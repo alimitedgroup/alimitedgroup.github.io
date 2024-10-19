@@ -1,4 +1,5 @@
 #import "../../lib.typ": *
+#import "modifiche_1510.typ": *
 
 #show: doc => verbale(
   data: [2024-10-15],
@@ -8,6 +9,9 @@
   ],
   doc,
 )
+#show: reg => registro(reg)
+
+
 
 = Informazioni generali
 
