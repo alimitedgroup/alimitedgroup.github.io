@@ -16,7 +16,7 @@ def writeFileWithLinks(filesdirectory,htmldirectory):
     if(Path(internaldir).is_dir()==True):
         for f in listdir(internaldir):
             logging.info("writing"+internaldir+f)
-            outputfile.write("\t\t\t\t"+linkbasestruct+'''https://github.com/alimitedgroup/documentazione/tree/main/verbali/interni/output/'''+f+'''">'''+f+'''</a>''')
+            outputfile.write("\t\t\t\t"+linkbasestruct+'''https://github.com/alimitedgroup/documentazione/blob/main/verbali/interni/output/'''+f+'''">'''+f+'''</a>''')
     
     
     outputfile.write('''\n\t\t</div>
@@ -28,7 +28,7 @@ def writeFileWithLinks(filesdirectory,htmldirectory):
     if(Path(internaldir).is_dir()==True):
         for f in listdir(internaldir):
             logging.info("writing"+internaldir+f)
-            outputfile.write("\t\t\t\t"+linkbasestruct+'''https://github.com/alimitedgroup/documentazione/tree/main/candidatura/output/'''+f+'''">'''+f+'''</a>''')
+            outputfile.write("\t\t\t\t"+linkbasestruct+'''https://github.com/alimitedgroup/documentazione/blob/main/candidatura/output/'''+f+'''">'''+f+'''</a>''')
     
     outputfile.write('''\n\t\t</div>
         <div class="documentDiv">
@@ -39,7 +39,7 @@ def writeFileWithLinks(filesdirectory,htmldirectory):
     if(Path(internaldir).is_dir()==True):
         for f in listdir(internaldir):
             logging.info("writing"+internaldir+f)
-            outputfile.write("\t\t\t\t"+linkbasestruct+'''https://github.com/alimitedgroup/documentazione/tree/main/verbali/esterni/output/'''+f+'''">'''+f+'''</a>''')
+            outputfile.write("\t\t\t\t"+linkbasestruct+'''https://github.com/alimitedgroup/documentazione/blob/main/verbali/esterni/output/'''+f+'''">'''+f+'''</a>''')
 
     outputfile.write('''\n\t\t</div>\n''')
     outputfile.close()
@@ -61,17 +61,17 @@ def main():
         <meta name="author" content="ALimitedGroup">
         <meta name="description" content="Pagina dei documenti del gruppo ALimitedGroup">
         <meta name="keywords" content="ALimitedGroup,progetto,ingegneria del software,swe,documenti,progetto">
-        <link type="text/css" rel="stylesheet" href="./../screen.css" media="screen">
-        <link rel="shortcut icon" href="./../images/logo.ico">
+        <link type="text/css" rel="stylesheet" href="https://github.com/alimitedgroup/documentazione/blob/main/website/screen.css" media="screen">
+        <link rel="shortcut icon" href="https://github.com/alimitedgroup/documentazione/blob/main/website/images/logo.ico">
     </head>
     <body>
     <header>
-        <img src="./../images/logo.png">
+        <img src="https://github.com/alimitedgroup/documentazione/blob/main/website/images/logo.png" alt="Immagine del gruppo ALimitedGroup. Il logo è formato da un cerchio con all'interno due scritte: il nome del gruppo e il motto">
     </header>
     <nav>
         <ul>
-            <li><a href="./../index.html"><span lang="en">Home</span></a></li>
-            <li><a href="./repository.html"><span lang="en">GitHub</span></a></li>
+            <li><a href="https://github.com/alimitedgroup/documentazione/blob/main/index.html""><span lang="en">Home</span></a></li>
+            <li><a href="https://github.com/alimitedgroup/documentazione/blob/main/website/pages/repository.html"><span lang="en">GitHub</span></a></li>
             <li id="currentPage">Documenti</li>
         </ul>
     </nav>
