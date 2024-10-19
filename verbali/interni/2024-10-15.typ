@@ -17,7 +17,7 @@ alle ore 15.34 con il seguente ordine del giorno:
 
 1. Decisione del nome del gruppo
 2. Realizzazione del logo del gruppo
-3. Definizione dell’email del gruppo
+3. Definizione dell'email del gruppo
 4. Definizione dei canali di comunicazione
 5. Definizione struttura generale dei verbali
 6. Valutazione dei capitolati disponibili
@@ -43,8 +43,8 @@ Si è proposto di utilizzarla come logo per rappresentare il nostro gruppo.
 
 == Definizione dell'email del gruppo
 
-Per tutte le comunicazioni verso l’esterno da parte del nostro gruppo è stato
-proposto l’utilizzo della seguente mail: #link("mailto:alimitedgroup@gmail.com")
+Per tutte le comunicazioni verso l'esterno da parte del nostro gruppo è stato
+proposto l'utilizzo della seguente mail: #link("mailto:alimitedgroup@gmail.com")
 
 == Definizione dei canali di comunicazione
 
@@ -59,13 +59,13 @@ canali di comunicazione interne:
 
 == Definizione della struttura generale dei verbali
 
-Durante la riunione è stato concordato l’utilizzo di un template standard
+Durante la riunione è stato concordato l'utilizzo di un template standard
 per la redazione dei verbali di riunioni interne ed esterne.
 
 == Valutazione dei capitolati disponibili
 
 Durante la riunione è stato proposto che, in base ai comuni interessi e alle
-conoscenze attuali, i seguenti capitolati, nell’ordine di preferenza, potrebbero
+conoscenze attuali, i seguenti capitolati, nell'ordine di preferenza, potrebbero
 essere di interesse per lo sviluppo:
 
 1. C6 = *Sistema di Gestione di un Magazzino Distribuito* avente

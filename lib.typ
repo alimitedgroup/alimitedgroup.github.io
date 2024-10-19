@@ -20,13 +20,13 @@
   let tipoFemminile = tipo.slice(0, -1) + "a"
 
   set align(center)
-  set text(font: "Helvetica")
+  set text(font: "Times New Roman")
 
   image("assets/altd.png", height: 7cm)
 
   v(4em)
 
-  text(24pt, weight: "black", fill: rgb(95, 95, 95, 255))[Verbale di riunione #tipoFemminile]
+  text(24pt, weight: "black", fill: black)[Verbale di riunione #tipoFemminile]
 
   v(3em)
 
