@@ -1,6 +1,22 @@
-/// Ciao
+/// Crea un verbale
+///
+/// Parametri:
+/// - odg: ordine del giorno
+/// - data: la data della riunione, nella forma YYYY-MM-DD
+/// - tipo: tipologia di verbale: "interno" o "esterno"
+/// - presenze: array di nomi e cognomi dei presenti
+/// - versione: attuale versione del documento
+/// - stato: attuale stato del documento (approvato oppure no)
+/// - regmodifiche: lista di modifiche, nella forma
+/// ```typst
+/// regmodifiche: (
+///   ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+///   ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+///   ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+/// )
+/// ```
 #let verbale(
-  data: "15-10-2024",
+  data: "2024-10-15",
   odg: [],
   tipo: "interno",
   presenze: (
@@ -14,24 +30,21 @@
   versione: [1.0.0],
   stato: "Approvato",
   distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio", "Prof. Cardin Riccardo"),
-  regmodifiche: [],
+  regmodifiche: (),
   contenuto,
 ) = {
 
   // Prima pagina
-
-  let tipoFemminile = tipo.slice(0, -1) + "a"
-
   set align(center)
   set text(font: "Times New Roman")
-
   image("assets/altd.png", height: 7cm)
-
   v(4em)
-
-  text(24pt, weight: "black", fill: black)[_Verbale_ interno #data]
-
-  v(1.5em)
+  text(24pt, weight: "black", fill: black)[_Verbale_ #tipo #data]
+  v(2.25em)
+  text(14pt, weight: "black", fill: black)[Ordine del giorno]
+  v(0.5em)
+  text(10pt)[#odg]
+  v(2em)
 
   show grid.cell.where(x: 0): cell => align(right, cell)
   show grid.cell.where(x: 1): cell => align(left, cell)
@@ -39,30 +52,23 @@
   box(
     width: 80%,
     grid(
-      columns: (1fr, 2fr),
+      columns: (1fr, 1fr),
       grid.vline(x: 1),
       inset: 8pt,
       [Stato], stato,
       [Versione], versione,
       [Presenti], grid(align: left, gutter: 8pt, ..presenze),
-      /*[Ordine del giorno], odg,*/
       [Distribuzione], grid(align: left, gutter: 8pt, ..distribuzione),
     ),
   )
 
-
-  v(2.25em)
-  text(14pt, weight: "black", fill: black)[Ordine del giorno]
-  v(0.5em)
-  text(10pt)[#odg]
-  // Seconda pagina (indice)
-
+  // Setup header, footer, contatore pagina
   set page(
-    numbering: "I",
+    numbering: "1",
     header: [
       #grid(
         columns: (1fr, 1fr),
-        align(left)[ALimitedGroup], align(right)[_Verbale_ interno #data],
+        align(left)[ALimitedGroup], align(right)[_Verbale_ #tipo #data],
       )
       #line(length: 100%)
     ],
@@ -74,14 +80,12 @@
       ]
     ],
   )
-  counter(page).update(1)
-  pagebreak()
-
-  //Registro delle modifiche
-  set page(numbering: "1")
   set align(left)
   set heading(numbering: "1.")
   counter(page).update(1)
+  pagebreak()
+
+  // Registro delle modifiche
   text(16pt, weight: "black", fill: black)[Registro delle Modifiche]
   table(
     fill: (x, y) => if (y == 0) {
@@ -102,24 +106,18 @@
       text(12pt, fill: white)[*Ruolo*],
       text(12pt, fill: white)[*Descrizione*],
     ),
-    ..regmodifiche
+    ..regmodifiche.flatten()
   )
   pagebreak()
-  //Indice
 
+  //Indice
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)
     strong(it)
   }
   outline(title: [#v(2em) Indice #v(3em)], indent: auto)
-
-  // Resto del documento
-
   pagebreak()
 
-  /*set page(numbering: "1")
-  set align(left)
-  set heading(numbering: "1.")
-  counter(page).update(1)*/
+  // Resto del documento
   contenuto
 }
