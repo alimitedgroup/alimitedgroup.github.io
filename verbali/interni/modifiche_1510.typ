@@ -34,33 +34,37 @@
       },
     columns:(auto, auto , 0.5fr, 0.5fr, 1fr),
     stroke: none,
-    inset: 10pt,
+    inset: 5pt,
     align: center,
     table.header(
-      [*Vers.*],[*Data*],[*Autore*],[*Ruolo*],[*Descrizione*],
+      text(12pt, fill: white)[*Vers.*],
+      text(12pt, fill: white)[*Data*],
+      text(12pt, fill: white)[*Autore*],
+      text(12pt, fill: white)[*Ruolo*],
+      text(12pt, fill: white)[*Descrizione*],
     ),
-    "0.0.1",
-    "15-10-24",
-    "Samuele Esposito",
-    "-",
-    "Creazione struttura e template documento",
-    "0.0.1",
-    "15-10-24",
-    "Samuele Esposito",
-    "-",
-    "Creazione struttura e template documento",
-      "0.0.1",
-    "15-10-24",
-    "Samuele Esposito",
-    "-",
-    "Creazione struttura e template documento",  
-  )
+    text(11pt)[1.0.0],
+    text(11pt)[15-10-24],
+    text(11pt)[Samuele Esposito],
+    text(11pt)[-],
+    text(11pt)[Approvazione documento],    
+    text(11pt)[0.1.0],
+    text(11pt)[15-10-24],
+    text(11pt)[Samuele Esposito],
+    text(11pt)[-],
+    text(11pt)[Verifica documento],      
+    text(11pt)[0.0.2],
+    text(11pt)[15-10-24],
+    text(11pt)[Samuele Esposito],
+    text(11pt)[-],
+    text(11pt)[Redazione documento],
+    text(11pt)[0.0.1],
+    text(11pt)[15-10-24],
+    text(11pt)[Samuele Esposito],
+    text(11pt)[-],
+    text(11pt)[Creazione struttura e template documento],
+  )  
   pagebreak()
-
-  set page(numbering: "1")
-  set align(left)
-  set heading(numbering: "1.")
-  counter(page).update(1)
   contenuto
 }
 

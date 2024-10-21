@@ -1,17 +1,20 @@
 /// Ciao
+#import "/documentazione/verbali/interni/modifiche_1510.typ": *
 #let verbale(
+  data: "15-10-2024",
   odg: [],
-  data: [2024-10-18],
   tipo: "interno",
   presenze: (
     "Emanuele Artusi",
-    "Lorenzo Stefani",
     "Loris Libralato",
     "Marco Piccoli",
     "Matteo Schievano",
     "Samuele Esposito",
     "Sara Ferraro",
   ),
+  versione: [1.0.0],
+  stato: "Approvato",
+  distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio" , "Prof. Cardin Riccardo"),
   contenuto,
 ) = {
 
@@ -26,26 +29,31 @@
 
   v(4em)
 
-  text(24pt, weight: "black", fill: black)[Verbale di riunione #tipoFemminile]
+  text(24pt, weight: "black", fill: black)[_Verbale_ interno #data]
 
-  v(3em)
+  v(1.5em)
 
   show grid.cell.where(x: 0): cell => align(right, cell)
   show grid.cell.where(x: 1): cell => align(left, cell)
-  set text(12pt)
+  set text(11pt)
   box(
     width: 80%,
     grid(
       columns: (1fr, 2fr),
       grid.vline(x: 1),
       inset: 8pt,
-
-      [Data], data,
+      [Stato], stato,
+      [Versione], versione,
       [Presenti], grid(align: left, gutter: 8pt, ..presenze),
-      [Ordine del giorno], odg
+      /*[Ordine del giorno], odg,*/
+      [Distribuzione], grid(align: left, gutter: 8pt, ..distribuzione),
     ),
   )
 
+  v(2.25em)
+  text(14pt, weight: "black", fill: black)[Ordine del giorno]
+  v(0.5em)
+  text(10pt)[#odg]
   // Seconda pagina (indice)
 
   set page(
@@ -53,20 +61,29 @@
     header: [
       #grid(
         columns: (1fr, 1fr),
-        align(left)[ALimitedGroup], align(right)[Verbale #tipo del #data],
+        align(left)[ALimitedGroup], align(right)[_Verbale_ interno #data],
       )
       #line(length: 100%)
     ],
     footer: [
+      #set align(center)
       #line(length: 100%)
-      #context {
-        align(right, counter(page).display(page.numbering))
-      }
+      #context [
+        Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
+      ]
+      
     ],
   )
   counter(page).update(1)
-
   pagebreak()
+  
+  //Registro delle modifiche
+  set page(numbering: "1" )
+  set align(left)
+  set heading(numbering: "1.")
+  counter(page).update(1)
+  show: reg => registro(reg)
+  //Indice
 
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)
@@ -78,9 +95,9 @@
 
   pagebreak()
 
-  set page(numbering: "1")
+  /*set page(numbering: "1")
   set align(left)
   set heading(numbering: "1.")
-  counter(page).update(1)
+  counter(page).update(1)*/
   contenuto
 }
