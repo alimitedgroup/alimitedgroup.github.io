@@ -15,9 +15,7 @@
 
 = Informazioni generali
 
-Con il seguente documento si attesta che in data 15 Ottobre 2024 in
-modalità virtuale è stata condotta una riunione durata dalle ore 14.30
-alle ore 15.34 con il seguente ordine del giorno:
+#inizio-verbale([15 Ottobre 2024], [14.30], [15.34])
 
 1. Decisione del nome del gruppo
 2. Realizzazione del logo del gruppo

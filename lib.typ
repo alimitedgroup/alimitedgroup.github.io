@@ -121,3 +121,13 @@
   // Resto del documento
   contenuto
 }
+
+#let inizio-verbale(
+  data,
+  inizio,
+  fine,
+) = [
+  Con il seguente documento si attesta che in data #data
+  è stata condotta una riunione durata dalle ore #inizio
+  alle ore #fine con il seguente ordine del giorno:
+]
