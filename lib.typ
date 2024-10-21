@@ -1,5 +1,5 @@
 /// Ciao
-#import "/documentazione/verbali/interni/modifiche_1510.typ": *
+#import "verbali/interni/modifiche_1510.typ"
 #let verbale(
   data: "15-10-2024",
   odg: [],
