@@ -4,6 +4,28 @@
     Definizione dei canali di comunicazione,
     prima discussione dei capitolati disponibili
   ],
+  regmodifiche: (
+    "1.0.0",
+    "15-10-24",
+    "Samuele Esposito",
+    "-",
+    "Approvazione documento",
+    "0.1.0",
+    "15-10-24",
+    "Samuele Esposito",
+    "-",
+    "Verifica documento",
+    "0.0.2",
+    "15-10-24",
+    "Samuele Esposito",
+    "-",
+    "Redazione documento",
+    "0.0.1",
+    "15-10-24",
+    "Samuele Esposito",
+    "-",
+    "Creazione struttura e template documento",
+  ),
   doc,
 )
 

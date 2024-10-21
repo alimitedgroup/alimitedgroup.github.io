@@ -1,5 +1,4 @@
 /// Ciao
-#import "verbali/interni/modifiche_1510.typ"
 #let verbale(
   data: "15-10-2024",
   odg: [],
@@ -15,6 +14,7 @@
   versione: [1.0.0],
   stato: "Approvato",
   distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio", "Prof. Cardin Riccardo"),
+  regmodifiche: [],
   contenuto,
 ) = {
 
@@ -72,7 +72,6 @@
       #context [
         Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
       ]
-
     ],
   )
   counter(page).update(1)
@@ -83,7 +82,29 @@
   set align(left)
   set heading(numbering: "1.")
   counter(page).update(1)
-  show: reg => registro(reg)
+  text(16pt, weight: "black", fill: black)[Registro delle Modifiche]
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto, 0.5fr, 0.5fr, 1fr),
+    stroke: none,
+    inset: 5pt,
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Vers.*],
+      text(12pt, fill: white)[*Data*],
+      text(12pt, fill: white)[*Autore*],
+      text(12pt, fill: white)[*Ruolo*],
+      text(12pt, fill: white)[*Descrizione*],
+    ),
+    ..regmodifiche
+  )
+  pagebreak()
   //Indice
 
   show outline.entry.where(level: 1): it => {
