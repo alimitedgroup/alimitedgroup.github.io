@@ -35,10 +35,10 @@ rappresentanza del nostro gruppo.
 
 == Realizzazione del logo del gruppo
 
-Successivamente l'approvazione da parte di tutto il gruppo del nuovo nome, è stato creato un logo che rappresentava appieno i valori del gruppo: 
+Successivamente l'approvazione da parte di tutto il gruppo del nuovo nome, è stato creato un logo che rappresentava appieno i valori del gruppo:
 #figure(
-  image("../../assets/altd.png", width:40%, format: "png"),
-  caption: [Logo scelto per il gruppo]
+  image("../../assets/altd.png", width: 40%, format: "png"),
+  caption: [Logo scelto per il gruppo],
 )<logo>
 
 Dopo aver discusso internamente, si è deciso ufficialmente di utilizzare l'immagine in @logo come logo per rappresentare il nostro gruppo.

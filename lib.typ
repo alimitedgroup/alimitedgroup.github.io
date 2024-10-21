@@ -14,7 +14,7 @@
   ),
   versione: [1.0.0],
   stato: "Approvato",
-  distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio" , "Prof. Cardin Riccardo"),
+  distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio", "Prof. Cardin Riccardo"),
   contenuto,
 ) = {
 
@@ -50,6 +50,7 @@
     ),
   )
 
+
   v(2.25em)
   text(14pt, weight: "black", fill: black)[Ordine del giorno]
   v(0.5em)
@@ -71,14 +72,14 @@
       #context [
         Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
       ]
-      
+
     ],
   )
   counter(page).update(1)
   pagebreak()
-  
+
   //Registro delle modifiche
-  set page(numbering: "1" )
+  set page(numbering: "1")
   set align(left)
   set heading(numbering: "1.")
   counter(page).update(1)
