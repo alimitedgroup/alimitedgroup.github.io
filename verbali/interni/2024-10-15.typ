@@ -1,5 +1,4 @@
 #import "../../lib.typ": *
-
 #show: doc => verbale(
   odg: [
     Definizione dei canali di comunicazione,
@@ -7,8 +6,6 @@
   ],
   doc,
 )
-
-
 
 = Informazioni generali
 
