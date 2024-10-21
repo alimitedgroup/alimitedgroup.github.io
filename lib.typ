@@ -1,4 +1,41 @@
-/// Ciao
+/// Crea un registro delle modifiche
+///
+/// Parametri:
+/// - righe: array di elementi nella forma
+/// ```typst
+/// righe: (
+///   ("0.0.1", "15-10-24", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+///   ("0.0.1", "15-10-24", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+///   ("0.0.1", "15-10-24", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+/// )
+/// ```
+#let registro(righe) = {
+  text(16pt, weight: "black", fill: black)[Registro delle Modifiche]
+  table(
+    columns: (auto, auto, 0.5fr, 0.5fr, 1fr),
+    stroke: 1pt,
+    inset: 10pt,
+    align: center,
+    table.header(
+      [*Vers.*],
+      [*Data*],
+      [*Autore*],
+      [*Ruolo*],
+      [*Descrizione*],
+    ),
+
+    ..(righe.flatten())
+  )
+}
+
+/// Crea un verbale
+///
+/// Parametri:
+/// - odg: ordine del giorno
+/// - data: la data della riunione, nella forma YYYY-MM-DD
+/// - tipo: tipologia di verbale: "interno" o "esterno"
+/// - presenze: array di nomi e cognomi dei presenti
+/// - versioni: lista di versioni del documento
 #let verbale(
   odg: [],
   data: [2024-10-18],
@@ -12,6 +49,7 @@
     "Samuele Esposito",
     "Sara Ferraro",
   ),
+  versioni: (),
   contenuto,
 ) = {
 
@@ -46,6 +84,8 @@
     ),
   )
 
+  pagebreak()
+
   // Seconda pagina (indice)
 
   set page(
@@ -66,7 +106,10 @@
   )
   counter(page).update(1)
 
-  pagebreak()
+  if versioni.len() != 0 {
+    registro(versioni)
+    pagebreak()
+  }
 
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)

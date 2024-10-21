@@ -1,5 +1,4 @@
 #import "../../lib.typ": *
-#import "modifiche_1510.typ": *
 
 #show: doc => verbale(
   data: [2024-10-15],
@@ -8,8 +7,14 @@
     prima discussione dei capitolati disponibili
   ],
   doc,
+
+  versioni: (
+    ("0.0.1", "15-10-24", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+    ("0.0.1", "15-10-24", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+    ("0.0.1", "15-10-24", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+  ),
 )
-#show: reg => registro(reg)
+// #show: reg => registro(reg)
 
 
 
