@@ -25,3 +25,43 @@ jobs:
         with:
           name: PDFs
           path: '**/*.pdf'
+
+      - name: Prepare website files
+        if: github.ref == 'refs/heads/main'
+        run: python3 .github/workflows/updatehtml.py
+
+      - name: Upload website files
+        uses: actions/upload-artifact@v4
+        with:
+          name: Website
+          path: './dist'
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download website files
+        uses: actions/download-artifact@v4
+        with:
+          name: 'Website'
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
