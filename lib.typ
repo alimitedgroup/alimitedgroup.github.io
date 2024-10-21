@@ -16,19 +16,21 @@
 /// )
 /// ```
 #let verbale(
-  data: "2024-10-15",
-  odg: [],
+  data: [],
   tipo: "interno",
-  presenze: (
+   odg: [],
+  /*presenze: (
     "Emanuele Artusi",
+    "Lorenzo Stefani",
     "Loris Libralato",
     "Marco Piccoli",
     "Matteo Schievano",
     "Samuele Esposito",
     "Sara Ferraro",
-  ),
-  versione: [1.0.0],
-  stato: "Approvato",
+  ),*/
+  presenze: (),
+  versione: [],
+  stato: [],
   distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio", "Prof. Cardin Riccardo"),
   regmodifiche: (),
   contenuto,
@@ -123,11 +125,12 @@
 }
 
 #let inizio-verbale(
+  modalità,
   data,
   inizio,
   fine,
 ) = [
   Con il seguente documento si attesta che in data #data
-  è stata condotta una riunione durata dalle ore #inizio
+  è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio
   alle ore #fine con il seguente ordine del giorno:
 ]

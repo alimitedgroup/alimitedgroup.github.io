@@ -1,21 +1,29 @@
 #import "../../lib.typ": *
 #show: doc => verbale(
-  odg: [
-    Definizione dei canali di comunicazione,
-    prima discussione dei capitolati disponibili
-  ],
+  data: [15-10-2024],
   regmodifiche: (
-    ("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),
-    ("0.1.0", "2024-10-15", "Samuele Esposito", "-", "Verifica documento"),
-    ("0.0.2", "2024-10-15", "Samuele Esposito", "-", "Redazione documento"),
+    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),
+    ("0.1.0", "2024-10-15", "Samuele Esposito", "-", "Verifica documento"),*/
+    ("0.0.2", "2024-10-16", "Schievano Matteo", "-", "Redazione documento"),
     ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
   ),
+  versione: [0.0.2],
+  stato: [redatto],
+  presenze: (
+    "Emanuele Artusi",
+    "Loris Libralato",
+    "Marco Piccoli",
+    "Matteo Schievano",
+    "Samuele Esposito",
+    "Sara Ferraro",
+  ),
+  odg: [test],
   doc,
 )
 
 = Informazioni generali
 
-#inizio-verbale([15 Ottobre 2024], [14.30], [15.34])
+#inizio-verbale([*virtuale*], [*15 Ottobre 2024*], [*14.30*], [*15.34*])
 
 1. Decisione del nome del gruppo
 2. Realizzazione del logo del gruppo
@@ -26,6 +34,7 @@
 
 Data l'assenza di un componente eventuali correzioni alle decisioni riportate in questo documento saranno debitamente verbalizzate a seguito di
 nuova riunione.
+#pagebreak()
 
 = Dettaglio riunione
 
@@ -89,7 +98,4 @@ In seguito al termine della riunione, il gruppo decide di conocordare una
 nuova riunione da svolgersi il prima possibile per confermare quanto
 proposto nel seguente documento con tutti i membri.
 
-Ha altresì proposto di concordare al prossimo momento utile chi vestirà
-per primo il ruolo di Responsabile per poter contattare i proponenti per
-discutere di informazioni sui capitolati e in vista del primo diario di bordo
-previsto dal calendario di Ingegneria del Software.
+Ha altresì proposto di concordare l'invio, quanto prima, di una mail per richiedere un colloquio con _M31_.
