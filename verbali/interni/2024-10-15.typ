@@ -1,14 +1,15 @@
 #import "../../lib.typ": *
+#set text(lang: "it")
 #show: doc => verbale(
   data: [15-10-2024],
   regmodifiche: (
-    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),
-    ("0.1.0", "2024-10-15", "Samuele Esposito", "-", "Verifica documento"),*/
-    ("0.0.2", "2024-10-16", "Schievano Matteo", "-", "Redazione documento"),
-    ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
+    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),*/
+    ("0.1.0", "17-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
+    ("0.0.2", "16-10", "Schievano Matteo", "-", "Redazione documento"),
+    ("0.0.1", "15-10", "Samuele Esposito", "-", "Creazione struttura e template documento"),
   ),
-  versione: [0.0.2],
-  stato: [redatto],
+  versione: [0.1.0],
+  stato: [Verificato],
   presenze: (
     "Emanuele Artusi",
     "Loris Libralato",
@@ -17,7 +18,7 @@
     "Samuele Esposito",
     "Sara Ferraro",
   ),
-  odg: [test],
+  odg: [Prima riunione di _ALimitedGroup_: vengono proposte le prime _task_ da portare a termine],
   doc,
 )
 
@@ -45,18 +46,18 @@ rappresentanza del nostro gruppo.
 
 == Realizzazione del logo del gruppo
 
-Successivamente l'approvazione da parte di tutto il gruppo del nuovo nome, è stato creato un logo che rappresentava appieno i valori del gruppo:
+Successivamente l'approvazione da parte di tutti i presenti del nuovo nome, è stato creato un logo che rappresentava appieno i valori del gruppo:
 #figure(
   image("../../assets/altd.png", width: 40%, format: "png"),
-  caption: [Logo scelto per il gruppo],
+  caption: [Logo scelto dati presenti],
 )<logo>
 
 Dopo aver discusso internamente, si è deciso ufficialmente di utilizzare l'immagine in @logo come logo per rappresentare il nostro gruppo.
 
 == Definizione dell'email del gruppo
 
-Per tutte le comunicazioni verso l'esterno da parte del nostro gruppo è stato
-proposto l'utilizzo della seguente mail: #link("mailto:alimitedgroup@gmail.com")
+Per tutte le comunicazioni verso l'esterno da parte del nostro gruppo è stato proposto l'utilizzo della seguente mail:\
+#align(center)[#emph[#link("mailto:alimitedgroup@gmail.com")]]
 
 == Definizione dei canali di comunicazione
 
@@ -73,7 +74,7 @@ canali di comunicazione interne:
 
 Durante la riunione è stato concordato l'utilizzo di un _template standard_
 per la redazione dei verbali di riunioni interne ed esterne.
-
+#pagebreak()
 == Valutazione dei capitolati disponibili
 
 Durante la riunione è stato proposto che, in base ai comuni interessi e alle

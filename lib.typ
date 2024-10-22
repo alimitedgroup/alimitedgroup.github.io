@@ -15,10 +15,11 @@
 ///   ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
 /// )
 /// ```
+#set text(lang: "it")
 #let verbale(
   data: [],
   tipo: "interno",
-   odg: [],
+  odg: [],
   /*presenze: (
     "Emanuele Artusi",
     "Lorenzo Stefani",
@@ -43,10 +44,6 @@
   v(4em)
   text(24pt, weight: "black", fill: black)[_Verbale_ #tipo #data]
   v(2.25em)
-  text(14pt, weight: "black", fill: black)[Ordine del giorno]
-  v(0.5em)
-  text(10pt)[#odg]
-  v(2em)
 
   show grid.cell.where(x: 0): cell => align(right, cell)
   show grid.cell.where(x: 1): cell => align(left, cell)
@@ -64,13 +61,18 @@
     ),
   )
 
+  v(2em)
+  text(14pt, weight: "black", fill: black)[Ordine del giorno]
+  v(0.5em)
+  text(10pt)[#odg]
+
   // Setup header, footer, contatore pagina
   set page(
     numbering: "1",
     header: [
       #grid(
         columns: (1fr, 1fr),
-        align(left)[ALimitedGroup], align(right)[_Verbale_ #tipo #data],
+        align(left)[_ALimitedGroup_], align(right)[_Verbale_ #tipo #data],
       )
       #line(length: 100%)
     ],
@@ -131,6 +133,5 @@
   fine,
 ) = [
   Con il seguente documento si attesta che in data #data
-  è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio
-  alle ore #fine con il seguente ordine del giorno:
+  è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con il seguente ordine del giorno:
 ]
