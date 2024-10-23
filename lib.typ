@@ -18,7 +18,7 @@
 #set text(lang: "it")
 #let verbale(
   data: [],
-  tipo: "interno",
+  tipo: [],
   odg: [],
   /*presenze: (
     "Emanuele Artusi",
@@ -126,7 +126,7 @@
   contenuto
 }
 
-#let inizio-verbale(
+#let inizio-verbale-interno(
   modalità,
   data,
   inizio,
@@ -134,4 +134,15 @@
 ) = [
   Con il seguente documento si attesta che in data #data
   è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con il seguente ordine del giorno:
+]
+
+#let inizio-verbale-esterno(
+  modalità,
+  data,
+  inizio,
+  fine,
+  azienda,
+) = [
+  Con il seguente documento si attesta che in data #data
+  è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con l'azienda #azienda riguardante i seguenti argomenti:
 ]

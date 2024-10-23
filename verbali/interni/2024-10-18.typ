@@ -21,7 +21,7 @@
 
 = Informazioni generali
 
-#inizio-verbale([*virtuale*], [*18 Ottobre 2024*], [*17.00*], [*19.30*])
+#inizio-verbale-interno([*virtuale*], [*18 Ottobre 2024*], [*17.00*], [*19.30*])
 
 + Conferma delle decisioni intraprese durante la riunione del 15 Ottobre 2024
 + Discussione sul repository GitHub dedicato alla documentazione

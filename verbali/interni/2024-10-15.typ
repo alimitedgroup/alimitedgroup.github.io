@@ -25,7 +25,7 @@
 
 = Informazioni generali
 
-#inizio-verbale([*virtuale*], [*15 Ottobre 2024*], [*14.30*], [*15.34*])
+#inizio-verbale-interno([*virtuale*], [*15 Ottobre 2024*], [*14.30*], [*15.34*])
 
 1. Decisione del nome del gruppo
 2. Realizzazione del logo del gruppo
