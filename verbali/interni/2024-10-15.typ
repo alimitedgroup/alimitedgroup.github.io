@@ -1,3 +1,4 @@
+// VI 15-10-2024
 #import "../../lib.typ": *
 #set text(lang: "it")
 #show: doc => verbale(
