@@ -52,9 +52,9 @@ così come stabilito sempre dalle indicazioni fornite.
 
 == Prime analisi sui sistemi di ticketing e di gestione compiti
 
-Durante la riunione è stato proposto di provare ad utilizzare le _issue_ di GitHub come piattaforma di ticketing e di utilizzare le board dello stesso servizio per avere rappresentazione visiva dei compiti da fare e permettere l'auto-assegnazione e l'assegnazione degli stessi.
+Durante la riunione è stato proposto di provare ad utilizzare le _issue_ di GitHub come piattaforma di ticketing e di utilizzare le _board_ dello stesso servizio per avere rappresentazione visiva dei compiti da fare e permettere l'auto-assegnazione e l'assegnazione degli stessi.
 
-Seguiranno nei giorni seguenti la modifica del Repository GitHub che ospita la documentazione per la realizzazione delle prime prove (che includeranno, al momento in via provvisoria, anche la realizzazione di alcune label personalizzate e comunuque di quanto necessario allo svolgimento delle prove).
+Seguiranno nei giorni seguenti la modifica del Repository GitHub che ospita la documentazione per la realizzazione delle prime prove (che includeranno, al momento in via provvisoria, anche la realizzazione di alcune label personalizzate e comunque di quanto necessario allo svolgimento delle prove).
 
 == Utilizzo di Google Calendar per la gestione degli eventi
 
@@ -68,7 +68,7 @@ Il gruppo propone, con l'ottica di migliorare la gestione di documenti e in part
 - *VI* per indicare un *Verbale Interno*;
 - *VE* per indicare un *Verbale Esterno*;
 
-Dato che l'aggiornamento del sito web avviene automaticamente al caricamento di un nuovo file, per facilitare la nominazione degli stessi verrà apposto, alla riga 1 del file sorgente (.typ) di ogni verbale, la dicitura:
+Dato che l'aggiornamento del sito web avviene automaticamente al caricamento di un nuovo file, per facilitare la denominazione degli stessi verrà apposto, alla riga 1 del file sorgente (.typ) di ogni verbale, la dicitura:
 
 
 #align(center)[*```//[Tipo Verbale] GG-MM-AAAA_#```*]
