@@ -18,7 +18,7 @@
 #set text(lang: "it")
 #let verbale(
   data: [],
-  tipo: [],
+  tipo: [interno],
   odg: [],
   /*presenze: (
     "Emanuele Artusi",
