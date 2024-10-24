@@ -15,20 +15,10 @@
 ///   ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
 /// )
 /// ```
-#set text(lang: "it")
 #let verbale(
   data: [],
   tipo: [interno],
   odg: [],
-  /*presenze: (
-    "Emanuele Artusi",
-    "Lorenzo Stefani",
-    "Loris Libralato",
-    "Marco Piccoli",
-    "Matteo Schievano",
-    "Samuele Esposito",
-    "Sara Ferraro",
-  ),*/
   presenze: (),
   versione: [],
   stato: [],
@@ -141,7 +131,7 @@
   data,
   inizio,
   fine,
-  azienda,
+  azienda, 
 ) = [
   Con il seguente documento si attesta che in data #data
   è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con l'azienda #azienda riguardante i seguenti argomenti:

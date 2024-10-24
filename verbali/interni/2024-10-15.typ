@@ -1,6 +1,9 @@
 // VI 15-10-2024
+
 #import "../../lib.typ": *
 #set text(lang: "it")
+#set list(indent: 1em)
+#set enum(indent: 1em)
 #show: doc => verbale(
   data: [15-10-2024],
   regmodifiche: (

@@ -2,6 +2,8 @@
 
 #import "../../lib.typ": *
 #set text(lang: "it")
+#set list(indent: 1em)
+#set enum(indent: 1em)
 #show: doc => verbale(
   regmodifiche: (
     ("0.0.2", "23-10", "Matteo Schievano", "-", "Redazione documento"),
