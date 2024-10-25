@@ -28,12 +28,16 @@
 )
 
 = Informazioni generali
-Con il seguente documento si attesta che in data *23 Ottobre 2024* è stata condotta, in modalità *virtuale*, una riunione durata dalle ore *15.00* alle ore *15.30* con l'azienda _Ergon Informatica Srl_.\
+#inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*15.00*], [*15.30*], [_Ergon Informatica Srl_ ],)
+- chiarimenti sul capitolato e sulle tecnologie da utilizzare
+- esposizioni domande riguardante il progetto.
+
 L'incontro si è svolto tramite la piattaforma _Zoom_.\
 
 L'azienda _Ergon Informatica Srl_ è stata rappresentata da:
 - Gianluca Carlesso
 - Anna Tieppo.
+#pagebreak()
 
 
 = Motivo della riunione
@@ -49,7 +53,7 @@ Dopo aver analizzato il capitolato _LLM: ASSISTENTE VIRTUALE_ presentato dall'az
 == LLM utilizzabili
 L'azienda ha assicurato piena libertà nella scelta dell'LLM.\
 Potranno essere utilizzati modelli di OpenAI, Meta.\
-In caso di necessità l'azienda fornirà anche account aziendali.\
+In caso di necessità l'azienda fornirà account aziendali.\
 
 == Documenti da testare
 L'azienda ha specificato che i documenti da testare saranno testuali: documenti Word,PDF...\
