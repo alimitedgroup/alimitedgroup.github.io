@@ -8,13 +8,13 @@
   data: [23-10-2024],
   tipo: [esterno],
   regmodifiche: (
-    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),*/
+    ("1.0.0", "25-10","Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
     ("0.1.0", "23-10", "Sara Ferraro    Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Marco Piccoli   Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Marco Piccoli", "-", "Creazione struttura e template documento"),
   ),
-  versione: [0.1.0],
-  stato: [Verificato],
+  versione: [1.0.0],
+  stato: [Approvato],
   presenze: (
     "Samuele Esposito",
     "Loris Libralato",
@@ -31,11 +31,13 @@
 = Informazioni generali
 
 #inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*16.00*], [*16.30*], [_Synclab_],)
+
 - chiarimenti sul capitolato e sulle tecnologie da utilizzare
 - esposizione domande riguardante il progetto.
 
 
 A questo incontro, svoltosi tramite la piattaforma _Google Meet_, hanno partecipato per conto dell'azienda _SyncLab_ i seguenti rappresentanti:
+
 - Andrea Dorigo
 - Fabio Pallaro
 - Daniele Zorzi.
@@ -43,6 +45,7 @@ A questo incontro, svoltosi tramite la piattaforma _Google Meet_, hanno partecip
 
 = Motivo della riunione
 Il gruppo _ALimitedGroup_ ha richiesto chiarimenti, dopo aver analizzato il progetto _NearYou_, su diversi ambiti:
+
 - punti d'interesse e pubblicità personalizzate
 - raccolta dati degli utenti
 - dettagli sui test da effettuare

@@ -8,13 +8,13 @@
   data: [23-10-2024],
   tipo: [esterno],
   regmodifiche: (
-    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),*/
+    ("1.0.0", "25-10","Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
     ("0.1.0", "23-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
-  versione: [0.1.0],
-  stato: [Verificato],
+  versione: [1.0.0],
+  stato: [Approvato],
   presenze: (
     "Samuele Esposito",
     "Loris Libralato",
@@ -29,12 +29,14 @@
 
 = Informazioni generali
 #inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*15.00*], [*15.30*], [_Ergon Informatica Srl_ ],)
+
 - chiarimenti sul capitolato e sulle tecnologie da utilizzare
 - esposizioni domande riguardante il progetto.
 
 L'incontro si è svolto tramite la piattaforma _Zoom_.\
 
 L'azienda _Ergon Informatica Srl_ è stata rappresentata da:
+
 - Gianluca Carlesso
 - Anna Tieppo.
 #pagebreak()
@@ -42,6 +44,7 @@ L'azienda _Ergon Informatica Srl_ è stata rappresentata da:
 
 = Motivo della riunione
 Dopo aver analizzato il capitolato _LLM: ASSISTENTE VIRTUALE_ presentato dall'azienda, il gruppo _ALimitedGroup_ ha chiesto dei chiarimenti riguardanti:
+
 - tipologia di LLM utilizzabili
 - tipologia di documenti da testare
 - dominio di applicazione del modello
