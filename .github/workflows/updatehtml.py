@@ -32,10 +32,10 @@ for file in glob('**/*.pdf', recursive=True):
 html = Path('dist/documents.html').read_text()
 html = html.replace('{{verbali_interni}}', '\n'.join(
     TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    for file in verbali_interni
+    for file in sorted(verbali_interni)
 ))
 html = html.replace('{{verbali_esterni}}', '\n'.join(
     TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    for file in verbali_esterni
+    for file in sorted(verbali_esterni)
 ))
 Path('dist/documents.html').write_text(html)
