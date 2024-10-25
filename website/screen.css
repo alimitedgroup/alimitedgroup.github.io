@@ -137,6 +137,11 @@ div.documentDiv>a:visited
     color: rgb(252, 51, 0);
 }
 
+div.documentDiv>ul
+{
+    list-style-type: none;
+}
+
 /*Regole specifiche per pagina profilo github*/
 
 div.repoDiv
