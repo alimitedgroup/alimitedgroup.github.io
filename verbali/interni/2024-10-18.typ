@@ -1,11 +1,12 @@
 // VI 18-10-2024
 
 #import "../../lib.typ": *
-#set text(lang: "it")
-#set list(indent: 1em)
-#set enum(indent: 1em)
 #show: doc => verbale(
-  regmodifiche: (("0.1.0", "22-10", "Marco Piccoli", "-", "Modifica e verifica documento"),("0.0.2", "21-10", "Matteo Schievano", "-", "Redazione documento"),("0.0.1", "21-10", "Matteo Schievano", "-", "Creazione struttura e template documento"),),
+  regmodifiche: (
+    ("0.1.0", "22-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
+    ("0.0.2", "21-10", "Matteo Schievano", "-", "Redazione documento"),
+    ("0.0.1", "21-10", "Matteo Schievano", "-", "Creazione struttura e template documento"),
+  ),
   data: [18-10-2024],
   versione: [0.1.0],
   stato: [Verificato],

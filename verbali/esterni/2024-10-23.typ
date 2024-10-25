@@ -1,14 +1,11 @@
 // VE 23-10-2024
 
 #import "../../lib.typ": *
-#set text(lang: "it")
-#set list(indent: 1em)
-#set enum(indent: 1em)
 #show: doc => verbale(
   data: [23-10-2024],
   tipo: [esterno],
   regmodifiche: (
-    ("1.0.0", "25-10","Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
+    ("1.0.0", "25-10", "Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
     ("0.1.0", "23-10", "Sara Ferraro    Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Marco Piccoli   Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Marco Piccoli", "-", "Creazione struttura e template documento"),
@@ -30,8 +27,7 @@
 
 = Informazioni generali
 
-#inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*16.00*], [*16.30*], [_Synclab_],)
-
+#inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*16.00*], [*16.30*], [_Synclab_])
 - chiarimenti sul capitolato e sulle tecnologie da utilizzare
 - esposizione domande riguardante il progetto.
 
@@ -81,7 +77,7 @@ L'azienda ha dichiarato che fornirà supporto nell'apprendimento delle nuove tec
 Inoltre, viene confermata la possibilità di inserire nel _curriculum vitae_ il progetto realizzato, con le conseguenti referenze.
 
 
-== Altro 
+== Altro
 L'azienda ha chiarito che non verrà richiesta l'implementazione della parte mobile del progetto e del software che visualizza i messaggi.
 #pagebreak()
 

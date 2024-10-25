@@ -26,6 +26,9 @@
   regmodifiche: (),
   contenuto,
 ) = {
+  set text(lang: "it")
+  set list(indent: 1em)
+  set enum(indent: 1em)
 
   // Prima pagina
   set align(center)
@@ -131,7 +134,7 @@
   data,
   inizio,
   fine,
-  azienda, 
+  azienda,
 ) = [
   Con il seguente documento si attesta che in data #data
   è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con l'azienda #azienda riguardante i seguenti argomenti:
