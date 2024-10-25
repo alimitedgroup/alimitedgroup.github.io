@@ -8,13 +8,13 @@
   data: [23-10-2024],
   tipo: [esterno],
   regmodifiche: (
-    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),
-    ("0.1.0", "17-10", "Marco Piccoli", "-", "Modifica e verifica documento"),*/
+    /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),*/
+    ("0.1.0", "17-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
-  versione: [0.0.2],
-  stato: [Redatto],
+  versione: [0.1.0],
+  stato: [Verificato],
   presenze: (
     "Samuele Esposito",
     "Loris Libralato",
@@ -23,7 +23,7 @@
     "Lorenzo Stefani",
     "Sara Ferraro",
   ),
-  odg: [Primo incontro di _ALimitedGroup_ con l'azienda _Ergon_: vengono chiariti dubbi sorti durante la presentazione del capitolato],
+  odg: [Primo incontro di _ALimitedGroup_ con l'azienda _Ergon Informatica_: vengono chiariti i dubbi sorti durante la presentazione del capitolato],
   doc,
 )
 
@@ -51,17 +51,17 @@ Dopo aver analizzato il capitolato _LLM: ASSISTENTE VIRTUALE_ presentato dall'az
 
 = Resoconto
 == LLM utilizzabili
-L'azienda ha assicurato piena libertà nella scelta dell'LLM.\
-Potranno essere utilizzati modelli di OpenAI, Meta.\
+L'azienda ha assicurato piena libertà nella scelta dell'_LLM_.\
+Potranno essere utilizzati modelli di _OpenAI_, _Meta_.\
 In caso di necessità l'azienda fornirà account aziendali.\
 
 == Documenti da testare
-L'azienda ha specificato che i documenti da testare saranno testuali: documenti Word,PDF...\
-È opzionale l'analisi di immagini.
+L'azienda ha specificato che i soli documenti da testare saranno testuali, ovvero documenti _PDF_ e _Word_. \
+_Ergon Informatica Srl_ ha spiegato, inoltre, come l'analisi di immagini sia opzionale.
 
 == Dominio di applicazione
 L'azienda ha chiarito che il dominio di applicazione del modello sarà specifico, non generico.\
-Verrà comunicato.
+Verranno comunicate, successivamente all'aggiudicazione del capitolato, tutte le informazioni relative al dominio.
 
 == Template di domanda e di risposta
 L'azienda ha puntualizzato che verrà utilizzato un template contenente un elenco di domande e risposte frequenti. Il processo che l'LLM  dovrà seguire è strutturato come segue:
@@ -74,18 +74,21 @@ L'azienda ha puntualizzato che verrà utilizzato un template contenente un elenc
     - se la domanda non è presente nel template: l'LLM utilizzerà le sue capacità di AI generativa per elaborare e fornire una nuova risposta basata sulle informazioni di cui dispone e sul contesto della domanda.
 
 == Hosting
-L'azienda ha chiarito che non è necessario occuparsi dell'hosting del progetto. Sarà sufficiente fornire il codice sorgente all'interno di una repository (GitHub,GitLab).\
+L'azienda ha chiarito che non è necessario occuparsi dell'hosting del progetto, e che sarà sufficiente fornire il codice sorgente all'interno di una repository (GitHub,GitLab).\
 _Ergon Informatica Srl_ si occuperà di gestire l'hosting del servizio.
 
 == Formazione e supporto
-L'azienda fornisce dei corsi online da seguire per l'approfondimento degli argomenti da trattare.\
-Verrà fornito supporto tramite chiamate settimanali programmate.
+L'azienda proponente mette a disposizione del gruppo dei corsi online da seguire per l'approfondimento degli argomenti da trattare; inoltre verrà fornito supporto tramite chiamate settimanali programmate.
 
 == Altro 
 L'azienda ha consigliato l'utilizzo di _.NET MAUI_ per la realizzazione dell'interfaccia utente.\
-Ha inoltre dichiarato che è facoltativa la progettazione di una web app.
+Ha dichiarato, inoltre, che la progettazione di una web app è facoltativa.
 
+#pagebreak()
 
+= Esiti della riunione
+La riunione con l'azienda _Ergon Informatica Srl_ è stata esplicativa e formativa per tutti i presenti del gruppo, i rappresentati dell'azienda hanno risposto esaustivamente toccando punto per punto il progetto didattico. \
+Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _Ergon Informatica Srl_ e i suoi rappresentanti per la disponibilità e la professionalità mostrataci durante il _meeting_.
 
 
 
