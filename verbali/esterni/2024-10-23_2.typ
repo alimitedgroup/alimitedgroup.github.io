@@ -9,7 +9,7 @@
   tipo: [esterno],
   regmodifiche: (
     /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),*/
-    ("0.1.0", "17-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
+    ("0.1.0", "23-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
