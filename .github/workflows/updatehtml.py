@@ -33,19 +33,20 @@ for file in glob('**/*.pdf', recursive=True):
         exit(1)
 
 # update the html file
-print(file)
+
+def process_template(path: str) -> str:
+    typ = file.removesuffix('.pdf') + '.typ'
+    title = Path(typ).read_text().splitlines()[0].strip('/').strip()
+    return TEMPLATE.replace('{{link}}', path).replace('{{name}}', title)
+
 html = Path('dist/documents.html').read_text()
 html = html.replace('{{verbali_interni}}', '\n'.join(
-    #TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    for file in sorted(verbali_interni)
+    process_template(file) for file in sorted(verbali_interni)
 ))
 html = html.replace('{{verbali_esterni}}', '\n'.join(
-    TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    for file in sorted(verbali_esterni)
+    process_template(file) for file in sorted(verbali_esterni)
 ))
 html = html.replace('{{diari_di_bordo}}', '\n'.join(
-    TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    for file in sorted(diari_di_bordo)
+    process_template(file) for file in sorted(diari_di_bordo)
 ))
 Path('dist/documents.html').write_text(html)
