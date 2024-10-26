@@ -12,7 +12,6 @@ copytree('website', 'dist', symlinks=False)
 
 verbali_interni = []
 verbali_esterni = []
-
 # Iterate over all PDF files, copy them into `dist`,
 # and save the paths, to later insert them into the html
 for file in glob('**/*.pdf', recursive=True):
@@ -29,14 +28,14 @@ for file in glob('**/*.pdf', recursive=True):
         exit(1)
 
 # update the html file
+
 html = Path('dist/documents.html').read_text()
 html = html.replace('{{verbali_interni}}', '\n'.join(
     TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
     for file in sorted(verbali_interni)
 ))
 html = html.replace('{{verbali_esterni}}', '\n'.join(
-    #TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
-    TEMPLATE.replace('{{link}}', file).replace('{{name}}',  file.readline().strip('\n'))
+    TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
     for file in sorted(verbali_esterni)
 ))
 Path('dist/documents.html').write_text(html)
