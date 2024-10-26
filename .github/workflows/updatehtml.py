@@ -35,7 +35,8 @@ html = html.replace('{{verbali_interni}}', '\n'.join(
     for file in sorted(verbali_interni)
 ))
 html = html.replace('{{verbali_esterni}}', '\n'.join(
-    TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
+    #TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
+    TEMPLATE.replace('{{link}}', file).replace('{{name}}',  file.readline().strip('\n'))
     for file in sorted(verbali_esterni)
 ))
 Path('dist/documents.html').write_text(html)
