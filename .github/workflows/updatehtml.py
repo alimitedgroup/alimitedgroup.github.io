@@ -12,6 +12,7 @@ copytree('website', 'dist', symlinks=False)
 
 verbali_interni = []
 verbali_esterni = []
+diari_di_bordo = []
 # Iterate over all PDF files, copy them into `dist`,
 # and save the paths, to later insert them into the html
 for file in glob('**/*.pdf', recursive=True):
@@ -22,6 +23,10 @@ for file in glob('**/*.pdf', recursive=True):
     elif 'verbali/esterni' in file:
         verbali_esterni.append(file)
         Path('dist/verbali/esterni').mkdir(parents=True, exist_ok=True)
+        copyfile(file, 'dist/' + file)
+    elif 'diaridibordo/presentazioni' in file:
+        diari_di_bordo.append(file)
+        Path('dist/diaridibordo/presentazioni').mkdir(parents=True, exist_ok=True)
         copyfile(file, 'dist/' + file)
     else:
         print('ERROR: unhandled file ' + file)
@@ -38,5 +43,9 @@ html = html.replace('{{verbali_interni}}', '\n'.join(
 html = html.replace('{{verbali_esterni}}', '\n'.join(
     TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
     for file in sorted(verbali_esterni)
+))
+html = html.replace('{{diari_di_bordo}}', '\n'.join(
+    TEMPLATE.replace('{{link}}', file).replace('{{name}}', file.split('.')[-2].split('/')[-1])
+    for file in sorted(diari_di_bordo)
 ))
 Path('dist/documents.html').write_text(html)
