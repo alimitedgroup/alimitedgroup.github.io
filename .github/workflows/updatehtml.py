@@ -35,7 +35,7 @@ for file in glob('**/*.pdf', recursive=True):
 # update the html file
 
 def process_template(path: str) -> str:
-    typ = file.removesuffix('.pdf') + '.typ'
+    typ = path.removesuffix('.pdf') + '.typ'
     title = Path(typ).read_text().splitlines()[0].strip('/').strip()
     return TEMPLATE.replace('{{link}}', path).replace('{{name}}', title)
 
