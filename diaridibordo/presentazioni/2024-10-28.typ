@@ -20,7 +20,6 @@
   ],
   contenuto3: [
     - Contatto preliminare con aziende
-    - Prima decisione strategica sulle azioni da intraprendere
-    - Pianificazione della tempistica per la redazione delle Norme di Progetto e del Glossario
+    - Calcolare un monte ore a lungo termine sembra essere particolarmente complesso
   ],
 )
