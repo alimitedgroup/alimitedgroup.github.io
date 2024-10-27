@@ -26,7 +26,7 @@
   regmodifiche: (),
   contenuto,
 ) = {
-  set text(lang: "it", font: "Hanken Grotesk")
+  set text(lang: "it", font: "Times New Roman")
   set list(indent: 1em)
   set enum(indent: 1em)
   set align(center)
