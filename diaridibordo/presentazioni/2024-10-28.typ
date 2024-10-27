@@ -1,3 +1,5 @@
+// DB 28/10/2024
+
 #import "../../lib_diario.typ": *
 
 #show: ppt => presentazione(
@@ -9,7 +11,7 @@
     - Creazione della mail e del logo del gruppo
     - Creazione della repository GitHub per la documentazione del progetto
     - Conduzione di colloqui con alcune aziende proponenti
-    ],
+  ],
   contenuto2: [
     - Proseguimento delle prove per l'utilizzo del sistema di ticketing su GitHub
     - Miglioramento del Way of Working tramite il sistema di ticketing
@@ -20,5 +22,5 @@
     - Contatto preliminare con aziende
     - Prima decisione strategica sulle azioni da intraprendere
     - Pianificazione della tempistica per la redazione delle Norme di Progetto e del Glossario
-  ]
+  ],
 )
