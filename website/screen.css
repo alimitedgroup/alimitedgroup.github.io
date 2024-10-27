@@ -105,8 +105,31 @@ main>div {
     padding: 2%;
 }
 
-#presentationDiv {
-    max-width: 50%;
+footer {
+    text-align: center;
+    background-color: var(--hfbgcolor);
+}
+
+footer>p {
+    text-align: center;
+    color: var(--footertxtcolor);
+}
+
+/*Regole specifiche per pagina principale*/
+
+#informationDiv {
+    background-color: transparent;
+    padding: 0%;
+}
+
+#informationDiv>div {
+    background-color: var(--sectionbgcolor);
+    border-radius: 9px;
+    padding: 9%;
+}
+
+#informationDiv>div:nth-child(1) {
+    margin-bottom: 2%;
 }
 
 #profileDiv {
@@ -122,16 +145,6 @@ main>div {
     height: 20%;
     padding: 3%;
     border-radius: 50%;
-}
-
-footer {
-    text-align: center;
-    background-color: var(--hfbgcolor);
-}
-
-footer>p {
-    text-align: center;
-    color: var(--footertxtcolor);
 }
 
 /*Regole specifiche per pagina documenti*/
