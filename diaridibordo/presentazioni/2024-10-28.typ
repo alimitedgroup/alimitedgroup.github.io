@@ -1,4 +1,4 @@
-#import "../../lib.typ": *
+#import "../../lib_diario.typ": *
 
 #show: ppt => presentazione(
   intestazioni: false,

@@ -23,10 +23,12 @@ for file in glob('**/*.pdf', recursive=True):
         verbali_esterni.append(file)
         Path('dist/verbali/esterni').mkdir(parents=True, exist_ok=True)
         copyfile(file, 'dist/' + file)
+    elif 'diaridibordo/presentazioni' in file:
+        continue
     else:
         print('ERROR: unhandled file ' + file)
         exit(1)
-        
+
 # update the html file
 print(file)
 html = Path('dist/documents.html').read_text()
