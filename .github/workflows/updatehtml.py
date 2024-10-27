@@ -26,25 +26,7 @@ for file in glob('**/*.pdf', recursive=True):
     else:
         print('ERROR: unhandled file ' + file)
         exit(1)
-
-nomi_file_interni = []
-nomi_file_esterni = []
-i = 0
-for file in sorted(verbali_interni):
-    f = open(verbali_interni[i], "r")
-    nome = f.readline()
-    print(nome)
-    nomi_file_interni.append(nome)
-    i += 1
-
-i = 0
-for file in sorted(verbali_esterni):
-    f = open(verbali_esterni[i], "r")
-    nome = f.readline()
-    print(nome)
-    nomi_file_esterni.append(nome)
-    i += 1
-
+        
 # update the html file
 print(file)
 html = Path('dist/documents.html').read_text()
