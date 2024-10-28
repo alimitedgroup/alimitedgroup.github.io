@@ -9,3 +9,14 @@
   stato: [In redazione],
   doc,
 )
+
+= Informazioni generali
+
+Il presente documento è stato redatto per motivare la scelta del gruppo _ALimitedGroup_ di candidarsi per il capitolato:
+
+#align(center)[*C6 = Sistema di gestione di un magazzino distribuito* \ avente come proponente \ _*M31*_]
+
+Di seguito saranno sintetizzate, per ogni capitolato, i punti a favore e a sfavore che i componenti hanno individuato in ciascun capitolato.
+
+#pagebreak()
+= Capitolato C1: Artificial QI di _Zucchetti_
