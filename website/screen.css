@@ -30,7 +30,7 @@ p#motto1, p#motto2{
     text-align: center;
     color: var(--navbgcolor);
     font-size: larger;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Helvetica';
     width: 35%;
 }
 
