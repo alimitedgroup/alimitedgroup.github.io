@@ -5,23 +5,47 @@
 }
 
 :root {
-    --hfbgcolor: #160f0f;
-    --navbgcolor: #2e2222;
+    --hfbgcolor: #a9a9a9;
+    --navbgcolor: #9C0071;
     --headertxtcolor: white;
-    --footertxtcolor: #c47d21;
-    --hovercolor: #131212;
-    --navlinkcolor: #e68c16;
-    --linkcolor: #e68c16;
-    --visitedlink: #e68c16;
-    --currentpagelink: #FF3300;
-    --mainbgcolor: #9e661d;
-    --sectionbgcolor: #663d07;
-    --repoimgbgcolor: #e68c16;
+    --footertxtcolor: #000000;
+    --hovercolor: #000000;
+    --navlinkcolor: #F7C6BA;
+    --linkcolor: white;
+    --visitedlink: #F9E6E1;
+    --currentpagelink: #F7C6BA;
+    --mainbgcolor: #000000;
+    --sectionbgcolor: #96025C;
+    --sectiontxtcolor: #E0B6EC;
+    --repoimgbgcolor: #96025C;
 }
 
 p {
     line-height: 1.5em;
     margin: 1em;
+}
+
+p#motto1, p#motto2{
+    margin-top: 3.5em;
+    text-align: center;
+    color: var(--navbgcolor);
+    font-size: larger;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 35%;
+}
+
+p#motto1{
+    letter-spacing: 15px;
+}
+
+p#motto2{
+    letter-spacing: 10px;
+}
+
+div#logo{
+    display: flex;
+    width: 20%;
+    justify-content: center;
 }
 
 header {
@@ -33,9 +57,10 @@ header {
     color: var(--headertxtcolor);
 }
 
-header>img {
-    width: 13%;
+header div#logo img {
+    width: 35%;
     height: auto;
+    align-content: center;
 }
 
 nav {
@@ -99,6 +124,7 @@ main {
 
 main>div {
     background-color: var(--sectionbgcolor);
+    color: var(--sectiontxtcolor);
     border-radius: 9px;
     width: 35%;
     margin: 2%;
@@ -171,7 +197,7 @@ div.repoDiv {
 
 div.repoDiv>a>img {
 
-    background-color: var(--repoimgbgcolor);
+    background-color: white;
     border-radius: 50%;
     max-width: 25%;
 }
