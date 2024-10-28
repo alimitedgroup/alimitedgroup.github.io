@@ -2,7 +2,7 @@
 
 #import "../../lib.typ": *
 #show: doc => verbale(
-  data: [15-10-2024],
+  data: datetime(day: 15, month: 10, year: 2024),
   regmodifiche: (
     /*("1.0.0", "2024-10-15", "Samuele Esposito", "-", "Approvazione documento"),*/
     ("0.1.0", "17-10", "Marco Piccoli", "-", "Modifica e verifica documento"),

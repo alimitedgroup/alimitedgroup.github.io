@@ -82,8 +82,17 @@ h2::before {
     color: var(--accent);
     content: "# ";
 }
+h3::before {
+    color: var(--accent);
+    content: "## ";
+}
 
 h2 {
     font-size: 1.75rem;
+    line-height: 1.1;
+}
+
+h3 {
+    font-size: 1.50rem;
     line-height: 1.1;
 }

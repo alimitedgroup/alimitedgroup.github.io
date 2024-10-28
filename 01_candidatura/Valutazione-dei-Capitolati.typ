@@ -3,7 +3,7 @@
 #import "../lib.typ": *
 #show: doc => documento(
   nome: [Valutazione dei Capitolati],
-  data: [28-10-2024],
+  data: datetime(day: 28, month: 10, year: 2024),
   regmodifiche: (("0.0.1", "28-10", "Matteo Schievano", "-", "Creazione struttura e template documento"),),
   versione: [0.0.1],
   stato: [In redazione],

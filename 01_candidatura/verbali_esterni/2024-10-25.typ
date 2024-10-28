@@ -2,7 +2,7 @@
 
 #import "../../lib.typ": *
 #show: doc => verbale(
-  data: [25-10-2024],
+  data: datetime(day: 25, month: 10, year: 2024),
   tipo: [esterno],
   regmodifiche: (("0.0.1", "25-10", "Samuele Esposito", "-", "Redazione documento"),),
   versione: [0.0.1],

@@ -1,55 +1,98 @@
-"""Script to compile Typst source files."""
+TEMPLATE = '<li><a href="{{link}}">{{name}}</a></li>'
+
+import sys
+import json
 import logging
 import subprocess
-import sys
+from os import getenv
 from glob import glob
+from pathlib import Path
+from shutil import rmtree, copytree
+from collections import defaultdict
 
 source_files = glob('*/**/*.typ', recursive=True)
-options = []
-compile_options = ['--root', '.']
+options = ['--root', '.', '--ignore-system-fonts', '--font-path', 'assets']
 
-def compile(filename: str, options: list[str]) -> bool:
-    """Compiles a Typst file with the specified global options.
+def query(filename, tag):
+    command = ["typst", "query", "--one", filename, tag] + options
+    logging.debug('Running: ' + ' '.join(command))
+    cmd = subprocess.run(command, check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL).stdout.strip()
+    try:
+        cmd = json.loads(cmd)['value']
+    except:
+        logging.error('Failed to deserialize the following `typst query` output: ' + cmd)
+        exit(1)
 
-    Returns True if the typst command exited with status 0, False otherwise.
-    """
-    command = ["typst"] + options + ["compile"] + compile_options + [filename]
+    try:
+        if type(cmd) == str:
+            return cmd
+        elif cmd['func'] == 'sequence' and cmd['children'] == []:
+            return ''
+        elif cmd['func'] == 'text':
+            return cmd['text']
+        else:
+            logging.error('Failed to deserialize the following `typst query` output: ' + cmd)
+            exit(1)
+    except:
+        logging.error('Failed to deserialize the following `typst query` output: ' + cmd)
+        exit(1)
+
+def compile(filename: str, compile_options: list[str]) -> bool:
+    command = ["typst", "compile"] + options + [filename] + compile_options
     logging.debug("Running: " + " ".join(command))
 
     result = subprocess.run(command, capture_output=True, text=True)
     try:
         result.check_returncode()
     except subprocess.CalledProcessError:
-        logging.error(f"Compiling {filename} failed with stderr: \n {result.stderr}")
+        logging.error(f"Compiling {filename} failed with stderr: \n{result.stderr}")
         return False
 
     return True
 
+def process_template(prefisso: str, data: str, versione: str, disambiguatore: str) -> str:
+    title = f'{prefisso} {data} {versione}{disambiguatore}'.strip()
+    return TEMPLATE.replace('{{link}}', title + '.pdf').replace('{{name}}', title)
 
 def main():
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=getenv('LOGLEVEL', 'INFO'))
 
-    version = subprocess.run(
-        ["typst", "--version"], capture_output=True, text=True
-    ).stdout
-    logging.info(f"Using version {version}")
+    # Setup `dist` directory
+    rmtree('dist', ignore_errors=True)
+    copytree('website', 'dist', symlinks=False)
 
-    success: dict[str, bool] = {}
+    success = True
+    documenti = defaultdict(list)
 
-    for filename in source_files:
+    for filename in sorted(source_files):
         filename = filename.strip()
-        if filename == "":
+        if filename == "" or len(filename.split('/')) == 1:
             continue
         logging.info(f"Compiling {filename}…")
-        success[filename] = compile(filename, options)
 
-    # Log status of each input files.
-    for filename, status in success.items():
-        logging.info(f"{filename}: {'✔' if status else '❌'}")
+        categorie = '/'.join(filename.split('/')[:-1])
 
-    if not all(success.values()):
+        prefisso = query(filename, '<prefisso>')
+        data = query(filename, '<data>')
+        versione = query(filename, '<versione>')
+        disambiguatore = ' ' + query(filename, '<disambiguatore>')
+        output = f'dist/{prefisso} {data} {versione}{disambiguatore}'.strip() + '.pdf'
+        status = compile(filename, [output])
+
+        documenti[categorie].append((prefisso, data, versione, disambiguatore))
+
+        if not status:
+            success = False
+
+    if not success:
         sys.exit(1)
 
+    html = Path('dist/index.html').read_text()
+    for pattern, docs in documenti.items():
+        html = html.replace('{{' + pattern + '}}', '\n'.join(
+            process_template(*file) for file in sorted(docs)
+        ))
+    Path('dist/index.html').write_text(html)
 
 if __name__ == "__main__":
     main()

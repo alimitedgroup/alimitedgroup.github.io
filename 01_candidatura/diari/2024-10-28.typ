@@ -1,12 +1,12 @@
 // DB 28-10-2024
 
-#import "../lib_diario.typ": *
+#import "../../lib_diario.typ": *
 
 #show: ppt => presentazione(
   intestazioni: true,
   motto: true,
   pseudoanimazioni: false,
-  date: [28 ottobre 2024],
+  date: datetime(day: 28, month: 10, year: 2024),
   contenuto1: [
     - Definizione del nome del gruppo
     - Creazione della mail e del logo del gruppo

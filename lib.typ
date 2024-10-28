@@ -25,10 +25,15 @@
   regmodifiche: (),
   contenuto,
 ) = {
-  set text(lang: "it", font: "Times New Roman")
+  set text(lang: "it", font: "Hanken Grotesk")
   set list(indent: 1em)
   set enum(indent: 1em)
   set align(center)
+
+  [ #metadata[AL] <prefisso> ]
+  [ #metadata(versione) <versione> ]
+  [ #metadata(data.display("[day]-[month]-[year]")) <data> ]
+  [ #metadata[] <disambiguatore> ]
 
   // Prima pagina
   image("assets/altd.png", height: 7cm)
@@ -46,7 +51,7 @@
       grid.vline(x: 1),
       inset: 8pt,
       [Stato], stato,
-      [Data ultima modifica], data,
+      [Data ultima modifica], data.display("[day]/[month]/[year]"),
       [Distribuzione], grid(align: left, gutter: 8pt, ..distribuzione),
     ),
   )
@@ -120,17 +125,29 @@
   stato: [],
   distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio", "Prof. Cardin Riccardo"),
   regmodifiche: (),
+  disambiguatore: [],
   contenuto,
 ) = {
-  set text(lang: "it", font: "Times New Roman")
+  set text(lang: "it", font: "Hanken Grotesk")
   set list(indent: 1em)
   set enum(indent: 1em)
   set align(center)
 
+  if tipo == [interno] {
+    [ #metadata([VI]) <prefisso> ]
+  } else if tipo == [esterno] {
+    [ #metadata([VE]) <prefisso> ]
+  } else {
+    panic("Tipo di verbale sconosciuto: " + tipo)
+  }
+  [ #metadata(versione) <versione> ]
+  [ #metadata(data.display("[day]-[month]-[year]")) <data> ]
+  [ #metadata(disambiguatore) <disambiguatore> ]
+
   // Prima pagina
   image("assets/altd.png", height: 7cm)
   v(4em)
-  text(24pt, weight: "bold", fill: black)[_Verbale_ #tipo #data]
+  text(24pt, weight: "bold", fill: black)[_Verbale_ #tipo #data.display("[day]/[month]/[year]")]
   v(2.25em)
 
   show grid.cell.where(x: 0): cell => align(right, cell)

@@ -2,7 +2,7 @@
 
 #import "../../lib.typ": *
 #show: doc => verbale(
-  data: [23-10-2024],
+  data: datetime(day: 23, month: 10, year: 2024),
   tipo: [esterno],
   regmodifiche: (
     ("1.0.0", "25-10", "Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
@@ -21,6 +21,7 @@
     "Sara Ferraro",
   ),
   odg: [Primo incontro di _ALimitedGroup_ con l'azienda _Ergon Informatica_: vengono chiariti i dubbi sorti durante la presentazione del capitolato],
+  disambiguatore: [(Ergon)],
   doc,
 )
 

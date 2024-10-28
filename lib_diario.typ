@@ -23,14 +23,14 @@
 }
 
 #let last-required-subslide(visible-subslides) = {
-    let last = 0
-    if "beginning" in visible-subslides {
-      last = calc.max(last, visible-subslides.beginning)
-    }
-    if "until" in visible-subslides {
-      last = calc.max(last, visible-subslides.until)
-    }
-    last
+  let last = 0
+  if "beginning" in visible-subslides {
+    last = calc.max(last, visible-subslides.beginning)
+  }
+  if "until" in visible-subslides {
+    last = calc.max(last, visible-subslides.until)
+  }
+  last
 }
 
 #let conditional-display(visible-subslides, reserve-space, mode, body) = {
@@ -175,6 +175,11 @@ contenuto3: elenco della terza sezione
   // per inserire uno sfondo immagine:
   //#set page(background: image(""))
 
+  [ #metadata(date.display()) <data> ]
+  [ #metadata[DB] <prefisso> ]
+  [ #metadata[] <versione> ]
+  [ #metadata[] <disambiguatore> ]
+
   // impostazione tema
   show: clean-theme.with(
     aspect-ratio: "16-9",
@@ -205,7 +210,7 @@ contenuto3: elenco della terza sezione
       [],
       [Lorenzo Stefani],
     ),
-    date: date,
+    date: date.display("[day]/[month]/[year]"),
     secondlogo: image("assets/unipd.svg"),
     watermark: none,
   )
@@ -214,7 +219,8 @@ contenuto3: elenco della terza sezione
   if (intestazioni) {
     new-section-slide("Risultati raggiunti e confronto con le previsioni")
     slide()[
-      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+      #if (pseudoanimazioni) {
+        // applicazione pseudoanimazione
         line-by-line(contenuto1)
       } else {
         contenuto1
@@ -222,7 +228,8 @@ contenuto3: elenco della terza sezione
     ]
     new-section-slide("Obiettivi e attività per il periodo successivo")
     slide()[
-      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+      #if (pseudoanimazioni) {
+        // applicazione pseudoanimazione
         line-by-line(contenuto2)
       } else {
         contenuto2
@@ -230,7 +237,8 @@ contenuto3: elenco della terza sezione
     ]
     new-section-slide("Difficoltà riscontrate e questioni aperte")
     slide()[
-      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+      #if (pseudoanimazioni) {
+        // applicazione pseudoanimazione
         line-by-line(contenuto3)
       } else {
         contenuto3
@@ -238,21 +246,24 @@ contenuto3: elenco della terza sezione
     ]
   } else {
     slide(title: "Risultati raggiunti e confronto con le previsioni")[
-      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+      #if (pseudoanimazioni) {
+        // applicazione pseudoanimazione
         line-by-line(contenuto1)
       } else {
         contenuto1
       }
     ]
     slide(title: "Obiettivi e attività per il periodo successivo")[
-      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+      #if (pseudoanimazioni) {
+        // applicazione pseudoanimazione
         line-by-line(contenuto2)
       } else {
         contenuto2
       }
     ]
     slide(title: "Difficoltà riscontrate e questioni aperte")[
-      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+      #if (pseudoanimazioni) {
+        // applicazione pseudoanimazione
         line-by-line(contenuto3)
       } else {
         contenuto3

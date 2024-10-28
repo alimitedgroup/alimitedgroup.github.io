@@ -7,7 +7,7 @@
     ("0.0.2", "23-10", "Matteo Schievano", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Matteo Schievano", "-", "Creazione struttura e template documento"),
   ),
-  data: [23-10-2024],
+  data: datetime(day: 23, month: 10, year: 2024),
   versione: [0.1.0],
   stato: [Verificato],
   presenze: (
@@ -82,7 +82,7 @@ dove:
 #pagebreak()
 Quest'ultimo carattere, ovvero *```#```*, è presente *se e solo se* nello stesso giorno sono state condotte più riunioni dello stesso tipo. Tale numero (con annesso il carattere _Underscore_) *non* va specificato per la prima riunione cronologicamente avvenuta.
 
-Esempio di dicitura che corrisponde a questo verbale: 
+Esempio di dicitura che corrisponde a questo verbale:
 #align(center)[*```//VI 23-10-2024```*]
 = Esiti della riunione
 
