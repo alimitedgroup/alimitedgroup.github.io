@@ -1,4 +1,4 @@
-// VDC 28-10-2024
+// PC 28-10-2024
 
 #import "../lib.typ": *
 #show: doc => documento(
