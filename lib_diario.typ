@@ -202,7 +202,7 @@ contenuto3: elenco della terza sezione
   // impostazione tema
   show: clean-theme.with(
     aspect-ratio: "16-9",
-    footer: [ALimitedGroup, Università di Padova],
+    footer: [ALimitedGroup #link("alimitedgroup@gmail.com")],
     short-title: [Diario di bordo],
     logo: image("assets/altd.png"),
     color: rgb(155,0,20)  // Colore linea decorativa
