@@ -5,83 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALimitedGroup</title>
-    <meta name="author" content="ALimitedGroup">
-    <meta name="description" content="Sito ufficiale del gruppo ALimitedGroup">
-    <meta name="keywords" content="ALimitedGroup,progetto,ingegneria del software,swe,unipd">
-    <link type="text/css" rel="stylesheet" href="screen.css" media="screen">
-    <link rel="shortcut icon" href="images/logo.ico">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <p id="motto1">Limited group</p>
-        <div id="logo"><img src="images/logo_nomotto.png"
-            alt="Immagine del gruppo ALimitedGroup. Il logo è formato da un cerchio con all'interno due scritte: il nome del gruppo e il motto">
+        <img src="images/logo.png" alt="Logo del gruppo">
+        <div>
+            <h1>ALimitedGroup</h1>
+            <span>Ingegneria del Software 2024/2025</span>
+            <span>Università degli Studi di Padova</span>
         </div>
-        <p id="motto2">Always commited to work!</p>
     </header>
-    <nav>
-        <ul>
-            <li id="currentPage" lang="en">Home</li>
-            <li><a href="repository.html" alt="Link alla pagina con le informazioni sulle repo GitHub del gruppo"><span
-                        lang="en">GitHub</span></a></li>
-            <li><a href="documents.html">Documenti</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div id="informationDiv">
-            <div>
-                <h2 id="titleText">Benevenuti nella pagina ufficiale del gruppo <em><span
-                            lang="en">ALimitedGroup</span></em>!</h2>
-                <p>Siamo un gruppo di 7 ragazzi impegnati nello svolgimento del progetto per il corso di Ingegneria del
-                    <span lang="en">Software</span> previsto dal corso
-                    di laurea in Informatica presso l'<a href="https://www.unipd.it/">Università degli Studi di
-                        Padova</a>.
-                </p>
-                <p>Mediante questo sito potrete comodamente accedere ai documenti redatti durante lo svolgimento del
-                    progetto e collegarvi
-                    ai repository cliccando sul link presente ad inizio pagina.
-                </p>
-                <p>Grazie per aver letto questa veloce presentazione, vi auguriamo una buona navigazione!</p>
-                <p id="sign">Il gruppo <em>ALimitedGroup</em></p>
-            </div>
-            <div>
-                <h2>Informazioni di Contatto</h2>
-                <p>Potete contattarci inviando una email all'indirizzo: <a
-                        href="mailto:alimitedgroup@gmail.com">alimitedgroup@gmail.com</a></p>
-            </div>
-        </div>
-        <div id="profileDiv">
-            <h2>I nostri profili</h2>
-            <dl>
-                <dt><img src="https://avatars.githubusercontent.com/u/185529916?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Emanuele"></dt>
-                <dd><a href="https://github.com/EM123AR">Emanuele</a></dd>
-                <dt><img src="https://avatars.githubusercontent.com/u/36164633?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Samuele"></dt>
-                <dd><a href="https://github.com/esposm03">Samuele</a></dd>
-                <dt><img src="https://avatars.githubusercontent.com/u/161834755?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Matteo"></dt>
-                <dd><a href="https://github.com/FireStoat3">Matteo</a></dd>
-                <dt><img src="https://avatars.githubusercontent.com/u/76793979?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Loris"></dt>
-                <dd><a href="https://github.com/lorislibralato">Loris</a></dd>
-                <dt><img src="https://avatars.githubusercontent.com/u/185530943?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Lorenzo"></dt>
-                <dd><a href="https://github.com/lorst97">Lorenzo</a></dd>
-                <dt><img src="https://avatars.githubusercontent.com/u/152176404?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Marco"></dt>
-                <dd><a href="https://github.com/mpiccoli18">Marco</a></dd>
-                <dt><img src="https://avatars.githubusercontent.com/u/162027125?s=96&v=4" class="profileIcon"
-                        alt="Foto profilo GitHub di Sara"></dt>
-                <dd><a href="https://github.com/saraferraro18">Sara</a></dd>
-            </dl>
-        </div>
-    </main>
-    <footer>
-        <p><span lang="en">Copyright</span>&copy; <time datetime="2024">2024</time> 
-        <span lang="en">ALimitedGroup</span>. Tutti i diritti riservati.</p>
-    </footer>
+
+    <h2>Diari di bordo</h2>
+    <ul>{{diari_di_bordo}}</ul>
+
+    <h2>Verbali interni</h2>
+    <ul>{{verbali_interni}}</ul>
+
+    <h2>Verbali esterni</h2>
+    <ul>{{verbali_esterni}}</ul>
 </body>
 
 </html>

@@ -39,7 +39,7 @@ def process_template(path: str) -> str:
     title = Path(typ).read_text().splitlines()[0].strip('/').strip()
     return TEMPLATE.replace('{{link}}', path).replace('{{name}}', title)
 
-html = Path('dist/documents.html').read_text()
+html = Path('dist/index.html').read_text()
 html = html.replace('{{verbali_interni}}', '\n'.join(
     process_template(file) for file in sorted(verbali_interni)
 ))
@@ -49,4 +49,4 @@ html = html.replace('{{verbali_esterni}}', '\n'.join(
 html = html.replace('{{diari_di_bordo}}', '\n'.join(
     process_template(file) for file in sorted(diari_di_bordo)
 ))
-Path('dist/documents.html').write_text(html)
+Path('dist/index.html').write_text(html)
