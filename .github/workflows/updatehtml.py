@@ -24,9 +24,9 @@ for file in glob('**/*.pdf', recursive=True):
         verbali_esterni.append(file)
         Path('dist/verbali/esterni').mkdir(parents=True, exist_ok=True)
         copyfile(file, 'dist/' + file)
-    elif 'diaridibordo/presentazioni' in file:
+    elif 'diaridibordo' in file:
         diari_di_bordo.append(file)
-        Path('dist/diaridibordo/presentazioni').mkdir(parents=True, exist_ok=True)
+        Path('dist/diaridibordo').mkdir(parents=True, exist_ok=True)
         copyfile(file, 'dist/' + file)
     else:
         print('ERROR: unhandled file ' + file)
