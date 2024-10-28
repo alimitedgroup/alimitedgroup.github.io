@@ -13,6 +13,7 @@ copytree('website', 'dist', symlinks=False)
 verbali_interni = []
 verbali_esterni = []
 diari_di_bordo = []
+documenti_candidatura = []
 # Iterate over all PDF files, copy them into `dist`,
 # and save the paths, to later insert them into the html
 for file in glob('**/*.pdf', recursive=True):
@@ -28,6 +29,10 @@ for file in glob('**/*.pdf', recursive=True):
         diari_di_bordo.append(file)
         Path('dist/diaridibordo').mkdir(parents=True, exist_ok=True)
         copyfile(file, 'dist/' + file)
+    elif 'candidatura' in file:
+        documenti_candidatura.append(file)
+        Path('dist/candidatura').mkdir(parents=True, exist_ok=True)
+        copyfile(file, 'dist/' + file)
     else:
         print('ERROR: unhandled file ' + file)
         exit(1)
@@ -40,6 +45,9 @@ def process_template(path: str) -> str:
     return TEMPLATE.replace('{{link}}', path).replace('{{name}}', title)
 
 html = Path('dist/index.html').read_text()
+html = html.replace('{{documenti_candidatura}}', '\n'.join(
+    process_template(file) for file in sorted(documenti_candidatura)
+))
 html = html.replace('{{verbali_interni}}', '\n'.join(
     process_template(file) for file in sorted(verbali_interni)
 ))

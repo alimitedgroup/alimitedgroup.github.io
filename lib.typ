@@ -15,6 +15,102 @@
 ///   ("0.0.1", "2024-10-15", "Samuele Esposito", "-", "Creazione struttura e template documento"),
 /// )
 /// ```
+
+#let documento(
+  versione: [],
+  nome: [],
+  data: [],
+  stato: [],
+  distribuzione: ([_ALimitedGroup_], "Prof. Vardanega Tullio", "Prof. Cardin Riccardo"),
+  regmodifiche: (),
+  contenuto,
+) = {
+  set text(lang: "it", font: "Times New Roman")
+  set list(indent: 1em)
+  set enum(indent: 1em)
+  set align(center)
+
+  // Prima pagina
+  image("assets/altd.png", height: 7cm)
+  v(4em)
+  text(24pt, weight: "bold", fill: black)[#nome \ Versione #versione]
+  v(2.25em)
+
+  show grid.cell.where(x: 0): cell => align(right, cell)
+  show grid.cell.where(x: 1): cell => align(left, cell)
+  set text(11pt)
+  box(
+    width: 80%,
+    grid(
+      columns: (1fr, 1fr),
+      grid.vline(x: 1),
+      inset: 8pt,
+      [Stato], stato,
+      [Data ultima modifica], data,
+      [Distribuzione], grid(align: left, gutter: 8pt, ..distribuzione),
+    ),
+  )
+
+  // Setup header, footer, contatore pagina
+  set page(
+    numbering: "1",
+    header: [
+      #grid(
+        columns: (1fr, 1fr),
+        align(left)[_ALimitedGroup_], align(right)[#nome \ #versione],
+      )
+      #line(length: 100%)
+    ],
+    footer: [
+      #set align(center)
+      #line(length: 100%)
+      #context [
+        Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
+      ]
+    ],
+  )
+  set align(left)
+  set heading(numbering: "1.")
+  counter(page).update(1)
+  pagebreak()
+
+  // Registro delle modifiche
+  text(16pt, weight: "black", fill: black)[Registro delle Modifiche]
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto, 0.5fr, 0.5fr, 1fr),
+    stroke: none,
+    inset: 5pt,
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Vers.*],
+      text(12pt, fill: white)[*Data*],
+      text(12pt, fill: white)[*Autore*],
+      text(12pt, fill: white)[*Ruolo*],
+      text(12pt, fill: white)[*Descrizione*],
+    ),
+    ..regmodifiche.flatten()
+  )
+  pagebreak()
+
+  //Indice
+  show outline.entry.where(level: 1): it => {
+    v(12pt, weak: true)
+    strong(it)
+  }
+  outline(title: [#v(2em) Indice #v(3em)], indent: auto)
+  pagebreak()
+
+  // Resto del documento
+  contenuto
+}
+
 #let verbale(
   data: [],
   tipo: [interno],
