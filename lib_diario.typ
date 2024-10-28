@@ -4,45 +4,25 @@
 #import "@preview/polylux:0.3.1": *
 #import themes.clean: *
 
+// per fixare punti elenco vuoti
 #let subslide = counter("subslide")
 #let repetitions = counter("repetitions")
 
-#let _check-visible(idx, visible-subslides) = {
-  if type(visible-subslides) == "integer" {
-    idx == visible-subslides
-  } else if type(visible-subslides) == "array" {
-    visible-subslides.any(s => _check-visible(idx, s))
-  } else if type(visible-subslides) == "string" {
-    let parts = _parse-subslide-indices(visible-subslides)
-    _check-visible(idx, parts)
-  } else if type(visible-subslides) == "dictionary" {
-    let lower-okay = if "beginning" in visible-subslides {
-      visible-subslides.beginning <= idx
-    } else {
-      true
-    }
-
-    let upper-okay = if "until" in visible-subslides {
-      visible-subslides.until >= idx
-    } else {
-      true
-    }
-
-    lower-okay and upper-okay
+#let check-visible(idx, visible-subslides) = {
+  let lower-okay = if "beginning" in visible-subslides {
+    visible-subslides.beginning <= idx
   } else {
-    panic("you may only provide a single integer, an array of integers, or a string")
+    true
   }
+  let upper-okay = if "until" in visible-subslides {
+    visible-subslides.until >= idx
+  } else {
+    true
+  }
+  lower-okay and upper-okay
 }
 
-#let _last-required-subslide(visible-subslides) = {
-  if type(visible-subslides) == "integer" {
-    visible-subslides
-  } else if type(visible-subslides) == "array" {
-    calc.max(..visible-subslides.map(s => _last-required-subslide(s)))
-  } else if type(visible-subslides) == "string" {
-    let parts = _parse-subslide-indices(visible-subslides)
-    _last-required-subslide(parts)
-  } else if type(visible-subslides) == "dictionary" {
+#let last-required-subslide(visible-subslides) = {
     let last = 0
     if "beginning" in visible-subslides {
       last = calc.max(last, visible-subslides.beginning)
@@ -51,29 +31,24 @@
       last = calc.max(last, visible-subslides.until)
     }
     last
-  } else {
-    panic("you may only provide a single integer, an array of integers, or a string")
-  }
 }
 
-#let _conditional-display(visible-subslides, reserve-space, mode, body) = {
+#let conditional-display(visible-subslides, reserve-space, mode, body) = {
   locate(loc => {
     let vs = if reserve-space and handout-mode.at(loc) {
       (:)
     } else {
       visible-subslides
     }
-    repetitions.update(rep => calc.max(rep, _last-required-subslide(vs)))
-    if _check-visible(subslide.at(loc).first(), vs) {
+    repetitions.update(rep => calc.max(rep, last-required-subslide(vs)))
+    if check-visible(subslide.at(loc).first(), vs) {
       body
-    } else if reserve-space {
-      _slides-cover(mode, body)
     }
   })
 }
 
 #let uncover(visible-subslides, mode: "invisible", body) = {
-  _conditional-display(visible-subslides, false, mode, body)
+  conditional-display(visible-subslides, false, mode, body)
 }
 
 // per creare lista con pseudo-animazione
@@ -83,7 +58,6 @@
   } else {
     body
   }
-
   let idx = start
   for item in items {
     if repr(item.func()) != "space" {
