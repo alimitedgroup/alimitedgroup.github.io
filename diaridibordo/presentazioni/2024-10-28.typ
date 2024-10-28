@@ -5,7 +5,7 @@
 #show: ppt => presentazione(
   intestazioni: true,
   motto: true,
-  pseudoanimazioni: true,
+  pseudoanimazioni: false,
   date: [28 ottobre 2024],
   contenuto1: [
     - Definizione del nome del gruppo
