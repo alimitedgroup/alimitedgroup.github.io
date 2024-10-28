@@ -174,11 +174,12 @@
   logic.polylux-slide(content)
 }
 
-// Crea una presentazione
+// Crea una presentazione (valori default per pubblicazione nel sito)
 /*
 Parametri:
-intestazioni: attiva o disattiva (default false)
+intestazioni: attiva o disattiva (default true)
 motto: attiva o disattiva (default true)
+pseudoanimazioni: attiva o disattiva (default false)
 date: data della presentazione (GG mese AAAA)
 contenuto1: elenco della prima sezione (formato:
 - item1
@@ -188,8 +189,9 @@ contenuto2: elenco della seconda sezione
 contenuto3: elenco della terza sezione
 */
 #let presentazione(
-  intestazioni: false,
+  intestazioni: true,
   motto: true,
+  pseudoanimazioni: false,
   date: [],
   contenuto1: [],
   contenuto2: [],
@@ -238,25 +240,49 @@ contenuto3: elenco della terza sezione
   if (intestazioni) {
     new-section-slide("Risultati raggiunti e confronto con le previsioni")
     slide()[
-      #line-by-line(contenuto1)
+      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+        line-by-line(contenuto1)
+      } else {
+        contenuto1
+      }
     ]
     new-section-slide("Obiettivi e attività per il periodo successivo")
     slide()[
-      #line-by-line(contenuto2)
+      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+        line-by-line(contenuto2)
+      } else {
+        contenuto2
+      }
     ]
     new-section-slide("Difficoltà riscontrate e questioni aperte")
     slide()[
-      #line-by-line(contenuto3)
+      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+        line-by-line(contenuto3)
+      } else {
+        contenuto3
+      }
     ]
   } else {
     slide(title: "Risultati raggiunti e confronto con le previsioni")[
-      #line-by-line(contenuto1)
+      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+        line-by-line(contenuto1)
+      } else {
+        contenuto1
+      }
     ]
     slide(title: "Obiettivi e attività per il periodo successivo")[
-      #line-by-line(contenuto2)
+      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+        line-by-line(contenuto2)
+      } else {
+        contenuto2
+      }
     ]
     slide(title: "Difficoltà riscontrate e questioni aperte")[
-      #line-by-line(contenuto3)
+      #if(pseudoanimazioni) { // applicazione pseudoanimazione
+        line-by-line(contenuto3)
+      } else {
+        contenuto3
+      }
     ]
   }
 }

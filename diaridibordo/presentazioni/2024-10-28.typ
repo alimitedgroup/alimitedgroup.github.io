@@ -3,8 +3,9 @@
 #import "../../lib_diario.typ": *
 
 #show: ppt => presentazione(
-  intestazioni: false,
+  intestazioni: true,
   motto: true,
+  pseudoanimazioni: false,
   date: [28 ottobre 2024],
   contenuto1: [
     - Definizione del nome del gruppo
