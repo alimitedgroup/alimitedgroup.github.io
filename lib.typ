@@ -34,7 +34,7 @@
   // Prima pagina
   image("assets/altd.png", height: 7cm)
   v(4em)
-  text(24pt, weight: "bold", fill: black)[Verbale #tipo #data]
+  text(24pt, weight: "bold", fill: black)[_Verbale_ #tipo #data]
   v(2.25em)
 
   show grid.cell.where(x: 0): cell => align(right, cell)
@@ -139,4 +139,4 @@
   è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con l'azienda #azienda riguardante i seguenti argomenti:
 ]
 
-#let M31 = text(font: "Futura", weight: 500)[M31]
+//#let M31 = text(font: "Futura", weight: 500)[M31]

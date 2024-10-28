@@ -87,7 +87,7 @@ essere di interesse per lo sviluppo:
 2. C2 = *Vimar GENIALE* avente come proponente *VIMAR*
 3. C7 = *LLM: Assistente Virtuale* avente come proponente *Ergon*
 
-È stato proposto, inoltre, di contattare il proponente #M31 per porre alcune
+È stato proposto, inoltre, di contattare il proponente _M31_ per porre alcune
 ulteriori domande riguardanti il capitolato, tra cui:
 
 - Richiesta maggiori dettagli in merito alla gestione della concorrenza
@@ -100,4 +100,4 @@ In seguito al termine della riunione, il gruppo decide di conocordare una
 nuova riunione da svolgersi il prima possibile per confermare quanto
 proposto nel seguente documento con tutti i membri.
 
-Ha altresì proposto di concordare l'invio, quanto prima, di una mail per richiedere un colloquio con #M31.
+Ha altresì proposto di concordare l'invio, quanto prima, di una mail per richiedere un colloquio con _M31_.

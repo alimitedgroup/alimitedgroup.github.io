@@ -6,7 +6,7 @@
   tipo: [esterno],
   regmodifiche: (("0.0.1", "25-10", "Samuele Esposito", "-", "Redazione documento"),),
   versione: [0.0.1],
-  stato: [Bozza],
+  stato: [Redatto],
   presenze: (
     "Samuele Esposito",
     "Loris Libralato",
@@ -15,21 +15,21 @@
     "Emanuele Artusi",
     "Sara Ferraro",
   ),
-  odg: [Primo meeting di _ALimitedGroup_ con l'azienda #M31: vengono chiariti alcuni dubbi sorti durante la presentazione del capitolato],
+  odg: [Primo incontro di _ALimitedGroup_ con l'azienda _M31_: vengono chiariti alcuni dubbi sorti durante la presentazione del capitolato],
   doc,
 )
 
 
 = Informazioni generali
 
-#inizio-verbale-esterno([*virtuale*], [*25 Ottobre 2024*], [*14.30*], [*15.10*], [#M31])
+#inizio-verbale-esterno([*virtuale*], [*25 Ottobre 2024*], [*14.30*], [*15.10*], [_M31_])
 
 - Chiarimenti sul capitolato
 - Richiesta di maggiori dettagli sui requisiti
 - Esposizione domande riguardante il progetto
 
 A questo incontro, svoltosi tramite la piattaforma _Microsoft Teams_,
-hanno partecipato per conto dell'azienda #M31 i seguenti rappresentanti:
+hanno partecipato per conto dell'azienda _M31_ i seguenti rappresentanti:
 - Luca Cossaro
 - Cristian Pîrlog
 
@@ -82,5 +82,5 @@ L'azienda ha chiarito che non verrà richiesta l'implementazione della parte mob
 
 = Esiti della riunione
 
-La riunione con l'azienda _SyncLab_ è stata esplicativa e formativa per tutti i presenti del gruppo, i rappresentati dell'azienda hanno risposto esaustivamente toccando punto per punto il progetto didattico. \
-Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _SyncLab_ e i suoi rappresentanti per la disponibilità e la professionalità mostrataci durante il _meeting_.
+La riunione con l'azienda _M31_ è stata esplicativa e formativa per tutti i presenti del gruppo, i rappresentati dell'azienda hanno risposto esaustivamente toccando punto per punto il progetto didattico. \
+Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _M31_ e i suoi rappresentanti per la disponibilità e la professionalità mostrataci durante il _meeting_.
