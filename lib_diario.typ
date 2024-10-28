@@ -57,7 +57,7 @@
 }
 
 #let _conditional-display(visible-subslides, reserve-space, mode, body) = {
-  locate( loc => {
+  locate(loc => {
     let vs = if reserve-space and handout-mode.at(loc) {
       (:)
     } else {
@@ -81,7 +81,7 @@
   let items = if repr(body.func()) == "sequence" {
     body.children
   } else {
-    ( body, )
+    body
   }
 
   let idx = start
@@ -105,11 +105,11 @@
   watermark: none,
   secondlogo: none,
 ) = {
-  let content = locate( loc => {
+  let content = locate(loc => {
     let color = clean-color.at(loc)
     let logo = clean-logo.at(loc)
     let authors = if type(authors) in ("string", "content") {
-      ( authors, )
+      authors
     } else {
       authors
     }
@@ -120,25 +120,30 @@
     }
 
     v(5%)
-    grid(columns: (5%, 1fr, 1fr, 5%),
+    grid(
+      columns: (5%, 1fr, 1fr, 5%),
       [],
       if logo != none {
         set align(bottom + left)
         set image(height: 3em)
         logo
-      } else { [] },
+      } else {
+        []
+      },
       if secondlogo != none {
         set align(bottom + right)
         set image(height: 3em)
         secondlogo
-      } else { [] },
-      []
+      } else {
+        []
+      },
+      [],
     )
 
     v(-10%)
     align(center + horizon)[
       #block(
-        stroke: ( y: 1mm + color ),
+        stroke: (y: 1mm + color),
         inset: 1em,
         breakable: false,
         [
@@ -153,7 +158,7 @@
               text(.6em)[#subsubtitle]
             }
           }
-        ]
+        ],
       )
       #set text(size: .8em)
       #grid(
@@ -188,7 +193,7 @@ contenuto3: elenco della terza sezione
   date: [],
   contenuto1: [],
   contenuto2: [],
-  contenuto3: []
+  contenuto3: [],
 ) = {
   set text(font: "Inria Sans")
   // per inserire uno sfondo immagine:
@@ -204,7 +209,7 @@ contenuto3: elenco della terza sezione
   )
 
   // applicazione motto
-  if(motto){
+  if (motto) {
     motto = [Limited group, always committed to work]
   } else {
     motto = none
@@ -214,14 +219,23 @@ contenuto3: elenco della terza sezione
     title: [Diario di bordo],
     subtitle: [ALimitedGroup],
     subsubtitle: motto,
-    authors: ([Emanuele Artusi], [Samuele Esposito], [Sara Ferraro], [Loris Libralato], [Marco Piccoli], [Matteo Schievano], [], [Lorenzo Stefani]),
+    authors: (
+      [Emanuele Artusi],
+      [Samuele Esposito],
+      [Sara Ferraro],
+      [Loris Libralato],
+      [Marco Piccoli],
+      [Matteo Schievano],
+      [],
+      [Lorenzo Stefani],
+    ),
     date: date,
     secondlogo: image("assets/unipd.svg"),
-    watermark: none
+    watermark: none,
   )
 
   // applicazione intestazioni
-  if(intestazioni){
+  if (intestazioni) {
     new-section-slide("Risultati raggiunti e confronto con le previsioni")
     slide()[
       #line-by-line(contenuto1)
