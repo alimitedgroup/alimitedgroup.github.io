@@ -42,41 +42,42 @@ ha richiesto ulteriori informazioni sui seguenti punti chiave:
 1. Possibilità di modifiche all'architettura proposta
 2. Chiarimenti su riassortimento predittivo
 3. Piattaforma per le repository del progetto
-4.
+4. Assistenza da parte di #M31 al gruppo _ALimitedGroup_
 
 = Resoconto
 
-== Punti d'interesse e pubblicità personalizzate
+== Possibilità di modifiche all'architettura proposta
 
-L'azienda ha chiarito che il sistema genererà un messaggio solo quando l'utente entrerà nel raggio di azione predefinito.\
-L'_LLM_ verrà interrogato una sola volta per ciascun evento, evitando interazioni ridondanti e ottimizzando le risorse.\
-Il messaggio personalizzato sarà basato su diverse informazioni contestuali, come il battito cardiaco dell'utente, le condizioni meteorologiche e altri dati pertinenti.\
-È fondamentale formulare la query in modo da evitare che il messaggio risulti sgradito o inappropriato per l'utente, assicurando così un'interazione positiva.\
-L'azienda ha anche suggerito una possibile verifica dell'autenticità della risposta mediante confronti con fonti online, pur confidando principalmente nell'affidabilità dell'LLM scelto.
+Durante la lettura del capitolato, il gruppo si era trovato in dubbio su alcuni punti dell'architettura e su alcuni passaggi dei requisiti.
+Di conseguenza, è stato richiesto ad #M31 se l'architettura proposta nel capitolato fosse vincolante;
+la risposta è stata negativa: come cliente, l'azienda non è strettamente interessata all'architettura interna del software,
+ma piuttosto alla sua qualità e al rispetto dei requisiti.
 
-== Raccolta dati utenti
+== Chiarimenti su riassortimento predittivo
 
-L'azienda proponente ha specificato che si partirà da un database esistente contenente dati degli utenti, il quale verrà aggiornato e personalizzato in tempo reale.\
-Questa raccolta dinamica permetterà di adattare le informazioni per ciascun utente, migliorando la precisione e la pertinenza delle risposte fornite.
+Uno dei requisiti del capitolato è l'implementazione di un "sistema per il riassortimento predittivo";
+abbiamo richiesto ulteriori informazioni in particolare su questo punto.
 
-== Test
+Si richiede di implementare un sistema che possa, mediante _Machine Learning_ o tecnologie simili,
+decidere quando e in che quantità effettuare spedizioni di materiale da un magazzino a un'altro.
+Per realizzare questo sistema, è necessario poter in qualche modo osservare la quantità di materiale in uscita
+e da quella determinare quando si rende necessario effettuare una spedizione.
+Chiaramente, l'obiettivo di questo sistema è evitare che un magazzino si trovi in carenza di materiale,
+e minimizzare il numero di spedizioni.
 
-Per il progetto _NearYou_, l'azienda proponente garantirà supporto per testare e verificare che il modello realizzato sia efficace e completo per tutti i casi d’uso previsti.\
-È stato anticipato che, nell'ambito del progetto, l'attenzione sarà principalmente focalizzata sui test _end-to-end_, piuttosto che sui test _unitari_, per assicurare una valutazione più ampia e integrata del sistema.
+== Piattaforma per le repository del progetto
 
-== Formazione
+Abbiamo richiesto su quale piattaforma sarebbero state conservate le repository del progetto.
+#M31 ha risposto che ci fornirà uno spazio apposito su piattaforma _BitBucket_
 
-L'azienda _SyncLab_ consiglia per il progetto _NearYou_ di adottare un modello _agile_.\
-Verranno organizzati _SAL_ settimanali o bisettimanali in presenza o a distanza.\
-Verrà effettuata un'analisi dei requisiti condivisa.\
-Se opportuno i requisiti potranno essere revisionati.\
-L'azienda ha dichiarato che fornirà supporto nell'apprendimento delle nuove tecnologie.\
-Inoltre, viene confermata la possibilità di inserire nel _curriculum vitae_ il progetto realizzato, con le conseguenti referenze.
+== Supporto da parte di #M31 al gruppo _ALimitedGroup_
 
+Il gruppo e l'azienda sono coscienti che il capitolato sia molto complicato di realizzazione;
+di conseguenza, l'azienda si è dimostrata disponibile, durante le fasi iniziali del progetto,
+a contrattare i requisiti.
 
-== Altro
-
-L'azienda ha chiarito che non verrà richiesta l'implementazione della parte mobile del progetto e del software che visualizza i messaggi.
+Inoltre, per la parte di "Riassortimento predittivo",
+#M31 metterà a disposizione un esperto in materia che ci potrà assistere.
 
 #pagebreak()
 
