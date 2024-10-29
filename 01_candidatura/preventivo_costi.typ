@@ -53,7 +53,7 @@ Trasformano i requisiti funzionali in un design architetturale, creando document
 
 
 = Costi
-Il preventivo per la realizzazione del progetto ammonta a _12930€_
+Il preventivo per la realizzazione del progetto ammonta a Euro _12930_
 
 = Consegna
 Limite massimo di consegna del progetto entro e non oltre il 31 Marzo 2025
