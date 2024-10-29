@@ -72,7 +72,7 @@ Uno dei requisiti del capitolato è l'implementazione di un "sistema per il rias
 abbiamo richiesto ulteriori informazioni in particolare su questo punto.
 
 Si richiede di implementare un sistema che possa, mediante _Machine Learning_ o tecnologie simili,
-decidere quando e in che quantità effettuare spedizioni di materiale da un magazzino a un'altro.\
+decidere quando e in che quantità effettuare spedizioni di materiale da un magazzino a un altro.\
 Per realizzare questo sistema, è necessario poter in qualche modo osservare la quantità di materiale in uscita
 e da quella determinare quando si rende necessario effettuare una spedizione.\
 Chiaramente, l'obiettivo di questo sistema è evitare che un magazzino si trovi in carenza di materiale e, inoltre, minimizzare il numero di spedizioni.
