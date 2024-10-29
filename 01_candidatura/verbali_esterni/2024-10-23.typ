@@ -17,7 +17,7 @@
     ("0.0.2", "23-10", "Marco Piccoli   Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Marco Piccoli", "-", "Creazione struttura e template documento"),
   ),
-  versione: [1.0.0],
+  versione: [1.0.1],
   stato: [Approvato],
   presenze: (
     "Samuele Esposito",
@@ -35,7 +35,7 @@
 
 = Informazioni generali
 
-#inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*16.00*], [*16.30*], [_Synclab_])
+#inizio-verbale-esterno([*virtuale*], [*23 Ottobre 2024*], [*16.00*], [*16.30*], [_SyncLab_])
 - chiarimenti sul capitolato e sulle tecnologie da utilizzare
 - esposizione domande riguardante il progetto.
 
