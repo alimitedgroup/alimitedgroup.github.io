@@ -18,7 +18,7 @@
     "Sara Ferraro",
   ),
   odg: [Primo incontro di _ALimitedGroup_ con l'azienda #M31: vengono chiariti alcuni dubbi sorti durante la presentazione del capitolato],
-  disambiguatore: [(M31)],
+  disambiguatore: [(#M31)],
   doc,
 )
 
