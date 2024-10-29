@@ -4,11 +4,20 @@
 #show: doc => verbale(
   data: datetime(day: 25, month: 10, year: 2024),
   tipo: [esterno],
-  regmodifiche: (("0.1.0", "29-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
-  ("0.0.2", "25-10", "Samuele Esposito", "-", "Redazione documento"),
-  ("0.0.1", "25-10", "Samuele Esposito", "-", "Creazione struttura e template del documento"),),
-  versione: [0.1.0],
-  stato: [Verificato],
+  regmodifiche: (
+    (
+      "1.0.0",
+      "29-10",
+      "Matteo Schievano",
+      "-",
+      "Modifiche minori, aggiunta della sezione per approvazione esterna e approvazione documento",
+    ),
+    ("0.1.0", "29-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
+    ("0.0.2", "25-10", "Samuele Esposito", "-", "Redazione documento"),
+    ("0.0.1", "25-10", "Samuele Esposito", "-", "Creazione struttura e template del documento"),
+  ),
+  versione: [1.0.0],
+  stato: [Approvato],
   presenze: (
     "Samuele Esposito",
     "Loris Libralato",
@@ -75,9 +84,8 @@ L'azienda #M31 ha risposto che ci fornirà uno spazio apposito sulla piattaforma
 
 == Assistenza da parte di #M31 al gruppo _ALimitedGroup_
 
-Il gruppo e l'azienda sono coscienti che il capitolato sia molto complicato di realizzazione;
-di conseguenza, l'azienda si è dimostrata disponibile, durante le fasi iniziali del progetto,
-a contrattare i requisiti.
+Il gruppo e l'azienda sono coscienti che il capitolato sia molto complicato in termini di realizzazione.
+L'azienda si è dimostrata, a tal proposito, disponibile, durante le fasi iniziali del progetto, a contrattare i requisiti.
 
 Inoltre, per la parte di "Riassortimento predittivo",
 #M31 metterà a disposizione un esperto in materia che ci potrà assistere.
@@ -88,3 +96,7 @@ Inoltre, per la parte di "Riassortimento predittivo",
 
 La riunione con l'azienda _M31_ è stata esplicativa e formativa per tutti i presenti del gruppo, i rappresentati dell'azienda hanno risposto esaustivamente toccando punto per punto il progetto didattico. \
 Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _M31_ e i suoi rappresentanti per la disponibilità e la professionalità mostrataci durante il _meeting_.
+
+#pagebreak()
+= Approvazione esterna
+#approvazione-esterna(nome_parte_esterna: [*M31*])

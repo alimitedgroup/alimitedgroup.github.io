@@ -5,7 +5,14 @@
   data: datetime(day: 23, month: 10, year: 2024),
   tipo: [esterno],
   regmodifiche: (
-    ("1.0.0", "25-10", "Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
+    ("1.0.1", "29-10", "Matteo Schievano", "-", "Aggiunta sezione per approvazione esterna"),
+    (
+      "1.0.0",
+      "25-10",
+      "Matteo Schievano",
+      "-",
+      "Modifiche di formattazione minori e approvazione documento",
+    ),
     ("0.1.0", "23-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
@@ -89,6 +96,10 @@ Ha dichiarato, inoltre, che la progettazione di una web app è facoltativa.
 = Esiti della riunione
 La riunione con l'azienda _Ergon Informatica Srl_ è stata esplicativa e formativa per tutti i presenti del gruppo, i rappresentati dell'azienda hanno risposto esaustivamente toccando punto per punto il progetto didattico. \
 Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _Ergon Informatica Srl_ e i suoi rappresentanti per la disponibilità e la professionalità mostrataci durante il _meeting_.
+
+#pagebreak()
+= Approvazione esterna
+#approvazione-esterna(nome_parte_esterna: [*Ergon Informatica Srl*])
 
 
 

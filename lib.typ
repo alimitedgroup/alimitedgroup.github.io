@@ -43,7 +43,7 @@
     header: [
       #grid(
         columns: (1fr, 1fr),
-        align(left)[_ALimitedGroup_], align(right)[#nome \ #versione],
+        align(left)[_ALimitedGroup_], align(right)[#nome \ Versione #versione],
       )
       #line(length: 100%)
     ],
@@ -249,6 +249,11 @@
   Con il seguente documento si attesta che in data #data
   è stata condotta, in modalità #modalità, una riunione durata dalle ore #inizio alle ore #fine con l'azienda #azienda riguardante i seguenti argomenti:
 ]
+
+#let approvazione-esterna(
+  nome_parte_esterna: [],
+) = [Si attesta, con la seguente sezione, che il presente verbale è stato approvato da parte dei rappresentanti di #nome_parte_esterna.\
+  Tale attestazione è comprovata dalla presenza, qui di seguito, delle firme dei rappresentanti:]
 
 /// Inserisce un simbolo che rappresenta M31
 #let M31 = text(font: "Futura", weight: 500)[M31]
