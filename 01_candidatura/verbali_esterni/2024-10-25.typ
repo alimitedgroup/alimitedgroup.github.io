@@ -4,8 +4,9 @@
 #show: doc => verbale(
   data: datetime(day: 25, month: 10, year: 2024),
   tipo: [esterno],
-  regmodifiche: (("0.1.0", "29-10", "Marco Piccoli", "-", "Verifica e modifica documento"),("0.0.2", "25-10", "Samuele Esposito", "-", "Redazione documento"),
-  ("0.0.1", "25-10", "Samuele Esposito", "-", "Creazione del documento"),),
+  regmodifiche: (("0.1.0", "29-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
+  ("0.0.2", "25-10", "Samuele Esposito", "-", "Redazione documento"),
+  ("0.0.1", "25-10", "Samuele Esposito", "-", "Creazione struttura e template del documento"),),
   versione: [0.1.0],
   stato: [Verificato],
   presenze: (
