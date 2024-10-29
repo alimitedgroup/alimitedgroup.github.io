@@ -2,6 +2,8 @@
 
 #import "@preview/fireside:1.0.0": *
 
+#metadata[Lettera di candidatura] <titolo>
+
 #set page(numbering: "1")
 
 #show: fireside.with(
