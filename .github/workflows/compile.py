@@ -13,29 +13,42 @@ from collections import defaultdict
 source_files = glob('*/**/*.typ', recursive=True)
 options = ['--root', '.', '--ignore-system-fonts', '--font-path', 'assets']
 
+# Functions for handling "typst query" output
+
+def handle(outp):
+    match outp['func']:
+        case 'metadata': return handle_metadata(outp)
+        case 'sequence': return handle_sequence(outp)
+        case 'text': return handle_text(outp)
+        case 'space': return handle_space(outp)
+        case _: print(f'unhandled function {outp["func"]}')
+
+def handle_sequence(outp):
+    res = ''
+    for v in outp['children']:
+        res += handle(v)
+    return res
+
+def handle_text(outp):
+    return outp['text']
+
+def handle_space(outp):
+    return ' '
+
+def handle_metadata(outp):
+    return handle(outp['value'])
+
+# Functions for running typst
+
 def query(filename, tag):
     command = ["typst", "query", "--one", filename, tag] + options
     logging.debug('Running: ' + ' '.join(command))
-    cmd = subprocess.run(command, check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL).stdout.strip()
     try:
-        cmd = json.loads(cmd)['value']
-    except:
-        logging.error('Failed to deserialize the following `typst query` output: ' + cmd)
+        meta = subprocess.run(command, check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.strip()
+    except subprocess.CalledProcessError as e:
+        logging.error(f'Command {" ".join(command)} failed with output: {e.stderr.strip()}')
         exit(1)
-
-    try:
-        if type(cmd) == str:
-            return cmd
-        elif cmd['func'] == 'sequence' and cmd['children'] == []:
-            return ''
-        elif cmd['func'] == 'text':
-            return cmd['text']
-        else:
-            logging.error('Failed to deserialize the following `typst query` output: ' + cmd)
-            exit(1)
-    except:
-        logging.error('Failed to deserialize the following `typst query` output: ' + cmd)
-        exit(1)
+    return handle(json.loads(meta))
 
 def compile(filename: str, compile_options: list[str]) -> bool:
     command = ["typst", "compile"] + options + [filename] + compile_options
@@ -50,9 +63,9 @@ def compile(filename: str, compile_options: list[str]) -> bool:
 
     return True
 
-def process_template(prefisso: str, data: str, versione: str, disambiguatore: str) -> str:
-    title = f'{prefisso} {data} {versione}{disambiguatore}'.strip()
-    return TEMPLATE.replace('{{link}}', title + '.pdf').replace('{{name}}', title)
+def process_template(titolo: str) -> str:
+    titolo = titolo.strip()
+    return TEMPLATE.replace('{{link}}', titolo + '.pdf').replace('{{name}}', titolo)
 
 def main():
     logging.basicConfig(level=getenv('LOGLEVEL', 'INFO'))
@@ -72,14 +85,11 @@ def main():
 
         categorie = '/'.join(filename.split('/')[:-1])
 
-        prefisso = query(filename, '<prefisso>')
-        data = query(filename, '<data>')
-        versione = query(filename, '<versione>')
-        disambiguatore = ' ' + query(filename, '<disambiguatore>')
-        output = f'dist/{prefisso} {data} {versione}{disambiguatore}'.strip() + '.pdf'
+        titolo = query(filename, '<titolo>')
+        output = f'dist/{titolo}'.strip() + '.pdf'
         status = compile(filename, [output])
 
-        documenti[categorie].append((prefisso, data, versione, disambiguatore))
+        documenti[categorie].append(titolo)
 
         if not status:
             success = False
@@ -90,7 +100,7 @@ def main():
     html = Path('dist/index.html').read_text()
     for pattern, docs in documenti.items():
         html = html.replace('{{' + pattern + '}}', '\n'.join(
-            process_template(*file) for file in sorted(docs)
+            process_template(file) for file in sorted(docs)
         ))
     Path('dist/index.html').write_text(html)
 

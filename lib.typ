@@ -37,10 +37,7 @@
   set enum(indent: 1em)
   set align(center)
 
-  [ #metadata[AL] <prefisso> ]
-  [ #metadata(versione) <versione> ]
-  [ #metadata(data.display("[day]-[month]-[year]")) <data> ]
-  [ #metadata[] <disambiguatore> ]
+  [ #metadata[#nome #versione] <titolo> ]
 
   // Prima pagina
   image("assets/altd.png", height: 7cm)
@@ -141,15 +138,12 @@
   set align(center)
 
   if tipo == [interno] {
-    [ #metadata([VI]) <prefisso> ]
+    [ #metadata[VI #data.display("[day]-[month]-[year]") #versione #disambiguatore] <titolo>]
   } else if tipo == [esterno] {
-    [ #metadata([VE]) <prefisso> ]
+    [ #metadata[VE #data.display("[day]-[month]-[year]") #versione #disambiguatore] <titolo>]
   } else {
     panic("Tipo di verbale sconosciuto: " + tipo)
   }
-  [ #metadata(versione) <versione> ]
-  [ #metadata(data.display("[day]-[month]-[year]")) <data> ]
-  [ #metadata(disambiguatore) <disambiguatore> ]
 
   // Prima pagina
   image("assets/altd.png", height: 7cm)
@@ -347,10 +341,7 @@
   set text(font: "Inria Sans", size: 25pt)
   set page(paper: "presentation-16-9", margin: 0em, header: none, footer: none)
 
-  [ #metadata[VE] <prefisso> ]
-  [ #metadata[] <versione> ]
-  [ #metadata(date.display("[day]-[month]-[year]")) <data> ]
-  [ #metadata[] <disambiguatore> ]
+  [ #metadata[DB #date.display("[day]-[month]-[year]")] <titolo> ]
 
   // applicazione motto
   if (motto) {
