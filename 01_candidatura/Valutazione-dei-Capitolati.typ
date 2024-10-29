@@ -21,9 +21,9 @@
 
 = Informazioni generali
 
-Il presente documento è stato redatto per motivare la scelta del gruppo _ALimitedGroup_ di candidarsi per il capitolato:
+Il presente documento è stato redatto per motivare la scelta, presente nella @capitolato_scelto, del gruppo _ALimitedGroup_ di candidarsi per il capitolato:
 
-#align(center)[*C6 = Sistema di gestione di un magazzino distribuito* \ avente come proponente \ _*M31*_]
+#align(center)[*C6 = Sistema di gestione di un magazzino distribuito* \ avente come proponente \ #M31]
 
 Di seguito saranno sintetizzate, per ogni capitolato, i punti a favore e a sfavore che i componenti hanno individuato.
 
