@@ -3,7 +3,6 @@
 #import "@preview/fireside:1.0.0": *
 
 #set page(numbering: "1")
-#let titolo = "Lettera di candidatura"
 
 #show: fireside.with(
   title: [Candidatura \ capitolato C6],
