@@ -5,7 +5,7 @@
 #show: ppt => presentazione(
   intestazioni: true,
   motto: true,
-  pseudoanimazioni: true,
+  pseudoanimazioni: false,
   date: datetime(day: 28, month: 10, year: 2024),
   contenuto1: [
     - Definizione del nome del gruppo
