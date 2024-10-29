@@ -14,7 +14,7 @@
 = Impegno
 
 #table(
-  columns: (auto, auto, auto, auto),
+  columns: (1fr, 1fr, 1fr, 1fr),
   inset: 1.1em,
   table.header(
     [*Ruolo*],

@@ -79,11 +79,12 @@ dove:
 - *```[Tipo Verbale]```* indica la dicitura scelta tra *VI*, *VE* o *DB*
 - *``` GG-MM-AAAA```* indica il giorno in cui l'evento descritto ha avuto luogo scritto nel formato europeo
 - *```#```* indica l'eventuale numero di riunione
-#pagebreak()
+
 Quest'ultimo carattere, ovvero *```#```*, è presente *se e solo se* nello stesso giorno sono state condotte più riunioni dello stesso tipo. Tale numero (con annesso il carattere _Underscore_) *non* va specificato per la prima riunione cronologicamente avvenuta.
 
 Esempio di dicitura che corrisponde a questo verbale:
 #align(center)[*```//VI 23-10-2024```*]
+#pagebreak()
 = Esiti della riunione
 
 Il gruppo conclude la riunione con l'obbiettivo di realizzare le prime prove con GitHub Action. Si è inoltre deciso di concordare chi avrà il compito di presentare il primo _Diario di Bordo_ che si terrà il giorno 28 Ottobre 2024.

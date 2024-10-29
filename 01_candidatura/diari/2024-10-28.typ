@@ -1,6 +1,6 @@
 // DB 28-10-2024
 
-#import "/lib_diario.typ": *
+#import "../../lib_diario.typ": *
 
 #show: ppt => presentazione(
   intestazioni: true,
