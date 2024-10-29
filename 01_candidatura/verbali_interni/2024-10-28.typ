@@ -3,11 +3,12 @@
 #import "../../lib.typ": *
 #show: doc => verbale(
   regmodifiche: (
+    ("0.0.3", "29-10", "Matteo Schievano", "-", "Modifiche di formattazione e correzioni minori"),
     ("0.0.2", "28-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "28-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
-  data: datetime(day:28, month:10, year:2024),
-  versione: [0.1.0],
+  data: datetime(day: 28, month: 10, year: 2024),
+  versione: [0.0.3],
   stato: [Redatto],
   presenze: (
     "Lorenzo Stefani",
@@ -23,14 +24,13 @@
 
 = Informazioni generali
 
-#inizio-verbale-interno([*in presenza*], [*28 Ottobre 2024*], [*12.30*], [*15.30*])
+#inizio-verbale-interno([*in presenza (Padova, complesso Paolotti)*], [*28 Ottobre 2024*], [*12.30*], [*15.30*])
 
-- Valutazione comparativa dei capitolati
-- Pianificazione temporale del progetto
-- Analisi dei ruoli e relative responsabilità
-- Analisi dei costi e preventivo
-- Gestione documentazione e repository
-
++ Valutazione comparativa dei capitolati
++ Pianificazione temporale del progetto
++ Analisi dei ruoli e relative responsabilità
++ Analisi dei costi e preventivo
++ Gestione documentazione e repository
 
 #pagebreak()
 
@@ -90,8 +90,8 @@ Il gruppo _ALimitedGroup_, in base ai costi associati a ciascun ruolo, ha determ
 == Gestione documentazione e repository
 Il gruppo ha definito una organizzazione sistematica della documentazione:
 1. Sito Web
- - Pianificazione degli aggiornamenti necessari al sito web collegato al repository GitHub
- - Implementazione delle modifiche per migliorare la presentazione della documentazione: viene indicata la versione affianco al documento.
+  - Pianificazione degli aggiornamenti necessari al sito web collegato al repository GitHub
+  - Implementazione delle modifiche per migliorare la presentazione della documentazione: viene indicata la versione affianco al documento.
 
 2. Documentazione di Candidatura
 - Organizzazione della cartella #emph[01_candidatura/] contenente:

@@ -1,20 +1,27 @@
-// VDC 28-10-2024
+// VDC 29-10-2024
 
 #import "../lib.typ": *
 #show: doc => documento(
   nome: [Valutazione dei Capitolati],
   data: datetime(day: 28, month: 10, year: 2024),
   regmodifiche: (
-    ("0.0.2", "29-10", "Matteo Schievano", "-", "Aggiunta delle informazioni riguardanti i capitolati C2, C3 e C4"),
+    ("0.0.3", "29-10", "Matteo Schievano", "-", "Aggiunta delle informazioni riguardanti i capitolati C2, C3 e C4"),
+    (
+      "0.0.2",
+      "28-10",
+      "Matteo Schievano",
+      "-",
+      "Realizzazione delle Informazioni generali ed aggiunta delle informazioni riguardanti il capitolato C1",
+    ),
     (
       "0.0.1",
       "28-10",
       "Matteo Schievano",
       "-",
-      "Creazione struttura e template documento. Realizzazione delle Informazioni generali d aggiunta delle informazioni riguardanti il capitolato C1",
+      "Creazione struttura e template documento",
     ),
   ),
-  versione: [0.0.1],
+  versione: [0.0.3],
   stato: [In redazione],
   doc,
 )
