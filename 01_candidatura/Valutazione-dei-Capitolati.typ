@@ -71,3 +71,18 @@ Nel dettaglio, _ALimitedGroup_ ha valutato positivamente la possibilità di appr
 Ha inoltre ritenuto molto positivo l'impiego dei _Large Language Models (LLM)_ ad un caso diverso dalla realizzazione di un _chatbot_ e con obbiettivi assolutamente validi per il mercato attuale.\
 
 In conclusione, il gruppo ha tuttavia deciso di non proseguire con la candidatura del presente capitolato: ha infatti mosso una forte preoccupazione in merito alla gestione corretta delle informazioni sensibili degli utenti, specialmente considerando i ferrei regolamenti in materia da parte dell'Unione Europea.
+
+#pagebreak()
+= Capitolato C5: 3Dataviz di _SanMarco Informatica_
+
+#pagebreak()
+= Capitolato C6: Sistema di gestione di un magazzino distribuito di #M31 <capitolato_scelto>
+
+#pagebreak()
+= Capitolato C7: LLM: Assistente Virtuale di _Ergon_
+
+#pagebreak()
+= Capitolato C8: _Requirement Tracker_ di _BlueWind_
+
+#pagebreak()
+= Capitolato C9: BuddyBot di _AzzurroDigitale_
