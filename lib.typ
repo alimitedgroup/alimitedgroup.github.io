@@ -126,10 +126,13 @@
   disambiguatore: [],
   contenuto,
 ) = {
+  let titolo = [_Verbale_ #tipo #data.display("[day]/[month]/[year]")]
+
   set text(lang: "it", font: "Hanken Grotesk")
   set list(indent: 1em)
   set enum(indent: 1em)
   set align(center)
+  set document(title: titolo, date: data)
 
   if tipo == [interno] {
     [ #metadata[VI #data.display("[day]-[month]-[year]") #versione #disambiguatore] <titolo>]
@@ -142,7 +145,7 @@
   // Prima pagina
   image("assets/altd.png", height: 7cm)
   v(4em)
-  text(24pt, weight: "bold", fill: black)[_Verbale_ #tipo #data.display("[day]/[month]/[year]")]
+  text(24pt, weight: "bold", fill: black, titolo)
   v(2.25em)
 
   show grid.cell.where(x: 0): cell => align(right, cell)
@@ -172,7 +175,7 @@
     header: [
       #grid(
         columns: (1fr, 1fr),
-        align(left)[_ALimitedGroup_], align(right)[_Verbale_ #tipo #data],
+        align(left)[_ALimitedGroup_], align(right, titolo),
       )
       #line(length: 100%)
     ],
