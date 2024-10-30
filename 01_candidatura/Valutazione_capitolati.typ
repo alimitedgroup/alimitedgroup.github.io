@@ -2,10 +2,10 @@
 
 #import "../lib.typ": *
 #show: doc => documento(
-  nome: [Studio di Fattibilità],
+  nome: [Valutazione dei capitolati],
   data: datetime(day: 28, month: 10, year: 2024),
   regmodifiche: (
-    ("0.0.4", "30-10", "Marco Piccoli", "-", "Aggiunta delle informazioni riguardanti i capitolato C5, piccole modifiche"),
+    ("0.0.4", "30-10", "Marco Piccoli", "-", "Aggiunta delle informazioni riguardanti i capitolato C5 e C7, piccole modifiche"),
     ("0.0.3", "29-10", "Matteo Schievano", "-", "Aggiunta delle informazioni riguardanti i capitolati C2, C3 e C4"),
     (
       "0.0.2",
@@ -97,7 +97,20 @@ In conclusione il gruppo ha deciso di non proseguire con la candidatura del pres
 
 #pagebreak()
 = Capitolato C7: LLM: Assistente Virtuale di _Ergon_
+Il capitolato *C7 = LLM: Assistente Virtuale* proposto da *_Ergon_* ha come scopo la realizzazione di un assistente virtuale che, per l'appunto, assista i clienti nella ricerca di informazioni sui prodotti disponibili e risponda alla domande più frequenti.\
 
+Il gruppo _ALimitedGroup_ ha mosso un interesse particolare nei confronti di questo capitolato e per questo motivo ha infatti deciso di realizzare un incontro formativo con l'azienda i cui esiti possono essere consultati nel relativo #link("https://alimitedgroup.github.io/VE%2023-10-2024%201.0.1%20(Ergon).pdf")[#underline[verbale esterno]].\
+
+Nel dettaglio, il gruppo, ha valutato molto positivamente la formazione e il supporto offertaci dall'azienda, infatti, quest'ultima mette a disposizione corsi di formazione specifici e l'affiancamento diretto con un referente dedicato.
+L'azienda _Ergon_, inoltre, è flessibile sulle tecnologie da utilizzare per la realizzazione di questo capitolato facendo, così, aumentare il nostro interesse.\
+
+Al contrario, però, l'integrazione necessaria di un sistema di raccolta feedback da parte degli utenti per migliorare continuamente le risposte degli _LLM_ comporta l'aumento di:
+#list([Complessità],
+[Configurazione della _LLM_],
+[Addestramento della _LLM_]) 
+Questo potrebbe richiedere ulteriore tempo per essere ottimizzati in maniera sufficiente.\
+
+In conclusione il gruppo ha deciso di non proseguire con la candidatura del presente capitolato.
 #pagebreak()
 = Capitolato C8: _Requirement Tracker_ di _BlueWind_
 
