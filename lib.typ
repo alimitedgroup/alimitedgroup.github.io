@@ -53,7 +53,7 @@
       #context [
         Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
       ]
-    ],
+    ]
   )
   set align(left)
   set heading(numbering: "1.")
