@@ -1,6 +1,8 @@
 // PC 28-10-2024
 
 #import "../lib.typ": *
+#import "@preview/plotst:0.2.0": *
+
 #show: doc => documento(
   nome: [Dichiarazione impegni],
   data: datetime(day: 29, month: 10, year: 2024),
@@ -66,6 +68,20 @@ Ogni membro del gruppo si impegna a dedicare al progetto un totale di 92 ore pro
   [Verificatore], [15€/h], [136h], [2040€],
   [*Totale*], [-], [*644h*], [*12930€*],
 )
+
+
+#{
+  let p = plot(data: (
+    (9, "Responsabile - 9%"),
+    (9.3, "Amministratore - 9.3%"),
+    (9.3, "Analista - 9.3%"),
+    (23.3, "Progettista - 23.3%"),
+    (28, "Programmatore - 28%"),
+    (21.1, "Verificatore - 21.1%"),
+  ))
+
+  pie_chart(p, (35%, 25%), caption: "Divisione ore", display_style: "hor-legend-chart")
+}
 
 = Ruoli
 
