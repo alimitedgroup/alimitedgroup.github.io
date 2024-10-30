@@ -9,7 +9,7 @@
     ("0.0.1", "28-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
   data: datetime(day: 28, month: 10, year: 2024),
-  versione: [0.0.3],
+  versione: [0.0.4],
   stato: [Redatto],
   presenze: (
     "Lorenzo Stefani",
