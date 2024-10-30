@@ -3,13 +3,14 @@
 #import "../../lib.typ": *
 #show: doc => verbale(
   regmodifiche: (
+    ("1.0.0", "30-10", "Samuele Esposito", "-", "Approvazione documento"),
     ("0.1.0", "22-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "21-10", "Matteo Schievano", "-", "Redazione documento"),
     ("0.0.1", "21-10", "Matteo Schievano", "-", "Creazione struttura e template documento"),
   ),
   data: datetime(day: 18, month: 10, year: 2024),
-  versione: [0.1.0],
-  stato: [Verificato],
+  versione: [1.0.0],
+  stato: [Approvato],
   presenze: (
     "Emanuele Artusi",
     "Lorenzo Stefani",
@@ -50,8 +51,8 @@ Durante la riunione è stato deciso di realizzare un _repository_ GitHub dedicat
 
 Tale _repository_ dovrà in conclusione contenere:
 
-- i _file .typst_ riguardanti la struttura dei verbali
-- i _file .typst_ relativi ai singoli verbali
+- i _file .typ_ riguardanti la struttura dei verbali
+- i _file .typ_ relativi ai singoli verbali
 - ulteriori _file_ a supporto dei verbali
 - tutti i _file_ relativi al sito web
 
@@ -75,7 +76,7 @@ Il gruppo ha preso in maggiore considerazione il seguente capitolato:\
 #align(center)[ C4 = *NearYou - Smart custom advertising platform*] avente come proponente *SyncLab*.
 
 Dopo il sorgere di alcuni dubbi, il gruppo ha rivalutato la possibilità di aderire al capitolato \
-#align(center)[C2 = *Vimar GENIALE*] avente come proponente *VIMAR*, perciò si è deciso di ridiscutere alla prossima riunione di tale capitolato per un'analisi più approfondita.
+#align(center)[C2 = *Vimar GENIALE*] avente come proponente *VIMAR*, perciò si è deciso di ridiscutere nelle prossime riunioni di tale capitolato per un'analisi più approfondita.
 
 = Esiti della riunione
 
