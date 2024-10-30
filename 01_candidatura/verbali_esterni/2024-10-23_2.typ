@@ -11,7 +11,7 @@
     ("0.0.2", "23-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
-  versione: [1.0.1],
+  versione: [1.0.0],
   stato: [Approvato],
   presenze: (
     "Samuele Esposito",

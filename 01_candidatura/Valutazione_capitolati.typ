@@ -1,4 +1,4 @@
-// SDF 29-10-2024
+// VDC 29-10-2024
 
 #import "../lib.typ": *
 #show: doc => documento(
