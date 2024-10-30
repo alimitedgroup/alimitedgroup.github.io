@@ -46,7 +46,7 @@ Si riassumono inoltre i punti di forza che hanno portato il gruppo alla scelta d
 - #lorem(5)
 Per ulteriori dettagli consigliamo di visionare il documento dedicato alla #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.0.4.pdf")[valutazione dei capitolati]. \
 
-Tutta la documentazione redatta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*] .\
+Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*] .\
 #colbreak()
 L'intero gruppo è a disposizione per qualsiasi chiarimento; si riportano i nominativi di tutti i membri di _ALimitedGroup_: \
 
