@@ -1,4 +1,4 @@
-// VDC 29-10-2024
+// VDC 30-10-2024
 
 #import "../lib.typ": *
 #show: doc => documento(
@@ -10,14 +10,14 @@
       "30-10",
       "Matteo Schievano",
       "-",
-      "Correzioni minori al testo riguardante i capitolato C5 e C7, aggiunta delle informazioni riguardanti il capitolato C6",
+      "Correzioni minori al testo riguardante i capitolato C5, C7 e C8. Aggiunta delle informazioni riguardanti il capitolato C6 e il capitolato C9",
     ),
     (
       "0.0.4",
       "30-10",
       "Marco Piccoli",
       "-",
-      "Aggiunta delle informazioni riguardanti i capitolato C5, C7 e C8 piccole modifiche",
+      "Aggiunta delle informazioni riguardanti i capitolato C5, C7 e C8. Piccole modifiche",
     ),
     ("0.0.3", "29-10", "Matteo Schievano", "-", "Aggiunta delle informazioni riguardanti i capitolati C2, C3 e C4"),
     (
@@ -143,14 +143,17 @@ In conclusione il gruppo ha deciso di non proseguire con la candidatura del pres
 
 Il capitolato *C8 = _Requirement Tracker_ - Plug-in VS Code* proposto da *_Bluewind_* chiede la realizzazione di un _plug-in_ per _Visual Studio Code_ che automatizzerà il tracciamento dei requisiti di progetto nel codice sorgente e fornirà suggerimenti per migliorare la qualità dei requisiti.\
 
-Il gruppo valuta positivamente la possibilità di imparare lo sviluppo in ambito _embedded_, ma soprattutto la creazione di un prodotto che potrebbe far risparmiare tempo prezioso durante lo sviluppo embedded.\
+Il gruppo valuta positivamente la possibilità, specie mediante la molto probabile lettura di codice sorgente, di imparare lo sviluppo in ambito _embedded_, ma soprattutto la creazione di un prodotto che potrebbe far risparmiare tempo prezioso durante lo sviluppo di applicativi.\
 
-_ALimitedGroup_ giudica, invece, negativamente:
-#list([la descrizione del capitolato], [l'utilizzo del _plug-in_ per _visual studio code_])
-La prima per essere molto sintetica e poco chiara, mentre la seconda sulla base delle conoscenze poco applicabili al mercato del lavoro. \
+_ALimitedGroup_ ha tuttavia ritenuto che il problema proposto dal capitolato (dal gruppo ritenuto in alcuni punti forse troppo sintetico) sia molto ampio e complesso ed ha espresso alcuni dubbi in merito alla fattibilità dello stesso. \
+Ha inoltre ragionato sul fatto che lo sviluppo di un plug-in specifico per l'_IDE_ di _Visual Studio Code_ potrebbe fortemente comprometterne la diffusione.\
 
-Inoltre, su questo progetto, c'è un'alta possibilità di fallimento essendo, il problema alla base, molto ampio e complesso. \
-
-In conclusione il gruppo ha deciso di non proseguire con la candidatura del presente capitolato.
+Per questi motivi il gruppo ha deciso di non proseguire con la candidatura del presente capitolato.
 #pagebreak()
 = Capitolato C9: BuddyBot di _AzzurroDigitale_
+
+Il capitolato *C9 = BuddyBot* di *_AzzurroDigitale_* propone di realizzare un assistente virtuale in grado di aggregare informazioni da varie fonti (quali _GitHub_, _Jira_ e _Confluence_) e rispondere a domande poste mediante un'interfaccia web anche essa da sviluppare.\
+
+Il gruppo ha complessivamente valutato positivamente il progetto, specialmente comprendendone l'utilità applicativa, tuttavia ha espresso dubbi riguardo la dipendenza da _API_ di terze parti: come specificato, le informazioni verranno prese da molte fonti e un cambiamento nei servizi offerti da queste fonti, specialmente relativo al livello di informazioni fornite, potrebbe determinare un calo del quantitativo di dati disponibili. \
+
+Questo, unito agli interessi comuni del gruppo non particolarmente declinati verso lo sviluppo di _frontend_ e _chatbot_, ha spinto il gruppo a decidere di non proseguire la candidatura con questo capitolato.
