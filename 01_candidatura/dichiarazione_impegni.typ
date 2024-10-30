@@ -37,13 +37,13 @@ Ogni membro del gruppo si impegna a dedicare al progetto un totale di 92 ore pro
     [*Tot*],
   ),
 
-  [Lorenzo Stefani], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
-  [Loris Libralato], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
-  [Marco Piccoli], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
-  [Matteo Schievano], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
-  [Samuele Esposito], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
-  [Sara Ferraro], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
-  [Emanuele Artusi], [0h], [0h], [0h], [0h], [0h], [0h], [92h],
+  [Loris Libralato], [8h], [9h], [8h], [22h], [27h], [18h], [92h],
+  [Samuele Esposito], [8h], [9h], [8h], [22h], [27h], [18h], [92h],
+  [Sara Ferraro], [9h], [8h], [9h], [22h], [25h], [19h], [92h],
+  [Lorenzo Stefani], [8h], [8h], [9h], [21h], [27h], [19h], [92h],
+  [Marco Piccoli], [8h], [8h], [9h], [21h], [26h], [20h], [92h],
+  [Matteo Schievano], [9h], [9h], [9h], [21h], [24h], [20h], [92h],
+  [Emanuele Artusi], [8h], [9h], [8h], [21h], [24h], [22h], [92h],
   [*Totale*], [*58h*], [*60h*], [*60h*], [*150h*], [*180h*], [*136h*], [*644h*],
 )
 #pagebreak()
@@ -72,16 +72,18 @@ Ogni membro del gruppo si impegna a dedicare al progetto un totale di 92 ore pro
 
 #{
   let p = plot(data: (
-    (9, "Responsabile - 9%"),
-    (9.3, "Amministratore - 9.3%"),
-    (9.3, "Analista - 9.3%"),
-    (23.3, "Progettista - 23.3%"),
-    (28, "Programmatore - 28%"),
-    (21.1, "Verificatore - 21.1%"),
+    (9.01, "Responsabile - 9.01%"),
+    (9.32, "Amministratore - 9.32%"),
+    (9.32, "Analista - 9.32%"),
+    (23.29, "Progettista - 23.29%"),
+    (27.95, "Programmatore - 27.95%"),
+    (21.12, "Verificatore - 21.12%"),
   ))
 
-  pie_chart(p, (35%, 25%), caption: "Divisione ore", display_style: "hor-legend-chart")
+  pie_chart(p, (40%, 30%), caption: "Divisione ore", display_style: "hor-legend-chart")
 }
+
+#pagebreak()
 
 = Ruoli
 
@@ -103,9 +105,10 @@ Il programmatore è responsabile dello sviluppo del software, traducendo il desi
 == Verificatore
 Il verificatore ha il compito di garantire che il prodotto finale rispetti gli standard di qualità e soddisfi i requisiti funzionali stabiliti. Si occupa di eseguire test approfonditi e revisioni del software, identificando eventuali bug o aree di miglioramento. Questo ruolo è cruciale per assicurare la soddisfazione del cliente e per ridurre al minimo i problemi post-lancio. Il contributo orario di questo ruolo sarà più intenso nelle fasi finali del progetto, quando si svolgeranno i test di integrazione e le verifiche finali prima della consegna.
 
+#pagebreak()
 
 = Costi
-Il costo previsto per la realizzazione del progetto è di *Euro 12.930*.
+Il costo previsto per la realizzazione del progetto è di *Euro 12930*.
 
 = Consegna
 La data ultima per la consegna del progetto è fissata improrogabilmente al 31 marzo 2025.
