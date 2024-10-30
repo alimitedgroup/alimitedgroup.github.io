@@ -3,6 +3,7 @@
 #import "../../lib.typ": *
 #show: doc => verbale(
   regmodifiche: (
+    ("0.0.4", "29-10", "Sara Ferraro", "-", "Correzione"),
     ("0.0.3", "29-10", "Matteo Schievano", "-", "Modifiche di formattazione e correzioni minori"),
     ("0.0.2", "28-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "28-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
@@ -74,13 +75,13 @@ Ipotizzando un approccio SCRUM, con Sprint bisettimanali, si preve il seguente a
   align: horizon,
   stroke: 0.7pt,
   [*Ruolo*], [*Ore*], [*(%)*],
-  [Programmatore], [180.00], [28,0%],
-  [Progettista], [150.00], [23,3%],
-  [Verificatore], [136.00], [21,1%],
-  [Amministratore], [60.00], [9,3%],
-  [Analista], [60.00], [9,3%],
-  [Responsabile], [58.00], [9,0%],
-  [*Totale*], [*644.00*], [*100%*],
+  [Programmatore], [180.00], [27.95%],
+  [Progettista], [150.00], [23.29%],
+  [Verificatore], [136.00], [21.12%],
+  [Amministratore], [60.00], [9.32%],
+  [Analista], [60.00], [9.32%],
+  [Responsabile], [58.00], [9.01%],
+  [*Totale*], [*644.00*], [*100.00%*],
 )
 
 
