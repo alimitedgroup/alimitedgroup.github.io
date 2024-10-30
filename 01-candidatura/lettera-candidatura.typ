@@ -4,7 +4,16 @@
 
 #metadata[Lettera di candidatura] <titolo>
 
-#set page(numbering: "1")
+#set page(  
+  numbering: "1",  
+  footer: [
+      #set align(center)
+      #line(length: 100%)
+      #context [
+        Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
+      ]
+  ]
+)
 
 #show: fireside.with(
   title: [Candidatura \ capitolato C6],
@@ -24,25 +33,25 @@
     35121, Padova
   ],
 )
-
 #show link: underline
-
-Egregi Prof. Vardanega e Prof. Cardin, \ 
-con la presente il gruppo *ALimitedGroup* desidera comunicarVi formalmente la propria candidatura per la realizzazione del prodotto commissionato, intitolato: \
-#align(center, text(12pt)[*Sistema di Gestione di un Magazzino Distribuito*]) \
-proposto dall’azienda *M31*, capitolato di progetto *C6*. \
-Come specificato nel documento #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%200.0.2.pdf")[Dichiarazione impegni], ALimitedGroup ha preventivato un costo totale per la realizzazione del progetto di *Euro 12930* ed ha fissato la data ultima di consegna al *31 marzo 2025*. \
+Egregio Prof. Vardanega,\ 
+Egregio Prof. Cardin, \
+con la presente il gruppo _ALimitedGroup_ desidera comunicarVi formalmente la propria candidatura per la realizzazione del prodotto commissionato, intitolato: \
+#align(center, text(12pt)[*Sistema di Gestione di un Magazzino Distribuito*])
+proposto dall'azienda #text(font: "Futura", weight: 500)[M31], capitolato di progetto *C6*. \
+Come specificato nel documento di #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%200.0.2.pdf")[dichiarazione degli impegni], _ALimitedGroup_ ha preventivato un costo totale per la realizzazione del progetto di *Euro 12˙930* ed ha fissato la data ultima di consegna al *31 Marzo 2025*. \
 Si riassumono inoltre i punti di forza che hanno portato il gruppo alla scelta del capitolato:
 - #lorem(4)
 - #lorem(3)
 - #lorem(5)
-Ulteriori dettagli nel documento dedicato #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.0.4.pdf")[Valutazione dei capitolati]. \
-Tutta la documentazione viene pubblicata nel *sito ufficiale di ALimitedGroup*: #link("https://alimitedgroup.github.io/")[alimitedgroup.github.io]. \
-L'intero gruppo è a disposizione per qualsiasi chiarimento; si riportano i nominativi di tutti i membri di ALimitedGroup: \
+Per ulteriori dettagli consigliamo di visionare il documento dedicato alla #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.0.4.pdf")[valutazione dei capitolati]. \
 
-#align(center)[
+Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*] .\
+#colbreak()
+L'intero gruppo è a disposizione per qualsiasi chiarimento; si riportano i nominativi di tutti i membri di _ALimitedGroup_: \
+
   #table(
-    columns: (auto, auto, auto),
+    columns: (1fr, 1fr, 1fr),
     inset: 10pt,
     align: center,
     table.header(
@@ -56,6 +65,7 @@ L'intero gruppo è a disposizione per qualsiasi chiarimento; si riportano i nomi
     [Schievano],[Matteo],[2075537],
     [Stefani],[Lorenzo],[2079249]
   )
-]
+
+Tutto il gruppo _ALimitedGroup_ desidera augurarVi un buon prosieguo di giornata.\
 Cordiali Saluti, \
 _ALimitedGroup_

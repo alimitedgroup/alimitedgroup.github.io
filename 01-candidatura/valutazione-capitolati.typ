@@ -17,7 +17,7 @@
       "30-10",
       "Marco Piccoli",
       "-",
-      "Aggiunta delle informazioni riguardanti i capitolato C5 e C7, piccole modifiche",
+      "Aggiunta delle informazioni riguardanti i capitolato C5, C7 e C8 piccole modifiche",
     ),
     ("0.0.3", "29-10", "Matteo Schievano", "-", "Aggiunta delle informazioni riguardanti i capitolati C2, C3 e C4"),
     (
@@ -141,5 +141,16 @@ In conclusione il gruppo ha deciso di non proseguire con la candidatura del pres
 #pagebreak()
 = Capitolato C8: _Requirement Tracker_ di _BlueWind_
 
+Il capitolato *C8 = _Requirement Tracker_ - Plug-in VS Code* proposto da *_Bluewind_* chiede la realizzazione di un _plug-in_ per _Visual Studio Code_ che automatizzerà il tracciamento dei requisiti di progetto nel codice sorgente e fornirà suggerimenti per migliorare la qualità dei requisiti.\
+
+Il gruppo valuta positivamente la possibilità di imparare lo sviluppo in ambito _embedded_, ma soprattutto la creazione di un prodotto che potrebbe far risparmiare tempo prezioso durante lo sviluppo embedded.\
+
+_ALimitedGroup_ giudica, invece, negativamente:
+#list([la descrizione del capitolato], [l'utilizzo del _plug-in_ per _visual studio code_])
+La prima per essere molto sintetica e poco chiara, mentre la seconda sulla base delle conoscenze poco applicabili al mercato del lavoro. \
+
+Inoltre, su questo progetto, c'è un'alta possibilità di fallimento essendo, il problema alla base, molto ampio e complesso. \
+
+In conclusione il gruppo ha deciso di non proseguire con la candidatura del presente capitolato.
 #pagebreak()
 = Capitolato C9: BuddyBot di _AzzurroDigitale_
