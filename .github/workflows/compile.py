@@ -7,7 +7,7 @@ import subprocess
 from os import getenv
 from glob import glob
 from pathlib import Path
-from shutil import rmtree, copytree
+from shutil import rmtree, copytree, copyfile
 from collections import defaultdict
 
 source_files = glob('*/**/*.typ', recursive=True)
@@ -78,16 +78,25 @@ def main():
     documenti = defaultdict(list)
 
     for filename in sorted(source_files):
+        if '.pdf' in filename:
+            continue
+
         filename = filename.strip()
         if filename == "" or len(filename.split('/')) == 1:
             continue
         logging.info(f"Compiling {filename}…")
+        filename_pdf = filename.removesuffix('.typ') + '.pdf'
 
         categorie = '/'.join(filename.split('/')[:-1])
 
-        titolo = query(filename, '<titolo>')
+        titolo = query(filename.replace('.pdf', '.typ'), '<titolo>')
         output = f'dist/{titolo}'.strip() + '.pdf'
-        status = compile(filename, [output])
+
+        if '.typ' in filename and Path(filename_pdf).exists():
+            copyfile(filename_pdf, output)
+            status = True
+        else:
+            status = compile(filename, [output])
 
         documenti[categorie].append(titolo)
 
