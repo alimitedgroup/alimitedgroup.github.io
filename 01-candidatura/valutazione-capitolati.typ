@@ -108,7 +108,7 @@ In conclusione il gruppo ha perciò deciso di non proseguire con la candidatura 
 #pagebreak()
 = Capitolato C6: Sistema di gestione di un magazzino distribuito di #M31 <capitolato_scelto>
 
-Il capitolato *C6 = Sistema di gestione di un magazzino distribuito* di #M31 ha come obbiettivo la realizzazione di un sistema adibito alla gestione ottimale di vari magazzini. In particolar modo, il sistema sviluppato dovrà essere in grado, dati vari magazzini collegati (o, talvolta, scollegati) alla rete, di ottimizzare i livelli di scorte, automatizzando, anche mediante algoritmi di _Machine Learning_, azioni di riassortimento e trasferimento, il tutto gestendo l'inserimento di ordini e la risoluzione di possibili conflitti dovuti ad aggiornamenti simultanei.\
+Il capitolato *C6 = Sistema di gestione di un magazzino distribuito* di #M31 ha come obbiettivo la realizzazione di un sistema adibito alla gestione ottimale di vari magazzini. In particolar modo, il sistema sviluppato dovrà essere in grado, dati vari magazzini collegati o anche scollegati alla rete, di ottimizzare i livelli di scorte, automatizzando, anche mediante algoritmi di _Machine Learning_, azioni di riassortimento e trasferimento, il tutto gestendo l'inserimento di ordini e la risoluzione di possibili conflitti dovuti ad aggiornamenti simultanei.\
 
 _ALimitedGroup_ ha mosso verso questo capitolato sin da subito un particolare interesse, valutando positivamente anche l'importante differenza tematica nei confronti di altri capitolati presentati per il progetto di _Ingegneria del Software_ di questo anno accademico.\
 
@@ -116,7 +116,7 @@ Per poter approfondire alcuni dubbi sorti durante l'esame del capitolato, il gru
 
 Complessivamente, il gruppo ha valutato positivamente l'utilizzo di moderni linguaggi di programmazione, come _Go_, e tecnologie interessanti anche dal punto di vista formativo (quali, ad esempio, _Kubernetes_ o _Google Cloud Platform_), ma ha anche apprezzato la forte disponibilità di #M31.\
 
-I componentu di _ALimitedGroup_ sono consapevoli che il progetto pone molti requisiti da soddisfare e sono consapevoli che, per alcuni di essi, la difficoltà risolutiva può risultare elevata (si veda ad esempio la gestione della concorrenza), ma ritengono, anche vista la disponibilità di #M31 alla contrattazione e al supporto durante lo svolgimento dell'attività, di riuscire a realizzare questo capitolato.\
+Tutti i componenti di _ALimitedGroup_ sono consapevoli che il progetto pone molti requisiti da soddisfare e sono consapevoli che, per alcuni di essi, la difficoltà risolutiva può risultare elevata (si veda ad esempio la gestione della concorrenza), ma ritengono, anche vista la disponibilità di #M31 alla contrattazione e al supporto durante lo svolgimento dell'attività, di riuscire a realizzare questo capitolato.\
 
 Concludendo, i componenti del gruppo _ALimitedGroup_ si dicono unanimemente d'accordo a candidarsi con questo capitolato.
 
