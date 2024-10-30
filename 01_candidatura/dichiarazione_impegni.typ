@@ -89,13 +89,13 @@ Ogni membro del gruppo si impegna a dedicare al progetto un totale di 92 ore pro
 Il responsabile sarà particolarmente presente nella fase iniziale per coordinare le attività del gruppo; man mano che il progetto avanzerà, il team acquisirà crescente autonomia, consentendo una riduzione progressiva delle ore dedicate a questo ruolo, che si concentrerà principalmente sulla comunicazione con il proponente e sulla redazione dei verbali.
 
 == Amministratore
-Si occupa della gestione dell’infrastruttura delle repository con test e deploy automatici, della piattaforma Google Cloud e del deployment dei relativi microservizi. Supporta inoltre il team nella configurazione degli ambienti di sviluppo e nell’ottimizzazione del workflow. Il suo contributo orario sarà costante per tutta la durata del progetto, con un picco durante il deploy dell'MVP.
+Si occupa della gestione dell'infrastruttura delle repository con test e deploy automatici, della piattaforma Google Cloud e del deployment dei relativi microservizi. Supporta inoltre il team nella configurazione degli ambienti di sviluppo e nell'ottimizzazione del workflow. Il suo contributo orario sarà costante per tutta la durata del progetto, con un picco durante il deploy dell'MVP.
 
 == Analista
 Essenziale nelle prime fasi del progetto per identificare e chiarire i requisiti funzionali, il monte ore associato a questo ruolo diminuirà con il progredire del lavoro, pur restando attivo per aggiornare o adattare i requisiti in base alle discussioni con il proponente. Questo ruolo è fondamentale, poiché facilita il lavoro successivo di progettisti e programmatori.
 
 == Progettista
-Questo ruolo trasforma i requisiti funzionali in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche. Nel contesto di questo progetto, l’aspetto architetturale è particolarmente rilevante; per questo motivo, abbiamo deciso di assegnare un numero consistente di ore a questa funzione, poiché un design inadeguato potrebbe generare difficoltà significative per i programmatori.
+Questo ruolo trasforma i requisiti funzionali in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche. Nel contesto di questo progetto, l'aspetto architetturale è particolarmente rilevante; per questo motivo, abbiamo deciso di assegnare un numero consistente di ore a questa funzione, poiché un design inadeguato potrebbe generare difficoltà significative per i programmatori.
 
 == Programmatore
 Il programmatore è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche. Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie scelte. Il monte ore assegnato a questo ruolo sarà distribuito in modo uniforme durante le varie fasi di sviluppo.

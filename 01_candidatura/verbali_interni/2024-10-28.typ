@@ -69,7 +69,7 @@ I componenti del gruppo hanno analizzato attentamente le responsabilità affidat
 Ipotizzando un approccio SCRUM, con Sprint bisettimanali, si preve il seguente ammontare di tempo da assegnare a ciascun ruolo.
 
 #table(
-  columns: (auto, auto, auto),
+  columns: (1fr, 1fr, 1fr),
   inset: 8pt,
   align: horizon,
   stroke: 0.7pt,
@@ -110,8 +110,7 @@ Il gruppo conclude la riunione stabilendo che:
 - Loris Libralato avrà il compito di redarre la _dichiarazione degli impegni_
 - Matteo Schievano avrà il compito di redarre la _valutazione dei capitolati_
 - Emanuele Artusi avrà il compito di redarre la _lettera di presentazione della candidatura_.
-
-\ I documenti dovranno essere terminati entro il 31/10/2024 per permettere la loro verifica, eventuale modifica e approvazione.
+I documenti dovranno essere terminati entro il 31/10/2024 per permettere la loro verifica, eventuale modifica e approvazione.
 
 
 
