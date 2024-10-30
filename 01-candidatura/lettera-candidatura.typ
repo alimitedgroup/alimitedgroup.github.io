@@ -4,15 +4,15 @@
 
 #metadata[Lettera di candidatura] <titolo>
 
-#set page(
-  numbering: "1",
+#set page(  
+  numbering: "1",  
   footer: [
-    #set align(center)
-    #line(length: 100%)
-    #context [
-      Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
-    ]
-  ],
+      #set align(center)
+      #line(length: 100%)
+      #context [
+        Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
+      ]
+  ]
 )
 
 #show: fireside.with(
@@ -34,41 +34,38 @@
   ],
 )
 #show link: underline
-Egregio Prof. Vardanega,\
+Egregio Prof. Vardanega,\ 
 Egregio Prof. Cardin, \
 con la presente il gruppo _ALimitedGroup_ desidera comunicarVi formalmente la propria candidatura per la realizzazione del prodotto commissionato, intitolato: \
 #align(center, text(12pt)[*Sistema di Gestione di un Magazzino Distribuito*])
 proposto dall'azienda #text(font: "Futura", weight: 500)[M31], capitolato di progetto *C6*. \
 Come specificato nel documento di #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%200.0.2.pdf")[dichiarazione degli impegni], _ALimitedGroup_ ha preventivato un costo totale per la realizzazione del progetto di *Euro 12˙930* ed ha fissato la data ultima di consegna al *31 Marzo 2025*. \
 Si riassumono inoltre i punti di forza che hanno portato il gruppo alla scelta del capitolato:
-- #lorem(4)
-- #lorem(3)
-- #lorem(5)
-Per ulteriori dettagli consigliamo di visionare il documento dedicato alla #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.0.5.pdf")[valutazione dei capitolati]. \
+- *Interesse immediato* per il capitolato, favorito dalla sua *differenza tematica* rispetto agli altri progetti di Ingegneria del Software proposti nell'anno accademico.
+- *Valutazione positiva dell’incontro con l’azienda* M31, che ha fornito chiarimenti sui dubbi sorti e ha confermato l’interesse del gruppo.
+- Apprezzamento per l’*utilizzo di linguaggi di programmazione moderni*, come Go, e di *tecnologie avanzate* e formative come Kubernetes e Google Cloud Platform.
+- Forte *disponibilità dell'azienda* M31 a fornire supporto e a collaborare con il gruppo.
+Per ulteriori dettagli consigliamo di visionare il documento dedicato alla #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.0.4.pdf")[valutazione dei capitolati]. \
 
-Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*] .\
+Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*].\
 #colbreak()
 L'intero gruppo è a disposizione per qualsiasi chiarimento; si riportano i nominativi di tutti i membri di _ALimitedGroup_: \
 
-#table(
-  columns: (1fr, 1fr, 1fr),
-  inset: 10pt,
-  align: center,
-  table.header(
-    [*Cognome*],
-    [*Nome*],
-    [*Matricola*],
-  ),
+  #table(
+    columns: (1fr, 1fr, 1fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+      [*Cognome*], [*Nome*], [*Matricola*],
+    ),
+    [Artusi],[Emanuele],[2068223],
+    [Esposito],[Samuele],[2068233],
+    [Ferraro],[Sara],[2076442],
+    [Libralato],[Loris],[2068237],
+    [Piccoli],[Marco],[2045039],
+    [Schievano],[Matteo],[2075537],
+    [Stefani],[Lorenzo],[2079249]
+  )
 
-  [Artusi], [Emanuele], [2068223],
-  [Esposito], [Samuele], [2068233],
-  [Ferraro], [Sara], [2076442],
-  [Libralato], [Loris], [2068237],
-  [Piccoli], [Marco], [2045039],
-  [Schievano], [Matteo], [2075537],
-  [Stefani], [Lorenzo], [2079249],
-)
-
-Tutto il gruppo _ALimitedGroup_ desidera augurarVi un buon prosieguo di giornata.\
 Cordiali Saluti, \
 _ALimitedGroup_
