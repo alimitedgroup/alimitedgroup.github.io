@@ -13,8 +13,8 @@
     ("0.0.2", "29-10", "Loris Libralato", "-", "Divisione di ruoli e ore"),
     ("0.0.1", "28-10", "Loris Libralato", "-", "Creazione struttura documento"),
   ),
-  versione: [0.1.0],
-  stato: [Verificato],
+  versione: [1.0.0],
+  stato: [Approvato],
   doc,
 )
 

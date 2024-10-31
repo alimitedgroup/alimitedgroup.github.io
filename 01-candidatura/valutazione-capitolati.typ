@@ -50,7 +50,7 @@
     ),
   ),
   versione: [1.0.0],
-  stato: [Verificato],
+  stato: [Approvato],
   doc,
 )
 
