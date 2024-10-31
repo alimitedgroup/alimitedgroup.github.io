@@ -7,7 +7,7 @@
   nome: [Dichiarazione impegni],
   data: datetime(day: 29, month: 10, year: 2024),
   regmodifiche: (
-    ("0.0.2", "29-10", "Loris Libralato", "-", "Ruoli e ore"),
+    ("0.0.2", "29-10", "Loris Libralato", "-", "Divisione di ruoli e ore"),
     ("0.0.1", "28-10", "Loris Libralato", "-", "Creazione struttura documento"),
   ),
   versione: [0.0.2],
