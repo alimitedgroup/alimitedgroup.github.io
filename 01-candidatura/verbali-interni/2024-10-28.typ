@@ -11,7 +11,7 @@
     ("0.0.1", "28-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
   data: datetime(day: 28, month: 10, year: 2024),
-  versione: [0.1.0],
+  versione: [1.0.0],
   stato: [Approvato],
   presenze: (
     "Lorenzo Stefani",
