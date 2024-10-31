@@ -5,13 +5,14 @@
 
 #show: doc => documento(
   nome: [Dichiarazione impegni],
-  data: datetime(day: 29, month: 10, year: 2024),
+  data: datetime(day: 31, month: 10, year: 2024),
   regmodifiche: (
+    ("0.1.0", "31-10", "Sara Ferraro", "-", "Modifiche minori e verifica documento"),
     ("0.0.2", "29-10", "Loris Libralato", "-", "Divisione di ruoli e ore"),
     ("0.0.1", "28-10", "Loris Libralato", "-", "Creazione struttura documento"),
   ),
-  versione: [0.0.2],
-  stato: [In redazione],
+  versione: [0.1.0],
+  stato: [Verificato],
   doc,
 )
 
@@ -94,7 +95,7 @@ Il responsabile sarà particolarmente presente nella fase iniziale per coordinar
 Si occupa della gestione dell'infrastruttura delle repository con test e deploy automatici, della piattaforma Google Cloud e del deployment dei relativi microservizi. Supporta inoltre il team nella configurazione degli ambienti di sviluppo e nell'ottimizzazione del workflow. Il suo contributo orario sarà costante per tutta la durata del progetto, con un picco durante il deploy dell'MVP.
 
 == Analista
-Essenziale nelle prime fasi del progetto per identificare e chiarire i requisiti funzionali, il monte ore associato a questo ruolo diminuirà con il progredire del lavoro, pur restando attivo per aggiornare o adattare i requisiti in base alle discussioni con il proponente. Questo ruolo è fondamentale, poiché facilita il lavoro successivo di progettisti e programmatori.
+Essenziale nelle prime fasi del progetto per identificare e chiarire i requisiti funzionali. Il monte ore associato a questo ruolo diminuirà con il progredire del lavoro, pur restando attivo per aggiornare o adattare i requisiti in base alle discussioni con il proponente. Questo ruolo è fondamentale, poiché facilita il lavoro successivo di progettisti e programmatori.
 
 == Progettista
 Questo ruolo trasforma i requisiti funzionali in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche. Nel contesto di questo progetto, l'aspetto architetturale è particolarmente rilevante; per questo motivo, abbiamo deciso di assegnare un numero consistente di ore a questa funzione, poiché un design inadeguato potrebbe generare difficoltà significative per i programmatori.
