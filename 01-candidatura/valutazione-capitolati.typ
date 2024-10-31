@@ -141,7 +141,7 @@ In conclusione il gruppo ha deciso di non proseguire con la candidatura del pres
 #pagebreak()
 = Capitolato C8: _Requirement Tracker_ di _BlueWind_
 
-Il capitolato *C8 = _Requirement Tracker_ - Plug-in VS Code* proposto da *_Bluewind_* chiede la realizzazione di un _plug-in_ per _Visual Studio Code_ che automatizzerà il tracciamento dei requisiti di progetto nel codice sorgente e fornirà suggerimenti per migliorare la qualità dei requisiti.\
+Il capitolato *C8 = _Requirement Tracker_ - _Plug-in VS Code_* proposto da *_Bluewind_* chiede la realizzazione di un _plug-in_ per _Visual Studio Code_ che automatizzerà il tracciamento dei requisiti di progetto nel codice sorgente e fornirà suggerimenti per migliorare la qualità dei requisiti.\
 
 Il gruppo valuta positivamente la possibilità, specie mediante la molto probabile lettura di codice sorgente, di imparare lo sviluppo in ambito _embedded_, ma soprattutto la creazione di un prodotto che potrebbe far risparmiare tempo prezioso durante lo sviluppo di applicativi.\
 
