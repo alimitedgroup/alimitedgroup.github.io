@@ -7,6 +7,7 @@
   nome: [Dichiarazione impegni],
   data: datetime(day: 31, month: 10, year: 2024),
   regmodifiche: (
+    ("1.0.0", "31-10", "Lorenzo Stefani", "-", "Approvazione documento"),
     ("0.1.0", "31-10", "Sara Ferraro", "-", "Modifica e verifica documento"),
     ("0.0.3", "31-10", "Matteo Schievano", "-", "Migliorie generali e correzioni minori"),
     ("0.0.2", "29-10", "Loris Libralato", "-", "Divisione di ruoli e ore"),
@@ -44,37 +45,37 @@ Seguiranno nei successivi paragrafi i dettagli.
     align(bottom + center, cl)
   }
   figure(
-  table(
-    columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-    inset: 1.1em,
-    stroke: (x, y) => if y >= 1 {
-      1pt + black
-    } else {
-      none
-    },
-    table.header(
-      [],
-      [*Responsabile*],
-      [*Amministratore*],
-      [*Analista*],
-      [*Progettista*],
-      [*Programmatore*],
-      [*Verificatore*],
-      [*Totale*],
-    ),
+    table(
+      columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      inset: 1.1em,
+      stroke: (x, y) => if y >= 1 {
+        1pt + black
+      } else {
+        none
+      },
+      table.header(
+        [],
+        [*Responsabile*],
+        [*Amministratore*],
+        [*Analista*],
+        [*Progettista*],
+        [*Programmatore*],
+        [*Verificatore*],
+        [*Totale*],
+      ),
 
-    [Loris Libralato], [8], [9], [8], [22], [27], [18], [92],
-    [Samuele Esposito], [8], [9], [8], [22], [27], [18], [92],
-    [Sara Ferraro], [9], [8], [9], [22], [25], [19], [92],
-    [Lorenzo Stefani], [8], [8], [9], [21], [27], [19], [92],
-    [Marco Piccoli], [8], [8], [9], [21], [26], [20], [92],
-    [Matteo Scievano], [9], [9], [9], [21], [24], [20], [92],
-    [Emanuele Artusi], [8], [9], [8], [21], [24], [22], [92],
-    [*Totale*], [*58*], [*60*], [*60*], [*150*], [*180*], [*136*], [*644*],
-  ),
-  caption:[Ore di ogni componente per ciascun ruolo]
+      [Loris Libralato], [8], [9], [8], [22], [27], [18], [92],
+      [Samuele Esposito], [8], [9], [8], [22], [27], [18], [92],
+      [Sara Ferraro], [9], [8], [9], [22], [25], [19], [92],
+      [Lorenzo Stefani], [8], [8], [9], [21], [27], [19], [92],
+      [Marco Piccoli], [8], [8], [9], [21], [26], [20], [92],
+      [Matteo Scievano], [9], [9], [9], [21], [24], [20], [92],
+      [Emanuele Artusi], [8], [9], [8], [21], [24], [22], [92],
+      [*Totale*], [*58*], [*60*], [*60*], [*150*], [*180*], [*136*], [*644*],
+    ),
+    caption: [Ore di ogni componente per ciascun ruolo],
   )
-  
+
 }
 #pagebreak()
 
