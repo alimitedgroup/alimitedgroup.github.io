@@ -5,8 +5,8 @@
   data: datetime(day: 23, month: 10, year: 2024),
   tipo: [esterno],
   regmodifiche: (
-    ("1.0.1", "29-10", "Matteo Schievano", "-", "Approvazione documento e aggiunta sezione per approvazione esterna"),
-    ("1.0.0", "25-10","Matteo Schievano","-","Modifiche di formattazione minori"),
+    ("1.0.1", "29-10", "Matteo Schievano", "-", "Aggiunta sezione per approvazione esterna"),
+    ("1.0.0", "25-10", "Matteo Schievano", "-", "Modifiche di formattazione minori e approvazione documento"),
     ("0.1.0", "23-10", "Sara Ferraro    Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Marco Piccoli   Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Marco Piccoli", "-", "Creazione struttura e template documento"),
