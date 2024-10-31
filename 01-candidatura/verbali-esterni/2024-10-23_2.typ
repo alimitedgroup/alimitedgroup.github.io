@@ -95,7 +95,7 @@ Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _Ergon Informa
 #pagebreak()
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [*Ergon Informatica Srl*])
-#figure(image("../../assets/firma_ergon.png", width: 45%))
+#figure(image("../../assets/firma_ergon.png", width: 40%))
 
 
 

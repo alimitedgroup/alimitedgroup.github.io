@@ -96,4 +96,4 @@ Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _M31_ e i suoi
 #pagebreak()
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#text(font:"Futura")[M31]])
-#figure(image("../../assets/firma_m31.png", width: 45%))
+#figure(image("../../assets/firma_m31.png", width: 40%))
