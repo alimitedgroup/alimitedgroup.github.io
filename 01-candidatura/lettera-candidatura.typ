@@ -1,4 +1,4 @@
-// LC 29-10-2024
+// LC 31-10-2024
 
 #import "@preview/fireside:1.0.0": *
 
@@ -48,7 +48,7 @@ Si riassumono inoltre i punti di forza che hanno portato il gruppo alla scelta d
 Per ulteriori dettagli consigliamo di visionare il documento dedicato alla #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.1.0.pdf")[valutazione dei capitolati] #footnote[https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.1.0.pdf]. \
 
 #colbreak()
-Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*]#footnote[https://alimitedgroup.github.io/].\
+Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*]#footnote[https://alimitedgroup.github.io/] e prodotta a partire dai documenti nel #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[*repository*]#footnote[https://github.com/alimitedgroup/alimitedgroup.github.io] dedicato alla documentazione.\
 L'intero gruppo è a disposizione per qualsiasi chiarimento; si riportano i nominativi di tutti i membri di _ALimitedGroup_: \
 
 #table(
