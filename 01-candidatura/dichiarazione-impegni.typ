@@ -25,41 +25,56 @@ per cui il gruppo si è candidato.\
 Verranno esposte di seguito le ore produttive che ciascun componente si impegna di dedicare al progetto, un riassunto dei costi e infine una descrizione dei ruoli che ogni membro del gruppo sarà tenuto a coprire.
 #pagebreak()
 = Impegno
-Ogni membro del gruppo si impegna a dedicare al progetto un totale di 92 ore produttive, ripartite equamente tra i ruoli di *Responsabile (Resp)*, *Amministratore (Am)*, *Analista (An)*, *Progettista (Proge)*, *Programmatore (Progr)* e *Verificatore (Ve)*.\
+Ogni membro del gruppo si impegna a dedicare al progetto un totale di 92 ore produttive, ripartite equamente tra i ruoli di *Responsabile*, *Amministratore*, *Analista*, *Progettista*, *Programmatore* e *Verificatore*.\
 
 Seguiranno nei successivi paragrafi i dettagli.
 
 == Individuale
-#figure(
+
+#v(4em)
+#{
+  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+    align(left, cl)
+  } else if cl.x == 0 {
+    align(bottom + left, cl)
+  } else if cl.y == 0 {
+    rotate(-45deg, reflow: false, align(left, cl))
+  } else {
+    align(bottom + center, cl)
+  }
+
   table(
-    columns: (2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
     inset: 1.1em,
+    stroke: (x, y) => if y >= 1 {
+      1pt + black
+    } else {
+      none
+    },
     table.header(
-      [*Nome*],
-      [*Resp*],
-      [*Am*],
-      [*An*],
-      [*Proge*],
-      [*Progr*],
-      [*Ve*],
-      [*Tot*],
+      [],
+      [*Responsabile*],
+      [*Amministratore*],
+      [*Analista*],
+      [*Progettista*],
+      [*Programmatore*],
+      [*Verificatore*],
+      [*Totale*],
     ),
 
-    [Loris Libralato], [8h], [9h], [8h], [22h], [27h], [18h], [92h],
-    [Samuele Esposito], [8h], [9h], [8h], [22h], [27h], [18h], [92h],
-    [Sara Ferraro], [9h], [8h], [9h], [22h], [25h], [19h], [92h],
-    [Lorenzo Stefani], [8h], [8h], [9h], [21h], [27h], [19h], [92h],
-    [Marco Piccoli], [8h], [8h], [9h], [21h], [26h], [20h], [92h],
-    [Matteo Schievano], [9h], [9h], [9h], [21h], [24h], [20h], [92h],
-    [Emanuele Artusi], [8h], [9h], [8h], [21h], [24h], [22h], [92h],
-    [*Totale*], [*58h*], [*60h*], [*60h*], [*150h*], [*180h*], [*136h*], [*644h*],
-  ),
-  caption: [Divisione oraria individuale],
-)
+    [Loris Libralato], [8], [9], [8], [22], [27], [18], [92],
+    [Samuele Esposito], [8], [9], [8], [22], [27], [18], [92],
+    [Sara Ferraro], [9], [8], [9], [22], [25], [19], [92],
+    [Lorenzo Stefani], [8], [8], [9], [21], [27], [19], [92],
+    [Marco Piccoli], [8], [8], [9], [21], [26], [20], [92],
+    [Matteo Scievano], [9], [9], [9], [21], [24], [20], [92],
+    [Emanuele Artusi], [8], [9], [8], [21], [24], [22], [92],
+    [*Totale*], [*58*], [*60*], [*60*], [*150*], [*180*], [*136*], [*644*],
+  )
+}
 #pagebreak()
 
-== Riassunto costi
-<par2.2>
+== Riassunto costi <par2.2>
 
 #figure(
   table(
@@ -72,18 +87,16 @@ Seguiranno nei successivi paragrafi i dettagli.
       [*Costo*],
     ),
 
-    [Responsabile], [30€/h], [58h], [1740€],
-    [Amministratore], [20€/h], [60h], [1200€],
-    [Analista], [25€/h], [60h], [1500€],
-    [Progettista], [25€/h], [150h], [3750€],
-    [Programmatore], [15€/h], [180h], [2700€],
-    [Verificatore], [15€/h], [136h], [2040€],
-    [*Totale*], [-], [*644h*], [*12930€*],
+    [Responsabile], [30€/h], [58h], [1.740€],
+    [Amministratore], [20€/h], [60h], [1.200€],
+    [Analista], [25€/h], [60h], [1.500€],
+    [Progettista], [25€/h], [150h], [3.750€],
+    [Programmatore], [15€/h], [180h], [2.700€],
+    [Verificatore], [15€/h], [136h], [2.040€],
+    [*Totale*], [-], [*644h*], [*12.930€*],
   ),
   caption: [riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
 ) <tab_2>
-
-
 
 #{
   let p = plot(data: (
@@ -126,7 +139,7 @@ Il verificatore ha il compito di garantire che tutto ciò che è prodotto, dalla
 #pagebreak()
 
 = Costi
-Il costo previsto per la realizzazione del progetto è, come anche osservabile dalla @tab_2 nella @par2.2, di *Euro 12˙930*.
+Il costo previsto per la realizzazione del progetto è, come anche osservabile dalla @tab_2 nella @par2.2, di *Euro 12.930*.
 
 = Consegna
 La data ultima per la consegna del progetto è fissata improrogabilmente al giorno *31 marzo 2025*.
