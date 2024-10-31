@@ -10,7 +10,7 @@
     ("0.0.1", "15-10", "Samuele Esposito", "-", "Creazione struttura e template documento"),
   ),
   versione: [1.0.0],
-  stato: [Verificato],
+  stato: [Approvato],
   presenze: (
     "Emanuele Artusi",
     "Loris Libralato",
