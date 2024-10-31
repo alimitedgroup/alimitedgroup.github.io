@@ -108,7 +108,7 @@ Il verificatore ha il compito di garantire che il prodotto finale rispetti gli s
 #pagebreak()
 
 = Costi
-Il costo previsto per la realizzazione del progetto è di *Euro 12930*.
+Il costo previsto per la realizzazione del progetto è di *Euro 12˙930*.
 
 = Consegna
 La data ultima per la consegna del progetto è fissata improrogabilmente al *31 marzo 2025*.

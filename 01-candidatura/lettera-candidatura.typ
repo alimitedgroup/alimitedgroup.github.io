@@ -39,12 +39,12 @@ Egregio Prof. Cardin, \
 con la presente il gruppo _ALimitedGroup_ desidera comunicarVi formalmente la propria candidatura per la realizzazione del prodotto commissionato, intitolato: \
 #align(center, text(12pt)[*Sistema di Gestione di un Magazzino Distribuito*])
 proposto dall'azienda #text(font: "Futura", weight: 500)[M31], capitolato di progetto *C6*. \
-Come specificato nel documento di #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%200.0.2.pdf")[dichiarazione degli impegni], _ALimitedGroup_ ha preventivato un costo totale per la realizzazione del progetto di *Euro 12˙930* ed ha fissato la data ultima di consegna al *31 Marzo 2025*. \
+Come specificato nel documento di #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%200.0.2.pdf")[dichiarazione degli impegni], _ALimitedGroup_ ha preventivato un costo totale per la realizzazione del progetto di *Euro 12˙930* ed ha fissato il termine ultimo di consegna al *31 Marzo 2025*. \
 Si riassumono inoltre i punti di forza che hanno portato il gruppo alla scelta del capitolato:
 - *Interesse immediato* per il capitolato, favorito dalla sua *differenza tematica* rispetto agli altri progetti di Ingegneria del Software proposti nell'anno accademico.
-- *Valutazione positiva dell’incontro con l’azienda* M31, che ha fornito chiarimenti sui dubbi sorti e ha confermato l’interesse del gruppo.
-- Apprezzamento per l’*utilizzo di linguaggi di programmazione moderni*, come Go, e di *tecnologie avanzate* e formative come Kubernetes e Google Cloud Platform.
-- Forte *disponibilità dell'azienda* M31 a fornire supporto e a collaborare con il gruppo.
+- *Valutazione positiva dell'incontro con l'azienda* #text(font: "Futura", weight: 500)[M31], che ha fornito chiarimenti sui dubbi sorti e ha confermato l’interesse del gruppo.
+- Apprezzamento per l'*utilizzo di linguaggi di programmazione moderni*, come _Go_, e di *tecnologie avanzate* e formative come _Kubernetes_ e _Google Cloud Platform_.
+- Forte *disponibilità dell'azienda* #text(font: "Futura", weight: 500)[M31] a fornire supporto e a collaborare con il gruppo.
 Per ulteriori dettagli consigliamo di visionare il documento dedicato alla #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%200.0.4.pdf")[valutazione dei capitolati]. \
 
 Tutta la documentazione redatta e prodotta da _ALimitedGroup_ viene pubblicata nel #link("https://alimitedgroup.github.io/")[*sito ufficiale*].\
