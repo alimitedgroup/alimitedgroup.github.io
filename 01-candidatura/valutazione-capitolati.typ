@@ -1,10 +1,17 @@
-// VDC 30-10-2024
+// VDC 31-10-2024
 
 #import "../lib.typ": *
 #show: doc => documento(
   nome: [Valutazione dei capitolati],
-  data: datetime(day: 28, month: 10, year: 2024),
+  data: datetime(day: 31, month: 10, year: 2024),
   regmodifiche: (
+    (
+      "0.1.0",
+      "31-10",
+      "Sara Ferraro",
+      "-",
+      "Modifiche minori e verifica documento",
+    ),
     (
       "0.0.5",
       "30-10",
@@ -35,8 +42,8 @@
       "Creazione struttura e template documento",
     ),
   ),
-  versione: [0.0.5],
-  stato: [In redazione],
+  versione: [0.1.0],
+  stato: [Verificato],
   doc,
 )
 
@@ -122,7 +129,7 @@ Concludendo, i componenti del gruppo _ALimitedGroup_ si dicono unanimemente d'ac
 
 #pagebreak()
 = Capitolato C7: LLM: Assistente Virtuale di _Ergon_
-Il capitolato *C7 = LLM: Assistente Virtuale* proposto da *_Ergon_* ha come scopo la realizzazione di un assistente virtuale che, per l'appunto, assista i clienti nella ricerca di informazioni sui prodotti disponibili e risponda alla domande più frequenti.\
+Il capitolato *C7 = LLM: Assistente Virtuale* proposto da *_Ergon_* ha come scopo la realizzazione di un assistente virtuale che supporti i clienti nella ricerca di informazioni sui prodotti disponibili e risponda alla domande più frequenti.\
 
 Il gruppo _ALimitedGroup_ ha mosso un interesse particolare nei confronti di questo capitolato e per questo motivo ha infatti deciso di realizzare un incontro formativo con l'azienda i cui esiti possono essere consultati nel relativo #link("https://alimitedgroup.github.io/VE%2023-10-2024%201.0.0%20(Ergon).pdf")[#underline[verbale esterno]].\
 
