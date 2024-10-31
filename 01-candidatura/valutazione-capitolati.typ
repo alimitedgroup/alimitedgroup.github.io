@@ -6,6 +6,13 @@
   data: datetime(day: 31, month: 10, year: 2024),
   regmodifiche: (
     (
+      "1.0.0",
+      "31-10",
+      "Loris Libralato",
+      "-",
+      "Approvazione documento",
+    ),
+    (
       "0.1.0",
       "31-10",
       "Sara Ferraro",
@@ -42,7 +49,7 @@
       "Creazione struttura e template documento",
     ),
   ),
-  versione: [0.1.0],
+  versione: [1.0.0],
   stato: [Verificato],
   doc,
 )
