@@ -7,12 +7,13 @@
   nome: [Dichiarazione impegni],
   data: datetime(day: 31, month: 10, year: 2024),
   regmodifiche: (
+    ("0.1.0", "31-10", "Sara Ferraro", "-", "Modifica e verifica documento"),
     ("0.0.3", "31-10", "Matteo Schievano", "-", "Migliorie generali e correzioni minori"),
     ("0.0.2", "29-10", "Loris Libralato", "-", "Divisione di ruoli e ore"),
     ("0.0.1", "28-10", "Loris Libralato", "-", "Creazione struttura documento"),
   ),
-  versione: [0.0.3],
-  stato: [In redazione],
+  versione: [0.1.0],
+  stato: [Verificato],
   doc,
 )
 
@@ -42,7 +43,7 @@ Seguiranno nei successivi paragrafi i dettagli.
   } else {
     align(bottom + center, cl)
   }
-
+  figure(
   table(
     columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
     inset: 1.1em,
@@ -70,7 +71,10 @@ Seguiranno nei successivi paragrafi i dettagli.
     [Matteo Scievano], [9], [9], [9], [21], [24], [20], [92],
     [Emanuele Artusi], [8], [9], [8], [21], [24], [22], [92],
     [*Totale*], [*58*], [*60*], [*60*], [*150*], [*180*], [*136*], [*644*],
+  ),
+  caption:[Ore di ogni componente per ciascun ruolo]
   )
+  
 }
 #pagebreak()
 
