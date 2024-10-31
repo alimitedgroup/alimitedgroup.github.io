@@ -1,9 +1,9 @@
-// VDC 30-10-2024
+// VDC 31-10-2024
 
 #import "../lib.typ": *
 #show: doc => documento(
   nome: [Valutazione dei capitolati],
-  data: datetime(day: 28, month: 10, year: 2024),
+  data: datetime(day: 31, month: 10, year: 2024),
   regmodifiche: (
     (
       "0.1.0",
