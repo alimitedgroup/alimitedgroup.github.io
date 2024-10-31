@@ -3,7 +3,7 @@
 #import "../../lib.typ": *
 #show: doc => verbale(
   regmodifiche: (
-    ("1.0.0", "25-10", "Marco Piccoli", "-", "Approvazione documento"),
+    ("1.0.0", "25-10", "Loris Libralato", "-", "Approvazione documento"),
     ("0.1.0", "24-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Matteo Schievano", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Matteo Schievano", "-", "Creazione struttura e template documento"),
