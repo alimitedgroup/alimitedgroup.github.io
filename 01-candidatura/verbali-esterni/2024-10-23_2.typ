@@ -5,13 +5,14 @@
   data: datetime(day: 23, month: 10, year: 2024),
   tipo: [esterno],
   regmodifiche: (
-    ("1.0.0", "29-10", "Matteo Schievano", "-", "Approvazione documento e aggiunta sezione per approvazione esterna"),
-    ("0.1.1","25-10","Matteo Schievano","-","Modifiche di formattazione minori",),
+    ("2.0.0", "31-10", "Marco Piccoli", "-", "Approvazione esterna del documento da parte di Ergon"),
+    ("1.0.1", "29-10", "Matteo Schievano", "-", "Approvazione documento e aggiunta sezione per approvazione esterna"),
+    ("1.0.0","25-10","Matteo Schievano","-","Modifiche di formattazione minori",),
     ("0.1.0", "23-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "23-10", "Sara Ferraro", "-", "Redazione documento"),
     ("0.0.1", "23-10", "Sara Ferraro", "-", "Creazione struttura e template documento"),
   ),
-  versione: [1.0.0],
+  versione: [2.0.0],
   stato: [Approvato],
   presenze: (
     "Samuele Esposito",
@@ -94,7 +95,7 @@ Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _Ergon Informa
 #pagebreak()
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [*Ergon Informatica Srl*])
-
+#figure(image("../../assets/firma_ergon.png", width: 45%))
 
 
 

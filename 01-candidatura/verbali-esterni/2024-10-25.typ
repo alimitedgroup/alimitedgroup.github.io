@@ -5,18 +5,13 @@
   data: datetime(day: 25, month: 10, year: 2024),
   tipo: [esterno],
   regmodifiche: (
-    (
-      "1.0.0",
-      "29-10",
-      "Matteo Schievano",
-      "-",
-      "Modifiche minori, aggiunta della sezione per approvazione esterna e approvazione documento",
-    ),
+    ("2.0.0","31-10","Marco Piccoli","-","Approvazione esterna del documento da parte di M31",),
+    ("1.0.0","29-10","Matteo Schievano","-","Modifiche minori, aggiunta della sezione per approvazione esterna e approvazione documento",),
     ("0.1.0", "29-10", "Marco Piccoli", "-", "Modifica e verifica documento"),
     ("0.0.2", "25-10", "Samuele Esposito", "-", "Redazione documento"),
     ("0.0.1", "25-10", "Samuele Esposito", "-", "Creazione struttura e template del documento"),
   ),
-  versione: [1.0.0],
+  versione: [2.0.0],
   stato: [Approvato],
   presenze: (
     "Emanuele Artusi",
@@ -100,4 +95,5 @@ Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _M31_ e i suoi
 
 #pagebreak()
 = Approvazione esterna
-#approvazione-esterna(nome_parte_esterna: [*M31*])
+#approvazione-esterna(nome_parte_esterna: [#text(font:"Futura")[M31]])
+#figure(image("../../assets/firma_m31.png", width: 45%))
