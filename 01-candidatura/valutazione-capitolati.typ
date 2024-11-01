@@ -101,7 +101,7 @@ In secondo luogo ha avuto importanza in questa decisione anche gli interessi dei
 
 Il capitolato *C4 = NearYou - Smart custom advertising platform* di *_SyncLab_* ha come obbiettivo quello di realizzare una piattaforma di _advertising_ personalizzato mediante l'aiuto dell'_Intelligenza Artificiale_ cercando di così risolvere definitvamente il problema della pubblicità non mirata e poco efficace.\
 
-Il gruppo _ALimitedGroup_ ha mosso un interesse particolare nei confronti di questo capitolato e per questo motivo ha infatti deciso di realizzare un incontro formativo con l'azienda i cui esiti possono essere consultati nel relativo #link("https://alimitedgroup.github.io/VE%2023-10-2024%201.0.0%20(SyncLab).pdf")[#underline[verbale esterno]].\
+Il gruppo _ALimitedGroup_ ha mosso un interesse particolare nei confronti di questo capitolato e per questo motivo ha infatti deciso di realizzare un incontro formativo con l'azienda i cui esiti possono essere consultati nel relativo #link("https://alimitedgroup.github.io/VE%2023-10-2024%201.0.1%20(SyncLab).pdf")[#underline[verbale esterno]].\
 
 Nel dettaglio, _ALimitedGroup_ ha valutato positivamente la possibilità di approfondire tecnologie di gestione di _Big Data_ e _Data Streaming_ e l'occasione di realizzare una piattaforma che, per essere efficace, deve avere un'architettura in grado di supportare un alto numero di utenti ed eventi.
 Ha inoltre ritenuto molto positivo l'impiego dei _Large Language Models (LLM)_ ad un caso diverso dalla realizzazione di un _chatbot_ e con obbiettivi assolutamente validi per il mercato attuale.\
@@ -126,7 +126,7 @@ Il capitolato *C6 = Sistema di gestione di un magazzino distribuito* di #M31 ha 
 
 _ALimitedGroup_ ha mosso verso questo capitolato sin da subito un particolare interesse, valutando positivamente anche l'importante differenza tematica nei confronti di altri capitolati presentati per il progetto di _Ingegneria del Software_ di questo anno accademico.\
 
-Per poter approfondire alcuni dubbi sorti durante l'esame del capitolato, il gruppo ha deciso di concordare un incontro con l'azienda #M31: l'incontro, i cui esiti possono essere approfonditi nel relativo #link("https://alimitedgroup.github.io/VE%2025-10-2024%201.0.0%20(M31).pdf")[#underline[verbale esterno]], si è dimostrato molto positivo e ha confermato la volontà del gruppo a candidarsi per questo capitolato.\
+Per poter approfondire alcuni dubbi sorti durante l'esame del capitolato, il gruppo ha deciso di concordare un incontro con l'azienda #M31: l'incontro, i cui esiti possono essere approfonditi nel relativo #link("https://alimitedgroup.github.io/VE%2025-10-2024%202.0.0%20(M31).pdf")[#underline[verbale esterno]], si è dimostrato molto positivo e ha confermato la volontà del gruppo a candidarsi per questo capitolato.\
 
 Complessivamente, il gruppo ha valutato positivamente l'utilizzo di moderni linguaggi di programmazione, come _Go_, e tecnologie interessanti anche dal punto di vista formativo (quali, ad esempio, _Kubernetes_ o _Google Cloud Platform_), ma ha anche apprezzato la forte disponibilità di #M31.\
 
@@ -138,7 +138,7 @@ Concludendo, i componenti del gruppo _ALimitedGroup_ si dicono unanimemente d'ac
 = Capitolato C7: LLM: Assistente Virtuale di _Ergon_
 Il capitolato *C7 = LLM: Assistente Virtuale* proposto da *_Ergon_* ha come scopo la realizzazione di un assistente virtuale che supporti i clienti nella ricerca di informazioni sui prodotti disponibili e risponda alla domande più frequenti.\
 
-Il gruppo _ALimitedGroup_ ha mosso un interesse particolare nei confronti di questo capitolato e per questo motivo ha infatti deciso di realizzare un incontro formativo con l'azienda i cui esiti possono essere consultati nel relativo #link("https://alimitedgroup.github.io/VE%2023-10-2024%201.0.0%20(Ergon).pdf")[#underline[verbale esterno]].\
+Il gruppo _ALimitedGroup_ ha mosso un interesse particolare nei confronti di questo capitolato e per questo motivo ha infatti deciso di realizzare un incontro formativo con l'azienda i cui esiti possono essere consultati nel relativo #link("https://alimitedgroup.github.io/VE%2023-10-2024%202.0.0%20(Ergon).pdf")[#underline[verbale esterno]].\
 
 Nel dettaglio, il gruppo, ha valutato molto positivamente la formazione e il supporto offertaci dall'azienda: quest'ultima mette infatti a disposizione corsi di formazione specifici e l'affiancamento diretto con un referente dedicato.
 L'azienda _Ergon_, inoltre, è flessibile sulle tecnologie da utilizzare per la realizzazione di questo capitolato facendo, così, aumentare il nostro interesse.\
