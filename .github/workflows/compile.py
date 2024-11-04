@@ -1,4 +1,4 @@
-TEMPLATE = '<li><a href="{{link}}">{{name}}</a></li>'
+TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a></li>'
 
 import sys
 import json
