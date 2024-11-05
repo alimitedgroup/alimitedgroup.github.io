@@ -1,12 +1,12 @@
 #import "/lib/verbale.typ": *
 
 #show: body => verbale(
-  data: datetime(day: 28, month: 10, year: 2024),
+  data: datetime(day: 04, month: 11, year: 2024),
   tipo: [interno],
   versioni: (
     (
       vers: "0.1.0",
-      date: datetime(day: 30, month: 10, year: 2024),
+      date: datetime(day: 05, month: 11, year: 2024),
       autore: p.matteo,
       //verifica: SPRITZ{INSERISCI_IL_VERIFICATORE},
       descr: "Redazione del contenuto",
