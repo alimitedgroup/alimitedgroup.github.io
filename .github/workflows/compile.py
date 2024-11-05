@@ -10,7 +10,7 @@ from pathlib import Path
 from shutil import rmtree, copytree, copyfile
 from collections import defaultdict
 
-source_files = glob('*/**/*.typ', recursive=True)
+source_files = glob('*/**/*.typ', recursive=True) + ['docs.typ']
 options = ['--root', '.', '--ignore-system-fonts', '--font-path', 'assets']
 
 # Functions for handling "typst query" output
@@ -78,12 +78,11 @@ def main():
     documenti = defaultdict(list)
 
     for filename in sorted(source_files):
-        if '.pdf' in filename:
+        if '.pdf' in filename or 'lib/' in filename or filename.strip() == '':
+            logging.info(f'Skipping {filename}…')
             continue
 
         filename = filename.strip()
-        if filename == "" or len(filename.split('/')) == 1:
-            continue
         logging.info(f"Compiling {filename}…")
         filename_pdf = filename.removesuffix('.typ') + '.pdf'
 
