@@ -174,27 +174,26 @@
   text(16pt, weight: "black", fill: black)[Registro delle Modifiche]
   table(
     fill: (x, y) => if (y == 0) {
-      luma(200)
+      rgb("#800080")
     } else if (calc.gcd(y, 2) == 2) {
-      luma(240)
+      rgb("#bf7fbf")
     } else {
-      white
+      rgb("#d8b2d8")
     },
-    columns: 5,
+    columns: (auto, auto, 0.5fr, 0.5fr, 1fr),
     inset: 5pt,
     align: center,
     table.header(
-      text(12pt)[*Vers.*],
-      text(12pt)[*Data*],
-      text(12pt)[*Autore*],
-      text(12pt)[*Verificatore*],
-      text(12pt)[*Descrizione*],
+      text(12pt, fill: white)[*Vers.*],
+      text(12pt, fill: white)[*Data*],
+      text(12pt, fill: white)[*Autore*],
+      text(12pt, fill: white)[*Verificatore*],
+      text(12pt, fill: white)[*Descrizione*],
     ),
-
     ..for mod in modifiche {
       (
         mod.vers,
-        mod.data.display("[year]-[month]-[day]"),
+        mod.date.display("[year]-[month]-[day]"),
         abbrev(mod.autore),
         if "verifica" in mod {
           abbrev(mod.verifica)
