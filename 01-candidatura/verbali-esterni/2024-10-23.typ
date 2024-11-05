@@ -1,6 +1,6 @@
 // VE 23-10-2024
 
-#import "../../lib.typ": *
+#import "/lib/legacy.typ": *
 #show: doc => verbale(
   data: datetime(day: 23, month: 10, year: 2024),
   tipo: [esterno],

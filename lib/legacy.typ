@@ -1,5 +1,3 @@
-#import "@preview/polylux:0.3.1": *
-
 #let documento(
   versione: [],
   nome: [],
@@ -17,7 +15,7 @@
   [ #metadata[#nome #versione] <titolo> ]
 
   // Prima pagina
-  image("assets/altd.png", height: 7cm)
+  image("/assets/altd.png", height: 7cm)
   v(4em)
   text(24pt, weight: "bold", fill: black)[#nome \ Versione #versione]
   v(2.25em)
@@ -53,7 +51,7 @@
       #context [
         Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
       ]
-    ]
+    ],
   )
   set align(left)
   set heading(numbering: "1.")
@@ -143,7 +141,7 @@
   }
 
   // Prima pagina
-  image("assets/altd.png", height: 7cm)
+  image("/assets/altd.png", height: 7cm)
   v(4em)
   text(24pt, weight: "bold", fill: black, titolo)
   v(2.25em)

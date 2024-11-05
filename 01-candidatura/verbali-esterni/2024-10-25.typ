@@ -1,6 +1,6 @@
 // VE 25-10-2024
 
-#import "../../lib.typ": *
+#import "/lib/legacy.typ": *
 #show: doc => verbale(
   data: datetime(day: 25, month: 10, year: 2024),
   tipo: [esterno],
@@ -95,5 +95,5 @@ Tutti i presenti del gruppo _ALimitedGroup_ ringraziano l'azienda _M31_ e i suoi
 
 #pagebreak()
 = Approvazione esterna
-#approvazione-esterna(nome_parte_esterna: [#text(font:"Futura")[M31]])
+#approvazione-esterna(nome_parte_esterna: [#text(font: "Futura")[M31]])
 #figure(image("../../assets/firma_m31.png", width: 40%))

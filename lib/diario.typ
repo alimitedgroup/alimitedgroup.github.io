@@ -182,7 +182,7 @@ contenuto3: elenco della terza sezione
     aspect-ratio: "16-9",
     footer: [ALimitedGroup, #link("mailto:alimitedgroup@gmail.com")],
     short-title: [Diario di bordo],
-    logo: image("assets/altd.png"),
+    logo: image("/assets/altd.png"),
     color: rgb(155,0,20)  // colore linea decorativa
   )
 
@@ -208,7 +208,7 @@ contenuto3: elenco della terza sezione
       [Lorenzo Stefani],
     ),
     date: date.display("[day]/[month]/[year]"),
-    secondlogo: image("assets/unipd.svg"),
+    secondlogo: image("/assets/unipd.svg"),
     watermark: none,
   )
 
