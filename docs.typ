@@ -1,5 +1,5 @@
 #import "@preview/tidy:0.3.0"
-#import "/lib/documentazione.typ" as docs-template
+#import "lib/documentazione.typ" as docs-template
 
 #metadata([docs]) <titolo>
 

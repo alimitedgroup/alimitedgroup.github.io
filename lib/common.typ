@@ -116,7 +116,7 @@
   set align(center)
 
   // Prima pagina
-  image("/assets/altd.png", height: 7cm)
+  image("../assets/altd.png", height: 7cm)
   v(4em)
   text(24pt, weight: "bold", fill: black)[#titolo]
   v(2.25em)
@@ -180,9 +180,10 @@
     } else {
       rgb("#d8b2d8")
     },
-    columns: (auto, auto, 0.5fr, 0.5fr, 1fr),
+    columns: (0.25fr, 0.5fr, 0.5fr, 0.5fr, 1fr),
     inset: 5pt,
     align: center,
+    stroke: none,
     table.header(
       text(12pt, fill: white)[*Vers.*],
       text(12pt, fill: white)[*Data*],
