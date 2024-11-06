@@ -1,4 +1,4 @@
-#import "/lib/verbale.typ": *
+#import "../../../lib/verbale.typ": *
 
 #show: body => verbale(
   data: datetime(day: 04, month: 11, year: 2024),
@@ -8,13 +8,13 @@
       vers: "0.1.0",
       date: datetime(day: 05, month: 11, year: 2024),
       autore: p.matteo,
-      //verifica: SPRITZ{INSERISCI_IL_VERIFICATORE},
+      verifica: p.marco,
       descr: "Redazione del contenuto",
     ),
   ),
   stato: [Redatto],
   presenze: (p.emanuele, p.loris, p.marco, p.matteo, p.samuele, p.sara),
-  odg: [Quinta riunione di ALimitedGroup: vengono analizzate le osservazioni nel documento di aggiudicazione degli appalti per procedere a migliorare il nostro Way of Working],
+  odg: [Quinta riunione di ALimitedGroup: vengono analizzate le osservazioni nel documento di aggiudicazione degli appalti per procedere a migliorare il nostro _Way of Working_],
   disambiguatore: [],
   body,
 )
@@ -37,29 +37,29 @@
 Il gruppo _ALimitedGroup_ ha accolto la problematica riguardante le mancate indicazioni in merito alla rotazione dei ruoli, non fornite nei documenti di candidatura.
 
 I componenti hanno compreso l'importanza di tale operazione e hanno stabilito che, almeno in questa fase iniziale segnata dall'inizio vero e proprio del progetto, i ruoli subiranno un cambiamento ogni *circa 7 giorni*.\
-Il gruppo concorda però nell'affermare che tale periodo di tempo non può che essere solo che momentaneo e con lo scopo di produrre efficacemente la prima documentazione di base, volta principalmente a sanare le problematiche rilevate durante l'aggiudicazione degli appalti.
+Il gruppo concorda però nell'affermare che tale periodo di tempo non può che essere solo momentaneo e con lo scopo di produrre efficacemente la prima documentazione di base, volta principalmente a sanare le problematiche rilevate durante l'aggiudicazione degli appalti.
 
 Il gruppo prevede che nel prossimo futuro il cambiamento dei ruoli *non potrà sicuramente avvenire prima di 14 giorni*, minimo periodo per produrre avanzamenti concreti, impossibili da realizzare con un periodo di tempo più corto.
 
-#pagebreak()
-
 == Migliorie alla parte pubblica del repository
 
-Il gruppo accoglie il suggerimento riguardante l'apertura delle risorse in una scheda dedicata: decide perciò di modificare la parte pubblica del repository (sito web) quanto prima per ottenere questo effetto.
+Il gruppo accoglie il suggerimento riguardante l'apertura delle risorse in una scheda dedicata: decide, perciò, di modificare la parte pubblica del _repository_ (sito web) quanto prima per ottenere questo effetto.
 
-Per migliorare ulteriormente l'organizzazione del repository, stabilisce altresì di inserire tutti i nuovi documenti prodotti dal giorno 04-11-2024 sino al superamento della Requirements and Tecnology Baseline (RTB) in una sezione appositamente realizzata: la parte pubblica del repository (sito web) dovrà riflettere questo cambiamento.
+Per migliorare ulteriormente l'organizzazione del _repository_, stabilisce altresì di inserire tutti i nuovi documenti prodotti dal giorno 04-11-2024 sino al superamento della _Requirements and Tecnology Baseline_ (RTB) in una sezione appositamente realizzata: la parte pubblica del _repository_ (sito web) dovrà riflettere questo cambiamento.
 
 #pagebreak()
 
 == Importanti cambiamenti nella redazione dei verbali
 
 _ALimitedGroup_ comprende l'importanza che non è possibile modificare nuovamente un verbale o un documento senza prima che questo venga verificato e comprende anche la necessità di tracciare le decisioni e le attività che seguono le riunioni.\
-Per questo ed altri motivi a carattere pricipalmente migliorativo, il gruppo ha deciso che effetterà degli importanti cambiamenti alla struttura e al metodo di redazione dei verbali, qui di seguito indicata.
+Per questo ed altri motivi a carattere principalmente migliorativo, il gruppo ha deciso che effettuerà degli importanti cambiamenti alla struttura e al metodo di redazione dei verbali, qui di seguito indicata.
 
 === Modifiche alla struttura dei verbali
 
 Nel corso della redazione dei verbali, il gruppo ha determinato che il commento iniziale stabilito dal *verbale interno* del #link("https://alimitedgroup.github.io/VI%2023-10-2024%201.0.0.pdf")[*23-10-2024*] alla *sezione 2.4* non risulta essere di alcuna utilità: lo sviluppo del repository ha rimosso l'esigenza di inserirlo nel documento grazie a meccanismi di querying automatici forniti da typst.
 Ha tuttavia trovato molto positiva la nomenclatura adottata: per questo motivo il gruppo ha deciso sarà *mantenuta* con lo scopo di nominare i file prodotti. \ \
+
+#pagebreak()
 
 Per soddisfare l'esigenza di verificare un verbale subito a seguito di una modifica, il registro delle modifiche conterrà ora le seguenti colonne:
 
@@ -78,9 +78,9 @@ Per soddisfare l'esigenza di verificare un verbale subito a seguito di una modif
 
 Con la data che indica il momento in cui la modifica effetuata dall'*autore* è stata verificata dal *verificatore*
 
-Il gruppo ha anche stabilito delle modifiche relative al metodo di stesura dei verbali: si veda la @metodo_stesura più avanti in questo documento. \
+Il gruppo ha anche stabilito delle modifiche relative al metodo di stesura dei verbali contenute nella @metodo_stesura di questo documento. \
 
-Per la necessità di tracciamento delle decisioni e delle azioni intraprese, la sezione *"Esiti della riunione"* dovrà ora contenere una tabella riepilogativa delle decisioni e azioni che seguono alla riunione. Tale tabella avrà la seguente struttura:
+Per la necessità di tracciamento delle decisioni e delle azioni intraprese, viene aggiunta la sezione *"Tabella delle decisioni e delle azioni"* che conterrà una tabella riepilogativa delle decisioni e azioni che seguono alla riunione. Tale tabella avrà la seguente struttura:
 
 #table(
   columns: (0.5fr, 0.5fr),
@@ -94,13 +94,15 @@ Per la necessità di tracciamento delle decisioni e delle azioni intraprese, la 
 
 dove:
 
-- *ID* è un codice univoco che rappresenta la decisione o l'azione. Tale valore può essere dei seguenti tipi:
+- *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
   - *DI\#* ovvero *Decisione Interna*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
   - *AP\#* ovvero *Attività Passata*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_ prima di procedere ad eventuali modifiche);
   - *REPOSITORY\#* con, al posto di *REPOSITORY*, il nome della repository ospitante l'_issue_ associata (per convenzione, il nome *DOCS* sarà riservato per riferirsi alla repository contenente la documentazione), e con, al posto di *\#*, il numero di tale _issue_. Viene utilizzata con lo stesso scopo di *AP\#* ma per le decisioni che comportano un'azione avente effettivamente una _issue_ associata nel sistema di ticketing.
-- *Dettaglio* una breve descrizione della decisione o azione intrapresa. \ \
+- *Dettaglio* è una breve descrizione della decisione o azione intrapresa. \ \
 
 Per convenzione, la tabella dovrà elencare prima le *DI*, poi le *AP* e infine le *REPOSITORY*.
+
+#pagebreak()
 
 === Metodo di stesura <metodo_stesura>
 
@@ -125,7 +127,7 @@ dove:
 - *MINOR*: subisce un incremento *solo* quando completato il processo di modifica *e* di verifica
 - *PATCH*: subisce un incremento per modifiche di entità minore, quali correzioni ortografiche e/o di sintassi.
 
-Lo spunto d'uso di tale sistema proviene dal sito web #link("https://semverdoc.org/")[semverdoc.org].
+Lo spunto d'uso di tale sistema proviene dal seguente #underline[#link("https://semverdoc.org/")[sito web]].
 
 #pagebreak()
 == Recupero delle precedenti decisioni e attività
@@ -197,21 +199,17 @@ Il gruppo ha individuato, nei precedenti verbali, le seguenti decisioni intrapre
   "Realizzazione Lettera di Candidatura (" + link("https://alimitedgroup.github.io/VI%2028-10-2024%201.0.0.pdf")[VI 28-10-2024] + ", sezione 3)",
 )
 
-#pagebreak()
-
 == Inizio redazioni di ulteriori documenti
 
 Il gruppo ha deciso di iniziare la redazione di questo verbale e di un nuovo documento, il *Glossario*, che conterrà i termini frequentementi utilizzati nei vari documenti.
-
-#pagebreak()
 
 == Assegnazione dei ruoli sino al giorno 11-11-2024
 
 Anche osservando quanto definito nella sezione 5, si decide che sino all'11-11-2024, saranno assegnati i seguenti ruoli: \
 
-*#p.samuele.nome #p.samuele.cognome* -> *Responsabile* \
-*#p.sara.nome #p.sara.cognome* -> *Verificatore*\
-*#p.marco.nome #p.marco.cognome* -> *Verificatore*\
+*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile* \
+*#p.sara.nome #p.sara.cognome* $arrow.r$ *Verificatore*\
+*#p.marco.nome #p.marco.cognome* $arrow.r$ *Verificatore*\
 
 Sarà assegnato a *#p.matteo.nome #p.matteo.cognome* il compito di redazione di questo verbale, mentre ai rimanenti componenti la redazione del Glossario.
 
@@ -221,7 +219,9 @@ Sarà assegnato a *#p.matteo.nome #p.matteo.cognome* il compito di redazione di 
 
 Il gruppo conclude la riunione con i compiti assegnati e le decisioni e azioni intraprese, riservandosi anche il compito di iniziare ad analizzare i requisiti del capitolato da eventualmente contrattare leggendo attentamente, in maniera asincrona, il capitolato: i risultati saranno discussi e messi per forma scritta nelle prossime riunioni.
 
-== Tabella delle decisioni e delle azioni
+#pagebreak()
+
+= Tabella delle decisioni e delle azioni
 
 #tabella-decisioni(
   "D13",
