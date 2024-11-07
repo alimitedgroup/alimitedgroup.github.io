@@ -37,6 +37,7 @@
   set enum(indent: 1em)
   set document(title: titolo, date: data)
   set text(lang: "it", font: "Hanken Grotesk")
+  show link: underline
 
   // @typstyle off
   prima-pagina(
@@ -94,20 +95,20 @@
   set align(center)
   table(
     fill: (x, y) => if (y == 0) {
-      luma(200)
+      rgb("#800080")
     } else if (calc.gcd(y, 2) == 2) {
-      luma(240)
+      rgb("#bf7fbf")
     } else {
-      white
+      rgb("#d8b2d8")
     },
-    columns: 2,
+    columns: (0.5fr, 0.5fr),
     inset: 5pt,
     align: center,
     table.header(
-      text(12pt)[*ID*],
-      text(12pt)[*Dettaglio*],
+      text(12pt, fill: white)[*ID*],
+      text(12pt, fill: white)[*Dettaglio*],
     ),
 
-    ..decisioni.pos().map(x => align(left, x)),
+    ..decisioni.pos().map(x => align(center, x)),
   )
 }
