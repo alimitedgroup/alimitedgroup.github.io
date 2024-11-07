@@ -5,6 +5,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 07, month: 11, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Approvazione del documento",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 05, month: 11, year: 2024),
       autore: p.matteo,
@@ -12,7 +19,7 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [Redatto],
+  stato: [Approvato],
   presenze: (p.emanuele, p.loris, p.marco, p.matteo, p.samuele, p.sara),
   odg: [Quinta riunione di ALimitedGroup: vengono analizzate le osservazioni nel documento di aggiudicazione degli appalti per procedere a migliorare il nostro _Way of Working_],
   disambiguatore: [],
