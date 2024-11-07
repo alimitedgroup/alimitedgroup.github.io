@@ -37,6 +37,7 @@
   set enum(indent: 1em)
   set document(title: titolo, date: data)
   set text(lang: "it", font: "Hanken Grotesk")
+  show link: underline
 
   // @typstyle off
   prima-pagina(
