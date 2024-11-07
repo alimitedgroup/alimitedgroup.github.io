@@ -45,7 +45,7 @@
 /// - `pulls`: suffisso da aggiungere a `link` per ottenere l'URL di una pull request
 #let repo = (
   docs: (
-    abbrev: "docs",
+    abbrev: "DOCS",
     link: "https://github.com/alimitedgroup/alimitedgroup.github.io",
     issues: "/issues/",
     pulls: "/pull/",
@@ -95,7 +95,7 @@
 /// - n (integer): Numero della issue su GitHub
 /// - repo (repository): Repository di riferimento
 #let issue(n, repo: repo.docs) = {
-  link(repo.link + repo.issues + str(n), repo.abbrev + " #" + str(n))
+  link(repo.link + repo.issues + str(n), repo.abbrev + str(n))
 }
 
 /// Una Pull Request su GitHub
@@ -106,6 +106,16 @@
 /// - repo (repository): Repository di riferimento
 #let pr(n, repo: repo.docs) = {
   link(repo.link + repo.pulls + str(n), repo.abbrev + " #" + str(n))
+}
+
+/// Un PDF hostato sul sito
+///
+/// #example(`doc("VI 2024-10-18 1.0.0")`)
+///
+/// - nome (string): Titolo del documento, senza il ".pdf" alla fine
+/// - body (content): Testo da mostrare al posto dell'indirizzo
+#let doc(nome, body) = {
+  link("https://alimitedgroup.github.io/" + nome + ".pdf", body)
 }
 
 /// Renderizza la prima pagina di un documento
