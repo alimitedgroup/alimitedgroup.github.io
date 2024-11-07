@@ -110,7 +110,7 @@
 
 /// Un PDF hostato sul sito
 ///
-/// #example(`doc("VI 2024-10-18 1.0.0")`)
+/// #example(`doc("VI 2024-10-18 1.0.0")[VI 2024-10-18]`)
 ///
 /// - nome (string): Titolo del documento, senza il ".pdf" alla fine
 /// - body (content): Testo da mostrare al posto dell'indirizzo
