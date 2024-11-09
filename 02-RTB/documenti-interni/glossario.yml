@@ -1,0 +1,103 @@
+# Per le lettere dell'alfabeto senza alcuna parola da definire viene inserito un 
+# segnaposto "": "" per evitare errori di compilazione, da sostituire eventualmente 
+# con la coppia parola: "definizione"
+A:
+  Angular: "Framework open-source per lo sviluppo di applicazioni web basato su 
+  TypeScript, mantenuto da Google."
+  AP: "Attività Passata: un’attività (dunque una decisione che dovrebbe
+  avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare
+  il sistema di ticketing."
+  API: "Application Programming Interface, interfaccia che consente la comunicazione 
+  tra diverse applicazioni o servizi."
+  Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da 
+  parte di un responsabile."
+  AWS: "Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata 
+  per archiviazione, elaborazione e gestione dati"
+B:
+  "": ""
+C:
+  "": ""
+D:
+  DI: "Decisione Interna: una decisione intrapresa con effetto immediato:
+ potrebbe, per questo motivo, non avere un’issue associata."
+E:
+  "": ""
+F:
+  "": ""
+G:
+  GitHub: "Piattaforma di versionamento e collaborazione per sviluppatori, 
+  basata su Git, che consente di gestire e condividere progetti di codice."
+  Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e 
+  semplicità, particolarmente adatto per sistemi e applicazioni cloud."
+  Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include 
+  servizi di elaborazione, archiviazione e analisi dei dati."
+H:
+  "": ""
+I:
+  IDE: "Integrated Development Environment, ambiente di sviluppo integrato che 
+  fornisce strumenti come editor di codice, debugger e compilatori."
+  Issue: "Problema o attività registrata in un sistema di tracciamento per 
+  monitorare e risolvere bug o richieste di funzionalità."
+J:
+  "": ""
+K:
+  Kubernetes: "Piattaforma open-source per l'automazione della gestione, del 
+  deployment e del dimensionamento di applicazioni containerizzate."
+L:
+  LLM: "Modello linguistico di grandi dimensioni, come ChatGPT, 
+  addestrato su enormi quantità di testo per comprendere e generare 
+  linguaggio naturale."
+M:
+  MVP: "Minimum Viable Product, versione base di un prodotto con funzionalità minime, 
+  rilasciata per ottenere feedback."
+N:
+  "": ""
+O:
+  "": ""
+P:
+  PoC: "Proof of Concept, prototipo o dimostrazione per verificare la fattibilità 
+  di un’idea o tecnologia."
+  PR: "Pull Request, richiesta di revisione e integrazione di codice 
+  modificato in un repository condiviso."
+  Prompt: "Testo o input fornito a un modello linguistico (come un LLM) 
+  per generare una risposta o eseguire un'azione."
+Q:
+  "": ""
+R:
+  React: "Una libreria JavaScript open-source sviluppata da Meta (ex Facebook) 
+  per creare interfacce utente dinamiche, soprattutto per applicazioni web single-page."
+  Repository: "Archivio centralizzato in cui viene memorizzato e 
+  gestito il codice sorgente."
+  RTB: "Requirements and Technology Baseline è un riferimento iniziale e stabilito 
+  di requisiti e tecnologie   approvate per un progetto. Questa baseline include 
+  requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, 
+  e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme 
+  e infrastrutture approvati per lo sviluppo del progetto.
+  Una volta stabilita, questa baseline rappresenta una base di confronto per valutare 
+  il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. 
+  Modifiche alla baseline richiedono una revisione e approvazione formale."
+S:
+  SAL: "Service Agreement Level, livello concordato di servizio e qualità 
+  offerto da un fornitore."
+  SCRUM: "Metodo agile per la gestione di progetti complessi, basato 
+  su iterazioni e collaborazioni continue."
+  Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare 
+  un set di attività."
+T:
+  TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato 
+  su JavaScript, con supporto per tipizzazione statica."
+U:
+  Unit Test: "Test automatizzato per verificare il corretto 
+  funzionamento di una singola unità o componente del software."
+V:
+  Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi 
+  determinati requisiti."
+W:
+  Way of Working: "Metodo di lavoro o approccio operativo adottato da un team o 
+  organizzazione."
+X:
+  "": ""
+Y:
+  "": ""
+Z:
+  "": ""

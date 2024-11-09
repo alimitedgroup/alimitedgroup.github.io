@@ -45,7 +45,7 @@
 /// - `pulls`: suffisso da aggiungere a `link` per ottenere l'URL di una pull request
 #let repo = (
   docs: (
-    abbrev: "docs",
+    abbrev: "DOCS",
     link: "https://github.com/alimitedgroup/alimitedgroup.github.io",
     issues: "/issues/",
     pulls: "/pull/",
@@ -95,7 +95,7 @@
 /// - n (integer): Numero della issue su GitHub
 /// - repo (repository): Repository di riferimento
 #let issue(n, repo: repo.docs) = {
-  link(repo.link + repo.issues + str(n), repo.abbrev + " #" + str(n))
+  link(repo.link + repo.issues + str(n), repo.abbrev + str(n))
 }
 
 /// Una Pull Request su GitHub
@@ -108,6 +108,16 @@
   link(repo.link + repo.pulls + str(n), repo.abbrev + " #" + str(n))
 }
 
+/// Un PDF hostato sul sito
+///
+/// #example(`doc("VI 2024-10-18 1.0.0")[VI 2024-10-18]`)
+///
+/// - nome (string): Titolo del documento, senza il ".pdf" alla fine
+/// - body (content): Testo da mostrare al posto dell'indirizzo
+#let doc(nome, body) = {
+  link("https://alimitedgroup.github.io/" + nome + ".pdf", body)
+}
+
 /// Renderizza la prima pagina di un documento
 ///
 /// - titolo (string, content): Il titolo del documento
@@ -116,7 +126,7 @@
   set align(center)
 
   // Prima pagina
-  image("/assets/altd.png", height: 7cm)
+  image("../assets/altd.png", height: 7cm)
   v(4em)
   text(24pt, weight: "bold", fill: black)[#titolo]
   v(2.25em)
@@ -174,27 +184,27 @@
   text(16pt, weight: "black", fill: black)[Registro delle Modifiche]
   table(
     fill: (x, y) => if (y == 0) {
-      luma(200)
+      rgb("#800080")
     } else if (calc.gcd(y, 2) == 2) {
-      luma(240)
+      rgb("#bf7fbf")
     } else {
-      white
+      rgb("#d8b2d8")
     },
-    columns: 5,
+    columns: (0.25fr, 0.5fr, 0.5fr, 0.5fr, 1fr),
     inset: 5pt,
     align: center,
+    stroke: none,
     table.header(
-      text(12pt)[*Vers.*],
-      text(12pt)[*Data*],
-      text(12pt)[*Autore*],
-      text(12pt)[*Verificatore*],
-      text(12pt)[*Descrizione*],
+      text(12pt, fill: white)[*Vers.*],
+      text(12pt, fill: white)[*Data*],
+      text(12pt, fill: white)[*Autore*],
+      text(12pt, fill: white)[*Verificatore*],
+      text(12pt, fill: white)[*Descrizione*],
     ),
-
     ..for mod in modifiche {
       (
         mod.vers,
-        mod.data.display("[year]-[month]-[day]"),
+        mod.date.display("[year]-[month]-[day]"),
         abbrev(mod.autore),
         if "verifica" in mod {
           abbrev(mod.verifica)
@@ -214,4 +224,30 @@
     strong(it)
   }
   outline(title: [#v(2em) Indice #v(3em)], indent: auto)
+}
+
+/// Collega una parola del documento alla sua definizione nel glossario
+#let def(parola) = {
+  let yml = yaml("../02-RTB/documenti-interni/glossario.yml")
+
+  // Se parola è di tipo content, ottieni il testo
+  if type(parola) == content {
+    parola = parola.text
+  }
+
+  // Cerca la parola in ogni lettera dell'alfabeto
+  let found = false
+  for (letter, words) in yml {
+    if parola in words {
+      found = true
+      break
+    }
+  }
+
+  // Se la parola non è trovata, genera l'errore; altrimenti, crea il link
+  if not found {
+    panic("Parola non definita nel glossario: " + parola)
+  } else {
+    link("https://alimitedgroup.github.io/glossario.pdf#" + parola, parola)
+  }
 }
