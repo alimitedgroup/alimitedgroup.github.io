@@ -7,38 +7,217 @@
     <title>ALimitedGroup</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
     <meta name="author" content="ALimitedGroup">
     <meta name="description" content="Sito ufficiale del gruppo 8 di Ingegneria del Software: ALimitedGroup">
     <meta name="keywords" content="swe,ingegneria del software,ALimitedGroup,unipd">
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #1b1b1b;
+            color: #d3d3d3;
+        }
+        .textcenter{
+            text-align: center;
+        }
+        .logomain{
+            max-height: 300px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+        .fade-in-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease-out 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .navbar, .card-header {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
+        }
+        .navbar-brand, .nav-link {
+            color: #E53975 !important;
+        }
+        .navbar-toggler {
+            border-color: #E53975;
+        }
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+        .card {
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
+        }
+        .btn-link {
+            color: #C03E6B;
+            background: linear-gradient(45deg, #E53975, #7A2D64);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-link:hover {
+            color: #E53975;
+        }
+        h3 {
+            color: #E53975;
+        }
+        p, .navTitle {
+            color: #d3d3d3;
+        }
+        .profile-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-name {
+            text-align: center;
+            color: #E53975;
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 
 <body>
-    <header>
-        <img src="images/logo.png" alt="Logo del gruppo">
-        <div>
-            <h1>ALimitedGroup</h1>
-            <span>Ingegneria del Software 2024/2025</span>
-            <span>Università degli Studi di Padova</span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo.png" alt="Logo del gruppo" width="30" height="30" class="d-inline-block align-text-top">
+                <span class="navTitle" style="margin-left:15px;">ALimitedGroup</span>
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <h2>Candidatura</h2>
-    <ul>{{01-candidatura}}</ul>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 mb-3 textcenter">
+                <img src="./images/logo.png" alt="Logo del gruppo" class="img-fluid logomain">
+            </div>
+            <div class="col-md-6 mb-3 mt-2 fade-in-text">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github1.png" alt="M.Piccoli">
+                                </div>
+                                <div class="profile-name">Marco Piccoli</div>
+                            </div>
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github2.png" alt="S.Esposito">
+                                </div>
+                                <div class="profile-name">Samuele Esposito</div>
+                            </div>
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github3.png" alt="S.Ferraro">
+                                </div>
+                                <div class="profile-name">Sara Ferraro</div>
+                            </div>
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github4.png" alt="L.Stefani">
+                                </div>
+                                <div class="profile-name">Lorenzo Stefani</div>
+                            </div>
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github5.png" alt="L.Libralato">
+                                </div>
+                                <div class="profile-name">Loris Libralato</div>
+                            </div>
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github6.png" alt="E.Artusi">
+                                </div>
+                                <div class="profile-name">Emanuele Artusi</div>
+                            </div>
+                            <div class="col-4 col-md-3 mb-4">
+                                <div class="profile-circle">
+                                    <img src="./images/github7.png" alt="M.Schievano">
+                                </div>
+                                <div class="profile-name">Matteo Schievano</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <h3>Diari di bordo</h3>
-    <ul>{{01-candidatura/diari}}</ul>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#candidatura" aria-expanded="false" aria-controls="candidatura">
+                                Candidatura
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="candidatura" class="collapse">
+                        <div class="card-body">
+                            <ul>{{01-candidatura}}</ul>
+                            <h3>Diari di bordo</h3>
+                            <ul>{{01-candidatura/diari}}</ul>
+                            <h3>Verbali interni</h3>
+                            <ul>{{01-candidatura/verbali-interni}}</ul>
+                            <h3>Verbali esterni</h3>
+                            <ul>{{01-candidatura/verbali-esterni}}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <h3>Verbali interni</h3>
-    <ul>{{01-candidatura/verbali-interni}}</ul>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#rtb" aria-expanded="false" aria-controls="rtb">
+                                RTB
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="rtb" class="collapse">
+                        <div class="card-body">
+                            <h3>Verbali interni</h3>
+                            <ul>{{02-RTB/documenti-interni/verbali}}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <h3>Verbali esterni</h3>
-    <ul>{{01-candidatura/verbali-esterni}}</ul>
+        <div class="row mt-4">
+            <div class="col-md-12 mb-4 mt-2 fade-in-text">
+                <h3>Chi siamo?</h3>
+                <p>Siamo il gruppo 8 di Ingegneria del Software all'Università degli Studi di Padova, noto come ALimitedGroup. Il nostro obiettivo è sviluppare soluzioni software innovative e di alta qualità, combinando competenze tecniche e lavoro di squadra.</p>
+            </div>
+        </div>
+    </div>
 
-    <h2>RTB</h2>
-
-    <h3>Verbali interni</h3>
-    <ul>{{02-RTB/documenti-interni/verbali}}</ul>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
