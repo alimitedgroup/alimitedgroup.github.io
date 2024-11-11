@@ -1,5 +1,3 @@
-#import "common.typ": def
-
 #let documento(
   versione: [],
   nome: [],
