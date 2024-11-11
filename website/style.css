@@ -2,7 +2,7 @@
     --background: #eeeeee;
     --text: #41474e;
     --accent: #d26878;
-    --link: #5690af;
+    --link: #0071ae;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,22 +31,20 @@ body {
 
 header {
     display: grid;
+    padding: 2em 0;
 
     grid-template-columns: 1fr 1fr;
+    gap: 2em;
 }
 
 @media screen and (max-width: 46rem) {
     header {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 300px 1fr;
     }
 }
 
-header img {
-    width: 100%;
-}
-
-header div {
+header * {
     justify-self: center;
     align-self: center;
 
@@ -55,7 +53,6 @@ header div {
     justify-content: center;
     align-items: center;
 }
-
 
 a,
 a:visited {
