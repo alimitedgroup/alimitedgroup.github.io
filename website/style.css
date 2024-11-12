@@ -1,99 +1,100 @@
 .textcenter {
-    text-align: center;
+  text-align: center;
 }
 .logomain {
-    max-height: 300px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease-out forwards;
+  max-height: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 .fade-in-text {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out 0.5s forwards;
 }
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .card-header {
-    background-color: #2c2c2c;
-    box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
-    position: relative;
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
+  position: relative;
 }
 .navbar {
-    background-color: #494949;
-    box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
+  background-color: #494949;
+  box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
 }
 .navbar-brand,
 .nav-link {
-    color: #E53975 !important;
+  color: #e53975 !important;
 }
 .navbar-toggler {
-    border-color: #E53975;
+  border-color: #e53975;
 }
 .navbar-toggler-icon {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 .card {
-    background-color: #2c2c2c;
-    border: 1px solid #444;
-    box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
 }
 .btn-link {
-    color: #C03E6B;
-    background: linear-gradient(45deg, #E53975, #7A2D64);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  color: #c03e6b;
+  background: linear-gradient(45deg, #e53975, #7a2d64);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .btn-link:hover {
-    color: #E53975;
+  color: #e53975;
 }
 h3 {
-    color: #E53975;
+  color: #e53975;
 }
 p,
 .navTitle {
-    color: #d3d3d3;
+  color: #d3d3d3;
 }
 .profile-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
 }
 .profile-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .profile-name {
-    text-align: center;
-    color: #E53975;
-    margin-top: 10px;
+  text-align: center;
+  color: #e53975;
+  margin-top: 10px;
 }
 .card-body ul {
-    color: #d3d3d3;
+  color: #d3d3d3;
 }
 .arrow-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-    transition: transform 0.3s ease;
-    filter: brightness(0) invert(1);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
 }
 .dropdown-toggle-icon.collapsed .arrow-icon {
-    transform: translateY(-50%) rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
 }
 .dropdown-toggle-icon:not(.collapsed) .arrow-icon {
-    transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
 }
