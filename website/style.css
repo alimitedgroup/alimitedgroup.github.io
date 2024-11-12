@@ -1,95 +1,99 @@
-:root {
-    --background: #eeeeee;
-    --text: #41474e;
-    --accent: #d26878;
-    --link: #0071ae;
+.textcenter {
+    text-align: center;
 }
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #222529;
-        --text: #d6d6d6;
-        --accent: #78b6ad;
-        --link: #e2aea2;
+.logomain {
+    max-height: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+.fade-in-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-
-html {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: monospace;
-    font-size: 1rem;
-    line-height: 24px;
-
-    display: grid;
-    grid-template-columns: 1fr min(45rem, 90%) 1fr;
+.card-header {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
+    position: relative;
 }
-
-body {
-    grid-column: 2;
+.navbar {
+    background-color: #494949;
+    box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
 }
-
-header {
-    display: grid;
-    padding: 2em 0;
-
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
+.navbar-brand,
+.nav-link {
+    color: #E53975 !important;
 }
-
-@media screen and (max-width: 46rem) {
-    header {
-        grid-template-columns: 1fr;
-        grid-template-rows: 300px 1fr;
-    }
+.navbar-toggler {
+    border-color: #E53975;
 }
-
-header * {
-    justify-self: center;
-    align-self: center;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
 }
-
-a,
-a:visited {
-    color: var(--link);
-    text-decoration: none;
-    border-radius: .125rem;
+.card {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
 }
-
-a:hover {
-    color: var(--background);
-    background-color: var(--link);
+.btn-link {
+    color: #C03E6B;
+    background: linear-gradient(45deg, #E53975, #7A2D64);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
-ul li::marker {
-    content: "» ";
-    color: var(--accent);
+.btn-link:hover {
+    color: #E53975;
 }
-
-h1 {
-    font-size: 2rem;
-}
-
-h2::before {
-    color: var(--accent);
-    content: "# ";
-}
-h3::before {
-    color: var(--accent);
-    content: "## ";
-}
-
-h2 {
-    font-size: 1.75rem;
-    line-height: 1.1;
-}
-
 h3 {
-    font-size: 1.50rem;
-    line-height: 1.1;
+    color: #E53975;
+}
+p,
+.navTitle {
+    color: #d3d3d3;
+}
+.profile-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
+}
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-name {
+    text-align: center;
+    color: #E53975;
+    margin-top: 10px;
+}
+.card-body ul {
+    color: #d3d3d3;
+}
+.arrow-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+.dropdown-toggle-icon.collapsed .arrow-icon {
+    transform: translateY(-50%) rotate(0deg);
+}
+.dropdown-toggle-icon:not(.collapsed) .arrow-icon {
+    transform: translateY(-50%) rotate(-90deg);
 }
