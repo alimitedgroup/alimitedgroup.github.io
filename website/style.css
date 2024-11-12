@@ -1,3 +1,9 @@
+:root {
+  --accent: #ff3b7f;
+  --link: #c03e6b;
+  --shadow: rgba(192, 62, 107, 0.05);
+}
+
 .textcenter {
   text-align: center;
 }
@@ -40,11 +46,11 @@
 
 .navbar-brand,
 .nav-link {
-  color: #e53975 !important;
+  color: var(--accent) !important;
 }
 
 .navbar-toggler {
-  border-color: #e53975;
+  border-color: var(--accent);
 }
 
 .navbar-toggler-icon {
@@ -54,23 +60,23 @@
 .card {
   background-color: #2c2c2c;
   border: 1px solid #444;
-  box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
+  box-shadow: 0 1px 2px var(--shadow);
 }
 
 .btn-link {
-  color: #c03e6b;
-  background: linear-gradient(45deg, #e53975, #7a2d64);
+  color: var(--link);
+  background: linear-gradient(45deg, var(--accent), #7a2d64);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .btn-link:hover {
-  color: #e53975;
+  color: var(--accent);
 }
 
 h3 {
-  color: #e53975;
+  color: var(--accent);
 }
 
 p,
@@ -95,7 +101,6 @@ p,
 
 .profile-name {
   text-align: center;
-  color: #e53975;
   margin-top: 10px;
 }
 
