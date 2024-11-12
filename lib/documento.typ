@@ -19,7 +19,7 @@
   body,
 ) = {
   let versione = versioni.at(0).vers
-  [ #metadata[DOC #data.display("[day]-[month]-[year]") #versione] <titolo>]
+  [ #metadata[#nome #versione] <titolo>]
 
   set list(indent: 1em)
   set enum(indent: 1em)
