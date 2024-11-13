@@ -1,7 +1,33 @@
 :root {
   --accent: #ff3b7f;
+  --accent2: #7a2d64;
   --link: #c03e6b;
   --shadow: rgba(192, 62, 107, 0.05);
+  --bg: #2c2c2c;
+  --bg2: #494949;
+  --border: #444;
+  --header: #d3d3d3;
+  --fg: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #efefef;
+    --bg2: #dbdbdb;
+    --header: #000000;
+    --border: #444;
+    --fg: #000;
+    --link: #5e9fff;
+  }
+
+  .arrow-icon {
+    filter: brightness(0) !important;
+  }
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
 }
 
 .textcenter {
@@ -34,13 +60,13 @@
 }
 
 .card-header {
-  background-color: #2c2c2c;
+  background-color: var(--bg);
   box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
   position: relative;
 }
 
 .navbar {
-  background-color: #494949;
+  background-color: var(--bg2);
   box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
 }
 
@@ -58,14 +84,14 @@
 }
 
 .card {
-  background-color: #2c2c2c;
-  border: 1px solid #444;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
   box-shadow: 0 1px 2px var(--shadow);
 }
 
 .btn-link {
-  color: var(--link);
-  background: linear-gradient(45deg, var(--accent), #7a2d64);
+  color: var(--accent);
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,7 +107,7 @@ h3 {
 
 p,
 .navTitle {
-  color: #d3d3d3;
+  color: var(--header);
 }
 
 .profile-circle {
@@ -123,11 +149,6 @@ p,
 
 .dropdown-toggle-icon:not(.collapsed) .arrow-icon {
   transform: translateY(-50%) rotate(-90deg);
-}
-
-body {
-  background-color: #1b1b1b;
-  color: #d3d3d3;
 }
 
 footer {
