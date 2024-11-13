@@ -8,7 +8,7 @@
       date: datetime(day: 13, month: 11, year: 2024),
       autore: p.sara,
       // verifica: p.,
-      descr: "Aggiornamento contenuto",
+      descr: "Aggiornamento indice \ Aggiornamento contenuto: sezione _Introduzione_",
     ),
     (
       vers: "0.0.1",
@@ -52,12 +52,22 @@
 }
 
 = Introduzione
-
-#lorem(10) 
-
 == Scopo del documento
 
-#lorem(10)
+Il presente documento di _Analisi dei Requisiti_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali e non funzionali del sistema software da sviluppare.\
+Esso rappresenterà il riferimento di base per la progettazione, l'implementazione e il collaudo del prodotto finale, garantendo che il sistema realizzato soddisfi pienamente le esigenze e le aspettative del committente. \
+I requisiti identificati sono classificati in: 
+- Obbligatori: irrinunciabili e imprescindibili per il corretto funzionamento del sistema.
+- Desiderabili: non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile.
+- Opzionali: relativamente utili oppure contrattabili per essere implementati in futuro.
+
+Il documento di _Analisi dei Requisiti_  viene redatto dagli _Analisti_ del team di progetto ed è rivolto ai seguenti principali destinatari:
+
+- Il _Committente_, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche.
+- Il _Team di Progettisti e di Programmatori_, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software.
+- Il Team di _Verificatori_, che baserà su questa Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
+
+Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come _Amministratori_ e _Responsabili di Progetto_, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
 == Ambito di applicazione
 
