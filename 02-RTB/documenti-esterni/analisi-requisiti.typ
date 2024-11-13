@@ -8,7 +8,7 @@
       date: datetime(day: 13, month: 11, year: 2024),
       autore: p.sara,
       // verifica: p.,
-      descr: "Aggiornamento indice \ Aggiornamento contenuto: sezione _Introduzione_",
+      descr: "Aggiornamento indice - Aggiornamento contenuto: sezione Introduzione",
     ),
     (
       vers: "0.0.1",
