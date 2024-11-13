@@ -122,7 +122,7 @@
 ///
 /// - titolo (string, content): Il titolo del documento
 /// -> content
-#let prima-pagina(titolo, ..entries) = {
+#let prima-pagina(titolo, extra, ..entries) = {
   set align(center)
 
   // Prima pagina
@@ -143,6 +143,10 @@
       ..entries
     ),
   )
+
+  if extra != none {
+    extra
+  }
 }
 
 /// Renderizza l'intestazione della pagina

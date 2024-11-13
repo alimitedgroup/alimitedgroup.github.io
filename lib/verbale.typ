@@ -42,6 +42,12 @@
   // @typstyle off
   prima-pagina(
     titolo,
+    {
+      v(2em)
+      text(14pt, weight: "black", fill: black)[Ordine del giorno]
+      v(0.5em)
+      text(10pt)[#odg]
+    },
     [Stato], stato,
     [Versione], versione,
     [Presenze], grid(align: left, gutter: 8pt, ..presenze.map(persona)),
