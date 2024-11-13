@@ -131,7 +131,7 @@ p,
 }
 
 .card-body ul {
-  color: #d3d3d3;
+  color: var(--fg);
 }
 
 .arrow-icon {
