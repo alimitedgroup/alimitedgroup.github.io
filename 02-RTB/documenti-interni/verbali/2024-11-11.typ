@@ -58,14 +58,11 @@ Mentre, per la sezione "Requisiti di Sicurezza", _ALimitedGroup_ chiederà all'a
 - Il *monitoraggio del sistema*, che viene posto come requisito obbligatorio ma che senza il requisito facoltativo "Sicurezza e controllo degli accessi", posto nella sezione antecedente, perde di significato.
 
 Successivamente aver avuto un riscontro da parte di #M31, come scritto nella @riscontro, ogni nuova informazione riguardo i requisiti richiesti verrà scritta nei verbali futuri.
-Successivamente aver avuto un riscontro da parte di #M31, come scritto nella @riscontro, ogni nuova informazione riguardo i requisiti richiesti verrà scritta nei verbali futuri. 
 
 
 #pagebreak()
-== Importanti migliorie nel sito web
-_ALimitedGroup_ ha deciso di approvare la nuova versione del #link("https://alimitedgroup.github.io/index.html")[sito]: tale versione non subirà più importanti cambiamenti come questo. \
 == Importanti migliorie nel sito web 
-_ALimitedGroup_ ha deciso di approvare la nuova versione del #underline[#link("https://alimitedgroup.github.io/index.html")[sito]]: tale versione non subirà più importanti cambiamenti come questo. \
+_ALimitedGroup_ ha deciso di approvare la nuova versione del #link("https://alimitedgroup.github.io/index.html")[sito]: tale versione non subirà più importanti cambiamenti come questo. \
 La nuova versione rende più piacevole e fruibile il sito nella sua interezza mostrando, per ogni categoria, ogni documento (Verbale, Diario di Bordo, etc...) relativo a quel periodo.\
 A tal proposito, le categorie presenti nel sito sono:
 - *Candidatura* : indica la prima parte del progetto, ovvero antecedente all'aggiudicazione degli appalti. Questa sezione contiene tutti i verbali interni/esterni organizzati in quel periodo, oltre ad ulteriori documenti come:
@@ -79,7 +76,6 @@ Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _sma
 Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_ di ogni membro di _ALimitedGroup_.
 
 == Assegnazione dei ruoli sino al giorno 18-11-2024
-I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 18-11-2024, saranno assegnati ai seguenti componenti questi ruoli: \
 I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 18-11-2024, saranno assegnati ai seguenti componenti questi ruoli: \
 
 #align(center)[*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile*]
@@ -96,7 +92,6 @@ concludendo di redigere il Glossario entro la prossima riunione ed iniziando la 
 
 Il gruppo, inoltre, procederà a contattare #M31 e attenderà riscontro da quest'ultima per decidere il/i prossimo/i incontro/i futuro/i.
 concludendo di redigere il Glossario entro la prossima riunione ed iniziando la stesura dei nuovi documenti, non appena finita quella di quest'ultimo. \
-Il gruppo, inoltre, procederà a contattare #M31 e attenderà riscontro da quest'ultima per decidere il/i prossimo/i incontro/i futuro/i.
 
 #pagebreak()
 = Tabella delle decisioni e delle azioni
