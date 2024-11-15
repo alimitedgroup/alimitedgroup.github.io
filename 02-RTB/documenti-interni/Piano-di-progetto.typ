@@ -1,4 +1,7 @@
 #import "../../lib/common.typ": *
+#metadata[piano-di-progetto] <titolo>
+
+#set text(lang: "it")
 
 #show link: underline
 
@@ -23,7 +26,7 @@
   [Versione],
   versione,
   [Distribuzione],
-  grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+  grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin)),
 )
 
 #set heading(numbering: "1.")
@@ -74,6 +77,8 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 #pagebreak()
 
 = Analisi e gestione dei rischi
+
+== Introduzione
 Parte fondamentale per la redazione di un piano di progetto è il poter analizzare e classificare in maniera efficace i possibili rischi delle attività da svolgere: realizzarne una buona analisi permette di prevedere quali attività richiedono più tempo del previsto e, conseguentemente, valutare se il numero complessivo di attività inserite nel backlog settimanale sono in numero eccessivo o adeguato.
 
 Un’analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
@@ -96,209 +101,243 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 == Rischio Tecnologico
 
 === RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
+    [*Codice*], [RT1],
+    [*Nome*], [Rischio Tecnologico legato alla tecnologia utilizzata],
+    [*Descrizione*],
+    [Rischio legato all’inesperienza o alla poca conoscenza di un componente da utilizzare per il progetto],
+
+    [*Mitigazione*],
+    [È necessario prevedere la possibilità che parte dell’impegno orario sarà dedicato alla formazione personale per l’uso di tale componente: è bene dunque valutare di spostare attività eventualmente di minore importanza al primo periodo successivo utile qualora altri componenti del gruppo non possano fornire supporto immediato. È necessario valutare anche la disponibilità di M31 al supporto.],
+
+    [*Frequenza probabile di avvenimento*], [Alta],
+    [*Pericolosità delle ripercussioni*], [Elevata],
   ),
-
-  [*Codice*], [RT1],
-  [*Nome*], [Rischio Tecnologico legato alla tecnologia utilizzata],
-  [*Descrizione*],
-  [Rischio legato all’inesperienza o alla poca conoscenza di un componente da utilizzare per il progetto],
-
-  [*Mitigazione*],
-  [È necessario prevedere la possibilità che parte dell’impegno orario sarà dedicato alla formazione personale per l’uso di tale componente: è bene dunque valutare di spostare attività eventualmente di minore importanza al primo periodo successivo utile qualora altri componenti del gruppo non possano fornire supporto immediato. È necessario valutare anche la disponibilità di M31 al supporto.],
-
-  [*Frequenza probabile di avvenimento*], [Alta],
-  [*Pericolosità delle ripercussioni*], [Elevata],
+  caption: [Informazioni sul rischio RT1],
 )
+
 
 === RT2: Rischio Tecnologico legato a errori nel codice
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RT2],
-  [*Nome*], [Rischio Tecnologico legato a errori nel codice],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RT2],
+    [*Nome*], [Rischio Tecnologico legato a errori nel codice],
+    [*Descrizione*],
+    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo un riesaminazione di quanto scritto],
+
+    [*Mitigazione*],
+    [In caso di codice non funzionante, il programmatore cerca di risolvere il problema. Qualora questo risulti troppo complesso il programmatore chiederà aiuto a programmatori più esperti. In caso di problema particolarmente grave, le attività meno urgenti verranno posticipate per lasciare spazio alla risoluzione del problema.],
+
+    [*Frequenza probabile di avvenimento*], [Alta],
+    [*Pericolosità delle ripercussioni*], [Elevata],
+  ),
+  caption: [Informazioni sul rischio RT2],
 )
+
 
 == Rischio Individuale
 
 === RI1: Rischio Individuale derivante dalle altre attività universitarie
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RI1],
-  [*Nome*], [Rischio Individuale derivante dalle altre attività universitarie],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RI1],
+    [*Nome*], [Rischio Individuale derivante dalle altre attività universitarie],
+    [*Descrizione*], [],
+    [*Mitigazione*], [],
+    [*Frequenza probabile di avvenimento*], [],
+    [*Pericolosità delle ripercussioni*], [],
+  ),
+  caption: [Informazioni sul rischio RI1],
 )
 
 === RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RI2],
-  [*Nome*], [Rischio Individuale derivato da improvviso impegno o indisponibilità personale],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RI2],
+    [*Nome*], [Rischio Individuale derivato da improvviso impegno o indisponibilità personale],
+    [*Descrizione*], [],
+    [*Mitigazione*], [],
+    [*Frequenza probabile di avvenimento*], [],
+    [*Pericolosità delle ripercussioni*], [],
+  ),
+  caption: [Informazioni sul rischio RI2],
 )
+
 
 == Rischio Globale
 
 === RG1: Rischio Globale derivato da forte disaccordo nel gruppo
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RG1],
-  [*Nome*], [Rischio Globale derivato da forte disaccordo nel gruppo],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RG1],
+    [*Nome*], [Rischio Globale derivato da forte disaccordo nel gruppo],
+    [*Descrizione*], [],
+    [*Mitigazione*], [],
+    [*Frequenza probabile di avvenimento*], [],
+    [*Pericolosità delle ripercussioni*], [],
+  ),
+  caption: [Informazioni sul rischio RG1],
 )
+
 
 === RG2: Rischio Globale derivato da malcomprensione del capitolato
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RG2],
-  [*Nome*], [Rischio Globale derivato da malcomprensione del capitolato],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RG2],
+    [*Nome*], [Rischio Globale derivato da malcomprensione del capitolato],
+    [*Descrizione*], [],
+    [*Mitigazione*], [],
+    [*Frequenza probabile di avvenimento*], [],
+    [*Pericolosità delle ripercussioni*], [],
+  ),
+  caption: [Informazioni sul rischio RG2],
 )
+
 
 === RG3: Rischio Globale derivato da sottostima di attività
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RG3],
-  [*Nome*], [Rischio Globale derivato da sottostima di attività],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RG3],
+    [*Nome*], [Rischio Globale derivato da sottostima di attività],
+    [*Descrizione*], [],
+    [*Mitigazione*], [],
+    [*Frequenza probabile di avvenimento*], [],
+    [*Pericolosità delle ripercussioni*], [],
+  ),
+  caption: [Informazioni sul rischio RG3],
 )
+
 
 === RG4: Rischio Globale derivato da sovrastima di attività
 
-#table(
-  fill: (x, y) => if (y == 0) {
-    rgb("#800080")
-  } else if (calc.gcd(y, 2) == 2) {
-    rgb("#bf7fbf")
-  } else {
-    rgb("#d8b2d8")
-  },
-  columns: (auto, auto),
-  align: center,
-  table.header(
-    text(12pt, fill: white)[*Tipologia Dato*],
-    text(12pt, fill: white)[*Valore*],
-  ),
+#figure(
+  table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    columns: (auto, auto),
+    align: center,
+    table.header(
+      text(12pt, fill: white)[*Tipologia Dato*],
+      text(12pt, fill: white)[*Valore*],
+    ),
 
-  [*Codice*], [RG4],
-  [*Nome*], [Rischio Globale derivato da sovrastima di attività],
-  [*Descrizione*], [],
-  [*Mitigazione*], [],
-  [*Frequenza probabile di avvenimento*], [],
-  [*Pericolosità delle ripercussioni*], [],
+    [*Codice*], [RG4],
+    [*Nome*], [Rischio Globale derivato da sovrastima di attività],
+    [*Descrizione*], [],
+    [*Mitigazione*], [],
+    [*Frequenza probabile di avvenimento*], [],
+    [*Pericolosità delle ripercussioni*], [],
+  ),
+  caption: [Informazioni sul rischio RG4],
 )
+
