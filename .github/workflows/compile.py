@@ -57,8 +57,11 @@ def compile(filename: str, compile_options: list[str]) -> bool:
     result = subprocess.run(command, capture_output=True, text=True)
     try:
         result.check_returncode()
-    except subprocess.CalledProcessError:
-        logging.error(f"Compiling {filename} failed with stderr: \n{result.stderr}")
+    except subprocess.CalledProcessError as e:
+        if b'error: expected exactly one element, found 0' in e.stderr:
+            logging.error(f"Compiling {filename} failed because no title was found\nTry using #documento for your document, or manually adding a `#metadata[title] <titolo>`")
+        else:
+            logging.error(f"Compiling {filename} failed with stderr: \n{result.stderr}")
         return False
 
     return True
