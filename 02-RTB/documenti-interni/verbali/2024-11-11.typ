@@ -71,7 +71,6 @@ A tal proposito, le categorie presenti nel sito sono:
   - Dichiarazione degli impegni
 - *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Tecnology Baseline_;
 - *_PB_* : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline_.
-- *_PB_* : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline_.
 Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _smartphone_ e _tablet_ per rendere l'accesso, alle risorse e documenti, più facile. \
 Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_ di ogni membro di _ALimitedGroup_.
 
@@ -91,7 +90,6 @@ Il gruppo conclude la riunione con i compiti assegnati e le decisioni e azioni i
 concludendo di redigere il Glossario entro la prossima riunione ed iniziando la stesura dei nuovi documenti, non appena finita quella di quest'ultimo.
 
 Il gruppo, inoltre, procederà a contattare #M31 e attenderà riscontro da quest'ultima per decidere il/i prossimo/i incontro/i futuro/i.
-concludendo di redigere il Glossario entro la prossima riunione ed iniziando la stesura dei nuovi documenti, non appena finita quella di quest'ultimo. \
 
 #pagebreak()
 = Tabella delle decisioni e delle azioni
