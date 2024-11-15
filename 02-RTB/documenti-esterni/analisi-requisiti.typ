@@ -65,13 +65,25 @@ Il documento di _Analisi dei Requisiti_ viene redatto dagli _Analisti_ del team 
 
 - Il _Committente_, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche.
 - Il _Team di Progettisti e di Programmatori_, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software.
-- Il Team di _Verificatori_, che baserà su questa Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
+- Il Team di _Verificatori_, che baserà sull' Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
 
 Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come _Amministratori_ e _Responsabili di Progetto_, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
 == Ambito di applicazione
 
-#lorem(10)
+Il capitolato d'appalto C6 proposto dall'azienda _M31_ propone lo sviluppo di un *Sistema di Gestione di un Magazzino Distribuito*. \
+Il sistema deve essere in grado di:
+- *Ottimizzare i livelli di scorte* attraverso il monitoraggio costante dell'inventario e suggerendo/automatizzando azioni di riassortimento o trasferimento tra magazzini.
+- *Gestire la condivisione dei dati di inventario in tempo reale* tra i vari magazzini e il sistema centrale.
+- *Implementare meccanismi di riassortimento predittivo* basati su algoritmi di machine learning per prevedere la domanda futura.
+-*Risolvere conflitti derivanti da aggiornamenti simultanei* dell'inventario da parte di diversi magazzini.
+- Fornire una piattaforma di *monitoraggio centralizzato e reportistica* sullo stato delle scorte.
+- Gestire le operazioni di *trasferimento di merce tra i magazzini*.
+
+Tutto garantendo la *sicurezza* dei dati trattati e del sistema.
+#footnote([I requisiti qui presentati costituiscono una visione preliminare del sistema. Ogni aspetto verrà approfondito e dettagliato nelle sezioni successive del documento, dove saranno inclusi requisiti aggiuntivi e specifiche tecniche complete.]).
+
+L'*obiettivo* del sistema è _migliorare la gestione di una rete logistica distribuita di magazzini_, garantendo disponibilità continua delle risorse, minimizzando i tempi di risposta e ottimizzando la distribuzione delle scorte attraverso una visione centralizzata e sincronizzata in tempo reale.
 
 == Definizioni, acronimi e abbreviazioni
 #lorem(10)
