@@ -36,7 +36,7 @@ I membri dell'intero gruppo si impegnano a visionare constantemente questo docum
 
 == Scopo del prodotto
 
-Il prodotto in questione nasce dalla necessità, da parte di #M31, di gestire l'inventario di vari magazzini per garantirne la disponibilità continua e rendere equilibrato tutto l'ecosistema. Per far sì che sia equilibrato, il sistema dovrà essere in grado di ottimizzare la distribuzione delle risorse ma, soprattutto, avere tempi di risposta minimi. \
+Il prodotto in questione nasce dalla necessità, da parte di #M31, di gestire l'inventario di vari magazzini per garantirne la disponibilità continua e rendere equilibrato tutto l'ecosistema. Per far sì che sia equilibrato, il sistema dovrà essere in grado di ottimizzare la distribuzione delle risorse ma, soprattutto, minimizzare i tempi di risposta. \
 
 == Glossario
 
