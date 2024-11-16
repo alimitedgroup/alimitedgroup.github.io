@@ -1,4 +1,6 @@
 #import "../../lib/common.typ": *
+#import "@preview/plotst:0.2.0": *
+
 #metadata[piano-di-progetto] <titolo>
 
 #set text(lang: "it")
@@ -438,8 +440,78 @@ Il gruppo ha concordato lo svolgimento delle seguenti attività:
 - Stabilire un incontro con l’azienda proponente #M31
 - Inizio stesura Analisi dei requisiti
 
+#pagebreak()
+
 ==== Prospetto consumo tempo e costi
+
+Si prospetta l'utilizzo delle seguenti risorse: \
+\
+\
+
+#{
+  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+    align(left, cl)
+  } else if cl.x == 0 {
+    align(bottom + left, cl)
+  } else if cl.y == 0 {
+    rotate(-45deg, reflow: false, align(left, cl))
+  } else {
+    align(bottom + center, cl)
+  }
+  figure(
+    table(
+      columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      inset: 1.1em,
+      stroke: (x, y) => if y >= 1 {
+        1pt + black
+      } else {
+        none
+      },
+      table.header(
+        [],
+        [*Responsabile*],
+        [*Amministratore*],
+        [*Analista*],
+        [*Progettista*],
+        [*Programmatore*],
+        [*Verificatore*],
+      ),
+
+      [Loris Libralato], [0], [0], [2], [0], [0], [0],
+      [Samuele Esposito], [3], [0], [0], [0], [0], [0],
+      [Sara Ferraro], [0], [0], [2], [0], [0], [2],
+      [Lorenzo Stefani], [0], [0], [0], [0], [0], [0],
+      [Marco Piccoli], [0], [0], [0], [0], [0], [2],
+      [Matteo Scievano], [0], [0], [0], [0], [0], [2],
+      [Emanuele Artusi], [0], [0], [0], [0], [0], [0],
+    ),
+    caption: [Suddivisione impegni per componente],
+  )
+}
+
+#{
+  let p = plot(data: (
+    (23.08, "Responsabile - 23.08%"),
+    (0, "Amministratore - 0%"),
+    (30.77, "Analista - 30.77%"),
+    (0, "Progettista - 0%"),
+    (0, "Programmatore - 0%"),
+    (46.15, "Verificatore - 46.15%"),
+  ))
+
+  pie_chart(p, (40%, 30%), caption: "Impegno per ruolo", display_style: "hor-legend-chart")
+}
+
 ==== Rischi attesi
-==== Consumo tempo e costi effettivo
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RG3: Rischio Globale derivato da sottostima di attività
+
+==== Consumo effettivo temporale e finanziario
 ==== Aggiornamento delle risorse rimanenti
-==== Retrospettiva, comprendente anche i rischi effettivamente riscontrati
+==== Retrospettiva
+
+// comprendente anche i rischi effettivamente riscontrati
