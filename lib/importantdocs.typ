@@ -11,7 +11,7 @@
 /// - versioni (list): una lista di versioni; ogni versione è nella forma `(vers: "1.0.0", data: datetime(day: 30, month: 10, year: 2024), autore: p.samuele, descr: "Approvazione documento")`
 /// - stato (content): lo stato del documento. Solitamente, è "verificato" o "approvato"
 /// - Responsabile : Il o i responsabili decisi per quella settimana
-/// - Verificatore (list): Il o i verificatori di quella settimana 
+/// - Verificatore (list): Il o i verificatori di quella settimana
 /// - Redattori (list): I redattori (solitamente) di questo documento
 /// - descrizione (content): La descrizione del tipo di documento da redigere
 #let importantdocs(
@@ -22,13 +22,13 @@
   stato: [],
   responsabile: (),
   verificatore: (),
-  redattori: (), 
+  redattori: (),
   descrizione: [],
   body,
 ) = {
   let titolo = [_Norme di Progetto_ \ Versione #versione]
   let versione = versioni.at(0).vers
-  [#metadata[#titolo #versione] <titolo> ]
+  [#metadata[Norme di Progetto #versione] <titolo> ]
 
   set list(indent: 1em)
   set enum(indent: 1em)
