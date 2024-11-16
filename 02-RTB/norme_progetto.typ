@@ -46,11 +46,17 @@ _ALimitedGroup_ si impegna a visionarlo periodicamente, per permetter la più co
 
 == Riferimenti
 === Riferimenti normativi
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato d'appalto C6: Sistema di gestione di un magazzino distribuito]
-- #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")[Standard ISO/IEC 12207:1995]
+- Capitolato d'appalto C6: Sistema di gestione di un magazzino distribuito \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+- Standard ISO/IEC 12207:1995 \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti informativi
-
+- I processi di ciclo di vita del software \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")
+- Glossario \
+  #link("https://alimitedgroup.github.io/Glossario.pdf") ///questo link va assolutamente cambiato quando sarà pubblicato il glossario
+                                                        
 
 #pagebreak()
 = Processi Primari
@@ -61,4 +67,42 @@ _ALimitedGroup_ si impegna a visionarlo periodicamente, per permetter la più co
 
 === Descrizione
 
+=== Aspettative
+
 === Rapporti con il proponente
+
+=== Documentazione fornita
+
+Vengono elencati di seguito tutti i documenti che _ALimitedGroup_ consegnerà all'azienda #M31 e ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_.
+
+==== Valutazione dei Capitolati
+
+La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[Valutazione dei Capitolati] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
+Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
+- *Panoramica*: che indica l'azienda proponente, il nome del capitolato e delle informazioni generali su il prodotto da realizzare;
+- *Scopo*: indica a che pro viene realizzato il prodotto;
+- *Punti di forza* 
+- *Critictà evidenziate*
+- *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
+
+==== Analisi dei requisiti
+
+//Prossimamente....
+
+==== Piano di progetto
+
+//Prossimamente....
+
+==== Piano di Qualifica
+
+//Prossimamente....
+
+==== Glossario
+
+//Prossimamente....
+
+==== Lettera di Presentazione
+
+//Prossimamente....
+
+=== Strumenti

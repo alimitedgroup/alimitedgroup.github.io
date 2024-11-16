@@ -1,6 +1,6 @@
 // VDC 31-10-2024
 
-#import "lib/legacy.typ": *
+#import "../lib/legacy.typ": *
 #show: doc => documento(
   nome: [Valutazione dei capitolati],
   data: datetime(day: 31, month: 10, year: 2024),
