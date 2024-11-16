@@ -1,6 +1,6 @@
 // PC 31-10-2024
 
-#import "/lib/legacy.typ": *
+#import "../lib/legacy.typ": *
 #import "@preview/plotst:0.2.0": *
 
 #show: doc => documento(
