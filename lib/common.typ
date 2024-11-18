@@ -229,3 +229,24 @@
   }
   outline(title: [#v(2em) Indice #v(3em)], indent: auto)
 }
+
+/// Indicizza le tabelle presenti nel documento
+#let indice-tabelle() = {
+  show outline.entry.where(level: 1): it => {
+    v(12pt, weak: true)
+    strong(it)
+  }
+  outline(title: [#v(2em) Lista delle tabelle #v(3em)], indent: auto, target: figure.where(kind: table))  
+}
+
+/// Indicizza le immagini presenti nel documento
+#let indice-immagini() = {
+  show outline.entry.where(level: 1): it => {
+    v(12pt, weak: true)
+    strong(it)
+  }
+  outline(title: [#colbreak() #v(2em) Lista delle immagini #v(3em)], indent: auto, target: figure.where(kind: image)) 
+}
+
+///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
+/// se e solo se queste sono delimitate dal comando #figure con annessa la caption
