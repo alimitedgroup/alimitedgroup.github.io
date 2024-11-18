@@ -49,8 +49,6 @@ In seguito all'incontro, il gruppo vaglierà le opzioni disponibili e decidere l
 == Domandare ad #M31 ulteriori dubbi riguardante i requisiti esposti nel capitolato
 
 Come scritto nell'ultimo #link("https://alimitedgroup.github.io/VI%2004-11-2024%201.0.0.pdf")[verbale interno] nella sezione "Esiti della riunione", _ALimitedGroup_ ha analizzato attentamente i requisiti richiesti nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[capitolato di presentazione] di #M31: è stato deciso di chiedere a quest'ultima ulteriori approfondimenti riguardo alla sezione "Requisiti Funzionali Minimi" su:
-Come scritto nell'ultimo #link("https://alimitedgroup.github.io/VI%2004-11-2024%201.0.0.pdf")[verbale interno] nella sezione "Esiti della riunione", _ALimitedGroup_ ha analizzato attentamente i requisiti richiesti nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[capitolato di presentazione] di #M31: è stato deciso di chiedere a quest'ultima ulteriori approfondimenti riguardo alla sezione "Requisiti Funzionali Minimi" su:
-
 - Il *riassortimento predittivo basato sul _Machine Learning_*, proponendo ad #M31 di semplificarlo utilizzando altre tecnologie a discapito del _ML_;
 - La *risoluzione dei conflitti negli aggiornamenti concorrenti*, discutendo su come approcciare tale requisito.
 
