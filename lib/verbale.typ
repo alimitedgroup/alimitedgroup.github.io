@@ -26,9 +26,9 @@
   let titolo = [_Verbale_ #tipo #data.display("[day]/[month]/[year]")]
   let versione = versioni.at(0).vers
   if tipo == [interno] {
-    [ #metadata[VI #data.display("[day]-[month]-[year]") #versione #disambiguatore] <titolo>]
+    [ #metadata[VI #data.display("[day]-[month]-[year]") v#versione #disambiguatore] <titolo>]
   } else if tipo == [esterno] {
-    [ #metadata[VE #data.display("[day]-[month]-[year]") #versione #disambiguatore] <titolo>]
+    [ #metadata[VE #data.display("[day]-[month]-[year]") v#versione #disambiguatore] <titolo>]
   } else {
     panic("Tipo di verbale sconosciuto: " + tipo)
   }
