@@ -76,7 +76,7 @@ Il sistema deve essere in grado di:
 - *Ottimizzare i livelli di scorte* attraverso il monitoraggio costante dell'inventario e suggerendo/automatizzando azioni di riassortimento o trasferimento tra magazzini.
 - *Gestire la condivisione dei dati di inventario in tempo reale* tra i vari magazzini e il sistema centrale.
 - *Implementare meccanismi di riassortimento predittivo* basati su algoritmi di machine learning per prevedere la domanda futura.
--*Risolvere conflitti derivanti da aggiornamenti simultanei* dell'inventario da parte di diversi magazzini.
+- *Risolvere conflitti derivanti da aggiornamenti simultanei* dell'inventario da parte di diversi magazzini.
 - Fornire una piattaforma di *monitoraggio centralizzato e reportistica* sullo stato delle scorte.
 - Gestire le operazioni di *trasferimento di merce tra i magazzini*.
 
