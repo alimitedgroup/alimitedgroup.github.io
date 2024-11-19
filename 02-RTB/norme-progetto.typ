@@ -160,7 +160,7 @@ Tra i processi di supporto utilizzati nel progetto distinguiamo:
 - Documentazione
 - Gestione delle configurazioni
 - Accertamento qualità
-- Qualifica, formata da:
+- Qualifica, formata a sua volta da:
   - Verifica
   - Validazione
 - Revisione
@@ -168,3 +168,70 @@ Tra i processi di supporto utilizzati nel progetto distinguiamo:
 - Gestione dei cambiamenti
 
 Saranno ora descritti nel dettaglio le attività previste.
+
+=== Documentazione
+
+Il processo di documentazione è parte fondamentale di tutti i processi primari: il prodotto di tale processo è infatti essenziale per tenere traccia delle decisioni intraprese e per favorire il lavoro asincrono, molto più produttivo di quello sincrono nel nostro ambito.\
+
+Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni prodotto da un processo o da un'attività nel ciclo di vita.\
+Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati (come manager, ingegneri e utenti del sistema o del prodotto _software_).
+
+==== Strumenti a supporto
+Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
+- *_Typst_*: trattasi di un linguaggio _mark-down_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
+ _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti, per ulteriori dettagli consultare la @sezione_typst;
+
+- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
+
+
+===== Typst <sezione_typst>
+
+Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
+Nello specifico, la redazione dei coumenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
+
+Qui di seguito saranno elencato le principali funzionalità fornite nei vari template disponibili suddivisi per documento di interesse: per tali motivi, verrà sintetizzata anche la struttura di tali documenti
+ove il _template_ li riguardi nello specifico.
+
+====== Verbali
+
+Tutte le funzioni relative ai verbali si trovano nel _file_ #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/verbale.typ")[_verbale.typ_] nella cartella _lib_, che contiene tutti i _template_ che il gruppo utilizzerà per redigere tutti i documenti.\
+
+La funzione principale di tale documento è, per l'appunto, "verbale" contenente la struttura standard di un verbale e definisce:
+- Pagina di copertina, con al suo interno:
+  - Logo del gruppo;
+  - Tipo di verbale (interno o esterno) con annessa data della riunione verbalizzata;
+  - Stato del documento;
+  - Persone presenti alla riunione;
+  - Distribuzione (ovvero, i destinatari);
+  - Ordine del giorno (in formato riassuntivo).
+- Allegato con tabella delle versioni;
+- Indice del documento, generato automaticamente da _Typst_.
+
+Un verbale successivamente prevede sempre una prima sezione con alcune informazioni generali tra cui:
+- Modalità, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_ salvo diversamente specificato);
+- Data della riunione;
+- Orario di inizio;
+- Orario di fine.
+
+Per automatizzare ulteriormente, abbiamo creato la funziona "inizio-verbale-interno" che crea in modo autonomo il testo con all'intero tutte le informazioni scritte precedentemente, a cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
+Un verbale prosegue quindi con la sua seconda sezione, che esplicita quanto discusso per ogi punto dell'ordine del griono.\
+Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato; l'ultima sezione, invece, si riferisce alla _tabella delle decisioni e delle azioni_ che, tramite il sistema di _ticketing_, elenca tutte le decisioni e azioni prese
+dal gruppo, tale tabella è facilmente realizzabile tramite la funzione "tabella-decisioni".\
+
+In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all'approvazione esterna, inseribile mediante la funzione "approvazione-esterna".
+
+====== Diari di bordo
+
+
+====== Template delle funzioni utili
+
+====== Altri documenti
+
+==== Attività previste
+
+===== Produzione
+
+
+
+===== GitHub <sezione_github>
+
