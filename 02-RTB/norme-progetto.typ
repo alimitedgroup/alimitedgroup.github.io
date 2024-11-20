@@ -115,7 +115,7 @@ Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando
 - *Panoramica*: che indica l'azienda proponente, il nome del capitolato e delle informazioni generali su il prodotto da realizzare;
 - *Scopo*: indica a che pro viene realizzato il prodotto;
 - *Punti di forza* 
-- *Critictà evidenziate*
+- *Criticità evidenziate*
 - *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
 
 ===== Analisi dei requisiti
@@ -197,39 +197,86 @@ ove il _template_ li riguardi nello specifico.
 Tutte le funzioni relative ai verbali si trovano nel _file_ #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/verbale.typ")[_verbale.typ_] nella cartella _lib_, che contiene tutti i _template_ che il gruppo utilizzerà per redigere tutti i documenti.\
 
 La funzione principale di tale documento è, per l'appunto, "verbale" contenente la struttura standard di un verbale e definisce:
-- Pagina di copertina, con al suo interno:
+- *Pagina di copertina*, con al suo interno:
   - Logo del gruppo;
   - Tipo di verbale (interno o esterno) con annessa data della riunione verbalizzata;
   - Stato del documento;
   - Persone presenti alla riunione;
   - Distribuzione (ovvero, i destinatari);
   - Ordine del giorno (in formato riassuntivo).
-- Allegato con tabella delle versioni;
-- Indice del documento, generato automaticamente da _Typst_.
+- Allegato con *tabella delle versioni*;
+- *Indice del documento*, generato automaticamente da _Typst_.
 
 Un verbale successivamente prevede sempre una prima sezione con alcune informazioni generali tra cui:
-- Modalità, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_ salvo diversamente specificato);
-- Data della riunione;
-- Orario di inizio;
-- Orario di fine.
+- *Modalità*, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_ salvo diversamente specificato);
+- *Data della riunione*;
+- *Orario di inizio*;
+- *Orario di fine*.
 
-Per automatizzare ulteriormente, abbiamo creato la funziona "inizio-verbale-interno" che crea in modo autonomo il testo con all'intero tutte le informazioni scritte precedentemente, a cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
-Un verbale prosegue quindi con la sua seconda sezione, che esplicita quanto discusso per ogi punto dell'ordine del griono.\
+Per automatizzare ulteriormente, abbiamo creato la funziona "inizio-verbale-interno" che crea in modo autonomo il testo con all'interno tutte le informazioni scritte precedentemente, a cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
+Un verbale prosegue quindi con la sua seconda sezione, che esplicita quanto discusso per ogi punto dell'ordine del giorno.\
 Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato; l'ultima sezione, invece, si riferisce alla _tabella delle decisioni e delle azioni_ che, tramite il sistema di _ticketing_, elenca tutte le decisioni e azioni prese
 dal gruppo, tale tabella è facilmente realizzabile tramite la funzione "tabella-decisioni".\
 
 In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all'approvazione esterna, inseribile mediante la funzione "approvazione-esterna".
 
+#pagebreak()
 ====== Diari di bordo
+
+Nell'ambito del progetto di Ingegneria del Software, il _Professor Vardanega Tullio_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.\
+
+Per facilitare la redazione delle diapositive dedicate a questi incontri, il gruppo ha realizzato un _template_ apposito con varie funzioni. La più importante è sicuramente "presentazione" che permette di generare l'intero documento formato da tre sezioni:
+- _Risultati raggiunti e confronto con le previsioni_, che elenca quanto abbiamo fatto nel periodo corrente;
+- _Obiettivi e attività per il periodo successivo_, che elenca le attività future da completare;
+- _Difficoltà riscontrate e questioni aperte_, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
 
 
 ====== Template delle funzioni utili
 
+I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
+Tali funzioni sono inserite in un _file_ particolare, denominato #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")["common.typ"], che contiene le seguenti funzioni:
+- _p_ : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
+- _M31_ : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
+- _abbrev_ : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
+- _prof_ : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
+- _issue_ : fornisce la possibilità di inserire il _link_  che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
+- _pr_ : come sopra, ma per indicare le _pull request_;
+- _doc_ : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
+
 ====== Altri documenti
+Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione_supporto, vale un formato standard che può essere ottenuto utilizzando il template "". Nello specifico ciascun documento possiede:
+- *Pagina di copertina*, con:
+  - Nome del documento;
+  - Versione;
+  - Stato del documento;
+  - Data di ultima modifica;
+  - Distribuzione (destinatari).
+- *Registro delle modifiche*, che viene realizzata automaticamente invocando la funzione per la copertina;
+- *Indice dei contenuti*, viene realizzato automaticamente con la stessa funziona menzionata sopra;
+- *Corpo del documento*, con sezioni e sotto-sezioni che vengono scritte manualmente.
 
 ==== Attività previste
 
+Il processo di documentazione è un processo assai delicato quanto importante. Le attività cardine di questo processo sono due:
+- *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto;
+- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato.
+
 ===== Produzione
+
+===== Manutenzione
+
+===== Convenzioni
+
+Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, qui di seguito definite.
+
+====== Denominazine dei documenti
+
+====== Datazione dei documenti e sintassi identificatori
+
+Le date nei documenti dovranno essere scritte sempre nel formato "GG-MM-AAAA" (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
+Eventuali identificatori dovranno sempre seguire la regola del *_Kebab case_*, ovvero parole separate dal carattere -.
+
+==== Documentazione prodotta o di supporto <documentazione_supporto>
 
 
 
