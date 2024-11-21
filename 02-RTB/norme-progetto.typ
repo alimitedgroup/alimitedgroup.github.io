@@ -7,6 +7,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "0.3.0",
+      date: datetime(day: 22, month: 11, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Aggiunta sezione Valutazione della configurazione. Aggiunta introduzione ai processi organizzativi e processo \"Gestione dei Processi\".",
+    ),
+    (
       vers: "0.2.0",
       date: datetime(day: 20, month: 11, year: 2024),
       autore: p.matteo,
@@ -21,7 +28,7 @@
       descr: "Prima redazione del documento",
     ),
   ),
-  versione: [0.1.0],
+  versione: [0.3.0],
   stato: [Verificato],
   responsabile: ((p.samuele),),
   verificatore: ((p.lorenzo),),
@@ -540,19 +547,26 @@ In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di
 
 [PROSEGUIRE]
 
-===== Valutazione della configurazione
+===== Valutazione della configurazione <valutazione-della-configurazione>
+
+La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del software prodotto rispetto ai suoi requisiti e al design scelto.
+
+_ALimitedGroup_, per compiere questa attività, realizzerà dei test appositi, in parte manuali in parte automatizzati, per renedere possibile tale controllo.
+Questi test saranno descritti in un documento apposito, il #link("")[*Test Book (CAMBIARE LINK)*], che descriverà anche che requisito quei test, se svolti con successo, promettono di soddisfare.
+
+[PROSEGUIRE, probabile prematuro fare adesso]
 
 === Accertamento qualità
 ==== Strumenti a supporto
 ==== Attività previste
 ==== Documentazione prodotta o di supporto
 
-=== Qualifica - Verifica
+=== Qualifica - Verifica <verifica>
 ==== Strumenti a supporto
 ==== Attività previste
 ==== Documentazione prodotta o di supporto
 
-=== Qualifica - Validazione
+=== Qualifica - Validazione <validazione>
 ==== Strumenti a supporto
 ==== Attività previste
 ==== Documentazione prodotta o di supporto
@@ -572,9 +586,93 @@ In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di
 ==== Attività previste
 ==== Documentazione prodotta o di supporto
 
-
 == Processi Organizzativi
+
+I *processi organizzativi* sono dei processi a supporto del progetto che assicurano il buon andamento dell'intero progetto.
+
+Le attività previste assicurano la buona esecuzione di tutti i processi adottati e l'adozione di eventuali miglioramenti, la gestione delle infrastrutture utilizzate e la formazione del team nei compiti da seguire.
+
 === Gestione dei Processi
+
+La *gestione dei processi* ha il compito di individuare i ruoli che dovranno permettere tutte le attività elencate in questo documento.
+
+Le attività principali, osservate da _ALimitedGroup_, previste da questo processo sono:
+- Inizializzazione
+- Pianificazione
+- Esecuzione e controllo
+- Revisione e valutazione
+- Finalizzazione
+
+==== Inizializzazione
+
+È compito del *Responsabile* stabilire anzitutto i requisiti della nuova attività da svolgere, comprendendo che compiti prevede e quali costi, in termini temporali e non solo, tale attività comporti, cercando di ben tenere in considerazione il tempo a disposizione per completare il tutto.
+
+A seconda dell'occorrenza di eventuali rischi o imprevisti le attività potranno essere modellate per poter essere, almeno parzialmente, terminate in tempo.
+
+==== Pianificazione
+
+Stabiliti i requisiti da soddisfare, il responsabile deve comprendere, oltre al tempo necessario per il completamento, anche i rischi associati all'attività, i costi di esecuzione e le misure qualitative per controllare la corretta esecuzione dei compiti.
+
+Il Responsabile deve altresì decidere a chi assegnare tale attività: per facilitare questa operazione, _ALimitedGroup_ ha individuato dei ruoli specifici assieme alle loro responsabilità.
+
+===== Responsabile
+
+Il *Responsabile* ha un ruolo centrale nel gruppo: esso infatti è responsabile delle attività di coordinamento interne al gruppo.
+
+È il componente che veste questo ruolo a cui spetta il compito di comprendere, tenendo in considerazione quanto già portato a termine, quanto da realizzare nei periodi di sviluppo successivi, individuando le attività, i costi e rischi associati e infine assegnandone lo svolgimento ai componenti che vestono in quel periodo il ruolo più appropriato.
+
+Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad _ALimitedGroup_, quali, a mero titolo esemplificativo, l'azienda proponente del capitolato #M31.
+
+In ultima istanza, è sempre compito di questo ruolo *approvare* i vari documenti prodotti da _ALimitedGroup_.
+
+===== Amministratore
+
+L'*Amministratore* (noto anche con il nome di *System Administrator* o *SysAdmin*) ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di _ALimitedGroup_ utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
+
+È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture.
+
+Per via della sua approfondita conoscenza del _Way of Working_ adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il *Piano di Qualifica*, ma può risultare un ruolo adatto anche alla redazione di verbali di riunione interna ed esterna.
+
+===== Analista
+
+L'*Analista* è il ruolo responsabile dell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente #M31.
+È sempre affidato a questo ruolo il compito di redazione dell'*Analisi dei Requisiti*.
+
+===== Progettista
+
+Il *Progettista* è un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche.
+
+===== Programmatore
+
+Il *Programmatore* è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche. Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate.
+
+È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato.
+
+===== Verificatore
+
+Il *Verificatore* ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d’arte.
+
+Si occupa di eseguire test approfonditi e revisioni del software, identificando eventuali aree di miglioramento specie in ambito qualitativo.
+
+È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata.
+
+==== Esecuzione e controllo
+
+L'esecuzione delle attività è affidata quindi ai vari ruoli così come indicato dal Responsabile, che dobrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
+
+==== Revisione e valutazione
+
+Una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del Verificatore.
+
+Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice.
+
+==== Finalizzazione
+
+Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
+
 === Infrastruttura
+
+//descrivere tutta l'infrastruttura utilizzata, da quella per le comunicazioni interne ed esterne, sino a GitHub
+
 === Processo di Miglioramento
 === Processo di Formazione
