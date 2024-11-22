@@ -75,7 +75,6 @@ Il capitolato d'appalto C6 proposto dall'azienda _M31_ propone lo sviluppo di un
 Il sistema deve essere in grado di:
 - *Ottimizzare i livelli di scorte* attraverso il monitoraggio costante dell'inventario e suggerendo/automatizzando azioni di riassortimento o trasferimento tra magazzini.
 - *Gestire la condivisione dei dati di inventario in tempo reale* tra i vari magazzini e il sistema centrale.
-- *Implementare meccanismi di riassortimento predittivo* basati su algoritmi di machine learning per prevedere la domanda futura.
 - *Risolvere conflitti derivanti da aggiornamenti simultanei* dell'inventario da parte di diversi magazzini.
 - Fornire una piattaforma di *monitoraggio centralizzato e reportistica* sullo stato delle scorte.
 - Gestire le operazioni di *trasferimento di merce tra i magazzini*.
@@ -86,7 +85,7 @@ Tutto garantendo la *sicurezza* dei dati trattati e del sistema.
 L'*obiettivo* del sistema è _migliorare la gestione di una rete logistica distribuita di magazzini_, garantendo disponibilità continua delle risorse, minimizzando i tempi di risposta e ottimizzando la distribuzione delle scorte attraverso una visione centralizzata e sincronizzata in tempo reale.
 
 == Definizioni, acronimi e abbreviazioni
-#lorem(10)
+Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo documento, si faccia riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.
 
 == Riferimenti
 === Riferimenti normativi
