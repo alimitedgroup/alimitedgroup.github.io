@@ -7,6 +7,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "0.4.0",
+      date: datetime(day: 23, month: 11, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Aggiunto processo di infrastruttura (processi organizzativi) e migliorie.",
+    ),
+    (
       vers: "0.3.0",
       date: datetime(day: 22, month: 11, year: 2024),
       autore: p.matteo,
@@ -18,7 +25,7 @@
       date: datetime(day: 20, month: 11, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Aggiunte informazioni sulla sezione 2.1.1.4. Redatta descrizione attività di redazione e manutenzione del processo \"Documentazione\". Aggiunte convenzioni usate sulla documentazione e informazioni sulla documentazione prodotta. Iniziata la redazione delle informazioni sulla \"Gestione delle Configurazioni\" e parte delle sue attività.",
+      descr: "Aggiunte informazioni sulla sezione \"Documentazione Fornita\" del processo di fornitura. Redatta descrizione attività di redazione e manutenzione del processo \"Documentazione\". Aggiunte convenzioni usate sulla documentazione e informazioni sulla documentazione prodotta. Iniziata la redazione delle informazioni sulla \"Gestione delle Configurazioni\" e parte delle sue attività.",
     ),
     (
       vers: "0.1.0",
@@ -28,7 +35,7 @@
       descr: "Prima redazione del documento",
     ),
   ),
-  versione: [0.3.0],
+  versione: [0.4.0],
   stato: [Verificato],
   responsabile: ((p.samuele),),
   verificatore: ((p.lorenzo),),
@@ -230,14 +237,13 @@ Per redigere la documentazione il gruppo fa utilizzo di due strumenti in partico
 Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
 Nello specifico, la redazione dei coumenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
 
-Qui di seguito saranno elencato le principali funzionalità fornite nei vari template disponibili suddivisi per documento di interesse: per tali motivi, verrà sintetizzata anche la struttura di tali documenti
-ove il _template_ li riguardi nello specifico.
+La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, qui di seguito saranno invece descritte le strutture dei vari documenti.
 
 ====== Verbali <desc-templ-verbale>
 
-Tutte le funzioni relative ai verbali si trovano nel _file_ #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/verbale.typ")[_verbale.typ_] nella cartella _lib_, che contiene tutti i _template_ che il gruppo utilizzerà per redigere tutti i documenti.\
+La redazione di un verbale sfrutta il _template_ nel _file_ #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/verbale.typ")[_verbale.typ_]
 
-La funzione principale di tale documento è, per l'appunto, "verbale" contenente la struttura standard di un verbale e definisce:
+Generalmente un verbale possiede questa struttura iniziale:
 - *Pagina di copertina*, con al suo interno:
   - Logo del gruppo;
   - Tipo di verbale (interno o esterno) con annessa data della riunione verbalizzata;
@@ -249,30 +255,36 @@ La funzione principale di tale documento è, per l'appunto, "verbale" contenente
 - *Indice del documento*, generato automaticamente da _Typst_.
 
 Un verbale successivamente prevede sempre una prima sezione con alcune informazioni generali tra cui:
+
 - *Modalità*, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_ salvo diversamente specificato);
 - *Data della riunione*;
 - *Orario di inizio*;
 - *Orario di fine*.
 
-La funzione “inizio-verbale-interno” permette di generare in maniera automatica il testo per inserire queste informazioni, cui seguirà, in elenco, l'ordine del giorno nei vari punti.\ \
-Un verbale prosegue quindi con la sua seconda sezione, che esplicita quanto discusso per ogni punto dell'ordine del giorno.\ \
+cui seguirà, in elenco, l'ordine del giorno nei vari punti.\ \
+
+La seconda sezione, che segue a quanto appena scritto, esplicita quanto discusso per ogni punto dell'ordine del giorno.\
+
 Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato; l'ultima sezione, invece, si riferisce alla _tabella delle decisioni e delle azioni_ che, tramite il sistema di _ticketing_, elenca tutte le decisioni e azioni prese
 dal gruppo, tale tabella è facilmente realizzabile tramite la funzione "tabella-decisioni".\
 
-In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all'approvazione esterna, inseribile mediante la funzione "approvazione-esterna".
+In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all'approvazione esterna e su ogni pagina (ad eccezione della pagina di copertina) del verbale deve essere riportato il numero di pagina e un _header_ con:
+- *Nome del gruppo*;
+- *Tipo verbale*;
+- *Data della riunione*.
 
 #pagebreak()
 ====== Diari di bordo
 
-Nell'ambito del progetto di Ingegneria del Software, il _Professor Vardanega Tullio_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.\
+Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.
 
-Per facilitare la redazione delle diapositive dedicate a questi incontri, il gruppo ha realizzato un _template_ apposito con varie funzioni: si veda la sezione @creazione. La più importante è sicuramente "presentazione" che permette di generare l'intero documento formato da tre sezioni:
-- _Risultati raggiunti e confronto con le previsioni_, che elenca quanto abbiamo fatto nel periodo corrente;
-- _Obiettivi e attività per il periodo successivo_, che elenca le attività future da completare;
-- _Difficoltà riscontrate e questioni aperte_, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
+In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
+- *Risultati raggiunti e confronto con le previsioni*, che elenca quanto abbiamo fatto nel periodo corrente;
+- *Obiettivi e attività per il periodo successivo*, che elenca le attività future da completare;
+- *Difficoltà riscontrate e questioni aperte*, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
 
 ====== Altri documenti
-Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione-supporto, vale un formato standard che può essere ottenuto utilizzando le funzioni nel template #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")["common.typ"]. Nello specifico ciascun documento possiede:
+Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione-supporto, la struttura è composta da:
 - *Pagina di copertina*, con:
   - Nome del documento;
   - Versione;
@@ -282,6 +294,13 @@ Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato 
 - *Registro delle modifiche*, che viene realizzata automaticamente invocando la funzione per la copertina;
 - *Indice dei contenuti*, viene realizzato automaticamente con la stessa funziona menzionata sopra;
 - *Corpo del documento*, con sezioni e sotto-sezioni che vengono scritte manualmente.
+
+Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
+- *Header* con:
+  - *Nome del gruppo*;
+  - *Titolo del documento*;
+  - *Versione del documento*
+- *Numero di pagina*
 
 ==== Attività previste
 
@@ -293,7 +312,7 @@ Il processo di documentazione è un processo assai delicato quanto importante. L
 <regole-branch-issue>
 La produzione di un documento segue solitamente questi passaggi:
 
-- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione.
+- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
 
 
 - *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l’issue di redazione e inizia la redazione del documento nel branch dedicato
@@ -310,7 +329,7 @@ Il responsabile, una volta approvato il documento, risolverà la pull request e 
 
 L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di verifica mediante _Pull Request_.
 
-Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @regole-branch-issue nella parte precedente di questo documento.
+Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
 
 ===== Convenzioni
 
@@ -636,8 +655,6 @@ Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamen
 
 === Infrastruttura
 
-//descrivere tutta l'infrastruttura utilizzata, da quella per le comunicazioni interne ed esterne, sino a GitHub. è qui che bisona descrivere i dettagli anche riguardanti i nomi dei branch.
-
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
 
 Si compone delle seguenti atività:
@@ -703,28 +720,29 @@ L'attività di *creazione* guida la realizzazione dell'infrastruttura. Di seguit
 
 ====== Discord
 
+Per utilizzare *Discord* è stato realizzato un server con un canale testuale e un canale apposito per le riunioni.
 
 ====== Git
 
+*Git* non richiede particolari modifiche: deve essere configurato inserendo username e email con cui il componente interagisce normalmente con il _repository_ GitHub del progetto
 
-====== GitHub
+====== GitHub <creazione-github> //action
 
+Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_repository_ *GitHub* dedicato alla documentazione] è strutturato in maniera da favorire la produzione dei documenti. All'interno è possibile trovare varie _directories_, qui di seguito descritte:
 
-====== Google Calendar
+- *.github/workflows*: contiene lo script in _Python_ che si occupa di compilare i files _Typst_ dei documenti ed aggiornare il sito di conseguenza;
+- *.vscode*: contiene informazioni utili per l'_IDE_ di sviluppo _Microsoft Visual Studio Code_, se questo viene utilizzato per la stesura dei documenti;
+- *01-candidatura*: contiene, con le eventuali _sub-directories_ i file della candidatura, ovvero la prima fase del progetto;
+- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della Requirements and Technology Baseline (RTB), ovvero la seconda fase del progetto;
+- *assets*: contiene _files_ utili per il sito web e i documenti, come loghi e _fonts_;
+- *lib*: contiene i file _template_ per la redazione dei documenti;
+- *website*: contiene i file relativi al sito web del gruppo.
 
-====== Microsoft Teams
+È inoltre possibile trovare il file *.gitignore* (utile per evitare il tracciamento di alcuni file specifici), il file *README.md* (che permette di realizzare la descrizione nella pagina principale del _repository_) e *docs.typ* (altro file di utilità per i documenti).
 
+Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
 
-====== Script in Python
-
-
-====== Telegram
-
-
-
-====== Typst //migliorare
-
-#align(center)[*BRANCH*\ *\#-azione-documento-data*]
+#align(center)[*\#-azione-documento-data*]
 
 Dove:
 - Al posto di *\#* va inserito il numero della _Issue_ le cui modifiche operate nel branch determineranno la chiusura
@@ -734,24 +752,74 @@ Dove:
 - Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
 - Al posto di *data* la data del documento, se tale documento la prevede (ad esempio i *verbali*)
 
-#align(center)[*ISSUE* \ *azione documento data*]
+Il gruppo ha poi deciso di utilizzare le _Issue_ di GitHub per tracciare le attività da fare. Generalmente, il nome di una _Issue_ segue il seguente schema:
+
+#align(center)[*azione documento data*]
 
 Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_.
 
-====== Template delle funzioni utili
+Ogni _Issue_ è inoltre legata ad una _Project Board_, uno strumento di GitHub che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso
+
+In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da GitHub denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
+
+====== Google Calendar
+
+In merito al calendario condiviso, è affidato al *Responsabile* il compito di aggiungere gli eventi del gruppo, dai diari di bordo sino alle riunioni interne ed esterne programmate.
+
+Il calendario è condiviso tra i vari membri, che riceveranno un promemoria almeno un giorno prima rispetto l'evento in questione.
+
+Rimane responsabilità di ogni membro controllarlo periodicamente.
+
+====== Microsoft Teams
+
+La piattaforma *Microsoft Teams* viene controllata direttamente da #M31, in quanto tale non necessita di alcuna operazione.
+
+====== Script in Python
+
+In merito agli Script di Python, questi non necessitano di particolare modifiche manuali: possono essere eseguiti direttamente senza necessita di alcuna operazione aggiuntiva.
+
+In merito allo Script sulla compilazione dei file _Typst_ e aggiornamento del sito, questo viene eseguito automaticamente come descritto nella sezione @creazione-github.
+
+====== Telegram
+
+Il gruppo ha realizzato un gruppo *Telegram* per le comunicazioni di minore importanza.
+Tale gruppo è configurato in maniera tale da escludere il possibile ingresso di persone esterne: ad eccezione di questo, non richiede operazioni di interesse per questo documento.
+
+====== Typst <creazione-typst> //migliorare
+
+L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazioni di _files_, da noi chiamati _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella *lib* del _repository_.
+
+In merito ai *verbali* le funzioni sono contenute nel file
+#link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/documentazione.typ")[*verbale.type*] e sono, in elenco:
+- *verbale*: inserisce la pagina di copertina, la tabella delle modifiche e l'indice;
+- *inizio-verbale-interno*: permette di inserire un testo con le informazioni iniziali della riunione (come, a titolo di esempio, la data, il luogo e la durata);
+- *inizio-verbale-esterno*: permette di inserire un testo con le informazioni iniziali della riunione (come, a titolo di esempio, la data, l'azienda con cui è stata fatta la riunione, il luogo e la durata);
+- *approvazione-esterna*: permette di inserire il testo per certificare, nella sezione esterna, l'approvazione da parte dell'azienda con cui si è svolto l'incontro (solo in caso di verbale esterno);
+- *tabella-decisioni*: permette di inserire la *tabella delle decisioni e delle azioni*.
+
+In merito ai *diari di bordo*, il file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/diario.typ")[*diario.typ*] possiede funzioni primarie e secondarie per la realizzazione delle presentazioni. In esso vi è un'unica funzione di interesse primario, *presentazione*, che permette di generare automaticamente l'intero documento se ad essa vengono forniti i punti per ciascuna delle sezioni.
+
+Per i rimanenti *documenti* funzioni di interesse sono contenute nel template #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*common.typ*], tra cui:
+- *prima-pagina*: Inserisce la pagina di copertina e il registro delle modifiche;
+- *indice*: genera l'indice del documento;
+- *indice-tabelle*: genera un elenco di tutte le tabelle inserite nel documento;
+- *indice-immagini*: genera un elenco di tutte le immagini presenti nel documento
+
+Per comodità, è stato realizzato un template apposito che esegue in automatico tutte le azioni necessarie per realizzare la struttura standard di questi documenti: #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*importantdocs.typ*]: il suo uso non è tuttavia obbligatorio.
 
 I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
-Tali funzioni sono inserite in un _file_ particolare, denominato #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")["common.typ"], che contiene le seguenti funzioni:
-- _p_ : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
-- _M31_ : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
-- _abbrev_ : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
-- _prof_ : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
-- _issue_ : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
-- _pr_ : come sopra, ma per indicare le _pull request_;
-- _doc_ : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
-
+Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*common.typ*]:
+- *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
+- *M31* : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
+- *abbrev* : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
+- *prof* : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
+- *issue* : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
+- *pr* : come sopra, ma per indicare le _pull request_;
+- *doc* : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
 
 ===== Manutenzione
+
+A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato il compito all'*Amministratore* di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità qualora errori o cambiamenti lo rendano necessario.
 
 === Processo di Miglioramento
 === Processo di Formazione
