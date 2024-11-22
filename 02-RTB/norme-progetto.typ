@@ -266,22 +266,10 @@ In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all
 
 Nell'ambito del progetto di Ingegneria del Software, il _Professor Vardanega Tullio_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.\
 
-Per facilitare la redazione delle diapositive dedicate a questi incontri, il gruppo ha realizzato un _template_ apposito con varie funzioni. La più importante è sicuramente "presentazione" che permette di generare l'intero documento formato da tre sezioni:
+Per facilitare la redazione delle diapositive dedicate a questi incontri, il gruppo ha realizzato un _template_ apposito con varie funzioni: si veda la sezione @creazione. La più importante è sicuramente "presentazione" che permette di generare l'intero documento formato da tre sezioni:
 - _Risultati raggiunti e confronto con le previsioni_, che elenca quanto abbiamo fatto nel periodo corrente;
 - _Obiettivi e attività per il periodo successivo_, che elenca le attività future da completare;
 - _Difficoltà riscontrate e questioni aperte_, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
-
-====== Template delle funzioni utili
-
-I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
-Tali funzioni sono inserite in un _file_ particolare, denominato #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")["common.typ"], che contiene le seguenti funzioni:
-- _p_ : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
-- _M31_ : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
-- _abbrev_ : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
-- _prof_ : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
-- _issue_ : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
-- _pr_ : come sopra, ma per indicare le _pull request_;
-- _doc_ : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
 
 ====== Altri documenti
 Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione-supporto, vale un formato standard che può essere ottenuto utilizzando le funzioni nel template #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")["common.typ"]. Nello specifico ciascun documento possiede:
@@ -305,21 +293,7 @@ Il processo di documentazione è un processo assai delicato quanto importante. L
 <regole-branch-issue>
 La produzione di un documento segue solitamente questi passaggi:
 
-- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e qui di seguito riportata:
-
-  #align(center)[*BRANCH*\ *\#-azione-documento-data*]
-
-  Dove:
-  - Al posto di *\#* va inserito il numero della _Issue_ le cui modifiche operate nel branch determineranno la chiusura
-  - Al posto di *azione* va inserita l'azione fatta nel _Branch_ ovvero:
-    - *redazione* per indicare la redazione di un nuovo documento
-    - *aggiornamento* per indicare la modifica di un documento esistente
-  - Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
-  - Al posto di *data* la data del documento, se tale documento la prevede (ad esempio i *verbali*)
-
-  #align(center)[*ISSUE* \ *azione documento data*]
-
-  Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_.
+- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione.
 
 
 - *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l’issue di redazione e inizia la redazione del documento nel branch dedicato
@@ -467,17 +441,7 @@ Il supporto alle attività di questo processo sono:
 - Git
 - GitHub
 
-===== Git <Git>
-
-Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
-
-Git è dunque un potente _Version Control System (VCS)_ che permette di efficacemente versionare tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.
-
-===== GitHub <sezione_github>
-
-*GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_
-
-_ALimitedGroup_ utilizza GitHub per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.
+Per ulteriori informazioni si veda la @implementazione
 
 ==== Attività previste
 
@@ -672,7 +636,122 @@ Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamen
 
 === Infrastruttura
 
-//descrivere tutta l'infrastruttura utilizzata, da quella per le comunicazioni interne ed esterne, sino a GitHub
+//descrivere tutta l'infrastruttura utilizzata, da quella per le comunicazioni interne ed esterne, sino a GitHub. è qui che bisona descrivere i dettagli anche riguardanti i nomi dei branch.
+
+Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
+
+Si compone delle seguenti atività:
+
+- Implementazione
+- Creazione
+- Manutenzione
+
+===== Implementazione <implementazione>
+
+_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati, analizzati ad uno ad uno nelle Sezioni successive:
+
+- Discord
+- Git
+- GitHub
+- Google Calendar
+- Microsoft Teams
+- Script in Python
+- Telegram
+- Typst
+
+====== Discord
+
+Discord è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
+
+====== Git <Git>
+
+Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
+
+Git è dunque un potente _Version Control System (VCS)_ che permette di efficacemente versionare tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.
+
+====== GitHub <sezione_github>
+
+*GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_
+
+_ALimitedGroup_ utilizza GitHub per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.
+
+====== Google Calendar
+
+Per condividere con il gruppo tutti gli appuntamenti futuri _ALimitedGroup_ utilizza *Google Calendar*.
+
+====== Microsoft Teams
+
+*Microsoft Teams* viene utilizzato da _ALimitedGroup_ per realizzare le riunioni esterne con l'azienda proponente #M31.
+
+====== Script in Python
+
+Per automatizzare l'aggiornamento del sito web con i nuovi documenti e la compilazione dei file Typst, _ALimitedGroup_ ha deciso di realizzare degli appositi script in Python.
+
+Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel glossario.
+
+====== Telegram
+
+Telegram viene utilizzato dal gruppo per comunicare in maniera diretta tra i membri in caso di dubbi minori per cui non è necessaria una riunione interna.
+
+====== Typst
+
+Typst viene utilizzato da _ALimitedGroup_ per la redazione di tutti i documenti. Vengono compilati automaticamente utilizzando gli script prodotti direttamente dal gruppo.
+
+===== Creazione <creazione>
+
+L'attività di *creazione* guida la realizzazione dell'infrastruttura. Di seguito i dettagli per ogni prodotto utilizzato.
+
+====== Discord
+
+
+====== Git
+
+
+====== GitHub
+
+
+====== Google Calendar
+
+====== Microsoft Teams
+
+
+====== Script in Python
+
+
+====== Telegram
+
+
+
+====== Typst //migliorare
+
+#align(center)[*BRANCH*\ *\#-azione-documento-data*]
+
+Dove:
+- Al posto di *\#* va inserito il numero della _Issue_ le cui modifiche operate nel branch determineranno la chiusura
+- Al posto di *azione* va inserita l'azione fatta nel _Branch_ ovvero:
+  - *redazione* per indicare la redazione di un nuovo documento
+  - *aggiornamento* per indicare la modifica di un documento esistente
+- Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
+- Al posto di *data* la data del documento, se tale documento la prevede (ad esempio i *verbali*)
+
+#align(center)[*ISSUE* \ *azione documento data*]
+
+Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_.
+
+====== Template delle funzioni utili
+
+I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
+Tali funzioni sono inserite in un _file_ particolare, denominato #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")["common.typ"], che contiene le seguenti funzioni:
+- _p_ : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
+- _M31_ : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
+- _abbrev_ : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
+- _prof_ : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
+- _issue_ : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
+- _pr_ : come sopra, ma per indicare le _pull request_;
+- _doc_ : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
+
+
+===== Manutenzione
 
 === Processo di Miglioramento
 === Processo di Formazione
