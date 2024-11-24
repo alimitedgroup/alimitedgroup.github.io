@@ -472,20 +472,20 @@ L’attività di gestione delle configurazioni svolta dal gruppo si avvale delle
 
 ===== Identificazione della configurazione
 
-Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l’identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell’architettura del sistema da sviluppare e allegare il risultato di quanto compreso all’#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
+Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell’architettura del sistema da sviluppare e allegare il risultato di quanto compreso all’#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
 
 Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @elenco-documenti e nella @documentazione-supporto.
 
 ===== Controllo della configurazione <controllo-config>
 
-Il *Controllo della configurazione* è l’attività che disciplina le richieste di modifica: queste devono poter essere identificate e valutate con esito favorevole alla loro implementazione o contrario.
+Il *Controllo della configurazione* è l'attività che disciplina le richieste di modifica: queste devono poter essere identificate e valutate con esito favorevole alla loro implementazione o contrario.
 Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l’approvazione.
 
 Per realizzare al meglio questa attività sono stati predisposti metodi differenti per la documentazione e il codice vero e proprio, qui di seguito descritti.
 
 ====== Documenti
 
-ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti con l’ausilio delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
+ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti con l'ausilio delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
 
 - *Issue*: ogni modifica da fare deve essere documentata mediante una issue da assegnare al componente che prenderà in carico la modifica o la redazione di un documento.
   Generalmente una issue possiede:
@@ -496,9 +496,9 @@ ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti
   - un assegnatario che prenderà in carico il lavoro da effettuare
   - un legame con la board del progetto
 - *Board*: serve per stabilire se una issue presa in carico è ancora da iniziare, in sviluppo o terminata
-- *Pull Request*: un sistema che permette di chiedere la verifica e (eventualmente) l’approvazione prima di fondere la modifica nel ramo principale del repository. Le Pull Request sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
+- *Pull Request*: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del repository. Le Pull Request sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
 
-Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall’utilizzo di Git, un version control system sviluppato da Linus Torvalds e brevemente descritto nella @Git.
+Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di Git, un version control system sviluppato da Linus Torvalds e brevemente descritto nella @Git.
 
 ====== Codice
 
@@ -733,7 +733,7 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 - *.github/workflows*: contiene lo script in _Python_ che si occupa di compilare i files _Typst_ dei documenti ed aggiornare il sito di conseguenza;
 - *.vscode*: contiene informazioni utili per l'_IDE_ di sviluppo _Microsoft Visual Studio Code_, se questo viene utilizzato per la stesura dei documenti;
 - *01-candidatura*: contiene, con le eventuali _sub-directories_ i file della candidatura, ovvero la prima fase del progetto;
-- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della Requirements and Technology Baseline (RTB), ovvero la seconda fase del progetto;
+- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della _Requirements and Technology Baseline_ (RTB), ovvero la seconda fase del progetto;
 - *assets*: contiene _files_ utili per il sito web e i documenti, come loghi e _fonts_;
 - *lib*: contiene i file _template_ per la redazione dei documenti;
 - *website*: contiene i file relativi al sito web del gruppo.
@@ -776,7 +776,7 @@ La piattaforma *Microsoft Teams* viene controllata direttamente da #M31, in quan
 
 ====== Script in Python
 
-In merito agli Script di Python, questi non necessitano di particolare modifiche manuali: possono essere eseguiti direttamente senza necessita di alcuna operazione aggiuntiva.
+In merito agli Script di _Python_, questi non necessitano di particolare modifiche manuali: possono essere eseguiti direttamente senza necessita di alcuna operazione aggiuntiva.
 
 In merito allo Script sulla compilazione dei file _Typst_ e aggiornamento del sito, questo viene eseguito automaticamente come descritto nella sezione @creazione-github.
 
@@ -787,17 +787,17 @@ Tale gruppo è configurato in maniera tale da escludere il possibile ingresso di
 
 ====== Typst <creazione-typst> //migliorare
 
-L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazioni di _files_, da noi chiamati _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella *lib* del _repository_.
+L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazione di _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella _lib_ del _repository_.
 
-In merito ai *verbali* le funzioni sono contenute nel file
-#link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/documentazione.typ")[*verbale.type*] e sono, in elenco:
+In merito ai *verbali*, le funzioni sono contenute nel file
+#link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/documentazione.typ")[*_verbale.typ_*] e sono, in elenco:
 - *verbale*: inserisce la pagina di copertina, la tabella delle modifiche e l'indice;
 - *inizio-verbale-interno*: permette di inserire un testo con le informazioni iniziali della riunione (come, a titolo di esempio, la data, il luogo e la durata);
 - *inizio-verbale-esterno*: permette di inserire un testo con le informazioni iniziali della riunione (come, a titolo di esempio, la data, l'azienda con cui è stata fatta la riunione, il luogo e la durata);
 - *approvazione-esterna*: permette di inserire il testo per certificare, nella sezione esterna, l'approvazione da parte dell'azienda con cui si è svolto l'incontro (solo in caso di verbale esterno);
 - *tabella-decisioni*: permette di inserire la *tabella delle decisioni e delle azioni*.
 
-In merito ai *diari di bordo*, il file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/diario.typ")[*diario.typ*] possiede funzioni primarie e secondarie per la realizzazione delle presentazioni. In esso vi è un'unica funzione di interesse primario, *presentazione*, che permette di generare automaticamente l'intero documento se ad essa vengono forniti i punti per ciascuna delle sezioni.
+In merito ai *diari di bordo*, il file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/diario.typ")[*_diario.typ_*] possiede funzioni primarie e secondarie per la realizzazione delle presentazioni. In esso vi è un'unica funzione di interesse primario, *presentazione*, che permette di generare automaticamente l'intero documento se ad essa vengono forniti i punti per ciascuna delle sezioni.
 
 Per i rimanenti *documenti* funzioni di interesse sono contenute nel template #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*common.typ*], tra cui:
 - *prima-pagina*: Inserisce la pagina di copertina e il registro delle modifiche;
@@ -805,10 +805,17 @@ Per i rimanenti *documenti* funzioni di interesse sono contenute nel template #l
 - *indice-tabelle*: genera un elenco di tutte le tabelle inserite nel documento;
 - *indice-immagini*: genera un elenco di tutte le immagini presenti nel documento
 
-Per comodità, è stato realizzato un template apposito che esegue in automatico tutte le azioni necessarie per realizzare la struttura standard di questi documenti: #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*importantdocs.typ*]: il suo uso non è tuttavia obbligatorio.
+Per i seguenti documenti:
+- *Norme di Progetto*;
+- *Piano di Progetto*;
+- *Piano di Qualifica*;
+- *Analisi dei Requisiti*;
+
+che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato il _template_, che permette di automatizzare la realizzazione della struttura _standard_ adatta a loro.\
+Tuttavia, l'utilizzo di #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*_importantdocs.typ_*] non è strettamente obbligatorio.
 
 I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
-Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*common.typ*]:
+Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*_common.typ_*]:
 - *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
 - *M31* : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
 - *abbrev* : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
