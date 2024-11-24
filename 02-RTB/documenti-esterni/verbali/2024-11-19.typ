@@ -31,26 +31,26 @@
 = Dettaglio riunione
 == Presentazione ufficiale dei team
 Conosciamo i nostri riferimenti all'interno dell'azienda _M31_:
-- *#p.luca.nome #p.luca.cognome*, #p.luca.ruolo
-- *#p.moones.nome #p.moones.cognome*, #p.moones.ruolo
-- *#p.cristian.nome #p.cristian.cognome*, #p.cristian.ruolo
+- *#persona(p.luca)*, #p.luca.ruolo
+- *#persona(p.moones)*, #p.moones.ruolo
+- *#persona(p.cristian)*, #p.cristian.ruolo
 
 Il gruppo _ALimitedGroup_ ha partecipato in modalità mista all'incontro, secondo la disponibilità offerta da _M31_. In particolare:
-- *in sede*: #p.emanuele.nome #p.emanuele.cognome, #p.samuele.nome #p.samuele.cognome, #p.loris.nome #p.loris.cognome
-- *da remoto*: #p.sara.nome #p.sara.cognome, #p.marco.nome #p.marco.cognome, #p.matteo.nome #p.matteo.cognome, #p.lorenzo.nome #p.lorenzo.cognome
+- *in sede*: #persona(p.emanuele), #persona(p.samuele), #persona(p.loris)
+- *da remoto*: #persona(p.sara), #persona(p.marco), #persona(p.matteo), #persona(p.lorenzo)
 I membri si sono tutti presentati qualificandosi con il proprio ruolo attuale, ricordando comunque che verranno ruotati periodicamente.
 
 #pagebreak()
 
 == Concordare way of working
-Abbiamo discusso principalmente con #p.luca.nome #p.luca.cognome i dettagli del way of working. L'azienda sottolinea l'importanza di *redarre un'ottima documentazione*, sia quella di progetto che quella nel codice. Sono invece disposti ad essere meno stringenti sull'implementazione software e sulla creazione di interfacce utente per rispettare la scadenza preventivata.
+Abbiamo discusso principalmente con #persona(p.luca) i dettagli del way of working. L'azienda sottolinea l'importanza di *redarre un'ottima documentazione*, sia quella di progetto che quella nel codice. Sono invece disposti ad essere meno stringenti sull'implementazione software e sulla creazione di interfacce utente per rispettare la scadenza preventivata.
 
 Abbiamo concordato l'utilizzo del *metodo agile* con sprint di *due settimane*, presentando però anche una panoramica generale del lavoro.
 
 #pagebreak()
 
 == Discutere i requisiti del capitolato
-La riunione si è concentrata nel fissare i requisiti minimi ed opzionali con #p.cristian.nome #p.cristian.cognome e #p.moones.nome #p.moones.cognome. \
+La riunione si è concentrata nel fissare i requisiti minimi ed opzionali con #persona(p.cristian) e #persona(p.moones).
 
 === Requisiti funzionali
 Il *riassortimento predittivo basato su machine learning* diventa requisito *desiderabile* visto che _M31_ non è interessata ad un progetto di ML ed è un processo che richiede molto tempo. Rimane però *obbligatorio il riassortimento automatico* (non predittivo). \
@@ -72,7 +72,7 @@ Per quanto riguarda la *creazione di una GUI centrale* si tratta di un *requisit
 #pagebreak()
 
 = Organizzare la comunicazione ed i prossimi incontri
-Tutti i membri di _M31_ che abbiamo conosciuto si dimostrano disponibili per rispondere a qualsiasi dubbio o necessità,. Rimarrà però *#p.moones.nome #p.moones.cognome* il nostro riferimento principale che contatteremo ancora *via email*, almeno per il momento. \
+Tutti i membri di _M31_ che abbiamo conosciuto si dimostrano disponibili per rispondere a qualsiasi dubbio o necessità,. Rimarrà però *#persona(p.moones)* il nostro riferimento principale che contatteremo ancora *via email*, almeno per il momento. \
 Il *prossimo incontro* tra _M31_ ed _ALimitedGroup_ è attualmente fissato a *martedì 3 dicembre*.
 
 #pagebreak()
