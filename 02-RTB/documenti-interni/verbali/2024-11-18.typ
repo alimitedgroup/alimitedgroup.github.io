@@ -5,6 +5,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 24, month: 11, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Approvazione del documento",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 19, month: 11, year: 2024),
       autore: p.matteo,
@@ -12,7 +19,7 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [Redatto],
+  stato: [Approvato],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
   odg: [Settima riunione di _ALimitedGroup_: vengono definite alcune convenzioni sulla nomenclatura di _Branch_ e _Issue_ e viene fatto il punto della situazione. Infine, vengono assegnati i nuovi ruoli.],
   disambiguatore: [],
@@ -35,7 +42,7 @@ I componenti di _ALimitedGroup_ hanno deciso di utilizzare, da ora in avanti, un
 \
 Da ora in avanti i *_Branch_* seguiranno la seguente nomenclatura:
 
-#align(center)[*\#-azione-documento-data*]
+#align(center)[*`#-azione-documento-data`*]
 
 Dove:
 - Al posto di *\#* va inserito il numero della _Issue_ le cui modifiche operate nel branch determineranno la chiusura
