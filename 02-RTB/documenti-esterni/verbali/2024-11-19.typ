@@ -67,7 +67,7 @@ Verranno fissate linee guida per la creazione pratica del *test book*, oltre che
 
 Accolgono inoltre la *proposta di modifica al livello centrale dell'architettura* #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=6")[ipotizzata nel capitolato]#footnote("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=6") (utilizzando NATS), concordando però che necessiterà di ulteriore confronto per chiarificare l'idea e renderla definitiva. \
 Sottolineano di essere aperti all'utilizzo di *qualsiasi tecnologia*. \
-Per quanto riguarda la *creazione di una GUI centrale* si tratta di un *requisito obbligatorio*, mentre la creazione di una *GUI periferica* (per ogni magazzino) è *requisito desiderabile*.
+Per quanto riguarda la *creazione di una GUI* si tratta di un *requisito desiderabile*, tuttavia è *requisito obbligatorio* l'implementazione di una API per permettere una qualche forma di accesso al software.
 
 #pagebreak()
 
@@ -92,6 +92,8 @@ _ALimitedGroup_ ringrazia _M31_ per averci accolto nella loro sede e per la disp
   "Il monitoraggio del sistema diventa requisito opzionale",
   "DI24",
   "La creazione di GUI periferiche è requisito desiderabile",
+  "DI25",
+  "L'implementazione di API per l'accesso al software è requisito obbligatorio",
 )
 
 #pagebreak()
