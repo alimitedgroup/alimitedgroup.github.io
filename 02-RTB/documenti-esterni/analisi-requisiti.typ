@@ -51,6 +51,43 @@
   pagebreak()
 }
 
+#let use_case(
+  num: [],
+  titolo: [],
+  attore: [],
+  pre: [],
+  scenari: [],
+  trigger: [],
+  post: none,
+  attori_secondari: none,
+  scenari_alternativi: none,
+  body,
+) = [
+  === UC#num - #titolo
+
+  - *Attore principale*: #attore
+
+  #if (attori_secondari != none) {
+    [- *Attore secondario*: attore_secondario]
+  }
+
+  - *Precondizioni*: #pre
+
+  #if (post != none) {
+    [- *Postcondizioni*: #post]
+  }
+
+  - *Scenario principale*: #scenari
+
+  #if (scenari_alternativi != none) {
+    [- *Scenari alternativi*: #scenari_alternativi]
+  }
+
+  - *Trigger*: #trigger
+
+  body
+]
+
 = Introduzione
 == Scopo del documento
 
@@ -112,6 +149,17 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 == Assunzioni e dipendenze
 #lorem(10)
 = Requisiti specifici
+
+= Use Case
+
+#use_case(
+  num: "1",
+  titolo: [Visualizzazione dashboard],
+  attore: "Utente",
+  pre: "L'utente è autenticato nel sistema",
+  scenari: "L'utente accede alla dashboard del sistema",
+  trigger: "L'utente seleziona la voce 'Dashboard' dal menu principale",
+)[]
 
 = Informazioni di supporto
 == Tabella dei contenuti
