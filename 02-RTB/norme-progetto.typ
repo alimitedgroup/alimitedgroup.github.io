@@ -334,7 +334,7 @@ Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @c
 Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, qui di seguito definite.
 
 #pagebreak()
-====== Denominazine dei documenti
+===== Denominazine dei documenti
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
@@ -352,7 +352,7 @@ dove:
 - *\#* è un modificatore, ovvero un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
 - *VERSIONE* indica la versione corrente del documento
 
-====== Datazione dei documenti e sintassi identificatori
+===== Datazione dei documenti e sintassi identificatori
 
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
 Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ovvero parole separate dal carattere *-*.
