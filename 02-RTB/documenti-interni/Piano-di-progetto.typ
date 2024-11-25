@@ -86,8 +86,8 @@ Parte fondamentale per la redazione di un piano di progetto è il poter analizza
 
 Un’analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
-- *Identificazione*: ovvero l'identificazione dei possibili rischi legati ad un’attività in tutti i vari domini, non solo quello progettuale, ma anche riguardante la sfera personale;
-- *Analisi*: individuati i rischi è necessario valutare quanto ciascun di questi sia probabile, ovvero che possibilità ha di effettivamente presentarsi, e che possibili risvolti questo potrebbe avere sulla buona riuscita dello sprint e del progetto;
+- *Identificazione*: ossia l'identificazione dei possibili rischi legati ad un’attività in tutti i vari domini, non solo quello progettuale, ma anche riguardante la sfera personale;
+- *Analisi*: individuati i rischi è necessario valutare quanto ciascun di questi sia probabile, ossia che possibilità ha di effettivamente presentarsi, e che possibili risvolti questo potrebbe avere sulla buona riuscita dello sprint e del progetto;
 - *Pianificazione*: analizzati rischi e possibile ricadute, è necessario pensare ai possibili metodi atti alla diminuzione della possibilità che tali rischi si avverino o, ove questo non possa essere applicabile, mitigarne gli effetti negativi;
 - *Controllo*: la parte attiva della gestione del rischio che prevede il continuo monitoraggio delle varie attività per poter rilevare quanto prima possibile l’insorgere di un rischio e applicare le procedure di mitigazione definite in precedenza
 
@@ -95,9 +95,9 @@ Un’analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
 In seguito saranno quindi illustrati i possibili rischi individuati da ALimitedGroup, divi in tre categorie:
 
-- *RT* ovvero *R*\ischio *T*\ecnologico
-- *RI* ovvero *R*\ischio *I*\ndividuale
-- *RG* ovvero *R*\ischio *G*\lobale
+- *RT* ossia *R*\ischio *T*\ecnologico
+- *RI* ossia *R*\ischio *I*\ndividuale
+- *RG* ossia *R*\ischio *G*\lobale
 
 Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della sezione apposita nelle #link-norme("Norme di Progetto").
 
