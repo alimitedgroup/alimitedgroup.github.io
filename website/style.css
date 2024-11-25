@@ -1,98 +1,162 @@
 :root {
-    --background: #eeeeee;
-    --text: #41474e;
-    --accent: #d26878;
-    --link: #5690af;
+  --accent: #ff3b7f;
+  --accent2: #7a2d64;
+  --link: #c03e6b;
+  --shadow: rgba(192, 62, 107, 0.05);
+  --bg: #2c2c2c;
+  --bg2: #494949;
+  --border: #444;
+  --header: #d3d3d3;
+  --fg: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #222529;
-        --text: #d6d6d6;
-        --accent: #78b6ad;
-        --link: #e2aea2;
-    }
-}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #efefef;
+    --bg2: #dbdbdb;
+    --header: #000000;
+    --border: #444;
+    --fg: #000;
+    --link: #5e9fff;
+  }
 
-html {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: monospace;
-    font-size: 1rem;
-    line-height: 24px;
-
-    display: grid;
-    grid-template-columns: 1fr min(45rem, 90%) 1fr;
+  .arrow-icon {
+    filter: brightness(0) !important;
+  }
 }
 
 body {
-    grid-column: 2;
+  background: var(--bg) !important;
+  color: var(--fg) !important;
 }
 
-header {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
+.textcenter {
+  text-align: center;
 }
 
-@media screen and (max-width: 46rem) {
-    header {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
+.logomain {
+  max-height: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 
-header img {
-    width: 100%;
+.fade-in-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-out 0.5s forwards;
 }
 
-header div {
-    justify-self: center;
-    align-self: center;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
-a,
-a:visited {
-    color: var(--link);
-    text-decoration: none;
-    border-radius: .125rem;
+.card-header {
+  background-color: var(--bg);
+  box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
+  position: relative;
 }
 
-a:hover {
-    color: var(--background);
-    background-color: var(--link);
+.navbar {
+  background-color: var(--bg2);
+  box-shadow: 0 4px 8px rgba(229, 57, 117, 0.4);
 }
 
-ul li::marker {
-    content: "» ";
-    color: var(--accent);
+.navbar-brand,
+.nav-link {
+  color: var(--accent) !important;
 }
 
-h1 {
-    font-size: 2rem;
+.navbar-toggler {
+  border-color: var(--accent);
 }
 
-h2::before {
-    color: var(--accent);
-    content: "# ";
-}
-h3::before {
-    color: var(--accent);
-    content: "## ";
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
 }
 
-h2 {
-    font-size: 1.75rem;
-    line-height: 1.1;
+.card {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px var(--shadow);
+}
+
+.btn-link {
+  color: var(--accent);
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-link:hover {
+  color: var(--accent);
 }
 
 h3 {
-    font-size: 1.50rem;
-    line-height: 1.1;
+  color: var(--accent);
+}
+
+p,
+.navTitle {
+  color: var(--header);
+}
+
+.profile-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(192, 62, 107, 0.4);
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-body ul {
+  color: var(--fg);
+}
+
+.arrow-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.dropdown-toggle-icon.collapsed .arrow-icon {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.dropdown-toggle-icon:not(.collapsed) .arrow-icon {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+footer {
+  text-align: center;
+  justify-content: center;
+}
+
+#mail-link {
+  display: block;
+  text-align: center;
 }
