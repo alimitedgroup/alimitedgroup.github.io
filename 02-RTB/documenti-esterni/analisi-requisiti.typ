@@ -1,4 +1,6 @@
 #import "/lib/common.typ": *
+#import "@preview/pintorita:0.1.2"
+#import "@preview/chronos:0.2.0"
 
 #{
   let nome = "Analisi dei requisiti"
@@ -51,6 +53,9 @@
   pagebreak()
 }
 
+// Don't delete, necessary for diagrams
+#show raw.where(lang: "pintora"): it => pintorita.render(it.text)
+
 #let use_case(
   num: [],
   titolo: [],
@@ -85,7 +90,7 @@
 
   - *Trigger*: #trigger
 
-  body
+  #body
 ]
 
 = Introduzione
@@ -150,7 +155,11 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 #lorem(10)
 = Requisiti specifici
 
-= Use Case
+= Casi d'uso
+
+== Introduzione
+== Attori
+== Lista casi d'uso
 
 #use_case(
   num: "1",
@@ -160,6 +169,36 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
   scenari: "L'utente accede alla dashboard del sistema",
   trigger: "L'utente seleziona la voce 'Dashboard' dal menu principale",
 )[]
+
+= Requisiti Funzionali
+== Requisiti funzionali
+#{
+  show table.cell: cl => align(left, cl)
+  figure(
+    table(
+      columns: (1fr, 5fr, 1fr),
+      inset: 1.1em,
+      stroke: (x, y) => if y >= 1 {
+        1pt + black
+      } else {
+        none
+      },
+      table.header(
+        [*Codice*],
+        [*Descrizione*],
+        [*Fonti*],
+      ),
+
+      [], [], [],
+      [], [], [],
+      [], [], [],
+    ),
+    caption: [Tabella dei requisiti funzionali],
+  )
+
+}
+== Requisiti di qualità
+== Requisiti di vincolo
 
 = Informazioni di supporto
 == Tabella dei contenuti
