@@ -3,7 +3,7 @@
 
 #metadata[piano-di-progetto] <titolo>
 
-#set text(lang: "it")
+#set text(lang: "it", font: "Hanken Grotesk")
 #set list(indent: 1em)
 
 #show link: underline
