@@ -145,16 +145,17 @@ Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando
 - *Criticità evidenziate*
 - *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
 
+#pagebreak()
 ====== Lettera di Candidatura
 
 La #link("https://alimitedgroup.github.io/Lettera%20di%20candidatura.pdf")[*Lettera di Candidatura*] è il documento con cui _ALimitedGroup_ ha ufficialmente presentato la sua candidatura al capitolato proposto dall'azienda #M31.
 Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti del gruppo a scegliere questo capitolato, nonché le informazioni generali riguardanti i _repository_ del gruppo contenente tutti i documenti relativi al progetto.
 
-====== Dichiarazione degli impegni
+====== Dichiarazione degli Impegni
 
 La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti di _ALimitedGroup_ svolgeranno durante lo stesso.
 
-===== Requirements and Technology Baseline (RTB)
+===== Requirements and Technology Baseline
 
 ====== Analisi dei requisiti
 
@@ -162,9 +163,7 @@ L'#link("")[*Analisi dei Requisiti (CAMBIARE LINK)*] è il documento in cui _ALi
 
 [PROSEGUIRE]
 
-#pagebreak()
-
-====== Lettera di Presentazione (RTB)
+====== Lettera di Presentazione
 
 La #link("")[*Lettera di Presentazione*] per la *Requirements and Technology Baseline (RTB)* è il documento con cui _ALimitedGroup_ si candida ufficialmente per la prima _Baseline_ del progetto del corso di Ingegneria del Software.
 Essa contiene le informazioni rilevanti a tale fine, come, a mero titolo di esempio, i _link_ ai documenti realizzato per l'occasione e in questa Sezione elencati.
@@ -187,7 +186,7 @@ Per questo motivo, il gruppo ha prodotto un #link("")[*Glossario (CAMBIARE LINK)
 
 [PROSEGUIRE]
 
-===== Product Baseline (PB)
+===== Product Baseline
 
 [PROSEGUIRE]
 
@@ -255,15 +254,14 @@ Generalmente un verbale possiede questa struttura iniziale:
 - *Indice del documento*, generato automaticamente da _Typst_.
 
 Un verbale successivamente prevede sempre una prima sezione con alcune informazioni generali tra cui:
-
 - *Modalità*, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_ salvo diversamente specificato);
 - *Data della riunione*;
 - *Orario di inizio*;
 - *Orario di fine*.
 
-cui seguirà, in elenco, l'ordine del giorno nei vari punti.\ \
+cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
 
-La seconda sezione, che segue a quanto appena scritto, esplicita quanto discusso per ogni punto dell'ordine del giorno.\
+La seconda sezione, che segue quanto appena scritto, esplicita quanto discusso per ogni punto dell'ordine del giorno.\
 
 Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato; l'ultima sezione, invece, si riferisce alla _tabella delle decisioni e delle azioni_ che, tramite il sistema di _ticketing_, elenca tutte le decisioni e azioni prese
 dal gruppo, tale tabella è facilmente realizzabile tramite la funzione "tabella-decisioni".\
@@ -323,7 +321,7 @@ A questo punto il processo diviene differente per i verbali e i rimanenti docume
 - *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di verifica positiva, il verificatore richiede al responsabile di approvare il documento.
 Il responsabile, una volta approvato il documento, risolverà la pull request e procede quindi al merge del branch secondario in quello principale. L’azione scatenera l’avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, questo anche considerando che con il tempo la memoria potrebbe non più essere precisa come prima: per queste ragioni il gruppo ha deciso che i verbali saranno pubblicati solamente quando approvati.
 - *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale: ciò avviene completando il _merge_ e risolvendo quindi la _Pull Request_. Tale processo è diversificato per i documenti rispetto ai verbali in quanto, essendo gli altri documenti di consultazione più frequente, è necessario avere a disposizione la versione più recente disponibile per la visione;
-- *Approvazione (altri documenti)*: l’approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
+- *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
 
 ===== Manutenzione
 
@@ -335,6 +333,7 @@ Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @c
 
 Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, qui di seguito definite.
 
+#pagebreak()
 ====== Denominazine dei documenti
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
@@ -351,13 +350,14 @@ dove:
   - *PQ* per *P*\iano di *Q*\ualifica
 - *GG-MM-AAAA* indica la data in formato giorno-mese-anno (con due cifre per giorno e mese e 4 cifre per l’anno)
 - *\#* è un modificatore, ovvero un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
-VERSIONE indica la versione corrente del documento
+- *VERSIONE* indica la versione corrente del documento
 
 ====== Datazione dei documenti e sintassi identificatori
 
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
 Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ovvero parole separate dal carattere *-*.
 
+#pagebreak()
 ==== Documentazione prodotta o di supporto <documentazione-supporto>
 
 Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima descrizione è stata realizzata nella @elenco-documenti.
@@ -365,9 +365,10 @@ Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima d
 #figure(
   table(
     align: center,
-    columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+    columns: (1fr, 2fr, 1fr, 1.5fr, 0.65fr),
+    inset: 5pt,
     table.header(
-      [*Tipo documento*],
+      [*Documento*],
       [*Descrizione*],
       [*Redattore*],
       [*Destinatari*],
@@ -377,72 +378,72 @@ Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima d
     [Analisi dei Requisiti],
     [Documento contenente informazioni sui requisiti obbligatori, desiderabili e opzionali del progetto],
     [Analisti],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [#M31,\ ALimitedGroup,
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Esterno],
 
     [Lettera di Candidatura],
     [Lettera redatta per presentare la candidatura del gruppo al capitolato di #M31],
     [-],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
-      Prof. Cardin Riccardo],
-    [Esterno],
-
-    [Lettera di Presentazione (PB)],
-    [Lettera redatta per presentare la candidatura del gruppo alla PB],
-    [Responsabile],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [ALimitedGroup, \
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Esterno],
 
     [Lettera di Presentazione (RTB)],
-    [Lettera redatta per presentare la candidatura del gruppo alla RTB],
+    [Lettera redatta per presentare la candidatura del gruppo alla _RTB_],
     [Responsabile],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [#M31,\ ALimitedGroup,
+      Prof. Vardanega Tullio, \
+      Prof. Cardin Riccardo],
+    [Esterno],
+
+    [Lettera di Presentazione (PB)],
+    [Lettera redatta per presentare la candidatura del gruppo alla _Product Baseline_],
+    [Responsabile],
+    [#M31,\ ALimitedGroup,
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Esterno],
 
     [Norme di Progetto],
     [Stabilisce il _Way of Working_ e le pratiche di sviluppo adottate dal gruppo],
     [Amministratore],
-    [ALimitedGroup
-      Prof. Vardanega Tullio \
+    [ALimitedGroup,
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Interno],
 
     [Piano di Progetto],
     [Definisce quanto realizzato in ogni periodo con relativi costi e aggiornamenti del _budget_ rimanente],
     [Responsabile],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [#M31,\ ALimitedGroup,
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Esterno],
 
     [Piano di Qualifica],
     [Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGroup_],
     [Amministratore],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [#M31,\ ALimitedGroup,
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Esterno],
 
     [Verbale Esterno],
     [Verbale di una riunione svolta con la presenza di persone esterne al gruppo],
     [Responsabile \ o Amministratore],
-    [#M31,\ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [#M31,\ ALimitedGroup,
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Esterno],
 
     [Verbale Interno],
     [Verbale di una riunione svolta senza la presenza di persone esterne al gruppo],
     [Responsabile \ o Amministratore],
-    [ ALimitedGroup
-      Prof. Vardanega Tullio \
+    [ ALimitedGroup,\
+      Prof. Vardanega Tullio, \
       Prof. Cardin Riccardo],
     [Interno],
   ),
@@ -653,6 +654,7 @@ Per un dettaglio più specifico delle attività di revisione si veda la @regole-
 
 Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
 
+#pagebreak()
 === Infrastruttura
 
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
@@ -663,70 +665,70 @@ Si compone delle seguenti atività:
 - Creazione
 - Manutenzione
 
-===== Implementazione <implementazione>
+==== Implementazione <implementazione>
 
 _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati, analizzati ad uno ad uno nelle Sezioni successive:
 
-- Discord
-- Git
-- GitHub
-- Google Calendar
-- Microsoft Teams
-- Script in Python
-- Telegram
-- Typst
+- _Discord_
+- _Git_
+- _GitHub_
+- _Google Calendar_
+- _Microsoft Teams_
+- Script in _Python_
+- _Telegram_
+- _Typst_
 
-====== Discord
+===== Discord
 
-Discord è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
+_Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
 
-====== Git <Git>
+===== Git <Git>
 
 Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
 
 Git è dunque un potente _Version Control System (VCS)_ che permette di efficacemente versionare tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.
 
-====== GitHub <sezione_github>
+===== GitHub <sezione_github>
 
 *GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_
 
-_ALimitedGroup_ utilizza GitHub per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.
+_ALimitedGroup_ utilizza _GitHub_ per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.
 
-====== Google Calendar
+===== Google Calendar
 
 Per condividere con il gruppo tutti gli appuntamenti futuri _ALimitedGroup_ utilizza *Google Calendar*.
 
-====== Microsoft Teams
+===== Microsoft Teams
 
 *Microsoft Teams* viene utilizzato da _ALimitedGroup_ per realizzare le riunioni esterne con l'azienda proponente #M31.
 
-====== Script in Python
+===== Script in Python
 
 Per automatizzare l'aggiornamento del sito web con i nuovi documenti e la compilazione dei file Typst, _ALimitedGroup_ ha deciso di realizzare degli appositi script in Python.
 
 Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel glossario.
 
-====== Telegram
+===== Telegram
 
 Telegram viene utilizzato dal gruppo per comunicare in maniera diretta tra i membri in caso di dubbi minori per cui non è necessaria una riunione interna.
 
-====== Typst
+===== Typst
 
 Typst viene utilizzato da _ALimitedGroup_ per la redazione di tutti i documenti. Vengono compilati automaticamente utilizzando gli script prodotti direttamente dal gruppo.
 
-===== Creazione <creazione>
+==== Creazione <creazione>
 
 L'attività di *creazione* guida la realizzazione dell'infrastruttura. Di seguito i dettagli per ogni prodotto utilizzato.
 
-====== Discord
+===== Discord
 
 Per utilizzare *Discord* è stato realizzato un server con un canale testuale e un canale apposito per le riunioni.
 
-====== Git
+===== Git
 
 *Git* non richiede particolari modifiche: deve essere configurato inserendo username e email con cui il componente interagisce normalmente con il _repository_ GitHub del progetto
 
-====== GitHub <creazione-github> //action
+===== GitHub <creazione-github> //action
 
 Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_repository_ *GitHub* dedicato alla documentazione] è strutturato in maniera da favorire la produzione dei documenti. All'interno è possibile trovare varie _directories_, qui di seguito descritte:
 
@@ -738,6 +740,7 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 - *lib*: contiene i file _template_ per la redazione dei documenti;
 - *website*: contiene i file relativi al sito web del gruppo.
 
+#pagebreak()
 È inoltre possibile trovare il file *.gitignore* (utile per evitare il tracciamento di alcuni file specifici), il file *README.md* (che permette di realizzare la descrizione nella pagina principale del _repository_) e *docs.typ* (altro file di utilità per i documenti).
 
 Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
@@ -762,7 +765,7 @@ Ogni _Issue_ è inoltre legata ad una _Project Board_, uno strumento di GitHub c
 
 In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da GitHub denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
 
-====== Google Calendar
+===== Google Calendar
 
 In merito al calendario condiviso, è affidato al *Responsabile* il compito di aggiungere gli eventi del gruppo, dai diari di bordo sino alle riunioni interne ed esterne programmate.
 
@@ -770,22 +773,22 @@ Il calendario è condiviso tra i vari membri, che riceveranno un promemoria alme
 
 Rimane responsabilità di ogni membro controllarlo periodicamente.
 
-====== Microsoft Teams
+===== Microsoft Teams
 
 La piattaforma *Microsoft Teams* viene controllata direttamente da #M31, in quanto tale non necessita di alcuna operazione.
 
-====== Script in Python
+===== Script in Python
 
 In merito agli Script di _Python_, questi non necessitano di particolare modifiche manuali: possono essere eseguiti direttamente senza necessita di alcuna operazione aggiuntiva.
 
 In merito allo Script sulla compilazione dei file _Typst_ e aggiornamento del sito, questo viene eseguito automaticamente come descritto nella sezione @creazione-github.
 
-====== Telegram
+===== Telegram
 
 Il gruppo ha realizzato un gruppo *Telegram* per le comunicazioni di minore importanza.
 Tale gruppo è configurato in maniera tale da escludere il possibile ingresso di persone esterne: ad eccezione di questo, non richiede operazioni di interesse per questo documento.
 
-====== Typst <creazione-typst> //migliorare
+===== Typst <creazione-typst> //migliorare
 
 L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazione di _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella _lib_ del _repository_.
 
@@ -814,6 +817,7 @@ Per i seguenti documenti:
 che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato il _template_, che permette di automatizzare la realizzazione della struttura _standard_ adatta a loro.\
 Tuttavia, l'utilizzo di #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*_importantdocs.typ_*] non è strettamente obbligatorio.
 
+#pagebreak()
 I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
 Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*_common.typ_*]:
 - *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
@@ -824,7 +828,7 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 - *pr* : come sopra, ma per indicare le _pull request_;
 - *doc* : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
 
-===== Manutenzione
+==== Manutenzione
 
 A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato il compito all'*Amministratore* di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità qualora errori o cambiamenti lo rendano necessario.
 
