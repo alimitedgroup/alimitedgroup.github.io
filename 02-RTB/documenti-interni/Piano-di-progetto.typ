@@ -421,34 +421,58 @@ Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno e
 - Aggiornamento delle risorse rimanenti
 - Retrospettiva, comprendente anche i rischi effettivamente riscontrati
 
+#pagebreak()
+
 == Requirements and Technology Baseline (RTB)
 
 === Sprint 1
 
-==== Informazioni generali e attività da svolgere
-Il gruppo ha concordato che questo sprint avrà una durata complessiva di *3 settimane*, dal giorno *04-11-2024* al giorno *24-11-2024*.
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[04-11-2024],
+  [Fine prevista:], strong[24-11-2024],
+  [Fine reale:], strong[24-11-2024],
+  [Giorni di ritardo:], strong[0],
+)
+// Inizio: *04-11-2024* \
+// Fine prevista: *24-11-2024* \
+// Fine reale: *24-11-2024*
 
-Il gruppo ha concordato lo svolgimento delle seguenti attività:
-- Sistemazione delle problematiche sorte durante l’assegnazione degli appalti, in particolare:
-  - Sistemazione del sito web
-  - Sistemazione del sistema di versionamento dei documenti
-  - Sistemazioni del modo in cui il gruppo redige e verifica i verbali
-  - Sistemazione del legame tra decisioni intraprese nelle riunioni e backlog
+==== Informazioni generali e attività da svolgere
+
+Questo primo periodo ha l'obiettivo principale di risolvere tutti i problemi sorti durante la candidatura;
+successivamente, avverrà la redazione dei documenti necessari per un buon inizio dei lavori.
+
+In particolare, le attività previste sono:
+- Aggiornamento del sito web
+- Sistemazione del sistema di versionamento dei documenti
+- Miglioramento del processo di redazione e verifica dei verbali
+- Formalizzazione del legame tra decisioni intraprese nelle riunioni e backlog
 - Prima redazione del Glossario
 - Prima redazione delle Norme di Progetto
 - Prima redazione del Piano di Progetto
 - Stabilire un incontro con l’azienda proponente #M31
 - Inizio stesura Analisi dei requisiti
 
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RG3: Rischio Globale derivato da sottostima di attività
+
 #pagebreak()
 
-==== Prospetto consumo tempo e costi
+==== Preventivo
 
-Si prospetta l'utilizzo delle seguenti risorse: \
-\
-\
+Si prospetta l'utilizzo delle seguenti risorse:
 
-#{
+#box({
+  v(2em)
   show table.cell: cl => if cl.x == 0 and cl.y != 0 {
     align(left, cl)
   } else if cl.x == 0 {
@@ -477,17 +501,17 @@ Si prospetta l'utilizzo delle seguenti risorse: \
         [*Verificatore*],
       ),
 
-      [Loris Libralato], [0], [0], [2], [0], [0], [0],
-      [Samuele Esposito], [3], [0], [0], [0], [0], [0],
-      [Sara Ferraro], [0], [0], [2], [0], [0], [2],
-      [Lorenzo Stefani], [0], [0], [0], [0], [0], [0],
-      [Marco Piccoli], [0], [0], [0], [0], [0], [2],
-      [Matteo Scievano], [0], [0], [0], [0], [0], [2],
-      [Emanuele Artusi], [0], [0], [0], [0], [0], [0],
+      [Loris Libralato], [-], [-], [2], [-], [-], [-],
+      [Samuele Esposito], [3], [-], [-], [-], [-], [-],
+      [Sara Ferraro], [-], [-], [2], [-], [-], [2],
+      [Lorenzo Stefani], [-], [-], [-], [-], [-], [-],
+      [Marco Piccoli], [-], [-], [-], [-], [-], [2],
+      [Matteo Scievano], [-], [-], [-], [-], [-], [2],
+      [Emanuele Artusi], [-], [-], [-], [-], [-], [-],
     ),
     caption: [Suddivisione impegni per componente],
   )
-}
+})
 
 #{
   let p = plot(data: (
@@ -502,13 +526,9 @@ Si prospetta l'utilizzo delle seguenti risorse: \
   pie_chart(p, (40%, 30%), caption: "Impegno per ruolo", display_style: "hor-legend-chart")
 }
 
-==== Rischi attesi
+#pagebreak()
 
-I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
-
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
-- RG3: Rischio Globale derivato da sottostima di attività
+==== Consuntivo
 
 ==== Consumo effettivo temporale e finanziario
 ==== Aggiornamento delle risorse rimanenti
