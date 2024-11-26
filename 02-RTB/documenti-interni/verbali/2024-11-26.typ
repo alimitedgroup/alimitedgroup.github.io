@@ -38,7 +38,8 @@
 
 == Aggiornamenti sui lavori in corso
 
-Il gruppo _ALimitedGroup_, in questa settimana, ha speso innumerevoli ore di orologio per redigere ed analizzare in maniera ordinata, pulita e professionale i documenti riguardanti le Norme di Progetto, Piano di Progetto, Glossario e Analisi dei Requisiti. \
+Il gruppo _ALimitedGroup_, in questa settimana, ha proseguito la redazione e l'analisi dei
+seguenti documenti: Norme di Progetto, Piano di Progetto, Glossario e Analisi dei Requisiti. \
 _ALimitedGroup_ decide, inoltre, che segnalerà ogni qualvolta una parola sia contenuta nel Glossario utilizzando la seguente nomenclatura:
 #align(center)[parola#super[g]]
 così facendo viene segnalato al lettore che la definizione di essa è presente in quest'ultimo.\
