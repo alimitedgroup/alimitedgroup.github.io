@@ -42,7 +42,7 @@
       descr: "Prima redazione del documento",
     ),
   ),
-  versione: [0.4.0],
+  versione: [0.5.0],
   stato: [Verificato],
   responsabile: ((p.samuele),),
   verificatore: ((p.lorenzo),),
@@ -89,9 +89,6 @@ _ALimitedGroup_ si impegna a visionarlo periodicamente, per permetter la più co
 
 
 #pagebreak()
-= Processi
-Per sviluppare un buon sistema software la sola scrittura di codice e lo svolgimento di alcuni test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ovvero che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
-Tra i più rigorosi modelli esistenti sicuramente è innegabile l'importanza di quello descritto dallo _standard ISO/IEC 12207_ pubblicato, nella sua prima versione, nel 1995.\
 Lo standard classifica tre tipologie di processi:
 
 - *Primari*: i processi senza il quale un progetto non può definirsi tale;
@@ -100,17 +97,20 @@ Lo standard classifica tre tipologie di processi:
 
 Durante la realizzazione del progetto, il gruppo ha deciso di adottare alcuni di questi processi: saranno qui descritti assieme anche alle loro principali azioni.
 
-== Processi Primari
-Tra i processi primari utilizzati nell'ambito del progetto distinguiamo:
+= Processi Primari
+Per sviluppare un buon sistema software la sola scrittura di codice e lo svolgimento di alcuni test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ovvero che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
+Tra i più rigorosi modelli esistenti sicuramente è innegabile l'importanza di quello descritto dallo _standard ISO/IEC 12207_ pubblicato, nella sua prima versione, nel 1995.\
+
+Tra i processi primari, definiti dallo _standard ISO/IEC 12207_, utilizzati nell'ambito del progetto distinguiamo:
 - Fornitura
 - Sviluppo
 
-=== Fornitura
+== Fornitura
 
 La fornitura è il processo primario adottato dal fornitore del futuro prodotto finale che si occupa di analizzare le azioni da intraprendere per la sua realizzazione.\
 Questo processo prevede un primo studio dei requisiti che il progetto dovrà, nelle componenti prodotte, soddisfare, in maniera da avere il materiale necessario per poter effettuare una contrattazione degli stessi con il proponente e poter comunicare allo stesso una possibile pianificazione del lavoro da svolgere con probabile data di consegna prevista.
 
-==== Strumenti a supporto
+=== Strumenti a supporto
 
 Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strumenti:
 - *_Google Calendar_*: per rendere pubblici del gruppo e a portata di mano tutti gli appuntamenti previsti;
@@ -120,7 +120,7 @@ Le comunicazioni verso l'azienda proponente richiedono, invece, l'utilizzo di:
 - _*Microsoft Teams*_
 
 #pagebreak()
-==== Attività previste
+=== Attività previste
 
 La fornitura prevede varie attività, qui di seguito descritte:
 
@@ -132,7 +132,7 @@ La fornitura prevede varie attività, qui di seguito descritte:
 - *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto prodotto, con annessa quindi una valutazione sullo stato di lavoro;
 - *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, con l'impegno di fornire supporto a quest'ultimo.
 
-==== Documentazione fornita <elenco-documenti>
+=== Documentazione fornita <elenco-documenti>
 
 Vengono ora elencati di seguito tutti i documenti che _ALimitedGroup_ consegnerà all'azienda #M31 e ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_.
 
@@ -196,7 +196,7 @@ Il processo di sviluppo contiene le attività principalmente svolte dagli svilup
 ==== Tecnologie utilizzate
 ==== Documentazione prodotta
 
-== Processi di Supporto
+= Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
 
 - Documentazione
@@ -211,7 +211,7 @@ Tra i processi di supporto utilizzati nel progetto distinguiamo:
 
 Saranno ora descritti nel dettaglio le attività previste.
 
-=== Documentazione
+== Documentazione
 
 Il processo di documentazione è parte fondamentale di tutti i processi primari: il prodotto di tale processo è infatti essenziale per tenere traccia delle decisioni intraprese e per favorire il lavoro asincrono, molto più produttivo di quello sincrono nel nostro ambito.\
 
@@ -225,14 +225,14 @@ Per redigere la documentazione il gruppo fa utilizzo di due strumenti in partico
 - *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
 
 #pagebreak()
-==== Typst <sezione_typst>
+=== Typst <sezione_typst>
 
 Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
 Nello specifico, la redazione dei coumenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
 
 La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, qui di seguito saranno invece descritte le strutture dei vari documenti.
 
-==== Verbali <desc-templ-verbale>
+=== Verbali <desc-templ-verbale>
 
 La redazione di un verbale sfrutta il _template_ nel _file_ #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/verbale.typ")[_verbale.typ_]
 
@@ -266,7 +266,7 @@ In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all
 - *Data della riunione*.
 
 #pagebreak()
-==== Diari di bordo
+=== Diari di bordo
 
 Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.
 
@@ -275,7 +275,7 @@ In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Obiettivi e attività per il periodo successivo*, che elenca le attività future da completare;
 - *Difficoltà riscontrate e questioni aperte*, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
 
-==== Altri documenti
+=== Altri documenti
 Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione-supporto, la struttura è composta da:
 - *Pagina di copertina*, con:
   - Nome del documento;
@@ -294,39 +294,39 @@ Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
   - *Versione del documento*
 - *Numero di pagina*
 
-==== Attività previste
+=== Attività previste
 
 Il processo di documentazione è un processo assai delicato quanto importante. Le attività cardine di questo processo sono due:
 - *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto;
 - *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato.
 
-===== Produzione <regole-branch-issue>
+==== Produzione <regole-branch-issue>
 La produzione di un documento segue solitamente questi passaggi:
 
 - *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
 
-- *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l’issue di redazione e inizia la redazione del documento nel branch dedicato
-- *Verifica*: terminata la redazione, il redattore apre una pull request su github per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività, lasciando l’elenco delle modifiche da apportare ai relatori.
+- *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l'issue di redazione e inizia la redazione del documento nel branch dedicato
+- *Verifica*: terminata la redazione, il redattore apre una pull request su github per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività, lasciando l'elenco delle modifiche da apportare ai relatori.
 
 A questo punto il processo diviene differente per i verbali e i rimanenti documenti:
 
 - *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di verifica positiva, il verificatore richiede al responsabile di approvare il documento.
-Il responsabile, una volta approvato il documento, risolverà la pull request e procede quindi al merge del branch secondario in quello principale. L’azione scatenera l’avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, questo anche considerando che con il tempo la memoria potrebbe non più essere precisa come prima: per queste ragioni il gruppo ha deciso che i verbali saranno pubblicati solamente quando approvati.
+Il responsabile, una volta approvato il documento, risolverà la pull request e procede quindi al merge del branch secondario in quello principale. L'azione scatenera l'avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, questo anche considerando che con il tempo la memoria potrebbe non più essere precisa come prima: per queste ragioni il gruppo ha deciso che i verbali saranno pubblicati solamente quando approvati.
 - *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale: ciò avviene completando il _merge_ e risolvendo quindi la _Pull Request_. Tale processo è diversificato per i documenti rispetto ai verbali in quanto, essendo gli altri documenti di consultazione più frequente, è necessario avere a disposizione la versione più recente disponibile per la visione;
 - *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
 
-===== Manutenzione
+Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, definite nella @sezione-denominazione-docs
+==== Manutenzione
 
 L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di verifica mediante _Pull Request_.
 
 Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
 
-===== Convenzioni
-
-Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, qui di seguito definite.
 
 #pagebreak()
-===== Denominazine dei documenti
+
+=== Regole stilistiche
+==== Denominazine dei documenti <sezione-denominazione-docs>
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
@@ -340,17 +340,17 @@ dove:
   - *PP* per *P*\iano di *P*\rogetto
   - *AR* per *A*\nalisi dei *R*\equisiti
   - *PQ* per *P*\iano di *Q*\ualifica
-- *GG-MM-AAAA* indica la data in formato giorno-mese-anno (con due cifre per giorno e mese e 4 cifre per l’anno)
+- *GG-MM-AAAA* indica la data in formato giorno-mese-anno (con due cifre per giorno e mese e 4 cifre per l'anno)
 - *\#* è un modificatore, ovvero un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
 - *VERSIONE* indica la versione corrente del documento
 
-===== Datazione dei documenti e sintassi identificatori
+==== Datazione dei documenti e sintassi identificatori
 
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
 Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ovvero parole separate dal carattere *-*.
 
 #pagebreak()
-==== Documentazione prodotta o di supporto <documentazione-supporto>
+=== Documentazione prodotta o di supporto <documentazione-supporto>
 
 Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima descrizione è stata realizzata nella @elenco-documenti.
 
@@ -457,7 +457,7 @@ Per ulteriori informazioni si veda la @implementazione
 
 ==== Attività previste
 
-L’attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
+L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
 - Identificazione della configurazione
 - Controllo della configurazione
 - Registrazione dello Stato di Configurazione
@@ -465,14 +465,14 @@ L’attività di gestione delle configurazioni svolta dal gruppo si avvale delle
 
 ==== Identificazione della configurazione
 
-Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell’architettura del sistema da sviluppare e allegare il risultato di quanto compreso all’#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
+Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell'architettura del sistema da sviluppare e allegare il risultato di quanto compreso all'#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
 
 Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @elenco-documenti e nella @documentazione-supporto.
 
 ==== Controllo della configurazione <controllo-config>
 
 Il *Controllo della configurazione* è l'attività che disciplina le richieste di modifica: queste devono poter essere identificate e valutate con esito favorevole alla loro implementazione o contrario.
-Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l’approvazione.
+Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l'approvazione.
 
 Per realizzare al meglio questa attività sono stati predisposti metodi differenti per la documentazione e il codice vero e proprio, qui di seguito descritti.
 
@@ -491,7 +491,7 @@ ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti
 - *Board*: serve per stabilire se una issue presa in carico è ancora da iniziare, in sviluppo o terminata
 - *Pull Request*: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del repository. Le Pull Request sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
 
-Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di Git, un version control system sviluppato da Linus Torvalds e brevemente descritto nella @Git.
+Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di Git, un version control system sviluppato da Linus Torvalds e brevemente descritto nella @sezione_git.
 
 ===== Codice
 
@@ -515,7 +515,7 @@ dove:
 - *MINOR*: subisce un incremento solo quando completato il processo di modifica e di verifica
 - *PATCH*: subisce un incremento per modifiche di entità minore, quali correzioni ortografiche e/o di sintassi.
 
-Lo spunto d’uso di tale sistema proviene dal sito #link("https://semverdoc.org/")[semverdoc.org].
+Lo spunto d'uso di tale sistema proviene dal sito #link("https://semverdoc.org/")[semverdoc.org].
 
 In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di tutte le modifiche apportate per ogni versione, come anche descritto nella @desc-templ-verbale.
 
@@ -562,13 +562,13 @@ Questi test saranno descritti in un documento apposito, il #link("")[*Test Book 
 ==== Attività previste
 ==== Documentazione prodotta o di supporto
 
-== Processi Organizzativi
+= Processi Organizzativi
 
 I *processi organizzativi* sono dei processi a supporto del progetto che assicurano il buon andamento dell'intero progetto.
 
 Le attività previste assicurano la buona esecuzione di tutti i processi adottati e l'adozione di eventuali miglioramenti, la gestione delle infrastrutture utilizzate e la formazione del team nei compiti da seguire.
 
-=== Gestione dei Processi
+== Gestione dei Processi
 
 La *gestione dei processi* ha il compito di individuare i ruoli che dovranno permettere tutte le attività elencate in questo documento.
 
@@ -579,19 +579,19 @@ Le attività principali, osservate da _ALimitedGroup_, previste da questo proces
 - Revisione e valutazione
 - Finalizzazione
 
-==== Inizializzazione
+=== Inizializzazione
 
 È compito del *Responsabile* stabilire anzitutto i requisiti della nuova attività da svolgere, comprendendo che compiti prevede e quali costi, in termini temporali e non solo, tale attività comporti, cercando di ben tenere in considerazione il tempo a disposizione per completare il tutto.
 
 A seconda dell'occorrenza di eventuali rischi o imprevisti le attività potranno essere modellate per poter essere, almeno parzialmente, terminate in tempo.
 
-==== Pianificazione
+=== Pianificazione
 
 Stabiliti i requisiti da soddisfare, il responsabile deve comprendere, oltre al tempo necessario per il completamento, anche i rischi associati all'attività, i costi di esecuzione e le misure qualitative per controllare la corretta esecuzione dei compiti.
 
 Il Responsabile deve altresì decidere a chi assegnare tale attività: per facilitare questa operazione, _ALimitedGroup_ ha individuato dei ruoli specifici assieme alle loro responsabilità.
 
-===== Responsabile
+==== Responsabile
 
 Il *Responsabile* ha un ruolo centrale nel gruppo: esso infatti è responsabile delle attività di coordinamento interne al gruppo.
 
@@ -601,7 +601,7 @@ Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di 
 
 In ultima istanza, è sempre compito di questo ruolo *approvare* i vari documenti prodotti da _ALimitedGroup_.
 
-===== Amministratore
+==== Amministratore
 
 L'*Amministratore* (noto anche con il nome di *System Administrator* o *SysAdmin*) ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di _ALimitedGroup_ utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
 
@@ -609,45 +609,45 @@ L'*Amministratore* (noto anche con il nome di *System Administrator* o *SysAdmin
 
 Per via della sua approfondita conoscenza del _Way of Working_ adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il *Piano di Qualifica*, ma può risultare un ruolo adatto anche alla redazione di verbali di riunione interna ed esterna.
 
-===== Analista
+==== Analista
 
 L'*Analista* è il ruolo responsabile dell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente #M31.
 È sempre affidato a questo ruolo il compito di redazione dell'*Analisi dei Requisiti*.
 
-===== Progettista
+==== Progettista
 
 Il *Progettista* è un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche.
 
-===== Programmatore
+==== Programmatore
 
 Il *Programmatore* è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche. Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate.
 
 È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato.
 
-===== Verificatore
+==== Verificatore
 
-Il *Verificatore* ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d’arte.
+Il *Verificatore* ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
 
 Si occupa di eseguire test approfonditi e revisioni del software, identificando eventuali aree di miglioramento specie in ambito qualitativo.
 
 È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata.
 
-==== Esecuzione e controllo
+=== Esecuzione e controllo
 
 L'esecuzione delle attività è affidata quindi ai vari ruoli così come indicato dal Responsabile, che dobrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
 
-==== Revisione e valutazione
+=== Revisione e valutazione
 
 Una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del Verificatore.
 
 Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice.
 
-==== Finalizzazione
+=== Finalizzazione
 
 Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
 
 #pagebreak()
-=== Infrastruttura
+== Infrastruttura
 
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
 
@@ -657,7 +657,7 @@ Si compone delle seguenti atività:
 - Creazione
 - Manutenzione
 
-==== Implementazione <implementazione>
+=== Implementazione <implementazione>
 
 _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati, analizzati ad uno ad uno nelle Sezioni successive:
 
@@ -670,57 +670,57 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
 - _Telegram_
 - _Typst_
 
-===== Discord
+==== Discord
 
 _Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
 
-===== Git <Git>
+==== Git <sezione_git>
 
 Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
 
 Git è dunque un potente _Version Control System (VCS)_ che permette di efficacemente versionare tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.
 
-===== GitHub <sezione_github>
+==== GitHub <sezione_github>
 
 *GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_
 
 _ALimitedGroup_ utilizza _GitHub_ per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.
 
-===== Google Calendar
+==== Google Calendar
 
 Per condividere con il gruppo tutti gli appuntamenti futuri _ALimitedGroup_ utilizza *Google Calendar*.
 
-===== Microsoft Teams
+==== Microsoft Teams
 
 *Microsoft Teams* viene utilizzato da _ALimitedGroup_ per realizzare le riunioni esterne con l'azienda proponente #M31.
 
-===== Script in Python
+==== Script in Python
 
 Per automatizzare l'aggiornamento del sito web con i nuovi documenti e la compilazione dei file Typst, _ALimitedGroup_ ha deciso di realizzare degli appositi script in Python.
 
 Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel glossario.
 
-===== Telegram
+==== Telegram
 
 Telegram viene utilizzato dal gruppo per comunicare in maniera diretta tra i membri in caso di dubbi minori per cui non è necessaria una riunione interna.
 
-===== Typst
+==== Typst
 
 Typst viene utilizzato da _ALimitedGroup_ per la redazione di tutti i documenti. Vengono compilati automaticamente utilizzando gli script prodotti direttamente dal gruppo.
 
-==== Creazione <creazione>
+== Creazione <creazione>
 
 L'attività di *creazione* guida la realizzazione dell'infrastruttura. Di seguito i dettagli per ogni prodotto utilizzato.
 
-===== Discord
+=== Discord
 
 Per utilizzare *Discord* è stato realizzato un server con un canale testuale e un canale apposito per le riunioni.
 
-===== Git
+=== Git
 
 *Git* non richiede particolari modifiche: deve essere configurato inserendo username e email con cui il componente interagisce normalmente con il _repository_ GitHub del progetto
 
-===== GitHub <creazione-github> //action
+=== GitHub <creazione-github> //action
 
 Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_repository_ *GitHub* dedicato alla documentazione] è strutturato in maniera da favorire la produzione dei documenti. All'interno è possibile trovare varie _directories_, qui di seguito descritte:
 
@@ -733,7 +733,7 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 - *website*: contiene i file relativi al sito web del gruppo.
 
 #pagebreak()
-È inoltre possibile trovare il file *.gitignore* (utile per evitare il tracciamento di alcuni file specifici), il file *README.md* (che permette di realizzare la descrizione nella pagina principale del _repository_) e *docs.typ* (altro file di utilità per i documenti).
+È inoltre possibile trovare il file _*.gitignore*_ (utile per evitare il tracciamento di alcuni file specifici), il file _*README.md*_ (che permette di realizzare la descrizione nella pagina principale del _repository_) e _*docs.typ*_ (altro file di utilità per i documenti).
 
 Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
 
@@ -757,7 +757,7 @@ Ogni _Issue_ è inoltre legata ad una _Project Board_, uno strumento di GitHub c
 
 In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da GitHub denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
 
-===== Google Calendar
+=== Google Calendar
 
 In merito al calendario condiviso, è affidato al *Responsabile* il compito di aggiungere gli eventi del gruppo, dai diari di bordo sino alle riunioni interne ed esterne programmate.
 
@@ -765,22 +765,22 @@ Il calendario è condiviso tra i vari membri, che riceveranno un promemoria alme
 
 Rimane responsabilità di ogni membro controllarlo periodicamente.
 
-===== Microsoft Teams
+=== Microsoft Teams
 
 La piattaforma *Microsoft Teams* viene controllata direttamente da #M31, in quanto tale non necessita di alcuna operazione.
 
-===== Script in Python
+=== Script in Python
 
 In merito agli Script di _Python_, questi non necessitano di particolare modifiche manuali: possono essere eseguiti direttamente senza necessita di alcuna operazione aggiuntiva.
 
 In merito allo Script sulla compilazione dei file _Typst_ e aggiornamento del sito, questo viene eseguito automaticamente come descritto nella sezione @creazione-github.
 
-===== Telegram
+=== Telegram
 
 Il gruppo ha realizzato un gruppo *Telegram* per le comunicazioni di minore importanza.
 Tale gruppo è configurato in maniera tale da escludere il possibile ingresso di persone esterne: ad eccezione di questo, non richiede operazioni di interesse per questo documento.
 
-===== Typst <creazione-typst> //migliorare
+=== Typst <creazione-typst> //migliorare
 
 L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazione di _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella _lib_ del _repository_.
 
@@ -820,7 +820,7 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 - *pr* : come sopra, ma per indicare le _pull request_;
 - *doc* : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
 
-==== Manutenzione
+== Manutenzione
 
 A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato il compito all'*Amministratore* di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità qualora errori o cambiamenti lo rendano necessario.
 
