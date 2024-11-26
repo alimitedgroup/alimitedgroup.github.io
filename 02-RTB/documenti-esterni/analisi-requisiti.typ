@@ -155,10 +155,22 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 #lorem(10)
 = Requisiti specifici
 
+#pagebreak()
 = Casi d'uso
 
 == Introduzione
 == Attori
+
+- Admin globale
+- Admin locale
+- Cliente
+
+#figure(
+  image("../../assets/diagrams/attori.out.svg", width: 40%),
+  caption: [Diagramma degli attori],
+)
+
+
 == Lista casi d'uso
 
 #use_case(
