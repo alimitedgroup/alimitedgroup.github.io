@@ -63,5 +63,11 @@
   indice()
   pagebreak()
 
+  indice-tabelle()
+  pagebreak()
+
+  ///indice-immagini()
+  ///pagebreak()
+
   body
 }

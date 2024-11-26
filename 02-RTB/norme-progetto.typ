@@ -7,6 +7,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "0.5.0",
+      date: datetime(day: 26, month: 11, year: 2024),
+      autore: p.marco,
+      verifica: p.lorenzo,
+      descr: "Ristrutturata la suddivisione dell'indice. Migliorie generali",
+    ),
+    (
       vers: "0.4.0",
       date: datetime(day: 23, month: 11, year: 2024),
       autore: p.matteo,
@@ -100,8 +107,6 @@ Tra i processi primari utilizzati nell'ambito del progetto distinguiamo:
 
 === Fornitura
 
-==== Descrizione
-
 La fornitura è il processo primario adottato dal fornitore del futuro prodotto finale che si occupa di analizzare le azioni da intraprendere per la sua realizzazione.\
 Questo processo prevede un primo studio dei requisiti che il progetto dovrà, nelle componenti prodotte, soddisfare, in maniera da avere il materiale necessario per poter effettuare una contrattazione degli stessi con il proponente e poter comunicare allo stesso una possibile pianificazione del lavoro da svolgere con probabile data di consegna prevista.
 
@@ -133,9 +138,7 @@ Vengono ora elencati di seguito tutti i documenti che _ALimitedGroup_ consegner�
 
 Per maggiori informazioni in merito ai ruoli che si occupano della redazione di ciascuno di questi documenti si veda la @documentazione-supporto.
 
-===== Candidatura
-
-====== Valutazione dei Capitolati
+==== Valutazione dei Capitolati
 
 La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[*Valutazione dei Capitolati*] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
 Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
@@ -146,39 +149,37 @@ Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando
 - *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
 
 #pagebreak()
-====== Lettera di Candidatura
+==== Lettera di Candidatura
 
 La #link("https://alimitedgroup.github.io/Lettera%20di%20candidatura.pdf")[*Lettera di Candidatura*] è il documento con cui _ALimitedGroup_ ha ufficialmente presentato la sua candidatura al capitolato proposto dall'azienda #M31.
 Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti del gruppo a scegliere questo capitolato, nonché le informazioni generali riguardanti i _repository_ del gruppo contenente tutti i documenti relativi al progetto.
 
-====== Dichiarazione degli Impegni
+==== Dichiarazione degli Impegni
 
 La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti di _ALimitedGroup_ svolgeranno durante lo stesso.
 
-===== Requirements and Technology Baseline
-
-====== Analisi dei requisiti
+==== Analisi dei requisiti
 
 L'#link("")[*Analisi dei Requisiti (CAMBIARE LINK)*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene:
 
 [PROSEGUIRE]
 
-====== Lettera di Presentazione
+==== Lettera di Presentazione
 
 La #link("")[*Lettera di Presentazione*] per la *Requirements and Technology Baseline (RTB)* è il documento con cui _ALimitedGroup_ si candida ufficialmente per la prima _Baseline_ del progetto del corso di Ingegneria del Software.
 Essa contiene le informazioni rilevanti a tale fine, come, a mero titolo di esempio, i _link_ ai documenti realizzato per l'occasione e in questa Sezione elencati.
 
-====== Piano di Progetto
+==== Piano di Progetto
 
 Il #link("")[*Piano di Progetto (CAMBIARE LINK)*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_ in _sprint_, nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
-====== Piano di Qualifica
+==== Piano di Qualifica
 
 //Prossimamente....
 [PROSEGUIRE]
 
-====== Glossario
+==== Glossario
 
 I componenti di _ALimitedGroup_ hanno verificato la necessità di avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i molti termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
 
@@ -186,16 +187,9 @@ Per questo motivo, il gruppo ha prodotto un #link("")[*Glossario (CAMBIARE LINK)
 
 [PROSEGUIRE]
 
-===== Product Baseline
-
-[PROSEGUIRE]
-
 #pagebreak()
 === Sviluppo
 
-[PROSEGUIRE]
-
-==== Descrizione
 Il processo di sviluppo contiene le attività principalmente svolte dagli sviluppatori, ma non solo: infatti questo processo copre anche l'analisi dei requisiti, il testing e molto altro.
 
 ==== Attività previste
@@ -224,21 +218,21 @@ Il processo di documentazione è parte fondamentale di tutti i processi primari:
 Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni prodotto da un processo o da un'attività nel ciclo di vita.\
 Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati (come manager, ingegneri e utenti del sistema o del prodotto _software_).
 
-==== Strumenti a supporto
 Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
 - *_Typst_*: trattasi di un linguaggio _mark-down_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
   _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti, per ulteriori dettagli consultare la @sezione_typst;
 
 - *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
 
-===== Typst <sezione_typst>
+#pagebreak()
+==== Typst <sezione_typst>
 
 Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
 Nello specifico, la redazione dei coumenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
 
 La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, qui di seguito saranno invece descritte le strutture dei vari documenti.
 
-====== Verbali <desc-templ-verbale>
+==== Verbali <desc-templ-verbale>
 
 La redazione di un verbale sfrutta il _template_ nel _file_ #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/verbale.typ")[_verbale.typ_]
 
@@ -272,7 +266,7 @@ In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all
 - *Data della riunione*.
 
 #pagebreak()
-====== Diari di bordo
+==== Diari di bordo
 
 Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.
 
@@ -281,7 +275,7 @@ In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Obiettivi e attività per il periodo successivo*, che elenca le attività future da completare;
 - *Difficoltà riscontrate e questioni aperte*, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
 
-====== Altri documenti
+==== Altri documenti
 Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione-supporto, la struttura è composta da:
 - *Pagina di copertina*, con:
   - Nome del documento;
@@ -294,7 +288,7 @@ Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato 
 - *Corpo del documento*, con sezioni e sotto-sezioni che vengono scritte manualmente.
 
 Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
-- *Header* con:
+- _*Header*_ con:
   - *Nome del gruppo*;
   - *Titolo del documento*;
   - *Versione del documento*
@@ -306,12 +300,10 @@ Il processo di documentazione è un processo assai delicato quanto importante. L
 - *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto;
 - *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato.
 
-===== Produzione
-<regole-branch-issue>
+===== Produzione <regole-branch-issue>
 La produzione di un documento segue solitamente questi passaggi:
 
 - *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
-
 
 - *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l’issue di redazione e inizia la redazione del documento nel branch dedicato
 - *Verifica*: terminata la redazione, il redattore apre una pull request su github per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività, lasciando l’elenco delle modifiche da apportare ai relatori.
@@ -471,20 +463,20 @@ L’attività di gestione delle configurazioni svolta dal gruppo si avvale delle
 - Registrazione dello Stato di Configurazione
 - Valutazione della configurazione
 
-===== Identificazione della configurazione
+==== Identificazione della configurazione
 
 Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell’architettura del sistema da sviluppare e allegare il risultato di quanto compreso all’#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
 
 Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @elenco-documenti e nella @documentazione-supporto.
 
-===== Controllo della configurazione <controllo-config>
+==== Controllo della configurazione <controllo-config>
 
 Il *Controllo della configurazione* è l'attività che disciplina le richieste di modifica: queste devono poter essere identificate e valutate con esito favorevole alla loro implementazione o contrario.
 Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l’approvazione.
 
 Per realizzare al meglio questa attività sono stati predisposti metodi differenti per la documentazione e il codice vero e proprio, qui di seguito descritti.
 
-====== Documenti
+===== Documenti
 
 ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti con l'ausilio delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
 
@@ -501,17 +493,17 @@ ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti
 
 Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di Git, un version control system sviluppato da Linus Torvalds e brevemente descritto nella @Git.
 
-====== Codice
+===== Codice
 
 [PROSEGUIRE]
 
-===== Registrazione dello Stato di Configurazione
+==== Registrazione dello Stato di Configurazione
 
 _ALimitedGroup_ è consapevole della necessità di tracciare i cambiamenti effettuati a documentazione e codice.
 
 L'attività di *Registrazione dello Stato di Configurazione* si occupa proprio di questo e i componenti di _ALimitedGroup_ hanno deciso di implementarla come segue.
 
-====== Documenti
+===== Documenti
 
 Come verbalizzato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024* ed esteso poi a tutta la documentazione, i documenti utilizzeranno il seguente sistema di versionamento:
 
@@ -527,11 +519,11 @@ Lo spunto d’uso di tale sistema proviene dal sito #link("https://semverdoc.org
 
 In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di tutte le modifiche apportate per ogni versione, come anche descritto nella @desc-templ-verbale.
 
-====== Codice
+===== Codice
 
 [PROSEGUIRE]
 
-===== Valutazione della configurazione <valutazione-della-configurazione>
+==== Valutazione della configurazione <valutazione-della-configurazione>
 
 La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del software prodotto rispetto ai suoi requisiti e al design scelto.
 
