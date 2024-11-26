@@ -93,13 +93,12 @@
   #body
 ]
 
-#let use-case-diagram(version, caption, width: 40%) = [
-  #align(left)[
-    #figure(
-      image("../../assets/diagrams/UC" + version + ".svg", width: width),
-      caption: caption,
-    )
-  ]
+#let use-case-diagram(version, caption, width: 60%) = [
+  #show figure: set align(center)
+  #figure(
+    image("../../assets/diagrams/UC" + version + ".svg", width: width),
+    caption: caption,
+  )
 ]
 
 = Introduzione
@@ -174,12 +173,11 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - Admin locale
 - Cliente
 
-#align(left)[
-  #figure(
-    image("../../assets/diagrams/attori.svg", width: 40%),
-    caption: [Diagramma degli attori],
-  )
-]
+#show figure: set align(center)
+#figure(
+  image("../../assets/diagrams/attori.svg", width: 50%),
+  caption: [Diagramma degli attori],
+)
 
 == Lista casi d'uso
 
