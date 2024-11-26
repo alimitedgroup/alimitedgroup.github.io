@@ -107,14 +107,14 @@
 Il presente documento di _Analisi dei Requisiti_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali e non funzionali del sistema software da sviluppare.\
 Esso rappresenterà il riferimento di base per la progettazione, l'implementazione e il collaudo del prodotto finale, garantendo che il sistema realizzato soddisfi pienamente le esigenze e le aspettative del committente. \
 I requisiti identificati sono classificati in:
-- Obbligatori: irrinunciabili e imprescindibili per il corretto funzionamento del sistema.
-- Desiderabili: non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile.
+- Obbligatori: irrinunciabili e imprescindibili per il corretto funzionamento del sistema;
+- Desiderabili: non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile;
 - Opzionali: relativamente utili oppure contrattabili per essere implementati in futuro.
 
 Il documento di _Analisi dei Requisiti_ viene redatto dagli _Analisti_ del team di progetto ed è rivolto ai seguenti principali destinatari:
 
-- Il _Committente_, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche.
-- Il _Team di Progettisti e di Programmatori_, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software.
+- Il _Committente_, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche;
+- Il _Team di Progettisti e di Programmatori_, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software;
 - Il Team di _Verificatori_, che baserà sull' Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
 
 Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come _Amministratori_ e _Responsabili di Progetto_, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
@@ -123,10 +123,10 @@ Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel p
 
 Il capitolato d'appalto C6 proposto dall'azienda _M31_ propone lo sviluppo di un *Sistema di Gestione di un Magazzino Distribuito*. \
 Il sistema deve essere in grado di:
-- *Ottimizzare i livelli di scorte* attraverso il monitoraggio costante dell'inventario e suggerendo/automatizzando azioni di riassortimento o trasferimento tra magazzini.
-- *Gestire la condivisione dei dati di inventario in tempo reale* tra i vari magazzini e il sistema centrale.
-- *Risolvere conflitti derivanti da aggiornamenti simultanei* dell'inventario da parte di diversi magazzini.
-- Fornire una piattaforma di *monitoraggio centralizzato e reportistica* sullo stato delle scorte.
+- *Ottimizzare i livelli di scorte* attraverso il monitoraggio costante dell'inventario e suggerendo/automatizzando azioni di riassortimento o trasferimento tra magazzini;
+- *Gestire la condivisione dei dati di inventario in tempo reale* tra i vari magazzini e il sistema centrale;
+- *Risolvere conflitti derivanti da aggiornamenti simultanei* dell'inventario da parte di diversi magazzini;
+- Fornire una piattaforma di *monitoraggio centralizzato e reportistica* sullo stato delle scorte;
 - Gestire le operazioni di *trasferimento di merce tra i magazzini*.
 
 Tutto garantendo la *sicurezza* dei dati trattati e del sistema.
@@ -148,7 +148,22 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - Diagrammi delle attività: \ https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20di%20Attivit%C3%A0.pdf
 
 == Quadro generale
-#lorem(10)
+Il presente documento analiizza in modo dettagliato ed esaustivo i requisiti emersi dal capitolato C6 _Sistema di Gestione di un Magazzino Distribuito_ e dalla fase di contrattazione con il committente _M31_.
+
+Include una descrizione approfondita dei casi d'uso, dei requisiti obbligatori, desiderabili e opzionali, nonché delle funzionalità previste per il sistema.\
+
+Verranno utilizzati i seguenti strumenti di rappresentazione formale per agevolare la comprensione:
+
+- *Diagrammi dei casi d'uso* per visualizzare le interazioni tra attori e sistema;
+- *Diagrammi delle attività* per descrivere i flussi operativi e i processi.
+
+A supporto di una consultazione rapida e intuitiva, è stata inoltre predisposta una tabella dei contenuti, che consente di:
+
+- Associare ciascun requisito al relativo caso d'uso;
+- Risalire alla fonte originaria di ogni requisito;
+- Comprendere immediatamente il contesto e l'importanza di ciascun elemento.
+
+La struttura del documento mira a garantire trasparenza, tracciabilità e comprensione condivisa tra tutti i soggetti coinvolti nel progetto.
 
 = Descrizione generale
 == Prospettiva del prodotto
