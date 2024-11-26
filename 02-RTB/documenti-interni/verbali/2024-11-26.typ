@@ -12,7 +12,7 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [In redazione],
+  stato: [Verificato],
   presenze: (
     p.emanuele,
     p.samuele,
