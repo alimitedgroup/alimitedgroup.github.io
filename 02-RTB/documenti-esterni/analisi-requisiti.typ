@@ -56,7 +56,7 @@
 // Don't delete, necessary for diagrams
 #show raw.where(lang: "pintora"): it => pintorita.render(it.text)
 
-#let use_case(
+#let use-case(
   num: [],
   titolo: [],
   attore: [],
@@ -91,6 +91,15 @@
   - *Trigger*: #trigger
 
   #body
+]
+
+#let use-case-diagram(version, caption, width: 40%) = [
+  #align(left)[
+    #figure(
+      image("../../assets/diagrams/UC" + version + ".svg", width: width),
+      caption: caption,
+    )
+  ]
 ]
 
 = Introduzione
@@ -165,22 +174,25 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - Admin locale
 - Cliente
 
-#figure(
-  image("../../assets/diagrams/attori.out.svg", width: 40%),
-  caption: [Diagramma degli attori],
-)
-
+#align(left)[
+  #figure(
+    image("../../assets/diagrams/attori.svg", width: 40%),
+    caption: [Diagramma degli attori],
+  )
+]
 
 == Lista casi d'uso
 
-#use_case(
+#use-case(
   num: "1",
   titolo: [Visualizzazione dashboard],
   attore: "Utente",
   pre: "L'utente è autenticato nel sistema",
   scenari: "L'utente accede alla dashboard del sistema",
   trigger: "L'utente seleziona la voce 'Dashboard' dal menu principale",
-)[]
+)[
+  #use-case-diagram("1", "Diagramma dei casi d'uso")
+]
 
 = Requisiti Funzionali
 == Requisiti funzionali
