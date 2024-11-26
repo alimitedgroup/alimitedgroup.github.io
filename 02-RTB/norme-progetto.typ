@@ -480,18 +480,19 @@ Per realizzare al meglio questa attività sono stati predisposti metodi differen
 
 ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti con l'ausilio delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
 
-- *Issue*: ogni modifica da fare deve essere documentata mediante una issue da assegnare al componente che prenderà in carico la modifica o la redazione di un documento.
+- _*Issue*_: ogni modifica da fare deve essere documentata mediante una _issue_ da assegnare al componente che prenderà in carico la modifica o la redazione di un documento.
   Generalmente una issue possiede:
-  - un numero univoco nella repository che funge da identificativo
-  - un nome che esplicita in cosa consiste la issue
+  - un numero univoco nella _repository_ che funge da identificativo
+  - un nome che esplicita in cosa consiste la _issue_
   - una descrizione facoltativa
-  - una milestone o una baseline associata
+  - una _milestone_ o una _baseline_ associata
   - un assegnatario che prenderà in carico il lavoro da effettuare
-  - un legame con la board del progetto
-- *Board*: serve per stabilire se una issue presa in carico è ancora da iniziare, in sviluppo o terminata
-- *Pull Request*: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del repository. Le Pull Request sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
+  - un legame con la _board_ del progetto
+#pagebreak()
+- _*Board*_: serve per stabilire se una _issue_ presa in carico è ancora da iniziare, in sviluppo o terminata
+- _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_. Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
 
-Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di Git, un version control system sviluppato da Linus Torvalds e brevemente descritto nella @sezione_git.
+Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di _Git_, un _version control system_ sviluppato da Linus Torvalds e brevemente descritto nella @sezione_git.
 
 ===== Codice
 
