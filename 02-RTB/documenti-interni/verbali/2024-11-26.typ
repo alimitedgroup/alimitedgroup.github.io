@@ -1,9 +1,16 @@
-#import "../../../lib/verbale.typ" : *
+#import "../../../lib/verbale.typ": *
 
 #show: body => verbale(
-  data: datetime(day:26, month:11, year:2024),
+  data: datetime(day: 26, month: 11, year: 2024),
   tipo: [interno],
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 26, month: 11, year: 2024),
+      autore: p.marco,
+      verifica: p.loris,
+      descr: "Approvazione del documento",
+    ),
     (
       vers: "0.1.0",
       date: datetime(day: 26, month: 11, year: 2024),
@@ -12,7 +19,7 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [Verificato],
+  stato: [Approvato],
   presenze: (
     p.emanuele,
     p.samuele,
@@ -20,7 +27,7 @@
     p.loris,
     p.marco,
     p.matteo,
-    p.lorenzo
+    p.lorenzo,
   ),
   odg: [Ottava riunione di _ALimitedGroup_: vengono decisi i ruoli, vengono decisi i tempi limite e la struttura per redigere i prossimi documenti],
   body,
@@ -50,7 +57,7 @@ Viene deciso, successivamente, di implementare uno _script_ in _Python_ per veri
 I presenti del gruppo decidono che la redazione dei seguenti documenti:
 - Analisi dei Requisiti
 - Norme di Progetto
-- Glossario 
+- Glossario
 venga terminata non oltre il 06-12-2024, con la successiva pubblicazione nel sito di tali documenti.\
 La conclusione, invece, della progettazione viene fissata entro il 31-12-2024 così da rispettare tutte le _milestone_ create.
 
@@ -60,7 +67,7 @@ Per quanto riguarda la _Requirements and Baseline Tecnology_, il gruppo prevede 
 == Vengono assegnati i ruoli sino al giorno 02-12-2024
 
 I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 02-12-2024, saranno assegnati ai seguenti componenti questi ruoli:
-#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*]\ 
+#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*]\
 #align(center)[*#persona(p.samuele)* $arrow.r$ *Amministratore* \ *#persona(p.marco)* $arrow.r$ *Amministratore*]\
 #align(center)[*#persona(p.sara)* $arrow.r$ *Verificatore* \ *#persona(p.lorenzo)* $arrow.r$ *Verificatore*]\
 #align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista* \ *#persona(p.matteo)* $arrow.r$ *Analista*]\
@@ -78,6 +85,6 @@ Il gruppo conclude la riunione con i compiti assegnati, le decisioni intraprese 
   "Stabiliti i nuovi ruoli per componente sino al 02-12-2024",
   "DI23",
   "Stabilita la nuova nomenclatura per il Glossario",
-  issue(47), 
-  "Redazione verbale interno 26-11-2024"
+  issue(47),
+  "Redazione verbale interno 26-11-2024",
 )
