@@ -227,16 +227,41 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Indice #v(3em)], indent: 1em)
+  outline(title: [#v(2em) Indice #v(3em)], indent: auto)
 }
 
+/// Collega una parola del documento alla sua definizione nel glossario
+#let def(parola) = {
+  let yml = yaml("../02-RTB/documenti-interni/glossario.yml")
+
+  // Se parola è di tipo content, ottieni il testo
+  if type(parola) == content {
+    parola = parola.text
+  }
+
+  // Cerca la parola in ogni lettera dell'alfabeto
+  let found = false
+  for (letter, words) in yml {
+    if parola in words {
+      found = true
+      break
+    }
+  }
+
+  // Se la parola non è trovata, genera l'errore; altrimenti, crea il link
+  if not found {
+    panic("Parola non definita nel glossario: " + parola)
+  } else {
+    link("https://alimitedgroup.github.io/glossario.pdf#" + parola, parola)
+  }
+}
 /// Indicizza le tabelle presenti nel documento
 #let indice-tabelle() = {
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Lista delle tabelle #v(3em)], indent: 1em, target: figure.where(kind: table))
+  outline(title: [#v(2em) Lista delle tabelle #v(3em)], indent: auto, target: figure.where(kind: table))
 }
 
 /// Indicizza le immagini presenti nel documento
@@ -245,8 +270,8 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#colbreak() #v(2em) Lista delle immagini #v(3em)], indent: 1em, target: figure.where(kind: image))
+  outline(title: [#colbreak() #v(2em) Lista delle immagini #v(3em)], indent: auto, target: figure.where(kind: image))
 }
 
-// COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
-//  se e solo se queste sono delimitate dal comando #figure con annessa la caption
+///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
+/// se e solo se queste sono delimitate dal comando #figure con annessa la caption
