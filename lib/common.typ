@@ -10,8 +10,11 @@
 ///  - `marco`
 ///  - `matteo`
 ///  - `lorenzo`
+///  - `luca`
+///  - `moones`
+///  - `cristian`
 ///
-/// Ogni persona ha le proprietà `nome`, `cognome` e, se è uno studente, `matricola`
+/// Ogni persona ha le proprietà `nome`, `cognome` e, se è uno studente `matricola`, se è di M31 `ruolo`
 ///
 /// #example(```
 ///  p.samuele.cognome
@@ -30,6 +33,10 @@
   marco: (nome: "Marco", cognome: "Piccoli", matricola: 2045039),
   matteo: (nome: "Matteo", cognome: "Schievano", matricola: 2075537),
   lorenzo: (nome: "Lorenzo", cognome: "Stefani", matricola: 2079249),
+  // M31
+  luca: (nome: "Luca", cognome: "Cossaro", ruolo: "CTO"),
+  moones: (nome: "Moones", cognome:"Mobaraki", ruolo: "Stage and Academy Coordinator"),
+  cristian: (nome: "Cristian", cognome: "Pîrlog", ruolo: "Web Engineer"),
 )
 
 /// Lista delle repository su cui si possono trovare issue e pull request
