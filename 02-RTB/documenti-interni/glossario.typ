@@ -6,9 +6,12 @@
 // Prima pagina
 #prima-pagina(
   "Glossario",
-  [Stato], [Redazione],
-  [Versione], [0.0.1],
-  [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+  [Stato],
+  [Redazione],
+  [Versione],
+  [0.0.1],
+  [Distribuzione],
+  grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
 )
 
 // Corpo
@@ -17,10 +20,13 @@
 #counter(page).update(1)
 
 #registro-modifiche((
-  (vers: "0.0.1", 
-  date: datetime(day: 07, month: 11, year: 2024),
-  autore: p.emanuele,
-  descr: "Redazione documento"),
+  (
+    vers: "0.0.1",
+    date: datetime(day: 07, month: 11, year: 2024),
+    autore: p.emanuele,
+    verifica: p.lorenzo,
+    descr: "Redazione documento",
+  ),
 ))
 #pagebreak()
 
@@ -31,11 +37,11 @@
   #heading(letter, level: 1) // Intestazione per ogni lettera
 
   #for (word, definition) in words [
-    #if (word != "") [  // Lascia vuoto se nessuna definizione da mostrare
+    #if (word != "") [ // Lascia vuoto se nessuna definizione da mostrare
       #heading(word, level: 2) // Intestazione per ogni parola
       #label(word)
       #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione
-    ] 
+    ]
   ]
   #pagebreak()
 ]
