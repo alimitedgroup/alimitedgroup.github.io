@@ -38,7 +38,7 @@
 
 #registro-modifiche((
   (
-    vers: "0.0.1",
+    vers: "0.1.0",
     date: datetime(day: 15, month: 11, year: 2024),
     autore: p.emanuele,
     descr: "Redazione documento",
@@ -437,9 +437,6 @@ Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno e
   [Fine reale:], strong[24-11-2024],
   [Giorni di ritardo:], strong[0],
 )
-// Inizio: *04-11-2024* \
-// Fine prevista: *24-11-2024* \
-// Fine reale: *24-11-2024*
 
 ==== Informazioni generali e attività da svolgere
 
@@ -467,71 +464,141 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 #pagebreak()
 
+#let cella(dati, preventivo, i, j) = {
+  let dat = dati.at(i).at(j)
+  let prev = if preventivo != none {
+    preventivo.at(i).at(j)
+  }
+
+  if j == 0 {
+    [#dat]
+  } else if preventivo == none and dat == 0 {
+    [-]
+  } else if preventivo == none {
+    [#dat]
+  } else if dat == prev and dat == 0 {
+    [-]
+  } else if dat == prev and dat != 0 {
+    [#dat]
+  } else if dat >= prev {
+    [#dat #text(red)[(+#(dat - prev))]]
+  } else {
+    [#dat #text(green, [(#(dat - prev))])]
+  }
+}
+
+#let periodo(
+  caption,
+  preventivo: none,
+  ..rows,
+) = {
+  let columns = (
+    "Responsabile",
+    "Amministratore",
+    "Analista",
+    "Progettista",
+    "Programmatore",
+    "Verificatore",
+  )
+
+  box({
+    v(3em)
+    show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+      align(left, cl)
+    } else if cl.x == 0 {
+      align(bottom + left, cl)
+    } else if cl.y == 0 {
+      rotate(-45deg, reflow: false, align(left, cl))
+    } else {
+      align(bottom + center, cl)
+    }
+    figure(
+      table(
+        columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+        inset: (x, y) => if y == 0 {
+          (x: 1.9em, y: 0.7em)
+        } else {
+          (x: 1.1em, y: 0.6em)
+        },
+        stroke: (x, y) => if y >= 1 {
+          1pt + black
+        } else {
+          none
+        },
+        table.header([], ..columns.map(strong)),
+
+        // @typstyle off
+        ..for i in range(0, rows.pos().len()) {
+          (..for j in range(0, rows.pos().at(i).len()) {
+            (cella(rows, preventivo, i, j),)
+          },)
+        }
+
+      ),
+      caption: caption,
+    )
+
+  })
+
+  let data = ()
+  let globsum = rows.pos().map(r => r.slice(1).sum()).sum()
+  if (globsum != 0) {
+    for (i, ruolo) in columns.enumerate() {
+      let sum = rows.pos().map(row => row.at(i + 1)).sum(default: 0)
+      data.push((sum / globsum * 100, ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%"))
+    }
+
+    let p = plot(data: data)
+
+    pie_chart(p, (40%, 30%), caption: "Impegno per ruolo", display_style: "hor-legend-chart")
+
+  }
+}
+
 ==== Preventivo
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#box({
-  v(2em)
-  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
-    align(left, cl)
-  } else if cl.x == 0 {
-    align(bottom + left, cl)
-  } else if cl.y == 0 {
-    rotate(-45deg, reflow: false, align(left, cl))
-  } else {
-    align(bottom + center, cl)
-  }
-  figure(
-    table(
-      columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-      inset: 1.1em,
-      stroke: (x, y) => if y >= 1 {
-        1pt + black
-      } else {
-        none
-      },
-      table.header(
-        [],
-        [*Responsabile*],
-        [*Amministratore*],
-        [*Analista*],
-        [*Progettista*],
-        [*Programmatore*],
-        [*Verificatore*],
-      ),
+#let sprint1 = (
+  preventivo: (
+    (persona(p.loris), 0, 0, 5, 0, 0, 0),
+    (persona(p.samuele), 5, 0, 0, 0, 0, 0),
+    (persona(p.sara), 0, 3, 4, 0, 0, 2),
+    (persona(p.lorenzo), 0, 2, 0, 0, 0, 5),
+    (persona(p.marco), 0, 5, 0, 0, 0, 3),
+    (persona(p.matteo), 0, 5, 0, 0, 0, 4),
+    (persona(p.emanuele), 0, 4, 0, 0, 0, 0),
+  ),
+  consuntivo: (
+    (persona(p.loris), 4, 0, 2, 0, 0, 0),
+    (persona(p.samuele), 3, 0, 0, 0, 0, 0),
+    (persona(p.sara), 0, 0, 2, 0, 0, 2),
+    (persona(p.lorenzo), 0, 0, 0, 0, 0, 0),
+    (persona(p.marco), 0, 0, 0, 0, 0, 2),
+    (persona(p.matteo), 0, 0, 0, 0, 0, 2),
+    (persona(p.emanuele), 0, 0, 0, 0, 0, 0),
+  ),
+)
 
-      [Loris Libralato], [-], [-], [2], [-], [-], [-],
-      [Samuele Esposito], [3], [-], [-], [-], [-], [-],
-      [Sara Ferraro], [-], [-], [2], [-], [-], [2],
-      [Lorenzo Stefani], [-], [-], [-], [-], [-], [-],
-      [Marco Piccoli], [-], [-], [-], [-], [-], [2],
-      [Matteo Scievano], [-], [-], [-], [-], [-], [2],
-      [Emanuele Artusi], [-], [-], [-], [-], [-], [-],
-    ),
-    caption: [Suddivisione impegni per componente],
-  )
-})
-
-#{
-  let p = plot(data: (
-    (23.08, "Responsabile - 23.08%"),
-    (0, "Amministratore - 0%"),
-    (30.77, "Analista - 30.77%"),
-    (0, "Progettista - 0%"),
-    (0, "Programmatore - 0%"),
-    (46.15, "Verificatore - 46.15%"),
-  ))
-
-  pie_chart(p, (40%, 30%), caption: "Impegno per ruolo", display_style: "hor-legend-chart")
-}
+#periodo([Suddivisione impegni per componente], ..sprint1.preventivo)
 
 #pagebreak()
-
 ==== Consuntivo
 
-==== Consumo effettivo temporale e finanziario
+#periodo(
+  [Suddivisione impegni per componente],
+  preventivo: sprint1.preventivo,
+  ..sprint1.consuntivo,
+)
+
 ==== Aggiornamento delle risorse rimanenti
+
+#table(
+  columns: 4,
+  table.header([Ruolo], [Ore], [Costo], [Differenza]),
+  [Responsabile], [7], [210€], [-30€],
+)
+
 ==== Retrospettiva
 
 // comprendente anche i rischi effettivamente riscontrati
