@@ -71,7 +71,7 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 == Glossario
 
 La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.\
-Per evitare, perciò, ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, è stato deciso di utilizzare un glossario in cui è trascritta, per ogni parola, la definizione. \
+Per evitare, perciò, ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, è stato deciso di utilizzare un Glossario in cui è trascritta, per ogni parola, la definizione. \
 _ALimitedGroup_ si impegna a visionarlo periodicamente, per permetter la più completa comprensione di ogni tipo di documento pubblicato dal gruppo.
 
 == Riferimenti
@@ -88,7 +88,7 @@ _ALimitedGroup_ si impegna a visionarlo periodicamente, per permetter la più co
   #link("https://alimitedgroup.github.io/Glossario.pdf") ///questo link va assolutamente cambiato quando sarà pubblicato il glossario
 
 
-#pagebreak()
+ 
 Lo standard classifica tre tipologie di processi:
 
 - *Primari*: i processi senza il quale un progetto non può definirsi tale;
@@ -119,7 +119,7 @@ Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strum
 Le comunicazioni verso l'azienda proponente richiedono, invece, l'utilizzo di:
 - _*Microsoft Teams*_
 
-#pagebreak()
+ 
 === Attività previste
 
 La fornitura prevede varie attività, qui di seguito descritte:
@@ -132,13 +132,11 @@ La fornitura prevede varie attività, qui di seguito descritte:
 - *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto prodotto, con annessa quindi una valutazione sullo stato di lavoro;
 - *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, con l'impegno di fornire supporto a quest'ultimo.
 
-=== Documentazione fornita <elenco-documenti>
-
 Vengono ora elencati di seguito tutti i documenti che _ALimitedGroup_ consegnerà all'azienda #M31 e ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_.
 
 Per maggiori informazioni in merito ai ruoli che si occupano della redazione di ciascuno di questi documenti si veda la @documentazione-supporto.
 
-==== Valutazione dei Capitolati
+=== Valutazione dei Capitolati <elenco-documenti>
 
 La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[*Valutazione dei Capitolati*] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
 Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
@@ -148,53 +146,53 @@ Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando
 - *Criticità evidenziate*
 - *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
 
-#pagebreak()
-==== Lettera di Candidatura
+ 
+=== Lettera di Candidatura
 
 La #link("https://alimitedgroup.github.io/Lettera%20di%20candidatura.pdf")[*Lettera di Candidatura*] è il documento con cui _ALimitedGroup_ ha ufficialmente presentato la sua candidatura al capitolato proposto dall'azienda #M31.
 Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti del gruppo a scegliere questo capitolato, nonché le informazioni generali riguardanti i _repository_ del gruppo contenente tutti i documenti relativi al progetto.
 
-==== Dichiarazione degli Impegni
+=== Dichiarazione degli Impegni
 
-La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti di _ALimitedGroup_ svolgeranno durante lo stesso.
+La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti del gruppo svolgeranno durante lo stesso.
 
-==== Analisi dei requisiti
+=== Analisi dei requisiti
 
 L'#link("")[*Analisi dei Requisiti (CAMBIARE LINK)*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene:
 
 [PROSEGUIRE]
 
-==== Lettera di Presentazione
+=== Lettera di Presentazione
 
-La #link("")[*Lettera di Presentazione*] per la *Requirements and Technology Baseline (RTB)* è il documento con cui _ALimitedGroup_ si candida ufficialmente per la prima _Baseline_ del progetto del corso di Ingegneria del Software.
+La #link("")[*Lettera di Presentazione*] per la _Requirements and Technology Baseline (RTB)_ è il documento con cui _ALimitedGroup_ si candida ufficialmente per la prima _Baseline_ del progetto del corso di Ingegneria del Software.
 Essa contiene le informazioni rilevanti a tale fine, come, a mero titolo di esempio, i _link_ ai documenti realizzato per l'occasione e in questa Sezione elencati.
 
-==== Piano di Progetto
+=== Piano di Progetto
 
 Il #link("")[*Piano di Progetto (CAMBIARE LINK)*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_ in _sprint_, nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
-==== Piano di Qualifica
+=== Piano di Qualifica
 
 //Prossimamente....
 [PROSEGUIRE]
 
-==== Glossario
+=== Glossario
 
 I componenti di _ALimitedGroup_ hanno verificato la necessità di avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i molti termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
 
-Per questo motivo, il gruppo ha prodotto un #link("")[*Glossario (CAMBIARE LINK)*], rivelatosi molto utile nel corso del tempo.
+Per questo motivo, il gruppo ha prodotto un #link("")[*Glossario*], rivelatosi molto utile nel corso del tempo.
 
 [PROSEGUIRE]
 
-#pagebreak()
-=== Sviluppo
+ 
+== Sviluppo
 
 Il processo di sviluppo contiene le attività principalmente svolte dagli sviluppatori, ma non solo: infatti questo processo copre anche l'analisi dei requisiti, il testing e molto altro.
 
-==== Attività previste
-==== Tecnologie utilizzate
-==== Documentazione prodotta
+=== Attività previste
+=== Tecnologie utilizzate
+=== Documentazione prodotta
 
 = Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
@@ -216,7 +214,12 @@ Saranno ora descritti nel dettaglio le attività previste.
 Il processo di documentazione è parte fondamentale di tutti i processi primari: il prodotto di tale processo è infatti essenziale per tenere traccia delle decisioni intraprese e per favorire il lavoro asincrono, molto più produttivo di quello sincrono nel nostro ambito.\
 
 Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni prodotto da un processo o da un'attività nel ciclo di vita.\
-Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati (come manager, ingegneri e utenti del sistema o del prodotto _software_).
+Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati (come manager, ingegneri e utenti del sistema o del prodotto _software_). \
+
+Il processo di documentazione è un processo assai delicato quanto importante. Le attività cardine di questo processo sono due:
+- *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
+- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato;
+per ulteriori informazioni vedere la @sezione_manutenzione.
 
 Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
 - *_Typst_*: trattasi di un linguaggio _mark-down_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
@@ -224,7 +227,7 @@ Per redigere la documentazione il gruppo fa utilizzo di due strumenti in partico
 
 - *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
 
-#pagebreak()
+ 
 === Typst <sezione_typst>
 
 Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
@@ -265,7 +268,7 @@ In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all
 - *Tipo verbale*;
 - *Data della riunione*.
 
-#pagebreak()
+ 
 === Diari di bordo
 
 Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.
@@ -294,20 +297,14 @@ Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
   - *Versione del documento*
 - *Numero di pagina*
 
-=== Attività previste
-
-Il processo di documentazione è un processo assai delicato quanto importante. Le attività cardine di questo processo sono due:
-- *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto;
-- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato.
-
-==== Produzione <regole-branch-issue>
+=== Produzione <regole-branch-issue>
 La produzione di un documento segue solitamente questi passaggi:
 
 - *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
 
 - *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l'issue di redazione e inizia la redazione del documento nel branch dedicato
 - *Verifica*: terminata la redazione, il redattore apre una pull request su github per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività, lasciando l'elenco delle modifiche da apportare ai relatori.
-
+\
 A questo punto il processo diviene differente per i verbali e i rimanenti documenti:
 
 - *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di verifica positiva, il verificatore richiede al responsabile di approvare il documento.
@@ -316,17 +313,15 @@ Il responsabile, una volta approvato il documento, risolverà la pull request e 
 - *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
 
 Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, definite nella @sezione-denominazione-docs
-==== Manutenzione
+
+=== Manutenzione <sezione_manutenzione>
 
 L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di verifica mediante _Pull Request_.
 
 Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
 
 
-#pagebreak()
-
-=== Regole stilistiche
-==== Denominazine dei documenti <sezione-denominazione-docs>
+=== Denominazione e datazione dei documenti <sezione-denominazione-docs>
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
@@ -343,13 +338,12 @@ dove:
 - *GG-MM-AAAA* indica la data in formato giorno-mese-anno (con due cifre per giorno e mese e 4 cifre per l'anno)
 - *\#* è un modificatore, ovvero un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
 - *VERSIONE* indica la versione corrente del documento
-
-==== Datazione dei documenti e sintassi identificatori
+\
 
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
 Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ovvero parole separate dal carattere *-*.
 
-#pagebreak()
+ 
 === Documentazione prodotta o di supporto <documentazione-supporto>
 
 Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima descrizione è stata realizzata nella @elenco-documenti.
@@ -488,7 +482,7 @@ ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti
   - una _milestone_ o una _baseline_ associata
   - un assegnatario che prenderà in carico il lavoro da effettuare
   - un legame con la _board_ del progetto
-#pagebreak()
+ 
 - _*Board*_: serve per stabilire se una _issue_ presa in carico è ancora da iniziare, in sviluppo o terminata
 - _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_. Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
 
@@ -647,7 +641,7 @@ Per un dettaglio più specifico delle attività di revisione si veda la @regole-
 
 Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
 
-#pagebreak()
+ 
 == Infrastruttura
 
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
@@ -733,7 +727,7 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 - *lib*: contiene i file _template_ per la redazione dei documenti;
 - *website*: contiene i file relativi al sito web del gruppo.
 
-#pagebreak()
+ 
 È inoltre possibile trovare il file _*.gitignore*_ (utile per evitare il tracciamento di alcuni file specifici), il file _*README.md*_ (che permette di realizzare la descrizione nella pagina principale del _repository_) e _*docs.typ*_ (altro file di utilità per i documenti).
 
 Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
@@ -810,7 +804,7 @@ Per i seguenti documenti:
 che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato il _template_, che permette di automatizzare la realizzazione della struttura _standard_ adatta a loro.\
 Tuttavia, l'utilizzo di #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*_importantdocs.typ_*] non è strettamente obbligatorio.
 
-#pagebreak()
+ 
 I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
 Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*_common.typ_*]:
 - *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
