@@ -1,5 +1,6 @@
 #import "../../lib/common.typ": *
-#import "@preview/plotst:0.2.0": *
+#import "@preview/cetz:0.3.1": *
+#import "@preview/cetz-plot:0.1.0": chart
 
 #metadata[piano-di-progetto] <titolo>
 
@@ -471,7 +472,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
   }
 
   if j == 0 {
-    [#dat]
+    persona(dat)
   } else if preventivo == none and dat == 0 {
     [-]
   } else if preventivo == none {
@@ -487,33 +488,18 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
   }
 }
 
-#let periodo(
-  caption,
-  preventivo: none,
-  ..rows,
-) = {
-  let columns = (
-    "Responsabile",
-    "Amministratore",
-    "Analista",
-    "Progettista",
-    "Programmatore",
-    "Verificatore",
-  )
-
-  box({
-    v(3em)
-    show table.cell: cl => if cl.x == 0 and cl.y != 0 {
-      align(left, cl)
-    } else if cl.x == 0 {
-      align(bottom + left, cl)
-    } else if cl.y == 0 {
-      rotate(-45deg, reflow: false, align(left, cl))
-    } else {
-      align(bottom + center, cl)
-    }
-    figure(
-      table(
+#let tabella-ruoli(ruoli, dati, preventivo) = {
+  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+    align(left, cl)
+  } else if cl.x == 0 {
+    align(bottom + left, cl)
+  } else if cl.y == 0 {
+    rotate(-45deg, reflow: false, align(left, cl))
+  } else {
+    align(bottom + center, cl)
+  }
+  figure(
+    table(
         columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
         inset: (x, y) => if y == 0 {
           (x: 1.9em, y: 0.7em)
@@ -525,34 +511,87 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
         } else {
           none
         },
-        table.header([], ..columns.map(strong)),
+        table.header([], ..ruoli.map(strong)),
 
         // @typstyle off
-        ..for i in range(0, rows.pos().len()) {
-          (..for j in range(0, rows.pos().at(i).len()) {
-            (cella(rows, preventivo, i, j),)
+        ..for i in range(0, dati.len()) {
+          (..for j in range(0, dati.at(i).len()) {
+            (cella(dati, preventivo, i, j),)
           },)
         }
 
       ),
-      caption: caption,
-    )
+    caption: [Suddivisione impegni per componente],
+  )
+}
 
-  })
-
+#let grafico-ruoli(ruoli, dati) = {
+  // data è un array di dizionari `(percentuale: 42, titolo: "thanks for all the fish")`
   let data = ()
-  let globsum = rows.pos().map(r => r.slice(1).sum()).sum()
-  if (globsum != 0) {
-    for (i, ruolo) in columns.enumerate() {
-      let sum = rows.pos().map(row => row.at(i + 1)).sum(default: 0)
-      data.push((sum / globsum * 100, ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%"))
-    }
-
-    let p = plot(data: data)
-
-    pie_chart(p, (40%, 30%), caption: "Impegno per ruolo", display_style: "hor-legend-chart")
-
+  let globsum = dati.map(r => r.slice(1).sum()).sum()
+  for (i, ruolo) in ruoli.enumerate() {
+    let sum = dati.map(row => row.at(i + 1)).sum(default: 0)
+    data.push((
+      percentuale: sum / globsum * 100,
+      titolo: ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%",
+    ))
   }
+
+  // set align(center)
+
+  // slice-style: pal_colors,
+  figure(
+    canvas({
+      import draw: *
+      chart.piechart(
+        data,
+        name: "pie",
+        position: (1em, 0),
+        radius: 1.8,
+        value-key: "percentuale",
+        label-key: "titolo",
+        outer-label: (content: none),
+        gap: 0,
+        legend: (orientation: ttb, item: (spacing: .0), position: "east", anchor: "west", offset: (1em, 0)),
+      )
+    }),
+
+    caption: [Tempo dedicato per ruolo],
+    supplement: [Grafico],
+  )
+
+  // TODO: abilitare (e fixare) questo quando viene fixata https://github.com/cetz-package/cetz-plot/issues/96
+  // let dirs = (2, 2, 2)
+  // let positions = ((2, 0),) * dirs.at(0) + ((-2, 0),) * dirs.at(1) + ((2, 0),) * dirs.at(2)
+  // let anchors = ("west",) * dirs.at(0) + ("east",) * dirs.at(1) + ("west",) * dirs.at(2)
+  // set-style(mark: (fill: white, start: "o", stroke: black), content: (padding: .1))
+  // for i in range(columns.len()) {
+  //   if data.at(i).at("percentuale") > 0 {
+  //     line("pie.item-" + str(i), ((), "-|", positions.at(i))) // should start at the center though
+  //     let t = calc.round(data.at(i).at("percentuale") * 100 / data.map(x => x.at("percentuale")).sum())
+  //     content((), [#columns.at(i) - #t%], anchor: anchors.at(i))
+  //   }
+  // }
+}
+
+#let periodo(
+  preventivo: none,
+  dati,
+) = {
+  let ruoli = (
+    "Responsabile",
+    "Amministratore",
+    "Analista",
+    "Progettista",
+    "Programmatore",
+    "Verificatore",
+  )
+
+  v(3em)
+  box({
+    tabella-ruoli(ruoli, dati, preventivo)
+    grafico-ruoli(ruoli, dati)
+  })
 }
 
 ==== Preventivo
@@ -561,34 +600,33 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 #let sprint1 = (
   preventivo: (
-    (persona(p.loris), 0, 0, 5, 0, 0, 0),
-    (persona(p.samuele), 5, 0, 0, 0, 0, 0),
-    (persona(p.sara), 0, 3, 4, 0, 0, 2),
-    (persona(p.lorenzo), 0, 2, 0, 0, 0, 5),
-    (persona(p.marco), 0, 5, 0, 0, 0, 3),
-    (persona(p.matteo), 0, 5, 0, 0, 0, 4),
-    (persona(p.emanuele), 0, 4, 0, 0, 0, 0),
+    (p.loris, 0, 0, 5, 0, 0, 0),
+    (p.samuele, 5, 0, 0, 0, 0, 0),
+    (p.sara, 0, 3, 4, 0, 0, 2),
+    (p.lorenzo, 0, 2, 0, 0, 0, 5),
+    (p.marco, 0, 5, 0, 0, 0, 3),
+    (p.matteo, 0, 5, 0, 0, 0, 4),
+    (p.emanuele, 0, 4, 0, 0, 0, 0),
   ),
   consuntivo: (
-    (persona(p.loris), 4, 0, 2, 0, 0, 0),
-    (persona(p.samuele), 3, 0, 0, 0, 0, 0),
-    (persona(p.sara), 0, 0, 2, 0, 0, 2),
-    (persona(p.lorenzo), 0, 0, 0, 0, 0, 0),
-    (persona(p.marco), 0, 0, 0, 0, 0, 2),
-    (persona(p.matteo), 0, 0, 0, 0, 0, 2),
-    (persona(p.emanuele), 0, 0, 0, 0, 0, 0),
+    (p.loris, 4, 0, 2, 0, 0, 0),
+    (p.samuele, 3, 0, 0, 0, 0, 0),
+    (p.sara, 0, 0, 2, 0, 0, 2),
+    (p.lorenzo, 0, 0, 0, 0, 0, 0),
+    (p.marco, 0, 0, 0, 0, 0, 2),
+    (p.matteo, 0, 0, 0, 0, 0, 2),
+    (p.emanuele, 0, 0, 0, 0, 0, 0),
   ),
 )
 
-#periodo([Suddivisione impegni per componente], ..sprint1.preventivo)
+#periodo(sprint1.preventivo)
 
 #pagebreak()
 ==== Consuntivo
 
 #periodo(
-  [Suddivisione impegni per componente],
   preventivo: sprint1.preventivo,
-  ..sprint1.consuntivo,
+  sprint1.consuntivo,
 )
 
 ==== Aggiornamento delle risorse rimanenti
