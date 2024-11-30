@@ -2,11 +2,8 @@
 #import "@preview/cetz:0.3.1": *
 #import "@preview/cetz-plot:0.1.0": chart
 
-#metadata[piano-di-progetto] <titolo>
-
 #set text(lang: "it", font: "Hanken Grotesk")
 #set list(indent: 1em)
-
 #show link: underline
 
 #let versione = [0.1.0]
@@ -22,6 +19,7 @@
   link("https://alimitedgroup.github.io/norme%20di%progetto%200.1.0")[#link-text]
 }
 
+#metadata[Piano di progetto #versione] <titolo>
 #prima-pagina(
   nome-documento + "\nVersione " + versione,
   [],
@@ -49,6 +47,233 @@
 
 #indice()
 #pagebreak()
+
+#let sprints = (
+  "1": (
+    preventivo: (
+      (p.loris, 0, 0, 5, 0, 0, 0),
+      (p.samuele, 5, 0, 0, 0, 0, 0),
+      (p.sara, 0, 3, 4, 0, 0, 2),
+      (p.lorenzo, 0, 2, 0, 0, 0, 5),
+      (p.marco, 0, 5, 0, 0, 0, 3),
+      (p.matteo, 0, 5, 0, 0, 0, 4),
+      (p.emanuele, 0, 4, 0, 0, 0, 0),
+    ),
+    consuntivo: (
+      (p.loris, 4, 0, 2, 0, 0, 0),
+      (p.samuele, 3, 0, 0, 0, 0, 0),
+      (p.sara, 0, 0, 2, 0, 0, 2),
+      (p.lorenzo, 0, 0, 0, 0, 0, 0),
+      (p.marco, 0, 0, 0, 0, 0, 2),
+      (p.matteo, 0, 0, 0, 0, 0, 2),
+      (p.emanuele, 0, 0, 0, 0, 0, 0),
+    ),
+  ),
+)
+
+#let cella(dati, preventivo, i, j) = {
+  let dat = dati.at(i).at(j)
+  let prev = if preventivo != none {
+    preventivo.at(i).at(j)
+  }
+
+  if j == 0 {
+    persona(dat)
+  } else if preventivo == none and dat == 0 {
+    [-]
+  } else if preventivo == none {
+    [#dat]
+  } else if dat == prev and dat == 0 {
+    [-]
+  } else if dat == prev and dat != 0 {
+    [#dat]
+  } else if dat >= prev {
+    [#dat #text(red)[(+#(dat - prev))]]
+  } else {
+    [#dat #text(green, [(#(dat - prev))])]
+  }
+}
+
+#let tabella-ruoli(ruoli, dati, preventivo) = {
+  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+    align(left, cl)
+  } else if cl.x == 0 {
+    align(bottom + left, cl)
+  } else if cl.y == 0 {
+    rotate(-45deg, reflow: false, align(left, cl))
+  } else {
+    align(bottom + center, cl)
+  }
+  figure(
+    table(
+        columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+        inset: (x, y) => if y == 0 {
+          (x: 1.9em, y: 0.7em)
+        } else {
+          (x: 1.1em, y: 0.6em)
+        },
+        fill: (x, y) => if calc.rem(y, 2) == 1 {
+          luma(235)
+        },
+        stroke: (x, y) => if y >= 1 {
+          1pt + black
+        } else {
+          none
+        },
+        table.header([], ..ruoli.map(strong)),
+
+        // @typstyle off
+        ..for i in range(0, dati.len()) {
+          (..for j in range(0, dati.at(i).len()) {
+            (cella(dati, preventivo, i, j),)
+          },)
+        }
+
+      ),
+    caption: [Suddivisione impegni per componente],
+  )
+}
+
+#let grafico-ruoli(ruoli, dati) = {
+  // data è un array di dizionari `(percentuale: 42, titolo: "thanks for all the fish")`
+  let data = ()
+  let globsum = dati.map(r => r.slice(1).sum()).sum()
+  for (i, ruolo) in ruoli.enumerate() {
+    let sum = dati.map(row => row.at(i + 1)).sum(default: 0)
+    data.push((
+      percentuale: sum / globsum * 100,
+      titolo: ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%",
+    ))
+  }
+
+  // set align(center)
+
+  // slice-style: pal_colors,
+  figure(
+    canvas({
+      import draw: *
+      chart.piechart(
+        data,
+        name: "pie",
+        position: (1em, 0),
+        radius: 1.8,
+        value-key: "percentuale",
+        label-key: "titolo",
+        outer-label: (content: none),
+        gap: 0,
+        legend: (orientation: ttb, item: (spacing: .0), position: "east", anchor: "west", offset: (1em, 0)),
+      )
+    }),
+
+    caption: [Tempo dedicato per ruolo],
+    supplement: [Grafico],
+  )
+
+  // TODO: abilitare (e fixare) questo quando viene fixata https://github.com/cetz-package/cetz-plot/issues/96
+  // let dirs = (2, 2, 2)
+  // let positions = ((2, 0),) * dirs.at(0) + ((-2, 0),) * dirs.at(1) + ((2, 0),) * dirs.at(2)
+  // let anchors = ("west",) * dirs.at(0) + ("east",) * dirs.at(1) + ("west",) * dirs.at(2)
+  // set-style(mark: (fill: white, start: "o", stroke: black), content: (padding: .1))
+  // for i in range(columns.len()) {
+  //   if data.at(i).at("percentuale") > 0 {
+  //     line("pie.item-" + str(i), ((), "-|", positions.at(i))) // should start at the center though
+  //     let t = calc.round(data.at(i).at("percentuale") * 100 / data.map(x => x.at("percentuale")).sum())
+  //     content((), [#columns.at(i) - #t%], anchor: anchors.at(i))
+  //   }
+  // }
+}
+
+#let impegni(
+  preventivo: false,
+  numero,
+) = {
+  let dati = sprints.at(str(numero))
+  let (dati, preventivo) = if preventivo {
+    (dati.consuntivo, dati.preventivo)
+  } else {
+    (dati.preventivo, none)
+  }
+
+  let ruoli = (
+    "Responsabile",
+    "Amministratore",
+    "Analista",
+    "Progettista",
+    "Programmatore",
+    "Verificatore",
+  )
+
+  v(3em)
+  box({
+    tabella-ruoli(ruoli, dati, preventivo)
+    grafico-ruoli(ruoli, dati)
+  })
+}
+
+#let prospetto-orario(sprint) = {
+  let ore-spese-sprint = 0
+  let budget-speso-sprint = 0
+  let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
+  let budget-tot = ruoli.values().map(ruolo => ruolo.max-ore * ruolo.costo).sum()
+  let sprint-idx = sprints.keys().position(x => x == sprint)
+
+  set align(center)
+  figure(
+    table(
+      columns: 6,
+      align: center,
+      [Ruolo], [Costo], [Ore], [Costo], [Ore rimanenti], [Budget rimanente],
+
+      ..for (i, ruolo) in ruoli.values().enumerate() {
+        let ore-spese = sprints.at(sprint).consuntivo.map(row => row.at(i + 1)).sum()
+        ore-spese-sprint += ore-spese
+        budget-speso-sprint += ruolo.costo * ore-spese
+
+        let ore-spese-prev = sprints
+          .values()
+          .slice(0, sprint-idx)
+          .map(sprint => sprint.consuntivo.map(row => row.at(i + 1)).sum())
+          .sum(default: 0)
+        let budget-speso-prec = ruolo.costo * ore-spese-prev
+
+        let ore-rimanenti = ruolo.max-ore - ore-spese-prev - ore-spese
+        let ore-rimanenti-prev = ruolo.max-ore - ore-spese-prev
+        let budget-rimanente = ruolo.costo * ore-rimanenti
+        let budget-rimanente-prev = budget-rimanente + ruolo.costo * ore-spese
+
+        (
+          ruolo.nome,
+          str(ruolo.costo) + "€/h",
+          if ore-spese != 0 {
+            str(ore-spese)
+          } else {
+            [-]
+          },
+          if ore-spese != 0 {
+            str(ore-spese * ruolo.costo) + "€"
+          } else {
+            [-]
+          },
+          str(ore-rimanenti) + if ore-spese != 0 {
+            text(red, " (" + str(ore-rimanenti - ore-rimanenti-prev) + ")")
+          },
+          str(budget-rimanente) + "€" + if ore-spese != 0 {
+            text(red, " (" + str(budget-rimanente - budget-rimanente-prev) + "€)")
+          },
+        )
+      },
+
+      [Totale],
+      [-],
+      str(ore-spese-sprint),
+      str(budget-speso-sprint) + "€",
+      str(ore-tot - ore-spese-sprint) + text(red)[ (#{-ore-spese-sprint})],
+      str(budget-tot - budget-speso-sprint) + text(red)[ (#{-budget-speso-sprint}€)],
+    ),
+    caption: [Variazioni nelle risorse disponibili per il primo sprint, rispetto alle risorse iniziali],
+  )
+}
+
 
 = Introduzione
 == Informazioni generali
@@ -375,7 +600,10 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
 #figure(
   table(
     columns: (1fr, 1fr, 1fr, 1fr),
-    inset: 1.1em,
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if calc.rem(y, 2) == 0 {
+      luma(235)
+    },
     table.header(
       [*Ruolo*],
       [*Costo Orario*],
@@ -465,178 +693,21 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 #pagebreak()
 
-#let cella(dati, preventivo, i, j) = {
-  let dat = dati.at(i).at(j)
-  let prev = if preventivo != none {
-    preventivo.at(i).at(j)
-  }
-
-  if j == 0 {
-    persona(dat)
-  } else if preventivo == none and dat == 0 {
-    [-]
-  } else if preventivo == none {
-    [#dat]
-  } else if dat == prev and dat == 0 {
-    [-]
-  } else if dat == prev and dat != 0 {
-    [#dat]
-  } else if dat >= prev {
-    [#dat #text(red)[(+#(dat - prev))]]
-  } else {
-    [#dat #text(green, [(#(dat - prev))])]
-  }
-}
-
-#let tabella-ruoli(ruoli, dati, preventivo) = {
-  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
-    align(left, cl)
-  } else if cl.x == 0 {
-    align(bottom + left, cl)
-  } else if cl.y == 0 {
-    rotate(-45deg, reflow: false, align(left, cl))
-  } else {
-    align(bottom + center, cl)
-  }
-  figure(
-    table(
-        columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-        inset: (x, y) => if y == 0 {
-          (x: 1.9em, y: 0.7em)
-        } else {
-          (x: 1.1em, y: 0.6em)
-        },
-        stroke: (x, y) => if y >= 1 {
-          1pt + black
-        } else {
-          none
-        },
-        table.header([], ..ruoli.map(strong)),
-
-        // @typstyle off
-        ..for i in range(0, dati.len()) {
-          (..for j in range(0, dati.at(i).len()) {
-            (cella(dati, preventivo, i, j),)
-          },)
-        }
-
-      ),
-    caption: [Suddivisione impegni per componente],
-  )
-}
-
-#let grafico-ruoli(ruoli, dati) = {
-  // data è un array di dizionari `(percentuale: 42, titolo: "thanks for all the fish")`
-  let data = ()
-  let globsum = dati.map(r => r.slice(1).sum()).sum()
-  for (i, ruolo) in ruoli.enumerate() {
-    let sum = dati.map(row => row.at(i + 1)).sum(default: 0)
-    data.push((
-      percentuale: sum / globsum * 100,
-      titolo: ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%",
-    ))
-  }
-
-  // set align(center)
-
-  // slice-style: pal_colors,
-  figure(
-    canvas({
-      import draw: *
-      chart.piechart(
-        data,
-        name: "pie",
-        position: (1em, 0),
-        radius: 1.8,
-        value-key: "percentuale",
-        label-key: "titolo",
-        outer-label: (content: none),
-        gap: 0,
-        legend: (orientation: ttb, item: (spacing: .0), position: "east", anchor: "west", offset: (1em, 0)),
-      )
-    }),
-
-    caption: [Tempo dedicato per ruolo],
-    supplement: [Grafico],
-  )
-
-  // TODO: abilitare (e fixare) questo quando viene fixata https://github.com/cetz-package/cetz-plot/issues/96
-  // let dirs = (2, 2, 2)
-  // let positions = ((2, 0),) * dirs.at(0) + ((-2, 0),) * dirs.at(1) + ((2, 0),) * dirs.at(2)
-  // let anchors = ("west",) * dirs.at(0) + ("east",) * dirs.at(1) + ("west",) * dirs.at(2)
-  // set-style(mark: (fill: white, start: "o", stroke: black), content: (padding: .1))
-  // for i in range(columns.len()) {
-  //   if data.at(i).at("percentuale") > 0 {
-  //     line("pie.item-" + str(i), ((), "-|", positions.at(i))) // should start at the center though
-  //     let t = calc.round(data.at(i).at("percentuale") * 100 / data.map(x => x.at("percentuale")).sum())
-  //     content((), [#columns.at(i) - #t%], anchor: anchors.at(i))
-  //   }
-  // }
-}
-
-#let periodo(
-  preventivo: none,
-  dati,
-) = {
-  let ruoli = (
-    "Responsabile",
-    "Amministratore",
-    "Analista",
-    "Progettista",
-    "Programmatore",
-    "Verificatore",
-  )
-
-  v(3em)
-  box({
-    tabella-ruoli(ruoli, dati, preventivo)
-    grafico-ruoli(ruoli, dati)
-  })
-}
-
 ==== Preventivo
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#let sprint1 = (
-  preventivo: (
-    (p.loris, 0, 0, 5, 0, 0, 0),
-    (p.samuele, 5, 0, 0, 0, 0, 0),
-    (p.sara, 0, 3, 4, 0, 0, 2),
-    (p.lorenzo, 0, 2, 0, 0, 0, 5),
-    (p.marco, 0, 5, 0, 0, 0, 3),
-    (p.matteo, 0, 5, 0, 0, 0, 4),
-    (p.emanuele, 0, 4, 0, 0, 0, 0),
-  ),
-  consuntivo: (
-    (p.loris, 4, 0, 2, 0, 0, 0),
-    (p.samuele, 3, 0, 0, 0, 0, 0),
-    (p.sara, 0, 0, 2, 0, 0, 2),
-    (p.lorenzo, 0, 0, 0, 0, 0, 0),
-    (p.marco, 0, 0, 0, 0, 0, 2),
-    (p.matteo, 0, 0, 0, 0, 0, 2),
-    (p.emanuele, 0, 0, 0, 0, 0, 0),
-  ),
-)
+#impegni(1)
 
-#periodo(sprint1.preventivo)
-
-#pagebreak()
 ==== Consuntivo
 
-#periodo(
-  preventivo: sprint1.preventivo,
-  sprint1.consuntivo,
-)
+#impegni(1, preventivo: true)
 
+#v(1em)
 ==== Aggiornamento delle risorse rimanenti
+#prospetto-orario("1")
 
-#table(
-  columns: 4,
-  table.header([Ruolo], [Ore], [Costo], [Differenza]),
-  [Responsabile], [7], [210€], [-30€],
-)
-
+#v(1em)
 ==== Retrospettiva
 
 // comprendente anche i rischi effettivamente riscontrati
