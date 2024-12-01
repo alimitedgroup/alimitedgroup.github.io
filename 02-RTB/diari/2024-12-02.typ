@@ -8,6 +8,7 @@
   contenuto1: [
     - Proseguita la redazione dell'Analisi dei Requisiti
     - La prima versione delle Norme di Progetto, organizzata per processi e singole attività, non è facilmente fruibile: abbiamo iniziato una riorganizzazione di quanto fatto
+    - Miglioramento sistema di ticketing
   ],
   contenuto2: [
     - Verificare la prima retrospettiva nel Piano di Progetto
