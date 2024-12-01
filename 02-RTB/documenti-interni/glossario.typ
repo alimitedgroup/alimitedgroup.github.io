@@ -27,7 +27,7 @@
     date: datetime(day: 29, month: 11, year: 2024),
     autore: p.matteo,
     verifica: p.sara,
-    descr: "Risolto problema nella pagina di copertina e unifomrato header del documento",
+    descr: "Risolto problema nella pagina di copertina e uniformato header del documento",
   ),
   (
     vers: "0.1.0",
