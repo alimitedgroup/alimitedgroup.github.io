@@ -17,5 +17,6 @@
   ],
   contenuto3: [
     - L'organizzazione di un documento può essere troppo specifica e non utile allo scopo del documento stesso
+    - Fino a che livello di dettaglio spingersi con i vari documenti (Analisi dei Requisiti)?
   ],
 )
