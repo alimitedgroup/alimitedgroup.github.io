@@ -2,26 +2,35 @@
 #metadata[Glossario] <titolo>
 
 #set text(lang: "it", font: "Hanken Grotesk")
+#let versione = [0.2.0]
 
 // Prima pagina
 #prima-pagina(
   "Glossario",
+  [],
   [Stato],
   [Redazione],
   [Versione],
-  [0.0.1],
+  versione,
   [Distribuzione],
   grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
 )
 
 // Corpo
 #set heading(numbering: "1.")
-#set page(numbering: "1", header: header("Glossario"), footer: footer())
+#set page(numbering: "1", header: header("Glossario" + "\n Versione " + versione), footer: footer())
 #counter(page).update(1)
 
 #registro-modifiche((
   (
-    vers: "0.0.1",
+    vers: "0.2.0",
+    date: datetime(day: 29, month: 11, year: 2024),
+    autore: p.matteo,
+    verifica: p.sara,
+    descr: "Risolto problema nella pagina di copertina e uniformato header del documento",
+  ),
+  (
+    vers: "0.1.0",
     date: datetime(day: 07, month: 11, year: 2024),
     autore: p.emanuele,
     verifica: p.lorenzo,
