@@ -134,7 +134,7 @@
   )
 }
 
-#let grafico-ruoli(ruoli, dati) = {
+#let grafico-ruoli(ruoli, dati, posizioni-legenda) = {
   // data è un array di dizionari `(percentuale: 42, titolo: "thanks for all the fish")`
   let data = ()
   let globsum = dati.map(r => r.slice(1).sum()).sum()
@@ -145,8 +145,6 @@
       titolo: ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%",
     ))
   }
-
-  // set align(center)
 
   // slice-style: pal_colors,
   figure(
@@ -160,32 +158,51 @@
         value-key: "percentuale",
         label-key: "titolo",
         outer-label: (content: none),
-        gap: 0,
-        legend: (orientation: ttb, item: (spacing: .0), position: "east", anchor: "west", offset: (1em, 0)),
+        gap: 2deg,
+        legend: (label: none),
       )
+
+      set-style(content: (padding: .2))
+      for (i, dat) in data.enumerate() {
+        if dat.percentuale > 0 {
+          // Calculate the point at 35% of the distance from the border of a slice to its center
+          let outer = "pie.chart.item-" + str(i)
+          let inner = "pie.chart.item-" + str(i) + "-inner"
+          line(outer, inner, stroke: none, mark: none, name: "midline-" + str(i))
+          let middle = (name: "midline-" + str(i), anchor: 35%)
+
+          let line-dir = posizioni-legenda.at(i)
+          let line-anchor = if posizioni-legenda.at(i) > 0 {
+            "west"
+          } else {
+            "east"
+          }
+          let percent = calc.round(dat.percentuale * 100 / data.map(x => x.percentuale).sum())
+
+          line(middle, (rel: (posizioni-legenda.at(i), 0)), name: "line-" + str(i))
+          content((), [#ruoli.at(i) - #percent%], anchor: line-anchor)
+          mark(
+            (name: "line-" + str(i), anchor: 0%),
+            (name: "line-" + str(i), anchor: 1%),
+            symbol: "o",
+            anchor: "center",
+            fill: white,
+            width: 1,
+          )
+        } else { }
+      }
     }),
 
     caption: [Tempo dedicato per ruolo],
     supplement: [Grafico],
   )
 
-  // TODO: abilitare (e fixare) questo quando viene fixata https://github.com/cetz-package/cetz-plot/issues/96
-  // let dirs = (2, 2, 2)
-  // let positions = ((2, 0),) * dirs.at(0) + ((-2, 0),) * dirs.at(1) + ((2, 0),) * dirs.at(2)
-  // let anchors = ("west",) * dirs.at(0) + ("east",) * dirs.at(1) + ("west",) * dirs.at(2)
-  // set-style(mark: (fill: white, start: "o", stroke: black), content: (padding: .1))
-  // for i in range(columns.len()) {
-  //   if data.at(i).at("percentuale") > 0 {
-  //     line("pie.item-" + str(i), ((), "-|", positions.at(i))) // should start at the center though
-  //     let t = calc.round(data.at(i).at("percentuale") * 100 / data.map(x => x.at("percentuale")).sum())
-  //     content((), [#columns.at(i) - #t%], anchor: anchors.at(i))
-  //   }
-  // }
 }
 
 #let impegni(
   preventivo: false,
   numero,
+  posizioni-legenda: (2, 2, 2, 2, 2, 2),
 ) = {
   let dati = sprints.at(str(numero))
   let (dati, preventivo) = if preventivo {
@@ -206,11 +223,12 @@
   v(3em)
   box({
     tabella-ruoli(ruoli, dati, preventivo)
-    grafico-ruoli(ruoli, dati)
+    grafico-ruoli(ruoli, dati, posizioni-legenda)
   })
 }
 
 #let prospetto-orario(sprint) = {
+  let sprint = str(sprint)
   let ore-spese-sprint = 0
   let budget-speso-sprint = 0
   let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
@@ -697,15 +715,15 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(1)
+#impegni(1, posizioni-legenda: (2, 2, -2, 2, 2, -2))
 
 ==== Consuntivo
 
-#impegni(1, preventivo: true)
+#impegni(1, preventivo: true, posizioni-legenda: (2, 2, 2, 2, 2, -2))
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
-#prospetto-orario("1")
+#prospetto-orario(1)
 
 #v(1em)
 ==== Retrospettiva
