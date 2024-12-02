@@ -7,6 +7,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "0.6.0",
+      date: datetime(day: 2, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.lorenzo,
+      descr: "Ristrutturato ulteriormente la suddivisione dell'indice. Migliorie generali",
+    ),
+    (
       vers: "0.5.0",
       date: datetime(day: 26, month: 11, year: 2024),
       autore: p.marco,
@@ -72,7 +79,10 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 
 La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.\
 Per evitare, perciò, ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, è stato deciso di utilizzare un Glossario in cui è trascritta, per ogni parola, la definizione. \
-_ALimitedGroup_ si impegna a visionarlo periodicamente, per permetter la più completa comprensione di ogni tipo di documento pubblicato dal gruppo.
+La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno del 26-11-2024], per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
+#align(center)[parola#super[g]] 
+
+_ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permetter la più completa comprensione di ogni tipo di documento pubblicato dal gruppo.
 
 == Riferimenti
 === Riferimenti normativi
@@ -218,8 +228,7 @@ Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppan
 
 Il processo di documentazione è un processo assai delicato quanto importante. Le attività cardine di questo processo sono due:
 - *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
-- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato;
-per ulteriori informazioni vedere la @sezione_manutenzione.
+- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
 
 Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
 - *_Typst_*: trattasi di un linguaggio _mark-down_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
@@ -312,16 +321,9 @@ Il responsabile, una volta approvato il documento, risolverà la pull request e 
 - *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale: ciò avviene completando il _merge_ e risolvendo quindi la _Pull Request_. Tale processo è diversificato per i documenti rispetto ai verbali in quanto, essendo gli altri documenti di consultazione più frequente, è necessario avere a disposizione la versione più recente disponibile per la visione;
 - *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
 
-Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, definite nella @sezione-denominazione-docs
+Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, definite nella prossima sezione.
 
-=== Manutenzione <sezione_manutenzione>
-
-L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di verifica mediante _Pull Request_.
-
-Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
-
-
-=== Denominazione e datazione dei documenti <sezione-denominazione-docs>
+==== Denominazione e datazione dei documenti
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
@@ -339,9 +341,14 @@ dove:
 - *\#* è un modificatore, ovvero un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
 - *VERSIONE* indica la versione corrente del documento
 \
-
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
 Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ovvero parole separate dal carattere *-*.
+
+=== Manutenzione <sezione_manutenzione>
+
+L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di verifica mediante _Pull Request_.
+
+Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
 
  
 === Documentazione prodotta o di supporto <documentazione-supporto>
@@ -436,41 +443,34 @@ Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima d
   caption: [Dettaglio documenti e ruolo responsabile della rispettiva redazione],
 )
 
-=== Gestione delle Configurazioni
+== Gestione delle Configurazioni
 
 La gestione delle configurazioni è un processo fondamentale in un progetto: essa permette di identificare le singole componenti del sistema sviluppato e controllarne le modifiche e i rilasci, nonché registrare lo stato di sviluppo di ciascuna. Complessivamente, il processo permette di avere un buon sviluppo.
-
-==== Strumenti a supporto
-
-Il supporto alle attività di questo processo sono:
-
-- Git
-- GitHub
-
-Per ulteriori informazioni si veda la @implementazione
-
-==== Attività previste
 
 L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
 - Identificazione della configurazione
 - Controllo della configurazione
-- Registrazione dello Stato di Configurazione
+- Registrazione dello stato di configurazione
 - Valutazione della configurazione
 
-==== Identificazione della configurazione
+Per ogni attività esposta precedentemente ed a supporto di ognuna, _ALimitedGroup_ utilizza:
+- _Git_
+- _GitHub_
+
+Per ulteriori informazioni si veda la @implementazione
+
+=== Identificazione della configurazione
 
 Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell'architettura del sistema da sviluppare e allegare il risultato di quanto compreso all'#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
 
 Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @elenco-documenti e nella @documentazione-supporto.
 
-==== Controllo della configurazione <controllo-config>
+=== Controllo della configurazione <controllo-config>
 
 Il *Controllo della configurazione* è l'attività che disciplina le richieste di modifica: queste devono poter essere identificate e valutate con esito favorevole alla loro implementazione o contrario.
 Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l'approvazione.
 
 Per realizzare al meglio questa attività sono stati predisposti metodi differenti per la documentazione e il codice vero e proprio, qui di seguito descritti.
-
-===== Documenti
 
 ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti con l'ausilio delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
 
@@ -488,17 +488,13 @@ ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti
 
 Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di _Git_, un _version control system_ sviluppato da Linus Torvalds e brevemente descritto nella @sezione_git.
 
-===== Codice
+[PROSEGUIRE con Codice]
 
-[PROSEGUIRE]
-
-==== Registrazione dello Stato di Configurazione
+=== Registrazione dello Stato di Configurazione
 
 _ALimitedGroup_ è consapevole della necessità di tracciare i cambiamenti effettuati a documentazione e codice.
 
 L'attività di *Registrazione dello Stato di Configurazione* si occupa proprio di questo e i componenti di _ALimitedGroup_ hanno deciso di implementarla come segue.
-
-===== Documenti
 
 Come verbalizzato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024* ed esteso poi a tutta la documentazione, i documenti utilizzeranno il seguente sistema di versionamento:
 
@@ -514,11 +510,9 @@ Lo spunto d'uso di tale sistema proviene dal sito #link("https://semverdoc.org/"
 
 In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di tutte le modifiche apportate per ogni versione, come anche descritto nella @desc-templ-verbale.
 
-===== Codice
-
 [PROSEGUIRE]
 
-==== Valutazione della configurazione <valutazione-della-configurazione>
+=== Valutazione della configurazione <valutazione-della-configurazione>
 
 La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del software prodotto rispetto ai suoi requisiti e al design scelto.
 
@@ -527,35 +521,36 @@ Questi test saranno descritti in un documento apposito, il #link("")[*Test Book 
 
 [PROSEGUIRE, probabile prematuro fare adesso]
 
-=== Accertamento qualità
-==== Strumenti a supporto
-==== Attività previste
-==== Documentazione prodotta o di supporto
+== Accertamento qualità
+[PROSEGUIRE]  Sezione Strumenti a supporto
+[PROSEGUIRE]  Sezione Attività previste
+[PROSEGUIRE]  Sezione Documentazione prodotta o di supporto
 
-=== Qualifica - Verifica <verifica>
-==== Strumenti a supporto
-==== Attività previste
-==== Documentazione prodotta o di supporto
+== Qualifica
+=== Verifica <verifica>
+[PROSEGUIRE]  Sezione Strumenti a supporto
+[PROSEGUIRE]  Sezione Attività previste
+[PROSEGUIRE]  Sezione Documentazione prodotta o di supporto
 
-=== Qualifica - Validazione <validazione>
-==== Strumenti a supporto
-==== Attività previste
-==== Documentazione prodotta o di supporto
+=== Validazione <validazione>
+[PROSEGUIRE]  Sezione Strumenti a supporto
+[PROSEGUIRE]  Sezione Attività previste
+[PROSEGUIRE]  Sezione Documentazione prodotta o di supporto
 
-=== Revisione
-==== Strumenti a supporto
-==== Attività previste
-==== Documentazione prodotta o di supporto
+== Revisione
+[PROSEGUIRE]  Sezione Strumenti a supporto
+[PROSEGUIRE]  Sezione Attività previste
+[PROSEGUIRE]  Sezione Documentazione prodotta o di supporto
 
-=== Revisione congiunta
-==== Strumenti a supporto
-==== Attività previste
-==== Documentazione prodotta o di supporto
+== Revisione congiunta
+[PROSEGUIRE]  Sezione Strumenti a supporto
+[PROSEGUIRE]  Sezione Attività previste
+[PROSEGUIRE]  Sezione Documentazione prodotta o di supporto
 
-=== Gestione dei cambiamenti
-==== Strumenti a supporto
-==== Attività previste
-==== Documentazione prodotta o di supporto
+== Gestione dei cambiamenti
+[PROSEGUIRE]  Sezione Strumenti a supporto
+[PROSEGUIRE]  Sezione Attività previste
+[PROSEGUIRE]  Sezione Documentazione prodotta o di supporto
 
 = Processi Organizzativi
 
@@ -819,5 +814,5 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 
 A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato il compito all'*Amministratore* di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità qualora errori o cambiamenti lo rendano necessario.
 
-=== Processo di Miglioramento
-=== Processo di Formazione
+=== Processo di miglioramento
+=== Processo di formazione
