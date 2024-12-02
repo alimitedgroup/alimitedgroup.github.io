@@ -79,7 +79,7 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 
 La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.\
 Per evitare, perciò, ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, è stato deciso di utilizzare un Glossario in cui è trascritta, per ogni parola, la definizione. \
-La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno del 26-11-2024], per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
+La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
 #align(center)[parola#super[g]] 
 
 _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permetter la più completa comprensione di ogni tipo di documento pubblicato dal gruppo.
@@ -581,7 +581,11 @@ Stabiliti i requisiti da soddisfare, il responsabile deve comprendere, oltre al 
 
 Il Responsabile deve altresì decidere a chi assegnare tale attività: per facilitare questa operazione, _ALimitedGroup_ ha individuato dei ruoli specifici assieme alle loro responsabilità.
 
-==== Responsabile
+==== Ruoli
+\ #set text(12pt) 
+*Responsabile*
+
+#set text(11pt)
 
 Il *Responsabile* ha un ruolo centrale nel gruppo: esso infatti è responsabile delle attività di coordinamento interne al gruppo.
 
@@ -591,30 +595,44 @@ Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di 
 
 In ultima istanza, è sempre compito di questo ruolo *approvare* i vari documenti prodotti da _ALimitedGroup_.
 
-==== Amministratore
+\ #set text(12pt) 
+*Amministratore*
 
+#set text(11pt)
 L'*Amministratore* (noto anche con il nome di *System Administrator* o *SysAdmin*) ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di _ALimitedGroup_ utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
 
 È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture.
 
 Per via della sua approfondita conoscenza del _Way of Working_ adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il *Piano di Qualifica*, ma può risultare un ruolo adatto anche alla redazione di verbali di riunione interna ed esterna.
 
-==== Analista
+\ #set text(12pt) 
+*Analista*
+
+#set text(11pt) 
 
 L'*Analista* è il ruolo responsabile dell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente #M31.
 È sempre affidato a questo ruolo il compito di redazione dell'*Analisi dei Requisiti*.
 
-==== Progettista
+\ #set text(12pt) 
+*Progettista*
+
+#set text(11pt)
 
 Il *Progettista* è un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche.
 
-==== Programmatore
+\ #set text(12pt) 
+*Programmatore*
+
+#set text(11pt)
 
 Il *Programmatore* è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche. Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate.
 
 È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato.
 
-==== Verificatore
+\ #set text(12pt) 
+*Verificatore*
+
+#set text(11pt)
 
 Il *Verificatore* ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
 
