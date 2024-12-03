@@ -2,8 +2,6 @@
 
 #let ver = [0.7.0]
 
-#metadata[Norme di Progetto v#ver] <titolo>
-
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
