@@ -38,7 +38,7 @@
     [Stato], stato,
     [Data ultima modifica], data.display("[day]-[month]-[year]"),
     [Versione], versione,
-    [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+    [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin)),
   )
 
   set heading(numbering: "1.")
