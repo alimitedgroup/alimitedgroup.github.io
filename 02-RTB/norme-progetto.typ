@@ -7,11 +7,18 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "0.7.0",
+      date: datetime(day: 3, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.lorenzo,
+      descr: "Ristrutturata la sezione ruoli. Migliorie generali nel documento",
+    ),
+    (
       vers: "0.6.0",
       date: datetime(day: 2, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.lorenzo,
-      descr: "Ristrutturato ulteriormente la suddivisione dell'indice. Migliorie generali",
+      descr: "Ristrutturata ulteriormente la suddivisione dell'indice. Migliorie generali",
     ),
     (
       vers: "0.5.0",
@@ -582,7 +589,38 @@ Stabiliti i requisiti da soddisfare, il responsabile deve comprendere, oltre al 
 Il Responsabile deve altresì decidere a chi assegnare tale attività: per facilitare questa operazione, _ALimitedGroup_ ha individuato dei ruoli specifici assieme alle loro responsabilità.
 
 ==== Ruoli
-\ #set text(12pt) 
+\ 
+#figure(
+  table(
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    table.header([*Ruolo*], [*Compiti e responsabilità*]),
+    ("Responsabile"),
+    ("Al Responsabile spetta il compito di comprendere, tenendo in considerazione quanto già portato a termine, quanto da realizzare nei periodi di sviluppo successivi, individuando le attività, i costi e rischi associati e infine assegnandone lo svolgimento ai componenti che vestono in quel periodo il ruolo più appropriato.
+Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad " + [_ALimitedGroup_] + ", quali, a mero titolo esemplificativo, l'azienda proponente del capitolato " + [#M31] + ".
+In ultima istanza, è sempre compito di questo ruolo " + [*approvare*] + " i vari documenti prodotti da " + [_ALimitedGroup_] + "."),
+    ("Amministratore"),
+    ("Noto anche come " +[_System Administrator_ o _SysAdmin_]  + ", ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di " + [_ALimitedGroup_] + " utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato. 
+    È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture. Per via della sua approfondita conoscenza del " + [_Way of Working_] + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il " + [*Piano di Qualifica*] + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."),
+    ("Verificatore"),
+    ("Ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
+Si occupa di eseguire test approfonditi e revisioni del software, identificando eventuali aree di miglioramento specie in ambito qualitativo. È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata."),
+    ("Analista"),
+    ("Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente " + [#M31] + ".
+È sempre affidato a questo ruolo il compito di regidere l'" + [*Analisi dei Requisiti*] + "."),
+    ("Programmatore"),
+    ("Il Programmatore è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche. 
+    Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate. È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato."),
+    ("Progettista"),
+    ("È un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche."),
+    
+  ),
+  caption: [Compiti e responsabilità di ogni singolo ruolo],
+)
+
+
+#set text(12pt) 
 *Responsabile*
 
 #set text(11pt)
