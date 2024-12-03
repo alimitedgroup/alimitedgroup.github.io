@@ -1,5 +1,7 @@
-name: Build Typst documents
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -18,7 +20,6 @@ jobs:
 
       - name: Upload website files
         uses: actions/upload-artifact@v4
-        if: github.ref == 'refs/heads/main'
         with:
           name: Website
           path: "./dist"
