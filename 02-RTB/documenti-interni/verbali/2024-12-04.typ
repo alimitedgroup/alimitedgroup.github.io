@@ -41,9 +41,9 @@
 
 I componenti di _ALimitedGroup_ si sono impegnati nel proseguo della redazione dell'*Analisi dei Requisiti* e del *Piano di Progetto*, nonché al miglioramento dell'organizzazione delle *Norme di Progetto*.
 
-In merito all'*Analisi dei Requisiti* sono stati fatti importanti avanzamenti in merito all'individuazione di buona parte degli _Use Case_ del capitolato, mentre è stata definitvamente completata la redazione del *Piano di Progetto* sino alla retrospettiva del primo periodo, che adesso dovrà essere verificato.
+In merito all'*Analisi dei Requisiti* sono stati fatti importanti avanzamenti in merito all'individuazione degli _Use Case_ del capitolato, mentre è stata definitivamente completata la redazione del *Piano di Progetto* (sino alla retrospettiva del primo periodo), che adesso dovrà essere verificato.
 
-Le *Norme di Progetto* sono state rese molto più fruibili e sono adesso pronte per essere verificate nella loro prima versione.
+Le *Norme di Progetto* sono state rese molto più fruibili.
 
 Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub* inserendo una miglior cruscotto sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità di _branch protection_.
 
