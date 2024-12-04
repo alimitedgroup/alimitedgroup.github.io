@@ -4,6 +4,12 @@
   data: datetime(day: 19, month: 11, year: 2024),
   tipo: [esterno],
   versioni: (
+    (  
+      vers: "0.1.0",
+      date: datetime(day: 04, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.loris,
+      descr: "Approvazione interna ed esterna di tutto il documento",),
     (
       vers: "0.1.0",
       date: datetime(day: 21, month: 11, year: 2024),
@@ -100,3 +106,6 @@ _ALimitedGroup_ ringrazia _M31_ per averci accolto nella loro sede e per la disp
 #pagebreak()
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [*M31*])
+#figure(
+  image("../../../assets/firma_ve_031224.png", width:auto)
+)
