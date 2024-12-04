@@ -4,7 +4,9 @@
 
 #set text(lang: "it", font: "Hanken Grotesk")
 #set list(indent: 1em)
+#set par(justify: true)
 #show link: underline
+#show ref: underline
 
 #let versione = [0.1.0]
 #let nome-documento = [Piano di Progetto]
@@ -32,7 +34,7 @@
 )
 
 #set heading(numbering: "1.")
-#set page(numbering: "1", header: header(nome-documento + "\nVersione " + versione), footer: footer())
+#set page(numbering: "1", header: header(nome-documento + " v" + versione), footer: footer())
 #counter(page).update(1)
 
 #registro-modifiche((
@@ -52,7 +54,7 @@
   "1": (
     preventivo: (
       (p.loris, 0, 0, 5, 0, 0, 0),
-      (p.samuele, 5, 0, 0, 0, 0, 0),
+      (p.samuele, 2, 0, 0, 0, 0, 0),
       (p.sara, 0, 3, 4, 0, 0, 2),
       (p.lorenzo, 0, 2, 0, 0, 0, 5),
       (p.marco, 0, 5, 0, 0, 0, 3),
@@ -60,13 +62,13 @@
       (p.emanuele, 0, 4, 0, 0, 0, 0),
     ),
     consuntivo: (
-      (p.loris, 4, 0, 2, 0, 0, 0),
-      (p.samuele, 3, 0, 0, 0, 0, 0),
-      (p.sara, 0, 0, 2, 0, 0, 2),
-      (p.lorenzo, 0, 0, 0, 0, 0, 0),
-      (p.marco, 0, 0, 0, 0, 0, 2),
-      (p.matteo, 0, 0, 0, 0, 0, 2),
-      (p.emanuele, 0, 0, 0, 0, 0, 0),
+      (p.loris, 0, 0, 5, 0, 0, 0),
+      (p.samuele, 5, 0, 0, 0, 0, 0),
+      (p.sara, 0, 3, 4, 0, 0, 2),
+      (p.lorenzo, 0, 2, 0, 0, 0, 5),
+      (p.marco, 0, 5, 0, 0, 0, 3),
+      (p.matteo, 0, 5, 0, 0, 0, 4),
+      (p.emanuele, 0, 4, 0, 0, 0, 0),
     ),
   ),
 )
@@ -95,6 +97,7 @@
 }
 
 #let tabella-ruoli(ruoli, dati, preventivo) = {
+  set par(justify: false)
   show table.cell: cl => if cl.x == 0 and cl.y != 0 {
     align(left, cl)
   } else if cl.x == 0 {
@@ -196,7 +199,6 @@
     caption: [Tempo dedicato per ruolo],
     supplement: [Grafico],
   )
-
 }
 
 #let impegni(
@@ -221,10 +223,8 @@
   )
 
   v(3em)
-  box({
-    tabella-ruoli(ruoli, dati, preventivo)
-    grafico-ruoli(ruoli, dati, posizioni-legenda)
-  })
+  tabella-ruoli(ruoli, dati, preventivo)
+  grafico-ruoli(ruoli, dati, posizioni-legenda)
 }
 
 #let prospetto-orario(sprint) = {
@@ -685,7 +685,7 @@ Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno e
   [Giorni di ritardo:], strong[0],
 )
 
-==== Informazioni generali e attività da svolgere
+==== Informazioni generali e attività da svolgere <sprint1intro>
 
 Questo primo periodo ha l'obiettivo principale di risolvere tutti i problemi sorti durante la candidatura;
 successivamente, avverrà la redazione dei documenti necessari per un buon inizio dei lavori.
@@ -719,13 +719,31 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Consuntivo
 
-#impegni(1, preventivo: true, posizioni-legenda: (2, 2, 2, 2, 2, -2))
+#impegni(1, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2))
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
 #prospetto-orario(1)
 
 #v(1em)
-==== Retrospettiva
+==== Rischi incontrati
 
-// comprendente anche i rischi effettivamente riscontrati
+Durante questo sprint abbiamo avuto difficoltà con la stima iniziale del numero di ore per ruolo.
+Come si può evincere dalle tabelle 10 e 11, nel preventivo avevamo fortemente
+sottostimato le ore necessarie per svolgere le fasi iniziali.
+Questa è un istanza del rischio _RG3: Rischio Globale derivato da sottostima di attività_,
+che avevamo previsto come possibile per questo periodo in quanto primo sprint.
+
+Inoltre, abbiamo incontrato il rischio
+_RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_.
+Il responsabile per questo sprint, #persona(p.samuele),
+ha dovuto ridimensionare notevolmente il proprio impegno per l'ultima settimana dello sprint.
+Per questo motivo, questa sezione del documento è redatta con qualche giorno di ritardo rispetto all'inizio dello sprint successivo.
+
+=== Retrospettiva
+
+Questo primo sprint è stato dedicato alla realizzazione di automazioni e alla redazione di documenti;
+entrambi gli obiettivi sono stati raggiunti.
+Tra le attività previste, elencate nella @sprint1intro,
+solo l'attività _Inizio stesura Analisi dei Requisiti_ non è stata svolta,
+in quanto rimandata allo sprint successivo.
