@@ -591,7 +591,6 @@ Stabiliti i requisiti da soddisfare, il responsabile deve comprendere, oltre al 
 Il Responsabile deve altresì decidere a chi assegnare tale attività: per facilitare questa operazione, _ALimitedGroup_ ha individuato dei ruoli specifici assieme alle loro responsabilità.
 
 ==== Ruoli
-\
 #figure(
   table(
     columns: (1fr, 4fr),
@@ -636,65 +635,6 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
   ),
   caption: [Compiti e responsabilità di ogni singolo ruolo],
 )
-
-
-#set text(12pt)
-*Responsabile*
-
-#set text(11pt)
-
-Il *Responsabile* ha un ruolo centrale nel gruppo: esso infatti è responsabile delle attività di coordinamento interne al gruppo.
-
-È il componente che veste questo ruolo a cui spetta il compito di comprendere, tenendo in considerazione quanto già portato a termine, quanto da realizzare nei periodi di sviluppo successivi, individuando le attività, i costi e rischi associati e infine assegnandone lo svolgimento ai componenti che vestono in quel periodo il ruolo più appropriato.
-
-Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad _ALimitedGroup_, quali, a mero titolo esemplificativo, l'azienda proponente del capitolato #M31.
-
-In ultima istanza, è sempre compito di questo ruolo *approvare* i vari documenti prodotti da _ALimitedGroup_.
-
-\ #set text(12pt)
-*Amministratore*
-
-#set text(11pt)
-L'*Amministratore* (noto anche con il nome di *System Administrator* o *SysAdmin*) ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di _ALimitedGroup_ utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
-
-È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture.
-
-Per via della sua approfondita conoscenza del _Way of Working_ adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il *Piano di Qualifica*, ma può risultare un ruolo adatto anche alla redazione di verbali di riunione interna ed esterna.
-
-\ #set text(12pt)
-*Analista*
-
-#set text(11pt)
-
-L'*Analista* è il ruolo responsabile dell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente #M31.
-È sempre affidato a questo ruolo il compito di redazione dell'*Analisi dei Requisiti*.
-
-\ #set text(12pt)
-*Progettista*
-
-#set text(11pt)
-
-Il *Progettista* è un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche.
-
-\ #set text(12pt)
-*Programmatore*
-
-#set text(11pt)
-
-Il *Programmatore* è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche. Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate.
-
-È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato.
-
-\ #set text(12pt)
-*Verificatore*
-
-#set text(11pt)
-
-Il *Verificatore* ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
-
-Si occupa di eseguire test approfonditi e revisioni del software, identificando eventuali aree di miglioramento specie in ambito qualitativo.
-
-È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata.
 
 === Esecuzione e controllo
 
