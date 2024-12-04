@@ -81,9 +81,9 @@ Il gruppo conclude la riunione con i compiti assegnati, le decisioni intraprese 
 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
-  "DI22",
+  "DI26",
   "Stabiliti i nuovi ruoli per componente sino al 02-12-2024",
-  "DI23",
+  "DI27",
   "Stabilita la nuova nomenclatura per il Glossario",
   issue(47),
   "Redazione verbale interno 26-11-2024",

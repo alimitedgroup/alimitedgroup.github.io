@@ -23,7 +23,7 @@
 #inizio-verbale-esterno([*ibrida*],[*2 Dicembre 2024*],[*14:30*],[*15:55*],[#M31])
 + Esposizione di tutti gli _use-case_ individuati e scritti nel documento di Analisi dei Requisiti;
 + Sciolti eventuali dubbi riguardo quest'ultimi, per comprendere la qualità del lavoro svolto;
-+ 
++ Prossimi incontri con #M31
 
 In questa riunione hanno partecipato, per conto, di #M31:
 - #persona(p.luca), in modalità virtuale tramite _Microsoft Teams_;
@@ -32,22 +32,35 @@ In questa riunione hanno partecipato, per conto, di #M31:
 
 #pagebreak()
 
-= Esposizione di tutti gli _use-case_
-Nella seguente riunione abbiamo elencato ai rappresentanti di #M31, tutti i possibili _use-case_ individuati nel lavoro di analisi compiuto da ogni singolo componente.\
+= Dettagli riunione
+== Esposizione di tutti gli _use-case_
+In questa riunione abbiamo elencato ai rappresentanti di #M31, tutti i possibili _use-case_ individuati nel lavoro di analisi compiuto da ogni singolo componente.\
 Ognuno di essi verrà pubblicato nel documento di *Analisi dei Requisiti*, quando questo sarà ultimato e completato. 
+
+== Sciolti i dubbi riguardo gli _use-case_
+Per comprendere al meglio la qualità del lavoro svolto dal gruppo, _ALimitedGroup_ ha chiesto ai rappresentanti di #M31 una serie di domande riguardo ogni singolo _use-case_.
+In particolare, il sig. #persona(p.luca) ha esposto un nuovo concetto legato agli _use-case_: gli _user-need_ (necessità dell'utente).\
+Questi ultimi sono importanti perché definiscono le necessità (_needs_ per l'appunto) che un utente, non esperto, fornisce al committente riguardo il prodotto che implementerà. Un esempio riguardo questi _user-need_ è: volere un'applicazione velocissima e che abbia tempi di risposta brevi.
+
+== Prossimi incontri con #M31
+I prossimi incontri con l'azienda e i rappresentanti di #M31 verranno fissati in questi giorni e successivamente riportati nei prossimi verbali.\
+#M31 ci consiglia di effettuare un ultimo _meeting_ prima del *20 Dicembre 2024*, data limite per via della chiusura natalizia dell'azienda. 
 
 #pagebreak()
 
 = Esiti della riunione
-
+Sono state risolte tutte le perplessità riguardo gli _use-case_ elencati ai rappresentanti di #M31, facendo capire a tutto il gruppo la qualità del lavoro svolto fino ad adesso. \
+_ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per averci accolto in sede, per la disponibilità e la professionalità mostrataci durante tutto l'arco della riunione.
 #pagebreak()
 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
+  "DI28",
   "",
+  "DI29",
   "",
   issue(57),
-  "Redazione verbale esterno del 2 Dicembre 2024"
+  "Redazione verbale esterno del 3 Dicembre 2024"
 )
 #pagebreak()
 
