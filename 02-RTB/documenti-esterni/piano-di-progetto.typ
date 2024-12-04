@@ -34,14 +34,14 @@
 )
 
 #set heading(numbering: "1.")
-#set page(numbering: "1", header: header(nome-documento + " v" + versione), footer: footer())
+#set page(numbering: "1", header: header(nome-documento + "\nVersione" + versione), footer: footer())
 #counter(page).update(1)
 
 #registro-modifiche((
   (
     vers: "0.1.0",
-    date: datetime(day: 15, month: 11, year: 2024),
-    autore: p.emanuele,
+    date: datetime(day: 27, month: 11, year: 2024),
+    autore: p.samuele,
     descr: "Redazione documento",
   ),
 ))
@@ -54,12 +54,12 @@
   "1": (
     preventivo: (
       (p.loris, 0, 0, 5, 0, 0, 0),
-      (p.samuele, 2, 0, 0, 0, 0, 0),
+      (p.samuele, 5, 0, 0, 0, 0, 0),
       (p.sara, 0, 3, 4, 0, 0, 2),
-      (p.lorenzo, 0, 2, 0, 0, 0, 5),
-      (p.marco, 0, 5, 0, 0, 0, 3),
-      (p.matteo, 0, 5, 0, 0, 0, 4),
-      (p.emanuele, 0, 4, 0, 0, 0, 0),
+      (p.lorenzo, 0, 2, 0, 0, 0, 4),
+      (p.marco, 0, 2, 0, 0, 0, 2),
+      (p.matteo, 0, 3, 0, 0, 0, 4),
+      (p.emanuele, 0, 3, 0, 0, 0, 0),
     ),
     consuntivo: (
       (p.loris, 0, 0, 5, 0, 0, 0),
