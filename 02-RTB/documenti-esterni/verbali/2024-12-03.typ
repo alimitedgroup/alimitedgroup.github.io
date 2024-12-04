@@ -14,13 +14,13 @@
   ),
   stato: [In redazione],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
-  odg: [Seconda riunione con #M31: esposizione di tutti gli _use-case_ individuati nell'Analisi dei Requisiti, sciolti i dubbi riguardo quest'ultimi],
+  odg: [Seconda riunione con #M31: esposizione di tutti gli _use-case_ individuati nell'Analisi dei Requisiti, sciolti i dubbi riguardo quest'ultimi, decisi i periodi dei prossimi _meeting_],
   disambiguatore: [#M31],
   body,
 )
 
 = Informazioni generali
-#inizio-verbale-esterno([*ibrida*],[*2 Dicembre 2024*],[*14:30*],[*15:55*],[#M31])
+#inizio-verbale-esterno([*ibrida*],[*3 Dicembre 2024*],[*14:30*],[*15:55*],[#M31])
 + Esposizione di tutti gli _use-case_ individuati e scritti nel documento di Analisi dei Requisiti;
 + Sciolti eventuali dubbi riguardo quest'ultimi, per comprendere la qualità del lavoro svolto;
 + Prossimi incontri con #M31
@@ -50,19 +50,16 @@ I prossimi incontri con l'azienda e i rappresentanti di #M31 verranno fissati in
 
 = Esiti della riunione
 Sono state risolte tutte le perplessità riguardo gli _use-case_ elencati ai rappresentanti di #M31, facendo capire a tutto il gruppo la qualità del lavoro svolto fino ad adesso. \
+Il gruppo si pone l'obiettivo di confrontarsi, prima, e decidere, dopo, quale architettura implementare per la gestione del magazzino distribuito. Tale decisione verrà presa prima del prossimo incontro con #M31, e verrà messa per iscritto nel verbale esterno futuro.\
 _ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per averci accolto in sede, per la disponibilità e la professionalità mostrataci durante tutto l'arco della riunione.
 #pagebreak()
 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
-  "DI28",
-  "",
-  "DI29",
-  "",
   issue(57),
   "Redazione verbale esterno del 3 Dicembre 2024"
 )
 #pagebreak()
 
 = Approvazione esterna
-#approvazione-esterna(nome_parte_esterna: [*M31*])
+#approvazione-esterna(nome_parte_esterna: [*#M31*])
