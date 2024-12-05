@@ -12,7 +12,7 @@
       vers: "0.7.0",
       date: datetime(day: 3, month: 12, year: 2024),
       autore: p.marco,
-      verifica: p.lorenzo,
+      verifica: p.samuele,
       descr: "Ristrutturata la sezione ruoli. Migliorie generali nel documento",
     ),
     (
