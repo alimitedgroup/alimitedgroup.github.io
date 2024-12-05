@@ -1,5 +1,5 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/use-case.typ"
+#import "../../lib/use-case.typ" : *
 #let ver = [0.1.0]
 
 #show: body => importantdocs(
@@ -108,6 +108,7 @@ A supporto di una consultazione rapida e intuitiva, è stata inoltre predisposta
 
 La struttura del documento mira a garantire trasparenza, tracciabilità e comprensione condivisa tra tutti i soggetti coinvolti nel progetto.
 
+#pagebreak()
 = Descrizione generale
 == Prospettiva del prodotto
 #lorem(10)
@@ -137,70 +138,38 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
 )
 
 == Lista casi d'uso
-#use-case[
+#use-case(
   num: "1",
   titolo: [Visualizzazione dashboard],
   attore: "Utente",
   pre: "L'utente è autenticato nel sistema",
   scenari: "L'utente accede alla dashboard del sistema",
   trigger: "L'utente seleziona la voce 'Dashboard' dal menu principale",
-  body,
-][
-  ///#use-case-diagram("1", "Diagramma dei casi d'uso")
+)[
+  #use-case-diagram("1", "Diagramma dei casi d'uso")
 ]
 
-= Requisiti Funzionali
-== Requisiti funzionali
+= Requisiti Principali
+== Requisiti Funzionali
 
 #show table.cell: cl => align(left, cl)
 #figure(
   table(
     columns: (1fr, 5fr, 1fr),
-    inset: 1.1em,
-    stroke: (x, y) => if y >= 1 {
-      1pt + black
-    } else {
-      none
-    },
+    inset: 10pt,
     table.header(
       [*Codice*],
       [*Descrizione*],
       [*Fonti*],
     ),
-
     [], [], [],
     [], [], [],
     [], [], [],
   ),
   caption: [Tabella dei requisiti funzionali],
 )
-/*#{
-  show table.cell: cl => align(left, cl)
-  figure(
-    table(
-      columns: (1fr, 5fr, 1fr),
-      inset: 1.1em,
-      stroke: (x, y) => if y >= 1 {
-        1pt + black
-      } else {
-        none
-      },
-      table.header(
-        [*Codice*],
-        [*Descrizione*],
-        [*Fonti*],
-      ),
-
-      [], [], [],
-      [], [], [],
-      [], [], [],
-    ),
-    caption: [Tabella dei requisiti funzionali],
-  )
-
-}*/
-== Requisiti di qualità
-== Requisiti di vincolo
+== Requisiti di Qualità
+== Requisiti di Vincolo
 
 = Informazioni di supporto
 == Tabella dei contenuti

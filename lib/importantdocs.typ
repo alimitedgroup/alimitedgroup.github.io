@@ -29,11 +29,11 @@
 ) = {
   let titolo = [#titolo \ Versione #versione]
   let versione = versioni.at(0).vers
-  [#metadata[Norme di Progetto #versione] <titolo> ]
+  [#metadata[#titolo #versione] <titolo> ]
 
   set list(indent: 1em)
   set enum(indent: 1em)
-  set document(title: titolo, date: data)
+  set document(title: titolo, date: data, author: "ALimitedGroup")
   set text(lang: "it", font: "Hanken Grotesk")
   show link: underline
 
