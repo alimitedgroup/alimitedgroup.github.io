@@ -29,7 +29,7 @@
 ) = {
   let titolo = [#titolo \ Versione #versione]
   let versione = versioni.at(0).vers
-  [#metadata[#titolo #versione] <titolo> ]
+  [#metadata[#titolo #versione] <titolo>]
 
   set list(indent: 1em)
   set enum(indent: 1em)
