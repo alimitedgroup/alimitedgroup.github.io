@@ -5,6 +5,13 @@
   tipo: [esterno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 05, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.loris,
+      descr: "Approvazione interna ed esterna del documento",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 21, month: 11, year: 2024),
       autore: p.emanuele,
@@ -12,10 +19,10 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [Redatto],
+  stato: [Approvato],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
-  odg: [Prima riunione con _M31_ dopo l'aggiudicazione del progetto: formalizzazione dei requisiti e dell'organizzazione futura],
-  disambiguatore: [],
+  odg: [Prima riunione con #M31 dopo l'aggiudicazione del progetto: formalizzazione dei requisiti e dell'organizzazione futura],
+  disambiguatore: [M31],
   body,
 )
 
@@ -100,3 +107,6 @@ _ALimitedGroup_ ringrazia _M31_ per averci accolto nella loro sede e per la disp
 #pagebreak()
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [*M31*])
+#figure(
+  image("../../../assets/firma_ve0312.png", width: auto),
+)

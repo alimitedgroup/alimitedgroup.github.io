@@ -51,7 +51,15 @@
     [Stato], stato,
     [Versione], versione,
     [Presenze], grid(align: left, gutter: 8pt, ..presenze.map(persona)),
-    [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+    [Distribuzione],
+    if tipo == [esterno]
+    {
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin))
+    }
+    else
+    {
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin))
+    },
   )
 
   set heading(numbering: "1.")
