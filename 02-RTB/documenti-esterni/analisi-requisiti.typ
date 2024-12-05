@@ -38,7 +38,7 @@
     (p.loris),
     (p.marco),
   ),
-  descrizione: [Questo documento contiene l'_Analisi dei Requisiti_ descritti dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
+  descrizione: [Questo documento contiene l'_Analisi dei Requisiti_ descritta dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
   titolo: [_Analisi dei Requisiti_],
   body,
 )
