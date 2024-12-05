@@ -9,7 +9,7 @@
       date: datetime(day: 04, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.loris,
-      descr: "Approvazione interna ed esterna di tutto il documento",),
+      descr: "Approvazione interna ed esterna del documento",),
     (
       vers: "0.1.0",
       date: datetime(day: 21, month: 11, year: 2024),
@@ -107,5 +107,5 @@ _ALimitedGroup_ ringrazia _M31_ per averci accolto nella loro sede e per la disp
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [*M31*])
 #figure(
-  image("../../../assets/firma_ve_031224.png", width:auto)
+  image("../../../assets/firma_ve0312.png", width:auto)
 )
