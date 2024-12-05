@@ -117,7 +117,7 @@ Lo standard classifica tre tipologie di processi:
 Durante la realizzazione del progetto, il gruppo ha deciso di adottare alcuni di questi processi: saranno qui descritti assieme anche alle loro principali azioni.
 
 = Processi Primari
-Per sviluppare un buon sistema software la sola scrittura di codice e lo svolgimento di alcuni test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ovvero che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
+Per sviluppare un buon sistema software la sola scrittura di codice e lo svolgimento di alcuni test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ossia che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
 Tra i più rigorosi modelli esistenti sicuramente è innegabile l'importanza di quello descritto dallo _standard ISO/IEC 12207_ pubblicato, nella sua prima versione, nel 1995.\
 
 Tra i processi primari, definiti dallo _standard ISO/IEC 12207_, utilizzati nell'ambito del progetto distinguiamo:
@@ -127,7 +127,9 @@ Tra i processi primari, definiti dallo _standard ISO/IEC 12207_, utilizzati nell
 == Fornitura
 
 La fornitura è il processo primario adottato dal fornitore del futuro prodotto finale che si occupa di analizzare le azioni da intraprendere per la sua realizzazione.\
-Questo processo prevede un primo studio dei requisiti che il progetto dovrà, nelle componenti prodotte, soddisfare, in maniera da avere il materiale necessario per poter effettuare una contrattazione degli stessi con il proponente e poter comunicare allo stesso una possibile pianificazione del lavoro da svolgere con probabile data di consegna prevista.
+Questo processo prevede un primo studio dei requisiti che il progetto dovrà, nelle componenti prodotte, soddisfare.
+Ciò produce il materiale necessario per poter effettuare una contrattazione dei requisiti con il proponente,
+e poter comunicare allo stesso una possibile pianificazione del lavoro da svolgere con probabile data di consegna prevista.
 
 === Strumenti a supporto
 
@@ -136,7 +138,8 @@ Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strum
 - *_GitHub_*: per la gestione del _BackLog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da fare;
 - *_Discord_* e *_Telegram_*: per concordare internamente pianificazioni mediante riunioni interne.
 Le comunicazioni verso l'azienda proponente richiedono, invece, l'utilizzo di:
-- _*Microsoft Teams*_
+- _*Email*_ per le comunicazioni scritte;
+- _*Microsoft Teams*_ per le riunioni non svolte in sede di #M31
 
 
 === Attività previste
@@ -145,7 +148,7 @@ La fornitura prevede varie attività, qui di seguito descritte:
 
 - *Inizializzazione*: questa prevede l'analisi, da parte del fornitore, delle richieste da parte del proponente, tenendo in considerazione eventuali vincoli organizzativi o di altra natura. È Il momento in cui il fornitore valuta la capacità di realizzare quanto proposto, determinando gli eventuali requisiti da contrattare con il proponente;
 - *Preparazione risposte*: questa attività prevede la realizzazione di una contro-proposta per il proponente che tenga conto di quanto derivato dall'attività di inizializzazione;
-- *Contrattazione*: è l'attività che prevede un colloqui con il proponente durante il quale verranno presentate al proponente le risposte precedentemente realizzate, con l'obbiettivo di giungere alla formalizzazione di un contratto;
+- *Contrattazione*: è l'attività che prevede un colloquio con il proponente durante il quale verranno presentate al proponente le risposte precedentemente realizzate, con l'obiettivo di giungere alla formalizzazione di un contratto;
 - *Pianificazione*: il fornitore, stabiliti i requisiti finali, deve adesso stabilire un'organizzazione e un metodo di lavoro in grado di assicurare la qualità del sistema da realizzare, scegliendo, qualora non lo sia da contratto, il modello di ciclo di vita del software da seguire. La pianificazione include anche l'individuazione delle risorse e le tecnologie necessarie allo sviluppo, considerando anche i potenziali rischi ad esse associate;
 - *Esecuzione e controllo*: Il fornitore deve, messo a documenti la pianificazione, realizzare quanto stabilito, monitorando nel frattempo la qualità di quanto prodotto e il progresso raggiunto;
 - *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto prodotto, con annessa quindi una valutazione sullo stato di lavoro;
@@ -177,7 +180,7 @@ La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[
 
 === Analisi dei requisiti
 
-L'#link("")[*Analisi dei Requisiti (CAMBIARE LINK)*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene:
+L'#link("")[*Analisi dei Requisiti*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene:
 
 [PROSEGUIRE]
 
@@ -188,19 +191,18 @@ Essa contiene le informazioni rilevanti a tale fine, come, a mero titolo di esem
 
 === Piano di Progetto
 
-Il #link("")[*Piano di Progetto (CAMBIARE LINK)*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_ in _sprint_, nonché l'analisi dei rischi associati a ciascuna attività.\
+Il #link("https://alimitedgroup.github.io/Piano%20di%20progetto%200.1.0.pdf")[*Piano di Progetto*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_ in _sprint_, nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
 === Piano di Qualifica
 
-//Prossimamente....
 [PROSEGUIRE]
 
 === Glossario
 
 I componenti di _ALimitedGroup_ hanno verificato la necessità di avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i molti termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
 
-Per questo motivo, il gruppo ha prodotto un #link("")[*Glossario*], rivelatosi molto utile nel corso del tempo.
+Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.io/Glossario.pdf")[*Glossario*], rivelatosi molto utile nel corso del tempo.
 
 [PROSEGUIRE]
 
@@ -235,12 +237,12 @@ Il processo di documentazione è parte fondamentale di tutti i processi primari:
 Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni prodotto da un processo o da un'attività nel ciclo di vita.\
 Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati (come manager, ingegneri e utenti del sistema o del prodotto _software_). \
 
-Il processo di documentazione è un processo assai delicato quanto importante. Le attività cardine di questo processo sono due:
+Il processo di documentazione è un processo assai delicato, e molto importante. Le attività cardine di questo processo sono due:
 - *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
 - *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
 
 Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
-- *_Typst_*: trattasi di un linguaggio _mark-down_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
+- *_Typst_*: trattasi di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
   _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti, per ulteriori dettagli consultare la @sezione_typst;
 
 - *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
@@ -263,7 +265,7 @@ Generalmente un verbale possiede questa struttura iniziale:
   - Tipo di verbale (interno o esterno) con annessa data della riunione verbalizzata;
   - Stato del documento;
   - Persone presenti alla riunione;
-  - Distribuzione (ovvero, i destinatari);
+  - Distribuzione (ossia, i destinatari);
   - Ordine del giorno (in formato riassuntivo).
 - Allegato con *tabella delle versioni*;
 - *Indice del documento*, generato automaticamente da _Typst_.
@@ -336,22 +338,23 @@ Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni,
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
-#align(center)[*TIPO GG-MM-AAAA** \# VERSIONE*]
+#align(center)[*TIPO AAAA-MM-GG** \# VERSIONE*]
 
 dove:
 - *TIPO* è una sigla che identifica il tipo di documento. Le possibili scelte sono:
   - *VI* per *V*\erbale *I*\nterno
   - *VE* per *V*\erbale *E*\sterno
+  - *DB* per *D*\iario di *B*\ordo
   - *NP* per *N*\orme di *P*\rogetto
   - *PP* per *P*\iano di *P*\rogetto
   - *AR* per *A*\nalisi dei *R*\equisiti
   - *PQ* per *P*\iano di *Q*\ualifica
-- *GG-MM-AAAA* indica la data in formato giorno-mese-anno (con due cifre per giorno e mese e 4 cifre per l'anno)
-- *\#* è un modificatore, ovvero un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
+- *AAAA-MM-GG* indica la data in formato anno-mese-giorno (con due cifre per giorno e mese e 4 cifre per l'anno)
+- *\#* è un modificatore, ossia un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
 - *VERSIONE* indica la versione corrente del documento
 \
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
-Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ovvero parole separate dal carattere *-*.
+Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ossia parole separate dal carattere *-*.
 
 === Manutenzione <sezione_manutenzione>
 
@@ -364,10 +367,11 @@ Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @c
 
 Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima descrizione è stata realizzata nella @elenco-documenti.
 
+#show table.cell: it => align(center + horizon, it)
 #figure(
   table(
     align: center,
-    columns: (1fr, 2fr, 1fr, 1.5fr, 0.65fr),
+    columns: (1fr, 1.8fr, 1.2fr, 1.5fr, 0.65fr),
     inset: 5pt,
     table.header(
       [*Documento*],
@@ -381,72 +385,72 @@ Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima d
     [Documento contenente informazioni sui requisiti obbligatori, desiderabili e opzionali del progetto],
     [Analisti],
     [#M31,\ ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Lettera di Candidatura],
     [Lettera redatta per presentare la candidatura del gruppo al capitolato di #M31],
     [-],
     [ALimitedGroup, \
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Lettera di Presentazione (RTB)],
     [Lettera redatta per presentare la candidatura del gruppo alla _RTB_],
     [Responsabile],
     [#M31,\ ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Lettera di Presentazione (PB)],
     [Lettera redatta per presentare la candidatura del gruppo alla _Product Baseline_],
     [Responsabile],
     [#M31,\ ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Norme di Progetto],
     [Stabilisce il _Way of Working_ e le pratiche di sviluppo adottate dal gruppo],
     [Amministratore],
     [ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Interno],
 
     [Piano di Progetto],
     [Definisce quanto realizzato in ogni periodo con relativi costi e aggiornamenti del _budget_ rimanente],
     [Responsabile],
     [#M31,\ ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Piano di Qualifica],
     [Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGroup_],
     [Amministratore],
     [#M31,\ ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Verbale Esterno],
-    [Verbale di una riunione svolta con la presenza di persone esterne al gruppo],
+    [Verbale di una riunione svolta con persone esterne al gruppo],
     [Responsabile \ o Amministratore],
     [#M31,\ ALimitedGroup,
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Esterno],
 
     [Verbale Interno],
     [Verbale di una riunione svolta senza la presenza di persone esterne al gruppo],
     [Responsabile \ o Amministratore],
     [ ALimitedGroup,\
-      Prof. Vardanega Tullio, \
-      Prof. Cardin Riccardo],
+      #profBreve(p.tullio), \
+      #profBreve(p.cardin)],
     [Interno],
   ),
   caption: [Dettaglio documenti e ruolo responsabile della rispettiva redazione],
@@ -597,38 +601,38 @@ Il Responsabile deve altresì decidere a chi assegnare tale attività: per facil
     inset: 5pt,
     align: horizon,
     table.header([*Ruolo*], [*Compiti e responsabilità*]),
-    ("Responsabile"),
+    "Responsabile",
     (
       "Al Responsabile spetta il compito di comprendere, tenendo in considerazione quanto già portato a termine, quanto da realizzare nei periodi di sviluppo successivi, individuando le attività, i costi e rischi associati e infine assegnandone lo svolgimento ai componenti che vestono in quel periodo il ruolo più appropriato.
 Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad " + [_ALimitedGroup_] + ", quali, a mero titolo esemplificativo, l'azienda proponente del capitolato " + [#M31] + ".
 In ultima istanza, è sempre compito di questo ruolo " + [*approvare*] + " i vari documenti prodotti da " + [_ALimitedGroup_] + "."
     ),
 
-    ("Amministratore"),
+    "Amministratore",
     (
       "Noto anche come " + [_System Administrator_ o _SysAdmin_] + ", ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di " + [_ALimitedGroup_] + " utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
     È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture. Per via della sua approfondita conoscenza del " + [_Way of Working_] + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il " + [*Piano di Qualifica*] + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."
     ),
 
-    ("Verificatore"),
+    "Verificatore",
     (
       "Ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
 Si occupa di eseguire test approfonditi e revisioni del software, identificando eventuali aree di miglioramento specie in ambito qualitativo. È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata."
     ),
 
-    ("Analista"),
+    "Analista",
     (
       "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente " + [#M31] + ".
 È sempre affidato a questo ruolo il compito di regidere l'" + [*Analisi dei Requisiti*] + "."
     ),
 
-    ("Programmatore"),
+    "Programmatore",
     (
       "Il Programmatore è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
     Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate. È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato."
     ),
 
-    ("Progettista"),
+    "Progettista",
     (
       "È un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche."
     ),
@@ -730,8 +734,8 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 
 - *.github/workflows*: contiene lo script in _Python_ che si occupa di compilare i files _Typst_ dei documenti ed aggiornare il sito di conseguenza;
 - *.vscode*: contiene informazioni utili per l'_IDE_ di sviluppo _Microsoft Visual Studio Code_, se questo viene utilizzato per la stesura dei documenti;
-- *01-candidatura*: contiene, con le eventuali _sub-directories_ i file della candidatura, ovvero la prima fase del progetto;
-- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della _Requirements and Technology Baseline_ (RTB), ovvero la seconda fase del progetto;
+- *01-candidatura*: contiene, con le eventuali _sub-directories_ i file della candidatura, ossia la prima fase del progetto;
+- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della _Requirements and Technology Baseline_ (RTB), ossia la seconda fase del progetto;
 - *assets*: contiene _files_ utili per il sito web e i documenti, come loghi e _fonts_;
 - *lib*: contiene i file _template_ per la redazione dei documenti;
 - *website*: contiene i file relativi al sito web del gruppo.
@@ -745,7 +749,7 @@ Come descritto nella @regole-branch-issue, la redazione o modifica di un documen
 
 Dove:
 - Al posto di *\#* va inserito il numero della _Issue_ le cui modifiche operate nel branch determineranno la chiusura
-- Al posto di *azione* va inserita l'azione fatta nel _Branch_ ovvero:
+- Al posto di *azione* va inserita l'azione fatta nel _Branch_ ossia:
   - *redazione* per indicare la redazione di un nuovo documento
   - *aggiornamento* per indicare la modifica di un documento esistente
 - Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
