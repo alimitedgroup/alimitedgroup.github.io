@@ -15,7 +15,7 @@
   stato: [In redazione],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
   odg: [Seconda riunione con #M31: esposizione di tutti gli _use-case_ individuati nell'Analisi dei Requisiti, sciolti i dubbi riguardo quest'ultimi, decisi i periodi dei prossimi _meeting_],
-  disambiguatore: [#M31],
+  disambiguatore: [M31],
   body,
 )
 

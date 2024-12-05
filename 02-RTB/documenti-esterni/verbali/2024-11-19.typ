@@ -5,8 +5,8 @@
   tipo: [esterno],
   versioni: (
     (  
-      vers: "0.1.0",
-      date: datetime(day: 04, month: 12, year: 2024),
+      vers: "1.0.0",
+      date: datetime(day: 05, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.loris,
       descr: "Approvazione interna ed esterna del documento",),
@@ -20,8 +20,8 @@
   ),
   stato: [Redatto],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
-  odg: [Prima riunione con _M31_ dopo l'aggiudicazione del progetto: formalizzazione dei requisiti e dell'organizzazione futura],
-  disambiguatore: [],
+  odg: [Prima riunione con #M31 dopo l'aggiudicazione del progetto: formalizzazione dei requisiti e dell'organizzazione futura],
+  disambiguatore: [M31],
   body,
 )
 
