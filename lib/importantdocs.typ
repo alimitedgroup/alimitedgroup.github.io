@@ -24,9 +24,10 @@
   verificatore: (),
   redattori: (),
   descrizione: [],
+  titolo:[],
   body,
 ) = {
-  let titolo = [_Norme di Progetto_ \ Versione #versione]
+  let titolo = [#titolo \ Versione #versione]
   let versione = versioni.at(0).vers
   [#metadata[Norme di Progetto #versione] <titolo> ]
 
@@ -49,7 +50,15 @@
     [Responsabile], grid(align: left, gutter: 8pt, ..responsabile.map(persona)),
     [Verificatore], grid(align: left, gutter: 8pt, ..verificatore.map(persona)),
     [Redattori], grid(align: left, gutter: 8pt, ..redattori.map(persona)),
-    [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+    [Distribuzione],     
+    if tipo == [esterno]
+    {
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin))
+    }
+    else
+    {
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin))
+    },
   )
 
   set heading(numbering: "1.")
@@ -66,8 +75,8 @@
   indice-tabelle()
   pagebreak()
 
-  ///indice-immagini()
-  ///pagebreak()
+  indice-immagini()
+  pagebreak()
 
   body
 }

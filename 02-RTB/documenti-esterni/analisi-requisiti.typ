@@ -1,10 +1,19 @@
-#import "/lib/common.typ": *
-#import "@preview/pintorita:0.1.2"
-#import "@preview/chronos:0.2.0"
+#import "../../lib/importantdocs.typ": *
+#import "../../lib/use-case.typ"
+#let ver = [0.1.0]
 
-#{
-  let nome = "Analisi dei requisiti"
-  let versioni = (
+#show: body => importantdocs(
+  data: datetime(day: 05, month: 12, year: 2024),
+  tipo: [esterno],
+  versione: ver,
+  versioni: (
+    (
+      vers: "0.1.0",
+      date: datetime(day: 05, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.lorenzo,
+      descr: "Rivoluzionata la struttura del documento secondo il template creato appositamente",
+    ),
     (
       vers: "0.0.2",
       date: datetime(day: 13, month: 11, year: 2024),
@@ -19,87 +28,20 @@
       // verifica: p.,
       descr: "Creazione struttura e template documento",
     ),
-  )
-  let data = versioni.at(0).date
-  let stato = "Redazione"
-
-  let versione = versioni.at(0).vers
-  [ #metadata[#nome #versione] <titolo>]
-
-  set list(indent: 1em)
-  set enum(indent: 1em)
-  set document(title: nome, date: data)
-  set text(lang: "it", font: "Hanken Grotesk")
-  show link: underline
-
-  // @typstyle off
-  prima-pagina(
-    nome, none,
-    [Stato], stato,
-    [Data ultima modifica], data.display("[day]-[month]-[year]"),
-    [Versione], versione,
-    [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin)),
-  )
-
-  set heading(numbering: "1.")
-  set page(numbering: "1", header: header(nome), footer: footer())
-  counter(page).update(1)
-  pagebreak()
-
-  registro-modifiche(versioni)
-  pagebreak()
-
-  indice()
-  pagebreak()
-}
-
-// Don't delete, necessary for diagrams
-#show raw.where(lang: "pintora"): it => pintorita.render(it.text)
-
-#let use-case(
-  num: [],
-  titolo: [],
-  attore: [],
-  pre: [],
-  scenari: [],
-  trigger: [],
-  post: none,
-  attori_secondari: none,
-  scenari_alternativi: none,
+  ),
+  stato: [In redazione],
+  responsabile: ((p.loris),),
+  verificatore: ((p.samuele), (p.lorenzo),),
+  redattori: (
+    (p.emanuele),
+    (p.sara),
+    (p.loris),
+    (p.marco),
+  ),
+  descrizione: [],
+  titolo: [_Analisi dei Requisiti_],
   body,
-) = [
-  === UC#num - #titolo
-
-  - *Attore principale*: #attore
-
-  #if (attori_secondari != none) {
-    [- *Attore secondario*: attore_secondario]
-  }
-
-  - *Precondizioni*: #pre
-
-  #if (post != none) {
-    [- *Postcondizioni*: #post]
-  }
-
-  - *Scenario principale*: #scenari
-
-  #if (scenari_alternativi != none) {
-    [- *Scenari alternativi*: #scenari_alternativi]
-  }
-
-  - *Trigger*: #trigger
-
-  #body
-]
-
-#let use-case-diagram(version, caption, width: 60%) = [
-  #show figure: set align(center)
-  #figure(
-    image("../../assets/diagrams/UC" + version + ".svg", width: width),
-    caption: caption,
-  )
-]
+)
 
 = Introduzione
 == Scopo del documento
@@ -117,11 +59,11 @@ Il documento di _Analisi dei Requisiti_ viene redatto dagli _Analisti_ del team 
 - Il _Team di Progettisti e di Programmatori_, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software;
 - Il Team di _Verificatori_, che baserà sull' Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
 
-Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come _Amministratori_ e _Responsabili di Progetto_, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
+Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori e Responsabili di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
 == Ambito di applicazione
 
-Il capitolato d'appalto C6 proposto dall'azienda _M31_ propone lo sviluppo di un *Sistema di Gestione di un Magazzino Distribuito*. \
+Il capitolato d'appalto C6 proposto dall'azienda #M31 propone lo sviluppo di un *Sistema di Gestione di un Magazzino Distribuito*. \
 Il sistema deve essere in grado di:
 - *Ottimizzare i livelli di scorte* attraverso il monitoraggio costante dell'inventario e suggerendo/automatizzando azioni di riassortimento o trasferimento tra magazzini;
 - *Gestire la condivisione dei dati di inventario in tempo reale* tra i vari magazzini e il sistema centrale;
@@ -139,13 +81,14 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-#lorem(10)
+- Norme di Progetto \ #link("alimitedgroup.github.io/norme-progetto.pdf")[alimitedgroup.github.io/norme-progetto.pdf]
+- Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_: \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
 === Riferimenti informativi
 - Standard IEEE: \ https://ieeexplore.ieee.org/document/720574
-- Capitolato C6 _Sistema di Gestione di un Magazzino Distribuito_: \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
 - Analisi dei requisiti: \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
 - Diagrammi casi d'uso: \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf
 - Diagrammi delle attività: \ https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20di%20Attivit%C3%A0.pdf
+- Glossario: \ #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
 
 == Quadro generale
 Il presente documento analiizza in modo dettagliato ed esaustivo i requisiti emersi dal capitolato C6 _Sistema di Gestione di un Magazzino Distribuito_ e dalla fase di contrattazione con il committente _M31_.
@@ -188,28 +131,50 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
 - Admin locale
 - Cliente
 
-#show figure: set align(center)
 #figure(
   image("../../assets/diagrams/attori.svg", width: 50%),
   caption: [Diagramma degli attori],
 )
 
 == Lista casi d'uso
-
-#use-case(
+#use-case[
   num: "1",
   titolo: [Visualizzazione dashboard],
   attore: "Utente",
   pre: "L'utente è autenticato nel sistema",
   scenari: "L'utente accede alla dashboard del sistema",
   trigger: "L'utente seleziona la voce 'Dashboard' dal menu principale",
-)[
-  #use-case-diagram("1", "Diagramma dei casi d'uso")
+  body,
+][
+  ///#use-case-diagram("1", "Diagramma dei casi d'uso")
 ]
 
 = Requisiti Funzionali
 == Requisiti funzionali
-#{
+
+#show table.cell: cl => align(left, cl)
+#figure(
+  table(
+    columns: (1fr, 5fr, 1fr),
+    inset: 1.1em,
+    stroke: (x, y) => if y >= 1 {
+      1pt + black
+    } else {
+      none
+    },
+    table.header(
+      [*Codice*],
+      [*Descrizione*],
+      [*Fonti*],
+    ),
+
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: [Tabella dei requisiti funzionali],
+)
+/*#{
   show table.cell: cl => align(left, cl)
   figure(
     table(
@@ -233,7 +198,7 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
     caption: [Tabella dei requisiti funzionali],
   )
 
-}
+}*/
 == Requisiti di qualità
 == Requisiti di vincolo
 
