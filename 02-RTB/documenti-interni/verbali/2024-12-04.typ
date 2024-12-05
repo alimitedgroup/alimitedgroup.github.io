@@ -53,7 +53,7 @@ Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 
 
 Sarà necessario verificare il *Piano di Progetto* e le *Norme di Progetto* sino ad ora redatte e proseguire la loro redazione.
 
-I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept (PoC)_, specie riguardo il linguaggio *Go* e la tecnologia *nats*.
+I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept (PoC)_, specie riguardo il linguaggio *Go* e la tecnologia *NATS*.
 
 Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica*.
 
@@ -61,7 +61,7 @@ Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione
 
 Per un lavoro asincrono più efficace, _ALimitedGroup_ userà d'ora in avanti un *Foglio Google* condiviso in cui annotare le ore impiegate in ciascun ruolo in ogni periodo al posto di comunicarle separatamente durante la retrospettiva.
 
-Inoltre è stato stabilito che l'assegnazione dei ruoli sarà più flessibile: d'ora in avanti stabilito il _backlog_ settimanale i ruoli potranno cambiare ad ogni settiman previo accordo tra le parti qualora questo si renda necessario e con l'unico vincolo di non coprire due ruoli simultaneamente.
+Inoltre è stato stabilito che l'assegnazione dei ruoli sarà più flessibile: d'ora in avanti stabilito il _backlog_ settimanale i ruoli potranno cambiare ad ogni settimana, previo accordo tra le parti qualora questo si renda necessario, e con l'unico vincolo di non coprire due ruoli simultaneamente.
 
 #pagebreak()
 
