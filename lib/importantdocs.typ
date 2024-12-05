@@ -29,7 +29,19 @@
 ) = {
   let titolo = [#titolo \ Versione #versione]
   let versione = versioni.at(0).vers
-  [#metadata[#titolo #versione] <titolo>]
+
+  if [#titolo] == [_Norme di Progetto_]{
+    [#metadata[Norme di Progetto #versione] <titolo>]
+  }
+  else if [#titolo] == [_Piano di Qualifica_]{
+    [#metadata[Piano di Qualifica #versione] <titolo>]
+  }
+  else  if [#titolo] == [_Analisi dei Requisiti_]{
+    [#metadata[Analisi dei Requisiti #versione] <titolo>]
+  }
+  else  if [#titolo] == [_Piano di Progetto_]{
+    [#metadata[Piano di Progetto #versione] <titolo>]
+  }
 
   set list(indent: 1em)
   set enum(indent: 1em)
