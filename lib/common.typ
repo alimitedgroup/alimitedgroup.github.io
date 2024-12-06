@@ -277,7 +277,7 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#colbreak() #v(2em) Lista delle immagini #v(3em)], indent: auto, target: figure.where(kind: image))
+  outline(title: [#v(2em) Lista delle immagini #v(3em)], indent: auto, target: figure.where(kind: image))
 }
 
 ///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
