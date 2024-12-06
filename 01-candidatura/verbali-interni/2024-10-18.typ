@@ -1,6 +1,6 @@
 // VI 18-10-2024
 
-#import "/lib/legacy.typ": *
+#import "../../lib/legacy.typ": *
 #show: doc => verbale(
   regmodifiche: (
     ("1.0.0", "30-10", "Samuele Esposito", "-", "Approvazione documento"),

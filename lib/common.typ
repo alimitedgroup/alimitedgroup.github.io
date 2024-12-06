@@ -86,13 +86,22 @@
   p.cognome
 }
 
-/// Mostra il nome di un professore, preceduto da Prof.
+/// Mostra il nome e cognome di un professore, preceduto da Prof.
 ///
 /// #example(`prof(p.tullio)`)
 ///
 /// - p (persona):
 #let prof(p) = {
   "Prof. " + p.nome + " " + p.cognome
+}
+
+/// Mostra il cognome di un professore, preceduto da Prof.
+///
+/// #example(`prof(p.tullio)`)
+///
+/// - p (persona):
+#let profBreve(p) = {
+  "Prof. " + p.cognome
 }
 
 /// Una issue su GitHub. Notare che la repository ha un valore di default
