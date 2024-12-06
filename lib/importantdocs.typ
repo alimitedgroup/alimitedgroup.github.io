@@ -24,24 +24,23 @@
   verificatore: (),
   redattori: (),
   descrizione: [],
-  titolo:[],
+  titolo: [],
   body,
 ) = {
+  if titolo == "Norme di Progetto" {
+    [#metadata[Norme di Progetto #versione] <titolo> ]
+  } else if titolo == "Piano di Qualifica" {
+    [#metadata[Piano di Qualifica #versione] <titolo> ]
+  } else if titolo == "Analisi dei Requisiti" {
+    [#metadata[Analisi dei Requisiti #versione] <titolo> ]
+  } else if titolo == "Piano di Progetto" {
+    [#metadata[Piano di Progetto #versione] <titolo> ]
+  } else {
+    panic("unknown title: " + titolo)
+  }
+
   let titolo = [#titolo \ Versione #versione]
   let versione = versioni.at(0).vers
-
-  if [#titolo] == [_Norme di Progetto_]{
-    [#metadata[Norme di Progetto #versione] <titolo> ]
-  }
-  else if [#titolo] == [_Piano di Qualifica_]{
-    [#metadata[Piano di Qualifica #versione] <titolo> ]
-  }
-  else  if [#titolo] == [_Analisi dei Requisiti_]{
-    [#metadata[Analisi dei Requisiti #versione] <titolo> ]
-  }
-  else  if [#titolo] == [_Piano di Progetto_]{
-    [#metadata[Piano di Progetto #versione] <titolo> ]
-  }
 
   set list(indent: 1em)
   set enum(indent: 1em)
@@ -62,7 +61,7 @@
     [Responsabile], grid(align: left, gutter: 8pt, ..responsabile.map(persona)),
     [Verificatore], grid(align: left, gutter: 8pt, ..verificatore.map(persona)),
     [Redattori], grid(align: left, gutter: 8pt, ..redattori.map(persona)),
-    [Distribuzione],     
+    [Distribuzione],
     if tipo == [esterno]
     {
       grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin))

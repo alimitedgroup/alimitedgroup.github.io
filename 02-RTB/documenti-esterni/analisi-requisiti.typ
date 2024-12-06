@@ -1,5 +1,5 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/use-case.typ" : *
+#import "../../lib/use-case.typ": *
 #let ver = [0.1.0]
 
 #show: body => importantdocs(
@@ -31,7 +31,7 @@
   ),
   stato: [In redazione],
   responsabile: ((p.loris),),
-  verificatore: ((p.samuele), (p.lorenzo),),
+  verificatore: ((p.samuele), (p.lorenzo)),
   redattori: (
     (p.emanuele),
     (p.sara),
@@ -39,7 +39,7 @@
     (p.marco),
   ),
   descrizione: [Questo documento contiene l'_Analisi dei Requisiti_ descritta dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
-  titolo: [_Analisi dei Requisiti_],
+  titolo: "Analisi dei Requisiti",
   body,
 )
 
@@ -162,6 +162,7 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
       [*Descrizione*],
       [*Fonti*],
     ),
+
     [], [], [],
     [], [], [],
     [], [], [],
