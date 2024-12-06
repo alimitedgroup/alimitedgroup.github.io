@@ -76,7 +76,7 @@
 == Scopo del documento
 Questo documento nasce per descrivere il _Way of Working_ adottato da parte di questo gruppo durante tutto l'arco di svolgimento del progetto didattico. In tale documento, perciò, vengono analizzate tutte le _best practices_ da seguire per ogni tipo di processo, ciascuno di questo avrà correlato le attività che lo compongono seguendo la struttura definita nello standard _ISO/IEC 12207:1995_.\
 Per la stesura di questo documento è stata intrapresa un metodo incrementale, cioè la stesura passo passo del documento con modifiche, aggiunte e cancellazioni successive ad un _template_ base. \
-I membri dell'intero gruppo si impegnano a visionare constantemente questo documento e a rispettare rigorosamente le regole definite in esso, per svolgere il progetto in modo professionale, coerente ed uniforme.
+I membri dell'intero gruppo si impegnano a visionare costantemente questo documento e a rispettare rigorosamente le regole definite in esso, per svolgere il progetto in modo professionale, coerente ed uniforme.
 
 == Scopo del prodotto
 
@@ -239,19 +239,19 @@ Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppan
 
 Il processo di documentazione è un processo assai delicato, e molto importante. Le attività cardine di questo processo sono due:
 - *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
-- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
+- *Manutenzione*: l'attività che definisce come un documento viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
 
 Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
-- *_Typst_*: trattasi di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
+- *_Typst_*: trattasi di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la redazione di documenti a carattere scientifico e non solo.
   _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti, per ulteriori dettagli consultare la @sezione_typst;
 
-- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
+- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la redazione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
 
 
 === Typst <sezione_typst>
 
 Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
-Nello specifico, la redazione dei coumenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
+Nello specifico, la redazione dei commenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
 
 La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, qui di seguito saranno invece descritte le strutture dei vari documenti.
 
@@ -291,7 +291,7 @@ In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all
 
 === Diari di bordo
 
-Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.
+Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progresso per ogni singolo gruppo iscritto al I lotto.
 
 In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Risultati raggiunti e confronto con le previsioni*, che elenca quanto abbiamo fatto nel periodo corrente;
@@ -529,7 +529,7 @@ In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di
 
 La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del software prodotto rispetto ai suoi requisiti e al design scelto.
 
-_ALimitedGroup_, per compiere questa attività, realizzerà dei test appositi, in parte manuali in parte automatizzati, per renedere possibile tale controllo.
+_ALimitedGroup_, per compiere questa attività, realizzerà dei test appositi, in parte manuali in parte automatizzati, per rendere possibile tale controllo.
 Questi test saranno descritti in un documento apposito, il #link("")[*Test Book (CAMBIARE LINK)*], che descriverà anche che requisito quei test, se svolti con successo, promettono di soddisfare.
 
 [PROSEGUIRE, probabile prematuro fare adesso]
@@ -623,7 +623,7 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
     "Analista",
     (
       "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente " + [#M31] + ".
-È sempre affidato a questo ruolo il compito di regidere l'" + [*Analisi dei Requisiti*] + "."
+È sempre affidato a questo ruolo il compito di redigere l'" + [*Analisi dei Requisiti*] + "."
     ),
 
     "Programmatore",
@@ -642,7 +642,7 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
 
 === Esecuzione e controllo
 
-L'esecuzione delle attività è affidata quindi ai vari ruoli così come indicato dal Responsabile, che dobrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
+L'esecuzione delle attività è affidata quindi ai vari ruoli così come indicato dal Responsabile, che dovrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
 
 === Revisione e valutazione
 
@@ -652,14 +652,14 @@ Per un dettaglio più specifico delle attività di revisione si veda la @regole-
 
 === Finalizzazione
 
-Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
+Un'attività è da reputarsi conclusa solo nel momento in cui viene definitivamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
 
 
 == Infrastruttura
 
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
 
-Si compone delle seguenti atività:
+Si compone delle seguenti attività:
 
 - Implementazione
 - Creazione
@@ -667,7 +667,7 @@ Si compone delle seguenti atività:
 
 === Implementazione <implementazione>
 
-_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati, analizzati ad uno ad uno nelle Sezioni successive:
+_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'insieme di tutti gli strumenti utilizzati, analizzati ad uno ad uno nelle Sezioni successive:
 
 - _Discord_
 - _Git_
@@ -680,7 +680,7 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
 
 ==== Discord
 
-_Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
+_Discord_ è un programma di messaggistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
 
 ==== Git <sezione_git>
 
@@ -822,7 +822,7 @@ I vari documenti sono spesso accomunati da esigenze particolari servibili median
 Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*_common.typ_*]:
 - *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
 - *M31* : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
-- *abbrev* : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
+- *abbrev* : preso un _output_ fornito dalla funzione _p_, inserisce nome e cognome della persona selezionata;
 - *prof* : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
 - *issue* : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
 - *pr* : come sopra, ma per indicare le _pull request_;
