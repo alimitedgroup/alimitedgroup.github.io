@@ -28,18 +28,18 @@
   body,
 ) = {
   if titolo == "Norme di Progetto" {
-    [#metadata[Norme di Progetto #versione] <titolo> ]
+    [#metadata[NP v#versione] <titolo> ]
   } else if titolo == "Piano di Qualifica" {
-    [#metadata[Piano di Qualifica #versione] <titolo> ]
+    [#metadata[PQ v#versione] <titolo> ]
   } else if titolo == "Analisi dei Requisiti" {
-    [#metadata[Analisi dei Requisiti #versione] <titolo> ]
+    [#metadata[AR v#versione] <titolo> ]
   } else if titolo == "Piano di Progetto" {
-    [#metadata[Piano di Progetto #versione] <titolo> ]
+    [#metadata[PP v#versione] <titolo> ]
   } else {
-    panic("unknown title: " + titolo)
+    panic("Unknown title: " + titolo)
   }
 
-  let titolo = [#titolo \ Versione #versione]
+  let titolo = [#emph[#titolo] \ Versione #versione]
   let versione = versioni.at(0).vers
 
   set list(indent: 1em)
