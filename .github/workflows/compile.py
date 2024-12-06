@@ -1,5 +1,6 @@
 TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a></li>'
 
+import re
 import sys
 import json
 import logging
@@ -110,9 +111,12 @@ def main():
 
     html = Path('dist/index.html').read_text()
     for pattern, docs in documenti.items():
-        html = html.replace('{{' + pattern + '}}', '\n'.join(
-            process_template(file) for file in sorted(docs)
-        ))
+        html = re.sub(
+            '{{' + pattern + '}}',
+            '\n'.join(process_template(file) for file in docs),
+            html,
+            flags=re.IGNORECASE,
+        )
     Path('dist/index.html').write_text(html)
 
 if __name__ == "__main__":
