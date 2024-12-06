@@ -1,9 +1,16 @@
 #import "../../../lib/verbale.typ": *
 
 #show: body => verbale(
-  data: datetime(day: 03, month: 12, year: 2024),
+  data: datetime(day: 06, month: 12, year: 2024),
   tipo: [esterno],
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 06, month: 12, year: 2024),
+      autore: p.sara,
+      verifica: p.loris,
+      descr: "Approvazione documento",
+    ),
     (
       vers: "0.1.0",
       date: datetime(day: 03, month: 12, year: 2024),
@@ -12,7 +19,7 @@
       descr: "Prima redazione del documento",
     ),
   ),
-  stato: [Redatto],
+  stato: [Approvato],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
   odg: [Seconda riunione con #M31: esposizione di tutti gli _use-case_ individuati nell'Analisi dei Requisiti, sciolti i dubbi riguardo quest'ultimi, decisi i periodi dei prossimi _meeting_],
   body,
