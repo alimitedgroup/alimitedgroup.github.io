@@ -187,14 +187,15 @@ Di seguito sono esposti gli attori utilizzati: \
   #use-case-diagram("1", "UC1 - Scelta tipologia utente")
 ]
 
-==== Inclusioni
+#pagebreak()
+Lo _use-case_ UC1 a sua volta, come scritto precedentemente, può essere diviso in tre sottocasi distinti, come raffigurato nella seguente immagine:
 #use-case-diagram(
   "1-incl",
-  "UC1.1 - Scelta tipologia utente, UC1.2 - Inserimento Username e UC1.3 - Inserimento Password",
+  "Divione in tre sottocasi dello " + [_use-case_] + " n.1: UC1.1, UC1.2, UC1.3",
 )
-===== UC1.1 - Scelta tipologia utente <UC1.1>
-===== UC1.2 - Inserimento Username <UC1.2>
-===== UC1.3 - Scelta Password <UC1.3>
+==== UC1.1 - Scelta tipologia utente <UC1.1>
+==== UC1.2 - Inserimento Username <UC1.2>
+==== UC1.3 - Scelta Password <UC1.3>
 
 === UC2 - Autenticazione non riuscita <UC2>
 #use-case(
