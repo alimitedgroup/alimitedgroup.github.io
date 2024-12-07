@@ -248,12 +248,13 @@ Di seguito sono esposti gli attori utilizzati: \
   #use-case-diagram("1", "UC1 - Scelta tipologia utente")
 ]
 
-==== Inclusioni
+#pagebreak()
+Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram(
   "1-incl",
-  "UC1.1 - Scelta tipologia utente, UC1.2 - Inserimento Username e UC1.3 - Inserimento Password",
+  "Inclusioni del Caso d'Uso n.1: UC1.1, UC1.2, UC1.3",
 )
-===== UC1.1 - Scelta tipologia utente <UC1.1>
+==== UC1.1 - Scelta tipologia utente <UC1.1>
 
 #use-case(
   attore: "Utente",
@@ -272,7 +273,7 @@ Di seguito sono esposti gli attori utilizzati: \
   trigger: "L'Utente vuole autenticarsi al sistema",
 )[]
 
-===== UC1.2 - Inserimento Username <UC1.2>
+==== UC1.2 - Inserimento Username <UC1.2>
 
 #use-case(
   attore: "Utente",
@@ -291,7 +292,7 @@ Di seguito sono esposti gli attori utilizzati: \
   trigger: "L'Utente vuole autenticarsi al sistema",
 )[]
 
-===== UC1.3 - Inserimento Password <UC1.3>
+==== UC1.3 - Inserimento Password <UC1.3>
 
 #use-case(
   attore: "Utente",

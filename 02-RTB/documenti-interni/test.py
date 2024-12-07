@@ -7,7 +7,7 @@ EXT=".typ"
 LINK="https://alimitedgroup.github.io/glossario%200.1.0.pdf"
 
 def loadGlossary():
-    with open('./glossario.yml','r') as f:
+    with open('02-RTB/documenti-interni/glossario.yml','r') as f:
         output = yaml.safe_load(f)
     return output
 
@@ -52,9 +52,11 @@ def substitue(filePath,glossaryYml):
                 if stop==False and word in glossary:
                     print("found: "+word)
                     if word[0]=="_" or word[0]=="*":
-                        newText+="#link(\""+LINK+"#"+word[1:-1]+"\")["+word+"] "
+                        #newText+="#link(\""+LINK+"#"+word[1:-1]+"\")["+word+"] "
+                        newText+= word + "#super[g] "
                     else:
-                        newText+="#link(\""+LINK+"#"+word+"\")["+word+"] "
+                        #newText+="#link(\""+LINK+"#"+word+"\")["+word+"] "
+                        newText+= word + "#super[g] "
                 else:
                     newText+=word+" "
             newText+="\n"
