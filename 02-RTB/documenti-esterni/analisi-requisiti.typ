@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.1.0]
+#let ver = [0.3.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
@@ -8,24 +8,24 @@
   versione: ver,
   versioni: (
     (
-      vers: "0.1.0",
+      vers: "0.3.0",
       date: datetime(day: 05, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.lorenzo,
       descr: "Rivoluzionata la struttura del documento secondo il template creato appositamente",
     ),
     (
-      vers: "0.0.2",
+      vers: "0.2.0",
       date: datetime(day: 13, month: 11, year: 2024),
       autore: p.sara,
-      // verifica: p.,
+      verifica: p.lorenzo,
       descr: "Aggiornamento indice - Aggiornamento contenuto: sezione Introduzione",
     ),
     (
-      vers: "0.0.1",
+      vers: "0.1.0",
       date: datetime(day: 12, month: 11, year: 2024),
       autore: p.loris,
-      // verifica: p.,
+      verifica: p.lorenzo,
       descr: "Creazione struttura e template documento",
     ),
   ),
@@ -33,7 +33,7 @@
   responsabile: ((p.loris),),
   verificatore: ((p.samuele), (p.lorenzo)),
   redattori: (
-    (p.emanuele),
+    (p.matteo),
     (p.sara),
     (p.loris),
     (p.marco),
@@ -128,26 +128,59 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
 == Introduzione
 == Attori
 
-- Admin globale
-- Admin locale
-- Cliente
+Di seguito sono esposti gli attori utilizzati: \
+\
 
 #figure(
   image("../../assets/diagrams/attori.svg", width: 50%),
   caption: [Diagramma degli attori],
 )
+\
+
+#figure(
+  table(
+    columns: (2fr, 5fr),
+    inset: 10pt,
+    table.header(
+      [*Attore*],
+      [*Descrizione*],
+    ),
+
+    [*Utente*], [Rappresenta un utente che vuole accedere al sistema],
+    [*Admin Locale*],
+    [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interessi nel signolo magazzino che superano quelle del normale utilizzatore],
+
+    [*Admin Globale*],
+    [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse alla situazione globale (dunque comprendente tutti i magazzini)],
+
+    [*Cliente*],
+    [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse nel singolo magazzino],
+  ),
+  caption: [Tabella degli attori],
+)
 
 == Lista casi d'uso
+=== UC1 - Scelta tipologia utente <UC1>
 #use-case(
-  num: "1",
-  titolo: [Visualizzazione dashboard],
   attore: "Utente",
-  pre: "L'utente è autenticato nel sistema",
-  scenari: "L'utente accede alla dashboard del sistema",
-  trigger: "L'utente seleziona la voce 'Dashboard' dal menu principale",
+  pre: [- Il sistema è attivo, in modalità online o offline],
+  post: [- L'utente ha eseguito l'accesso al sistema ed è dallo stesso riconosciuto come Cliente, come Admin locale o come Admin globale],
+  scenari: "L'Utente seleziona nel sistema se vuole essere riconosciuto come Cliente, come Admin locale o come Admin globale",
+  trigger: "L'Utente vuole accedere al sistema",
 )[
-  #use-case-diagram("1", "Diagramma dei casi d'uso")
+  #use-case-diagram("1", "UC1 - Scelta tipologia utente")
 ]
+
+=== UC2 - Scelta tipologia utente
+#use-case(
+  attore: "Admin globale, Admin Locale, Cliente",
+  pre: [- Il sistema è attivo in modalità online o offline;
+    - L'attore principato ha scelto di accedere al sistema, ovvero ha selezionato di essere riconosciuto come Admin globale, Admin locale o Cliente
+    - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])],
+  post: [- Il sistema autentica l'attore principale],
+  scenari: [],
+  trigger: "",
+)[]
 
 = Requisiti Principali
 == Requisiti Funzionali

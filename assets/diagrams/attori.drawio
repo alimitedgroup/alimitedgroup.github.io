@@ -1,53 +1,42 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="24.7.17">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0" version="24.9.2">
   <diagram name="Page-1" id="929967ad-93f9-6ef4-fab6-5d389245f69c">
-    <mxGraphModel dx="895" dy="553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="880" dy="480" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" style=";html=1;" />
         <mxCell id="1" style=";html=1;" parent="0" />
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-2" value="Utente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="190" y="630" width="30" height="60" as="geometry" />
+        <mxCell id="ePUQpkzo7ko2c0lcYNFo-2" value="Utente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="210" y="640" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ePUQpkzo7ko2c0lcYNFo-3" target="ePUQpkzo7ko2c0lcYNFo-8">
+        <mxCell id="ePUQpkzo7ko2c0lcYNFo-3" value="Admin Globale" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="130" y="780" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KTMDN4Z3QXYRXXIMXmHU-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=block;endFill=0;" edge="1" parent="1" source="ePUQpkzo7ko2c0lcYNFo-4">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="225" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ePUQpkzo7ko2c0lcYNFo-4" value="Admin Locale" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="210" y="780" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ePUQpkzo7ko2c0lcYNFo-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="ePUQpkzo7ko2c0lcYNFo-3" target="ePUQpkzo7ko2c0lcYNFo-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="750" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="75" y="780" />
+              <mxPoint x="145" y="670" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-3" value="Admin Globale" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="870" width="30" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ePUQpkzo7ko2c0lcYNFo-4" target="ePUQpkzo7ko2c0lcYNFo-8">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="175" y="780" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-4" value="Admin Locale" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="160" y="870" width="30" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ePUQpkzo7ko2c0lcYNFo-8" target="ePUQpkzo7ko2c0lcYNFo-2">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="130" y="740" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="135" y="670" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-8" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="120" y="750" width="30" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ePUQpkzo7ko2c0lcYNFo-9" target="ePUQpkzo7ko2c0lcYNFo-2">
+        <mxCell id="ePUQpkzo7ko2c0lcYNFo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="ePUQpkzo7ko2c0lcYNFo-9" target="ePUQpkzo7ko2c0lcYNFo-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="180" y="670" as="targetPoint" />
             <Array as="points">
+              <mxPoint x="305" y="740" />
               <mxPoint x="305" y="670" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ePUQpkzo7ko2c0lcYNFo-9" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="290" y="760" width="30" height="60" as="geometry" />
+        <mxCell id="ePUQpkzo7ko2c0lcYNFo-9" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="290" y="780" width="30" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
