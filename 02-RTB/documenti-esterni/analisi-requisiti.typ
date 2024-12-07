@@ -8,6 +8,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.4.0",
+      date: datetime(day: 07, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti UC1, UC1.1, UC1.2, UC1.3 e UC2",
+    ),
+    (
       vers: "0.3.0",
       date: datetime(day: 05, month: 12, year: 2024),
       autore: p.marco,
@@ -95,10 +102,7 @@ Il presente documento analiizza in modo dettagliato ed esaustivo i requisiti eme
 
 Include una descrizione approfondita dei casi d'uso, dei requisiti obbligatori, desiderabili e opzionali, nonché delle funzionalità previste per il sistema.\
 
-Verranno utilizzati i seguenti strumenti di rappresentazione formale per agevolare la comprensione:
-
-- *Diagrammi dei casi d'uso* per visualizzare le interazioni tra attori e sistema;
-- *Diagrammi delle attività* per descrivere i flussi operativi e i processi.
+Verranno utilizzati, per agevolare la comprensione, i *Diagrammi dei Casi d'Uso* per visualizzare le interazioni tra attori e sistema;
 
 A supporto di una consultazione rapida e intuitiva, è stata inoltre predisposta una tabella dei contenuti, che consente di:
 
@@ -111,21 +115,78 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
 #pagebreak()
 = Descrizione generale
 == Prospettiva del prodotto
-#lorem(10)
+Il prodotto che _ALimitedGroup_ si promette di sviluppare è un sistema efficace e scalabile per la gestione di magazzini.
+\
+Nello specifico, si vuole sviluppare un sistema che sia in grado non solo di gestire un magazzino locale, ma che sia in grado di avere in tempo reale una visione globale di tutti i magazzini connessi al Sistema. \ \
+Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare i propri servizi per essere in grado di mantenere la reattività. \ \
+fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
 == Funzioni del prodotto
-#lorem(10)
+Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità:
+
+- Avere una _Command Line Interface_ per interagire con le _API_ del sistema
+- Possibilità di realizzare un ordine con prodotti disponibili sia localmente che globalmente;
+- Possibilità di realizzare trasferimenti tra magazzini;
+- Possibilità di ricevere suggerimenti di riassortimento quando la disponibilità locale di merce sia sotto una certa soglia;
+- Possibilità di modifica della soglia per il riassortimento per ogni merce;
+- Possibilità di esportare gli ordini e i report di inventario;
+- Possibilità di visualizzare in tempo reale il numero di richieste per ogni Servizio del sistema;
+
+
+Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[*Capitolato*] i requisiti obbligatori sono stati rimodulati in base a quanto riportato nel #link("https://alimitedgroup.github.io/VE%2019-11-2024%20v1.0.0.pdf")[*Verbale Esterno*] del *19 Ottobre 2024*. Nello specifico non sono più obbligatori:
+
+- Il riassortimento predittivo basato su _Machine Learning_;
+- Il monitoraggio della telemetria;
+- Il riconoscimento di traffico anomalo;
+- La creazione di una _Graphic User Interface_ (a vantaggio di _API_ con la quale la _Command Line Interface_ dovrà interagire)
+
+Nel seguente documento saranno comunque riportati tutti i requisiti, debitamente segnando a mezzo di nomenclatura i requisiti obbligatori, desiderabili e opzionali.
+
 == Caratteristiche dell'utente
-#lorem(10)
-== Vincoli
-#lorem(10)
-== Assunzioni e dipendenze
-#lorem(10)
-= Requisiti specifici
 
-#pagebreak()
+Gli utilizzatori finali del prodotto non sono specifici: l'obiettivo è soprattutto quello di fornire una progettazione efficace che permetta al proponente #M31 di sviluppare il prodotto in maniera definitiva.
+
+In generale è possibile dire che gli Utenti finali sono tutti coloro che hanno bisogno di un sistema scalabile, reattivo e semplice da utilizzare per la gestione di numerosi magazzini, principalmente dunque medie e grandi imprese.
+
 = Casi d'uso
-
 == Introduzione
+
+I casi d'uso si compongono di un grafico UML e una descrizione testuale che permetta di comprendere al meglio cosa il prodotto deve fornire.
+La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti irrilevante per il caso d'uso (ad esempio, un Caso d'Uso che non prevede la possibilità di errori non avrà Scenari secondari):
+
+#figure(
+  table(
+    columns: (2fr, 5fr),
+    inset: 10pt,
+    table.header(
+      [*Campo*],
+      [*Descrizione*],
+    ),
+
+    [*Attori*], [Sono coloro che interagiscono attivamente con il sistema e svolgono l'azione indicata dal Caso d'Uso],
+    [*Attori secondari*], [Sono coloro che interagiscono passivamente con il sistema],
+    [*Precondizioni*],
+    [Lista di elementi che sono *necessari* affinché l'Attore possa compiere l'azione indicata dal caso d'uso],
+
+    [*Postcondizioni*],
+    [Lista di elementi che descrivono come il Sistema risulta essere internamente cambiato dopo che l'Attore ha effettuato l'azione prevista dal Caso d'Uso],
+
+    [*Scenario principale*],
+    [Descrizione ragionevole delle operazioni che l'attore deve fare per compiere l'azione descritta dal Caso d'Uso],
+
+    [*Scenario secondario*],
+    [Descrizione ragionevole degli eventi che possono accadere qualora una delle operazioni descritte nello *Scenario principale* non vada a buon fine],
+
+    [*Inclusioni*],
+    [Casi d'Uso ulteriori che l'Attore deve compiere per realizzare il Caso d'Uso attualmente descritto],
+
+    [*Estensioni*],
+    [Casi d'Uso ulteriori che possono realizzarsi durante l'esecuzione delle operazioni del Caso d'Uso principale],
+
+    [*Trigger*], [Motivazioni che portano l'Attore a svolgere l'azione descritta dal Caso d'Uso],
+  ),
+  caption: [Campi della descrizione testuale dei Casi d'Uso],
+)
+#pagebreak()
 == Attori
 
 Di seguito sono esposti gli attori utilizzati: \
@@ -156,7 +217,7 @@ Di seguito sono esposti gli attori utilizzati: \
     [*Cliente*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse nel singolo magazzino],
   ),
-  caption: [Tabella degli attori],
+  caption: [Attori],
 )
 
 == Lista casi d'uso
@@ -164,7 +225,7 @@ Di seguito sono esposti gli attori utilizzati: \
 #use-case(
   attore: "Utente",
   pre: [- Il sistema è attivo, in modalità online o offline
-    - Il sistema non riconosce l'Utente],
+    - L'Utente non è autenticato con il Sistema],
   post: [- L'utente ha eseguito l'accesso al sistema ed è dallo stesso riconosciuto come Cliente, come Admin locale o come Admin globale],
   scenari: [
     - L'Utente seleziona la tipologia di utente $arrow$ @UC1.1[Vedi UC1.1 Sezione]
@@ -193,17 +254,70 @@ Di seguito sono esposti gli attori utilizzati: \
   "UC1.1 - Scelta tipologia utente, UC1.2 - Inserimento Username e UC1.3 - Inserimento Password",
 )
 ===== UC1.1 - Scelta tipologia utente <UC1.1>
+
+#use-case(
+  attore: "Utente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'Utente non è autenticato con il Sistema,
+    - L'Utente ha selezionato dal menù di voler effettuare l'autenticazione al Sistema
+    - Il Sistema non conosce la tipologia di utente dell'Utente
+  ],
+  post: [
+    - Il Sistema riceve la tipologia di utente in cui l'Utente si vuole autenticare
+  ],
+  scenari: [
+    - L'Utente procede ad inserire un'opzione tra Admin Locale, Admin Globale o Cliente
+  ],
+  trigger: "L'Utente vuole autenticarsi al sistema",
+)[]
+
 ===== UC1.2 - Inserimento Username <UC1.2>
-===== UC1.3 - Scelta Password <UC1.3>
+
+#use-case(
+  attore: "Utente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'Utente non è autenticato con il Sistema,
+    - L'Utente ha selezionato dal menù di voler effettuare l'autenticazione al Sistema
+    - Il Sistema non conosce l'Username dell'Utente
+  ],
+  post: [
+    - Il Sistema riceve l'Username con la quale l'Utente si vuole autenticare al Sistema
+  ],
+  scenari: [
+    - L'Utente procede ad inserire il proprio Username
+  ],
+  trigger: "L'Utente vuole autenticarsi al sistema",
+)[]
+
+===== UC1.3 - Inserimento Password <UC1.3>
+
+#use-case(
+  attore: "Utente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'Utente non è autenticato con il Sistema,
+    - L'Utente ha selezionato dal menù di voler effettuare l'autenticazione al Sistema
+    - Il Sistema non conosce la Password dell'Utente
+  ],
+  post: [
+    - Il Sistema riceve la Password con cui l'Utente si vuole autenticare
+  ],
+  scenari: [
+    - L'utente procede ad inserire la propria Password
+  ],
+  trigger: "L'Utente vuole autenticarsi al sistema",
+)[]
 
 === UC2 - Autenticazione non riuscita <UC2>
 #use-case(
-  attore: "Admin globale, Admin Locale, Cliente",
+  attore: "Utente",
   pre: [- Il sistema è attivo in modalità online o offline;
     - L'attore principato ha scelto di accedere al sistema, ovvero ha selezionato di essere riconosciuto come Admin globale, Admin locale o Cliente
     - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])
     - L'attore principale ha immesso uno Username o una password non corretta oppure ha selezionato una tipologia di utente sbagliata],
-  post: [- Il sistema annulla il tentativo di autenticazione],
+  post: [- Il Sistema annulla il tentativo di autenticazione],
   scenari: [
     - Il Sistema ha ricevuto Username, Password e tipoloia di utente ma non è riuscito a verificare tali credenziali
   ],
@@ -228,7 +342,7 @@ Di seguito sono esposti gli attori utilizzati: \
     [], [], [],
     [], [], [],
   ),
-  caption: [Tabella dei requisiti funzionali],
+  caption: [Requisiti funzionali],
 )
 == Requisiti di Qualità
 == Requisiti di Vincolo

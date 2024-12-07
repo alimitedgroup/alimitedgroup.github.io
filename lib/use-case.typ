@@ -12,9 +12,6 @@
 ]
 
 #let use-case(
-  num: [],
-  tag: "",
-  titolo: [],
   attore: [],
   pre: [],
   scenari: [],
