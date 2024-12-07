@@ -160,27 +160,55 @@ Di seguito sono esposti gli attori utilizzati: \
 )
 
 == Lista casi d'uso
-=== UC1 - Scelta tipologia utente <UC1>
+=== UC1 - Autenticazione <UC1>
 #use-case(
   attore: "Utente",
-  pre: [- Il sistema è attivo, in modalità online o offline],
+  pre: [- Il sistema è attivo, in modalità online o offline
+    - Il sistema non riconosce l'Utente],
   post: [- L'utente ha eseguito l'accesso al sistema ed è dallo stesso riconosciuto come Cliente, come Admin locale o come Admin globale],
-  scenari: "L'Utente seleziona nel sistema se vuole essere riconosciuto come Cliente, come Admin locale o come Admin globale",
-  trigger: "L'Utente vuole accedere al sistema",
+  scenari: [
+    - L'Utente seleziona la tipologia di utente $arrow$ @UC1.1[Vedi UC1.1 Sezione]
+    - L'Utente Inserisce l'Username $arrow$ @UC1.2[Vedi UC1.2 Sezione]
+    - L'Utente inserisce la Password $arrow$ @UC1.3[Vedi UC1.3 Sezione]
+  ],
+  scenari_alternativi: [
+    - L'utente inserisce Username, Password o tipologia di utente errati $arrow$ @UC2[Vedi UC2 Sezione]
+  ],
+  inclusioni: [
+    - @UC1.1[UC1.1 Sezione]
+    - @UC1.2[UC1.2 Sezione]
+    - @UC1.3[UC1.3 Sezione]
+  ],
+  estensioni: [
+    @UC2[UC2 Sezione]
+  ],
+  trigger: "L'Utente vuole autenticarsi al sistema",
 )[
   #use-case-diagram("1", "UC1 - Scelta tipologia utente")
 ]
 
-=== UC2 - Scelta tipologia utente
+==== Inclusioni
+#use-case-diagram(
+  "1-incl",
+  "UC1.1 - Scelta tipologia utente, UC1.2 - Inserimento Username e UC1.3 - Inserimento Password",
+)
+===== UC1.1 - Scelta tipologia utente <UC1.1>
+===== UC1.2 - Inserimento Username <UC1.2>
+===== UC1.3 - Scelta Password <UC1.3>
+
+=== UC2 - Autenticazione non riuscita <UC2>
 #use-case(
   attore: "Admin globale, Admin Locale, Cliente",
   pre: [- Il sistema è attivo in modalità online o offline;
     - L'attore principato ha scelto di accedere al sistema, ovvero ha selezionato di essere riconosciuto come Admin globale, Admin locale o Cliente
-    - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])],
-  post: [- Il sistema autentica l'attore principale],
-  scenari: [],
-  trigger: "",
+    - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])
+    - L'attore principale ha immesso uno Username o una password non corretta oppure ha selezionato una tipologia di utente sbagliata],
+  post: [- Il sistema annulla il tentativo di autenticazione],
+  scenari: [
+    - Il Sistema ha ricevuto Username, Password e tipoloia di utente ma non è riuscito a verificare tali credenziali
+  ],
 )[]
+
 
 = Requisiti Principali
 == Requisiti Funzionali

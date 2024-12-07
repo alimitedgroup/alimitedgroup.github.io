@@ -18,7 +18,9 @@
   attore: [],
   pre: [],
   scenari: [],
-  trigger: [],
+  trigger: none,
+  inclusioni: none,
+  estensioni: none,
   post: none,
   attori_secondari: none,
   scenari_alternativi: none,
@@ -45,6 +47,16 @@
     [- *Scenari alternativi*: #scenari_alternativi]
   }
 
-  - *Trigger*: #trigger
+  #if (inclusioni != none) {
+    [- *Inclusioni*: #inclusioni]
+  }
+
+  #if (estensioni != none) {
+    [- *Estensioni*: #estensioni]
+  }
+
+  #if (trigger != none) {
+    [- *Trigger*: #trigger]
+  }
 ]
 
