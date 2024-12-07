@@ -38,6 +38,13 @@
 #counter(page).update(1)
 
 #registro-modifiche((
+  // (
+  //  TODO: in attesa del merge
+  //   vers: "0.2.0",
+  //   date: datetime(day: 07, month: 12, year: 2024),
+  //   autore: p.loris,
+  //   descr: "Redazione per il secondo sprint",
+  // ),
   (
     vers: "0.1.0",
     date: datetime(day: 27, month: 11, year: 2024),
@@ -69,6 +76,26 @@
       (p.marco, 0, 5, 0, 0, 0, 3),
       (p.matteo, 0, 5, 0, 0, 0, 4),
       (p.emanuele, 0, 4, 0, 0, 0, 0),
+    ),
+  ),
+  "2": (
+    preventivo: (
+      (p.loris, 5, 1, 2, 0, 0, 0),
+      (p.samuele, 0, 4, 0, 0, 0, 0),
+      (p.sara, 0, 0, 3, 0, 0, 2),
+      (p.lorenzo, 0, 0, 0, 0, 0, 3),
+      (p.marco, 0, 2, 4, 0, 0, 0),
+      (p.matteo, 0, 1, 5, 0, 0, 0),
+      (p.emanuele, 0, 0, 6, 0, 0, 0),
+    ),
+    consuntivo: (
+      (p.loris, 5, 1, 2, 0, 0, 0),
+      (p.samuele, 0, 4, 0, 0, 0, 0),
+      (p.sara, 0, 0, 3, 0, 0, 2),
+      (p.lorenzo, 0, 0, 0, 0, 0, 3),
+      (p.marco, 0, 2, 4, 0, 0, 0),
+      (p.matteo, 0, 1, 5, 0, 0, 0),
+      (p.emanuele, 0, 0, 6, 0, 0, 0),
     ),
   ),
 )
@@ -747,3 +774,42 @@ entrambi gli obiettivi sono stati raggiunti.
 Tra le attività previste, elencate nella @sprint1intro,
 solo l'attività _Inizio stesura Analisi dei Requisiti_ non è stata svolta,
 in quanto rimandata allo sprint successivo.
+
+=== Sprint 2
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[24-11-2024],
+  [Fine prevista:], strong[7-12-2024],
+  [Fine reale:], strong[7-12-2024],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint2intro>
+
+==== Rischi attesi
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(2, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+
+==== Consuntivo
+
+#impegni(2, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(1)
+
+#v(1em)
+==== Rischi incontrati
+
+
+=== Retrospettiva
