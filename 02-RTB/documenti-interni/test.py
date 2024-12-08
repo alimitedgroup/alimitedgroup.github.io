@@ -30,7 +30,7 @@ def substitue(filePath,glossaryYml):
     newText=""
     startText=" "
 
-    file=open(filePath,"r")
+    file=open(filePath,"r", encoding ="utf-8")
     bodyFound=False
     parFound=False
     line=" "
@@ -63,7 +63,7 @@ def substitue(filePath,glossaryYml):
 
     file.close()
 
-    with open(filePath,"w") as file:
+    with open(filePath,"w", encoding ="utf-8") as file:
         file.write(startText+"\n")
         file.write(newText)
 
@@ -80,9 +80,10 @@ def main():
     fileList = []
     find_files(fileList)
     for file in fileList:
-        if file!="./glossario.typ":
-            print("sub: "+file)
-            substitue(file,loadGlossary())
+        if "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
+            continue
+        print("sub: "+file)
+        substitue(file,loadGlossary())
 
 if __name__ == "__main__":
     main()
