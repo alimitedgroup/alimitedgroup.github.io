@@ -12,7 +12,7 @@
       date: datetime(day: 08, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Aggiunti UC3, UC3.1, UC3.2 e UC3.3",
+      descr: "Aggiunti UC3, UC3.1, UC3.2 e UC3.3. Aggiunti UC4 e relative inclusioni ed estensioni",
     ),
     (
       vers: "0.4.0",
