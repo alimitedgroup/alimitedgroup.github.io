@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.3.0]
+#let ver = [0.5.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.5.0",
+      date: datetime(day: 08, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Aggiunti UC3, UC3.1, UC3.2 e UC3.3",
+    ),
     (
       vers: "0.4.0",
       date: datetime(day: 07, month: 12, year: 2024),
@@ -261,7 +268,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'Utente non è autenticato con il Sistema,
-    - L'Utente ha selezionato dal menù di voler effettuare l'autenticazione al Sistema
+    - L'Utente ha selezionato dal menu di voler effettuare l'autenticazione al Sistema
     - Il Sistema non conosce la tipologia di utente dell'Utente
   ],
   post: [
@@ -280,7 +287,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'Utente non è autenticato con il Sistema,
-    - L'Utente ha selezionato dal menù di voler effettuare l'autenticazione al Sistema
+    - L'Utente ha selezionato dal menu di voler effettuare l'autenticazione al Sistema
     - Il Sistema non conosce l'Username dell'Utente
   ],
   post: [
@@ -299,7 +306,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'Utente non è autenticato con il Sistema,
-    - L'Utente ha selezionato dal menù di voler effettuare l'autenticazione al Sistema
+    - L'Utente ha selezionato dal menu di voler effettuare l'autenticazione al Sistema
     - Il Sistema non conosce la Password dell'Utente
   ],
   post: [
@@ -314,7 +321,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 === UC2 - Autenticazione non riuscita <UC2>
 #use-case(
   attore: "Utente",
-  pre: [- Il sistema è attivo in modalità online o offline;
+  pre: [- Il Sistema è attivo, in modalità online o offline;
     - L'attore principato ha scelto di accedere al sistema, ovvero ha selezionato di essere riconosciuto come Admin globale, Admin locale o Cliente
     - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])
     - L'attore principale ha immesso uno Username o una password non corretta oppure ha selezionato una tipologia di utente sbagliata],
@@ -324,6 +331,98 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
 )[]
 
+=== UC3 - Creazione di un ordine da confermare
+#use-case(
+  attore: "Cliente",
+  pre: [- Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente],
+  post: [- Il Sistema memorizza l'esistenza di un nuovo ordine non confermato con le relative informazioni],
+  scenari: [
+    - Il Cliente seleziona dal menu principale l'opzione relativa alla creazione di un nuovo ordine da confermare
+    - Il Cliente inserisce il nome del nuovo ordine da confermare $arrow$ @UC3.1[Vedi UC3.1 Sezione]
+    - Il Cliente inserisce il nominativo del destinatario del nuovo ordine da confermare $arrow$ @UC3.2[Vedi UC3.2 Sezione]
+    - Il Cliente inserisce l'indirizzo di spedizione del nuovo ordine da confermare $arrow$ @UC3.3[Vedi UC3.3 Sezione]
+  ],
+  trigger: [Il Cliente vuole creare un nuovo ordine da confermare],
+  inclusioni: [
+    - UC3.1 @UC3.1
+    - UC3.2 @UC3.2
+    - UC3.3 @UC3.3
+  ],
+)[
+  #use-case-diagram("3", "Creazione di un ordine da confermare")
+]
+
+Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("3-incl", "Inclusioni del Caso d'Uso n.3: UC3.1, UC3.2, UC3.3")
+
+==== UC3.1 - Inserisci nome ordine <UC3.1>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente ha selezionato dal menu di voler creare un nuovo ordine non confermato
+    - Il Sistema non conosce il nome del nuovo ordine da confermare
+  ],
+  post: [
+    - Il Sistema riceve il nome con cui il Cliente vuole che il nuovo ordine da confermare sia identificato
+  ],
+  scenari: [
+    - Il Cliente procede ad inserire il nome del nuovo ordine non confermato
+  ],
+  trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
+)[]
+==== UC3.2 - Inserisci nominativo del destinatario <UC3.2>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente ha selezionato dal menu di voler creare un nuovo ordine non confermato
+    - Il Sistema non conosce il nominativo del destinatario del nuovo ordine da confermare
+  ],
+  post: [
+    - Il Sistema riceve il nominativo del destinatario del nuovo ordine da confermare sia identificato
+  ],
+  scenari: [
+    - Il Cliente procede ad inserire il nominativo del destinatario del nuovo ordine non confermato
+  ],
+  trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
+)[]
+==== UC3.3 - Inserisci indirizzo di spedizione <UC3.3>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente ha selezionato dal menu di voler creare un nuovo ordine non confermato
+    - Il Sistema non conosce l'indirizzo di spedizione del nuovo ordine da confermare
+  ],
+  post: [
+    - Il Sistema riceve l'indirizzo di spedizione del nuovo ordine da confermare sia identificato
+  ],
+  scenari: [
+    - Il Cliente procede ad inserire l'indirizzo di spedizione del nuovo ordine non confermato
+  ],
+  trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
+)[]
+
+=== UC4 - Aggiunta di una merce ad un ordine non confermato
+
+=== UC5 - Aggiunta merce non valida
+
+=== UC6 - Nessun ordine non confermato disponibile
+
+Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC4.1, UC4.2, UC7")
+
+==== UC4.1 - Seleziona merce da aggiungere all'ordine non confermato
+
+==== UC4.2 - Seleziona quantità merce da aggiungere all'ordine non confermato
+
+==== UC7 - Seleziona ordine non confermato
 
 = Requisiti Principali
 == Requisiti Funzionali
