@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install typst CLI
+        uses: typst-community/setup-typst@v3
+
+      - name: Write Dictionary
+        run: python3 02-RTB/documenti-interni/test.py
+
+      - name: Compile Typst files 
+        run: python3 .github/workflows/compile.py
+
+      - name: Upload website files
+        uses: actions/upload-artifact@v4
+        with:
+          name: Website
+          path: "./dist"
