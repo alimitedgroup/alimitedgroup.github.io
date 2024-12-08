@@ -39,6 +39,15 @@
   cristian: (nome: "Cristian", cognome: "Pîrlog", ruolo: "Web Engineer"),
 )
 
+#let ruoli = (
+  responsabile: (max-ore: 58, costo: 30, nome: "Responsabile"),
+  amministratore: (max-ore: 60, costo: 20, nome: "Amministratore"),
+  analista: (max-ore: 60, costo: 25, nome: "Analista"),
+  progettista: (max-ore: 150, costo: 25, nome: "Progettista"),
+  programmatore: (max-ore: 180, costo: 15, nome: "Programmatore"),
+  verificatore: (max-ore: 136, costo: 15, nome: "Verificatore"),
+)
+
 /// Lista delle repository su cui si possono trovare issue e pull request
 /// Solitamente questa variabile viene usata solo dentro a `#issue` o `#pr`
 ///
