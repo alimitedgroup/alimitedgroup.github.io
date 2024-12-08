@@ -15,7 +15,7 @@ jobs:
       - name: Install typst CLI
         uses: typst-community/setup-typst@v3
       - name: Write dictionary
-        run: python3 02-RTB/documenti-interni/test.py
+        run: python3 02-RTB/documenti-interni/test.py && git diff --exit-code
       - name: Compile Typst files
         run: python3 .github/workflows/compile.py
 
