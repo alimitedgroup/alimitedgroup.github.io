@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.5.0]
+#let ver = [0.6.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.6.0",
+      date: datetime(day: 09, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Aggiunti Casi d'Uso sino a UC12 e relative inclusioni ed estensioni",
+    ),
     (
       vers: "0.5.0",
       date: datetime(day: 08, month: 12, year: 2024),
