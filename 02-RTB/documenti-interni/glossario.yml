@@ -2,9 +2,22 @@
 # segnaposto "": "" per evitare errori di compilazione, da sostituire eventualmente 
 # con la coppia parola: "definizione"
 A:
+  Action: "In GitHub, un "action" (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi
+  nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora.
+  Tale servizio è direttamente integrato nella piattaforma GitHub."
   Angular: "Framework open-source per lo sviluppo di applicazioni web basato su 
   TypeScript, mantenuto da Google."
-  AP: "Attività Passata: un’attività (dunque una decisione che dovrebbe
+  Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività
+  amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire
+  che il progetto sia gestito in modo efficiente e conforme ai requisiti definiti."
+  Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare
+  e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto
+  deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel
+  successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi
+  utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi
+  aziendali, delle tecnologie e delle esigenze degli utenti."
+  Analisi dei Requisiti: ""
+  AP: "Attività Passata: un'attività (dunque una decisione che dovrebbe
   avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare
   il sistema di ticketing."
   API: "Application Programming Interface, interfaccia che consente la comunicazione 
@@ -17,12 +30,21 @@ A:
   AWS: "Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata 
   per archiviazione, elaborazione e gestione dati"
 B:
-  "": ""
+  Branch: "Nello sviluppo software un branch è una copia separata del codice sorgente che consente agli sviluppatori di lavorare alle modifiche su un ramo a parte senza influenzare direttamente il ramo principale.
+  I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di GitHub."
 C:
+  Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un
+  progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una
+  base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte
+  abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
   Caso d'uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
 D:
   DI: "Decisione Interna: una decisione intrapresa con effetto immediato:
- potrebbe, per questo motivo, non avere un’issue associata."
+  potrebbe, per questo motivo, non avere un'issue associata."
+  Discord: "Discord è una piattaforma di comunicazione online che combina chat testuale, vocale e video. Consente
+  agli utenti di creare server, organizzare discussioni in canali e personalizzare l'esperienza di comunicazione. Discord, inoltre, offre un sistema di ruoli e autorizzazioni che consente di controllare l'accesso
+  agli utenti e di definire chi può fare cosa all'interno del server. Inoltre supporta bot e integrazioni di
+  terze parti che consentono di aggiungere funzionalità personalizzate ai server"
 E:
   "": ""
 F:
@@ -59,18 +81,23 @@ O:
   "": ""
 P:
   PoC: "Proof of Concept, prototipo o dimostrazione per verificare la fattibilità 
-  di un’idea o tecnologia."
+  di un'idea o tecnologia."
   PR: "Pull Request, richiesta di revisione e integrazione di codice 
   modificato in un repository condiviso."
   Prompt: "Testo o input fornito a un modello linguistico (come un LLM) 
   per generare una risposta o eseguire un'azione."
+  Progettista: ""
+  Programmatore: ""
 Q:
   "": ""
 R:
   React: "Una libreria JavaScript open-source sviluppata da Meta (ex Facebook) 
   per creare interfacce utente dinamiche, soprattutto per applicazioni web single-page."
+  Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza,
+  occupandosi di correggere eventuali errori segnalati dal Verificatore."
   Repository: "Archivio centralizzato in cui viene memorizzato e 
   gestito il codice sorgente."
+  Responsabile: ""
   Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
   RTB: "Requirements and Technology Baseline è un riferimento iniziale e stabilito 
@@ -89,6 +116,7 @@ S:
   Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare 
   un set di attività."
 T:
+  Test: "Attività inclusa nello sviluppo di un software consona a verificarne le funzionalità, individuando eventuali problemi"
   TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato 
   su JavaScript, con supporto per tipizzazione statica."
 U:
@@ -97,6 +125,7 @@ U:
 V:
   Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi 
   determinati requisiti."
+  Verificatore: "Colui che si occupa di segnalare eventuali errori commessi dal Redattore, in fase di redazione, di un qualsiasi documento."
 W:
   Way of Working: "Metodo di lavoro o approccio operativo adottato da un team o 
   organizzazione."

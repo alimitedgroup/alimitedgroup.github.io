@@ -22,6 +22,12 @@
 #counter(page).update(1)
 
 #registro-modifiche((
+  (vers: "0.3.0",
+    date: datetime(day: 09, month: 12, year: 2024),
+    autore: p.marco,
+    verifica: p.lorenzo,
+    descr: "Aggiunte nuove definizioni al glossario."
+  ),
   (
     vers: "0.2.0",
     date: datetime(day: 29, month: 11, year: 2024),
