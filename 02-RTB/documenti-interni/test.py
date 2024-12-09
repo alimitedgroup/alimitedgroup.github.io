@@ -37,6 +37,7 @@ def substitue(filePath,glossaryYml):
 
     while line:
         line=file.readline()
+        #print(f"read:{line}")
         if(bodyFound==False or parFound==False):
             startText+=line
             if "body" in line and "=>" not in line:
@@ -45,18 +46,32 @@ def substitue(filePath,glossaryYml):
                 parFound=True
         else:
             for word in line.split():
+                print("read: "+word)
                 if word in stopCheckingWords:
+                    print(f"settingStop {word}, {stopCheckingWords}")
                     stop=True
                 elif word==")":
                     stop=False
-                if stop==False and word in glossary:
+                #if stop==False and word in glossary:
+                if stop==False and (word in glossary or word[:-2] in glossary or word[:-1] in glossary):
                     print("found: "+word)
-                    if word[0]=="_" or word[0]=="*":
+                    if word[:-2] == "" or word[:-1] == "":
+                        print("first if")
+                        newText+= word + " "
+                        continue
+                    elif word[:-1] in glossary:
+                        newText+= word[:-1] + "#super[g] " + word[-1:]
+                    elif word[:-2] in glossary:
+                        newText+= word[:-2] + "#super[g] " + word[-2:]
+                    elif word[0]=="_" or word[0]=="*":
                         #newText+="#link(\""+LINK+"#"+word[1:-1]+"\")["+word+"] "
                         newText+= word + "#super[g] "
                     else:
                         #newText+="#link(\""+LINK+"#"+word+"\")["+word+"] "
                         newText+= word + "#super[g] "
+                #elif stop == False and word[:-2] in glossary and word not in "":
+                #    print("found n.2: " +word[:-2])
+                #    newText+= word + "#super[g] "
                 else:
                     newText+=word+" "
             newText+="\n"
