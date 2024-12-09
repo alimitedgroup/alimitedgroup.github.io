@@ -20,20 +20,28 @@ B:
   "": ""
 C:
   Caso d'uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
+  CTO: "Chief Technology Officer, manager di primo livello e membro del consiglio direttivo di un’azienda che seleziona, valuta e suggerirsce
+        le migliori tecnologie da applicare ai prodotti o ai servizi che l’azienda produce."
 D:
   DI: "Decisione Interna: una decisione intrapresa con effetto immediato:
  potrebbe, per questo motivo, non avere un’issue associata."
+ Diagramma dei casi d'uso : "Strumento di modellazione grafica appartenente al linguaggio UML (Unified Modeling Language) che rappresenta le interazioni tra un sistema e i suoi attori esterni,
+  illustrando le funzionalità principali di un sistema dal punto di vista degli utenti."
 E:
   "": ""
 F:
   "": ""
 G:
-  GitHub: "Piattaforma di versionamento e collaborazione per sviluppatori, 
-  basata su Git, che consente di gestire e condividere progetti di codice."
+  GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, 
+  facilitando la condivisione e lo sviluppo di progetti software."
+  GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), 
+  che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
   Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e 
   semplicità, particolarmente adatto per sistemi e applicazioni cloud."
   Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include 
   servizi di elaborazione, archiviazione e analisi dei dati."
+  Grafana: "Piattaforma open-source di visualizzazione, monitoraggio e analisi di dati, progettata per aggregare, 
+  rappresentare graficamente e interpretare metriche provenienti da diverse sorgenti attraverso dashboard configurabili e dinamiche."
 H:
   "": ""
 I:
@@ -51,10 +59,14 @@ L:
   addestrato su enormi quantità di testo per comprendere e generare 
   linguaggio naturale."
 M:
+  Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento,
+   che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria,
+   mantenendo allineati codice, branch e metadati."
   MVP: "Minimum Viable Product, versione base di un prodotto con funzionalità minime, 
   rilasciata per ottenere feedback."
 N:
-  "": ""
+  NATS: "NATS (Neural Architecture Transfer System) è un sistema di middleware open-source progettato
+   per la messaggistica distribuita e la gestione dei servizi."
 O:
   "": ""
 P:

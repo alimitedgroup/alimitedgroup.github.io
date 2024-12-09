@@ -23,6 +23,12 @@
 
 #registro-modifiche((
   (
+    vers: "0.3.0",
+    date: datetime(day: 9, month: 12, year: 2024),
+    autore: p.sara,
+    descr: "Aggiornamento glossario",
+  ),
+  (
     vers: "0.2.0",
     date: datetime(day: 29, month: 11, year: 2024),
     autore: p.matteo,
