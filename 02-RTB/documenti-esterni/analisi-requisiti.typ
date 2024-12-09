@@ -353,7 +353,7 @@ Il Caso d'Uso UC1 include tre ulteriori _use-case_ come raffigurato nella seguen
   #use-case-diagram("3", "UC3 - Creazione di un ordine da confermare")
 ]
 
-Il Caso d'Uso UC3 include tre ulteriori _use-case_ come raffigurato nella seguente immagine:
+Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("3-incl", "Inclusioni del Caso d'Uso n.3: UC3.1, UC3.2, UC3.3")
 
 ==== UC3.1 - Inserisci nome ordine <UC3.1>
@@ -410,7 +410,7 @@ Il Caso d'Uso UC3 include tre ulteriori _use-case_ come raffigurato nella seguen
 )[]
 
 === UC4 - Aggiunta di una merce ad un ordine non confermato
-
+//NOTA: l'ordine globale e locale sono i medesimi, cambia solo questo UC4 che tuttavia rimane sostanzialmente lo stesso per l'ordine locale o globale, dunque nei requisiti si può derivare sia la selezione locale che quella globale
 #use-case(
   attore: "Cliente",
   pre: [
@@ -444,7 +444,7 @@ Il Caso d'Uso UC3 include tre ulteriori _use-case_ come raffigurato nella seguen
   #use-case-diagram("4", "UC4 - Aggiunta di una merce ad un ordine non confermato")
 ]
 
-Il Caso d'Uso UC4 include tre ulteriori _use-case_ come raffigurato nella seguente immagine:
+Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC4.1, UC4.2, UC7")
 
 ==== UC4.1 - Seleziona merce da aggiungere all'ordine non confermato <UC4.1>
@@ -509,13 +509,13 @@ Il Caso d'Uso UC4 include tre ulteriori _use-case_ come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente ha avviato un'operazione di aggiunta merce ad un ordine non confermato
+    - L'Utente ha selezionato dal menu un'opzione che riguarda un ordine non confermato
   ],
   post: [
-    - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
+    - L'operazione riguardante un ordine non confermato viene annullata
   ],
   scenari: [
-    - Il Cliente ha avviato un'operazione di aggiunta merce ad un ordine non confermato ma il Sistema non ha memorizzato alcun ordine non confermato per l'utente corrente
+    - Il Cliente ha avviato un'operazione riguardante un ordine non confermato ma il Sistema non ha memorizzato alcun ordine non confermato per l'utente corrente
   ],
 )[]
 
@@ -527,17 +527,164 @@ Il Caso d'Uso UC4 include tre ulteriori _use-case_ come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - L'Utente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
-    - Il Sistema non conosce l'ordine a cui il Cliente vuole aggiungere merce
+    - L'Utente ha selezionato dal menu un'opzione che riguarda un ordine non confermato
+    - Il Sistema non conosce l'ordine non confermato su cui il Cliente vuole effettuare un'operazione
   ],
   post: [
     - Il Sistema riceve l'ordine non confermato alla quale il Cliente vuole aggiungere merce
   ],
   scenari: [
-    - L'utente procede ad inserire l'identificativo dell'ordine alla quale vuole aggiungere della merce
+    - L'utente procede ad inserire l'identificativo dell'ordine sulla quale vuole eseguire l'operazione
   ],
-  trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
+  trigger: "Il Cliente vuole eseguire un'operazione su un ordine non confermato",
 )[]
+
+=== UC8 - Cancella ordine non confermato
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  post: [
+    - Il Sistema cancella un ordine non confermato registrato nel Sistema
+  ],
+  scenari: [
+    - Il Cliente seleziona dal menu principale l'opzione relativa alla cancellazione di un ordine non confermato
+    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di cancellazione $arrow$ @UC7[Vedi UC7 Sezione]
+  ],
+  scenari_alternativi: [
+    - Il Cliente cerca di cancellare un ordine non confermato ma nessun ordine non confermato è registrato nel sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
+  ],
+  inclusioni: [
+    - UC7 @UC7
+  ],
+  estensioni: [
+    - UC6 @UC6
+  ],
+  trigger: "Il Cliente vuole cancellare un ordine non confermato",
+)[
+  #use-case-diagram("8", "UC8 - Cancella ordine non confermato")
+]
+
+Il Caso d'Uso UC8 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("8-incl", "Inclusione del Caso d'Uso n.8: UC7")
+Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC7.
+
+=== UC9 - Conferma ordine non confermato
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  post: [
+    - Il Sistema conferma un ordine non confermato registrato nel Sistema
+  ],
+  scenari: [
+    - Il Cliente seleziona dal menu principale l'opzione relativa alla conferma di un ordine non confermato
+    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di conferma $arrow$ @UC7[Vedi UC7 Sezione]
+  ],
+  scenari_alternativi: [
+    - Il Cliente cerca di confermare un ordine non confermato ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
+  ],
+  inclusioni: [
+    - UC7 @UC7
+  ],
+  estensioni: [
+    - UC6 @UC6
+  ],
+  trigger: "Il Cliente vuole confermare un ordine non confermato",
+)[
+  #use-case-diagram("9", "UC9 - Conferma ordine non confermato")
+]
+
+Il Caso d'Uso UC9 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.9: UC7")
+Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC7.
+
+=== UC10 - Visualizza elenco ordini non confermati
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  scenari: [
+    - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini non confermati registrati nel Sistema
+    - Il Cliente visualizza a schermo la lista degli ordini non confermati registrati nel Sistema $arrow$ @UC10.1[Vedi UC10.1 Sezione]
+  ],
+  scenari_alternativi: [
+    - Il Cliente cerca di visualizzare gli ordine non confermati ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
+  ],
+  inclusioni: [
+    - UC10.1 @UC10.1
+  ],
+  estensioni: [
+    - UC6 @UC6
+  ],
+  trigger: "Il Cliente vuole visualizzare gli ordini non confermati registrati nel Sistema per l'utente corrente",
+)[
+  #use-case-diagram("10", "UC10 - Visualizza elenco ordini non confermati")
+]
+
+Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("10-incl", "Inclusione del Caso d'Uso n.10: UC10.1")
+Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui di seguito descritte.
+
+==== UC10.1 - Visualizza elemento lista ordini non confermati <UC10.1>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di ordini non confermati registrati nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
+      - l'ID dell'ordine $arrow$ @UC11[Vedi UC11 Sezione]
+      - La data di creazione dell'ordine $arrow$ @UC12[Vedi UC12 Sezione]
+  ],
+  inclusioni: [
+    - UC11 @UC11
+    - UC12 @UC12
+  ],
+  trigger: "Il Cliente vuole visualizzare gli ordini non confermati registrati nel Sistema per l'utente corrente",
+)[]
+
+=== UC11- Visualizza ID ordine <UC11>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzato l'ID dell'ordine
+  ],
+)[]
+
+=== UC12 - Visualizza data creazione ordine <UC12>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzato la data di creazione dell'ordine
+  ],
+)[]
+
+=== UC13 - Visualizza dettaglio ordine non confermato
 
 = Requisiti Principali
 == Requisiti Funzionali
