@@ -8,7 +8,7 @@
 #show link: underline
 #show ref: underline
 
-#let versione = [0.1.0]
+#let versione = [0.2.0]
 #let nome-documento = [Piano di Progetto]
 #let link-glossario(
   link-text,
@@ -42,6 +42,7 @@
     vers: "0.2.0",
     date: datetime(day: 07, month: 12, year: 2024),
     autore: p.loris,
+    verifica: p.samuele,
     descr: "Redazione per il secondo sprint",
   ),
   (
@@ -828,9 +829,9 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una sottovalutazione del tempo necessario per completare l'Analisi dei Requisiti.
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti.
 
-Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno il capitolato hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
+Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
 
 Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti seguendo le linee guida delineate nella sezione @rischio_globale.
 
