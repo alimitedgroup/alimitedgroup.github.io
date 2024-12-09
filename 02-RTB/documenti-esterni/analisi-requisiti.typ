@@ -256,7 +256,7 @@ Di seguito sono esposti gli attori utilizzati: \
 ]
 
 #pagebreak()
-Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+Il Caso d'Uso UC1 include tre ulteriori _use-case_ come raffigurato nella seguente immagine:
 #use-case-diagram(
   "1-incl",
   "Inclusioni del Caso d'Uso n.1: UC1.1, UC1.2, UC1.3",
@@ -350,10 +350,10 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
     - UC3.3 @UC3.3
   ],
 )[
-  #use-case-diagram("3", "Creazione di un ordine da confermare")
+  #use-case-diagram("3", "UC3 - Creazione di un ordine da confermare")
 ]
 
-Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+Il Caso d'Uso UC3 include tre ulteriori _use-case_ come raffigurato nella seguente immagine:
 #use-case-diagram("3-incl", "Inclusioni del Caso d'Uso n.3: UC3.1, UC3.2, UC3.3")
 
 ==== UC3.1 - Inserisci nome ordine <UC3.1>
@@ -444,41 +444,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   #use-case-diagram("4", "UC4 - Aggiunta di una merce ad un ordine non confermato")
 ]
 
-=== UC5 - Aggiunta merce non valida <UC5>
-
-#use-case(
-  attore: "Cliente",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente ha eseguito l'operazione di aggiunta di una merce ad un ordine non confermato
-  ],
-  post: [
-    - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
-  ],
-  scenari: [
-    - Il Cliente ha scelto la tipologia di merce da aggiungere all'ordine non confermato, la quantità e l'ordine a cui aggiungere tale merce ma il Sistema ha verificato che la merce selezionata non esiste o è in quantità inferiore a quella selezionata
-  ],
-)[]
-
-=== UC6 - Nessun ordine non confermato disponibile <UC6>
-
-#use-case(
-  attore: "Cliente",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente ha avviato un'operazione di aggiunta merce ad un ordine non confermato
-  ],
-  post: [
-    - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
-  ],
-  scenari: [
-    - Il Cliente ha avviato un'operazione di aggiunta merce ad un ordine non confermato ma il Sistema non ha memorizzato alcun ordine non confermato per l'utente corrente
-  ],
-)[]
-
-Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+Il Caso d'Uso UC4 include tre ulteriori _use-case_ come raffigurato nella seguente immagine:
 #use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC4.1, UC4.2, UC7")
 
 ==== UC4.1 - Seleziona merce da aggiungere all'ordine non confermato <UC4.1>
@@ -519,7 +485,42 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
 )[]
 
-==== UC7 - Seleziona ordine non confermato <UC7>
+=== UC5 - Aggiunta merce non valida <UC5>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente ha eseguito l'operazione di aggiunta di una merce ad un ordine non confermato
+  ],
+  post: [
+    - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
+  ],
+  scenari: [
+    - Il Cliente ha scelto la tipologia di merce da aggiungere all'ordine non confermato, la quantità e l'ordine a cui aggiungere tale merce ma il Sistema ha verificato che la merce selezionata non esiste o è in quantità inferiore a quella selezionata
+  ],
+)[]
+
+=== UC6 - Nessun ordine non confermato disponibile <UC6>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente ha avviato un'operazione di aggiunta merce ad un ordine non confermato
+  ],
+  post: [
+    - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
+  ],
+  scenari: [
+    - Il Cliente ha avviato un'operazione di aggiunta merce ad un ordine non confermato ma il Sistema non ha memorizzato alcun ordine non confermato per l'utente corrente
+  ],
+)[]
+
+
+=== UC7 - Seleziona ordine non confermato <UC7>
 
 #use-case(
   attore: "Cliente",
