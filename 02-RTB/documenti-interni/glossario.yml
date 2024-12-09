@@ -2,7 +2,7 @@
 # segnaposto "": "" per evitare errori di compilazione, da sostituire eventualmente 
 # con la coppia parola: "definizione"
 A:
-  Action: "In GitHub, un "action" (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi
+  Action: "In GitHub, un 'action' (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi
   nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora.
   Tale servizio è direttamente integrato nella piattaforma GitHub."
   Angular: "Framework open-source per lo sviluppo di applicazioni web basato su 
