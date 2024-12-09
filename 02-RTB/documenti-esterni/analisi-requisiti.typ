@@ -12,7 +12,7 @@
       date: datetime(day: 09, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Aggiunti Casi d'Uso sino a UC12 e relative inclusioni ed estensioni",
+      descr: "Aggiunti Casi d'Uso sino a UC13 e relative inclusioni ed estensioni. Impostazione UC14.",
     ),
     (
       vers: "0.5.0",
@@ -505,7 +505,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
     - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
   ],
   scenari: [
-    - Il Cliente ha scelto la tipologia di merce da aggiungere all'ordine non confermato, la quantità e l'ordine a cui aggiungere tale merce ma il Sistema ha verificato che la merce selezionata non esiste o è in quantità inferiore a quella selezionata
+    - Il Cliente ha scelto la tipologia di merce da aggiungere all'ordine non confermato, la quantità e l'ordine a cui aggiungere tale merce ma il Sistema ha verificato che la merce selezionata non esiste o eccede la quantità disponibile
   ],
 )[]
 
@@ -595,12 +595,14 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
     - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di conferma $arrow$ @UC7[Vedi UC7 Sezione]
   ],
   scenari_alternativi: [
+    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @UC5[Vedi UC5 Sezione]
     - Il Cliente cerca di confermare un ordine non confermato ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
   ],
   inclusioni: [
     - UC7 @UC7
   ],
   estensioni: [
+    - UC5 @UC5
     - UC6 @UC6
   ],
   trigger: "Il Cliente vuole confermare un ordine non confermato",
@@ -655,10 +657,12 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
       - l'ID dell'ordine $arrow$ @UC11[Vedi UC11 Sezione]
       - La data di creazione dell'ordine $arrow$ @UC12[Vedi UC12 Sezione]
+      - Il nome dell'ordine $arrow$ @UC13[Vedi UC13 Sezione]
   ],
   inclusioni: [
     - UC11 @UC11
     - UC12 @UC12
+    - UC13 @UC13
   ],
   trigger: "Il Cliente vuole visualizzare gli ordini non confermati registrati nel Sistema per l'utente corrente",
 )[]
@@ -691,7 +695,37 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   ],
 )[]
 
-=== UC13 - Visualizza dettaglio ordine non confermato
+=== UC13 - Visualizza nome ordine <UC13>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzato il nome dell'ordine
+  ],
+)[]
+
+=== UC14 - Visualizza ordine non confermato
+
+#use-case()[
+  #use-case-diagram("14", "UC14 - Visualizza ordine non confermato")
+]
+
+Il Caso d'Uso UC14 include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("14-incl", "Inclusione del Caso d'Uso n.14: UC11, UC12, UC13, UC14.1")
+Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive descrizioni (@UC11, @UC12 e @UC13), mentre per il Caso d'Uso 14.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
+
+==== UC14.1 - Visualizza lista merce ordine non confermato
+
+===== UC14.1.1 - Visualizza elemento lista merce ordine non confermato
+
+====== UC14.1.1.1 - Visualizza quantità singola merce nell'ordine non confermato
+
+=== UC15 - Visualizza nome merce
 
 = Requisiti Principali
 == Requisiti Funzionali
