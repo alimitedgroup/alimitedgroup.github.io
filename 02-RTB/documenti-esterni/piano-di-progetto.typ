@@ -13,12 +13,12 @@
 #let link-glossario(
   link-text,
 ) = {
-  link("https://alimitedgroup.github.io/glossario%200.1.0")[#link-text]
+  link("https://alimitedgroup.github.io/glossario")[#link-text]
 }
 #let link-norme(
   link-text,
 ) = {
-  link("https://alimitedgroup.github.io/norme%20di%progetto%200.1.0")[#link-text]
+  link("https://alimitedgroup.github.io/norme%20di%progetto%200.7.0")[#link-text]
 }
 
 #metadata[Piano di progetto #versione] <titolo>
@@ -38,13 +38,12 @@
 #counter(page).update(1)
 
 #registro-modifiche((
-  // (
-  //  TODO: in attesa del merge
-  //   vers: "0.2.0",
-  //   date: datetime(day: 07, month: 12, year: 2024),
-  //   autore: p.loris,
-  //   descr: "Redazione per il secondo sprint",
-  // ),
+  (
+    vers: "0.2.0",
+    date: datetime(day: 07, month: 12, year: 2024),
+    autore: p.loris,
+    descr: "Redazione per il secondo sprint",
+  ),
   (
     vers: "0.1.0",
     date: datetime(day: 27, month: 11, year: 2024),
@@ -498,7 +497,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
     [Un componente del gruppo ha un impegno improvviso che gli impedisce di portare a termine le attività assegnate],
 
     [*Mitigazione*],
-    [Il componente del gruppo darà tempestiva comunicazione della sua indisponibilità improvvisa agli altri componenti. Questi cercheranno di spartirsi le attività rimanenti, rimanandole al periodo successivo se necessario. Risolta l'indisponibilità, il componente cercherà di recuperare le attività eventualmente rimanenti],
+    [Il componente del gruppo darà tempestiva comunicazione della sua indisponibilità improvvisa agli altri componenti. Questi cercheranno di spartirsi le attività rimanenti, rimandandole al periodo successivo se necessario. Risolta l'indisponibilità, il componente cercherà di recuperare le attività eventualmente rimanenti],
 
     [*Frequenza probabile di avvenimento*], [Media],
     [*Pericolosità delle ripercussioni*], [Media],
@@ -507,7 +506,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 )
 
 
-== Rischio Globale
+== Rischio Globale <rischio_globale>
 
 === RG1: Rischio Globale derivato da forte disaccordo nel gruppo
 
@@ -624,7 +623,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 
     [*Codice*], [RG4],
     [*Nome*], [Rischio Globale derivato da sovrastima di attività],
-    [*Descrizione*], [Lo svolgimento di una attività richiede più tempo del previsto],
+    [*Descrizione*], [Lo svolgimento di una attività richiede meno tempo del previsto],
     [*Mitigazione*],
     [Il componente o i componenti segnalano l'anticipo agli altri componenti del gruppo. Procederanno quindi all'aiuto dei componenti che ne hanno bisogno per minimizzare il rischio di ritardo. Qualora non ci siano situazioni critiche, i componenti in anticipo provvederanno all'inizio di una nuova attività, possibilmente compatibile con il tempo rimanente a disposizione],
 
@@ -791,7 +790,24 @@ in quanto rimandata allo sprint successivo.
 
 ==== Informazioni generali e attività da svolgere <sprint2intro>
 
+Il secondo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sulla relativa discussione con il proponente #M31.
+
+Le attività pianificate nel dettaglio includono:
+
+- Redazione dell'Analisi dei Requisiti;
+- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli use case;
+- Studio delle tecnologie Golang e NATS;
+- Ottimizzazione del sistema di ticketing e del *way of working*;
+- Riorganizzazione delle Norme di Progetto;
+- Verifica del Piano di Progetto.
+
 ==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
 
 #pagebreak()
 
@@ -807,10 +823,17 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
-#prospetto-orario(1)
+#prospetto-orario(2)
 
 #v(1em)
 ==== Rischi incontrati
 
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una sottovalutazione del tempo necessario per completare l'Analisi dei Requisiti.
+
+Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno il capitolato hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
+
+Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti seguendo le linee guida delineate nella sezione @rischio_globale.
 
 === Retrospettiva
+
+In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
