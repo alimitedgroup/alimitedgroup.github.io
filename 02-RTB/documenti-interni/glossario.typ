@@ -2,7 +2,7 @@
 #metadata[Glossario] <titolo>
 
 #set text(lang: "it", font: "Hanken Grotesk")
-#let versione = [0.2.0]
+#let versione = [0.3.0]
 
 // Prima pagina
 #prima-pagina(
@@ -17,7 +17,9 @@
 )
 
 // Corpo
-#set heading(numbering: "1.")
+
+#set enum(indent: 1em)
+#set heading(numbering: none, hanging-indent: 1em)
 #set page(numbering: "1", header: header("Glossario" + "\n Versione " + versione), footer: footer())
 #counter(page).update(1)
 
@@ -53,7 +55,7 @@
 
   #for (word, definition) in words [
     #if (word != "") [ // Lascia vuoto se nessuna definizione da mostrare
-      #heading(word, level: 2) // Intestazione per ogni parola
+      #strong[#list(word)] // Intestazione per ogni parola
       #label(word)
       #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione
     ]
