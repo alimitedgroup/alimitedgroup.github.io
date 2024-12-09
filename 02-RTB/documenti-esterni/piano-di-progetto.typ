@@ -99,6 +99,26 @@
       (p.emanuele, 0, 0, 6, 0, 0, 0),
     ),
   ),
+  "3": (
+    preventivo: (
+      (p.loris, 0, 0, 0, 0, 0, 0),
+      (p.samuele, 0, 0, 0, 0, 0, 0),
+      (p.sara, 0, 0, 0, 0, 0, 0),
+      (p.lorenzo, 0, 0, 0, 0, 0, 0),
+      (p.marco, 0, 0, 0, 0, 0, 0),
+      (p.matteo, 0, 0, 0, 0, 0, 0),
+      (p.emanuele, 0, 0, 0, 0, 0, 0),
+    ),
+    consuntivo: (
+      (p.loris, 0, 0, 0, 0, 0, 0),
+      (p.samuele, 0, 0, 0, 0, 0, 0),
+      (p.sara, 0, 0, 0, 0, 0, 0),
+      (p.lorenzo, 0, 0, 0, 0, 0, 0),
+      (p.marco, 0, 0, 0, 0, 0, 0),
+      (p.matteo, 0, 0, 0, 0, 0, 0),
+      (p.emanuele, 0, 0, 0, 0, 0, 0),
+    ),
+  ),
 )
 
 #let cella(dati, preventivo, i, j) = {
@@ -171,9 +191,10 @@
   let globsum = dati.map(r => r.slice(1).sum()).sum()
   for (i, ruolo) in ruoli.enumerate() {
     let sum = dati.map(row => row.at(i + 1)).sum(default: 0)
+    let percentuale = if globsum != 0 { sum / globsum * 100 } else { 0 }
     data.push((
-      percentuale: sum / globsum * 100,
-      titolo: ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%",
+      percentuale: percentuale,
+      titolo: ruolo + " - " + str(calc.round(percentuale, digits: 0)) + "%",
     ))
   }
 
@@ -428,7 +449,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
     [*Codice*], [RT2],
     [*Nome*], [Rischio Tecnologico legato a errori nel codice],
     [*Descrizione*],
-    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo una riesaminazione di quanto scritto],
+    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo un riesame di quanto scritto],
 
     [*Mitigazione*],
     [In caso di codice non funzionante, il programmatore cerca di risolvere il problema. Qualora questo risulti troppo complesso il programmatore chiederà aiuto a programmatori più esperti. In caso di problema particolarmente grave, le attività meno urgenti verranno posticipate per lasciare spazio alla risoluzione del problema.],
@@ -838,3 +859,48 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 === Retrospettiva
 
 In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
+
+
+=== Sprint 3
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[24-11-2024],
+  [Fine prevista:], strong[7-12-2024],
+  [Fine reale:], strong[7-12-2024],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint3intro>
+
+
+Le attività pianificate nel dettaglio includono:
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(3, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+
+==== Consuntivo
+
+#impegni(3, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(3)
+
+#v(1em)
+==== Rischi incontrati
+
+
+=== Retrospettiva
