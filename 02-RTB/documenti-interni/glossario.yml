@@ -31,7 +31,7 @@ A:
   per archiviazione, elaborazione e gestione dati"
 B:
   Branch: "Nello sviluppo software un branch è una copia separata del codice sorgente che consente agli sviluppatori di lavorare alle modifiche su un ramo a parte senza influenzare direttamente il ramo principale.
-  I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di GitHub."
+  I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di Git, e, di conseguenza, di GitHub."
 C:
   Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un
   progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una

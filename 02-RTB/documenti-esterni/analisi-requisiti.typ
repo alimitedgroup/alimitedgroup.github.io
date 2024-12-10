@@ -11,7 +11,7 @@
       vers: "0.6.0",
       date: datetime(day: 09, month: 12, year: 2024),
       autore: p.matteo,
-      verifica: p.lorenzo,
+      verifica: p.samuele,
       descr: "Aggiunti Casi d'Uso sino a UC13 e relative inclusioni ed estensioni. Impostazione UC14.",
     ),
     (
@@ -114,7 +114,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 == Quadro generale
 Il presente documento analiizza in modo dettagliato ed esaustivo i requisiti emersi dal capitolato C6 _Sistema di Gestione di un Magazzino Distribuito_ e dalla fase di contrattazione con il committente _M31_.
 
-Include una descrizione approfondita dei casi d'uso, dei requisiti obbligatori, desiderabili e opzionali, nonché delle funzionalità previste per il sistema.\
+Include una descrizione approfondita dei casi d'uso, dei requisiti obbligatori, desiderabili e opzionali, nonché delle funzionalità previste per il sistema.
 
 Verranno utilizzati, per agevolare la comprensione, i *Diagrammi dei Casi d'Uso* per visualizzare le interazioni tra attori e sistema;
 
@@ -130,9 +130,9 @@ La struttura del documento mira a garantire trasparenza, tracciabilità e compre
 = Descrizione generale
 == Prospettiva del prodotto
 Il prodotto che _ALimitedGroup_ si promette di sviluppare è un sistema efficace e scalabile per la gestione di magazzini.
-\
-Nello specifico, si vuole sviluppare un sistema che sia in grado non solo di gestire un magazzino locale, ma che sia in grado di avere in tempo reale una visione globale di tutti i magazzini connessi al Sistema. \ \
-Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare i propri servizi per essere in grado di mantenere la reattività. \ \
+
+Nello specifico, si vuole sviluppare un sistema che sia in grado non solo di gestire un magazzino locale, ma che sia in grado di avere in tempo reale una visione globale di tutti i magazzini connessi al Sistema.
+Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare i propri servizi per essere in grado di mantenere la reattività.
 fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
 == Funzioni del prodotto
 Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità:
@@ -203,14 +203,14 @@ La descrizione testuale, in particolar modo, dovrà contenere le informazioni ne
 #pagebreak()
 == Attori
 
-Di seguito sono esposti gli attori utilizzati: \
-\
+Di seguito sono esposti gli attori utilizzati:
+#v(1em)
 
 #figure(
   image("../../assets/diagrams/attori.svg", width: 50%),
   caption: [Diagramma degli attori],
 )
-\
+#v(1em)
 
 #figure(
   table(
@@ -538,10 +538,10 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
     - Il Sistema non conosce l'ordine non confermato su cui il Cliente vuole effettuare un'operazione
   ],
   post: [
-    - Il Sistema riceve l'ordine non confermato alla quale il Cliente vuole aggiungere merce
+    - Il Sistema riceve l'ordine non confermato sul quale il Cliente vuole operare
   ],
   scenari: [
-    - L'utente procede ad inserire l'identificativo dell'ordine sulla quale vuole eseguire l'operazione
+    - L'utente procede ad inserire l'identificativo dell'ordine sul quale vuole eseguire l'operazione
   ],
   trigger: "Il Cliente vuole eseguire un'operazione su un ordine non confermato",
 )[]
