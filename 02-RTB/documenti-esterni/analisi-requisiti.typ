@@ -8,6 +8,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.7.0",
+      date: datetime(day: 10, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Completato fino ad UC15",
+    ),
+    (
       vers: "0.6.0",
       date: datetime(day: 09, month: 12, year: 2024),
       autore: p.matteo,
@@ -711,7 +718,28 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
 
 === UC14 - Visualizza ordine non confermato
 
-#use-case()[
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  scenari: [
+    - Il Cliente ha selezionato da una lista di ordini non confermati la visualizzazione di un ordine specifico
+    - Il Cliente visualizza del suddetto ordine:
+      - ID dell'ordine $arrow$ @UC11[Vedi UC11 Sezione]
+      - Data creazione dell'ordine non confermato $arrow$ @UC12[Vedi UC12 Sezione]
+      - Nome dell'ordine $arrow$ @UC13[Vedi UC13 Sezione]
+      - Lista delle merci $arrow$ @UC14.1[Vedi UC14.1 Sezione]
+  ],
+  inclusioni: [
+    - UC11 @UC11
+    - UC12 @UC12
+    - UC13 @UC13
+    - UC14.1 @UC14.1
+  ],
+  trigger: "Il Cliente vuole vedere un ordine non confermato specifico registrato nel Sistema per l'utemte corrente",
+)[
   #use-case-diagram("14", "UC14 - Visualizza ordine non confermato")
 ]
 
@@ -719,14 +747,72 @@ Il Caso d'Uso UC14 include ulteriori Casi d'Uso come raffigurato nella seguente 
 #use-case-diagram("14-incl", "Inclusione del Caso d'Uso n.14: UC11, UC12, UC13, UC14.1")
 Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive descrizioni (@UC11, @UC12 e @UC13), mentre per il Caso d'Uso 14.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
-==== UC14.1 - Visualizza lista merce ordine non confermato
+==== UC14.1 - Visualizza lista merce ordine non confermato <UC14.1>
 
-===== UC14.1.1 - Visualizza elemento lista merce ordine non confermato
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando un ordine non confermato registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine non confermato selezionato $arrow$ @UC14.1.1[Vedi UC14.1.1 Sezione]
+  ],
+  inclusioni: [
+    - UC 14.1.1 @UC14.1.1
+  ],
+  trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
+)[]
 
-====== UC14.1.1.1 - Visualizza quantità singola merce nell'ordine non confermato
+==== UC14.1.1 - Visualizza elemento lista merce ordine non confermato <UC14.1.1>
 
-=== UC15 - Visualizza nome merce
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando un elenco di merci di un ordine non confermato registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
+      - Quantità di quella merce nell'ordine non confermato selezionato $arrow$ @UC14.1.1.1[Vedi UC14.1.1.1 Sezione];
+      - Nome della merce $arrow$ @UC15[Vedi UC15 Sezione];
+  ],
+  inclusioni: [
+    - UC14.1.1.1 @UC14.1.1.1
+    - UC15 @UC15
+  ],
+  trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
+)[]
 
+==== UC14.1.1.1 - Visualizza quantità singola merce nell'ordine non confermato <UC14.1.1.1>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine non confermato registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzata la quantità della singola merce nell'ordine non confermato selezionato
+  ],
+)[]
+
+=== UC15 - Visualizza nome merce <UC15>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine non confermato registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzata il nome della singola merce nell'ordine non confermato selezionato
+  ],
+)[]
 
 // TODO: definire numero UC da qui in poi
 
