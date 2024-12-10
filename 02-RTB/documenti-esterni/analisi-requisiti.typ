@@ -727,6 +727,154 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 === UC15 - Visualizza nome merce
 
+
+// TODO: definire numero UC da qui in poi
+
+// LORIS
+=== UC - Visualizzazione ordini eseguiti
+
+
+==== UC - Visualizza elemento ordine eseguito
+
+
+=== UC - Visualizzazione dettaglio ordine
+
+
+==== UC - Visualizzazione merci di un ordine
+
+
+==== UC - Visualizza stato delle merci di un ordine
+
+
+==== UC - Visualizza la lista delle merci
+
+
+=== UC - Visualizzazione dettaglio merce
+
+
+==== UC - Visualizza lo stock totale di una merce
+
+
+==== UC - Visualizza stock di una merce per magazzino
+
+
+=== UC - Aggiunta di una merce
+
+
+=== UC - Aggiornamento informazioni di una merce
+
+
+=== UC - Eliminazione di una merce
+
+
+// EMANUELE
+
+=== UC - Trasferimento merce
+
+// Questi erano di Sara, credo vada integrato il tutto con il lavoro di Emanuele
+=== UC - Selezione degli oggetti per il trasferimento
+
+
+=== UC - Selezione del magazzino di destinazione
+
+
+=== UC - Conferma del trasferimento
+
+
+=== UC - Visualizza l'elenco dei trasferimenti
+
+
+=== UC - Visualizza il singolo trasferimento
+
+
+==== UC - Visualizza id trasferimento
+
+
+==== UC - Visualizza stato trasferimento
+
+
+==== UC - Visualizza elenco merci trasferimento
+
+
+=== UC - Visualizza singolo prodotto
+
+
+=== UC - Conferma un ordine di trasferimento
+
+
+// MATTEO
+
+=== UC - Visualizza elenco notifiche rifornimento
+
+
+==== UC - Errore nessuna notifica di rifornimento
+
+
+==== UC - Visualizza singola notifica
+
+
+===== UC - Visualizza stato notifica rifornimento
+
+
+===== UC - Visualizza ID notifica rifornimento
+
+
+=== UC - Visualizza singola notifica rifornimento
+
+
+==== UC - Visualizza elenco merce da riassortire
+
+
+===== UC - Visualizza singola merce da rifornire
+
+
+====== UC - Visualizza ID merce
+
+
+====== UC - Visualizza nome merce
+
+
+====== UC - Visualizza quantità merce
+
+
+===== UC - Accetta notifica di rifornimento
+
+
+===== UC - Rifiuta notifica di rifornimento
+
+
+==== UC - Seleziona notifica di rifornimento
+
+
+=== UC - Mostra lista dei microservizi
+
+
+==== UC - Visualizza singolo elemento microservizi
+
+
+===== UC - Visualizza numero di richieste al secondo
+
+
+// SARA
+
+=== UC - Esportazione ordini
+
+
+=== UC - Esportazione report inventario
+
+
+=== UC - Creazione di una soglia minima per una merce
+
+
+==== UC - Soglia minima non valida
+
+
+// MARCO
+
+=== UC - Aggiunta stock di una merce
+
+
+
 = Requisiti Principali
 == Requisiti Funzionali
 
