@@ -1,6 +1,6 @@
 // VI 15-10-2024
 
-#import "/lib/legacy.typ": *
+#import "../../lib/legacy.typ": *
 #show: doc => verbale(
   data: datetime(day: 15, month: 10, year: 2024),
   regmodifiche: (

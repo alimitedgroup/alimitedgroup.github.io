@@ -69,7 +69,7 @@
     else
     {
       grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin))
-    },
+    }
   )
 
   set heading(numbering: "1.")
