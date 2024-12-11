@@ -817,10 +817,49 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 // TODO: definire numero UC da qui in poi
 
 // LORIS
-=== UC - Visualizzazione ordini eseguiti
+=== UC - Visualizza lista ordini eseguiti
 
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il cliente visualizza la lista degli ordini eseguiti
+  ],
+  scenari: [
+    - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini eseguiti registrati nel sistema per l'utente corrente
+    // TODO: freccia allo use case del singolo elemento della lista
+    - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema
+  ],
+  scenari_alternativi: [
+    // TODO: freccia allo use case del singolo elemento della lista
+    - Il Cliente cerca di visualizzare gli ordine eseguiti ma nessun ordine eseguito è registrato nel Sistema per l'utente corrente
+  ],
+  trigger: "l'utente vuole vedere la lista degli ordini eseguiti",
+)[
+  #use-case-diagram("x-lista_ordini_eseguiti", "UCx - Visualizza lista ordini eseguiti")
+]
 
-==== UC - Visualizza elemento ordine eseguito
+==== UC - Visualizza elemento lista ordini eseguiti
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando la lista degli ordini eseguiti registrati nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Ogni elemento della lista visualizzata deve mostrare:
+      - ID dell'ordine eseguito
+      - Data di invio dell'ordine
+      - Nota dell'ordine
+      - Stato dell'ordine
+  ],
+  trigger: "l'utente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
+)[
+  #use-case-diagram("x-elemento_lista_ordini_eseguiti", "UCx - Visualizza elemento lista ordini eseguiti")
+]
 
 
 === UC - Visualizzazione dettaglio ordine
