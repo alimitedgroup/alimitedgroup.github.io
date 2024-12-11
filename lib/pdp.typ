@@ -2,6 +2,8 @@
 #import "@preview/cetz-plot:0.1.0": chart
 #import "common.typ" : *
 #set par(justify: true)
+#show link: underline
+#show ref: underline
 
 #let link-glossario(
   link-text,
@@ -53,6 +55,26 @@
       (p.marco, 0, 2, 4, 0, 0, 0),
       (p.matteo, 0, 1, 5, 0, 0, 0),
       (p.emanuele, 0, 0, 6, 0, 0, 0),
+    ),
+  ),
+  "3": (
+    preventivo: (
+      (p.loris, 0, 0, 0, 0, 0, 0),
+      (p.samuele, 0, 0, 0, 0, 0, 0),
+      (p.sara, 0, 0, 0, 0, 0, 0),
+      (p.lorenzo, 0, 0, 0, 0, 0, 0),
+      (p.marco, 0, 0, 0, 0, 0, 0),
+      (p.matteo, 0, 0, 0, 0, 0, 0),
+      (p.emanuele, 0, 0, 0, 0, 0, 0),
+    ),
+    consuntivo: (
+      (p.loris, 0, 0, 0, 0, 0, 0),
+      (p.samuele, 0, 0, 0, 0, 0, 0),
+      (p.sara, 0, 0, 0, 0, 0, 0),
+      (p.lorenzo, 0, 0, 0, 0, 0, 0),
+      (p.marco, 0, 0, 0, 0, 0, 0),
+      (p.matteo, 0, 0, 0, 0, 0, 0),
+      (p.emanuele, 0, 0, 0, 0, 0, 0),
     ),
   ),
 )
