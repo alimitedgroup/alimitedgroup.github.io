@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.6.0]
+#let ver = [0.7.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
