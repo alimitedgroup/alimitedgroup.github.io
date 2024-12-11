@@ -26,20 +26,23 @@ def substitue(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let"]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table("]
+    specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
     startText=" "
 
     file=open(filePath,"r", encoding ="utf-8")
-    chapter = False
     bodyFound=False
     parFound=False
     line=" "
 
+    filtered_glossary = list(filter(lambda el: " " in el, glossary))
+    #print(filtered_glossary)
+
     while line:
         line=file.readline()
-        chapter = False
+        
         #print(f"read:{line}")
         if(bodyFound==False or parFound==False):
             startText+=line
@@ -48,26 +51,36 @@ def substitue(filePath,glossaryYml):
             if bodyFound==True and ")" in line:
                 parFound=True
         else:
+            if(stop == False):
+                for sub in filtered_glossary:
+                    line = line.replace(sub, f"{sub}#super[g]")
+                    if(sub in line):
+                        print("found sub in : " +sub)
+
+            if len(line.strip()) > 0 and line.strip()[0] == '=':
+                newText+= line
+                continue
             for word in line.split():
                 #print("read: "+word)
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}, {stopCheckingWords}")
                     stop=True
-                elif word[0] == "=":
-                    #print(f"settingStop {word}")
-                    chapter = True
                 elif word==")":
                     stop=False
-                #if stop==False and word in glossary:
-                if stop==False and chapter == False and (word in glossary or word[:-1] in glossary):
-                    if word[0]=="_" or word[0]=="*":
+                if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0)) and len(word)>1:
+                    if word[:-1] in glossary and word[len(word)-1] in specialChar:
+                        newText+= word[:-1] + "#super[g] " + word[-1:]
+                        print("found - 1: " +word)
+                    elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
+                        newText+= word[:-2] + "#super[g] " + word[-2:]
+                        print("found - 2: " +word)
+                    elif word[0]=="_" or word[0]=="*":
                         newText+= word + "#super[g] "
-                        print("found: "+word)
+                        print("found - 3: "+word)
                     else:
                         newText+= word + " "
                 else:
                     newText+=word+" "
-                    stop = False
             newText+="\n"
 
     file.close()
