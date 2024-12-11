@@ -85,7 +85,7 @@ Il documento di _Analisi dei Requisiti_ viene redatto dagli _Analisti_ del team 
 
 - Il _Committente_, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche;
 - Il _Team di Progettisti e di Programmatori_, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software;
-- Il Team di _Verificatori_, che baserà sull' Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
+- Il Team di _Verificatori_, che baserà sull'Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
 
 Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori e Responsabili di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
@@ -119,7 +119,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - Glossario: \ #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
 
 == Quadro generale
-Il presente documento analiizza in modo dettagliato ed esaustivo i requisiti emersi dal capitolato C6 _Sistema di Gestione di un Magazzino Distribuito_ e dalla fase di contrattazione con il committente _M31_.
+Il presente documento analizza in modo dettagliato ed esaustivo i requisiti emersi dal capitolato C6 _Sistema di Gestione di un Magazzino Distribuito_ e dalla fase di contrattazione con il committente _M31_.
 
 Include una descrizione approfondita dei casi d'uso, dei requisiti obbligatori, desiderabili e opzionali, nonché delle funzionalità previste per il sistema.
 
@@ -140,7 +140,7 @@ Il prodotto che _ALimitedGroup_ si promette di sviluppare è un sistema efficace
 
 Nello specifico, si vuole sviluppare un sistema che sia in grado non solo di gestire un magazzino locale, ma che sia in grado di avere in tempo reale una visione globale di tutti i magazzini connessi al Sistema.
 Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare i propri servizi per essere in grado di mantenere la reattività.
-fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
+fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
 == Funzioni del prodotto
 Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità:
 
@@ -230,7 +230,7 @@ Di seguito sono esposti gli attori utilizzati:
 
     [*Utente*], [Rappresenta un utente che vuole accedere al sistema],
     [*Admin Locale*],
-    [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interessi nel signolo magazzino che superano quelle del normale utilizzatore],
+    [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interessi nel singolo magazzino che superano quelle del normale utilizzatore],
 
     [*Admin Globale*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse alla situazione globale (dunque comprendente tutti i magazzini)],
@@ -341,7 +341,7 @@ Il Caso d'Uso UC1 include tre ulteriori _use-case_ come raffigurato nella seguen
     - L'attore principale ha immesso uno Username o una password non corretta oppure ha selezionato una tipologia di utente sbagliata],
   post: [- Il Sistema annulla il tentativo di autenticazione],
   scenari: [
-    - Il Sistema ha ricevuto Username, Password e tipoloia di utente ma non è riuscito a verificare tali credenziali
+    - Il Sistema ha ricevuto Username, Password e tipologia di utente ma non è riuscito a verificare tali credenziali
   ],
 )[]
 
@@ -738,7 +738,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - UC13 @UC13
     - UC14.1 @UC14.1
   ],
-  trigger: "Il Cliente vuole vedere un ordine non confermato specifico registrato nel Sistema per l'utemte corrente",
+  trigger: "Il Cliente vuole vedere un ordine non confermato specifico registrato nel Sistema per l'utente corrente",
 )[
   #use-case-diagram("14", "UC14 - Visualizza ordine non confermato")
 ]
