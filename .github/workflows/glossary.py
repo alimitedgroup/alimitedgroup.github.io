@@ -67,7 +67,7 @@ def substitue(filePath,glossaryYml):
                     stop=True
                 elif word==")":
                     stop=False
-                if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0)) and len(word)>1:
+                if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
                     if word[:-1] in glossary and word[len(word)-1] in specialChar:
                         newText+= word[:-1] + "#super[g] " + word[-1:]
                         print("found - 1: " +word)
@@ -77,6 +77,9 @@ def substitue(filePath,glossaryYml):
                     elif word[0]=="_" or word[0]=="*":
                         newText+= word + "#super[g] "
                         print("found - 3: "+word)
+                    elif word[0] == "(" and word[len(word)-1] == ")":
+                        newText += word[:-1] + "#super[g] " + word[-1:]
+                        print("found - 4: "+word)  
                     else:
                         newText+= word + " "
                 else:
