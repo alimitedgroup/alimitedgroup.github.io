@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.7.0]
+#let ver = [0.8.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.8.0",
+      date: datetime(day: 11, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Redatto Caso d'Uso relativo alla visualizzazione delle notifiche di rifornimento e relative inclusioni. Redatto Caso d'Uso relativo all'accettazione di una notifica di rifornimento.",
+    ),
     (
       vers: "0.7.0",
       date: datetime(day: 10, month: 12, year: 2024),
@@ -931,18 +938,96 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 === UC - Visualizza elenco notifiche rifornimento
 
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione delle notifiche di rifornimento
+    - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento $arrow$ @UCsingoloelementonot[Vedi UC Sezione]
+  ],
+  scenari_alternativi: [
+    - L'Admin globale cerca di visualizzare le notifiche di rifornimento ma nessuna notifica è presente $arrow$ @UCerrnessunanotifica[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @UCsingoloelementonot
+  ],
+  estensioni: [
+    - UC @UCerrnessunanotifica
+  ],
+  trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
+)[
+  #use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+]
 
-==== UC - Errore nessuna notifica di rifornimento
+=== UC - Nessuna notifica di rifornimento <UCerrnessunanotifica>
 
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento
+  ],
+  scenari: [
+    - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento ma nessuna notifica di rifornimento è disponibile
+  ],
+)[]
 
-==== UC - Visualizza singola notifica
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("M1-incl", "Inclusione del Caso d'Uso n.: UC")
+Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
+==== UC - Visualizza elemento lista notifiche rifornimento <UCsingoloelementonot>
 
-===== UC - Visualizza stato notifica rifornimento
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale sta visualizzando la lista delle notifiche di rifornimento
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dall'Admin globale dovrà contenere:
+      - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UCstatonot[Vedi UC, Sezione]
+      - L'ID della notifica $arrow$ @UCIDnot[Vedi UC, Sezione]
+  ],
+  inclusioni: [
+    - UC @UCstatonot
+    - UC @UCIDnot
+  ],
+  trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
+)[]
 
+=== UC - Visualizza stato notifica rifornimento <UCstatonot>
 
-===== UC - Visualizza ID notifica rifornimento
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - Il Cliente sta visualizzando una notifica di rifornimento, in elenco o in dettaglio
+  ],
+  scenari: [
+    - Viene visualizzato lo stato della notifica di rifornimento
+  ],
+)[]
 
+=== UC - Visualizza ID notifica rifornimento <UCIDnot>
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - Il Cliente sta visualizzando una notifica di rifornimento, in elenco o in dettaglio
+  ],
+  scenari: [
+    - Viene visualizzato l'ID della notifica di rifornimento
+  ],
+)[]
 
 === UC - Visualizza singola notifica rifornimento
 
@@ -962,13 +1047,36 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 ====== UC - Visualizza quantità merce
 
 
-===== UC - Accetta notifica di rifornimento
+=== UC - Accetta notifica di rifornimento
 
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa all'accettazione delle notifiche di rifornimento
+    - L'Admin globale sceglie quale notifica di rifornimento accettare $arrow$ @UCselectnot[Vedi UC, Sezione]
+  ],
+  scenari_alternativi: [
+    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento $arrow$ @UCerrnessunanotifica[Vedi UC, Sezione]
+  ],
+  inclusioni: [
+    - UC @UCselectnot
+  ],
+  estensioni: [
+    - UC @UCerrnessunanotifica
+  ],
+  trigger: "L'Admin globale vuole accettare una notifica di rifornimento",
+)[
+  #use-case-diagram("M2", "UC - Accetta notifica di rifornimento")
+]
 
 ===== UC - Rifiuta notifica di rifornimento
 
 
-==== UC - Seleziona notifica di rifornimento
+=== UC - Seleziona notifica di rifornimento <UCselectnot>
 
 
 === UC - Mostra lista dei microservizi
