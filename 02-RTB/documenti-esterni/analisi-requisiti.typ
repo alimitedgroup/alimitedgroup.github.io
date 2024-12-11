@@ -12,7 +12,7 @@
       date: datetime(day: 11, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Redatto Caso d'Uso relativo alla visualizzazione delle notifiche di rifornimento e relative inclusioni. Redatto Caso d'Uso relativo all'accettazione di una notifica di rifornimento.",
+      descr: "Redatto Caso d'Uso relativo alla visualizzazione delle notifiche di rifornimento e relative inclusioni. Redatto Caso d'Uso relativo all'accettazione e al rifiuto di una notifica di rifornimento.",
     ),
     (
       vers: "0.7.0",
@@ -977,7 +977,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento
   ],
   scenari: [
-    - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento ma nessuna notifica di rifornimento è disponibile
+    - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento ma nessuna notifica di rifornimento è disponibile per l'operazione da effettuare
   ],
 )[]
 
@@ -992,7 +992,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin globale sta visualizzando la lista delle notifiche di rifornimento
+    - L'Admin globale sta visualizzando la lista delle notifiche di rifornimento (scaturite per via della soglia di guardia o per mezzo delle tecnologie di _Machine Learning_)
   ],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dall'Admin globale dovrà contenere:
@@ -1060,12 +1060,15 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
+  post: [
+    - Il Sistema registra la notifica di rifornimento come accettata
+  ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa all'accettazione delle notifiche di rifornimento
     - L'Admin globale sceglie quale notifica di rifornimento accettare $arrow$ @UCselectnot[Vedi UC, Sezione]
   ],
   scenari_alternativi: [
-    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento $arrow$ @UCerrnessunanotifica[Vedi UC, Sezione]
+    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da accettare$arrow$ @UCerrnessunanotifica[Vedi UC, Sezione]
   ],
   inclusioni: [
     - UC @UCselectnot
@@ -1078,11 +1081,58 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   #use-case-diagram("M2", "UC - Accetta notifica di rifornimento")
 ]
 
-===== UC - Rifiuta notifica di rifornimento
-
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("M2-incl", "Inclusione del Caso d'Uso n.: UC")
 
 === UC - Seleziona notifica di rifornimento <UCselectnot>
 
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale sta compiendo un'operazione riguardante le notifiche di rifornimento
+  ],
+  post: [
+    - Il Sistema registra su quale notifica di rifornimento effettuare l'operazione voluta dall'Admin globale
+  ],
+  scenari: [
+    - L'Admin globale procede ad inserire la notifica sulla quale vuole che l'operazione sia effettuata
+  ],
+  trigger: "L'Admin globale vuole effettuare un'operazione su una notifica di rifornimento",
+)[]
+
+=== UC - Rifiuta notifica di rifornimento
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  post: [
+    - Il Sistema registra la notifica di rifornimento come rifiutata
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa al rifiuto delle notifiche di rifornimento
+    - L'Admin globale sceglie quale notifica di rifornimento rifiutare $arrow$ @UCselectnot[Vedi UC, Sezione]
+  ],
+  scenari_alternativi: [
+    - L'Admin globale vuole rifiutare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da rifiutare $arrow$ @UCerrnessunanotifica[Vedi UC, Sezione]
+  ],
+  inclusioni: [
+    - UC @UCselectnot
+  ],
+  estensioni: [
+    - UC @UCerrnessunanotifica
+  ],
+  trigger: "L'Admin globale vuole rifiutare una notifica di rifornimento",
+)[
+  #use-case-diagram("M3", "UC - Rifiuta notifica di rifornimento")
+]
+
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("M3-incl", "Inclusione del Caso d'Uso n.: UC")
+Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
 === UC - Mostra lista dei microservizi
 
