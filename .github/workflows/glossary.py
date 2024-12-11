@@ -102,11 +102,10 @@ def main():
     fileList = []
     find_files(fileList)
     for file in fileList:
-        #if "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
-        #    continue
-        if  "/02-RTB/documenti-interni" in file or "/02-RTB\\documenti-interni" in file:
-            print("sub: "+file)
-            substitue(file,loadGlossary())
+        if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
+            continue
+        print("sub: "+file)
+        substitue(file,loadGlossary())
 
 if __name__ == "__main__":
     main()
