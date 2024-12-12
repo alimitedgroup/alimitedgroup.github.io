@@ -968,38 +968,291 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 // EMANUELE
 
-=== UC - Trasferimento merce
+// #### TODO: VERIFICARE NUMERO UC ####
+
+=== UCea - Creazione di un trasferimento
+<UCea>
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù di voler creare un nuovo trasferimento
+    ],
+  post: [
+    - Il Sistema memorizza l'esistenza di un nuovo trasferimento non confermato con le relative informazioni (identificativo viene fornito dal Sistema)
+    ],
+  scenari: [
+    - L'Admin globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
+    - L'Admin globale inserisce l'identificativo del magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UCea.1[Vedi UCe.1 Sezione]
+  ],
+  trigger: [L'Admin globale vuole creare un nuovo trasferimento da confermare],
+  inclusioni: [
+    - UCe.1 @UCea.1
+  ],
+)[
+  #use-case-diagram("ea-creazione-trasferimento", "UCea - Creazione di un trasferimento")
+]
+
+
 
 // Questi erano di Sara, credo vada integrato il tutto con il lavoro di Emanuele
-=== UC - Selezione degli oggetti per il trasferimento
+==== UCea.1 - Selezione del magazzino di destinazione
+<UCea.1>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale ha selezionato dal menù di voler creare un nuovo trasferimento
+    - Il Sistema non conosce l'indirizzo di spedizione del nuovo trasferimento
+  ],
+  post: [
+    - Il Sistema riceve l'identificativo del magazzino destinatario del nuovo trasferimento
+  ],
+  scenari: [
+    - L'Admin globale procede ad inserire l'identificativo del magazzino destinatario del nuovo trasferimento non confermato
+  ],
+  trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
+)[]
 
 
-=== UC - Selezione del magazzino di destinazione
+=== UCeb - Selezione merce per il trasferimento
+<UCeb>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale ha selezionato dal menù di voler aggiungere merce ad un trasferimento
+    - Nel Sistema esiste almeno un trasferimento da confermare
+  ],
+  post: [
+    - La merce desiderata è stata aggiunta ad un trasferimento
+  ],
+  scenari: [
+    - L'Admin globale procede ad aggiungere merce da trasferire in un trasferimento esistente da confermare
+  ],
+  trigger: "L'Admin globale vuole trasferire oggetti specifici da un magazzino all'altro",
+)[
+  #use-case-diagram("eb-selezione-trasferimento","UCeb - Selezione degli oggetti per il trasferimento")
+]
+
+=== UCec - Conferma del trasferimento
+<UCec>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale ha selezionato dal menù di voler creare un nuovo trasferimento
+    - Il Sistema non conosce l'indirizzo di spedizione del nuovo trasferimento
+  ],
+  post: [
+    - Il Sistema riceve l'identificativo del magazzino destinatario del nuovo trasferimento
+  ],
+  scenari: [
+    - L'Admin globale procede ad inserire l'identificativo del magazzino destinatario del nuovo trasferimento non confermato
+  ],
+  trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
+)[
+  #use-case-diagram("ec-conferma-trasferimento", "UCec - Conferma del trasferimento")
+]
+
+=== UCed - Visualizza l'elenco dei trasferimenti
+<UCed>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù di voler visualizzare ogni trasferimento
+    ],
+  scenari: [
+    - L'Admin globale seleziona dal menù principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
+    - L'Admin globale seleziona un traferimento in particolare dall'elenco per visualizzarne i dettagli $arrow$ @UCed.1[Vedi UCed.1 Sezione]
+  ],
+  trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
+  inclusioni: [
+    - UCed.1 @UCed.1
+  ],
+)[
+  #use-case-diagram("ed-visualizza-trasferimenti", "UCed - Visualizza l'elenco dei trasferimenti")
+]
+
+==== UCed.1 - Visualizza il singolo trasferimento
+<UCed.1>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale seleziona dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza l'id del trasferimento $arrow$ @UCed.1.1[Vedi UCed.1.1 Sezione]
+    - L'Admin globale visualizza l'identificativo del magazzino mittente del trasferimento $arrow$ @UCed.1.2[Vedi UCed.1.2 Sezione]
+    - L'Admin globale visualizza l'identificativo del magazzino destinatario del trasferimento  $arrow$ @UCed.1.3[Vedi UCed.1.3 Sezione]
+    - L'Admin globale visualizza lo stato del trasferimento $arrow$ @UCed.1.4[Vedi UCed.1.4 Sezione]
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UCed.1.5[Vedi UCed.1.5 Sezione]
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+  inclusioni: [
+    - UCed.1.1 @UCed.1.1
+    - UCed.1.2 @UCed.1.2
+    - UCed.1.3 @UCed.1.3
+    - UCed.1.4 @UCed.1.4
+    - UCed.1.5 @UCed.1.5
+  ],
+)[
+  #use-case-diagram("ed-visualizza-dettaglio-trasferimento", "UCed.1 - Visualizza il singolo trasferimento")
+]
+
+===== UCed.1.1 - Visualizza id trasferimento
+<UCed.1.1>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza l'id del trasferimento
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+)[]
+
+===== UCed.1.2 - Visualizza magazzino mittente trasferimento
+<UCed.1.2>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza il magazzino mittente del trasferimento
+  ],
+  trigger:"L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+)[]
+
+===== UCed.1.3 - Visualizza magazzino destinatario trasferimento
+<UCed.1.3>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza il magazzino destinatario del trasferimento
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+)[]
 
 
-=== UC - Conferma del trasferimento
+===== UCed.1.4 - Visualizza stato trasferimento
+<UCed.1.4>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza lo stato del trasferimento
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+)[]
+
+===== UCed.1.5 - Visualizza elenco merce trasferimento
+<UCed.1.5>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
+    - L'Admin globale visualizza la singola merce $arrow$ @UCed.1.5.1 [Vedi UCed.1.5.1 Sezione]
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+  inclusioni: [
+    - UCed.1.5.1 @UCed.1.5.1
+  ]
+)[]
+
+====== UCed.1.5.1 - Visualizza singola merce trasferimento
+<UCed.1.5.1>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
+    - L'Admin globale visualizza il nome della singola merce interessata dal trasferimento $arrow$ @UCee [Vedi UCef Sezione]
+    - L'Admin globale visualizza la quantità della singola merce interessata dal trasferimento $arrow$ @UCed.1.5.1.1 [Vedi UCed.1.5.1.1 Sezione]
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce del trasferimento",
+  inclusioni: [
+    - UCee @UCee
+    - UCed.1.5.1.1 @UCed.1.5.1.1
+  ]
+)[
+  #use-case-diagram("ed-visualizza-singola-merce-trasferimento", "UCed.1.5.1 - Visualizza singola merce trasferimento")
+]
+
+======= UCed.1.5.1.1 - Visualizza quantità singola merce trasferimento
+<UCed.1.5.1.1>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    ],
+  scenari: [
+    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
+    - L'Admin globale visualizza la quantità della singola merce interessata dal trasferimento
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce del trasferimento",
+)[]
 
 
-=== UC - Visualizza l'elenco dei trasferimenti
-
-
-=== UC - Visualizza il singolo trasferimento
-
-
-==== UC - Visualizza id trasferimento
-
-
-==== UC - Visualizza stato trasferimento
-
-
-==== UC - Visualizza elenco merci trasferimento
-
-
-=== UC - Visualizza singolo prodotto
-
-
-=== UC - Conferma un ordine di trasferimento
-
+=== UCee - Visualizza nome merce
+<UCee>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L’utente sta visualizzando una merce
+    ],
+  scenari: [
+    - L'Admin globale sta visualizzando una merce
+  ],
+  trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce",
+)[
+  #use-case-diagram("ee-nome-merce", "UCee - Visualizza nome merce")
+]
 
 // MATTEO
 
