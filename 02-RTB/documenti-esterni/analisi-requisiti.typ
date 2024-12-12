@@ -1496,7 +1496,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
   ],
 
   scenari: [
-    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti ma nessun ordine è stato esuguito
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti ma nessun ordine è stato eseguito
   ],
 )[]
 
