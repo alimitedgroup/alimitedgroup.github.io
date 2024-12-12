@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.10.0]
+#let ver = [0.11.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
@@ -8,7 +8,7 @@
   versione: ver,
   versioni: (
     (
-      vers: "0.12.0",
+      vers: "0.11.0",
       date: datetime(day: 12, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
