@@ -849,8 +849,40 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 // LORIS
 
 === UC - Visualizza la lista delle merci
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - Il Cliente deve essere autenticato nella dashboard
+  ],
+  scenari: [
+    - Il Cliente visualizza a schermo la lista delle merci presenti nel catalogo
+  ],
+  trigger: "l'utente vuole visualizzare la lista delle merci presenti nel Sistema",
+)[
+  // #use-case-diagram("x-merce", "UCx - Visualizza lista delle merci")
+]
 
 ==== UC - Visualizza elemento lista delle merci
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - Il Cliente deve essere autenticato nella dashboard
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
+      - il nome della merce $arrow$ UC Visualizza nome di una merce
+      - lo stock totale della merce $arrow$ UC Visualizza lo stock totale di una merce
+  ],
+  inclusioni: [
+    - UC Visualizza nome di una merce
+    - UC Visualizza lo stock totale di una merce
+  ],
+  trigger: "l'utente vuole visualizzare la lista delle merci presenti nel Sistema",
+)[
+  // #use-case-diagram("x-merce", "UCx - Visualizza lista delle merci")
+]
 
 
 === UC - Visualizza merce
