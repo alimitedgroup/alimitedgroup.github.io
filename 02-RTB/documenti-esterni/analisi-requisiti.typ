@@ -905,13 +905,38 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 
-=== UC - Aggiunta di una merce al catalogo
-
-
 === UC - Aggiornamento informazioni di una merce
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - L'Admin globale deve essere autenticato nella dashboard
+  ],
+  post: [
+    - L'aggiornamento della merce verrà propagato in tutti i magazzini locali
+  ],
+  scenari: [
+    - L'Admin globale modifica le informazioni di una merce nel catalogo
+  ],
+  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
+)[]
 
 
 === UC - Eliminazione di una merce dal catalogo
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - L'Admin globale deve essere autenticato nella dashboard
+  ],
+  post: [
+    - La merce verrà eliminata in tutti i magazzini locali
+  ],
+  scenari: [
+    - L'Admin globale modifica le informazioni di una merce nel catalogo
+  ],
+  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
+)[]
 
 
 // EMANUELE
@@ -1177,7 +1202,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
     - L'utente è riconosciuto dal Sistema come Admin Locale
     - La merce selezionata è pre-esistente, ovvero non bisogna farne la creazione
   ],
-  post:[
+  post: [
     - Il Sistema registra l'aggiunta di stock a quella determinata merce
     - Il Sistema comunica all'Admin Locale la corretta esecuzione del processo di aggiunta
     - Il Sistema comunica al magazzino globale l'aggiunta di stock a tale merce
@@ -1195,17 +1220,17 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
 #use-case(
   attore: "Admin Globale",
-  pre:[
+  pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - La merce che verrà creata non può essere in nessun modo già esistente all'interno del Sistema
   ],
-  post:[
+  post: [
     - Il Sistema registra la creazione di una nuova merce
     - Il Sistema comunica all'Admin Globale la corretta esecuzione del processo di creazione
     - Il Sistema comunica a tutti i magazzini locali la creazione di una nuova merce
   ],
-  scenari:[
+  scenari: [
     - L'Admin Globale crea una nuova merce nel Sistema
     - L'Admin Globale associa a tale merce: ID e descrizione
   ],
