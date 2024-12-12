@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.8.0]
+#let ver = [0.9.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.9.0",
+      date: datetime(day: 12, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Redatto Caso d'Uso relativo all'aggiornamento delle quantità disponibili di una merce (stock). Redatto Caso d'Uso relativo alla creazione di una merce globale.",
+    ),
     (
       vers: "0.8.0",
       date: datetime(day: 11, month: 12, year: 2024),
@@ -1162,35 +1169,29 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
 // MARCO
 
-=== UC - Aggiunta stock di una merce globale
+=== UC - Aggiunta stock di una merce
 #use-case(
-  attore: "Admin Globale",
+  attore: "Admin Locale",
   pre:[
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'utente è riconosciuto dal Sistema come Admin Locale
     - La merce selezionata è pre-esistente, ovvero non bisogna farne la creazione
   ],
   post:[
     - Il Sistema registra l'aggiunta di stock a quella determinata merce
-    - Il Sistema comunica all'Admin Globale la corretta esecuzione del processo di aggiunta
-    - Il Sistema comunica a tutti i magazzini locali l'aggiunta di stock a tale merce
+    - Il Sistema comunica all'Admin Locale la corretta esecuzione del processo di aggiunta
+    - Il Sistema comunica al magazzino globale l'aggiunta di stock a tale merce
   ],
   scenari:[
-    - L'Admin Globale seleziona la merce a cui verrà aggiornata la quantità (stock)
-    - L'Admin Globale seleziona la quantità da aggiungere a tale merce
+    - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock)
+    - L'Admin Locale seleziona la quantità da aggiungere a tale merce
   ],
-  scenari_alternativi: [
-    - L'Admin Globale tenta di aggiornare la quantità ad una merce non presente nel magazzino
-    - L'Admin Globale crea la nuova merce $arrow.r$ Vedi UC, @UC_creazionemerceglob 
-    - L'Admin Globale aggiorna la quantità della nuova merce
-  ],
-  inclusioni:[UC @UC_creazionemerceglob],
-  trigger: "L'Admin Globale vuole aggiornare la quantità (stock) per una determinata merce "
+  trigger: "L'Admin Locale vuole aggiornare la quantità (stock) per una determinata merce "
 )[
-  #use-case-diagram("42","UC - Aggiunta stock di una merce globale")
+  #use-case-diagram("42","UC - Aggiunta stock di una merce")
 ]
 
-==== UC - Creazione merce globale <UC_creazionemerceglob>
+=== UC - Creazione merce globale 
 
 #use-case(
   attore: "Admin Globale",
@@ -1206,10 +1207,12 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
   ],
   scenari:[
     - L'Admin Globale crea una nuova merce nel Sistema
-    - L'Admin Globale associa a tale merce: ID, quantità e descrizione
+    - L'Admin Globale associa a tale merce: ID e descrizione
   ],
   trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione"
-)[]
+)[
+  #use-case-diagram("43", "UC - Creazione di una merce globale")
+]
 
 = Requisiti Principali
 == Requisiti Funzionali
