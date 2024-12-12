@@ -865,9 +865,12 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   scenari: [
     - Il Cliente visualizza a schermo la lista delle merci presenti nel catalogo
   ],
+  inclusioni: [
+    - UC Visualizza elemento lista delle merci
+  ],
   trigger: "l'utente vuole visualizzare la lista delle merci presenti nel Sistema",
 )[
-  // #use-case-diagram("x-merce", "UCx - Visualizza lista delle merci")
+  #use-case-diagram("x-lista_merci", "UCx - Visualizza lista delle merci")
 ]
 
 ==== UC - Visualizza elemento lista delle merci
@@ -879,8 +882,8 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - il nome della merce $arrow$ UC Visualizza nome di una merce
-      - lo stock totale della merce $arrow$ UC Visualizza lo stock totale di una merce
+    - il nome della merce $arrow$ UC Visualizza nome di una merce
+    - lo stock totale della merce $arrow$ UC Visualizza lo stock totale di una merce
   ],
   inclusioni: [
     - UC Visualizza nome di una merce
@@ -907,10 +910,11 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - UC Visualizza lo stock totale di una merce
     - UC Visualizza stock di una merce per magazzino
     - UC Visualizza nome di una merce
+    - UC Visualizza descrizione di una merce
   ],
   trigger: "l'utente vuole visualizzare i dettagli di una merce presente nel Sistema",
 )[
-  // #use-case-diagram("x-merce", "UCx - Visualizza merce")
+  #use-case-diagram("x-merce", "UCx - Visualizza merce")
 ]
 
 
