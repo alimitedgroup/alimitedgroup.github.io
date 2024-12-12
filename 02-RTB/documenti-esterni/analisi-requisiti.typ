@@ -937,23 +937,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 
-=== UC - Aggiornamento informazioni di una merce
-#use-case(
-  attore: "Admin Globale",
-  pre: [
-    - Il sistema è attivo, in modalità online o offline
-    - L'Admin globale deve essere autenticato nella dashboard
-  ],
-  post: [
-    - L'aggiornamento della merce verrà propagato in tutti i magazzini locali
-  ],
-  scenari: [
-    - L'Admin globale modifica le informazioni di una merce nel catalogo
-  ],
-  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
-)[]
-
-
+// TODO: siamo sicuri di volerla fare? non è nel capitolato e implementarla è difficile per via della gestione degli ordini in corso
 === UC - Eliminazione di una merce dal catalogo
 #use-case(
   attore: "Admin Globale",
@@ -1243,12 +1227,12 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
     - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock)
     - L'Admin Locale seleziona la quantità da aggiungere a tale merce
   ],
-  trigger: "L'Admin Locale vuole aggiornare la quantità (stock) per una determinata merce "
+  trigger: "L'Admin Locale vuole aggiornare la quantità (stock) per una determinata merce ",
 )[
-  #use-case-diagram("42","UC - Aggiunta stock di una merce")
+  #use-case-diagram("42", "UC - Aggiunta stock di una merce")
 ]
 
-=== UC - Creazione merce globale 
+=== UC - Creazione merce globale
 
 #use-case(
   attore: "Admin Globale",
@@ -1266,10 +1250,26 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
     - L'Admin Globale crea una nuova merce nel Sistema
     - L'Admin Globale associa a tale merce: ID e descrizione
   ],
-  trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione"
+  trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione",
 )[
   #use-case-diagram("43", "UC - Creazione di una merce globale")
 ]
+
+=== UC - Aggiornamento informazioni di una merce
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - L'Admin globale deve essere autenticato nella dashboard
+  ],
+  post: [
+    - L'aggiornamento della merce verrà propagato in tutti i magazzini locali
+  ],
+  scenari: [
+    - L'Admin globale modifica le informazioni di una merce nel catalogo
+  ],
+  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
+)[]
 
 = Requisiti Principali
 == Requisiti Funzionali
