@@ -788,6 +788,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   inclusioni: [
     - UC14.1.1.1 @UC14.1.1.1
+    - UC14.1.1.2 @UC14.1.1.2
     - UC15 @UC15
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
@@ -807,6 +808,20 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
+=== UC14.1.1.2 - Visualizza stato singola merce nell'ordine <UC14.1.1.2>
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzato lo stato della singola merce nell'ordine selezionato
+  ],
+)[]
+
 === UC15 - Visualizza nome merce <UC15>
 
 #use-case(
@@ -821,87 +836,75 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
+
 // TODO: definire numero UC da qui in poi
 
 // LORIS
-=== UC - Visualizza lista ordini eseguiti
 
+=== UC - Visualizza la lista delle merci
+
+==== UC - Visualizza elemento lista delle merci
+
+
+=== UC - Visualizza merce
 #use-case(
   attore: "Cliente",
   pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il sistema è attivo, in modalità online o offline
+    - Il Cliente deve essere autenticato nella dashboard
+    - Il Cliente ha selezionato una merce
   ],
   scenari: [
-    - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini eseguiti registrati nel sistema per l'utente corrente
-    // TODO: freccia allo use case del singolo elemento della lista
-    - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema $arrow$ @UCx_Visualizza_elemento_lista_ordini_eseguiti[Vedi UCx Sezione]
-  ],
-  scenari_alternativi: [
-    // TODO: freccia allo use case del singolo elemento della lista
-    - Il Cliente cerca di visualizzare gli ordine eseguiti ma nessun ordine eseguito è registrato nel Sistema per l'utente corrente
-  ],
-  estensioni: [
-    - UCx @UCx_Visualizza_elemento_lista_ordini_eseguiti
-  ],
-  trigger: "l'utente vuole vedere la lista degli ordini eseguiti",
-)[
-  #use-case-diagram("x-lista_ordini_eseguiti", "UCx - Visualizza lista ordini eseguiti")
-]
-
-==== UC - Visualizza elemento lista ordini eseguiti <UCx_Visualizza_elemento_lista_ordini_eseguiti>
-
-#use-case(
-  attore: "Cliente",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando la lista degli ordini eseguiti registrati nel Sistema per l'utente corrente
-  ],
-  scenari: [
-    - Ogni elemento della lista visualizzata deve mostrare:
-      - ID dell'ordine eseguito
-      - Data di invio dell'ordine
-      - Nome dell'ordine
-      - Stato dell'ordine
+    - Il Cliente visualizza a schermo i dettagli della merce selezionata
   ],
   inclusioni: [
-
+    - UC Visualizza lo stock totale di una merce
+    - UC Visualizza stock di una merce per magazzino
+    - UC Visualizza nome di una merce
   ],
-  trigger: "l'utente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
+  trigger: "l'utente vuole visualizzare i dettagli di una merce presente nel Sistema",
 )[
-  #use-case-diagram("x-elemento_lista_ordini_eseguiti", "UCx - Visualizza elemento lista ordini eseguiti")
+  // #use-case-diagram("x-merce", "UCx - Visualizza merce")
 ]
-
-
-=== UC - Visualizzazione dettaglio ordine
-
-
-==== UC - Visualizzazione merci di un ordine
-
-
-==== UC - Visualizza stato delle merci di un ordine
-
-
-==== UC - Visualizza la lista delle merci
-
-
-=== UC - Visualizzazione dettaglio merce
 
 
 ==== UC - Visualizza lo stock totale di una merce
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - Il Cliente deve essere autenticato nella dashboard
+    - Il Cliente ha selezionato una merce
+  ],
+  scenari: [
+    - Il Cliente visualizza a schermo lo stock totale della merce selezionata
+  ],
+  trigger: "l'utente vuole visualizzare lo stock totale di una merce presente nel Sistema",
+)[]
 
 
 ==== UC - Visualizza stock di una merce per magazzino
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - Il Cliente deve essere autenticato nella dashboard
+    - Il Cliente ha selezionato una merce
+  ],
+  scenari: [
+    - Il Cliente visualizza a schermo lo stock della merce selezionata per magazzino
+  ],
+  trigger: "l'utente vuole visualizzare lo stock di una merce per magazzino presente nel Sistema",
+)[]
 
 
-=== UC - Aggiunta di una merce
+=== UC - Aggiunta di una merce al catalogo
 
 
 === UC - Aggiornamento informazioni di una merce
 
 
-=== UC - Eliminazione di una merce
+=== UC - Eliminazione di una merce dal catalogo
 
 
 // EMANUELE
