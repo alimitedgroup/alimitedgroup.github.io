@@ -1,5 +1,5 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/pdp.typ" : *
+#import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
 #let ver = [0.3.0]
@@ -33,7 +33,7 @@
   versione: ver,
   responsabile: ((p.loris),),
   verificatore: ((p.lorenzo),),
-  redattori: ((p.samuele), (p.loris), (p.marco),),
+  redattori: ((p.samuele), (p.loris), (p.marco)),
   descrizione: [Il seguente documento contiene il _Piano di Progetto_ utilizzato, da _ALimitedGroup_, per la realizzazione di un magazzino distribuito presentato da parte di #M31],
   titolo: "Piano di Progetto",
   body,
@@ -531,7 +531,13 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Consuntivo
 
-#impegni(1, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 1 - Consuntivo per componente", "Sprint 1 - Consuntivo")
+#impegni(
+  1,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 1 - Consuntivo per componente",
+  "Sprint 1 - Consuntivo",
+)
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
@@ -604,7 +610,13 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Consuntivo
 
-#impegni(2, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 2 - Consuntivo per componente", "Sprint 2 - Consuntivo")
+#impegni(
+  2,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 2 - Consuntivo per componente",
+  "Sprint 2 - Consuntivo",
+)
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
