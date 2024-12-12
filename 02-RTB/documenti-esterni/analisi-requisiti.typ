@@ -899,12 +899,53 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 
 === UC - Aggiunta di una merce al catalogo
-
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - L'Admin globale deve essere autenticato nella dashboard
+  ],
+  post: [
+    - La nuova merce sarà resa disponibile in tutti i magazzini locali
+  ],
+  scenari: [
+    - L'Admin globale aggiunge una merce al catalogo
+  ],
+  trigger: "L'Admin globale vuole aggiungere una nuova merce al catalogo",
+)[]
 
 === UC - Aggiornamento informazioni di una merce
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - L'Admin globale deve essere autenticato nella dashboard
+  ],
+  post: [
+    - L'aggiornamento della merce verrà propagato in tutti i magazzini locali
+  ],
+  scenari: [
+    - L'Admin globale modifica le informazioni di una merce nel catalogo
+  ],
+  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
+)[]
 
 
 === UC - Eliminazione di una merce dal catalogo
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il sistema è attivo, in modalità online o offline
+    - L'Admin globale deve essere autenticato nella dashboard
+  ],
+  post: [
+    - La merce verrà eliminata in tutti i magazzini locali
+  ],
+  scenari: [
+    - L'Admin globale modifica le informazioni di una merce nel catalogo
+  ],
+  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
+)[]
 
 
 // EMANUELE
