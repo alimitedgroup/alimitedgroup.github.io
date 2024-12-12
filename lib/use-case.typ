@@ -29,7 +29,7 @@
   - *Attore principale*: #attore
 
   #if (attori_secondari != none) {
-    [- *Attore secondario*: attore_secondario]
+    [- *Attore secondario*: #attori_secondari]
   }
 
   - *Precondizioni*: #pre

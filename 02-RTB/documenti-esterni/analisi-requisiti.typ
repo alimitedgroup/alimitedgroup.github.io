@@ -8,6 +8,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.12.0",
+      date: datetime(day: 12, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Redatti Casi d'Uso relativi alla visualizzazione della singola notifica di rifornimento.",
+    ),
+    (
       vers: "0.10.0",
       date: datetime(day: 12, month: 12, year: 2024),
       autore: p.sara,
@@ -260,6 +267,28 @@ Di seguito sono esposti gli attori utilizzati:
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse nel singolo magazzino],
   ),
   caption: [Attori],
+)
+
+Vengono inoltre utilizzati i seguenti attori secondari:
+
+#figure(
+  image("../../assets/diagrams/LLM - Actor.svg", width: 6%),
+  caption: [Diagramma degli attori secondari],
+)
+
+#figure(
+  table(
+    columns: (2fr, 5fr),
+    inset: 10pt,
+    table.header(
+      [*Attore*],
+      [*Descrizione*],
+    ),
+
+    [*LLM*],
+    [Rappresenta un _Large Language Model_ che fornisce consigli di rifornimento sfruttando il _Machine Learning_],
+  ),
+  caption: [Attori secondari],
 )
 
 == Lista casi d'uso
@@ -839,14 +868,14 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 === UC15 - Visualizza nome merce <UC15>
 
 #use-case(
-  attore: "Cliente",
+  attore: "Cliente, Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando una lista di merci di un ordine non confermato registrato nel Sistema per l'utente corrente
+    - L'utente è riconosciuto dal Sistema come Cliente o come Admin Globale
+    - L'attore principale sta visualizzando una lista di merci
   ],
   scenari: [
-    - Viene visualizzata il nome della singola merce nell'ordine non confermato selezionato
+    - Viene visualizzata il nome della singola merce
   ],
 )[]
 
@@ -979,10 +1008,10 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù di voler creare un nuovo trasferimento
-    ],
+  ],
   post: [
     - Il Sistema memorizza l'esistenza di un nuovo trasferimento non confermato con le relative informazioni (identificativo viene fornito dal Sistema)
-    ],
+  ],
   scenari: [
     - L'Admin globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
     - L'Admin globale inserisce l'identificativo del magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UCea.1[Vedi UCe.1 Sezione]
@@ -1036,7 +1065,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "L'Admin globale vuole trasferire oggetti specifici da un magazzino all'altro",
 )[
-  #use-case-diagram("eb-selezione-trasferimento","UCeb - Selezione degli oggetti per il trasferimento")
+  #use-case-diagram("eb-selezione-trasferimento", "UCeb - Selezione degli oggetti per il trasferimento")
 ]
 
 === UCec - Conferma del trasferimento
@@ -1068,7 +1097,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù di voler visualizzare ogni trasferimento
-    ],
+  ],
   scenari: [
     - L'Admin globale seleziona dal menù principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
     - L'Admin globale seleziona un traferimento in particolare dall'elenco per visualizzarne i dettagli $arrow$ @UCed.1[Vedi UCed.1 Sezione]
@@ -1089,12 +1118,12 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale seleziona dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'id del trasferimento $arrow$ @UCed.1.1[Vedi UCed.1.1 Sezione]
     - L'Admin globale visualizza l'identificativo del magazzino mittente del trasferimento $arrow$ @UCed.1.2[Vedi UCed.1.2 Sezione]
-    - L'Admin globale visualizza l'identificativo del magazzino destinatario del trasferimento  $arrow$ @UCed.1.3[Vedi UCed.1.3 Sezione]
+    - L'Admin globale visualizza l'identificativo del magazzino destinatario del trasferimento $arrow$ @UCed.1.3[Vedi UCed.1.3 Sezione]
     - L'Admin globale visualizza lo stato del trasferimento $arrow$ @UCed.1.4[Vedi UCed.1.4 Sezione]
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UCed.1.5[Vedi UCed.1.5 Sezione]
   ],
@@ -1118,7 +1147,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'id del trasferimento
@@ -1134,12 +1163,12 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza il magazzino mittente del trasferimento
   ],
-  trigger:"L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
 ===== UCed.1.3 - Visualizza magazzino destinatario trasferimento
@@ -1150,7 +1179,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza il magazzino destinatario del trasferimento
@@ -1167,7 +1196,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza lo stato del trasferimento
@@ -1183,7 +1212,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
@@ -1192,7 +1221,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
   inclusioni: [
     - UCed.1.5.1 @UCed.1.5.1
-  ]
+  ],
 )[]
 
 ====== UCed.1.5.1 - Visualizza singola merce trasferimento
@@ -1203,7 +1232,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
@@ -1214,7 +1243,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   inclusioni: [
     - UCee @UCee
     - UCed.1.5.1.1 @UCed.1.5.1.1
-  ]
+  ],
 )[
   #use-case-diagram("ed-visualizza-singola-merce-trasferimento", "UCed.1.5.1 - Visualizza singola merce trasferimento")
 ]
@@ -1227,7 +1256,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
-    ],
+  ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
@@ -1245,7 +1274,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L’utente sta visualizzando una merce
-    ],
+  ],
   scenari: [
     - L'Admin globale sta visualizzando una merce
   ],
@@ -1349,22 +1378,151 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC - Visualizza singola notifica rifornimento
+=== UC - Visualizza elenco notifiche di rifornimento fornite da _Machine Learning_
 
+#use-case(
+  attore: "Admin globale",
+  attori_secondari: "LLM",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione delle notifiche di rifornimento fornite da _Machine Learning_
+    - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento fornite da _Machine Learning_ $arrow$ @UCsingoloelementonot[Vedi UC Sezione]
+  ],
+  scenari_alternativi: [
+    - L'Admin globale cerca di visualizzare le notifiche di rifornimento fornite da _Machine Learning_ ma nessuna notifica è presente $arrow$ @UCerrnessunanotifica[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @UCsingoloelementonot
+  ],
+  estensioni: [
+    - UC @UCerrnessunanotifica
+  ],
+  trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento suggerite da" + [_Machine Learning_] + ".",
+)[#use-case-diagram(
+    "M5",
+    "UC - Visualizza elenco notifiche di rifornimento fornite da " + [_Machine Learning_],
+  )]
 
-==== UC - Visualizza elenco merce da riassortire
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M5-incl","Inclusione del Caso d'Uso n.: UC")
+Maggiori informazioni sono disponibili alla @UCsingoloelementonot
 
+=== UC - Visualizza notifica rifornimento
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  scenari: [
+    - L'Admin globale ha selezionato da una lista di notifiche di rifornimento la visualizzazione di una notifica specifia
+    - L'Admin globale visualizza della suddetta notifica:
+      - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UCstatonot[Vedi UC, Sezione]
+      - L'ID della notifica $arrow$ @UCIDnot[Vedi UC, Sezione]
+      - L'elenco della merce il cui rifornimento è consigliato $arrow$ @UCmerceconsrif[Vedi UC Sezione]
+      - Magazzino di destinazione $arrow$ @UCmagdest[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @UCstatonot
+    - UC @UCIDnot
+    - UC @UCmerceconsrif
+    - UC @UCmagdest
+  ],
+  trigger: "L'Admin globale una notifica di rifornimento specifica registrata nel sistema",
+)[#use-case-diagram("M4", "UC - Visualizza notifica di rifornimento")]
 
-===== UC - Visualizza singola merce da rifornire
+Il Caso d'Uso UC include ulteriori Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl","Inclusione del Caso d'Uso n.: UC, UC e UC").
+Riguardo UC e UC è possibile avere maggiori informazioni alla @UCstatonot e alla @UCIDnot, mentre di seguito sarà esposto UC.
 
+==== UC - Visualizza magazzino di destinazione <UCmagdest>
 
-====== UC - Visualizza ID merce
+#use-case(
+  attore: "Cliente, Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente o come Admin globale
+    - L'attore principale sta visualizzando il dettaglio di una notifica di rifornimento
+  ],
+  scenari: [
+    - Viene visualizzata il magazzino di destinazione
+  ],
+)[]
 
+==== UC - Visualizza elenco merce consigliata da rifornire <UCmerceconsrif>
 
-====== UC - Visualizza nome merce
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  scenari: [
+    - L'Admin globale seleziona una notifica di rifornimento specifica
+    - L'Admin Globale visualizza a schermo l'elenco delle merci il cui rifornimento è consigliato $arrow$ @UCelementolistamercerif[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @UCelementolistamercerif
+  ],
+  trigger: "L'Admin globale vuole visualizzare una notifica di rifornimento nel dettaglio",
+)[]
 
+Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl-2","Inclusione del Caso d'Uso n.: UC"). Sarà esposto qui di seguito.
 
-====== UC - Visualizza quantità merce
+===== UC - Visualizza elemento lista merce consigliata da rifornire <UCelementolistamercerif>
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale sta visualizzando un elenco di merce il cui rifornimento è consigliato
+  ],
+  scenari: [
+    - Per ogni elemento della lista viene visualizzato:
+      - ID della merce $arrow$ @UCIDmerce[Vedi UC Sezione]
+      - Nome della merce $arrow$ @UC15[Vedi UC Sezione]
+      - Quantità da rifornire $arrow$ @UCqtamercedarif
+  ],
+  inclusioni: [
+    - UC @UCIDmerce
+    - UC @UC15
+    - UC @UCqtamercedarif
+  ],
+  trigger: "L'Admin globale vuole visualizzare una notifica di rifornimento nel dettaglio",
+)[]
+
+Il Caso d'Uso UC include ulteriori Caso d'Uso come descritto sopra.
+In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti saranno invece esposti qui di seguito.
+
+====== UC - Visualizza ID merce <UCIDmerce>
+
+#use-case(
+  attore: "Cliente, Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente o come Admin globale
+    - L'attore principale sta visualizzando una lista di merci
+  ],
+  scenari: [
+    - Viene visualizzata l'ID della singola merce
+  ],
+)[]
+
+====== UC - Visualizza quantità merce da rifornire <UCqtamercedarif>
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale sta visualizzando una lista di merci in una notifica di rifornimento
+  ],
+  scenari: [
+    - Viene visualizzata la quantità da rifornire consigliata della singola merce
+  ],
+)[]
 
 
 === UC - Accetta notifica di rifornimento
