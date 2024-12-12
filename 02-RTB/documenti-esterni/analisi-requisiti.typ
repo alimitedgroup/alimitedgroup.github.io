@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.9.0]
+#let ver = [0.10.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.10.0",
+      date: datetime(day: 12, month: 12, year: 2024),
+      autore: p.sara,
+      verifica: p.samuele,
+      descr: "Redatto Caso d'Uso relativo all'esportazione ordine eseguiti. Redatto Caso d'Uso relativo all'esportazione report di inventario",
+    ),
     (
       vers: "0.9.0",
       date: datetime(day: 12, month: 12, year: 2024),
@@ -1198,8 +1205,84 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
 === UC - Esportazione ordini
 
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  post: [
+    - Il file CSV viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando fedelmente gli ordini eseguiti
+
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
+  ],
+  scenari_alternativi: [
+    - L'Admin globale cerca di esportare gli ordini eseguiti ma non ci sono dati da esportare $arrow$ @UCerrnessunordine[Vedi UC, Sezione]
+  ],
+  estensioni: [
+    - UC @UCerrnessunordine
+  ],
+  trigger: "L’Admin globale richiede l’esportazione degli ordini eseguiti tramite l’apposita funzionalità.",
+)[
+  //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+]
+
+=== UC - Nessun ordine da esportare <UCerrnessunordine>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
+  ],
+
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti ma nessun ordine è stato esuguito
+  ],
+)[]
+
+
 
 === UC - Esportazione report inventario
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  post: [
+    - Il file CSV viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando accuratamente lo stato attuale dell’inventario
+
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario
+  ],
+  scenari_alternativi: [
+    - L'Admin globale cerca di esportare l'inventario ma non ci sono dati da esportare $arrow$ @UCerrnessundatoinventario[Vedi UC, Sezione]
+  ],
+  estensioni: [
+    - UC @UCerrnessundatoinventario
+  ],
+  trigger: "L’Admin globale richiede l’esportazione del report dekk'inventario tramite l’apposita funzionalità.",
+)[
+  //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+]
+
+=== UC - Nessun ordine da esportare <UCerrnessundatoinventario>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario
+  ],
+
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario ma nessun dato è disponibile
+  ],
+)[]
 
 
 === UC - Creazione di una soglia minima per una merce
