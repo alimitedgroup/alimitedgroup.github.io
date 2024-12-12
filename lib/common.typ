@@ -252,7 +252,7 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Indice #v(3em)], indent: auto)
+  outline(title: [#v(2em) Indice #v(3em)], indent: 1em)
 }
 
 /// Collega una parola del documento alla sua definizione nel glossario
@@ -286,7 +286,7 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Lista delle tabelle #v(3em)], indent: auto, target: figure.where(kind: table))
+  outline(title: [#v(2em) Lista delle tabelle #v(3em)], indent: 1em, target: figure.where(kind: table))
 }
 
 /// Indicizza le immagini presenti nel documento
@@ -295,7 +295,7 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Lista delle immagini #v(3em)], indent: auto, target: figure.where(kind: image))
+  outline(title: [#v(2em) Lista delle immagini #v(3em)], indent: 1em, target: figure.where(kind: image))
 }
 
 ///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
