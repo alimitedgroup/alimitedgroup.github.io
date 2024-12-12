@@ -1162,9 +1162,54 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
 // MARCO
 
-=== UC - Aggiunta stock di una merce
+=== UC - Aggiunta stock di una merce globale
+#use-case(
+  attore: "Admin Globale",
+  pre:[
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - La merce selezionata è pre-esistente, ovvero non bisogna farne la creazione
+  ],
+  post:[
+    - Il Sistema registra l'aggiunta di stock a quella determinata merce
+    - Il Sistema comunica all'Admin Globale la corretta esecuzione del processo di aggiunta
+    - Il Sistema comunica a tutti i magazzini locali l'aggiunta di stock a tale merce
+  ],
+  scenari:[
+    - L'Admin Globale seleziona la merce a cui verrà aggiornata la quantità (stock)
+    - L'Admin Globale seleziona la quantità da aggiungere a tale merce
+  ],
+  scenari_alternativi: [
+    - L'Admin Globale tenta di aggiornare la quantità ad una merce non presente nel magazzino
+    - L'Admin Globale crea la nuova merce $arrow.r$ Vedi UC, @UC_creazionemerceglob 
+    - L'Admin Globale aggiorna la quantità della nuova merce
+  ],
+  inclusioni:[UC @UC_creazionemerceglob],
+  trigger: "L'Admin Globale vuole aggiornare la quantità (stock) per una determinata merce "
+)[
+  #use-case-diagram("42","UC - Aggiunta stock di una merce globale")
+]
 
+==== UC - Creazione merce globale <UC_creazionemerceglob>
 
+#use-case(
+  attore: "Admin Globale",
+  pre:[
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - La merce che verrà creata non può essere in nessun modo già esistente all'interno del Sistema
+  ],
+  post:[
+    - Il Sistema registra la creazione di una nuova merce
+    - Il Sistema comunica all'Admin Globale la corretta esecuzione del processo di creazione
+    - Il Sistema comunica a tutti i magazzini locali la creazione di una nuova merce
+  ],
+  scenari:[
+    - L'Admin Globale crea una nuova merce nel Sistema
+    - L'Admin Globale associa a tale merce: ID, quantità e descrizione
+  ],
+  trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione"
+)[]
 
 = Requisiti Principali
 == Requisiti Funzionali
