@@ -1197,7 +1197,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 === UC - Aggiunta stock di una merce
 #use-case(
   attore: "Admin Locale",
-  pre:[
+  pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Locale
     - La merce selezionata è pre-esistente, ovvero non bisogna farne la creazione
@@ -1207,7 +1207,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
     - Il Sistema comunica all'Admin Locale la corretta esecuzione del processo di aggiunta
     - Il Sistema comunica al magazzino globale l'aggiunta di stock a tale merce
   ],
-  scenari:[
+  scenari: [
     - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock)
     - L'Admin Locale seleziona la quantità da aggiungere a tale merce
   ],
