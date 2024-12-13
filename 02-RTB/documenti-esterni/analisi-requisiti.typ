@@ -8,6 +8,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.13.0",
+      date: datetime(day: 13, month: 12, year: 2024),
+      autore: p.sara,
+      verifica: p.samuele,
+      descr: "Redatto Caso d'Uso relativo soglia minima",
+    ),
+    (
       vers: "0.12.0",
       date: datetime(day: 13, month: 12, year: 2024),
       autore: p.matteo,
@@ -1667,12 +1674,9 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - Viene visualizzato il numero di richieste al secondo per il microservizio
   ],
 )[]
-
-
 // SARA
 
 === UC - Esportazione ordini
-
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1694,6 +1698,8 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   trigger: "L’Admin globale richiede l’esportazione degli ordini eseguiti tramite l’apposita funzionalità.",
 )[
+  //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
+  // INTANTO E' SU DRAW.IO
   //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
 ]
 
@@ -1703,11 +1709,13 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
+    - L'Admin globale ha selezionato dal menu la voce relativa all'esportazione degli ordini eseguiti
   ],
-
+  post: [
+    -Il Sistema invia una notifica informando che non c'è alcun ordine da esportare
+  ],
   scenari: [
-    - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti ma nessun ordine è stato eseguito
+    - L'Admin globale seleziona dal menù la voce relativa all'esportazione degli ordini eseguiti ma nessun ordine è stato eseguito
   ],
 )[]
 
@@ -1733,18 +1741,23 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   estensioni: [
     - UC @UCerrnessundatoinventario
   ],
-  trigger: "L’Admin globale richiede l’esportazione del report dekk'inventario tramite l’apposita funzionalità.",
+  trigger: "L’Admin globale richiede l’esportazione del report dell'inventario tramite l’apposita funzionalità.",
 )[
+  //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
+  // INTANTO E' SU DRAW.IO
   //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
 ]
 
-=== UC - Nessun ordine da esportare <UCerrnessundatoinventario>
+=== UC - Nessun dato inventario <UCerrnessundatoinventario>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario
+    - L'Admin globale ha selezionato dal menu la voce relativa all'esportazione del report dell'inventario
+  ],
+  post: [
+    -Il Sistema invia una notifica informando che non c'è alcun dato dell'inventario disponibile
   ],
 
   scenari: [
@@ -1754,9 +1767,100 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 
 
 === UC - Creazione di una soglia minima per una merce
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+
+  post: [
+    - La soglia minima impostata viene salvata correttamente nel Sistema
+  ],
+  scenari: [
+    - L’Admin globale accede dal menù alla sezione gestione inventario.
+    - L’Admin seleziona la merce per cui vuole impostare una soglia minima.
+    - L’Admin inserisce il valore della soglia minima desiderata
+    - L’Admin conferma l’operazione
+
+  ],
+  scenari_alternativi: [
+    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UCsogliaminimanonvalida[Vedi UC, Sezione]
+  ],
+  estensioni: [
+    - UC @UCsogliaminimanonvalida
+  ],
+  trigger: "L’Admin globale richiede di impostare una soglia minima per una specifica merce.",
+)[
+  //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
+  // INTANTO E' SU DRAW.IO
+  //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+]
+
+=== UC-Selezione merce
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - L’Admin globale accede dal menù alla sezione gestione inventario
+  ],
+  scenari: [
+    - L’Admin globale seleziona la merce per cui vuole impostare una soglia minima
+  ],
+)[]
+
+=== UC-Inserisci soglia minima
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - L’Admin globale accede dal menù alla sezione gestione inventario
+    - L’Admin ha selezionato la merce per cui vuole impostare una soglia minima
+  ],
+
+  scenari: [
+    - L’Admin inserisce il valore della soglia minima desiderata
+  ],
+  scenari_alternativi: [
+    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UCsogliaminimanonvalida[Vedi UC, Sezione]
+  ],
+  estensioni: [
+    - UC @UCsogliaminimanonvalida
+  ],
+)[]
+==== UC - Soglia minima non valida <UCsogliaminimanonvalida>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - L’Admin globale accede dal menù alla sezione gestione inventario.
+    - L’Admin seleziona la merce per cui vuole impostare una soglia minima.
+    - L’Admin inserisce una soglia minima
+  ],
+  post: [
+    - Il Sistema notifica l’admin dell’errore e richiede un valore valido.
+  ],
+  scenari: [
+    - L'Admin globale inserisce una soglia minima non valida relativa ad una specifica merce
+  ],
+)[]
+
+=== UC-Conferma operazione
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - L’Admin globale è nella sezione gestione inventario
+    - L’Admin ha selezionato la merce per cui vuole impostare una soglia minima
+    -L'Admin ha inserito una soglia minima valida
+  ],
+  post: [
+    - La soglia minima impostata viene salvata correttamente nel Sistema
+  ],
+
+  scenari: [
+    - L’Admin conferma l'operazione
+  ],
+)[]
 
 
-==== UC - Soglia minima non valida
+
 
 
 // MARCO
