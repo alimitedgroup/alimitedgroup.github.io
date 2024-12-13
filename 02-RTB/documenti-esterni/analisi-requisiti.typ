@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.11.0]
+#let ver = [0.12.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.12.0",
+      date: datetime(day: 13, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Redatti Casi d'Uso relativi alle richieste al secondo per microservizi e Casi d'Uso correlati.",
+    ),
     (
       vers: "0.11.0",
       date: datetime(day: 12, month: 12, year: 2024),
@@ -1607,13 +1614,59 @@ Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente
 Il Caso d'Uso UC include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("M3-incl", "Inclusione del Caso d'Uso n.: UC")
 Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
-=== UC - Mostra lista dei microservizi
+=== UC - Visualizza elenco microservizi
 
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+  ],
+  scenari: [
+    - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione dei microservizi
+    - L'Admin globale visualizza a schermo la lista dei microservizi del Sistema $arrow$ @UCsingoloelementomicr[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @UCsingoloelementomicr
+  ],
+  trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
+)[#use-case-diagram("M6", "UC - Visualizza elenco microservizi")]
 
-==== UC - Visualizza singolo elemento microservizi
+Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M6-incl","Inclusione del Caso d'Uso n.: UC").
+Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito.
 
+==== UC - Visualizza elemento lista microservizi <UCsingoloelementomicr>
 
-===== UC - Visualizza numero di richieste al secondo
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale sta visualizzando una lista di microservizi
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista visualizzata dall'Admin globale dovrà contenere:
+      - numero di richieste al secondo $arrow$ @ricsecmicr[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @ricsecmicr
+  ],
+  trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
+)[]
+
+===== UC - Visualizza numero richieste al secondo del microservizio <ricsecmicr>
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'admin globale sta visualizzando un microservizio o un elenco di microservizi
+  ],
+  scenari: [
+    - Viene visualizzato il numero di richieste al secondo per il microservizio
+  ],
+)[]
 
 
 // SARA
