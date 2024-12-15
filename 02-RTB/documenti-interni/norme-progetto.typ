@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.7.0]
+#let ver = [0.9.0]
 
 #show figure: set block(breakable: true)
 
@@ -8,6 +8,20 @@
   data: datetime(day: 15, month: 11, year: 2024),
   tipo: [interno],
   versioni: (
+    (
+      vers: "0.9.0",
+      date: datetime(day: 15, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Miglioramento Sezione \"Documentazione Fornita\" del processo di Fornitura",
+    ),
+    (
+      vers: "0.8.0",
+      date: datetime(day: 15, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Ristrutturazione documento, accorpamento di alcune sezioni",
+    ),
     (
       vers: "0.7.0",
       date: datetime(day: 3, month: 12, year: 2024),
@@ -74,8 +88,16 @@
 = Introduzione
 
 == Scopo del documento
-Questo documento nasce per descrivere il _Way of Working_ adottato da parte di questo gruppo durante tutto l'arco di svolgimento del progetto didattico. In tale documento, perciò, vengono analizzate tutte le _best practices_ da seguire per ogni tipo di processo, ciascuno di questo avrà correlato le attività che lo compongono seguendo la struttura definita nello standard _ISO/IEC 12207:1995_.\
-Per la stesura di questo documento è stata intrapresa un metodo incrementale, cioè la stesura passo passo del documento con modifiche, aggiunte e cancellazioni successive ad un _template_ base. \
+Questo documento nasce per descrivere il _Way of Working_ adottato da parte di _ALimitedGroup_ durante tutto l'arco di tempo dedicato allo svolgimento del progetto didattico.
+
+Per realizzare il _Way of Working_, i componenti hanno deciso di prendere come riferimento lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi:
+
+- *Primari*: i processi senza il quale un progetto non può definirsi tale;
+- *Supporto*: i processi che coadiuvano i processi primari nello svolgimento delle rispettive azioni;
+- *Organizzativi*: processi di carattere più generale che aiutano la realizzazione dei progetti.
+
+Per la stesura di questo documento è stata deciso un metodo incrementale, cioè una stesura passo passo del documento con modifiche, aggiunte e cancellazioni a seguito di modifiche del metodo di lavoro.
+
 I membri dell'intero gruppo si impegnano a visionare constantemente questo documento e a rispettare rigorosamente le regole definite in esso, per svolgere il progetto in modo professionale, coerente ed uniforme.
 
 == Scopo del prodotto
@@ -86,7 +108,8 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 
 == Glossario
 
-La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.\
+La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
+
 Per evitare, perciò, ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, è stato deciso di utilizzare un Glossario in cui è trascritta, per ogni parola, la definizione. \
 La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
 #align(center)[parola#super[g]]
@@ -106,23 +129,15 @@ _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permette
 - Glossario \
   #link("https://alimitedgroup.github.io/Glossario.pdf") ///questo link va assolutamente cambiato quando sarà pubblicato il glossario
 
-
-
-Lo standard classifica tre tipologie di processi:
-
-- *Primari*: i processi senza il quale un progetto non può definirsi tale;
-- *Supporto*: i processi che coadiuvano i processi primari nello svolgimento delle rispettive azioni;
-- *Organizzativi*: processi di carattere più generale che aiutano la realizzazione dei progetti.
-
-Durante la realizzazione del progetto, il gruppo ha deciso di adottare alcuni di questi processi: saranno qui descritti assieme anche alle loro principali azioni.
+#pagebreak()
 
 = Processi Primari
 Per sviluppare un buon sistema software la sola scrittura di codice e lo svolgimento di alcuni test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ossia che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
-Tra i più rigorosi modelli esistenti sicuramente è innegabile l'importanza di quello descritto dallo _standard ISO/IEC 12207_ pubblicato, nella sua prima versione, nel 1995.\
 
-Tra i processi primari, definiti dallo _standard ISO/IEC 12207_, utilizzati nell'ambito del progetto distinguiamo:
-- Fornitura
-- Sviluppo
+Tra i processi primari definiti dallo _standard ISO/IEC 12207_ si distinguono i processi di:
+
+- *Fornitura*
+- *Sviluppo*
 
 == Fornitura
 
@@ -135,11 +150,11 @@ e poter comunicare allo stesso una possibile pianificazione del lavoro da svolge
 
 Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strumenti:
 - *_Google Calendar_*: per rendere pubblici del gruppo e a portata di mano tutti gli appuntamenti previsti;
-- *_GitHub_*: per la gestione del _BackLog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da fare;
+- *_GitHub_*: per la gestione del _Backlog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da far. GitHub offre inoltre una visualizzazione specifica per avere dei diagrammi di Gantt, utili per fini di pianificazione;
 - *_Discord_* e *_Telegram_*: per concordare internamente pianificazioni mediante riunioni interne.
 Le comunicazioni verso l'azienda proponente richiedono, invece, l'utilizzo di:
-- _*Email*_ per le comunicazioni scritte;
-- _*Microsoft Teams*_ per le riunioni non svolte in sede di #M31
+- _*Google Mail*_ per le comunicazioni scritte;
+- _*Microsoft Teams*_ per le riunion totalmente e parzialmente svolte in remoto con #M31
 
 
 === Attività previste
@@ -154,11 +169,156 @@ La fornitura prevede varie attività, qui di seguito descritte:
 - *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto prodotto, con annessa quindi una valutazione sullo stato di lavoro;
 - *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, con l'impegno di fornire supporto a quest'ultimo.
 
+=== Documentazione Fornita <elenco-documenti>
+
 Vengono ora elencati di seguito tutti i documenti che _ALimitedGroup_ consegnerà all'azienda #M31 e ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_.
 
-Per maggiori informazioni in merito ai ruoli che si occupano della redazione di ciascuno di questi documenti si veda la @documentazione-supporto.
+==== Analisi dei Requisiti
 
-=== Valutazione dei Capitolati <elenco-documenti>
+L'#link("")[*Analisi dei Requisiti*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato e, infine, informazioni utili al tracciamento degli stessi.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Analisi dei Requisiti*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Analisti],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Analisi dei Requisiti"],
+)
+
+
+==== Dichiarazione degli Impegni
+
+La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti del gruppo svolgeranno durante lo stesso.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Dichiarazione degli Impegni*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Dichiarazione degli Impegni"],
+)
+
+==== Glossario
+
+I componenti di _ALimitedGroup_ hanno verificato la necessità di avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i molti termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
+
+Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.io/Glossario.pdf")[*Glossario*], rivelatosi molto utile nel corso del tempo.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Glossario*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Amministratore],
+    [*Destinatari*], [ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Interno],
+  ),
+  caption: [Proprietà del documento "Glossario"],
+)
+
+==== Lettera di Candidatura
+
+La #link("https://alimitedgroup.github.io/Lettera%20di%20candidatura.pdf")[*Lettera di Candidatura*] è il documento con cui _ALimitedGroup_ ha ufficialmente presentato la sua candidatura al capitolato proposto dall'azienda #M31.
+Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti del gruppo a scegliere questo capitolato, nonché le informazioni generali riguardanti i _repository_ del gruppo contenente tutti i documenti relativi al progetto.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Lettera di Candidatura*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Lettera di Candidatura"],
+)
+
+==== Lettera di Presentazione
+
+Di due tipologie:
+- La Lettera di presentazione per la *_Requirements and Technology Baseline (RTB)_*
+- La lettera di presentazione per la *_Product Baseline (PB)_*
+
+Lo scopo del documento è quello di presentare formalmente la candidatura di _ALimitedGroup_ alle rispettive _Baseline_.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Lettera di Presentazione*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Lettera di Presentazione"],
+)
+
+==== Norme di Progetto
+
+Il presente documento: stabilisce il _Way of Working_ e le pratiche di sviluppo adottate dal gruppo.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Norme di Progetto*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Amministratore],
+    [*Destinatari*], [ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Interno],
+  ),
+  caption: [Proprietà del documento "Norme di Progetto"],
+)
+
+==== Piano di Progetto
+
+Il #link("https://alimitedgroup.github.io/Piano%20di%20progetto%200.1.0.pdf")[*Piano di Progetto*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_ in _sprint_, nonché l'analisi dei rischi associati a ciascuna attività.\
+Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Piano di Progetto*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Piano di Progetto"],
+)
+
+==== Piano di Qualifica
+
+Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGroup_, nonché i test effettuati sul prodotto e i rispettivi esiti.
+
+#figure(
+  table(
+    table.cell(colspan: 2)[*Piano di Qualifica*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Amministratore],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Piano di Qualifica"],
+)
+
+==== Valutazione dei Capitolati
 
 La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[*Valutazione dei Capitolati*] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
 Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
@@ -168,44 +328,52 @@ Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando
 - *Criticità evidenziate*
 - *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
 
+#figure(
+  table(
+    table.cell(colspan: 2)[*Valutazione dei Capitolati*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Valutazione dei Capitolati"],
+)
 
-=== Lettera di Candidatura
+==== Verbale Esterno
 
-La #link("https://alimitedgroup.github.io/Lettera%20di%20candidatura.pdf")[*Lettera di Candidatura*] è il documento con cui _ALimitedGroup_ ha ufficialmente presentato la sua candidatura al capitolato proposto dall'azienda #M31.
-Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti del gruppo a scegliere questo capitolato, nonché le informazioni generali riguardanti i _repository_ del gruppo contenente tutti i documenti relativi al progetto.
+Verbale di una riunione svolta con persone esterne al gruppo.
 
-=== Dichiarazione degli Impegni
+#figure(
+  table(
+    table.cell(colspan: 2)[*Verbale Esterno*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile o Amministratore],
+    [*Destinatari*], [#M31, ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Verbale Esterno"],
+)
 
-La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti del gruppo svolgeranno durante lo stesso.
+==== Verbale Interno
 
-=== Analisi dei requisiti
+Verbale di una riunione svolta senza la presenza di persone esterne al gruppo.
 
-L'#link("")[*Analisi dei Requisiti*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene:
-
-[PROSEGUIRE]
-
-=== Lettera di Presentazione
-
-La #link("")[*Lettera di Presentazione*] per la _Requirements and Technology Baseline (RTB)_ è il documento con cui _ALimitedGroup_ si candida ufficialmente per la prima _Baseline_ del progetto del corso di Ingegneria del Software.
-Essa contiene le informazioni rilevanti a tale fine, come, a mero titolo di esempio, i _link_ ai documenti realizzato per l'occasione e in questa Sezione elencati.
-
-=== Piano di Progetto
-
-Il #link("https://alimitedgroup.github.io/Piano%20di%20progetto%200.1.0.pdf")[*Piano di Progetto*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_ in _sprint_, nonché l'analisi dei rischi associati a ciascuna attività.\
-Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
-
-=== Piano di Qualifica
-
-[PROSEGUIRE]
-
-=== Glossario
-
-I componenti di _ALimitedGroup_ hanno verificato la necessità di avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i molti termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
-
-Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.io/Glossario.pdf")[*Glossario*], rivelatosi molto utile nel corso del tempo.
-
-[PROSEGUIRE]
-
+#figure(
+  table(
+    table.cell(colspan: 2)[*Verbale Interno*],
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    [*Redattore*], [Responsabile o Amministratore],
+    [*Destinatari*], [ALimitedGroup, #profBreve(p.tullio), #profBreve(p.cardin)],
+    [*Uso*], [Interno],
+  ),
+  caption: [Proprietà del documento "Verbale Interno"],
+)
 
 == Sviluppo
 
@@ -218,42 +386,41 @@ Il processo di sviluppo contiene le attività principalmente svolte dagli svilup
 = Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
 
-- Documentazione
-- Gestione delle configurazioni
-- Accertamento qualità
-- Qualifica, formata a sua volta da:
-  - Verifica
-  - Validazione
-- Revisione
-- Revisione congiunta
-- Gestione dei cambiamenti
+- *Documentazione*
+- *Gestione delle configurazioni*
+- *Accertamento qualità*
+- *Qualifica*, formata a sua volta da:
+  - *Verifica*
+  - *Validazione*
+- *Revisione*
+- *Revisione congiunta*
+- *Gestione dei cambiamenti*
 
 Saranno ora descritti nel dettaglio le attività previste.
 
-== Documentazione
+== Documentazione <documentazione>
 
 Il processo di documentazione è parte fondamentale di tutti i processi primari: il prodotto di tale processo è infatti essenziale per tenere traccia delle decisioni intraprese e per favorire il lavoro asincrono, molto più produttivo di quello sincrono nel nostro ambito.\
 
 Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni prodotto da un processo o da un'attività nel ciclo di vita.\
-Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati (come manager, ingegneri e utenti del sistema o del prodotto _software_). \
+Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati.\
+
+=== Strumenti a supporto
+
+Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
+
+- *_Typst_*: trattasi di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX* per la dezione di documenti a carattere scientifico e non solo.
+  _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti.
+  Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_ appositamente scritte allo scopo presenti all'interno di documenti che noi chiamiamo _Template_.\
+  La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa Sezione saranno invece descritte le strutture dei vari documenti.
+
+- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @infrastruttura.
+
+=== Attività previste
 
 Il processo di documentazione è un processo assai delicato, e molto importante. Le attività cardine di questo processo sono due:
 - *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
 - *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
-
-Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
-- *_Typst_*: trattasi di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LATEX* per la dezione di documenti a carattere scientifico e non solo.
-  _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti, per ulteriori dettagli consultare la @sezione_typst;
-
-- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_ per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @sezione_github.
-
-
-=== Typst <sezione_typst>
-
-Come anticipato, _ALimitedGroup_ ha scelto di utilizzare _Typst_ per la redazione di tutti i documenti.\
-Nello specifico, la redazione dei coumenti sfrutta apposite funzioni di _Typst_ appositamente scritte allo scopo all'interno di documenti che noi chiamiamo _Template_.\
-
-La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, qui di seguito saranno invece descritte le strutture dei vari documenti.
 
 === Verbali <desc-templ-verbale>
 
@@ -283,11 +450,10 @@ La seconda sezione, che segue quanto appena scritto, esplicita quanto discusso p
 Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato; l'ultima sezione, invece, si riferisce alla _tabella delle decisioni e delle azioni_ che, tramite il sistema di _ticketing_, elenca tutte le decisioni e azioni prese
 dal gruppo, tale tabella è facilmente realizzabile tramite la funzione "tabella-decisioni".\
 
-In ultima istanza, i verbali esterni devono avere anche una sezione dedicata all'approvazione esterna e su ogni pagina (ad eccezione della pagina di copertina) del verbale deve essere riportato il numero di pagina e un _header_ con:
+In ultima istanza, i *verbali esterni* devono avere anche una sezione dedicata all'approvazione esterna e su ogni pagina (ad eccezione della pagina di copertina) del verbale deve essere riportato il numero di pagina e un _header_ con:
 - *Nome del gruppo*;
 - *Tipo verbale*;
 - *Data della riunione*.
-
 
 === Diari di bordo
 
@@ -299,7 +465,8 @@ In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Difficoltà riscontrate e questioni aperte*, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
 
 === Altri documenti
-Per tutti gli altri documenti, un cui riassunto comprensivo può essere trovato nella @documentazione-supporto, la struttura è composta da:
+Per tutti gli altri documenti la struttura è composta da:
+
 - *Pagina di copertina*, con:
   - Nome del documento;
   - Versione;
@@ -322,8 +489,8 @@ La produzione di un documento segue solitamente questi passaggi:
 
 - *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
 
-- *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (si veda la tabella nella sezione successiva) si assegna l'issue di redazione e inizia la redazione del documento nel branch dedicato
-- *Verifica*: terminata la redazione, il redattore apre una pull request su github per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività, lasciando l'elenco delle modifiche da apportare ai relatori.
+- *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (vedi la @elenco-documenti per maggiori informazioni) si assegna l'issue di redazione e inizia la redazione del documento nel branch dedicato
+- *Verifica*: terminata la redazione, il redattore apre una _pull request_ su GitHub per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività che potrà avere esito positivo oppure negativo, lasciando, in questo caso, l'elenco delle modifiche da apportare ai relatori.
 \
 A questo punto il processo diviene differente per i verbali e i rimanenti documenti:
 
@@ -362,121 +529,27 @@ L'attività di manutenzione è necessaria nel momento in cui un documento ha bis
 
 Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
 
-
-=== Documentazione prodotta o di supporto <documentazione-supporto>
-
-Di seguito vengono elencati la totalità dei documenti prodotti, una cui prima descrizione è stata realizzata nella @elenco-documenti.
-
-#show table.cell: it => align(center + horizon, it)
-#figure(
-  table(
-    align: center,
-    columns: (1fr, 1.8fr, 1.2fr, 1.5fr, 0.65fr),
-    inset: 5pt,
-    table.header(
-      [*Documento*],
-      [*Descrizione*],
-      [*Redattore*],
-      [*Destinatari*],
-      [*Uso*],
-    ),
-
-    [Analisi dei Requisiti],
-    [Documento contenente informazioni sui requisiti obbligatori, desiderabili e opzionali del progetto],
-    [Analisti],
-    [#M31,\ ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Lettera di Candidatura],
-    [Lettera redatta per presentare la candidatura del gruppo al capitolato di #M31],
-    [-],
-    [ALimitedGroup, \
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Lettera di Presentazione (RTB)],
-    [Lettera redatta per presentare la candidatura del gruppo alla _RTB_],
-    [Responsabile],
-    [#M31,\ ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Lettera di Presentazione (PB)],
-    [Lettera redatta per presentare la candidatura del gruppo alla _Product Baseline_],
-    [Responsabile],
-    [#M31,\ ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Norme di Progetto],
-    [Stabilisce il _Way of Working_ e le pratiche di sviluppo adottate dal gruppo],
-    [Amministratore],
-    [ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Interno],
-
-    [Piano di Progetto],
-    [Definisce quanto realizzato in ogni periodo con relativi costi e aggiornamenti del _budget_ rimanente],
-    [Responsabile],
-    [#M31,\ ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Piano di Qualifica],
-    [Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGroup_],
-    [Amministratore],
-    [#M31,\ ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Verbale Esterno],
-    [Verbale di una riunione svolta con persone esterne al gruppo],
-    [Responsabile \ o Amministratore],
-    [#M31,\ ALimitedGroup,
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Esterno],
-
-    [Verbale Interno],
-    [Verbale di una riunione svolta senza la presenza di persone esterne al gruppo],
-    [Responsabile \ o Amministratore],
-    [ ALimitedGroup,\
-      #profBreve(p.tullio), \
-      #profBreve(p.cardin)],
-    [Interno],
-  ),
-  caption: [Dettaglio documenti e ruolo responsabile della rispettiva redazione],
-)
-
 == Gestione delle Configurazioni
 
 La gestione delle configurazioni è un processo fondamentale in un progetto: essa permette di identificare le singole componenti del sistema sviluppato e controllarne le modifiche e i rilasci, nonché registrare lo stato di sviluppo di ciascuna. Complessivamente, il processo permette di avere un buon sviluppo.
 
 L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
-- Identificazione della configurazione
-- Controllo della configurazione
-- Registrazione dello stato di configurazione
-- Valutazione della configurazione
+- *Identificazione della configurazione*
+- *Controllo della configurazione*
+- *Registrazione dello stato di configurazione*
+- *Valutazione della configurazione*
 
 Per ogni attività esposta precedentemente ed a supporto di ognuna, _ALimitedGroup_ utilizza:
 - _Git_
 - _GitHub_
 
-Per ulteriori informazioni si veda la @implementazione
+Per ulteriori informazioni si veda la @implementazione.
 
 === Identificazione della configurazione
 
 Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell'architettura del sistema da sviluppare e allegare il risultato di quanto compreso all'#link("")[*Analisi Progettuale (CAMBIARE LINK O NOME DOCUMENTO SE NECESSARIO*)].
 
-Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @elenco-documenti e nella @documentazione-supporto.
+Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @documentazione.
 
 === Controllo della configurazione <controllo-config>
 
@@ -499,7 +572,7 @@ ALimitedGroup ha deciso di attuare questa attività nel repository dei documenti
 - _*Board*_: serve per stabilire se una _issue_ presa in carico è ancora da iniziare, in sviluppo o terminata
 - _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_. Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
 
-Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di _Git_, un _version control system_ sviluppato da Linus Torvalds e brevemente descritto nella @sezione_git.
+Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di _Git_, un _version control system_ sviluppato da Linus Torvalds e brevemente descritto nella @infrastruttura.
 
 [PROSEGUIRE con Codice]
 
@@ -556,6 +629,8 @@ Questi test saranno descritti in un documento apposito, il #link("")[*Test Book 
 [PROSEGUIRE] Sezione Documentazione prodotta o di supporto
 
 == Revisione congiunta
+// This process may be employed by any two parties, where one party
+(reviewing party) reviews another party (reviewed party).
 [PROSEGUIRE] Sezione Strumenti a supporto
 [PROSEGUIRE] Sezione Attività previste
 [PROSEGUIRE] Sezione Documentazione prodotta o di supporto
@@ -567,34 +642,31 @@ Questi test saranno descritti in un documento apposito, il #link("")[*Test Book 
 
 = Processi Organizzativi
 
-I *processi organizzativi* sono dei processi a supporto del progetto che assicurano il buon andamento dell'intero progetto.
-
+I *Processi Organizzativi* sono dei processi a supporto del progetto che assicurano il buon andamento dell'intero progetto.
 Le attività previste assicurano la buona esecuzione di tutti i processi adottati e l'adozione di eventuali miglioramenti, la gestione delle infrastrutture utilizzate e la formazione del team nei compiti da seguire.
+
+Tra i processi organizzativi si individuano:
+
+- *Gestione dei Processi*
+- *Infrastruttura*
+- *Miglioramento*
+- *Formazione*
 
 == Gestione dei Processi
 
-La *gestione dei processi* ha il compito di individuare i ruoli che dovranno permettere tutte le attività elencate in questo documento.
+La *Gestione dei Processi* ha il l'obbiettvo di individuare i compiti da svolgere e i ruoli alla quale questi saranno assegnati, nonché permettere una comunicazione interna ed esterna efficace e altresì garantire lo svolgimento delle varie attività in maniera efficace mediante una opportuna pianificazione.
 
 Le attività principali, osservate da _ALimitedGroup_, previste da questo processo sono:
-- Inizializzazione
-- Pianificazione
-- Esecuzione e controllo
-- Revisione e valutazione
-- Finalizzazione
+- *Inizializzazione*: è necessario stabilire i requisiti delle attività da svolgere, cercando di comprendere quali risorse esse richiedono. È compito del *Responsabile* determinare queste caratteristiche che vengono comunque discusse internamente a mezzo di riunioni interne.
+- *Pianificazione*: è necessario, stabiliti i requisiti, comprendere il tempo necessario per completare le attività, così come è necessario anche stimare i costi economici e temporali necessari allo svolgimento. Per facilitare questo compito, è stato scelto di dividere le responsabilità in vari ruoli, vedi @ruoli.
+- *Esecuzione e controllo*: L'esecuzione delle attività è affidata quindi ai vari ruoli e il *Responsabile* dovrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
+- *Revisione e valutazione*: Una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del *Verificatore*. Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice.
+- *Finalizzazione*: Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
 
-=== Inizializzazione
+Nell'interesse dello scopo del presente documento saranno ora descritti i ruoli prima citati e le loro responsabilità, previsti in particolar modo dall'attività di *pianificazione*.
+Sarà quindi dato spazio ad una parte fondamentale del gruppo, ovvero i metodi di *coordinamento*.
 
-È compito del *Responsabile* stabilire anzitutto i requisiti della nuova attività da svolgere, comprendendo che compiti prevede e quali costi, in termini temporali e non solo, tale attività comporti, cercando di ben tenere in considerazione il tempo a disposizione per completare il tutto.
-
-A seconda dell'occorrenza di eventuali rischi o imprevisti le attività potranno essere modellate per poter essere, almeno parzialmente, terminate in tempo.
-
-=== Pianificazione
-
-Stabiliti i requisiti da soddisfare, il responsabile deve comprendere, oltre al tempo necessario per il completamento, anche i rischi associati all'attività, i costi di esecuzione e le misure qualitative per controllare la corretta esecuzione dei compiti.
-
-Il Responsabile deve altresì decidere a chi assegnare tale attività: per facilitare questa operazione, _ALimitedGroup_ ha individuato dei ruoli specifici assieme alle loro responsabilità.
-
-==== Ruoli
+=== Ruoli <ruoli>
 #figure(
   table(
     columns: (1fr, 4fr),
@@ -640,81 +712,95 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
   caption: [Compiti e responsabilità di ogni singolo ruolo],
 )
 
-=== Esecuzione e controllo
+=== Coordinamento
 
-L'esecuzione delle attività è affidata quindi ai vari ruoli così come indicato dal Responsabile, che dobrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
+Una parte fondamentale del progetto risiede nelle capacità di coordinamento da parte del gruppo, sia internamente che esternamente.
 
-=== Revisione e valutazione
+Per svolgere adeguatamente questa attività è necessario prevedere e svolgere riunioni apposite e avere canali di comunicazioni funzionanti e utili allo scopo.
 
-Una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del Verificatore.
+==== Riunioni
 
-Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice.
+Le riunioni sono di due tipi: *interne* ed *esterne*.
 
-=== Finalizzazione
+_ALimitedGroup_ realizza periodicamente, generalmente all'inizio di ogni _Sprint_, riunioni interne per il coordinamento interno: durante le stesse viene effettuato un punto della situazione sul progetto, un momento in cui i componenti si aggiornano sulle attività svolte e su quelle non terminate in tempo.
+L'attività di dialogo permetterà al *Responsabile* di avere una panoramica attuale su quanto svolto, permettendogli così di gestire al meglio il periodo successivo.
+In queste occasioni è anche possibile effettuare la rotazione dei ruoli in caso di necessità (quali, a mero titolo di esempio, il termine delle ore di un determinato ruolo per una determinata persona oppure l'esaurimento di compiti appartenenti a quel ruolo).
 
-Un'attività è da reputarsi conclusa solo nel momento in cui viene definitvamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica, con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_ e del _Branch_ utilizzato per la redazione/modifica della componente.
+Durante lo svolgimento del progetto è inoltre utile avere degli incontri con #M31: si tratta dunque di riunioni *esterne* dove i componenti di _ALimitedGroup_ hanno l'occasione di presentare il lavoro sino ad ora svolto e porre eventuali dubbi riscontrati. Contrariamente alle riunioni interne, non è prevista una periodicità: gli incontri sono fissati di volta in volta a mezzo di richiesta ad #M31 mediante posta elettronica.
 
+L'esito degli incontri dovrà sempre essere documentato mediante la redazione di appositi *verbali*, rispettivamente *interni* ed *esterni*: per maggiori informazioni si veda la @elenco-documenti.
 
-== Infrastruttura
+==== Comunicazioni
+
+In merito ai metodi comunicativi, _ALimitedGroup_ utilizza *Telegram* e *Discord* per, rispettivamente, comunicazioni asincrone e sincrone (riunioni).
+In genere una comunicazione urgente ma che non richiede approfondita discussione o per comunicazioni di servizio minori (come, a titolo di esempio, dubbi minori e non urgenti su particolari argomenti) i componenti utilizzeranno l'apposito gruppo realizzato su *Telegram* o messaggi diretti ad un componente specifico sempre utilizzando la medesima piattaforma, mentre per la realizzazione di riunioni interne e la discussione di criticità complesse richiederanno lo svolgimento di una riunione presso il _Server_ *Discord* appositamente realizzato.
+
+Per quanto riguarda invece le comunicazioni esterne, queste verranno sempre realizzate dal *Responsabile* mediante l'utilizzo dell'inidirizzo di posta elettronica di _ALimitedGroup_ #link("mailto:alimitedgroup@gmail.com")[alimitedgroup\@gmail.com].
+
+Per maggiori informazioni si consiglia la lettura del processo di *Infrastruttura* alla @infrastruttura.
+
+== Infrastruttura <infrastruttura>
 
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
 
 Si compone delle seguenti atività:
 
-- Implementazione
-- Creazione
-- Manutenzione
+- *Implementazione*
+- *Creazione*
+- *Manutenzione*
 
 === Implementazione <implementazione>
 
-_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati, analizzati ad uno ad uno nelle Sezioni successive:
+_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati.
 
 - _Discord_
 - _Git_
 - _GitHub_
 - _Google Calendar_
+- _Google Fogli_
+- _Google Mail_
 - _Microsoft Teams_
 - Script in _Python_
 - _Telegram_
 - _Typst_
 
-==== Discord
+#figure(
+  table(
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    table.header([*Strumento*], [*Descrizione*]),
+    [*Discord*],
+    [_Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.],
 
-_Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.
+    [*Git*],
+    [Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
+      Git è dunque un potente _Version Control System (VCS)_ che permette di efficacemente versionare tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.],
 
-==== Git <sezione_git>
+    [*GitHub*],
+    [*GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_
+      _ALimitedGroup_ utilizza _GitHub_ per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.],
 
-Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
+    [*Google Calendar*],
+    [Per condividere con il gruppo tutti gli appuntamenti futuri _ALimitedGroup_ utilizza *Google Calendar*.],
 
-Git è dunque un potente _Version Control System (VCS)_ che permette di efficacemente versionare tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.
+    [*Google Fogli*], [[PROSEGUIRE]],
+    [*Google Mail*], [[PROSEGUIRE]],
+    [*Microsoft Teams*],
+    [*Microsoft Teams* viene utilizzato da _ALimitedGroup_ per realizzare le riunioni esterne con l'azienda proponente #M31.],
 
-==== GitHub <sezione_github>
+    [*Script in Python*],
+    [Per automatizzare l'aggiornamento del sito web con i nuovi documenti e la compilazione dei file Typst, _ALimitedGroup_ ha deciso di realizzare degli appositi script in Python.
+      Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel glossario],
 
-*GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_
+    [*Telegram*],
+    [Telegram viene utilizzato dal gruppo per comunicare in maniera diretta tra i membri in caso di dubbi minori per cui non è necessaria una riunione interna.],
 
-_ALimitedGroup_ utilizza _GitHub_ per sincronizzare tra i membri gli sviluppi tra i vari membri, tenere traccia del _backlog_ mediante il sistema di _issue_ e _project board_, nonché permettere la verifica di quanto redatto prima che tali documenti o codice raggiunga il _branch_ principale. Per i dettagli d'uso si rimanda alla @controllo-config.
-
-==== Google Calendar
-
-Per condividere con il gruppo tutti gli appuntamenti futuri _ALimitedGroup_ utilizza *Google Calendar*.
-
-==== Microsoft Teams
-
-*Microsoft Teams* viene utilizzato da _ALimitedGroup_ per realizzare le riunioni esterne con l'azienda proponente #M31.
-
-==== Script in Python
-
-Per automatizzare l'aggiornamento del sito web con i nuovi documenti e la compilazione dei file Typst, _ALimitedGroup_ ha deciso di realizzare degli appositi script in Python.
-
-Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel glossario.
-
-==== Telegram
-
-Telegram viene utilizzato dal gruppo per comunicare in maniera diretta tra i membri in caso di dubbi minori per cui non è necessaria una riunione interna.
-
-==== Typst
-
-Typst viene utilizzato da _ALimitedGroup_ per la redazione di tutti i documenti. Vengono compilati automaticamente utilizzando gli script prodotti direttamente dal gruppo.
+    [*Typst*],
+    [Typst viene utilizzato da _ALimitedGroup_ per la redazione di tutti i documenti. Vengono compilati automaticamente utilizzando gli script prodotti direttamente dal gruppo.],
+  ),
+  caption: [Strumenti componenti l'Infrastruttura],
+)
 
 == Creazione <creazione>
 
@@ -761,7 +847,14 @@ Il gruppo ha poi deciso di utilizzare le _Issue_ di GitHub per tracciare le atti
 
 Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_.
 
-Ogni _Issue_ è inoltre legata ad una _Project Board_, uno strumento di GitHub che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso
+Ogni _Issue_ è inoltre legata ad una _Project Board_, uno strumento di GitHub che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso.
+
+La chiusura di una _Issue_ avviene sempre ed esclusivamente mediante l'apertura di una _Pull Request_ e al seguito di una verifica con esito positivo: in tal caso il *Verificatore* che ha effettuato la verifica o il *Responsabile* potrà procedere alla chiusura della stessa con conseguente entrata delle modifiche nel _Branch_ principale e questa azione determinerà la chiusura automatica della Issue. Qualora _GitHub_ non segnalasse tale automazione, sarà necessario procedere ad aggiungere al commento di chiusura della _Pull Request_ la dicitura
+#align(center)[*fix #issue*]
+
+dove al posto di *_issue_* va inserito il numero della issue associata alla _Pull Request_.
+
+È bene sottolineare che seppur la chiusura di una _Issue_ può essere effettuata manualmente in caso di necessità, questo *compromette fortemente* la *tracciabilità* di quanto effettuato.
 
 In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da GitHub denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
 
@@ -772,6 +865,14 @@ In merito al calendario condiviso, è affidato al *Responsabile* il compito di a
 Il calendario è condiviso tra i vari membri, che riceveranno un promemoria almeno un giorno prima rispetto l'evento in questione.
 
 Rimane responsabilità di ogni membro controllarlo periodicamente.
+
+=== Google Fogli
+
+[PROSEGUIRE]
+
+=== Google Mail
+
+[PROSEGUIRE]
 
 === Microsoft Teams
 
