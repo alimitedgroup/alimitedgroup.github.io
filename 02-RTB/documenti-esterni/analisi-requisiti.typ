@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.14.0]
+#let ver = [0.15.0]
 
 #show: body => importantdocs(
   data: datetime(day: 05, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.15.0",
+      date: datetime(day: 15, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Ristrutturato l'indice per una sua corretta visualizzazione e fruibilità. Assegnato per ogni UC un proprio numero",
+    ),
     (
       vers: "0.14.0",
       date: datetime(day: 13, month: 12, year: 2024),
@@ -721,7 +728,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   trigger: "Il Cliente vuole visualizzare gli ordini non confermati registrati nel Sistema per l'utente corrente",
 )[]
 
-=== UC11- Visualizza ID ordine <UC11>
+=== UC11 - Visualizza ID ordine <UC11>
 
 #use-case(
   attore: "Cliente",
@@ -794,7 +801,7 @@ Il Caso d'Uso UC14 include ulteriori Casi d'Uso come raffigurato nella seguente 
 #use-case-diagram("14-incl", "Inclusione del Caso d'Uso n.14: UC11, UC12, UC13, UC14.1")
 Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive descrizioni (@UC11, @UC12 e @UC13), mentre per il Caso d'Uso 14.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
-==== UC14.1 - Visualizza lista merce ordine non confermato <UC14.1>
+==== UC14.1 - Visualizza lista merci ordine non confermato <UC14.1>
 
 #use-case(
   attore: "Cliente",
@@ -812,7 +819,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
-==== UC14.1.1 - Visualizza elemento lista merce ordine non confermato <UC14.1.1>
+===== UC14.1.1 - Visualizza elemento lista merce ordine non confermato <UC14.1.1>
 
 #use-case(
   attore: "Cliente",
@@ -834,7 +841,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
-==== UC14.1.1.1 - Visualizza quantità singola merce nell'ordine non confermato <UC14.1.1.1>
+====== UC14.1.1.1 - Visualizza quantità singola merce nell'ordine <UC14.1.1.1>
 
 #use-case(
   attore: "Cliente",
@@ -848,7 +855,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
-=== UC14.1.1.2 - Visualizza stato singola merce nell'ordine <UC14.1.1.2>
+====== UC14.1.1.2 - Visualizza stato singola merce nell'ordine <UC14.1.1.2>
 
 #use-case(
   attore: "Cliente",
@@ -881,7 +888,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 // LORIS
 
-=== UC - Visualizza la lista delle merci
+=== UC16 - Visualizza la lista delle merci
 #use-case(
   attore: "Cliente",
   pre: [
@@ -899,7 +906,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   #use-case-diagram("x-lista_merci", "UCx - Visualizza lista delle merci")
 ]
 
-==== UC - Visualizza elemento lista delle merci
+==== UC16.1 - Visualizza elemento lista delle merci
 #use-case(
   attore: "Cliente",
   pre: [
@@ -921,7 +928,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 ]
 
 
-=== UC - Visualizza merce
+=== UC17 - Visualizza merce
 #use-case(
   attore: "Cliente",
   pre: [
@@ -944,7 +951,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 ]
 
 
-==== UC - Visualizza lo stock totale di una merce
+==== UC17.1 - Visualizza lo stock totale di una merce
 #use-case(
   attore: "Cliente",
   pre: [
@@ -959,7 +966,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 
-==== UC - Visualizza stock di una merce per magazzino
+==== UC17.2 - Visualizza stock di una merce per magazzino
 #use-case(
   attore: "Cliente",
   pre: [
@@ -975,7 +982,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 
 // TODO: siamo sicuri di volerla fare? non è nel capitolato e implementarla è difficile per via della gestione degli ordini in corso
-=== UC - Eliminazione di una merce dal catalogo
+=== UC18 - Eliminazione di una merce dal catalogo
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -996,36 +1003,36 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 // #### TODO: VERIFICARE NUMERO UC ####
 
-=== UCea - Creazione di un trasferimento
-<UCea>
+=== UC19 - Creazione di un trasferimento
+<UC19>
 
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù di voler creare un nuovo trasferimento
+    - L'utente ha selezionato dal menù di voler creare un nuovo trasferimento
   ],
   post: [
     - Il Sistema memorizza l'esistenza di un nuovo trasferimento non confermato con le relative informazioni (identificativo viene fornito dal Sistema)
   ],
   scenari: [
     - L'Admin globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
-    - L'Admin globale inserisce l'identificativo del magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UCea.1[Vedi UCe.1 Sezione]
+    - L'Admin globale inserisce l'identificativo del magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC19.1[Vedi UC19.1 Sezione]
   ],
   trigger: [L'Admin globale vuole creare un nuovo trasferimento da confermare],
   inclusioni: [
-    - UCe.1 @UCea.1
+    - UC19.1 @UC19.1
   ],
 )[
-  #use-case-diagram("ea-creazione-trasferimento", "UCea - Creazione di un trasferimento")
+  #use-case-diagram("ea-creazione-trasferimento", "UC19 - Creazione di un trasferimento")
 ]
 
 
 
 // Questi erano di Sara, credo vada integrato il tutto con il lavoro di Emanuele
-==== UCea.1 - Selezione del magazzino di destinazione
-<UCea.1>
+==== UC19.1 - Selezione del magazzino di destinazione
+<UC19.1>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1044,8 +1051,8 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 
-=== UCeb - Selezione merce per il trasferimento
-<UCeb>
+=== UC20 - Selezione merce per il trasferimento
+<UC20>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1062,11 +1069,11 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "L'Admin globale vuole trasferire oggetti specifici da un magazzino all'altro",
 )[
-  #use-case-diagram("eb-selezione-trasferimento", "UCeb - Selezione degli oggetti per il trasferimento")
+  #use-case-diagram("eb-selezione-trasferimento", "UC20 - Selezione degli oggetti per il trasferimento")
 ]
 
-=== UCec - Conferma del trasferimento
-<UCec>
+=== UC21 - Conferma del trasferimento
+<UC21>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1083,67 +1090,67 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
 )[
-  #use-case-diagram("ec-conferma-trasferimento", "UCec - Conferma del trasferimento")
+  #use-case-diagram("ec-conferma-trasferimento", "UC21 - Conferma del trasferimento")
 ]
 
-=== UCed - Visualizza l'elenco dei trasferimenti
-<UCed>
+=== UC22 - Visualizza l'elenco dei trasferimenti
+<UC22>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù di voler visualizzare ogni trasferimento
+    - L'utente ha selezionato dal menù di voler visualizzare ogni trasferimento
   ],
   scenari: [
     - L'Admin globale seleziona dal menù principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
-    - L'Admin globale seleziona un traferimento in particolare dall'elenco per visualizzarne i dettagli $arrow$ @UCed.1[Vedi UCed.1 Sezione]
+    - L'Admin globale seleziona un traferimento in particolare dall'elenco per visualizzarne i dettagli $arrow$ @UC22.1[Vedi UC22.1 Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
   inclusioni: [
-    - UCed.1 @UCed.1
+    - UC22.1 @UC22.1
   ],
 )[
-  #use-case-diagram("ed-visualizza-trasferimenti", "UCed - Visualizza l'elenco dei trasferimenti")
+  #use-case-diagram("ed-visualizza-trasferimenti", "UC22 - Visualizza l'elenco dei trasferimenti")
 ]
 
-==== UCed.1 - Visualizza il singolo trasferimento
-<UCed.1>
+==== UC22.1 - Visualizza il singolo trasferimento
+<UC22.1>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale seleziona dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza l'id del trasferimento $arrow$ @UCed.1.1[Vedi UCed.1.1 Sezione]
-    - L'Admin globale visualizza l'identificativo del magazzino mittente del trasferimento $arrow$ @UCed.1.2[Vedi UCed.1.2 Sezione]
-    - L'Admin globale visualizza l'identificativo del magazzino destinatario del trasferimento $arrow$ @UCed.1.3[Vedi UCed.1.3 Sezione]
-    - L'Admin globale visualizza lo stato del trasferimento $arrow$ @UCed.1.4[Vedi UCed.1.4 Sezione]
-    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UCed.1.5[Vedi UCed.1.5 Sezione]
+    - L'Admin globale visualizza l'id del trasferimento $arrow$ @UC22.1.1[Vedi UC22.1.1 Sezione]
+    - L'Admin globale visualizza l'identificativo del magazzino mittente del trasferimento $arrow$ @UC22.1.2[Vedi UC22.1.2 Sezione]
+    - L'Admin globale visualizza l'identificativo del magazzino destinatario del trasferimento $arrow$ @UC22.1.3[Vedi UC22.1.3 Sezione]
+    - L'Admin globale visualizza lo stato del trasferimento $arrow$ @UC22.1.4[Vedi UC22.1.4 Sezione]
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UC22.1.5[Vedi UC22.1.5 Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
   inclusioni: [
-    - UCed.1.1 @UCed.1.1
-    - UCed.1.2 @UCed.1.2
-    - UCed.1.3 @UCed.1.3
-    - UCed.1.4 @UCed.1.4
-    - UCed.1.5 @UCed.1.5
+    - UC22.1.1 @UC22.1.1
+    - UC22.1.2 @UC22.1.2
+    - UC22.1.3 @UC22.1.3
+    - UC22.1.4 @UC22.1.4
+    - UC22.1.5 @UC22.1.5
   ],
 )[
-  #use-case-diagram("ed-visualizza-dettaglio-trasferimento", "UCed.1 - Visualizza il singolo trasferimento")
+  #use-case-diagram("ed-visualizza-dettaglio-trasferimento", "UC22.1 - Visualizza il singolo trasferimento")
 ]
 
-===== UCed.1.1 - Visualizza id trasferimento
-<UCed.1.1>
+===== UC22.1.1 - Visualizza id trasferimento
+<UC22.1.1>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
@@ -1152,14 +1159,14 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
-===== UCed.1.2 - Visualizza magazzino mittente trasferimento
-<UCed.1.2>
+===== UC22.1.2 - Visualizza mittente trasferimento
+<UC22.1.2>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
@@ -1168,14 +1175,14 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
-===== UCed.1.3 - Visualizza magazzino destinatario trasferimento
-<UCed.1.3>
+===== UC22.1.3 - Visualizza destinatario trasferimento
+<UC22.1.3>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
@@ -1185,14 +1192,14 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 
-===== UCed.1.4 - Visualizza stato trasferimento
-<UCed.1.4>
+===== UC22.1.4 - Visualizza stato trasferimento
+<UC22.1.4>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
@@ -1201,58 +1208,58 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
-===== UCed.1.5 - Visualizza elenco merce trasferimento
-<UCed.1.5>
+===== UC22.1.5 - Visualizza elenco merce trasferimento
+<UC22.1.5>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
-    - L'Admin globale visualizza la singola merce $arrow$ @UCed.1.5.1 [Vedi UCed.1.5.1 Sezione]
+    - L'Admin globale visualizza la singola merce $arrow$ @UC22.1.5.1 [Vedi UC22.1.5.1 Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
   inclusioni: [
-    - UCed.1.5.1 @UCed.1.5.1
+    - UC22.1.5.1 @UC22.1.5.1
   ],
 )[]
 
-====== UCed.1.5.1 - Visualizza singola merce trasferimento
-<UCed.1.5.1>
+====== UC22.1.5.1 - Visualizza singola merce trasferimento
+<UC22.1.5.1>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
-    - L'Admin globale visualizza il nome della singola merce interessata dal trasferimento $arrow$ @UCee [Vedi UCef Sezione]
-    - L'Admin globale visualizza la quantità della singola merce interessata dal trasferimento $arrow$ @UCed.1.5.1.1 [Vedi UCed.1.5.1.1 Sezione]
+    - L'Admin globale visualizza il nome della singola merce interessata dal trasferimento $arrow$ @UC23 [Vedi UCef Sezione]
+    - L'Admin globale visualizza la quantità della singola merce interessata dal trasferimento $arrow$ @UC22.1.5.1.1 [Vedi UC22.1.5.1.1 Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce del trasferimento",
   inclusioni: [
-    - UCee @UCee
-    - UCed.1.5.1.1 @UCed.1.5.1.1
+    - UC23 @UC23
+    - UC22.1.5.1.1 @UC22.1.5.1.1
   ],
 )[
-  #use-case-diagram("ed-visualizza-singola-merce-trasferimento", "UCed.1.5.1 - Visualizza singola merce trasferimento")
+  #use-case-diagram("ed-visualizza-singola-merce-trasferimento", "UC22.1.5.1 - Visualizza singola merce trasferimento")
 ]
 
-======= UCed.1.5.1.1 - Visualizza quantità singola merce trasferimento
-<UCed.1.5.1.1>
+======= UC22.1.5.1.1 - Visualizza quantità singola merce
+<UC22.1.5.1.1>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente ha selezionato dal menù dall’elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
     - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
@@ -1263,26 +1270,26 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 
-=== UCee - Visualizza nome merce
-<UCee>
+=== UC23 - Visualizza nome merce
+<UC23>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L’utente sta visualizzando una merce
+    - L'utente sta visualizzando una merce
   ],
   scenari: [
     - L'Admin globale sta visualizzando una merce
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce",
 )[
-  #use-case-diagram("ee-nome-merce", "UCee - Visualizza nome merce")
+  #use-case-diagram("ee-nome-merce", "UC23 - Visualizza nome merce")
 ]
 
 // MATTEO
 
-=== UC - Visualizza elenco notifiche rifornimento
+=== UC24 - Visualizza elenco notifiche rifornimento
 
 #use-case(
   attore: "Admin globale",
@@ -1305,10 +1312,10 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
 )[
-  #use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+  #use-case-diagram("M1", "UC24 - Visualizza elenco notifiche rifornimento")
 ]
 
-=== UC - Nessuna notifica di rifornimento <UCerrnessunanotifica>
+=== UC25 - Nessuna notifica di rifornimento <UCerrnessunanotifica>
 
 #use-case(
   attore: "Admin globale",
@@ -1322,11 +1329,11 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
-Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("M1-incl", "Inclusione del Caso d'Uso n.: UC")
+Il Caso d'Uso UC25 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("M1-incl", "Inclusione del Caso d'Uso n. 25: UC25.1")
 Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
-==== UC - Visualizza elemento lista notifiche rifornimento <UCsingoloelementonot>
+==== UC25.1 - Visualizza elemento lista notifiche rifornimento <UCsingoloelementonot>
 
 #use-case(
   attore: "Admin globale",
@@ -1347,7 +1354,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
 )[]
 
-=== UC - Visualizza stato notifica rifornimento <UCstatonot>
+=== UC26 - Visualizza stato notifica rifornimento <UCstatonot>
 
 #use-case(
   attore: "Admin globale",
@@ -1361,7 +1368,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC - Visualizza ID notifica rifornimento <UCIDnot>
+=== UC27 - Visualizza ID notifica rifornimento <UCIDnot>
 
 #use-case(
   attore: "Admin globale",
@@ -1375,7 +1382,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC - Visualizza elenco notifiche di rifornimento fornite da _Machine Learning_
+=== UC28 - Visualizza elenco notifiche di rifornimento con _Machine Learning_
 
 #use-case(
   attore: "Admin globale",
@@ -1400,13 +1407,13 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento suggerite da" + [_Machine Learning_] + ".",
 )[#use-case-diagram(
     "M5",
-    "UC - Visualizza elenco notifiche di rifornimento fornite da " + [_Machine Learning_],
+    "UC28 - Visualizza elenco notifiche di rifornimento con " + [_Machine Learning_],
   )]
 
-Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M5-incl","Inclusione del Caso d'Uso n.: UC")
+Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M5-incl","Inclusione del Caso d'Uso n.28: UC")
 Maggiori informazioni sono disponibili alla @UCsingoloelementonot
 
-=== UC - Visualizza notifica rifornimento
+=== UC29 - Visualizza notifica rifornimento
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1422,18 +1429,18 @@ Maggiori informazioni sono disponibili alla @UCsingoloelementonot
       - Magazzino di destinazione $arrow$ @UCmagdest[Vedi UC Sezione]
   ],
   inclusioni: [
-    - UC @UCstatonot
-    - UC @UCIDnot
-    - UC @UCmerceconsrif
-    - UC @UCmagdest
+    - UC26 @UCstatonot
+    - UC27 @UCIDnot
+    - UC29.2 @UCmerceconsrif
+    - UC29.1 @UCmagdest
   ],
   trigger: "L'Admin globale una notifica di rifornimento specifica registrata nel sistema",
-)[#use-case-diagram("M4", "UC - Visualizza notifica di rifornimento")]
+)[#use-case-diagram("M4", "UC29 - Visualizza notifica di rifornimento")]
 
-Il Caso d'Uso UC include ulteriori Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl","Inclusione del Caso d'Uso n.: UC, UC e UC").
+Il Caso d'Uso UC include ulteriori Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl","Inclusione del Caso d'Uso n.29: UC29.1, UC29.2 e UC29.3").
 Riguardo UC e UC è possibile avere maggiori informazioni alla @UCstatonot e alla @UCIDnot, mentre di seguito sarà esposto UC.
 
-==== UC - Visualizza magazzino di destinazione <UCmagdest>
+==== UC29.1 - Visualizza magazzino di destinazione <UCmagdest>
 
 #use-case(
   attore: "Cliente, Admin globale",
@@ -1447,7 +1454,7 @@ Riguardo UC e UC è possibile avere maggiori informazioni alla @UCstatonot e all
   ],
 )[]
 
-==== UC - Visualizza elenco merce consigliata da rifornire <UCmerceconsrif>
+==== UC29.2 - Visualizza elenco merce consigliata da rifornire <UCmerceconsrif>
 
 #use-case(
   attore: "Admin globale",
@@ -1465,9 +1472,9 @@ Riguardo UC e UC è possibile avere maggiori informazioni alla @UCstatonot e all
   trigger: "L'Admin globale vuole visualizzare una notifica di rifornimento nel dettaglio",
 )[]
 
-Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl-2","Inclusione del Caso d'Uso n.: UC"). Sarà esposto qui di seguito.
+Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl-2","Inclusione del Caso d'Uso n.29.2: UC29.2.1"). Sarà esposto qui di seguito.
 
-===== UC - Visualizza elemento lista merce consigliata da rifornire <UCelementolistamercerif>
+===== UC29.2.1 - Visualizza elemento lista merce consigliata da rifornire <UCelementolistamercerif>
 
 #use-case(
   attore: "Admin globale",
@@ -1483,9 +1490,9 @@ Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente
       - Quantità da rifornire $arrow$ @UCqtamercedarif
   ],
   inclusioni: [
-    - UC @UCIDmerce
-    - UC @UC15
-    - UC @UCqtamercedarif
+    - UC29.2.1.1 @UCIDmerce
+    - UC15 @UC15
+    - UC29.2.1.2 @UCqtamercedarif
   ],
   trigger: "L'Admin globale vuole visualizzare una notifica di rifornimento nel dettaglio",
 )[]
@@ -1493,7 +1500,7 @@ Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente
 Il Caso d'Uso UC include ulteriori Caso d'Uso come descritto sopra.
 In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti saranno invece esposti qui di seguito.
 
-====== UC - Visualizza ID merce <UCIDmerce>
+====== UC29.2.1.1 - Visualizza ID merce <UCIDmerce>
 
 #use-case(
   attore: "Cliente, Admin globale",
@@ -1507,7 +1514,7 @@ In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti 
   ],
 )[]
 
-====== UC - Visualizza quantità merce da rifornire <UCqtamercedarif>
+====== UC29.2.1.2 - Visualizza quantità merce da rifornire <UCqtamercedarif>
 
 #use-case(
   attore: "Admin globale",
@@ -1522,7 +1529,7 @@ In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti 
 )[]
 
 
-=== UC - Accetta notifica di rifornimento
+=== UC30 - Accetta notifica di rifornimento
 
 #use-case(
   attore: "Admin globale",
@@ -1535,26 +1542,26 @@ In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti 
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa all'accettazione delle notifiche di rifornimento
-    - L'Admin globale sceglie quale notifica di rifornimento accettare $arrow$ @UCselectnot[Vedi UC, Sezione]
+    - L'Admin globale sceglie quale notifica di rifornimento accettare $arrow$ @UCselectnot[Vedi UC31, Sezione]
   ],
   scenari_alternativi: [
-    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da accettare$arrow$ @UCerrnessunanotifica[Vedi UC, Sezione]
+    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da accettare$arrow$ @UCerrnessunanotifica[Vedi UC25, Sezione]
   ],
   inclusioni: [
-    - UC @UCselectnot
+    - UC30.1 @UCselectnot
   ],
   estensioni: [
-    - UC @UCerrnessunanotifica
+    - UC25 @UCerrnessunanotifica
   ],
   trigger: "L'Admin globale vuole accettare una notifica di rifornimento",
 )[
-  #use-case-diagram("M2", "UC - Accetta notifica di rifornimento")
+  #use-case-diagram("M2", "UC30 - Accetta notifica di rifornimento")
 ]
 
-Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("M2-incl", "Inclusione del Caso d'Uso n.: UC")
+Il Caso d'Uso UC30 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("M2-incl", "Inclusione del Caso d'Uso n.30: UC30.1")
 
-=== UC - Seleziona notifica di rifornimento <UCselectnot>
+==== UC30.1 - Seleziona notifica di rifornimento <UCselectnot>
 
 #use-case(
   attore: "Admin globale",
@@ -1572,7 +1579,7 @@ Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente
   trigger: "L'Admin globale vuole effettuare un'operazione su una notifica di rifornimento",
 )[]
 
-=== UC - Rifiuta notifica di rifornimento
+=== UC31 - Rifiuta notifica di rifornimento
 
 #use-case(
   attore: "Admin globale",
@@ -1585,26 +1592,26 @@ Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa al rifiuto delle notifiche di rifornimento
-    - L'Admin globale sceglie quale notifica di rifornimento rifiutare $arrow$ @UCselectnot[Vedi UC, Sezione]
+    - L'Admin globale sceglie quale notifica di rifornimento rifiutare $arrow$ @UCselectnot[Vedi UC30.1, Sezione]
   ],
   scenari_alternativi: [
     - L'Admin globale vuole rifiutare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da rifiutare $arrow$ @UCerrnessunanotifica[Vedi UC, Sezione]
   ],
   inclusioni: [
-    - UC @UCselectnot
+    - UC30.1 @UCselectnot
   ],
   estensioni: [
-    - UC @UCerrnessunanotifica
+    - UC25 @UCerrnessunanotifica
   ],
   trigger: "L'Admin globale vuole rifiutare una notifica di rifornimento",
 )[
   #use-case-diagram("M3", "UC - Rifiuta notifica di rifornimento")
 ]
 
-Il Caso d'Uso UC include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("M3-incl", "Inclusione del Caso d'Uso n.: UC")
+Il Caso d'Uso UC31 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("M3-incl", "Inclusione del Caso d'Uso n.31: UC30.1")
 Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
 
-=== UC - Visualizza elenco microservizi
+=== UC32 - Visualizza elenco microservizi
 
 #use-case(
   attore: "Admin globale",
@@ -1614,18 +1621,18 @@ Tale caso d'uso è disponibile per la consultazione alla @UCselectnot.
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione dei microservizi
-    - L'Admin globale visualizza a schermo la lista dei microservizi del Sistema $arrow$ @UCsingoloelementomicr[Vedi UC Sezione]
+    - L'Admin globale visualizza a schermo la lista dei microservizi del Sistema $arrow$ @UCsingoloelementomicr[Vedi UC32.1 Sezione]
   ],
   inclusioni: [
-    - UC @UCsingoloelementomicr
+    - UC32.1 @UCsingoloelementomicr
   ],
   trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
 )[#use-case-diagram("M6", "UC - Visualizza elenco microservizi")]
 
-Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M6-incl","Inclusione del Caso d'Uso n.: UC").
+Il Caso d'Uso UC32 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M6-incl","Inclusione del Caso d'Uso n.32: UC32.1").
 Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito.
 
-==== UC - Visualizza elemento lista microservizi <UCsingoloelementomicr>
+==== UC32.1 - Visualizza elemento lista microservizi <UCsingoloelementomicr>
 
 #use-case(
   attore: "Admin globale",
@@ -1644,7 +1651,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
 )[]
 
-===== UC - Visualizza numero richieste al secondo del microservizio <ricsecmicr>
+===== UC32.1.1 - Visualizza numero richieste al secondo del microservizio <ricsecmicr>
 
 #use-case(
   attore: "Admin globale",
@@ -1659,7 +1666,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 )[]
 // SARA
 
-=== UC - Esportazione ordini
+=== UC33 - Esportazione ordini
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1674,19 +1681,19 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
   ],
   scenari_alternativi: [
-    - L'Admin globale cerca di esportare gli ordini eseguiti ma non ci sono dati da esportare $arrow$ @UCerrnessunordine[Vedi UC, Sezione]
+    - L'Admin globale cerca di esportare gli ordini eseguiti ma non ci sono dati da esportare $arrow$ @UCerrnessunordine[Vedi UC34, Sezione]
   ],
   estensioni: [
-    - UC @UCerrnessunordine
+    - UC34 @UCerrnessunordine
   ],
-  trigger: "L’Admin globale richiede l’esportazione degli ordini eseguiti tramite l’apposita funzionalità.",
+  trigger: "L'Admin globale richiede l'esportazione degli ordini eseguiti tramite l'apposita funzionalità.",
 )[
   //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
   // INTANTO E' SU DRAW.IO
-  //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+  //#use-case-diagram("M1", "UC33 Visualizza elenco notifiche rifornimento")
 ]
 
-=== UC - Nessun ordine da esportare <UCerrnessunordine>
+=== UC34 - Nessun ordine da esportare <UCerrnessunordine>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1704,7 +1711,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 
 
 
-=== UC - Esportazione report inventario
+=== UC35 - Esportazione report inventario
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1712,26 +1719,26 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
   post: [
-    - Il file CSV viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando accuratamente lo stato attuale dell’inventario
+    - Il file CSV viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando accuratamente lo stato attuale dell'inventario
 
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario
   ],
   scenari_alternativi: [
-    - L'Admin globale cerca di esportare l'inventario ma non ci sono dati da esportare $arrow$ @UCerrnessundatoinventario[Vedi UC, Sezione]
+    - L'Admin globale cerca di esportare l'inventario ma non ci sono dati da esportare $arrow$ @UCerrnessundatoinventario[Vedi UC36, Sezione]
   ],
   estensioni: [
-    - UC @UCerrnessundatoinventario
+    - UC36 @UCerrnessundatoinventario
   ],
-  trigger: "L’Admin globale richiede l’esportazione del report dell'inventario tramite l’apposita funzionalità.",
+  trigger: "L'Admin globale richiede l'esportazione del report dell'inventario tramite l'apposita funzionalità.",
 )[
   //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
   // INTANTO E' SU DRAW.IO
   //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
 ]
 
-=== UC - Nessun dato inventario <UCerrnessundatoinventario>
+=== UC36 - Nessun dato inventario <UCerrnessundatoinventario>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1749,7 +1756,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 )[]
 
 
-=== UC - Creazione di una soglia minima per una merce
+=== UC37 - Creazione di una soglia minima per una merce
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1761,76 +1768,76 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - La soglia minima impostata viene salvata correttamente nel Sistema
   ],
   scenari: [
-    - L’Admin globale accede dal menù alla sezione gestione inventario.
-    - L’Admin seleziona la merce per cui vuole impostare una soglia minima.
-    - L’Admin inserisce il valore della soglia minima desiderata
-    - L’Admin conferma l’operazione
+    - L'Admin globale accede dal menù alla sezione gestione inventario.
+    - L'Admin seleziona la merce per cui vuole impostare una soglia minima.
+    - L'Admin inserisce il valore della soglia minima desiderata
+    - L'Admin conferma l'operazione
 
   ],
   scenari_alternativi: [
-    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UCsogliaminimanonvalida[Vedi UC, Sezione]
+    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UCsogliaminimanonvalida[Vedi UC39.1, Sezione]
   ],
   estensioni: [
-    - UC @UCsogliaminimanonvalida
+    - UC39.1 @UCsogliaminimanonvalida
   ],
-  trigger: "L’Admin globale richiede di impostare una soglia minima per una specifica merce.",
+  trigger: "L'Admin globale richiede di impostare una soglia minima per una specifica merce.",
 )[
   //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
   // INTANTO E' SU DRAW.IO
   //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
 ]
 
-=== UC-Selezione merce
+=== UC38 - Selezione merce
 #use-case(
   attore: "Admin globale",
   pre: [
-    - L’Admin globale accede dal menù alla sezione gestione inventario
+    - L'Admin globale accede dal menù alla sezione gestione inventario
   ],
   scenari: [
-    - L’Admin globale seleziona la merce per cui vuole impostare una soglia minima
+    - L'Admin globale seleziona la merce per cui vuole impostare una soglia minima
   ],
 )[]
 
-=== UC-Inserisci soglia minima
+=== UC39 - Inserisci soglia minima
 #use-case(
   attore: "Admin globale",
   pre: [
-    - L’Admin globale accede dal menù alla sezione gestione inventario
-    - L’Admin ha selezionato la merce per cui vuole impostare una soglia minima
+    - L'Admin globale accede dal menù alla sezione gestione inventario
+    - L'Admin ha selezionato la merce per cui vuole impostare una soglia minima
   ],
 
   scenari: [
-    - L’Admin inserisce il valore della soglia minima desiderata
+    - L'Admin inserisce il valore della soglia minima desiderata
   ],
   scenari_alternativi: [
-    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UCsogliaminimanonvalida[Vedi UC, Sezione]
+    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UCsogliaminimanonvalida[Vedi UC39.1, Sezione]
   ],
   estensioni: [
-    - UC @UCsogliaminimanonvalida
+    - UC39.1 @UCsogliaminimanonvalida
   ],
 )[]
-==== UC - Soglia minima non valida <UCsogliaminimanonvalida>
+==== UC39.1 - Soglia minima non valida <UCsogliaminimanonvalida>
 #use-case(
   attore: "Admin globale",
   pre: [
-    - L’Admin globale accede dal menù alla sezione gestione inventario.
-    - L’Admin seleziona la merce per cui vuole impostare una soglia minima.
-    - L’Admin inserisce una soglia minima
+    - L'Admin globale accede dal menù alla sezione gestione inventario.
+    - L'Admin seleziona la merce per cui vuole impostare una soglia minima.
+    - L'Admin inserisce una soglia minima
   ],
   post: [
-    - Il Sistema notifica l’admin dell’errore e richiede un valore valido.
+    - Il Sistema notifica l'admin dell'errore e richiede un valore valido.
   ],
   scenari: [
     - L'Admin globale inserisce una soglia minima non valida relativa ad una specifica merce
   ],
 )[]
 
-=== UC-Conferma operazione
+=== UC40 - Conferma operazione
 #use-case(
   attore: "Admin globale",
   pre: [
-    - L’Admin globale è nella sezione gestione inventario
-    - L’Admin ha selezionato la merce per cui vuole impostare una soglia minima
+    - L'Admin globale è nella sezione gestione inventario
+    - L'Admin ha selezionato la merce per cui vuole impostare una soglia minima
     -L'Admin ha inserito una soglia minima valida
   ],
   post: [
@@ -1838,7 +1845,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 
   scenari: [
-    - L’Admin conferma l'operazione
+    - L'Admin conferma l'operazione
   ],
 )[]
 
@@ -1848,7 +1855,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 
 // MARCO
 
-=== UC - Aggiunta stock di una merce
+=== UC41 - Aggiunta stock di una merce
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -1867,10 +1874,10 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   trigger: "L'Admin Locale vuole aggiornare la quantità (stock) per una determinata merce ",
 )[
-  #use-case-diagram("42", "UC - Aggiunta stock di una merce")
+  #use-case-diagram("42", "UC41 - Aggiunta stock di una merce")
 ]
 
-=== UC - Creazione merce globale
+=== UC42 - Creazione merce globale
 
 #use-case(
   attore: "Admin Globale",
@@ -1893,7 +1900,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   #use-case-diagram("43", "UC - Creazione di una merce globale")
 ]
 
-=== UC - Aggiornamento informazioni di una merce
+=== UC43 - Aggiornamento informazioni di una merce
 #use-case(
   attore: "Admin Globale",
   pre: [
