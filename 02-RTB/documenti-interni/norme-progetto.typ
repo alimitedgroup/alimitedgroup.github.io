@@ -13,7 +13,7 @@
       date: datetime(day: 15, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Miglioramento Sezione \"Documentazione Fornita\" del processo di Fornitura",
+      descr: "Miglioramento Sezione \"Documentazione Fornita\" del processo di Fornitura. Iniziata redazione processo di Sviluppo.",
     ),
     (
       vers: "0.8.0",
@@ -378,11 +378,27 @@ Verbale di una riunione svolta senza la presenza di persone esterne al gruppo.
 
 == Sviluppo
 
-Il processo di sviluppo contiene le attività principalmente svolte dagli sviluppatori, ma non solo: infatti questo processo copre anche l'analisi dei requisiti, il testing e molto altro.
+Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di Analisi dei Requisiti, la progettazione, la codifica del Software, l'installazione e l'accettazione di quanto prodotto.
 
 === Attività previste
+
+Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 12207:1995_ sono le seguenti:
+
+- *Implementazione del processo*: ovvero la scelta del *Ciclo di Vita* del Software più appropriato in base allo scopo, l'importanza e la complessità del progetto;
+- *Analisi dei Requisiti*: ovvero l'analisi di cosa l'utilizzatore finale del Software ha bisogno che quest'ultimo assolva con le sue funzionalità. Un'Analisi dei Requisiti completa dovrebbe descrivere le funzionalità del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente;
+- *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _Software_ del prodotto finale, al fine che quest'ultimo riesca a soddisfare tutti i requisiti individuati (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
+- *Analisi dei Requisiti Software*: ovvero l'analisi del modo in cui il Software soddisfa i requisiti lato utente. Tale analisi deve includere anche le caratteristiche di qualità, quali, a scopo di esempio, caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento Software e requisiti di sicurezza;
+- *Progettazione dell'architettura Software*: ovvero la progettazione delle varie componenti Software che soddisferanno i requisiti Software da un punto di vista di "alto livello" ovvero non nel dettaglio;
+- *Progettazione in dettaglio del Software*: ovvero la progettazione in dettaglio delle singole componenti Software, fino ad individuare le singole unità di ciascuna;
+- *Codifica e _testing_ del Software*: ovvero la produzione di tutte le unità di tutte le componenti individuate. Ciascuna di queste parti dovrà dunque essere adeguatamente testata per assicurare il suo corretto funzionamento;
+- *Integrazione del Software*: ovvero l'integrazione delle varie parti di una componente nella sua componente completa. Tale integrazione dovrà quindi essere adeguatamente testata per assicuranrne il corretto funzionamento;
+- *Test di qualifica del Software*: ovvero la realizzazione di appositi test per assicurare la conformità del Software agli obbiettivi di qualità attesi;
+- *Integrazione del Sistema*: ovvero l'integrazione di tutte le componenti realizzati nel Sistema finale;
+- *Test di qualifica del Sistema*: ovvero il test dell'intero Sistema per assicurarne il corretto funzionamento;
+- *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente da lui indicato in accordo a quanto stabilito tra lui e il fornitore;
+- *Supporto per approvazione del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti sono effettivamente soddisfatti.
+
 === Tecnologie utilizzate
-=== Documentazione prodotta
 
 = Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
