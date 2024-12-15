@@ -998,6 +998,144 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
 )[]
 
+=== UC - Visualizza elenco ordini eseguiti
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  scenari: [
+    - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini eseguiti registrati nel Sistema
+    - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema $arrow$
+  ],
+  inclusioni: [
+    - UC Visualizza elemento lista ordini eseguiti
+  ],
+  trigger: "Il Cliente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
+)[]
+
+==== UC - Visualizza elemento lista ordini eseguiti
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di ordini eseguiti registrati nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
+      - l'ID dell'ordine $arrow$ @UC11[Vedi UC11 Sezione]
+      - La data di creazione dell'ordine $arrow$ @UC12[Vedi UC12 Sezione]
+      - Il nome dell'ordine $arrow$ @UC13[Vedi UC13 Sezione]
+  ],
+  inclusioni: [
+    - UC11 @UC11
+    - UC12 @UC12
+    - UC13 @UC13
+  ],
+  trigger: "Il Cliente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
+)[]
+
+=== UC - Visualizza ordine eseguito
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
+  scenari: [
+    - Il Cliente ha selezionato da una lista di ordini eseguiti la visualizzazione di un ordine specifico
+    - Il Cliente visualizza del suddetto ordine:
+      - ID dell'ordine $arrow$ @UC11[Vedi UC11 Sezione]
+      - Data creazione dell'ordine eseguito $arrow$ @UC12[Vedi UC12 Sezione]
+      - Nome dell'ordine $arrow$ @UC13[Vedi UC13 Sezione]
+      - Lista delle merci $arrow$ UC - Visualizza lista merci ordine eseguiti
+  ],
+  inclusioni: [
+    - UC11 @UC11
+    - UC12 @UC12
+    - UC13 @UC13
+    - UC Visualizza lista merci ordine eseguiti
+  ],
+  trigger: "Il Cliente vuole vedere un ordine eseguito specifico registrato nel Sistema per l'utente corrente",
+)[
+]
+
+Il Caso d'Uso UC14 include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive descrizioni (@UC11, @UC12 e @UC13), mentre per il Caso d'Uso UC Visualizza lista merci ordine eseguiti sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
+
+==== UC - Visualizza lista merci ordine eseguiti
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine eseguito selezionato $arrow$ UC - Visualizza elemento lista merce ordine eseguito
+  ],
+  inclusioni: [
+    - UC Visualizza elemento lista merce ordine eseguito
+  ],
+  trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
+)[]
+
+===== UC - Visualizza elemento lista merce ordine eseguito
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando un elenco di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
+      - Quantità di quella merce nell'ordine eseguito selezionato $arrow$ UC Visualizza quantità singola merce nell'ordine eseguito
+      - Nome della merce $arrow$ @UC15[Vedi UC15 Sezione];
+  ],
+  inclusioni: [
+    - UC Visualizza quantità singola merce nell'ordine eseguito
+    - UC Visualizza stato singola merce nell'ordine eseguito
+    - UC15 @UC15
+  ],
+  trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
+)[]
+
+====== UC - Visualizza quantità singola merce nell'ordine eseguito
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzata la quantità della singola merce nell'ordine eseguito selezionato
+  ],
+)[]
+
+====== UC - Visualizza stato singola merce nell'ordine eseguito
+
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzato lo stato della singola merce nell'ordine eseguito selezionato
+  ],
+)[]
+
 
 // EMANUELE
 
