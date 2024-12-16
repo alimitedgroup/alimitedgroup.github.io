@@ -1936,7 +1936,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 Il Caso d'Uso UC44 include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive descrizioni (@UC11, @UC12 e @UC13), mentre per il Caso d'Uso UC44 Visualizza lista merci ordine eseguiti sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
-==== UC44.1 - Visualizza elemento lista ordini eseguiti <UC44.1>
+==== UC44.1 - Visualizza singolo elemento dell'ordine eseguito <UC44.1>
 
 #use-case(
   attore: "Cliente",
@@ -1984,6 +1984,70 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "Il Cliente vuole vedere un ordine eseguito specifico registrato nel Sistema per l'utente corrente",
 )[
 ]
+
+==== UC45.1 - Visualizza lista merci ordine eseguito
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine eseguito selezionato $arrow$ @UC45.1.1[Vedi UC45.1.1, Sezione]
+  ],
+  inclusioni: [
+    - UC45.1.1 @UC45.1.1
+  ],
+  trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
+)[]
+
+===== UC45.1.1 - Visualizza singolo elemento merce ordine eseguito <UC45.1.1>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando un elenco di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
+      - Quantità di quella merce nell'ordine eseguito selezionato $arrow$ @UC45.1.1.1[Vedi UC45.1.1.1, Sezione]
+      - Nome della merce $arrow$ @UC15[Vedi UC15, Sezione]
+  ],
+  inclusioni: [
+    - UC45.1.1.1 @UC45.1.1.1
+    - UC45.1.1.2 @UC45.1.1.2
+    - UC15 @UC15
+  ],
+  trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
+)[]
+
+====== UC45.1.1.1 - Visualizza quantità singolo elemento nell'ordine <UC45.1.1.1>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzata la quantità della singola merce nell'ordine eseguito selezionato
+  ],
+)[]
+
+====== UC45.1.1.2 - Visualizza stato singola merce nell'ordine <UC45.1.1.2>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
+  ],
+  scenari: [
+    - Viene visualizzato lo stato della singola merce nell'ordine eseguito selezionato
+  ],
+)[]
 
 = Requisiti Principali
 == Requisiti Funzionali
