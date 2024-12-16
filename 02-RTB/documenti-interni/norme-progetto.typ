@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.9.0]
+#let ver = [0.11.0]
 
 #show figure: set block(breakable: true)
 
@@ -8,6 +8,20 @@
   data: datetime(day: 15, month: 11, year: 2024),
   tipo: [interno],
   versioni: (
+    (
+      vers: "0.11.0",
+      date: datetime(day: 16, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Proseguo redazione processo di Sviluppo (descritta attività di Analisi dei Requisiti). Aggiunta alla descrizione dell'Infrastruttura le informazioni relative a Google Fogli e Google Mail.",
+    ),
+    (
+      vers: "0.10.0",
+      date: datetime(day: 16, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.lorenzo,
+      descr: "Miglioramento delle tabelle del documento",
+    ),
     (
       vers: "0.9.0",
       date: datetime(day: 15, month: 12, year: 2024),
@@ -431,7 +445,57 @@ Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 
 - *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente da lui indicato in accordo a quanto stabilito tra lui e il fornitore;
 - *Supporto per approvazione del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti sono effettivamente soddisfatti.
 
-=== Tecnologie utilizzate
+Apportando lo scopo del processo alle _Baseline_ previste dal progetto (_Requirements and Technology Baseline (RTB)_ e _Product Baseline (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti* e *Codifica* per la _RTB_ mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_: _ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo ed eventualmente modificando le sezioni dedicate a questa attività nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_ raggiunta).
+
+=== Analisi dei Requisiti
+
+L'*Analisi dei Requisiti* è tra le attività cardine della _Requirements and Technology Baseline (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
+Tale analisi, reperibile nell'apposito documento visualizzabile su #link("")[alimitedgroup.github.io [PROSEGUIRE]], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il documento per comprendere velocemente quali requisiti sono stati "implementati" e quali ancora da implementare, favorendo le attività di pianificazione).
+
+In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requisiti ad essi associati. Per una più rapida consultazione sarà ora discussa la nomenclatura nel dettaglio.
+
+==== Casi d'Uso
+
+Per i casi d'Uso viene utilizzata la seguente nomenclatura:
+
+#align(center)[*`UCPrincipale.Secondario`*]
+
+dove:
+
+- *UC* è un acronimo stante per *U*\se *C*\ase, ovvero la traduzione inglese di Caso d'Uso;
+- *Principale* è un numero crescente stante ad indicare che il Caso d'Uso non è correlato ad altri Casi d'Uso oppure è utilizzato da più Casi d'Uso mediante inclusione, cosa che giustifica lo stesso ad essere promosso ad una importanza maggiore);
+- *Secondario* è un numero crescente stante ad indicare che il Caso d'Uso è correlato esclusivamente al Caso d'Uso identificato dal valore *Principale*
+
+Si noti che *Principale* è *univoco* tra tutti i Casi d'Uso, dunque non può sussistere l'esistenza di due Casi d'Uso aventi stesso valore *Principale* mentre è possibile che uno stesso valore *Secondario* sia ripetuto, ma *mai* per la stesso valore *Principale*.
+
+La nomenclatura utilizzata è volta ad assicurare l'unicità di ogni Caso d'Uso.
+
+Ogni Caso d'Uso è inoltre accompagnato da un suo nome che ne riassume lo scopo e una sua descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("")[*Analisi dei Requisiti [PROSEGUIRE*]].
+
+==== Requisiti
+
+Identificati i Casi d'Uso, il documento di #link("")[*Analisi dei Requisiti [PROSEGUIRE*]] si concentra sull'individuazione dei requisiti traibili dagli stessi e dal capitolato.
+I requisiti sono anch'essi identificati da una nomenclatura:
+
+#align(center)[*`R-Numero-Tipolgia-Priorità`*]
+
+dove:
+- *R* è per abbreviare la parola *R*\equisito;
+- *Numero* è un valore univoco che identifica il requisito;
+- *Tipologia* indica il tipo di requisito. I possibili valori sono:
+  - *F* per *F*\unzionale;
+  - *Q* per *Q*\ualità;
+  - *V* per *V*\incolo;
+- *Priorità* indica la priorità di sviluppo che quel requisito assume. I valori possibili sono:
+  - *Ob* per *Ob*\bligatorio;
+  - *De* per *De*\siderabile;
+  - *Op* per *Op*\zionale;
+
+Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("")[*Analisi dei Requisiti [PROSEGUIRE*]].
+
+=== Codifica
+
+[PROSEGUIRE]
 
 = Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
@@ -834,8 +898,12 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
     [*Google Calendar*],
     [Per condividere con il gruppo tutti gli appuntamenti futuri _ALimitedGroup_ utilizza *Google Calendar*.],
 
-    [*Google Fogli*], [[PROSEGUIRE]],
-    [*Google Mail*], [[PROSEGUIRE]],
+    [*Google Fogli*],
+    [_ALimitedGroup_ ha deciso di utilizzare un documento di *Google Fogli* per tenere traccia delle attività svolte settimanalmente durante gli _Sprint_],
+
+    [*Google Mail*],
+    [Il servizio di posta elettronica utilizzato da _ALimitedGroup_ per tutte le comunicazione verso l'esterno],
+
     [*Microsoft Teams*],
     [*Microsoft Teams* viene utilizzato da _ALimitedGroup_ per realizzare le riunioni esterne con l'azienda proponente #M31.],
 
@@ -918,11 +986,14 @@ Rimane responsabilità di ogni membro controllarlo periodicamente.
 
 === Google Fogli
 
-[PROSEGUIRE]
+Il file condiviso di *Google Fogli* prevede tre schede:
+
+- *Dashboard*: fornisce un prospetto aggiornato delle ore preventivate, quelle utilizzate e quelle rimanenti per ogni ruolo, nonché un dettaglio per ogni _Sprint_. È responsabilità di ogni componente aggiornare l'impegno orario effettivo durante lo _Sprint_ ad ogni ora produttiva svolta, annotando l'elenco delle attività svolte;
+- *Grafico*: fornisce una rappresentazione grafica delle informazioni contenute nella *Dashboard*
 
 === Google Mail
 
-[PROSEGUIRE]
+La casella di Google Mail non ha richiesto particolari configurazioni.
 
 === Microsoft Teams
 
@@ -965,8 +1036,8 @@ Per i seguenti documenti:
 - *Piano di Qualifica*;
 - *Analisi dei Requisiti*;
 
-che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato il _template_, che permette di automatizzare la realizzazione della struttura _standard_ adatta a loro.\
-Tuttavia, l'utilizzo di #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*_importantdocs.typ_*] non è strettamente obbligatorio.
+che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato un _template_ apposito, che permette di automatizzare la realizzazione della struttura adatta a loro.\
+Tuttavia, l'utilizzo di tale _template_, denominato #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*_importantdocs.typ_*] non è strettamente obbligatorio.
 
 
 I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
