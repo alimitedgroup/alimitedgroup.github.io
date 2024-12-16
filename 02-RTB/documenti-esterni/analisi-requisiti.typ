@@ -247,7 +247,7 @@ Di seguito sono esposti gli attori utilizzati:
 
 #figure(
   image("../../assets/diagrams/attori.svg", width: 50%),
-  caption: [Diagramma degli attori],
+  caption: [Diagramma degli attori principali],
 )
 #v(1em)
 
@@ -270,7 +270,7 @@ Di seguito sono esposti gli attori utilizzati:
     [*Cliente*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse nel singolo magazzino],
   ),
-  caption: [Attori],
+  caption: [Descrizione degli attori],
 )
 
 Vengono inoltre utilizzati i seguenti attori secondari:
@@ -1604,7 +1604,7 @@ Il Caso d'Uso UC30 include un ulteriore Caso d'Uso come raffigurato nella seguen
   ],
   trigger: "L'Admin globale vuole rifiutare una notifica di rifornimento",
 )[
-  #use-case-diagram("M3", "UC - Rifiuta notifica di rifornimento")
+  #use-case-diagram("M3", "UC31 - Rifiuta notifica di rifornimento")
 ]
 
 Il Caso d'Uso UC31 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("M3-incl", "Inclusione del Caso d'Uso n.31: UC30.1")
@@ -1626,7 +1626,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UC30.1.
     - UC32.1 @UC32.1
   ],
   trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
-)[#use-case-diagram("M6", "UC - Visualizza elenco microservizi")]
+)[#use-case-diagram("M6", "UC32 - Visualizza elenco microservizi")]
 
 Il Caso d'Uso UC32 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M6-incl","Inclusione del Caso d'Uso n.32: UC32.1").
 Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito.
@@ -1893,7 +1893,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione",
 )[
-  #use-case-diagram("43", "UC - Creazione di una merce globale")
+  #use-case-diagram("43", "UC43 - Creazione di una merce globale")
 ]
 
 === UC43 - Aggiornamento informazioni di una merce
