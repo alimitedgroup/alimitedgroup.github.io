@@ -14,7 +14,7 @@
   ],
   contenuto2: [
     - Redigere le informazioni nel Piano di Progetto relative al terzo Sprint
-    - Verficare i Casi d'Uso redatti e redigere i Casi d'Uso che daranno luogo a requisiti desiderbaili o opzionali
+    - Verificare i Casi d'Uso redatti e redigere i Casi d'Uso che daranno luogo a requisiti desiderabili o opzionali
     - Proseguire la redazione di Piano di Qualifica e Norme di Progetto
     - Proseguire lo studio delle tecnologie e la realizzazione del PoC
   ],
