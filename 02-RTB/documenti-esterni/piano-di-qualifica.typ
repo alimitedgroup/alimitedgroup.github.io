@@ -8,7 +8,7 @@
 #show link: underline
 #show ref: underline
 
-#let versione = [0.1.0]
+#let versione = [0.2.0]
 #let nome-documento = [Piano di Qualifica]
 #let link-glossario(
   link-text,
@@ -39,7 +39,7 @@
 
 #registro-modifiche((
   (
-    vers: "0.1.0",
+    vers: "0.2.0",
     date: datetime(day: 11, month: 12, year: 2024),
     autore: p.sara,
     descr: "Aggiunta sezione introduzione",
@@ -108,7 +108,7 @@ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
 alimitedgroup.github.io/Glossario.pdf
 
 
-=Qualità di processo
+= Qualità di processo
 
-=Qualità di prodotto
+= Qualità di prodotto
 
