@@ -55,6 +55,7 @@ K:
   Kubernetes: "Piattaforma open-source per l'automazione della gestione, del 
   deployment e del dimensionamento di applicazioni containerizzate."
 L:
+  LGTM: "Looks good to me, acronimo utilizzato dal verificatore per indicare che il documento è pronto per essere approvato."
   LLM: "Modello linguistico di grandi dimensioni, come ChatGPT, 
   addestrato su enormi quantità di testo per comprendere e generare 
   linguaggio naturale."
@@ -68,7 +69,8 @@ N:
   NATS: "NATS (Neural Architecture Transfer System) è un sistema di middleware open-source progettato
    per la messaggistica distribuita e la gestione dei servizi."
 O:
-  "": ""
+  Ordine: "Spostamento verso l’esterno di un insieme di merci. Almeno un prodotto deve essere trasferito.
+  Un ordine può essere soddisfatto da più magazzini."
 P:
   PoC: "Proof of Concept, prototipo o dimostrazione per verificare la fattibilità 
   di un’idea o tecnologia."
@@ -100,6 +102,8 @@ S:
   Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare 
   un set di attività."
 T:
+  Trasferimento: "Spostamento di un insieme di merci da un magazzino all’altro. Almeno un prodotto deve essere trasferito.
+  Il trasferimento ha solo due magazzini che partecipano all’operazione."
   TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato 
   su JavaScript, con supporto per tipizzazione statica."
 U:
