@@ -28,7 +28,7 @@
     ),
   ),
   stato: [In redazione],
-  responsabile: ((p.loris),),
+  // responsabile: ((p.loris),),
   //verificatore: ((p.samuele), (p.lorenzo)),
   redattori: (
     (p.sara),
@@ -93,6 +93,47 @@ rilevanti per il progetto.
 = Qualità di processo
 == Processi primari
 === Fornitura
+==== Earned Value
+#metric(
+  cod: [MPF1],
+  formula: [
+    $"Earned Value" = "Budget at Completion" * "Percentuale di lavoro completato nello sprint"$
+  ],
+  desc: [L'indicatore Earned Value rappresenta il valore del lavoro _completato_ rispetto al budget totale previsto.\
+    L'indicatore è utile per monitorare l'andamento del progetto e valutare se il lavoro svolto è in linea con le aspettative.],
+)
+
+==== Planned Value
+#metric(
+  cod: [MPF2],
+  formula: [
+    $"Planned Value" = "Budget at Completion" * "Percentuale di lavoro pianificato nello spront"$
+  ],
+  desc: [L'indicatore Planned Value rappresenta il valore del lavoro _pianificato_ rispetto al budget totale previsto.\
+    L'indicatore è utile per monitorare l'andamento del progetto e valutare se la pianificazione è rispettata.
+    Il valore pianificato non può essere negativo e deve essere inferiore al BAC],
+)
+
+==== Actual Cost
+#metric(
+  cod: [MPF3],
+  formula: [
+    $"Actual Cost" = "Costo effettivo sostenuto nello sprint"$
+  ],
+  desc: [L'indicatore Actual Cost rappresenta il costo effettivo sostenuto per completare il lavoro nello sprint.\
+    L'indicatore è utile per monitorare l'andamento del progetto e valutare se i costi sono in linea con le aspettative.],
+)
+
+
+==== Cost Performance Index
+#metric(
+  cod: [MPF4],
+  formula: [
+    $"Cost Performance Index" = "Earned Value" / "Actual Cost"$
+  ],
+  desc: [Il Cost Performance Index rappresenta il rapporto tra il valore del lavoro completato e il costo effettivo sostenuto.\
+    Un valore maggiore di 1 indica che il progetto sta rispettando il budget, un valore minore di 1 indica che il progetto sta superando il budget.],
+)
 
 
 == Processi di supporto
