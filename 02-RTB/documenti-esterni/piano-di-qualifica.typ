@@ -87,7 +87,7 @@ alimitedgroup.github.io/Glossario.pdf
 = Qualità di processo
 == Processi primari
 === Fornitura
-#show: metric.with(
+#metric(
   code: "MPC-2",
   formula: $ 100 dot (Ore "Consuntivate" - Ore "Preventivate") / Ore "Preventivate" $,
   description: "Questa metrica valuta la percentuale di variazione dell'impegno orario complessivo tra preventivo e consuntivo in uno sprint. Il valore è positivo quando viene preventivato un impegno orario inferiore a quello effettivamente svolto, mentre è negativo quando viene preventivato un impegno orario maggiore a quello effettivamente svolto.",
