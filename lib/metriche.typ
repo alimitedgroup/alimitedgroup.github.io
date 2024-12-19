@@ -2,10 +2,9 @@
   cod: [],
   formula: none,
   desc: [],
-  body,
 ) = [
 
-  #body
+  //#body
 
   - *Codice*: #cod
 
@@ -15,4 +14,3 @@
 
   - *Descrizione*: #desc
 ]
-)

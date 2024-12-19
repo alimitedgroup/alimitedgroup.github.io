@@ -1,5 +1,5 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/metriche.typ": metric
+#import "../../lib/metriche.typ": *
 
 #let ver = [0.2.0]
 
@@ -33,29 +33,29 @@
   redattori: (
     (p.sara),
   ),
-  descrizione: [Questo documento contiene l'_Piano di Qualifica_ descritta dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
+  descrizione: [Questo documento contiene il _Piano di Qualifica_ descritto dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
   titolo: "Piano di Qualifica",
   body,
 )
 
 = Introduzione
 == Scopo del documento
-Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto software e dei processi coinvolti nel suo ciclo di vita.\
+Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _software_ e dei processi coinvolti nel suo ciclo di vita.\
 Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
 
-+ Piano della Qualità
++ *Piano della Qualità*
   - Definisce gli obiettivi qualitativi
   - Stabilisce gli standard di riferimento
   - Delinea le politiche e le strategie per raggiungere l'eccellenza
 
 
-+ Controllo di Qualità
++ *Controllo di Qualità*
   - Implementa meccanismi di misurazione oggettivi
   - Verifica la conformità ai requisiti
   - Monitora le prestazioni attraverso metriche predefinite
 
 
-+ Miglioramento Continuo
++ *Miglioramento Continuo*
   - Analizza periodicamente i risultati
   - Identifica opportunità di ottimizzazione
   - Adatta costantemente processi e obiettivi
@@ -79,15 +79,15 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 rilevanti per il progetto.
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto
-alimitedgroup.github.io/norme-progetto.pdf
-- Capitolato d’appalto C6 Sistema di Gestione di un Magazzino Distribuito:
-https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
+- Norme di Progetto: \
+  #link("alimitedgroup.github.io/norme-progetto.pdf")[alimitedgroup.github.io/norme-progetto.pdf]
+- Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito: \
+  https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
 
 
 === Riferimenti informativi
-- Glossario:
-alimitedgroup.github.io/Glossario.pdf
+- Glossario: \
+  #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
 
 
 = Qualità di processo
@@ -98,7 +98,7 @@ alimitedgroup.github.io/Glossario.pdf
 == Processi di supporto
 === Documentazione
 ==== Indice di Gulpease
-#show: metric.with(
+#metric(
   cod: [MPD1],
   formula: [
     $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *100 + "numero di frasi" / "numero di parole" * 300$
@@ -107,22 +107,22 @@ alimitedgroup.github.io/Glossario.pdf
     È utile per capire quanto un testo sia facile o difficile da leggere per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.\
 
     _Intervalli e interpretazioni_
-    - Indice ≥ 80:
+    - Indice $gt.eq$ 80:
       Il testo è molto facile da leggere, comprensibile per chi ha completato solo la scuola elementare.
 
-    - Indice tra 60 e 80:
+    - Indice compreso 60 e 80:
       Il testo è di media difficoltà, adatto a chi ha completato la scuola dell'obbligo.
 
-    - Indice tra 40 e 60:
+    - Indice compreso 40 e 60:
       Il testo è abbastanza difficile, comprensibile per chi ha almeno un'istruzione di livello superiore.
 
-    - Indice < 40:
+    - Indice $lt$ 40:
       Il testo è molto difficile da leggere, comprensibile per lettori con un'istruzione universitaria.],
 )
 
 
 ==== Correttezza ortografica
-#show: metric.with(
+#metric(
   cod: [MPD2],
   formula: [
     $"Correttezza ortografica" = (1-"numero di errori ortografici" / "numero di parole" )* 100$
