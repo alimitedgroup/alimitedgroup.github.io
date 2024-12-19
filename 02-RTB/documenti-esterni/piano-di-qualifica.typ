@@ -1,5 +1,5 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/metriche.typ": *
+#import "../../lib/metriche.typ": metric
 
 #let ver = [0.2.0]
 
@@ -8,6 +8,12 @@
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.2.0",
+      date: datetime(day: 19, month: 12, year: 2024),
+      autore: p.sara,
+      descr: "Aggiunte metriche di processo",
+    ),
     (
       vers: "0.2.0",
       date: datetime(day: 11, month: 12, year: 2024),
@@ -87,13 +93,50 @@ alimitedgroup.github.io/Glossario.pdf
 = Qualità di processo
 == Processi primari
 === Fornitura
-==== MPD-1: Schedule Variance
+
+
+== Processi di supporto
+=== Documentazione
+==== Indice di Gulpease
 #show: metric.with(
-  code: [MPC-2],
-  //formula: $ 100 dot (Ore "Consuntivate" - Ore "Preventivate") / Ore "Preventivate" $,
-  description: [ABC],
+  cod: [MPD1],
+  formula: [
+    $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *100 + "numero di frasi" / "numero di parole" * 300$
+  ],
+  desc: [L'Indice Gulpease è un indice di leggibilità del testo.
+    È utile per capire quanto un testo sia facile o difficile da leggere per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.\
+
+    _Intervalli e interpretazioni_
+    - Indice ≥ 80:
+      Il testo è molto facile da leggere, comprensibile per chi ha completato solo la scuola elementare.
+
+    - Indice tra 60 e 80:
+      Il testo è di media difficoltà, adatto a chi ha completato la scuola dell'obbligo.
+
+    - Indice tra 40 e 60:
+      Il testo è abbastanza difficile, comprensibile per chi ha almeno un'istruzione di livello superiore.
+
+    - Indice < 40:
+      Il testo è molto difficile da leggere, comprensibile per lettori con un'istruzione universitaria.],
 )
 
 
-= Qualità di prodotto
+==== Correttezza ortografica
+#show: metric.with(
+  cod: [MPD2],
+  formula: [
+    $"Correttezza ortografica" = (1-"numero di errori ortografici" / "numero di parole" )* 100$
+  ],
+  desc: [La correttezza ortografica è un indicatore della qualità della documentazione.
+    Una precisione del 100% significa che non ci sono errori ortografici.],
+)
+
+
+
+
+
+
+
+
+
 

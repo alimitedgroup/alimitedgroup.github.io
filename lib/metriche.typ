@@ -1,31 +1,18 @@
 #let metric(
-  code: [],
+  cod: [],
   formula: none,
-  description: [],
-) = {
-  // Impostazioni del documento
-  set text(font: "New Computer Modern", size: 11pt)
+  desc: [],
+  body,
+) = [
 
-  // Stile per le etichette
-  let label(text) = text(weight: "bold")[#text + ":"]
+  #body
 
-  // Codice
-  grid(
-    columns: (120pt, auto),
-    gutter: 10pt,
-    label("Codice"), text[#code],
-  )
+  - *Codice*: #cod
 
-  // Formula (opzionale)
-  if formula != none {
-    block(spacing: 1em)[
-      #label("Formula")
-      #align(center)[#formula]
-    ]
+  #if (formula != none) {
+    [- *Formula*: #formula]
   }
 
-  // Descrizione
-  block(spacing: 1em)[
-    #label("Descrizione") #description
-  ]
-}
+  - *Descrizione*: #desc
+]
+)
