@@ -32,7 +32,7 @@ In questa riunione hanno partecipato, per conto, di #M31:
 = Dettagli riunione
 == Esposizione degli avanzamenti sullo studio delle tecnologie e possibile architettura del Sistema
 Nel corso della riunione i componenti di _ALimitedGroup_ presenti all'incontro hanno esposto ad #M31 gli avanzamenti fatti in merito all'uso di *Go* e *Nats*:
-nel dettaglio, è stata presentata un'istanza di funzionamento di un pacchetto *Docker* che comunicava, mediante *Nats*, ad un Database localmente presente, il tutto gestito mediante codice in Go.
+nel dettaglio, è stata presentata un'istanza di funzionamento di un pacchetto *Docker* che comunicava, mediante *Nats*, ad un Database localmente presente, il tutto gestito mediante codice in *Go*.
 
 In seguito è stata esposta una prima idea architetturale, idea che, data la complessità del progetto, è necessaria per adeguatamente testare le tecnologie da utilizzare nel progetto.
 
