@@ -1,5 +1,5 @@
-#import "../../lib/importantdocs.typ"
-#import "../../lib/metriche.typ"
+#import "../../lib/importantdocs.typ": *
+#import "../../lib/metriche.typ": *
 
 #let ver = [0.2.0]
 
@@ -87,10 +87,11 @@ alimitedgroup.github.io/Glossario.pdf
 = Qualità di processo
 == Processi primari
 === Fornitura
-#metric(
-  code: "MPC-2",
-  formula: $ 100 dot (Ore "Consuntivate" - Ore "Preventivate") / Ore "Preventivate" $,
-  description: "Questa metrica valuta la percentuale di variazione dell'impegno orario complessivo tra preventivo e consuntivo in uno sprint. Il valore è positivo quando viene preventivato un impegno orario inferiore a quello effettivamente svolto, mentre è negativo quando viene preventivato un impegno orario maggiore a quello effettivamente svolto.",
+==== MPD-1: Schedule Variance
+#show: metric.with(
+  code: [MPC-2],
+  //formula: $ 100 dot (Ore "Consuntivate" - Ore "Preventivate") / Ore "Preventivate" $,
+  description: [ABC],
 )
 
 
