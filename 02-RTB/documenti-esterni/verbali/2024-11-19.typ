@@ -21,8 +21,7 @@
   ),
   stato: [Approvato],
   presenze: (p.emanuele, p.samuele, p.sara, p.loris, p.marco, p.matteo, p.lorenzo),
-  odg: [Prima riunione con #M31 dopo l'aggiudicazione del progetto: formalizzazione dei requisiti e dell'organizzazione futura],
-  disambiguatore: [M31],
+  odg: [Prima riunione con _M31_ dopo l'aggiudicazione del progetto: formalizzazione dei requisiti e dell'organizzazione futura],
   body,
 )
 

@@ -15,7 +15,7 @@
   [ #metadata[#nome #versione] <titolo> ]
 
   // Prima pagina
-  image("/assets/altd.png", height: 7cm)
+  image("../assets/altd.png", height: 7cm)
   v(4em)
   text(24pt, weight: "bold", fill: black)[#nome \ Versione #versione]
   v(2.25em)
