@@ -1,4 +1,50 @@
-#import "../../lib/common.typ": *
+#import "../../lib/importantdocs.typ": *
+
+#let ver = [0.2.0]
+
+#show: body => importantdocs(
+  data: datetime(day: 05, month: 12, year: 2024),
+  tipo: [esterno],
+  versione: ver,
+  versioni: (
+    (
+      vers: "0.2.0",
+      date: datetime(day: 11, month: 12, year: 2024),
+      autore: p.sara,
+      descr: "Aggiunta sezione introduzione",
+    ),
+    (
+      vers: "0.1.0",
+      date: datetime(day: 5, month: 12, year: 2024),
+      autore: p.sara,
+      descr: "Redazione documento",
+    ),
+  ),
+  stato: [In redazione],
+  responsabile: ((p.loris),),
+  //verificatore: ((p.samuele), (p.lorenzo)),
+  redattori: (
+    (p.sara),
+  ),
+  descrizione: [Questo documento contiene l'_Piano di Qualifica_ descritta dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
+  titolo: "Piano di Qualifica",
+  body,
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#import "../../lib/common.typ": *
 #import "@preview/cetz:0.3.1": *
 #import "@preview/cetz-plot:0.1.0": chart
 
@@ -54,7 +100,7 @@
 #pagebreak()
 
 #indice()
-#pagebreak()
+#pagebreak()*/
 
 = Introduzione
 == Scopo del documento
