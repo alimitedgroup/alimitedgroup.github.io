@@ -2,7 +2,7 @@
 #metadata[Glossario] <titolo>
 
 #set text(lang: "it", font: "Hanken Grotesk")
-#let versione = [0.2.0]
+#let versione = [0.4.0]
 
 // Prima pagina
 #prima-pagina(
@@ -22,6 +22,12 @@
 #counter(page).update(1)
 
 #registro-modifiche((
+    (
+    vers: "0.4.0",
+    date: datetime(day: 18, month: 12, year: 2024),
+    autore: p.sara,
+    descr: "Aggiornamento glossario",
+  ),
   (
     vers: "0.3.0",
     date: datetime(day: 9, month: 12, year: 2024),
