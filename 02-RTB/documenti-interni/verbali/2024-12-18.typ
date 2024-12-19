@@ -68,7 +68,7 @@ Nel dettaglio è stato deciso che:
 Per l'assegnazione delle attività saranno mantenute le issue generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.
 
 #pagebreak()
-== Assegnazione prevista dei ruoli sino al 5-01-2025
+== Assegnazione prevista dei ruoli sino al 05-01-2025
 
 Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono così i ruoli:
 
