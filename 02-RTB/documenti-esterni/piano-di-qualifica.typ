@@ -1,4 +1,5 @@
-#import "../../lib/importantdocs.typ": *
+#import "../../lib/importantdocs.typ"
+#import "../../lib/metriche.typ"
 
 #let ver = [0.2.0]
 
@@ -30,77 +31,6 @@
   titolo: "Piano di Qualifica",
   body,
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*#import "../../lib/common.typ": *
-#import "@preview/cetz:0.3.1": *
-#import "@preview/cetz-plot:0.1.0": chart
-
-#set text(lang: "it", font: "Hanken Grotesk")
-#set list(indent: 1em)
-#set par(justify: true)
-#show link: underline
-#show ref: underline
-
-#let versione = [0.2.0]
-#let nome-documento = [Piano di Qualifica]
-#let link-glossario(
-  link-text,
-) = {
-  link("https://alimitedgroup.github.io/glossario%200.1.0")[#link-text]
-}
-#let link-norme(
-  link-text,
-) = {
-  link("https://alimitedgroup.github.io/norme%20di%progetto%200.1.0")[#link-text]
-}
-
-#metadata[Piano di qualifica #versione] <titolo>
-#prima-pagina(
-  nome-documento + "\nVersione " + versione,
-  [],
-  [Stato],
-  [Redazione],
-  [Versione],
-  versione,
-  [Distribuzione],
-  grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin)),
-)
-
-#set heading(numbering: "1.")
-#set page(numbering: "1", header: header(nome-documento + " v" + versione), footer: footer())
-#counter(page).update(1)
-
-#registro-modifiche((
-  (
-    vers: "0.2.0",
-    date: datetime(day: 11, month: 12, year: 2024),
-    autore: p.sara,
-    descr: "Aggiunta sezione introduzione",
-  ),
-  (
-    vers: "0.1.0",
-    date: datetime(day: 5, month: 12, year: 2024),
-    autore: p.sara,
-    descr: "Redazione documento",
-  ),
-))
-#pagebreak()
-
-#indice()
-#pagebreak()*/
 
 = Introduzione
 == Scopo del documento
@@ -155,6 +85,14 @@ alimitedgroup.github.io/Glossario.pdf
 
 
 = Qualità di processo
+== Processi primari
+=== Fornitura
+#show: metric.with(
+  code: "MPC-2",
+  formula: $ 100 dot (Ore "Consuntivate" - Ore "Preventivate") / Ore "Preventivate" $,
+  description: "Questa metrica valuta la percentuale di variazione dell'impegno orario complessivo tra preventivo e consuntivo in uno sprint. Il valore è positivo quando viene preventivato un impegno orario inferiore a quello effettivamente svolto, mentre è negativo quando viene preventivato un impegno orario maggiore a quello effettivamente svolto.",
+)
+
 
 = Qualità di prodotto
 
