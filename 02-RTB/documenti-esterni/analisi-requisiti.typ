@@ -1559,11 +1559,11 @@ In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti 
   ],
   trigger: "L'Admin globale vuole accettare una notifica di rifornimento",
 )[
-  #use-case-diagram("M2", "UC30 - Accetta notifica di rifornimento")
+  #use-case-diagram("30", "UC30 - Accetta notifica di rifornimento")
 ]
 
 Il Caso d'Uso UC30 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("M2-incl", "Inclusione del Caso d'Uso n.30: UC30.1")
+#use-case-diagram("30-incl", "Inclusione del Caso d'Uso n.30: UC30.1")
 
 ==== UC30.1 - Seleziona notifica di rifornimento <UC30.1>
 
@@ -1609,10 +1609,10 @@ Il Caso d'Uso UC30 include un ulteriore Caso d'Uso come raffigurato nella seguen
   ],
   trigger: "L'Admin globale vuole rifiutare una notifica di rifornimento",
 )[
-  #use-case-diagram("M3", "UC31 - Rifiuta notifica di rifornimento")
+  #use-case-diagram("31", "UC31 - Rifiuta notifica di rifornimento")
 ]
 
-Il Caso d'Uso UC31 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("M3-incl", "Inclusione del Caso d'Uso n.31: UC30.1")
+Il Caso d'Uso UC31 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("31-incl", "Inclusione del Caso d'Uso n.31: UC30.1")
 Tale caso d'uso è disponibile per la consultazione alla @UC30.1.
 
 === UC32 - Visualizza elenco microservizi
@@ -1631,9 +1631,9 @@ Tale caso d'uso è disponibile per la consultazione alla @UC30.1.
     - UC32.1 @UC32.1
   ],
   trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
-)[#use-case-diagram("M6", "UC32 - Visualizza elenco microservizi")]
+)[#use-case-diagram("32", "UC32 - Visualizza elenco microservizi")]
 
-Il Caso d'Uso UC32 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M6-incl","Inclusione del Caso d'Uso n.32: UC32.1").
+Il Caso d'Uso UC32 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("32-incl","Inclusione del Caso d'Uso n.32: UC32.1").
 Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito.
 
 ==== UC32.1 - Visualizza elemento lista microservizi <UC32.1>
@@ -1678,7 +1678,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
   post: [
-    - Il file CSV viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando fedelmente gli ordini eseguiti
+    - Il file _.csv_ viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando fedelmente gli ordini eseguiti
 
   ],
   scenari: [
@@ -1694,7 +1694,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 )[
   //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
   // INTANTO E' SU DRAW.IO
-  //#use-case-diagram("M1", "UC33 Visualizza elenco notifiche rifornimento")
+  #use-case-diagram("33", "UC33 - Visualizza elenco notifiche rifornimento")
 ]
 
 === UC34 - Nessun ordine da esportare <UC34>
@@ -1723,7 +1723,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
   post: [
-    - Il file CSV viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando accuratamente lo stato attuale dell'inventario
+    - Il file _.csv_ viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando accuratamente lo stato attuale dell'inventario
 
   ],
   scenari: [
@@ -1739,7 +1739,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 )[
   //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
   // INTANTO E' SU DRAW.IO
-  //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+  #use-case-diagram("35", "UC35 - Esportazione report inventario")
 ]
 
 === UC36 - Nessun dato inventario <UC36>
@@ -1788,7 +1788,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 )[
   //TO DO DA INSERIRE DIAGRAMMA QUANDO SARA' CORRETTA LA NUMERAZIONE DEGLI USE CASE
   // INTANTO E' SU DRAW.IO
-  //#use-case-diagram("M1", "UC Visualizza elenco notifiche rifornimento")
+  #use-case-diagram("37", "UC37 - Creazione di una soglia minima per una merce")
 ]
 
 === UC38 - Selezione merce
@@ -1875,7 +1875,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   trigger: "L'Admin Locale vuole aggiornare la quantità (stock) per una determinata merce ",
 )[
-  #use-case-diagram("42", "UC41 - Aggiunta stock di una merce")
+  #use-case-diagram("41", "UC41 - Aggiunta stock di una merce")
 ]
 
 === UC42 - Creazione merce globale
@@ -1898,7 +1898,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione",
 )[
-  #use-case-diagram("43", "UC43 - Creazione di una merce globale")
+  #use-case-diagram("42", "UC42 - Creazione di una merce globale")
 ]
 
 === UC43 - Aggiornamento informazioni di una merce
