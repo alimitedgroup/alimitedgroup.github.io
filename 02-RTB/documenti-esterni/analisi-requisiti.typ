@@ -390,12 +390,11 @@ Il Caso d'Uso UC1 include tre ulteriori _use-case_ come raffigurato nella seguen
 #use-case(
   attore: "Utente",
   pre: [- Il Sistema è attivo, in modalità online o offline;
-    - L'attore principato ha scelto di accedere al sistema, ovvero ha selezionato di essere riconosciuto come Admin globale, Admin locale o Cliente
     - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])
-    - L'attore principale ha immesso uno Username o una password non corretta oppure ha selezionato una tipologia di utente sbagliata],
+    - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata],
   post: [- Il Sistema annulla il tentativo di autenticazione],
   scenari: [
-    - Il Sistema ha ricevuto Username, Password e tipologia di utente ma non è riuscito a verificare tali credenziali
+    - Il Sistema ha ricevuto Username, Password e tipologia di utente, ma non è riuscito a verificare tali credenziali
   ],
 )[]
 
@@ -522,14 +521,14 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - L'Utente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
+    - Il Cliente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
     - Il Sistema non conosce la merce che il Cliente vuole aggiungere all'ordine non confermato
   ],
   post: [
     - Il Sistema riceve la tipologia di merce da aggiungere all'ordine non confermato
   ],
   scenari: [
-    - L'utente procede ad inserire la tipologia di merce che vuole aggiungere all'ordine
+    - Il Cliente procede ad inserire la tipologia di merce che vuole aggiungere all'ordine
   ],
   trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
 )[]
@@ -541,14 +540,14 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - L'Utente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
+    - Il Cliente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
     - Il Sistema non conosce la quantità della tipologia di merce che il Cliente vuole aggiungere all'ordine non confermato
   ],
   post: [
-    - Il Sistema riceve la quantità della tipologia di merce merce da aggiungere all'ordine non confermato
+    - Il Sistema riceve la quantità della tipologia di merce da aggiungere all'ordine non confermato
   ],
   scenari: [
-    - L'utente procede ad inserire la quantità della tipologia di merce che vuole aggiungere all'ordine
+    - Il Cliente procede ad inserire la quantità della tipologia di merce che vuole aggiungere all'ordine
   ],
   trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
 )[]
@@ -649,7 +648,7 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
   post: [
-    - Il Sistema conferma un ordine non confermato registrato nel Sistema
+    - Il Sistema conferma un ordine non confermato registrato nel Sistema eaggiorna le scorte di merci disponibili
   ],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa alla conferma di un ordine non confermato
@@ -675,7 +674,7 @@ Il Caso d'Uso UC9 include un ulteriore Caso d'Uso come raffigurato nella seguent
 #use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.9: UC7")
 Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC7.
 
-=== UC10 - Visualizza elenco ordini non confermati
+=== UC10 - Visualizza elenco ordini non confermati per l'utente corrente
 
 #use-case(
   attore: "Cliente",
@@ -685,10 +684,10 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
   ],
   scenari: [
     - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini non confermati registrati nel Sistema
-    - Il Cliente visualizza a schermo la lista degli ordini non confermati registrati nel Sistema $arrow$ @UC10.1[Vedi UC10.1 Sezione]
+    - Il Cliente visualizza a schermo la lista degli ordini non confermati registrati nel Sistema per l'utente corrente $arrow$ @UC10.1[Vedi UC10.1 Sezione]
   ],
   scenari_alternativi: [
-    - Il Cliente cerca di visualizzare gli ordine non confermati ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
+    - Il Cliente cerca di visualizzare gli ordini non confermati ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
   ],
   inclusioni: [
     - UC10.1 @UC10.1
@@ -735,7 +734,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente
+    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente o un ordine specifico nel dettaglio
   ],
   scenari: [
     - Viene visualizzato l'ID dell'ordine
@@ -749,7 +748,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente
+    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente o un ordine specifico nel dettaglio
   ],
   scenari: [
     - Viene visualizzato la data di creazione dell'ordine
@@ -763,7 +762,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente
+    - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente o un ordine specifico nel dettaglio
   ],
   scenari: [
     - Viene visualizzato il nome dell'ordine
@@ -779,7 +778,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
   scenari: [
-    - Il Cliente ha selezionato da una lista di ordini non confermati la visualizzazione di un ordine specifico
+    - Il Cliente seleziona da una lista di ordini non confermati la visualizzazione di un ordine specifico
     - Il Cliente visualizza del suddetto ordine:
       - ID dell'ordine $arrow$ @UC11[Vedi UC11 Sezione]
       - Data creazione dell'ordine non confermato $arrow$ @UC12[Vedi UC12 Sezione]
@@ -808,7 +807,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando un ordine non confermato registrato nel Sistema per l'utente corrente
+    - Il Cliente sta visualizzando un ordine non confermato registrato nel Sistema per l'utente corrente nel dettaglio
   ],
   scenari: [
     - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine non confermato selezionato $arrow$ @UC14.1.1[Vedi UC14.1.1 Sezione]
@@ -835,13 +834,13 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   inclusioni: [
     - UC14.1.1.1 @UC14.1.1.1
-    - UC14.1.1.2 @UC14.1.1.2
+    /*- UC14.1.1.2 @UC14.1.1.2*/ //??
     - UC15 @UC15
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
-====== UC14.1.1.1 - Visualizza quantità singola merce nell'ordine <UC14.1.1.1>
+====== UC14.1.1.1 - Visualizza quantità singola merce ordine non confermato <UC14.1.1.1>
 
 #use-case(
   attore: "Cliente",
@@ -855,7 +854,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
-====== UC14.1.1.2 - Visualizza stato singola merce nell'ordine <UC14.1.1.2>
+/*====== UC14.1.1.2 - Visualizza stato singola merce nell'ordine <UC14.1.1.2> ??
 
 #use-case(
   attore: "Cliente",
@@ -868,7 +867,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - Viene visualizzato lo stato della singola merce nell'ordine selezionato
   ],
 )[]
-
+*/
 === UC15 - Visualizza nome merce <UC15>
 
 #use-case(
@@ -888,30 +887,34 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 
 // LORIS
 
-=== UC16 - Visualizza la lista delle merci
+=== UC16 - Visualizza lista delle merci nel Sistema
 #use-case(
   attore: "Cliente",
   pre: [
     - Il sistema è attivo, in modalità online o offline
-    - Il Cliente deve essere autenticato nella dashboard
+    - L'utente è riconosciuto dal Sistema come Cliente
   ],
   scenari: [
-    - Il Cliente visualizza a schermo la lista delle merci presenti nel catalogo
+    - Il Cliente seleziona dal menu l'opzione relativa alla visualizzazione dell'elenco delle merci memorizzate nel Sistema
+    - Il Cliente visualizza a schermo la lista delle merci memorizzate nel Sistema $arrow$ @elementolistamercisistema[Vedi UC16 Sezione]
   ],
   inclusioni: [
-    - UC Visualizza elemento lista delle merci
+    - UC16.1 @elementolistamercisistema
   ],
-  trigger: "l'utente vuole visualizzare la lista delle merci presenti nel Sistema",
+  trigger: "l'utente vuole visualizzare la lista delle merci memorizzate nel Sistema",
 )[
   #use-case-diagram("x-lista_merci", "UCx - Visualizza lista delle merci")
 ]
 
-==== UC16.1 - Visualizza elemento lista delle merci
+Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente immagine: [PROSEGUIRE]
+
+==== UC16.1 - Visualizza elemento lista delle merci <elementolistamercisistema>
 #use-case(
   attore: "Cliente",
   pre: [
     - Il sistema è attivo, in modalità online o offline
-    - Il Cliente deve essere autenticato nella dashboard
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando la lista delle merci memorizzate nel Sistema
   ],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
@@ -1091,7 +1094,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[
   #use-case-diagram("ec-conferma-trasferimento", "UC21 - Conferma del trasferimento")
 ]
-
+//--
 === UC22 - Visualizza l'elenco dei trasferimenti
 <UC22>
 #use-case(
