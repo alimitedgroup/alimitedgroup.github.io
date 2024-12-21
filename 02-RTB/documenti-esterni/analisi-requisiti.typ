@@ -1283,7 +1283,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce",
 )[
-  #use-case-diagram("ee-nome-merce", "UC23 - Visualizza nome merce")
+  #use-case-diagram("23", "UC23 - Visualizza nome merce")
 ]
 
 // MATTEO
@@ -1311,7 +1311,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
 )[
-  #use-case-diagram("M1", "UC24 - Visualizza elenco notifiche rifornimento")
+  #use-case-diagram("24", "UC24 - Visualizza elenco notifiche rifornimento")
 ]
 
 === UC25 - Nessuna notifica di rifornimento <UC25>
@@ -1329,7 +1329,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
 )[]
 
 Il Caso d'Uso UC25 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("M1-incl", "Inclusione del Caso d'Uso n. 25: UC25.1")
+#use-case-diagram("25-incl", "Inclusione del Caso d'Uso n. 25: UC25.1")
 Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
 ==== UC25.1 - Visualizza elemento lista notifiche rifornimento <UC25.1>
@@ -1403,13 +1403,15 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   estensioni: [
     - UC25 @UC25
   ],
-  trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento suggerite da" + [_Machine Learning_] + ".",
+  trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento suggerite da"
+    + [_Machine Learning_]
+    + ".",
 )[#use-case-diagram(
-    "M5",
+    "28",
     "UC28 - Visualizza elenco notifiche di rifornimento con " + [_Machine Learning_],
   )]
 
-Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M5-incl","Inclusione del Caso d'Uso n.28: UC")
+Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("28-incl","Inclusione del Caso d'Uso n.28: UC")
 Maggiori informazioni sono disponibili alla @UC25.1
 
 === UC29 - Visualizza notifica rifornimento
@@ -1434,9 +1436,9 @@ Maggiori informazioni sono disponibili alla @UC25.1
     - UC29.2 @UC29.2
   ],
   trigger: "L'Admin globale una notifica di rifornimento specifica registrata nel sistema",
-)[#use-case-diagram("M4", "UC29 - Visualizza notifica di rifornimento")]
+)[#use-case-diagram("29", "UC29 - Visualizza notifica di rifornimento")]
 
-Il Caso d'Uso UC include ulteriori Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl","Inclusione del Caso d'Uso n.29: UC29.1, UC29.2 e UC29.3").
+Il Caso d'Uso UC include ulteriori Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("29-incl","Inclusione del Caso d'Uso n.29: UC29.1, UC29.2 e UC29.3").
 Riguardo UC e UC è possibile avere maggiori informazioni alla @UC26 e alla @UC27, mentre di seguito sarà esposto UC.
 
 ==== UC29.1 - Visualizza magazzino di destinazione <UC29.1>
@@ -1471,7 +1473,7 @@ Riguardo UC e UC è possibile avere maggiori informazioni alla @UC26 e alla @UC2
   trigger: "L'Admin globale vuole visualizzare una notifica di rifornimento nel dettaglio",
 )[]
 
-Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("M4-incl-2","Inclusione del Caso d'Uso n.29.2: UC29.2.1"). Sarà esposto qui di seguito.
+Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("29-incl-2","Inclusione del Caso d'Uso n.29.2: UC29.2.1"). Sarà esposto qui di seguito.
 
 ===== UC29.2.1 - Visualizza elemento lista merce consigliata da rifornire <UC29.2.1>
 
@@ -1982,8 +1984,7 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
     - UC Visualizza lista merci ordine eseguiti
   ],
   trigger: "Il Cliente vuole vedere un ordine eseguito specifico registrato nel Sistema per l'utente corrente",
-)[
-]
+)[ ]
 
 ==== UC45.1 - Visualizza lista merci ordine eseguito
 #use-case(
