@@ -489,21 +489,21 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa all'aggiunta di una merce ad un ordine non confermato
-    - Il Cliente seleziona la tipologia di merce da aggiungere all'ordine non confermato $arrow$ @UC4.1[Vedi UC4.1 Sezione]
-    - Il Cliente seleziona la quantità di tale merce da aggiungere all'ordine non confermato $arrow$ @UC4.2[Vedi UC4.2 Sezione]
+    - Il Cliente seleziona la tipologia di merce da aggiungere all'ordine non confermato $arrow$ @aggmerce[Vedi UC4.1 Sezione]
+    - Il Cliente seleziona la quantità di tale merce da aggiungere all'ordine non confermato $arrow$ @qtamerce[Vedi UC4.2 Sezione]
     - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di aggiunta $arrow$ @UC7[Vedi UC7 Sezione]
   ],
   scenari_alternativi: [
-    - Il Cliente seleziona una merce non valida e/o una quantità non disponibile $arrow$ @UC5[Vedi UC5 Sezione]
+    - Il Cliente seleziona una merce non valida e/o una quantità non disponibile $arrow$ @errmercenonvalida[Vedi UC5 Sezione]
     - Il Cliente cerca di aggiungere merce ad un ordine non confermato ma nessun ordine non confermato è registrato nel sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
   ],
   inclusioni: [
-    - UC4.1 @UC4.1
-    - UC4.2 @UC4.2
+    - UC4.1 @aggmerce
+    - UC4.2 @qtamerce
     - UC7 @UC7
   ],
   estensioni: [
-    - UC5 @UC5
+    - UC5 @errmercenonvalida
     - UC6 @UC6
   ],
   trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
@@ -514,58 +514,58 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC4.1, UC4.2, UC7")
 
-==== UC4.1 - Seleziona merce da aggiungere all'ordine non confermato <UC4.1>
+=== UC5 - Seleziona merce da aggiungere all'ordine o trasferimento non confermato <aggmerce>
 
 #use-case(
-  attore: "Cliente",
+  attore: "Cliente, Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
-    - Il Sistema non conosce la merce che il Cliente vuole aggiungere all'ordine non confermato
+    - L'attore principale ha selezionato dal menu di voler aggiungere merce ad un ordine o ad un trasferimento non confermato
+    - Il Sistema non conosce la merce che il Cliente vuole aggiungere all'ordine o al trasferimento non confermato
   ],
   post: [
-    - Il Sistema riceve la tipologia di merce da aggiungere all'ordine non confermato
+    - Il Sistema riceve la tipologia di merce da aggiungere all'ordine o al trasferimento non confermato
   ],
   scenari: [
-    - Il Cliente procede ad inserire la tipologia di merce che vuole aggiungere all'ordine
+    - Il Cliente procede ad inserire la tipologia di merce che vuole aggiungere all'ordine o al trasferimento non confermato
   ],
-  trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
+  trigger: "Il Cliente vuole aggiungere merce ad un ordine o ad un trasferimento non confermato",
 )[]
 
-==== UC4.2 - Seleziona quantità merce da aggiungere all'ordine non confermato <UC4.2>
+=== UC6 - Seleziona quantità merce da aggiungere all'ordine o trasferimento non confermato <qtamerce>
 
 #use-case(
   attore: "Cliente",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente ha selezionato dal menu di voler aggiungere merce ad un ordine non confermato
-    - Il Sistema non conosce la quantità della tipologia di merce che il Cliente vuole aggiungere all'ordine non confermato
+    - Il Cliente ha selezionato dal menu di voler aggiungere merce ad un ordine o ad un trasferimento non confermato
+    - Il Sistema non conosce la quantità della tipologia di merce che il Cliente vuole aggiungere all'ordine o al trasferimento non confermato
   ],
   post: [
-    - Il Sistema riceve la quantità della tipologia di merce da aggiungere all'ordine non confermato
+    - Il Sistema riceve la quantità della tipologia di merce da aggiungere all'ordine o al trasferimento non confermato
   ],
   scenari: [
-    - Il Cliente procede ad inserire la quantità della tipologia di merce che vuole aggiungere all'ordine
+    - Il Cliente procede ad inserire la quantità della tipologia di merce che vuole aggiungere all'ordine o al trasferimento non confermato
   ],
-  trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
+  trigger: "Il Cliente vuole aggiungere merce ad un ordine o ad un trasferimento non confermato",
 )[]
 
-=== UC5 - Aggiunta merce non valida <UC5>
+=== UC5 - Aggiunta merce non valida <errmercenonvalida>
 
 #use-case(
-  attore: "Cliente",
+  attore: "Cliente, Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente ha eseguito l'operazione di aggiunta di una merce ad un ordine non confermato
+    - L'attore principale ha eseguito l'operazione di aggiunta di una merce ad un ordine o ad un trasferimento non confermato
   ],
   post: [
-    - L'operazione di aggiunta di una merce ad un ordine non confermato viene annullata
+    - L'operazione di aggiunta di una merce ad un ordine o ad un trasferimento non confermato viene annullata
   ],
   scenari: [
-    - Il Cliente ha scelto la tipologia di merce da aggiungere all'ordine non confermato, la quantità e l'ordine a cui aggiungere tale merce ma il Sistema ha verificato che la merce selezionata non esiste o eccede la quantità disponibile
+    - L'attore principale ha scelto la tipologia di merce da aggiungere all'ordine o al trasferimento non confermato, la quantità e l'ordine o trasferimento a cui aggiungere tale merce ma il Sistema ha verificato che la merce selezionata non esiste o eccede la quantità disponibile nel magazzino mittente
   ],
 )[]
 
@@ -655,14 +655,14 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
     - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di conferma $arrow$ @UC7[Vedi UC7 Sezione]
   ],
   scenari_alternativi: [
-    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @UC5[Vedi UC5 Sezione]
+    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @errmercenonvalida[Vedi UC5 Sezione]
     - Il Cliente cerca di confermare un ordine non confermato ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC6[Vedi UC6 Sezione]
   ],
   inclusioni: [
     - UC7 @UC7
   ],
   estensioni: [
-    - UC5 @UC5
+    - UC5 @errmercenonvalida
     - UC6 @UC6
   ],
   trigger: "Il Cliente vuole confermare un ordine non confermato",
@@ -834,7 +834,6 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   inclusioni: [
     - UC14.1.1.1 @UC14.1.1.1
-    /*- UC14.1.1.2 @UC14.1.1.2*/ //??
     - UC15 @UC15
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
@@ -854,20 +853,6 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
-/*====== UC14.1.1.2 - Visualizza stato singola merce nell'ordine <UC14.1.1.2> ??
-
-#use-case(
-  attore: "Cliente",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando una lista di merci di un ordine registrato nel Sistema per l'utente corrente
-  ],
-  scenari: [
-    - Viene visualizzato lo stato della singola merce nell'ordine selezionato
-  ],
-)[]
-*/
 === UC15 - Visualizza nome merce <UC15>
 
 #use-case(
@@ -882,16 +867,11 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
-
-// TODO: definire numero UC da qui in poi
-
-// LORIS
-
-=== UC16 - Visualizza lista delle merci nel Sistema
+=== UC16 - Visualizza elenco delle merci nel Sistema
 #use-case(
   attore: "Cliente",
   pre: [
-    - Il sistema è attivo, in modalità online o offline
+    - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
   scenari: [
@@ -912,98 +892,90 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
 #use-case(
   attore: "Cliente",
   pre: [
-    - Il sistema è attivo, in modalità online o offline
+    - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando la lista delle merci memorizzate nel Sistema
   ],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-    - il nome della merce $arrow$ UC Visualizza nome di una merce
-    - lo stock totale della merce $arrow$ UC Visualizza lo stock totale di una merce
+    - il nome della merce $arrow$ @UC15[Vedi UC15 Sezione]
+    - la quantità di merce complessiva in tutti i magazzini $arrow$ @qtmercecompl[Vedi UC Sezione]
+    - la quantità di merce nel magazzino presso cui il Cliente ha fatto l'autenticazione $arrow$ @qtmercemagatt[Vedi UC Sezione]
   ],
   inclusioni: [
-    - UC Visualizza nome di una merce
-    - UC Visualizza lo stock totale di una merce
+    - UC15 @UC15
+    - UC @qtmercecompl
+    - UC @qtmercemagatt
   ],
   trigger: "l'utente vuole visualizzare la lista delle merci presenti nel Sistema",
 )[
   // #use-case-diagram("x-merce", "UCx - Visualizza lista delle merci")
 ]
 
+=== UCx - Visualizza quantità complessiva di una merce in tutti i magazzini <qtmercecompl>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci oppure una singola merce nel dettaglio
+  ],
+  scenari: [
+    - Il Cliente visualizza la quantità complessiva della merce in tutti i magazzini
+  ],
+)[]
+
+=== UCx - Visualizza quantità di una merce nel magazzino attuale <qtmercemagatt>
+#use-case(
+  attore: "Cliente",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando una lista di merci oppure una singola merce nel dettaglio
+  ],
+  scenari: [
+    - Il Cliente visualizza la quantità della merce nel magazzino attuale
+  ],
+)[]
 
 === UC17 - Visualizza merce
 #use-case(
   attore: "Cliente",
   pre: [
-    - Il sistema è attivo, in modalità online o offline
-    - Il Cliente deve essere autenticato nella dashboard
-    - Il Cliente ha selezionato una merce
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
   ],
   scenari: [
-    - Il Cliente visualizza a schermo i dettagli della merce selezionata
+    - Il Cliente seleziona da una lista di merci la visualizzazione di una merce in particolare
+    - Il Cliente viusalizza della merce selezionata:
+      - Nome della merce $arrow$ @UC15[Vedi UC15 Sezione]
+      - Quantità della merce disponibile nel magazzino attuale $arrow$ @qtmercemagatt[Vedi UC Sezione]
+      - Quantità della merce complessivamente disponibile in tutti i magazzini $arrow$ @qtmercecompl[Vedi UC Sezione]
+      - Descrizione della merce $arrow$ @descmerce[Vedi UC Sezione]
   ],
   inclusioni: [
-    - UC Visualizza lo stock totale di una merce
-    - UC Visualizza stock di una merce per magazzino
-    - UC Visualizza nome di una merce
-    - UC Visualizza descrizione di una merce
+    - UC15 @UC15
+    - UC @qtmercemagatt
+    - UC @qtmercecompl
   ],
   trigger: "l'utente vuole visualizzare i dettagli di una merce presente nel Sistema",
 )[
   #use-case-diagram("x-merce", "UCx - Visualizza merce")
 ]
 
+==== UCx - Visualizza descrizione della merce <descmerce>
 
-==== UC17.1 - Visualizza lo stock totale di una merce
 #use-case(
   attore: "Cliente",
   pre: [
-    - Il sistema è attivo, in modalità online o offline
-    - Il Cliente deve essere autenticato nella dashboard
-    - Il Cliente ha selezionato una merce
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - Il Cliente sta visualizzando il dettaglio di una merce
   ],
   scenari: [
-    - Il Cliente visualizza a schermo lo stock totale della merce selezionata
+    - Il Cliente visualizza la descrizione della merce
   ],
-  trigger: "l'utente vuole visualizzare lo stock totale di una merce presente nel Sistema",
 )[]
-
-
-==== UC17.2 - Visualizza stock di una merce per magazzino
-#use-case(
-  attore: "Cliente",
-  pre: [
-    - Il sistema è attivo, in modalità online o offline
-    - Il Cliente deve essere autenticato nella dashboard
-    - Il Cliente ha selezionato una merce
-  ],
-  scenari: [
-    - Il Cliente visualizza a schermo lo stock della merce selezionata per magazzino
-  ],
-  trigger: "l'utente vuole visualizzare lo stock di una merce per magazzino presente nel Sistema",
-)[]
-
-
-// TODO: siamo sicuri di volerla fare? non è nel capitolato e implementarla è difficile per via della gestione degli ordini in corso
-=== UC18 - Eliminazione di una merce dal catalogo
-#use-case(
-  attore: "Admin Globale",
-  pre: [
-    - Il sistema è attivo, in modalità online o offline
-    - L'Admin globale deve essere autenticato nella dashboard
-  ],
-  post: [
-    - La merce verrà eliminata in tutti i magazzini locali
-  ],
-  scenari: [
-    - L'Admin globale modifica le informazioni di una merce nel catalogo
-  ],
-  trigger: "L'Admin globale vuole modificare le informazioni di una merce nel catalogo",
-)[]
-
-// EMANUELE
-
-// #### TODO: VERIFICARE NUMERO UC ####
 
 === UC19 - Creazione di un trasferimento
 <UC19>
@@ -1016,11 +988,12 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
     - L'utente ha selezionato dal menù di voler creare un nuovo trasferimento
   ],
   post: [
-    - Il Sistema memorizza l'esistenza di un nuovo trasferimento non confermato con le relative informazioni (identificativo viene fornito dal Sistema)
+    - Il Sistema memorizza l'esistenza di un nuovo trasferimento non confermato con le relative informazioni
   ],
   scenari: [
-    - L'Admin globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
-    - L'Admin globale inserisce l'identificativo del magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC19.1[Vedi UC19.1 Sezione]
+    - L'Admin Globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
+    - L'Admin Globale sceglie il magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC19.1[Vedi UC19.1 Sezione]
+    - L'Admin Globale sceglie il magazzino mittente del nuovo trasferimento da confermare $arrow$ @selezmagmitttrasf[Vedi UC Sezione]
   ],
   trigger: [L'Admin globale vuole creare un nuovo trasferimento da confermare],
   inclusioni: [
@@ -1030,10 +1003,26 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   #use-case-diagram("ea-creazione-trasferimento", "UC19 - Creazione di un trasferimento")
 ]
 
+==== UCx - Selezione del magazzino mittente di un trasferimento non confermato
+<selezmagmitttrasf>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale ha selezionato dal menu di voler creare un nuovo trasferimento
+    - Il Sistema non conosce il magazzino mittente di un trasferimento non confermato
+  ],
+  post: [
+    - Il Sistema riceve l'identificativo del magazzino mittente del nuovo trasferimento
+  ],
+  scenari: [
+    - L'Admin globale procede ad inserire l'identificativo del magazzino mittente del nuovo trasferimento non confermato
+  ],
+  trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
+)[]
 
-
-// Questi erano di Sara, credo vada integrato il tutto con il lavoro di Emanuele
-==== UC19.1 - Selezione del magazzino di destinazione
+==== UC19.1 - Selezione del magazzino destinatario di un trasferimento non confermato
 <UC19.1>
 #use-case(
   attore: "Admin globale",
@@ -1041,7 +1030,7 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin globale ha selezionato dal menù di voler creare un nuovo trasferimento
-    - Il Sistema non conosce l'indirizzo di spedizione del nuovo trasferimento
+    - Il Sistema non conosce il magazzino destinatario di un trasferimento non confermato
   ],
   post: [
     - Il Sistema riceve l'identificativo del magazzino destinatario del nuovo trasferimento
@@ -1049,30 +1038,62 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   scenari: [
     - L'Admin globale procede ad inserire l'identificativo del magazzino destinatario del nuovo trasferimento non confermato
   ],
-  trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
+  trigger: "L'Admin globale vuole creare un nuovo trasferimento di merce tra magazzini da confermare",
 )[]
 
-
-=== UC20 - Selezione merce per il trasferimento
+=== UC20 - Aggiunta merce ad un trasferimento non confermato
 <UC20>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin globale ha selezionato dal menù di voler aggiungere merce ad un trasferimento
+    - L'Admin globale ha selezionato dal menu di voler aggiungere merce ad un trasferimento
     - Nel Sistema esiste almeno un trasferimento da confermare
   ],
   post: [
-    - La merce desiderata è stata aggiunta ad un trasferimento
+    - La merce selezionata è stata aggiunta ad un trasferimento
   ],
   scenari: [
-    - L'Admin globale procede ad aggiungere merce da trasferire in un trasferimento esistente da confermare
+    - L'Admin Globale seleziona la voce del menu relativa all'aggiunta di merce ad un trasferimento non confermato
+    - L'Admin Globale seleziona il trasferimento non confermato a cui aggiungere merce $arrow$ @seleztrasf[Vedi UC Sezione]
+    - L'Admin Globale inserisce il nome della merce che vuole trasferire $arrow$ @aggmerce[Vedi UC Sezione]
+    - L'Admin Globale inserisce la quantità della merce da trasferire $arrow$ @qtamerce[Vedi UC Sezione]
   ],
-  trigger: "L'Admin globale vuole trasferire oggetti specifici da un magazzino all'altro",
+  scenari_alternativi: [
+    - L'Admin globale ha scelto una quantità di merce per la merce selezionata superiore alla quantità disponibile nel magazzino mittente $arrow$ @errmercenonvalida[Vedi UC Sezione]
+    - L'Admin Globale ha selezionato di voler aggiungere merce ad un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @errnessuntrasf[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @seleztrasf
+    - UC @aggmerce
+    - UC @qtamerce
+  ],
+  estensioni: [
+    - UC @errmercenonvalida
+    - UC @errnessuntrasf
+  ],
+  trigger: "L'Admin globale vuole trasferire della merce da un magazzino all'altro",
 )[
   #use-case-diagram("eb-selezione-trasferimento", "UC20 - Selezione degli oggetti per il trasferimento")
 ]
+
+=== UCx - Seleziona trasferimento non confermato <seleztrasf>
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin globale ha selezionato dal menu di voler aggiungere merce ad un trasferimento non confermato o di confermarne uno
+  ],
+  post: [
+    - Il Sistema memorizza il trasferimento non confermato alla quale aggiungere la merce o il trasferimento da confermare
+  ],
+  scenari: [
+    - L'Admin Globale inserisce l'ID del trasferimento non confermato alla quale aggiungere merce o che vuole confermare
+  ],
+  trigger: "L'Admin globale vuole trasferire della merce da un magazzino all'altro o confermare un trasferimento non confermato",
+)[]
 
 === UC21 - Conferma del trasferimento
 <UC21>
@@ -1080,20 +1101,44 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin globale ha selezionato dal menù di voler creare un nuovo trasferimento
-    - Il Sistema non conosce l'indirizzo di spedizione del nuovo trasferimento
+    - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
   post: [
-    - Il Sistema riceve l'identificativo del magazzino destinatario del nuovo trasferimento
+    - Il Sistema memorizza un trasferimento come confermato e lo avvia nell'effettivo
   ],
   scenari: [
-    - L'Admin globale procede ad inserire l'identificativo del magazzino destinatario del nuovo trasferimento non confermato
+    - L'Admin Globale seleziona dal menu l'opzione relativa alla conferma di un trasferimento non confermato
+    - L'Admin Globale seleziona il trasferimento non confermato da confermare $arrow$ @seleztrasf[Vedi UC Sezione]
   ],
-  trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
+  scenari_alternativi: [
+    - L'Admin Globale ha selezionato il trasferimento non confermato ma la quantità della merce non è più disponibile nel magazzino mittente $arrow$ @errmercenonvalida[Vedi UC Sezione]
+    - L'Admin Globale ha selezionato di voler confermare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @errnessuntrasf[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @seleztrasf
+    - UC @errnessuntrasf
+  ],
+  trigger: "L'Admin Globale vuole creare un nuovo trasferimento da confermare",
 )[
   #use-case-diagram("ec-conferma-trasferimento", "UC21 - Conferma del trasferimento")
 ]
+
+=== UCx - Nessun trasferimento non confermato disponibile <errnessuntrasf>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - L'Utente ha selezionato dal menu un'opzione che riguarda un ordine non confermato
+  ],
+  post: [
+    - L'operazione riguardante un ordine non confermato viene annullata
+  ],
+  scenari: [
+    - Il Cliente ha avviato un'operazione riguardante un ordine non confermato ma il Sistema non ha memorizzato alcun ordine non confermato per l'utente corrente
+  ],
+)[]
 //--
 === UC22 - Visualizza l'elenco dei trasferimenti
 <UC22>
@@ -2021,7 +2066,6 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   inclusioni: [
     - UC45.1.1.1 @UC45.1.1.1
-    - UC45.1.1.2 @UC45.1.1.2
     - UC15 @UC15
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
@@ -2040,18 +2084,6 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
 )[]
 
-====== UC45.1.1.2 - Visualizza stato singola merce nell'ordine <UC45.1.1.2>
-#use-case(
-  attore: "Cliente",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - Il Cliente sta visualizzando una lista di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
-  ],
-  scenari: [
-    - Viene visualizzato lo stato della singola merce nell'ordine eseguito selezionato
-  ],
-)[]
 
 = Requisiti Principali
 == Requisiti Funzionali
