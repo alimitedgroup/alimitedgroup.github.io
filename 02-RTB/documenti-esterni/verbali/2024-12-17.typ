@@ -14,7 +14,7 @@
   ),
   stato: [Redatto],
   presenze: (p.samuele, p.loris, p.matteo, p.marco),
-  odg: [Terza riunione con #M31: esposizione di tutti gli _use-case_ individuati nell'Analisi dei Requisiti, sciolti i dubbi riguardo quest'ultimi, decisi i periodi dei prossimi _meeting_],
+  odg: [Terza riunione con #M31: vengono esposti gli avanzamenti sullo studio delle tecnologie e una possibile architettura del Sistema],
   body,
 )
 
