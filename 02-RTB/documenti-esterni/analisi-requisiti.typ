@@ -440,6 +440,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
+
 ==== UC3.2 - Inserisci nominativo del destinatario <UC3.2>
 #use-case(
   attore: "Cliente",
@@ -457,8 +458,8 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
-==== UC3.3 - Inserisci indirizzo di spedizione <UC3.3>
 
+==== UC3.3 - Inserisci indirizzo di spedizione <UC3.3>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -818,6 +819,10 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC").
+Tale Caso d'Uso sarà descritto qui di seguito:
+
 ===== UC14.1.1 - Visualizza elemento lista merce ordine non confermato <UC14.1.1>
 
 #use-case(
@@ -838,6 +843,10 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
+
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC").
+Tale Caso d'Uso sarà descritto qui di seguito:
 
 ====== UC14.1.1.1 - Visualizza quantità singola merce ordine non confermato <UC14.1.1.1>
 
@@ -886,7 +895,9 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   #use-case-diagram("x-lista_merci", "UCx - Visualizza lista delle merci")
 ]
 
-Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente immagine: [PROSEGUIRE]
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC").
+Tale Caso d'Uso sarà descritto qui di seguito:
 
 ==== UC16.1 - Visualizza elemento lista delle merci <elementolistamercisistema>
 #use-case(
@@ -914,7 +925,11 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   // #use-case-diagram("x-merce", "UCx - Visualizza lista delle merci")
 ]
 
-====== UCx - Visualizza ID merce <IDmerce>
+Il Caso d'Uso UC include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.: UC , UC , UC  e UC").
+Tali Casi d'Uso saranno descritti qui di seguito:
+
+=== UCx - Visualizza ID merce <IDmerce>
 
 #use-case(
   attore: "Cliente, Admin globale",
@@ -975,11 +990,16 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
     - UC15 @UC15
     - UC @qtmercemagatt
     - UC @qtmercecompl
+    - UC @descmerce
   ],
   trigger: "l'utente vuole visualizzare i dettagli di una merce presente nel Sistema",
 )[
   #use-case-diagram("x-merce", "UCx - Visualizza merce")
 ]
+
+Il Caso d'Uso UC include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.: UC , UC , UC , UC e UC").
+Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n. reperibili, rispettivamente, alla @IDmerce, @UC15, @qtmercemagatt e @qtmercecompl.
 
 ==== UCx - Visualizza descrizione della merce <descmerce>
 
@@ -1015,10 +1035,15 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   trigger: [L'Admin globale vuole creare un nuovo trasferimento da confermare],
   inclusioni: [
     - UC19.1 @UC19.1
+    - UC @selezmagmitttrasf
   ],
 )[
   #use-case-diagram("ea-creazione-trasferimento", "UC19 - Creazione di un trasferimento")
 ]
+
+Il Caso d'Uso UC include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.: UC e UC").
+Tali Casi d'Uso saranno descritti qui di seguito:
 
 ==== UCx - Selezione del magazzino mittente di un trasferimento non confermato
 <selezmagmitttrasf>
@@ -1095,6 +1120,10 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   #use-case-diagram("eb-selezione-trasferimento", "UC20 - Selezione degli oggetti per il trasferimento")
 ]
 
+Il Caso d'Uso UC include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.: UC , UC e UC").
+Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC e UC, reperibili, rispettivamente, alla @aggmerce e alla @qtamerce.
+
 === UCx - Seleziona trasferimento non confermato <seleztrasf>
 #use-case(
   attore: "Admin Globale",
@@ -1133,12 +1162,36 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
   inclusioni: [
     - UC @seleztrasf
+  ],
+  estensioni: [
+    - UC @errmercenonvalida
     - UC @errnessuntrasf
   ],
   trigger: "L'Admin Globale vuole confermare un trasferimento non confermato",
 )[
   #use-case-diagram("ec-conferma-trasferimento", "UC21 - Conferma del trasferimento")
 ]
+
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC ").
+Tale Caso d'Uso è reperibile alla @seleztrasf.
+
+=== UCx - Nessun trasferimento non confermato disponibile <errnessuntrasf>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+    - L'Utente ha selezionato dal menu un'opzione che riguarda un trasferimento non confermato
+  ],
+  post: [
+    - L'operazione riguardante un trasferimento non confermato viene annullata
+  ],
+  scenari: [
+    - Il Cliente ha avviato un'operazione riguardante un trasferimento non confermato ma il Sistema non ha memorizzato alcun trasferimento non confermato
+  ],
+)[]
 
 === UCx - Cancella trasferimento non confermato
 
@@ -1159,27 +1212,17 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
     - L'Admin Globale ha selezionato di voler cancellare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @errnessuntrasf[Vedi UC Sezione]
   ],
   inclusioni: [
+    - UC @seleztrasf
+  ],
+  estensioni: [
     - UC @errnessuntrasf
   ],
   trigger: "L'Admin Globale vuole cancellare un trasferimento non confermato",
 )[]
 
-=== UCx - Nessun trasferimento non confermato disponibile <errnessuntrasf>
-
-#use-case(
-  attore: "Admin Globale",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
-    - L'Utente ha selezionato dal menu un'opzione che riguarda un trasferimento non confermato
-  ],
-  post: [
-    - L'operazione riguardante un trasferimento non confermato viene annullata
-  ],
-  scenari: [
-    - Il Cliente ha avviato un'operazione riguardante un trasferimento non confermato ma il Sistema non ha memorizzato alcun trasferimento non confermato
-  ],
-)[]
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC ").
+Tale Caso d'Uso è reperibile alla @seleztrasf.
 
 === UC22 - Visualizza elenco dei trasferimenti
 <UC22>
@@ -1201,7 +1244,11 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   #use-case-diagram("ed-visualizza-trasferimenti", "UC22 - Visualizza l'elenco dei trasferimenti")
 ]
 
-=== UCx - Visualizza elemento lista trasferimenti <elementolistatrasf>
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC ").
+Tale Caso d'Uso sarà qui di seguito descritto:
+
+==== UCx - Visualizza elemento lista trasferimenti <elementolistatrasf>
 
 #use-case(
   attore: "Admin Globale",
@@ -1222,7 +1269,39 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
 )[]
 
-==== UC22.1 - Visualizza trasferimento
+Il Caso d'Uso UC include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC e UC").
+Tali Casi d'Uso daranno ora descritti:
+
+=== UCx - Visualizza ID trasferimento
+<UC22.1.1>
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
+  ],
+  scenari: [
+    - L'Admin Globale visualizza l'ID del trasferimento
+  ],
+)[]
+
+=== UCx - Visualizza stato trasferimento
+<UC22.1.4>
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin globale
+    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
+  ],
+  scenari: [
+    - L'Admin Globale visualizza lo stato del trasferimento
+  ],
+)[]
+
+=== UCx - Visualizza trasferimento
 <UC22.1>
 #use-case(
   attore: "Admin globale",
@@ -1251,22 +1330,11 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   #use-case-diagram("ed-visualizza-dettaglio-trasferimento", "UC22.1 - Visualizza il singolo trasferimento")
 ]
 
-===== UC22.1.1 - Visualizza ID trasferimento
-<UC22.1.1>
-#use-case(
-  attore: "Admin Globale",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
-  ],
-  scenari: [
-    - L'Admin Globale visualizza l'ID del trasferimento
-  ],
-)[]
+Il Caso d'Uso n. include ulteriori Casi d'Uso come rappresentato dalla seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC , UC , UC , UC e UC").
+Tali Casi d'Uso saranno ora descitti ad eccezione degli UC e UC la cui descrizione è reperibile ala, rispettivamente, @UC22.1.1 e @UC22.1.4.
 
-//--
-===== UC22.1.2 - Visualizza magazzino mittente trasferimento
+==== UCx - Visualizza magazzino mittente trasferimento
 <UC22.1.2>
 #use-case(
   attore: "Admin Globale",
@@ -1280,7 +1348,7 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
 )[]
 
-===== UC22.1.3 - Visualizza magazzino destinatario trasferimento
+==== UCx - Visualizza magazzino destinatario trasferimento
 <UC22.1.3>
 #use-case(
   attore: "Admin Globale",
@@ -1294,33 +1362,17 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
 )[]
 
-===== UC22.1.4 - Visualizza stato trasferimento
-<UC22.1.4>
-#use-case(
-  attore: "Admin Globale",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
-  ],
-  scenari: [
-    - L'Admin Globale visualizza lo stato del trasferimento
-  ],
-)[]
-
-===== UC22.1.5 - Visualizza elenco merce trasferimento
+==== UCx - Visualizza elenco merce trasferimento
 <UC22.1.5>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'utente ha selezionato dall'elenco dei trasferimenti un trasferimento da visualizzare nel dettaglio
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
-    - L'Admin globale visualizza la singola merce $arrow$ @UC22.1.5.1 [Vedi UC22.1.5.1 Sezione]
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UC22.1.5.1 [Vedi UC22.1.5.1 Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
   inclusioni: [
@@ -1328,7 +1380,11 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
 )[]
 
-====== UC22.1.5.1 - Visualizza elemento lista merce trasferimento <UC22.1.5.1>
+Il Caso d'Uso n. include un ulteriore Caso d'Uso come rappresentato dalla seguente immagine:
+#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.: UC e relative inclusioni (UC e UC)").
+Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell'UC , una cui descrizione è reperibile alla @UC15.
+
+===== UCx - Visualizza elemento lista merce trasferimento <UC22.1.5.1>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1350,7 +1406,7 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   #use-case-diagram("ed-visualizza-singola-merce-trasferimento", "UC22.1.5.1 - Visualizza singola merce trasferimento")
 ]
 
-======= UC22.1.5.1.1 - Visualizza quantità singola merce
+====== UCx - Visualizza quantità singola merce
 <UC22.1.5.1.1>
 #use-case(
   attore: "Admin globale",
