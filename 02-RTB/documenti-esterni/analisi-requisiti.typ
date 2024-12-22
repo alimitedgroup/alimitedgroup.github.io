@@ -898,11 +898,13 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-    - il nome della merce $arrow$ @UC15[Vedi UC15 Sezione]
-    - la quantità di merce complessiva in tutti i magazzini $arrow$ @qtmercecompl[Vedi UC Sezione]
-    - la quantità di merce nel magazzino presso cui il Cliente ha fatto l'autenticazione $arrow$ @qtmercemagatt[Vedi UC Sezione]
+      - l'ID della merce $arrow$ @IDmerce[Vedi UC Sezione]
+      - il nome della merce $arrow$ @UC15[Vedi UC15 Sezione]
+      - la quantità di merce complessiva in tutti i magazzini $arrow$ @qtmercecompl[Vedi UC Sezione]
+      - la quantità di merce nel magazzino presso cui il Cliente ha fatto l'autenticazione $arrow$ @qtmercemagatt[Vedi UC Sezione]
   ],
   inclusioni: [
+    - UC @IDmerce
     - UC15 @UC15
     - UC @qtmercecompl
     - UC @qtmercemagatt
@@ -911,6 +913,20 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
 )[
   // #use-case-diagram("x-merce", "UCx - Visualizza lista delle merci")
 ]
+
+====== UCx - Visualizza ID merce <IDmerce>
+
+#use-case(
+  attore: "Cliente, Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente o come Admin globale
+    - L'attore principale sta visualizzando una lista di merci
+  ],
+  scenari: [
+    - Viene visualizzata l'ID della singola merce
+  ],
+)[]
 
 === UCx - Visualizza quantità complessiva di una merce in tutti i magazzini <qtmercecompl>
 #use-case(
@@ -948,12 +964,14 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   scenari: [
     - Il Cliente seleziona da una lista di merci la visualizzazione di una merce in particolare
     - Il Cliente viusalizza della merce selezionata:
+      l'ID della merce $arrow$ @IDmerce[Vedi UC Sezione]
       - Nome della merce $arrow$ @UC15[Vedi UC15 Sezione]
       - Quantità della merce disponibile nel magazzino attuale $arrow$ @qtmercemagatt[Vedi UC Sezione]
       - Quantità della merce complessivamente disponibile in tutti i magazzini $arrow$ @qtmercecompl[Vedi UC Sezione]
       - Descrizione della merce $arrow$ @descmerce[Vedi UC Sezione]
   ],
   inclusioni: [
+    - UC @IDmerce
     - UC15 @UC15
     - UC @qtmercemagatt
     - UC @qtmercecompl
@@ -977,15 +995,14 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
 )[]
 
-=== UC19 - Creazione di un trasferimento
+=== UC19 - Creazione di un trasferimento da confermare
 <UC19>
 
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù di voler creare un nuovo trasferimento
+    - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
   post: [
     - Il Sistema memorizza l'esistenza di un nuovo trasferimento non confermato con le relative informazioni
@@ -1044,7 +1061,7 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
 === UC20 - Aggiunta merce ad un trasferimento non confermato
 <UC20>
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
@@ -1084,18 +1101,18 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'Admin globale ha selezionato dal menu di voler aggiungere merce ad un trasferimento non confermato o di confermarne uno
+    - L'Admin globale ha selezionato dal menu di voler aggiungere merce ad un trasferimento non confermato o di confermarne/cancellarne uno
   ],
   post: [
-    - Il Sistema memorizza il trasferimento non confermato alla quale aggiungere la merce o il trasferimento da confermare
+    - Il Sistema memorizza il trasferimento non confermato alla quale aggiungere la merce o il trasferimento da confermare/cancellare
   ],
   scenari: [
-    - L'Admin Globale inserisce l'ID del trasferimento non confermato alla quale aggiungere merce o che vuole confermare
+    - L'Admin Globale inserisce l'ID del trasferimento non confermato alla quale aggiungere merce o che vuole confermare/cancellare
   ],
-  trigger: "L'Admin globale vuole trasferire della merce da un magazzino all'altro o confermare un trasferimento non confermato",
+  trigger: "L'Admin globale vuole trasferire della merce da un magazzino all'altro o confermare/cancellare un trasferimento non confermato",
 )[]
 
-=== UC21 - Conferma del trasferimento
+=== UC21 - Conferma trasferimento non confermato
 <UC21>
 #use-case(
   attore: "Admin globale",
@@ -1118,10 +1135,34 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
     - UC @seleztrasf
     - UC @errnessuntrasf
   ],
-  trigger: "L'Admin Globale vuole creare un nuovo trasferimento da confermare",
+  trigger: "L'Admin Globale vuole confermare un trasferimento non confermato",
 )[
   #use-case-diagram("ec-conferma-trasferimento", "UC21 - Conferma del trasferimento")
 ]
+
+=== UCx - Cancella trasferimento non confermato
+
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+  ],
+  post: [
+    - Il Sistema cancella un trasferimento non ancora confermato
+  ],
+  scenari: [
+    - L'Admin Globale seleziona dal menu l'opzione relativa alla cancellazione di un trasferimento non confermato
+    - L'Admin Globale seleziona il trasferimento non confermato da cancellare $arrow$ @seleztrasf[Vedi UC Sezione]
+  ],
+  scenari_alternativi: [
+    - L'Admin Globale ha selezionato di voler cancellare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @errnessuntrasf[Vedi UC Sezione]
+  ],
+  inclusioni: [
+    - UC @errnessuntrasf
+  ],
+  trigger: "L'Admin Globale vuole cancellare un trasferimento non confermato",
+)[]
 
 === UCx - Nessun trasferimento non confermato disponibile <errnessuntrasf>
 
@@ -1130,55 +1171,75 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
-    - L'Utente ha selezionato dal menu un'opzione che riguarda un ordine non confermato
+    - L'Utente ha selezionato dal menu un'opzione che riguarda un trasferimento non confermato
   ],
   post: [
-    - L'operazione riguardante un ordine non confermato viene annullata
+    - L'operazione riguardante un trasferimento non confermato viene annullata
   ],
   scenari: [
-    - Il Cliente ha avviato un'operazione riguardante un ordine non confermato ma il Sistema non ha memorizzato alcun ordine non confermato per l'utente corrente
+    - Il Cliente ha avviato un'operazione riguardante un trasferimento non confermato ma il Sistema non ha memorizzato alcun trasferimento non confermato
   ],
 )[]
-//--
-=== UC22 - Visualizza l'elenco dei trasferimenti
+
+=== UC22 - Visualizza elenco dei trasferimenti
 <UC22>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù di voler visualizzare ogni trasferimento
+    - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
   scenari: [
-    - L'Admin globale seleziona dal menù principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
-    - L'Admin globale seleziona un traferimento in particolare dall'elenco per visualizzarne i dettagli $arrow$ @UC22.1[Vedi UC22.1 Sezione]
+    - L'Admin Globale seleziona dal menu principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
+    - L'Admin Globale visualizza a schermo la lista di tutti i trasferimenti memorizzati nel Sistema $arrow$ @elementolistatrasf[Vedi UC Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
   inclusioni: [
-    - UC22.1 @UC22.1
+    - UC22.1 @elementolistatrasf
   ],
 )[
   #use-case-diagram("ed-visualizza-trasferimenti", "UC22 - Visualizza l'elenco dei trasferimenti")
 ]
 
-==== UC22.1 - Visualizza il singolo trasferimento
+=== UCx - Visualizza elemento lista trasferimenti <elementolistatrasf>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando la lista dei trasferimenti memorizzati nel Sistema
+  ],
+  scenari: [
+    - Ogni singolo elemento della lista attualmente visualizzata deve presentare:
+      - L'ID del trasferimento $arrow$ @UC22.1.1[Vedi UC22.1.1 Sezione]
+      - Lo stato del trasferimento $arrow$ @UC22.1.4[Vedi UC22.1.4 Sezione]
+  ],
+  inclusioni: [
+    - UC @UC22.1.1
+    - UC @UC22.1.4
+  ],
+  trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
+)[]
+
+==== UC22.1 - Visualizza trasferimento
 <UC22.1>
 #use-case(
   attore: "Admin globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
   ],
   scenari: [
-    - L'Admin globale seleziona dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza l'id del trasferimento $arrow$ @UC22.1.1[Vedi UC22.1.1 Sezione]
-    - L'Admin globale visualizza l'identificativo del magazzino mittente del trasferimento $arrow$ @UC22.1.2[Vedi UC22.1.2 Sezione]
-    - L'Admin globale visualizza l'identificativo del magazzino destinatario del trasferimento $arrow$ @UC22.1.3[Vedi UC22.1.3 Sezione]
-    - L'Admin globale visualizza lo stato del trasferimento $arrow$ @UC22.1.4[Vedi UC22.1.4 Sezione]
-    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UC22.1.5[Vedi UC22.1.5 Sezione]
+    - L'Admin Globale seleziona da una lista di trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
+    - L'Admin Globale visualizza del suddetto trasferimento:
+      - l'ID del trasferimento $arrow$ @UC22.1.1[Vedi UC22.1.1 Sezione]
+      - il magazzino mittente del trasferimento $arrow$ @UC22.1.2[Vedi UC22.1.2 Sezione]
+      - il magazzino destinatario del trasferimento $arrow$ @UC22.1.3[Vedi UC22.1.3 Sezione]
+      - lo stato del trasferimento $arrow$ @UC22.1.4[Vedi UC22.1.4 Sezione]
+      - L'elenco della merce interessata dal trasferimento $arrow$ @UC22.1.5[Vedi UC22.1.5 Sezione]
   ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
+  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento specifico",
   inclusioni: [
     - UC22.1.1 @UC22.1.1
     - UC22.1.2 @UC22.1.2
@@ -1190,22 +1251,21 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   #use-case-diagram("ed-visualizza-dettaglio-trasferimento", "UC22.1 - Visualizza il singolo trasferimento")
 ]
 
-===== UC22.1.1 - Visualizza id trasferimento
+===== UC22.1.1 - Visualizza ID trasferimento
 <UC22.1.1>
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello sspecifico
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza l'id del trasferimento
+    - L'Admin Globale visualizza l'ID del trasferimento
   ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
+//--
 ===== UC22.1.2 - Visualizza mittente trasferimento
 <UC22.1.2>
 #use-case(
@@ -1534,12 +1594,12 @@ Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente
   ],
   scenari: [
     - Per ogni elemento della lista viene visualizzato:
-      - ID della merce $arrow$ @UC29.2.1.1[Vedi UC29.2.1.1, Sezione]
+      - ID della merce $arrow$ @IDmerce[Vedi UC29.2.1.1, Sezione]
       - Nome della merce $arrow$ @UC15[Vedi UC15, Sezione]
       - Quantità da rifornire $arrow$ @UC29.2.1.2[Vedi UC29.2.1.2, Sezione]
   ],
   inclusioni: [
-    - UC29.2.1.1 @UC29.2.1.1
+    - UC29.2.1.1 @IDmerce
     - UC15 @UC15
     - UC29.2.1.2 @UC29.2.1.2
   ],
@@ -1549,19 +1609,6 @@ Il Caso d'Uso UC include un ulteriore caso d'uso come raffigurato nella seguente
 Il Caso d'Uso UC include ulteriori Caso d'Uso come descritto sopra.
 In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti saranno invece esposti qui di seguito.
 
-====== UC29.2.1.1 - Visualizza ID merce <UC29.2.1.1>
-
-#use-case(
-  attore: "Cliente, Admin globale",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente o come Admin globale
-    - L'attore principale sta visualizzando una lista di merci
-  ],
-  scenari: [
-    - Viene visualizzata l'ID della singola merce
-  ],
-)[]
 
 ====== UC29.2.1.2 - Visualizza quantità merce da rifornire <UC29.2.1.2>
 
@@ -1576,7 +1623,6 @@ In merito a UC è possibile avere maggiori informazioni alla @UC15, i rimanenti 
     - Viene visualizzata la quantità da rifornire consigliata della singola merce
   ],
 )[]
-
 
 === UC30 - Accetta notifica di rifornimento
 
