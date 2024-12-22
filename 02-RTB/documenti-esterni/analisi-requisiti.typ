@@ -1258,7 +1258,7 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello sspecifico
+    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
   ],
   scenari: [
     - L'Admin Globale visualizza l'ID del trasferimento
@@ -1266,53 +1266,46 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
 )[]
 
 //--
-===== UC22.1.2 - Visualizza mittente trasferimento
+===== UC22.1.2 - Visualizza magazzino mittente trasferimento
 <UC22.1.2>
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un trasferimento nello specifico
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza il magazzino mittente del trasferimento
   ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
-===== UC22.1.3 - Visualizza destinatario trasferimento
+===== UC22.1.3 - Visualizza magazzino destinatario trasferimento
 <UC22.1.3>
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un trasferimento nello specifico
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin globale visualizza il magazzino destinatario del trasferimento
   ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
-
 
 ===== UC22.1.4 - Visualizza stato trasferimento
 <UC22.1.4>
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza lo stato del trasferimento
+    - L'Admin Globale visualizza lo stato del trasferimento
   ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
 )[]
 
 ===== UC22.1.5 - Visualizza elenco merce trasferimento
@@ -1335,24 +1328,22 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   ],
 )[]
 
-====== UC22.1.5.1 - Visualizza singola merce trasferimento
-<UC22.1.5.1>
+====== UC22.1.5.1 - Visualizza elemento lista merce trasferimento <UC22.1.5.1>
 #use-case(
-  attore: "Admin globale",
+  attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un elenco di merce appartenente ad un rifornimento
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
-    - L'Admin globale visualizza il nome della singola merce interessata dal trasferimento $arrow$ @UC23 [Vedi UCef Sezione]
-    - L'Admin globale visualizza la quantità della singola merce interessata dal trasferimento $arrow$ @UC22.1.5.1.1 [Vedi UC22.1.5.1.1 Sezione]
+    - Per ogni elemento della lista l'Admin Globale deve visualizzare:
+      - Il nome della singola merce interessata dal trasferimento $arrow$ @UC15 [Vedi UCef Sezione]
+      - La quantità della singola merce interessata dal trasferimento $arrow$ @UC22.1.5.1.1 [Vedi UC22.1.5.1.1 Sezione]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce del trasferimento",
   inclusioni: [
-    - UC23 @UC23
+    - UC23 @UC15
     - UC22.1.5.1.1 @UC22.1.5.1.1
   ],
 )[
@@ -1366,33 +1357,12 @@ Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente 
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente ha selezionato dal menù dall'elenco un trasferimento da visualizzare
+    - L'Admin Globale sta visualizzando un elenco di merce appartenente ad un rifornimento
   ],
   scenari: [
-    - L'Admin globale ha selezionato dall'elenco dei trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
-    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento
-    - L'Admin globale visualizza la quantità della singola merce interessata dal trasferimento
+    - L'Admin Globale visualizza la quantità della singola merce interessata dal trasferimento
   ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce del trasferimento",
 )[]
-
-
-=== UC23 - Visualizza nome merce
-<UC23>
-#use-case(
-  attore: "Admin globale",
-  pre: [
-    - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin globale
-    - L'utente sta visualizzando una merce
-  ],
-  scenari: [
-    - L'Admin globale sta visualizzando una merce
-  ],
-  trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce",
-)[
-  #use-case-diagram("23", "UC23 - Visualizza nome merce")
-]
 
 // MATTEO
 
