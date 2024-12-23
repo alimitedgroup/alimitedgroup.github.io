@@ -68,6 +68,7 @@
     (p.matteo),
   ),
   descrizione: [Questo documento contiene le _Norme di Progetto_ seguite da il gruppo _ALimitedGroup_ per il progetto C6 proposto dall'azienda #M31],
+  titolo: "Norme di Progetto",
   body,
 )
 
