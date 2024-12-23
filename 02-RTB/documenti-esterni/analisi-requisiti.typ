@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.15.0]
+#let ver = [0.16.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 05, month: 12, year: 2024),
+  data: datetime(day: 23, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.16.0",
+      date: datetime(day: 23, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Ristrutturato ulteriormente l'indice per una maggiore fruibilità. Modificati i numeri degli UC",
+    ),
     (
       vers: "0.15.0",
       date: datetime(day: 15, month: 12, year: 2024),
