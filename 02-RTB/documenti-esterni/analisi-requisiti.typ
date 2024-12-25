@@ -336,6 +336,7 @@ Il Caso d'Uso UC1 include tre ulteriori _use-case_ come raffigurato nella seguen
   "1-incl",
   "Inclusioni del Caso d'Uso n.1: UC1.1, UC1.2, UC1.3",
 )
+
 ==== UC1.1 - Scelta tipologia utente <UC1.1>
 
 #use-case(
@@ -541,7 +542,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole aggiungere merce ad un ordine o ad un trasferimento non confermato",
 )[]
 
-=== UC6 - Scelta q.tà merce da aggiungere: ordine/trasferimento non confermato <UC6>
+=== UC6 - Scelta quantità merce da aggiungere: ordine/trasferimento non confermato <UC6>
 
 #use-case(
   attore: "Cliente",
@@ -647,7 +648,7 @@ Il Caso d'Uso UC8 include un ulteriore Caso d'Uso come raffigurato nella seguent
 #use-case-diagram("8-incl", "Inclusione del Caso d'Uso n.10: UC9")
 Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
 
-=== UC13 - Conferma ordine non confermato
+=== UC11 - Conferma ordine non //ex 13
 
 #use-case(
   attore: "Cliente",
@@ -682,7 +683,7 @@ Il Caso d'Uso UC13 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.11: UC9")
 Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
 
-=== UC14 - Visualizza elenco ordini non confermati per l'utente corrente
+=== UC12 - Visualizza elenco ordini non confermati per l'utente corrente //ex 14
 
 #use-case(
   attore: "Cliente",
@@ -855,7 +856,7 @@ Il Caso d'Uso UC16.1.1 include un ulteriore Caso d'Uso come raffigurato nella se
 #use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.16.1.1: UC16.1.1.1")
 Tale Caso d'Uso sarà descritto qui di seguito:
 
-====== UC16.1.1.1 - Visualizza q.tà della merce ordine non confermato <UC16.1.1.1>
+====== UC16.1.1.1 - Visualizza quantità della merce ordine non confermato <UC16.1.1.1>
 
 #use-case(
   attore: "Cliente",
@@ -1830,8 +1831,6 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-
-
 === UC42 - Esportazione report inventario
 #use-case(
   attore: "Admin globale",
@@ -1908,7 +1907,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   #use-case-diagram("37", "UC44 - Creazione di una soglia minima per una merce")
 ]
 
-=== UC43 - Selezione merce
+=== UC45 - Selezione merce //ex 43
 #use-case(
   attore: "Admin globale",
   pre: [
