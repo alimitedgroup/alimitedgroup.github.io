@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.16.0]
+#let ver = [0.17.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 23, month: 12, year: 2024),
+  data: datetime(day: 26, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.17.0",
+      date: datetime(day: 26, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Sistemazione UML sino ad UC15.",
+    ),
     (
       vers: "0.16.0",
       date: datetime(day: 23, month: 12, year: 2024),
@@ -19,7 +26,7 @@
       date: datetime(day: 15, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Ristrutturato l'indice per una sua corretta visualizzazione e fruibilità. Assegnato per ogni UC un proprio numero",
+      descr: "Ristrutturato l'indice per una sua corretta visualizzazione e fruibilità. Inseriti UC rimanenti. Assegnato per ogni UC un proprio numero",
     ),
     (
       vers: "0.14.0",
@@ -96,7 +103,7 @@
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti UC1, UC1.1, UC1.2, UC1.3 e UC2",
+      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione",
     ),
     (
       vers: "0.3.0",
@@ -331,7 +338,7 @@ Vengono inoltre utilizzati i seguenti attori secondari:
 ]
 
 #pagebreak()
-Il Caso d'Uso UC1 include tre ulteriori _use-case_ come raffigurato nella seguente immagine:
+Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram(
   "1-incl",
   "Inclusioni del Caso d'Uso n.1: UC1.1, UC1.2, UC1.3",
@@ -512,7 +519,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
     - UC9 @UC9
   ],
   estensioni: [
-    - UC5 @UC7
+    - UC7 @UC7
     - UC8 @UC8
   ],
   trigger: "Il Cliente vuole aggiungere merce ad un ordine non confermato",
@@ -521,7 +528,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 ]
 
 Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC4.1, UC4.2, UC9")
+#use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC5, UC6 e UC9")
 
 === UC5 - Scelta merce da aggiungere: ordine/trasferimento non confermato <UC5>
 
@@ -644,11 +651,11 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   #use-case-diagram("10", "UC10 - Cancella ordine non confermato")
 ]
 
-Il Caso d'Uso UC8 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
+Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("10-incl", "Inclusione del Caso d'Uso n.10: UC9")
 Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
 
-=== UC11 - Conferma ordine non //ex 13
+=== UC11 - Conferma ordine non confermato //ex 13
 
 #use-case(
   attore: "Cliente",
@@ -664,14 +671,14 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
     - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di conferma $arrow$ @UC9[Vedi UC9 Sezione]
   ],
   scenari_alternativi: [
-    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @UC7[Vedi UC5 Sezione]
+    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @UC7[Vedi UC7 Sezione]
     - Il Cliente cerca di confermare un ordine non confermato ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC8[Vedi UC8 Sezione]
   ],
   inclusioni: [
     - UC9 @UC9
   ],
   estensioni: [
-    - UC5 @UC7
+    - UC7 @UC7
     - UC8 @UC8
   ],
   trigger: "Il Cliente vuole confermare un ordine non confermato",
@@ -764,7 +771,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   ],
 )[]
 
-=== UC15 - Visualizza nome ordine <UC15>
+=== UC15 - Visualizza nome ordine <UC15> //
 
 #use-case(
   attore: "Cliente",
@@ -1274,6 +1281,8 @@ Tale Caso d'Uso sarà qui di seguito descritto:
 Il Caso d'Uso UC29.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.29.1: UC30 e UC31")
 Tali Casi d'Uso daranno ora descritti:
+
+//Sistema Matteo (su) sistema Marco (giù)
 
 === UC30 - Visualizza ID trasferimento <UC30>
 #use-case(
