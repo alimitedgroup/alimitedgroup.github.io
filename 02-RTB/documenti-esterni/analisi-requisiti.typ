@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.17.0]
+#let ver = [0.18.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 26, month: 12, year: 2024),
+  data: datetime(day: 27, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.18.0",
+      date: datetime(day: 27, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Sistemazione UML sino ad UC29.",
+    ),
     (
       vers: "0.17.0",
       date: datetime(day: 26, month: 12, year: 2024),
@@ -814,7 +821,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
 
 Il Caso d'Uso UC16 include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("16-incl", "Inclusione del Caso d'Uso n.16: UC13, UC14, UC15, UC16.1")
-Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive descrizioni (@UC13, @UC14 e @UC15), mentre per il Caso d'Uso 14.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
+Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive descrizioni (@UC13, @UC14 e @UC15), mentre per il Caso d'Uso 16.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
 ==== UC16.1 - Visualizza lista merci ordine non confermato <UC16.1>
 
@@ -833,10 +840,6 @@ Per maggiori informazioni sui Casi d'Uso 11, 12 e 13 si rimanda alle rispettive 
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
-
-Il Caso d'Uso UC16.1 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.16.1: UC16.1.1")
-Tale Caso d'Uso sarà descritto qui di seguito:
 
 ===== UC16.1.1 - Visualizza elemento lista merce ordine non confermato <UC16.1.1>
 
@@ -858,10 +861,6 @@ Tale Caso d'Uso sarà descritto qui di seguito:
   ],
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
-
-Il Caso d'Uso UC16.1.1 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.16.1.1: UC16.1.1.1")
-Tale Caso d'Uso sarà descritto qui di seguito:
 
 ====== UC16.1.1.1 - Visualizza q.tà della merce ordine non confermato <UC16.1.1.1>
 
@@ -911,8 +910,8 @@ Tale Caso d'Uso sarà descritto qui di seguito:
 ]
 
 Il Caso d'Uso UC18 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.18: UC18.1")
-Tale Caso d'Uso sarà descritto qui di seguito:
+#use-case-diagram("18-incl", "Inclusione del Caso d'Uso n.18: UC18.1")
+Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, sempre rappresentate in figura, ad eccezione del Caso d'Uso n. 17, la cui descrizione è disponibile alla @UC17.
 
 ==== UC18.1 - Visualizza elemento lista delle merci <UC18.1>
 #use-case(
@@ -939,10 +938,6 @@ Tale Caso d'Uso sarà descritto qui di seguito:
 )[
   //#use-case-diagram("18-invcl", "UCx - Visualizza lista delle merci")
 ]
-
-Il Caso d'Uso UC18.1 include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.18.1: UC17, UC19, UC20 e UC21")
-Tali Casi d'Uso saranno descritti qui di seguito:
 
 === UC19 - Visualizza ID merce <UC19>
 
@@ -994,7 +989,7 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   scenari: [
     - Il Cliente seleziona da una lista di merci la visualizzazione di una merce in particolare
     - Il Cliente viusalizza della merce selezionata:
-      l'ID della merce $arrow$ @UC19[Vedi UC19, Sezione]
+      - l'ID della merce $arrow$ @UC19[Vedi UC19, Sezione]
       - Nome della merce $arrow$ @UC17[Vedi UC17, Sezione]
       - Quantità della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC20, Sezione]
       - Quantità della merce complessivamente disponibile in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sezione]
@@ -1013,8 +1008,8 @@ Tali Casi d'Uso saranno descritti qui di seguito:
 ]
 
 Il Caso d'Uso UC22 include cinque ulteriori Casi d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.22: UC17, UC19, UC20, UC21 e UC22.1")
-Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.15, 19, 20 e 21 reperibili, rispettivamente, alla @UC17, @UC19, @UC20 e @UC21.
+#use-case-diagram("22-incl", "Inclusioni del Caso d'Uso n.22: UC17, UC19, UC20, UC21 e UC22.1")
+Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19, 20 e 21 reperibili, rispettivamente, alla @UC17, @UC19, @UC20 e @UC21.
 
 ==== UC22.1 - Visualizza descrizione della merce <UC22.1>
 
@@ -1052,11 +1047,11 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.15, 19,
     - UC23.2 @UC23.2
   ],
 )[
-  #use-case-diagram("23", "UC23 - Creazione di un trasferimento")
+  #use-case-diagram("23", "UC23 - Creazione di un trasferimento da confermare")
 ]
 
 Il Caso d'Uso UC23 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.23: UC23.1 e UC23.2")
+#use-case-diagram("23-incl", "Inclusioni del Caso d'Uso n.23: UC23.1 e UC23.2")
 Tali Casi d'Uso saranno descritti qui di seguito:
 
 ==== UC23.1 - Scelta del magazzino mittente: trasferimento non confermato <UC23.1>
@@ -1077,7 +1072,7 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
 )[]
 
-==== UC23.2 - Scelta del magazzino ricevente: trasferimento non confermato <UC23.2>
+==== UC23.2 - Scelta del magazzino destinatario: trasferimento non confermato <UC23.2>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1128,11 +1123,11 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   ],
   trigger: "L'Admin globale vuole trasferire della merce da un magazzino all'altro",
 )[
-  #use-case-diagram("24", "UC24 - Selezione degli oggetti per il trasferimento")
+  #use-case-diagram("24", "UC24 - Aggiunta merce ad un trasferimento non confermato")
 ]
 
 Il Caso d'Uso UC24 include ulteriori Casi d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusioni del Caso d'Uso n.24: UC5 , UC6 e UC25")
+#use-case-diagram("24-incl", "Inclusioni del Caso d'Uso n.24: UC5 , UC6 e UC25")
 Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, reperibili, rispettivamente, alla @UC5 e alla @UC6.
 
 === UC25 - Seleziona trasferimento non confermato <UC25>
@@ -1179,11 +1174,11 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, repe
   ],
   trigger: "L'Admin Globale vuole confermare un trasferimento non confermato",
 )[
-  #use-case-diagram("26", "UC26 - Conferma del trasferimento")
+  #use-case-diagram("26", "UC26 - Conferma trasferimento non confermato")
 ]
 
 Il Caso d'Uso UC26 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.26: UC25")
+#use-case-diagram("26-incl", "Inclusione del Caso d'Uso n.26: UC25")
 Tale Caso d'Uso è reperibile alla @UC25.
 
 === UC27 - Nessun trasferimento non confermato disponibile <UC27>
@@ -1228,10 +1223,12 @@ Tale Caso d'Uso è reperibile alla @UC25.
     - UC27 @UC27
   ],
   trigger: "L'Admin Globale vuole cancellare un trasferimento non confermato",
-)[]
+)[
+  #use-case-diagram("28", "UC28 - Cancella trasferimento non confermato")
+]
 
 Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.28: UC25")
+#use-case-diagram("28-incl", "Inclusione del Caso d'Uso n.28: UC25")
 Tale Caso d'Uso è reperibile alla @UC25.
 
 === UC29 - Visualizza elenco dei trasferimenti <UC29>
@@ -1254,8 +1251,8 @@ Tale Caso d'Uso è reperibile alla @UC25.
 ]
 
 Il Caso d'Uso UC29 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n. 29: UC29.1")
-Tale Caso d'Uso sarà qui di seguito descritto:
+#use-case-diagram("29-incl", "Inclusione del Caso d'Uso n. 29: UC29.1")
+Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (sempre rappresentate nell'immagine precedente).
 
 ==== UC29.1 - Visualizza elemento lista trasferimenti <UC29.1>
 
@@ -1277,10 +1274,6 @@ Tale Caso d'Uso sarà qui di seguito descritto:
   ],
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
 )[]
-
-Il Caso d'Uso UC29.1 include due ulteriori Casi d'Uso come raffigurato nella seguente immagine:
-#use-case-diagram("9-incl", "Inclusione del Caso d'Uso n.29.1: UC30 e UC31")
-Tali Casi d'Uso daranno ora descritti:
 
 //Sistema Matteo (su) sistema Marco (giù)
 
