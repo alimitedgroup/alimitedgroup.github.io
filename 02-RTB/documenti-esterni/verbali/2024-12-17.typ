@@ -5,6 +5,13 @@
   tipo: [esterno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 29, month: 12, year: 2024),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Approvazione interna del documento",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 19, month: 12, year: 2024),
       autore: p.matteo,
@@ -12,7 +19,7 @@
       descr: "Prima redazione del documento",
     ),
   ),
-  stato: [Redatto],
+  stato: [Approvato],
   presenze: (p.samuele, p.loris, p.matteo, p.marco),
   odg: [Terza riunione con #M31: vengono esposti gli avanzamenti sullo studio delle tecnologie e una possibile architettura del Sistema],
   body,
@@ -36,9 +43,9 @@ nel dettaglio, è stata presentata un'istanza di funzionamento di un pacchetto *
 
 In seguito è stata esposta una prima idea architetturale, idea che, data la complessità del progetto, è necessaria per adeguatamente testare le tecnologie da utilizzare nel progetto.
 
-#M31 ha accolto positivamente entrambi gli eventi, esprimondosi in maniera positiva su quanto realizzato.
+#M31 ha accolto positivamente entrambi gli eventi, esprimendosi in maniera positiva su quanto realizzato.
 
-I rappresentanti di #M31 hanno consigliato, in merito alla bozza architetturale, di cercare progetti _Open Soruce_ che potrebbero implementare meccanismi utili alla risoluzione di alcuni delle problematiche che il Sistema sviluppato da _ALimitedGroup_ dovrà risolvere.
+I rappresentanti di #M31 hanno consigliato, in merito alla bozza architetturale, di cercare progetti _Open Source_ che potrebbero implementare meccanismi utili alla risoluzione di alcuni delle problematiche che il Sistema sviluppato da _ALimitedGroup_ dovrà risolvere.
 
 == Prossimi incontri con #M31
 
