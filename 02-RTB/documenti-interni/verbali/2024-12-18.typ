@@ -5,6 +5,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 29, month: 12, year: 2024),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Approvazione del documento",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 19, month: 12, year: 2024),
       autore: p.matteo,
@@ -12,7 +19,7 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [Redatto],
+  stato: [Approvato],
   presenze: (
     p.emanuele,
     p.samuele,
@@ -39,7 +46,7 @@
 
 == Aggiornamenti sui lavori in corso
 
-Il gruppo ha proseguto le attività previste nel terzo _Sprint_: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica* e dell'*Analisi dei Requisiti* sono stati per la maggior parte raggiunti.
+Il gruppo ha proseguito le attività previste nel terzo _Sprint_: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica* e dell'*Analisi dei Requisiti* sono stati per la maggior parte raggiunti.
 Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
 
 Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test sulle stesse.
@@ -82,7 +89,7 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
 
 Si stabilisce inoltre di contattare quanto prima il docente *#abbrev(p.cardin)* per avere riscontro sui principali dubbi sorti durante la redazione dell'*Analisi dei Requisiti* e di redigere il verbale di questa riunione e della riunione esterna con #M31 svoltasi in data 17 Dicembre 2024 entro la fine del quarto _Sprint_.
 
-Si conclude tenendo conto che in caso di esauriemnto delle ore per il ruolo assegnato, anche facendo riferimento al precedente #link("https://alimitedgroup.github.io/VI%2004-12-2024%20v1.0.0.pdf")[*Verbale Interno*], tali ruoli potrebbero subire variazioni.
+Si conclude tenendo conto che in caso di esaurimento delle ore per il ruolo assegnato, anche facendo riferimento al precedente #link("https://alimitedgroup.github.io/VI%2004-12-2024%20v1.0.0.pdf")[*Verbale Interno*], tali ruoli potrebbero subire variazioni.
 
 #pagebreak()
 = Esiti della riunione
