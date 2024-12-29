@@ -2,12 +2,18 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [0.3.0]
+#let ver = [0.4.0]
 #show: body => importantdocs(
-  data: datetime(day: 10, month: 12, year: 2024),
+  data: datetime(day: 29, month: 12, year: 2024),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "0.4.0",
+      date: datetime(day: 29, month: 12, year: 2024),
+      autore: p.loris,
+      descr: "Redazione per il terzo sprint",
+    ),
     (
       vers: "0.3.0",
       date: datetime(day: 10, month: 12, year: 2024),
@@ -634,3 +640,67 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 === Retrospettiva
 
 In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
+
+=== Sprint 3
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[8-12-2024],
+  [Fine prevista:], strong[21-12-2024],
+  [Fine reale:], strong[21-12-2024],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint3intro>
+
+Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sul.
+
+Le attività pianificate nel dettaglio includono:
+
+- Continuo redazione dell'Analisi dei Requisiti;
+- Inizio redazione Piano di Qualifica;
+- Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC;
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(3, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 3 - Preventivo per componente", "Sprint 3 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  3,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 3 - Consuntivo per componente",
+  "Sprint 3 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(3, "Sprint 3 - Variazione nelle risorse disponibili")
+
+#v(1em)
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
+
+Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
+
+=== Retrospettiva
+
+In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo. L'obiettivo principale è raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
