@@ -24,15 +24,27 @@
   verificatore: (),
   redattori: (),
   descrizione: [],
+  titolo: [],
   body,
 ) = {
-  let titolo = [_Norme di Progetto_ \ Versione #versione]
+  if titolo == "Norme di Progetto" {
+    [#metadata[NP v#versione] <titolo> ]
+  } else if titolo == "Piano di Qualifica" {
+    [#metadata[PQ v#versione] <titolo> ]
+  } else if titolo == "Analisi dei Requisiti" {
+    [#metadata[AR v#versione] <titolo> ]
+  } else if titolo == "Piano di Progetto" {
+    [#metadata[PP v#versione] <titolo> ]
+  } else {
+    panic("Unknown title: " + titolo)
+  }
+
+  let titolo = [#emph[#titolo] \ Versione #versione]
   let versione = versioni.at(0).vers
-  [#metadata[Norme di Progetto #versione] <titolo> ]
 
   set list(indent: 1em)
   set enum(indent: 1em)
-  set document(title: titolo, date: data)
+  set document(title: titolo, date: data, author: "ALimitedGroup")
   set text(lang: "it", font: "Hanken Grotesk")
   show link: underline
 
@@ -49,7 +61,15 @@
     [Responsabile], grid(align: left, gutter: 8pt, ..responsabile.map(persona)),
     [Verificatore], grid(align: left, gutter: 8pt, ..verificatore.map(persona)),
     [Redattori], grid(align: left, gutter: 8pt, ..redattori.map(persona)),
-    [Distribuzione], grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+    [Distribuzione],
+    if tipo == [esterno]
+    {
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin))
+    }
+    else
+    {
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin))
+    }
   )
 
   set heading(numbering: "1.")
@@ -66,8 +86,8 @@
   indice-tabelle()
   pagebreak()
 
-  ///indice-immagini()
-  ///pagebreak()
+  indice-immagini()
+  pagebreak()
 
   body
 }
