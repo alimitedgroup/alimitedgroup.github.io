@@ -1,13 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.11.0]
+#let ver = [0.12.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 15, month: 11, year: 2024),
+  data: datetime(day: 31, month: 12, year: 2024),
   tipo: [interno],
   versioni: (
+    (
+      vers: "0.12.0",
+      date: datetime(day: 31, month: 12, year: 2024),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Sistemazione titolazione di alcuni paragrafi non correttamente numerati. Descritto il processo di Miglioramento e quello di Formazione.",
+    ),
     (
       vers: "0.11.0",
       date: datetime(day: 16, month: 12, year: 2024),
@@ -194,16 +201,18 @@ L'#link("")[*Analisi dei Requisiti*] è il documento in cui _ALimitedGroup_ desc
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Analisi dei Requisiti*],
+    table.cell(colspan: 2, text(white)[*Analisi dei Requisiti*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Analista],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Analista],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Analisi dei Requisiti"],
 )
@@ -215,16 +224,18 @@ La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Dichiarazione degli Impegni*],
+    table.cell(colspan: 2, text(white)[*Dichiarazione degli Impegni*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Responsabile],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Dichiarazione degli Impegni"],
 )
@@ -237,16 +248,18 @@ Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Glossario*],
+    table.cell(colspan: 2, text(white)[*Glossario*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Amministratore],
-    [*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Interno],
+    text(white)[*Redattore*], [Amministratore],
+    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Interno],
   ),
   caption: [Proprietà del documento "Glossario"],
 )
@@ -258,16 +271,18 @@ Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti 
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Lettera di Candidatura*],
+    table.cell(colspan: 2, text(white)[*Lettera di Candidatura*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Responsabile],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Lettera di Candidatura"],
 )
@@ -282,16 +297,18 @@ Lo scopo del documento è quello di presentare formalmente la candidatura di _AL
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Lettera di Presentazione*],
+    table.cell(colspan: 2, text(white)[*Lettera di Presentazione*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Responsabile],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Lettera di Presentazione"],
 )
@@ -302,16 +319,18 @@ Il presente documento: stabilisce il _Way of Working_ e le pratiche di sviluppo 
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Norme di Progetto*],
+    table.cell(colspan: 2, text(white)[*Norme di Progetto*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Amministratore],
-    [*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Interno],
+    text(white)[*Redattore*], [Amministratore],
+    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Interno],
   ),
   caption: [Proprietà del documento "Norme di Progetto"],
 )
@@ -323,16 +342,18 @@ Dati i requisiti del progetto, questo documento avrà anche il compito di aggior
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Piano di Progetto*],
+    table.cell(colspan: 2, text(white)[*Piano di Progetto*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Responsabile],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Piano di Progetto"],
 )
@@ -343,16 +364,18 @@ Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGro
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Piano di Qualifica*],
+    table.cell(colspan: 2, text(white)[*Piano di Qualifica*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Amministratore],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Amministratore],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Piano di Qualifica"],
 )
@@ -369,16 +392,18 @@ Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Valutazione dei Capitolati*],
+    table.cell(colspan: 2, text(white)[*Valutazione dei Capitolati*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile],
-    [*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Responsabile],
+    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Valutazione dei Capitolati"],
 )
@@ -389,16 +414,18 @@ Verbale di una riunione svolta con persone esterne al gruppo.
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Verbale Esterno*],
+    table.cell(colspan: 2, text(white)[*Verbale Esterno*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile o Amministratore],
-    [*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Esterno],
+    text(white)[*Redattore*], [Responsabile o Amministratore],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Verbale Esterno"],
 )
@@ -409,16 +436,18 @@ Verbale di una riunione svolta senza la presenza di persone esterne al gruppo.
 
 #figure(
   table(
-    table.cell(colspan: 2)[*Verbale Interno*],
+    table.cell(colspan: 2, text(white)[*Verbale Interno*]),
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    fill: (x, y) => if x == 0 or y == 0 { gray } else { lime },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    [*Redattore*], [Responsabile o Amministratore],
-    [*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
-    [*Uso*], [Interno],
+    text(white)[*Redattore*], [Responsabile o Amministratore],
+    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Interno],
   ),
   caption: [Proprietà del documento "Verbale Interno"],
 )
@@ -467,6 +496,8 @@ dove:
 - *Secondario* è un numero crescente stante ad indicare che il Caso d'Uso è correlato esclusivamente al Caso d'Uso identificato dal valore *Principale*
 
 Si noti che *Principale* è *univoco* tra tutti i Casi d'Uso, dunque non può sussistere l'esistenza di due Casi d'Uso aventi stesso valore *Principale* mentre è possibile che uno stesso valore *Secondario* sia ripetuto, ma *mai* per la stesso valore *Principale*.
+
+Si noti inoltre che un caso d'uso *Secondario* può avere a sua volta delle inclusioni: in tal caso la nomenclatura *Principale*.*Secondario* sarà la parte *Principale* di tale inclusione e seguirà le regole sopra esposte.
 
 La nomenclatura utilizzata è volta ad assicurare l'unicità di ogni Caso d'Uso.
 
@@ -647,17 +678,22 @@ Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @c
 
 La gestione delle configurazioni è un processo fondamentale in un progetto: essa permette di identificare le singole componenti del sistema sviluppato e controllarne le modifiche e i rilasci, nonché registrare lo stato di sviluppo di ciascuna. Complessivamente, il processo permette di avere un buon sviluppo.
 
-L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
-- *Identificazione della configurazione*
-- *Controllo della configurazione*
-- *Registrazione dello stato di configurazione*
-- *Valutazione della configurazione*
+=== Strumenti a Supporto
 
-Per ogni attività esposta precedentemente ed a supporto di ognuna, _ALimitedGroup_ utilizza:
-- _Git_
-- _GitHub_
+Per ogni attività prevista dal processo, _ALimitedGroup_ utilizza:
+
+- _GitHub_: per gestire i cambiamenti da effettuare ai documenti e al codice, nonché per garantire a tutti i membri di _ALimitedGroup_ di accedere ai compiti da svolgere;
 
 Per ulteriori informazioni si veda la @implementazione.
+
+=== Attività Previste
+
+L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
+
+- *Identificazione della configurazione* ovvero l'identificazione delle componenti che formeranno il prodotto da sviluppare;
+- *Controllo della configurazione* ovvero il controllo dei cambiamenti con opportuni metodi di approvazione e rifiuto degli stessi;
+- *Registrazione dello stato di configurazione* ovvero il come rappresentare la storia dei cambiamenti subiti da ciascun elemento sviluppato;
+- *Valutazione della configurazione* ovvero come determinare l'efficacia del prodotto sviluppato, ossia la sua conformità ai requisiti;
 
 === Identificazione della configurazione
 
@@ -686,8 +722,6 @@ _ALimitedGroup_ ha deciso di attuare questa attività nel repository dei documen
 - _*Board*_: serve per stabilire se una _issue_ presa in carico è ancora da iniziare, in sviluppo o terminata
 - _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_. Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
 
-Il tracciamento delle modifiche approvate è inoltre garantito, sotto il cofano, dall'utilizzo di _Git_, un _version control system_ sviluppato da Linus Torvalds e brevemente descritto nella @infrastruttura.
-
 [PROSEGUIRE con Codice]
 
 === Registrazione dello Stato di Configurazione
@@ -712,14 +746,11 @@ In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di
 
 [PROSEGUIRE]
 
-=== Valutazione della configurazione <valutazione-della-configurazione>
+=== Valutazione della configurazione <valutazione-della-configurazione> //tracciamento dei requisiti, non sono i test
 
 La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del software prodotto rispetto ai suoi requisiti e al design scelto.
 
-_ALimitedGroup_, per compiere questa attività, realizzerà dei test appositi, in parte manuali in parte automatizzati, per renedere possibile tale controllo.
-Questi test saranno descritti in un documento apposito, il #link("")[*Test Book (CAMBIARE LINK)*], che descriverà anche che requisito quei test, se svolti con successo, promettono di soddisfare.
-
-[PROSEGUIRE, probabile prematuro fare adesso]
+_ALimitedGroup_ intende realizzare un *Tracciamento dei Requisiti* per controllare l'aderenza di quanto sviluppato con quanto era da sviluppare. Più nello specifico, l'obbiettivo è realizzare un Prodotto che sia efficiente nel senso che soddisfa tutti i requisti e sufficiente nel senso che soddisfa solo i requisiti strettamente necessari: per questo il gruppo, specie durante la parte di sviluppo effettiva, si impegnerà per tracciare nel codice cosa una parte intende soddisfare mediante l'utilizzo di commenti opportuni.
 
 == Accertamento qualità
 [PROSEGUIRE] Sezione Strumenti a supporto
@@ -727,12 +758,12 @@ Questi test saranno descritti in un documento apposito, il #link("")[*Test Book 
 [PROSEGUIRE] Sezione Documentazione prodotta o di supporto
 
 == Qualifica
-=== Verifica <verifica>
+=== Verifica <verifica> //did I build the System right? ovvero i test
 [PROSEGUIRE] Sezione Strumenti a supporto
 [PROSEGUIRE] Sezione Attività previste
 [PROSEGUIRE] Sezione Documentazione prodotta o di supporto
 
-=== Validazione <validazione>
+=== Validazione <validazione> //did I build the right System?
 [PROSEGUIRE] Sezione Strumenti a supporto
 [PROSEGUIRE] Sezione Attività previste
 [PROSEGUIRE] Sezione Documentazione prodotta o di supporto
@@ -770,6 +801,8 @@ Tra i processi organizzativi si individuano:
 
 La *Gestione dei Processi* ha il l'obbiettvo di individuare i compiti da svolgere e i ruoli alla quale questi saranno assegnati, nonché permettere una comunicazione interna ed esterna efficace e altresì garantire lo svolgimento delle varie attività in maniera efficace mediante una opportuna pianificazione.
 
+=== Attività previste
+
 Le attività principali, osservate da _ALimitedGroup_, previste da questo processo sono:
 - *Inizializzazione*: è necessario stabilire i requisiti delle attività da svolgere, cercando di comprendere quali risorse esse richiedono. È compito del *Responsabile* determinare queste caratteristiche che vengono comunque discusse internamente a mezzo di riunioni interne.
 - *Pianificazione*: è necessario, stabiliti i requisiti, comprendere il tempo necessario per completare le attività, così come è necessario anche stimare i costi economici e temporali necessari allo svolgimento. Per facilitare questo compito, è stato scelto di dividere le responsabilità in vari ruoli, vedi @ruoli.
@@ -786,18 +819,41 @@ Sarà quindi dato spazio ad una parte fondamentale del gruppo, ovvero i metodi d
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    table.header([*Ruolo*], [*Compiti e responsabilità*]),
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    table.header(text(white)[*Ruolo*], text(white)[*Compiti e responsabilità*]),
     "Responsabile",
     (
       "Al Responsabile spetta il compito di comprendere, tenendo in considerazione quanto già portato a termine, quanto da realizzare nei periodi di sviluppo successivi, individuando le attività, i costi e rischi associati e infine assegnandone lo svolgimento ai componenti che vestono in quel periodo il ruolo più appropriato.
-Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad " + [_ALimitedGroup_] + ", quali, a mero titolo esemplificativo, l'azienda proponente del capitolato " + [#M31] + ".
-In ultima istanza, è sempre compito di questo ruolo " + [*approvare*] + " i vari documenti prodotti da " + [_ALimitedGroup_] + "."
+Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad "
+        + [_ALimitedGroup_]
+        + ", quali, a mero titolo esemplificativo, l'azienda proponente del capitolato "
+        + [#M31]
+        + ".
+In ultima istanza, è sempre compito di questo ruolo "
+        + [*approvare*]
+        + " i vari documenti prodotti da "
+        + [_ALimitedGroup_]
+        + "."
     ),
 
     "Amministratore",
     (
-      "Noto anche come " + [_System Administrator_ o _SysAdmin_] + ", ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di " + [_ALimitedGroup_] + " utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
-    È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture. Per via della sua approfondita conoscenza del " + [_Way of Working_] + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il " + [*Piano di Qualifica*] + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."
+      "Noto anche come "
+        + [_System Administrator_ o _SysAdmin_]
+        + ", ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di "
+        + [_ALimitedGroup_]
+        + " utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
+    È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture. Per via della sua approfondita conoscenza del "
+        + [_Way of Working_]
+        + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il "
+        + [*Piano di Qualifica*]
+        + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."
     ),
 
     "Verificatore",
@@ -808,8 +864,12 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
 
     "Analista",
     (
-      "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente " + [#M31] + ".
-È sempre affidato a questo ruolo il compito di regidere l'" + [*Analisi dei Requisiti*] + "."
+      "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente "
+        + [#M31]
+        + ".
+È sempre affidato a questo ruolo il compito di regidere l'"
+        + [*Analisi dei Requisiti*]
+        + "."
     ),
 
     "Programmatore",
@@ -883,7 +943,14 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
     columns: (1fr, 4fr),
     inset: 5pt,
     align: horizon,
-    table.header([*Strumento*], [*Descrizione*]),
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    table.header(text(white)[*Strumento*], text(white)[*Descrizione*]),
     [*Discord*],
     [_Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.],
 
@@ -920,19 +987,19 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
   caption: [Strumenti componenti l'Infrastruttura],
 )
 
-== Creazione <creazione>
+=== Creazione <creazione>
 
 L'attività di *creazione* guida la realizzazione dell'infrastruttura. Di seguito i dettagli per ogni prodotto utilizzato.
 
-=== Discord
+==== Discord
 
 Per utilizzare *Discord* è stato realizzato un server con un canale testuale e un canale apposito per le riunioni.
 
-=== Git
+==== Git
 
 *Git* non richiede particolari modifiche: deve essere configurato inserendo username e email con cui il componente interagisce normalmente con il _repository_ GitHub del progetto
 
-=== GitHub <creazione-github> //action
+==== GitHub <creazione-github> //action
 
 Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_repository_ *GitHub* dedicato alla documentazione] è strutturato in maniera da favorire la produzione dei documenti. All'interno è possibile trovare varie _directories_, qui di seguito descritte:
 
@@ -976,7 +1043,7 @@ dove al posto di *_issue_* va inserito il numero della issue associata alla _Pul
 
 In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da GitHub denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
 
-=== Google Calendar
+==== Google Calendar
 
 In merito al calendario condiviso, è affidato al *Responsabile* il compito di aggiungere gli eventi del gruppo, dai diari di bordo sino alle riunioni interne ed esterne programmate.
 
@@ -984,33 +1051,33 @@ Il calendario è condiviso tra i vari membri, che riceveranno un promemoria alme
 
 Rimane responsabilità di ogni membro controllarlo periodicamente.
 
-=== Google Fogli
+==== Google Fogli
 
 Il file condiviso di *Google Fogli* prevede tre schede:
 
 - *Dashboard*: fornisce un prospetto aggiornato delle ore preventivate, quelle utilizzate e quelle rimanenti per ogni ruolo, nonché un dettaglio per ogni _Sprint_. È responsabilità di ogni componente aggiornare l'impegno orario effettivo durante lo _Sprint_ ad ogni ora produttiva svolta, annotando l'elenco delle attività svolte;
 - *Grafico*: fornisce una rappresentazione grafica delle informazioni contenute nella *Dashboard*
 
-=== Google Mail
+==== Google Mail
 
 La casella di Google Mail non ha richiesto particolari configurazioni.
 
-=== Microsoft Teams
+==== Microsoft Teams
 
 La piattaforma *Microsoft Teams* viene controllata direttamente da #M31, in quanto tale non necessita di alcuna operazione.
 
-=== Script in Python
+==== Script in Python
 
 In merito agli Script di _Python_, questi non necessitano di particolare modifiche manuali: possono essere eseguiti direttamente senza necessita di alcuna operazione aggiuntiva.
 
 In merito allo Script sulla compilazione dei file _Typst_ e aggiornamento del sito, questo viene eseguito automaticamente come descritto nella sezione @creazione-github.
 
-=== Telegram
+==== Telegram
 
 Il gruppo ha realizzato un gruppo *Telegram* per le comunicazioni di minore importanza.
 Tale gruppo è configurato in maniera tale da escludere il possibile ingresso di persone esterne: ad eccezione di questo, non richiede operazioni di interesse per questo documento.
 
-=== Typst <creazione-typst> //migliorare
+==== Typst <creazione-typst> //migliorare
 
 L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazione di _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella _lib_ del _repository_.
 
@@ -1050,9 +1117,105 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 - *pr* : come sopra, ma per indicare le _pull request_;
 - *doc* : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
 
-== Manutenzione
+=== Manutenzione
 
 A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato il compito all'*Amministratore* di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità qualora errori o cambiamenti lo rendano necessario.
 
-=== Processo di miglioramento
-=== Processo di formazione
+== Processo di Miglioramento
+
+Il Processo di *Miglioramento* consiste, in base allo standard _ISO/IEC 12207:1995_ nello stabilire, consolidare, misurare, controllare e migliorare i processi utilizzati durante il ciclo di sviluppo di un Software.
+
+=== Attività previste
+
+Il processo prevede tre attività:
+
+- *Inizializzazione del processo*, ovvero lo stabiilire stabilire i processi organizzativi e realizzare l'opportuna documentazione;
+- *Valutazione del processo*, ovvero lo stabilire un modo per valutare e documentare le revisioni dei vari processi con lo scopo di comprenderne l'efficienza e l'efficacia;
+- *Miglioramento del processo*, ovvero lo stabilire come un processo inefficace o inefficiente possa essere migliorato, osservando le revisioni effettuati nei periodi in cui questo era in atto;
+
+=== Inizializzazione del processo
+
+Come anticipato, è necessario stabilire dei processi organizzativi che guidino la realizzazione del progetto, durante, dunque, lo svolgimento di tutte le sue attività.
+Tali processi devono essere documentati ed è lo scopo principale del presente documento.
+
+=== Valutazione del processo
+
+Stabiliti i processi, si rivela essenziale controllare l'andamento degli stessi: è necessario dunque individuare delle misurazioni appropriate allo scopo di valutare l'efficienza e l'efficacia dei processi adottati e realizzare periodici controlli sui dati provenienti da queste metriche.
+Per maggiori informazioni si veda la @metriche-qt-processo.
+
+=== Miglioramento del processo
+
+Effettuate le misurazioni e controllate le stesse è necessario dedurre i processi che presentano problematiche e individuare opportune soluzioni che consentano di migliorare gli stessi. La documentazione dovrà dunque essere aggiornata per riflettere questi cambiamenti.
+
+== Processo di formazione
+
+Il processo di formazione ha lo scopo di mantenere i membri di _ALimitedGroup_ aggiornati sui cambiamenti effettuati, nonché definire come gli stessi debbano apprendere le nozioni necessarie allo svolgimento del Progetto.
+
+=== Attività previste
+
+Il processo di formazione include le seguenti attività:
+
+- *Implementazione del processo* ovvero la realizzazione dei meccanismi necessari alla formazione del personale;
+- *Sviluppo di materiale per la formazione* ovvero lo sviluppo di materiale atto alla formazione del gruppo;
+- *Implementazione del piano per la formazione* ovvero la realizzazione di un piano per formare e mantenere formato il gruppo;
+
+=== Implementazione del processo
+
+In base a quanto previsto dallo standard _ISO/IEC 12207:1995_ è necessario venga realizzata una revisione dei requisiti del progetto per comprendere le competenze che i membri di _ALimitedGroup_ dovranno sviluppare per portare a compimento il progetto didattico.
+
+_ALimitedGroup_ ha perciò sin da subito analizzato i requisiti e compreso quali tecnologie sarà necessario approfondire dal punto di vista del progetto vero e proprio:
+
+- Il linguaggio di programmazione *Go*;
+- Il sistema di messaggistica per sistemi distribuiti *Nats*;
+- Il sistema di containerizzazione *Docker*;
+
+e dal punto di vista della produzione della documentazione:
+
+- Il linguaggio di marcatura *Typst*;
+- Il linguaggio di programmazione *Python*;
+
+Saranno inoltre utili i seguenti servizi:
+
+- Il _software_ per il versionamento *Git*;
+- Il servizio di _hosting_ per progetti *GitHub*;
+
+=== Sviluppo di materiale per la formazione
+
+Data la natura del progetto, ovvero a fini didattici, _ALimitedGroup_ ha optato per la ricerca di materiale utile allo studio rispetto alla produzione propria. In particolar modo, il gruppo ha concluso che lo studio sarà affrontato a mezzo delle seguenti risorse:
+#figure(
+  table(
+    columns: (2fr, 3fr),
+    inset: 5pt,
+    align: horizon,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    text(white)[*Strumento*], text(white)[*Risorsa*],
+    [*Go*], [],
+    [*Nats*],
+    [Videocorso realizzato dagli stessi sviluppatori del prodotto reperibile su #link("https://youtube.com/playlist?list=PLgqCaaYodvKY22TpvwlsalIArTmc56W9h")[YouTube]],
+
+    [*Docker*], [],
+    [*Typst*], [],
+    [*Python*], [],
+    [*Git* e *GitHub*],
+    [Viene consigliata la lettura del materiale messo a disposizione per il corso di *Metodi e Tecnologie per lo Sviluppo Software* reperibili nel #link("https://stem.elearning.unipd.it/course/view.php?id=8278")[Moodle STEM] dell'Università di Padova],
+  ),
+  caption: [Materiale per la formazione dei membri di _ALimitedGroup_],
+)
+
+=== Implementazione del piano per la formazione
+
+_ALimitedGroup_ si promette di permettere durante la durata del progetto appositi spazi per permettere la formazione dei membri: durante i vari _sprint_ sarà possibile avere possibilità di sfruttare i momenti in cui è stata assegnata un'attività di peso minore per poter dare maggior peso alla formazione personale.
+
+_ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di riservare degli spazi temporali durante gli _sprint_ dedicati esclusivamente allo studio di queste tecnologie, pur restando consapevole che un forte aiuto sarà dato dalla realizzazione effettiva del _Proof of Concept_ e del progetto finale.
+
+= Metriche
+
+== Metriche di qualità del Processo <metriche-qt-processo>
+
+== Metriche di qualità del Prodotto
