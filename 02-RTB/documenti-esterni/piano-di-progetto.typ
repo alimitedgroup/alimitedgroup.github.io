@@ -656,13 +656,16 @@ In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazion
 
 ==== Informazioni generali e attività da svolgere <sprint3intro>
 
-Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sul.
+Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sull'inizio dello sviluppo del PoC
 
 Le attività pianificate nel dettaglio includono:
 
 - Continuo redazione dell'Analisi dei Requisiti;
+- Discussione del Poc e dell'Analisi dei Requisiti con l'azienda proponente #M31;
 - Inizio redazione Piano di Qualifica;
 - Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC;
+- Setup della repository con divisione del progetto in più microservizi
+- Setup dell'ambiente di sviluppo locale in modo da renderlo replicabile per tutti i componenti del gruppo
 
 ==== Rischi attesi
 
@@ -703,4 +706,10 @@ Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezio
 
 === Retrospettiva
 
-In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo. L'obiettivo principale è raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
+In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
+
+L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
+
+Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi Nat & Postgresql.
+
+I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
