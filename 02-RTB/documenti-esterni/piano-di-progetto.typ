@@ -12,6 +12,7 @@
       vers: "0.4.0",
       date: datetime(day: 29, month: 12, year: 2024),
       autore: p.loris,
+      verifica: p.samuele,
       descr: "Redazione per il terzo sprint",
     ),
     (
@@ -710,6 +711,6 @@ In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione 
 
 L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
 
-Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi Nat & Postgresql.
+Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
 
 I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
