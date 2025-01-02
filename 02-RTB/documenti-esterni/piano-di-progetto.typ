@@ -1,261 +1,52 @@
-#import "../../lib/common.typ": *
-#import "@preview/cetz:0.3.1": *
-#import "@preview/cetz-plot:0.1.0": chart
-
-#set text(lang: "it", font: "Hanken Grotesk")
-#set list(indent: 1em)
-#set par(justify: true)
-#show link: underline
-#show ref: underline
-
-#let versione = [0.2.0]
+#import "../../lib/importantdocs.typ": *
+#import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
-#let link-glossario(
-  link-text,
-) = {
-  link("https://alimitedgroup.github.io/glossario")[#link-text]
-}
-#let link-norme(
-  link-text,
-) = {
-  link("https://alimitedgroup.github.io/norme%20di%progetto%200.7.0")[#link-text]
-}
 
-#metadata[Piano di progetto #versione] <titolo>
-#prima-pagina(
-  nome-documento + "\nVersione " + versione,
-  [],
-  [Stato],
-  [Redazione],
-  [Versione],
-  versione,
-  [Distribuzione],
-  grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin)),
+#let ver = [0.4.0]
+#show: body => importantdocs(
+  data: datetime(day: 29, month: 12, year: 2024),
+  tipo: [esterno],
+  stato: [Redatto],
+  versioni: (
+    (
+      vers: "0.4.0",
+      date: datetime(day: 29, month: 12, year: 2024),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Redazione per il terzo sprint",
+    ),
+    (
+      vers: "0.3.0",
+      date: datetime(day: 10, month: 12, year: 2024),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Ristrutturato il documento secondo il template selezionato. Migliorie generali.",
+    ),
+    (
+      vers: "0.2.0",
+      date: datetime(day: 07, month: 12, year: 2024),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Redazione per il secondo sprint",
+    ),
+    (
+      vers: "0.1.0",
+      date: datetime(day: 27, month: 11, year: 2024),
+      autore: p.samuele,
+      verifica: p.lorenzo,
+      descr: "Redazione documento",
+    ),
+  ),
+  versione: ver,
+  responsabile: ((p.loris),),
+  verificatore: ((p.lorenzo),),
+  redattori: ((p.samuele), (p.loris), (p.marco)),
+  descrizione: [Il seguente documento contiene il _Piano di Progetto_ utilizzato, da _ALimitedGroup_, per la realizzazione di un magazzino distribuito presentato da parte di #M31],
+  titolo: "Piano di Progetto",
+  body,
 )
 
-#set heading(numbering: "1.")
-#set page(numbering: "1", header: header(nome-documento + "\nVersione" + versione), footer: footer())
-#counter(page).update(1)
-
-#registro-modifiche((
-  (
-    vers: "0.2.0",
-    date: datetime(day: 07, month: 12, year: 2024),
-    autore: p.loris,
-    verifica: p.samuele,
-    descr: "Redazione per il secondo sprint",
-  ),
-  (
-    vers: "0.1.0",
-    date: datetime(day: 27, month: 11, year: 2024),
-    autore: p.samuele,
-    verifica: p.lorenzo,
-    descr: "Redazione documento",
-  ),
-))
-#pagebreak()
-
-#indice()
-#pagebreak()
-
-#let sprints = (
-  "1": (
-    preventivo: (
-      (p.loris, 0, 0, 5, 0, 0, 0),
-      (p.samuele, 5, 0, 0, 0, 0, 0),
-      (p.sara, 0, 3, 4, 0, 0, 2),
-      (p.lorenzo, 0, 2, 0, 0, 0, 4),
-      (p.marco, 0, 2, 0, 0, 0, 2),
-      (p.matteo, 0, 3, 0, 0, 0, 4),
-      (p.emanuele, 0, 3, 0, 0, 0, 0),
-    ),
-    consuntivo: (
-      (p.loris, 0, 0, 5, 0, 0, 0),
-      (p.samuele, 5, 0, 0, 0, 0, 0),
-      (p.sara, 0, 3, 4, 0, 0, 2),
-      (p.lorenzo, 0, 2, 0, 0, 0, 5),
-      (p.marco, 0, 5, 0, 0, 0, 3),
-      (p.matteo, 0, 5, 0, 0, 0, 4),
-      (p.emanuele, 0, 4, 0, 0, 0, 0),
-    ),
-  ),
-  "2": (
-    preventivo: (
-      (p.loris, 5, 1, 2, 0, 0, 0),
-      (p.samuele, 0, 4, 0, 0, 0, 0),
-      (p.sara, 0, 0, 3, 0, 0, 2),
-      (p.lorenzo, 0, 0, 0, 0, 0, 3),
-      (p.marco, 0, 2, 4, 0, 0, 0),
-      (p.matteo, 0, 1, 5, 0, 0, 0),
-      (p.emanuele, 0, 0, 6, 0, 0, 0),
-    ),
-    consuntivo: (
-      (p.loris, 5, 1, 2, 0, 0, 0),
-      (p.samuele, 0, 4, 0, 0, 0, 0),
-      (p.sara, 0, 0, 3, 0, 0, 2),
-      (p.lorenzo, 0, 0, 0, 0, 0, 3),
-      (p.marco, 0, 2, 4, 0, 0, 0),
-      (p.matteo, 0, 1, 5, 0, 0, 0),
-      (p.emanuele, 0, 0, 6, 0, 0, 0),
-    ),
-  ),
-)
-
-#let cella(dati, preventivo, i, j) = {
-  let dat = dati.at(i).at(j)
-  let prev = if preventivo != none {
-    preventivo.at(i).at(j)
-  }
-
-  if j == 0 {
-    persona(dat)
-  } else if preventivo == none and dat == 0 {
-    [-]
-  } else if preventivo == none {
-    [#dat]
-  } else if dat == prev and dat == 0 {
-    [-]
-  } else if dat == prev and dat != 0 {
-    [#dat]
-  } else if dat >= prev {
-    [#dat #text(red)[(+#(dat - prev))]]
-  } else {
-    [#dat #text(green, [(#(dat - prev))])]
-  }
-}
-
-#let tabella-ruoli(ruoli, dati, preventivo) = {
-  set par(justify: false)
-  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
-    align(left, cl)
-  } else if cl.x == 0 {
-    align(bottom + left, cl)
-  } else if cl.y == 0 {
-    rotate(-45deg, reflow: false, align(left, cl))
-  } else {
-    align(bottom + center, cl)
-  }
-  figure(
-    table(
-        columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-        inset: (x, y) => if y == 0 {
-          (x: 1.9em, y: 0.7em)
-        } else {
-          (x: 1.1em, y: 0.6em)
-        },
-        fill: (x, y) => if calc.rem(y, 2) == 1 {
-          luma(235)
-        },
-        stroke: (x, y) => if y >= 1 {
-          1pt + black
-        } else {
-          none
-        },
-        table.header([], ..ruoli.map(strong)),
-
-        // @typstyle off
-        ..for i in range(0, dati.len()) {
-          (..for j in range(0, dati.at(i).len()) {
-            (cella(dati, preventivo, i, j),)
-          },)
-        }
-
-      ),
-    caption: [Suddivisione impegni per componente],
-  )
-}
-
-#let grafico-ruoli(ruoli, dati, posizioni-legenda) = {
-  // data è un array di dizionari `(percentuale: 42, titolo: "thanks for all the fish")`
-  let data = ()
-  let globsum = dati.map(r => r.slice(1).sum()).sum()
-  for (i, ruolo) in ruoli.enumerate() {
-    let sum = dati.map(row => row.at(i + 1)).sum(default: 0)
-    data.push((
-      percentuale: sum / globsum * 100,
-      titolo: ruolo + " - " + str(calc.round(sum / globsum * 100, digits: 0)) + "%",
-    ))
-  }
-
-  // slice-style: pal_colors,
-  figure(
-    canvas({
-      import draw: *
-      chart.piechart(
-        data,
-        name: "pie",
-        position: (1em, 0),
-        radius: 1.8,
-        value-key: "percentuale",
-        label-key: "titolo",
-        outer-label: (content: none),
-        gap: 2deg,
-        legend: (label: none),
-      )
-
-      set-style(content: (padding: .2))
-      for (i, dat) in data.enumerate() {
-        if dat.percentuale > 0 {
-          // Calculate the point at 35% of the distance from the border of a slice to its center
-          let outer = "pie.chart.item-" + str(i)
-          let inner = "pie.chart.item-" + str(i) + "-inner"
-          line(outer, inner, stroke: none, mark: none, name: "midline-" + str(i))
-          let middle = (name: "midline-" + str(i), anchor: 35%)
-
-          let line-dir = posizioni-legenda.at(i)
-          let line-anchor = if posizioni-legenda.at(i) > 0 {
-            "west"
-          } else {
-            "east"
-          }
-          let percent = calc.round(dat.percentuale * 100 / data.map(x => x.percentuale).sum())
-
-          line(middle, (rel: (posizioni-legenda.at(i), 0)), name: "line-" + str(i))
-          content((), [#ruoli.at(i) - #percent%], anchor: line-anchor)
-          mark(
-            (name: "line-" + str(i), anchor: 0%),
-            (name: "line-" + str(i), anchor: 1%),
-            symbol: "o",
-            anchor: "center",
-            fill: white,
-            width: 1,
-          )
-        } else { }
-      }
-    }),
-
-    caption: [Tempo dedicato per ruolo],
-    supplement: [Grafico],
-  )
-}
-
-#let impegni(
-  preventivo: false,
-  numero,
-  posizioni-legenda: (2, 2, 2, 2, 2, 2),
-) = {
-  let dati = sprints.at(str(numero))
-  let (dati, preventivo) = if preventivo {
-    (dati.consuntivo, dati.preventivo)
-  } else {
-    (dati.preventivo, none)
-  }
-
-  let ruoli = (
-    "Responsabile",
-    "Amministratore",
-    "Analista",
-    "Progettista",
-    "Programmatore",
-    "Verificatore",
-  )
-
-  v(3em)
-  tabella-ruoli(ruoli, dati, preventivo)
-  grafico-ruoli(ruoli, dati, posizioni-legenda)
-}
-
-#let prospetto-orario(sprint) = {
+/*#let prospetto-orario(sprint) = {
   let sprint = str(sprint)
   let ore-spese-sprint = 0
   let budget-speso-sprint = 0
@@ -318,7 +109,7 @@
     ),
     caption: [Variazioni nelle risorse disponibili per il primo sprint, rispetto alle risorse iniziali],
   )
-}
+}*/
 
 
 = Introduzione
@@ -332,7 +123,7 @@ Data la necessità di pianificare le attività volta per volta, in quanto una pr
 
 == Glossario
 
-La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un’importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
+La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
 
 È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, al seguente #link-glossario("indirizzo").
 
@@ -340,7 +131,7 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 === Riferimenti normativi
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdfhttps://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato d’appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31]
+- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdfhttps://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31]
 - #link-norme("Norme di progetto")
 
 === Riferimenti informativi
@@ -356,12 +147,12 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 == Introduzione
 Parte fondamentale per la redazione di un piano di progetto è il poter analizzare e classificare in maniera efficace i possibili rischi delle attività da svolgere: realizzarne una buona analisi permette di prevedere quali attività richiedono più tempo del previsto e, conseguentemente, valutare se il numero complessivo di attività inserite nel backlog settimanale sono in numero eccessivo o adeguato.
 
-Un’analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
+Un'analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
-- *Identificazione*: ossia l'identificazione dei possibili rischi legati ad un’attività in tutti i vari domini, non solo quello progettuale, ma anche riguardante la sfera personale;
+- *Identificazione*: ossia l'identificazione dei possibili rischi legati ad un'attività in tutti i vari domini, non solo quello progettuale, ma anche riguardante la sfera personale;
 - *Analisi*: individuati i rischi è necessario valutare quanto ciascun di questi sia probabile, ossia che possibilità ha di effettivamente presentarsi, e che possibili risvolti questo potrebbe avere sulla buona riuscita dello sprint e del progetto;
 - *Pianificazione*: analizzati rischi e possibile ricadute, è necessario pensare ai possibili metodi atti alla diminuzione della possibilità che tali rischi si avverino o, ove questo non possa essere applicabile, mitigarne gli effetti negativi;
-- *Controllo*: la parte attiva della gestione del rischio che prevede il continuo monitoraggio delle varie attività per poter rilevare quanto prima possibile l’insorgere di un rischio e applicare le procedure di mitigazione definite in precedenza
+- *Controllo*: la parte attiva della gestione del rischio che prevede il continuo monitoraggio delle varie attività per poter rilevare quanto prima possibile l'insorgere di un rischio e applicare le procedure di mitigazione definite in precedenza
 
 È assolutamente ragionevole pensare che, causa ridotta esperienza, gli effetti di mitigazione possano rivelarsi inefficaci: per questo motivo è necessario prendere atto degli errori di mitigazione rilevati durante la fase di controllo per poter apportare miglioramenti alle strategie adottate.
 
@@ -395,10 +186,10 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
     [*Codice*], [RT1],
     [*Nome*], [Rischio Tecnologico legato alla tecnologia utilizzata],
     [*Descrizione*],
-    [Rischio legato all’inesperienza o alla poca conoscenza di un componente da utilizzare per il progetto],
+    [Rischio legato all'inesperienza o alla poca conoscenza di un componente da utilizzare per il progetto],
 
     [*Mitigazione*],
-    [È necessario prevedere la possibilità che parte dell’impegno orario sarà dedicato alla formazione personale per l’uso di tale componente: è bene dunque valutare di spostare attività eventualmente di minore importanza al primo periodo successivo utile qualora altri componenti del gruppo non possano fornire supporto immediato. È necessario valutare anche la disponibilità di M31 al supporto.],
+    [È necessario prevedere la possibilità che parte dell'impegno orario sarà dedicato alla formazione personale per l'uso di tale componente: è bene dunque valutare di spostare attività eventualmente di minore importanza al primo periodo successivo utile qualora altri componenti del gruppo non possano fornire supporto immediato. È necessario valutare anche la disponibilità di M31 al supporto.],
 
     [*Frequenza probabile di avvenimento*], [Alta],
     [*Pericolosità delle ripercussioni*], [Elevata],
@@ -665,10 +456,10 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
     [Verificatore], [15€/h], [136h], [2.040€],
     [*Totale*], [-], [*644h*], [*12.930€*],
   ),
-  caption: [riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
 )
 \
-In seguito a quanto suggerito in merito all’analisi dei requisiti è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista.
+In seguito a quanto suggerito in merito all'analisi dei requisiti è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista.
 
 Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline_ (RTB)* entro il *3 febbraio 2025*.
 
@@ -726,7 +517,7 @@ In particolare, le attività previste sono:
 - Prima redazione del Glossario
 - Prima redazione delle Norme di Progetto
 - Prima redazione del Piano di Progetto
-- Stabilire un incontro con l’azienda proponente #M31
+- Stabilire un incontro con l'azienda proponente #M31
 - Inizio stesura Analisi dei requisiti
 
 ==== Rischi attesi
@@ -743,15 +534,21 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(1, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+#impegni(1, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 1 - Preventivo per componente", "Sprint 1 - Preventivo")
 
 ==== Consuntivo
 
-#impegni(1, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+#impegni(
+  1,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 1 - Consuntivo per componente",
+  "Sprint 1 - Consuntivo",
+)
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
-#prospetto-orario(1)
+#prospetto-orario(1, "Sprint 1 - Variazione nelle risorse disponibili")
 
 #v(1em)
 ==== Rischi incontrati
@@ -796,9 +593,9 @@ Il secondo sprint è focalizzato principalmente sulla redazione dell'Analisi dei
 Le attività pianificate nel dettaglio includono:
 
 - Redazione dell'Analisi dei Requisiti;
-- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli use case;
-- Studio delle tecnologie Golang e NATS;
-- Ottimizzazione del sistema di ticketing e del *way of working*;
+- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli _use-case_;
+- Studio delle tecnologie _Golang_ e _NATS_;
+- Ottimizzazione del sistema di _ticketing_ e del *way of working*;
 - Riorganizzazione delle Norme di Progetto;
 - Verifica del Piano di Progetto.
 
@@ -816,15 +613,21 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(2, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+#impegni(2, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 2 - Preventivo per componente", "Sprint 2 - Preventivo")
 
 ==== Consuntivo
 
-#impegni(2, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2))
+#impegni(
+  2,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 2 - Consuntivo per componente",
+  "Sprint 2 - Consuntivo",
+)
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
-#prospetto-orario(2)
+#prospetto-orario(2, "Sprint 2 - Variazione nelle risorse disponibili")
 
 #v(1em)
 ==== Rischi incontrati
@@ -838,3 +641,76 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 === Retrospettiva
 
 In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
+
+=== Sprint 3
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[8-12-2024],
+  [Fine prevista:], strong[21-12-2024],
+  [Fine reale:], strong[21-12-2024],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint3intro>
+
+Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sull'inizio dello sviluppo del PoC
+
+Le attività pianificate nel dettaglio includono:
+
+- Continuo redazione dell'Analisi dei Requisiti;
+- Discussione del Poc e dell'Analisi dei Requisiti con l'azienda proponente #M31;
+- Inizio redazione Piano di Qualifica;
+- Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC;
+- Setup della repository con divisione del progetto in più microservizi
+- Setup dell'ambiente di sviluppo locale in modo da renderlo replicabile per tutti i componenti del gruppo
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(3, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 3 - Preventivo per componente", "Sprint 3 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  3,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 3 - Consuntivo per componente",
+  "Sprint 3 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(3, "Sprint 3 - Variazione nelle risorse disponibili")
+
+#v(1em)
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
+
+Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
+
+=== Retrospettiva
+
+In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
+
+L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
+
+Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
+
+I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
