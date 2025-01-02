@@ -60,7 +60,7 @@
   "3": (
     preventivo: (
       (p.loris, 2, 0, 0, 0, 4, 0),
-      (p.samuele, 0, 0, 0, 0, 4, 0),
+      (p.samuele, 0, 0, 0, 0, 4, 2),
       (p.sara, 0, 4, 2, 0, 0, 0),
       (p.lorenzo, 0, 0, 0, 0, 1, 0),
       (p.marco, 0, 0, 4, 0, 0, 0),
@@ -69,7 +69,7 @@
     ),
     consuntivo: (
       (p.loris, 2, 0, 1, 0, 3, 0),
-      (p.samuele, 0, 0, 0, 0, 4, 0),
+      (p.samuele, 0, 0, 0, 0, 4, 2),
       (p.sara, 0, 4, 2, 0, 0, 0),
       (p.lorenzo, 0, 0, 0, 0, 0, 0),
       (p.marco, 0, 0, 4, 0, 0, 0),
