@@ -714,3 +714,65 @@ L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei 
 Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
 
 I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
+
+=== Sprint 4
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[22-12-2024],
+  [Fine prevista:], strong[05-1-2025],
+  [Fine reale:], strong[05-01-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint4intro>
+
+Il quarto sprint è focalizzato principalmente sulla
+
+Le attività pianificate nel dettaglio includono:
+
+-
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(4, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 4 - Preventivo per componente", "Sprint 4 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  4,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 4 - Consuntivo per componente",
+  "Sprint 4 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(4, "Sprint 4 - Variazione nelle risorse disponibili")
+
+#v(1em)
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio
+
+Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
+
+=== Retrospettiva
+
+In questo quarto sprint, ci siamo concentrati principalmente sulla realizzazione
