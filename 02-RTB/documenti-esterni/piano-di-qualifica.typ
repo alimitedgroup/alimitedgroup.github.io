@@ -390,11 +390,11 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   table(
     columns: (auto, auto, auto, auto),
     fill: (col, row) => if row == 0 {
-      rgb(128, 0, 128) // Purple for header
+      rgb(128, 0, 128)
     } else if calc.even(row) {
-      rgb(191, 127, 191) // Light purple for even rows
+      rgb(191, 127, 191)
     } else {
-      rgb(216, 178, 216) // Lighter purple for odd rows
+      rgb(216, 178, 216)
     },
     align: center + horizon,
     inset: 8pt,
