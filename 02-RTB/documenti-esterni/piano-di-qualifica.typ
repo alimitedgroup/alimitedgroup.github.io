@@ -385,7 +385,55 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 )
 
 
+== tabelle
+/*#table(
+  columns: (auto, auto, auto, auto),
+  inset: 10pt,
+  align: horizon,
+  fill: (col, row) => if row == 0 { black } else if calc.odd(row) { rgb(217, 217, 217) } else { white },
+  [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore ottimo*],
+  [MPF1], [Budget at completion (BAC)], [≥ 0], [In linea col preventivo],
+  [MPF2], [Earned value (EV)], [≥ 0], [≤ BAC],
+  [MPF3], [Planned value (PV)], [≥ 0], [≤ BAC],
+  [MPF4], [Actual cost (AC)], [≥ 0], [≤ EAC],
+  [MPF5], [Cost performance index (CPI)], [≥ 0.95], [≥ 1],
+  [MPF6], [Schedule performance index (SPI)], [≥ 0.95], [≥ 1],
+  [MPF7], [Estimate at completion (EAC)], [Errore del ± 3% rispetto al BAC], [Esattamente pari al BAC],
+  [MPF8], [Estimate to complete (ETC)], [≥ 0], [≤ EAC],
+  [MPF9],
+  [Time estimate at completion (TEAC)],
+  [Errore del ± 3% rispetto alla durata pianificata],
+  [Esattamente pari alla durata pianificata],
+)*/
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128) // Purple for header
+    } else if calc.even(row) {
+      rgb(191, 127, 191) // Light purple for even rows
+    } else {
+      rgb(216, 178, 216) // Lighter purple for odd rows
+    },
+    align: center + horizon,
+    inset: 8pt,
 
+    // Header row
+    [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore ottimo*],
+
+    // Data rows
+    [MPF1], [Budget at completion (BAC)], [≥ 0], [In linea col preventivo],
+    [MPF2], [Earned value (EV)], [≥ 0], [≤ BAC],
+    [MPF3], [Planned value (PV)], [≥ 0], [≤ BAC],
+    [MPF4], [Actual cost (AC)], [≥ 0], [≤ EAC],
+    [MPF5], [Cost performance index (CPI)], [≥ 0.95], [≥ 1],
+    [MPF6], [Schedule performance index (SPI)], [≥ 0.95], [≥ 1],
+    [MPF7], [Estimate at completion (EAC)], [Errore del ± 3% rispetto al BAC], [Esattamente pari al BAC],
+    [MPF8], [Estimate to complete (ETC)], [≥ 0], [≤ EAC],
+    [MPF9], [Time estimate at completion (TEAC)], [Errore del ± 3% rispetto alla durata pianificata], [Esattamente pari alla durata pianificata]
+  ),
+  caption: [Informazioni metriche],
+)
 
 
 
