@@ -9,6 +9,18 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.4.0",
+      date: datetime(day: 3, month: 01, year: 2025),
+      autore: p.sara,
+      descr: "Aggiornamento metriche di processo e tabelle",
+    ),
+    (
+      vers: "0.3.0",
+      date: datetime(day: 27, month: 12, year: 2024),
+      autore: p.sara,
+      descr: "Aggiornamento metriche di processo",
+    ),
+    (
       vers: "0.2.0",
       date: datetime(day: 19, month: 12, year: 2024),
       autore: p.sara,
@@ -93,9 +105,19 @@ rilevanti per il progetto.
 = Qualità di processo
 == Processi primari
 === Fornitura
-==== Earned Value
+
+==== Budget at Completion (BAC)
 #metric(
   cod: [MPF1],
+  formula: [
+    $"Budget at Completion" = "Costo totale del progetto"$
+  ],
+  desc: [Il Budget at Completion rappresenta il costo totale previsto per completare il progetto.],
+)
+
+==== Earned Value (EV)
+#metric(
+  cod: [MPF2],
   formula: [
     $"Earned Value" = "Budget at Completion" * "Percentuale di lavoro completato nello sprint"$
   ],
@@ -103,20 +125,20 @@ rilevanti per il progetto.
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se il lavoro svolto è in linea con le aspettative.],
 )
 
-==== Planned Value
+==== Planned Value (PV)
 #metric(
-  cod: [MPF2],
+  cod: [MPF3],
   formula: [
-    $"Planned Value" = "Budget at Completion" * "Percentuale di lavoro pianificato nello spront"$
+    $"Planned Value" = "Budget at Completion" * "Percentuale di lavoro pianificato nello sprint"$
   ],
   desc: [L'indicatore Planned Value rappresenta il valore del lavoro _pianificato_ rispetto al budget totale previsto.\
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se la pianificazione è rispettata.
     Il valore pianificato non può essere negativo e deve essere inferiore al BAC],
 )
 
-==== Actual Cost
+==== Actual Cost (AC)
 #metric(
-  cod: [MPF3],
+  cod: [MPF4],
   formula: [
     $"Actual Cost" = "Costo effettivo sostenuto nello sprint"$
   ],
@@ -124,16 +146,174 @@ rilevanti per il progetto.
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se i costi sono in linea con le aspettative.],
 )
 
-
-==== Cost Performance Index
+==== Cost Performance Index (CPI)
 #metric(
-  cod: [MPF4],
+  cod: [MPF5],
   formula: [
     $"Cost Performance Index" = "Earned Value" / "Actual Cost"$
   ],
   desc: [Il Cost Performance Index rappresenta il rapporto tra il valore del lavoro completato e il costo effettivo sostenuto.\
     Un valore maggiore di 1 indica che il progetto sta rispettando il budget, un valore minore di 1 indica che il progetto sta superando il budget.],
 )
+
+==== Schedule Performance Index (SPI)
+#metric(
+  cod: [MPF6],
+  formula: [
+    $"Schedule Performance Index" = "Earned Value" / "Planned Value"$
+  ],
+  desc: [Lo Schedule Performance Index rappresenta il rapporto tra il valore del lavoro completato e il valore del lavoro pianificato.\
+    Un valore maggiore di 1 indica che il progetto sta rispettando la pianificazione, un valore minore di 1 indica che il progetto sta accumulando ritardi.],
+)
+
+/*SONO COMMENTATE PERCHE' MOLTO SIMILI A COST PERFORMANCE INDEX E SCHEDULE PERFORMANCE INDEX*/
+
+/*==== Budget Variance
+
+#metric(
+  cod: [MPF7],
+  formula: [
+    $"Budget Variance" = ("Earned Value" - "Actual Cost" ) / "Actual Cost" * 100$
+  ],
+  desc: [La Budget Variance rappresenta la differenza percentuale tra il valore del lavoro completato e il costo effettivo sostenuto per completare il lavoro nello sprint.\
+    Un valore positivo indica che il progetto sta rispettando il budget, un valore negativo indica che il progetto sta superando il budget.],
+)
+
+==== Effort Variance
+#metric(
+  cod: [MPF8],
+  formula: [
+    $"Effort Variance" = ("Ore Pianificate" - "Ore Effettive") / "Ore Pianificate" * "100"$
+  ],
+  desc: [L'Effort Variance rappresenta la differenza percentuale tra le ore pianificate e le ore effettive impiegate per completare il lavoro nello sprint.\
+    Un valore positivo indica che il progetto sta rispettando la pianificazione, un valore negativo indica che il progetto sta accumulando ritardi.],
+)*/
+
+==== Estimate At Completion (EAC)
+#metric(
+  cod: [MPF7],
+  formula: [
+    $"Estimate At Completion" = "Budget at Completion" / "Cost Performance Index"$
+  ],
+  desc: [La metrica Estimate At Completion rappresenta una proiezione del costo finale totale del progetto basata sulla performance attuale.
+    Utilizza il CPI come indicatore di efficienza per correggere la stima iniziale (BAC).
+    Se CPI < 1, EAC sarà maggiore del BAC, indicando un probabile sforamento del budget.],
+)
+
+==== Estimate To Complete (ETC)
+#metric(
+  cod: [MPF8],
+  formula: [
+    $"Estimate To Complete" = "Estimate At Completion" - "Actual Cost"$
+  ],
+  desc: [La metrica Estimate To Complete stima quanto costerà completare il lavoro rimanente del progetto.
+    Si calcola sottraendo i costi già sostenuti (AC) dalla stima del costo finale totale (EAC).
+    Utile per la pianificazione del budget residuo necessario.],
+)
+
+==== Time Estimate At Completion (TEAC)
+#metric(
+  cod: [MPF9],
+  formula: [
+    $"Time Estimate At Completion" = "Durata pianificata" / "Schedule Performance Index"$
+  ],
+  desc: [La metrica Time Estimate At Completion proietta la durata finale del progetto basandosi sulla performance temporale attuale.
+    Utilizza SPI come indicatore di efficienza temporale per correggere la stima iniziale.
+    Se SPI < 1, TEAC sarà maggiore della durata pianificata, indicando un probabile ritardo.],
+)
+
+
+=== Sviluppo
+/*==== Cyclomatic Complexity
+
+#metric(
+  cod: [MPS1],
+  formula: [
+    $"Cyclomatic Complexity" = E - N + 2P$
+
+  ],
+  desc: [
+- E = numero di archi nel grafo di controllo
+- N = numero di nodi nel grafo di controllo
+- P = numero di componenti connesse\
+Misura la complessità del codice contando i percorsi linearmente indipendenti. Un valore superiore a 10 indica codice complesso che potrebbe richiedere refactoring.],
+)*/
+
+==== Code Coverage
+#metric(
+  cod: [MPS2],
+  formula: [
+    $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
+  ],
+  desc: [Percentuale di codice coperto da test automatizzati. Si raccomanda un coverage minimo del 80%.],
+)
+
+==== Technical Debt Ratio
+
+#metric(
+  cod: [MPS3],
+  formula: [
+    $"Technical Debt Ratio" = ("Remediation Cost" / "Development Cost") * 100$
+  ],
+  desc: [Rapporto tra il costo stimato per risolvere i problemi tecnici e il costo di sviluppo. Un valore superiore al 5% richiede attenzione.],
+)
+
+==== Sprint Velocity
+
+#metric(
+  cod: [MPS4],
+  formula: [
+    $"Sprint Velocity" = "Story Points completati nello sprint"$
+  ],
+  desc: [Media mobile degli story points completati negli ultimi 3 sprint. Utile per la capacity planning.],
+)
+==== Lead Time
+#metric(
+  cod: [MPS5],
+  formula: [
+    $"Lead Time" = "Data completamento" - "Data creazione task"$
+  ],
+  desc: [Tempo medio tra la creazione di una user story e il suo completamento. Indica l'efficienza del processo di sviluppo.],
+)
+
+==== Defect Density
+
+#metric(
+  cod: [MPS6],
+  formula: [
+    $"Defect Density" = "Numero di difetti" / "KLOC"$
+  ],
+  desc: [Numero di difetti per 1000 linee di codice. Un valore superiore a 1 indica possibili problemi di qualità.],
+)
+
+==== Test Success Rate
+#metric(
+  cod: [MPS7],
+  formula: [
+    $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
+  ],
+  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi sopra il 95%.],
+)
+
+==== Deployment Frequency
+
+#metric(
+  cod: [MPS8],
+  formula: [
+    $"Deployment Frequency" = "Numero deployment" / "Periodo di tempo"$
+  ],
+  desc: [Frequenza dei rilasci in produzione. Indica la maturità del processo CI/CD.],
+)
+
+==== Change Failure Rate
+#metric(
+  cod: [MPS9],
+  formula: [
+    $"Change Failure Rate" = ("Deployment falliti" / "Deployment totali") * 100$
+  ],
+  desc: [Percentuale di deployment che causano un fallimento in produzione. Dovrebbe essere inferiore al 15%.],
+)
+
 
 
 == Processi di supporto
@@ -173,7 +353,36 @@ rilevanti per il progetto.
 )
 
 
+== Qualità di prodotto
+==== Requisiti obbligatori soddisfatti
+#metric(
+  cod: [MPS1],
+  formula: [
+    $"Requisiti obbligatori soddisfatti" = "Numero di requisiti obbligatori soddisfatti" / "Numero di requisiti obbligatori totali" * 100$
+  ],
+  desc: [L'indicatore Requisiti obbligatori soddisfatti rappresenta la percentuale di requisiti obbligatori soddisfatti rispetto al totale dei requisiti obbligatori.\
+    L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti essenziali del progetto.],
+)
 
+==== Requisiti desiderabili soddisfatti
+#metric(
+  cod: [MPS2],
+  formula: [
+    $"Requisiti desiderabili soddisfatti" = "Numero di requisiti desiderabili soddisfatti" / "Numero di requisiti desiderabili totali" * 100$
+  ],
+  desc: [L'indicatore Requisiti desiderabili soddisfatti rappresenta la percentuale di requisiti desiderabili soddisfatti rispetto al totale dei requisiti desiderabili.\
+    L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti opzionali del progetto.],
+)
+
+==== Requisiti opzionali soddisfatti
+#metric(
+  cod: [MPS3],
+  formula: [
+    $"Requisiti opzionali soddisfatti" = "Numero di requisiti opzionali soddisfatti" / "Numero di requisiti opzionali totali" * 100$
+  ],
+  desc: [L'indicatore Requisiti opzionali soddisfatti rappresenta la percentuale di requisiti opzionali soddisfatti rispetto al totale dei requisiti opzionali.\
+    L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti aggiuntivi del progetto.],
+)
 
 
 
