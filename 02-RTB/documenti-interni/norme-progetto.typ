@@ -1,13 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.12.0]
+#let ver = [0.13.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 31, month: 12, year: 2024),
+  data: datetime(day: 04, month: 01, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "0.13.0",
+      date: datetime(day: 04, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Aggiunto processo di Accertamento Qualità e di Verifica",
+    ),
     (
       vers: "0.12.0",
       date: datetime(day: 31, month: 12, year: 2024),
@@ -541,7 +548,7 @@ Tra i processi di supporto utilizzati nel progetto distinguiamo:
 - *Revisione congiunta*
 - *Gestione dei cambiamenti*
 
-Saranno ora descritti nel dettaglio le attività previste.
+Saranno ora descritte nel dettaglio le attività previste.
 
 == Documentazione <documentazione>
 
@@ -609,7 +616,7 @@ In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Obiettivi e attività per il periodo successivo*, che elenca le attività future da completare;
 - *Difficoltà riscontrate e questioni aperte*, che ci permette di esporre le problematiche che abbiamo affrontato e quelle su cui ancora nutriamo dei dubbi.
 
-=== Altri documenti
+=== Altri documenti <desc-templ-altri-doc>
 Per tutti gli altri documenti la struttura è composta da:
 
 - *Pagina di copertina*, con:
@@ -620,6 +627,7 @@ Per tutti gli altri documenti la struttura è composta da:
   - Distribuzione (destinatari).
 - *Registro delle modifiche*, che viene realizzata automaticamente invocando la funzione per la copertina;
 - *Indice dei contenuti*, viene realizzato automaticamente con la stessa funziona menzionata sopra;
+- *Elenchi di tabelle e figure*, se presenti nel documento;
 - *Corpo del documento*, con sezioni e sotto-sezioni che vengono scritte manualmente.
 
 Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
@@ -706,23 +714,24 @@ Per quanto riguarda invece la parte di documentazione, le parti componenti tale 
 Il *Controllo della configurazione* è l'attività che disciplina le richieste di modifica: queste devono poter essere identificate e valutate con esito favorevole alla loro implementazione o contrario.
 Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l'approvazione.
 
-Per realizzare al meglio questa attività sono stati predisposti metodi differenti per la documentazione e il codice vero e proprio, qui di seguito descritti.
+_ALimitedGroup_ ha deciso di attuare questa attività mediante l'utilizzo delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
 
-_ALimitedGroup_ ha deciso di attuare questa attività nel repository dei documenti con l'ausilio delle *_issue_*, delle *_board_* e delle *_Pull Request_* di *_GitHub_*, così come descritto qui di seguito:
+- _*Issue*_: ogni modifica da apportare deve essere documentata mediante una _issue_ da assegnare al componente che prenderà in carico la modifica o la redazione di un documento o di una parte di codice.
+Generalmente una issue possiede:
+- un numero univoco nella _repository_ che funge da identificativo della _issue_;
+- un nome che esplicita in cosa consiste la _issue_;
+- una descrizione facoltativa;
+- una _milestone_ o una _baseline_ associata;
+- un assegnatario che prenderà in carico il lavoro da effettuare;
+- un legame con la _board_ del progetto;
+Una _issue_ può essere chiusa solo nel momento in cui l'attività che prevedeva è stata verificata e portata dunque nel ramo principale dei _repository_: tale operazione può essere efftuata in automatico inserendo, nel commento del _commit_ che esegue lo spostamento delle modifiche al ramo principale, il numero della _issue_ preceduto da `fix #` (esempio `fix #1` chiude in automatico la issue numero 1).
 
-- _*Issue*_: ogni modifica da fare deve essere documentata mediante una _issue_ da assegnare al componente che prenderà in carico la modifica o la redazione di un documento.
-  Generalmente una issue possiede:
-  - un numero univoco nella _repository_ che funge da identificativo
-  - un nome che esplicita in cosa consiste la _issue_
-  - una descrizione facoltativa
-  - una _milestone_ o una _baseline_ associata
-  - un assegnatario che prenderà in carico il lavoro da effettuare
-  - un legame con la _board_ del progetto
-
-- _*Board*_: serve per stabilire se una _issue_ presa in carico è ancora da iniziare, in sviluppo o terminata
-- _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_. Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerarle definitive
-
-[PROSEGUIRE con Codice]
+- _*Board*_: serve per stabilire se una _issue_ presa in carico è ancora da iniziare, in sviluppo o terminata. Essa consente inoltre di identificare in quale periodo è da svolgere e, mediante dei diagrammi di Gantt generati da _GitHub_ e qui integrati, comprendere se ci sono attività che stanno richiedendo più tempo di quanto preventivato;
+- _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_. Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerare le modifiche apportate come definitive.
+- _*Teams di GitHub*_: i _repository_ realizzati sono realizzati per poter permettere solo ai verificatori (e al responsabile per eventuali approvazioni) la possibilità di poter trasportare delle modifiche nel ramo principale (previa, ovviamente, attività di verifica). Per queste esigenze, i _repository_ prevedono tre categorie:
+  - Responsabile;
+  - Verificatori;
+  - Redattori.
 
 === Registrazione dello Stato di Configurazione
 
@@ -736,15 +745,13 @@ Come verbalizzato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v
 
 dove:
 
-- *MAJOR*: subisce un incremento solo alla pubblicazione del file finale
-- *MINOR*: subisce un incremento solo quando completato il processo di modifica e di verifica
+- *MAJOR*: subisce un incremento solo ad approvazione del file;
+- *MINOR*: subisce un incremento solo quando completato sia il processo di modifica che quello di verifica;
 - *PATCH*: subisce un incremento per modifiche di entità minore, quali correzioni ortografiche e/o di sintassi.
 
 Lo spunto d'uso di tale sistema proviene dal sito #link("https://semverdoc.org/")[semverdoc.org].
 
-In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di tutte le modifiche apportate per ogni versione, come anche descritto nella @desc-templ-verbale.
-
-[PROSEGUIRE]
+In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di tutte le modifiche apportate per ogni versione, come anche descritto nella @desc-templ-verbale e @desc-templ-altri-doc.
 
 === Valutazione della configurazione <valutazione-della-configurazione> //tracciamento dei requisiti, non sono i test
 
@@ -752,16 +759,121 @@ La *Valutazione della configurazione* è l'attività che prevede di controllare 
 
 _ALimitedGroup_ intende realizzare un *Tracciamento dei Requisiti* per controllare l'aderenza di quanto sviluppato con quanto era da sviluppare. Più nello specifico, l'obbiettivo è realizzare un Prodotto che sia efficiente nel senso che soddisfa tutti i requisti e sufficiente nel senso che soddisfa solo i requisiti strettamente necessari: per questo il gruppo, specie durante la parte di sviluppo effettiva, si impegnerà per tracciare nel codice cosa una parte intende soddisfare mediante l'utilizzo di commenti opportuni.
 
-== Accertamento qualità
-[PROSEGUIRE] Sezione Strumenti a supporto
-[PROSEGUIRE] Sezione Attività previste
-[PROSEGUIRE] Sezione Documentazione prodotta o di supporto
+== Accertamento Qualità
+
+L'*Accertamento della Qualità* (detto anche _*Quality Assurance*_) è un processo che ha come scopo quello di attestare che la realizzazione dei processi e dei prodotti finali sia stata fatta a regola d'arte: in sostanza dunque il processo ha il dovere di assicurare che processi e prodotti soddisfino determinati requisiti minimi affinché possano essere considerati efficienti ed efficaci.
+
+Per realizzare l'importante obiettivo posto dal processo, _ALimitedGroup_ utilizzerà, come suggerito dallo standard _ISO/IEC 12207:1995_ i risultati prodotti dalle attività di Verifica (@verifica) e validazione (@validazione).
+
+=== Attività previste
+
+Le attività previste dal processo di *Accertamento della qualità* sono le seguenti:
+
+- *Implementazione del processo*, che prevede l'instaurazione degli standard di qualità da rispettare, nonché le procedure da eseguire per raccogliere le valutazioni;
+- *Accertamento qualità prodotto*, che prevede il controllo di tutto il materiale prodotto per verificare che questo rispetti gli standard decisi;
+- *Accertamento qualità processo*, che prevede il controllo di tutti i processi eseguiti dal gruppo per verificare che questi rispettino gli standard decisi.
+
+_ALimitedGroup_ ha deciso di realizzare questo processo mediante l'instaurazioni di specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una Sezione apposita tali misurazioni per renderle più velocemente consultabili.
+
+Le misurazioni dovranno essere realizzate alla fine di ogni _Sprint_ e adeguatamente riportate nel *Piano di Qualifica* [PROSEGUIRE](inserire link).
+
+Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodotto mentre quelle di processo alla @metriche-qt-processo.
 
 == Qualifica
 === Verifica <verifica> //did I build the System right? ovvero i test
-[PROSEGUIRE] Sezione Strumenti a supporto
-[PROSEGUIRE] Sezione Attività previste
-[PROSEGUIRE] Sezione Documentazione prodotta o di supporto
+
+Il processo di *Verifica* ha come scopo quello di verificare che quanto prodotto sia effettivamente stato svolto a regola d'arte, ovvero effettivamente soddisfi i requisiti imposti, anche quelli di natura qualitativa ma anche funzionale: è compito di questo processo assicurare che quanto realizzato soddisfi il requisito che si intendeva soddisfare.
+
+Possiamo racchiudere l'obbiettivo di questo processo nella domanda _"Did I build the System right?"_, ovvero _"Ho realizzato il Sistema correttamente?_.
+
+Tutti gli obbiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel *Piano di Qualifica*[PROSEGUIRE](inserire link).
+
+==== Strumenti a supporto
+
+[PROSEGUIRE](descrivere eventuali script per misurazioni, programmi per test, ecc. Assicurarsi di aggiornare anche l'infrastruttura se necessario)
+
+==== Attività previste
+
+In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo processo sono:
+
+- *Implementazione del processo*, che prevede la realizzazione di quanto necessario al perseguimento dell'attività di verifica, dalla rilevazione delle criticità del Progetto da analizzare sino alla rilevazione delle problematiche e ai metodi di mitigazione;
+- *Attività di Verifica*, ovvero l'attività di verifica vera e propria in cui è necessario controllare l'efficacia di *Processi*, *Requisiti* (in termini di esaustività e consistenza), *Progettazione* (in termini di efficacia rispetto ai requisiti ed esigenze di #M31), *Codice* (in termini di grado di soddisfacimento dei requisiti che una parte di codice dovrebbe soddisfare), *Integrazione* (delle varie parti del Sistema tra loro) e *Documentazione*.
+
+==== Implementazione del processo
+
+_ALimitedGroup_ ha concluso che la principale necessità è il Progetto soddisfi le esigenze di #M31 e per questo ha intenzione di realizzare approfonditi test, dalla Documentazione al Codice prodotto, realizzando inoltre che questo non è possibile se i processi eseguiti nono sono adeguatamente misurati (si veda, a tal proposito, la @metriche-qt-processo).
+
+In merito alla verifica delle componenti del progetto, _ALimitedGroup_ ha stabilito che nessun documento o parte di codice possa essere portato nel ramo principale del _repository_ del gruppo senza che questo sia prima stato adeguatamente verificato e/o testato ove possibile, così come descritto nella @attività-verifica. Si comprende dunque che il ramo principale del _repository_, essendo principale, non possa contenere elementi che sono, in quanto potenzialmente non corretti, non di qualità.
+
+Eventuali problematiche di qualsiasi natura non singolarmente risolvibili saranno oggetto di discussione in sede di riunione interna.
+
+Ai fini di descrivere al meglio la parte di _Way of Working_ che _ALimitedGroup_ intende adottare per il processo di Verifica, saranno ora esposti i vari aspetti dell'attività di verifica.
+
+==== Attività di Verifica <attività-verifica>
+
+Iniziando anzitutto dalla *Documentazione*, attività in cui il gruppo si è particolarmente concentrato nella prima fase del Progetto, _ALimitedGroup_ ha predisposto che ogni documento sia predisposto almeno alla fase di verifica dopo essere redatto, prima che questo possa essere portato nel ramo principale del _repository_. Questa attività consiste nel controllare anzitutto la correttezza grammaticale e sintattica del documento, ma anche la correttezza di quanto scritto e la realizzazioni delle eventuali misurazioni descritte in @metriche.
+
+Per maggiori informazioni sul processo di redazione di un documento si consiglia la lettura della @regole-branch-issue.
+
+In merito invece alle verifiche relative al *Codice*, questo sarà un argomento che _ALimitedGroup_ affronterà maggiormente nel dettaglio non appena raggiunta la _Requirements and Technology Baseline_.
+
+In generale tutte le informazioni relative alla verifica, dalle misurazioni agli esiti dei test effettuati, dovranno essere riportati nel *Piano di Qualifica*[PROSEGUIRE](inserire link)
+
+La verifica, in generale può essere realizzata in due modi: mediante *Analisi Statica* e mediante *Analisi Dinamica*, qui di seguito descritte.
+
+===== Analisi Statica
+
+L'analisi statica è così chiamata in quanto sono attività di verifica che *non* prevedono l'esecuzione dell'oggetto da verificare. Si tratta dunque di una verifica che si concentra maggiormente sulla sintassi e sulla correttezza effettiva di quanto scritto, al fine di rilevare potenziali problemi ancor prima che questi si possano verificare mediante l'esecuzione.
+
+L'*Analisi Statica* può essere realizzata mediante *metodi formali*, ovvero mediante prove matematiche, oppure per *metodi di lettura*, meno formali ma comunque efficaci.
+
+I *metodi di lettura* sono due:
+
+- *Walkthrought*, che suppone di sapere la presenza di un problema, ma di non sapere che problema è e dove questo è presente. Richiede dunque un'analisi approfondita di tutto l'oggetto di verifica alla ricerca di tale problema: si tratta di una metodologia costosa e poco applicabile specie perché difficilmente automatizzabile;
+- *Ispezione*, che suppone di sapere i possibili problemi ma di non sapere se questi sono presenti: questo sistema è meno efficace del primo in quanto non perfettamente esaustivo specie ad attività appena avviata, permette tuttavia di realizzare una lista di controllo da applicare all'oggetto di verifica, permettendo dunque di identificare i possibili errori e/o problemi.
+
+Tra i due, data l'alta mole di oggetti da verificare, l'*ispezione* è preferibile in quanto, potendola realizzare mediante una lista di controllo, è automatizzabile.
+
+===== Analisi Dinamica
+
+L'*Analisi Dinamica* è così chiamata perché prevede, per poter essere effettuata, l'esecuzione dell'oggetto da verificare.
+L'intento è quello di rimuovere i _fault_, ovvero elementi che hanno determinato un comportamento inatteso, mediante l'esecuzione del codice e la rilevazione delle _failure_, ovvero esecuzioni il cui esito non era quello atteso.
+
+L'*Analisi Dinamica* assolve il proprio compito mediante i _test_, che deveono essere *ripetibili* (poiché se si presenta un _failure_ e i _fault_ che lo ha causato viene risolto è necessario eseguire nuovamente il test per verificarne l'effettiva correzione) e automatizzabili (questo ottenibile mediante _driver_ che chiamano le parti di codice non direttamente eseguibili, _stub_ che sostituiscono parti di codice richiamabili per testare la componente che le chiama e _logger_ che registrano l'esito dei test in un formato comprensibile da un automa).
+
+Per essere corretto, un _test_ deve essere indipendente dall'ambiente di esecuzione e restituire, dato uno stesso input, lo stesso output, che deve essere corretto rispetto all'input fornito.
+
+Le principali tipologie di _test_ sono:
+- *Test di Unità*;
+- *Test di Integrazione*;
+- *Test di Sistema*;
+- *Test di Regressione*.
+
+====== Test di Unità
+
+I *Test di Unità* verificano la correttezza delle unità del codice, ovvero parti del Sistema che, eventualmente avvalendosi di moduli, costituiscono una componentre piccola ma con una responsabilità unica, non condivisa e sufficientemente grande per poter essere testata.
+
+Questi _test_ sono di due tipologie:
+
+- *Test Funzionali*: sono test che verificano gli input e gli output dati al sistema, ma senza verificare la logica che porta alle conclusioni di tali risultati. Non guardando la logica dell'unità, sono per questo detti anche *black-box*. Per realizzare dei buoni test funzionali è necessario realizzare, data una unità, test su cinque classi di valori in input: uno non ammissibile "inferiore" all'insieme dei valori ammissibile, uno tra i valori "estremi inferiori" ammissibili, uno tra i valori ammissibili, uno tra i valori "estremi superiori" ammissibili e uno tra i valori non ammissibili "superiori".
+- *Test Strutturali*: sono test che invece concentrano l'attenzione sulla logica del programma, su quanti e quali _statement_ del codice vengono effettivamente eseguiti.
+
+====== Test di Integrazione
+
+Una volta attestato che le varie unità funzionano correttamente, è necessario assicurarsi che le varie unità "parlino" correttamente tra di loro, verificandone quindi l'integrazione. Per effettuare tale integrazione è possibile seguire due metodologie:
+
+- *Top - Down*: prevede di verificare prima le componenti con maggior numero di dipendenze, ovvero quelle che hanno maggiore responsabilità verso l'esterno del Sistema;
+- *Bottom - Up*: ovvero a partire dalle componenti con minore dipendenze d'uso, solitamente dunque quelle con maggiore importanza all'interno del Sistema.
+
+====== Test di Sistema
+
+Sono _test_ che mirano a verificare la correttezza del Sistema nel suo complesso, per controllare l'effettiva efficacia del Sistema rispetto ai suoi requisiti.
+
+======= Test di Regressione
+
+Durante l'esecuzione dei _test_ descritti in precedenza, è completamente possibile che uno di questi segnali un problema: in tal caso è necessario analizzare il problema, sviluppare una soluzione, codificarla e infine controllare che il problema sia stato risolto ripetendo il _test_.
+
+È tuttavia necessario assicurarsi che una correzzione apportata non introduca un problema precedentemente risolto: a questo scopo non ci si limita all'esecuzione del solo _test_ fallito, bensì di tutti i _test_, per evitare, di fatto, una regressione.
 
 === Validazione <validazione> //did I build the right System?
 [PROSEGUIRE] Sezione Strumenti a supporto
@@ -917,11 +1029,15 @@ Per maggiori informazioni si consiglia la lettura del processo di *Infrastruttur
 
 Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
 
+=== Attività previste
+
 Si compone delle seguenti atività:
 
 - *Implementazione*
 - *Creazione*
 - *Manutenzione*
+
+Tali attività saranno descritte nel dettaglio nelle prossime Sezioni.
 
 === Implementazione <implementazione>
 
@@ -1214,8 +1330,8 @@ _ALimitedGroup_ si promette di permettere durante la durata del progetto apposit
 
 _ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di riservare degli spazi temporali durante gli _sprint_ dedicati esclusivamente allo studio di queste tecnologie, pur restando consapevole che un forte aiuto sarà dato dalla realizzazione effettiva del _Proof of Concept_ e del progetto finale.
 
-= Metriche
+= Metriche <metriche>
 
 == Metriche di qualità del Processo <metriche-qt-processo>
 
-== Metriche di qualità del Prodotto
+== Metriche di qualità del Prodotto <metriche-qt-prodotto>
