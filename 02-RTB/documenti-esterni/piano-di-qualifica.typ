@@ -9,6 +9,12 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.5.0",
+      date: datetime(day: 04, month: 01, year: 2025),
+      autore: p.emanuele,
+      descr: "Aggiunta metriche qualità di prodotto e tabelle",
+    ),
+    (
       vers: "0.4.0",
       date: datetime(day: 3, month: 01, year: 2025),
       autore: p.sara,
@@ -354,6 +360,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 
 == Qualità di prodotto
+=== Funzionalità
 ==== Requisiti obbligatori soddisfatti
 #metric(
   cod: [MPS1],
@@ -384,6 +391,82 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti aggiuntivi del progetto.],
 )
 
+=== Affidabilità
+==== Branch Coverage
+#metric(
+  cod: [MPS4],
+  formula: [
+    $"Branch Coverage" = ("Rami testati" / "Rami totali") * 100$
+  ],
+  desc: [Percentuale di rami del codice coperti da test automatizzati. Si raccomanda un coverage minimo del 60%.],
+)
+
+==== Statement Coverage
+#metric(
+  cod: [MPS5],
+  formula: [
+    $"Statement Coverage" = ("Istruzioni testate" / "Istruzioni totali") * 100$
+  ],
+  desc: [Percentuale di istruzioni del codice coperte da test automatizzati. Si raccomanda un coverage minimo del 70%.],
+)
+
+==== Failure Density
+#metric(
+  cod: [MPS6],
+  formula: [
+    $"Failure Density" = ("Numero di difetti rilevati" / "KLOC")$
+  ],
+  desc: [Numero di failure per 1000 linee di codice (Kilo Lines of Code). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
+)
+
+=== Usabilità
+==== Time on Task
+#metric(
+  cod: [MPS7],
+  formula: [
+    $"Time on Task" = "Tempo medio per completare un'attività"$
+  ],
+  desc: [Tempo medio impiegato per completare un'attività. Indica l'usabilità del prodotto.],
+)
+
+==== Error Rate
+#metric(
+  cod: [MPS8],
+  formula: [
+    $"Error Rate" = ("Errori totali" / "Azioni totali") * 100$
+  ],
+  desc: [Percentuale di errori commessi durante l'utilizzo del prodotto. Dovrebbe essere inferiore al 5%.],
+)
+
+=== Efficienza
+==== Response Time
+#metric(
+  cod: [MPS9],
+  formula: [
+    $"Response Time" = "Tempo medio di risposta"$
+  ],
+  desc: [Tempo medio impiegato per rispondere a una richiesta. Indica l'efficienza del prodotto. Un tempo di risposta inferiore a 2 secondi è considerato accettabile, mentre un tempo inferiore a 1 secondo è considerato ottimo.],
+)
+
+=== Manutenibilità
+==== Code Smells
+#metric(
+  cod: [MPS10],
+  formula: [
+    $"Code Smells" = ("Numero di code smells" / "KLOC")$
+  ],
+  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del software. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
+  desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
+)
+
+==== Coefficient of Coupling (CoC)
+#metric(
+  cod: [MPS11],
+  formula: [
+    $"Coefficient of Coupling" = ("Numero di dipendenze" / "Numero di componenti")$
+  ],
+  desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
+)
 
 == tabelle
 #figure(
@@ -411,7 +494,18 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     [MPF6], [Schedule performance index (SPI)], [≥ 0.95], [≥ 1],
     [MPF7], [Estimate at completion (EAC)], [Errore del ± 3% rispetto al BAC], [Esattamente pari al BAC],
     [MPF8], [Estimate to complete (ETC)], [≥ 0], [≤ EAC],
-    [MPF9], [Time estimate at completion (TEAC)], [Errore del ± 3% rispetto alla durata pianificata], [Esattamente pari alla durata pianificata]
+    [MPF9], [Time estimate at completion (TEAC)], [Errore del ± 3% rispetto alla durata pianificata], [Esattamente pari alla durata pianificata],
+    [MPS1], [Requisiti obbligatori soddisfatti], [≥ 80%], [≥ 90%],
+    [MPS2], [Requisiti desiderabili soddisfatti], [≥ 50%], [≥ 70%],
+    [MPS3], [Requisiti opzionali soddisfatti], [≥ 20%], [≥ 40%],
+    [MPS4], [Branch coverage], [≥ 60%], [≥ 85%],
+    [MPS5], [Statement coverage], [≥ 70%], [≥ 90%],
+    [MPS6], [Failure density], [≤ 0.5], [≤ 0.2],
+    [MPS7], [Time on task], [≤ 10 min], [≤ 5 min],
+    [MPS8], [Error rate], [≤ 5%], [≤ 2%],
+    [MPS9], [Response time], [≤ 2 s], [≤ 1 s],
+    [MPS10], [Code smells], [≤ 10], [0],
+    [MPS11], [Coefficient of coupling (CoC)], [≤ 0.4], [≤ 0.1],
   ),
   caption: [Informazioni metriche],
 )
