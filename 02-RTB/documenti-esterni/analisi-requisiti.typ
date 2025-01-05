@@ -2020,6 +2020,10 @@ L'Uc49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
     - L'Admin Globale inserisce il nome della nuova merce $arrow$ @UC53[Vedi UC53, Sezione]
     - L'Admin Globale inserisce la descrizione della nuova merce $arrow$ @UC54[Vedi UC54, Sezione]
   ],
+  inclusioni: [
+    - UC53 @UC53
+    - UC54 @UC54
+  ],
   trigger: "L'Admin Globale vuole aggiungere al Sistema una nuova merce tramite il processo di creazione",
 )[
   #use-case-diagram("52", "UC52 - Creazione di una nuova merce")
@@ -2043,7 +2047,7 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce il nome da assegnare alla nuova merce
   ],
-)[]
+)[#use-case-diagram("53", "UC53 - Inserimento nome della merce")]
 
 === UC54 - Inserimento descrizione merce <UC54>
 
@@ -2060,7 +2064,7 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce la descrizione da assegnare alla nuova merce
   ],
-)[]
+)[#use-case-diagram("54", "UC54 - Inserimento descrizione della merce")]
 
 === UC55 - Aggiornamento informazioni di una merce
 #use-case(
@@ -2075,8 +2079,13 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa alla modifica di una merce esistente
     - L'Admin globale seleziona la merce da modificare @UC49[Vedi UC49, Sezione]
-    - l'Admin Globale seleziona il nome da assegnare @UC53[Vedi UC53, Sezione]
-    - l'Admin Globale seleziona la descrizione da assegnare @UC54[Vedi UC54, Sezione]
+    - L'Admin Globale seleziona il nome da assegnare @UC53[Vedi UC53, Sezione]
+    - L'Admin Globale seleziona la descrizione da assegnare @UC54[Vedi UC54, Sezione]
+  ],
+  inclusioni: [
+    - UC49 @UC49
+    - UC53 @UC53
+    - UC54 @UC54
   ],
   trigger: "L'Admin globale vuole modificare le informazioni di una merce nel Sistema",
 )[
@@ -2099,7 +2108,7 @@ Sono stati esposti alla @UC49, @UC53 e alla @UC54 rispettivamente.
     - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema $arrow$ @UC56.1[Vedi UC56.1, Sezione]
   ],
   inclusioni: [
-    - UC52.1 @UC56.1
+    - UC56.1 @UC56.1
   ],
   trigger: "Il Cliente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
 )[#use-case-diagram("56", "UC56 - Visualizza elenco ordini eseguiti")]
