@@ -7,7 +7,7 @@
 */
 #let use-case-diagram(version, caption, width: 70%) = [
   #figure(
-    image("../assets/diagrams/UC" + version + ".svg", width: width),
+    image("../assets/diagrams/UC" + version + ".png", width: width),
     caption: caption,
   )
 ]
