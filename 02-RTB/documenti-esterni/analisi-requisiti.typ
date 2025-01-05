@@ -1280,8 +1280,6 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
 )[]
 
-//Sistema Matteo (su) sistema Marco (giù)
-
 === UC30 - Visualizza ID trasferimento <UC30>
 #use-case(
   attore: "Admin Globale",
@@ -1470,7 +1468,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
   inclusioni: [
     - UC35 @UC35
-    - UC33.1.2 @UC36
+    - UC36 @UC36
   ],
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
 )[]
@@ -1609,7 +1607,7 @@ Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e a
   trigger: "L'Admin globale vuole visualizzare una notifica di rifornimento nel dettaglio",
 )[]
 
-Il Caso d'Uso UC36.2 include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("39-incl-2","Inclusione del Caso d'Uso n.39.2: UC39.2.1")
+Il Caso d'Uso UC39.2 include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("39-incl-2","Inclusione del Caso d'Uso n.39.2: UC39.2.1")
 Tale Caso d'Uso sarà esposto qui di seguito.
 
 ===== UC39.2.1 - Visualizza elemento lista merce consigliata da rifornire <UC39.2.1>
@@ -1729,7 +1727,7 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
   ],
   trigger: "L'Admin globale vuole rifiutare una notifica di rifornimento",
 )[
-  #use-case-diagram("38", "UC38 - Rifiuta notifica di rifornimento")
+  #use-case-diagram("42", "UC42 - Rifiuta notifica di rifornimento")
 ]
 
 Il Caso d'Uso UC42 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("42-incl", "Inclusione del Caso d'Uso n.42: UC41")
@@ -1788,7 +1786,6 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - Viene visualizzato il numero di richieste al secondo per il microservizio
   ],
 )[]
-// SARA
 
 === UC44 - Esportazione ordini
 #use-case(
@@ -1799,7 +1796,6 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   post: [
     - Il file _.csv_ viene generato correttamente e scaricato sul dispositivo dell'Admin globale riportando fedelmente gli ordini eseguiti
-
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
@@ -1920,12 +1916,6 @@ Tali Casi d'Uso saranno di seguito esposti.
   scenari: [
     - L'Admin inserisce il valore della soglia minima desiderata
   ],
-  scenari_alternativi: [
-    - L'Admin globale inserisce una soglia minima non valida$arrow$ @UC50[Vedi UC50, Sezione]
-  ],
-  estensioni: [
-    - UC50 @UC50
-  ],
 )[]
 
 === UC49 - Selezione merce <UC49>
@@ -1960,6 +1950,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   ],
 )[]
 
+//Sistema Matteo (su) sistema Marco (giù)
 // MARCO
 
 === UC51 - Aggiunta stock di una merce
