@@ -263,7 +263,8 @@ La descrizione testuale, in particolar modo, dovrà contenere le informazioni ne
     [*Estensioni*],
     [Casi d'Uso ulteriori che possono realizzarsi durante l'esecuzione delle operazioni del Caso d'Uso principale],
 
-    [*Trigger*], [Motivazioni che portano l'Attore a svolgere l'azione descritta dal Caso d'Uso],
+    [*Trigger*],
+    [Motivazioni che portano l'Attore a svolgere l'azione descritta dal Caso d'Uso. Non sempre disponibile in quanto il Caso d'Uso potrebbe essere incluso da un altro caso d'uso "principale"],
   ),
   caption: [Campi della descrizione testuale dei Casi d'Uso],
 )
@@ -421,7 +422,8 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   pre: [- Il Sistema è attivo, in modalità online o offline;
     - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])
     - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata],
-  post: [- Il Sistema annulla il tentativo di autenticazione],
+  post: [- Il Sistema annulla il tentativo di autenticazione
+    - Il Sistema mostra un errore a schermo],
   scenari: [
     - Il Sistema ha ricevuto Username, Password e tipologia di utente, ma non è riuscito a verificare tali credenziali
   ],
@@ -712,6 +714,7 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Il Sistema mostra a schermo l'elenco degli ordini non confermati per l'utente corrente],
   scenari: [
     - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini non confermati registrati nel Sistema
     - Il Cliente visualizza a schermo la lista degli ordini non confermati registrati nel Sistema per l'utente corrente $arrow$ @UC12.1[Vedi UC12.1 Sezione]
@@ -743,6 +746,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di ordini non confermati registrati nel Sistema per l'utente corrente
   ],
+  post: [Il Sistema mostra, nel singolo elemento della lista ordini non confermati, ID, data creazione e nome dell'ordine],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
       - l'ID dell'ordine $arrow$ @UC13[Vedi UC13, Sezione]
@@ -766,6 +770,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente o un ordine specifico nel dettaglio
   ],
+  post: [Viene visualizzato l'ID dell'ordine],
   scenari: [
     - Viene visualizzato l'ID dell'ordine
   ],
@@ -780,12 +785,13 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente o un ordine specifico nel dettaglio
   ],
+  post: [Viene visualizzata la data di creazione dell'ordine],
   scenari: [
     - Viene visualizzato la data di creazione dell'ordine
   ],
 )[]
 
-=== UC15 - Visualizza nome ordine <UC15> //
+=== UC15 - Visualizza nome ordine <UC15>
 
 #use-case(
   attore: "Cliente",
@@ -794,6 +800,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di ordini registrati nel Sistema per l'utente corrente o un ordine specifico nel dettaglio
   ],
+  post: [Viene visualizzato il nome dell'ordine],
   scenari: [
     - Viene visualizzato il nome dell'ordine
   ],
@@ -807,6 +814,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Viene visualizzato ID, data creazione, nome e lista merci dell'ordine],
   scenari: [
     - Il Cliente seleziona da una lista di ordini non confermati la visualizzazione di un ordine specifico
     - Il Cliente visualizza del suddetto ordine:
@@ -839,6 +847,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando un ordine non confermato registrato nel Sistema per l'utente corrente nel dettaglio
   ],
+  post: [Viene visualizzata la lista delle merci di un ordine non confermato],
   scenari: [
     - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine non confermato selezionato $arrow$ @UC16.1.1[Vedi UC16.1.1 Sezione]
   ],
@@ -857,6 +866,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando un elenco di merci di un ordine non confermato registrato nel Sistema per l'utente corrente
   ],
+  post: [Viene visualizzaa la quantità e il nome della merce di un ordine non confermato],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
       - Quantità di quella merce nell'ordine non confermato selezionato $arrow$ @UC16.1.1.1[Vedi UC16.1.1.1 Sezione];
@@ -878,6 +888,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di merci di un ordine non confermato registrato nel Sistema per l'utente corrente
   ],
+  post: [Viene visualizzata la quantità di una merce in un ordine non confermato],
   scenari: [
     - Viene visualizzata la quantità della singola merce nell'ordine non confermato selezionato
   ],
@@ -892,6 +903,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente o come Admin Globale
     - L'attore principale sta visualizzando una lista di merci
   ],
+  post: [Viene visualizzato il nome di una merce],
   scenari: [
     - Viene visualizzata il nome della singola merce
   ],
@@ -904,6 +916,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Viene visualizzato un elenco delle merci nel Sistema],
   scenari: [
     - Il Cliente seleziona dal menu l'opzione relativa alla visualizzazione dell'elenco delle merci memorizzate nel Sistema
     - Il Cliente visualizza a schermo la lista delle merci memorizzate nel Sistema $arrow$ @UC18.1[Vedi UC16 Sezione]
@@ -928,6 +941,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando la lista delle merci memorizzate nel Sistema
   ],
+  post: [Nell'elemento della lista delle merci viene visualizzato ID, nome, quantità complessiva in tutti i magazzini e quantità locale della singola merce],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
       - L'ID della merce $arrow$ @UC19[Vedi UC19, Sezione]
@@ -953,6 +967,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - L'utente è riconosciuto dal Sistema come Cliente o come Admin globale
     - L'attore principale sta visualizzando una lista di merci
   ],
+  post: [Viene visualizzao l'ID della merce],
   scenari: [
     - Viene visualizzata l'ID della singola merce
   ],
@@ -966,6 +981,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di merci oppure una singola merce nel dettaglio
   ],
+  post: [Viene visualizzata la quantità complessiva di una merce in tutti i magazzini],
   scenari: [
     - Il Cliente visualizza la quantità complessiva della merce in tutti i magazzini
   ],
@@ -979,6 +995,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di merci oppure una singola merce nel dettaglio
   ],
+  post: [Viene visualizzata la quantità complessiva di una merce nel magazzino attuale],
   scenari: [
     - Il Cliente visualizza la quantità della merce nel magazzino attuale
   ],
@@ -991,6 +1008,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Della merce selezionata, il Cliente visualizza ID, nome, quantità globale e locale e descrizione],
   scenari: [
     - Il Cliente seleziona da una lista di merci la visualizzazione di una merce in particolare
     - Il Cliente viusalizza della merce selezionata:
@@ -1025,6 +1043,7 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19,
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando il dettaglio di una merce
   ],
+  post: [Viene visualizzata la descrizione della merce],
   scenari: [
     - Il Cliente visualizza la descrizione della merce
   ],
@@ -1243,6 +1262,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
+  post: [Viene visualizzato l'elenco dei trasferimenti],
   scenari: [
     - L'Admin Globale seleziona dal menu principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
     - L'Admin Globale visualizza a schermo la lista di tutti i trasferimenti memorizzati nel Sistema $arrow$ @UC29.1[Vedi UC Sezione]
@@ -1268,6 +1288,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
     - L'utente è riconosciuto dal Sistema come Admin Globale
     - L'Admin Globale sta visualizzando la lista dei trasferimenti memorizzati nel Sistema
   ],
+  post: [Per il singolo elemento della lista dei trasferimenti viene visualizzato ID e stato di tale trasferimento],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata deve presentare:
       - L'ID del trasferimento $arrow$ @UC30[Vedi UC30 Sezione]
@@ -1288,6 +1309,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
     - L'utente è riconosciuto dal Sistema come Admin Globale
     - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
   ],
+  post: [Viene visualizzato l'ID del trasferimento],
   scenari: [
     - L'Admin Globale visualizza l'ID del trasferimento
   ],
@@ -1301,6 +1323,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin Globale sta visualizzando una lista di trasferimenti o un trasferimento nello specifico
   ],
+  post: [Viene visualizzato lo stato del trasferimento],
   scenari: [
     - L'Admin Globale visualizza lo stato del trasferimento
   ],
@@ -1313,6 +1336,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
+  post: [Viene visualizzato un trasferimento nel dettaglio. Tale visualizzazione comprende l'ID, il magazzino mittente, il magazzino destinatario, lo stato e l'elenco della merce interessata dal trasferimento],
   scenari: [
     - L'Admin Globale seleziona da una lista di trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin Globale visualizza del suddetto trasferimento:
@@ -1349,6 +1373,7 @@ Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descr
     - L'utente è riconosciuto dal Sistema come Admin Globale
     - L'Admin Globale sta visualizzando un trasferimento nello specifico
   ],
+  post: [Viene visualizzato il magazzino mittente di un trasferimento],
   scenari: [
     - L'Admin globale visualizza il magazzino mittente del trasferimento
   ],
@@ -1362,6 +1387,7 @@ Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descr
     - L'utente è riconosciuto dal Sistema come Admin Globale
     - L'Admin Globale sta visualizzando un trasferimento nello specifico
   ],
+  post: [Viene visualizzato il magazzino destinatario di un trasferimento],
   scenari: [
     - L'Admin globale visualizza il magazzino destinatario del trasferimento
   ],
@@ -1375,6 +1401,7 @@ Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descr
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'utente ha selezionato dall'elenco dei trasferimenti un trasferimento da visualizzare nel dettaglio
   ],
+  post: [Viene visualizzato l'elenco della merce interessata dal trasferimento],
   scenari: [
     - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UC32.3.1[Vedi UC32.3.1, Sezione]
   ],
@@ -1396,6 +1423,7 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
     - L'utente è riconosciuto dal Sistema come Admin Globale
     - L'Admin Globale sta visualizzando un elenco di merce appartenente ad un rifornimento
   ],
+  post: [Per il singolo elemento della lista della merce interessata dal trasferimento viene visualizzato nome e quantità della merce],
   scenari: [
     - Per ogni elemento della lista l'Admin Globale deve visualizzare:
       - Il nome della singola merce interessata dal trasferimento $arrow$ @UC17[Vedi UC17, Sezione]
@@ -1417,6 +1445,7 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin Globale sta visualizzando un elenco di merce appartenente ad un rifornimento
   ],
+  post: [Viene visualizzata la quantità della singola merce interessata dal trasferimento],
   scenari: [
     - L'Admin Globale visualizza la quantità della singola merce interessata dal trasferimento
   ],
@@ -1430,6 +1459,7 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
+  post: [Viene visualizzato l'elenco delle notifiche di rifornimento],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione delle notifiche di rifornimento
     - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento $arrow$ @UC34[Vedi UC34, Sezione]
@@ -1461,6 +1491,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin globale sta visualizzando la lista delle notifiche di rifornimento (scaturite per via della soglia di guardia o per mezzo delle tecnologie di _Machine Learning_)
   ],
+  post: [Per ogni elemento della lista delle notifiche di rifornimento viene visualizzato lo stato (ad esempio confermata o non confermata) e l'ID della notifica],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dall'Admin globale dovrà contenere:
       - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UC35[Vedi UC35, Sezione]
@@ -1482,6 +1513,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - L'utente è riconosciuto dal Sistema come Admin globale
     - Il Cliente sta visualizzando una notifica di rifornimento, in elenco o in dettaglio
   ],
+  post: [viene visualizzato lo stato (ad esempio confermata o non confermata) della notifica di rifornimento],
   scenari: [
     - Viene visualizzato lo stato della notifica di rifornimento
   ],
@@ -1496,6 +1528,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - L'utente è riconosciuto dal Sistema come Admin globale
     - Il Cliente sta visualizzando una notifica di rifornimento, in elenco o in dettaglio
   ],
+  post: [Viene visualizzato l'ID della notifica di rifornimento],
   scenari: [
     - Viene visualizzato l'ID della notifica di rifornimento
   ],
@@ -1510,6 +1543,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento
   ],
+  post: [Viene annullata l'operazione di visualizzazione delle notifiche di rifornimento e un errore apposito viene mostrato all'Admin globale],
   scenari: [
     - L'Admin globale ha selezionato un'opzione relativa alle notifiche di rifornimento ma nessuna notifica di rifornimento è disponibile per l'operazione da effettuare
   ],
@@ -1524,6 +1558,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
+  post: [Viene visualizzato l'elenco delle notifiche di rifornimento fornite da _Machine Learning_],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione delle notifiche di rifornimento fornite da _Machine Learning_
     - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento fornite da _Machine Learning_ $arrow$ @UC34[Vedi UC34, Sezione]
@@ -1555,6 +1590,7 @@ Maggiori informazioni sono disponibili alla @UC34.
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Per la notifica selezionata viene visualizzato stato, ID, magazzino di destinazione e merce interessata dal rifornimento],
   scenari: [
     - L'Admin globale ha selezionato da una lista di notifiche di rifornimento la visualizzazione di una notifica specifia
     - L'Admin globale visualizza della suddetta notifica:
@@ -1584,6 +1620,7 @@ Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e a
     - L'utente è riconosciuto dal Sistema come Cliente o come Admin globale
     - L'attore principale sta visualizzando il dettaglio di una notifica di rifornimento
   ],
+  post: [Viene visualizzato il magazzino destinatario del trasferimento],
   scenari: [
     - Viene visualizzato il magazzino di destinazione
   ],
@@ -1597,6 +1634,7 @@ Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e a
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
+  post: [Viene visualizzato l'elenco della merce il cui rifornimento è consigliato],
   scenari: [
     - L'Admin globale seleziona una notifica di rifornimento specifica
     - L'Admin Globale visualizza a schermo l'elenco delle merci il cui rifornimento è consigliato $arrow$ @UC39.2.1[Vedi UC39.2.1, Sezione]
@@ -1619,6 +1657,7 @@ Tale Caso d'Uso sarà esposto qui di seguito.
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin globale sta visualizzando un elenco di merce il cui rifornimento è consigliato
   ],
+  post: [Per ogni elemento della lista delle merci il cui rifornimento è consigliato viene mostrato ID, nome e quantità della merce rispettiva],
   scenari: [
     - Per ogni elemento della lista viene visualizzato:
       - ID della merce $arrow$ @UC19[Vedi UC23, Sezione]
@@ -1646,6 +1685,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin globale sta visualizzando una lista di merci in una notifica di rifornimento
   ],
+  post: [Viene visualizzata la quantità di merce il cui rifornimento è consigliato],
   scenari: [
     - Viene visualizzata la quantità da rifornire consigliata della singola merce
   ],
@@ -1741,6 +1781,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UC41.
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
+  post: [Viene visualizzato l'elenco dei microservizi],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione dei microservizi
     - L'Admin globale visualizza a schermo la lista dei microservizi del Sistema $arrow$ @UC43.1[Vedi UC43.1, Sezione]
@@ -1763,6 +1804,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'utente è riconosciuto dal Sistema come Admin globale
     - L'Admin globale sta visualizzando una lista di microservizi
   ],
+  post: [Per ogni elemento della lista dei microservizi viene visualizzato il numero di richieste al secondo],
   scenari: [
     - Ogni singolo elemento della lista visualizzata dall'Admin globale dovrà contenere:
       - numero di richieste al secondo $arrow$ @UC43.1.1[Vedi UC43.1.1, Sezione]
@@ -1782,6 +1824,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'utente è riconosciuto dal Sistema come Admin Globale
     - L'admin globale sta visualizzando un microservizio o un elenco di microservizi
   ],
+  post: [Viene visualizzato il numero di richieste al secondo di un microservizio],
   scenari: [
     - Viene visualizzato il numero di richieste al secondo per il microservizio
   ],
@@ -1874,7 +1917,6 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin globale
   ],
-
   post: [
     - La soglia minima impostata viene salvata correttamente nel Sistema
   ],
@@ -2094,6 +2136,7 @@ Sono stati esposti alla @UC49, @UC53 e alla @UC54 rispettivamente.
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Viene visualizzato l'elenco degli ordini eseguiti],
   scenari: [
     - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini eseguiti registrati nel Sistema
     - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema $arrow$ @UC56.1[Vedi UC56.1, Sezione]
@@ -2108,7 +2151,7 @@ Il Caso d'Uso UC51 include cinque ulteriori Casi d'Uso come raffigurato nella se
 #use-case-diagram("56-incl", "Inclusioni del Caso d'Uso n.56: UC56.1").
 Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già state esposte precedentemente).
 
-==== UC56.1 - Visualizza singolo elemento dell'ordine eseguito <UC56.1>
+==== UC56.1 - Visualizza singolo elemento lista ordini eseguiti <UC56.1>
 
 #use-case(
   attore: "Cliente",
@@ -2117,6 +2160,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di ordini eseguiti registrati nel Sistema per l'utente corrente
   ],
+  post: [Per ogni elemento della lista degli ordini eseguiti viene visualizzato ID, data e nome dell'ordine],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
       - l'ID dell'ordine $arrow$ @UC13[Vedi UC13, Sezione]
@@ -2139,6 +2183,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Cliente
   ],
+  post: [Viene visualizzato un ordine eseguito con le segeuenti infromazioni: ID, data creazione, nome e lista delle merci di tale ordine],
   scenari: [
     - Il Cliente ha selezionato da una lista di ordini eseguiti la visualizzazione di un ordine specifico
     - Il Cliente visualizza del suddetto ordine:
@@ -2168,6 +2213,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando un ordine eseguito registrato nel Sistema per l'utente corrente
   ],
+  post: [Viene visualizzata la lista delle merci in un ordine eseguito],
   scenari: [
     - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine eseguito selezionato $arrow$ @UC57.1.1[Vedi UC57.1.1, Sezione]
   ],
@@ -2177,7 +2223,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
 )[]
 
-===== UC57.1.1 - Visualizza singolo elemento merce ordine eseguito <UC57.1.1>
+===== UC57.1.1 - Visualizza singolo elemento lista merci ordine eseguito <UC57.1.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -2185,6 +2231,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando un elenco di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
   ],
+  post: [Per ogni elemento della lista delle merci di un ordine eseguito viene mostrata quantità e nome della merce],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
       - Quantità di quella merce nell'ordine eseguito selezionato $arrow$ @UC57.1.1.1[Vedi UC57.1.1.1, Sezione]
@@ -2197,7 +2244,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
 )[]
 
-====== UC57.1.1.1 - Visualizza quantità singolo elemento nell'ordine <UC57.1.1.1>
+====== UC57.1.1.1 - Visualizza quantità singolo elemento lista merci ordine eseguito <UC57.1.1.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -2205,6 +2252,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
     - L'utente è riconosciuto dal Sistema come Cliente
     - Il Cliente sta visualizzando una lista di merci di un ordine eseguito registrato nel Sistema per l'utente corrente
   ],
+  post: [Viene visualizzata la quantità della singola merce],
   scenari: [
     - Viene visualizzata la quantità della singola merce nell'ordine eseguito selezionato
   ],
