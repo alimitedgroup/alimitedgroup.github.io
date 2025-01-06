@@ -1,13 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.13.0]
+#let ver = [0.14.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 04, month: 01, year: 2025),
+  data: datetime(day: 06, month: 01, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "0.14.0",
+      date: datetime(day: 06, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.lorenzo,
+      descr: "Aggiunto processo di Validazione",
+    ),
     (
       vers: "0.13.0",
       date: datetime(day: 04, month: 01, year: 2025),
@@ -544,9 +551,6 @@ Tra i processi di supporto utilizzati nel progetto distinguiamo:
 - *Qualifica*, formata a sua volta da:
   - *Verifica*
   - *Validazione*
-- *Revisione*
-- *Revisione congiunta*
-- *Gestione dei cambiamenti*
 
 Saranno ora descritte nel dettaglio le attività previste.
 
@@ -784,7 +788,7 @@ Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodo
 
 Il processo di *Verifica* ha come scopo quello di verificare che quanto prodotto sia effettivamente stato svolto a regola d'arte, ovvero effettivamente soddisfi i requisiti imposti, anche quelli di natura qualitativa ma anche funzionale: è compito di questo processo assicurare che quanto realizzato soddisfi il requisito che si intendeva soddisfare.
 
-Possiamo racchiudere l'obbiettivo di questo processo nella domanda _"Did I build the System right?"_, ovvero _"Ho realizzato il Sistema correttamente?_.
+Possiamo racchiudere l'obbiettivo di questo processo nella risposta alla domanda _"Did I build the System right?"_, ovvero _"Ho realizzato il Sistema correttamente?_.
 
 Tutti gli obbiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel *Piano di Qualifica*[PROSEGUIRE](inserire link).
 
@@ -875,27 +879,29 @@ Durante l'esecuzione dei _test_ descritti in precedenza, è completamente possib
 
 È tuttavia necessario assicurarsi che una correzzione apportata non introduca un problema precedentemente risolto: a questo scopo non ci si limita all'esecuzione del solo _test_ fallito, bensì di tutti i _test_, per evitare, di fatto, una regressione.
 
-=== Validazione <validazione> //did I build the right System?
-[PROSEGUIRE] Sezione Strumenti a supporto
-[PROSEGUIRE] Sezione Attività previste
-[PROSEGUIRE] Sezione Documentazione prodotta o di supporto
+=== Validazione <validazione>
 
-== Revisione
-[PROSEGUIRE] Sezione Strumenti a supporto
-[PROSEGUIRE] Sezione Attività previste
-[PROSEGUIRE] Sezione Documentazione prodotta o di supporto
+Lo scopo del processo di *Validazione* è sostanzialmente quello di tracciare l'efficacia di quanto sviluppato, ovvero comprendere se quanto realizzato soddisfa le esigenze di #M31.
+Potremmo riassumere lo scopo della *Validazione* nella risposta alla domanda _"Did I build the right System?"_, ovvero _"Ho realizzato il giusto Sistema?_.
 
-== Revisione congiunta
-// This process may be employed by any two parties, where one party
-(reviewing party) reviews another party (reviewed party).
-[PROSEGUIRE] Sezione Strumenti a supporto
-[PROSEGUIRE] Sezione Attività previste
-[PROSEGUIRE] Sezione Documentazione prodotta o di supporto
+==== Attività previste
 
-== Gestione dei cambiamenti
-[PROSEGUIRE] Sezione Strumenti a supporto
-[PROSEGUIRE] Sezione Attività previste
-[PROSEGUIRE] Sezione Documentazione prodotta o di supporto
+In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo processo sono:
+
+- *Implementazione del processo*
+- *Attività di Validazione*
+
+===== Implementazione del processo
+
+_ALimitedGroup_ ha studiato le esigenze di #M31 e ha racchiuso tutti i requisiti da soddisfare all'interno dell'*Analisi dei Requisiti* [PROSEGUIRE](inserire link).
+
+Come già previsto da quanto descritto alla @valutazione-della-configurazione, il *Tracciamento dei Requisiti* sarà un elemento valido anche al processo di Validazione: permette infatti di controllare se il prodotto funziona correttamente (un requisito è soddisfatto solo se il codice che lo implementa funziona correttamente) ed è conforme ai requisiti (perché il loro soddisfacimento è, per l'appunto, tracciato).
+
+In aggiunta a questo, _ALimitedGroup_ ritiene necessario realizzare opportuni *test di accettazione*, volti a comprendere se quanto realizzato è effettivamente utile agli utenti finali.
+
+===== Attività di Validazione
+
+_ALimitedGroup_, per realizzare l'attività di Validazione vera e propria, di realizzare dunque il *tracciamento dei Requisiti* ed eventuali *test di accettazione* per controllare l'efficacia di quanto sviluppato.
 
 = Processi Organizzativi
 
