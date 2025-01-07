@@ -1974,7 +1974,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   scenari: [
     - L'Attore principale seleziona la merce per cui vuole impostare una soglia minima
   ],
-)[]
+)[#use-case-diagram("49", "UC49 - Selezione merce")]
 
 ==== UC50 - Soglia minima non valida <UC50>
 #use-case(
@@ -1990,7 +1990,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce una soglia minima non valida relativa ad una specifica merce.
   ],
-)[]
+)[#use-case-diagram("50", "UC50 - Soglia minima non valida")]
 
 //Sistema Matteo (su) sistema Marco (giù)
 // MARCO
@@ -2010,15 +2010,19 @@ Tali Casi d'Uso saranno di seguito esposti.
     - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock) @UC49[Vedi UC49, Sezione]
     - L'Admin Locale seleziona la quantità da aggiungere a tale merce
   ],
+  inclusioni: [
+    - UC49 @UC49
+    - UC51.1 @UC51.1
+  ],
   trigger: "L'Admin Locale vuole aggiornare la quantità (stock) per una determinata merce ",
 )[
   #use-case-diagram("51", "UC51 - Aggiunta stock di una merce")
 ]
 
-Il Caso d'Uso 48 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1").
-L'Uc49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
+Il Caso d'Uso 51 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1")
+L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
 
-=== UC51.1 - Seleziona quantità da aggiungere a merce esistente
+=== UC51.1 - Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2062,7 +2066,7 @@ L'Uc49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
   #use-case-diagram("52", "UC52 - Creazione di una nuova merce")
 ]
 
-Il Caso d'Uso 52 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("52-incl","Inclusioni del Caso d'Uso n.52: UC53 e UC54").
+Il Caso d'Uso 52 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("52-incl","Inclusioni del Caso d'Uso n.52: UC53 e UC54")
 Saranno di seguito esposti.
 
 === UC53 - Inserimento nome merce <UC53>
@@ -2080,7 +2084,7 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce il nome da assegnare alla nuova merce
   ],
-)[]
+)[#use-case-diagram("53", "UC53 - Inserimento nome merce")]
 
 === UC54 - Inserimento descrizione merce <UC54>
 
@@ -2097,7 +2101,7 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce la descrizione da assegnare alla nuova merce
   ],
-)[]
+)[#use-case-diagram("54", "UC54 - Inserimento descrizione merce")]
 
 === UC55 - Aggiornamento informazioni di una merce
 #use-case(

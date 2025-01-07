@@ -5,7 +5,7 @@
 // Don't delete, necessary for diagrams
 #show raw.where(lang: "pintora"): it => pintorita.render(it.text)
 */
-#let use-case-diagram(version, caption, width: 70%) = [
+#let use-case-diagram(version, caption, width: 60%) = [
   #figure(
     image("../assets/diagrams/UC" + version + ".png", width: width),
     caption: caption,
@@ -33,10 +33,10 @@
     [- *Attore secondario*: #attori_secondari]
   }
 
-  - *Precondizioni*: #pre
+  - *Pre-condizioni*: #pre
 
   #if (post != none) {
-    [- *Postcondizioni*: #post]
+    [- *Post-condizioni*: #post]
   }
 
   - *Scenario principale*: #scenari
