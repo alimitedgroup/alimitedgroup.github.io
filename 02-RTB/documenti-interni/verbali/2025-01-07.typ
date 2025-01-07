@@ -5,6 +5,13 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 07, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Approvazione del documento",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 07, month: 01, year: 2025),
       autore: p.matteo,
