@@ -42,11 +42,11 @@ In questa riunione hanno partecipato, per conto, di #M31:
 == Esposizione _use-case_ e risoluzione dubbi
 Il gruppo _ALimitedGroup_ ha esposto ai rappresentanti di #M31 alcuni _use-case_ emersi durante la fase di analisi.
 
-L'azienda ha consigliato di concentrare l'attenzione sulla descrizione testuale, considerando i diagrammi dei casi d'uso come uno strumento di supporto alla comprensione del documento di *Analisi dei Requisiti*.
+L'azienda ha consigliato di concentrare l'attenzione sulla descrizione testuale, considerando i diagrammi dei casi d'uso come uno strumento di supporto alla comprensione del documento di *Analisi dei Requisiti#super[g]*.
 
 Visto che il progetto riguarda un *sistema distribuito*, è stato evidenziato come prioritario affrontare la gestione della concorrenza, con particolare attenzione al trattamento delle eccezioni e degli errori correlati.
 
-Il CTO #persona(p.luca) ha illustrato la metodologia seguita da #M31 durante l'analisi dei requisiti:
+Il CTO #persona(p.luca) ha illustrato la metodologia seguita da #M31 durante l'analisi dei requisiti#super[g]:
 + Individuazione degli *User Need*: si identificano le richieste e le necessità espresse dall'utente in relazione al prodotto.
 + Definizione dei *Design Input*: gli user need vengono tradotti in requisiti specifici e misurabili.
 + Definizione dei *Design Output*: si progettano soluzioni tecniche mirate a soddisfare i requisiti individuati e a risolvere i problemi emersi.

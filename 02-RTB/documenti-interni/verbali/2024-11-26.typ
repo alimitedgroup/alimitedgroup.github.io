@@ -46,7 +46,7 @@
 == Aggiornamenti sui lavori in corso
 
 Il gruppo _ALimitedGroup_, in questa settimana, ha proseguito la redazione e l'analisi dei
-seguenti documenti: Norme di Progetto, Piano di Progetto, Glossario e Analisi dei Requisiti. \
+seguenti documenti: Norme di Progetto, Piano di Progetto, Glossario e Analisi dei Requisiti#super[g]. \
 _ALimitedGroup_ decide, inoltre, che segnalerà ogni qualvolta una parola sia contenuta nel Glossario utilizzando la seguente nomenclatura:
 #align(center)[parola#super[g]]
 così facendo viene segnalato al lettore che la definizione di essa è presente in quest'ultimo.\
@@ -55,7 +55,7 @@ Viene deciso, successivamente, di implementare uno _script_ in _Python_ per veri
 == Assegnate scadenze per la redazione dei documenti
 
 I presenti del gruppo decidono che la redazione dei seguenti documenti:
-- Analisi dei Requisiti
+- Analisi dei Requisiti#super[g]
 - Norme di Progetto
 - Glossario
 venga terminata non oltre il 06-12-2024, con la successiva pubblicazione nel sito di tali documenti.\
@@ -67,12 +67,12 @@ Per quanto riguarda la _Requirements and Baseline Tecnology_, il gruppo prevede 
 == Vengono assegnati i ruoli sino al giorno 02-12-2024
 
 I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 02-12-2024, saranno assegnati ai seguenti componenti questi ruoli:
-#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*]\
-#align(center)[*#persona(p.samuele)* $arrow.r$ *Amministratore* \ *#persona(p.marco)* $arrow.r$ *Amministratore*]\
-#align(center)[*#persona(p.sara)* $arrow.r$ *Verificatore* \ *#persona(p.lorenzo)* $arrow.r$ *Verificatore*]\
-#align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista* \ *#persona(p.matteo)* $arrow.r$ *Analista*]\
+#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*#super[g]] \
+#align(center)[*#persona(p.samuele)* $arrow.r$ *Amministratore*#super[g] \ *#persona(p.marco)* $arrow.r$ *Amministratore*#super[g]] \
+#align(center)[*#persona(p.sara)* $arrow.r$ *Verificatore*#super[g] \ *#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[g]] \
+#align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista*#super[g] \ *#persona(p.matteo)* $arrow.r$ *Analista*#super[g]] \
 
-Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, agli *analisti* viene assegnata la continuazione di analisi per il documento di _Analisi dei Requisiti_, agli *amministratori* viene assegnata la continuazione del documento di _Norme di Progetto_ e del _Piano di Progetto_.
+Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, agli *analisti* viene assegnata la continuazione di analisi per il documento di _Analisi dei Requisiti#super[g]_, agli *amministratori* viene assegnata la continuazione del documento di _Norme di Progetto_ e del _Piano di Progetto_.
 
 #pagebreak()
 = Esiti della riunione
