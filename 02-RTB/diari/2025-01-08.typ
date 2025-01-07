@@ -4,7 +4,7 @@
   intestazioni: true,
   motto: true,
   pseudoanimazioni: false,
-  date: datetime(day: 18, month: 12, year: 2024),
+  date: datetime(day: 8, month: 1, year: 2025),
   contenuto1: [
     - Proseguita la redazione Analisi dei Requisiti, tutti i Casi d'Uso relativi a requisiti non obbligatori sono stati realizzati
     - Proseguite le Norme di Progetto, tutte le sezioni sono state redatte ma alcune sono da approfondire
