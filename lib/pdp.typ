@@ -1,7 +1,9 @@
 #import "@preview/cetz:0.3.1": *
 #import "@preview/cetz-plot:0.1.0": chart
-#import "common.typ" : *
+#import "common.typ": *
 #set par(justify: true)
+#show link: underline
+#show ref: underline
 
 #let link-glossario(
   link-text,
@@ -55,6 +57,26 @@
       (p.emanuele, 0, 0, 6, 0, 0, 0),
     ),
   ),
+  "3": (
+    preventivo: (
+      (p.loris, 2, 0, 0, 0, 4, 0),
+      (p.samuele, 0, 0, 0, 0, 4, 2),
+      (p.sara, 0, 4, 2, 0, 0, 0),
+      (p.lorenzo, 0, 0, 0, 0, 1, 0),
+      (p.marco, 0, 0, 5, 0, 0, 0),
+      (p.matteo, 0, 2, 6, 0, 0, 0),
+      (p.emanuele, 0, 3, 3, 0, 0, 0),
+    ),
+    consuntivo: (
+      (p.loris, 2, 0, 1, 0, 3, 0),
+      (p.samuele, 0, 0, 0, 0, 4, 2),
+      (p.sara, 0, 4, 2, 0, 0, 0),
+      (p.lorenzo, 0, 0, 0, 0, 0, 0),
+      (p.marco, 0, 0, 5, 0, 0, 0),
+      (p.matteo, 0, 1, 7, 0, 0, 0),
+      (p.emanuele, 0, 3, 3, 0, 0, 0),
+    ),
+  ),
 )
 
 #let cella(dati, preventivo, i, j) = {
@@ -93,30 +115,31 @@
   }
   figure(
     table(
-        columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-        inset: (x, y) => if y == 0 {
-          (x: 1.9em, y: 0.7em)
-        } else {
-          (x: 1.1em, y: 0.6em)
-        },
-        fill: (x, y) => if calc.rem(y, 2) == 1 {
-          luma(235)
-        },
-        stroke: (x, y) => if y >= 1 {
-          1pt + black
-        } else {
-          none
-        },
-        table.header([], ..ruoli.map(strong)),
+      columns: (2.5fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      inset: (x, y) => if y == 0 {
+        (x: 1.9em, y: 0.7em)
+      } else {
+        (x: 1.1em, y: 0.6em)
+      },
+      fill: (x, y) => if calc.rem(y, 2) == 1 {
+        luma(235)
+      },
+      stroke: (x, y) => if y >= 1 {
+        1pt + black
+      } else {
+        none
+      },
+      table.header([], ..ruoli.map(strong)),
 
-        // @typstyle off
-        ..for i in range(0, dati.len()) {
-          (..for j in range(0, dati.at(i).len()) {
+      // @typstyle off
+      ..for i in range(0, dati.len()) {
+        (
+          ..for j in range(0, dati.at(i).len()) {
             (cella(dati, preventivo, i, j),)
-          },)
-        }
-
-      ),
+          },
+        )
+      }
+    ),
     caption: descrizione,
   )
 }
@@ -258,12 +281,15 @@
           } else {
             [-]
           },
-          str(ore-rimanenti) + if ore-spese != 0 {
-            text(red, " (" + str(ore-rimanenti - ore-rimanenti-prev) + ")")
-          },
-          str(budget-rimanente) + "€" + if ore-spese != 0 {
-            text(red, " (" + str(budget-rimanente - budget-rimanente-prev) + "€)")
-          },
+          str(ore-rimanenti)
+            + if ore-spese != 0 {
+              text(red, " (" + str(ore-rimanenti - ore-rimanenti-prev) + ")")
+            },
+          str(budget-rimanente)
+            + "€"
+            + if ore-spese != 0 {
+              text(red, " (" + str(budget-rimanente - budget-rimanente-prev) + "€)")
+            },
         )
       },
 

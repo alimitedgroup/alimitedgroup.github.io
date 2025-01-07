@@ -1,12 +1,20 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/pdp.typ" : *
+#import "../../lib/pdp.typ": *
+#let nome-documento = [Piano di Progetto]
 
-#let ver = [0.3.0]
+#let ver = [0.4.0]
 #show: body => importantdocs(
-  data: datetime(day: 10, month: 12, year: 2024),
+  data: datetime(day: 29, month: 12, year: 2024),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "0.4.0",
+      date: datetime(day: 29, month: 12, year: 2024),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Redazione per il terzo sprint",
+    ),
     (
       vers: "0.3.0",
       date: datetime(day: 10, month: 12, year: 2024),
@@ -32,11 +40,77 @@
   versione: ver,
   responsabile: ((p.loris),),
   verificatore: ((p.lorenzo),),
-  redattori: ((p.samuele), (p.loris), (p.marco),),
+  redattori: ((p.samuele), (p.loris), (p.marco)),
   descrizione: [Il seguente documento contiene il _Piano di Progetto_ utilizzato, da _ALimitedGroup_, per la realizzazione di un magazzino distribuito presentato da parte di #M31],
-  titolo:"Piano di Progetto",
+  titolo: "Piano di Progetto",
   body,
 )
+
+/*#let prospetto-orario(sprint) = {
+  let sprint = str(sprint)
+  let ore-spese-sprint = 0
+  let budget-speso-sprint = 0
+  let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
+  let budget-tot = ruoli.values().map(ruolo => ruolo.max-ore * ruolo.costo).sum()
+  let sprint-idx = sprints.keys().position(x => x == sprint)
+
+  set align(center)
+  figure(
+    table(
+      columns: 6,
+      align: center,
+      [Ruolo], [Costo], [Ore], [Costo], [Ore rimanenti], [Budget rimanente],
+
+      ..for (i, ruolo) in ruoli.values().enumerate() {
+        let ore-spese = sprints.at(sprint).consuntivo.map(row => row.at(i + 1)).sum()
+        ore-spese-sprint += ore-spese
+        budget-speso-sprint += ruolo.costo * ore-spese
+
+        let ore-spese-prev = sprints
+          .values()
+          .slice(0, sprint-idx)
+          .map(sprint => sprint.consuntivo.map(row => row.at(i + 1)).sum())
+          .sum(default: 0)
+        let budget-speso-prec = ruolo.costo * ore-spese-prev
+
+        let ore-rimanenti = ruolo.max-ore - ore-spese-prev - ore-spese
+        let ore-rimanenti-prev = ruolo.max-ore - ore-spese-prev
+        let budget-rimanente = ruolo.costo * ore-rimanenti
+        let budget-rimanente-prev = budget-rimanente + ruolo.costo * ore-spese
+
+        (
+          ruolo.nome,
+          str(ruolo.costo) + "€/h",
+          if ore-spese != 0 {
+            str(ore-spese)
+          } else {
+            [-]
+          },
+          if ore-spese != 0 {
+            str(ore-spese * ruolo.costo) + "€"
+          } else {
+            [-]
+          },
+          str(ore-rimanenti) + if ore-spese != 0 {
+            text(red, " (" + str(ore-rimanenti - ore-rimanenti-prev) + ")")
+          },
+          str(budget-rimanente) + "€" + if ore-spese != 0 {
+            text(red, " (" + str(budget-rimanente - budget-rimanente-prev) + "€)")
+          },
+        )
+      },
+
+      [Totale],
+      [-],
+      str(ore-spese-sprint),
+      str(budget-speso-sprint) + "€",
+      str(ore-tot - ore-spese-sprint) + text(red)[ (#{-ore-spese-sprint})],
+      str(budget-tot - budget-speso-sprint) + text(red)[ (#{-budget-speso-sprint}€)],
+    ),
+    caption: [Variazioni nelle risorse disponibili per il primo sprint, rispetto alle risorse iniziali],
+  )
+}*/
+
 
 = Introduzione
 == Informazioni generali
@@ -464,7 +538,13 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Consuntivo
 
-#impegni(1, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 1 - Consuntivo per componente", "Sprint 1 - Consuntivo")
+#impegni(
+  1,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 1 - Consuntivo per componente",
+  "Sprint 1 - Consuntivo",
+)
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
@@ -537,7 +617,13 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Consuntivo
 
-#impegni(2, preventivo: true, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 2 - Consuntivo per componente", "Sprint 2 - Consuntivo")
+#impegni(
+  2,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 2 - Consuntivo per componente",
+  "Sprint 2 - Consuntivo",
+)
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti
@@ -555,3 +641,76 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 === Retrospettiva
 
 In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
+
+=== Sprint 3
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[8-12-2024],
+  [Fine prevista:], strong[21-12-2024],
+  [Fine reale:], strong[21-12-2024],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint3intro>
+
+Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sull'inizio dello sviluppo del PoC
+
+Le attività pianificate nel dettaglio includono:
+
+- Continuo redazione dell'Analisi dei Requisiti;
+- Discussione del Poc e dell'Analisi dei Requisiti con l'azienda proponente #M31;
+- Inizio redazione Piano di Qualifica;
+- Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC;
+- Setup della repository con divisione del progetto in più microservizi
+- Setup dell'ambiente di sviluppo locale in modo da renderlo replicabile per tutti i componenti del gruppo
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(3, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 3 - Preventivo per componente", "Sprint 3 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  3,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 3 - Consuntivo per componente",
+  "Sprint 3 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(3, "Sprint 3 - Variazione nelle risorse disponibili")
+
+#v(1em)
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
+
+Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
+
+=== Retrospettiva
+
+In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
+
+L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
+
+Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
+
+I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
