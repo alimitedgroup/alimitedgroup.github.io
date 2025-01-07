@@ -46,8 +46,8 @@
 
 == Aggiornamenti sui lavori in corso
 
-Il gruppo ha proseguito le attività previste nel terzo _Sprint_: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica* e dell'*Analisi dei Requisiti* sono stati per la maggior parte raggiunti.
-Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
+Il gruppo ha proseguito le attività previste nel terzo _Sprint_#super[g]: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica* e dell'*Analisi dei Requisiti#super[g]* sono stati per la maggior parte raggiunti.
+Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti#super[g]*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
 
 Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test sulle stesse.
 
@@ -59,7 +59,7 @@ _ALimitedGroup_ ha compreso che gli obiettivi posti sino ad ora non sono stati s
 
 Nel dettaglio è stato deciso che:
 
-#align(center)[*Analisi dei Requisiti*]
+#align(center)[*Analisi dei Requisiti#super[g]*]
 - Sarà necessario aver revisionato tutti i Casi d'Uso sino ad ora redatti entro il giorno *29 Dicembre 2024*
 - Sarà necessario aver aggiunto tutti i Casi d'Uso relativi a requisiti non obbligatori entro il giorno *5 Gennaio 2025*
 
@@ -70,7 +70,7 @@ Nel dettaglio è stato deciso che:
 - Sarà necessario effettuare la stesura dell'introduzione del documento e di tutte le misurazioni rilevate entro il giorno *5 Gennaio 2025*
 
 #align(center)[*Tecnologie e PoC*]
-- Sarà necessario proseguire con lo studio delle tecnologie e relativi testing basandosi sui requisiti descritti nel capitolato, eventualmente iniziando la realizzazione del PoC, sino al giorno *5 Gennaio 2025*
+- Sarà necessario proseguire con lo studio delle tecnologie e relativi testing basandosi sui requisiti descritti nel capitolato#super[g], eventualmente iniziando la realizzazione del PoC#super[g], sino al giorno *5 Gennaio 2025*
 
 Per l'assegnazione delle attività saranno mantenute le issue generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.
 
@@ -79,15 +79,17 @@ Per l'assegnazione delle attività saranno mantenute le issue generiche di redaz
 
 Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono così i ruoli:
 
-#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*]
-#align(center)[*#persona(p.sara)* $arrow.r$ *Amministratore* \
-  *#persona(p.emanuele)* $arrow.r$ *Amministratore*]
-#align(center)[*#persona(p.samuele)* $arrow.r$ *Programmatore*]
-#align(center)[*#persona(p.matteo)* $arrow.r$ *Analista* \
-  *#persona(p.marco)* $arrow.r$ *Analista*\
-  *#persona(p.lorenzo)* $arrow.r$ *Analista*]\
+#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*#super[g]]
+#align(center)[*#persona(p.sara)* $arrow.r$ *Amministratore*#super[g] \
+  *#persona(p.emanuele)* $arrow.r$ *Amministratore*#super[g]
+]
+#align(center)[*#persona(p.samuele)* $arrow.r$ *Programmatore*#super[g]]
+#align(center)[*#persona(p.matteo)* $arrow.r$ *Analista*#super[g] \
+  *#persona(p.marco)* $arrow.r$ *Analista*#super[g] \
+  *#persona(p.lorenzo)* $arrow.r$ *Analista*#super[g]
+]\
 
-Si stabilisce inoltre di contattare quanto prima il docente *#abbrev(p.cardin)* per avere riscontro sui principali dubbi sorti durante la redazione dell'*Analisi dei Requisiti* e di redigere il verbale di questa riunione e della riunione esterna con #M31 svoltasi in data 17 Dicembre 2024 entro la fine del quarto _Sprint_.
+Si stabilisce inoltre di contattare quanto prima il docente *#abbrev(p.cardin)* per avere riscontro sui principali dubbi sorti durante la redazione dell'*Analisi dei Requisiti#super[g]* e di redigere il verbale di questa riunione e della riunione esterna con #M31 svoltasi in data 17 Dicembre 2024 entro la fine del quarto _Sprint_#super[g].
 
 Si conclude tenendo conto che in caso di esaurimento delle ore per il ruolo assegnato, anche facendo riferimento al precedente #link("https://alimitedgroup.github.io/VI%2004-12-2024%20v1.0.0.pdf")[*Verbale Interno*], tali ruoli potrebbero subire variazioni.
 

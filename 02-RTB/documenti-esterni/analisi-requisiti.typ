@@ -158,7 +158,7 @@
 = Introduzione
 == Scopo del documento
 
-Il presente documento di _Analisi dei Requisiti_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali e non funzionali del sistema software da sviluppare.
+Il presente documento di _Analisi dei Requisiti#super[g]_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali#super[g] e non funzionali del sistema software da sviluppare.
 
 Per tale scopo, il documento include una descrizione approfondita dei Casi d'Uso, che sono fonte dei requisiti infine elencati.
 Verranno utilizzati, per agevolare la comprensione, i *Diagrammi dei Casi d'Uso* per visualizzare le interazioni tra attori e sistema.
@@ -170,11 +170,11 @@ I requisiti identificati sono classificati in:
 - *Desiderabili*: non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile;
 - *Opzionali*: relativamente utili oppure contrattabili per essere implementati in futuro.
 
-Il documento di _Analisi dei Requisiti_ viene redatto dagli _Analisti_ del team di progetto ed è rivolto ai seguenti principali destinatari:
+Il documento di _Analisi dei Requisiti#super[g]_ viene redatto dagli _Analisti_ del team di progetto ed è rivolto ai seguenti principali destinatari:
 
 - Il *_Committente_*, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche;
 - Il _Team di_ *_Progettisti_* e di *_Programmatori_*, che utilizzerà questo documento come guida fondamentale per la realizzazione del sistema software;
-- Il _Team_ di *_Verificatori_*, che baserà sull'Analisi dei Requisiti la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
+- Il _Team_ di *_Verificatori_*, che baserà sull'Analisi dei Requisiti#super[g] la definizione dei casi di test e la verifica del corretto funzionamento del prodotto.
 
 Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori e Responsabili di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
@@ -188,7 +188,7 @@ Fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di ap
 == Funzioni del prodotto
 Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità:
 
-- Avere una _Command Line Interface_ per interagire con le _API_ del sistema
+- Avere una _Command Line Interface_ per interagire con le _API_#super[g] del sistema
 - Possibilità di realizzare un ordine con prodotti disponibili sia localmente che globalmente;
 - Possibilità di realizzare trasferimenti tra magazzini;
 - Possibilità di ricevere suggerimenti di riassortimento quando la disponibilità locale di merce sia sotto una certa soglia;
@@ -202,7 +202,7 @@ Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~
 - Il riassortimento predittivo basato su _Machine Learning_;
 - Il monitoraggio della telemetria;
 - Il riconoscimento di traffico anomalo;
-- La creazione di una _Graphic User Interface_ (a vantaggio di _API_ con la quale la _Command Line Interface_ dovrà interagire)
+- La creazione di una _Graphic User Interface_ (a vantaggio di _API_#super[g] con la quale la _Command Line Interface_ dovrà interagire)
 
 Nel seguente documento saranno comunque riportati tutti i requisiti, debitamente segnando a mezzo di nomenclatura i requisiti obbligatori, desiderabili e opzionali.
 
@@ -232,7 +232,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 == Introduzione
 
 I casi d'uso si compongono di un grafico UML e una descrizione testuale che permetta di comprendere al meglio cosa il prodotto deve fornire.
-La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti irrilevante per il caso d'uso (ad esempio, un Caso d'Uso che non prevede la possibilità di errori non avrà Scenari secondari):
+La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti irrilevante per il caso d'uso#super[g] (ad esempio, un Caso d'Uso che non prevede la possibilità di errori non avrà Scenari secondari):
 
 #figure(
   table(

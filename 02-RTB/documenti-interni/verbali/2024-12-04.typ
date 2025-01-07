@@ -47,21 +47,21 @@
 
 == Aggiornamenti sui lavori in corso
 
-I componenti di _ALimitedGroup_ si sono impegnati nel proseguo della redazione dell'*Analisi dei Requisiti* e del *Piano di Progetto*, nonché al miglioramento dell'organizzazione delle *Norme di Progetto*.
+I componenti di _ALimitedGroup_ si sono impegnati nel proseguo della redazione dell'*Analisi dei Requisiti#super[g]* e del *Piano di Progetto*, nonché al miglioramento dell'organizzazione delle *Norme di Progetto*.
 
-In merito all'*Analisi dei Requisiti* sono stati fatti importanti avanzamenti in merito all'individuazione degli _Use Case_ del capitolato, mentre è stata definitivamente completata la redazione del *Piano di Progetto* (sino alla retrospettiva del primo periodo), che adesso dovrà essere verificato.
+In merito all'*Analisi dei Requisiti#super[g]* sono stati fatti importanti avanzamenti in merito all'individuazione degli _Use Case_ del capitolato#super[g] ,mentre è stata definitivamente completata la redazione del *Piano di Progetto* (sino alla retrospettiva del primo periodo), che adesso dovrà essere verificato.
 
 Le *Norme di Progetto* sono state rese molto più fruibili.
 
-Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub* inserendo una miglior cruscotto sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità di _branch protection_.
+Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub*#super[g] inserendo una miglior cruscotto sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità di _branch protection_.
 
 == Decisioni relative alle attività del prossimo periodo
 
-Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 2024 con #M31, comprende la necessità di proseguire con l'*Analisi dei Requisiti*, espandendo più nel dettaglio gli _Use Case_ rilevati e aggiungendo quelli relativi ai requisiti considerati desiderabili o opzionali.
+Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 2024 con #M31, comprende la necessità di proseguire con l'*Analisi dei Requisiti#super[g]*, espandendo più nel dettaglio gli _Use Case_ rilevati e aggiungendo quelli relativi ai requisiti considerati desiderabili o opzionali.
 
 Sarà necessario verificare il *Piano di Progetto* e le *Norme di Progetto* sino ad ora redatte e proseguire la loro redazione.
 
-I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept (PoC)_, specie riguardo il linguaggio *Go* e la tecnologia *NATS*.
+I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept (PoC)_, specie riguardo il linguaggio *Go*#super[g] e la tecnologia *NATS*.
 
 Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica*.
 
@@ -77,13 +77,14 @@ Inoltre è stato stabilito che l'assegnazione dei ruoli sarà più flessibile: d
 
 In base ai compiti assegnati a ciascuno verrà stabilita la seguente suddivisione dei ruoli:
 
-#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*]
-#align(center)[*#persona(p.sara)* $arrow.r$ *Amministratore* \
-  *#persona(p.matteo)* $arrow.r$ *Amministratore*]
-#align(center)[*#persona(p.samuele)* $arrow.r$ *Verificatore* \
-  *#persona(p.lorenzo)* $arrow.r$ *Verificatore*]
-#align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista* \
-  *#persona(p.marco)* $arrow.r$ *Analista*]\
+#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*#super[g]]
+#align(center)[*#persona(p.sara)* $arrow.r$ *Amministratore*#super[g] \
+  *#persona(p.matteo)* $arrow.r$ *Amministratore*#super[g]]
+#align(center)[*#persona(p.samuele)* $arrow.r$ *Verificatore*#super[g] \
+  *#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[g]]
+#align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista*#super[g] \
+  *#persona(p.marco)* $arrow.r$ *Analista*#super[g]
+]\
 
 Anche in base a quanto stabilito nella @nuove_regole, tali ruoli sono da considerarsi flessibili.
 
