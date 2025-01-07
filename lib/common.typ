@@ -67,6 +67,12 @@
     issues: "/issues/",
     pulls: "/pull/",
   ),
+  poc: (
+    abbrev: "POC",
+    link: "https://github.com/alimitedgroup/PoC",
+    issues: "/issues/",
+    pulls: "/pull/",
+  ),
 )
 
 /// Inserisce un simbolo che rappresenta M31
