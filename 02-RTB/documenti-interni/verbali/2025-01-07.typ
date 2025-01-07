@@ -40,21 +40,21 @@
 
 _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'analisi è risultato che:
 
-- *Analisi dei Requisiti*: Sono stati riesaminati tutti i casi d'uso redatti ed è stata completata la redazione di tutti i Casi d'Uso relativi a requisiti obbligatori;
+- *Analisi dei Requisiti#super[g]*: Sono stati riesaminati tutti i casi d'uso redatti ed è stata completata la redazione di tutti i Casi d'Uso relativi a requisiti obbligatori;
 - *Piano di Qualifica*: è stata completata la ricerca delle misurazioni da effettuare;
 - *Tecnologie e PoC*: è proseguita la realizzazione del PoC che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
 
-In merito all'*Analisi dei Requisiti*, non è stata rispettata la scadenza relativa alla redazione dei requisiti non obbligatori per il sopraggiungere di alcune complicazioni.
+In merito all'*Analisi dei Requisiti#super[g]*, non è stata rispettata la scadenza relativa alla redazione dei requisiti non obbligatori per il sopraggiungere di alcune complicazioni.
 
 In merito alle *Norme di Progetto*, non è stata rispettata la scadenza relativa alla redazione delle informazioni sulla codifica del codice, ma è sostanzialmente completa la redazione delle Sezioni mancanti.
 
-Per maggiori informazioni è consigliata la lettura del *Piano di Progetto* relativamente al quarto Sprint, la cui stesura dovrà avvenire entro la fine del quinto Sprint.
+Per maggiori informazioni è consigliata la lettura del *Piano di Progetto* relativamente al quarto Sprint#super[g] ,la cui stesura dovrà avvenire entro la fine del quinto Sprint#super[g] .
 
 == Decisioni relative alle attività del prossimo periodo
 
 I membri di _ALimitedGroup_ hanno stabilito che nel corso del quinto Sprint sarà necessario:
 
-#align(center)[*Analisi dei Requisiti*]
+#align(center)[*Analisi dei Requisiti#super[g]*]
 - Effettuare la redazione dei Casi d'Uso relativi ai requisiti non obbligatori entro il giorno *12 Gennaio 2025*
 - Effettuare la redazione dei Casi d'Uso relativi alle attività svolte dal Backend entro il giorno *19 Gennaio 2025*
 
@@ -85,7 +85,7 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
   *#persona(p.lorenzo)* $arrow.r$ *Analista*#super[g]
 ]\
 
-Eventuali compiti di *Verifica* sono affidati a *#persona(p.loris)* e *#persona(p.samuele)* quando questi non sono impegnati nella attività di programmazione, il *Responsabile* avrà modo di svolgere attività di *analisi* nei momenti in cui le attività del suo ruolo non sono richieste: tali vincoli sono per evitare che le persone svolgano due ruoli contemporaneamente.
+Eventuali compiti di *Verifica*#super[g] sono affidati a *#persona(p.loris)* e *#persona(p.samuele)* quando questi non sono impegnati nella attività di programmazione, il *Responsabile*#super[g] avrà modo di svolgere attività di *analisi* nei momenti in cui le attività del suo ruolo non sono richieste: tali vincoli sono per evitare che le persone svolgano due ruoli contemporaneamente.
 
 = Esiti della riunione
 
