@@ -158,14 +158,14 @@
 = Introduzione
 == Scopo del documento
 
-Il presente documento di _Analisi dei Requisiti_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali e non funzionali del sistema software da sviluppare.\
+Il presente documento di _Analisi dei Requisiti_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali e non funzionali del sistema software da sviluppare.
 
 Per tale scopo, il documento include una descrizione approfondita dei Casi d'Uso, che sono fonte dei requisiti infine elencati.
+Verranno utilizzati, per agevolare la comprensione, i *Diagrammi dei Casi d'Uso* per visualizzare le interazioni tra attori e sistema.
 
-Verranno utilizzati, per agevolare la comprensione, i *Diagrammi dei Casi d'Uso* per visualizzare le interazioni tra attori e sistema;
+Il presente documento rappresenterà il riferimento di base per la progettazione, l'implementazione e il collaudo del prodotto finale, garantendo che il sistema realizzato soddisfi pienamente le esigenze e le aspettative del committente.
 
-Il presente documento rappresenterà il riferimento di base per la progettazione, l'implementazione e il collaudo del prodotto finale, garantendo che il sistema realizzato soddisfi pienamente le esigenze e le aspettative del committente. \
-I requisiti identificati sono classificati in: \ \
+I requisiti identificati sono classificati in:
 - *Obbligatori*: irrinunciabili e imprescindibili per il corretto funzionamento del sistema;
 - *Desiderabili*: non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile;
 - *Opzionali*: relativamente utili oppure contrattabili per essere implementati in futuro.
@@ -183,7 +183,7 @@ Il prodotto che _ALimitedGroup_ si promette di sviluppare è un sistema efficace
 
 Nello specifico, si vuole sviluppare un sistema che sia in grado non solo di gestire un magazzino locale, ma che sia in grado di avere in tempo reale una visione globale di tutti i magazzini connessi al Sistema.
 Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare i propri servizi per essere in grado di mantenere la reattività.
-fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
+Fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
 
 == Funzioni del prodotto
 Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità:
@@ -197,7 +197,7 @@ Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le segue
 - Possibilità di visualizzare in tempo reale il numero di richieste per ogni Servizio del sistema;
 
 
-Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[*Capitolato*] i requisiti obbligatori sono stati rimodulati in base a quanto riportato nel #link("https://alimitedgroup.github.io/VE%2019-11-2024%20v1.0.0.pdf")[*Verbale Esterno*] del *19 Ottobre 2024*. Nello specifico non sono più obbligatori:
+Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[*Capitolato*] i requisiti obbligatori sono stati rimodulati in base a quanto riportato nel #link("https://alimitedgroup.github.io/VE%2019-11-2024%20v1.0.0.pdf")[*Verbale Esterno*] del *19 Ottobre 2024*. Nello specifico, non sono più obbligatori:
 
 - Il riassortimento predittivo basato su _Machine Learning_;
 - Il monitoraggio della telemetria;
@@ -217,7 +217,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto \ #link("alimitedgroup.github.io/norme-progetto.pdf")[alimitedgroup.github.io/norme-progetto.pdf]
+- Norme di Progetto \ #link("https://alimitedgroup.github.io/norme-progetto.pdf")[https://alimitedgroup.github.io/norme-progetto.pdf]
 - Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_: \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
 === Riferimenti informativi
 - Standard IEEE: \ https://ieeexplore.ieee.org/document/720574
@@ -251,6 +251,7 @@ La descrizione testuale, in particolar modo, dovrà contenere le informazioni ne
     [*Postcondizioni*],
     [Lista di elementi che descrivono come il Sistema risulta essere internamente cambiato dopo che l'Attore ha effettuato l'azione prevista dal Caso d'Uso],
 
+    // TODO: cosa si intende con descrizione "ragionevole"?
     [*Scenario principale*],
     [Descrizione ragionevole delle operazioni che l'attore deve fare per compiere l'azione descritta dal Caso d'Uso],
 

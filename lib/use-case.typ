@@ -1,10 +1,3 @@
-
-/*#import "@preview/pintorita:0.1.2"
-#import "@preview/chronos:0.2.0"
-
-// Don't delete, necessary for diagrams
-#show raw.where(lang: "pintora"): it => pintorita.render(it.text)
-*/
 #let use-case-diagram(version, caption, width: 60%) = [
   #figure(
     image("../assets/diagrams/UC" + version + ".png", width: width),
