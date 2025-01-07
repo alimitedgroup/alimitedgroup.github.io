@@ -522,7 +522,7 @@ in quanto rimandata allo sprint successivo.
 
 ==== Informazioni generali e attività da svolgere <sprint2intro>
 
-Il secondo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla relativa discussione con il proponente #M31.
+Il secondo sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla relativa discussione con il proponente #M31.
 
 Le attività pianificate nel dettaglio includono:
 
@@ -566,7 +566,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[g].
+Durante questo sprint#super[g] si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[g].
 
 Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
 
@@ -635,7 +635,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti#super[g]. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
+Durante questo sprint#super[g] si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti#super[g]. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
 
 Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
 
@@ -657,14 +657,14 @@ I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono 
   inset: (x: 0pt),
   column-gutter: 1em,
   [Inizio:], strong[22-12-2024],
-  [Fine prevista:], strong[05-1-2025],
-  [Fine reale:], strong[05-01-2025],
+  [Fine prevista:], strong[04-1-2025],
+  [Fine reale:], strong[04-01-2025],
   [Giorni di ritardo:], strong[0],
 )
 
 ==== Informazioni generali e attività da svolgere <sprint4intro>
 
-Il quarto sprint è focalizzato principalmente sulla
+Il quarto sprint#super[g] è focalizzato principalmente sulla
 
 Le attività pianificate nel dettaglio includono:
 
@@ -709,4 +709,4 @@ Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezio
 
 === Retrospettiva
 
-In questo quarto sprint, ci siamo concentrati principalmente sulla realizzazione
+In questo quarto sprint#super[g] ,ci siamo concentrati principalmente sulla realizzazione
