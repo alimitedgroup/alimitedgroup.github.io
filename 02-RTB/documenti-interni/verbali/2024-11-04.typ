@@ -50,9 +50,9 @@ Il gruppo prevede che nel prossimo futuro il cambiamento dei ruoli *non potrà s
 
 == Migliorie alla parte pubblica del repository
 
-Il gruppo accoglie il suggerimento riguardante l'apertura delle risorse in una scheda dedicata: decide, perciò, di modificare la parte pubblica del _repository_ (sito web) quanto prima per ottenere questo effetto.
+Il gruppo accoglie il suggerimento riguardante l'apertura delle risorse in una scheda dedicata: decide, perciò, di modificare la parte pubblica del _repository_#super[g] (sito web) quanto prima per ottenere questo effetto.
 
-Per migliorare ulteriormente l'organizzazione del _repository_, stabilisce altresì di inserire tutti i nuovi documenti prodotti dal giorno 04-11-2024 sino al superamento della _Requirements and Tecnology Baseline_ (RTB) in una sezione appositamente realizzata: la parte pubblica del _repository_ (sito web) dovrà riflettere questo cambiamento.
+Per migliorare ulteriormente l'organizzazione del _repository_#super[g], stabilisce altresì di inserire tutti i nuovi documenti prodotti dal giorno 04-11-2024 sino al superamento della _Requirements and Tecnology Baseline_ (RTB#super[g]) in una sezione appositamente realizzata: la parte pubblica del _repository_#super[g] (sito web) dovrà riflettere questo cambiamento.
 
 #pagebreak()
 
@@ -83,7 +83,7 @@ Per soddisfare l'esigenza di verificare un verbale subito a seguito di una modif
   ),
 )
 
-Con la data che indica il momento in cui la modifica effetuata dall'*autore* è stata verificata dal *verificatore*
+Con la data che indica il momento in cui la modifica effetuata dall'*autore* è stata verificata dal *verificatore*#super[g]
 
 Il gruppo ha anche stabilito delle modifiche relative al metodo di stesura dei verbali contenute nella @metodo_stesura di questo documento. \
 
@@ -103,11 +103,11 @@ dove:
 
 - *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
   - *DI\#* ovvero *Decisione Interna*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
-  - *AP\#* ovvero *Attività Passata*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_ prima di procedere ad eventuali modifiche);
-  - *REPOSITORY\#* con, al posto di *REPOSITORY*, il nome della repository ospitante l'_issue_ associata (per convenzione, il nome *DOCS* sarà riservato per riferirsi alla repository contenente la documentazione), e con, al posto di *\#*, il numero di tale _issue_. Viene utilizzata con lo stesso scopo di *AP\#* ma per le decisioni che comportano un'azione avente effettivamente una _issue_ associata nel sistema di ticketing.
+  - *AP\#* ovvero *Attività Passata*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[g]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[g] prima di procedere ad eventuali modifiche);
+  - *REPOSITORY\#* con, al posto di *REPOSITORY*, il nome della repository ospitante l'_issue_ associata (per convenzione, il nome *DOCS* sarà riservato per riferirsi alla repository contenente la documentazione), e con, al posto di *\#*, il numero di tale _issue_#super[g]. Viene utilizzata con lo stesso scopo di *AP\#* ma per le decisioni che comportano un'azione avente effettivamente una _issue_#super[g] associata nel sistema di ticketing.
 - *Dettaglio* è una breve descrizione della decisione o azione intrapresa. \ \
 
-Per convenzione, la tabella dovrà elencare prima le *DI*, poi le *AP* e infine le *REPOSITORY*.
+Per convenzione, la tabella dovrà elencare prima le *DI*#super[g], poi le *AP*#super[g] e infine le *REPOSITORY*.
 
 #pagebreak()
 
@@ -115,12 +115,12 @@ Per convenzione, la tabella dovrà elencare prima le *DI*, poi le *AP* e infine 
 
 La stesura di un verbale adesso seguirà il seguente procedimento:
 
-+ Viene aperta una _issue_ di GitHub. Tale _issue_ non dovrà avere alcun _tag_;
-+ Viene realizzato un branch secondario dedicato alla sola redazione del verbale: il verbale può essere redatto sul nuovo branch;
-+ Quando la redazione è conclusa ed è stato eseguito il _push_ delle modifiche, viene aperta una _Draft Pull Request_ legata al nuovo branch;
++ Viene aperta una _issue_#super[g] di GitHub#super[g]. Tale _issue_#super[g] non dovrà avere alcun _tag_;
++ Viene realizzato un branch secondario dedicato alla sola redazione del verbale: il verbale può essere redatto sul nuovo branch#super[g];
++ Quando la redazione è conclusa ed è stato eseguito il _push_ delle modifiche, viene aperta una _Draft Pull Request_ legata al nuovo branch#super[g];
 + Aperta la _Draft Pull Request_, il redattore può eventualmente proseguire la redazione per apportare migliorie. Nel momento in cui ritiene il documento redatto, egli marcherà la _Draft Pull Request_ come pronta per essere verificata;
 + Il verificatore verifica il documento: se corretto segnalerà, mediante commento nella _Draft Pull Request_, al responsabile di procedere all'approvazione, se da modificare verrà sfruttato il sistema messo a disposizione da GitHub appositamente realizzato per permettere di comunicare con facilità i cambiamenti da effettuare. Completate le modifiche, il verificatore procederà nuovamente come spiegato;
-+ Una volta notificato il responsabile, questo procederà ad effettuare il merge del branch secondario in quello principale completando quindi la _Draft Pull Request_ e chiudendo la issue.
++ Una volta notificato il responsabile#super[g], questo procederà ad effettuare il merge del branch secondario in quello principale completando quindi la _Draft Pull Request_ e chiudendo la issue#super[g].
 
 === Cambiamento al sistema di versionamento
 
@@ -153,17 +153,27 @@ Il gruppo ha individuato, nei precedenti verbali, le seguenti decisioni intrapre
   "D5",
   "Decisione sulla struttura dei documenti (" + doc("VI 18-10-2024 1.0.0")[VI 18-10-2024] + ", sezione 2.3)",
   "D6",
-  "Decisioni in merito alla presentazione per le attività di Diario di Bordo (" + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024] + ", sezione 2.1)",
+  "Decisioni in merito alla presentazione per le attività di Diario di Bordo ("
+    + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024]
+    + ", sezione 2.1)",
   "D7",
-  "Utilizzo delle issue di GitHub come sistema di ticketing (" + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024] + ", sezione 2.2)",
+  "Utilizzo delle issue di GitHub come sistema di ticketing ("
+    + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024]
+    + ", sezione 2.2)",
   "D8",
-  "Utilizzo di Google Calendar per la gestione degli eventi (" + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024] + ", sezione 2.3)",
+  "Utilizzo di Google Calendar per la gestione degli eventi ("
+    + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024]
+    + ", sezione 2.3)",
   "D9",
-  "I verbali dovranno avere uno specifico commento iniziale (" + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024] + ", sezione 2.4)",
+  "I verbali dovranno avere uno specifico commento iniziale ("
+    + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024]
+    + ", sezione 2.4)",
   "D10",
   "Decisione alla candidatura con il capitolato C6 (" + doc("VI 28-10-2024 1.0.0")[VI 28-10-2024] + ", sezione 2.1)",
   "D11",
-  "Pianificazione temporale del progetto, analisi dei ruoli e costi (" + doc("VI 28-10-2024 1.0.0")[VI 28-10-2024] + ", sezione 2.2, 2.3 e 2.4)",
+  "Pianificazione temporale del progetto, analisi dei ruoli e costi ("
+    + doc("VI 28-10-2024 1.0.0")[VI 28-10-2024]
+    + ", sezione 2.2, 2.3 e 2.4)",
   "D12",
   "Decisione struttura finale del repository (" + doc("VI 28-10-2024 1.0.0")[VI 28-10-2024] + ", sezione 2.5)",
   "AP1",
@@ -173,7 +183,9 @@ Il gruppo ha individuato, nei precedenti verbali, le seguenti decisioni intrapre
   "AP3",
   "Richiedere colloquio con M31 (" + doc("VI 15-10-2024 1.0.0")[VI 15-10-2024] + ", sezione 3)",
   "AP4",
-  "Creazione Repository GitHub dedicato alla documentazione (" + doc("VI 18-10-2024 1.0.0")[VI 18-10-2024] + ", sezioni 2.2 e 3)",
+  "Creazione Repository GitHub dedicato alla documentazione ("
+    + doc("VI 18-10-2024 1.0.0")[VI 18-10-2024]
+    + ", sezioni 2.2 e 3)",
   "AP5",
   "Valutare capitolato di VIMAR (" + doc("VI 18-10-2024 1.0.0")[VI 18-10-2024] + ", sezione 2.4)",
   "AP6",
@@ -185,7 +197,9 @@ Il gruppo ha individuato, nei precedenti verbali, le seguenti decisioni intrapre
   "AP9",
   "Realizzare diapositive per il primo diario di bordo (" + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024] + ", sezione 3)",
   "AP10",
-  "Realizzare le prime prove per uso sistema di ticketing su GitHub (" + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024] + ", sezione 2.2)",
+  "Realizzare le prime prove per uso sistema di ticketing su GitHub ("
+    + doc("VI 23-10-2024 1.0.0")[VI 23-10-2024]
+    + ", sezione 2.2)",
   "AP11",
   "Realizzare verbale 23-10-2024",
   "AP12",
@@ -214,9 +228,9 @@ Il gruppo ha deciso di iniziare la redazione di questo verbale e di un nuovo doc
 
 Anche osservando quanto definito nella sezione 5, si decide che sino all'11-11-2024, saranno assegnati i seguenti ruoli: \
 
-*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile* \
-*#p.sara.nome #p.sara.cognome* $arrow.r$ *Verificatore*\
-*#p.marco.nome #p.marco.cognome* $arrow.r$ *Verificatore*\
+*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile*#super[g] \
+*#p.sara.nome #p.sara.cognome* $arrow.r$ *Verificatore*#super[g] \
+*#p.marco.nome #p.marco.cognome* $arrow.r$ *Verificatore*#super[g] \
 
 Sarà assegnato a *#p.matteo.nome #p.matteo.cognome* il compito di redazione di questo verbale, mentre ai rimanenti componenti la redazione del Glossario.
 
@@ -224,7 +238,7 @@ Sarà assegnato a *#p.matteo.nome #p.matteo.cognome* il compito di redazione di 
 
 = Esiti della riunione
 
-Il gruppo conclude la riunione con i compiti assegnati e le decisioni e azioni intraprese, riservandosi anche il compito di iniziare ad analizzare i requisiti del capitolato da eventualmente contrattare leggendo attentamente, in maniera asincrona, il capitolato: i risultati saranno discussi e messi per forma scritta nelle prossime riunioni.
+Il gruppo conclude la riunione con i compiti assegnati e le decisioni e azioni intraprese, riservandosi anche il compito di iniziare ad analizzare i requisiti del capitolato da eventualmente contrattare leggendo attentamente, in maniera asincrona, il capitolato#super[g]: i risultati saranno discussi e messi per forma scritta nelle prossime riunioni.
 
 #pagebreak()
 

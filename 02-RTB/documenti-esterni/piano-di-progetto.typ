@@ -46,72 +46,6 @@
   body,
 )
 
-/*#let prospetto-orario(sprint) = {
-  let sprint = str(sprint)
-  let ore-spese-sprint = 0
-  let budget-speso-sprint = 0
-  let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
-  let budget-tot = ruoli.values().map(ruolo => ruolo.max-ore * ruolo.costo).sum()
-  let sprint-idx = sprints.keys().position(x => x == sprint)
-
-  set align(center)
-  figure(
-    table(
-      columns: 6,
-      align: center,
-      [Ruolo], [Costo], [Ore], [Costo], [Ore rimanenti], [Budget rimanente],
-
-      ..for (i, ruolo) in ruoli.values().enumerate() {
-        let ore-spese = sprints.at(sprint).consuntivo.map(row => row.at(i + 1)).sum()
-        ore-spese-sprint += ore-spese
-        budget-speso-sprint += ruolo.costo * ore-spese
-
-        let ore-spese-prev = sprints
-          .values()
-          .slice(0, sprint-idx)
-          .map(sprint => sprint.consuntivo.map(row => row.at(i + 1)).sum())
-          .sum(default: 0)
-        let budget-speso-prec = ruolo.costo * ore-spese-prev
-
-        let ore-rimanenti = ruolo.max-ore - ore-spese-prev - ore-spese
-        let ore-rimanenti-prev = ruolo.max-ore - ore-spese-prev
-        let budget-rimanente = ruolo.costo * ore-rimanenti
-        let budget-rimanente-prev = budget-rimanente + ruolo.costo * ore-spese
-
-        (
-          ruolo.nome,
-          str(ruolo.costo) + "€/h",
-          if ore-spese != 0 {
-            str(ore-spese)
-          } else {
-            [-]
-          },
-          if ore-spese != 0 {
-            str(ore-spese * ruolo.costo) + "€"
-          } else {
-            [-]
-          },
-          str(ore-rimanenti) + if ore-spese != 0 {
-            text(red, " (" + str(ore-rimanenti - ore-rimanenti-prev) + ")")
-          },
-          str(budget-rimanente) + "€" + if ore-spese != 0 {
-            text(red, " (" + str(budget-rimanente - budget-rimanente-prev) + "€)")
-          },
-        )
-      },
-
-      [Totale],
-      [-],
-      str(ore-spese-sprint),
-      str(budget-speso-sprint) + "€",
-      str(ore-tot - ore-spese-sprint) + text(red)[ (#{-ore-spese-sprint})],
-      str(budget-tot - budget-speso-sprint) + text(red)[ (#{-budget-speso-sprint}€)],
-    ),
-    caption: [Variazioni nelle risorse disponibili per il primo sprint, rispetto alle risorse iniziali],
-  )
-}*/
-
-
 = Introduzione
 == Informazioni generali
 
@@ -459,7 +393,7 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
   caption: [Riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
 )
 \
-In seguito a quanto suggerito in merito all'analisi dei requisiti è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista.
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[g] .
 
 Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline_ (RTB)* entro il *3 febbraio 2025*.
 
@@ -469,11 +403,11 @@ Si stima inoltre ad una candidatura per la *_Requirements and Technology Baselin
 
 == Introduzione
 
-_ALimitedGroup_ ha stabilito di procedere con un *approccio Agile* allo svolgimento del progetto, riconoscendo che un periodo efficace per produrre sviluppi utili si aggira intorno alle 2 settimane: stabilisce dunque di realizzare *_sprint_* di *circa 2 settimane*.
+_ALimitedGroup_ ha stabilito di procedere con un *approccio Agile* allo svolgimento del progetto, riconoscendo che un periodo efficace per produrre sviluppi utili si aggira intorno alle 2 settimane: stabilisce dunque di realizzare *_sprint_*#super[g] di *circa 2 settimane*.
 
-Seguendo questo principio, il gruppo si impegna a stabilire all'inizio di ogni _sprint_ le attività per le due settimane successive, ruotando nelle medesime occasioni i ruoli ricoperti, seppur mantenendo la possibilità di effettuare il cambiamento anche durante il suddetto periodo qualora le esigenze organizzative lo imponessero: tutto questo ha lo scopo di acquisire esperienza in ciascun ruolo e comprendere il periodo di rotazione ottimale.
+Seguendo questo principio, il gruppo si impegna a stabilire all'inizio di ogni _sprint_#super[g] le attività per le due settimane successive, ruotando nelle medesime occasioni i ruoli ricoperti, seppur mantenendo la possibilità di effettuare il cambiamento anche durante il suddetto periodo qualora le esigenze organizzative lo imponessero: tutto questo ha lo scopo di acquisire esperienza in ciascun ruolo e comprendere il periodo di rotazione ottimale.
 
-Il gruppo si impegna altresì a concordare riunioni con il proponente #M31 per ricevere feedback su quanto realizzato in momenti quanto più vicini possibili alla scadenza degli _sprint_.
+Il gruppo si impegna altresì a concordare riunioni con il proponente #M31 per ricevere feedback su quanto realizzato in momenti quanto più vicini possibili alla scadenza degli _sprint_#super[g] .
 
 Complessivamente riteniamo che il *modello Agile* possa rivelarsi il più efficace per portare a termine il progetto nei tempi prestabiliti, al contempo assicurandosi che quanto fatto sia realizzato conformemente alle volontà del proponente.
 
@@ -557,12 +491,12 @@ Durante questo sprint abbiamo avuto difficoltà con la stima iniziale del numero
 Come si può evincere dalle tabelle 10 e 11, nel preventivo avevamo fortemente
 sottostimato le ore necessarie per svolgere le fasi iniziali.
 Questa è un istanza del rischio _RG3: Rischio Globale derivato da sottostima di attività_,
-che avevamo previsto come possibile per questo periodo in quanto primo sprint.
+che avevamo previsto come possibile per questo periodo in quanto primo sprint#super[g] .
 
 Inoltre, abbiamo incontrato il rischio
 _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_.
-Il responsabile per questo sprint, #persona(p.samuele),
-ha dovuto ridimensionare notevolmente il proprio impegno per l'ultima settimana dello sprint.
+Il responsabile per questo sprint#super[g] ,#persona(p.samuele),
+ha dovuto ridimensionare notevolmente il proprio impegno per l'ultima settimana dello sprint#super[g] .
 Per questo motivo, questa sezione del documento è redatta con qualche giorno di ritardo rispetto all'inizio dello sprint successivo.
 
 === Retrospettiva
@@ -570,7 +504,7 @@ Per questo motivo, questa sezione del documento è redatta con qualche giorno di
 Questo primo sprint è stato dedicato alla realizzazione di automazioni e alla redazione di documenti;
 entrambi gli obiettivi sono stati raggiunti.
 Tra le attività previste, elencate nella @sprint1intro,
-solo l'attività _Inizio stesura Analisi dei Requisiti_ non è stata svolta,
+solo l'attività _Inizio stesura Analisi dei Requisiti#super[g]_ non è stata svolta,
 in quanto rimandata allo sprint successivo.
 
 === Sprint 2
@@ -588,14 +522,14 @@ in quanto rimandata allo sprint successivo.
 
 ==== Informazioni generali e attività da svolgere <sprint2intro>
 
-Il secondo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sulla relativa discussione con il proponente #M31.
+Il secondo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla relativa discussione con il proponente #M31.
 
 Le attività pianificate nel dettaglio includono:
 
-- Redazione dell'Analisi dei Requisiti;
+- Redazione dell'Analisi dei Requisiti#super[g];
 - Incontro con l'azienda proponente #M31 per discutere i requisiti e gli _use-case_;
 - Studio delle tecnologie _Golang_ e _NATS_;
-- Ottimizzazione del sistema di _ticketing_ e del *way of working*;
+- Ottimizzazione del sistema di _ticketing_ e del *way of working#super[g]*;
 - Riorganizzazione delle Norme di Progetto;
 - Verifica del Piano di Progetto.
 
@@ -632,7 +566,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti.
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[g].
 
 Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
 
@@ -640,7 +574,7 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 
 === Retrospettiva
 
-In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
+In questo secondo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
 
 === Sprint 3
 
@@ -657,14 +591,14 @@ In questo secondo sprint, ci siamo concentrati principalmente sulla realizzazion
 
 ==== Informazioni generali e attività da svolgere <sprint3intro>
 
-Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sull'inizio dello sviluppo del PoC
+Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sull'inizio dello sviluppo del PoC
 
 Le attività pianificate nel dettaglio includono:
 
-- Continuo redazione dell'Analisi dei Requisiti;
-- Discussione del Poc e dell'Analisi dei Requisiti con l'azienda proponente #M31;
+- Continuo redazione dell'Analisi dei Requisiti#super[g];
+- Discussione del Poc e dell'Analisi dei Requisiti#super[g] con l'azienda proponente #M31;
 - Inizio redazione Piano di Qualifica;
-- Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC;
+- Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC#super[g];
 - Setup della repository con divisione del progetto in più microservizi
 - Setup dell'ambiente di sviluppo locale in modo da renderlo replicabile per tutti i componenti del gruppo
 
@@ -701,15 +635,15 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
+Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti#super[g]. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
 
 Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
 
 === Retrospettiva
 
-In questo terzo sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti, considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
+In questo terzo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
 
-L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti per poter discutere con il professore Cardin la validità del lavoro svolto.
+L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti#super[g] per poter discutere con il professore Cardin la validità del lavoro svolto.
 
 Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
 
