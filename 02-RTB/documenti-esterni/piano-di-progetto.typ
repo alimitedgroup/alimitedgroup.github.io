@@ -664,18 +664,23 @@ I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono 
 
 ==== Informazioni generali e attività da svolgere <sprint4intro>
 
-Il quarto sprint#super[g] è focalizzato principalmente sulla
+Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sulla realizzazione del PoC.
 
 Le attività pianificate nel dettaglio includono:
 
--
+- Aggiungere la sezione sulla codifica nelle Norme di Progetto;
+- Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti;
+- Svolgere un incontro con il professore Cardin per discutere l'Analisi dei Requisiti;
+- Utilizzare tutte le tecnologie scelte nell PoC per valutarne l'usabilità;
+- Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC;
+- Proseguire con il Piano di Qualità
+
 
 ==== Rischi attesi
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
 
 #pagebreak()
@@ -709,4 +714,11 @@ Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezio
 
 === Retrospettiva
 
-In questo quarto sprint#super[g] ,ci siamo concentrati principalmente sulla realizzazione
+In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC.
+
+La riunione con il professore Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti,
+come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
+tra Use Case del backend e del frontend che devono essere rappresentati separatamente.
+
+Non è stata completata la redazione degli Use Case non obbligatori a causa di problemi con la numerazione degli Use Case e la creazione dei relativi grafici in formato SVG.
+Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
