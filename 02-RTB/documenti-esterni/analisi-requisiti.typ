@@ -1549,7 +1549,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC38 - Visualizza elenco notifiche di rifornimento forniti da _Machine Learning_
+=== UC38 - Visualizza lista notifiche di rifornimento forniti da _Machine Learning_
 
 #use-case(
   attore: "Admin globale",
@@ -2248,7 +2248,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
 )[]
 
-====== UC57.1.1.1 - Visualizza quantità singolo elemento lista merci ordine eseguito <UC57.1.1.1>
+====== UC57.1.1.1 - Visualizza q.tà singolo elemento lista merci ordine eseguito <UC57.1.1.1>
 #use-case(
   attore: "Cliente",
   pre: [
