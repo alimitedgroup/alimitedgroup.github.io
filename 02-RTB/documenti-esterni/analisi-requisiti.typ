@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.19.0]
+#let ver = [0.20.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 03, month: 01, year: 2025),
+  data: datetime(day: 08, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.20.0",
+      date: datetime(day: 08, month: 01, year: 2025),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Realizzati primi UC relativi a backup del sistema locale",
+    ),
     (
       vers: "0.19.0",
       date: datetime(day: 03, month: 01, year: 2025),
@@ -2263,6 +2270,162 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   ],
 )[]
 
+/*
+APPUNTI VARI
+Invio SMS, E-Mail e notifiche interne da parte del BE. -> opzionale ma fatto dal BE. Le notifiche sono già state modellate.
+L'attore potrebbe essere un dispositivo GSM e un client Email che riceve la notifica, questo rivolterebbe effettivamente il fatto di esser fatto dal BE
+Legato a questo c'è il fatto che l'Admin Locale e quello Globale vogliono registrare un Sistema GSM e un client email presso il Sistema
+
+I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno scheduler. Esempi sono aggiorna informazioni merci disponibili, aggiorna informazioni notifiche rifornimento, aggiorna elenco transazioni (ordini/trasferimenti) non completate, invia conferma ordini, invia conferma transazioni (ordini/trasferimenti), invia notifica email, invia notifica sms, crea backup regolare ecc.
+*/
+
+=== UC58 - Creazione Backup
+
+#use-case(
+  attore: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+  ],
+  post: [
+    - Il Sistema crea un Backup dei dati localmente presenti nel Sistema;
+  ],
+  scenari: [
+    - L'Admin Locale seleziona dal menu principale l'opzione relativa alla creazione di un Backup;
+  ],
+  trigger: "L'Admin Locale vuole creare un Backup del Sistema",
+)[]
+
+=== UC59 - Attiva Backup periodico //include selezione ogni quanto fare il backup
+
+#use-case(
+  attore: "Admin Locale",
+  attori_secondari: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+    - Non sono presenti altri Backup periodici attivi
+  ],
+  post: [
+    - Il Sistema comunica allo Scheduler la scelta dell'Admin Locale di realizzare periodicamente un Backup
+  ],
+  scenari: [
+    - L'Admin Locale seleziona dal menu principale l'opzione relativa all'attivazione di un Backup periodico;
+    - L'Admin Locale inserisce la periodicità $arrow$ @UC59.1[Vedi UC59.1, Sezione]
+  ],
+  scenari_alternativi: [
+    - L'Admin Locale vuole attivare un Backup periodico ma la periodicità inserita non è valida $arrow$ @UC60
+  ],
+  inclusioni: [
+    - UC59.1 @UC59.1
+  ],
+  estensioni: [
+    - UC60 @UC60
+  ],
+  trigger: "L'Admin Locale vuole attivare un Backup periodico del Sistema",
+)[]
+
+==== UC59.1 - Selezione periodicità Backup periodico <UC59.1>
+
+#use-case(
+  attore: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+    - L'Admin Locale ha scelto di attivare un Backup periodico
+  ],
+  post: [
+    - Il Sistema conosce la periodicità del Backup periodico;
+  ],
+  scenari: [
+    - L'Admin Locale inserisce la periodicità (in ore) del Backup;
+  ],
+)[]
+
+=== UC60 - Periodicità non valida <UC60>
+
+#use-case(
+  attore: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+    - L'Admin Locale ha scelto di attivare un Backup periodico
+    - L'Admin Locale ha immesso una periodicità non valida (ad esempio negativa)
+  ],
+  post: [
+    - Il Sistema annulla l'operazione di attivazione di un Backup periodico
+  ],
+  scenari: [
+    - Il Sistema ha ricevuto la periodicità inserita dall'Admin Locale, ma questa non è valida (ad esempio perché negativa)
+  ],
+)[]
+
+=== UC61 - Elimina Backup periodico
+
+#use-case(
+  attore: "Admin Locale",
+  attori_secondari: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+  ],
+  post: [
+    - Il Sistema comunica allo Scheduler la scelta dell'Admin Locale di non realizzare periodicamente un Backup
+  ],
+  scenari: [
+    - L'Admin Locale seleziona dal menu principale l'opzione relativa all'eliminazione di un Backup periodico;
+  ],
+  scenari_alternativi: [
+    - L'Admin Locale vuole attivare un Backup periodico ma nessun Backup periodico è attivo $arrow$ @UC62
+  ],
+  estensioni: [
+    - UC62 @UC62
+  ],
+  trigger: "L'Admin Locale vuole eliminare il Backup periodico del Sistema",
+)[]
+
+=== UC62 - Nessun Backup periodico attivo <UC62>
+
+#use-case(
+  attore: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+    - L'Admin Locale ha scelto di disattivare il Backup periodico
+  ],
+  post: [
+    - Il Sistema annulla l'operazione di eliminazione del Backup periodico
+  ],
+  scenari: [
+    - Il Sistema ha ricevuto la richiesta di disattivazione del Backup periodico, ma nessun Backup periodico è attivo
+  ],
+)[]
+
+=== UC63 - Ripristino dati da Backup
+
+=== UC64 - Errore nessun Backup rilevato
+
+=== UC65 - Visualizzazione attività di accesso
+
+=== UC66 - Blocca accesso sospetto //
+
+=== UC67 - Ricezione Email notifica
+
+=== UC68 - Ricezione SMS notifica
+
+=== UC69 - Aggiungi utente //include inserisci nome utente, inserisci psw utente, inserisci ruolo utente
+
+==== UC69.1 - Inserisci nome nuovo utente
+
+==== UC69.2 - Inserisci password nuovo utente
+
+=== UC70 Inserisci ruolo utente
+
+=== UC71 - Elimina utente
+
+=== UC72 - Seleziona nome utente
+
+=== UC73 - Modifica ruolo utente //include seleziona utente, inserisci ruolo utente
 
 = Requisiti Principali
 == Requisiti Funzionali
