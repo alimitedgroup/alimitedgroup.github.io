@@ -372,6 +372,30 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 #figure(
   table(
+    columns: (auto, auto, auto),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Obiettivo*], text(white)[*Descrizione*], text(white)[*Metrica*],
+
+    //table row
+    [*Correttezza linguistica*], [I documenti devono essere privi di errori ortografici o grammaticali], [MPD1],
+    [*Leggibilità*], [I documenti devono essere comprensibili all'utente], [MPD2],
+  ),
+  caption: [Obiettivi qualità del processo di documentazione],
+)
+
+
+#figure(
+  table(
     columns: (auto, auto, auto, auto),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
