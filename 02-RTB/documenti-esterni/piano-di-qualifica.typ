@@ -9,6 +9,12 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.6.0",
+      date: datetime(day: 8, month: 01, year: 2025),
+      autore: p.sara,
+      descr: "Aggiornamento sezione qualità di processo",
+    ),
+    (
       vers: "0.5.0",
       date: datetime(day: 04, month: 01, year: 2025),
       autore: p.emanuele,
