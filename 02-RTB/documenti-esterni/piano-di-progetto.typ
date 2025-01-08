@@ -664,15 +664,15 @@ I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono 
 
 ==== Informazioni generali e attività da svolgere <sprint4intro>
 
-Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti e sulla realizzazione del PoC.
+Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla realizzazione del PoC#super[g] .
 
 Le attività pianificate nel dettaglio includono:
 
 - Aggiungere la sezione sulla codifica nelle Norme di Progetto;
-- Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti;
-- Svolgere un incontro con il professore Cardin per discutere l'Analisi dei Requisiti;
+- Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti#super[g];
+- Svolgere un incontro con il professore Cardin per discutere l'Analisi dei Requisiti#super[g];
 - Utilizzare tutte le tecnologie scelte nell PoC per valutarne l'usabilità;
-- Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC;
+- Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
 - Proseguire con il Piano di Qualità
 
 
@@ -714,9 +714,9 @@ Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezio
 
 === Retrospettiva
 
-In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC.
+In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g] .
 
-La riunione con il professore Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti,
+La riunione con il professore Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[g],
 come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
 tra Use Case del backend e del frontend che devono essere rappresentati separatamente.
 
