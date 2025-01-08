@@ -541,6 +541,29 @@ Per maggiori informazioni circa la tipologia e la priorità si consiglia la lett
 === Codifica
 
 [PROSEGUIRE]
+==== Scopo
+La codifica svolta dai programmatori di _ALimitedGroup_ ha come scopo la realizzazione di quanto progettato dagli analisti e dai progettisti.
+
+Questa sezione descrive le regole e le convenzioni che i programmatori devono seguire per garantire la qualità del codice prodotto.
+
+==== Stile di codifica: Golang
+
+===== Formattazione del codice
+
+La struttura di un file sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
+
+Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite Github Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del main branch.
+
+===== Pratiche di programmazione
+- Variabili globali: evitare l'uso di variabili globali dove possibile
+- Funzioni: evitare funzioni troppo lunghe, preferire funzioni brevi e ben definite
+
+===== Convenzioni sintattiche
+- Lingua: usare la lingua inglese per tutti i costrutti e commenti
+- Nomi: usare nomi significativi per variabili, funzioni, metodi e strutture
+- Commenti: commentare il codice in modo chiaro e conciso, ogni funzione deve avere un commento che ne descriva lo scopo e i suoi argomenti
+- Indentazione: usare quattro spazi per l'indentazione
+- Più istruzioni su una linea: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice
 
 = Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
