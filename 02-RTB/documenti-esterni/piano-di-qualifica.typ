@@ -109,6 +109,12 @@ rilevanti per il progetto.
 
 
 = Qualità di processo
+La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto software.
+Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
+Per garantire la qualità di processo, il progetto si avvale di:
+- *Modelli di riferimento*: CMMI (Capability Maturity Model Integration) e ISO/IEC 12207.
+- *Metriche di processo*: strumenti per valutare le prestazioni e l’efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità.
+- *Revisioni periodiche*: sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
 == Processi primari
 === Fornitura
 
