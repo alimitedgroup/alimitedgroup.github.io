@@ -370,6 +370,29 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     Una precisione del 100% significa che non ci sono errori ortografici.],
 )
 
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPD1*], [Indice di Gulpease], [≥ 60%], [≥ 80%],
+    [*MPD2*], [Correttezza ortografica], [100%], [100%],
+  ),
+  caption: [Soglie metriche processo di documentazione],
+)
+
 
 == Qualità di prodotto
 === Funzionalità
@@ -495,7 +518,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     inset: 8pt,
 
     // Header row
-    [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore ottimo*],
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     // Data rows
     [MPF1], [Budget at completion (BAC)], [≥ 0], [In linea col preventivo],
