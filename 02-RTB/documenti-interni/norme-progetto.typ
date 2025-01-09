@@ -1329,7 +1329,7 @@ Saranno inoltre utili i seguenti servizi:
 Data la natura del progetto, ovvero a fini didattici, _ALimitedGroup_ ha optato per la ricerca di materiale utile allo studio rispetto alla produzione propria. In particolar modo, il gruppo ha concluso che lo studio sarà affrontato a mezzo delle seguenti risorse:
 #figure(
   table(
-    columns: (2fr, 3fr),
+    columns: (1fr, 3fr),
     inset: 5pt,
     align: horizon,
     fill: (x, y) => if (y == 0) {
@@ -1340,15 +1340,35 @@ Data la natura del progetto, ovvero a fini didattici, _ALimitedGroup_ ha optato 
       rgb("#d8b2d8")
     },
     text(white)[*Strumento*], text(white)[*Risorsa*],
-    [*Go*], [],
-    [*Nats*],
-    [Videocorso realizzato dagli stessi sviluppatori del prodotto reperibile su #link("https://youtube.com/playlist?list=PLgqCaaYodvKY22TpvwlsalIArTmc56W9h")[YouTube]],
+    [*Go*],
+    [Risorse presenti sul #link("https://go.dev/learn/")[sito del linguaggio]\;
+      in particolare, l'autore di questa sezione ha trovato molto utile il #link("https://go.dev/tour")[_Tour of Go_]],
 
-    [*Docker*], [],
-    [*Typst*], [],
-    [*Python*], [],
+    [*NATS*],
+    [Videocorso realizzato dagli stessi sviluppatori del prodotto,
+      reperibile su #link("https://youtube.com/playlist?list=PLgqCaaYodvKY22TpvwlsalIArTmc56W9h")[YouTube]],
+
+    [*Docker*],
+    [Si consiglia di installare Docker Desktop, aprire un terminale,
+      avviare l'immagine #link("https://hub.docker.com/r/docker/getting-started")[`docker/getting-started`]
+      (istruzioni presenti al link), ed infine aprire http://localhost in un browser.
+      Si troverà un tutorial che spiega le basi di Docker.],
+
+    [*Typst*],
+    [La documentazione ufficiale ha un tutorial base al seguente link https://typst.app/docs/tutorial.
+      Purtroppo, c'é una relativa carenza di risorse più avanzate,
+      che tuttavia non dovrebbero essere necessarie per scrivere base e/o usando template già fatti.],
+
+    [*Python*],
+    [Python, data la sua caratteristica di essere un linguaggio molto facile
+      ed estremamente diffuso, ha moltissime risorse disponibili su Internet.
+      Appunto la sua facilità porta l'autore a pensare che una _cheatsheet_ come
+      https://learnxinyminutes.com/python/ sia ampiamente sufficiente per usufruire del linguaggio.],
+
     [*Git* e *GitHub*],
-    [Viene consigliata la lettura del materiale messo a disposizione per il corso di *Metodi e Tecnologie per lo Sviluppo Software* reperibili nel #link("https://stem.elearning.unipd.it/course/view.php?id=8278")[Moodle STEM] dell'Università di Padova],
+    [Viene consigliata la lettura del materiale messo a disposizione per il corso di
+      *Metodi e Tecnologie per lo Sviluppo Software* reperibili nel
+      #link("https://stem.elearning.unipd.it/course/view.php?id=8278")[Moodle STEM] dell'Università di Padova],
   ),
   caption: [Materiale per la formazione dei membri di _ALimitedGroup_],
 )
