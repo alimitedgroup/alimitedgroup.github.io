@@ -1,16 +1,23 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.20.0]
+#let ver = [0.21.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 08, month: 01, year: 2025),
+  data: datetime(day: 09, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
     (
+      vers: "0.21.0",
+      date: datetime(day: 09, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "terminati UC relativi a backup del Sistema locale. Realizzati UC relativi a controllo accessi al Sistema.",
+    ),
+    (
       vers: "0.20.0",
       date: datetime(day: 08, month: 01, year: 2025),
-      autore: p.marco,
+      autore: p.matteo,
       verifica: p.samuele,
       descr: "Realizzati primi UC relativi a backup del sistema locale",
     ),
@@ -2401,13 +2408,181 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
 )[]
 
-=== UC63 - Ripristino dati da Backup
+=== UC63 - Ripristino dati da utlimo Backup effettuato
 
-=== UC64 - Errore nessun Backup rilevato
+#use-case(
+  attore: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+  ],
+  post: [
+    - Il Sistema avvia il ripristino del Backup
+  ],
+  scenari: [
+    - L'Admin Locale seleziona dal menu principale l'opzione relativa al ripristino dell'ultimo Backup effettuato;
+  ],
+  scenari_alternativi: [
+    - L'Admin Locale ha selezionato dal menu principale l'opzione relativa al ripristino dell'ultimo Backup effettuato, ma nessun Backup è presente $arrow$ UC64[Vedi UC64, Sezione];
+  ],
+  estensioni: [
+    - UC64 @UC64
+  ],
+  trigger: "L'Admin Locale vuole ripristinare il Sistema all'ultimo Backup effettuato",
+)[]
 
-=== UC65 - Visualizzazione attività di accesso
+=== UC64 - Errore nessun Backup trovato <UC64>
 
-=== UC66 - Blocca accesso sospetto //
+#use-case(
+  attore: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Locale
+    - L'Admin Locale ha scelto di ripristiare l'ultimo Backup effettuato
+    - Non è presente alcun Backup
+  ],
+  post: [
+    - Il Sistema annulla l'operazione di ripristino dell'ultimo Backup effettuato
+  ],
+  scenari: [
+    - Il Sistema ha ricevuto la richiesta di ripristino dell'ultimo Backup effettuato da parte dell'Admin Locale, ma non esiste alcun Backup
+  ],
+)[]
+
+=== UC65 - Visualizzazione elenco attività di accesso
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+  ],
+  post: [
+    - L'Admin Globale visualizza la lista delle attività di accesso
+  ],
+  scenari: [
+    - L'Admin Globale seleziona dal menu la voce relativa alla visualizzazione delle attività di accesso
+    - L'Admin Globale visualizza a schermo la lista delle attività di accesso $arrow$ @UC65.1[Vedi UC65.1 Sezione]
+  ],
+  inclusioni: [
+    - UC65.1 @UC65.1
+  ],
+  trigger: "L'Admin Globale vuole visualizzare le attività di accesso",
+)[]
+
+==== UC65.1 - Visualizza elemento lista attività di accesso <UC65.1>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un elenco di attività di accesso
+  ],
+  post: [
+    - Il Sistema mostra, per ogni elemento della lista della attività di accesso, indirizzo IP del luogo di accesso, ID del tentativo di accesso e stato dell'accesso (riuscito, bloccato o negato)
+  ],
+  scenari: [
+    - Ogni elemento della lista delle attività di accesso deve presentare:
+      - Indirizzo IP del luogo di accesso @UC65.1.1[Vedi UC65.1.1 Sezione]
+      - ID del tentativo di accesso @UC65.1.2[Vedi UC65.1.2 Sezione]
+      - Stato dell'accesso @UC65.1.3[Vedi UC65.1.3 Sezione]
+  ],
+  inclusioni: [
+    - UC65.1.1 @UC65.1.1
+    - UC65.1.2 @UC65.1.2
+    - UC65.1.3 @UC65.1.3
+  ],
+)[]
+
+===== UC65.1.1 - Visualizza indirizzo IP luogo di connessione tentativo di accesso <UC65.1.1>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un elenco di attività di accesso
+  ],
+  post: [
+    - Viene visualizzato l'indirizzo IP del luogo in cui è stato effettuato il tentativo di accesso
+  ],
+  scenari: [
+    - Viene visualizzato l'indirizzo IP del luogo in cui è stato effettuato il tentativo di accesso
+  ],
+)[]
+
+===== UC65.1.2 - Visualizza ID tentativo di accesso <UC65.1.2>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un elenco di attività di accesso
+  ],
+  post: [
+    - Viene visualizzato l'ID del tentativo di accesso
+  ],
+  scenari: [
+    - Viene visualizzato l'ID del tentativo di accesso
+  ],
+)[]
+
+===== UC65.1.3 - Visualizza stato tentativo di accesso <UC65.1.3>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale sta visualizzando un elenco di attività di accesso
+  ],
+  post: [
+    - Viene visualizzato lo stato del tentativo di accesso
+  ],
+  scenari: [
+    - Viene visualizzato lo stato del tentativo di accesso (riuscito, bloccato o negato)
+  ],
+)[]
+
+=== UC66 - Blocca tentativo di accesso
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+  ],
+  post: [
+    - Il Sistema blocca l'indirizzo IP da cui è stato effettuato il tentativo di accesso selezionato
+  ],
+  scenari: [
+    - L'Admin Globale seleziona dal menu la voce relativa al blocco di una attività di accesso
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato $arrow$ @UC66.1[Vedi UC66.1 Sezione]
+  ],
+  inclusioni: [
+    - UC65.1 @UC66.1
+  ],
+  trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
+)[]
+
+==== UC66.1 - Inserisci ID tentativo di accesso da bloccare <UC66.1>
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
+  ],
+  post: [
+    - Il Sistema conosce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+  ],
+  scenari: [
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+  ],
+)[]
 
 === UC67 - Ricezione Email notifica
 
