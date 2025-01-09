@@ -586,7 +586,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
 == Valutazioni sull'organizzazione
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (auto, auto),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
     } else if calc.even(row) {
@@ -598,7 +598,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+    text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
 
     // Data rows
     
@@ -609,7 +609,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
 == Valutazioni sui ruoli
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (auto, auto, auto),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
     } else if calc.even(row) {
@@ -621,7 +621,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+    text(white)[*Ruolo interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
 
     // Data rows
     
@@ -632,7 +632,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
 == Valutazioni sugli strumenti
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (auto, auto, auto),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
     } else if calc.even(row) {
@@ -644,7 +644,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+    text(white)[*Strumento interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
 
     // Data rows
     
