@@ -9,6 +9,12 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.7.0",
+      date: datetime(day: 09, month: 01, year: 2025),
+      autore: p.emanuele,
+      descr: "Aggiunta sezione automiglioramento",
+    ),
+    (
       vers: "0.6.0",
       date: datetime(day: 8, month: 01, year: 2025),
       autore: p.sara,
@@ -598,10 +604,13 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
+    text(white)[*Descrizione problema*], text(white)[*Contromisura adottata*],
 
     // Data rows
-    
+    [Mancanza di tracciabilità delle attività rende complicato l'avanzamento produttivo e la pianificazione del lavoro], [Implementazione del sistema di ticketing su GitHub per migliorare la gestione e il monitoraggio delle attività],
+    [Assenza di controllo sulle modifiche dirette al branch principale può causare problemi di integrazione e qualità del codice], [Implementazione di branch protection su GitHub per evitare modifiche non autorizzate e garantire la revisione del codice],
+    [Comunicare la rendicontazione ore separatamente durante la retrospettiva dello sprint rallenta ed appesantisce il flusso organizzativo],[Utilizzo di Foglio Google condiviso in cui annotare le ore impiegate di ciascun ruolo in ogni periodo asincronamente],
+    [Nominare le risorse con formati arbitrari crea problemi di consistenza e rallenta notevolmente qualsiasi attività di ricerca],[Ideazione ed utilizzo di convenzioni per la nomenclatura di issue, branch, file e decisioni prese per garantire una maggiore chiarezza e uniformità],
   ),
   caption: [contromisure adottate per migliorare l'organizzazione],
 )
@@ -624,7 +633,10 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     text(white)[*Ruolo interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
 
     // Data rows
-    
+    [Tutti i ruoli],[In fasi più avanzate del progetto diventa limitante dover ricoprire lo stesso ruolo per due settimane, lasciando insoddisfatte delle necessità e sfruttando male le ore produttive],[I ruoli possono cambiare ad ogni settimana, previo accordo tra le
+parti qualora questo si renda necessario, e con l’unico vincolo di non coprire due ruoli
+simultaneamente],
+    [Verificatore],[Modificare o aggiornare documenti senza  prima averlo sottoposto a verifica non è conforme ai buoni standard progettuali],[Il verificatore è tenuto a compilare ad ogni modifica la tabella relativa per ciascun documento],
   ),
   caption: [contromisure adottate per migliorare la gestione dei ruoli],
 )
@@ -647,7 +659,16 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     text(white)[*Strumento interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
 
     // Data rows
-    
+    [Linguaggio Go], [Alcuni membri del gruppo non hanno familiarità con questa tecnologia], [Ogni membro ha autonomamente intrapreso un percorso di apprendimento per colmare le proprie lacune],
+    [Sistema NATS],[Alcuni membri del gruppo non hanno familiarità con questa tecnologia], [Ogni membro ha autonomamente intrapreso un percorso di apprendimento per colmare le proprie lacune],
+    [Glossario],[Risulta difficile riconoscere se una parola del documento è definita nel glossario, oltre che dispendioso assicurarsi manualmente che ogni occorrenza di una parola definita segua la stessa convenzione],
+    [Tramite script Python è stato implementato un controllo automatico che verifica la presenza di ogni parola definita nel glossario e la sua corretta scrittura con l'aggiunta di una lettera "g" in apice al termine in tutti i documenti],
+    [Sito],[La navigazione del sito è macchinosa e la presentazione non supporta la visualizzazione sugli schermi più piccoli],[Il sito è ristrutturato per garantire una navigazione più fluida e una visualizzazione ottimale su tutti i dispositivi],
   ),
   caption: [contromisure adottate per migliorare il rapporto con gli strumenti di lavoro],
 )
+
+== Considerazioni finali
+Il processo di automiglioramento è un'attività continua e fondamentale per garantire la qualità del progetto.
+Le contromisure adottate hanno permesso di risolvere o ridurre i problemi individuati, migliorando l'efficienza e l'efficacia del lavoro svolto.
+Il gruppo si impegna a mantenere un approccio proattivo e collaborativo per individuare e risolvere tempestivamente eventuali criticità.
