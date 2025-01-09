@@ -418,9 +418,9 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 )
 
 
-== Qualità di prodotto
-=== Funzionalità
-==== Requisiti obbligatori soddisfatti
+= Qualità di prodotto
+== Funzionalità
+=== Requisiti obbligatori soddisfatti
 #metric(
   cod: [MPS1],
   formula: [
@@ -430,7 +430,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti essenziali del progetto.],
 )
 
-==== Requisiti desiderabili soddisfatti
+=== Requisiti desiderabili soddisfatti
 #metric(
   cod: [MPS2],
   formula: [
@@ -440,7 +440,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti opzionali del progetto.],
 )
 
-==== Requisiti opzionali soddisfatti
+=== Requisiti opzionali soddisfatti
 #metric(
   cod: [MPS3],
   formula: [
@@ -450,8 +450,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti aggiuntivi del progetto.],
 )
 
-=== Affidabilità
-==== Branch Coverage
+== Affidabilità
+=== Branch Coverage
 #metric(
   cod: [MPS4],
   formula: [
@@ -460,7 +460,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Percentuale di rami del codice coperti da test automatizzati. Si raccomanda un coverage minimo del 60%.],
 )
 
-==== Statement Coverage
+=== Statement Coverage
 #metric(
   cod: [MPS5],
   formula: [
@@ -469,7 +469,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Percentuale di istruzioni del codice coperte da test automatizzati. Si raccomanda un coverage minimo del 70%.],
 )
 
-==== Failure Density
+=== Failure Density
 #metric(
   cod: [MPS6],
   formula: [
@@ -478,8 +478,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Numero di failure per 1000 linee di codice (Kilo Lines of Code). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
 )
 
-=== Usabilità
-==== Time on Task
+== Usabilità
+=== Time on Task
 #metric(
   cod: [MPS7],
   formula: [
@@ -488,7 +488,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Tempo medio impiegato per completare un'attività. Indica l'usabilità del prodotto.],
 )
 
-==== Error Rate
+=== Error Rate
 #metric(
   cod: [MPS8],
   formula: [
@@ -497,8 +497,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Percentuale di errori commessi durante l'utilizzo del prodotto. Dovrebbe essere inferiore al 5%.],
 )
 
-=== Efficienza
-==== Response Time
+== Efficienza
+=== Response Time
 #metric(
   cod: [MPS9],
   formula: [
@@ -507,8 +507,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Tempo medio impiegato per rispondere a una richiesta. Indica l'efficienza del prodotto. Un tempo di risposta inferiore a 2 secondi è considerato accettabile, mentre un tempo inferiore a 1 secondo è considerato ottimo.],
 )
 
-=== Manutenibilità
-==== Code Smells
+== Manutenibilità
+=== Code Smells
 #metric(
   cod: [MPS10],
   formula: [
@@ -518,7 +518,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
 )
 
-==== Coefficient of Coupling (CoC)
+
+=== Coefficient of Coupling (CoC)
 #metric(
   cod: [MPS11],
   formula: [
@@ -526,6 +527,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   ],
   desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
 )
+
 
 == tabelle
 #figure(
@@ -570,5 +572,82 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 )
 
 
+= Metodi di testing
+/* DA FARE */
 
+= Cruscotto di valutazione
+/* DA FARE */
 
+= Iniziative di automiglioramento
+== Introduzione
+Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto software.
+Di seguito, presenteremo i principali problemi individuati e le relative contromisure messe in atto per risolvere o ridurre gli ostacoli riscontrati.
+
+== Valutazioni sull'organizzazione
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    // Data rows
+    
+  ),
+  caption: [contromisure adottate per migliorare l'organizzazione],
+)
+
+== Valutazioni sui ruoli
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    // Data rows
+    
+  ),
+  caption: [contromisure adottate per migliorare la gestione dei ruoli],
+)
+
+== Valutazioni sugli strumenti
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    // Data rows
+    
+  ),
+  caption: [contromisure adottate per migliorare il rapporto con gli strumenti di lavoro],
+)
