@@ -12,7 +12,7 @@
       vers: "0.8.0",
       date: datetime(day: 10, month: 01, year: 2025),
       autore: p.sara,
-      descr: "Aggiornamento qualità del prodotto",
+      descr: "Aggiornamento qualità del processo e prodotto, soglie e tabelle",
     ),
     (
       vers: "0.7.0",
@@ -135,10 +135,39 @@ Per garantire la qualità di processo, il progetto si avvale di:
 - *Revisioni periodiche*: sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
 == Processi primari
 === Fornitura
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPC01*], [Budget at Completion], [in linea conpreventivo], [≤ preventivo],
+    [*MPC02*], [Earned Value], [≥ 0], [≤ EAC],
+    [*MPC03*], [Planned Value], [≥ 0], [≤ BAC],
+    [*MPC04*], [Actual Cost], [≥ 0], [≤ EAC],
+    [*MPC05*], [Cost Performance Index], [≥ 0], [1],
+    [*MPC06*], [Schedule Performance Index], [≥ 0], [1],
+    [*MPC07*], [Estimate At Completion], [≥ 0], [≤ BAC],
+    [*MPC08*], [Estimate To Complete], [≥ 0], [≤ BAC],
+    [*MPC09*], [Time Estimate At Completion], [≥ 0], [≤ Durata pianificata],
+  ),
+  caption: [Soglie metriche processo di fornitura],
+)
 
 ==== Budget at Completion (BAC)
 #metric(
-  cod: [MPF1],
+  cod: [MPC01],
   formula: [
     $"Budget at Completion" = "Costo totale del progetto"$
   ],
@@ -147,7 +176,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Earned Value (EV)
 #metric(
-  cod: [MPF2],
+  cod: [MPC02],
   formula: [
     $"Earned Value" = "Budget at Completion" * "Percentuale di lavoro completato nello sprint"$
   ],
@@ -157,7 +186,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Planned Value (PV)
 #metric(
-  cod: [MPF3],
+  cod: [MPC03],
   formula: [
     $"Planned Value" = "Budget at Completion" * "Percentuale di lavoro pianificato nello sprint"$
   ],
@@ -168,7 +197,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Actual Cost (AC)
 #metric(
-  cod: [MPF4],
+  cod: [MPC04],
   formula: [
     $"Actual Cost" = "Costo effettivo sostenuto nello sprint"$
   ],
@@ -178,7 +207,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Cost Performance Index (CPI)
 #metric(
-  cod: [MPF5],
+  cod: [MPC05],
   formula: [
     $"Cost Performance Index" = "Earned Value" / "Actual Cost"$
   ],
@@ -188,7 +217,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Schedule Performance Index (SPI)
 #metric(
-  cod: [MPF6],
+  cod: [MPC06],
   formula: [
     $"Schedule Performance Index" = "Earned Value" / "Planned Value"$
   ],
@@ -221,7 +250,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Estimate At Completion (EAC)
 #metric(
-  cod: [MPF7],
+  cod: [MPC07],
   formula: [
     $"Estimate At Completion" = "Budget at Completion" / "Cost Performance Index"$
   ],
@@ -232,7 +261,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Estimate To Complete (ETC)
 #metric(
-  cod: [MPF8],
+  cod: [MPC08],
   formula: [
     $"Estimate To Complete" = "Estimate At Completion" - "Actual Cost"$
   ],
@@ -243,7 +272,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Time Estimate At Completion (TEAC)
 #metric(
-  cod: [MPF9],
+  cod: [MPC09],
   formula: [
     $"Time Estimate At Completion" = "Durata pianificata" / "Schedule Performance Index"$
   ],
@@ -254,6 +283,34 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 
 === Sviluppo
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPC10*], [Code Coverage], [≥ 70%], [≥ 80%],
+    [*MPC11*], [Technical Debt Ratio], [≤ 5%], [≤ 2%],
+    [*MPC12*], [Sprint Velocity], [costante], [crescente],
+    [*MPC13*], [Lead Time], [≤ 21], [≤ 14],
+    [*MPC14*], [Defect Density], [≤ 1], [≤ 0.5],
+    [*MPC15*], [Test Success Rate], [≥ 95%], [≥ 98%],
+    [*MPC16*], [Deployment Frequency], [≥ 1 a sprint], [≥ 2 a sprint],
+    [*MPC17*], [Change Failure Rate], [≤ 15%], [≤ 10%],
+  ),
+  caption: [Soglie metriche processo di sviluppo],
+)
 /*==== Cyclomatic Complexity
 
 #metric(
@@ -271,7 +328,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 ==== Code Coverage
 #metric(
-  cod: [MPS2],
+  cod: [MPC10],
   formula: [
     $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
   ],
@@ -281,7 +338,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 ==== Technical Debt Ratio
 
 #metric(
-  cod: [MPS3],
+  cod: [MPC11],
   formula: [
     $"Technical Debt Ratio" = ("Remediation Cost" / "Development Cost") * 100$
   ],
@@ -291,7 +348,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 ==== Sprint Velocity
 
 #metric(
-  cod: [MPS4],
+  cod: [MPC12],
   formula: [
     $"Sprint Velocity" = "Story Points completati nello sprint"$
   ],
@@ -299,7 +356,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 )
 ==== Lead Time
 #metric(
-  cod: [MPS5],
+  cod: [MPC13],
   formula: [
     $"Lead Time" = "Data completamento" - "Data creazione task"$
   ],
@@ -309,7 +366,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 ==== Defect Density
 
 #metric(
-  cod: [MPS6],
+  cod: [MPC14],
   formula: [
     $"Defect Density" = "Numero di difetti" / "KLOC"$
   ],
@@ -318,7 +375,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 ==== Test Success Rate
 #metric(
-  cod: [MPS7],
+  cod: [MPC15],
   formula: [
     $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
   ],
@@ -328,7 +385,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 ==== Deployment Frequency
 
 #metric(
-  cod: [MPS8],
+  cod: [MPC16],
   formula: [
     $"Deployment Frequency" = "Numero deployment" / "Periodo di tempo"$
   ],
@@ -337,7 +394,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 ==== Change Failure Rate
 #metric(
-  cod: [MPS9],
+  cod: [MPC17],
   formula: [
     $"Change Failure Rate" = ("Deployment falliti" / "Deployment totali") * 100$
   ],
@@ -350,7 +407,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 === Documentazione
 ==== Indice di Gulpease
 #metric(
-  cod: [MPD1],
+  cod: [MPC18],
   formula: [
     $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *100 + "numero di frasi" / "numero di parole" * 300$
   ],
@@ -374,7 +431,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 ==== Correttezza ortografica
 #metric(
-  cod: [MPD2],
+  cod: [MPC19],
   formula: [
     $"Correttezza ortografica" = (1-"numero di errori ortografici" / "numero di parole" )* 100$
   ],
@@ -399,8 +456,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     text(white)[*Obiettivo*], text(white)[*Descrizione*], text(white)[*Metrica*],
 
     //table row
-    [*Correttezza linguistica*], [I documenti devono essere privi di errori ortografici o grammaticali], [MPD1],
-    [*Leggibilità*], [I documenti devono essere comprensibili all'utente], [MPD2],
+    [*Correttezza linguistica*], [I documenti devono essere privi di errori ortografici o grammaticali], [MPC18],
+    [*Leggibilità*], [I documenti devono essere comprensibili all'utente], [MPC19],
   ),
   caption: [Obiettivi qualità del processo di documentazione],
 )
@@ -423,8 +480,8 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPD1*], [Indice di Gulpease], [≥ 60%], [≥ 80%],
-    [*MPD2*], [Correttezza ortografica], [100%], [100%],
+    [*MPC18*], [Indice di Gulpease], [≥ 60%], [≥ 80%],
+    [*MPC19*], [Correttezza ortografica], [100%], [100%],
   ),
   caption: [Soglie metriche processo di documentazione],
 )
