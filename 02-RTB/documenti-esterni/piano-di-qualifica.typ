@@ -384,7 +384,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 #figure(
   table(
-    columns: (auto, auto, auto),
+    columns: (1fr, 2fr, 0.75fr),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
     } else if calc.even(row) {
@@ -408,7 +408,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
 
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
     } else if calc.even(row) {
@@ -442,9 +442,32 @@ Un prodotto software è considerato di alta qualità quando:
 - È *manutenibile*, ossia progettato per consentire aggiornamenti, correzioni e modifiche senza compromettere la stabilità.
 
 == Funzionalità
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPD01*], [Requisiti obbligatori soddisfatti], [100%], [100%],
+    [*MPD02*], [Requisiti desiderabili soddisfatti], [0%], [100%],
+    [*MPD02*], [Requisiti opzionali soddisfatti], [0%], [100%],
+  ),
+  caption: [Soglie metriche funzionalitá del prodotto],
+)
 === Requisiti obbligatori soddisfatti
 #metric(
-  cod: [MPS1],
+  cod: [MPD01],
   formula: [
     $"Requisiti obbligatori soddisfatti" = "Numero di requisiti obbligatori soddisfatti" / "Numero di requisiti obbligatori totali" * 100$
   ],
@@ -454,7 +477,7 @@ Un prodotto software è considerato di alta qualità quando:
 
 === Requisiti desiderabili soddisfatti
 #metric(
-  cod: [MPS2],
+  cod: [MPD02],
   formula: [
     $"Requisiti desiderabili soddisfatti" = "Numero di requisiti desiderabili soddisfatti" / "Numero di requisiti desiderabili totali" * 100$
   ],
@@ -464,7 +487,7 @@ Un prodotto software è considerato di alta qualità quando:
 
 === Requisiti opzionali soddisfatti
 #metric(
-  cod: [MPS3],
+  cod: [MPD03],
   formula: [
     $"Requisiti opzionali soddisfatti" = "Numero di requisiti opzionali soddisfatti" / "Numero di requisiti opzionali totali" * 100$
   ],
@@ -473,9 +496,32 @@ Un prodotto software è considerato di alta qualità quando:
 )
 
 == Affidabilità
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPD04*], [Branch Coverage], [≥ 60%], [≥ 80%],
+    [*MPD05*], [Statement Coverage], [≥ 70%], [≥ 90%],
+    [*MPD06*], [Failure Density], [≤ 0.5], [≤ 0.1],
+  ),
+  caption: [Soglie metriche affidabilità del prodotto],
+)
 === Branch Coverage
 #metric(
-  cod: [MPS4],
+  cod: [MPD04],
   formula: [
     $"Branch Coverage" = ("Rami testati" / "Rami totali") * 100$
   ],
@@ -484,7 +530,7 @@ Un prodotto software è considerato di alta qualità quando:
 
 === Statement Coverage
 #metric(
-  cod: [MPS5],
+  cod: [MPD05],
   formula: [
     $"Statement Coverage" = ("Istruzioni testate" / "Istruzioni totali") * 100$
   ],
@@ -493,7 +539,7 @@ Un prodotto software è considerato di alta qualità quando:
 
 === Failure Density
 #metric(
-  cod: [MPS6],
+  cod: [MPD06],
   formula: [
     $"Failure Density" = ("Numero di difetti rilevati" / "KLOC")$
   ],
@@ -501,9 +547,31 @@ Un prodotto software è considerato di alta qualità quando:
 )
 
 == Usabilità
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPD07*], [Time on Task], [≤ 60 sec], [≤ 30 sec],
+    [*MPD08*], [Error Rate], [≤ 5%], [≤ 2%],
+  ),
+  caption: [Soglie metriche usabilità del prodotto],
+)
 === Time on Task
 #metric(
-  cod: [MPS7],
+  cod: [MPD07],
   formula: [
     $"Time on Task" = "Tempo medio per completare un'attività"$
   ],
@@ -512,7 +580,7 @@ Un prodotto software è considerato di alta qualità quando:
 
 === Error Rate
 #metric(
-  cod: [MPS8],
+  cod: [MPD08],
   formula: [
     $"Error Rate" = ("Errori totali" / "Azioni totali") * 100$
   ],
@@ -520,9 +588,30 @@ Un prodotto software è considerato di alta qualità quando:
 )
 
 == Efficienza
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPD09*], [Response Time], [≤ 2 sec], [≤ 1 sec],
+  ),
+  caption: [Soglie metriche efficienza del prodotto],
+)
 === Response Time
 #metric(
-  cod: [MPS9],
+  cod: [MPD09],
   formula: [
     $"Response Time" = "Tempo medio di risposta"$
   ],
@@ -530,9 +619,32 @@ Un prodotto software è considerato di alta qualità quando:
 )
 
 == Manutenibilità
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPD10*], [Code Smells], [≤ 10], [≤ 5],
+    [*MPD11*], [Coefficient of Coupling], [≤ 0.4], [≤ 0.2],
+  ),
+  caption: [Soglie metriche manutenibilità del prodotto],
+)
 === Code Smells
 #metric(
-  cod: [MPS10],
+  cod: [MPD10],
   formula: [
     $"Code Smells" = ("Numero di code smells" / "KLOC")$
   ],
@@ -543,7 +655,7 @@ Un prodotto software è considerato di alta qualità quando:
 
 === Coefficient of Coupling (CoC)
 #metric(
-  cod: [MPS11],
+  cod: [MPD11],
   formula: [
     $"Coefficient of Coupling" = ("Numero di dipendenze" / "Numero di componenti")$
   ],
@@ -554,7 +666,7 @@ Un prodotto software è considerato di alta qualità quando:
 == tabelle
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
     } else if calc.even(row) {
