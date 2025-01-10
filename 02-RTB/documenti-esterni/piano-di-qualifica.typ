@@ -720,47 +720,6 @@ Un prodotto software è considerato di alta qualità quando:
 )
 
 
-== tabelle
-#figure(
-  table(
-    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
-    fill: (col, row) => if row == 0 {
-      rgb(128, 0, 128)
-    } else if calc.even(row) {
-      rgb(191, 127, 191)
-    } else {
-      rgb(216, 178, 216)
-    },
-    align: center + horizon,
-    inset: 8pt,
-
-    // Header row
-    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
-
-    // Data rows
-    [MPF1], [Budget at completion (BAC)], [≥ 0], [In linea col preventivo],
-    [MPF2], [Earned value (EV)], [≥ 0], [≤ BAC],
-    [MPF3], [Planned value (PV)], [≥ 0], [≤ BAC],
-    [MPF4], [Actual cost (AC)], [≥ 0], [≤ EAC],
-    [MPF5], [Cost performance index (CPI)], [≥ 0.95], [≥ 1],
-    [MPF6], [Schedule performance index (SPI)], [≥ 0.95], [≥ 1],
-    [MPF7], [Estimate at completion (EAC)], [Esattamente pari al BAC], [Esattamente pari al BAC],
-    [MPF8], [Estimate to complete (ETC)], [≥ 0], [≤ EAC],
-    [MPF9], [Time estimate at completion (TEAC)], [Errore del ± 3% rispetto alla durata pianificata], [Esattamente pari alla durata pianificata],
-    [MPS1], [Requisiti obbligatori soddisfatti], [100%], [100%],
-    [MPS2], [Requisiti desiderabili soddisfatti], [≥ 0%], [≥ 50%],
-    [MPS3], [Requisiti opzionali soddisfatti], [≥ 0%], [≥ 40%],
-    [MPS4], [Branch coverage], [≥ 60%], [≥ 85%],
-    [MPS5], [Statement coverage], [≥ 70%], [≥ 90%],
-    [MPS6], [Failure density], [≤ 0.5], [≤ 0.2],
-    [MPS7], [Time on task], [≤ 10 min], [≤ 5 min],
-    [MPS8], [Error rate], [≤ 5%], [≤ 2%],
-    [MPS9], [Response time], [≤ 2 s], [≤ 1 s],
-    [MPS10], [Code smells], [≤ 10], [0],
-    [MPS11], [Coefficient of coupling (CoC)], [≤ 0.4], [≤ 0.1],
-  ),
-  caption: [Informazioni metriche],
-)
 
 
 = Metodi di testing
