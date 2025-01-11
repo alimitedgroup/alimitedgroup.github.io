@@ -2585,16 +2585,67 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
 )[]
 
 === UC67 - Ricezione Email notifica
+#use-case(
+  attore: "Admin Globale",
+  attori_secondari: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
+  ],
+  post: [
+    - Il Sistema, successivamente il blocco dell'accesso, invia tramite una e-mail l'avviso del tentativo di accesso non autorizzato.
+  ],
+  scenari: [
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+  ],
+)[]
 
 === UC68 - Ricezione SMS notifica
 
+#use-case(
+  attore: "Admin Globale",
+  attori_secondari: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
+  ],
+  post: [
+    - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
+  ],
+  scenari: [
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+  ],
+)[]
+
 === UC69 - Aggiungi utente //include inserisci nome utente, inserisci psw utente, inserisci ruolo utente
 
-==== UC69.1 - Inserisci nome nuovo utente
+#use-case(
+  attore: "Admin Globale",
+  attori_secondari: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale ha selezionato di voler aggiungere un nuovo utente nel sistema
+  ],
+  post: [
+    - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
+  ],
+  scenari: [
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+  ],
+  inclusioni: [
+    - UC69.1 @UC69.1
+    - UC69.2 @UC69.2
+  ],
+)[]
 
-==== UC69.2 - Inserisci password nuovo utente
+==== UC69.1 - Inserisci nome nuovo utente <UC69.1>
 
-=== UC70 Inserisci ruolo utente
+==== UC69.2 - Inserisci password nuovo utente <UC69.2>
+
+=== UC70 - Inserisci ruolo utente <UC70>
 
 === UC71 - Elimina utente
 
@@ -2602,6 +2653,25 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
 
 === UC73 - Modifica ruolo utente //include seleziona utente, inserisci ruolo utente
 
+#use-case(
+  attore: "Admin Globale",
+  attori_secondari: "Admin Locale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
+  ],
+  post: [
+    - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
+  ],
+  scenari: [
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+  ],
+  inclusioni: [
+    - UC69.1 @UC69.1
+    - UC70 @UC70
+  ],
+)[]
 = Requisiti Principali
 == Requisiti Funzionali
 
