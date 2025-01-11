@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.21.0]
+#let ver = [0.22.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 09, month: 01, year: 2025),
+  data: datetime(day: 11, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.22.0",
+      date: datetime(day: 11, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Iniziata redazione sezione Requisiti",
+    ),
     (
       vers: "0.21.0",
       date: datetime(day: 09, month: 01, year: 2025),
@@ -444,7 +451,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
 )[]
 
-=== UC3 - Creazione di un ordine da confermare
+=== UC3 - Creazione di un ordine da confermare <UC3>
 #use-case(
   attore: "Cliente",
   pre: [- Il Sistema è attivo, in modalità online o offline
@@ -523,7 +530,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
 
-=== UC4 - Aggiunta di una merce: ordine/traferimento non confermato
+=== UC4 - Aggiunta di una merce: ordine/traferimento non confermato <UC4>
 //NOTA: l'ordine globale e locale sono i medesimi, cambia solo questo UC4 che tuttavia rimane sostanzialmente lo stesso per l'ordine locale o globale, dunque nei requisiti si può derivare sia la selezione locale che quella globale
 #use-case(
   attore: "Cliente",
@@ -653,7 +660,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole eseguire un'operazione su un ordine non confermato",
 )[]
 
-=== UC10 - Cancella ordine non confermato
+=== UC10 - Cancella ordine non confermato <UC10>
 
 #use-case(
   attore: "Cliente",
@@ -821,7 +828,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   ],
 )[]
 
-=== UC16 - Visualizza ordine non confermato
+=== UC16 - Visualizza ordine non confermato <UC16>
 
 #use-case(
   attore: "Cliente",
@@ -924,7 +931,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   ],
 )[]
 
-=== UC18 - Visualizza elenco delle merci nel Sistema
+=== UC18 - Visualizza elenco delle merci nel Sistema <UC18>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -934,7 +941,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   post: [Viene visualizzato un elenco delle merci nel Sistema],
   scenari: [
     - Il Cliente seleziona dal menu l'opzione relativa alla visualizzazione dell'elenco delle merci memorizzate nel Sistema
-    - Il Cliente visualizza a schermo la lista delle merci memorizzate nel Sistema $arrow$ @UC18.1[Vedi UC16 Sezione]
+    - Il Cliente visualizza a schermo la lista delle merci memorizzate nel Sistema $arrow$ @UC18.1[Vedi UC18.1 Sezione]
   ],
   inclusioni: [
     - UC18.1 @UC18.1
@@ -1016,7 +1023,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   ],
 )[]
 
-=== UC22 - Visualizza merce
+=== UC22 - Visualizza merce <UC22>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -1078,7 +1085,7 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19,
   scenari: [
     - L'Admin Globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
     - L'Admin Globale sceglie il magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC23.2[Vedi UC23.2 Sezione]
-    - L'Admin Globale sceglie il magazzino mittente del nuovo trasferimento da confermare $arrow$ @UC23.1[Vedi UC Sezione]
+    - L'Admin Globale sceglie il magazzino mittente del nuovo trasferimento da confermare $arrow$ @UC23.1[Vedi UC23.1 Sezione]
   ],
   trigger: [L'Admin globale vuole creare un nuovo trasferimento da confermare],
   inclusioni: [
@@ -1237,7 +1244,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
   ],
 )[]
 
-=== UC28 - Cancella trasferimento non confermato
+=== UC28 - Cancella trasferimento non confermato <UC28>
 
 #use-case(
   attore: "Admin globale",
@@ -2672,23 +2679,136 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - UC70 @UC70
   ],
 )[]
-= Requisiti Principali
+
+= Requisiti
+
+Verranno ora descritti i requisiti che _ALimitedGroup_ ha individuato, raggruppati per requisiti:
+- *Funzionali*, ovvero requisiti che rappresentano qualcosa che il sistema sviluppato deve avere per soddisfare un'aspettativa;
+- *Qualità*, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
+- *Vincolo*, ovvero restrizioni poste al sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
+
+Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle #link("")[*Norme di Progetto*] [PROSEGUIRE](inserisci link)
+
 == Requisiti Funzionali
 
 #show table.cell: cl => align(left, cl)
+#show figure: set block(breakable: true)
 #figure(
   table(
-    columns: (1fr, 5fr, 1fr),
+    columns: (1.5fr, 4fr, 2.5fr),
     inset: 10pt,
     table.header(
-      [*Codice*],
-      [*Descrizione*],
-      [*Fonti*],
+      align(center)[*Codice*],
+      align(center)[*Descrizione*],
+      align(center)[*Fonti*],
     ),
 
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [R-1-F-Ob],
+    [L'Utente deve poter autenticarsi presso il Sistema selezionando la tipologia di utente (Cliente, Admin Globale o Admin Locale)],
+    [@UC1[UC1 Sezione] \ @UC1.1[UC1.1 Sezione]],
+
+    [R-2-F-De],
+    [L'Utente deve potersi autenticare inserendo anche Username e Password],
+    [@UC1.2[UC1.2 Sezione] \ @UC1.3[UC1.3 Sezione]],
+
+    [R-3-F-Ob],
+    [L'Utente deve ricevere un errore in seguito ad un tentativo di accesso/autenticazione non riuscito],
+    [@UC2[UC2 Sezione]],
+
+    [R-4-F-Ob],
+    [L'utente deve poter creare un ordine che può confermare in seguito. Tale ordine deve contenere le seguenti informazioni:
+      - Nome dell'ordine;
+      - Nominativo del destinatario
+      - Indirizzo di spedizione],
+    [@UC3[UC3 Sezione] \ @UC3.1[UC3.1 Sezione] \ @UC3.2[UC3.2 Sezione], \ @UC3.3[UC3.3 Sezione]],
+
+    [R-5-F-Ob],
+    [Il Cliente deve poter aggiungere merce ad un ordine non ancora confermato, selezionandone la quantità da aggiungere, indipendentemente se di natura locale (limitata al magazzino corrente) o globale],
+    [@UC4[UC4 Sezione] \ @UC5[UC5 Sezione] \ @UC6[UC6 Sezione] \ @UC9[UC9 Sezione]],
+
+    [R-6-F-Ob],
+    [Il Cliente deve ricevere un errore qualora la merce aggiunta all'ordine non risulti essere valida (ovvero la quantità della merce è insufficiente oppure la merce non esiste)],
+    [@UC7[UC7 Sezione]],
+
+    [R-7-F-Ob],
+    [Il Cliente deve ricevere un errore quando sta cercando di fare un'operazione su un ordine non confermato (quale l'aggiunta di merce, la cancellazione od una conferma) ma nessun ordine non confermato è disponibile],
+    [@UC8[UC8 Sezione]],
+
+    [R-8-F-Ob],
+    [Il Cliente deve poter cancellare un ordine non ancora confermato],
+    [@UC10[UC10 Sezione] \ @UC9[UC9 Sezione]],
+
+    [R-9-F-Ob],
+    [Il Cliente deve poter confermare un ordine non ancora confermato],
+    [@UC11[UC11 Sezione] \ @UC9[UC9 Sezione]],
+
+    [R-10-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato, visualizzandone:
+      - ID dell'ordine
+      - Data di creazione dell'ordine
+      - Nome dell'ordine],
+    [@UC12[UC12 Sezione] \ @UC12.1[UC12.1 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC15[UC15 Sezione]],
+
+    [R-11-F-Ob],
+    [Il Cliente deve poter consultare i dettagli di un ordine non confermato. Nello specifico deve poterne visualizzare:
+      - ID dell'ordine
+      - Data creazione dell'ordine
+      - Nome dell'ordine
+      - Lista delle merci dell'ordine],
+    [@UC16[UC16 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC16.1[UC16.1 Sezione]],
+
+    [R-12-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter trarre le seguenti informazioni per ogni merce:
+      - Quantità della merce
+      - Nome della merce],
+    [@UC16.1.1[UC16.1.1 Sezione] \ @UC16.1.1.1[UC16.1.1.1 Sezione], @UC17[UC17 Sezione]],
+
+    [R-12-F-Ob],
+    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema con le seguenti inforrmazioni per ogni merce:
+      - ID della merce
+      - Nome della merce
+      - Quantità della merce complessiva in tutti i magazzini
+      - Quantità della merce attualmente presente nel magazzino],
+    [@UC18[UC18 Sezione] \ @UC18.1[UC18.1 Sezione] \ @UC17[UC17 Sezione] \ @UC19[UC19 Sezione] \ @UC20[UC20 Sezione] \ @UC21[UC21 Sezione]],
+
+    [R-13-F-Ob],
+    [Il Cliente deve poter visualizzare le seguenti informazioni relative ad una singola merce nel dettaglio:
+      - ID della merce
+      - Nome della merce
+      - Quantità della merce complessiva in tutti i magazzini
+      - Quantità della merce attualmente presente nel magazzino
+      - Descrizione della merce],
+    [@UC22[UC22 Sezione], @UC17[UC17 Sezione] \ @UC19[UC19 Sezione] \ @UC20[UC20 Sezione] \ @UC21[UC21 Sezione] \ @UC22.1[UC22.1 Sezione]],
+
+    [R-14-F-Ob],
+    [L'Admin Globale deve poter creare un trasferimento da confermare in seguito, scegliendo il magazzino destinatario e il magazzino mittente],
+    [@UC23[UC23 Sezione] \ @UC23.1[UC23.1 Sezione] \ @UC23.2[UC23.2 Sezione]],
+
+    [R-15-F-Ob],
+    [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato, selezionando nome della merce e quantità],
+    [@UC24[UC24 Sezione] \ @UC25[UC25 Sezione] \ @UC5[UC5 Sezione] \ @UC6[UC6 Sezione]],
+
+    [R-16-F-Ob],
+    [L'Admin Globale deve poter confermare un trasferimento non ancora confermato],
+    [@UC26[UC26 Sezione] \ @UC25[UC25 Sezione]],
+
+    [R-17-F-Ob],
+    [L'Admin Globale deve ricevere un errore se la merce in un trasferimento che vuole confermare non è più disponibile in quantità sufficiente o non è più esistente nel Sistema],
+    [@UC7[UC7 Sezione]],
+
+    [R-18-F-Ob],
+    [L'Admin Globale deve ricevere un errore qualora selezioni di voler confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
+    [@UC27[UC27 Sezione]],
+
+    [R-19-F-Ob],
+    [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato],
+    [@UC28[UC28 Sezione] \ @UC25[UC25 Sezione]],
+
+    [R-20-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti. Per ognuno di essi deve poter visualizzare:
+      - ID del trasferimento
+      - Lo stato del trasferimento (confermato o cancellato)],
+    [@UC29[UC29 Sezione] \ @UC29.1[UC29.1 Sezione] \ @UC30[UC30 Sezione] \ @UC31[UC31 Sezione]],
   ),
   caption: [Requisiti funzionali],
 )
