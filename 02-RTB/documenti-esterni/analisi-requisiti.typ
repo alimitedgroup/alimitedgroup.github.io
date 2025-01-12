@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.22.0]
+#let ver = [0.23.0]
 
 #show: body => importantdocs(
   data: datetime(day: 11, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.23.0",
+      date: datetime(day: 12, month: 01, year: 2025),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Terminata la redazione degli UC riguardanti la creazione e la modifica degli utenti, la ricezione dei tentativi di accesso e dell'eliminazione degli utenti.",
+    ),
     (
       vers: "0.22.0",
       date: datetime(day: 11, month: 01, year: 2025),
@@ -2502,7 +2509,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
 )[]
 
-===== UC65.1.1 - Visualizza indirizzo IP luogo di connessione tentativo di accesso <UC65.1.1>
+===== UC65.1.1 - Visualizza indirizzo IP del tentativo di accesso anomalo <UC65.1.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -2592,7 +2599,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[]
 
-=== UC67 - Ricezione Email notifica
+=== UC67 - Ricezione E-mail notifica
 #use-case(
   attore: "Admin Globale",
   attori_secondari: "Admin Locale",
@@ -2607,7 +2614,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - L'Admin Globale riceve, tramite e-mail, la notifica di un tentativo di accesso anomalo nel Sistema
     - L'Admin Globale, successivamente la ricezione della e-mail, consulta nel Sistema tutte le informazioni a riguardo
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via email del tentativo di accesso anomalo",
+  trigger: "L'Admin Globale/Locale riceve la notifica via e-mail del tentativo di accesso anomalo",
 )[]
 
 === UC68 - Ricezione SMS notifica
