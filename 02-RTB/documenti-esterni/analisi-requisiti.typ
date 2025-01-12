@@ -2569,7 +2569,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato $arrow$ @UC66.1[Vedi UC66.1 Sezione]
   ],
   inclusioni: [
-    - UC65.1 @UC66.1
+    - UC66.1 @UC66.1
   ],
   trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
 )[]
@@ -2587,8 +2587,9 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - Il Sistema conosce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
   ],
   scenari: [
-    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+    - L'Admin Globale inserisce l'ID del tentativo di accesso, il cui indirizzo IP deve essere bloccato
   ],
+  trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[]
 
 === UC67 - Ricezione Email notifica
@@ -2598,14 +2599,15 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
   ],
   post: [
     - Il Sistema, successivamente il blocco dell'accesso, invia tramite una e-mail l'avviso del tentativo di accesso non autorizzato.
   ],
   scenari: [
-    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+    - L'Admin Globale riceve, tramite e-mail, la notifica di un tentativo di accesso anomalo nel Sistema
+    - L'Admin Globale, successivamente la ricezione della e-mail, consulta nel Sistema tutte le informazioni a riguardo
   ],
+  trigger: "L'Admin Globale/Locale riceve la notifica via email del tentativo di accesso anomalo",
 )[]
 
 === UC68 - Ricezione SMS notifica
@@ -2616,49 +2618,120 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
   ],
   post: [
     - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
   ],
   scenari: [
-    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+    - L'Admin Globale riceve, tramite SMS, la notifica di un tentativo di accesso anomalo nel Sistema
+    - L'Admin Globale, successivamente la ricezione dell'SMS, consulta nel Sistema tutte le informazioni a riguardo
   ],
+  trigger: "L'Admin Globale/Locale riceve la notifica via SMS del tentativo di accesso anomalo",
 )[]
 
 === UC69 - Aggiungi utente //include inserisci nome utente, inserisci psw utente, inserisci ruolo utente
 
 #use-case(
   attore: "Admin Globale",
-  attori_secondari: "Admin Locale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale ha selezionato di voler aggiungere un nuovo utente nel sistema
+    - L'Admin Globale ha selezionato di voler aggiungere un nuovo utente nel Sistema
   ],
   post: [
-    - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
+    - Il Sistema aggiunge correttamente un nuovo utente nel Sistema.
   ],
   scenari: [
-    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+    - L'Admin Globale aggiunge il nuovo utente nel Sistema:
+      - L'Admin Globale inserisce il nome per il nuovo utente $arrow$ @UC69.1[Vedi UC69.1, Sezione]
+      - L'Admin Globale inserisce la password per il nuovo utente $arrow$ @UC69.2[Vedi UC69.2, Sezione]
+      - L'Admin Globale inserisce il ruolo per il nuovo utente $arrow$ @UC69.3[Vedi UC69.3, Sezione]
   ],
   inclusioni: [
     - UC69.1 @UC69.1
     - UC69.2 @UC69.2
+    - UC69.3 @UC69.3
   ],
+  trigger: "L'Admin Globale aggiunge un nuovo utente all'interno del Sistema",
 )[]
 
 ==== UC69.1 - Inserisci nome nuovo utente <UC69.1>
 
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale vuole inserire il nome per un nuovo utente nel Sistema
+  ],
+  post: [
+    - Il Sistema aggiunge correttamente il nome per il nuovo utente nel Sistema.
+  ],
+  scenari: [
+    - L'Admin Globale vuole inserire il nome per il nuovo utente all'interno del Sistema
+  ],
+  trigger: "L'Admin Globale inserisce il nome per il nuovo utente all'interno del Sistema",
+)[]
+
 ==== UC69.2 - Inserisci password nuovo utente <UC69.2>
 
-=== UC70 - Inserisci ruolo utente <UC70>
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale vuole inserire la password per un nuovo utente nel Sistema
+  ],
+  post: [
+    - Il Sistema aggiunge correttamente la password per il nuovo utente nel Sistema.
+  ],
+  scenari: [
+    - L'Admin Globale vuole inserire la password per il nuovo utente all'interno del Sistema
+  ],
+  trigger: "L'Admin Globale inserisce la password per il nuovo utente all'interno del Sistema",
+)[]
 
-=== UC71 - Elimina utente
+==== UC69.3 - Inserisci ruolo utente <UC69.3>
 
-=== UC72 - Seleziona nome utente
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale vuole inserire il ruolo un nuovo utente nel Sistema
+  ],
+  post: [
+    - Il Sistema aggiunge correttamente il ruolo per il nuovo utente nel Sistema.
+  ],
+  scenari: [
+    - L'Admin Globale vuole inserire il ruolo per il nuovo utente all'interno del Sistema
+  ],
+  trigger: "L'Admin Globale inserisce il ruolo per il nuovo utente all'interno del Sistema",
+)[]
 
-=== UC73 - Modifica ruolo utente //include seleziona utente, inserisci ruolo utente
+=== UC70 - Elimina utente
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale ha selezionato di voler eliminare un utente pre-esistente nel Sistema
+  ],
+  post: [
+    - Il Sistema elimina correttamente l'utente selezionato dal Sistema.
+  ],
+  scenari: [
+    - L'Admin Globale seleziona l'utente che vuole eliminare dal Sistema $arrow$ @UC71[Vedi UC71, Sezione]
+    - L'Admin Globale elimina correttamente l'utente selezionato.
+  ],
+  inclusioni: [
+    - UC71 @UC71
+  ],
+  trigger: "L'Admin Globale vuole eliminare un determinato utente registrato all'interno del Sistema",
+)[]
+
+=== UC71 - Seleziona nome utente <UC71>
 
 #use-case(
   attore: "Admin Globale",
@@ -2666,18 +2739,45 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale ha selezionato di voler bloccare un tentativo di accesso
+    - L'Admin Globale ha selezionato il nome dell'utente, per visualizzare/modificare le informazioni di quest'ultimo
   ],
   post: [
-    - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
+    - Il Sistema seleziona correttamente l'utente
   ],
   scenari: [
-    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato
+    - L'Admin Globale inserisce il nome dell'utente per visualizzarne/modificarne le informazioni:
+    - Nel caso volesse modificarne le informazioni:
+      - L'Admin Globale modifica il nome dell'utente selezionato $arrow$ @UC69.1[Vedi UC69.1, Sezione]
+      - L'Admin Globale modifica il ruolo dell'utente selezionato $arrow$ @UC69.3[Vedi UC69.3, Sezione]
   ],
   inclusioni: [
     - UC69.1 @UC69.1
-    - UC70 @UC70
+    - UC69.3 @UC69.3
   ],
+  trigger: "L'Admin Globale vuole selezionare il nome utente di un determinato fruitore del Sistema",
+)[]
+
+=== UC72 - Modifica ruolo utente //include seleziona utente, inserisci ruolo utente
+
+#use-case(
+  attore: "Admin Globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'Admin Globale vuole modificare il ruolo e i relativi permessi di un certo utente nel Sistema
+  ],
+  post: [
+    - Il Sistema modifica correttamente i ruoli e i permessi per l'utente selezionato.
+  ],
+  scenari: [
+    - L'Admin Globale seleziona il nome dell'utente a cui verrà cambiato il ruolo e i permessi $arrow$ @UC71[Vedi UC71, Sezione]
+    - L'Admin Globale, successivamente aver selezionato l'utente corretto, inserisce il nuovo ruolo per quest'ultimo $arrow$ @UC69.3[Vedi UC69.3, Sezione]
+  ],
+  inclusioni: [
+    - UC69.3 @UC69.3
+    - UC71 @UC71
+  ],
+  trigger: "L'Admin Globale vuole modificare il ruolo di un determinato utente registrato nel Sistema",
 )[]
 
 = Requisiti
