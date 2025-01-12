@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.23.0]
+#let ver = [0.24.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 11, month: 01, year: 2025),
+  data: datetime(day: 12, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.24.0",
+      date: datetime(day: 12, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Proseguo sezione Requisiti: descritti tutti i requisiti obbligatori.",
+    ),
     (
       vers: "0.23.0",
       date: datetime(day: 12, month: 01, year: 2025),
@@ -264,11 +271,18 @@ La descrizione testuale, in particolar modo, dovrà contenere le informazioni ne
 
 #figure(
   table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
     columns: (2fr, 5fr),
     inset: 10pt,
     table.header(
-      [*Campo*],
-      [*Descrizione*],
+      text(fill: white)[*Campo*],
+      text(fill: white)[*Descrizione*],
     ),
 
     [*Attori*], [Sono coloro che interagiscono attivamente con il sistema e svolgono l'azione indicata dal Caso d'Uso],
@@ -311,11 +325,18 @@ Di seguito sono esposti gli attori utilizzati:
 
 #figure(
   table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
     columns: (2fr, 5fr),
     inset: 10pt,
     table.header(
-      [*Attore*],
-      [*Descrizione*],
+      text(fill: white)[*Attore*],
+      text(fill: white)[*Descrizione*],
     ),
 
     [*Utente*], [Rappresenta un utente che vuole accedere al sistema],
@@ -340,11 +361,18 @@ Vengono inoltre utilizzati i seguenti attori secondari:
 
 #figure(
   table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
     columns: (2fr, 5fr),
     inset: 10pt,
     table.header(
-      [*Attore*],
-      [*Descrizione*],
+      text(fill: white)[*Attore*],
+      text(fill: white)[*Descrizione*],
     ),
 
     [*LLM*],
@@ -1480,7 +1508,7 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
   ],
 )[]
 
-=== UC33 - Visualizza elenco notifiche rifornimento
+=== UC33 - Visualizza elenco notifiche rifornimento <UC33>
 
 #use-case(
   attore: "Admin globale",
@@ -1511,7 +1539,7 @@ Il Caso d'Uso UC33 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("33-incl", "Inclusione del Caso d'Uso n. 33: UC34")
 Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
-==== UC34 - Visualizza elemento lista notifiche rifornimento <UC34>
+=== UC34 - Visualizza elemento lista notifiche rifornimento <UC34>
 
 #use-case(
   attore: "Admin globale",
@@ -1533,7 +1561,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
 )[]
 
-===== UC35 - Visualizza stato notifica rifornimento <UC35>
+=== UC35 - Visualizza stato notifica rifornimento <UC35>
 
 #use-case(
   attore: "Admin globale",
@@ -1548,7 +1576,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-===== UC36 - Visualizza ID notifica rifornimento <UC36>
+=== UC36 - Visualizza ID notifica rifornimento <UC36>
 
 #use-case(
   attore: "Admin globale",
@@ -1578,7 +1606,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC38 - Visualizza lista notifiche di rifornimento forniti da _Machine Learning_
+=== UC38 - Visualizza lista notifiche di rifornimento forniti da _Machine Learning_ <UC38>
 
 #use-case(
   attore: "Admin globale",
@@ -1612,7 +1640,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 Il Caso d'Uso UC35 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("38-incl","Inclusione del Caso d'Uso n.38: UC34")
 Maggiori informazioni sono disponibili alla @UC34.
 
-=== UC39 - Visualizza notifica rifornimento
+=== UC39 - Visualizza notifica rifornimento <UC39>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1720,7 +1748,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
   ],
 )[]
 
-=== UC40 - Accetta notifica di rifornimento
+=== UC40 - Accetta notifica di rifornimento <UC40>
 
 #use-case(
   attore: "Admin globale",
@@ -1752,7 +1780,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
 Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("40-incl", "Inclusione del Caso d'Uso n.40: UC41")
 
-==== UC41 - Seleziona notifica di rifornimento <UC41>
+=== UC41 - Seleziona notifica di rifornimento <UC41>
 
 #use-case(
   attore: "Admin globale",
@@ -1770,7 +1798,7 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
   trigger: "L'Admin globale vuole effettuare un'operazione su una notifica di rifornimento",
 )[]
 
-=== UC42 - Rifiuta notifica di rifornimento
+=== UC42 - Rifiuta notifica di rifornimento <UC42>
 
 #use-case(
   attore: "Admin globale",
@@ -1802,7 +1830,7 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
 Il Caso d'Uso UC42 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("42-incl", "Inclusione del Caso d'Uso n.42: UC41")
 Tale caso d'uso è disponibile per la consultazione alla @UC41.
 
-=== UC43 - Visualizza elenco microservizi
+=== UC43 - Visualizza elenco microservizi <UC43>
 
 #use-case(
   attore: "Admin globale",
@@ -1837,9 +1865,11 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   scenari: [
     - Ogni singolo elemento della lista visualizzata dall'Admin globale dovrà contenere:
       - numero di richieste al secondo $arrow$ @UC43.1.1[Vedi UC43.1.1, Sezione]
+      - nome del microservizio $arrow$ @UC43.1.2[Vedi UC43.1.2, Sezione]
   ],
   inclusioni: [
     - UC43.1.1 @UC43.1.1
+    - UC43.1.2 @UC43.1.2
   ],
   trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
 )[]
@@ -1859,7 +1889,21 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-=== UC44 - Esportazione ordini
+===== UC43.1.2 - Visualizza nome del microservizio <UC43.1.2>
+#use-case(
+  attore: "Admin globale",
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Admin Globale
+    - L'admin globale sta visualizzando un microservizio o un elenco di microservizi
+  ],
+  post: [Viene visualizzato il nome del microservizio],
+  scenari: [
+    - Viene visualizzato il nome del microservizio
+  ],
+)[]
+
+=== UC44 - Esportazione ordini <UC44>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1899,7 +1943,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-=== UC46 - Esportazione report inventario
+=== UC46 - Esportazione report inventario <UC46>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1939,7 +1983,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-=== UC48 - Creazione di una soglia minima per una merce
+=== UC48 - Creazione di una soglia minima per una merce <UC48>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1972,7 +2016,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 Il Caso d'Uso 48 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("48-incl","Inclusioni del Caso d'Uso n.48: UC48.1 e UC49").
 Tali Casi d'Uso saranno di seguito esposti.
 
-=== UC48.1 - Inserisci soglia minima <UC48.1>
+==== UC48.1 - Inserisci soglia minima <UC48.1>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -2005,7 +2049,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   ],
 )[#use-case-diagram("49", "UC49 - Selezione merce")]
 
-==== UC50 - Soglia minima non valida <UC50>
+=== UC50 - Soglia minima non valida <UC50>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -2019,12 +2063,12 @@ Tali Casi d'Uso saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce una soglia minima non valida relativa ad una specifica merce.
   ],
-)[#use-case-diagram("50", "UC50 - Soglia minima non valida")]
+)[/*#use-case-diagram("50", "UC50 - Soglia minima non valida") presente sopra*/]
 
 //Sistema Matteo (su) sistema Marco (giù)
 // MARCO
 
-=== UC51 - Aggiunta stock di una merce
+=== UC51 - Aggiunta stock di una merce <UC51>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2036,8 +2080,8 @@ Tali Casi d'Uso saranno di seguito esposti.
     - Il Sistema registra l'aggiunta di stock a quella determinata merce
   ],
   scenari: [
-    - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock) @UC49[Vedi UC49, Sezione]
-    - L'Admin Locale seleziona la quantità da aggiungere a tale merce
+    - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock) $arrow$ @UC49[Vedi UC49, Sezione]
+    - L'Admin Locale seleziona la quantità da aggiungere a tale merce $arrow$ @UC51.1[Vedi UC51.1, Sezione]
   ],
   inclusioni: [
     - UC49 @UC49
@@ -2051,7 +2095,7 @@ Tali Casi d'Uso saranno di seguito esposti.
 Il Caso d'Uso 51 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1")
 L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
 
-=== UC51.1 - Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
+==== UC51.1 - Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2067,7 +2111,7 @@ L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
   ],
 )[]
 
-=== UC52 - Creazione merce
+=== UC52 - Creazione merce <UC52>
 
 #use-case(
   attore: "Admin Globale",
@@ -2113,7 +2157,7 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce il nome da assegnare alla nuova merce
   ],
-)[#use-case-diagram("53", "UC53 - Inserimento nome merce")]
+)[/*#use-case-diagram("53", "UC53 - Inserimento nome merce") già presente sopra*/]
 
 === UC54 - Inserimento descrizione merce <UC54>
 
@@ -2130,9 +2174,9 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin globale inserisce la descrizione da assegnare alla nuova merce
   ],
-)[#use-case-diagram("54", "UC54 - Inserimento descrizione merce")]
+)[/*#use-case-diagram("54", "UC54 - Inserimento descrizione merce") già presente sopra*/]
 
-=== UC55 - Aggiornamento informazioni di una merce
+=== UC55 - Aggiornamento informazioni di una merce <UC55>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -2161,7 +2205,7 @@ Saranno di seguito esposti.
 Il Caso d'Uso 55 include tre ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("55-incl","Inclusioni del Caso d'Uso n.55: UC49, UC53 e UC54").
 Sono stati esposti alla @UC49, @UC53 e alla @UC54 rispettivamente.
 
-=== UC56 - Visualizza elenco ordini eseguiti
+=== UC56 - Visualizza elenco ordini eseguiti <UC56>
 
 #use-case(
   attore: "Cliente",
@@ -2208,7 +2252,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
   trigger: "Il Cliente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
 )[]
 
-=== UC57 - Visualizza ordine eseguito
+=== UC57 - Visualizza ordine eseguito <UC57>
 
 #use-case(
   attore: "Cliente",
@@ -2300,7 +2344,7 @@ Legato a questo c'è il fatto che l'Admin Locale e quello Globale vogliono regis
 I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno scheduler. Esempi sono aggiorna informazioni merci disponibili, aggiorna informazioni notifiche rifornimento, aggiorna elenco transazioni (ordini/trasferimenti) non completate, invia conferma ordini, invia conferma transazioni (ordini/trasferimenti), invia notifica email, invia notifica sms, crea backup regolare ecc.
 */
 
-=== UC58 - Creazione Backup
+=== UC58 - Creazione Backup <UC58>
 
 #use-case(
   attore: "Admin Locale",
@@ -2317,7 +2361,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Locale vuole creare un Backup del Sistema",
 )[]
 
-=== UC59 - Attiva Backup periodico //include selezione ogni quanto fare il backup
+=== UC59 - Attiva Backup periodico <UC59>
 
 #use-case(
   attore: "Admin Locale",
@@ -2381,7 +2425,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
 )[]
 
-=== UC61 - Elimina Backup periodico
+=== UC61 - Elimina Backup periodico <UC61>
 
 #use-case(
   attore: "Admin Locale",
@@ -2422,7 +2466,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
 )[]
 
-=== UC63 - Ripristino dati da utlimo Backup effettuato
+=== UC63 - Ripristino dati da utlimo Backup effettuato <UC63>
 
 #use-case(
   attore: "Admin Locale",
@@ -2463,7 +2507,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
 )[]
 
-=== UC65 - Visualizzazione elenco attività di accesso
+=== UC65 - Visualizzazione elenco attività di accesso <UC65>
 
 #use-case(
   attore: "Admin Globale",
@@ -2560,7 +2604,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
 )[]
 
-=== UC66 - Blocca tentativo di accesso
+=== UC66 - Blocca tentativo di accesso <UC66>
 
 #use-case(
   attore: "Admin Globale",
@@ -2599,7 +2643,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[]
 
-=== UC67 - Ricezione E-mail notifica
+=== UC67 - Ricezione E-mail notifica <UC67>
 #use-case(
   attore: "Admin Globale",
   attori_secondari: "Admin Locale",
@@ -2617,7 +2661,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale/Locale riceve la notifica via e-mail del tentativo di accesso anomalo",
 )[]
 
-=== UC68 - Ricezione SMS notifica
+=== UC68 - Ricezione SMS notifica <UC68>
 
 #use-case(
   attore: "Admin Globale",
@@ -2636,7 +2680,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale/Locale riceve la notifica via SMS del tentativo di accesso anomalo",
 )[]
 
-=== UC69 - Aggiungi utente //include inserisci nome utente, inserisci psw utente, inserisci ruolo utente
+=== UC69 - Aggiungi utente <UC69>
 
 #use-case(
   attore: "Admin Globale",
@@ -2716,7 +2760,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale inserisce il ruolo per il nuovo utente all'interno del Sistema",
 )[]
 
-=== UC70 - Elimina utente
+=== UC70 - Elimina utente <UC70>
 
 #use-case(
   attore: "Admin Globale",
@@ -2764,7 +2808,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale vuole selezionare il nome utente di un determinato fruitore del Sistema",
 )[]
 
-=== UC72 - Modifica ruolo utente //include seleziona utente, inserisci ruolo utente
+=== UC72 - Modifica ruolo utente <UC72>
 
 #use-case(
   attore: "Admin Globale",
@@ -2802,12 +2846,19 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
 #show figure: set block(breakable: true)
 #figure(
   table(
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
     columns: (1.5fr, 4fr, 2.5fr),
     inset: 10pt,
     table.header(
-      align(center)[*Codice*],
-      align(center)[*Descrizione*],
-      align(center)[*Fonti*],
+      align(center)[#text(fill: white)[*Codice*]],
+      align(center)[#text(fill: white)[*Descrizione*]],
+      align(center)[#text(fill: white)[*Fonti*]],
     ),
 
     [R-1-F-Ob],
@@ -2916,8 +2967,127 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
       - ID del trasferimento
       - Lo stato del trasferimento (confermato o cancellato)],
     [@UC29[UC29 Sezione] \ @UC29.1[UC29.1 Sezione] \ @UC30[UC30 Sezione] \ @UC31[UC31 Sezione]],
+
+    [R-21-F-Ob],
+    [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico. Nello specifico, L'Admin Globale deve visualizzare:
+      - ID del trasferimento,
+      - magazzino mittente
+      - magazzino di destinazione
+      - stato del trasferimento (confermato o cancellato)
+      - L'elenco della merce interessata dal trasferimento],
+    [@UC32[UC32 Sezione] \ @UC30[UC30 Sezione] \ @UC32.1[UC32.1 Sezione] \ @UC32.2[UC32.2 Sezione] \ @UC31[UC31 Sezione] \ @UC32.3[UC32.3 Sezione]],
+
+    [R-22-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve poter ottenere delle merci interessate dal trasferimento le seguenti informazioni:
+      - Nome della merce
+      - Quantità interessata dal trasferimento],
+    [@UC32.3.1[UC32.3.1 Sezione] \ @UC17[UC17 Sezione] \ @UC32.3.1.1[UC32.3.1.1 Sezione]],
+
+    [R-23-F-Ob],
+    [L'Admin Globale deve poter visualizzare le notifiche contenenti i consigli di rifornimento, visualizzandone ID e stato (confermato, da confermare, rifiutato). Tali consigli sono calcolati sulla base di una soglia minima di allerta.],
+    [@UC33[UC33 Sezione] \ @UC34[UC34 Sezione] \ @UC35[UC35 Sezione] \ @UC36[UC36 Sezione]],
+
+    [R-24-F-Ob],
+    [L'Admin Globale deve ricevere un messaggio di errore quando tenta di compiere un'azione sulle notifiche di rifornimento, ma nessuna notifica è disponibile],
+    [@UC37[UC37 Sezione]],
+
+    [R-25-F-De],
+    [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da un LLM, visualizzandone ID e stato (confermato, da confermare, rifiutato)],
+    [@UC38[UC38 Sezione] \ @UC34[UC34 Sezione]],
+
+    [R-26-F-Ob],
+    [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico, visualizzandone:
+      - ID della notifica
+      - Stato della notifica (confermato, da confermare, rifiutato)
+      - Elenco della merce il cui rifornimento è consigliato
+      - Magazzino di destinatario del rifornimento],
+    [@UC39[UC39 Sezione] \ @UC36[UC36 Sezione] \ @UC35[UC35 Sezione] \ @UC39.2[UC39.2 Sezione] \ @UC39.1[UC39.1 Sezione]],
+
+    [R-27-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare:
+      - ID della merce
+      - Nome della merce
+      - Quantità da rifornire],
+    [@UC39.2[UC39.2 Sezione] \ @UC19[UC19 Sezione] \ @UC17[UC17 Sezione] \ @UC39.2.1.1[UC 39.2.1.1 Sezione]],
+
+    [R-28-F-Ob],
+    [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata],
+    [@UC40[UC40 Sezione] \ @UC41[UC41 Sezione]],
+
+    [R-29-F-Ob],
+    [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata],
+    [@UC42[UC42 Sezione] \ @UC41[UC41 Sezione]],
+
+    [R-30-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco dei microservizi. Per ogni microservizio elencato le seguenti informazioni devono essere disponibili:
+      - nome del microservizio
+      - numero di richieste al secondo del microservizio],
+    [@UC43[UC43 Sezione] \ UC43.1 @UC43.1 \ UC43.1.1 @UC43.1.1 \ UC43.1.2 @UC43.1.2],
+
+    [R-31-F-Ob], [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_], [UC44 @UC44],
+    [R-32-F-Ob],
+    [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
+    [UC45 @UC45],
+
+    [R-33-F-Ob],
+    [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
+    [UC46 @UC46],
+
+    [R-34-F-Ob],
+    [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
+    [UC47 @UC47],
+
+    [R-35-F-Ob],
+    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
+    [UC48 @UC48, UC49 @UC49, UC48.1 @UC48.1],
+
+    [R-36-F-Ob],
+    [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
+    [UC50 @UC50],
+
+    [R-37-F-Ob],
+    [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
+    [UC51 @UC51 \ UC51.1 @UC51.1 \ UC49 @UC49],
+
+    [R-38-F-Ob],
+    [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema, inserendone nome e descrizione],
+    [UC52 @UC52 \ UC53 @UC53 \ UC54 @UC54],
+
+    [R-39-F-Ob],
+    [L'Admin Globale deve poter aggiornare le informazioni di una merce, cambiandone nome e descrizione],
+    [@UC55[UC55 Sezione] \ @UC49[UC49 Sezione] \ @UC53[UC53 Sezione] \ @UC54[UC54 Sezione]],
+
+    [R-40-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti. Per ciascun ordine è opportuno visualizzare:
+      - ID dell'ordine
+      - Data creazione dell'ordine
+      - Nome dell'ordine],
+    [@UC56[UC56 Sezione] \ @UC56.1[UC56.1 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC15[UC15 Sezione]],
+
+    [R-41-F-Ob],
+    [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito. Nello specifico, il Cliente deve poter visualizzarne:
+      - ID
+      - Data creazione
+      - Nome
+      - Lista delle merci],
+    [@UC57[UC57 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC15[UC15 Sezione] \ @UC57.1[UC57.1 Sezione]],
+
+    [R-42-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare:
+      - nome della merce
+      - quantità della merce
+    ],
+    [@UC57.1[UC57.1 Sezione] \ @UC57.1.1[UC57.1.1 Sezione] \ @UC57.1.1.1[UC57.1.1.1 Sezione] \ @UC17[UC17 Sezione]],
+
+    [R-43-F-De],
+    [L'Admin Locale deve avere la possibilità di creare un Backup del proprio magazzino],
+    [@UC58[UC58 Sezione]],
+
+    [R-44-F-De],
+    [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
+    [@UC59[UC59 Sezione] \ @UC60[UC60 Sezione]],
   ),
-  caption: [Requisiti funzionali],
+  caption: [Requisiti Funzionali],
 )
 == Requisiti di Qualità
 == Requisiti di Vincolo
