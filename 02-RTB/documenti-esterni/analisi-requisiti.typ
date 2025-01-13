@@ -2359,7 +2359,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - L'Admin Locale seleziona dal menu principale l'opzione relativa alla creazione di un Backup;
   ],
   trigger: "L'Admin Locale vuole creare un Backup del Sistema",
-)[]
+)[#use-case-diagram("58", "UC58 - Creazione Backup")]
 
 === UC59 - Attiva Backup periodico <UC59>
 
@@ -2388,9 +2388,13 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - UC60 @UC60
   ],
   trigger: "L'Admin Locale vuole attivare un Backup periodico del Sistema",
-)[]
+)[#use-case-diagram("59", "UC59 - Attiva Backup periodico")]
 
-==== UC59.1 - Selezione periodicità Backup periodico <UC59.1>
+Il Caso d'Uso 59 include un ulteriore Caso d'Uso come mostrato di seguito:
+#use-case-diagram("59-incl", "Inclusioni UC59: UC59.1")
+Tale Caso d'Uso sarà ora esposto.
+
+==== UC59.1 - Inserisci periodicità Backup periodico <UC59.1>
 
 #use-case(
   attore: "Admin Locale",
@@ -2405,6 +2409,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   scenari: [
     - L'Admin Locale inserisce la periodicità (in ore) del Backup;
   ],
+  trigger: "L'Admin Locale vuole fornire la periodicità con cui effettuare un Backup periodico",
 )[]
 
 === UC60 - Periodicità non valida <UC60>
@@ -2447,7 +2452,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - UC62 @UC62
   ],
   trigger: "L'Admin Locale vuole eliminare il Backup periodico del Sistema",
-)[]
+)[#use-case-diagram("61", "UC61 - Elimina Backup periodico")]
 
 === UC62 - Nessun Backup periodico attivo <UC62>
 
@@ -2487,9 +2492,9 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - UC64 @UC64
   ],
   trigger: "L'Admin Locale vuole ripristinare il Sistema all'ultimo Backup effettuato",
-)[]
+)[#use-case-diagram("63", "Ripristino dati da ultimo Backup effettuato")]
 
-=== UC64 - Errore nessun Backup trovato <UC64>
+=== UC64 - Errore nessun Backup trovato <UC64> //
 
 #use-case(
   attore: "Admin Locale",
@@ -2527,6 +2532,10 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
   trigger: "L'Admin Globale vuole visualizzare le attività di accesso",
 )[]
+
+Il Caso d'Uso 65 include un ulteriore Caso d'Uso come mostrato di seguito:
+//immagine
+Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
 
 ==== UC65.1 - Visualizza elemento lista attività di accesso <UC65.1>
 
@@ -2625,6 +2634,10 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
 )[]
 
+Il Caso d'Uso 66 include un ulteriore Caso d'Uso come mostrato di seguito:
+//immagine
+Tale Caso d'Uso sarà ora esposto.
+
 ==== UC66.1 - Inserisci ID tentativo di accesso da bloccare <UC66.1>
 
 #use-case(
@@ -2641,7 +2654,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - L'Admin Globale inserisce l'ID del tentativo di accesso, il cui indirizzo IP deve essere bloccato
   ],
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
-)[]
+)[] //
 
 === UC67 - Ricezione E-mail notifica <UC67>
 #use-case(
