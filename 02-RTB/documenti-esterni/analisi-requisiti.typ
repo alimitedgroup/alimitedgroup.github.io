@@ -676,7 +676,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 )[]
 
 
-=== UC9 -, Seleziona ordine non confermato <UC9>
+=== UC9 - Seleziona ordine non confermato <UC9>
 
 #use-case(
   attore: "Cliente",
@@ -1211,7 +1211,7 @@ Il Caso d'Uso UC24 include tre ulteriori Casi d'Uso come raffigurato nella segue
 #use-case-diagram("24-incl", "Inclusioni del Caso d'Uso n.24: UC5 , UC6 e UC25")
 Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, reperibili, rispettivamente, alla @UC5 e alla @UC6.
 
-=== UC25 -, Seleziona trasferimento non confermato <UC25>
+=== UC25 - Seleziona trasferimento non confermato <UC25>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1780,7 +1780,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
 Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("40-incl", "Inclusione del Caso d'Uso n.40: UC41")
 
-=== UC41 -, Seleziona notifica di rifornimento <UC41>
+=== UC41 - Seleziona notifica di rifornimento <UC41>
 
 #use-case(
   attore: "Admin globale",
@@ -2033,7 +2033,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   ],
 )[]
 
-=== UC49 -, Selezione merce <UC49>
+=== UC49 - Selezione merce <UC49>
 #use-case(
   attore: "Admin globale, Admin locale",
   pre: [
@@ -2047,7 +2047,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   scenari: [
     - L'Attore principale seleziona la merce per cui vuole impostare una soglia minima
   ],
-)[#use-case-diagram("49", "UC49 -, Selezione merce")]
+)[#use-case-diagram("49", "UC49 - Selezione merce")]
 
 === UC50 - Soglia minima non valida <UC50>
 #use-case(
@@ -2095,7 +2095,7 @@ Tali Casi d'Uso saranno di seguito esposti.
 Il Caso d'Uso 51 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1")
 L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
 
-==== UC51.1 -, Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
+==== UC51.1 - Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2390,7 +2390,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Locale vuole attivare un Backup periodico del Sistema",
 )[]
 
-==== UC59.1 -, Selezione periodicità Backup periodico <UC59.1>
+==== UC59.1 - Selezione periodicità Backup periodico <UC59.1>
 
 #use-case(
   attore: "Admin Locale",
@@ -2782,7 +2782,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale vuole eliminare un determinato utente registrato all'interno del Sistema",
 )[]
 
-=== UC71 -, Seleziona nome utente <UC71>
+=== UC71 - Seleziona nome utente <UC71>
 
 #use-case(
   attore: "Admin Globale",
@@ -2945,7 +2945,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
       - Quantità della merce complessiva in tutti i magazzini
       - Quantità della merce attualmente presente nel magazzino
       - Descrizione della merce],
-    [@UC22[UC22, Sez.], @UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.] \ @UC22.1[UC22.1, Sez.]],
+    [@UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.] \ @UC22[UC22, Sez.] \ @UC22.1[UC22.1, Sez.]],
 
     [R-14-F-Ob],
     [L'Admin Globale deve poter creare un trasferimento da confermare in seguito, scegliendo il magazzino destinatario e il magazzino mittente],
@@ -3031,36 +3031,39 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
     [L'Admin Globale deve poter visualizzare l'elenco dei microservizi. Per ogni microservizio elencato le seguenti informazioni devono essere disponibili:
       - nome del microservizio
       - numero di richieste al secondo del microservizio],
-    [@UC43[UC43, Sez.] \ UC43.1 @UC43.1 \ UC43.1.1 @UC43.1.1 \ UC43.1.2 @UC43.1.2],
+    [@UC43[UC43, Sez.] \ @UC43.1[UC43.1, Sez.] \ @UC43.1.1[UC43.1.1, Sez.] \ @UC43.1.2[UC43.1.2, Sez.]],
 
-    [R-31-F-Ob], [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_], [UC44 @UC44],
+    [R-31-F-Ob],
+    [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_],
+    [@UC44[UC44, Sez.]],
+
     [R-32-F-Ob],
     [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
-    [UC45 @UC45],
+    [@UC45[UC45, Sez.]],
 
     [R-33-F-Ob],
     [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
-    [UC46 @UC46],
+    [@UC46[UC46, Sez.]],
 
     [R-34-F-Ob],
     [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
-    [UC47 @UC47],
+    [@UC47[UC47, Sez.]],
 
     [R-35-F-Ob],
     [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
-    [UC48 @UC48, UC49 @UC49, UC48.1 @UC48.1],
+    [@UC48[UC48, Sez.], @UC48.1[UC48.1, Sez.], @UC49[UC49, Sez.]],
 
     [R-36-F-Ob],
     [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
-    [UC50 @UC50],
+    [@UC50[UC50, Sez.]],
 
     [R-37-F-Ob],
     [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
-    [UC51 @UC51 \ UC51.1 @UC51.1 \ UC49 @UC49],
+    [@UC51[UC51, Sez.] \ @UC51.1[UC51.1, Sez.] \ @UC49[UC49, Sez.]],
 
     [R-38-F-Ob],
     [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema, inserendone nome e descrizione],
-    [UC52 @UC52 \ UC53 @UC53 \ UC54 @UC54],
+    [@UC52[UC52, Sez.] \ @UC53[UC53, Sez.] \ @UC54[UC54, Sez.]],
 
     [R-39-F-Ob],
     [L'Admin Globale deve poter aggiornare le informazioni di una merce, cambiandone nome e descrizione],
