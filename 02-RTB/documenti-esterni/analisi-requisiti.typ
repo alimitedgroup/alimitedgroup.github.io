@@ -152,7 +152,7 @@
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione",
+      descr: "Redazione Capitolo 2 e, Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione",
     ),
     (
       vers: "0.3.0",
@@ -229,7 +229,7 @@ Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le segue
 - Possibilità di ricevere suggerimenti di riassortimento quando la disponibilità locale di merce sia sotto una certa soglia;
 - Possibilità di modifica della soglia per il riassortimento per ogni merce;
 - Possibilità di esportare gli ordini e i report di inventario;
-- Possibilità di visualizzare in tempo reale il numero di richieste per ogni Servizio del sistema;
+- Possibilità di visualizzare in tempo reale il numero di richieste per ogni, Servizio del sistema;
 
 
 Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[*Capitolato*] i requisiti obbligatori sono stati rimodulati in base a quanto riportato nel #link("https://alimitedgroup.github.io/VE%2019-11-2024%20v1.0.0.pdf")[*Verbale Esterno*] del *19 Ottobre 2024*. Nello specifico, non sono più obbligatori:
@@ -389,20 +389,20 @@ Vengono inoltre utilizzati i seguenti attori secondari:
     - L'Utente non è autenticato con il Sistema],
   post: [- L'utente ha eseguito l'accesso al sistema ed è dallo stesso riconosciuto come Cliente, come Admin locale o come Admin globale],
   scenari: [
-    - L'Utente seleziona la tipologia di utente $arrow$ @UC1.1[Vedi UC1.1 Sezione]
-    - L'Utente Inserisce l'Username $arrow$ @UC1.2[Vedi UC1.2 Sezione]
-    - L'Utente inserisce la Password $arrow$ @UC1.3[Vedi UC1.3 Sezione]
+    - L'Utente seleziona la tipologia di utente $arrow$ @UC1.1[Vedi UC1.1, Sez.]
+    - L'Utente Inserisce l'Username $arrow$ @UC1.2[Vedi UC1.2, Sez.]
+    - L'Utente inserisce la Password $arrow$ @UC1.3[Vedi UC1.3, Sez.]
   ],
   scenari_alternativi: [
-    - L'utente inserisce Username, Password o tipologia di utente errati $arrow$ @UC2[Vedi UC2 Sezione]
+    - L'utente inserisce Username, Password o tipologia di utente errati $arrow$ @UC2[Vedi UC2, Sez.]
   ],
   inclusioni: [
-    - @UC1.1[UC1.1 Sezione]
-    - @UC1.2[UC1.2 Sezione]
-    - @UC1.3[UC1.3 Sezione]
+    - @UC1.1[UC1.1, Sez.]
+    - @UC1.2[UC1.2, Sez.]
+    - @UC1.3[UC1.3, Sez.]
   ],
   estensioni: [
-    @UC2[UC2 Sezione]
+    @UC2[UC2, Sez.]
   ],
   trigger: "L'Utente vuole autenticarsi al sistema",
 )[
@@ -477,7 +477,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 #use-case(
   attore: "Utente",
   pre: [- Il Sistema è attivo, in modalità online o offline;
-    - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1 Sezione])
+    - L'attore principale non è autenticato al sistema (@UC1[Vedi UC1, Sez.])
     - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata],
   post: [- Il Sistema annulla il tentativo di autenticazione
     - Il Sistema mostra un errore a schermo],
@@ -494,9 +494,9 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   post: [- Il Sistema memorizza l'esistenza di un nuovo ordine non confermato con le relative informazioni],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa alla creazione di un nuovo ordine da confermare
-    - Il Cliente inserisce il nome del nuovo ordine da confermare $arrow$ @UC3.1[Vedi UC3.1 Sezione]
-    - Il Cliente inserisce il nominativo del destinatario del nuovo ordine da confermare $arrow$ @UC3.2[Vedi UC3.2 Sezione]
-    - Il Cliente inserisce l'indirizzo di spedizione del nuovo ordine da confermare $arrow$ @UC3.3[Vedi UC3.3 Sezione]
+    - Il Cliente inserisce il nome del nuovo ordine da confermare $arrow$ @UC3.1[Vedi UC3.1, Sez.]
+    - Il Cliente inserisce il nominativo del destinatario del nuovo ordine da confermare $arrow$ @UC3.2[Vedi UC3.2, Sez.]
+    - Il Cliente inserisce l'indirizzo di spedizione del nuovo ordine da confermare $arrow$ @UC3.3[Vedi UC3.3, Sez.]
   ],
   trigger: [Il Cliente vuole creare un nuovo ordine da confermare],
   inclusioni: [
@@ -578,13 +578,13 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa all'aggiunta di una merce ad un ordine non confermato
-    - Il Cliente seleziona la tipologia di merce da aggiungere all'ordine non confermato $arrow$ @UC5[Vedi UC5, Sezione]
-    - Il Cliente seleziona la quantità di tale merce da aggiungere all'ordine non confermato $arrow$ @UC6[Vedi UC6, Sezione]
-    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di aggiunta $arrow$ @UC9[Vedi UC9, Sezione]
+    - Il Cliente seleziona la tipologia di merce da aggiungere all'ordine non confermato $arrow$ @UC5[Vedi UC5, Sez.]
+    - Il Cliente seleziona la quantità di tale merce da aggiungere all'ordine non confermato $arrow$ @UC6[Vedi UC6, Sez.]
+    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di aggiunta $arrow$ @UC9[Vedi UC9, Sez.]
   ],
   scenari_alternativi: [
-    - Il Cliente seleziona una merce non valida e/o una quantità non disponibile $arrow$ @UC7[Vedi UC7, Sezione]
-    - Il Cliente cerca di aggiungere merce ad un ordine non confermato ma nessun ordine non confermato è registrato nel sistema per l'utente corrente $arrow$ @UC8[Vedi UC8, Sezione]
+    - Il Cliente seleziona una merce non valida e/o una quantità non disponibile $arrow$ @UC7[Vedi UC7, Sez.]
+    - Il Cliente cerca di aggiungere merce ad un ordine non confermato ma nessun ordine non confermato è registrato nel sistema per l'utente corrente $arrow$ @UC8[Vedi UC8, Sez.]
   ],
   inclusioni: [
     - UC5 @UC5
@@ -676,7 +676,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 )[]
 
 
-=== UC9 - Seleziona ordine non confermato <UC9>
+=== UC9 -, Seleziona ordine non confermato <UC9>
 
 #use-case(
   attore: "Cliente",
@@ -708,10 +708,10 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa alla cancellazione di un ordine non confermato
-    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di cancellazione $arrow$ @UC9[Vedi UC9 Sezione]
+    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di cancellazione $arrow$ @UC9[Vedi UC9, Sez.]
   ],
   scenari_alternativi: [
-    - Il Cliente cerca di cancellare un ordine non confermato ma nessun ordine non confermato è registrato nel sistema per l'utente corrente $arrow$ @UC8[Vedi UC8 Sezione]
+    - Il Cliente cerca di cancellare un ordine non confermato ma nessun ordine non confermato è registrato nel sistema per l'utente corrente $arrow$ @UC8[Vedi UC8, Sez.]
   ],
   inclusioni: [
     - UC9 @UC9
@@ -741,11 +741,11 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
   ],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa alla conferma di un ordine non confermato
-    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di conferma $arrow$ @UC9[Vedi UC9 Sezione]
+    - Il Cliente seleziona l'ordine non confermato sulla quale effettuare l'operazione di conferma $arrow$ @UC9[Vedi UC9, Sez.]
   ],
   scenari_alternativi: [
-    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @UC7[Vedi UC7 Sezione]
-    - Il Cliente cerca di confermare un ordine non confermato ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC8[Vedi UC8 Sezione]
+    - Il Cliente cerca di confermare un ordine non confermato ma la merce selezionata non esiste più oppure la quantità immessa eccede le risorse a disposizione $arrow$ @UC7[Vedi UC7, Sez.]
+    - Il Cliente cerca di confermare un ordine non confermato ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC8[Vedi UC8, Sez.]
   ],
   inclusioni: [
     - UC9 @UC9
@@ -774,10 +774,10 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
   post: [Il Sistema mostra a schermo l'elenco degli ordini non confermati per l'utente corrente],
   scenari: [
     - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini non confermati registrati nel Sistema
-    - Il Cliente visualizza a schermo la lista degli ordini non confermati registrati nel Sistema per l'utente corrente $arrow$ @UC12.1[Vedi UC12.1 Sezione]
+    - Il Cliente visualizza a schermo la lista degli ordini non confermati registrati nel Sistema per l'utente corrente $arrow$ @UC12.1[Vedi UC12.1, Sez.]
   ],
   scenari_alternativi: [
-    - Il Cliente cerca di visualizzare gli ordini non confermati ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC8[Vedi UC8 Sezione]
+    - Il Cliente cerca di visualizzare gli ordini non confermati ma nessun ordine non confermato è registrato nel Sistema per l'utente corrente $arrow$ @UC8[Vedi UC8, Sez.]
   ],
   inclusioni: [
     - UC12.1 @UC12.1
@@ -806,9 +806,9 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   post: [Il Sistema mostra, nel singolo elemento della lista ordini non confermati, ID, data creazione e nome dell'ordine],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - l'ID dell'ordine $arrow$ @UC13[Vedi UC13, Sezione]
-      - La data di creazione dell'ordine $arrow$ @UC14[Vedi UC14, Sezione]
-      - Il nome dell'ordine $arrow$ @UC15[Vedi UC15, Sezione]
+      - l'ID dell'ordine $arrow$ @UC13[Vedi UC13, Sez.]
+      - La data di creazione dell'ordine $arrow$ @UC14[Vedi UC14, Sez.]
+      - Il nome dell'ordine $arrow$ @UC15[Vedi UC15, Sez.]
   ],
   inclusioni: [
     - UC13 @UC13
@@ -875,10 +875,10 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   scenari: [
     - Il Cliente seleziona da una lista di ordini non confermati la visualizzazione di un ordine specifico
     - Il Cliente visualizza del suddetto ordine:
-      - ID dell'ordine $arrow$ @UC13[Vedi UC13, Sezione]
-      - Data creazione dell'ordine non confermato $arrow$ @UC14[Vedi UC14, Sezione]
-      - Nome dell'ordine $arrow$ @UC15[Vedi UC15, Sezione]
-      - Lista delle merci $arrow$ @UC16.1[Vedi UC16.1, Sezione]
+      - ID dell'ordine $arrow$ @UC13[Vedi UC13, Sez.]
+      - Data creazione dell'ordine non confermato $arrow$ @UC14[Vedi UC14, Sez.]
+      - Nome dell'ordine $arrow$ @UC15[Vedi UC15, Sez.]
+      - Lista delle merci $arrow$ @UC16.1[Vedi UC16.1, Sez.]
   ],
   inclusioni: [
     - UC13 @UC13
@@ -906,7 +906,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   ],
   post: [Viene visualizzata la lista delle merci di un ordine non confermato],
   scenari: [
-    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine non confermato selezionato $arrow$ @UC16.1.1[Vedi UC16.1.1 Sezione]
+    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine non confermato selezionato $arrow$ @UC16.1.1[Vedi UC16.1.1, Sez.]
   ],
   inclusioni: [
     - UC 16.1.1 @UC16.1.1
@@ -926,8 +926,8 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   post: [Viene visualizzaa la quantità e il nome della merce di un ordine non confermato],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - Quantità di quella merce nell'ordine non confermato selezionato $arrow$ @UC16.1.1.1[Vedi UC16.1.1.1 Sezione];
-      - Nome della merce $arrow$ @UC17[Vedi UC17 Sezione];
+      - Quantità di quella merce nell'ordine non confermato selezionato $arrow$ @UC16.1.1.1[Vedi UC16.1.1.1, Sez.];
+      - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.];
   ],
   inclusioni: [
     - UC16.1.1.1 @UC16.1.1.1
@@ -976,7 +976,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   post: [Viene visualizzato un elenco delle merci nel Sistema],
   scenari: [
     - Il Cliente seleziona dal menu l'opzione relativa alla visualizzazione dell'elenco delle merci memorizzate nel Sistema
-    - Il Cliente visualizza a schermo la lista delle merci memorizzate nel Sistema $arrow$ @UC18.1[Vedi UC18.1 Sezione]
+    - Il Cliente visualizza a schermo la lista delle merci memorizzate nel Sistema $arrow$ @UC18.1[Vedi UC18.1, Sez.]
   ],
   inclusioni: [
     - UC18.1 @UC18.1
@@ -1001,10 +1001,10 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   post: [Nell'elemento della lista delle merci viene visualizzato ID, nome, quantità complessiva in tutti i magazzini e quantità locale della singola merce],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - L'ID della merce $arrow$ @UC19[Vedi UC19, Sezione]
-      - Il nome della merce $arrow$ @UC17[Vedi UC17, Sezione]
-      - La quantità di merce complessiva in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sezione]
-      - La quantità di merce nel magazzino presso cui il Cliente ha fatto l'autenticazione $arrow$ @UC21[Vedi UC21, Sezione]
+      - L'ID della merce $arrow$ @UC19[Vedi UC19, Sez.]
+      - Il nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
+      - La quantità di merce complessiva in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sez.]
+      - La quantità di merce nel magazzino presso cui il Cliente ha fatto l'autenticazione $arrow$ @UC21[Vedi UC21, Sez.]
   ],
   inclusioni: [
     - UC17 @UC17
@@ -1069,11 +1069,11 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   scenari: [
     - Il Cliente seleziona da una lista di merci la visualizzazione di una merce in particolare
     - Il Cliente viusalizza della merce selezionata:
-      - l'ID della merce $arrow$ @UC19[Vedi UC19, Sezione]
-      - Nome della merce $arrow$ @UC17[Vedi UC17, Sezione]
-      - Quantità della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC20, Sezione]
-      - Quantità della merce complessivamente disponibile in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sezione]
-      - Descrizione della merce $arrow$ @UC22.1[Vedi UC, Sezione]
+      - l'ID della merce $arrow$ @UC19[Vedi UC19, Sez.]
+      - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
+      - Quantità della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC20, Sez.]
+      - Quantità della merce complessivamente disponibile in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sez.]
+      - Descrizione della merce $arrow$ @UC22.1[Vedi UC, Sez.]
   ],
   inclusioni: [
     - UC17 @UC17
@@ -1119,8 +1119,8 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19,
   ],
   scenari: [
     - L'Admin Globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
-    - L'Admin Globale sceglie il magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC23.2[Vedi UC23.2 Sezione]
-    - L'Admin Globale sceglie il magazzino mittente del nuovo trasferimento da confermare $arrow$ @UC23.1[Vedi UC23.1 Sezione]
+    - L'Admin Globale sceglie il magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC23.2[Vedi UC23.2, Sez.]
+    - L'Admin Globale sceglie il magazzino mittente del nuovo trasferimento da confermare $arrow$ @UC23.1[Vedi UC23.1, Sez.]
   ],
   trigger: [L'Admin globale vuole creare un nuovo trasferimento da confermare],
   inclusioni: [
@@ -1185,13 +1185,13 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   ],
   scenari: [
     - L'Admin Globale seleziona la voce del menu relativa all'aggiunta di merce ad un trasferimento non confermato
-    - L'Admin Globale seleziona il trasferimento non confermato a cui aggiungere merce $arrow$ @UC25[Vedi UC25, Sezione]
-    - L'Admin Globale inserisce il nome della merce che vuole trasferire $arrow$ @UC5[Vedi UC5, Sezione]
-    - L'Admin Globale inserisce la quantità della merce da trasferire $arrow$ @UC6[Vedi UC6 Sezione]
+    - L'Admin Globale seleziona il trasferimento non confermato a cui aggiungere merce $arrow$ @UC25[Vedi UC25, Sez.]
+    - L'Admin Globale inserisce il nome della merce che vuole trasferire $arrow$ @UC5[Vedi UC5, Sez.]
+    - L'Admin Globale inserisce la quantità della merce da trasferire $arrow$ @UC6[Vedi UC6, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin globale ha scelto una quantità di merce per la merce selezionata superiore alla quantità disponibile nel magazzino mittente $arrow$ @UC7[Vedi UC7, Sezione]
-    - L'Admin Globale ha selezionato di voler aggiungere merce ad un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sezione]
+    - L'Admin globale ha scelto una quantità di merce per la merce selezionata superiore alla quantità disponibile nel magazzino mittente $arrow$ @UC7[Vedi UC7, Sez.]
+    - L'Admin Globale ha selezionato di voler aggiungere merce ad un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sez.]
   ],
   inclusioni: [
     - UC25 @UC25
@@ -1211,7 +1211,7 @@ Il Caso d'Uso UC24 include tre ulteriori Casi d'Uso come raffigurato nella segue
 #use-case-diagram("24-incl", "Inclusioni del Caso d'Uso n.24: UC5 , UC6 e UC25")
 Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, reperibili, rispettivamente, alla @UC5 e alla @UC6.
 
-=== UC25 - Seleziona trasferimento non confermato <UC25>
+=== UC25 -, Seleziona trasferimento non confermato <UC25>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1240,11 +1240,11 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, repe
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu l'opzione relativa alla conferma di un trasferimento non confermato
-    - L'Admin Globale seleziona il trasferimento non confermato da confermare $arrow$ @UC25[Vedi UC Sezione]
+    - L'Admin Globale seleziona il trasferimento non confermato da confermare $arrow$ @UC25[Vedi UC, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin Globale ha selezionato il trasferimento non confermato ma la quantità della merce non è più disponibile nel magazzino mittente $arrow$ @UC7[Vedi UC7, Sezione]
-    - L'Admin Globale ha selezionato di voler confermare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27 Sezione]
+    - L'Admin Globale ha selezionato il trasferimento non confermato ma la quantità della merce non è più disponibile nel magazzino mittente $arrow$ @UC7[Vedi UC7, Sez.]
+    - L'Admin Globale ha selezionato di voler confermare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sez.]
   ],
   inclusioni: [
     - UC25 @UC25
@@ -1292,10 +1292,10 @@ Tale Caso d'Uso è reperibile alla @UC25.
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu l'opzione relativa alla cancellazione di un trasferimento non confermato
-    - L'Admin Globale seleziona il trasferimento non confermato da cancellare $arrow$ @UC25[Vedi UC Sezione]
+    - L'Admin Globale seleziona il trasferimento non confermato da cancellare $arrow$ @UC25[Vedi UC, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin Globale ha selezionato di voler cancellare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sezione]
+    - L'Admin Globale ha selezionato di voler cancellare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sez.]
   ],
   inclusioni: [
     - UC25 @UC25
@@ -1322,7 +1322,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
   post: [Viene visualizzato l'elenco dei trasferimenti],
   scenari: [
     - L'Admin Globale seleziona dal menu principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel sistema
-    - L'Admin Globale visualizza a schermo la lista di tutti i trasferimenti memorizzati nel Sistema $arrow$ @UC29.1[Vedi UC Sezione]
+    - L'Admin Globale visualizza a schermo la lista di tutti i trasferimenti memorizzati nel Sistema $arrow$ @UC29.1[Vedi UC, Sez.]
   ],
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
   inclusioni: [
@@ -1348,8 +1348,8 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   post: [Per il singolo elemento della lista dei trasferimenti viene visualizzato ID e stato di tale trasferimento],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata deve presentare:
-      - L'ID del trasferimento $arrow$ @UC30[Vedi UC30 Sezione]
-      - Lo stato del trasferimento $arrow$ @UC31[Vedi UC31 Sezione]
+      - L'ID del trasferimento $arrow$ @UC30[Vedi UC30, Sez.]
+      - Lo stato del trasferimento $arrow$ @UC31[Vedi UC31, Sez.]
   ],
   inclusioni: [
     - UC30 @UC30
@@ -1397,11 +1397,11 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   scenari: [
     - L'Admin Globale seleziona da una lista di trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin Globale visualizza del suddetto trasferimento:
-      - L'ID del trasferimento $arrow$ @UC30[Vedi UC30 Sezione]
-      - Il magazzino mittente del trasferimento $arrow$ @UC32.1[Vedi UC32.1, Sezione]
-      - Il magazzino destinatario del trasferimento $arrow$ @UC32.2[Vedi UC32.2, Sezione]
-      - Lo stato del trasferimento $arrow$ @UC31[Vedi UC31, Sezione]
-      - L'elenco della merce interessata dal trasferimento $arrow$ @UC32.3[Vedi UC32.3, Sezione]
+      - L'ID del trasferimento $arrow$ @UC30[Vedi UC30, Sez.]
+      - Il magazzino mittente del trasferimento $arrow$ @UC32.1[Vedi UC32.1, Sez.]
+      - Il magazzino destinatario del trasferimento $arrow$ @UC32.2[Vedi UC32.2, Sez.]
+      - Lo stato del trasferimento $arrow$ @UC31[Vedi UC31, Sez.]
+      - L'elenco della merce interessata dal trasferimento $arrow$ @UC32.3[Vedi UC32.3, Sez.]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento specifico",
   inclusioni: [
@@ -1460,7 +1460,7 @@ Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descr
   ],
   post: [Viene visualizzato l'elenco della merce interessata dal trasferimento],
   scenari: [
-    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UC32.3.1[Vedi UC32.3.1, Sezione]
+    - L'Admin globale visualizza l'elenco della merce interessata dal trasferimento $arrow$ @UC32.3.1[Vedi UC32.3.1, Sez.]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli di un trasferimento",
   inclusioni: [
@@ -1483,8 +1483,8 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
   post: [Per il singolo elemento della lista della merce interessata dal trasferimento viene visualizzato nome e quantità della merce],
   scenari: [
     - Per ogni elemento della lista l'Admin Globale deve visualizzare:
-      - Il nome della singola merce interessata dal trasferimento $arrow$ @UC17[Vedi UC17, Sezione]
-      - La quantità della singola merce interessata dal trasferimento $arrow$ @UC32.3.1.1[Vedi UC32.3.1.1, Sezione]
+      - Il nome della singola merce interessata dal trasferimento $arrow$ @UC17[Vedi UC17, Sez.]
+      - La quantità della singola merce interessata dal trasferimento $arrow$ @UC32.3.1.1[Vedi UC32.3.1.1, Sez.]
   ],
   trigger: "L'Admin globale vuole visualizzare i dettagli della singola merce del trasferimento",
   inclusioni: [
@@ -1519,10 +1519,10 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
   post: [Viene visualizzato l'elenco delle notifiche di rifornimento],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione delle notifiche di rifornimento
-    - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento $arrow$ @UC34[Vedi UC34, Sezione]
+    - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento $arrow$ @UC34[Vedi UC34, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin globale cerca di visualizzare le notifiche di rifornimento ma nessuna notifica è presente $arrow$ @UC37[Vedi UC37, Sezione]
+    - L'Admin globale cerca di visualizzare le notifiche di rifornimento ma nessuna notifica è presente $arrow$ @UC37[Vedi UC37, Sez.]
   ],
   inclusioni: [
     - UC34 @UC34
@@ -1551,8 +1551,8 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   post: [Per ogni elemento della lista delle notifiche di rifornimento viene visualizzato lo stato (ad esempio confermata o non confermata) e l'ID della notifica],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dall'Admin globale dovrà contenere:
-      - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UC35[Vedi UC35, Sezione]
-      - L'ID della notifica $arrow$ @UC36[Vedi UC36, Sezione]
+      - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UC35[Vedi UC35, Sez.]
+      - L'ID della notifica $arrow$ @UC36[Vedi UC36, Sez.]
   ],
   inclusioni: [
     - UC35 @UC35
@@ -1618,10 +1618,10 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   post: [Viene visualizzato l'elenco delle notifiche di rifornimento fornite da _Machine Learning_],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione delle notifiche di rifornimento fornite da _Machine Learning_
-    - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento fornite da _Machine Learning_ $arrow$ @UC34[Vedi UC34, Sezione]
+    - L'Admin globale visualizza a schermo la lista delle notifiche di rifornimento fornite da _Machine Learning_ $arrow$ @UC34[Vedi UC34, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin globale cerca di visualizzare le notifiche di rifornimento fornite da _Machine Learning_ ma nessuna notifica è presente $arrow$ @UC37[Vedi UC37, Sezione]
+    - L'Admin globale cerca di visualizzare le notifiche di rifornimento fornite da _Machine Learning_ ma nessuna notifica è presente $arrow$ @UC37[Vedi UC37, Sez.]
   ],
   inclusioni: [
     - UC34 @UC34
@@ -1651,10 +1651,10 @@ Maggiori informazioni sono disponibili alla @UC34.
   scenari: [
     - L'Admin globale ha selezionato da una lista di notifiche di rifornimento la visualizzazione di una notifica specifia
     - L'Admin globale visualizza della suddetta notifica:
-      - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UC35[Vedi UC35, Sezione]
-      - L'ID della notifica $arrow$ @UC36[Vedi UC36, Sezione]
-      - L'elenco della merce il cui rifornimento è consigliato $arrow$ @UC39.2[Vedi UC39.2, Sezione]
-      - Magazzino di destinazione $arrow$ @UC39.1[Vedi UC39.1, Sezione]
+      - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ @UC35[Vedi UC35, Sez.]
+      - L'ID della notifica $arrow$ @UC36[Vedi UC36, Sez.]
+      - L'elenco della merce il cui rifornimento è consigliato $arrow$ @UC39.2[Vedi UC39.2, Sez.]
+      - Magazzino di destinazione $arrow$ @UC39.1[Vedi UC39.1, Sez.]
   ],
   inclusioni: [
     - UC35 @UC35
@@ -1694,7 +1694,7 @@ Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e a
   post: [Viene visualizzato l'elenco della merce il cui rifornimento è consigliato],
   scenari: [
     - L'Admin globale seleziona una notifica di rifornimento specifica
-    - L'Admin Globale visualizza a schermo l'elenco delle merci il cui rifornimento è consigliato $arrow$ @UC39.2.1[Vedi UC39.2.1, Sezione]
+    - L'Admin Globale visualizza a schermo l'elenco delle merci il cui rifornimento è consigliato $arrow$ @UC39.2.1[Vedi UC39.2.1, Sez.]
   ],
   inclusioni: [
     - UC39.2.1 @UC39.2.1
@@ -1717,9 +1717,9 @@ Tale Caso d'Uso sarà esposto qui di seguito.
   post: [Per ogni elemento della lista delle merci il cui rifornimento è consigliato viene mostrato ID, nome e quantità della merce rispettiva],
   scenari: [
     - Per ogni elemento della lista viene visualizzato:
-      - ID della merce $arrow$ @UC19[Vedi UC23, Sezione]
-      - Nome della merce $arrow$ @UC17[Vedi UC17, Sezione]
-      - Quantità da rifornire $arrow$ @UC39.2.1.1[Vedi UC39.2.1.1, Sezione]
+      - ID della merce $arrow$ @UC19[Vedi UC23, Sez.]
+      - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
+      - Quantità da rifornire $arrow$ @UC39.2.1.1[Vedi UC39.2.1.1, Sez.]
   ],
   inclusioni: [
     - UC19 @UC19
@@ -1761,10 +1761,10 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa all'accettazione delle notifiche di rifornimento
-    - L'Admin globale sceglie quale notifica di rifornimento accettare $arrow$ @UC41[Vedi UC41, Sezione]
+    - L'Admin globale sceglie quale notifica di rifornimento accettare $arrow$ @UC41[Vedi UC41, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da accettare$arrow$ @UC37[Vedi UC37, Sezione]
+    - L'Admin globale vuole accettare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da accettare$arrow$ @UC37[Vedi UC37, Sez.]
   ],
   inclusioni: [
     - UC41 @UC41
@@ -1780,7 +1780,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
 Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("40-incl", "Inclusione del Caso d'Uso n.40: UC41")
 
-=== UC41 - Seleziona notifica di rifornimento <UC41>
+=== UC41 -, Seleziona notifica di rifornimento <UC41>
 
 #use-case(
   attore: "Admin globale",
@@ -1811,10 +1811,10 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
   ],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa al rifiuto delle notifiche di rifornimento
-    - L'Admin globale sceglie quale notifica di rifornimento rifiutare $arrow$ @UC41[Vedi UC41, Sezione]
+    - L'Admin globale sceglie quale notifica di rifornimento rifiutare $arrow$ @UC41[Vedi UC41, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin globale vuole rifiutare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da rifiutare $arrow$ @UC37[Vedi UC37, Sezione]
+    - L'Admin globale vuole rifiutare una notifica di rifornimento ma il Sistema non ha registrata alcuna notifica di rifornimento da rifiutare $arrow$ @UC37[Vedi UC37, Sez.]
   ],
   inclusioni: [
     - UC41 @UC41
@@ -1841,7 +1841,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UC41.
   post: [Viene visualizzato l'elenco dei microservizi],
   scenari: [
     - L'Admin globale seleziona dal menu la voce relativa alla visualizzazione dei microservizi
-    - L'Admin globale visualizza a schermo la lista dei microservizi del Sistema $arrow$ @UC43.1[Vedi UC43.1, Sezione]
+    - L'Admin globale visualizza a schermo la lista dei microservizi del Sistema $arrow$ @UC43.1[Vedi UC43.1, Sez.]
   ],
   inclusioni: [
     - UC43.1 @UC43.1
@@ -1864,8 +1864,8 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   post: [Per ogni elemento della lista dei microservizi viene visualizzato il numero di richieste al secondo],
   scenari: [
     - Ogni singolo elemento della lista visualizzata dall'Admin globale dovrà contenere:
-      - numero di richieste al secondo $arrow$ @UC43.1.1[Vedi UC43.1.1, Sezione]
-      - nome del microservizio $arrow$ @UC43.1.2[Vedi UC43.1.2, Sezione]
+      - numero di richieste al secondo $arrow$ @UC43.1.1[Vedi UC43.1.1, Sez.]
+      - nome del microservizio $arrow$ @UC43.1.2[Vedi UC43.1.2, Sez.]
   ],
   inclusioni: [
     - UC43.1.1 @UC43.1.1
@@ -1917,7 +1917,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
   ],
   scenari_alternativi: [
-    - L'Admin globale cerca di esportare gli ordini eseguiti ma non ci sono dati da esportare $arrow$ @UC45[Vedi UC45, Sezione]
+    - L'Admin globale cerca di esportare gli ordini eseguiti ma non ci sono dati da esportare $arrow$ @UC45[Vedi UC45, Sez.]
   ],
   estensioni: [
     - UC45 @UC45
@@ -1957,7 +1957,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario
   ],
   scenari_alternativi: [
-    - L'Admin globale cerca di esportare l'inventario ma non ci sono dati da esportare $arrow$ @UC47[Vedi UC47, Sezione]
+    - L'Admin globale cerca di esportare l'inventario ma non ci sono dati da esportare $arrow$ @UC47[Vedi UC47, Sez.]
   ],
   estensioni: [
     - UC47 @UC47
@@ -1995,11 +1995,11 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   scenari: [
     - L'Admin globale accede dal menù alla sezione gestione inventario.
-    - L'Admin seleziona la merce per cui vuole impostare una soglia minima @UC49[Vedi UC49, Sezione]
-    - L'Admin inserisce il valore della soglia minima desiderata @UC48.1[Vedi UC48.1, Sezione]
+    - L'Admin seleziona la merce per cui vuole impostare una soglia minima @UC49[Vedi UC49, Sez.]
+    - L'Admin inserisce il valore della soglia minima desiderata @UC48.1[Vedi UC48.1, Sez.]
   ],
   scenari_alternativi: [
-    - L'Admin globale inserisce una soglia minima non valida $arrow$ @UC50[Vedi UC50, Sezione]
+    - L'Admin globale inserisce una soglia minima non valida $arrow$ @UC50[Vedi UC50, Sez.]
   ],
   inclusioni: [
     - UC49 @UC49
@@ -2033,7 +2033,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   ],
 )[]
 
-=== UC49 - Selezione merce <UC49>
+=== UC49 -, Selezione merce <UC49>
 #use-case(
   attore: "Admin globale, Admin locale",
   pre: [
@@ -2047,7 +2047,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   scenari: [
     - L'Attore principale seleziona la merce per cui vuole impostare una soglia minima
   ],
-)[#use-case-diagram("49", "UC49 - Selezione merce")]
+)[#use-case-diagram("49", "UC49 -, Selezione merce")]
 
 === UC50 - Soglia minima non valida <UC50>
 #use-case(
@@ -2080,8 +2080,8 @@ Tali Casi d'Uso saranno di seguito esposti.
     - Il Sistema registra l'aggiunta di stock a quella determinata merce
   ],
   scenari: [
-    - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock) $arrow$ @UC49[Vedi UC49, Sezione]
-    - L'Admin Locale seleziona la quantità da aggiungere a tale merce $arrow$ @UC51.1[Vedi UC51.1, Sezione]
+    - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock) $arrow$ @UC49[Vedi UC49, Sez.]
+    - L'Admin Locale seleziona la quantità da aggiungere a tale merce $arrow$ @UC51.1[Vedi UC51.1, Sez.]
   ],
   inclusioni: [
     - UC49 @UC49
@@ -2095,7 +2095,7 @@ Tali Casi d'Uso saranno di seguito esposti.
 Il Caso d'Uso 51 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1")
 L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
 
-==== UC51.1 - Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
+==== UC51.1 -, Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2127,8 +2127,8 @@ L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
   ],
   scenari: [
     - L'Admin Globale seleziona l'opzione di creazione di una nuova merce nel sistema dal menù principale;
-    - L'Admin Globale inserisce il nome della nuova merce $arrow$ @UC53[Vedi UC53, Sezione]
-    - L'Admin Globale inserisce la descrizione della nuova merce $arrow$ @UC54[Vedi UC54, Sezione]
+    - L'Admin Globale inserisce il nome della nuova merce $arrow$ @UC53[Vedi UC53, Sez.]
+    - L'Admin Globale inserisce la descrizione della nuova merce $arrow$ @UC54[Vedi UC54, Sez.]
   ],
   inclusioni: [
     - UC53 @UC53
@@ -2188,9 +2188,9 @@ Saranno di seguito esposti.
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa alla modifica di una merce esistente
-    - L'Admin globale seleziona la merce da modificare @UC49[Vedi UC49, Sezione]
-    - l'Admin Globale seleziona il nome da assegnare @UC53[Vedi UC53, Sezione]
-    - l'Admin Globale seleziona la descrizione da assegnare @UC54[Vedi UC54, Sezione]
+    - L'Admin globale seleziona la merce da modificare @UC49[Vedi UC49, Sez.]
+    - l'Admin Globale seleziona il nome da assegnare @UC53[Vedi UC53, Sez.]
+    - l'Admin Globale seleziona la descrizione da assegnare @UC54[Vedi UC54, Sez.]
   ],
   inclusioni: [
     - UC49 @UC49
@@ -2216,7 +2216,7 @@ Sono stati esposti alla @UC49, @UC53 e alla @UC54 rispettivamente.
   post: [Viene visualizzato l'elenco degli ordini eseguiti],
   scenari: [
     - Il Cliente seleziona dal menu la voce relativa alla visualizzazione degli ordini eseguiti registrati nel Sistema
-    - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema $arrow$ @UC56.1[Vedi UC56.1, Sezione]
+    - Il Cliente visualizza a schermo la lista degli ordini eseguiti registrati nel Sistema $arrow$ @UC56.1[Vedi UC56.1, Sez.]
   ],
   inclusioni: [
     - UC56.1 @UC56.1
@@ -2240,9 +2240,9 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
   post: [Per ogni elemento della lista degli ordini eseguiti viene visualizzato ID, data e nome dell'ordine],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - l'ID dell'ordine $arrow$ @UC13[Vedi UC13, Sezione]
-      - La data di creazione dell'ordine $arrow$ @UC14[Vedi UC14, Sezione]
-      - Il nome dell'ordine $arrow$ @UC15[Vedi UC15, Sezione]
+      - l'ID dell'ordine $arrow$ @UC13[Vedi UC13, Sez.]
+      - La data di creazione dell'ordine $arrow$ @UC14[Vedi UC14, Sez.]
+      - Il nome dell'ordine $arrow$ @UC15[Vedi UC15, Sez.]
   ],
   inclusioni: [
     - UC13 @UC13
@@ -2264,10 +2264,10 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
   scenari: [
     - Il Cliente ha selezionato da una lista di ordini eseguiti la visualizzazione di un ordine specifico
     - Il Cliente visualizza del suddetto ordine:
-      - ID dell'ordine $arrow$ @UC13[Vedi UC13, Sezione]
-      - Data creazione dell'ordine eseguito $arrow$ @UC14[Vedi UC14, Sezione]
-      - Nome dell'ordine $arrow$ @UC15[Vedi UC15, Sezione]
-      - Lista delle merci $arrow$ @UC57.1[Vedi UC57.1, Sezione]
+      - ID dell'ordine $arrow$ @UC13[Vedi UC13, Sez.]
+      - Data creazione dell'ordine eseguito $arrow$ @UC14[Vedi UC14, Sez.]
+      - Nome dell'ordine $arrow$ @UC15[Vedi UC15, Sez.]
+      - Lista delle merci $arrow$ @UC57.1[Vedi UC57.1, Sez.]
   ],
   inclusioni: [
     - UC13 @UC13
@@ -2292,7 +2292,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   ],
   post: [Viene visualizzata la lista delle merci in un ordine eseguito],
   scenari: [
-    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine eseguito selezionato $arrow$ @UC57.1.1[Vedi UC57.1.1, Sezione]
+    - Il Cliente visualizza a schermo la lista della merce aggiunta all'ordine eseguito selezionato $arrow$ @UC57.1.1[Vedi UC57.1.1, Sez.]
   ],
   inclusioni: [
     - UC52.1.1 @UC57.1.1
@@ -2311,8 +2311,8 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   post: [Per ogni elemento della lista delle merci di un ordine eseguito viene mostrata quantità e nome della merce],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - Quantità di quella merce nell'ordine eseguito selezionato $arrow$ @UC57.1.1.1[Vedi UC57.1.1.1, Sezione]
-      - Nome della merce $arrow$ @UC17[Vedi UC17, Sezione]
+      - Quantità di quella merce nell'ordine eseguito selezionato $arrow$ @UC57.1.1.1[Vedi UC57.1.1.1, Sez.]
+      - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
   ],
   inclusioni: [
     - UC57.1.1.1 @UC57.1.1.1
@@ -2376,7 +2376,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
   scenari: [
     - L'Admin Locale seleziona dal menu principale l'opzione relativa all'attivazione di un Backup periodico;
-    - L'Admin Locale inserisce la periodicità $arrow$ @UC59.1[Vedi UC59.1, Sezione]
+    - L'Admin Locale inserisce la periodicità $arrow$ @UC59.1[Vedi UC59.1, Sez.]
   ],
   scenari_alternativi: [
     - L'Admin Locale vuole attivare un Backup periodico ma la periodicità inserita non è valida $arrow$ @UC60
@@ -2390,7 +2390,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Locale vuole attivare un Backup periodico del Sistema",
 )[]
 
-==== UC59.1 - Selezione periodicità Backup periodico <UC59.1>
+==== UC59.1 -, Selezione periodicità Backup periodico <UC59.1>
 
 #use-case(
   attore: "Admin Locale",
@@ -2481,7 +2481,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - L'Admin Locale seleziona dal menu principale l'opzione relativa al ripristino dell'ultimo Backup effettuato;
   ],
   scenari_alternativi: [
-    - L'Admin Locale ha selezionato dal menu principale l'opzione relativa al ripristino dell'ultimo Backup effettuato, ma nessun Backup è presente $arrow$ UC64[Vedi UC64, Sezione];
+    - L'Admin Locale ha selezionato dal menu principale l'opzione relativa al ripristino dell'ultimo Backup effettuato, ma nessun Backup è presente $arrow$ UC64[Vedi UC64, Sez.];
   ],
   estensioni: [
     - UC64 @UC64
@@ -2520,7 +2520,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa alla visualizzazione delle attività di accesso
-    - L'Admin Globale visualizza a schermo la lista delle attività di accesso $arrow$ @UC65.1[Vedi UC65.1 Sezione]
+    - L'Admin Globale visualizza a schermo la lista delle attività di accesso $arrow$ @UC65.1[Vedi UC65.1, Sez.]
   ],
   inclusioni: [
     - UC65.1 @UC65.1
@@ -2542,9 +2542,9 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
   scenari: [
     - Ogni elemento della lista delle attività di accesso deve presentare:
-      - Indirizzo IP del luogo di accesso @UC65.1.1[Vedi UC65.1.1 Sezione]
-      - ID del tentativo di accesso @UC65.1.2[Vedi UC65.1.2 Sezione]
-      - Stato dell'accesso @UC65.1.3[Vedi UC65.1.3 Sezione]
+      - Indirizzo IP del luogo di accesso @UC65.1.1[Vedi UC65.1.1, Sez.]
+      - ID del tentativo di accesso @UC65.1.2[Vedi UC65.1.2, Sez.]
+      - Stato dell'accesso @UC65.1.3[Vedi UC65.1.3, Sez.]
   ],
   inclusioni: [
     - UC65.1.1 @UC65.1.1
@@ -2617,7 +2617,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa al blocco di una attività di accesso
-    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato $arrow$ @UC66.1[Vedi UC66.1 Sezione]
+    - L'Admin Globale inserisce l'ID del tentativo di accesso il cui indirizzo IP deve essere bloccato $arrow$ @UC66.1[Vedi UC66.1, Sez.]
   ],
   inclusioni: [
     - UC66.1 @UC66.1
@@ -2694,9 +2694,9 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   ],
   scenari: [
     - L'Admin Globale aggiunge il nuovo utente nel Sistema:
-      - L'Admin Globale inserisce il nome per il nuovo utente $arrow$ @UC69.1[Vedi UC69.1, Sezione]
-      - L'Admin Globale inserisce la password per il nuovo utente $arrow$ @UC69.2[Vedi UC69.2, Sezione]
-      - L'Admin Globale inserisce il ruolo per il nuovo utente $arrow$ @UC69.3[Vedi UC69.3, Sezione]
+      - L'Admin Globale inserisce il nome per il nuovo utente $arrow$ @UC69.1[Vedi UC69.1, Sez.]
+      - L'Admin Globale inserisce la password per il nuovo utente $arrow$ @UC69.2[Vedi UC69.2, Sez.]
+      - L'Admin Globale inserisce il ruolo per il nuovo utente $arrow$ @UC69.3[Vedi UC69.3, Sez.]
   ],
   inclusioni: [
     - UC69.1 @UC69.1
@@ -2773,7 +2773,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - Il Sistema elimina correttamente l'utente selezionato dal Sistema.
   ],
   scenari: [
-    - L'Admin Globale seleziona l'utente che vuole eliminare dal Sistema $arrow$ @UC71[Vedi UC71, Sezione]
+    - L'Admin Globale seleziona l'utente che vuole eliminare dal Sistema $arrow$ @UC71[Vedi UC71, Sez.]
     - L'Admin Globale elimina correttamente l'utente selezionato.
   ],
   inclusioni: [
@@ -2782,7 +2782,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Globale vuole eliminare un determinato utente registrato all'interno del Sistema",
 )[]
 
-=== UC71 - Seleziona nome utente <UC71>
+=== UC71 -, Seleziona nome utente <UC71>
 
 #use-case(
   attore: "Admin Globale",
@@ -2798,8 +2798,8 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   scenari: [
     - L'Admin Globale inserisce il nome dell'utente per visualizzarne/modificarne le informazioni:
     - Nel caso volesse modificarne le informazioni:
-      - L'Admin Globale modifica il nome dell'utente selezionato $arrow$ @UC69.1[Vedi UC69.1, Sezione]
-      - L'Admin Globale modifica il ruolo dell'utente selezionato $arrow$ @UC69.3[Vedi UC69.3, Sezione]
+      - L'Admin Globale modifica il nome dell'utente selezionato $arrow$ @UC69.1[Vedi UC69.1, Sez.]
+      - L'Admin Globale modifica il ruolo dell'utente selezionato $arrow$ @UC69.3[Vedi UC69.3, Sez.]
   ],
   inclusioni: [
     - UC69.1 @UC69.1
@@ -2821,8 +2821,8 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
     - Il Sistema modifica correttamente i ruoli e i permessi per l'utente selezionato.
   ],
   scenari: [
-    - L'Admin Globale seleziona il nome dell'utente a cui verrà cambiato il ruolo e i permessi $arrow$ @UC71[Vedi UC71, Sezione]
-    - L'Admin Globale, successivamente aver selezionato l'utente corretto, inserisce il nuovo ruolo per quest'ultimo $arrow$ @UC69.3[Vedi UC69.3, Sezione]
+    - L'Admin Globale seleziona il nome dell'utente a cui verrà cambiato il ruolo e i permessi $arrow$ @UC71[Vedi UC71, Sez.]
+    - L'Admin Globale, successivamente aver selezionato l'utente corretto, inserisce il nuovo ruolo per quest'ultimo $arrow$ @UC69.3[Vedi UC69.3, Sez.]
   ],
   inclusioni: [
     - UC69.3 @UC69.3
@@ -2838,14 +2838,17 @@ Verranno ora descritti i requisiti che _ALimitedGroup_ ha individuato, raggruppa
 - *Qualità*, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
 - *Vincolo*, ovvero restrizioni poste al sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
 
-Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle #link("")[*Norme di Progetto*] [PROSEGUIRE](inserisci link)
+Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle #link("")[*Norme di Progetto*] [PROSEGUIRE](inserisci link)
 
 == Requisiti Funzionali
 
-#show table.cell: cl => align(left, cl)
 #show figure: set block(breakable: true)
+#show table.cell.where(x: 0): strong
+//#show table.cell.where(x: 1):
+//#show table: block.with(stroke: (y: 1pt)
 #figure(
   table(
+    align: left,
     fill: (x, y) => if (y == 0) {
       rgb("#800080")
     } else if (calc.gcd(y, 2) == 2) {
@@ -2853,59 +2856,65 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
     } else {
       rgb("#d8b2d8")
     },
-    columns: (1.5fr, 4fr, 2.5fr),
-    inset: 10pt,
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: (1.25fr, 4fr, 3fr),
+    inset: 8pt,
     table.header(
-      align(center)[#text(fill: white)[*Codice*]],
-      align(center)[#text(fill: white)[*Descrizione*]],
-      align(center)[#text(fill: white)[*Fonti*]],
+      align(left)[#text(fill: white)[*Codice*]],
+      align(left)[#text(fill: white)[*Descrizione*]],
+      align(left)[#text(fill: white)[*Fonti*]],
     ),
 
     [R-1-F-Ob],
     [L'Utente deve poter autenticarsi presso il Sistema selezionando la tipologia di utente (Cliente, Admin Globale o Admin Locale)],
-    [@UC1[UC1 Sezione] \ @UC1.1[UC1.1 Sezione]],
+    [@UC1[UC1, Sez.] \ @UC1.1[UC1.1, Sez.]],
 
     [R-2-F-De],
     [L'Utente deve potersi autenticare inserendo anche Username e Password],
-    [@UC1.2[UC1.2 Sezione] \ @UC1.3[UC1.3 Sezione]],
+    [@UC1.2[UC1.2, Sez.] \ @UC1.3[UC1.3, Sez.]],
 
     [R-3-F-Ob],
     [L'Utente deve ricevere un errore in seguito ad un tentativo di accesso/autenticazione non riuscito],
-    [@UC2[UC2 Sezione]],
+    [@UC2[UC2, Sez.]],
 
     [R-4-F-Ob],
     [L'utente deve poter creare un ordine che può confermare in seguito. Tale ordine deve contenere le seguenti informazioni:
       - Nome dell'ordine;
       - Nominativo del destinatario
       - Indirizzo di spedizione],
-    [@UC3[UC3 Sezione] \ @UC3.1[UC3.1 Sezione] \ @UC3.2[UC3.2 Sezione], \ @UC3.3[UC3.3 Sezione]],
+    [@UC3[UC3, Sez.] \ @UC3.1[UC3.1, Sez.] \ @UC3.2[UC3.2, Sez.], \ @UC3.3[UC3.3, Sez.]],
 
     [R-5-F-Ob],
     [Il Cliente deve poter aggiungere merce ad un ordine non ancora confermato, selezionandone la quantità da aggiungere, indipendentemente se di natura locale (limitata al magazzino corrente) o globale],
-    [@UC4[UC4 Sezione] \ @UC5[UC5 Sezione] \ @UC6[UC6 Sezione] \ @UC9[UC9 Sezione]],
+    [@UC4[UC4, Sez.] \ @UC5[UC5, Sez.] \ @UC6[UC6, Sez.] \ @UC9[UC9, Sez.]],
 
     [R-6-F-Ob],
     [Il Cliente deve ricevere un errore qualora la merce aggiunta all'ordine non risulti essere valida (ovvero la quantità della merce è insufficiente oppure la merce non esiste)],
-    [@UC7[UC7 Sezione]],
+    [@UC7[UC7, Sez.]],
 
     [R-7-F-Ob],
     [Il Cliente deve ricevere un errore quando sta cercando di fare un'operazione su un ordine non confermato (quale l'aggiunta di merce, la cancellazione od una conferma) ma nessun ordine non confermato è disponibile],
-    [@UC8[UC8 Sezione]],
+    [@UC8[UC8, Sez.]],
 
     [R-8-F-Ob],
     [Il Cliente deve poter cancellare un ordine non ancora confermato],
-    [@UC10[UC10 Sezione] \ @UC9[UC9 Sezione]],
+    [@UC10[UC10, Sez.] \ @UC9[UC9, Sez.]],
 
     [R-9-F-Ob],
     [Il Cliente deve poter confermare un ordine non ancora confermato],
-    [@UC11[UC11 Sezione] \ @UC9[UC9 Sezione]],
+    [@UC11[UC11, Sez.] \ @UC9[UC9, Sez.]],
 
     [R-10-F-Ob],
     [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato, visualizzandone:
       - ID dell'ordine
       - Data di creazione dell'ordine
       - Nome dell'ordine],
-    [@UC12[UC12 Sezione] \ @UC12.1[UC12.1 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC15[UC15 Sezione]],
+    [@UC12[UC12, Sez.] \ @UC12.1[UC12.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
 
     [R-11-F-Ob],
     [Il Cliente deve poter consultare i dettagli di un ordine non confermato. Nello specifico deve poterne visualizzare:
@@ -2913,21 +2922,21 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
       - Data creazione dell'ordine
       - Nome dell'ordine
       - Lista delle merci dell'ordine],
-    [@UC16[UC16 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC16.1[UC16.1 Sezione]],
+    [@UC16[UC16, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC16.1[UC16.1, Sez.]],
 
     [R-12-F-Ob],
     [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter trarre le seguenti informazioni per ogni merce:
       - Quantità della merce
       - Nome della merce],
-    [@UC16.1.1[UC16.1.1 Sezione] \ @UC16.1.1.1[UC16.1.1.1 Sezione], @UC17[UC17 Sezione]],
+    [@UC16.1.1[UC16.1.1, Sez.] \ @UC16.1.1.1[UC16.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
 
     [R-12-F-Ob],
-    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema con le seguenti inforrmazioni per ogni merce:
+    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema con le seguenti informazioni per ogni merce:
       - ID della merce
       - Nome della merce
       - Quantità della merce complessiva in tutti i magazzini
       - Quantità della merce attualmente presente nel magazzino],
-    [@UC18[UC18 Sezione] \ @UC18.1[UC18.1 Sezione] \ @UC17[UC17 Sezione] \ @UC19[UC19 Sezione] \ @UC20[UC20 Sezione] \ @UC21[UC21 Sezione]],
+    [@UC18[UC18, Sez.] \ @UC18.1[UC18.1, Sez.] \ @UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.]],
 
     [R-13-F-Ob],
     [Il Cliente deve poter visualizzare le seguenti informazioni relative ad una singola merce nel dettaglio:
@@ -2936,37 +2945,37 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
       - Quantità della merce complessiva in tutti i magazzini
       - Quantità della merce attualmente presente nel magazzino
       - Descrizione della merce],
-    [@UC22[UC22 Sezione], @UC17[UC17 Sezione] \ @UC19[UC19 Sezione] \ @UC20[UC20 Sezione] \ @UC21[UC21 Sezione] \ @UC22.1[UC22.1 Sezione]],
+    [@UC22[UC22, Sez.], @UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.] \ @UC22.1[UC22.1, Sez.]],
 
     [R-14-F-Ob],
     [L'Admin Globale deve poter creare un trasferimento da confermare in seguito, scegliendo il magazzino destinatario e il magazzino mittente],
-    [@UC23[UC23 Sezione] \ @UC23.1[UC23.1 Sezione] \ @UC23.2[UC23.2 Sezione]],
+    [@UC23[UC23, Sez.] \ @UC23.1[UC23.1, Sez.] \ @UC23.2[UC23.2, Sez.]],
 
     [R-15-F-Ob],
     [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato, selezionando nome della merce e quantità],
-    [@UC24[UC24 Sezione] \ @UC25[UC25 Sezione] \ @UC5[UC5 Sezione] \ @UC6[UC6 Sezione]],
+    [@UC24[UC24, Sez.] \ @UC25[UC25, Sez.] \ @UC5[UC5, Sez.] \ @UC6[UC6, Sez.]],
 
     [R-16-F-Ob],
     [L'Admin Globale deve poter confermare un trasferimento non ancora confermato],
-    [@UC26[UC26 Sezione] \ @UC25[UC25 Sezione]],
+    [@UC26[UC26, Sez.] \ @UC25[UC25, Sez.]],
 
     [R-17-F-Ob],
     [L'Admin Globale deve ricevere un errore se la merce in un trasferimento che vuole confermare non è più disponibile in quantità sufficiente o non è più esistente nel Sistema],
-    [@UC7[UC7 Sezione]],
+    [@UC7[UC7, Sez.]],
 
     [R-18-F-Ob],
     [L'Admin Globale deve ricevere un errore qualora selezioni di voler confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
-    [@UC27[UC27 Sezione]],
+    [@UC27[UC27, Sez.]],
 
     [R-19-F-Ob],
     [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato],
-    [@UC28[UC28 Sezione] \ @UC25[UC25 Sezione]],
+    [@UC28[UC28, Sez.] \ @UC25[UC25, Sez.]],
 
     [R-20-F-Ob],
     [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti. Per ognuno di essi deve poter visualizzare:
       - ID del trasferimento
       - Lo stato del trasferimento (confermato o cancellato)],
-    [@UC29[UC29 Sezione] \ @UC29.1[UC29.1 Sezione] \ @UC30[UC30 Sezione] \ @UC31[UC31 Sezione]],
+    [@UC29[UC29, Sez.] \ @UC29.1[UC29.1, Sez.] \ @UC30[UC30, Sez.] \ @UC31[UC31, Sez.]],
 
     [R-21-F-Ob],
     [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico. Nello specifico, L'Admin Globale deve visualizzare:
@@ -2975,25 +2984,25 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
       - magazzino di destinazione
       - stato del trasferimento (confermato o cancellato)
       - L'elenco della merce interessata dal trasferimento],
-    [@UC32[UC32 Sezione] \ @UC30[UC30 Sezione] \ @UC32.1[UC32.1 Sezione] \ @UC32.2[UC32.2 Sezione] \ @UC31[UC31 Sezione] \ @UC32.3[UC32.3 Sezione]],
+    [@UC32[UC32, Sez.] \ @UC30[UC30, Sez.] \ @UC32.1[UC32.1, Sez.] \ @UC32.2[UC32.2, Sez.] \ @UC31[UC31, Sez.] \ @UC32.3[UC32.3, Sez.]],
 
     [R-22-F-Ob],
     [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve poter ottenere delle merci interessate dal trasferimento le seguenti informazioni:
       - Nome della merce
       - Quantità interessata dal trasferimento],
-    [@UC32.3.1[UC32.3.1 Sezione] \ @UC17[UC17 Sezione] \ @UC32.3.1.1[UC32.3.1.1 Sezione]],
+    [@UC32.3.1[UC32.3.1, Sez.] \ @UC17[UC17, Sez.] \ @UC32.3.1.1[UC32.3.1.1, Sez.]],
 
     [R-23-F-Ob],
     [L'Admin Globale deve poter visualizzare le notifiche contenenti i consigli di rifornimento, visualizzandone ID e stato (confermato, da confermare, rifiutato). Tali consigli sono calcolati sulla base di una soglia minima di allerta.],
-    [@UC33[UC33 Sezione] \ @UC34[UC34 Sezione] \ @UC35[UC35 Sezione] \ @UC36[UC36 Sezione]],
+    [@UC33[UC33, Sez.] \ @UC34[UC34, Sez.] \ @UC35[UC35, Sez.] \ @UC36[UC36, Sez.]],
 
     [R-24-F-Ob],
     [L'Admin Globale deve ricevere un messaggio di errore quando tenta di compiere un'azione sulle notifiche di rifornimento, ma nessuna notifica è disponibile],
-    [@UC37[UC37 Sezione]],
+    [@UC37[UC37, Sez.]],
 
     [R-25-F-De],
     [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da un LLM, visualizzandone ID e stato (confermato, da confermare, rifiutato)],
-    [@UC38[UC38 Sezione] \ @UC34[UC34 Sezione]],
+    [@UC38[UC38, Sez.] \ @UC34[UC34, Sez.]],
 
     [R-26-F-Ob],
     [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico, visualizzandone:
@@ -3001,28 +3010,28 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
       - Stato della notifica (confermato, da confermare, rifiutato)
       - Elenco della merce il cui rifornimento è consigliato
       - Magazzino di destinatario del rifornimento],
-    [@UC39[UC39 Sezione] \ @UC36[UC36 Sezione] \ @UC35[UC35 Sezione] \ @UC39.2[UC39.2 Sezione] \ @UC39.1[UC39.1 Sezione]],
+    [@UC39[UC39, Sez.] \ @UC36[UC36, Sez.] \ @UC35[UC35, Sez.] \ @UC39.2[UC39.2, Sez.] \ @UC39.1[UC39.1, Sez.]],
 
     [R-27-F-Ob],
     [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare:
       - ID della merce
       - Nome della merce
       - Quantità da rifornire],
-    [@UC39.2[UC39.2 Sezione] \ @UC19[UC19 Sezione] \ @UC17[UC17 Sezione] \ @UC39.2.1.1[UC 39.2.1.1 Sezione]],
+    [@UC39.2[UC39.2, Sez.] \ @UC19[UC19, Sez.] \ @UC17[UC17, Sez.] \ @UC39.2.1.1[UC 39.2.1.1, Sez.]],
 
     [R-28-F-Ob],
     [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata],
-    [@UC40[UC40 Sezione] \ @UC41[UC41 Sezione]],
+    [@UC40[UC40, Sez.] \ @UC41[UC41, Sez.]],
 
     [R-29-F-Ob],
     [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata],
-    [@UC42[UC42 Sezione] \ @UC41[UC41 Sezione]],
+    [@UC42[UC42, Sez.] \ @UC41[UC41, Sez.]],
 
     [R-30-F-Ob],
     [L'Admin Globale deve poter visualizzare l'elenco dei microservizi. Per ogni microservizio elencato le seguenti informazioni devono essere disponibili:
       - nome del microservizio
       - numero di richieste al secondo del microservizio],
-    [@UC43[UC43 Sezione] \ UC43.1 @UC43.1 \ UC43.1.1 @UC43.1.1 \ UC43.1.2 @UC43.1.2],
+    [@UC43[UC43, Sez.] \ UC43.1 @UC43.1 \ UC43.1.1 @UC43.1.1 \ UC43.1.2 @UC43.1.2],
 
     [R-31-F-Ob], [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_], [UC44 @UC44],
     [R-32-F-Ob],
@@ -3055,14 +3064,14 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
 
     [R-39-F-Ob],
     [L'Admin Globale deve poter aggiornare le informazioni di una merce, cambiandone nome e descrizione],
-    [@UC55[UC55 Sezione] \ @UC49[UC49 Sezione] \ @UC53[UC53 Sezione] \ @UC54[UC54 Sezione]],
+    [@UC55[UC55, Sez.] \ @UC49[UC49, Sez.] \ @UC53[UC53, Sez.] \ @UC54[UC54, Sez.]],
 
     [R-40-F-Ob],
     [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti. Per ciascun ordine è opportuno visualizzare:
       - ID dell'ordine
       - Data creazione dell'ordine
       - Nome dell'ordine],
-    [@UC56[UC56 Sezione] \ @UC56.1[UC56.1 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC15[UC15 Sezione]],
+    [@UC56[UC56, Sez.] \ @UC56.1[UC56.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
 
     [R-41-F-Ob],
     [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito. Nello specifico, il Cliente deve poter visualizzarne:
@@ -3070,22 +3079,22 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sezione 2.2.2.2 delle 
       - Data creazione
       - Nome
       - Lista delle merci],
-    [@UC57[UC57 Sezione] \ @UC13[UC13 Sezione] \ @UC14[UC14 Sezione] \ @UC15[UC15 Sezione] \ @UC57.1[UC57.1 Sezione]],
+    [@UC57[UC57, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.] \ @UC57.1[UC57.1, Sez.]],
 
     [R-42-F-Ob],
     [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare:
       - nome della merce
       - quantità della merce
     ],
-    [@UC57.1[UC57.1 Sezione] \ @UC57.1.1[UC57.1.1 Sezione] \ @UC57.1.1.1[UC57.1.1.1 Sezione] \ @UC17[UC17 Sezione]],
+    [@UC57.1[UC57.1, Sez.] \ @UC57.1.1[UC57.1.1, Sez.] \ @UC57.1.1.1[UC57.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
 
     [R-43-F-De],
     [L'Admin Locale deve avere la possibilità di creare un Backup del proprio magazzino],
-    [@UC58[UC58 Sezione]],
+    [@UC58[UC58, Sez.]],
 
     [R-44-F-De],
     [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
-    [@UC59[UC59 Sezione] \ @UC60[UC60 Sezione]],
+    [@UC59[UC59, Sez.] \ @UC60[UC60, Sez.]],
   ),
   caption: [Requisiti Funzionali],
 )
