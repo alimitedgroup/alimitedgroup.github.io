@@ -2882,7 +2882,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - Il Sistema sincronizza le informazioni sulla singola merce
   ],
   scenari: [
-    - Lo scheduler sincronizza le seguenti informazioni riguardanti la singola merce:
+    - Lo Scheduler avvia la sincronizzazione delle seguenti informazioni riguardanti la singola merce:
       - quantità delle merce localmente disponibile $arrow$ @UC74.2[Vedi UC74.1 Sezione]
       - quantità delle merce globalmente disponibile in tutti i magazzini $arrow$ @UC74.2[Vedi UC74.2 Sezione]
       - nome della merce $arrow$ @UC74.3[Vedi UC74.3 Sezione]
@@ -2909,10 +2909,11 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - La sincronizzazione di una merce specifica è in corso
   ],
   post: [
-    - Il Sistema ottiene le informazioni sulla quantità locale di una merce
+    - Il Sistema sincronizza le informazioni sulla quantità locale di una merce
   ],
   scenari: [
-    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sulla quantità localmente disponibile di una merce
+    - Lo Scheduler avvia il reperimento delle informazioni sulla quantità locale di una merce
+    - Lo Scheduler avvia la sincronizzazione delle informazioni sulla quantità localmente disponibile di una merce
   ],
   trigger: "Lo scheduler deve sincronizzare la quantità locale di una singola merce",
 )[]
@@ -2927,10 +2928,11 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - La sincronizzazione di una merce specifica è in corso
   ],
   post: [
-    - Il Sistema ottiene le informazioni sulla quantità globale di una merce
+    - Il Sistema sincronizza le informazioni sulla quantità globale di una merce
   ],
   scenari: [
-    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sulla quantità globalmente disponibile di una merce
+    - Lo Scheduler avvia il reperimento delle informazioni sulla quantità globale di una merce
+    - Lo Scheduler avvia la sincronizzazione delle informazioni sulla quantità globalmente disponibile di una merce
   ],
   trigger: "Lo scheduler deve sincronizzare la quantità globale di una singola merce",
 )[]
@@ -2945,10 +2947,11 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - La sincronizzazione di una merce specifica è in corso
   ],
   post: [
-    - Il Sistema ottiene le informazioni sul nome di una merce
+    - Il Sistema sincronizza le informazioni sul nome di una merce
   ],
   scenari: [
-    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sul nome di una merce
+    - Lo Scheduler avvia il reperimento del nome della merce
+    - Lo Scheduler avvia la sincronizzazione del nome della merce
   ],
   trigger: "Lo scheduler deve sincronizzare il nome di una singola merce",
 )[]
@@ -2963,10 +2966,11 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - La sincronizzazione di una merce specifica è in corso
   ],
   post: [
-    - Il Sistema ottiene le informazioni sulla descrizione di una merce
+    - Il Sistema sincronizza le informazioni sulla descrizione di una merce
   ],
   scenari: [
-    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sulla descrizione di una merce
+    - Lo Scheduler avvia il reperimento della descrizione della merce
+    - Lo Scheduler avvia la sincronizzazione della descrizione della merce
   ],
   trigger: "Lo scheduler deve sincronizzare la descrizione di una singola merce",
 )[]
@@ -2981,41 +2985,251 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - La sincronizzazione di una merce specifica è in corso
   ],
   post: [
-    - Il Sistema ottiene le informazioni sul'ID di una merce
+    - Il Sistema sincronizza le informazioni sull'ID di una merce
   ],
   scenari: [
-    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sul'ID di una merce
+    - Lo Scheduler avvia il reperimento dell'ID della merce
+    - Lo Scheduler avvia la sincronizzazione dell'ID della merce
   ],
   trigger: "Lo scheduler deve sincronizzare l'ID di una singola merce",
 )[]
 
-=== UC76 - Sincronizza aggiunta merce //include sync singola merce
+=== UC76 - Sincronizza aggiunta merce <UC76> //include sync singola merce
 
-=== UC77 - Sincronizza eliminazione merce //include sync singola merce
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - Il Sistema ha registrato l'aggiunta di una nuova merce
+  ],
+  post: [
+    - Il Sistema sincronizza i dati aggiornati sulla merce
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione dei dati sulla nuova merce $arrow$ @UC74[Vedi UC74 Sezione]
+  ],
+  inclusioni: [
+    - UC74 @UC74
+  ],
+  trigger: "Lo scheduler deve sincronizzare le informazioni su una nuova merce",
+)[]
 
-=== UC78 - Sincronizza modifica informazioni merce //include sync singola merce
+Il Caso d'Uso 76 include un ulteriore Caso d'Uso come mostrato in figura:
+//immagine
+Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
-=== UC79 - Sincronizza elenco ordini
+=== UC77 - Sincronizza eliminazione merce <UC77> //include sync singola merce
 
-=== UC80 - Sincronizza singolo ordine
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - Il Sistema ha registrato l'eliminazione di una merce
+  ],
+  post: [
+    - Il Sistema sincronizza i dati aggiornati sulla merce
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione dei dati sulla merce eliminata $arrow$ @UC74[Vedi UC74 Sezione]
+  ],
+  inclusioni: [
+    - UC74 @UC74
+  ],
+  trigger: "Lo scheduler deve sincronizzare le informazioni su una merce eliminata",
+)[]
 
-=== UC81 - Sincronizza ID singolo ordine/trasferimento
+Il Caso d'Uso 77 include un ulteriore Caso d'Uso come mostrato in figura:
+//immagine
+Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
-==== UC80.2 - Sincronizza Data creazione singolo ordine
+=== UC78 - Sincronizza modifica informazioni merce <UC78> //include sync singola merce
 
-==== UC80.3 - Sincronizza Nome singolo ordine
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - Il Sistema ha registrato l'eliminazione di una merce
+  ],
+  post: [
+    - Il Sistema sincronizza i dati aggiornati sulla merce
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione dei dati sulla merce modificata $arrow$ @UC74[Vedi UC74 Sezione]
+  ],
+  inclusioni: [
+    - UC74 @UC74
+  ],
+  trigger: "Lo scheduler deve sincronizzare le informazioni su una merce modificata",
+)[]
 
-==== UC80.4 - Sincronizza lista merci singolo ordine
+Il Caso d'Uso 78 include un ulteriore Caso d'Uso come mostrato in figura:
+//immagine
+Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
+
+=== UC79 - Sincronizza elenco ordini <UC79>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+  ],
+  post: [
+    - Il Sistema sincronizza l'elenco di tutti gli ordini
+  ],
+  scenari: [
+    - Lo scheduler inizia l'attivita di sincronizzazione di tutti gli ordini, sincronizzando le informazioni di ogni singola ordine $arrow$ @UC80[Vedi UC80 Sezione]
+  ],
+  inclusioni: [
+    - UC80 @UC80
+  ],
+  trigger: "Lo scheduler deve, periodicamente, sincronizzare le informazioni sull'elenco merci nel Sistema",
+)[]
+
+Il Caso d'Uso 79 include ulteriori Casi d'Uso come mostrato in figura:
+//immagine
+Tale Caso d'Uso e relative inclusioni saranno ora esposte.
+
+=== UC80 - Sincronizza singolo ordine <UC80>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sul singola ordine
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione delle seguenti informazioni riguardanti la singola merce:
+      - ID dell'ordine $arrow$ @UC81[Vedi UC81 Sezione]
+      - Data creazione dell'ordine $arrow$ @UC80.1[Vedi UC80.1 Sezione]
+      - Nome dell'ordine $arrow$ @UC80.2[Vedi UC80.2 Sezione]
+      - Liste delle merci previste nell'ordine @UC80.3[Vedi UC80.3 Sezione]
+      - Stato dell'ordine @UC82[Vedi UC82 Sezione]
+  ],
+  inclusioni: [
+    - UC81 @UC81
+    - UC80.1 @UC80.1
+    - UC80.2 @UC80.2
+    - UC80.3 @UC80.3
+    - UC82 @UC82
+  ],
+  trigger: "Lo scheduler deve sincronizzare le informazioni sul singolo ordine",
+)[]
+
+=== UC81 - Sincronizza ID singolo ordine/trasferimento <UC81>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini/trasferimenti è in corso
+    - La sincronizzazione di un ordine/trasferimento specifico è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sull'ID di un ordine/trasferimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dell'ID dell'ordine/trasferimento
+    - Lo Scheduler avvia la sincronizzazione dell'ID dell'ordine/trasferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'ID di un ordine/trasferimento",
+)[]
+
+==== UC80.1 - Sincronizza Data creazione singolo ordine <UC80.1>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini/trasferimenti è in corso
+    - La sincronizzazione di un ordine/trasferimento specifico è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sulla data di creazione di un ordine/trasferimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento della data di creazione dell'ordine/trasferimento
+    - Lo Scheduler avvia la sincronizzazione della data di creazione dell'ordine/trasferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare la data di creazione di un ordine/trasferimento",
+)[]
+
+==== UC80.2 - Sincronizza Nome singolo ordine
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini/trasferimenti è in corso
+    - La sincronizzazione di un ordine/trasferimento specifico è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sul nome di un ordine/trasferimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento del nome dell'ordine/trasferimento
+    - Lo Scheduler avvia la sincronizzazione del nome dell'ordine/trasferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare il nome di un ordine/trasferimento",
+)[]
+
+==== UC80.3 - Sincronizza lista merci singolo ordine
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini è in corso
+    - La sincronizzazione di un ordine specifico è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza l'elenco delle merci di un singolo ordine
+  ],
+  scenari: [
+    - Lo Scheduler inizia l'attivita di sincronizzazione delle merci di un singolo ordine $arrow$ @UC83[Vedi UC83 Sezione]
+  ],
+  inclusioni: [
+    - UC83 @UC83
+  ],
+  trigger: "Lo scheduler deve sincronizzare la lista delle merci di un singolo ordine",
+)[]
 
 === UC82 - Sincronizza stato ordine/trasferimento
 
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini/trasferimenti è in corso
+    - La sincronizzazione di un ordine/trasferimento specifico è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sullo stato di un ordine/trasferimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'ordine/trasferimento
+    - Lo Scheduler avvia la sincronizzazione dello stato dell'ordine/trasferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare lo stato di un ordine/trasferimento",
+)[]
+
 === UC83 - Sincronizza singola merce ordine/trasferimento //include sincronizza ID merce e 82.1
+
+
+Il Caso d'Uso 83 include ulteriori Casi d'Uso come mostrato in figura:
+//immagine
+Le informazioni su tali Casi d'Uso saranno ora esposte
 
 ==== UC83.1 - Sincronizza quantità merce ordine/trasferimento
 
 === UC84 - Sincronizza ordini confermati //include sincronizza elenco ordini e sincronizza elenco merci
 
-=== UC85 - Sincronizza ordini non confermati //include sincronizza elenco ordini
+=== UC85 - Sincronizza ordini non confermati //include sincronizza elenco ordini //
 
 === UC86 - Sincronizza elenco trasferimenti //include 81,82 e 83 e 86.x
 
