@@ -355,7 +355,7 @@ Di seguito sono esposti gli attori utilizzati:
 Vengono inoltre utilizzati i seguenti attori secondari:
 
 #figure(
-  image("../../assets/diagrams/LLM-Actor.png", width: 6%),
+  image("../../assets/diagrams/attori-secondari.png", width: 30%),
   caption: [Diagramma degli attori secondari],
 )
 
@@ -377,6 +377,9 @@ Vengono inoltre utilizzati i seguenti attori secondari:
 
     [*LLM*],
     [Rappresenta un _Large Language Model_ che fornisce consigli di rifornimento sfruttando il _Machine Learning_],
+
+    [*Scheduler*],
+    [Rappresenta uno Scheduler, la componente del Sistema che periodicamente avvia operazioni di sincronizzazione],
   ),
   caption: [Attori secondari],
 )
@@ -2843,6 +2846,216 @@ Tale Caso d'Uso sarà ora esposto.
   ],
   trigger: "L'Admin Globale vuole modificare il ruolo di un determinato utente registrato nel Sistema",
 )[]
+
+//requisiti attività backend: suggerisco di usare scheduler come attore
+=== UC73 - Sincronizza elenco merci disponibili <UC73>
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+  ],
+  post: [
+    - Il Sistema sincronizza l'elenco delle merci disponibili
+  ],
+  scenari: [
+    - Lo scheduler inizia l'attivita di sincronizzazione dell'elenco merci disponibili, sincronizzando le informazioni di ogni singola merce $arrow$ @UC74[Vedi UC74 Sezione]
+  ],
+  inclusioni: [
+    - UC74 @UC74
+  ],
+  trigger: "Lo scheduler deve, periodicamente, sincronizzare le informazioni sull'elenco merci nel Sistema",
+)[]
+
+L'UC73 include i seguenti Casi D'Uso
+//immagine
+Tali Casi d'Uso con relative inclusioni saranno ora esposti.
+
+=== UC74 - Sincronizza singola merce <UC74>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sulla singola merce
+  ],
+  scenari: [
+    - Lo scheduler sincronizza le seguenti informazioni riguardanti la singola merce:
+      - quantità delle merce localmente disponibile $arrow$ @UC74.2[Vedi UC74.1 Sezione]
+      - quantità delle merce globalmente disponibile in tutti i magazzini $arrow$ @UC74.2[Vedi UC74.2 Sezione]
+      - nome della merce $arrow$ @UC74.3[Vedi UC74.3 Sezione]
+      - descrizione della merce $arrow$ @UC74.4[Vedi UC74.4 Sezione]
+      - ID della merce $arrow$ @UC75[Vedi UC75 Sezione]
+  ],
+  inclusioni: [
+    - UC74.1 @UC74.1
+    - UC74.2 @UC74.2
+    - UC74.3 @UC74.3
+    - UC74.4 @UC74.4
+    - UC75 @UC75
+  ],
+  trigger: "Lo scheduler deve sincronizzare le informazioni sulla singola merce",
+)[]
+
+==== UC74.1 - Sincronizza quantità merce locale <UC74.1>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - La sincronizzazione di una merce specifica è in corso
+  ],
+  post: [
+    - Il Sistema ottiene le informazioni sulla quantità locale di una merce
+  ],
+  scenari: [
+    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sulla quantità localmente disponibile di una merce
+  ],
+  trigger: "Lo scheduler deve sincronizzare la quantità locale di una singola merce",
+)[]
+
+==== UC74.2 - Sincronizza quantità merce globale <UC74.2>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - La sincronizzazione di una merce specifica è in corso
+  ],
+  post: [
+    - Il Sistema ottiene le informazioni sulla quantità globale di una merce
+  ],
+  scenari: [
+    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sulla quantità globalmente disponibile di una merce
+  ],
+  trigger: "Lo scheduler deve sincronizzare la quantità globale di una singola merce",
+)[]
+
+==== UC74.3 - Sincronizza nome merce <UC74.3>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - La sincronizzazione di una merce specifica è in corso
+  ],
+  post: [
+    - Il Sistema ottiene le informazioni sul nome di una merce
+  ],
+  scenari: [
+    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sul nome di una merce
+  ],
+  trigger: "Lo scheduler deve sincronizzare il nome di una singola merce",
+)[]
+
+==== UC74.4 - Sincronizza descrizione merce <UC74.4>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - La sincronizzazione di una merce specifica è in corso
+  ],
+  post: [
+    - Il Sistema ottiene le informazioni sulla descrizione di una merce
+  ],
+  scenari: [
+    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sulla descrizione di una merce
+  ],
+  trigger: "Lo scheduler deve sincronizzare la descrizione di una singola merce",
+)[]
+
+=== UC75 - Sincronizza ID merce <UC75>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - La sincronizzazione di una merce specifica è in corso
+  ],
+  post: [
+    - Il Sistema ottiene le informazioni sul'ID di una merce
+  ],
+  scenari: [
+    - Il Sistema, durante la sincronizzazione di una merce, reperisce le informazioni sul'ID di una merce
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'ID di una singola merce",
+)[]
+
+=== UC76 - Sincronizza aggiunta merce //include sync singola merce
+
+=== UC77 - Sincronizza eliminazione merce //include sync singola merce
+
+=== UC78 - Sincronizza modifica informazioni merce //include sync singola merce
+
+=== UC79 - Sincronizza elenco ordini
+
+=== UC80 - Sincronizza singolo ordine
+
+=== UC81 - Sincronizza ID singolo ordine/trasferimento
+
+==== UC80.2 - Sincronizza Data creazione singolo ordine
+
+==== UC80.3 - Sincronizza Nome singolo ordine
+
+==== UC80.4 - Sincronizza lista merci singolo ordine
+
+=== UC82 - Sincronizza stato ordine/trasferimento
+
+=== UC83 - Sincronizza singola merce ordine/trasferimento //include sincronizza ID merce e 82.1
+
+==== UC83.1 - Sincronizza quantità merce ordine/trasferimento
+
+=== UC84 - Sincronizza ordini confermati //include sincronizza elenco ordini e sincronizza elenco merci
+
+=== UC85 - Sincronizza ordini non confermati //include sincronizza elenco ordini
+
+=== UC86 - Sincronizza elenco trasferimenti //include 81,82 e 83 e 86.x
+
+==== UC86.1 - Sincronizza magazzino destinatario trasferimento
+
+==== UC86.2 - Sincronizza magazzino mittente trasferimento
+
+=== UC87 - Sincronizza trasferimenti confermati //include 86 73
+
+=== UC88- Sincronizza trasferimenti cancellati //include 86
+
+=== UC89 - Sincronizza notifiche di rifornimento
+
+==== UC89.1 - Sincronizza singola notifica di rifornimento
+
+===== UC89.1.1 - Sincronizza ID notifica rifornimento
+
+===== UC89.1.2 - Sincronizza magazzino destinatario notifica rifornimento
+
+===== UC89.1.3 - Sincronizza stato notifica rifornimento
+
+===== UC89.1.4 - Sincronizza elenco merci notifica rifornimento
+
+====== UC89.1.4.1 - Sincronizza singola merce notifica rifornimento //include 75
+
+====== UC89.1.4.2 - Sincronizza quantità da rifornire merce notifica rifornimento
+
+=== UC90 - Sincronizza notifica rifornimento confermate //include 89 73
+
+=== UC91 - Sincronizza notifica rifornimento cancellata //include 89
+
+=== UC92 - Sincronizza elenco microservizi
+
+==== UC92.1 - Sincronizza singolo microservizio
+
+===== UC92.1.1 - Sincronizza nome singolo microservizio
+
+===== UC92.1.2 - Sincronizza richieste al secondo singolo microservizio
+
+=== UC93 - sincronizza soglia minima di allerta merce //include sincronizza ID merce
 
 = Requisiti
 
