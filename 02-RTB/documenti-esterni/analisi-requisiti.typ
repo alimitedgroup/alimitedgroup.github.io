@@ -2391,7 +2391,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
 )[#use-case-diagram("59", "UC59 - Attiva Backup periodico")]
 
 Il Caso d'Uso 59 include un ulteriore Caso d'Uso come mostrato di seguito:
-#use-case-diagram("59-incl", "Inclusioni UC59: UC59.1")
+#use-case-diagram("59-incl", "Inclusioni del Caso d'Uso n.59: UC59.1")
 Tale Caso d'Uso sarà ora esposto.
 
 ==== UC59.1 - Inserisci periodicità Backup periodico <UC59.1>
@@ -2492,9 +2492,9 @@ Tale Caso d'Uso sarà ora esposto.
     - UC64 @UC64
   ],
   trigger: "L'Admin Locale vuole ripristinare il Sistema all'ultimo Backup effettuato",
-)[#use-case-diagram("63", "Ripristino dati da ultimo Backup effettuato")]
+)[#use-case-diagram("63", "UC63 - Ripristino dati da ultimo Backup effettuato")]
 
-=== UC64 - Errore nessun Backup trovato <UC64> //
+=== UC64 - Errore nessun Backup trovato <UC64>
 
 #use-case(
   attore: "Admin Locale",
@@ -2531,10 +2531,10 @@ Tale Caso d'Uso sarà ora esposto.
     - UC65.1 @UC65.1
   ],
   trigger: "L'Admin Globale vuole visualizzare le attività di accesso",
-)[]
+)[#use-case-diagram("65", "UC65 - Visualizzazione elenco attività di accesso")]
 
 Il Caso d'Uso 65 include un ulteriore Caso d'Uso come mostrato di seguito:
-//immagine
+#use-case-diagram("65-incl", "Inclusioni del Caso d'Uso n.65: 65.1 e relative inclusioni")
 Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
 
 ==== UC65.1 - Visualizza elemento lista attività di accesso <UC65.1>
@@ -2562,7 +2562,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-===== UC65.1.1 - Visualizza indirizzo IP del tentativo di accesso anomalo <UC65.1.1>
+===== UC65.1.1 - Visualizza indirizzo IP del tentativo di accesso <UC65.1.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -2632,10 +2632,10 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
     - UC66.1 @UC66.1
   ],
   trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
-)[]
+)[#use-case-diagram("66", "UC66 - Blocca tentativo di accesso")]
 
 Il Caso d'Uso 66 include un ulteriore Caso d'Uso come mostrato di seguito:
-//immagine
+#use-case-diagram("66-incl", "Inclusioni del Caso d'Uso n.66: UC66.1")
 Tale Caso d'Uso sarà ora esposto.
 
 ==== UC66.1 - Inserisci ID tentativo di accesso da bloccare <UC66.1>
@@ -2654,9 +2654,9 @@ Tale Caso d'Uso sarà ora esposto.
     - L'Admin Globale inserisce l'ID del tentativo di accesso, il cui indirizzo IP deve essere bloccato
   ],
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
-)[] //
+)[]
 
-=== UC67 - Ricezione E-mail notifica <UC67>
+=== UC67 - Ricezione E-mail notifica <UC67> //
 #use-case(
   attore: "Admin Globale",
   attori_secondari: "Admin Locale",
