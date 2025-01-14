@@ -3159,7 +3159,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare la data di creazione di un ordine/trasferimento",
 )[]
 
-==== UC80.2 - Sincronizza Nome singolo ordine
+==== UC80.2 - Sincronizza Nome singolo ordine <UC80.2>
 
 #use-case(
   attore: "Scheduler",
@@ -3178,7 +3178,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare il nome di un ordine/trasferimento",
 )[]
 
-==== UC80.3 - Sincronizza lista merci singolo ordine
+==== UC80.3 - Sincronizza lista merci singolo ordine <UC80.3>
 
 #use-case(
   attore: "Scheduler",
@@ -3199,7 +3199,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare la lista delle merci di un singolo ordine",
 )[]
 
-=== UC82 - Sincronizza stato ordine/trasferimento
+=== UC82 - Sincronizza stato ordine/trasferimento <UC82>
 
 #use-case(
   attore: "Scheduler",
@@ -3218,7 +3218,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare lo stato di un ordine/trasferimento",
 )[]
 
-=== UC83 - Sincronizza singola merce ordine/trasferimento //include sincronizza ID merce e 82.1
+=== UC83 - Sincronizza singola merce ordine/trasferimento <UC83> //include sincronizza ID merce e 82.1
 
 
 Il Caso d'Uso 83 include ulteriori Casi d'Uso come mostrato in figura:
