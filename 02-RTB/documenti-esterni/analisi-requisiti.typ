@@ -362,6 +362,9 @@ Di seguito sono esposti gli attori utilizzati:
 
     [*Cliente*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interesse nel singolo magazzino],
+
+    [*Scheduler*],
+    [Rappresenta uno Scheduler, la componente del Sistema che periodicamente avvia operazioni di sincronizzazione],
   ),
   caption: [Descrizione degli attori],
 )
@@ -369,7 +372,7 @@ Di seguito sono esposti gli attori utilizzati:
 Vengono inoltre utilizzati i seguenti attori secondari:
 
 #figure(
-  image("../../assets/diagrams/attori-secondari.png", width: 30%),
+  image("../../assets/diagrams/attori-secondari.png", width: 7%),
   caption: [Diagramma degli attori secondari],
 )
 
@@ -391,9 +394,6 @@ Vengono inoltre utilizzati i seguenti attori secondari:
 
     [*LLM*],
     [Rappresenta un _Large Language Model_ che fornisce consigli di rifornimento sfruttando il _Machine Learning_],
-
-    [*Scheduler*],
-    [Rappresenta uno Scheduler, la componente del Sistema che periodicamente avvia operazioni di sincronizzazione],
   ),
   caption: [Attori secondari],
 )
@@ -2877,10 +2877,10 @@ Tale Caso d'Uso sarà ora esposto.
     - UC74 @UC74[Sez.]
   ],
   trigger: "Lo scheduler deve, periodicamente, sincronizzare le informazioni sull'elenco merci nel Sistema",
-)[]
+)[#use-case-diagram("73", "UC73 - Sincronizza elenco merci disponibili")]
 
 L'UC73 include i seguenti Casi D'Uso
-//immagine
+#use-case-diagram("73-incl", "Inclusioni del Caso d'Uso n.73: UC74 e relative inclusioni", width: 75%)
 Tali Casi d'Uso con relative inclusioni saranno ora esposti.
 
 === UC74: Sincronizza singola merce <UC74>
@@ -2889,7 +2889,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   attore: "Scheduler",
   pre: [
     - Il Sistema è attivo, in modalità online
-    - La sincronizzazione dell'elenco delle merci è in corso
+    - La sincronizzazione dell'elenco delle merci o di una merce singola è in corso
   ],
   post: [
     - Il Sistema sincronizza le informazioni sulla singola merce
@@ -3026,10 +3026,10 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
     - UC74 @UC74[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare le informazioni su una nuova merce",
-)[]
+)[#use-case-diagram("76", "UC76 - Sincronizza aggiunta merce")]
 
 Il Caso d'Uso 76 include un ulteriore Caso d'Uso come mostrato in figura:
-//immagine
+#use-case-diagram("76-incl", "Inclusioni del Caso d'Uso n.76: UC74")
 Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
 === UC77: Sincronizza eliminazione merce <UC77> //include sync singola merce
@@ -3051,10 +3051,10 @@ Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
     - UC74 @UC74[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare le informazioni su una merce eliminata",
-)[]
+)[#use-case-diagram("77", "UC77 - Sincronizza eliminazione merce")]
 
 Il Caso d'Uso 77 include un ulteriore Caso d'Uso come mostrato in figura:
-//immagine
+#use-case-diagram("77-incl", "Inclusioni del Caso d'Uso n.77: UC74")
 Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
 === UC78: Sincronizza modifica informazioni merce <UC78> //include sync singola merce
@@ -3076,10 +3076,10 @@ Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
     - UC74 @UC74[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare le informazioni su una merce modificata",
-)[]
+)[#use-case-diagram("78", "UC78 - Sincronizza modifica informazioni merce")]
 
 Il Caso d'Uso 78 include un ulteriore Caso d'Uso come mostrato in figura:
-//immagine
+#use-case-diagram("78-incl", "Inclusioni del Caso d'Uso n.78: UC74")
 Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
 === UC79: Sincronizza elenco ordini <UC79>
@@ -3099,10 +3099,10 @@ Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
     - UC79.1 @UC79.1[Sez.]
   ],
   trigger: "Lo scheduler deve, periodicamente, sincronizzare le informazioni sull'elenco merci nel Sistema",
-)[]
+)[#use-case-diagram("79", "UC79 - Sincronizza elenco ordini")]
 
 Il Caso d'Uso 79 include ulteriori Casi d'Uso come mostrato in figura:
-//immagine
+#use-case-diagram("79-incl", "Inclusioni del Caso d'Uso n.79: UC79.1 e relative inclusioni", width: 95%)
 Tale Caso d'Uso e relative inclusioni saranno ora esposte.
 
 ==== UC79.1: Sincronizza singolo ordine <UC79.1>
@@ -3125,10 +3125,10 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
       - Stato dell'ordine @UC81[Vedi UC81, Sez.]
   ],
   inclusioni: [
-    - UC81 @UC80[Sez.]
     - UC79.1.1 @UC79.1.1[Sez.]
     - UC79.1.2 @UC79.1.2[Sez.]
     - UC79.1.3 @UC79.1.3[Sez.]
+    - UC80 @UC80[Sez.]
     - UC81 @UC81[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare le informazioni sul singolo ordine",
@@ -3256,7 +3256,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
 )[]
 
 Il Caso d'Uso 82 include due ulteriori Casi d'Uso come mostrato in figura:
-//immagine
+#use-case-diagram("82-incl", "Inclusioni del Caso d'Uso n.82: UC75 e UC82.1")
 Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre lo UC82.1 sarà di seguito esposto.
 
 ==== UC82.1: Sincronizza quantità merce ordine/trasferimento <UC82.1>
@@ -3295,11 +3295,11 @@ Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre l
     - UC79 @UC79[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare gli ordini confermati",
-)[]
+)[#use-case-diagram("83", "UC83 - Sincronizza ordini confermati")]
 
-Il Caso d'Uso n. 84 include due ulteriori Casi d'Uso come mostrato in figura:
-//immagine
-Le informazioni riguardanti i due casi d'uso UC73 e UC79, sono reperibili alle rispettive Sezioni: @UC73, @UC79.
+Il Caso d'Uso n. 83 include un ulteriore Caso d'Uso come mostrato in figura:
+#use-case-diagram("83-incl", "Inclusioni del Caso d'Uso n.83: UC79")
+Le informazioni riguardanti tale Caso d'Uso sono disponibili alla @UC79.
 
 === UC84: Sincronizza ordini cancellati
 #use-case(
@@ -3318,13 +3318,13 @@ Le informazioni riguardanti i due casi d'uso UC73 e UC79, sono reperibili alle r
     - UC79 @UC79[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare gli ordini cancellati",
-)[]
+)[#use-case-diagram("84", "UC84 - Sincronizza ordini cancellati")]
 
-Il Caso d'Uso n. 85 include un ulteriore Caso d'Uso come mostrato in figura:
-//immagine
+Il Caso d'Uso n. 84 include un ulteriore Caso d'Uso come mostrato in figura:
+#use-case-diagram("84-incl", "Inclusioni del Caso d'Uso n.84: UC79")
 Le informazioni riguardante il caso d'uso UC79, sono reperibili alla relativa sezione: @UC79.
 
-=== UC85: Sincronizza elenco trasferimenti <UC85> //include 81,82 e 83 e 86.x
+=== UC85: Sincronizza elenco trasferimenti <UC85> //
 
 #use-case(
   attore: "Scheduler",
@@ -3341,10 +3341,10 @@ Le informazioni riguardante il caso d'uso UC79, sono reperibili alla relativa se
     - UC85.1 @UC85.1[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare l'elenco dei trasferimenti",
-)[]
+)[#use-case-diagram("85", "UC85 - Sincronizza elenco trasferimenti")]
 
 Il Caso d'Uso n. 85 include un ulteriore Caso d'Uso come mostrato in figura:\
-//immagine
+#use-case-diagram("85-incl", "Inclusioni del Caso d'Uso n.85: UC85.1 e relative inclusioni")
 Le informazioni su tale Caso d'Uso e le relative inclusioni saranno ora esposte.
 
 ==== UC85.1: Sincronizza singolo trasferimento <UC85.1>
