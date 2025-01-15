@@ -1,12 +1,26 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.24.0]
+#let ver = [0.26.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 12, month: 01, year: 2025),
+  data: datetime(day: 15, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.26.0",
+      date: datetime(day: 15, month: 01, year: 2025),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Redatti Casi d'Uso dal numero 81 al numero 93. Cambiata la numerazione dal template per una corretta visualizzazione",
+    ),
+    (
+      vers: "0.25.0",
+      date: datetime(day: 15, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Redatti Casi d'Uso riguardanti sincronizzazione merci, ordini e trasferimenti",
+    ),
     (
       vers: "0.24.0",
       date: datetime(day: 12, month: 01, year: 2025),
@@ -385,7 +399,7 @@ Vengono inoltre utilizzati i seguenti attori secondari:
 )
 
 == Lista casi d'uso
-=== UC1 - Autenticazione <UC1>
+=== UC1: Autenticazione <UC1>
 #use-case(
   attore: "Utente",
   pre: [- Il sistema è attivo, in modalità online o offline
@@ -412,14 +426,13 @@ Vengono inoltre utilizzati i seguenti attori secondari:
   #use-case-diagram("1", "UC1 - Scelta tipologia utente")
 ]
 
-#pagebreak()
 Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram(
   "1-incl",
   "Inclusioni del Caso d'Uso n.1: UC1.1, UC1.2, UC1.3",
 )
 
-==== UC1.1 - Scelta tipologia utente <UC1.1>
+==== UC1.1: Scelta tipologia utente <UC1.1>
 
 #use-case(
   attore: "Utente",
@@ -438,7 +451,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "L'Utente vuole autenticarsi al sistema",
 )[]
 
-==== UC1.2 - Inserimento Username <UC1.2>
+==== UC1.2: Inserimento Username <UC1.2>
 
 #use-case(
   attore: "Utente",
@@ -457,7 +470,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "L'Utente vuole autenticarsi al sistema",
 )[]
 
-==== UC1.3 - Inserimento Password <UC1.3>
+==== UC1.3: Inserimento Password <UC1.3>
 
 #use-case(
   attore: "Utente",
@@ -476,7 +489,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "L'Utente vuole autenticarsi al sistema",
 )[]
 
-=== UC2 - Autenticazione non riuscita <UC2>
+=== UC2: Autenticazione non riuscita <UC2>
 #use-case(
   attore: "Utente",
   pre: [- Il Sistema è attivo, in modalità online o offline;
@@ -489,7 +502,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
 )[]
 
-=== UC3 - Creazione di un ordine da confermare <UC3>
+=== UC3: Creazione di un ordine da confermare <UC3>
 #use-case(
   attore: "Cliente",
   pre: [- Il Sistema è attivo, in modalità online o offline
@@ -514,7 +527,7 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("3-incl", "Inclusioni del Caso d'Uso n.3: UC3.1, UC3.2, UC3.3")
 
-==== UC3.1 - Inserisci nome ordine <UC3.1>
+==== UC3.1: Inserisci nome ordine <UC3.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -532,7 +545,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
 
-==== UC3.2 - Inserisci nominativo del destinatario <UC3.2>
+==== UC3.2: Inserisci nominativo del destinatario <UC3.2>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -550,7 +563,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
 
-==== UC3.3 - Inserisci indirizzo di spedizione <UC3.3>
+==== UC3.3: Inserisci indirizzo di spedizione <UC3.3>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -568,7 +581,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
 
-=== UC4 - Aggiunta di una merce: ordine/traferimento non confermato <UC4>
+=== UC4: Aggiunta di una merce: ordine/traferimento non confermato <UC4>
 //NOTA: l'ordine globale e locale sono i medesimi, cambia solo questo UC4 che tuttavia rimane sostanzialmente lo stesso per l'ordine locale o globale, dunque nei requisiti si può derivare sia la selezione locale che quella globale
 #use-case(
   attore: "Cliente",
@@ -606,7 +619,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("4-incl", "Inclusioni del Caso d'Uso n.4: UC5, UC6 e UC9")
 
-=== UC5 - Scelta merce da aggiungere: ordine/trasferimento non confermato <UC5>
+=== UC5: Scelta merce da aggiungere: ordine/trasferimento non confermato <UC5>
 
 #use-case(
   attore: "Cliente, Admin Globale",
@@ -625,7 +638,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole aggiungere merce ad un ordine o ad un trasferimento non confermato",
 )[]
 
-=== UC6 - Scelta q.tà merce da aggiungere: ordine/trasferimento non confermato <UC6>
+=== UC6: Scelta q.tà merce da aggiungere: ordine/trasferimento non confermato <UC6>
 
 #use-case(
   attore: "Cliente",
@@ -644,7 +657,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole aggiungere merce ad un ordine o ad un trasferimento non confermato",
 )[]
 
-=== UC7 - Aggiunta merce non valida <UC7>
+=== UC7: Aggiunta merce non valida <UC7>
 
 #use-case(
   attore: "Cliente, Admin Globale",
@@ -661,7 +674,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   ],
 )[]
 
-=== UC8 - Nessun ordine non confermato disponibile <UC8>
+=== UC8: Nessun ordine non confermato disponibile <UC8>
 
 #use-case(
   attore: "Cliente",
@@ -679,7 +692,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 )[]
 
 
-=== UC9 - Seleziona ordine non confermato <UC9>
+=== UC9: Seleziona ordine non confermato <UC9>
 
 #use-case(
   attore: "Cliente",
@@ -698,7 +711,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole eseguire un'operazione su un ordine non confermato",
 )[]
 
-=== UC10 - Cancella ordine non confermato <UC10>
+=== UC10: Cancella ordine non confermato <UC10>
 
 #use-case(
   attore: "Cliente",
@@ -731,7 +744,7 @@ Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("10-incl", "Inclusione del Caso d'Uso n.10: UC9")
 Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
 
-=== UC11 - Conferma ordine non confermato <UC11>
+=== UC11: Conferma ordine non confermato <UC11>
 
 #use-case(
   attore: "Cliente",
@@ -766,7 +779,7 @@ Il Caso d'Uso UC11 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("11-incl", "Inclusione del Caso d'Uso n.11: UC9")
 Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
 
-=== UC12 - Visualizza elenco ordini non confermati per l'utente corrente <UC12>
+=== UC12: Visualizza elenco ordini non confermati per l'utente corrente <UC12>
 
 #use-case(
   attore: "Cliente",
@@ -797,7 +810,7 @@ Il Caso d'Uso UC12 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("12-incl", "Inclusione del Caso d'Uso n.12: UC12.1")
 Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui di seguito descritte.
 
-==== UC12.1 - Visualizza elemento lista ordini non confermati <UC12.1>
+==== UC12.1: Visualizza elemento lista ordini non confermati <UC12.1>
 
 #use-case(
   attore: "Cliente",
@@ -821,7 +834,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   trigger: "Il Cliente vuole visualizzare gli ordini non confermati registrati nel Sistema per l'utente corrente",
 )[]
 
-=== UC13 - Visualizza ID ordine <UC13>
+=== UC13: Visualizza ID ordine <UC13>
 
 #use-case(
   attore: "Cliente",
@@ -836,7 +849,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   ],
 )[]
 
-=== UC14 - Visualizza data creazione ordine <UC14>
+=== UC14: Visualizza data creazione ordine <UC14>
 
 #use-case(
   attore: "Cliente",
@@ -851,7 +864,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   ],
 )[]
 
-=== UC15 - Visualizza nome ordine <UC15>
+=== UC15: Visualizza nome ordine <UC15>
 
 #use-case(
   attore: "Cliente",
@@ -866,7 +879,7 @@ Il presente Caso d'Uso presenta inoltre ulteriori due inclusioni, anch'esse qui 
   ],
 )[]
 
-=== UC16 - Visualizza ordine non confermato <UC16>
+=== UC16: Visualizza ordine non confermato <UC16>
 
 #use-case(
   attore: "Cliente",
@@ -898,7 +911,7 @@ Il Caso d'Uso UC16 include quattro ulteriori Casi d'Uso come raffigurato nella s
 #use-case-diagram("16-incl", "Inclusione del Caso d'Uso n.16: UC13, UC14, UC15, UC16.1")
 Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive descrizioni (@UC13, @UC14 e @UC15), mentre per il Caso d'Uso 16.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
-==== UC16.1 - Visualizza lista merci ordine non confermato <UC16.1>
+==== UC16.1: Visualizza lista merci ordine non confermato <UC16.1>
 
 #use-case(
   attore: "Cliente",
@@ -917,7 +930,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
-===== UC16.1.1 - Visualizza elemento lista merce ordine non confermato <UC16.1.1>
+===== UC16.1.1: Visualizza elemento lista merce ordine non confermato <UC16.1.1>
 
 #use-case(
   attore: "Cliente",
@@ -939,7 +952,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
-====== UC16.1.1.1 - Visualizza q.tà della merce ordine non confermato <UC16.1.1.1>
+====== UC16.1.1.1: Visualizza q.tà della merce ordine non confermato <UC16.1.1.1>
 
 #use-case(
   attore: "Cliente",
@@ -954,7 +967,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   ],
 )[]
 
-=== UC17 - Visualizza nome merce <UC17>
+=== UC17: Visualizza nome merce <UC17>
 
 #use-case(
   attore: "Cliente, Admin Globale",
@@ -969,7 +982,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   ],
 )[]
 
-=== UC18 - Visualizza elenco delle merci nel Sistema <UC18>
+=== UC18: Visualizza elenco delle merci nel Sistema <UC18>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -993,7 +1006,7 @@ Il Caso d'Uso UC18 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("18-incl", "Inclusione del Caso d'Uso n.18: UC18.1")
 Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, sempre rappresentate in figura, ad eccezione del Caso d'Uso n. 17, la cui descrizione è disponibile alla @UC17.
 
-==== UC18.1 - Visualizza elemento lista delle merci <UC18.1>
+==== UC18.1: Visualizza elemento lista delle merci <UC18.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -1018,7 +1031,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   trigger: "l'utente vuole visualizzare la lista delle merci presenti nel Sistema",
 )[]
 
-=== UC19 - Visualizza ID merce <UC19>
+=== UC19: Visualizza ID merce <UC19>
 
 #use-case(
   attore: "Cliente, Admin globale",
@@ -1033,7 +1046,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   ],
 )[]
 
-=== UC20 - Visualizza quantità complessiva di una merce in tutti i magazzini <UC20>
+=== UC20: Visualizza quantità complessiva di una merce in tutti i magazzini <UC20>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -1047,7 +1060,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   ],
 )[]
 
-=== UC21 - Visualizza quantità di una merce nel magazzino attuale <UC21>
+=== UC21: Visualizza quantità di una merce nel magazzino attuale <UC21>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -1061,7 +1074,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
   ],
 )[]
 
-=== UC22 - Visualizza merce <UC22>
+=== UC22: Visualizza merce <UC22>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -1094,7 +1107,7 @@ Il Caso d'Uso UC22 include cinque ulteriori Casi d'Uso come raffigurato nella se
 #use-case-diagram("22-incl", "Inclusioni del Caso d'Uso n.22: UC17, UC19, UC20, UC21 e UC22.1")
 Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19, 20 e 21 reperibili, rispettivamente, alla @UC17, @UC19, @UC20 e @UC21.
 
-==== UC22.1 - Visualizza descrizione della merce <UC22.1>
+==== UC22.1: Visualizza descrizione della merce <UC22.1>
 
 #use-case(
   attore: "Cliente",
@@ -1109,7 +1122,7 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19,
   ],
 )[]
 
-=== UC23 - Creazione di un trasferimento da confermare <UC23>
+=== UC23: Creazione di un trasferimento da confermare <UC23>
 
 #use-case(
   attore: "Admin Globale",
@@ -1138,7 +1151,7 @@ Il Caso d'Uso UC23 include due ulteriori Casi d'Uso come raffigurato nella segue
 #use-case-diagram("23-incl", "Inclusioni del Caso d'Uso n.23: UC23.1 e UC23.2")
 Tali Casi d'Uso saranno descritti qui di seguito:
 
-==== UC23.1 - Scelta del magazzino mittente: trasferimento non confermato <UC23.1>
+==== UC23.1: Scelta del magazzino mittente: trasferimento non confermato <UC23.1>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1156,7 +1169,7 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   trigger: "L'Admin globale vuole creare un nuovo trasferimento da confermare",
 )[]
 
-==== UC23.2 - Scelta del magazzino ricevente: trasferimento non confermato <UC23.2>
+==== UC23.2: Scelta del magazzino ricevente: trasferimento non confermato <UC23.2>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1174,7 +1187,7 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   trigger: "L'Admin globale vuole creare un nuovo trasferimento di merce tra magazzini da confermare",
 )[]
 
-=== UC24 - Aggiunta merce ad un trasferimento non confermato <UC24>
+=== UC24: Aggiunta merce ad un trasferimento non confermato <UC24>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1214,7 +1227,7 @@ Il Caso d'Uso UC24 include tre ulteriori Casi d'Uso come raffigurato nella segue
 #use-case-diagram("24-incl", "Inclusioni del Caso d'Uso n.24: UC5 , UC6 e UC25")
 Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, reperibili, rispettivamente, alla @UC5 e alla @UC6.
 
-=== UC25 - Seleziona trasferimento non confermato <UC25>
+=== UC25: Seleziona trasferimento non confermato <UC25>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1231,7 +1244,7 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, repe
   trigger: "L'Admin globale vuole trasferire della merce da un magazzino all'altro o confermare/cancellare un trasferimento non confermato",
 )[]
 
-=== UC26 - Conferma trasferimento non confermato <UC26>
+=== UC26: Conferma trasferimento non confermato <UC26>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1265,7 +1278,7 @@ Il Caso d'Uso UC26 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("26-incl", "Inclusione del Caso d'Uso n.26: UC25")
 Tale Caso d'Uso è reperibile alla @UC25.
 
-=== UC27 - Nessun trasferimento non confermato disponibile <UC27>
+=== UC27: Nessun trasferimento non confermato disponibile <UC27>
 
 #use-case(
   attore: "Admin Globale",
@@ -1282,7 +1295,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
   ],
 )[]
 
-=== UC28 - Cancella trasferimento non confermato <UC28>
+=== UC28: Cancella trasferimento non confermato <UC28>
 
 #use-case(
   attore: "Admin globale",
@@ -1315,7 +1328,7 @@ Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("28-incl", "Inclusione del Caso d'Uso n.28: UC25")
 Tale Caso d'Uso è reperibile alla @UC25.
 
-=== UC29 - Visualizza elenco dei trasferimenti <UC29>
+=== UC29: Visualizza elenco dei trasferimenti <UC29>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1339,7 +1352,7 @@ Il Caso d'Uso UC29 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("29-incl", "Inclusione del Caso d'Uso n. 29: UC29.1")
 Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (sempre rappresentate nell'immagine precedente).
 
-==== UC29.1 - Visualizza elemento lista trasferimenti <UC29.1>
+==== UC29.1: Visualizza elemento lista trasferimenti <UC29.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -1361,7 +1374,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   trigger: "L'Admin globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
 )[]
 
-=== UC30 - Visualizza ID trasferimento <UC30>
+=== UC30: Visualizza ID trasferimento <UC30>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1375,7 +1388,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   ],
 )[]
 
-=== UC31 - Visualizza stato trasferimento <UC31>
+=== UC31: Visualizza stato trasferimento <UC31>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1389,7 +1402,7 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   ],
 )[]
 
-=== UC32 - Visualizza trasferimento <UC32>
+=== UC32: Visualizza trasferimento <UC32>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1425,7 +1438,7 @@ Il Caso d'Uso UC32 include cinque ulteriori Casi d'Uso come rappresentato dalla 
 #use-case-diagram("32-incl", "Inclusione del Caso d'Uso n.32: UC30, UC31, UC32.1, UC32.2 e UC32.3")
 Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descrizione è reperibile alla, rispettivamente, @UC30 e @UC31.
 
-==== UC32.1 - Visualizza magazzino mittente trasferimento <UC32.1>
+==== UC32.1: Visualizza magazzino mittente trasferimento <UC32.1>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1439,7 +1452,7 @@ Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descr
   ],
 )[]
 
-==== UC32.2 - Visualizza magazzino destinatario trasferimento <UC32.2>
+==== UC32.2: Visualizza magazzino destinatario trasferimento <UC32.2>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1453,7 +1466,7 @@ Tali Casi d'Uso saranno ora descitti ad eccezione degli UC30 e UC31 la cui descr
   ],
 )[]
 
-==== UC32.3 - Visualizza elenco merce trasferimento <UC32.3>
+==== UC32.3: Visualizza elenco merce trasferimento <UC32.3>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1475,7 +1488,7 @@ Il Caso d'Uso UC32.3 include un ulteriore Caso d'Uso come rappresentato dalla se
 #use-case-diagram("32-incl-2", "Inclusione del Caso d'Uso n.32.3: UC32.3.1 e relative inclusioni")
 Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell'UC17, una cui descrizione è reperibile alla @UC17.
 
-===== UC32.3.1 - Visualizza elemento lista merce trasferimento <UC32.3.1>
+===== UC32.3.1: Visualizza elemento lista merce trasferimento <UC32.3.1>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -1496,7 +1509,7 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
   ],
 )[]
 
-====== UC32.3.1.1 - Visualizza quantità singola merce
+====== UC32.3.1.1: Visualizza quantità singola merce
 <UC32.3.1.1>
 #use-case(
   attore: "Admin globale",
@@ -1511,7 +1524,7 @@ Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell
   ],
 )[]
 
-=== UC33 - Visualizza elenco notifiche rifornimento <UC33>
+=== UC33: Visualizza elenco notifiche rifornimento <UC33>
 
 #use-case(
   attore: "Admin globale",
@@ -1542,7 +1555,7 @@ Il Caso d'Uso UC33 include un ulteriore Caso d'Uso come raffigurato nella seguen
 #use-case-diagram("33-incl", "Inclusione del Caso d'Uso n. 33: UC34")
 Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
-=== UC34 - Visualizza elemento lista notifiche rifornimento <UC34>
+=== UC34: Visualizza elemento lista notifiche rifornimento <UC34>
 
 #use-case(
   attore: "Admin globale",
@@ -1564,7 +1577,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   trigger: "L'Admin globale vuole visualizzare la lista delle notifiche di rifornimento",
 )[]
 
-=== UC35 - Visualizza stato notifica rifornimento <UC35>
+=== UC35: Visualizza stato notifica rifornimento <UC35>
 
 #use-case(
   attore: "Admin globale",
@@ -1573,13 +1586,13 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
     - L'utente è riconosciuto dal Sistema come Admin globale
     - Il Cliente sta visualizzando una notifica di rifornimento, in elenco o in dettaglio
   ],
-  post: [viene visualizzato lo stato (ad esempio confermata o non confermata) della notifica di rifornimento],
+  post: [Viene visualizzato lo stato (ad esempio confermata o non confermata) della notifica di rifornimento],
   scenari: [
     - Viene visualizzato lo stato della notifica di rifornimento
   ],
 )[]
 
-=== UC36 - Visualizza ID notifica rifornimento <UC36>
+=== UC36: Visualizza ID notifica rifornimento <UC36>
 
 #use-case(
   attore: "Admin globale",
@@ -1594,7 +1607,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC37 - Nessuna notifica di rifornimento <UC37>
+=== UC37: Nessuna notifica di rifornimento <UC37>
 
 #use-case(
   attore: "Admin globale",
@@ -1609,7 +1622,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
   ],
 )[]
 
-=== UC38 - Visualizza lista notifiche di rifornimento forniti da _Machine Learning_ <UC38>
+=== UC38: Visualizza lista notifiche di rifornimento forniti da _Machine Learning_ <UC38>
 
 #use-case(
   attore: "Admin globale",
@@ -1643,7 +1656,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 Il Caso d'Uso UC35 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("38-incl","Inclusione del Caso d'Uso n.38: UC34")
 Maggiori informazioni sono disponibili alla @UC34.
 
-=== UC39 - Visualizza notifica rifornimento <UC39>
+=== UC39: Visualizza notifica rifornimento <UC39>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1671,7 +1684,7 @@ Maggiori informazioni sono disponibili alla @UC34.
 Il Caso d'Uso UC39 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine: #use-case-diagram("39-incl","Inclusione del Caso d'Uso n.39: UC35, UC36, UC39.1 e UC39.2")
 Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e alla @UC36.
 
-==== UC39.1 - Visualizza magazzino di destinazione <UC39.1>
+==== UC39.1: Visualizza magazzino di destinazione <UC39.1>
 
 #use-case(
   attore: "Cliente, Admin globale",
@@ -1686,7 +1699,7 @@ Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e a
   ],
 )[]
 
-==== UC39.2 - Visualizza elenco merce consigliata da rifornire <UC39.2>
+==== UC39.2: Visualizza elenco merce consigliata da rifornire <UC39.2>
 
 #use-case(
   attore: "Admin globale",
@@ -1708,7 +1721,7 @@ Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e a
 Il Caso d'Uso UC39.2 include un ulteriore caso d'uso come raffigurato nella seguente immagine: #use-case-diagram("39-incl-2","Inclusione del Caso d'Uso n.39.2: UC39.2.1")
 Tale Caso d'Uso sarà esposto qui di seguito.
 
-===== UC39.2.1 - Visualizza elemento lista merce consigliata da rifornire <UC39.2.1>
+===== UC39.2.1: Visualizza elemento lista merce consigliata da rifornire <UC39.2.1>
 
 #use-case(
   attore: "Admin globale",
@@ -1736,7 +1749,7 @@ Il Caso d'Uso UC39.2.1 include tre ulteriori Casi d'Uso come descritto sopra.
 In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivamente, alla @UC17 e alla @UC19, i rimanenti saranno invece esposti qui di seguito.
 
 
-====== UC39.2.1.1 - Visualizza quantità merce da rifornire <UC39.2.1.1>
+====== UC39.2.1.1: Visualizza quantità merce da rifornire <UC39.2.1.1>
 
 #use-case(
   attore: "Admin globale",
@@ -1751,7 +1764,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
   ],
 )[]
 
-=== UC40 - Accetta notifica di rifornimento <UC40>
+=== UC40: Accetta notifica di rifornimento <UC40>
 
 #use-case(
   attore: "Admin globale",
@@ -1783,7 +1796,7 @@ In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivament
 Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("40-incl", "Inclusione del Caso d'Uso n.40: UC41")
 
-=== UC41 - Seleziona notifica di rifornimento <UC41>
+=== UC41: Seleziona notifica di rifornimento <UC41>
 
 #use-case(
   attore: "Admin globale",
@@ -1801,7 +1814,7 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
   trigger: "L'Admin globale vuole effettuare un'operazione su una notifica di rifornimento",
 )[]
 
-=== UC42 - Rifiuta notifica di rifornimento <UC42>
+=== UC42: Rifiuta notifica di rifornimento <UC42>
 
 #use-case(
   attore: "Admin globale",
@@ -1833,7 +1846,7 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
 Il Caso d'Uso UC42 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("42-incl", "Inclusione del Caso d'Uso n.42: UC41")
 Tale caso d'uso è disponibile per la consultazione alla @UC41.
 
-=== UC43 - Visualizza elenco microservizi <UC43>
+=== UC43: Visualizza elenco microservizi <UC43>
 
 #use-case(
   attore: "Admin globale",
@@ -1855,7 +1868,7 @@ Tale caso d'uso è disponibile per la consultazione alla @UC41.
 Il Caso d'Uso UC39 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("43-incl","Inclusioni del Caso d'Uso n.43: UC43.1")
 Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito.
 
-==== UC43.1 - Visualizza elemento lista microservizi <UC43.1>
+==== UC43.1: Visualizza elemento lista microservizi <UC43.1>
 
 #use-case(
   attore: "Admin globale",
@@ -1877,7 +1890,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   trigger: "L'Admin globale vuole visualizzare l'elenco dei microservizi del Sistema",
 )[]
 
-===== UC43.1.1 - Visualizza numero richieste al secondo del microservizio <UC43.1.1>
+===== UC43.1.1: Visualizza numero richieste al secondo del microservizio <UC43.1.1>
 
 #use-case(
   attore: "Admin globale",
@@ -1892,7 +1905,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-===== UC43.1.2 - Visualizza nome del microservizio <UC43.1.2>
+===== UC43.1.2: Visualizza nome del microservizio <UC43.1.2>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1906,7 +1919,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-=== UC44 - Esportazione ordini <UC44>
+=== UC44: Esportazione ordini <UC44>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1930,7 +1943,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   #use-case-diagram("44", "UC44 - Esportazione ordini")
 ]
 
-=== UC45 - Nessun ordine da esportare <UC45>
+=== UC45: Nessun ordine da esportare <UC45>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1946,7 +1959,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-=== UC46 - Esportazione report inventario <UC46>
+=== UC46: Esportazione report inventario <UC46>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1970,7 +1983,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   #use-case-diagram("46", "UC46 - Esportazione report inventario")
 ]
 
-=== UC47 - Nessun dato inventario <UC47>
+=== UC47: Nessun dato inventario <UC47>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -1986,7 +1999,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
 )[]
 
-=== UC48 - Creazione di una soglia minima per una merce <UC48>
+=== UC48: Creazione di una soglia minima per una merce <UC48>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -2019,7 +2032,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
 Il Caso d'Uso 48 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("48-incl","Inclusioni del Caso d'Uso n.48: UC48.1 e UC49").
 Tali Casi d'Uso saranno di seguito esposti.
 
-==== UC48.1 - Inserisci soglia minima <UC48.1>
+==== UC48.1: Inserisci soglia minima <UC48.1>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -2036,7 +2049,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   ],
 )[]
 
-=== UC49 - Selezione merce <UC49>
+=== UC49: Selezione merce <UC49>
 #use-case(
   attore: "Admin globale, Admin locale",
   pre: [
@@ -2052,7 +2065,7 @@ Tali Casi d'Uso saranno di seguito esposti.
   ],
 )[#use-case-diagram("49", "UC49 - Selezione merce")]
 
-=== UC50 - Soglia minima non valida <UC50>
+=== UC50: Soglia minima non valida <UC50>
 #use-case(
   attore: "Admin globale",
   pre: [
@@ -2071,7 +2084,7 @@ Tali Casi d'Uso saranno di seguito esposti.
 //Sistema Matteo (su) sistema Marco (giù)
 // MARCO
 
-=== UC51 - Aggiunta stock di una merce <UC51>
+=== UC51: Aggiunta stock di una merce <UC51>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2098,7 +2111,7 @@ Tali Casi d'Uso saranno di seguito esposti.
 Il Caso d'Uso 51 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1")
 L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
 
-==== UC51.1 - Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
+==== UC51.1: Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
 #use-case(
   attore: "Admin Locale",
   pre: [
@@ -2114,7 +2127,7 @@ L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
   ],
 )[]
 
-=== UC52 - Creazione merce <UC52>
+=== UC52: Creazione merce <UC52>
 
 #use-case(
   attore: "Admin Globale",
@@ -2145,7 +2158,7 @@ L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
 Il Caso d'Uso 52 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("52-incl","Inclusioni del Caso d'Uso n.52: UC53 e UC54")
 Saranno di seguito esposti.
 
-=== UC53 - Inserimento nome merce <UC53>
+=== UC53: Inserimento nome merce <UC53>
 
 #use-case(
   attore: "Admin globale",
@@ -2162,7 +2175,7 @@ Saranno di seguito esposti.
   ],
 )[/*#use-case-diagram("53", "UC53 - Inserimento nome merce") già presente sopra*/]
 
-=== UC54 - Inserimento descrizione merce <UC54>
+=== UC54: Inserimento descrizione merce <UC54>
 
 #use-case(
   attore: "Admin globale",
@@ -2179,7 +2192,7 @@ Saranno di seguito esposti.
   ],
 )[/*#use-case-diagram("54", "UC54 - Inserimento descrizione merce") già presente sopra*/]
 
-=== UC55 - Aggiornamento informazioni di una merce <UC55>
+=== UC55: Aggiornamento informazioni di una merce <UC55>
 #use-case(
   attore: "Admin Globale",
   pre: [
@@ -2192,8 +2205,8 @@ Saranno di seguito esposti.
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa alla modifica di una merce esistente
     - L'Admin globale seleziona la merce da modificare @UC49[Vedi UC49, Sez.]
-    - l'Admin Globale seleziona il nome da assegnare @UC53[Vedi UC53, Sez.]
-    - l'Admin Globale seleziona la descrizione da assegnare @UC54[Vedi UC54, Sez.]
+    - L'Admin Globale seleziona il nome da assegnare @UC53[Vedi UC53, Sez.]
+    - L'Admin Globale seleziona la descrizione da assegnare @UC54[Vedi UC54, Sez.]
   ],
   inclusioni: [
     - UC49 @UC49[Sez.]
@@ -2208,7 +2221,7 @@ Saranno di seguito esposti.
 Il Caso d'Uso 55 include tre ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("55-incl","Inclusioni del Caso d'Uso n.55: UC49, UC53 e UC54").
 Sono stati esposti alla @UC49, @UC53 e alla @UC54 rispettivamente.
 
-=== UC56 - Visualizza elenco ordini eseguiti <UC56>
+=== UC56: Visualizza elenco ordini eseguiti <UC56>
 
 #use-case(
   attore: "Cliente",
@@ -2231,7 +2244,7 @@ Il Caso d'Uso UC51 include cinque ulteriori Casi d'Uso come raffigurato nella se
 #use-case-diagram("56-incl", "Inclusioni del Caso d'Uso n.56: UC56.1").
 Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già state esposte precedentemente).
 
-==== UC56.1 - Visualizza singolo elemento lista ordini eseguiti <UC56.1>
+==== UC56.1: Visualizza singolo elemento lista ordini eseguiti <UC56.1>
 
 #use-case(
   attore: "Cliente",
@@ -2255,7 +2268,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
   trigger: "Il Cliente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
 )[]
 
-=== UC57 - Visualizza ordine eseguito <UC57>
+=== UC57: Visualizza ordine eseguito <UC57>
 
 #use-case(
   attore: "Cliente",
@@ -2285,7 +2298,7 @@ Il Caso d'Uso UC57 include cinque ulteriori Casi d'Uso come raffigurato nella se
 #use-case-diagram("57-incl", "Inclusioni del Caso d'Uso n.57: UC13, UC14, UC15, UC57.1 e relative inclusioni")
 Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive descrizioni (@UC13, @UC14 e @UC15), mentre per il Caso d'Uso UC57.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
-==== UC57.1 - Visualizza lista merci ordine eseguito <UC57.1>
+==== UC57.1: Visualizza lista merci ordine eseguito <UC57.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -2303,7 +2316,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
 )[]
 
-===== UC57.1.1 - Visualizza singolo elemento lista merci ordine eseguito <UC57.1.1>
+===== UC57.1.1: Visualizza singolo elemento lista merci ordine eseguito <UC57.1.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -2324,7 +2337,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini eseguiti la lista delle merci che tali ordini contengono",
 )[]
 
-====== UC57.1.1.1 - Visualizza q.tà elemento lista merci ordine eseguito <UC57.1.1.1>
+====== UC57.1.1.1: Visualizza q.tà elemento lista merci ordine eseguito <UC57.1.1.1>
 #use-case(
   attore: "Cliente",
   pre: [
@@ -2347,7 +2360,7 @@ Legato a questo c'è il fatto che l'Admin Locale e quello Globale vogliono regis
 I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno scheduler. Esempi sono aggiorna informazioni merci disponibili, aggiorna informazioni notifiche rifornimento, aggiorna elenco transazioni (ordini/trasferimenti) non completate, invia conferma ordini, invia conferma transazioni (ordini/trasferimenti), invia notifica email, invia notifica sms, crea backup regolare ecc.
 */
 
-=== UC58 - Creazione Backup <UC58>
+=== UC58: Creazione Backup <UC58>
 
 #use-case(
   attore: "Admin Locale",
@@ -2364,7 +2377,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
   trigger: "L'Admin Locale vuole creare un Backup del Sistema",
 )[#use-case-diagram("58", "UC58 - Creazione Backup")]
 
-=== UC59 - Attiva Backup periodico <UC59>
+=== UC59: Attiva Backup periodico <UC59>
 
 #use-case(
   attore: "Admin Locale",
@@ -2397,7 +2410,7 @@ Il Caso d'Uso 59 include un ulteriore Caso d'Uso come mostrato di seguito:
 #use-case-diagram("59-incl", "Inclusioni UC59: UC59.1")
 Tale Caso d'Uso sarà ora esposto.
 
-==== UC59.1 - Inserisci periodicità Backup periodico <UC59.1>
+==== UC59.1: Inserisci periodicità Backup periodico <UC59.1>
 
 #use-case(
   attore: "Admin Locale",
@@ -2415,7 +2428,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Locale vuole fornire la periodicità con cui effettuare un Backup periodico",
 )[]
 
-=== UC60 - Periodicità non valida <UC60>
+=== UC60: Periodicità non valida <UC60>
 
 #use-case(
   attore: "Admin Locale",
@@ -2433,7 +2446,7 @@ Tale Caso d'Uso sarà ora esposto.
   ],
 )[]
 
-=== UC61 - Elimina Backup periodico <UC61>
+=== UC61: Elimina Backup periodico <UC61>
 
 #use-case(
   attore: "Admin Locale",
@@ -2457,7 +2470,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Locale vuole eliminare il Backup periodico del Sistema",
 )[#use-case-diagram("61", "UC61 - Elimina Backup periodico")]
 
-=== UC62 - Nessun Backup periodico attivo <UC62>
+=== UC62: Nessun Backup periodico attivo <UC62>
 
 #use-case(
   attore: "Admin Locale",
@@ -2474,7 +2487,7 @@ Tale Caso d'Uso sarà ora esposto.
   ],
 )[]
 
-=== UC63 - Ripristino dati da utlimo Backup effettuato <UC63>
+=== UC63: Ripristino dati da ultimo Backup effettuato <UC63>
 
 #use-case(
   attore: "Admin Locale",
@@ -2497,7 +2510,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Locale vuole ripristinare il Sistema all'ultimo Backup effettuato",
 )[#use-case-diagram("63", "Ripristino dati da ultimo Backup effettuato")]
 
-=== UC64 - Errore nessun Backup trovato <UC64> //
+=== UC64: Errore nessun Backup trovato <UC64> //
 
 #use-case(
   attore: "Admin Locale",
@@ -2515,7 +2528,7 @@ Tale Caso d'Uso sarà ora esposto.
   ],
 )[]
 
-=== UC65 - Visualizzazione elenco attività di accesso <UC65>
+=== UC65: Visualizzazione elenco attività di accesso <UC65>
 
 #use-case(
   attore: "Admin Globale",
@@ -2540,7 +2553,7 @@ Il Caso d'Uso 65 include un ulteriore Caso d'Uso come mostrato di seguito:
 //immagine
 Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
 
-==== UC65.1 - Visualizza elemento lista attività di accesso <UC65.1>
+==== UC65.1: Visualizza elemento lista attività di accesso <UC65.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -2565,7 +2578,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-===== UC65.1.1 - Visualizza indirizzo IP del tentativo di accesso anomalo <UC65.1.1>
+===== UC65.1.1: Visualizza indirizzo IP del tentativo di accesso anomalo <UC65.1.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -2582,7 +2595,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-===== UC65.1.2 - Visualizza ID tentativo di accesso <UC65.1.2>
+===== UC65.1.2: Visualizza ID tentativo di accesso <UC65.1.2>
 
 #use-case(
   attore: "Admin Globale",
@@ -2599,7 +2612,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-===== UC65.1.3 - Visualizza stato tentativo di accesso <UC65.1.3>
+===== UC65.1.3: Visualizza stato tentativo di accesso <UC65.1.3>
 
 #use-case(
   attore: "Admin Globale",
@@ -2616,7 +2629,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-=== UC66 - Blocca tentativo di accesso <UC66>
+=== UC66: Blocca tentativo di accesso <UC66>
 
 #use-case(
   attore: "Admin Globale",
@@ -2641,7 +2654,7 @@ Il Caso d'Uso 66 include un ulteriore Caso d'Uso come mostrato di seguito:
 //immagine
 Tale Caso d'Uso sarà ora esposto.
 
-==== UC66.1 - Inserisci ID tentativo di accesso da bloccare <UC66.1>
+==== UC66.1: Inserisci ID tentativo di accesso da bloccare <UC66.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -2659,7 +2672,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[] //
 
-=== UC67 - Ricezione E-mail notifica <UC67>
+=== UC67: Ricezione E-mail notifica <UC67>
 #use-case(
   attore: "Admin Globale",
   attori_secondari: "Admin Locale",
@@ -2677,7 +2690,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale/Locale riceve la notifica via e-mail del tentativo di accesso anomalo",
 )[]
 
-=== UC68 - Ricezione SMS notifica <UC68>
+=== UC68: Ricezione SMS notifica <UC68>
 
 #use-case(
   attore: "Admin Globale",
@@ -2696,7 +2709,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale/Locale riceve la notifica via SMS del tentativo di accesso anomalo",
 )[]
 
-=== UC69 - Aggiungi utente <UC69>
+=== UC69: Aggiungi utente <UC69>
 
 #use-case(
   attore: "Admin Globale",
@@ -2722,7 +2735,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale aggiunge un nuovo utente all'interno del Sistema",
 )[]
 
-==== UC69.1 - Inserisci nome nuovo utente <UC69.1>
+==== UC69.1: Inserisci nome nuovo utente <UC69.1>
 
 #use-case(
   attore: "Admin Globale",
@@ -2740,7 +2753,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale inserisce il nome per il nuovo utente all'interno del Sistema",
 )[]
 
-==== UC69.2 - Inserisci password nuovo utente <UC69.2>
+==== UC69.2: Inserisci password nuovo utente <UC69.2>
 
 #use-case(
   attore: "Admin Globale",
@@ -2758,7 +2771,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale inserisce la password per il nuovo utente all'interno del Sistema",
 )[]
 
-==== UC69.3 - Inserisci ruolo utente <UC69.3>
+==== UC69.3: Inserisci ruolo utente <UC69.3>
 
 #use-case(
   attore: "Admin Globale",
@@ -2776,7 +2789,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale inserisce il ruolo per il nuovo utente all'interno del Sistema",
 )[]
 
-=== UC70 - Elimina utente <UC70>
+=== UC70: Elimina utente <UC70>
 
 #use-case(
   attore: "Admin Globale",
@@ -2798,7 +2811,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole eliminare un determinato utente registrato all'interno del Sistema",
 )[]
 
-=== UC71 - Seleziona nome utente <UC71>
+=== UC71: Seleziona nome utente <UC71>
 
 #use-case(
   attore: "Admin Globale",
@@ -2824,7 +2837,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole selezionare il nome utente di un determinato fruitore del Sistema",
 )[]
 
-=== UC72 - Modifica ruolo utente <UC72>
+=== UC72: Modifica ruolo utente <UC72>
 
 #use-case(
   attore: "Admin Globale",
@@ -2848,7 +2861,7 @@ Tale Caso d'Uso sarà ora esposto.
 )[]
 
 //requisiti attività backend: suggerisco di usare scheduler come attore
-=== UC73 - Sincronizza elenco merci disponibili <UC73>
+=== UC73: Sincronizza elenco merci disponibili <UC73>
 #use-case(
   attore: "Scheduler",
   pre: [
@@ -2870,7 +2883,7 @@ L'UC73 include i seguenti Casi D'Uso
 //immagine
 Tali Casi d'Uso con relative inclusioni saranno ora esposti.
 
-=== UC74 - Sincronizza singola merce <UC74>
+=== UC74: Sincronizza singola merce <UC74>
 
 #use-case(
   attore: "Scheduler",
@@ -2899,7 +2912,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   trigger: "Lo scheduler deve sincronizzare le informazioni sulla singola merce",
 )[]
 
-==== UC74.1 - Sincronizza quantità merce locale <UC74.1>
+==== UC74.1: Sincronizza quantità merce locale <UC74.1>
 
 #use-case(
   attore: "Scheduler",
@@ -2918,7 +2931,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   trigger: "Lo scheduler deve sincronizzare la quantità locale di una singola merce",
 )[]
 
-==== UC74.2 - Sincronizza quantità merce globale <UC74.2>
+==== UC74.2: Sincronizza quantità merce globale <UC74.2>
 
 #use-case(
   attore: "Scheduler",
@@ -2937,7 +2950,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   trigger: "Lo scheduler deve sincronizzare la quantità globale di una singola merce",
 )[]
 
-==== UC74.3 - Sincronizza nome merce <UC74.3>
+==== UC74.3: Sincronizza nome merce <UC74.3>
 
 #use-case(
   attore: "Scheduler",
@@ -2956,7 +2969,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   trigger: "Lo scheduler deve sincronizzare il nome di una singola merce",
 )[]
 
-==== UC74.4 - Sincronizza descrizione merce <UC74.4>
+==== UC74.4: Sincronizza descrizione merce <UC74.4>
 
 #use-case(
   attore: "Scheduler",
@@ -2975,7 +2988,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   trigger: "Lo scheduler deve sincronizzare la descrizione di una singola merce",
 )[]
 
-=== UC75 - Sincronizza ID merce <UC75>
+=== UC75: Sincronizza ID merce <UC75>
 
 #use-case(
   attore: "Scheduler",
@@ -2994,7 +3007,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   trigger: "Lo scheduler deve sincronizzare l'ID di una singola merce",
 )[]
 
-=== UC76 - Sincronizza aggiunta merce <UC76> //include sync singola merce
+=== UC76: Sincronizza aggiunta merce <UC76> //include sync singola merce
 
 #use-case(
   attore: "Scheduler",
@@ -3019,7 +3032,7 @@ Il Caso d'Uso 76 include un ulteriore Caso d'Uso come mostrato in figura:
 //immagine
 Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
-=== UC77 - Sincronizza eliminazione merce <UC77> //include sync singola merce
+=== UC77: Sincronizza eliminazione merce <UC77> //include sync singola merce
 
 #use-case(
   attore: "Scheduler",
@@ -3044,7 +3057,7 @@ Il Caso d'Uso 77 include un ulteriore Caso d'Uso come mostrato in figura:
 //immagine
 Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
-=== UC78 - Sincronizza modifica informazioni merce <UC78> //include sync singola merce
+=== UC78: Sincronizza modifica informazioni merce <UC78> //include sync singola merce
 
 #use-case(
   attore: "Scheduler",
@@ -3069,7 +3082,7 @@ Il Caso d'Uso 78 include un ulteriore Caso d'Uso come mostrato in figura:
 //immagine
 Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
-=== UC79 - Sincronizza elenco ordini <UC79>
+=== UC79: Sincronizza elenco ordini <UC79>
 
 #use-case(
   attore: "Scheduler",
@@ -3092,7 +3105,7 @@ Il Caso d'Uso 79 include ulteriori Casi d'Uso come mostrato in figura:
 //immagine
 Tale Caso d'Uso e relative inclusioni saranno ora esposte.
 
-=== UC80 - Sincronizza singolo ordine <UC80>
+=== UC80: Sincronizza singolo ordine <UC80>
 
 #use-case(
   attore: "Scheduler",
@@ -3121,7 +3134,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare le informazioni sul singolo ordine",
 )[]
 
-==== UC80.1 - Sincronizza Data creazione singolo ordine <UC80.1>
+==== UC80.1: Sincronizza Data creazione singolo ordine <UC80.1>
 
 #use-case(
   attore: "Scheduler",
@@ -3140,7 +3153,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare la data di creazione di un ordine/trasferimento",
 )[]
 
-==== UC80.2 - Sincronizza Nome singolo ordine <UC80.2>
+==== UC80.2: Sincronizza Nome singolo ordine <UC80.2>
 
 #use-case(
   attore: "Scheduler",
@@ -3159,7 +3172,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare il nome di un ordine/trasferimento",
 )[]
 
-==== UC80.3 - Sincronizza lista merci singolo ordine <UC80.3>
+==== UC80.3: Sincronizza lista merci singolo ordine <UC80.3>
 
 #use-case(
   attore: "Scheduler",
@@ -3180,7 +3193,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare la lista delle merci di un singolo ordine",
 )[]
 
-=== UC81 - Sincronizza ID singolo ordine/trasferimento <UC81>
+=== UC81: Sincronizza ID singolo ordine/trasferimento <UC81>
 
 #use-case(
   attore: "Scheduler",
@@ -3204,7 +3217,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare l'ID di un ordine/trasferimento",
 )[]
 
-=== UC82 - Sincronizza stato ordine/trasferimento <UC82>
+=== UC82: Sincronizza stato ordine/trasferimento <UC82>
 
 #use-case(
   attore: "Scheduler",
@@ -3223,7 +3236,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare lo stato di un ordine/trasferimento",
 )[]
 
-=== UC83 - Sincronizza singola merce ordine/trasferimento <UC83> //include sincronizza ID merce e 82.1
+=== UC83: Sincronizza singola merce ordine/trasferimento <UC83> //include sincronizza ID merce e 82.1
 
 #use-case(
   attore: "Scheduler",
@@ -3253,7 +3266,7 @@ Il Caso d'Uso 83 include due ulteriori Casi d'Uso come mostrato in figura:
 //immagine
 Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre lo UC83.1 sarà di seguito esposto.
 
-==== UC83.1 - Sincronizza quantità merce ordine/trasferimento <UC83.1>
+==== UC83.1: Sincronizza quantità merce ordine/trasferimento <UC83.1>
 #use-case(
   attore: "Scheduler",
   pre: [
@@ -3274,7 +3287,7 @@ Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre l
   trigger: "Lo scheduler deve sincronizzare la quantità della singola merce di un ordine/trasferimento",
 )[]
 
-=== UC84 - Sincronizza ordini confermati //include sincronizza elenco ordini e sincronizza elenco merci
+=== UC84: Sincronizza ordini confermati //include sincronizza elenco ordini e sincronizza elenco merci
 #use-case(
   attore: "Scheduler",
   pre: [
@@ -3299,7 +3312,7 @@ Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre l
 Il Caso d'Uso n. 84 include due ulteriori Casi d'Uso come mostrato in figura:
 //immagine
 Le informazioni riguardanti i due casi d'uso UC73 e UC79, sono reperibili alle rispettive Sezioni: @UC73, @UC79.
-=== UC85 - Sincronizza ordini non confermati //include sincronizza elenco ordini //
+=== UC85: Sincronizza ordini non confermati //include sincronizza elenco ordini //
 #use-case(
   attore: "Scheduler",
   pre: [
@@ -3323,7 +3336,7 @@ Il Caso d'Uso n. 85 include un ulteriore Caso d'Uso come mostrato in figura:
 //immagine
 Le informazioni riguardante il caso d'uso UC79, sono reperibili alla relativa sezione: @UC79.
 
-=== UC86 - Sincronizza elenco trasferimenti <UC86> //include 81,82 e 83 e 86.x
+=== UC86: Sincronizza elenco trasferimenti <UC86> //include 81,82 e 83 e 86.x
 
 #use-case(
   attore: "Scheduler",
@@ -3358,7 +3371,7 @@ Il Caso d'Uso n. 86 include cinque ulteriori Casi d'Uso come mostrato in figura:
 Le informazioni riguardanti i casi d'uso UC81, UC82, UC83 sono reperibili, rispettivamente, alla @UC81, @UC82, @UC83.
 Mentre i restanti casi d'uso, UC86.1 e UC86.2, verranno di seguito esposti.
 
-==== UC86.1 - Sincronizza magazzino destinatario trasferimento <UC86.1>
+==== UC86.1: Sincronizza magazzino destinatario trasferimento <UC86.1>
 
 #use-case(
   attore: "Scheduler",
@@ -3377,7 +3390,7 @@ Mentre i restanti casi d'uso, UC86.1 e UC86.2, verranno di seguito esposti.
   trigger: "Lo scheduler deve sincronizzare il magazzino destinatario del trasferimento",
 )[]
 
-==== UC86.2 - Sincronizza magazzino mittente trasferimento <UC86.2>
+==== UC86.2: Sincronizza magazzino mittente trasferimento <UC86.2>
 
 #use-case(
   attore: "Scheduler",
@@ -3396,7 +3409,7 @@ Mentre i restanti casi d'uso, UC86.1 e UC86.2, verranno di seguito esposti.
   trigger: "Lo scheduler deve sincronizzare il magazzino mittente del trasferimento",
 )[]
 
-=== UC87 - Sincronizza trasferimenti confermati //include 86 73
+=== UC87: Sincronizza trasferimenti confermati //include 86 73
 
 #use-case(
   attore: "Scheduler",
@@ -3423,37 +3436,395 @@ Il Caso d'Uso n. 87 include due ulteriori Casi d'Uso come mostrato in figura:\
 //immagine
 Le informazioni riguardanti i casi d'uso UC73 e UC86 sono reperibili, rispettivamente, alla @UC73 e alla @UC86.
 
-=== UC88 - Sincronizza trasferimenti cancellati //include 86
+=== UC88: Sincronizza trasferimenti cancellati //include 86
 
-=== UC89 - Sincronizza notifiche di rifornimento
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco dei trasferimenti cancellati è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza tutte le informazioni dell'elenco dei trasferimenti cancellati
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco dei trasferimenti
+    - Lo Scheduler avvia la sincronizzazione dell'elenco dei trasferimenti $arrow$ @UC86[Vedi UC86, Sez.]
+    - Lo Scheduler avvia la sincronizzazione dell'elenco dei trasferimenti cancellati
+  ],
+  inclusioni: [
+    - UC86 @UC86[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'elenco di tutti i trasferimenti cancellati",
+)[]
 
-==== UC89.1 - Sincronizza singola notifica di rifornimento
+Il Caso d'Uso n. 88 include un ulteriore Caso d'Uso come mostrato in figura:\
+//immagine
+Le informazioni riguardanti il caso d'uso incluso sono disponibili alla @UC86.
 
-===== UC89.1.1 - Sincronizza ID notifica rifornimento
+=== UC89: Sincronizza notifiche di rifornimento <UC89>
 
-===== UC89.1.2 - Sincronizza magazzino destinatario notifica rifornimento
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza tutte le informazioni delle notifiche di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento $arrow$ @UC89.1[Vedi UC89.1, Sez.]
+  ],
+  inclusioni: [
+    - UC89.1 @UC89.1[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'elenco delle notifiche di rifornimento",
+)[]
 
-===== UC89.1.3 - Sincronizza stato notifica rifornimento
+Il Caso d'Uso n. 89 include un ulteriore Caso d'Uso come mostrato in figura:\
+//immagine
+Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di seguito esposte.
 
-===== UC89.1.4 - Sincronizza elenco merci notifica rifornimento
+==== UC89.1: Sincronizza singola notifica di rifornimento <UC89.1>
 
-====== UC89.1.4.1 - Sincronizza singola merce nella notifica //include 75
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza tutte le informazioni della singola notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler, per ogni singola notifica, avvia la sincronizzazione delle seguenti informazioni:
+      - ID della notifica di rifornimento $arrow$ @UC89.1.1[Vedi UC89.1.1, Sez.];
+      - Magazzino destinatario della notifica di rifornimento $arrow$ @UC89.1.2[Vedi UC89.1.2, Sez.];
+      - Stato della notifica di rifornimento $arrow$ @UC89.1.3[Vedi UC89.1.3, Sez.];
+      - Elenco delle merce nella notifica di rifornimento $arrow$ @UC89.1.4[Vedi UC89.1.4, Sez.].
+  ],
+  inclusioni: [
+    - UC89.1.1 @UC89.1.1[Sez.]
+    - UC89.1.2 @UC89.1.2[Sez.]
+    - UC89.1.3 @UC89.1.3[Sez.]
+    - UC89.1.4 @UC89.1.4[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare la singola notifica di riferimento",
+)[]
 
-====== UC89.1.4.2 - Sincronizza q.tà da rifornire merce nella notifica
+===== UC89.1.1: Sincronizza ID notifica rifornimento <UC89.1.1>
 
-=== UC90 - Sincronizza notifica rifornimento confermata //include 89 73
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza l'ID della singola notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler avvia la sincronizzazione dell'ID della notifica di riferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'ID della singola notifica di rifornimento",
+)[]
 
-=== UC91 - Sincronizza notifica rifornimento cancellata //include 89
+===== UC89.1.2 - Sincronizza magazzino destinatario notifica rifornimento <UC89.1.2>
 
-=== UC92 - Sincronizza elenco microservizi
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza il magazzino destinatario della singola notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler avvia la sincronizzazione del magazzino destinatario della notifica di riferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare il magazzino destinatario della singola notifica di rifornimento",
+)[]
 
-==== UC92.1 - Sincronizza singolo microservizio
+===== UC89.1.3: Sincronizza stato notifica rifornimento <UC89.1.3>
 
-===== UC92.1.1 - Sincronizza nome del singolo microservizio
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza lo stato della singola notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler avvia la sincronizzazione dello stato della notifica di riferimento
+  ],
+  trigger: "Lo scheduler deve sincronizzare lo stato della singola notifica di rifornimento",
+)[]
 
-===== UC92.1.2 - Sincronizza richieste al secondo del singolo microservizio
+===== UC89.1.4: Sincronizza elenco merci notifica rifornimento <UC89.1.4>
 
-=== UC93 - Sincronizza soglia minima di allerta merce //include sincronizza ID merce
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza l'elenco delle merci della singola notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle merci della notifica di riferimento
+    - Lo Scheduler avvia la sincronizzazione della singola merce nella notifica di rifornimento $arrow$ @UC89.1.4.1[Vedi UC89.1.4.1, Sez.]
+    - Lo Scheduler avvia la sincronizzazione della q.tà della singola merce nella notifica di rifornimento $arrow$ @UC89.1.4.2[Vedi UC89.1.4.2, Sez.]
+  ],
+  inclusioni: [
+    - UC89.1.4.1 @UC89.1.4.1[Sez.]
+    - UC89.1.4.2 @UC89.1.4.2[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'elenco delle merci della singola notifica di rifornimento",
+)[]
+
+====== UC89.1.4.1: Sincronizza singola merce nella notifica <UC89.1.4.1> //include 75
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza la singola merce nella notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle merci della notifica di riferimento
+    - Lo Scheduler avvia la sincronizzazione della singola merce nella notifica di rifornimento con, annessa, la seguente informazione:
+      - ID della merce $arrow$ @UC75[Vedi UC75, Sez.]
+  ],
+  inclusioni: [
+    - UC75 @UC75[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare la singola merce nella notifica di rifornimento",
+)[]
+
+====== UC89.1.4.2: Sincronizza q.tà da rifornire merce nella notifica <UC89.1.4.2>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza la q.tà della singola merce nella notifica di rifornimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento
+    - Lo Scheduler avvia la sincronizzazione di ogni singola notifica di rifornimento
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle merci della notifica di riferimento
+    - Lo Scheduler avvia la sincronizzazione della q.tà da rifornire per tale merce nella notifica di rifornimento.
+  ],
+  inclusioni: [
+    - UC75 @UC75[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare la q.tà singola merce nella notifica di rifornimento",
+)[]
+
+=== UC90: Sincronizza notifica rifornimento confermata //include 89 73
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento confermate è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le notifiche di rifornimento confermate
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento $arrow$ @UC89[Vedi UC89, Sez.]
+    - Lo Scheduler avvia la sincronizzazione delle notifiche di rifornimento confermate con, annesse, le seguenti informazioni:
+      - Le merci disponibili per il trasferimento $arrow$ @UC73[Vedi UC73, Sez.]
+  ],
+  inclusioni: [
+    - UC73 @UC73[Sez.]
+    - UC89 @UC89[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare le notifiche di rifornimento confermate",
+)[]
+
+Il Caso d'Uso n. 90 include due ulteriori Casi d'Uso come mostrato in figura:\
+//immagine
+Le informazioni riguardanti i casi d'uso UC73 e UC89 sono reperibili, rispettivamente, alla @UC73 e alla @UC89.
+
+=== UC91: Sincronizza notifica rifornimento cancellata //include 89
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle notifiche di rifornimento cancellate è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le notifiche di rifornimento cancellate
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle notifiche
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle notifiche di rifornimento $arrow$ @UC89[Vedi UC89, Sez.]
+    - Lo Scheduler avvia la sincronizzazione delle notifiche di rifornimento cancellate
+  ],
+  inclusioni: [
+    - UC89 @UC89[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare le notifiche di rifornimento cancellate",
+)[]
+
+Il Caso d'Uso n. 91 include un ulteriore Caso d'Uso come mostrato in figura:\
+//immagine
+Le informazioni riguardanti il caso d'uso UC89 è reperibile alla @UC89.
+
+=== UC92: Sincronizza elenco microservizi
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco dei microservizi è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza l'elenco dei microservizi
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione del singolo microservizio $arrow$ @UC92.1[Vedi UC92.1, Sez.]
+  ],
+  inclusioni: [
+    - UC92.1 @UC92.1[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare l'elenco dei microservizi",
+)[]
+
+Il Caso d'Uso n. 92 include un ulteriore Caso d'Uso come mostrato in figura:\
+//immagine
+Le informazioni riguardanti il caso d'uso UC92.1, e le sue relative inclusioni, verranno di seguito esposte.
+
+==== UC92.1: Sincronizza singolo microservizio <UC92.1>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione il singolo microservizio è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza il singolo microservizio
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione del singolo microservizio con, annesse, le seguenti informazioni:
+      - Il nome di tale microservizio $arrow$ @UC92.1.1[Vedi UC92.1.1, Sez.]
+      - Le richieste al secondo del microservizio $arrow$ @UC92.1.2[Vedi UC92.1.2, Sez.]
+  ],
+  inclusioni: [
+    - UC92.1.1 @UC92.1.1[Sez.]
+    - UC92.1.2 @UC92.1.2[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare il singolo microservizio",
+)[]
+
+===== UC92.1.1: Sincronizza nome del singolo microservizio <UC92.1.1>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione il nome del singolo microservizio è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza il nome del singolo microservizio
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione del singolo microservizio
+    - Lo Scheduler avvia la sincronizzazione del nome di tale microservizio
+  ],
+  trigger: "Lo scheduler deve sincronizzare il nome del singolo microservizio",
+)[]
+
+===== UC92.1.2: Sincronizza richieste al secondo singolo microservizio <UC92.1.2>
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione delle richieste al secondo del singolo microservizio è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le richieste al secondo del singolo microservizio
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione dell'elenco dei microservizi
+    - Lo Scheduler avvia la sincronizzazione del singolo microservizio
+    - Lo Scheduler avvia la sincronizzazione delle richieste al secondo di tale microservizio
+  ],
+  trigger: "Lo scheduler deve sincronizzare le richieste al secondo del singolo microservizio",
+)[]
+
+=== UC93: Sincronizza soglia minima di allerta merce //include sincronizza ID merce
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione della soglia minima di allerta per le merci è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza la soglia minima di allerta per le merci
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento dello stato dell'elenco delle merci disponibili
+    - Lo Scheduler avvia la sincronizzazione dell'elenco delle merci disponibili $arrow$ @UC73[Vedi UC73, Sez.]
+    - Lo Scheduler avvia la sincronizzazione delle singole merci disponibili, con annesso l'ID di tale merce $arrow$ @UC75[Vedi UC75, Sez.]
+    - Lo Scheduler avvia la sincronizzazione della soglia minima di allerta per tale merce
+  ],
+  inclusioni: [
+    - UC73 @UC73[Sez.]
+    - UC75 @UC75[Sez.]
+  ],
+  trigger: "Lo scheduler deve sincronizzare la soglia minima di allerta per le merci",
+)[]
+
+Il Caso d'Uso n. 93 include due ulteriori Casi d'Uso come mostrato in figura:\
+//immagine
+Le informazioni riguardanti i casi d'uso UC73 e UC75 sono reperibili, rispettivamente, alla @UC73 e alla @UC75.
 
 = Requisiti
 
