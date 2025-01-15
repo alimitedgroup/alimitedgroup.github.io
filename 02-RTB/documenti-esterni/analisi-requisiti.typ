@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.24.0]
+#let ver = [0.25.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 12, month: 01, year: 2025),
+  data: datetime(day: 15, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.25.0",
+      date: datetime(day: 15, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Redatti Casi d'Uso riguardanti sincronizzazione merci, ordini e trasferimenti",
+    ),
     (
       vers: "0.24.0",
       date: datetime(day: 12, month: 01, year: 2025),
@@ -3220,16 +3227,94 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
 
 === UC83 - Sincronizza singola merce ordine/trasferimento <UC83> //include sincronizza ID merce e 82.1
 
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini/trasferimenti è in corso
+    - La sincronizzazione di un ordine/trasferimento specifico è in corso
+    - La sincronizzazione della lista delle merci di un ordine/trasferimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sulla singola merce di un ordine/trasferimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione delle seguenti informazioni riguardanti la singola merce:
+      - ID della merce $arrow$ @UC75[Vedi UC75 Sezione]
+      - Quantità della merce $arrow$ @UC83.1[Vedi UC83.1 Sezione]
+  ],
+  inclusioni: [
+    - UC75 @UC75
+    - UC83.1 @UC83.1
+  ],
+  trigger: "Lo scheduler deve sincronizzare le informazioni sulla singola merce della lista delle merci del singolo ordine/trasferimento",
+)[]
 
 Il Caso d'Uso 83 include ulteriori Casi d'Uso come mostrato in figura:
 //immagine
 Le informazioni su tali Casi d'Uso saranno ora esposte
 
-==== UC83.1 - Sincronizza quantità merce ordine/trasferimento
+==== UC83.1 - Sincronizza quantità merce ordine/trasferimento <UC83.1>
 
-=== UC84 - Sincronizza ordini confermati //include sincronizza elenco ordini e sincronizza elenco merci
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco degli ordini/trasferimenti è in corso
+    - La sincronizzazione di un ordine/trasferimento specifico è in corso
+    - La sincronizzazione della lista delle merci di un ordine/trasferimento è in corso
+  ],
+  post: [
+    - Il Sistema sincronizza le informazioni sullo singola merce di un ordine/trasferimento
+  ],
+  scenari: [
+    - Lo Scheduler avvia il reperimento della quantità della singola merce della lista delle merci dell'ordine/trasferimento
+    - Lo Scheduler avvia la sincronizzazione della quantità della singola merce della lista delle merci
+  ],
+  trigger: "Lo scheduler deve sincronizzare la quantità della singola merce della lista delle merci del singolo ordine/trasferimento",
+)[]
 
-=== UC85 - Sincronizza ordini non confermati //include sincronizza elenco ordini //
+=== UC84 - Sincronizza ordine confermato //include sincronizza elenco ordini e sincronizza elenco merci
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - Il Sistema ha registrato la conferma di un ordine
+  ],
+  post: [
+    - Il Sistema sincronizza i dati aggiornati sugli ordini
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione dei dati ordini $arrow$ @UC79[Vedi UC79 Sezione]
+  ],
+  inclusioni: [
+    - UC79 @UC79
+  ],
+  trigger: "Lo Scheduler deve sincronizzare le informazioni sugli ordini poiché un ordine è stato confermato",
+)[]
+
+=== UC85 - Sincronizza ordine cancellato //include sincronizza elenco ordini //
+
+#use-case(
+  attore: "Scheduler",
+  pre: [
+    - Il Sistema è attivo, in modalità online
+    - La sincronizzazione dell'elenco delle merci è in corso
+    - Il Sistema ha registrato la cancellazione di un ordine
+  ],
+  post: [
+    - Il Sistema sincronizza i dati aggiornati sugli ordini
+  ],
+  scenari: [
+    - Lo Scheduler avvia la sincronizzazione dei dati ordini $arrow$ @UC79[Vedi UC79 Sezione]
+  ],
+  inclusioni: [
+    - UC79 @UC79
+  ],
+  trigger: "Lo Scheduler deve sincronizzare le informazioni sugli ordini poiché un ordine è stato cancellato",
+)[]
 
 === UC86 - Sincronizza elenco trasferimenti //include 81,82 e 83 e 86.x
 
