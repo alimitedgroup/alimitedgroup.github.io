@@ -2,12 +2,19 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [0.4.0]
+#let ver = [0.5.0]
 #show: body => importantdocs(
-  data: datetime(day: 29, month: 12, year: 2024),
+  data: datetime(day: 16, month: 1, year: 2025),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "0.5.0",
+      date: datetime(day: 16, month: 1, year: 2025),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Redazione per il quarto sprint",
+    ),
     (
       vers: "0.4.0",
       date: datetime(day: 29, month: 12, year: 2024),
@@ -522,7 +529,7 @@ in quanto rimandata allo sprint successivo.
 
 ==== Informazioni generali e attività da svolgere <sprint2intro>
 
-Il secondo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla relativa discussione con il proponente #M31.
+Il secondo sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla relativa discussione con il proponente #M31.
 
 Le attività pianificate nel dettaglio includono:
 
@@ -566,7 +573,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[g].
+Durante questo sprint#super[g] si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[g].
 
 Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
 
@@ -635,7 +642,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti#super[g]. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
+Durante questo sprint#super[g] si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare una bozza soddisfacente dell'Analisi dei Requisiti#super[g]. Il gruppo ha mitigato questo rischio assegnando questa attività alla maggior parte dei componenti per accelerare il processo di scrittura.
 
 Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
 
@@ -643,8 +650,81 @@ Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezio
 
 In questo terzo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
 
-L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti#super[g] per poter discutere con il professore Cardin la validità del lavoro svolto.
+L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti#super[g] per poter discutere con il professor Cardin la validità del lavoro svolto.
 
 Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
 
 I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
+
+=== Sprint 4
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[22-12-2024],
+  [Fine prevista:], strong[04-1-2025],
+  [Fine reale:], strong[04-01-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint4intro>
+
+Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g] e sulla realizzazione del PoC#super[g] .
+
+Le attività pianificate nel dettaglio includono:
+
+- Aggiungere la sezione sulla codifica nelle Norme di Progetto;
+- Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti#super[g];
+- Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[g];
+- Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
+- Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
+- Proseguire con il Piano di Qualifica
+
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(4, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 4 - Preventivo per componente", "Sprint 4 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  4,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 4 - Consuntivo per componente",
+  "Sprint 4 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(4, "Sprint 4 - Variazione nelle risorse disponibili")
+
+#v(1em)
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_, a causa delle vacanze natalizie che hanno rallentato il lavoro generale dell'intero gruppo. Il rischio era stato preventivato in quanto è stato deciso di svolgere comunque uno sprint durante il periodo festivo.
+
+=== Retrospettiva
+
+In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g] .
+
+La riunione con il professor Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[g],
+come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
+tra Use Case del backend e del frontend che devono essere rappresentati separatamente.
+
+Non è stata completata la redazione degli Use Case non obbligatori a causa di problemi con la numerazione degli Use Case e la creazione dei relativi grafici in formato SVG.
+Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
