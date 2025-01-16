@@ -3788,7 +3788,7 @@ Le informazioni riguardanti il caso d'uso UC91.1, e le sue relative inclusioni, 
   trigger: "Lo scheduler deve sincronizzare le richieste al secondo del singolo microservizio",
 )[]
 
-=== UC93: Sincronizza soglia minima di allerta merce
+=== UC92: Sincronizza soglia minima di allerta merce
 
 #use-case(
   attore: "Scheduler",
