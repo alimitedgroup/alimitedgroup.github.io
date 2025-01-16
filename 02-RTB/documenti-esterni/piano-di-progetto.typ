@@ -682,6 +682,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
 #pagebreak()
 
@@ -708,9 +709,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio
-
-Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezione @rischio_globale.
+Durante questo sprint si è concretizzato il rischio _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_, a causa delle vacanze natalizie che hanno rallentato il lavoro generale dell'intero gruppo. Il rischio era stato preventivato in quanto è stato deciso di svolgere comunque uno sprint durante il periodo festivo.
 
 === Retrospettiva
 
