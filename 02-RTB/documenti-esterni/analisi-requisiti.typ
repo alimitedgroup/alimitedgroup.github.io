@@ -942,7 +942,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   post: [Viene visualizzaa la quantità e il nome della merce di un ordine non confermato],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - Quantità di quella merce nell'ordine non confermato selezionato $arrow$ @UC16.1.1.1[Vedi UC16.1.1.1, Sez.];
+      - Q.tà di quella merce nell'ordine non confermato selezionato $arrow$ @UC16.1.1.1[Vedi UC16.1.1.1, Sez.];
       - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.];
   ],
   inclusioni: [
@@ -1087,8 +1087,8 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - Il Cliente viusalizza della merce selezionata:
       - l'ID della merce $arrow$ @UC19[Vedi UC19, Sez.]
       - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
-      - Quantità della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC20, Sez.]
-      - Quantità della merce complessivamente disponibile in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sez.]
+      - Q.tà della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC20, Sez.]
+      - Q.tà della merce complessivamente disponibile in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sez.]
       - Descrizione della merce $arrow$ @UC22.1[Vedi UC, Sez.]
   ],
   inclusioni: [
@@ -1735,7 +1735,7 @@ Tale Caso d'Uso sarà esposto qui di seguito.
     - Per ogni elemento della lista viene visualizzato:
       - ID della merce $arrow$ @UC19[Vedi UC23, Sez.]
       - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
-      - Quantità da rifornire $arrow$ @UC39.2.1.1[Vedi UC39.2.1.1, Sez.]
+      - Q.tà da rifornire $arrow$ @UC39.2.1.1[Vedi UC39.2.1.1, Sez.]
   ],
   inclusioni: [
     - UC19 @UC19[Sez.]
@@ -2327,7 +2327,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   post: [Per ogni elemento della lista delle merci di un ordine eseguito viene mostrata quantità e nome della merce],
   scenari: [
     - Ogni singolo elemento della lista attualmente visualizzata dal Cliente deve presentare:
-      - Quantità di quella merce nell'ordine eseguito selezionato $arrow$ @UC57.1.1.1[Vedi UC57.1.1.1, Sez.]
+      - Q.tà di quella merce nell'ordine eseguito selezionato $arrow$ @UC57.1.1.1[Vedi UC57.1.1.1, Sez.]
       - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
   ],
   inclusioni: [
@@ -2896,8 +2896,8 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
   ],
   scenari: [
     - Lo Scheduler avvia la sincronizzazione delle seguenti informazioni riguardanti la singola merce:
-      - Quantità delle merce localmente disponibile $arrow$ @UC74.2[Vedi UC74.1, Sez.]
-      - Quantità delle merce globalmente disponibile in tutti i magazzini $arrow$ @UC74.2[Vedi UC74.2, Sez.]
+      - Q.tà delle merce localmente disponibile $arrow$ @UC74.2[Vedi UC74.1, Sez.]
+      - Q.tà delle merce globalmente disponibile in tutti i magazzini $arrow$ @UC74.2[Vedi UC74.2, Sez.]
       - Nome della merce $arrow$ @UC74.3[Vedi UC74.3, Sez.]
       - Descrizione della merce $arrow$ @UC74.4[Vedi UC74.4, Sez.]
       - ID della merce $arrow$ @UC75[Vedi UC75, Sez.]
@@ -3246,7 +3246,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
   scenari: [
     - Lo Scheduler avvia la sincronizzazione della singola merce dell'ordine/trasferimento con:
       - ID della merce $arrow$ @UC75[Vedi UC75, Sez.];
-      - Quantità della merce $arrow$ @UC82.1[Vedi UC82.1, Sez.].
+      - Q.tà della merce $arrow$ @UC82.1[Vedi UC82.1, Sez.].
   ],
   inclusioni: [
     - UC75 @UC75[Sez.]
@@ -3550,7 +3550,7 @@ Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di se
   trigger: "Lo scheduler deve sincronizzare l'ID della singola notifica di rifornimento",
 )[]
 
-===== UC88.1.2 - Sincronizza magazzino destinatario notifica rifornimento <UC88.1.2>
+===== UC88.1.2: Sincronizza magazzino destinatario notifica rifornimento <UC88.1.2>
 
 #use-case(
   attore: "Scheduler",
@@ -3634,7 +3634,7 @@ Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di se
   trigger: "Lo scheduler deve sincronizzare la singola merce nella notifica di rifornimento",
 )[]
 
-======= UC88.1.4.1.1: Sincronizza q.tà da rifornire merce elenco merci notifica di rifornimento <UC88.1.4.1.1>
+======= UC88.1.4.1.1: Sincronizza q.tà da rifornire merce notifica <UC88.1.4.1.1>
 
 #use-case(
   attore: "Scheduler",
@@ -3807,6 +3807,7 @@ Le informazioni riguardanti il caso d'uso UC91.1, e le sue relative inclusioni, 
   trigger: "Lo scheduler deve sincronizzare la soglia minima di allerta per le merci",
 )[]
 
+#pagebreak()
 = Requisiti
 
 Verranno ora descritti i requisiti che _ALimitedGroup_ ha individuato, raggruppati per requisiti:
@@ -3814,7 +3815,7 @@ Verranno ora descritti i requisiti che _ALimitedGroup_ ha individuato, raggruppa
 - *Qualità*, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
 - *Vincolo*, ovvero restrizioni poste al sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
 
-Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle #link("")[*Norme di Progetto*] [PROSEGUIRE](inserisci link)
+Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #link("")[*Norme di Progetto*] [PROSEGUIRE](inserisci link)
 
 == Requisiti Funzionali
 
@@ -3838,7 +3839,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
       top: if (y < 2) { 1pt } else { 0pt },
       bottom: 1pt,
     ),
-    columns: (1.25fr, 4fr, 3fr),
+    columns: 3,
     inset: 8pt,
     table.header(
       align(left)[#text(fill: white)[*Codice*]],
@@ -3861,8 +3862,8 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
     [R-4-F-Ob],
     [L'utente deve poter creare un ordine che può confermare in seguito. Tale ordine deve contenere le seguenti informazioni:
       - Nome dell'ordine;
-      - Nominativo del destinatario
-      - Indirizzo di spedizione],
+      - Nominativo del destinatario;
+      - Indirizzo di spedizione.],
     [@UC3[UC3, Sez.] \ @UC3.1[UC3.1, Sez.] \ @UC3.2[UC3.2, Sez.], \ @UC3.3[UC3.3, Sez.]],
 
     [R-5-F-Ob],
@@ -3887,63 +3888,63 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
 
     [R-10-F-Ob],
     [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato, visualizzandone:
-      - ID dell'ordine
-      - Data di creazione dell'ordine
-      - Nome dell'ordine],
+      - ID dell'ordine;
+      - Data di creazione dell'ordine;
+      - Nome dell'ordine.],
     [@UC12[UC12, Sez.] \ @UC12.1[UC12.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
 
     [R-11-F-Ob],
     [Il Cliente deve poter consultare i dettagli di un ordine non confermato. Nello specifico deve poterne visualizzare:
-      - ID dell'ordine
-      - Data creazione dell'ordine
-      - Nome dell'ordine
-      - Lista delle merci dell'ordine],
+      - ID dell'ordine;
+      - Data creazione dell'ordine;
+      - Nome dell'ordine;
+      - Lista delle merci dell'ordine.],
     [@UC16[UC16, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC16.1[UC16.1, Sez.]],
 
     [R-12-F-Ob],
     [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter trarre le seguenti informazioni per ogni merce:
-      - Quantità della merce
-      - Nome della merce],
+      - Q.tà della merce;
+      - Nome della merce.],
     [@UC16.1.1[UC16.1.1, Sez.] \ @UC16.1.1.1[UC16.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
 
-    [R-12-F-Ob],
+    [R-13-F-Ob],
     [Il Cliente deve poter visualizzare la lista delle merci nel Sistema con le seguenti informazioni per ogni merce:
-      - ID della merce
-      - Nome della merce
-      - Quantità della merce complessiva in tutti i magazzini
-      - Quantità della merce attualmente presente nel magazzino],
+      - ID della merce;
+      - Nome della merce;
+      - Q.tà della merce complessiva in tutti i magazzini;
+      - Q.tà della merce attualmente presente nel magazzino.],
     [@UC18[UC18, Sez.] \ @UC18.1[UC18.1, Sez.] \ @UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.]],
 
-    [R-13-F-Ob],
+    [R-14-F-Ob],
     [Il Cliente deve poter visualizzare le seguenti informazioni relative ad una singola merce nel dettaglio:
-      - ID della merce
-      - Nome della merce
-      - Quantità della merce complessiva in tutti i magazzini
-      - Quantità della merce attualmente presente nel magazzino
-      - Descrizione della merce],
+      - ID della merce;
+      - Nome della merce;
+      - Q.tà della merce complessiva in tutti i magazzini;
+      - Q.tà della merce attualmente presente nel magazzino;
+      - Descrizione della merce.],
     [@UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.] \ @UC22[UC22, Sez.] \ @UC22.1[UC22.1, Sez.]],
 
-    [R-14-F-Ob],
+    [R-15-F-Ob],
     [L'Admin Globale deve poter creare un trasferimento da confermare in seguito, scegliendo il magazzino destinatario e il magazzino mittente],
     [@UC23[UC23, Sez.] \ @UC23.1[UC23.1, Sez.] \ @UC23.2[UC23.2, Sez.]],
 
-    [R-15-F-Ob],
+    [R-16-F-Ob],
     [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato, selezionando nome della merce e quantità],
     [@UC24[UC24, Sez.] \ @UC25[UC25, Sez.] \ @UC5[UC5, Sez.] \ @UC6[UC6, Sez.]],
 
-    [R-16-F-Ob],
+    [R-17-F-Ob],
     [L'Admin Globale deve poter confermare un trasferimento non ancora confermato],
     [@UC26[UC26, Sez.] \ @UC25[UC25, Sez.]],
 
-    [R-17-F-Ob],
+    [R-18-F-Ob],
     [L'Admin Globale deve ricevere un errore se la merce in un trasferimento che vuole confermare non è più disponibile in quantità sufficiente o non è più esistente nel Sistema],
     [@UC7[UC7, Sez.]],
 
-    [R-18-F-Ob],
+    [R-19-F-Ob],
     [L'Admin Globale deve ricevere un errore qualora selezioni di voler confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
     [@UC27[UC27, Sez.]],
 
-    [R-19-F-Ob],
+    [R-20-F-Ob],
     [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato],
     [@UC28[UC28, Sez.] \ @UC25[UC25, Sez.]],
 
@@ -3955,17 +3956,17 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
 
     [R-21-F-Ob],
     [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico. Nello specifico, L'Admin Globale deve visualizzare:
-      - ID del trasferimento,
-      - magazzino mittente
-      - magazzino di destinazione
-      - stato del trasferimento (confermato o cancellato)
-      - L'elenco della merce interessata dal trasferimento],
+      - ID del trasferimento;
+      - Magazzino mittente;
+      - Magazzino di destinazione;
+      - Stato del trasferimento (confermato o cancellato);
+      - L'elenco della merce interessata dal trasferimento.],
     [@UC32[UC32, Sez.] \ @UC30[UC30, Sez.] \ @UC32.1[UC32.1, Sez.] \ @UC32.2[UC32.2, Sez.] \ @UC31[UC31, Sez.] \ @UC32.3[UC32.3, Sez.]],
 
     [R-22-F-Ob],
     [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve poter ottenere delle merci interessate dal trasferimento le seguenti informazioni:
-      - Nome della merce
-      - Quantità interessata dal trasferimento],
+      - Nome della merce;
+      - Q.tà interessata dal trasferimento.],
     [@UC32.3.1[UC32.3.1, Sez.] \ @UC17[UC17, Sez.] \ @UC32.3.1.1[UC32.3.1.1, Sez.]],
 
     [R-23-F-Ob],
@@ -3982,17 +3983,17 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
 
     [R-26-F-Ob],
     [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico, visualizzandone:
-      - ID della notifica
-      - Stato della notifica (confermato, da confermare, rifiutato)
-      - Elenco della merce il cui rifornimento è consigliato
-      - Magazzino di destinatario del rifornimento],
+      - ID della notifica;
+      - Stato della notifica (confermato, da confermare, rifiutato);
+      - Elenco della merce il cui rifornimento è consigliato;
+      - Magazzino di destinatario del rifornimento.],
     [@UC39[UC39, Sez.] \ @UC36[UC36, Sez.] \ @UC35[UC35, Sez.] \ @UC39.2[UC39.2, Sez.] \ @UC39.1[UC39.1, Sez.]],
 
     [R-27-F-Ob],
     [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare:
-      - ID della merce
-      - Nome della merce
-      - Quantità da rifornire],
+      - ID della merce;
+      - Nome della merce;
+      - Q.tà da rifornire.],
     [@UC39.2[UC39.2, Sez.] \ @UC19[UC19, Sez.] \ @UC17[UC17, Sez.] \ @UC39.2.1.1[UC 39.2.1.1, Sez.]],
 
     [R-28-F-Ob],
@@ -4005,8 +4006,8 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
 
     [R-30-F-Ob],
     [L'Admin Globale deve poter visualizzare l'elenco dei microservizi. Per ogni microservizio elencato le seguenti informazioni devono essere disponibili:
-      - nome del microservizio
-      - numero di richieste al secondo del microservizio],
+      - Nome del microservizio;
+      - Numero di richieste al secondo del microservizio.],
     [@UC43[UC43, Sez.] \ @UC43.1[UC43.1, Sez.] \ @UC43.1.1[UC43.1.1, Sez.] \ @UC43.1.2[UC43.1.2, Sez.]],
 
     [R-31-F-Ob],
@@ -4047,23 +4048,23 @@ Per la nomenclatura utilizzata si consiglia di leggere la, Sezione 2.2.2.2 delle
 
     [R-40-F-Ob],
     [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti. Per ciascun ordine è opportuno visualizzare:
-      - ID dell'ordine
-      - Data creazione dell'ordine
-      - Nome dell'ordine],
+      - ID dell'ordine;
+      - Data creazione dell'ordine;
+      - Nome dell'ordine.],
     [@UC56[UC56, Sez.] \ @UC56.1[UC56.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
 
     [R-41-F-Ob],
     [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito. Nello specifico, il Cliente deve poter visualizzarne:
-      - ID
-      - Data creazione
-      - Nome
-      - Lista delle merci],
+      - ID dell'ordine;
+      - Data creazione dell'ordine;
+      - Nome dell'ordine;
+      - Lista delle merci.],
     [@UC57[UC57, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.] \ @UC57.1[UC57.1, Sez.]],
 
     [R-42-F-Ob],
     [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare:
-      - nome della merce
-      - quantità della merce
+      - Nome della merce;
+      - Q.tà della merce.
     ],
     [@UC57.1[UC57.1, Sez.] \ @UC57.1.1[UC57.1.1, Sez.] \ @UC57.1.1.1[UC57.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
 
