@@ -2787,7 +2787,6 @@ Tale Caso d'Uso sarà ora esposto.
   ],
   scenari: [
     - L'Admin Globale seleziona l'utente che vuole eliminare dal Sistema $arrow$ @UC71[Vedi UC71, Sez.]
-    - L'Admin Globale elimina correttamente l'utente selezionato.
   ],
   inclusioni: [
     - UC71 @UC71
@@ -2803,25 +2802,17 @@ Tale Caso d'Uso sarà ora esposto.
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale ha selezionato il nome dell'utente, per visualizzare/modificare le informazioni di quest'ultimo
   ],
   post: [
-    - Il Sistema seleziona correttamente l'utente
+    - Il Sistema conosce il nome utente dell'utente sulla quale effettuare l'operazione
   ],
   scenari: [
-    - L'Admin Globale inserisce il nome dell'utente per visualizzarne/modificarne le informazioni:
-    - Nel caso volesse modificarne le informazioni:
-      - L'Admin Globale modifica il nome dell'utente selezionato $arrow$ @UC69.1[Vedi UC69.1, Sez.]
-      - L'Admin Globale modifica il ruolo dell'utente selezionato $arrow$ @UC69.3[Vedi UC69.3, Sez.]
-  ],
-  inclusioni: [
-    - UC69.1 @UC69.1
-    - UC69.3 @UC69.3
+    - L'Admin Globale inserisce il nome dell'utente sulla quale vuole effettuare un'operazione.
   ],
   trigger: "L'Admin Globale vuole selezionare il nome utente di un determinato fruitore del Sistema",
 )[]
 
-=== UC72 - Modifica ruolo utente <UC72>
+=== UC72 - Promuovi ruolo utente <UC72>
 
 #use-case(
   attore: "Admin Globale",
@@ -2834,11 +2825,9 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema modifica correttamente i ruoli e i permessi per l'utente selezionato.
   ],
   scenari: [
-    - L'Admin Globale seleziona il nome dell'utente a cui verrà cambiato il ruolo e i permessi $arrow$ @UC71[Vedi UC71, Sez.]
-    - L'Admin Globale, successivamente aver selezionato l'utente corretto, inserisce il nuovo ruolo per quest'ultimo $arrow$ @UC69.3[Vedi UC69.3, Sez.]
+    - L'Admin Globale seleziona il nome dell'utente a cui verrà promosso il ruolo $arrow$ @UC71[Vedi UC71, Sez.]
   ],
   inclusioni: [
-    - UC69.3 @UC69.3
     - UC71 @UC71
   ],
   trigger: "L'Admin Globale vuole modificare il ruolo di un determinato utente registrato nel Sistema",
