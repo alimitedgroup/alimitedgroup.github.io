@@ -3344,7 +3344,7 @@ Le informazioni riguardante il caso d'uso UC79, sono reperibili alla relativa se
 )[#use-case-diagram("85", "UC85 - Sincronizza elenco trasferimenti")]
 
 Il Caso d'Uso n. 85 include un ulteriore Caso d'Uso come mostrato in figura:\
-#use-case-diagram("85-incl", "Inclusioni del Caso d'Uso n.85: UC85.1 e relative inclusioni")
+#use-case-diagram("85-incl", "Inclusioni del Caso d'Uso n.85: UC85.1 e relative inclusioni", width: 75%);
 Le informazioni su tale Caso d'Uso e le relative inclusioni saranno ora esposte.
 
 ==== UC85.1: Sincronizza singolo trasferimento <UC85.1>
