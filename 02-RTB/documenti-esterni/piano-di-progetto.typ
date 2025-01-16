@@ -9,6 +9,13 @@
   stato: [Redatto],
   versioni: (
     (
+      vers: "0.5.0",
+      date: datetime(day: 16, month: 1, year: 2025),
+      autore: p.loris,
+      verifica: p.samuele,
+      descr: "Redazione per il quarto sprint",
+    ),
+    (
       vers: "0.4.0",
       date: datetime(day: 29, month: 12, year: 2024),
       autore: p.loris,
@@ -643,7 +650,7 @@ Il rischio è quindi stato gestito seguendo le linee guida delineate nella sezio
 
 In questo terzo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le fasi successive di progettazione e sviluppo.
 
-L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti#super[g] per poter discutere con il professore Cardin la validità del lavoro svolto.
+L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti#super[g] per poter discutere con il professor Cardin la validità del lavoro svolto.
 
 Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
 
@@ -670,7 +677,7 @@ Le attività pianificate nel dettaglio includono:
 
 - Aggiungere la sezione sulla codifica nelle Norme di Progetto;
 - Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti#super[g];
-- Svolgere un incontro con il professore Cardin per discutere l'Analisi dei Requisiti#super[g];
+- Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[g];
 - Utilizzare tutte le tecnologie scelte nell PoC per valutarne l'usabilità;
 - Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
 - Proseguire con il Piano di Qualità
@@ -715,7 +722,7 @@ Durante questo sprint si è concretizzato il rischio _RI2: Rischio Individuale d
 
 In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g] .
 
-La riunione con il professore Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[g],
+La riunione con il professor Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[g],
 come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
 tra Use Case del backend e del frontend che devono essere rappresentati separatamente.
 
