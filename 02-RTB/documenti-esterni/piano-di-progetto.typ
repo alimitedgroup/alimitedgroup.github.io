@@ -678,9 +678,9 @@ Le attività pianificate nel dettaglio includono:
 - Aggiungere la sezione sulla codifica nelle Norme di Progetto;
 - Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti#super[g];
 - Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[g];
-- Utilizzare tutte le tecnologie scelte nell PoC per valutarne l'usabilità;
+- Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
 - Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
-- Proseguire con il Piano di Qualità
+- Proseguire con il Piano di Qualifica
 
 
 ==== Rischi attesi
