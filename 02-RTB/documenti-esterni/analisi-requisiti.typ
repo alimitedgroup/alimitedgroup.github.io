@@ -2443,10 +2443,10 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema comunica allo Scheduler la scelta dell'Admin Locale di non realizzare periodicamente un Backup
   ],
   scenari: [
-    - L'Admin Locale seleziona dal menu principale l'opzione relativa all'eliminazione di un Backup periodico;
+    - L'Admin Locale seleziona dal menu principale l'opzione relativa all'eliminazione (disattivazione) di un Backup periodico;
   ],
   scenari_alternativi: [
-    - L'Admin Locale vuole attivare un Backup periodico ma nessun Backup periodico è attivo $arrow$ @UC62
+    - L'Admin Locale vuole eliminare (disattivare) un Backup periodico ma nessun Backup periodico è attivo $arrow$ @UC62
   ],
   estensioni: [
     - UC62 @UC62
