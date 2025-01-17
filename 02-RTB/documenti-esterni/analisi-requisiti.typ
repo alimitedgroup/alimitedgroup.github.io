@@ -4270,6 +4270,46 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       align(left)[#text(fill: white)[*Descrizione*]],
       align(left)[#text(fill: white)[*Fonti*]],
     ),
+
+    [R-1-Q-Ob],
+    [È necessario fornire un diagramma architetturale],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-2-Q-Ob],
+    [È necessario realizzare opportuni test di sincronizzazione],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-3-Q-De],
+    [È necessario realizzare opportuni test predittivi],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-4-Q-Ob],
+    [È necessario realizzare opportuni test di unità],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-4-Q-Ob],
+    [È necessario realizzare opportuni test di carico e scalabilità],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-5-Q-Ob],
+    [È necessario realizzare opportuni test di carico e scalabilità],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-6-Q-Ob],
+    [È necessario descrivere tutti i test effettuati. Tale redazione sarà effettuata nel Piano di Qualifica[PROSEGUIRE](inserire link) oppure in un _Test Book_ dedicato],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-7-Q-Ob],
+    [È necessario perseguire al raggiungimento degli obiettivi posti dal Piano di Qualifica[PROSEGUIRE](inserire link)],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-8-Q-Ob],
+    [È necessario rispettare tutte le norme presenti nelle Norme di Progetto[PROSEGUIRE](inserire link)],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-9-Q-Ob],
+    [È necessario versionare il codice con appositi _Software_ di versionamento.],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
   ),
   caption: [Requisiti di Qualità],
 )
@@ -4299,12 +4339,29 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       align(left)[#text(fill: white)[*Descrizione*]],
       align(left)[#text(fill: white)[*Fonti*]],
     ),
+
+    [R-1-V-Ob],
+    [È necessario utilizzare Git come _Software_ di versionamento],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-2-V-Ob],
+    [È necessario che il Sistema realizzato sia a microservizi],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-3-V-Ob],
+    [È necessario l'utilizzo di Go per la realizzazione dei microservizi],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-4-V-Ob],
+    [È necessario l'utilizzo di NATS per lo scambio di messaggi tra i microservizi],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+
+    [R-5-V-Ob],
+    [È necessario l'utilizzo di PostgreSQL per la persistenza dei dati strutturati],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
   ),
-  caption: [Requisiti di Qualità],
+  caption: [Requisiti di Vincolo],
 )
 
-= Informazioni di supporto
-== Tabella dei contenuti
-#lorem(10)
-
+== Riassunto
 
