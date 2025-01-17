@@ -2547,10 +2547,10 @@ Tale Caso d'Uso sarà ora esposto.
     - UC65.1 @UC65.1[Sez.]
   ],
   trigger: "L'Admin Globale vuole visualizzare le attività di accesso",
-)[]
+)[#use-case-diagram("65", "UC65 - Visualizzazione elenco attività di accesso")]
 
 Il Caso d'Uso 65 include un ulteriore Caso d'Uso come mostrato di seguito:
-//immagine
+#use-case-diagram("65-incl", "Inclusione del Caso d'Uso n.65: UC65.1 e relative inclusioni")
 Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
 
 ==== UC65.1: Visualizza elemento lista attività di accesso <UC65.1>
@@ -2595,7 +2595,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-===== UC65.1.2: Visualizza ID tentativo di accesso <UC65.1.2>
+===== UC65.1.2: Visualizza ID del tentativo di accesso anomalo <UC65.1.2>
 
 #use-case(
   attore: "Admin Globale",
@@ -2612,7 +2612,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-===== UC65.1.3: Visualizza stato tentativo di accesso <UC65.1.3>
+===== UC65.1.3: Visualizza stato del tentativo di accesso anomalo <UC65.1.3>
 
 #use-case(
   attore: "Admin Globale",
@@ -2629,7 +2629,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
   ],
 )[]
 
-=== UC66: Blocca tentativo di accesso <UC66>
+=== UC66: Blocca tentativo di accesso anomalo <UC66>
 
 #use-case(
   attore: "Admin Globale",
@@ -2648,10 +2648,10 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
     - UC66.1 @UC66.1[Sez.]
   ],
   trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
-)[]
+)[#use-case-diagram("66", "UC66 - Blocca tentativo di accesso anomalo")]
 
 Il Caso d'Uso 66 include un ulteriore Caso d'Uso come mostrato di seguito:
-//immagine
+#use-case-diagram("66-incl", "Inclusione del Caso d'Uso n.66: UC66.1")
 Tale Caso d'Uso sarà ora esposto.
 
 ==== UC66.1: Inserisci ID tentativo di accesso da bloccare <UC66.1>
@@ -2709,7 +2709,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale/Locale riceve la notifica via SMS del tentativo di accesso anomalo",
 )[]
 
-=== UC69: Aggiungi utente <UC69>
+=== UC69: Aggiungi nuovo utente <UC69>
 
 #use-case(
   attore: "Admin Globale",
@@ -2733,8 +2733,11 @@ Tale Caso d'Uso sarà ora esposto.
     - UC69.3 @UC69.3[Sez.]
   ],
   trigger: "L'Admin Globale aggiunge un nuovo utente all'interno del Sistema",
-)[]
+)[#use-case-diagram("69", "UC69 - Aggiungi nuovo utente")]
 
+Il Caso d'Uso 69 include tre ulteriori Casi d'Uso come mostrato nella seguente figura:
+#use-case-diagram("69-incl", "Inclusione del Caso d'Uso n.69: UC69.1, UC69.2, UC69.3")
+Tali casi d'uso saranno ora esposti.
 ==== UC69.1: Inserisci nome nuovo utente <UC69.1>
 
 #use-case(
@@ -2771,7 +2774,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale inserisce la password per il nuovo utente all'interno del Sistema",
 )[]
 
-==== UC69.3: Inserisci ruolo utente <UC69.3>
+==== UC69.3: Inserisci ruolo nuovo utente <UC69.3>
 
 #use-case(
   attore: "Admin Globale",
@@ -2809,7 +2812,11 @@ Tale Caso d'Uso sarà ora esposto.
     - UC71 @UC71[Sez.]
   ],
   trigger: "L'Admin Globale vuole eliminare un determinato utente registrato all'interno del Sistema",
-)[]
+)[#use-case-diagram("70", "UC70 - Elimina utente")]
+
+Il Caso d'Uso 70 include un ulteriore caso d'uso come mostrato nella seguente immagine:
+#use-case-diagram("70-incl", "Inclusione del Caso d'Uso n.70: UC71")
+Tale caso d'Uso sarà ora esposto.
 
 === UC71 - Seleziona nome utente <UC71>
 
@@ -3440,10 +3447,10 @@ Le informazioni su tale Caso d'Uso e le relative inclusioni saranno ora esposte.
     - UC85 @UC85[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare l'elenco di tutti i trasferimenti confermati",
-)[]
+)[#use-case-diagram("86", "UC86 - Sincronizza trasferimenti confermati")]
 
 Il Caso d'Uso n. 86 include un ulteriore Caso d'Uso come mostrato in figura:\
-//immagine
+#use-case-diagram("86-incl", "Inclusione nel Caso d'Uso n.86: UC85")
 Le informazioni riguardanti il Caso d'Uso UC85 sono reperibili alla @UC85.
 
 === UC87: Sincronizza trasferimenti cancellati <UC87>
@@ -3464,10 +3471,10 @@ Le informazioni riguardanti il Caso d'Uso UC85 sono reperibili alla @UC85.
     - UC85 @UC85[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare l'elenco di tutti i trasferimenti cancellati",
-)[]
+)[#use-case-diagram("87", "UC87 - Sincronizza trasferimenti cancellati")]
 
 Il Caso d'Uso n. 87 include un ulteriore Caso d'Uso come mostrato in figura:\
-//immagine
+#use-case-diagram("87-incl", "Inclusione nel Caso d'Uso n.87: UC85")
 Le informazioni riguardanti il Caso d'Uso incluso sono disponibili alla @UC85.
 
 === UC88: Sincronizza notifiche di rifornimento <UC88>
@@ -3488,10 +3495,10 @@ Le informazioni riguardanti il Caso d'Uso incluso sono disponibili alla @UC85.
     - UC88.1 @UC88.1[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare l'elenco delle notifiche di rifornimento",
-)[]
+)[#use-case-diagram("88", "UC88 - Sincronizza notifiche di rifornimento")]
 
 Il Caso d'Uso n. 88 include un ulteriore Caso d'Uso come mostrato in figura:\
-//immagine
+#use-case-diagram("88-incl", "Inclusione nel Caso d'Uso n.88: UC88.1 e relative inclusioni")
 Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di seguito esposte.
 
 ==== UC88.1: Sincronizza singola notifica di rifornimento <UC88.1>
@@ -3663,10 +3670,10 @@ Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di se
     - UC88 @UC88[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare le notifiche di rifornimento confermate",
-)[]
+)[#use-case-diagram("89", "UC89 - Sincronizza notifiche di rifornimento confermate")]
 
 Il Caso d'Uso n. 89 include due ulteriori Casi d'Uso come mostrato in figura:\
-//immagine
+#use-case-diagram("89-incl", "Inclusione nel Caso d'Uso n.89: UC88")
 Le informazioni riguardanti il Caso d'Uso 88 sono reperibili alla @UC88.
 
 === UC90: Sincronizza notifica rifornimento cancellata <UC90>
@@ -3687,10 +3694,10 @@ Le informazioni riguardanti il Caso d'Uso 88 sono reperibili alla @UC88.
     - UC88 @UC88[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare le notifiche di rifornimento cancellate",
-)[]
+)[#use-case-diagram("90", "UC90 - Sincronizza notifiche di rifornimento cancellate")]
 
-Il Caso d'Uso n. 91 include un ulteriore Caso d'Uso come mostrato in figura:\
-//immagine
+Il Caso d'Uso n. 90 include un ulteriore Caso d'Uso come mostrato in figura:\
+#use-case-diagram("90-incl", "Inclusione nel Caso d'Uso n.90: UC88")
 Le informazioni riguardanti il caso d'uso UC88 è reperibile alla @UC88.
 
 === UC91: Sincronizza elenco microservizi <UC91>
@@ -3711,10 +3718,10 @@ Le informazioni riguardanti il caso d'uso UC88 è reperibile alla @UC88.
     - UC91.1 @UC91.1[Sez.]
   ],
   trigger: "Lo scheduler deve sincronizzare l'elenco dei microservizi",
-)[]
+)[#use-case-diagram("91", "UC91 - Sincronizza elenco microservizi")]
 
 Il Caso d'Uso n. 91 include un ulteriore Caso d'Uso come mostrato in figura:\
-//immagine
+#use-case-diagram("91-incl", "Inclusioni nel Caso d'Uso n.91: UC91.1 e relative inclusioni")
 Le informazioni riguardanti il caso d'uso UC91.1, e le sue relative inclusioni, verranno di seguito esposte.
 
 ==== UC91.1: Sincronizza singolo microservizio <UC91.1>
@@ -3795,7 +3802,7 @@ Le informazioni riguardanti il caso d'uso UC91.1, e le sue relative inclusioni, 
     - Lo Scheduler avvia la sincronizzazione della soglia minima di allerta per tale merce
   ],
   trigger: "Lo scheduler deve sincronizzare la soglia minima di allerta per le merci",
-)[]
+)[#use-case-diagram("92", "UC92 - Sincronizza soglia minima di allerta merce")]
 
 #pagebreak()
 = Requisiti
@@ -4235,8 +4242,8 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
     [R-70-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi. Per ogni microservizio si vuole avviare la sincronizzazione di:
-      - nome del microservizio
-      - richieste al secondo del microservizio],
+      - Nome del microservizio
+      - Richieste al secondo del microservizio],
     [@UC91[UC91, Sez.] \ @UC91.1[UC91.1, Sez.] \ @UC91.1.1[UC91.1.1, Sez.] \ @UC91.1.2[UC91.1.2, Sez.]],
 
     [R-71-F-Ob],
@@ -4273,43 +4280,43 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
     [R-1-Q-Ob],
     [È necessario fornire un diagramma architetturale],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
     [R-2-Q-Ob],
     [È necessario realizzare opportuni test di sincronizzazione],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-3-Q-De],
     [È necessario realizzare opportuni test predittivi],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-4-Q-Ob],
     [È necessario realizzare opportuni test di unità],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-4-Q-Ob],
     [È necessario realizzare opportuni test di carico e scalabilità],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-5-Q-Ob],
     [È necessario realizzare opportuni test di carico e scalabilità],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-6-Q-Ob],
-    [È necessario descrivere tutti i test effettuati. Tale redazione sarà effettuata nel Piano di Qualifica[PROSEGUIRE](inserire link) oppure in un _Test Book_ dedicato],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [È necessario descrivere tutti i test effettuati. Tale redazione sarà effettuata nel #link("")[Piano di Qualifica] (PROSEGUIRE) oppure in un _Test Book_ dedicato],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
     [R-7-Q-Ob],
     [È necessario perseguire al raggiungimento degli obiettivi posti dal Piano di Qualifica[PROSEGUIRE](inserire link)],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto]],
 
     [R-8-Q-Ob],
     [È necessario rispettare tutte le norme presenti nelle Norme di Progetto[PROSEGUIRE](inserire link)],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto]],
 
     [R-9-Q-Ob],
     [È necessario versionare il codice con appositi _Software_ di versionamento.],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Requisiti non Funzionali"],
   ),
   caption: [Requisiti di Qualità],
 )
@@ -4342,23 +4349,23 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
     [R-1-V-Ob],
     [È necessario utilizzare Git come _Software_ di versionamento],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Requisiti non Funzionali"],
 
     [R-2-V-Ob],
     [È necessario che il Sistema realizzato sia a microservizi],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Architettura"],
 
     [R-3-V-Ob],
     [È necessario l'utilizzo di Go per la realizzazione dei microservizi],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-4-V-Ob],
     [È necessario l'utilizzo di NATS per lo scambio di messaggi tra i microservizi],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-5-V-Ob],
     [È necessario l'utilizzo di PostgreSQL per la persistenza dei dati strutturati],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato]],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
   ),
   caption: [Requisiti di Vincolo],
 )
