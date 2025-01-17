@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.26.0]
+#let ver = [0.27.0]
 
 #show: body => importantdocs(
   data: datetime(day: 15, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.27.0",
+      date: datetime(day: 17, month: 01, year: 2025),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Completato l'inserimento dei diagrammi UML per i Casi d'Uso relativi al Backend. Completata la sezione <<Riassunto>>",
+    ),
     (
       vers: "0.26.0",
       date: datetime(day: 15, month: 01, year: 2025),
@@ -3839,9 +3846,9 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     columns: 3,
     inset: 8pt,
     table.header(
-      align(left)[#text(fill: white)[*Codice*]],
-      align(left)[#text(fill: white)[*Descrizione*]],
-      align(left)[#text(fill: white)[*Fonti*]],
+      [#text(fill: white)[*Codice*]],
+      [#text(fill: white)[*Descrizione*]],
+      [#text(fill: white)[*Fonti*]],
     ),
 
     [R-1-F-Ob],
@@ -3945,13 +3952,13 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato],
     [@UC28[UC28, Sez.] \ @UC25[UC25, Sez.]],
 
-    [R-20-F-Ob],
+    [R-21-F-Ob],
     [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti. Per ognuno di essi deve poter visualizzare:
       - ID del trasferimento
       - Lo stato del trasferimento (confermato o cancellato)],
     [@UC29[UC29, Sez.] \ @UC29.1[UC29.1, Sez.] \ @UC30[UC30, Sez.] \ @UC31[UC31, Sez.]],
 
-    [R-21-F-Ob],
+    [R-22-F-Ob],
     [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico. Nello specifico, L'Admin Globale deve visualizzare:
       - ID del trasferimento;
       - Magazzino mittente;
@@ -3960,25 +3967,25 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - L'elenco della merce interessata dal trasferimento.],
     [@UC32[UC32, Sez.] \ @UC30[UC30, Sez.] \ @UC32.1[UC32.1, Sez.] \ @UC32.2[UC32.2, Sez.] \ @UC31[UC31, Sez.] \ @UC32.3[UC32.3, Sez.]],
 
-    [R-22-F-Ob],
+    [R-23-F-Ob],
     [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve poter ottenere delle merci interessate dal trasferimento le seguenti informazioni:
       - Nome della merce;
       - Q.tà interessata dal trasferimento.],
     [@UC32.3.1[UC32.3.1, Sez.] \ @UC17[UC17, Sez.] \ @UC32.3.1.1[UC32.3.1.1, Sez.]],
 
-    [R-23-F-Ob],
+    [R-24-F-Ob],
     [L'Admin Globale deve poter visualizzare le notifiche contenenti i consigli di rifornimento, visualizzandone ID e stato (confermato, da confermare, rifiutato). Tali consigli sono calcolati sulla base di una soglia minima di allerta.],
     [@UC33[UC33, Sez.] \ @UC34[UC34, Sez.] \ @UC35[UC35, Sez.] \ @UC36[UC36, Sez.]],
 
-    [R-24-F-Ob],
+    [R-25-F-Ob],
     [L'Admin Globale deve ricevere un messaggio di errore quando tenta di compiere un'azione sulle notifiche di rifornimento, ma nessuna notifica è disponibile],
     [@UC37[UC37, Sez.]],
 
-    [R-25-F-De],
+    [R-26-F-De],
     [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da un LLM, visualizzandone ID e stato (confermato, da confermare, rifiutato)],
     [@UC38[UC38, Sez.] \ @UC34[UC34, Sez.]],
 
-    [R-26-F-Ob],
+    [R-27-F-Ob],
     [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico, visualizzandone:
       - ID della notifica;
       - Stato della notifica (confermato, da confermare, rifiutato);
@@ -3986,71 +3993,71 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Magazzino di destinatario del rifornimento.],
     [@UC39[UC39, Sez.] \ @UC36[UC36, Sez.] \ @UC35[UC35, Sez.] \ @UC39.2[UC39.2, Sez.] \ @UC39.1[UC39.1, Sez.]],
 
-    [R-27-F-Ob],
+    [R-28-F-Ob],
     [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare:
       - ID della merce;
       - Nome della merce;
       - Q.tà da rifornire.],
     [@UC39.2[UC39.2, Sez.] \ @UC19[UC19, Sez.] \ @UC17[UC17, Sez.] \ @UC39.2.1.1[UC 39.2.1.1, Sez.]],
 
-    [R-28-F-Ob],
+    [R-29-F-Ob],
     [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata],
     [@UC40[UC40, Sez.] \ @UC41[UC41, Sez.]],
 
-    [R-29-F-Ob],
+    [R-30-F-Ob],
     [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata],
     [@UC42[UC42, Sez.] \ @UC41[UC41, Sez.]],
 
-    [R-30-F-Ob],
+    [R-31-F-Ob],
     [L'Admin Globale deve poter visualizzare l'elenco dei microservizi. Per ogni microservizio elencato le seguenti informazioni devono essere disponibili:
       - Nome del microservizio;
       - Numero di richieste al secondo del microservizio.],
     [@UC43[UC43, Sez.] \ @UC43.1[UC43.1, Sez.] \ @UC43.1.1[UC43.1.1, Sez.] \ @UC43.1.2[UC43.1.2, Sez.]],
 
-    [R-31-F-Ob],
+    [R-32-F-Ob],
     [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_],
     [@UC44[UC44, Sez.]],
 
-    [R-32-F-Ob],
+    [R-33-F-Ob],
     [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
     [@UC45[UC45, Sez.]],
 
-    [R-33-F-Ob],
+    [R-34-F-Ob],
     [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
     [@UC46[UC46, Sez.]],
 
-    [R-34-F-Ob],
+    [R-35-F-Ob],
     [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
     [@UC47[UC47, Sez.]],
 
-    [R-35-F-Ob],
+    [R-36-F-Ob],
     [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
     [@UC48[UC48, Sez.], @UC48.1[UC48.1, Sez.], @UC49[UC49, Sez.]],
 
-    [R-36-F-Ob],
+    [R-37-F-Ob],
     [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
     [@UC50[UC50, Sez.]],
 
-    [R-37-F-Ob],
+    [R-38-F-Ob],
     [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
     [@UC51[UC51, Sez.] \ @UC51.1[UC51.1, Sez.] \ @UC49[UC49, Sez.]],
 
-    [R-38-F-Ob],
+    [R-39-F-Ob],
     [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema, inserendone nome e descrizione],
     [@UC52[UC52, Sez.] \ @UC53[UC53, Sez.] \ @UC54[UC54, Sez.]],
 
-    [R-39-F-Ob],
+    [R-40-F-Ob],
     [L'Admin Globale deve poter aggiornare le informazioni di una merce, cambiandone nome e descrizione],
     [@UC55[UC55, Sez.] \ @UC49[UC49, Sez.] \ @UC53[UC53, Sez.] \ @UC54[UC54, Sez.]],
 
-    [R-40-F-Ob],
+    [R-41-F-Ob],
     [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti. Per ciascun ordine è opportuno visualizzare:
       - ID dell'ordine;
       - Data creazione dell'ordine;
       - Nome dell'ordine.],
     [@UC56[UC56, Sez.] \ @UC56.1[UC56.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
 
-    [R-41-F-Ob],
+    [R-42-F-Ob],
     [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito. Nello specifico, il Cliente deve poter visualizzarne:
       - ID dell'ordine;
       - Data creazione dell'ordine;
@@ -4058,63 +4065,63 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Lista delle merci.],
     [@UC57[UC57, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.] \ @UC57.1[UC57.1, Sez.]],
 
-    [R-42-F-Ob],
+    [R-43-F-Ob],
     [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare:
       - Nome della merce;
       - Q.tà della merce.
     ],
     [@UC57.1[UC57.1, Sez.] \ @UC57.1.1[UC57.1.1, Sez.] \ @UC57.1.1.1[UC57.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
 
-    [R-43-F-De],
+    [R-44-F-De],
     [L'Admin Locale deve avere la possibilità di creare un Backup del proprio magazzino],
     [@UC58[UC58, Sez.]],
 
-    [R-44-F-De],
+    [R-45-F-De],
     [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
     [@UC59[UC59, Sez.] \ @UC59.1[UC59.1, Sez.]],
 
-    [R-45-F-De],
+    [R-46-F-De],
     [L'Admin Locale deve ricevere un errore se la periodicità del Backup periodico che ha selezionato non è valida],
     [@UC60[UC60, Sez.]],
 
-    [R-46-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [@UC61[UC61, Sez.]],
-    [R-47-F-De],
+    [R-47-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [@UC61[UC61, Sez.]],
+    [R-48-F-De],
     [L'Admin Locale deve ricevere un errore quando vuole eliminare la realizzazione di un Backup periodico ma non è attivo un Backup periodico],
     [@UC62[UC62, Sez.]],
 
-    [R-48-F-De],
+    [R-49-F-De],
     [L'Admin Locale deve avere la possibilità di ripristinare i dati dell'ultimo Backup effettuato],
     [@UC63[UC63, Sez.]],
 
-    [R-49-F-De],
+    [R-50-F-De],
     [L'Admin Locale deve ricevere un errore quando vuole ripristiare i dati dell'ultimo Backup effettuato ma nessun Backup è presente],
     [@UC64[UC64, Sez.]],
 
-    [R-50-F-De],
+    [R-51-F-De],
     [L'Admin Globale deve poter visualizzare l'elenco delle attività di accesso. Per ciascuna delle attività le seguenti informazioni devono essere presenti:
       - Indirizzo IP del luogo di accesso
       - ID del tentativo di accesso
       - Stato dell'accesso (riuscito, bloccato o negato)],
     [@UC65[UC65, Sez.] \ @UC65.1[UC65.1, Sez.] \ @UC65.1.1[UC65.1.1, Sez.] \ @UC65.1.2[UC65.1.2, Sez.] \ @UC65.1.3[UC65.1.3, Sez.]],
 
-    [R-50-F-De],
+    [R-52-F-De],
     [L'Admin Globale deve poter bloccare un tentativo di accesso, bloccando l'indirizzo IP dalla quale questo è avvenuto, inserendo l'ID del tentativo],
     [@UC66[UC66, Sez.] \ @UC66.1[UC66.1]],
 
-    [R-51-F-De],
+    [R-53-F-De],
     [Gli Admin Globali devono ricevere notifiche email/sms per attività di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
     [@UC67[UC67, Sez.] \ @UC68[UC68, Sez.]],
 
-    [R-52-F-De],
+    [R-54-F-De],
     [L'Admin Globale deve avere la possibilià di aggiungere un utente al Sistema, inserendone:
       - Nome
       - Password
       - Ruolo],
     [@UC69[UC69, Sez.] \ @UC69.1[UC69.1, Sez.] \ @UC69.2[UC69.2, Sez.] \ @UC69.3[UC69.3, Sez.]],
 
-    [R-53-F-De], [L'Admin Globale deve poter eliminare un utente dal Sistema], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
-    [R-54-F-De], [L'Admin globale deve poter promuovere il ruolo di un utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
-    [R-55-F-Ob],
+    [R-55-F-De], [L'Admin Globale deve poter eliminare un utente dal Sistema], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
+    [R-56-F-De], [L'Admin globale deve poter promuovere il ruolo di un utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
+    [R-57-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibile. Per ogni merce sarà necessario aggiornare:
       - Quantità localmente disponibile della merce
       - Quantità globalmente disponibile della merce
@@ -4123,7 +4130,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - ID della merce],
     [@UC73[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
-    [R-56-F-Ob],
+    [R-58-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione delle merci aggiunte. Per ogni merce aggiunta sarà necessario aggiornare:
       - Quantità localmente disponibile della merce
       - Quantità globalmente disponibile della merce
@@ -4132,7 +4139,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - ID della merce],
     [@UC76[UC76, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
-    [R-57-F-Ob],
+    [R-59-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione delle merci eliminate. Per ogni merce eliminata sarà necessario aggiornare, ovvero eliminare:
       - Quantità localmente disponibile della merce
       - Quantità globalmente disponibile della merce
@@ -4141,7 +4148,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - ID della merce],
     [@UC77[UC77, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
-    [R-58-F-Ob],
+    [R-60-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione delle merci modificate. Per ogni merce modificata sarà necessario aggiornare:
       - Quantità localmente disponibile della merce
       - Quantità globalmente disponibile della merce
@@ -4150,7 +4157,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - ID della merce],
     [@UC78[UC78, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
-    [R-59-F-Ob],
+    [R-61-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini. Per ogni ordine è necessario aggiornare le seguenti informazioni:
       - Data creazione dell'ordine
       - Nome dell'ordine
@@ -4159,13 +4166,13 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Stato dell'ordine],
     [@UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
 
-    [R-60-F-Ob],
+    [R-62-F-Ob],
     [Per ogni merce di un ordine/trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione delle seguenti informazioni:
       - ID della merce
       - Quantità della merce nell'ordine/trasferimento],
     [@UC82[UC82, Sez.] \ @UC75[UC75, Sez.] \ @UC82.1[UC82.1, Sez.]],
 
-    [R-61-F-Ob],
+    [R-63-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini confermati. Per ogni ordine è necessario aggiornare le seguenti informazioni:
       - Data creazione dell'ordine
       - Nome dell'ordine
@@ -4174,7 +4181,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Stato dell'ordine],
     [@UC83[UC83, Sez.] \ @UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
 
-    [R-62-F-Ob],
+    [R-64-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini cancellati. Per ogni ordine è necessario aggiornare le seguenti informazioni:
       - Data creazione dell'ordine
       - Nome dell'ordine
@@ -4183,7 +4190,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Stato dell'ordine],
     [@UC84[UC84, Sez.] \ @UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
 
-    [R-63-F-Ob],
+    [R-65-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione dell'elenco dei trasferimenti. Per ogni trasferimento è necessario avviare la sincronizzazione:
       - Magazzino destinatario
       - Magazzino mittente
@@ -4192,7 +4199,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Stato del trasferimento],
     [@UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
 
-    [R-64-F-Ob],
+    [R-66-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti confermati. Per ogni trasferimento è necessario avviare la sincronizzazione:
       - Magazzino destinatario
       - Magazzino mittente
@@ -4201,7 +4208,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Stato del trasferimento],
     [@UC86[UC86, Sez.] \ @UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
 
-    [R-65-F-Ob],
+    [R-67-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti cancellati. Per ogni trasferimento è necessario avviare la sincronizzazione:
       - Magazzino destinatario
       - Magazzino mittente
@@ -4210,7 +4217,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Stato del trasferimento],
     [@UC87[UC87, Sez.] \ @UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
 
-    [R-66-F-Ob],
+    [R-68-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento. Per ogni notifica è necessario aggiornare:
       - ID della notifica di rifornimento
       - Magazzino destinatario
@@ -4218,13 +4225,13 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Elenco della merce da rifornire],
     [@UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
 
-    [R-67-F-Ob],
+    [R-69-F-Ob],
     [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare:
       - ID della merce
       - Q.tà della merce da rifornire],
     [@UC88.1.4.1[UC88.1.4.1, Sez.] \ @UC75[UC75, Sez.] \ @UC88.1.4.1.1[UC88.1.4.1.1, Sez.]],
 
-    [R-68-F-Ob],
+    [R-70-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento confermate. Per ogni notifica è necessario aggiornare:
       - ID della notifica di rifornimento
       - Magazzino destinatario
@@ -4232,7 +4239,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Elenco della merce da rifornire],
     [@UC89[UC89, Sez.] \ @UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
 
-    [R-69-F-Ob],
+    [R-71-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento cancellate. Per ogni notifica è necessario aggiornare:
       - ID della notifica di rifornimento
       - Magazzino destinatario
@@ -4240,13 +4247,13 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Elenco della merce da rifornire],
     [@UC90[UC90, Sez.] \ @UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
 
-    [R-70-F-Ob],
+    [R-72-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi. Per ogni microservizio si vuole avviare la sincronizzazione di:
       - Nome del microservizio
       - Richieste al secondo del microservizio],
     [@UC91[UC91, Sez.] \ @UC91.1[UC91.1, Sez.] \ @UC91.1.1[UC91.1.1, Sez.] \ @UC91.1.2[UC91.1.2, Sez.]],
 
-    [R-71-F-Ob],
+    [R-73-F-Ob],
     [Lo Scheduler deve avviare la sincronizzazione della soglia minima di allerta per una merce],
     [@UC92[UC92, Sez.]],
   ),
@@ -4273,9 +4280,9 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     columns: 3,
     inset: 8pt,
     table.header(
-      align(left)[#text(fill: white)[*Codice*]],
-      align(left)[#text(fill: white)[*Descrizione*]],
-      align(left)[#text(fill: white)[*Fonti*]],
+      [#text(fill: white)[*Codice*]],
+      [#text(fill: white)[*Descrizione*]],
+      [#text(fill: white)[*Fonti*]],
     ),
 
     [R-1-Q-Ob],
@@ -4294,27 +4301,27 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [È necessario realizzare opportuni test di unità],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
-    [R-4-Q-Ob],
-    [È necessario realizzare opportuni test di carico e scalabilità],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
-
     [R-5-Q-Ob],
     [È necessario realizzare opportuni test di carico e scalabilità],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-6-Q-Ob],
+    [È necessario realizzare opportuni test di carico e scalabilità],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
+
+    [R-7-Q-Ob],
     [È necessario descrivere tutti i test effettuati. Tale redazione sarà effettuata nel #link("")[Piano di Qualifica] (PROSEGUIRE) oppure in un _Test Book_ dedicato],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
-    [R-7-Q-Ob],
+    [R-8-Q-Ob],
     [È necessario perseguire al raggiungimento degli obiettivi posti dal Piano di Qualifica[PROSEGUIRE](inserire link)],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto]],
 
-    [R-8-Q-Ob],
+    [R-9-Q-Ob],
     [È necessario rispettare tutte le norme presenti nelle Norme di Progetto[PROSEGUIRE](inserire link)],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto]],
 
-    [R-9-Q-Ob],
+    [R-10-Q-Ob],
     [È necessario versionare il codice con appositi _Software_ di versionamento.],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Requisiti non Funzionali"],
   ),
@@ -4342,9 +4349,9 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     columns: 3,
     inset: 8pt,
     table.header(
-      align(left)[#text(fill: white)[*Codice*]],
-      align(left)[#text(fill: white)[*Descrizione*]],
-      align(left)[#text(fill: white)[*Fonti*]],
+      [#text(fill: white)[*Codice*]],
+      [#text(fill: white)[*Descrizione*]],
+      [#text(fill: white)[*Fonti*]],
     ),
 
     [R-1-V-Ob],
@@ -4372,3 +4379,34 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
 == Riassunto
 
+#figure(
+  table(
+    align: horizon,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: 4,
+    inset: 8pt,
+    table.header(
+      [#text(fill: white)[*Tipologia*]],
+      [#text(fill: white)[*Obbligatori*]],
+      [#text(fill: white)[*Desiderabili*]],
+      [#text(fill: white)[*Opzionali*]],
+    ),
+
+    [Funzionali], [58], [15], [0],
+    [Qualità], [9], [1], [0],
+    [Vincolo], [5], [0], [0],
+  ),
+  caption: [Riepilogo dei Requisiti],
+)
