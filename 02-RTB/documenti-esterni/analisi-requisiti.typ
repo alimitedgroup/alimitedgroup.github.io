@@ -3268,7 +3268,7 @@ Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre l
   trigger: "Lo scheduler deve sincronizzare la quantità della singola merce di un ordine/trasferimento",
 )[]
 
-=== UC83: Sincronizza ordini confermati
+=== UC83: Sincronizza ordini confermati <UC83>
 #use-case(
   attore: "Scheduler",
   pre: [
@@ -3291,7 +3291,7 @@ Il Caso d'Uso n. 83 include un ulteriore Caso d'Uso come mostrato in figura:
 #use-case-diagram("83-incl", "Inclusioni del Caso d'Uso n.83: UC79")
 Le informazioni riguardanti tale Caso d'Uso sono disponibili alla @UC79.
 
-=== UC84: Sincronizza ordini cancellati
+=== UC84: Sincronizza ordini cancellati <UC84>
 #use-case(
   attore: "Scheduler",
   pre: [
@@ -3334,7 +3334,7 @@ Le informazioni riguardante il caso d'uso UC79, sono reperibili alla relativa se
 )[#use-case-diagram("85", "UC85 - Sincronizza elenco trasferimenti")]
 
 Il Caso d'Uso n. 85 include un ulteriore Caso d'Uso come mostrato in figura:\
-#use-case-diagram("85-incl", "Inclusioni del Caso d'Uso n.85: UC85.1 e relative inclusioni", width: 75%);
+#use-case-diagram("85-incl", "Inclusioni del Caso d'Uso n.85: UC85.1 e relative inclusioni", width: 95%);
 Le informazioni su tale Caso d'Uso e le relative inclusioni saranno ora esposte.
 
 ==== UC85.1: Sincronizza singolo trasferimento <UC85.1>
@@ -3422,7 +3422,7 @@ Le informazioni su tale Caso d'Uso e le relative inclusioni saranno ora esposte.
   trigger: "Lo scheduler deve sincronizzare la lista delle merci del trasferimento",
 )[]
 
-=== UC86: Sincronizza trasferimenti confermati
+=== UC86: Sincronizza trasferimenti confermati <UC86>
 
 #use-case(
   attore: "Scheduler",
@@ -3446,7 +3446,7 @@ Il Caso d'Uso n. 86 include un ulteriore Caso d'Uso come mostrato in figura:\
 //immagine
 Le informazioni riguardanti il Caso d'Uso UC85 sono reperibili alla @UC85.
 
-=== UC87: Sincronizza trasferimenti cancellati //include 86
+=== UC87: Sincronizza trasferimenti cancellati <UC87>
 
 #use-case(
   attore: "Scheduler",
@@ -3645,7 +3645,7 @@ Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di se
   trigger: "Lo scheduler deve sincronizzare la q.tà singola merce nella notifica di rifornimento",
 )[]
 
-=== UC89: Sincronizza notifica rifornimento confermata
+=== UC89: Sincronizza notifica rifornimento confermata <UC89>
 
 #use-case(
   attore: "Scheduler",
@@ -3665,11 +3665,11 @@ Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di se
   trigger: "Lo scheduler deve sincronizzare le notifiche di rifornimento confermate",
 )[]
 
-Il Caso d'Uso n. 90 include due ulteriori Casi d'Uso come mostrato in figura:\
+Il Caso d'Uso n. 89 include due ulteriori Casi d'Uso come mostrato in figura:\
 //immagine
 Le informazioni riguardanti il Caso d'Uso 88 sono reperibili alla @UC88.
 
-=== UC90: Sincronizza notifica rifornimento cancellata //include 89
+=== UC90: Sincronizza notifica rifornimento cancellata <UC90>
 
 #use-case(
   attore: "Scheduler",
@@ -3693,7 +3693,7 @@ Il Caso d'Uso n. 91 include un ulteriore Caso d'Uso come mostrato in figura:\
 //immagine
 Le informazioni riguardanti il caso d'uso UC88 è reperibile alla @UC88.
 
-=== UC91: Sincronizza elenco microservizi
+=== UC91: Sincronizza elenco microservizi <UC91>
 
 #use-case(
   attore: "Scheduler",
@@ -3778,7 +3778,7 @@ Le informazioni riguardanti il caso d'uso UC91.1, e le sue relative inclusioni, 
   trigger: "Lo scheduler deve sincronizzare le richieste al secondo del singolo microservizio",
 )[]
 
-=== UC92: Sincronizza soglia minima di allerta merce
+=== UC92: Sincronizza soglia minima di allerta merce <UC92>
 
 #use-case(
   attore: "Scheduler",
@@ -4123,7 +4123,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Nome della merce
       - Descrizione della merce
       - ID della merce],
-    [@UC76[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [@UC76[UC76, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
     [R-57-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione delle merci eliminate. Per ogni merce eliminata sarà necessario aggiornare, ovvero eliminare:
@@ -4132,7 +4132,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Nome della merce
       - Descrizione della merce
       - ID della merce],
-    [@UC77[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [@UC77[UC77, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
     [R-58-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione delle merci modificate. Per ogni merce modificata sarà necessario aggiornare:
@@ -4141,7 +4141,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       - Nome della merce
       - Descrizione della merce
       - ID della merce],
-    [@UC78[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [@UC78[UC78, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
 
     [R-59-F-Ob],
     [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini. Per ogni ordine è necessario aggiornare le seguenti informazioni:
@@ -4153,15 +4153,155 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
 
     [R-60-F-Ob],
-    [Per ogni merce di un ordine/trasferimento è necessario, lo Scheduler deve avviare la sincronizzazione delle seguenti informazioni:
+    [Per ogni merce di un ordine/trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione delle seguenti informazioni:
       - ID della merce
       - Quantità della merce nell'ordine/trasferimento],
     [@UC82[UC82, Sez.] \ @UC75[UC75, Sez.] \ @UC82.1[UC82.1, Sez.]],
+
+    [R-61-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini confermati. Per ogni ordine è necessario aggiornare le seguenti informazioni:
+      - Data creazione dell'ordine
+      - Nome dell'ordine
+      - Lista delle merci dell'ordine
+      - ID dell'ordine
+      - Stato dell'ordine],
+    [@UC83[UC83, Sez.] \ @UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
+
+    [R-62-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini cancellati. Per ogni ordine è necessario aggiornare le seguenti informazioni:
+      - Data creazione dell'ordine
+      - Nome dell'ordine
+      - Lista delle merci dell'ordine
+      - ID dell'ordine
+      - Stato dell'ordine],
+    [@UC84[UC84, Sez.] \ @UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
+
+    [R-63-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dell'elenco dei trasferimenti. Per ogni trasferimento è necessario avviare la sincronizzazione:
+      - Magazzino destinatario
+      - Magazzino mittente
+      - Lista merci del trasferimento
+      - ID del trasferimento
+      - Stato del trasferimento],
+    [@UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
+
+    [R-64-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti confermati. Per ogni trasferimento è necessario avviare la sincronizzazione:
+      - Magazzino destinatario
+      - Magazzino mittente
+      - Lista merci del trasferimento
+      - ID del trasferimento
+      - Stato del trasferimento],
+    [@UC86[UC86, Sez.] \ @UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
+
+    [R-65-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti cancellati. Per ogni trasferimento è necessario avviare la sincronizzazione:
+      - Magazzino destinatario
+      - Magazzino mittente
+      - Lista merci del trasferimento
+      - ID del trasferimento
+      - Stato del trasferimento],
+    [@UC87[UC87, Sez.] \ @UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
+
+    [R-66-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento. Per ogni notifica è necessario aggiornare:
+      - ID della notifica di rifornimento
+      - Magazzino destinatario
+      - Stato della notifica
+      - Elenco della merce da rifornire],
+    [@UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+
+    [R-67-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare:
+      - ID della merce
+      - Q.tà della merce da rifornire],
+    [@UC88.1.4.1[UC88.1.4.1, Sez.] \ @UC75[UC75, Sez.] \ @UC88.1.4.1.1[UC88.1.4.1.1, Sez.]],
+
+    [R-68-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento confermate. Per ogni notifica è necessario aggiornare:
+      - ID della notifica di rifornimento
+      - Magazzino destinatario
+      - Stato della notifica
+      - Elenco della merce da rifornire],
+    [@UC89[UC89, Sez.] \ @UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+
+    [R-69-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento cancellate. Per ogni notifica è necessario aggiornare:
+      - ID della notifica di rifornimento
+      - Magazzino destinatario
+      - Stato della notifica
+      - Elenco della merce da rifornire],
+    [@UC90[UC90, Sez.] \ @UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+
+    [R-70-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi. Per ogni microservizio si vuole avviare la sincronizzazione di:
+      - nome del microservizio
+      - richieste al secondo del microservizio],
+    [@UC91[UC91, Sez.] \ @UC91.1[UC91.1, Sez.] \ @UC91.1.1[UC91.1.1, Sez.] \ @UC91.1.2[UC91.1.2, Sez.]],
+
+    [R-71-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione della soglia minima di allerta per una merce],
+    [@UC92[UC92, Sez.]],
   ),
   caption: [Requisiti Funzionali],
 )
 == Requisiti di Qualità
+
+#figure(
+  table(
+    align: left,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: 3,
+    inset: 8pt,
+    table.header(
+      align(left)[#text(fill: white)[*Codice*]],
+      align(left)[#text(fill: white)[*Descrizione*]],
+      align(left)[#text(fill: white)[*Fonti*]],
+    ),
+  ),
+  caption: [Requisiti di Qualità],
+)
+
 == Requisiti di Vincolo
+
+#figure(
+  table(
+    align: left,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: 3,
+    inset: 8pt,
+    table.header(
+      align(left)[#text(fill: white)[*Codice*]],
+      align(left)[#text(fill: white)[*Descrizione*]],
+      align(left)[#text(fill: white)[*Fonti*]],
+    ),
+  ),
+  caption: [Requisiti di Qualità],
+)
 
 = Informazioni di supporto
 == Tabella dei contenuti
