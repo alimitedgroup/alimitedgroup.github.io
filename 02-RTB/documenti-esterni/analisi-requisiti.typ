@@ -2811,7 +2811,7 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole eliminare un determinato utente registrato all'interno del Sistema",
 )[]
 
-=== UC71: Seleziona nome utente <UC71>
+=== UC71 - Seleziona nome utente <UC71>
 
 #use-case(
   attore: "Admin Globale",
@@ -2819,25 +2819,17 @@ Tale Caso d'Uso sarà ora esposto.
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
-    - L'Admin Globale ha selezionato il nome dell'utente, per visualizzare/modificare le informazioni di quest'ultimo
   ],
   post: [
-    - Il Sistema seleziona correttamente l'utente
+    - Il Sistema conosce il nome utente dell'utente sulla quale effettuare l'operazione
   ],
   scenari: [
-    - L'Admin Globale inserisce il nome dell'utente per visualizzarne/modificarne le informazioni:
-    - Nel caso volesse modificarne le informazioni:
-      - L'Admin Globale modifica il nome dell'utente selezionato $arrow$ @UC69.1[Vedi UC69.1, Sez.]
-      - L'Admin Globale modifica il ruolo dell'utente selezionato $arrow$ @UC69.3[Vedi UC69.3, Sez.]
-  ],
-  inclusioni: [
-    - UC69.1 @UC69.1[Sez.]
-    - UC69.3 @UC69.3[Sez.]
+    - L'Admin Globale inserisce il nome dell'utente sulla quale vuole effettuare un'operazione.
   ],
   trigger: "L'Admin Globale vuole selezionare il nome utente di un determinato fruitore del Sistema",
 )[]
 
-=== UC72: Modifica ruolo utente <UC72>
+=== UC72 - Promuovi ruolo utente <UC72>
 
 #use-case(
   attore: "Admin Globale",
@@ -2850,12 +2842,10 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema modifica correttamente i ruoli e i permessi per l'utente selezionato.
   ],
   scenari: [
-    - L'Admin Globale seleziona il nome dell'utente a cui verrà cambiato il ruolo e i permessi $arrow$ @UC71[Vedi UC71, Sez.]
-    - L'Admin Globale, successivamente aver selezionato l'utente corretto, inserisce il nuovo ruolo per quest'ultimo $arrow$ @UC69.3[Vedi UC69.3, Sez.]
+    - L'Admin Globale seleziona il nome dell'utente a cui verrà promosso il ruolo $arrow$ @UC71[Vedi UC71, Sez.]
   ],
   inclusioni: [
-    - UC69.3 @UC69.3[Sez.]
-    - UC71 @UC71[Sez.]
+    - UC71 @UC71
   ],
   trigger: "L'Admin Globale vuole modificare il ruolo di un determinato utente registrato nel Sistema",
 )[]
@@ -4074,7 +4064,99 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
     [R-44-F-De],
     [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
-    [@UC59[UC59, Sez.] \ @UC60[UC60, Sez.]],
+    [@UC59[UC59, Sez.] \ @UC59.1[UC59.1, Sez.]],
+
+    [R-45-F-De],
+    [L'Admin Locale deve ricevere un errore se la periodicità del Backup periodico che ha selezionato non è valida],
+    [@UC60[UC60, Sez.]],
+
+    [R-46-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [@UC61[UC61, Sez.]],
+    [R-47-F-De],
+    [L'Admin Locale deve ricevere un errore quando vuole eliminare la realizzazione di un Backup periodico ma non è attivo un Backup periodico],
+    [@UC62[UC62, Sez.]],
+
+    [R-48-F-De],
+    [L'Admin Locale deve avere la possibilità di ripristinare i dati dell'ultimo Backup effettuato],
+    [@UC63[UC63, Sez.]],
+
+    [R-49-F-De],
+    [L'Admin Locale deve ricevere un errore quando vuole ripristiare i dati dell'ultimo Backup effettuato ma nessun Backup è presente],
+    [@UC64[UC64, Sez.]],
+
+    [R-50-F-De],
+    [L'Admin Globale deve poter visualizzare l'elenco delle attività di accesso. Per ciascuna delle attività le seguenti informazioni devono essere presenti:
+      - Indirizzo IP del luogo di accesso
+      - ID del tentativo di accesso
+      - Stato dell'accesso (riuscito, bloccato o negato)],
+    [@UC65[UC65, Sez.] \ @UC65.1[UC65.1, Sez.] \ @UC65.1.1[UC65.1.1, Sez.] \ @UC65.1.2[UC65.1.2, Sez.] \ @UC65.1.3[UC65.1.3, Sez.]],
+
+    [R-50-F-De],
+    [L'Admin Globale deve poter bloccare un tentativo di accesso, bloccando l'indirizzo IP dalla quale questo è avvenuto, inserendo l'ID del tentativo],
+    [@UC66[UC66, Sez.] \ @UC66.1[UC66.1]],
+
+    [R-51-F-De],
+    [Gli Admin Globali devono ricevere notifiche email/sms per attività di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
+    [@UC67[UC67, Sez.] \ @UC68[UC68, Sez.]],
+
+    [R-52-F-De],
+    [L'Admin Globale deve avere la possibilià di aggiungere un utente al Sistema, inserendone:
+      - Nome
+      - Password
+      - Ruolo],
+    [@UC69[UC69, Sez.] \ @UC69.1[UC69.1, Sez.] \ @UC69.2[UC69.2, Sez.] \ @UC69.3[UC69.3, Sez.]],
+
+    [R-53-F-De], [L'Admin Globale deve poter eliminare un utente dal Sistema], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
+    [R-54-F-De], [L'Admin globale deve poter promuovere il ruolo di un utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
+    [R-55-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibile. Per ogni merce sarà necessario aggiornare:
+      - Quantità localmente disponibile della merce
+      - Quantità globalmente disponibile della merce
+      - Nome della merce
+      - Descrizione della merce
+      - ID della merce],
+    [@UC73[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+
+    [R-56-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione delle merci aggiunte. Per ogni merce aggiunta sarà necessario aggiornare:
+      - Quantità localmente disponibile della merce
+      - Quantità globalmente disponibile della merce
+      - Nome della merce
+      - Descrizione della merce
+      - ID della merce],
+    [@UC76[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+
+    [R-57-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione delle merci eliminate. Per ogni merce eliminata sarà necessario aggiornare, ovvero eliminare:
+      - Quantità localmente disponibile della merce
+      - Quantità globalmente disponibile della merce
+      - Nome della merce
+      - Descrizione della merce
+      - ID della merce],
+    [@UC77[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+
+    [R-58-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione delle merci modificate. Per ogni merce modificata sarà necessario aggiornare:
+      - Quantità localmente disponibile della merce
+      - Quantità globalmente disponibile della merce
+      - Nome della merce
+      - Descrizione della merce
+      - ID della merce],
+    [@UC78[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+
+    [R-59-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini. Per ogni ordine è necessario aggiornare le seguenti informazioni:
+      - Data creazione dell'ordine
+      - Nome dell'ordine
+      - Lista delle merci dell'ordine
+      - ID dell'ordine
+      - Stato dell'ordine],
+    [@UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
+
+    [R-60-F-Ob],
+    [Per ogni merce di un ordine/trasferimento è necessario, lo Scheduler deve avviare la sincronizzazione delle seguenti informazioni:
+      - ID della merce
+      - Quantità della merce nell'ordine/trasferimento],
+    [@UC82[UC82, Sez.] \ @UC75[UC75, Sez.] \ @UC82.1[UC82.1, Sez.]],
   ),
   caption: [Requisiti Funzionali],
 )
