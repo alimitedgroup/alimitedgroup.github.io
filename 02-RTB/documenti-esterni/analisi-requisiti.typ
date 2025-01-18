@@ -2655,10 +2655,7 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
     - UC66.1 @UC66.1[Sez.]
   ],
   trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
-)[#use-case-diagram("66", "UC66 - Blocca tentativo di accesso anomalo")#use-case-diagram(
-    "66",
-    "UC66 - Blocca tentativo di accesso",
-  )]
+)[#use-case-diagram("66", "UC66 - Blocca tentativo di accesso anomalo")]
 
 Il Caso d'Uso 66 include un ulteriore Caso d'Uso come mostrato di seguito:
 #use-case-diagram("66-incl", "Inclusione del Caso d'Uso n.66: UC66.1")
@@ -2682,42 +2679,38 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[]
 
-=== UC67: Ricezione E-mail notifica <UC67>
+=== UC67: Ricezione E-mail evento critico <UC67>
 #use-case(
-  attore: "Admin Globale",
-  attori_secondari: "Admin Locale",
+  attore: "Client Email",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
   post: [
-    - Il Sistema, successivamente il blocco dell'accesso, invia tramite una e-mail l'avviso del tentativo di accesso non autorizzato.
+    - Il Client Email riceve una email dal Sistema con le informazioni critiche
   ],
   scenari: [
-    - L'Admin Globale riceve, tramite e-mail, la notifica di un tentativo di accesso anomalo nel Sistema
-    - L'Admin Globale, successivamente la ricezione della e-mail, consulta nel Sistema tutte le informazioni a riguardo
+    - Il Sistema rileva un'informazione critica da segnalare agli Utenti registrati
+    - Il Sistema invia un'email ai Client email registrati
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via e-mail del tentativo di accesso anomalo",
-)[]
+  trigger: "L'Admin Globale/Locale riceve la notifica via e-mail di un evento critico",
+)[#use-case-diagram("67", "UC67 - Ricezione E-mail evento critico")]
 
-=== UC68: Ricezione SMS notifica <UC68>
+=== UC68: Ricezione SMS evento critico <UC68>
 
 #use-case(
-  attore: "Admin Globale",
-  attori_secondari: "Admin Locale",
+  attore: "Dispositivo GSM",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
   post: [
-    - Il Sistema, successivamente il blocco dell'accesso, invia tramite un SMS l'avviso del tentativo di accesso non autorizzato.
+    - Il dispositivo GSM riceve una un sms dal Sistema con le informazioni richieste
   ],
   scenari: [
-    - L'Admin Globale riceve, tramite SMS, la notifica di un tentativo di accesso anomalo nel Sistema
-    - L'Admin Globale, successivamente la ricezione dell'SMS, consulta nel Sistema tutte le informazioni a riguardo
+    - Il Sistema rileva un'informazione critica da segnalare agli Utenti registrati
+    - Il Sistema invia un sms ai dispositivi GSM registrati
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via SMS del tentativo di accesso anomalo",
-)[]
+  trigger: "L'Admin Globale/Locale riceve la notifica via sms di un evento critico",
+)[#use-case-diagram("68", "UC68 - Ricezione SMS evento critico")]
 
 === UC69: Aggiungi nuovo utente <UC69>
 
