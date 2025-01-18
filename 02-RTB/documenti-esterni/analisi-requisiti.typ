@@ -12,7 +12,7 @@
       date: datetime(day: 17, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Completato l'inserimento dei diagrammi UML per i Casi d'Uso relativi al Backend. Completata la sezione <<Riassunto>>",
+      descr: "Completato l'inserimento dei diagrammi UML per i Casi d'Uso relativi al Backend. Completati i requisiti e la sezione Riassunto",
     ),
     (
       vers: "0.26.0",
