@@ -2414,7 +2414,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno sch
 )[#use-case-diagram("59", "UC59 - Attiva Backup periodico")]
 
 Il Caso d'Uso 59 include un ulteriore Caso d'Uso come mostrato di seguito:
-#use-case-diagram("59-incl", "Inclusioni UC59: UC59.1")
+#use-case-diagram("59-incl", "Inclusioni del Caso d'Uso n.59: UC59.1")
 Tale Caso d'Uso sarà ora esposto.
 
 ==== UC59.1: Inserisci periodicità Backup periodico <UC59.1>
@@ -2466,10 +2466,10 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema comunica allo Scheduler la scelta dell'Admin Locale di non realizzare periodicamente un Backup
   ],
   scenari: [
-    - L'Admin Locale seleziona dal menu principale l'opzione relativa all'eliminazione di un Backup periodico;
+    - L'Admin Locale seleziona dal menu principale l'opzione relativa all'eliminazione (disattivazione) di un Backup periodico;
   ],
   scenari_alternativi: [
-    - L'Admin Locale vuole attivare un Backup periodico ma nessun Backup periodico è attivo $arrow$ @UC62
+    - L'Admin Locale vuole eliminare (disattivare) un Backup periodico ma nessun Backup periodico è attivo $arrow$ @UC62
   ],
   estensioni: [
     - UC62 @UC62
@@ -2515,7 +2515,7 @@ Tale Caso d'Uso sarà ora esposto.
     - UC64 @UC64
   ],
   trigger: "L'Admin Locale vuole ripristinare il Sistema all'ultimo Backup effettuato",
-)[#use-case-diagram("63", "Ripristino dati da ultimo Backup effettuato")]
+)[#use-case-diagram("63", "UC63 - Ripristino dati da ultimo Backup effettuato")]
 
 === UC64: Errore nessun Backup trovato <UC64> //
 
@@ -2557,7 +2557,7 @@ Tale Caso d'Uso sarà ora esposto.
 )[#use-case-diagram("65", "UC65 - Visualizzazione elenco attività di accesso")]
 
 Il Caso d'Uso 65 include un ulteriore Caso d'Uso come mostrato di seguito:
-#use-case-diagram("65-incl", "Inclusione del Caso d'Uso n.65: UC65.1 e relative inclusioni")
+#use-case-diagram("65-incl", "Inclusioni del Caso d'Uso n.65: 65.1 e relative inclusioni")
 Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
 
 ==== UC65.1: Visualizza elemento lista attività di accesso <UC65.1>
@@ -2655,7 +2655,10 @@ Tale Caso d'Uso sarà ora esposto assieme alle relative inclusioni.
     - UC66.1 @UC66.1[Sez.]
   ],
   trigger: "L'Admin Globale vuole annullare un tentativo di accesso",
-)[#use-case-diagram("66", "UC66 - Blocca tentativo di accesso anomalo")]
+)[#use-case-diagram("66", "UC66 - Blocca tentativo di accesso anomalo")#use-case-diagram(
+    "66",
+    "UC66 - Blocca tentativo di accesso",
+  )]
 
 Il Caso d'Uso 66 include un ulteriore Caso d'Uso come mostrato di seguito:
 #use-case-diagram("66-incl", "Inclusione del Caso d'Uso n.66: UC66.1")
@@ -2677,7 +2680,7 @@ Tale Caso d'Uso sarà ora esposto.
     - L'Admin Globale inserisce l'ID del tentativo di accesso, il cui indirizzo IP deve essere bloccato
   ],
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
-)[] //
+)[]
 
 === UC67: Ricezione E-mail notifica <UC67>
 #use-case(
@@ -2813,7 +2816,6 @@ Tali casi d'uso saranno ora esposti.
   ],
   scenari: [
     - L'Admin Globale seleziona l'utente che vuole eliminare dal Sistema $arrow$ @UC71[Vedi UC71, Sez.]
-    - L'Admin Globale elimina correttamente l'utente selezionato.
   ],
   inclusioni: [
     - UC71 @UC71[Sez.]
