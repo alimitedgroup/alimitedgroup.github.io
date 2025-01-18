@@ -360,6 +360,8 @@ Di seguito sono esposti gli attori utilizzati:
       text(fill: white)[*Descrizione*],
     ),
 
+    [*Dispositivo GSM*], [Rappresenta un dispositivo GSM registrato al Sistema e in grado di ricevere SMS],
+    [*Client Email*], [Rappresenta un Client Email registrato al Sistema],
     [*Utente*], [Rappresenta un utente che vuole accedere al sistema],
     [*Admin Locale*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al sistema con interessi nel singolo magazzino che superano quelle del normale utilizzatore],
