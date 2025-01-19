@@ -173,7 +173,7 @@
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Redazione Capitolo 2 e, Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione",
+      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione",
     ),
     (
       vers: "0.3.0",
@@ -250,7 +250,7 @@ Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le segue
 - Possibilità di ricevere suggerimenti di riassortimento quando la disponibilità locale di merce sia sotto una certa soglia;
 - Possibilità di modifica della soglia per il riassortimento per ogni merce;
 - Possibilità di esportare gli ordini e i report di inventario;
-- Possibilità di visualizzare in tempo reale il numero di richieste per ogni, Servizio del sistema;
+- Possibilità di visualizzare in tempo reale il numero di richieste per ogni Servizio del sistema;
 
 
 Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[*Capitolato*] i requisiti obbligatori sono stati rimodulati in base a quanto riportato nel #link("https://alimitedgroup.github.io/VE%2019-11-2024%20v1.0.0.pdf")[*Verbale Esterno*] del *19 Ottobre 2024*. Nello specifico, non sono più obbligatori:
