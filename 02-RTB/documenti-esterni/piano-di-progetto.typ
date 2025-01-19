@@ -623,14 +623,14 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(3, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 3 - Preventivo per componente", "Sprint 3 - Preventivo")
+#impegni(3, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 3 - Preventivo per componente", "Sprint 3 - Preventivo")
 
 ==== Consuntivo
 
 #impegni(
   3,
   preventivo: true,
-  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  posizioni-legenda: (2, 2, -2, 2, -2, -2),
   "Sprint 3 - Consuntivo per componente",
   "Sprint 3 - Consuntivo",
 )
@@ -689,6 +689,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
 #pagebreak()
@@ -697,14 +698,14 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(4, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 4 - Preventivo per componente", "Sprint 4 - Preventivo")
+#impegni(4, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 4 - Preventivo per componente", "Sprint 4 - Preventivo")
 
 ==== Consuntivo
 
 #impegni(
   4,
   preventivo: true,
-  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  posizioni-legenda: (2, 2, -2, 2, -2, -2),
   "Sprint 4 - Consuntivo per componente",
   "Sprint 4 - Consuntivo",
 )
@@ -728,3 +729,70 @@ tra Use Case del backend e del frontend che devono essere rappresentati separata
 
 Non è stata completata la redazione degli Use Case non obbligatori a causa di problemi con la numerazione degli Use Case e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
+
+=== Sprint 5
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[06-1-2025],
+  [Fine prevista:], strong[18-1-2025],
+  [Fine reale:], strong[18-01-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint4intro>
+
+Il quinto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g], sul completamento del PoC#super[g] e sul proseguo del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto.
+
+Le attività pianificate nel dettaglio includono:
+
+- Terminare la stesura dei Casi d'Uso relativi a requisiti non obbligatori e riguardanti le attività di _Backend_ del Sistema;
+- Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni;
+- Effettuare le prime misurazioni da riportare nel Piano di Qualifica
+- Effettuare la verifica di quanto redatto nelle Norme di Progetto;
+- erminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
+
+Il Responsabile dello sprint dovrà inoltre contattare #M31 al fine di predisporre una riunione per discutere dell'efficacia dell'Analisi dei Requisiti#super[g] e del PoC realizzato.
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+
+#pagebreak()
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:[PROSEGUIRE]
+
+#impegni(5, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 5 - Preventivo per componente", "Sprint 5 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  5,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, -2, -2),
+  "Sprint 5 - Consuntivo per componente",
+  "Sprint 5 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(5, "Sprint 5 - Variazione nelle risorse disponibili")
+
+#v(1em)
+==== Rischi incontrati
+
+
+=== Retrospettiva
+
+In merito alle attività riguardanti l'Analisi dei Requisiti#super[g], sono stati realizzati forti progressi in quanto non solo è stata completata la redazione di quanto previsto, ma gli Analisti sono riusciti a completare l'intera sezione riguardante i requisiti.
+
+È stata contattata inoltre #M31: #M31 è stata aggiornata dei progressi realizzati e ha predisposto una riunione il giorno 28 Gennaio 2025 alle ore 15.00.
