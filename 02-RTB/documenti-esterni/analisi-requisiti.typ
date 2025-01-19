@@ -2820,7 +2820,7 @@ Tali casi d'uso saranno ora esposti.
 
 Il Caso d'Uso 70 include un ulteriore caso d'uso come mostrato nella seguente immagine:
 #use-case-diagram("70-incl", "Inclusione del Caso d'Uso n.70: UC71")
-Tale caso d'Uso sarà ora esposto.
+Tale Caso d'Uso sarà ora esposto.
 
 === UC71 - Seleziona nome utente <UC71>
 
