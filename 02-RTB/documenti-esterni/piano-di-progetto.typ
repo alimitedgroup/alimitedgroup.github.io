@@ -753,7 +753,7 @@ Le attività pianificate nel dettaglio includono:
 - Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni;
 - Effettuare le prime misurazioni da riportare nel Piano di Qualifica
 - Effettuare la verifica di quanto redatto nelle Norme di Progetto;
-- erminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
+- terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
 
 Il Responsabile dello sprint dovrà inoltre contattare #M31 al fine di predisporre una riunione per discutere dell'efficacia dell'Analisi dei Requisiti#super[g] e del PoC realizzato.
 
@@ -763,7 +763,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+- RG3: Rischio Globale derivato da sottostima di attività
 
 #pagebreak()
 
@@ -790,9 +790,18 @@ Si prospetta l'utilizzo delle seguenti risorse:[PROSEGUIRE]
 #v(1em)
 ==== Rischi incontrati
 
+Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa dell'inizio della sessione e il richio _RI1: Rischio Individuale derivante dalle altre attività universitarie_ dovuto al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+
+In merito all'Analisi dei Requisiti#super[g] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, che tuttavia è stato superato anticipando la redazione dei requisiti.
 
 === Retrospettiva
 
 In merito alle attività riguardanti l'Analisi dei Requisiti#super[g], sono stati realizzati forti progressi in quanto non solo è stata completata la redazione di quanto previsto, ma gli Analisti sono riusciti a completare l'intera sezione riguardante i requisiti.
 
 È stata contattata inoltre #M31: #M31 è stata aggiornata dei progressi realizzati e ha predisposto una riunione il giorno 28 Gennaio 2025 alle ore 15.00.
+
+È stata completata la redazione del Piano di Qualifica sulle sezioni preventivate, occorre ora verificare quanto redatto.
+
+Anche il PoC ha subito degli importanti progressi, ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
+
+A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto e le prime misurazioni del Piano di Qualifica.
