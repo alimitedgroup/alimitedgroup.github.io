@@ -99,6 +99,10 @@ La riunione si conclude con l'affermare la necessità di rispettare le scadenze 
   "Aggiornare il glossario e i relativi documenti (entro 2 Febbraio 2025)",
   issue(104),
   "Effettuare le ultime misurazioni nel Piano di Qualifica (entro 2 Febbraio 2025)",
+  issue(106),
+  "Verifica Norme di Progetto (entro 2 Febbraio 2025)",
+  issue(107),
+  "Verifica Piano di Qualifica (entro 2 Febbraio 2025)",
   issue(7, repo: repo.poc),
   "Terminare la funzionalità di esecuzione degli ordini nel PoC (entro 2 Febbraio 2025)",
 )
