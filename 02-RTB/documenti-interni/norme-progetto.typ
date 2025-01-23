@@ -572,7 +572,7 @@ Tra i processi di supporto utilizzati nel progetto distinguiamo:
 - *Gestione delle configurazioni*
 - *Accertamento qualità*
 - *Qualifica*, formata a sua volta da:
-  - *Verifica*#super[g] 
+  - *Verifica*#super[g]
   - *Validazione*
 
 Saranno ora descritte nel dettaglio le attività previste.
@@ -1072,9 +1072,9 @@ Tali attività saranno descritte nel dettaglio nelle prossime Sezioni.
 
 _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati.
 
-- _Discord_#super[g] 
+- _Discord_#super[g]
 - _Git_
-- _GitHub_#super[g] 
+- _GitHub_#super[g]
 - _Google Calendar_
 - _Google Fogli_
 - _Google Mail_
