@@ -664,7 +664,7 @@ I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono 
   inset: (x: 0pt),
   column-gutter: 1em,
   [Inizio:], strong[22-12-2024],
-  [Fine prevista:], strong[04-1-2025],
+  [Fine prevista:], strong[04-01-2025],
   [Fine reale:], strong[04-01-2025],
   [Giorni di ritardo:], strong[0],
 )
@@ -738,7 +738,7 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma
   inset: (x: 0pt),
   column-gutter: 1em,
   [Inizio:], strong[06-1-2025],
-  [Fine prevista:], strong[18-1-2025],
+  [Fine prevista:], strong[18-01-2025],
   [Fine reale:], strong[18-01-2025],
   [Giorni di ritardo:], strong[0],
 )
@@ -790,7 +790,7 @@ Si prospetta l'utilizzo delle seguenti risorse:[PROSEGUIRE]
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa dell'inizio della sessione e il richio _RI1: Rischio Individuale derivante dalle altre attività universitarie_ dovuto al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa dell'inizio della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
 
 In merito all'Analisi dei Requisiti#super[g] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, che tuttavia è stato superato anticipando la redazione dei requisiti.
 
