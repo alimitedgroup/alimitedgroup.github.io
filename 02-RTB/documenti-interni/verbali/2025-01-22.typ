@@ -65,7 +65,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà
 - Aggiornare il glossario e i relativi documenti entro il giorno *2 Febbraio 2025*
 
 #align(center)[*Tecnologie e PoC*]
-- Terminare la funzionalità di esecuzione degli ordini *2 Febbraio 2025*
+- Terminare la funzionalità di esecuzione degli ordini entro il giorno *2 Febbraio 2025*
 
 == Assegnazione prevista dei ruoli sino al 02-02-2025
 
