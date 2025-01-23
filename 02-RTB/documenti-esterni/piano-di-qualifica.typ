@@ -201,7 +201,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
   formula: [
     $"Actual Cost" = "Costo effettivo sostenuto nello sprint"$
   ],
-  desc: [L'indicatore Actual Cost rappresenta il costo effettivo sostenuto per completare il lavoro nello sprint.\
+  desc: [L'indicatore Actual Cost rappresenta il costo effettivo sostenuto per completare il lavoro nello sprint#super[g] .\
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se i costi sono in linea con le aspettative.],
 )
 
@@ -234,7 +234,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
   formula: [
     $"Budget Variance" = ("Earned Value" - "Actual Cost" ) / "Actual Cost" * 100$
   ],
-  desc: [La Budget Variance rappresenta la differenza percentuale tra il valore del lavoro completato e il costo effettivo sostenuto per completare il lavoro nello sprint.\
+  desc: [La Budget Variance rappresenta la differenza percentuale tra il valore del lavoro completato e il costo effettivo sostenuto per completare il lavoro nello sprint#super[g] .\
     Un valore positivo indica che il progetto sta rispettando il budget, un valore negativo indica che il progetto sta superando il budget.],
 )
 
@@ -244,7 +244,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
   formula: [
     $"Effort Variance" = ("Ore Pianificate" - "Ore Effettive") / "Ore Pianificate" * "100"$
   ],
-  desc: [L'Effort Variance rappresenta la differenza percentuale tra le ore pianificate e le ore effettive impiegate per completare il lavoro nello sprint.\
+  desc: [L'Effort Variance rappresenta la differenza percentuale tra le ore pianificate e le ore effettive impiegate per completare il lavoro nello sprint#super[g] .\
     Un valore positivo indica che il progetto sta rispettando la pianificazione, un valore negativo indica che il progetto sta accumulando ritardi.],
 )*/
 
@@ -352,7 +352,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
   formula: [
     $"Sprint Velocity" = "Story Points completati nello sprint"$
   ],
-  desc: [Media mobile degli story points completati negli ultimi 3 sprint. Utile per la capacity planning.],
+  desc: [Media mobile degli story points completati negli ultimi 3 sprint#super[g] .Utile per la capacity planning.],
 )
 ==== Lead Time
 #metric(
@@ -492,7 +492,7 @@ La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto sof
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto software è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali e non funzionali definiti nell'analisi.
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nell'analisi.
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori.
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali.
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste.
