@@ -397,12 +397,12 @@ Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGro
 ==== Valutazione dei Capitolati
 
 La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[*Valutazione dei Capitolati*] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
-Quest'ultimo fornisce, per ogni capitolato, una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
+Quest'ultimo fornisce, per ogni capitolato#super[g], una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
 - *Panoramica*: che indica l'azienda proponente, il nome del capitolato e delle informazioni generali su il prodotto da realizzare;
 - *Scopo*: indica a che pro viene realizzato il prodotto;
 - *Punti di forza*
 - *Criticità evidenziate*
-- *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato.
+- *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato#super[g].
 
 #figure(
   table(
@@ -617,7 +617,7 @@ Generalmente un verbale possiede questa struttura iniziale:
 - *Indice del documento*, generato automaticamente da _Typst_.
 
 Un verbale successivamente prevede sempre una prima sezione con alcune informazioni generali tra cui:
-- *Modalità*, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_ salvo diversamente specificato);
+- *Modalità*, distinta tra "in presenza" o "virtuale" (se virtuale si intende avvenuta sulla piattaforma _Discord_#super[g] salvo diversamente specificato);
 - *Data della riunione*;
 - *Orario di inizio*;
 - *Orario di fine*.
@@ -667,7 +667,7 @@ Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
 === Produzione <regole-branch-issue>
 La produzione di un documento segue solitamente questi passaggi:
 
-- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub, elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_ e delle _issue_ segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
+- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub#super[g], elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_#super[g] e delle _issue_#super[g] segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
 
 - *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (vedi la @elenco-documenti per maggiori informazioni) si assegna l'issue di redazione e inizia la redazione del documento nel branch dedicato
 - *Verifica*: terminata la redazione, il redattore apre una _pull request_ su GitHub per chiedere, ad un verificatore, la verifica del documento. Il verificatore procederà quindi a tale attività che potrà avere esito positivo oppure negativo, lasciando, in questo caso, l'elenco delle modifiche da apportare ai relatori.
@@ -675,7 +675,7 @@ La produzione di un documento segue solitamente questi passaggi:
 A questo punto il processo diviene differente per i verbali e i rimanenti documenti:
 
 - *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di verifica positiva, il verificatore richiede al responsabile di approvare il documento.
-Il responsabile, una volta approvato il documento, risolverà la pull request e procede quindi al merge del branch secondario in quello principale. L'azione scatenera l'avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, questo anche considerando che con il tempo la memoria potrebbe non più essere precisa come prima: per queste ragioni il gruppo ha deciso che i verbali saranno pubblicati solamente quando approvati.
+Il responsabile#super[g], una volta approvato il documento, risolverà la pull request e procede quindi al merge del branch secondario in quello principale. L'azione scatenera l'avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, questo anche considerando che con il tempo la memoria potrebbe non più essere precisa come prima: per queste ragioni il gruppo ha deciso che i verbali saranno pubblicati solamente quando approvati.
 - *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale: ciò avviene completando il _merge_ e risolvendo quindi la _Pull Request_. Tale processo è diversificato per i documenti rispetto ai verbali in quanto, essendo gli altri documenti di consultazione più frequente, è necessario avere a disposizione la versione più recente disponibile per la visione;
 - *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
 
@@ -707,7 +707,7 @@ Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, o
 
 L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di verifica mediante _Pull Request_.
 
-Per le regole sulla nomenclatura da utilizzare per _Branch_ e _Issue_ si veda @creazione-github nella parte precedente di questo documento.
+Per le regole sulla nomenclatura da utilizzare per _Branch_#super[g] e _Issue_#super[g] si veda @creazione-github nella parte precedente di questo documento.
 
 == Gestione delle Configurazioni
 
@@ -981,10 +981,30 @@ In ultima istanza, è sempre compito di questo ruolo "
         + " i vari documenti prodotti da "
         + [_ALimitedGroup_]
         + "."
+Il Responsabile è anche colui che ha il compito, a nome di tutto il gruppo, di dialogare con le parti esterne ad "
+        + [_ALimitedGroup_]
+        + ", quali, a mero titolo esemplificativo, l'azienda proponente del capitolato "
+        + [#M31]
+        + ".
+In ultima istanza, è sempre compito di questo ruolo "
+        + [*approvare*]
+        + " i vari documenti prodotti da "
+        + [_ALimitedGroup_]
+        + "."
     ),
 
     "Amministratore",
     (
+      "Noto anche come "
+        + [_System Administrator_ o _SysAdmin_]
+        + ", ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di "
+        + [_ALimitedGroup_]
+        + " utilizza per portare a compimento le varie attività del progetto didattico, a partire dal sistema di ticketing sino agli strumenti utilizzati per la verifica e validazione di quanto realizzato.
+    È questo ruolo che copre la responsabilità di risolvere quanto prima eventuali problematiche legate alle infrastrutture. Per via della sua approfondita conoscenza del "
+        + [_Way of Working_]
+        + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il "
+        + [*Piano di Qualifica*]
+        + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."
       "Noto anche come "
         + [_System Administrator_ o _SysAdmin_]
         + ", ha l'importante compito di gestire e migliorare l'infrastruttura che i membri di "
@@ -1005,6 +1025,12 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
 
     "Analista",
     (
+      "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente "
+        + [#M31]
+        + ".
+È sempre affidato a questo ruolo il compito di regidere l'"
+        + [*Analisi dei Requisiti*]
+        + "."
       "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente "
         + [#M31]
         + ".
@@ -1072,9 +1098,9 @@ Tali attività saranno descritte nel dettaglio nelle prossime Sezioni.
 
 _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati.
 
-- _Discord_
+- _Discord_#super[g]
 - _Git_
-- _GitHub_
+- _GitHub_#super[g]
 - _Google Calendar_
 - _Google Fogli_
 - _Google Mail_
@@ -1138,15 +1164,15 @@ L'attività di *creazione* guida la realizzazione dell'infrastruttura. Di seguit
 
 ==== Discord
 
-Per utilizzare *Discord* è stato realizzato un server con un canale testuale e un canale apposito per le riunioni.
+Per utilizzare *Discord*#super[g] è stato realizzato un server con un canale testuale e un canale apposito per le riunioni.
 
 ==== Git
 
-*Git* non richiede particolari modifiche: deve essere configurato inserendo username e email con cui il componente interagisce normalmente con il _repository_ GitHub del progetto
+*Git* non richiede particolari modifiche: deve essere configurato inserendo username e email con cui il componente interagisce normalmente con il _repository_#super[g] GitHub del progetto
 
 ==== GitHub <creazione-github> //action
 
-Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_repository_ *GitHub* dedicato alla documentazione] è strutturato in maniera da favorire la produzione dei documenti. All'interno è possibile trovare varie _directories_, qui di seguito descritte:
+Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_repository_ *GitHub*#super[g] dedicato alla documentazione] è strutturato in maniera da favorire la produzione dei documenti. All'interno è possibile trovare varie _directories_, qui di seguito descritte:
 
 - *.github/workflows*: contiene lo script in _Python_ che si occupa di compilare i files _Typst_ dei documenti ed aggiornare il sito di conseguenza;
 - *.vscode*: contiene informazioni utili per l'_IDE_ di sviluppo _Microsoft Visual Studio Code_, se questo viene utilizzato per la stesura dei documenti;
@@ -1157,25 +1183,25 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 - *website*: contiene i file relativi al sito web del gruppo.
 
 
-È inoltre possibile trovare il file _*.gitignore*_ (utile per evitare il tracciamento di alcuni file specifici), il file _*README.md*_ (che permette di realizzare la descrizione nella pagina principale del _repository_) e _*docs.typ*_ (altro file di utilità per i documenti).
+È inoltre possibile trovare il file _*.gitignore*_ (utile per evitare il tracciamento di alcuni file specifici), il file _*README.md*_ (che permette di realizzare la descrizione nella pagina principale del _repository_#super[g]) e _*docs.typ*_ (altro file di utilità per i documenti).
 
 Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
 
 #align(center)[*\#-azione-documento-data*]
 
 Dove:
-- Al posto di *\#* va inserito il numero della _Issue_ le cui modifiche operate nel branch determineranno la chiusura
-- Al posto di *azione* va inserita l'azione fatta nel _Branch_ ossia:
+- Al posto di *\#* va inserito il numero della _Issue_#super[g] le cui modifiche operate nel branch determineranno la chiusura
+- Al posto di *azione* va inserita l'azione fatta nel _Branch_#super[g] ossia:
   - *redazione* per indicare la redazione di un nuovo documento
   - *aggiornamento* per indicare la modifica di un documento esistente
 - Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
 - Al posto di *data* la data del documento, se tale documento la prevede (ad esempio i *verbali*)
 
-Il gruppo ha poi deciso di utilizzare le _Issue_ di GitHub per tracciare le attività da fare. Generalmente, il nome di una _Issue_ segue il seguente schema:
+Il gruppo ha poi deciso di utilizzare le _Issue_#super[g] di GitHub per tracciare le attività da fare. Generalmente, il nome di una _Issue_#super[g] segue il seguente schema:
 
 #align(center)[*azione documento data*]
 
-Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_.
+Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_#super[g] .
 
 Ogni _Issue_ è inoltre legata ad una _Project Board_, uno strumento di GitHub che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso.
 
@@ -1190,7 +1216,7 @@ In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da Gi
 
 ==== Google Calendar
 
-In merito al calendario condiviso, è affidato al *Responsabile* il compito di aggiungere gli eventi del gruppo, dai diari di bordo sino alle riunioni interne ed esterne programmate.
+In merito al calendario condiviso, è affidato al *Responsabile*#super[g] il compito di aggiungere gli eventi del gruppo, dai diari di bordo sino alle riunioni interne ed esterne programmate.
 
 Il calendario è condiviso tra i vari membri, che riceveranno un promemoria almeno un giorno prima rispetto l'evento in questione.
 
@@ -1224,7 +1250,7 @@ Tale gruppo è configurato in maniera tale da escludere il possibile ingresso di
 
 ==== Typst <creazione-typst> //migliorare
 
-L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazione di _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella _lib_ del _repository_.
+L'ambiente per la realizzazione dei documenti, *Typst*, è stato personalizzato a partire dalla realizzazione di _template_, contenenti funzioni utili alla stesura dei documenti e conservati nella cartella _lib_ del _repository_#super[g].
 
 In merito ai *verbali*, le funzioni sono contenute nel file
 #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/documentazione.typ")[*_verbale.typ_*] e sono, in elenco:
@@ -1246,7 +1272,7 @@ Per i seguenti documenti:
 - *Norme di Progetto*;
 - *Piano di Progetto*;
 - *Piano di Qualifica*;
-- *Analisi dei Requisiti*;
+- *Analisi dei Requisiti#super[g]*;
 
 che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato un _template_ apposito, che permette di automatizzare la realizzazione della struttura adatta a loro.\
 Tuttavia, l'utilizzo di tale _template_, denominato #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/importantdocs.typ")[*_importantdocs.typ_*] non è strettamente obbligatorio.
@@ -1258,8 +1284,8 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 - *M31* : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
 - *abbrev* : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
 - *prof* : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
-- *issue* : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_, tramite il numero associato a quest'ultima (e opzionalmente il _repository_, altrimenti viene di _default_ inserito quella della documentazione);
-- *pr* : come sopra, ma per indicare le _pull request_;
+- *issue*#super[g] : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_#super[g], tramite il numero associato a quest'ultima (e opzionalmente il _repository_#super[g], altrimenti viene di _default_ inserito quella della documentazione);
+- *pr*#super[g] : come sopra, ma per indicare le _pull request_;
 - *doc* : che, preso in _input_ il nome del documento e il testo da inserire, fornisce il _link_ per quel documento con al suo posto il testo dato.
 
 === Manutenzione

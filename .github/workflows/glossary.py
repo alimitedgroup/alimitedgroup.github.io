@@ -1,5 +1,7 @@
-import yaml
 import os
+import sys
+import yaml
+import logging
 
 ALPHABET="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ROOT="./"
@@ -11,7 +13,17 @@ def loadGlossary():
         output = yaml.safe_load(f)
     return output
 
-def substitue(filePath,glossaryYml):
+def substitute_line(filename, linenum, line, filtered_glossary):
+    for sub in filtered_glossary:
+        origLine = line
+        line = line.replace(sub, f"{sub}#super[g]")
+        line = line.replace('#super[g]#super[g]', f'#super[g]')
+        if line != origLine:
+            logging.error(f'Found un-tagged word at {filename}:{linenum}')
+
+    return line
+
+def substitute(filePath,glossaryYml):
     glossary = []
     doNotLowerWords=["DI"]
 
@@ -30,19 +42,19 @@ def substitue(filePath,glossaryYml):
     specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
-    startText=" "
+    startText=""
 
     file=open(filePath,"r", encoding ="utf-8")
     bodyFound=False
     parFound=False
-    line=" "
+    line=file.readline()
+    linenum = 0
 
     filtered_glossary = list(filter(lambda el: " " in el, glossary))
     #print(filtered_glossary)
 
     while line:
-        line=file.readline()
-        
+        linenum += 1
         #print(f"read:{line}")
         if(bodyFound==False or parFound==False):
             startText+=line
@@ -52,15 +64,14 @@ def substitue(filePath,glossaryYml):
                 parFound=True
         else:
             if(stop == False):
-                for sub in filtered_glossary:
-                    line = line.replace(sub, f"{sub}#super[g]")
-                    if(sub in line):
-                        print("found sub in : " +sub)
+                line = substitute_line(filePath, linenum, line, filtered_glossary)
 
             if len(line.strip()) > 0 and line.strip()[0] == '=':
-                newText+= line
+                newText += line
+                line=file.readline()
                 continue
-            for word in line.split():
+            if len(line.lstrip()) != 0: newText += line[:len(line) - len(line.lstrip())]
+            for i, word in enumerate(line.split()):
                 #print("read: "+word)
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}, {stopCheckingWords}")
@@ -69,27 +80,31 @@ def substitue(filePath,glossaryYml):
                     stop=False
                 if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
                     if word[:-1] in glossary and word[len(word)-1] in specialChar:
-                        newText+= word[:-1] + "#super[g] " + word[-1:]
-                        print("found - 1: " +word)
+                        newText += word[:-1] + "#super[g] " + word[-1:]
+                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
-                        newText+= word[:-2] + "#super[g] " + word[-2:]
-                        print("found - 2: " +word)
+                        newText += word[:-2] + "#super[g] " + word[-2:]
+                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0]=="_" or word[0]=="*":
-                        newText+= word + "#super[g] "
-                        print("found - 3: "+word)
+                        newText += word + "#super[g] "
+                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0] == "(" and word[len(word)-1] == ")":
                         newText += word[:-1] + "#super[g] " + word[-1:]
-                        print("found - 4: "+word)  
+                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     else:
-                        newText+= word + " "
+                        newText += word
+                        if i != len(line.split()) - 1: newText += ' '
                 else:
-                    newText+=word+" "
+                    newText += word
+                    if i != len(line.split()) - 1: newText += ' '
+
             newText+="\n"
+        line=file.readline()
 
     file.close()
 
     with open(filePath,"w", encoding ="utf-8") as file:
-        file.write(startText+"\n")
+        file.write(startText)
         file.write(newText)
 
 def find_files(fileList,path=ROOT):
@@ -103,12 +118,18 @@ def find_files(fileList,path=ROOT):
 
 def main():
     fileList = []
-    find_files(fileList)
-    for file in fileList:
-        if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
-            continue
-        print("sub: "+file)
-        substitue(file,loadGlossary())
+
+    # If any filename was passed on the command line, only proces those files
+    if len(sys.argv) > 1:
+        for file in sys.argv[1:]:
+            substitute(file, loadGlossary())
+
+    else:
+        find_files(fileList)
+        for file in fileList:
+            if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
+                continue
+            substitute(file,loadGlossary())
 
 if __name__ == "__main__":
     main()

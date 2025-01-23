@@ -72,7 +72,7 @@
     }
   )
 
-  set heading(numbering: "1.")
+  set heading(numbering: "1.1 -")
   set page(numbering: "1", header: header(titolo), footer: footer())
   counter(page).update(1)
   pagebreak()

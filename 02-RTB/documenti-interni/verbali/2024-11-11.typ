@@ -70,15 +70,15 @@ A tal proposito, le categorie presenti nel sito sono:
 - *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Tecnology Baseline_;
 - *_PB_* : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline_.
 Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _smartphone_ e _tablet_ per rendere l'accesso, alle risorse e documenti, più facile. \
-Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_ di ogni membro di _ALimitedGroup_.
+Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_#super[g] di ogni membro di _ALimitedGroup_.
 
 == Assegnazione dei ruoli sino al giorno 18-11-2024
 I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 18-11-2024, saranno assegnati ai seguenti componenti questi ruoli: \
 
-#align(center)[*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile*]
-#align(center)[*#p.matteo.nome #p.matteo.cognome* $arrow.r$ *Verificatore*]
-#align(center)[*#p.sara.nome #p.sara.cognome* $arrow.r$ *Analista*]
-#align(center)[*#p.loris.nome #p.loris.cognome* $arrow.r$ *Analista*]
+#align(center)[*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile*#super[g]]
+#align(center)[*#p.matteo.nome #p.matteo.cognome* $arrow.r$ *Verificatore*#super[g]]
+#align(center)[*#p.sara.nome #p.sara.cognome* $arrow.r$ *Analista*#super[g]]
+#align(center)[*#p.loris.nome #p.loris.cognome* $arrow.r$ *Analista*#super[g]]
 
 Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, mentre ai rimanenti componenti di _ALimitedGroup_ il proseguio della redazione del glossario e l'inizio delle norme e del piano di progetto.
 

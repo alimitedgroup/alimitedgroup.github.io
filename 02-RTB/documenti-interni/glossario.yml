@@ -1,0 +1,137 @@
+# Per le lettere dell'alfabeto senza alcuna parola da definire viene inserito un 
+# segnaposto "": "" per evitare errori di compilazione, da sostituire eventualmente 
+# con la coppia parola: "definizione"
+A:
+  Action: "In GitHub, un 'action' (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi
+  nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora.
+  Tale servizio è direttamente integrato nella piattaforma GitHub."
+  Angular: "Framework open-source per lo sviluppo di applicazioni web basato su 
+  TypeScript, mantenuto da Google."
+  Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività
+  amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire
+  che il progetto sia gestito in modo efficiente e conforme ai requisiti definiti."
+  Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare
+  e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto
+  deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel
+  successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi
+  utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi
+  aziendali, delle tecnologie e delle esigenze degli utenti."
+  Analisi dei Requisiti: ""
+  AP: "Attività Passata: un'attività (dunque una decisione che dovrebbe
+  avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare
+  il sistema di ticketing."
+  API: "Application Programming Interface, interfaccia che consente la comunicazione 
+  tra diverse applicazioni o servizi."
+  Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da 
+  parte di un responsabile."
+  Attore: " Entità esterna che interagisce con il sistema descritto nel caso d'uso, ha obiettivi o interessi specifici nell'utilizzo del sistema, non è parte del sistema stesso. 
+  Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere.
+  Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
+  AWS: "Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata 
+  per archiviazione, elaborazione e gestione dati"
+B:
+  Branch: "Nello sviluppo software un branch è una copia separata del codice sorgente che consente agli sviluppatori di lavorare alle modifiche su un ramo a parte senza influenzare direttamente il ramo principale.
+  I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di Git, e, di conseguenza, di GitHub."
+C:
+  Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un
+  progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una
+  base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte
+  abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
+  Caso d'uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
+D:
+  DI: "Decisione Interna: una decisione intrapresa con effetto immediato:
+  potrebbe, per questo motivo, non avere un'issue associata."
+  Discord: "Discord è una piattaforma di comunicazione online che combina chat testuale, vocale e video. Consente
+  agli utenti di creare server, organizzare discussioni in canali e personalizzare l'esperienza di comunicazione. Discord, inoltre, offre un sistema di ruoli e autorizzazioni che consente di controllare l'accesso
+  agli utenti e di definire chi può fare cosa all'interno del server. Inoltre supporta bot e integrazioni di
+  terze parti che consentono di aggiungere funzionalità personalizzate ai server"
+E:
+  "": ""
+F:
+  "": ""
+G:
+  GitHub: "Piattaforma di versionamento e collaborazione per sviluppatori, 
+  basata su Git, che consente di gestire e condividere progetti di codice."
+  Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e 
+  semplicità, particolarmente adatto per sistemi e applicazioni cloud."
+  Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include 
+  servizi di elaborazione, archiviazione e analisi dei dati."
+H:
+  "": ""
+I:
+  IDE: "Integrated Development Environment, ambiente di sviluppo integrato che 
+  fornisce strumenti come editor di codice, debugger e compilatori."
+  Issue: "Problema o attività registrata in un sistema di tracciamento per 
+  monitorare e risolvere bug o richieste di funzionalità."
+J:
+  "": ""
+K:
+  Kubernetes: "Piattaforma open-source per l'automazione della gestione, del 
+  deployment e del dimensionamento di applicazioni containerizzate."
+L:
+  LLM: "Modello linguistico di grandi dimensioni, come ChatGPT, 
+  addestrato su enormi quantità di testo per comprendere e generare 
+  linguaggio naturale."
+M:
+  MVP: "Minimum Viable Product, versione base di un prodotto con funzionalità minime, 
+  rilasciata per ottenere feedback."
+N:
+  "": ""
+O:
+  "": ""
+P:
+  PoC: "Proof of Concept, prototipo o dimostrazione per verificare la fattibilità 
+  di un'idea o tecnologia."
+  PR: "Pull Request, richiesta di revisione e integrazione di codice 
+  modificato in un repository condiviso."
+  Prompt: "Testo o input fornito a un modello linguistico (come un LLM) 
+  per generare una risposta o eseguire un'azione."
+  Progettista: ""
+  Programmatore: ""
+Q:
+  "": ""
+R:
+  React: "Una libreria JavaScript open-source sviluppata da Meta (ex Facebook) 
+  per creare interfacce utente dinamiche, soprattutto per applicazioni web single-page."
+  Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza,
+  occupandosi di correggere eventuali errori segnalati dal Verificatore."
+  Repository: "Archivio centralizzato in cui viene memorizzato e 
+  gestito il codice sorgente."
+  Responsabile: ""
+  Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
+  Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
+  RTB: "Requirements and Technology Baseline è un riferimento iniziale e stabilito 
+  di requisiti e tecnologie   approvate per un progetto. Questa baseline include 
+  requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, 
+  e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme 
+  e infrastrutture approvati per lo sviluppo del progetto.
+  Una volta stabilita, questa baseline rappresenta una base di confronto per valutare 
+  il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. 
+  Modifiche alla baseline richiedono una revisione e approvazione formale."
+S:
+  SAL: "Service Agreement Level, livello concordato di servizio e qualità 
+  offerto da un fornitore."
+  SCRUM: "Metodo agile per la gestione di progetti complessi, basato 
+  su iterazioni e collaborazioni continue."
+  Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare 
+  un set di attività."
+T:
+  Test: "Attività inclusa nello sviluppo di un software consona a verificarne le funzionalità, individuando eventuali problemi"
+  TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato 
+  su JavaScript, con supporto per tipizzazione statica."
+U:
+  Unit Test: "Test automatizzato per verificare il corretto 
+  funzionamento di una singola unità o componente del software."
+V:
+  Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi 
+  determinati requisiti."
+  Verificatore: "Colui che si occupa di segnalare eventuali errori commessi dal Redattore, in fase di redazione, di un qualsiasi documento."
+W:
+  Way of Working: "Metodo di lavoro o approccio operativo adottato da un team o 
+  organizzazione."
+X:
+  "": ""
+Y:
+  "": ""
+Z:
+  "": ""

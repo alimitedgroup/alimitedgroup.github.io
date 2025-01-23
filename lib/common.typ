@@ -1,3 +1,4 @@
+
 /// Array con le persone incluse nel progetto
 ///
 /// Le chiavi disponibili sono:
@@ -35,7 +36,7 @@
   lorenzo: (nome: "Lorenzo", cognome: "Stefani", matricola: 2079249),
   // M31
   luca: (nome: "Luca", cognome: "Cossaro", ruolo: "CTO"),
-  moones: (nome: "Moones", cognome:"Mobaraki", ruolo: "Stage and Academy Coordinator"),
+  moones: (nome: "Moones", cognome: "Mobaraki", ruolo: "Stage and Academy Coordinator"),
   cristian: (nome: "Cristian", cognome: "Pîrlog", ruolo: "Web Engineer"),
 )
 
@@ -63,6 +64,12 @@
   docs: (
     abbrev: "DOCS",
     link: "https://github.com/alimitedgroup/alimitedgroup.github.io",
+    issues: "/issues/",
+    pulls: "/pull/",
+  ),
+  poc: (
+    abbrev: "POC",
+    link: "https://github.com/alimitedgroup/PoC",
     issues: "/issues/",
     pulls: "/pull/",
   ),
@@ -286,7 +293,7 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Lista delle tabelle #v(3em)], indent: 1em, target: figure.where(kind: table))
+  outline(title: [#v(2em) Lista delle tabelle #v(2em)], indent: 1em, target: figure.where(kind: table))
 }
 
 /// Indicizza le immagini presenti nel documento
@@ -295,7 +302,7 @@
     v(12pt, weak: true)
     strong(it)
   }
-  outline(title: [#v(2em) Lista delle immagini #v(3em)], indent: 1em, target: figure.where(kind: image))
+  outline(title: [#v(2em) Lista delle immagini #v(2em)], indent: 1em, target: figure.where(kind: image))
 }
 
 ///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
