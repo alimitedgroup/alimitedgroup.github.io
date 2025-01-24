@@ -2,7 +2,7 @@
 #metadata[Glossario] <titolo>
 
 #set text(lang: "it", font: "Hanken Grotesk")
-#let versione = [0.3.0]
+#let versione = [0.4.0]
 
 // Prima pagina
 #prima-pagina(
