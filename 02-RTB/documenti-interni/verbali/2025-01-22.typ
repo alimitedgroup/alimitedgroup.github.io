@@ -9,7 +9,7 @@
       date: datetime(day: 24, month: 01, year: 2025),
       autore: p.loris,
       verifica: p.marco,
-      descr: "Approvazione del contenuto",
+      descr: "Approvazione del documento",
     ),
     (
       vers: "0.1.0",
@@ -19,7 +19,7 @@
       descr: "Redazione del contenuto",
     ),
   ),
-  stato: [Redazione],
+  stato: [Approvato],
   presenze: (
     p.emanuele,
     p.samuele,
