@@ -4,7 +4,7 @@
 #let ver = [0.8.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 05, month: 12, year: 2024),
+  data: datetime(day: 10, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
@@ -733,7 +733,59 @@ Un prodotto software è considerato di alta qualità quando:
 
 
 = Metodi di testing
-/* DA FARE */
+Come stabilito nelle #link("")[*Norme di Progetto*], [PROSEGUIRE (inserire link)] i test effettuati saranno:
+
+- Test di Unità
+- Test di Integrazione
+- Test di Sistema
+- Test di Regressione
+- Test di Accettazione
+
+La nomenclatura utilizzata è la seguente:
+
+#align(center)[`T-#-Tipo`]
+
+dove:
+
+- *T* indica la parola *T*\esterno
+- *\#* è un numero crescente che identifica, all'interno del tipo, un determinato test
+- *Tipo* classifica il test in una delle seguenti tipologie:
+  - *U* per Test di *U*\nità
+  - *I* per Test di *I*\ntegrazione
+  - *S* per Test di *S*\istema
+  - *A* per Test di *A*\ccettazione
+
+Ogni test ha poi uno stato tra i seguenti:
+
+- *S* ovvero *S*\uperato
+- *I* ovvero *I*\mplementato
+- *DI* ovvero *D*\a *I*\mplementare
+
+ALimitedGroup ha deciso di identificare i test di Unità, Integrazione, Accettazione e i relativi Test di Reggressione durante lo svolgimento delle attività per la _Product Baseline_.
+
+== Test di Sistema
+
+#figure(
+  table(
+    columns: (0.75fr, 3fr, 1.5fr, 1.0fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Requisito di riferimento*], text(white)[*Stato del Test*],
+
+    //table row
+  ),
+  caption: [Test di Sistema],
+)
 
 = Cruscotto di valutazione
 /* DA FARE */
