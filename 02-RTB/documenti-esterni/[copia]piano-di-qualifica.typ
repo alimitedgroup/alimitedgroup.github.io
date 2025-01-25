@@ -759,7 +759,7 @@ Ogni test ha poi uno stato tra i seguenti:
 
 - *S* ovvero *S*\uperato
 - *I* ovvero *I*\mplementato
-- *DI* ovvero *D*\a *I*\mplementare
+- *NI* ovvero *N*\on *I*\mplementato
 
 ALimitedGroup ha deciso di identificare i test di Unità, Integrazione, Accettazione e i relativi Test di Reggressione durante lo svolgimento delle attività per la _Product Baseline_.
 
