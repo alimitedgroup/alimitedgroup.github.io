@@ -412,7 +412,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
   formula: [
     $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
   ],
-  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi al 100% data la naturta del progetto],
+  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi al 100% data la natura del progetto],
 )
 
 === Gestione della Qualità
@@ -515,7 +515,7 @@ Un prodotto software è considerato di alta qualità quando:
     [*MPD02*], [Requisiti desiderabili soddisfatti], [0%], [100%],
     [*MPD02*], [Requisiti opzionali soddisfatti], [0%], [100%],
   ),
-  caption: [Soglie metriche funzionalitá del prodotto],
+  caption: [Soglie metriche funzionalità del prodotto],
 )
 === Requisiti obbligatori soddisfatti
 #metric(
@@ -761,7 +761,7 @@ Ogni test ha poi uno stato tra i seguenti:
 - *I* ovvero *I*\mplementato
 - *NI* ovvero *N*\on *I*\mplementato
 
-ALimitedGroup ha deciso di identificare i test di Unità, Integrazione, Accettazione e i relativi Test di Reggressione durante lo svolgimento delle attività per la _Product Baseline_.
+ALimitedGroup ha deciso di identificare i test di Unità, Integrazione, Accettazione e i relativi Test di Regressione durante lo svolgimento delle attività per la _Product Baseline_.
 
 == Test di Sistema
 
@@ -836,7 +836,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Ruolo interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
+    text(white)[*Ruolo interessato*], text(white)[*Descrizione problema*], text(white)[*Contromisura adottata*],
 
     // Data rows
     [Tutti i ruoli], [In fasi più avanzate del progetto diventa limitante dover ricoprire lo stesso ruolo per due settimane, lasciando insoddisfatte delle necessità e sfruttando male le ore produttive], [I ruoli possono cambiare ad ogni settimana, previo accordo tra le
@@ -862,7 +862,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Strumento interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
+    text(white)[*Strumento interessato*], text(white)[*Descrizione problema*], text(white)[*Contromisura adottata*],
 
     // Data rows
     [Linguaggio Go], [Alcuni membri del gruppo non hanno familiarità con questa tecnologia], [Ogni membro ha autonomamente intrapreso un percorso di apprendimento per colmare le proprie lacune],
