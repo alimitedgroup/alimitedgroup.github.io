@@ -124,7 +124,7 @@
 = Introduzione
 
 == Scopo del documento
-Questo documento nasce per descrivere il _Way of Working#super[g]_ adottato da parte di _ALimitedGroup_ durante tutto l'arco di tempo dedicato allo svolgimento del progetto didattico.
+Questo documento nasce per descrivere il _Way of Working#super[g]_ adottato da parte di _ALimitedGroup_ durante lo svolgimento del progetto didattico.
 
 Per realizzare il _Way of Working#super[g]_, i componenti hanno deciso di prendere come riferimento lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi:
 
@@ -132,7 +132,7 @@ Per realizzare il _Way of Working#super[g]_, i componenti hanno deciso di prende
 - *Supporto*: i processi che coadiuvano i processi primari nello svolgimento delle rispettive azioni;
 - *Organizzativi*: processi di carattere più generale che aiutano la realizzazione dei progetti.
 
-Per la stesura di questo documento è stata deciso un metodo incrementale, cioè una stesura passo passo del documento con modifiche, aggiunte e cancellazioni a seguito di modifiche del metodo di lavoro.
+La stesura di questo documento è incrementale, cioè una stesura passo passo con modifiche, aggiunte e cancellazioni a seguito di miglioramenti del metodo di lavoro.
 
 I membri dell'intero gruppo si impegnano a visionare constantemente questo documento e a rispettare rigorosamente le regole definite in esso, per svolgere il progetto in modo professionale, coerente ed uniforme.
 
@@ -144,9 +144,9 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 
 == Glossario
 
-La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
+La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivanti da questa attività saranno appositamente documentate.
 
-Per evitare, perciò, ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, è stato deciso di utilizzare un Glossario in cui è trascritta, per ogni parola, la definizione. \
+Per evitare ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, viene utilizzato un Glossario in cui è trascritta, per ogni parola, la definizione. \
 La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
 #align(center)[parola#super[g]]
 
@@ -185,12 +185,12 @@ e poter comunicare allo stesso una possibile pianificazione del lavoro da svolge
 === Strumenti a supporto
 
 Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strumenti:
-- *_Google Calendar_*: per rendere pubblici del gruppo e a portata di mano tutti gli appuntamenti previsti;
-- *_GitHub_*: per la gestione del _Backlog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da far. GitHub offre inoltre una visualizzazione specifica per avere dei diagrammi di Gantt, utili per fini di pianificazione;
+- *_Google Calendar_*: per segnalare tutti gli appuntamenti previsti;
+- *_GitHub_*: per la gestione del _Backlog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da fare. GitHub offre inoltre una visualizzazione specifica per avere dei diagrammi di Gantt, utili per fini di pianificazione;
 - *_Discord_*#super[g] e *_Telegram_*: per concordare internamente pianificazioni mediante riunioni interne.
 Le comunicazioni verso l'azienda proponente richiedono, invece, l'utilizzo di:
 - _*Google Mail*_ per le comunicazioni scritte;
-- _*Microsoft Teams*_ per le riunion totalmente e parzialmente svolte in remoto con #M31
+- _*Microsoft Teams*_ per le riunioni totalmente e parzialmente svolte in remoto con #M31
 
 
 === Attività previste
@@ -202,16 +202,16 @@ La fornitura prevede varie attività, qui di seguito descritte:
 - *Contrattazione*: è l'attività che prevede un colloquio con il proponente durante il quale verranno presentate al proponente le risposte precedentemente realizzate, con l'obiettivo di giungere alla formalizzazione di un contratto;
 - *Pianificazione*: il fornitore, stabiliti i requisiti finali, deve adesso stabilire un'organizzazione e un metodo di lavoro in grado di assicurare la qualità del sistema da realizzare, scegliendo, qualora non lo sia da contratto, il modello di ciclo di vita del software da seguire. La pianificazione include anche l'individuazione delle risorse e le tecnologie necessarie allo sviluppo, considerando anche i potenziali rischi ad esse associate;
 - *Esecuzione e controllo*: Il fornitore deve, messo a documenti la pianificazione, realizzare quanto stabilito, monitorando nel frattempo la qualità di quanto prodotto e il progresso raggiunto;
-- *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto prodotto, con annessa quindi una valutazione sullo stato di lavoro;
-- *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, con l'impegno di fornire supporto a quest'ultimo.
+- *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto realizzato, con annessa quindi una valutazione sullo stato di lavoro;
+- *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, garantedogli supporto.
 
 === Documentazione Fornita <elenco-documenti>
 
-Vengono ora elencati di seguito tutti i documenti che _ALimitedGroup_ consegnerà all'azienda #M31 e ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_.
+Vengono ora elencati tutti i documenti che _ALimitedGroup_ consegnerà all'azienda #M31 e ai committenti _Prof. Tullio Vardanega_ e _Prof. Riccardo Cardin_.
 
 ==== Analisi dei Requisiti#super[g]
 
-L'#link("")[*Analisi dei Requisiti#super[g]*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato e, infine, informazioni utili al tracciamento degli stessi.
+L'#link("")[*Analisi dei Requisiti#super[g]*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato e, infine, informazioni utili al loro tracciamento.
 
 #figure(
   table(
@@ -234,7 +234,7 @@ L'#link("")[*Analisi dei Requisiti#super[g]*] è il documento in cui _ALimitedGr
 
 ==== Dichiarazione degli Impegni
 
-La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha previsto varie informazioni riguardanti i costi preventivi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti del gruppo svolgeranno durante lo stesso.
+La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[*Dichiarazione degli Impegni*] è il documento in cui _ALimitedGroup_ ha stimato i costi del progetto, dall'impegno orario per persona e per ruolo, al costo complessivo del progetto e dei ruoli che i componenti del gruppo ricopriranno.
 
 #figure(
   table(
@@ -256,7 +256,7 @@ La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[
 
 ==== Glossario
 
-I componenti di _ALimitedGroup_ hanno verificato la necessità di avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i molti termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
+I componenti di _ALimitedGroup_ ritengono necessario avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
 
 Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.io/Glossario.pdf")[*Glossario*], rivelatosi molto utile nel corso del tempo.
 
@@ -398,8 +398,8 @@ Descrive i metodi di qualifica (verifica e validazione) adottate da _ALimitedGro
 
 La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[*Valutazione dei Capitolati*] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
 Quest'ultimo fornisce, per ogni capitolato#super[g] ,una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
-- *Panoramica*: che indica l'azienda proponente, il nome del capitolato e delle informazioni generali su il prodotto da realizzare;
-- *Scopo*: indica a che pro viene realizzato il prodotto;
+- *Panoramica*: che indica l'azienda proponente, il nome del capitolato e delle informazioni generali sul prodotto da realizzare;
+- *Scopo*: indica che vantaggi porta la realizzazione del prodotto;
 - *Punti di forza*
 - *Criticità evidenziate*
 - *Conclusioni*: motivazioni del gruppo sulla scelta/non scelta del capitolato#super[g] .
@@ -424,7 +424,7 @@ Quest'ultimo fornisce, per ogni capitolato#super[g] ,una dettagliata analisi evi
 
 ==== Verbale Esterno
 
-Verbale di una riunione svolta con persone esterne al gruppo.
+Verbale delle riunioni svolte con persone esterne al gruppo.
 
 #figure(
   table(
@@ -437,7 +437,7 @@ Verbale di una riunione svolta con persone esterne al gruppo.
     } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    text(white)[*Redattore*], [Responsabile o Amministratore],
+    text(white)[*Redattore*], [Amministratore],
     text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
     text(white)[*Uso*], [Esterno],
   ),
@@ -446,7 +446,7 @@ Verbale di una riunione svolta con persone esterne al gruppo.
 
 ==== Verbale Interno
 
-Verbale di una riunione svolta senza la presenza di persone esterne al gruppo.
+Verbali delle riunioni svolte senza la presenza di persone esterne al gruppo.
 
 #figure(
   table(
@@ -459,7 +459,7 @@ Verbale di una riunione svolta senza la presenza di persone esterne al gruppo.
     } else { rgb("#d8b2d8") },
     stroke: none,
     gutter: 0.2em,
-    text(white)[*Redattore*], [Responsabile o Amministratore],
+    text(white)[*Redattore*], [Amministratore],
     text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
     text(white)[*Uso*], [Interno],
   ),
@@ -475,25 +475,25 @@ Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di
 Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 12207:1995_ sono le seguenti:
 
 - *Implementazione del processo*: ovvero la scelta del *Ciclo di Vita* del Software più appropriato in base allo scopo, l'importanza e la complessità del progetto;
-- *Analisi dei Requisiti#super[g]*: ovvero l'analisi di cosa l'utilizzatore finale del Software ha bisogno che quest'ultimo assolva con le sue funzionalità. Un'Analisi dei Requisiti#super[g] completa dovrebbe descrivere le funzionalità del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente;
-- *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _Software_ del prodotto finale, al fine che quest'ultimo riesca a soddisfare tutti i requisiti individuati (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
-- *Analisi dei Requisiti#super[g] Software*: ovvero l'analisi del modo in cui il Software soddisfa i requisiti lato utente. Tale analisi deve includere anche le caratteristiche di qualità, quali, a scopo di esempio, caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento Software e requisiti di sicurezza;
-- *Progettazione dell'architettura Software*: ovvero la progettazione delle varie componenti Software che soddisferanno i requisiti Software da un punto di vista di "alto livello" ovvero non nel dettaglio;
+- *Analisi dei Requisiti#super[g]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità che il software deve offrire. Un'Analisi dei Requisiti#super[g] completa deve descrivere le funzionalità del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente;
+- *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _Software_ del prodotto finale, affinché tutti i requisiti individuati siano soddisfatti (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
+- *Analisi dei Requisiti#super[g] Software*: ovvero l'analisi del modo in cui il Software soddisfa i requisiti lato utente. Deve includere anche le caratteristiche di qualità: caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento Software e requisiti di sicurezza;
+- *Progettazione dell'architettura Software*: consiste nel definire le diverse componenti del Sistema e il loro funzionamento, ponendo l'attenzione sulla struttura generale, non nel dettaglio implementativo;
 - *Progettazione in dettaglio del Software*: ovvero la progettazione in dettaglio delle singole componenti Software, fino ad individuare le singole unità di ciascuna;
-- *Codifica e _testing_ del Software*: ovvero la produzione di tutte le unità di tutte le componenti individuate. Ciascuna di queste parti dovrà dunque essere adeguatamente testata per assicurare il suo corretto funzionamento;
-- *Integrazione del Software*: ovvero l'integrazione delle varie parti di una componente nella sua componente completa. Tale integrazione dovrà quindi essere adeguatamente testata per assicuranrne il corretto funzionamento;
-- *Test di qualifica del Software*: ovvero la realizzazione di appositi test per assicurare la conformità del Software agli obbiettivi di qualità attesi;
+- *Codifica e _testing_ del Software*: ovvero la produzione di tutte le unità di tutte le componenti individuate. Ciascuna di queste parti dovrà essere adeguatamente testata per assicurare il suo corretto funzionamento;
+- *Integrazione del Software*: ovvero l'integrazione delle varie parti di una componente nella sua componente completa. Essenziali sono i test per assicurare il corretto funzionamento;
+- *Test di qualifica del Software*: ovvero la realizzazione di appositi test per assicurare la conformità del Software agli obiettivi di qualità attesi;
 - *Integrazione del Sistema*: ovvero l'integrazione di tutte le componenti realizzati nel Sistema finale;
 - *Test di qualifica del Sistema*: ovvero il test dell'intero Sistema per assicurarne il corretto funzionamento;
-- *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente da lui indicato in accordo a quanto stabilito tra lui e il fornitore;
-- *Supporto per approvazione del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti sono effettivamente soddisfatti.
+- *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente concordato;
+- *Supporto per approvazione del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti siano effettivamente soddisfatti.
 
-Apportando lo scopo del processo alle _Baseline_ previste dal progetto (_Requirements and Technology Baseline (RTB)_ e _Product Baseline (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[g]* e *Codifica* per la _RTB_#super[g] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_: _ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo ed eventualmente modificando le sezioni dedicate a questa attività nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[g] raggiunta).
+Apportando lo scopo del processo alle _Baseline_ previste dal progetto (_Requirements and Technology Baseline (RTB)_ e _Product Baseline (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[g]* e *Codifica* per la _RTB_#super[g] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_: _ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[g] raggiunta).
 
 === Analisi dei Requisiti#super[g]
 
 L'*Analisi dei Requisiti#super[g]* è tra le attività cardine della _Requirements and Technology Baseline (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
-Tale analisi, reperibile nell'apposito documento visualizzabile su #link("")[alimitedgroup.github.io [PROSEGUIRE]], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il documento per comprendere velocemente quali requisiti sono stati "implementati" e quali ancora da implementare, favorendo le attività di pianificazione).
+Tale analisi, reperibile nell'apposito documento visualizzabile su #link("")[alimitedgroup.github.io [PROSEGUIRE]], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("")[Piano di Qualifica [PROSEGUIRE]] che, contenendo i test e il loro stato, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
 
 In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requisiti ad essi associati. Per una più rapida consultazione sarà ora discussa la nomenclatura nel dettaglio.
 
@@ -506,16 +506,17 @@ Per i casi d'Uso viene utilizzata la seguente nomenclatura:
 dove:
 
 - *UC* è un acronimo stante per *U*\se *C*\ase, ovvero la traduzione inglese di Caso d'Uso;
-- *Principale* è un numero crescente stante ad indicare che il Caso d'Uso non è correlato ad altri Casi d'Uso oppure è utilizzato da più Casi d'Uso mediante inclusione, cosa che giustifica lo stesso ad essere promosso ad una importanza maggiore);
+- *Principale* è un numero crescente stante ad indicare che il Caso d'Uso non è correlato ad altri Casi d'Uso oppure è utilizzato da più Casi d'Uso mediante inclusione.
 - *Secondario* è un numero crescente stante ad indicare che il Caso d'Uso è correlato esclusivamente al Caso d'Uso identificato dal valore *Principale*
 
 Si noti che *Principale* è *univoco* tra tutti i Casi d'Uso, dunque non può sussistere l'esistenza di due Casi d'Uso aventi stesso valore *Principale* mentre è possibile che uno stesso valore *Secondario* sia ripetuto, ma *mai* per la stesso valore *Principale*.
 
-Si noti inoltre che un caso d'uso#super[g] *Secondario* può avere a sua volta delle inclusioni: in tal caso la nomenclatura *Principale*.*Secondario* sarà la parte *Principale* di tale inclusione e seguirà le regole sopra esposte.
+Si noti, inoltre, che un Caso d'Uso#super[g] *Secondario* può avere a sua volta delle inclusioni: in tal caso la nomenclatura *Principale*.*Secondario* sarà la parte *Principale* di tale inclusione e seguirà le regole sopra esposte.
 
 La nomenclatura utilizzata è volta ad assicurare l'unicità di ogni Caso d'Uso.
 
-Ogni Caso d'Uso è inoltre accompagnato da un suo nome che ne riassume lo scopo e una sua descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("")[*Analisi dei Requisiti#super[g] [PROSEGUIRE*]].
+
+Ogni Caso d'Uso è inoltre accompagnato da un nome che ne riassume lo scopo e una descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("")[*Analisi dei Requisiti#super[g] [PROSEGUIRE*]]
 
 ==== Requisiti
 
