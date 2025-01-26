@@ -925,7 +925,7 @@ In aggiunta a questo, _ALimitedGroup_ ritiene necessario realizzare opportuni *t
 
 ===== Attività di Validazione
 
-_ALimitedGroup_, per realizzare l'attività di Validazione vera e propria, di realizzare dunque il *tracciamento dei Requisiti* ed eventuali *test di accettazione* per controllare l'efficacia di quanto sviluppato.
+_ALimitedGroup_, per realizzare l'attività di Validazione vera e propria, di realizzare dunque il *tracciamento dei Requisiti* ed eventuali *Test di Accettazione* per controllare l'efficacia di quanto sviluppato e già verificato, simulando scenari di utilizzo da parte di #M31.
 
 = Processi Organizzativi
 
