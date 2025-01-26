@@ -3,7 +3,7 @@
 #let ver = [0.27.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 15, month: 01, year: 2025),
+  data: datetime(day: 17, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
@@ -590,7 +590,7 @@ Il Caso d'Uso UC3 include tre ulteriori Casi d'Uso come raffigurato nella seguen
   trigger: "Il Cliente vuole creare un nuovo ordine da confermare",
 )[]
 
-=== UC4: Aggiunta di una merce: ordine/traferimento non confermato <UC4>
+=== UC4: Aggiunta di una merce: ordine non confermato <UC4>
 //NOTA: l'ordine globale e locale sono i medesimi, cambia solo questo UC4 che tuttavia rimane sostanzialmente lo stesso per l'ordine locale o globale, dunque nei requisiti si può derivare sia la selezione locale che quella globale
 #use-case(
   attore: "Cliente",
@@ -639,10 +639,10 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
     - Il Sistema non conosce la merce che il Cliente vuole aggiungere all'ordine o al trasferimento non confermato
   ],
   post: [
-    - Il Sistema riceve la tipologia di merce da aggiungere all'ordine o al trasferimento non confermato
+    - Il Sistema riceve l'ID della merce da aggiungere all'ordine o al trasferimento non confermato
   ],
   scenari: [
-    - Il Cliente procede ad inserire la tipologia di merce che vuole aggiungere all'ordine o al trasferimento non confermato
+    - Il Cliente procede ad inserire l'ID della merce che vuole aggiungere all'ordine o al trasferimento non confermato
   ],
   trigger: "Il Cliente vuole aggiungere merce ad un ordine o ad un trasferimento non confermato",
 )[]
@@ -3848,193 +3848,290 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       [#text(fill: white)[*Fonti*]],
     ),
 
-    [R-1-F-Ob],
-    [L'Utente deve poter autenticarsi presso il Sistema selezionando la tipologia di utente (Cliente, Admin Globale o Admin Locale)],
+    [R-1-F-Ob], [L'Utente deve poter autenticarsi presso il Sistema], [@UC1[UC1, Sez.]],
+    [R-2-F-Ob],
+    [L'Utente deve inserire la tipologia di utente (Cliente, Admin Globale o Admin Locale) per potersi autenticare al Sistema],
     [@UC1[UC1, Sez.] \ @UC1.1[UC1.1, Sez.]],
 
-    [R-2-F-De],
-    [L'Utente deve potersi autenticare inserendo anche Username e Password],
-    [@UC1.2[UC1.2, Sez.] \ @UC1.3[UC1.3, Sez.]],
+    [R-3-F-De],
+    [L'Utente deve inserire il proprio Username per potersi autenticare],
+    [@UC1[UC1, Sez.] \ @UC1.2[UC1.2, Sez.]],
 
-    [R-3-F-Ob],
+    [R-4-F-De],
+    [L'Utente deve inserire la propria Password per potersi autenticare],
+    [@UC1[UC1, Sez.] \ @UC1.3[UC1.3, Sez.]],
+
+    [R-5-F-Ob],
     [L'Utente deve ricevere un errore in seguito ad un tentativo di accesso/autenticazione non riuscito],
     [@UC2[UC2, Sez.]],
 
-    [R-4-F-Ob],
-    [L'utente deve poter creare un ordine che può confermare in seguito. Tale ordine deve contenere le seguenti informazioni:
-      - Nome dell'ordine;
-      - Nominativo del destinatario;
-      - Indirizzo di spedizione.],
-    [@UC3[UC3, Sez.] \ @UC3.1[UC3.1, Sez.] \ @UC3.2[UC3.2, Sez.], \ @UC3.3[UC3.3, Sez.]],
+    [R-6-F-Ob], [Il Cliente deve poter creare un ordine che può confermare in seguito.], [@UC3[UC3, Sez.]],
+    [R-7-F-Ob],
+    [Il Cliente deve inserire il nome dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [@UC3[UC3, Sez.] \ @UC3.1[UC3.1, Sez.]],
 
-    [R-5-F-Ob],
-    [Il Cliente deve poter aggiungere merce ad un ordine non ancora confermato, selezionandone la quantità da aggiungere, indipendentemente se di natura locale (limitata al magazzino corrente) o globale],
-    [@UC4[UC4, Sez.] \ @UC5[UC5, Sez.] \ @UC6[UC6, Sez.] \ @UC9[UC9, Sez.]],
+    [R-8-F-Ob],
+    [Il Cliente deve inserire il nominativo del destinatario dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [@UC3[UC3, Sez.] \ @UC3.2[UC3.2, Sez.]],
 
-    [R-6-F-Ob],
+    [R-9-F-Ob],
+    [Il Cliente deve inserire l'indirizzo di spedizione dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [@UC3[UC3, Sez.] \ @UC3.3[UC3.3, Sez.]],
+
+    [R-10-F-Ob],
+    [Il Cliente deve poter aggiungere merce ad un ordine non ancora confermato, indipendentemente se si tratta di un ordine di natura locale (limitata al magazzino corrente) o globale],
+    [@UC4[UC4, Sez.]],
+
+    [R-11-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve selezionare la merce che vuole aggiungere ad un ordine non ancora confermato],
+    [@UC4[UC4, Sez.] \ @UC5[UC5, Sez.]],
+
+    [R-12-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve inserire il quantitativo della merce che vuole aggiungere ad un ordine non ancora confermato],
+    [@UC4[UC4, Sez.] \ @UC6[UC6, Sez.]],
+
+    [R-13-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve selezionare l'ordine non ancora confermato alla quale vuole aggiungere la merce],
+    [@UC4[UC4, Sez.] \ @UC9[UC9, Sez.]],
+
+    [R-14-F-Ob],
     [Il Cliente deve ricevere un errore qualora la merce aggiunta all'ordine non risulti essere valida (ovvero la quantità della merce è insufficiente oppure la merce non esiste)],
     [@UC7[UC7, Sez.]],
 
-    [R-7-F-Ob],
+    [R-15-F-Ob],
     [Il Cliente deve ricevere un errore quando sta cercando di fare un'operazione su un ordine non confermato (quale l'aggiunta di merce, la cancellazione od una conferma) ma nessun ordine non confermato è disponibile],
     [@UC8[UC8, Sez.]],
 
-    [R-8-F-Ob],
-    [Il Cliente deve poter cancellare un ordine non ancora confermato],
+    [R-16-F-Ob],
+    [Il Cliente deve poter cancellare un ordine non ancora confermato, selezionando quale ordine cancellare],
     [@UC10[UC10, Sez.] \ @UC9[UC9, Sez.]],
 
-    [R-9-F-Ob],
-    [Il Cliente deve poter confermare un ordine non ancora confermato],
+    [R-17-F-Ob],
+    [Il Cliente deve poter confermare un ordine non ancora confermato, selezionando quale ordine cancellare],
     [@UC11[UC11, Sez.] \ @UC9[UC9, Sez.]],
 
-    [R-10-F-Ob],
-    [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato, visualizzandone:
-      - ID dell'ordine;
-      - Data di creazione dell'ordine;
-      - Nome dell'ordine.],
-    [@UC12[UC12, Sez.] \ @UC12.1[UC12.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
+    [R-18-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato.],
+    [@UC12[UC12, Sez.]],
 
-    [R-11-F-Ob],
-    [Il Cliente deve poter consultare i dettagli di un ordine non confermato. Nello specifico deve poterne visualizzare:
-      - ID dell'ordine;
-      - Data creazione dell'ordine;
-      - Nome dell'ordine;
-      - Lista delle merci dell'ordine.],
-    [@UC16[UC16, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC16.1[UC16.1, Sez.]],
+    [R-19-F-Ob],
+    [Il Cliente deve poter visualizzare l'ID di ciascun ordine nella lista degli ordini non confermati],
+    [@UC12.1[UC12.1, Sez.] \ @UC13[UC13, Sez.]],
 
-    [R-12-F-Ob],
-    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter trarre le seguenti informazioni per ogni merce:
-      - Q.tà della merce;
-      - Nome della merce.],
-    [@UC16.1.1[UC16.1.1, Sez.] \ @UC16.1.1.1[UC16.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
+    [R-20-F-Ob],
+    [Il Cliente deve poter visualizzare la data di creazione di ciascun ordine nella lista degli ordini non confermati],
+    [@UC12.1[UC12.1, Sez.] \ @UC14[UC14, Sez.]],
 
-    [R-13-F-Ob],
-    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema con le seguenti informazioni per ogni merce:
-      - ID della merce;
-      - Nome della merce;
-      - Q.tà della merce complessiva in tutti i magazzini;
-      - Q.tà della merce attualmente presente nel magazzino.],
-    [@UC18[UC18, Sez.] \ @UC18.1[UC18.1, Sez.] \ @UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.]],
+    [R-21-F-Ob],
+    [Il Cliente deve poter visualizzare il nome di ciascun ordine nella lista degli ordini non confermati],
+    [@UC12.1[UC12.1, Sez.] \ @UC15[UC15, Sez.]],
 
-    [R-14-F-Ob],
-    [Il Cliente deve poter visualizzare le seguenti informazioni relative ad una singola merce nel dettaglio:
-      - ID della merce;
-      - Nome della merce;
-      - Q.tà della merce complessiva in tutti i magazzini;
-      - Q.tà della merce attualmente presente nel magazzino;
-      - Descrizione della merce.],
-    [@UC17[UC17, Sez.] \ @UC19[UC19, Sez.] \ @UC20[UC20, Sez.] \ @UC21[UC21, Sez.] \ @UC22[UC22, Sez.] \ @UC22.1[UC22.1, Sez.]],
+    [R-22-F-Ob], [Il Cliente deve poter consultare i dettagli di un ordine non confermato.], [@UC16[UC16, Sez.]],
+    [R-23-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne l'ID],
+    [@UC16[UC16, Sez.] \ @UC13[UC13, Sez.]],
 
-    [R-15-F-Ob],
-    [L'Admin Globale deve poter creare un trasferimento da confermare in seguito, scegliendo il magazzino destinatario e il magazzino mittente],
-    [@UC23[UC23, Sez.] \ @UC23.1[UC23.1, Sez.] \ @UC23.2[UC23.2, Sez.]],
+    [R-24-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne la data di creazione],
+    [@UC16[UC16, Sez.] \ @UC14[UC14, Sez.]],
 
-    [R-16-F-Ob],
-    [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato, selezionando nome della merce e quantità],
+    [R-25-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne il nome],
+    [@UC16[UC16, Sez.] \ @UC15[UC15, Sez.]],
+
+    [R-26-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne la lista delle merci],
+    [@UC16[UC16, Sez.] \ @UC16.1[UC16.1, Sez.]],
+
+    [R-27-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter visualizzare la quantità della merce;],
+    [@UC16.1.1[UC16.1.1, Sez.] \ @UC16.1.1.1[UC16.1.1.1, Sez.]],
+
+    [R-28-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter visualizzare il nome della merce],
+    [@UC16.1.1[UC16.1.1, Sez.] \ @UC17[UC17, Sez.]],
+
+    [R-29-F-Ob],
+    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema.],
+    [@UC18[UC18, Sez.]],
+
+    [R-30-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare l'ID di ciascuna delle merci], [@UC18.1[UC18.1, Sez.] \ @UC19[UC19, Sez.]],
+    [R-31-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare il nome di ciascuna delle merci], [@UC18.1[UC18.1, Sez.] \ @UC17[UC17, Sez.]],
+    [R-32-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di ciascuna delle merci], [@UC18.1[UC18.1, Sez.] \ @UC20[UC20, Sez.]],
+    [R-33-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di ciascuna delle merci], [@UC18.1[UC18.1, Sez.] \ @UC21[UC21, Sez.]],
+
+    [R-34-F-Ob],
+    [Il Cliente deve poter visualizzare una merce nel Sistema nel dettaglio],
+    [@UC22[UC22, Sez.]],
+
+    [R-35-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare l'ID di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC19[UC19, Sez.]],
+    [R-36-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare il nome di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC17[UC17, Sez.]],
+    [R-37-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC20[UC20, Sez.]],
+    [R-38-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC21[UC21, Sez.]],
+    [R-39-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la descrizione di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC22.1[UC22.1, Sez.]],
+
+    [R-40-F-Ob],
+    [L'Admin Globale deve poter creare un trasferimento da confermare in seguito.],
+    [@UC23[UC23, Sez.]],
+
+    [R-41-F-Ob],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve poter creare un trasferimento da confermare in seguito, deve selezionare il magazzino mittente],
+    [@UC23[UC23, Sez.] \ @UC23.1[UC23.1, Sez.]],
+
+    [R-42-F-Ob],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve selezionare il magazzino destinatario],
+    [@UC23[UC23, Sez.] \ @UC23.2[UC23.2, Sez.]],
+
+    [R-43-F-Ob],
+    [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato],
     [@UC24[UC24, Sez.] \ @UC25[UC25, Sez.] \ @UC5[UC5, Sez.] \ @UC6[UC6, Sez.]],
 
-    [R-17-F-Ob],
-    [L'Admin Globale deve poter confermare un trasferimento non ancora confermato],
+    [R-44-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la merce da aggiungere],
+    [@UC24[UC24, Sez.] \ @UC5[UC5, Sez.]],
+
+    [R-145-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la quantità di merce da aggiungere],
+    [@UC24[UC24, Sez.] \ @UC6[UC6, Sez.]],
+
+    [R-46-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare il trasferimento non confermato alla quale aggiungere la merce],
+    [@UC24[UC24, Sez.] \ @UC25[UC25, Sez.]],
+
+    [R-47-F-Ob],
+    [L'Admin Globale deve poter confermare un trasferimento non ancora confermato, elezionando quale trasferimento confermare],
     [@UC26[UC26, Sez.] \ @UC25[UC25, Sez.]],
 
-    [R-18-F-Ob],
+    [R-48-F-Ob],
     [L'Admin Globale deve ricevere un errore se la merce in un trasferimento che vuole confermare non è più disponibile in quantità sufficiente o non è più esistente nel Sistema],
     [@UC7[UC7, Sez.]],
 
-    [R-19-F-Ob],
-    [L'Admin Globale deve ricevere un errore qualora selezioni di voler confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
+    [R-49-F-Ob],
+    [L'Admin Globale deve ricevere un errore qualora selezioni di voler aggiungere merce, confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
     [@UC27[UC27, Sez.]],
 
-    [R-20-F-Ob],
-    [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato],
+    [R-50-F-Ob],
+    [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato, selezionando quale trasferimento cancellare],
     [@UC28[UC28, Sez.] \ @UC25[UC25, Sez.]],
 
-    [R-21-F-Ob],
-    [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti. Per ognuno di essi deve poter visualizzare:
-      - ID del trasferimento
-      - Lo stato del trasferimento (confermato o cancellato)],
-    [@UC29[UC29, Sez.] \ @UC29.1[UC29.1, Sez.] \ @UC30[UC30, Sez.] \ @UC31[UC31, Sez.]],
+    [R-51-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti],
+    [@UC29[UC29, Sez.]],
 
-    [R-22-F-Ob],
-    [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico. Nello specifico, L'Admin Globale deve visualizzare:
-      - ID del trasferimento;
-      - Magazzino mittente;
-      - Magazzino di destinazione;
-      - Stato del trasferimento (confermato o cancellato);
-      - L'elenco della merce interessata dal trasferimento.],
-    [@UC32[UC32, Sez.] \ @UC30[UC30, Sez.] \ @UC32.1[UC32.1, Sez.] \ @UC32.2[UC32.2, Sez.] \ @UC31[UC31, Sez.] \ @UC32.3[UC32.3, Sez.]],
+    [R-52-F-Ob],
+    [L'Admin Globale deve poter visualizzare per ogni trasferimento dell'elenco di tutti i trasferimenti, l'ID del trasferimento],
+    [@UC29.1[UC29.1, Sez.] \ @UC30[UC30, Sez.]],
 
-    [R-23-F-Ob],
-    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve poter ottenere delle merci interessate dal trasferimento le seguenti informazioni:
-      - Nome della merce;
-      - Q.tà interessata dal trasferimento.],
-    [@UC32.3.1[UC32.3.1, Sez.] \ @UC17[UC17, Sez.] \ @UC32.3.1.1[UC32.3.1.1, Sez.]],
+    [R-53-F-Ob],
+    [L'Admin Globale deve poter visualizzare per ogni trasferimento dell'elenco di tutti i trasferimenti, lo stato del trasferimento],
+    [@UC29.1[UC29.1, Sez.] \ @UC31[UC31, Sez.]],
 
-    [R-24-F-Ob],
-    [L'Admin Globale deve poter visualizzare le notifiche contenenti i consigli di rifornimento, visualizzandone ID e stato (confermato, da confermare, rifiutato). Tali consigli sono calcolati sulla base di una soglia minima di allerta.],
-    [@UC33[UC33, Sez.] \ @UC34[UC34, Sez.] \ @UC35[UC35, Sez.] \ @UC36[UC36, Sez.]],
+    [R-54-F-Ob],
+    [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico],
+    [@UC32[UC32, Sez.]],
 
-    [R-25-F-Ob],
+    [R-55-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare l'ID del trasferimento], [@UC32[UC32, Sez.] \ @UC30[UC30, Sez.]],
+    [R-56-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare il magazzino mittente del trasferimento], [@UC32[UC32, Sez.] \ @UC32.1[UC32.1, Sez.]],
+    [R-57-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare il magazzino di destinazione del trasferimento], [@UC32[UC32, Sez.] \ @UC32.2[UC32.2, Sez.]],
+    [R-58-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare lo stato del trasferimento], [@UC32[UC32, Sez.] \ @UC31[UC31, Sez.]],
+    [R-59-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare l'elenco della merce interessata dal trasferimento], [@UC32[UC32, Sez.] \ @UC32.3[UC32.3, Sez.]],
+
+    [R-60-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve visualizzare per ogni merce interessata il nome di tale merce],
+    [@UC32.3.1[UC32.3.1, Sez.] \ @UC17[UC17, Sez.]],
+
+    [R-61-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve visualizzare per ogni merce interessata la quantità di tale merce],
+    [@UC32.3.1[UC32.3.1, Sez.] \ @UC32.3.1.1[UC32.3.1.1, Sez.]],
+
+    [R-62-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco delle notifiche contenenti i consigli di rifornimento.],
+    [@UC33[UC33, Sez.]],
+
+    [R-63-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento, l'ID della notifica],
+    [@UC34[UC34, Sez.] \ @UC36[UC36, Sez.]],
+
+    [R-64-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [@UC34[UC34, Sez.] \ @UC35[UC35, Sez.]],
+
+    [R-65-F-Ob],
     [L'Admin Globale deve ricevere un messaggio di errore quando tenta di compiere un'azione sulle notifiche di rifornimento, ma nessuna notifica è disponibile],
     [@UC37[UC37, Sez.]],
 
-    [R-26-F-De],
+    [R-66-F-De],
     [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da un LLM, visualizzandone ID e stato (confermato, da confermare, rifiutato)],
-    [@UC38[UC38, Sez.] \ @UC34[UC34, Sez.]],
+    [@UC38[UC38, Sez.]],
 
-    [R-27-F-Ob],
-    [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico, visualizzandone:
-      - ID della notifica;
-      - Stato della notifica (confermato, da confermare, rifiutato);
-      - Elenco della merce il cui rifornimento è consigliato;
-      - Magazzino di destinatario del rifornimento.],
-    [@UC39[UC39, Sez.] \ @UC36[UC36, Sez.] \ @UC35[UC35, Sez.] \ @UC39.2[UC39.2, Sez.] \ @UC39.1[UC39.1, Sez.]],
+    [R-67-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un LLM, l'ID della notifica],
+    [@UC34[UC34, Sez.] \ @UC36[UC36, Sez.]],
 
-    [R-28-F-Ob],
-    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare:
-      - ID della merce;
-      - Nome della merce;
-      - Q.tà da rifornire.],
-    [@UC39.2[UC39.2, Sez.] \ @UC19[UC19, Sez.] \ @UC17[UC17, Sez.] \ @UC39.2.1.1[UC 39.2.1.1, Sez.]],
+    [R-68-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un LLM, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [@UC34[UC34, Sez.] \ @UC35[UC35, Sez.]],
 
-    [R-29-F-Ob],
-    [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata],
+    [R-69-F-Ob],
+    [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico],
+    [@UC39[UC39, Sez.]],
+
+    [R-70-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne l'ID], [@UC39[UC39, Sez.] \ @UC36[UC36, Sez.]],
+    [R-71-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne lo stato (confermato, da confermare, rifiutato)], [@UC39[UC39, Sez.] \ @UC35[UC35, Sez.]],
+    [R-72-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne il magazzino destinatario], [@UC39[UC39, Sez.] \ @UC39.1[UC39.1, Sez.]],
+    [R-73-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne l'elenco della merce], [@UC39[UC39, Sez.] \ @UC39.2[UC39.2, Sez.]],
+
+    [R-74-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, l'ID della merce],
+    [@UC39.2.1[UC39.2.1, Sez.] \ @UC19[UC19, Sez.]],
+
+    [R-75-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, il nome della merce],
+    [@UC39.2.1[UC39.2.1, Sez.] \ @UC17[UC17, Sez.]],
+
+    [R-76-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, la quantità della merce da rifornire],
+    [@UC39.2.1[UC39.2.1, Sez.] \ @UC39.2.1.1[UC 39.2.1.1, Sez.]],
+
+    [R-77-F-Ob],
+    [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata, selezionando quale accettare],
     [@UC40[UC40, Sez.] \ @UC41[UC41, Sez.]],
 
-    [R-30-F-Ob],
-    [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata],
+    [R-78-F-Ob],
+    [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata, selezionando quale rifiutare],
     [@UC42[UC42, Sez.] \ @UC41[UC41, Sez.]],
 
-    [R-31-F-Ob],
-    [L'Admin Globale deve poter visualizzare l'elenco dei microservizi. Per ogni microservizio elencato le seguenti informazioni devono essere disponibili:
-      - Nome del microservizio;
-      - Numero di richieste al secondo del microservizio.],
-    [@UC43[UC43, Sez.] \ @UC43.1[UC43.1, Sez.] \ @UC43.1.1[UC43.1.1, Sez.] \ @UC43.1.2[UC43.1.2, Sez.]],
+    [R-79-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco dei microservizi],
+    [@UC43[UC43, Sez.]],
 
-    [R-32-F-Ob],
+    [R-80-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il nome di ciascun microservizio], [@UC43.1[UC43.1, Sez.] \ @UC43.1.2[UC43.1.2, Sez.]],
+    [R-82-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il numero di richieste al secondo di ciascun microservizio], [@UC43.1[UC43.1, Sez.] \ @UC43.1.1[UC43.1.1, Sez.]],
+
+    [R-83-F-Ob],
     [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_],
     [@UC44[UC44, Sez.]],
 
-    [R-33-F-Ob],
+    [R-84-F-Ob],
     [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
     [@UC45[UC45, Sez.]],
 
-    [R-34-F-Ob],
+    [R-85-F-Ob],
     [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
     [@UC46[UC46, Sez.]],
 
-    [R-35-F-Ob],
+    [R-86-F-Ob],
     [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
     [@UC47[UC47, Sez.]],
 
-    [R-36-F-Ob],
-    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
+    [R-87-F-Ob],
+    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce, selezionando merce e soglia minima],
     [@UC48[UC48, Sez.], @UC48.1[UC48.1, Sez.], @UC49[UC49, Sez.]],
 
-    [R-37-F-Ob],
+    [R-88-F-Ob],
     [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
     [@UC50[UC50, Sez.]],
-
+    //
     [R-38-F-Ob],
     [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
     [@UC51[UC51, Sez.] \ @UC51.1[UC51.1, Sez.] \ @UC49[UC49, Sez.]],
