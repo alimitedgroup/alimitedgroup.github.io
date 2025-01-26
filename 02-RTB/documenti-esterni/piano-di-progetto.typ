@@ -2,12 +2,19 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [0.5.0]
+#let ver = [0.6.0]
 #show: body => importantdocs(
-  data: datetime(day: 16, month: 1, year: 2025),
+  data: datetime(day: 24, month: 1, year: 2025),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "0.6.0",
+      date: datetime(day: 24, month: 1, year: 2025),
+      autore: p.matteo,
+      verifica: p.emanuele,
+      descr: "Redazione per il quinto sprint",
+    ),
     (
       vers: "0.5.0",
       date: datetime(day: 16, month: 1, year: 2025),
@@ -745,15 +752,15 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma
 
 ==== Informazioni generali e attività da svolgere <sprint4intro>
 
-Il quinto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g], sul completamento del PoC#super[g] e sul proseguo del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto.
+Il quinto sprint#super[g] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[g], sul completamento del PoC#super[g] e sul proseguimento del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto.
 
 Le attività pianificate nel dettaglio includono:
 
 - Terminare la stesura dei Casi d'Uso relativi a requisiti non obbligatori e riguardanti le attività di _Backend_ del Sistema;
 - Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni;
-- Effettuare le prime misurazioni da riportare nel Piano di Qualifica
+- Effettuare le prime misurazioni da riportare nel Piano di Qualifica;
 - Effettuare la verifica di quanto redatto nelle Norme di Progetto;
-- terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
+- Terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
 
 Il Responsabile dello sprint dovrà inoltre contattare #M31 al fine di predisporre una riunione per discutere dell'efficacia dell'Analisi dei Requisiti#super[g] e del PoC realizzato.
 
@@ -761,15 +768,15 @@ Il Responsabile dello sprint dovrà inoltre contattare #M31 al fine di predispor
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RG3: Rischio Globale derivato da sottostima di attività
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività universitarie;
+- RG3: Rischio Globale derivato da sottostima di attività.
 
 #pagebreak()
 
 ==== Preventivo
 
-Si prospetta l'utilizzo delle seguenti risorse:[PROSEGUIRE]
+Si prospetta l'utilizzo delle seguenti risorse:
 
 #impegni(5, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 5 - Preventivo per componente", "Sprint 5 - Preventivo")
 
@@ -798,10 +805,10 @@ In merito all'Analisi dei Requisiti#super[g] si è concretizzato il rischio _RG3
 
 In merito alle attività riguardanti l'Analisi dei Requisiti#super[g], sono stati realizzati forti progressi in quanto non solo è stata completata la redazione di quanto previsto, ma gli Analisti sono riusciti a completare l'intera sezione riguardante i requisiti.
 
-È stata contattata inoltre #M31: #M31 è stata aggiornata dei progressi realizzati e ha predisposto una riunione il giorno 28 Gennaio 2025 alle ore 15.00.
+Inoltre #M31 è stata aggiornata sui progressi realizzati e ha predisposto una riunione il giorno 28 Gennaio 2025 alle ore 15:00.
 
-È stata completata la redazione del Piano di Qualifica sulle sezioni preventivate, occorre ora verificare quanto redatto.
+È stata completata la redazione del Piano di Qualifica sulle sezioni preventivate; occorre ora verificare quanto redatto.
 
-Anche il PoC ha subito degli importanti progressi, ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
+Anche il PoC ha subito degli importanti progressi ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
 
 A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto e le prime misurazioni del Piano di Qualifica.
