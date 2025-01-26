@@ -1,12 +1,19 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.27.0]
+#let ver = [0.28.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 17, month: 01, year: 2025),
+  data: datetime(day: 26, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.28.0",
+      date: datetime(day: 26, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Correzioni minori e approfondimento requisiti funzionali.",
+    ),
     (
       vers: "0.27.0",
       date: datetime(day: 17, month: 01, year: 2025),
@@ -3502,7 +3509,7 @@ Le informazioni riguardanti il Caso d'Uso incluso sono disponibili alla @UC85.
 )[#use-case-diagram("88", "UC88 - Sincronizza notifiche di rifornimento")]
 
 Il Caso d'Uso n. 88 include un ulteriore Caso d'Uso come mostrato in figura:\
-#use-case-diagram("88-incl", "Inclusione nel Caso d'Uso n.88: UC88.1 e relative inclusioni")
+#use-case-diagram("88-incl", "Inclusione nel Caso d'Uso n.88: UC88.1 e relative inclusioni", width: 100%)
 Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di seguito esposte.
 
 ==== UC88.1: Sincronizza singola notifica di rifornimento <UC88.1>
@@ -4125,230 +4132,258 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC47[UC47, Sez.]],
 
     [R-87-F-Ob],
-    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce, selezionando merce e soglia minima],
-    [@UC48[UC48, Sez.], @UC48.1[UC48.1, Sez.], @UC49[UC49, Sez.]],
+    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
+    [@UC48[UC48, Sez.]],
 
-    [R-88-F-Ob],
+    [R-88-F-Ob], [L'Admin Globale, impostando una soglia minima di allerta, deve selezionare la merce a cui assegnare la nuova soglia], [@UC48[UC48, Sez.] \ @UC49[UC49, Sez.]],
+    [R-89-F-Ob], [L'Admin Globale, impostando una soglia minima di allerta, deve inserire la nuova soglia], [@UC48[UC48, Sez.] \ @UC48.1[UC48.1, Sez.]],
+
+    [R-90-F-Ob],
     [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
     [@UC50[UC50, Sez.]],
     //
-    [R-38-F-Ob],
+    [R-91-F-Ob],
     [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
-    [@UC51[UC51, Sez.] \ @UC51.1[UC51.1, Sez.] \ @UC49[UC49, Sez.]],
+    [@UC51[UC51, Sez.]],
 
-    [R-39-F-Ob],
-    [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema, inserendone nome e descrizione],
-    [@UC52[UC52, Sez.] \ @UC53[UC53, Sez.] \ @UC54[UC54, Sez.]],
+    [R-92-F-Ob], [L'Admin Locale, aggiungendo uno stock di merce, deve selezionare la merce a cui aggiungere lo stock], [@UC51[UC51, Sez.] \ @UC49[UC49, Sez.]],
+    [R-93-F-Ob], [L'Admin Locale, aggiungendo uno stock di merce, deve inserire la quantità da aggiungere], [@UC51[UC51, Sez.] \ @UC51.1[UC51.1, Sez.]],
 
-    [R-40-F-Ob],
-    [L'Admin Globale deve poter aggiornare le informazioni di una merce, cambiandone nome e descrizione],
-    [@UC55[UC55, Sez.] \ @UC49[UC49, Sez.] \ @UC53[UC53, Sez.] \ @UC54[UC54, Sez.]],
+    [R-94-F-Ob],
+    [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema],
+    [@UC52[UC52, Sez.]],
 
-    [R-41-F-Ob],
-    [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti. Per ciascun ordine è opportuno visualizzare:
-      - ID dell'ordine;
-      - Data creazione dell'ordine;
-      - Nome dell'ordine.],
+    [R-95-F-Ob], [L'Admin Globale, creando (aggiungendo) una merce al sistema, deve indicare il nome], [@UC52[UC52, Sez.] \ @UC53[UC53, Sez.]],
+    [R-96-F-Ob], [L'Admin Globale, creando (aggiungendo) una merce al sistema, deve indicare la descrizione], [@UC52[UC52, Sez.] \ @UC54[UC54, Sez.]],
+
+    [R-97-F-Ob],
+    [L'Admin Globale deve poter aggiornare le informazioni di una merce],
+    [@UC55[UC55, Sez.]],
+
+    [R-98-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare quale merce modificare], [@UC55[UC55, Sez.] \ @UC49[UC49, Sez.]],
+    [R-99-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare il nome], [@UC55[UC55, Sez.] \ @UC53[UC53, Sez.]],
+    [R-100-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare la descrizione], [@UC55[UC55, Sez.] \ @UC54[UC54, Sez.]],
+
+    [R-101-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti],
     [@UC56[UC56, Sez.] \ @UC56.1[UC56.1, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.]],
 
-    [R-42-F-Ob],
-    [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito. Nello specifico, il Cliente deve poter visualizzarne:
-      - ID dell'ordine;
-      - Data creazione dell'ordine;
-      - Nome dell'ordine;
-      - Lista delle merci.],
-    [@UC57[UC57, Sez.] \ @UC13[UC13, Sez.] \ @UC14[UC14, Sez.] \ @UC15[UC15, Sez.] \ @UC57.1[UC57.1, Sez.]],
+    [R-102-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne l'ID], [@UC56.1[UC56.1, Sez.] \ @UC13[UC13, Sez.]],
+    [R-103-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne la data di creazione], [@UC56.1[UC56.1, Sez.] \ @UC14[UC14, Sez.]],
+    [R-104-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne il nome], [@UC56.1[UC56.1, Sez.] \ @UC15[UC15, Sez.]],
 
-    [R-43-F-Ob],
-    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare:
-      - Nome della merce;
-      - Q.tà della merce.
-    ],
-    [@UC57.1[UC57.1, Sez.] \ @UC57.1.1[UC57.1.1, Sez.] \ @UC57.1.1.1[UC57.1.1.1, Sez.] \ @UC17[UC17, Sez.]],
+    [R-105-F-Ob],
+    [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito],
+    [@UC57[UC57, Sez.]],
 
-    [R-44-F-De],
+    [R-106-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne l'ID], [@UC57[UC57, Sez.] \ @UC13[UC13, Sez.]],
+    [R-107-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne la data di creazione], [@UC57[UC57, Sez.] \ @UC14[UC14, Sez.]],
+    [R-108-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne il nome], [@UC57[UC57, Sez.] \ @UC15[UC15, Sez.]],
+    [R-109-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne la lista delle merci], [@UC57[UC57, Sez.] \ @UC57.1[UC57.1, Sez.]],
+
+    [R-110-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare il nome della merce],
+    [@UC57.1.1[UC57.1.1, Sez.] \ @UC17[UC17, Sez.]],
+    [R-111-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare la quantità interessata dall'ordine],
+    [@UC57.1.1[UC57.1.1, Sez.] \ @UC57.1.1.1[UC57.1.1.1, Sez.]],
+
+    [R-112-F-De],
     [L'Admin Locale deve avere la possibilità di creare un Backup del proprio magazzino],
     [@UC58[UC58, Sez.]],
 
-    [R-45-F-De],
+    [R-113-F-De],
     [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
     [@UC59[UC59, Sez.] \ @UC59.1[UC59.1, Sez.]],
 
-    [R-46-F-De],
+    [R-114-F-De],
     [L'Admin Locale deve ricevere un errore se la periodicità del Backup periodico che ha selezionato non è valida],
     [@UC60[UC60, Sez.]],
 
-    [R-47-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [@UC61[UC61, Sez.]],
-    [R-48-F-De],
+    [R-115-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [@UC61[UC61, Sez.]],
+
+    [R-116-F-De],
     [L'Admin Locale deve ricevere un errore quando vuole eliminare la realizzazione di un Backup periodico ma non è attivo un Backup periodico],
     [@UC62[UC62, Sez.]],
 
-    [R-49-F-De],
+    [R-117-F-De],
     [L'Admin Locale deve avere la possibilità di ripristinare i dati dell'ultimo Backup effettuato],
     [@UC63[UC63, Sez.]],
 
-    [R-50-F-De],
+    [R-118-F-De],
     [L'Admin Locale deve ricevere un errore quando vuole ripristiare i dati dell'ultimo Backup effettuato ma nessun Backup è presente],
     [@UC64[UC64, Sez.]],
 
-    [R-51-F-De],
-    [L'Admin Globale deve poter visualizzare l'elenco delle attività di accesso. Per ciascuna delle attività le seguenti informazioni devono essere presenti:
-      - Indirizzo IP del luogo di accesso
-      - ID del tentativo di accesso
-      - Stato dell'accesso (riuscito, bloccato o negato)],
-    [@UC65[UC65, Sez.] \ @UC65.1[UC65.1, Sez.] \ @UC65.1.1[UC65.1.1, Sez.] \ @UC65.1.2[UC65.1.2, Sez.] \ @UC65.1.3[UC65.1.3, Sez.]],
+    [R-119-F-De],
+    [L'Admin Globale deve poter visualizzare l'elenco delle attività di accesso],
+    [@UC65[UC65, Sez.]],
 
-    [R-52-F-De],
+    [R-120-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare l'Indirizzo IP del luogo di accesso di ciascuna], [@UC65.1[UC65.1, Sez.] \ @UC65.1.1[UC65.1.1, Sez.]],
+    [R-121-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare l'ID di ciascuna], [@UC65.1[UC65.1, Sez.] \ @UC65.1.2[UC65.1.2, Sez.]],
+    [R-122-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare lo stato di ciascuna (riuscito, bloccato o negato)], [@UC65.1[UC65.1, Sez.] \ @UC65.1.3[UC65.1.3, Sez.]],
+
+    [R-123-F-De],
     [L'Admin Globale deve poter bloccare un tentativo di accesso, bloccando l'indirizzo IP dalla quale questo è avvenuto, inserendo l'ID del tentativo],
     [@UC66[UC66, Sez.] \ @UC66.1[UC66.1]],
 
-    [R-53-F-De],
+    [R-124-F-De],
     [Gli Admin Globali devono ricevere notifiche email/sms per attività di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
     [@UC67[UC67, Sez.] \ @UC68[UC68, Sez.]],
 
-    [R-54-F-De],
-    [L'Admin Globale deve avere la possibilià di aggiungere un utente al Sistema, inserendone:
-      - Nome
-      - Password
-      - Ruolo],
-    [@UC69[UC69, Sez.] \ @UC69.1[UC69.1, Sez.] \ @UC69.2[UC69.2, Sez.] \ @UC69.3[UC69.3, Sez.]],
+    [R-125-F-De],
+    [L'Admin Globale deve avere la possibilià di aggiungere un utente al Sistema],
+    [@UC69[UC69, Sez.]],
 
-    [R-55-F-De], [L'Admin Globale deve poter eliminare un utente dal Sistema], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
-    [R-56-F-De], [L'Admin globale deve poter promuovere il ruolo di un utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
-    [R-57-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibile. Per ogni merce sarà necessario aggiornare:
-      - Quantità localmente disponibile della merce
-      - Quantità globalmente disponibile della merce
-      - Nome della merce
-      - Descrizione della merce
-      - ID della merce],
-    [@UC73[UC73, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [R-126-F-De], [L'Admin Globale, aggiungendo un nuovo utente, deve inserirne il nome], [@UC69[UC69, Sez.] \ @UC69.1[UC69.1, Sez.]],
+    [R-127-F-De], [L'Admin Globale, aggiungendo un nuovo utente, deve inserirne la passsword], [@UC69[UC69, Sez.] \ @UC69.2[UC69.2, Sez.]],
+    [R-128-F-De], [L'Admin Globale, aggiungendo un nuovo utente, deve inserirne il ruolo], [@UC69[UC69, Sez.] \ @UC69.3[UC69.3, Sez.]],
 
-    [R-58-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione delle merci aggiunte. Per ogni merce aggiunta sarà necessario aggiornare:
-      - Quantità localmente disponibile della merce
-      - Quantità globalmente disponibile della merce
-      - Nome della merce
-      - Descrizione della merce
-      - ID della merce],
-    [@UC76[UC76, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [R-129-F-De], [L'Admin Globale deve poter eliminare un utente dal Sistema, selezionando quale], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
+    [R-130-F-De], [L'Admin globale deve poter promuovere il ruolo di un utente, selezionando quale utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
 
-    [R-59-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione delle merci eliminate. Per ogni merce eliminata sarà necessario aggiornare, ovvero eliminare:
-      - Quantità localmente disponibile della merce
-      - Quantità globalmente disponibile della merce
-      - Nome della merce
-      - Descrizione della merce
-      - ID della merce],
-    [@UC77[UC77, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [R-131-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibile],
+    [@UC73[UC73, Sez.]],
 
-    [R-60-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione delle merci modificate. Per ogni merce modificata sarà necessario aggiornare:
-      - Quantità localmente disponibile della merce
-      - Quantità globalmente disponibile della merce
-      - Nome della merce
-      - Descrizione della merce
-      - ID della merce],
-    [@UC78[UC78, Sez.] \ @UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.] \ @UC74.2[UC74.2, Sez.] \ @UC74.3[UC74.3, Sez.] \ @UC74.4[UC74.4, Sez.] \ @UC75[UC75, Sez.]],
+    [R-132-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità localmente disponibile per ciascuna merce], [@UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.]],
+    [R-133-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità globalmente disponibile per ciascuna merce], [@UC74[UC74, Sez. ] \ @UC74.2[UC74.2, Sez.]],
+    [R-134-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione del nome per ciascuna merce], [@UC74[UC74, Sez. ] \ @UC74.3[UC74.3, Sez.]],
+    [R-135-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della descrizione per ciascuna merce], [@UC74[UC74, Sez. ] \ @UC74.4[UC74.4, Sez.]],
+    [R-136-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione dell'ID per ciascuna merce], [@UC74[UC74, Sez. ] \ @UC75[UC75, Sez.]],
 
-    [R-61-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini. Per ogni ordine è necessario aggiornare le seguenti informazioni:
-      - Data creazione dell'ordine
-      - Nome dell'ordine
-      - Lista delle merci dell'ordine
-      - ID dell'ordine
-      - Stato dell'ordine],
-    [@UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
+    [R-137-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una nuova merce],
+    [@UC76[UC76, Sez.]],
 
-    [R-62-F-Ob],
-    [Per ogni merce di un ordine/trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione delle seguenti informazioni:
-      - ID della merce
-      - Quantità della merce nell'ordine/trasferimento],
-    [@UC82[UC82, Sez.] \ @UC75[UC75, Sez.] \ @UC82.1[UC82.1, Sez.]],
+    [R-138-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della quantità localmente disponibile], [@UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.]],
+    [R-139-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della quantità globalmente disponibile], [@UC74[UC74, Sez. ] \ @UC74.2[UC74.2, Sez.]],
+    [R-140-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione del nome], [@UC74[UC74, Sez. ] \ @UC74.3[UC74.3, Sez.]],
+    [R-141-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della descrizione], [@UC74[UC74, Sez. ] \ @UC74.4[UC74.4, Sez.]],
+    [R-142-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione dell'ID], [@UC74[UC74, Sez. ] \ @UC75[UC75, Sez.]],
 
-    [R-63-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini confermati. Per ogni ordine è necessario aggiornare le seguenti informazioni:
-      - Data creazione dell'ordine
-      - Nome dell'ordine
-      - Lista delle merci dell'ordine
-      - ID dell'ordine
-      - Stato dell'ordine],
-    [@UC83[UC83, Sez.] \ @UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
 
-    [R-64-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini cancellati. Per ogni ordine è necessario aggiornare le seguenti informazioni:
-      - Data creazione dell'ordine
-      - Nome dell'ordine
-      - Lista delle merci dell'ordine
-      - ID dell'ordine
-      - Stato dell'ordine],
-    [@UC84[UC84, Sez.] \ @UC79[UC79, Sez.] \ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.] \ @UC79.1.3[UC79.1.3, Sez.] \ @UC80[UC80, Sez] \ @UC81[UC81, Sez.]],
+    [R-143-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una merce eliminata],
+    [@UC77[UC77, Sez.]],
 
-    [R-65-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione dell'elenco dei trasferimenti. Per ogni trasferimento è necessario avviare la sincronizzazione:
-      - Magazzino destinatario
-      - Magazzino mittente
-      - Lista merci del trasferimento
-      - ID del trasferimento
-      - Stato del trasferimento],
-    [@UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
+    [R-144-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della quantità localmente disponibile], [@UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.]],
+    [R-145-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della quantità globalmente disponibile], [@UC74[UC74, Sez. ] \ @UC74.2[UC74.2, Sez.]],
+    [R-146-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione del nome], [@UC74[UC74, Sez. ] \ @UC74.3[UC74.3, Sez.]],
+    [R-147-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della descrizione], [@UC74[UC74, Sez. ] \ @UC74.4[UC74.4, Sez.]],
+    [R-148-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione dell'ID], [@UC74[UC74, Sez. ] \ @UC75[UC75, Sez.]],
 
-    [R-66-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti confermati. Per ogni trasferimento è necessario avviare la sincronizzazione:
-      - Magazzino destinatario
-      - Magazzino mittente
-      - Lista merci del trasferimento
-      - ID del trasferimento
-      - Stato del trasferimento],
-    [@UC86[UC86, Sez.] \ @UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
+    [R-149-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una merce modificata],
+    [@UC78[UC78, Sez.]],
 
-    [R-67-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti cancellati. Per ogni trasferimento è necessario avviare la sincronizzazione:
-      - Magazzino destinatario
-      - Magazzino mittente
-      - Lista merci del trasferimento
-      - ID del trasferimento
-      - Stato del trasferimento],
-    [@UC87[UC87, Sez.] \ @UC85[UC85, Sez.] \ @UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.] \ @UC85.1.3[UC85.1.3, Sez.] \ @UC82[UC82, Sez.] \ @UC80[UC80, Sez.] \ @UC81[UC81, Sez.]],
+    [R-150-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della quantità localmente disponibile], [@UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.]],
+    [R-151-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della quantità globalmente disponibile], [@UC74[UC74, Sez. ] \ @UC74.2[UC74.2, Sez.]],
+    [R-152-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione del nome], [@UC74[UC74, Sez. ] \ @UC74.3[UC74.3, Sez.]],
+    [R-153-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della descrizione], [@UC74[UC74, Sez. ] \ @UC74.4[UC74.4, Sez.]],
+    [R-154-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione dell'ID], [@UC74[UC74, Sez. ] \ @UC75[UC75, Sez.]],
 
-    [R-68-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento. Per ogni notifica è necessario aggiornare:
-      - ID della notifica di rifornimento
-      - Magazzino destinatario
-      - Stato della notifica
-      - Elenco della merce da rifornire],
-    [@UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+    [R-155-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini],
+    [@UC79[UC79, Sez.]],
 
-    [R-69-F-Ob],
-    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare:
-      - ID della merce
-      - Q.tà della merce da rifornire],
-    [@UC88.1.4.1[UC88.1.4.1, Sez.] \ @UC75[UC75, Sez.] \ @UC88.1.4.1.1[UC88.1.4.1.1, Sez.]],
+    [R-156-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine la data di creazione], [ @UC79.1[UC79.1, Sez.] \ @UC79.1.1[UC79.1.1, Sez.]],
+    [R-157-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine il nome], [ @UC79.1[UC79.1, Sez.] \ @UC79.1.2[UC79.1.2, Sez.]],
+    [R-158-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine l'ID], [ @UC79.1[UC79.1, Sez.] \ @UC80[UC80, Sez]],
+    [R-159-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine lo stato], [ @UC79.1[UC79.1, Sez.] \ @UC81[UC81, Sez.]],
+    [R-160-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine la lista delle merci interessate], [ @UC79.1[UC79.1, Sez.] \ @UC79.1.3[UC79.1.3, Sez.]],
 
-    [R-70-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento confermate. Per ogni notifica è necessario aggiornare:
-      - ID della notifica di rifornimento
-      - Magazzino destinatario
-      - Stato della notifica
-      - Elenco della merce da rifornire],
-    [@UC89[UC89, Sez.] \ @UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+    [R-161-F-Ob],
+    [Per ogni merce di un ordine da sincronizzare, lo Scheduler deve avviare la sincronizzazione dell'ID della merce],
+    [@UC82[UC82, Sez.] \ @UC75[UC75, Sez.]],
 
-    [R-71-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento cancellate. Per ogni notifica è necessario aggiornare:
-      - ID della notifica di rifornimento
-      - Magazzino destinatario
-      - Stato della notifica
-      - Elenco della merce da rifornire],
-    [@UC90[UC90, Sez.] \ @UC88[UC88, Sez.] \ @UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.] \ @UC88.1.3[UC88.1.3, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+    [R-162-F-Ob],
+    [Per ogni merce di un ordine da sincronizzare, lo Scheduler deve avviare la sincronizzazione la quantità interessata della merce],
+    [@UC82[UC82, Sez.] \ @UC82.1[UC82.1, Sez.]],
 
-    [R-72-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi. Per ogni microservizio si vuole avviare la sincronizzazione di:
-      - Nome del microservizio
-      - Richieste al secondo del microservizio],
-    [@UC91[UC91, Sez.] \ @UC91.1[UC91.1, Sez.] \ @UC91.1.1[UC91.1.1, Sez.] \ @UC91.1.2[UC91.1.2, Sez.]],
+    [R-163-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione degli ordini confermati],
+    [@UC83[UC83, Sez.]],
 
-    [R-73-F-Ob],
-    [Lo Scheduler deve avviare la sincronizzazione della soglia minima di allerta per una merce],
+    [R-164-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini confermati, avvia la sincronizzazione di tutti gli ordini], [@UC79[UC79, Sez.]],
+
+    [R-165-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione degli ordini cancellati],
+    [@UC84[UC84, Sez.]],
+
+    [R-166-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini cancellati, avvia la sincronizzazione di tutti gli ordini], [@UC79[UC79, Sez.]],
+
+    [R-167-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dell'elenco dei trasferimenti],
+    [@UC85[UC85, Sez.]],
+
+    [R-168-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare il magazzino destinatario di ciascun trasferimento], [@UC85.1[UC85, Sez.] \ @UC85.1.1[UC85.1.1, Sez.]],
+    [R-169-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare il magazzino mittente di ciascun trasferimento], [@UC85.1[UC85, Sez.] \ @UC85.1.2[UC85.1.2, Sez.]],
+    [R-170-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare l'ID di ciascun trasferimento], [@UC85.1[UC85, Sez.] \ @UC80[UC80, Sez.]],
+    [R-171-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare lo stato di ciascun trasferimento], [@UC85.1[UC85, Sez.] \ @UC81[UC81, Sez.]],
+    [R-172-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare la lista delle merci di ciascun trasferimento], [@UC85.1[UC85, Sez.] \ @UC85.1.3[UC85.1.3, Sez.]],
+
+    [R-173-F-Ob],
+    [Per ogni merce di un trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione dell'ID della merce],
+    [@UC82[UC82, Sez.] \ @UC75[UC75, Sez.]],
+
+    [R-174-F-Ob],
+    [Per ogni merce di un trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione la quantità interessata della merce],
+    [@UC82[UC82, Sez.] \ @UC82.1[UC82.1, Sez.]],
+
+    [R-175-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti confermati],
+    [@UC86[UC86, Sez.]],
+
+    [R-176-F-Ob],
+    [Lo Scheduler, avviando la sincronizzazione dei trasferimenti confermati, deve avviare la sincronizzazione di tutti i trasferimenti],
+    [@UC85[UC85, Sez.]],
+
+    [R-177-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti cancellati],
+    [@UC87[UC87, Sez.]],
+
+    [R-178-F-Ob],
+    [Lo Scheduler, avviando la sincronizzazione dei trasferimenti cancellati, deve avviare la sincronizzazione di tutti i trasferimenti],
+    [@UC85[UC85, Sez.]],
+
+    [R-179-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento],
+    [@UC88[UC88, Sez.]],
+
+    [R-180-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'ID], [@UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.]],
+    [R-181-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica il magazzino destinatario], [@UC88.1[UC88.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.]],
+    [R-182-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica lo stato], [@UC88.1[UC88.1, Sez.] \ @UC88.1.3[UC88.1.3, Sez.]],
+    [R-183-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'elenco], [@UC88.1[UC88.1, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+
+    [R-184-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare l'ID della merce],
+    [@UC88.1.4.1[UC88.1.4.1, Sez.] \ @UC75[UC75, Sez.]],
+
+    [R-185-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare la quantità interessata della merce],
+    [@UC88.1.4.1[UC88.1.4.1, Sez.] \ @UC88.1.4.1.1[UC88.1.4.1.1, Sez.]],
+
+    [R-186-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento confermate],
+    [@UC89[UC89, Sez.]],
+
+    [R-187-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento confermate, deve sincronizzare tutte le notifiche di rifornimento], [@UC88[UC88, Sez.]],
+
+    [R-188-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento cancellate],
+    [@UC90[UC90, Sez.]],
+
+    [R-189-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento cancellate, deve sincronizzare tutte le notifiche di rifornimento], [@UC88[UC88, Sez.]],
+
+    [R-190-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi],
+    [@UC91[UC91, Sez.]],
+
+    [R-191-F-Ob], [Lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, deve avviare la sincronizzazione del nome di ciascun microservizio], [@UC91.1[UC91.1, Sez.] \ @UC91.1.1[UC91.1.1, Sez.]],
+    [R-192-F-Ob], [Lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, deve avviare la sincronizzazione delle richieste al secondo di ciascun microservizio], [@UC91.1[UC91.1, Sez.] \ @UC91.1.2[UC91.1.2, Sez.]],
+
+    [R-193-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione della soglia minima di allerta per una merce quando aggiornata],
     [@UC92[UC92, Sez.]],
   ),
   caption: [Requisiti Funzionali],
@@ -4498,7 +4533,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
       [#text(fill: white)[*Opzionali*]],
     ),
 
-    [Funzionali], [58], [15], [0],
+    [Funzionali], [171], [22], [0],
     [Qualità], [9], [1], [0],
     [Vincolo], [5], [0], [0],
   ),
