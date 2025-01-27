@@ -343,7 +343,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 #metric(
   cod: [MPC10],
   formula: [
-    $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *100 + "numero di frasi" / "numero di parole" * 300$
+    $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *10 + "numero di frasi" / "numero di parole" * 300$
   ],
   desc: [L'Indice Gulpease è un indice di leggibilità del testo.
     È utile per capire quanto un testo sia facile o difficile da leggere per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.\
