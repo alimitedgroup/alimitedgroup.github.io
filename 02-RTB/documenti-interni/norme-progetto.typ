@@ -582,24 +582,24 @@ Saranno ora descritte nel dettaglio le attività previste.
 
 Il processo di documentazione è parte fondamentale di tutti i processi primari: il prodotto di tale processo è infatti essenziale per tenere traccia delle decisioni intraprese e per favorire il lavoro asincrono, molto più produttivo di quello sincrono nel nostro ambito.\
 
-Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni prodotto da un processo o da un'attività nel ciclo di vita.\
+Nel dettaglio, il processo di documentazione si occupa della registrazione delle informazioni derivanti da un processo o da un'attività nel ciclo di vita.\
 Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppano, producono, modificano, distribuiscono e mantengono i documenti necessari a tutti gli interessati.\
 
 === Strumenti a supporto
 
-Per redigere la documentazione il gruppo fa utilizzo di due strumenti in particolare:
+Per redigere la documentazione il gruppo utilizza due strumenti in particolare:
 
-- *_Typst_*: trattasi di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX* per la dezione di documenti a carattere scientifico e non solo.
-  _Typst_ permette la realizzazione di una preview sostanzialmente istantanea, senza necessità di compilare ogni volta il documento, allo stesso modo mettendo a disposizione una sintassi quanto più vicina possibile ai normali linguaggi di programmazione. _ALimitedGroup_ lo utilizza di tutti i documenti.
-  Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_ appositamente scritte allo scopo presenti all'interno di documenti che noi chiamiamo _Template_.\
+- *_Typst_*: si tratta di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX* per la redazione di documenti a carattere scientifico e non solo.
+  _Typst_ permette la realizzazione di una preview istantanea, senza necessità di compilare ogni volta il documento, inoltre la sintassi è molto vicina ai linguaggi di programmazione. _ALimitedGroup_ lo utilizza in tutti i documenti.
+  Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_ appositamente implementate dai componenti di _ALimitedGroup_ presenti all'interno della cartella _lib_ del _repository_#super[g] .\
   La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa Sezione saranno invece descritte le strutture dei vari documenti.
 
-- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_#super[g] per permettere la rezione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @infrastruttura.
+- *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_#super[g] per permettere la redazione, verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @infrastruttura.
 
 === Attività previste
 
 Il processo di documentazione è un processo assai delicato, e molto importante. Le attività cardine di questo processo sono due:
-- *Produzione*: l'attività che stabilisce con quale metodo il documento debba essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
+- *Produzione*: l'attività che stabilisce con quale metodo il documento deve essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
 - *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
 
 === Verbali <desc-templ-verbale>
@@ -613,7 +613,7 @@ Generalmente un verbale possiede questa struttura iniziale:
   - Stato del documento;
   - Persone presenti alla riunione;
   - Distribuzione (ossia, i destinatari);
-  - Ordine del giorno (in formato riassuntivo).
+  - Ordine del giorno (in formato riassuntivo);
 - Allegato con *tabella delle versioni*;
 - *Indice del documento*, generato automaticamente da _Typst_.
 
@@ -627,10 +627,9 @@ cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
 
 La seconda sezione, che segue quanto appena scritto, esplicita quanto discusso per ogni punto dell'ordine del giorno.\
 
-Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato; l'ultima sezione, invece, si riferisce alla _tabella delle decisioni e delle azioni_ che, tramite il sistema di _ticketing_, elenca tutte le decisioni e azioni prese
-dal gruppo, tale tabella è facilmente realizzabile tramite la funzione "tabella-decisioni".\
+Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato. \ L'ultima sezione è dedicata alla _tabella delle decisioni e delle azioni_, che riassume in modo strutturato tutte le decisioni prese e le azioni concordate.\ Queste informazioni vengono integrate e tracciate nel _sistema di ticketing_. \ La tabella è creata tramite la funzione "tabella-decisioni".\
 
-In ultima istanza, i *verbali esterni* devono avere anche una sezione dedicata all'approvazione esterna e su ogni pagina (ad eccezione della pagina di copertina) del verbale deve essere riportato il numero di pagina e un _header_ con:
+In ultima istanza, i *verbali esterni* devono includere una sezione dedicata all'approvazione esterna.\ Ogni pagina, ad eccezione della copertina, deve riportare il numero e un _header_ con:
 - *Nome del gruppo*;
 - *Tipo verbale*;
 - *Data della riunione*.
@@ -652,7 +651,7 @@ Per tutti gli altri documenti la struttura è composta da:
   - Versione;
   - Stato del documento;
   - Data di ultima modifica;
-  - Distribuzione (destinatari).
+  - Distribuzione (destinatari);
 - *Registro delle modifiche*, che viene realizzata automaticamente invocando la funzione per la copertina;
 - *Indice dei contenuti*, viene realizzato automaticamente con la stessa funziona menzionata sopra;
 - *Elenchi di tabelle e figure*, se presenti nel documento;
@@ -662,23 +661,23 @@ Ogni pagina, ad eccezione della copertina, dovrà inoltre contenere:
 - _*Header*_ con:
   - *Nome del gruppo*;
   - *Titolo del documento*;
-  - *Versione del documento*
-- *Numero di pagina*
+  - *Versione del documento*;
+- *Numero di pagina*.
 
 === Produzione <regole-branch-issue>
-La produzione di un documento segue solitamente questi passaggi:
+La produzione di un documento segue questi passaggi:
 
-- *Creazione della issue e del branch secondario*: anzitutto viene aperta una issue su GitHub#super[g] ,elemento necessario per tenere traccia dei compiti da svolgere, quindi viene aperto un branch secondario rispetto al principale nel sistema di versioning, in maniera di poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_#super[g] e delle _issue_#super[g] segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
+- *Creazione della issue e del branch secondario*: innanzitutto viene aperta una issue su GitHub#super[g] , essenziale per tenere traccia dei compiti da svolgere, in seguito viene creato un branch secondario rispetto al principale nel sistema di versioning, per poter eseguire modifiche senza intaccare il ramo stabile. La denominazione del _branch_#super[g] e delle _issue_#super[g] segue una nomenclatura specifica decisa nel #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[*verbale interno*] del *18 Novembre 2024* e riportata nella @creazione-github.
 
-- *Assegnazione della issue e inizio stesura*: una delle persone che in quel periodo hanno il compito di realizzare quel documento (vedi la @elenco-documenti per maggiori informazioni) si assegna l'issue di redazione e inizia la redazione del documento nel branch dedicato
-- *Verifica*#super[g] :terminata la redazione, il redattore apre una _pull request_ su GitHub per chiedere, ad un verificatore#super[g] ,la verifica del documento. Il verificatore procederà quindi a tale attività che potrà avere esito positivo oppure negativo, lasciando, in questo caso, l'elenco delle modifiche da apportare ai relatori.
-\
+- *Assegnazione della issue e inizio stesura*: in base al ruolo (vedi la @elenco-documenti per maggiori informazioni) viene assegnata l'issue di redazione e si inizia la stesura del documento nel branch dedicato.
+- *Verifica*#super[g] : terminata la redazione, il redattore apre una _pull request_ su GitHub per chiedere, ad un verificatore#super[g] , la verifica del documento.\ L'esito dell'attività potrà essere positivo oppure negativo. \ Se negativo, il verificatore allega un elenco delle modifiche da apportare ai redattori.
+
 A questo punto il processo diviene differente per i verbali e i rimanenti documenti:
 
-- *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di verifica positiva, il verificatore richiede al responsabile di approvare il documento.
-Il responsabile#super[g] ,una volta approvato il documento, risolverà la pull request e procede quindi al merge del branch secondario in quello principale. L'azione scatenera l'avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, questo anche considerando che con il tempo la memoria potrebbe non più essere precisa come prima: per queste ragioni il gruppo ha deciso che i verbali saranno pubblicati solamente quando approvati.
-- *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale: ciò avviene completando il _merge_ e risolvendo quindi la _Pull Request_. Tale processo è diversificato per i documenti rispetto ai verbali in quanto, essendo gli altri documenti di consultazione più frequente, è necessario avere a disposizione la versione più recente disponibile per la visione;
-- *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di una determinata accuratezza dello stesso. Similmente a quanto avviene per i verbali, sarà il responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
+- *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di verifica positiva, il verificatore richiede al Responsabile di approvare il documento.
+Il Responsabile#super[g] ,una volta approvato il documento, risolve la pull request e procede quindi al merge del branch secondario in quello principale. L'azione scatenerà l'avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, perciò il _ALimitedGroup_ ha deciso che i verbali saranno pubblicati solamente quando approvati.
+- *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale completando il _merge_ e risolvendo la _Pull Request_. \ Questo processo differisce da quello dei verbali, in quanto questi ultimi possono essere integrati nel branch principale (main) solo dopo l'approvazione formale. \ Al contrario, gli altri documenti, essendo di consultazione più frequente, possono essere pubblicati nel branch principale semplicemente dopo la verifica#super[g] ,per garantire l'accesso alla versione più aggiornata.
+- *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di determinati standard di qualità. Similmente a quanto avviene per i verbali, sarà il Responsabile ad approvare il documento a seguito di opportuna _Pull Request_.
 
 Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni, definite nella prossima sezione.
 
@@ -690,16 +689,16 @@ Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0
 
 dove:
 - *TIPO* è una sigla che identifica il tipo di documento. Le possibili scelte sono:
-  - *VI* per *V*\erbale *I*\nterno
-  - *VE* per *V*\erbale *E*\sterno
-  - *DB* per *D*\iario di *B*\ordo
-  - *NP* per *N*\orme di *P*\rogetto
-  - *PP* per *P*\iano di *P*\rogetto
-  - *AR* per *A*\nalisi dei *R*\equisiti
-  - *PQ* per *P*\iano di *Q*\ualifica
-- *AAAA-MM-GG* indica la data in formato anno-mese-giorno (con due cifre per giorno e mese e 4 cifre per l'anno)
-- *\#* è un modificatore, ossia un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico
-- *VERSIONE* indica la versione corrente del documento
+  - *VI* per *V*\erbale *I*\nterno;
+  - *VE* per *V*\erbale *E*\sterno;
+  - *DB* per *D*\iario di *B*\ordo;
+  - *NP* per *N*\orme di *P*\rogetto;
+  - *PP* per *P*\iano di *P*\rogetto;
+  - *AR* per *A*\nalisi dei *R*\equisiti;
+  - *PQ* per *P*\iano di *Q*\ualifica.
+- *AAAA-MM-GG* indica la data in formato anno-mese-giorno (con due cifre per giorno e mese e 4 cifre per l'anno);
+- *\#* è un modificatore, ossia un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico;
+- *VERSIONE* indica la versione corrente del documento.
 \
 Le date nei documenti dovranno essere scritte sempre nel formato *GG-MM-AAAA* (giorno-mese-anno, con due cifre per giorno e mese e quattro cifre per l'anno).\
 Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, ossia parole separate dal carattere *-*.
@@ -756,7 +755,7 @@ Una _issue_#super[g] può essere chiusa solo nel momento in cui l'attività che 
 
 - _*Board*_: serve per stabilire se una _issue_#super[g] presa in carico è ancora da iniziare, in sviluppo o terminata. Essa consente inoltre di identificare in quale periodo è da svolgere e, mediante dei diagrammi di Gantt generati da _GitHub_#super[g] e qui integrati, comprendere se ci sono attività che stanno richiedendo più tempo di quanto preventivato;
 - _*Pull Request*_: un sistema che permette di chiedere la verifica e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_#super[g] .Le _Pull Request_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerare le modifiche apportate come definitive.
-- _*Teams di GitHub*_: i _repository_#super[g] realizzati sono realizzati per poter permettere solo ai verificatori (e al responsabile per eventuali approvazioni) la possibilità di poter trasportare delle modifiche nel ramo principale (previa, ovviamente, attività di verifica#super[g] ).Per queste esigenze, i _repository_#super[g] prevedono tre categorie:
+- _*Teams di GitHub*_: i _repository_#super[g] realizzati sono realizzati per poter permettere solo ai verificatori (e al Responsabile per eventuali approvazioni) la possibilità di poter trasportare delle modifiche nel ramo principale (previa, ovviamente, attività di verifica#super[g] ).Per queste esigenze, i _repository_#super[g] prevedono tre categorie:
   - Responsabile#super[g] ;
   - Verificatori;
   - Redattori.
@@ -1006,7 +1005,7 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
 
     "Analista",
     (
-      "Questo ruolo è responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente "
+      "Questo ruolo è Responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente "
         + [#M31]
         + ".
 È sempre affidato a questo ruolo il compito di regidere l'"
@@ -1016,7 +1015,7 @@ Si occupa di eseguire test approfonditi e revisioni del software, identificando 
 
     "Programmatore",
     (
-      "Il Programmatore è responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
+      "Il Programmatore è Responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
     Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate. È affidata a questo ruolo anche la responsabilità di realizzare test automatici per verificare il corretto funzionamento del codice sviluppato."
     ),
 
@@ -1057,7 +1056,7 @@ Per maggiori informazioni si consiglia la lettura del processo di *Infrastruttur
 
 == Infrastruttura <infrastruttura>
 
-Il processo di *Infrastruttura* è responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
+Il processo di *Infrastruttura* è Responsabile della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
 
 === Attività previste
 
