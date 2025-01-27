@@ -19,21 +19,23 @@
       date: datetime(day: 17, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Completato l'inserimento dei diagrammi UML per i Casi d'Uso relativi al Backend. Completati i requisiti e la sezione Riassunto",
+      descr: "Completato l'inserimento dei diagrammi per i Casi d'Uso relativi al Backend. Completati i requisiti e la sezione Riassunto",
     ),
     (
       vers: "0.26.0",
       date: datetime(day: 15, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Terminati i Casi d'Uso relativi alle attività del Backend. Cambiata la numerazione dal template per una corretta visualizzazione",
+      descr: "Terminati i Casi d'Uso relativi alle attività del Backend "
+        + [(da @UC88 a @UC92)]
+        + ". Cambiata la numerazione dal template per una corretta visualizzazione",
     ),
     (
       vers: "0.25.0",
       date: datetime(day: 15, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Redatti Casi d'Uso riguardanti sincronizzazione merci, ordini e trasferimenti",
+      descr: "Redatti Casi d'Uso riguardanti sincronizzazione merci, ordini e trasferimenti" + [(da @UC73 a @UC87)],
     ),
     (
       vers: "0.24.0",
@@ -47,7 +49,8 @@
       date: datetime(day: 12, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Terminata la redazione degli UC riguardanti la creazione e la modifica degli utenti, la ricezione dei tentativi di accesso e dell'eliminazione degli utenti.",
+      descr: "Terminata la redazione degli UC riguardanti la creazione e la modifica degli utenti, la ricezione dei tentativi di accesso e dell'eliminazione degli utenti "
+        + [(da @UC67 a @UC72)],
     ),
     (
       vers: "0.22.0",
@@ -61,49 +64,51 @@
       date: datetime(day: 09, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "terminati UC relativi a backup del Sistema locale. Realizzati UC relativi a controllo accessi al Sistema.",
+      descr: "terminati UC relativi a backup del Sistema locale. Realizzati UC relativi a controllo accessi al Sistema "
+        + [(da @UC61 a @UC66.1)],
     ),
     (
       vers: "0.20.0",
       date: datetime(day: 08, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Realizzati primi UC relativi a backup del sistema locale",
+      descr: "Realizzati primi UC relativi a backup del sistema locale " + [da @UC58 a @UC60],
     ),
     (
       vers: "0.19.0",
       date: datetime(day: 03, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Ristrutturati i diagrammi per ogni singolo UC, con annesse inclusioni ed estensioni. Migliorie generali",
+      descr: "completati diagrammi per ogni singolo UC. Migliorie generali",
     ),
     (
       vers: "0.18.0",
       date: datetime(day: 27, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Sistemazione UML sino ad UC29.",
+      descr: "Sistemazione diagrammi sino ad UC29.",
     ),
     (
       vers: "0.17.0",
       date: datetime(day: 26, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Sistemazione UML sino ad UC15.",
+      descr: "Sistemazione diagrammi sino ad UC15.",
     ),
     (
       vers: "0.16.0",
       date: datetime(day: 23, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Ristrutturato ulteriormente l'indice per una maggiore fruibilità. Modificati i numeri degli UC",
+      descr: "Ristrutturato ulteriormente l'indice per una maggiore fruibilità",
     ),
     (
       vers: "0.15.0",
       date: datetime(day: 15, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Ristrutturato l'indice per una sua corretta visualizzazione e fruibilità. Inseriti UC rimanenti. Assegnato per ogni UC un proprio numero",
+      descr: "Ristrutturato l'indice per una sua corretta visualizzazione e fruibilità. Inseriti Casi d'Uso riguardanti gli ordini eseguiti "
+        + [(da @UC56 a @UC57.1.1.1)],
     ),
     (
       vers: "0.14.0",
@@ -117,70 +122,86 @@
       date: datetime(day: 13, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.samuele,
-      descr: "Redatto Caso d'Uso relativo soglia minima",
+      descr: "Redatto Caso d'Uso relativo soglia minima e inclusioni/estensioni " + [(da @UC48 a @UC50)],
     ),
     (
       vers: "0.12.0",
       date: datetime(day: 13, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Redatti Casi d'Uso relativi alle richieste al secondo per microservizi e Casi d'Uso correlati.",
+      descr: "Redatti Casi d'Uso relativi alle richieste al secondo per microservizi e Casi d'Uso correlati "
+        + [(da @UC43 a @UC43.1.2)],
     ),
     (
       vers: "0.11.0",
       date: datetime(day: 12, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Redatti Casi d'Uso relativi alla visualizzazione della singola notifica di rifornimento.",
+      descr: "Redatti Casi d'Uso relativi alla visualizzazione della singola notifica di rifornimento e Casi d'Uso riguardanti i trasferimenti, con inclusioni ed estensioni (da "
+        + [@UC23 a @UC32.3.1.1 e da @UC39 a @UC39.2.1.1]
+        + ")",
     ),
     (
       vers: "0.10.0",
       date: datetime(day: 12, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.samuele,
-      descr: "Redatto Caso d'Uso relativo all'esportazione ordine eseguiti. Redatto Caso d'Uso relativo all'esportazione report di inventario",
+      descr: "Redatto Caso d'Uso relativo all'esportazione ordini eseguiti e report di inventario ("
+        + [da @UC44 a @UC47)],
     ),
     (
       vers: "0.9.0",
       date: datetime(day: 12, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Redatto Caso d'Uso relativo all'aggiornamento delle quantità disponibili di una merce (stock). Redatto Caso d'Uso relativo alla creazione di una merce globale.",
+      descr: "Redatto Caso d'Uso relativo all'aggiornamento delle quantità disponibili di una merce (stock) e redatto Casi d'Uso relativi alla creazione/visualizzazione di una merce globale con rispettive inclusioni/estensioni (da "
+        + [@UC18 a @UC22.1 e da @UC51 a @UC55]
+        + ")",
     ),
     (
       vers: "0.8.0",
       date: datetime(day: 11, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Redatto Caso d'Uso relativo alla visualizzazione delle notifiche di rifornimento e relative inclusioni. Redatto Caso d'Uso relativo all'accettazione e al rifiuto di una notifica di rifornimento.",
+      descr: "Redatto Caso d'Uso relativo alla visualizzazione delle notifiche di rifornimento e Casi d'Uso relativi all'accettazione e al rifiuto di una notifica di rifornimento ("
+        + [da @UC33 a @UC38 e da @UC40 e @UC42]
+        + ")",
     ),
     (
       vers: "0.7.0",
       date: datetime(day: 10, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Completato fino ad UC17",
+      descr: "Aggiunti Casi d'Uso su visualizzazione ordini non confermati con relative inclusioni/estensioni (fino a "
+        + [@UC17]
+        + ")",
     ),
     (
       vers: "0.6.0",
       date: datetime(day: 09, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Aggiunti Casi d'Uso sino a UC15 e relative inclusioni ed estensioni. Impostazione UC14.",
+      descr: "Aggiunti Casi d'Uso su cancellazione/conferma ordine non confermato e visualizzazione ordini sino e relative inclusioni/estensioni (fino a "
+        + [@UC15]
+        + ")",
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 08, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Aggiunti UC3, UC3.1, UC3.2 e UC3.3. Aggiunti UC4 e relative inclusioni ed estensioni",
+      descr: "Aggiunti Casi d'Uso sulla creazione di un ordine, sull'aggiunta di merci ad un ordine e rispettive inclusioni/estensioni (fino a "
+        + [@UC9]
+        + ")",
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.matteo,
       verifica: p.lorenzo,
-      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione",
+      descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazionene (fino a "
+        + [@UC2]
+        + ")",
     ),
     (
       vers: "0.3.0",
