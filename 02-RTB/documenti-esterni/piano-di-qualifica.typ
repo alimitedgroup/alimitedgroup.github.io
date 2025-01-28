@@ -1,73 +1,90 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [0.2.0]
+#let ver = [0.9.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 05, month: 12, year: 2024),
+  data: datetime(day: 10, month: 12, year: 2024),
   tipo: [esterno],
   versione: ver,
   versioni: (
     (
+      vers: "0.9.0",
+      date: datetime(day: 28, month: 01, year: 2025),
+      autore: p.sara,
+      verifica: p.matteo,
+      descr: "Correzioni",
+    ),
+    (
       vers: "0.8.0",
       date: datetime(day: 10, month: 01, year: 2025),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Aggiornamento qualità del processo e prodotto, soglie e tabelle",
     ),
     (
       vers: "0.7.0",
       date: datetime(day: 09, month: 01, year: 2025),
       autore: p.emanuele,
+      verifica: p.matteo,
       descr: "Aggiunta sezione automiglioramento",
     ),
     (
       vers: "0.6.0",
       date: datetime(day: 08, month: 01, year: 2025),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Aggiornamento sezione qualità di processo",
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 04, month: 01, year: 2025),
       autore: p.emanuele,
+      verifica: p.matteo,
       descr: "Aggiunta metriche qualità di prodotto e tabelle",
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 3, month: 01, year: 2025),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Aggiornamento metriche di processo e tabelle",
     ),
     (
       vers: "0.3.0",
       date: datetime(day: 27, month: 12, year: 2024),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Aggiornamento metriche di processo",
     ),
     (
       vers: "0.2.0",
       date: datetime(day: 19, month: 12, year: 2024),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Aggiunte metriche di processo",
     ),
     (
       vers: "0.2.0",
       date: datetime(day: 11, month: 12, year: 2024),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Aggiunta sezione introduzione",
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 5, month: 12, year: 2024),
       autore: p.sara,
+      verifica: p.matteo,
       descr: "Redazione documento",
     ),
   ),
   stato: [In redazione],
-  // responsabile: ((p.loris),),
-  //verificatore: ((p.samuele), (p.lorenzo)),
+  responsabile: ((p.loris),),
+  verificatore: ((p.samuele), (p.lorenzo)),
   redattori: (
     (p.sara),
+    (p.emanuele),
   ),
   descrizione: [Questo documento contiene il _Piano di Qualifica_ descritto dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
   titolo: "Piano di Qualifica",
@@ -108,17 +125,31 @@ I destinatari del documento sono:
 - Committenti
 - Utenti finali
 
-== Definizioni, acronimi e abbreviazioni
+== Nomenclatura, definizioni, acronimi e abbreviazioni
+
+La nomenclatura utilizzata per le metriche è la seguente:
+
+#align(center)[`MTipo##`]
+
+dove:
+
+- *M* sta per *M*\etrica
+- *Tipo* può assumere uno dtra questi valori:
+  - *PC* ovvero *P*\ro#text()[*c*]esso
+  - *PD* ovvero *P*\ro#text()[*d*]otto
+- *\#\#* è un numero crescente da 0. Il conteggio per il tipo *PC* e *PD* è separato.
+
 Per tutte le definizioni, acronimi e abbreviazioni utilizzati in questo documento, si faccia
 riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni
 necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti
 rilevanti per il progetto.
+
 == Riferimenti
 === Riferimenti normativi
 - Norme di Progetto: \
   #link("alimitedgroup.github.io/norme-progetto.pdf")[alimitedgroup.github.io/norme-progetto.pdf]
 - Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito: \
-  https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
 
 
 === Riferimenti informativi
@@ -152,31 +183,21 @@ Per garantire la qualità di processo, il progetto si avvale di:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPC01*], [Budget at Completion], [in linea conpreventivo], [≤ preventivo],
-    [*MPC02*], [Earned Value], [≥ 0], [≤ EAC],
-    [*MPC03*], [Planned Value], [≥ 0], [≤ BAC],
-    [*MPC04*], [Actual Cost], [≥ 0], [≤ EAC],
-    [*MPC05*], [Cost Performance Index], [≥ 0], [1],
-    [*MPC06*], [Schedule Performance Index], [≥ 0], [1],
-    [*MPC07*], [Estimate At Completion], [≥ 0], [≤ BAC],
-    [*MPC08*], [Estimate To Complete], [≥ 0], [≤ BAC],
-    [*MPC09*], [Time Estimate At Completion], [≥ 0], [≤ Durata pianificata],
+    [*MPC01*], [Earned Value], [≥ 0], [≤ EAC],
+    [*MPC02*], [Planned Value], [≥ 0], [≤ BAC],
+    [*MPC03*], [Actual Cost], [≥ 0], [≤ EAC],
+    [*MPC04*], [Cost Performance Index], [≥ 0], [1],
+    [*MPC05*], [Schedule Performance Index], [≥ 0], [1],
+    [*MPC06*], [Estimate At Completion], [≥ 0], [≤ BAC],
+    [*MPC07*], [Estimate To Complete], [≥ 0], [≤ BAC],
+    [*MPC08*], [Time Estimate At Completion], [≥ 0], [≤ Durata pianificata],
   ),
   caption: [Soglie metriche processo di fornitura],
 )
 
-==== Budget at Completion (BAC)
-#metric(
-  cod: [MPC01],
-  formula: [
-    $"Budget at Completion" = "Costo totale del progetto"$
-  ],
-  desc: [Il Budget at Completion rappresenta il costo totale previsto per completare il progetto.],
-)
-
 ==== Earned Value (EV)
 #metric(
-  cod: [MPC02],
+  cod: [MPC01],
   formula: [
     $"Earned Value" = "Budget at Completion" * "Percentuale di lavoro completato nello sprint"$
   ],
@@ -186,7 +207,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Planned Value (PV)
 #metric(
-  cod: [MPC03],
+  cod: [MPC02],
   formula: [
     $"Planned Value" = "Budget at Completion" * "Percentuale di lavoro pianificato nello sprint"$
   ],
@@ -197,7 +218,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Actual Cost (AC)
 #metric(
-  cod: [MPC04],
+  cod: [MPC03],
   formula: [
     $"Actual Cost" = "Costo effettivo sostenuto nello sprint"$
   ],
@@ -207,7 +228,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Cost Performance Index (CPI)
 #metric(
-  cod: [MPC05],
+  cod: [MPC04],
   formula: [
     $"Cost Performance Index" = "Earned Value" / "Actual Cost"$
   ],
@@ -217,7 +238,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Schedule Performance Index (SPI)
 #metric(
-  cod: [MPC06],
+  cod: [MPC05],
   formula: [
     $"Schedule Performance Index" = "Earned Value" / "Planned Value"$
   ],
@@ -225,32 +246,9 @@ Per garantire la qualità di processo, il progetto si avvale di:
     Un valore maggiore di 1 indica che il progetto sta rispettando la pianificazione, un valore minore di 1 indica che il progetto sta accumulando ritardi.],
 )
 
-/*SONO COMMENTATE PERCHE' MOLTO SIMILI A COST PERFORMANCE INDEX E SCHEDULE PERFORMANCE INDEX*/
-
-/*==== Budget Variance
-
-#metric(
-  cod: [MPF7],
-  formula: [
-    $"Budget Variance" = ("Earned Value" - "Actual Cost" ) / "Actual Cost" * 100$
-  ],
-  desc: [La Budget Variance rappresenta la differenza percentuale tra il valore del lavoro completato e il costo effettivo sostenuto per completare il lavoro nello sprint#super[g] .\
-    Un valore positivo indica che il progetto sta rispettando il budget, un valore negativo indica che il progetto sta superando il budget.],
-)
-
-==== Effort Variance
-#metric(
-  cod: [MPF8],
-  formula: [
-    $"Effort Variance" = ("Ore Pianificate" - "Ore Effettive") / "Ore Pianificate" * "100"$
-  ],
-  desc: [L'Effort Variance rappresenta la differenza percentuale tra le ore pianificate e le ore effettive impiegate per completare il lavoro nello sprint#super[g] .\
-    Un valore positivo indica che il progetto sta rispettando la pianificazione, un valore negativo indica che il progetto sta accumulando ritardi.],
-)*/
-
 ==== Estimate At Completion (EAC)
 #metric(
-  cod: [MPC07],
+  cod: [MPC06],
   formula: [
     $"Estimate At Completion" = "Budget at Completion" / "Cost Performance Index"$
   ],
@@ -261,7 +259,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Estimate To Complete (ETC)
 #metric(
-  cod: [MPC08],
+  cod: [MPC07],
   formula: [
     $"Estimate To Complete" = "Estimate At Completion" - "Actual Cost"$
   ],
@@ -272,7 +270,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 ==== Time Estimate At Completion (TEAC)
 #metric(
-  cod: [MPC09],
+  cod: [MPC08],
   formula: [
     $"Time Estimate At Completion" = "Durata pianificata" / "Schedule Performance Index"$
   ],
@@ -281,8 +279,8 @@ Per garantire la qualità di processo, il progetto si avvale di:
     Se SPI < 1, TEAC sarà maggiore della durata pianificata, indicando un probabile ritardo.],
 )
 
-
 === Sviluppo
+
 #figure(
   table(
     columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
@@ -300,114 +298,57 @@ Per garantire la qualità di processo, il progetto si avvale di:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPC10*], [Code Coverage], [≥ 70%], [≥ 80%],
-    [*MPC11*], [Technical Debt Ratio], [≤ 5%], [≤ 2%],
-    [*MPC12*], [Sprint Velocity], [costante], [crescente],
-    [*MPC13*], [Lead Time], [≤ 21], [≤ 14],
-    [*MPC14*], [Defect Density], [≤ 1], [≤ 0.5],
-    [*MPC15*], [Test Success Rate], [≥ 95%], [≥ 98%],
-    [*MPC16*], [Deployment Frequency], [≥ 1 a sprint], [≥ 2 a sprint],
-    [*MPC17*], [Change Failure Rate], [≤ 15%], [≤ 10%],
+    [*MPC09*], [Requirements Stability Index], [≥ 70%], [100%],
   ),
-  caption: [Soglie metriche processo di sviluppo],
+  caption: [Soglie metriche processo di Sviluppo],
 )
-/*==== Cyclomatic Complexity
+
+==== Requirements Stability Index
 
 #metric(
-  cod: [MPS1],
+  cod: [MPC09],
   formula: [
-    $"Cyclomatic Complexity" = E - N + 2P$
-
+    $"Requirements Stability Index" = 1-(("NCAM" + "NCAN" + "NAGG") / "NTOT")*100$
   ],
   desc: [
-- E = numero di archi nel grafo di controllo
-- N = numero di nodi nel grafo di controllo
-- P = numero di componenti connesse\
-Misura la complessità del codice contando i percorsi linearmente indipendenti. Un valore superiore a 10 indica codice complesso che potrebbe richiedere refactoring.],
-)*/
+    - *NCAM*: *N*\umero *Cam*\biamenti;
+    - *NCAN*: *N*\umero *Can*\cellati
+    - *NAGG*: *N*\umero *Agg*\iunti
+    - *NTOT*: *N*\umero *Tot*\ali
 
-==== Code Coverage
-#metric(
-  cod: [MPC10],
-  formula: [
-    $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
+    Permette di misurare il numero di cambiamenti apportati ai requisiti nel corso del tempo.
   ],
-  desc: [Percentuale di codice coperto da test automatizzati. Si raccomanda un coverage minimo del 80%.],
 )
-
-==== Technical Debt Ratio
-
-#metric(
-  cod: [MPC11],
-  formula: [
-    $"Technical Debt Ratio" = ("Remediation Cost" / "Development Cost") * 100$
-  ],
-  desc: [Rapporto tra il costo stimato per risolvere i problemi tecnici e il costo di sviluppo. Un valore superiore al 5% richiede attenzione.],
-)
-
-==== Sprint Velocity
-
-#metric(
-  cod: [MPC12],
-  formula: [
-    $"Sprint Velocity" = "Story Points completati nello sprint"$
-  ],
-  desc: [Media mobile degli story points completati negli ultimi 3 sprint#super[g] .Utile per la capacity planning.],
-)
-==== Lead Time
-#metric(
-  cod: [MPC13],
-  formula: [
-    $"Lead Time" = "Data completamento" - "Data creazione task"$
-  ],
-  desc: [Tempo medio tra la creazione di una user story e il suo completamento. Indica l'efficienza del processo di sviluppo.],
-)
-
-==== Defect Density
-
-#metric(
-  cod: [MPC14],
-  formula: [
-    $"Defect Density" = "Numero di difetti" / "KLOC"$
-  ],
-  desc: [Numero di difetti per 1000 linee di codice. Un valore superiore a 1 indica possibili problemi di qualità.],
-)
-
-==== Test Success Rate
-#metric(
-  cod: [MPC15],
-  formula: [
-    $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
-  ],
-  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi sopra il 95%.],
-)
-
-==== Deployment Frequency
-
-#metric(
-  cod: [MPC16],
-  formula: [
-    $"Deployment Frequency" = "Numero deployment" / "Periodo di tempo"$
-  ],
-  desc: [Frequenza dei rilasci in produzione. Indica la maturità del processo CI/CD.],
-)
-
-==== Change Failure Rate
-#metric(
-  cod: [MPC17],
-  formula: [
-    $"Change Failure Rate" = ("Deployment falliti" / "Deployment totali") * 100$
-  ],
-  desc: [Percentuale di deployment che causano un fallimento in produzione. Dovrebbe essere inferiore al 15%.],
-)
-
-
 
 == Processi di supporto
 === Documentazione
+
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPC10*], [Indice di Gulpease], [≥ 60%], [≥ 80%],
+    [*MPC11*], [Correttezza ortografica], [100%], [100%],
+  ),
+  caption: [Soglie metriche processo di Documentazione],
+)
+
 ==== Indice di Gulpease
 #metric(
-  cod: [MPC18],
+  cod: [MPC10],
   formula: [
     $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *100 + "numero di frasi" / "numero di parole" * 300$
   ],
@@ -428,10 +369,9 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
       Il testo è molto difficile da leggere, comprensibile per lettori con un'istruzione universitaria.],
 )
 
-
 ==== Correttezza ortografica
 #metric(
-  cod: [MPC19],
+  cod: [MPC11],
   formula: [
     $"Correttezza ortografica" = (1-"numero di errori ortografici" / "numero di parole" )* 100$
   ],
@@ -439,29 +379,7 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     Una precisione del 100% significa che non ci sono errori ortografici.],
 )
 
-#figure(
-  table(
-    columns: (1fr, 2fr, 0.75fr),
-    fill: (col, row) => if row == 0 {
-      rgb(128, 0, 128)
-    } else if calc.even(row) {
-      rgb(191, 127, 191)
-    } else {
-      rgb(216, 178, 216)
-    },
-    align: center + horizon,
-    inset: 8pt,
-
-    // Header row
-    text(white)[*Obiettivo*], text(white)[*Descrizione*], text(white)[*Metrica*],
-
-    //table row
-    [*Correttezza linguistica*], [I documenti devono essere privi di errori ortografici o grammaticali], [MPC18],
-    [*Leggibilità*], [I documenti devono essere comprensibili all'utente], [MPC19],
-  ),
-  caption: [Obiettivi qualità del processo di documentazione],
-)
-
+=== Verifica
 
 #figure(
   table(
@@ -480,12 +398,96 @@ Misura la complessità del codice contando i percorsi linearmente indipendenti. 
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPC18*], [Indice di Gulpease], [≥ 60%], [≥ 80%],
-    [*MPC19*], [Correttezza ortografica], [100%], [100%],
+    [*MPC12*], [Code Coverage], [≥ 80%], [100%],
+    [*MPC13*], [Test Success Rate], [100%], [100%],
   ),
-  caption: [Soglie metriche processo di documentazione],
+  caption: [Soglie metriche processo di Verifica],
 )
 
+==== Code Coverage
+#metric(
+  cod: [MPC12],
+  formula: [
+    $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
+  ],
+  desc: [Percentuale di codice coperto da test automatizzati. Si raccomanda un coverage minimo del 80%.],
+)
+
+==== Test Success Rate
+#metric(
+  cod: [MPC13],
+  formula: [
+    $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
+  ],
+  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi al 100% data la natura del progetto],
+)
+
+=== Gestione della Qualità
+
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPC14*], [Quality metrics satisfied], [≥ 80%], [100%],
+  ),
+  caption: [Soglie metriche Gestione della Qualità],
+)
+
+==== Quality metrics satisfied
+#metric(
+  cod: [MPC14],
+  formula: [
+    $"Quality metrics satisfied" = ("Numero metriche soddisfatte" / "Numero metriche totali") * 100$
+  ],
+  desc: [Percentuale di soddisfacimento delle metriche],
+)
+
+== Processi organizzativi
+
+=== Gestione dei Processi
+
+#figure(
+  table(
+    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
+
+    //table row
+    [*MPC15*], [Time Efficiency], [≤ 2], [1],
+  ),
+  caption: [Soglie metriche processo Gestione dei Processi],
+)
+==== Time Efficiency
+#metric(
+  cod: [MPC15],
+  formula: [
+    $"Time Efficiency" = ("Ore totali" / "Ore produttive")$
+  ],
+  desc: [Valutazione del rapporto tra le ore utilizzate e quelle effettivamente produttive.],
+)
 
 = Qualità di prodotto
 La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto software e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
@@ -520,7 +522,7 @@ Un prodotto software è considerato di alta qualità quando:
     [*MPD02*], [Requisiti desiderabili soddisfatti], [0%], [100%],
     [*MPD02*], [Requisiti opzionali soddisfatti], [0%], [100%],
   ),
-  caption: [Soglie metriche funzionalitá del prodotto],
+  caption: [Soglie metriche funzionalità del prodotto],
 )
 === Requisiti obbligatori soddisfatti
 #metric(
@@ -576,6 +578,7 @@ Un prodotto software è considerato di alta qualità quando:
   ),
   caption: [Soglie metriche affidabilità del prodotto],
 )
+
 === Branch Coverage
 #metric(
   cod: [MPD04],
@@ -600,7 +603,7 @@ Un prodotto software è considerato di alta qualità quando:
   formula: [
     $"Failure Density" = ("Numero di difetti rilevati" / "KLOC")$
   ],
-  desc: [Numero di failure per 1000 linee di codice (Kilo Lines of Code). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
+  desc: [Numero di failure per 1000 linee di codice (*KLOC*, _*K*\ilo *L*\ines *O*\f *C*\ode_). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
 )
 
 == Usabilità
@@ -696,9 +699,11 @@ Un prodotto software è considerato di alta qualità quando:
     //table row
     [*MPD10*], [Code Smells], [≤ 10], [≤ 5],
     [*MPD11*], [Coefficient of Coupling], [≤ 0.4], [≤ 0.2],
+    [*MPD12*], [Cyclomatic complexity], [≤ 20], [≤ 10],
   ),
   caption: [Soglie metriche manutenibilità del prodotto],
 )
+
 === Code Smells
 #metric(
   cod: [MPD10],
@@ -709,7 +714,6 @@ Un prodotto software è considerato di alta qualità quando:
   desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
 )
 
-
 === Coefficient of Coupling (CoC)
 #metric(
   cod: [MPD11],
@@ -719,11 +723,76 @@ Un prodotto software è considerato di alta qualità quando:
   desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
 )
 
+==== Cyclomatic Complexity
 
+#metric(
+  cod: [MPD12],
+  formula: [
+    $"Cyclomatic Complexity" = E - N + P$
+
+  ],
+  desc: [
+    - E = numero di archi nel grafo di controllo
+    - N = numero di nodi nel grafo di controllo
+    - P = numero di componenti connesse da ogni arco\
+    Misura la complessità del codice contando i percorsi linearmente indipendenti. Un valore superiore a 10 indica codice complesso che potrebbe richiedere refactoring.],
+)
 
 
 = Metodi di testing
-/* DA FARE */
+Come stabilito nelle #link("")[*Norme di Progetto*], [PROSEGUIRE (inserire link)] i test effettuati saranno:
+
+- Test di Unità
+- Test di Integrazione
+- Test di Sistema
+- Test di Regressione
+- Test di Accettazione
+
+La nomenclatura utilizzata è la seguente:
+
+#align(center)[`T-#-Tipo`]
+
+dove:
+
+- *T* indica la parola *T*\esterno
+- *\#* è un numero crescente che identifica, all'interno del tipo, un determinato test
+- *Tipo* classifica il test in una delle seguenti tipologie:
+  - *U* per Test di *U*\nità
+  - *I* per Test di *I*\ntegrazione
+  - *S* per Test di *S*\istema
+  - *A* per Test di *A*\ccettazione
+
+Ogni test ha poi uno stato tra i seguenti:
+
+- *S* ovvero *S*\uperato
+- *I* ovvero *I*\mplementato
+- *NI* ovvero *N*\on *I*\mplementato
+
+ALimitedGroup ha deciso di identificare i test di Unità, Integrazione, Accettazione e i relativi Test di Regressione durante lo svolgimento delle attività per la _Product Baseline_.
+
+== Test di Sistema
+
+#figure(
+  table(
+    columns: (0.75fr, 3fr, 1.5fr, 1.0fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Requisito di riferimento*], text(white)[*Stato del Test*],
+
+    //table row
+  ),
+  caption: [Test di Sistema],
+)
 
 = Cruscotto di valutazione
 /* DA FARE */
@@ -774,7 +843,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Ruolo interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
+    text(white)[*Ruolo interessato*], text(white)[*Descrizione problema*], text(white)[*Contromisura adottata*],
 
     // Data rows
     [Tutti i ruoli], [In fasi più avanzate del progetto diventa limitante dover ricoprire lo stesso ruolo per due settimane, lasciando insoddisfatte delle necessità e sfruttando male le ore produttive], [I ruoli possono cambiare ad ogni settimana, previo accordo tra le
@@ -800,7 +869,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     inset: 8pt,
 
     // Header row
-    text(white)[*Strumento interessato*], text(white)[*Descrizione problema*], text(white)[*Constromisura adottata*],
+    text(white)[*Strumento interessato*], text(white)[*Descrizione problema*], text(white)[*Contromisura adottata*],
 
     // Data rows
     [Linguaggio Go], [Alcuni membri del gruppo non hanno familiarità con questa tecnologia], [Ogni membro ha autonomamente intrapreso un percorso di apprendimento per colmare le proprie lacune],
