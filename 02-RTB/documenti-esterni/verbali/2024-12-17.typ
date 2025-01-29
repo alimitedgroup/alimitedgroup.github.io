@@ -30,7 +30,7 @@
 + Esposizione degli avanzamenti sullo studio delle tecnologie e possibile architettura del Sistema
 + Prossimi incontri con #M31
 
-In questa riunione hanno partecipato, per conto, di #M31:
+In questa riunione hanno partecipato, per conto di #M31:
 - #persona(p.moones), in presenza;
 - #persona(p.cristian), in presenza.
 

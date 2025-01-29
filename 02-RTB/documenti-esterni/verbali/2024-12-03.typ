@@ -31,7 +31,7 @@
 + Risoluzione dubbi fase di analisi
 + Prossimi incontri con #M31
 
-In questa riunione hanno partecipato, per conto, di #M31:
+In questa riunione hanno partecipato, per conto di #M31:
 - #persona(p.luca), in modalità virtuale tramite _Microsoft Teams_;
 - #persona(p.moones), in presenza;
 - #persona(p.cristian), in presenza.
