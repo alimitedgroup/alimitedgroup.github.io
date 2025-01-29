@@ -39,7 +39,7 @@ In questa riunione hanno partecipato, per conto di #M31:
 #pagebreak()
 
 = Dettagli riunione
-== Esposizione Analisi dei Requisiti
+== Esposizione Analisi dei Requisiti#super[g]
 
 Nel corso della riunione _ALimitedGroup_ ha richiesto ad #M31 dei feedback sull'Analisi dei Requisiti#super[g], inviata precedentemente via email.
 #M31 ha espresso parere positivo per la qualità del documento, sottolineando la completezza dei requisiti esposti.
