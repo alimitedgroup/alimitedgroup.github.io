@@ -102,9 +102,8 @@ O:
   Ordine: "Spostamento verso l’esterno di un insieme di merci. Almeno un prodotto deve essere trasferito.
   Un ordine può essere soddisfatto da più magazzini."
 P:
-  PoC: "Proof of Concept, prototipo o dimostrazione per verificare la fattibilità 
-  di un'idea o tecnologia."
-  Proof of Concept: "Vedi PoC."
+  PoC: "Vedi Proof of Concept."
+  Proof of Concept: "prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia"
   PR: "Pull Request, richiesta di revisione e integrazione di codice 
   modificato in un repository condiviso."
   Progettista: "Ruolo che si occupa di progettare l'architettura del Sistema allo scopo di giungere alla codifica avendo correttezza per costruzione e non per correzione"
