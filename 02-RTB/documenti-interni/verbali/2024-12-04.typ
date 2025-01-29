@@ -61,7 +61,7 @@ Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 
 
 Sarà necessario verificare il *Piano di Progetto* e le *Norme di Progetto* sino ad ora redatte e proseguire la loro redazione.
 
-I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept (PoC)_, specie riguardo il linguaggio *Go*#super[g] e la tecnologia *NATS*.
+I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept#super[g] (PoC)_, specie riguardo il linguaggio *Go*#super[g] e la tecnologia *NATS*.
 
 Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica*.
 
