@@ -21,7 +21,7 @@
   ),
   stato: [Approvato],
   presenze: (p.sara, p.samuele, p.lorenzo, p.loris, p.matteo, p.marco),
-  odg: [Quarta riunione con #M31: viene presentata l'Analisi dei Requisiti e si discute il PoC],
+  odg: [Quarta riunione con #M31: viene presentata l'Analisi dei Requisiti e si discute il _PoC_],
   body,
 )
 
@@ -39,7 +39,7 @@ In questa riunione hanno partecipato, per conto di #M31:
 #pagebreak()
 
 = Dettagli riunione
-== Esposizione Analisi dei Requisiti#super[g]
+== Esposizione Analisi dei Requisiti
 
 Nel corso della riunione _ALimitedGroup_ ha richiesto ad #M31 dei feedback sull'Analisi dei Requisiti#super[g], inviata precedentemente via email.
 #M31 ha espresso parere positivo per la qualità del documento, sottolineando la completezza dei requisiti esposti.
