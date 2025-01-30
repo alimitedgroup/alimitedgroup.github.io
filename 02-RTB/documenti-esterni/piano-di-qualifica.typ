@@ -308,7 +308,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 #metric(
   cod: [MPC09],
   formula: [
-    $"Requirements Stability Index" = 1-(("NCAM" + "NCAN" + "NAGG") / "NTOT")*100$
+    $"Requirements Stability Index" = (("R"_"initial"-("R"_"added" + "R"_"changed" + "R"_"deleted")) / "R"_"initial")*100$
   ],
   desc: [
     - *NCAM*: *N*\umero *Cam*\biamenti;
