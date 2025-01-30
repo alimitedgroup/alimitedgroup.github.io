@@ -106,4 +106,4 @@ _ALimitedGroup_ ringrazia _M31_ per averci accolto nella loro sede e per la disp
 #pagebreak()
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [*M31*])
-#figure(image("../../../assets/firma_ve0312.png", width: auto))
+#figure(image("../../../assets/firma_ve1911.png", width: auto))

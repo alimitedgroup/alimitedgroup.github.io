@@ -6,10 +6,10 @@
   versioni: (
     (
       vers: "1.0.0",
-      date: datetime(day: 29, month: 01, year: 2025),
+      date: datetime(day: 30, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.marco,
-      descr: "Approvazione interna documento",
+      descr: "Approvazione interna ed esterna del documento",
     ),
     (
       vers: "0.1.0",
@@ -71,3 +71,4 @@ Il gruppo teneva, inoltre, ringraziare per i consigli forniti e gli esempi deriv
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
+#figure(image("../../../assets/firma_ve2801.png", width: auto))
