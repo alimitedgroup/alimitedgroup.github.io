@@ -4512,7 +4512,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test, questi saranno concordati con #M31 e definiti nel Piano di Qualifica[PROSEGUIRE](inserire link) durante lo svolgimento della _Product Baseline (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno concordati con #M31 e definiti nel Piano di Qualifica[PROSEGUIRE](inserire link) durante lo svolgimento della _Product Baseline (PB)_.
 
 == Requisiti di Vincolo
 
