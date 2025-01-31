@@ -266,7 +266,7 @@ Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel p
 Il prodotto che _ALimitedGroup_ si promette di sviluppare è un Sistema efficace e scalabile per la gestione di magazzini.
 
 Nello specifico, si vuole sviluppare un Sistema che sia in grado non solo di gestire un magazzino locale, ma che sia in grado di avere in tempo reale una visione globale di tutti i magazzini connessi al Sistema.
-Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare i propri servizi per essere in grado di mantenere la reattività.
+Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni effettuate in ogni magazzino, potendo, in caso di carico molto importante, scalare orizzontalmente e verticalmente i microservizi per essere in grado di mantenere la reattività.
 Fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
 
 == Funzioni del prodotto
@@ -307,6 +307,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - Standard IEEE: \ https://ieeexplore.ieee.org/document/720574
 - Analisi dei requisiti: \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
 - Diagrammi Casi d'Uso: \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf
+- _Repository GitHub_ del #prof(p.cardin): #link("https://github.com/rcardin/swe-imdb")[github.com/rcardin/swe-imdb]
 - Glossario: \ #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
 
 #pagebreak()
@@ -315,7 +316,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 == Introduzione
 
 I casi d'uso si compongono di un grafico UML e una descrizione testuale che permetta di comprendere al meglio cosa il prodotto deve fornire.
-La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti irrilevante per il caso d'uso#super[g] (ad esempio, un Caso d'Uso che non prevede la possibilità di errori non avrà Scenari secondari):
+La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti rilevante (ad esempio, un Caso d'Uso che non prevede la possibilità di errori non avrà Scenari secondari):
 
 #figure(
   table(
@@ -366,7 +367,7 @@ Di seguito sono esposti gli attori utilizzati:
 #v(1em)
 
 #figure(
-  image("../../assets/diagrams/attori.png", width: 50%),
+  image("../../assets/diagrams/attori.png", width: 60%),
   caption: [Diagramma degli attori principali],
 )
 #v(1em)
@@ -405,11 +406,11 @@ Di seguito sono esposti gli attori utilizzati:
   caption: [Descrizione degli attori],
 )
 
-Vengono inoltre utilizzati i seguenti attori secondari:
+Vengono inoltre utilizzati i seguenti Attori Secondari:
 
 #figure(
-  image("../../assets/diagrams/attori-secondari.png", width: 7%),
-  caption: [Diagramma degli attori secondari],
+  image("../../assets/diagrams/attori-secondari.png", width: 15%),
+  caption: [Diagramma degli Attori Secondari],
 )
 
 #figure(
@@ -428,10 +429,9 @@ Vengono inoltre utilizzati i seguenti attori secondari:
       text(fill: white)[*Descrizione*],
     ),
 
-    [*LLM*],
-    [Rappresenta un _Large Language Model_ che fornisce consigli di rifornimento sfruttando il _Machine Learning_],
+    [*_Machine Learning_*], [Rappresenta un Sistema basato su _Machine Learning_ che fornisce consigli di rifornimento],
   ),
-  caption: [Attori secondari],
+  caption: [Attori Secondari],
 )
 
 == Lista casi d'uso
@@ -972,6 +972,8 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
   trigger: "Il Cliente vuole visualizzare per gli ordini non confermati la lista delle merci che tali ordini contengono",
 )[]
 
+#pagebreak()
+
 ===== UC16.1.1: Visualizza elemento lista merce ordine non confermato <UC16.1.1>
 
 #use-case(
@@ -1129,9 +1131,9 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
     - Il Cliente visualizza della merce selezionata:
       - l'ID della merce $arrow$ @UC19[Vedi UC19, Sez.]
       - Nome della merce $arrow$ @UC17[Vedi UC17, Sez.]
-      - Q.tà della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC20, Sez.]
+      - Q.tà della merce disponibile nel magazzino attuale $arrow$ @UC21[Vedi UC21, Sez.]
       - Q.tà della merce complessivamente disponibile in tutti i magazzini $arrow$ @UC20[Vedi UC20, Sez.]
-      - Descrizione della merce $arrow$ @UC22.1[Vedi UC, Sez.]
+      - Descrizione della merce $arrow$ @UC22.1[Vedi UC22.1, Sez.]
   ],
   inclusioni: [
     - UC17 @UC17[Sez.]
@@ -1177,8 +1179,8 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19,
   ],
   scenari: [
     - L'Admin Globale seleziona dal menù principale l'opzione relativa alla creazione di un nuovo trasferimento da confermare
-    - L'Admin Globale sceglie il magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC23.2[Vedi UC23.2, Sez.]
     - L'Admin Globale sceglie il magazzino mittente del nuovo trasferimento da confermare $arrow$ @UC23.1[Vedi UC23.1, Sez.]
+    - L'Admin Globale sceglie il magazzino destinatario del nuovo trasferimento da confermare $arrow$ @UC23.2[Vedi UC23.2, Sez.]
   ],
   trigger: [L'Admin Globale vuole creare un nuovo trasferimento da confermare],
   inclusioni: [
@@ -1244,7 +1246,7 @@ Tali Casi d'Uso saranno descritti qui di seguito:
   scenari: [
     - L'Admin Globale seleziona la voce del menu relativa all'aggiunta di merce ad un trasferimento non confermato
     - L'Admin Globale seleziona il trasferimento non confermato a cui aggiungere merce $arrow$ @UC25[Vedi UC25, Sez.]
-    - L'Admin Globale inserisce il nome della merce che vuole trasferire $arrow$ @UC5[Vedi UC5, Sez.]
+    - L'Admin Globale seleziona la merce che vuole trasferire $arrow$ @UC5[Vedi UC5, Sez.]
     - L'Admin Globale inserisce la quantità della merce da trasferire $arrow$ @UC6[Vedi UC6, Sez.] \ \ \ \ \
   ],
   scenari_alternativi: [
@@ -1252,9 +1254,9 @@ Tali Casi d'Uso saranno descritti qui di seguito:
     - L'Admin Globale ha selezionato di voler aggiungere merce ad un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sez.]
   ],
   inclusioni: [
-    - UC25 @UC25[Sez.]
     - UC5 @UC5[Sez.]
     - UC6 @UC6[Sez.]
+    - UC25 @UC25[Sez.]
   ],
   estensioni: [
     - UC7 @UC7[Sez.]
@@ -1300,7 +1302,7 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, repe
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu l'opzione relativa alla conferma di un trasferimento non confermato
-    - L'Admin Globale seleziona il trasferimento non confermato da confermare $arrow$ @UC25[Vedi UC, Sez.]
+    - L'Admin Globale seleziona il trasferimento non confermato da confermare $arrow$ @UC25[Vedi UC25, Sez.]
   ],
   scenari_alternativi: [
     - L'Admin Globale ha selezionato il trasferimento non confermato ma la quantità della merce non è più disponibile nel magazzino mittente $arrow$ @UC7[Vedi UC7, Sez.]
@@ -1354,7 +1356,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu l'opzione relativa alla cancellazione di un trasferimento non confermato
-    - L'Admin Globale seleziona il trasferimento non confermato da cancellare $arrow$ @UC25[Vedi UC, Sez.]
+    - L'Admin Globale seleziona il trasferimento non confermato da cancellare $arrow$ @UC25[Vedi UC25, Sez.]
   ],
   scenari_alternativi: [
     - L'Admin Globale ha selezionato di voler cancellare un trasferimento non confermato ma nessun trasferimento non confermato è disponibile $arrow$ @UC27[Vedi UC27, Sez.] \ \
@@ -1384,7 +1386,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
   post: [Viene visualizzato l'elenco dei trasferimenti \ \ ],
   scenari: [
     - L'Admin Globale seleziona dal menu principale l'opzione relativa alla visualizzazione dell'elenco completo dei trasferimenti nel Sistema
-    - L'Admin Globale visualizza a schermo la lista di tutti i trasferimenti memorizzati nel Sistema $arrow$ @UC29.1[Vedi UC, Sez.]
+    - L'Admin Globale visualizza a schermo la lista di tutti i trasferimenti memorizzati nel Sistema $arrow$ @UC29.1[Vedi UC29.1, Sez.]
   ],
   trigger: "L'Admin Globale vuole visualizzare i trasferimenti, a prescindere dallo stato",
   inclusioni: [
@@ -1460,9 +1462,9 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
     - L'Admin Globale seleziona da una lista di trasferimenti l'opzione relativa alla visualizzazione di un trasferimento in particolare
     - L'Admin Globale visualizza del suddetto trasferimento:
       - L'ID del trasferimento $arrow$ @UC30[Vedi UC30, Sez.]
+      - Lo stato del trasferimento $arrow$ @UC31[Vedi UC31, Sez.]
       - Il magazzino mittente del trasferimento $arrow$ @UC32.1[Vedi UC32.1, Sez.]
       - Il magazzino destinatario del trasferimento $arrow$ @UC32.2[Vedi UC32.2, Sez.]
-      - Lo stato del trasferimento $arrow$ @UC31[Vedi UC31, Sez.]
       - L'elenco della merce interessata dal trasferimento $arrow$ @UC32.3[Vedi UC32.3, Sez.]
   ],
   trigger: "L'Admin Globale vuole visualizzare i dettagli di un trasferimento specifico",
@@ -1678,7 +1680,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
 #use-case(
   attore: "Admin Globale",
-  attori_secondari: "LLM",
+  attori_secondari: "Machine Learning",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Globale
@@ -3878,7 +3880,7 @@ Verranno ora descritti i requisiti che _ALimitedGroup_ ha individuato, raggruppa
 - *Qualità*, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
 - *Vincolo*, ovvero restrizioni poste al Sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
 
-Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #link("")[*Norme di Progetto*] [PROSEGUIRE](inserisci link)
+Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*]
 
 == Requisiti Funzionali
 
@@ -4026,18 +4028,18 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [Il Cliente deve poter visualizzare una merce nel Sistema nel dettaglio],
     [@UC22[UC22, Sez.]],
 
-    [R-35-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare l'ID di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC19[UC19, Sez.]],
-    [R-36-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare il nome di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC17[UC17, Sez.]],
-    [R-37-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC20[UC20, Sez.]],
-    [R-38-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC21[UC21, Sez.]],
-    [R-39-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la descrizione di ciascuna delle merci], [@UC22[UC22, Sez.] \ @UC22.1[UC22.1, Sez.]],
+    [R-35-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare l'ID di tale merce], [@UC22[UC22, Sez.] \ @UC19[UC19, Sez.]],
+    [R-36-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare il nome di tale merce], [@UC22[UC22, Sez.] \ @UC17[UC17, Sez.]],
+    [R-37-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di tale merce], [@UC22[UC22, Sez.] \ @UC20[UC20, Sez.]],
+    [R-38-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di tale merce], [@UC22[UC22, Sez.] \ @UC21[UC21, Sez.]],
+    [R-39-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la descrizione di tale merce], [@UC22[UC22, Sez.] \ @UC22.1[UC22.1, Sez.]],
 
     [R-40-F-Ob],
     [L'Admin Globale deve poter creare un trasferimento da confermare in seguito.],
     [@UC23[UC23, Sez.]],
 
     [R-41-F-Ob],
-    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve poter creare un trasferimento da confermare in seguito, deve selezionare il magazzino mittente],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve selezionare il magazzino mittente],
     [@UC23[UC23, Sez.] \ @UC23.1[UC23.1, Sez.]],
 
     [R-42-F-Ob],
@@ -4046,13 +4048,13 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
     [R-43-F-Ob],
     [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato],
-    [@UC24[UC24, Sez.] \ @UC25[UC25, Sez.] \ @UC5[UC5, Sez.] \ @UC6[UC6, Sez.]],
+    [@UC24[UC24, Sez.]],
 
     [R-44-F-Ob],
     [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la merce da aggiungere],
     [@UC24[UC24, Sez.] \ @UC5[UC5, Sez.]],
 
-    [R-145-F-Ob],
+    [R-45-F-Ob],
     [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la quantità di merce da aggiungere],
     [@UC24[UC24, Sez.] \ @UC6[UC6, Sez.]],
 
@@ -4123,15 +4125,15 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC37[UC37, Sez.]],
 
     [R-66-F-De],
-    [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da un LLM, visualizzandone ID e stato (confermato, da confermare, rifiutato)],
+    [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da _Machine Learning_, visualizzandone ID e stato (confermato, da confermare, rifiutato)],
     [@UC38[UC38, Sez.]],
 
     [R-67-F-Ob],
-    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un LLM, l'ID della notifica],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di _Machine Learning_, l'ID della notifica],
     [@UC34[UC34, Sez.] \ @UC36[UC36, Sez.]],
 
     [R-68-F-Ob],
-    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un LLM, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un _Machine Learning_, lo stato della notifica (confermato, da confermare, rifiutato)],
     [@UC34[UC34, Sez.] \ @UC35[UC35, Sez.]],
 
     [R-69-F-Ob],
@@ -4482,7 +4484,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-4-Q-Ob],
-    [È necessario realizzare opportuni Test di unità],
+    [È necessario realizzare opportuni Test di Unità],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-5-Q-Ob],
@@ -4494,16 +4496,16 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-7-Q-Ob],
-    [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("")[Piano di Qualifica] (PROSEGUIRE) oppure in un _Test Book_ dedicato],
+    [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] oppure in un _Test Book_ dedicato],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
     [R-8-Q-Ob],
-    [È necessario perseguire al raggiungimento degli obiettivi posti dal Piano di Qualifica[PROSEGUIRE](inserire link)],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto e Interno]],
+    [È necessario perseguire al raggiungimento degli obiettivi posti dal #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*])],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto] e Interno],
 
     [R-9-Q-Ob],
-    [È necessario rispettare tutte le norme presenti nelle Norme di Progetto[PROSEGUIRE](inserire link)],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Interno]],
+    [È necessario rispettare tutte le norme presenti nelle #link("https://alimitedgroup.github.io/NP%201.0.0.pdf")[*Norme di Progetto ver. 1.0.0*]],
+    [Interno],
 
     [R-10-Q-Ob],
     [È necessario versionare il codice con appositi _Software_ di versionamento.],
@@ -4512,7 +4514,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno concordati con #M31 e definiti nel Piano di Qualifica[PROSEGUIRE](inserire link) durante lo svolgimento della _Product Baseline (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
 
 == Requisiti di Vincolo
 
