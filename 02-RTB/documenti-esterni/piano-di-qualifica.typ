@@ -341,7 +341,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
     //table row
     [*MPC10*], [Indice di Gulpease], [≥ 60%], [≥ 80%],
-    [*MPC11*], [Correttezza ortografica], [100%], [100%],
+    [*MPC11*], [Correttezza ortografica], [0], [0],
   ),
   caption: [Soglie metriche processo di Documentazione],
 )
@@ -373,10 +373,10 @@ Per garantire la qualità di processo, il progetto si avvale di:
 #metric(
   cod: [MPC11],
   formula: [
-    $"Correttezza ortografica" = (1-"numero di errori ortografici" / "numero di parole" )* 100$
+    $"Correttezza ortografica" = "numero di errori ortografici"$
   ],
   desc: [La correttezza ortografica è un indicatore della qualità della documentazione.
-    Una precisione del 100% significa che non ci sono errori ortografici.],
+    I documenti devono essere privi di errori ortografici.],
 )
 
 === Verifica
@@ -476,7 +476,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPC15*], [Time Efficiency], [≤ 2], [1],
+    [*MPC15*], [Time Efficiency], [50%], [100%],
   ),
   caption: [Soglie metriche processo Gestione dei Processi],
 )
@@ -484,7 +484,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 #metric(
   cod: [MPC15],
   formula: [
-    $"Time Efficiency" = ("Ore totali" / "Ore produttive")$
+    $"Time Efficiency" = ("Ore produttive" / "Ore totali")*100$
   ],
   desc: [Valutazione del rapporto tra le ore utilizzate e quelle effettivamente produttive.],
 )
