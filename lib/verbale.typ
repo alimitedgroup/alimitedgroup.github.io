@@ -102,7 +102,7 @@
   nome_parte_esterna: [],
 ) = [
   Si attesta, con la seguente sezione, che il presente verbale è stato approvato da parte dei rappresentanti di #nome_parte_esterna.\
-  Tale attestazione è comprovata dalla presenza, qui di seguito, delle firme dei rappresentanti:
+  Tale attestazione è comprovata dalla presenza, qui di seguito, delle firme di almeno uno dei rappresentanti:
 ]
 
 #let tabella-decisioni(..decisioni) = {

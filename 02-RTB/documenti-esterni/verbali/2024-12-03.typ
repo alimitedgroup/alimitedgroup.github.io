@@ -9,7 +9,7 @@
       date: datetime(day: 06, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.loris,
-      descr: "Approvazione documento",
+      descr: "Approvazione interna ed esterna del documento",
     ),
     (
       vers: "0.1.0",
@@ -31,7 +31,7 @@
 + Risoluzione dubbi fase di analisi
 + Prossimi incontri con #M31
 
-In questa riunione hanno partecipato, per conto, di #M31:
+In questa riunione hanno partecipato, per conto di #M31:
 - #persona(p.luca), in modalità virtuale tramite _Microsoft Teams_;
 - #persona(p.moones), in presenza;
 - #persona(p.cristian), in presenza.
@@ -85,3 +85,4 @@ _ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per averci accolto in sed
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
+#figure(image("../../../assets/firma_ve0312.png", width: auto))
