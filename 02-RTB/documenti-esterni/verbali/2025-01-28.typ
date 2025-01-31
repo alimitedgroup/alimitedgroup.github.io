@@ -19,7 +19,7 @@
 
 = Informazioni generali
 #inizio-verbale-esterno([*virtuale*], [*28 Gennaio 2025*], [*15.00*], [*16.30*], [#M31])
-+ Esposizione Analisi dei Requisiti
++ Esposizione Analisi dei Requisiti#super[g]
 + Discussione PoC
 
 In questa riunione hanno partecipato, per conto, di #M31:
@@ -30,8 +30,8 @@ In questa riunione hanno partecipato, per conto, di #M31:
 #pagebreak()
 
 = Dettagli riunione
-== Esposizione Analisi dei Requisiti
-Nel corso della riunione _ALimitedGroup_ ha richiesto ad #M31 dei feedback sull'*Analisi dei Requisiti*, inviata precedentemente via mail.
+== Esposizione Analisi dei Requisiti#super[g]
+Nel corso della riunione _ALimitedGroup_ ha richiesto ad #M31 dei feedback sull'*Analisi dei Requisiti#super[g]*, inviata precedentemente via mail.
 
 #M31 ha espresso apprezzamento per la qualità del documento, sottolineando la completezza e la chiarezza dei requisiti esposti.
 
@@ -57,8 +57,8 @@ Durante l'incontro il gruppo _ALimitedGroup_ ha effettuato una dimostrazione com
 #pagebreak()
 
 = Esiti della riunione
-L'*Analisi dei Requisiti* è stata approvata da #M31.
-Il *PoC* presentato è stato valutato positivamente.
+L'*Analisi dei Requisiti#super[g]* è stata approvata da #M31.
+Il *PoC*#super[g] presentato è stato valutato positivamente.
 _ALimitedGroup_ si riserva di pianificare il prossimo incontro e di implementare i suggerimenti ricevuti.
 
 
