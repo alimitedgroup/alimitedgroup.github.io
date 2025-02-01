@@ -1,82 +1,75 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [0.9.0]
+#let ver = [0.8.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 10, month: 12, year: 2024),
+  data: datetime(day: 10, month: 01, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
-    (
-      vers: "0.9.0",
-      date: datetime(day: 28, month: 01, year: 2025),
-      autore: p.sara,
-      verifica: p.matteo,
-      descr: "Correzioni",
-    ),
     (
       vers: "0.8.0",
       date: datetime(day: 10, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiornamento qualità del processo e prodotto, soglie e tabelle",
+      descr: "Aggiornamento qualità del processo e prodotto, soglie e tabelle " + [(@qtaprc e @qtaprd)],
     ),
     (
       vers: "0.7.0",
       date: datetime(day: 09, month: 01, year: 2025),
       autore: p.emanuele,
       verifica: p.matteo,
-      descr: "Aggiunta sezione automiglioramento",
+      descr: "Aggiunta sezione automiglioramento " + [(@automiglioramento)],
     ),
     (
       vers: "0.6.0",
       date: datetime(day: 08, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiornamento sezione qualità di processo",
+      descr: "Aggiornamento sezione qualità di processo " + [(@qtaprc)],
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 04, month: 01, year: 2025),
       autore: p.emanuele,
       verifica: p.matteo,
-      descr: "Aggiunta metriche qualità di prodotto e tabelle",
+      descr: "Aggiunta metriche qualità di prodotto e tabelle " + [(@qtaprd)],
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 3, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiornamento metriche di processo e tabelle",
+      descr: "Aggiornamento metriche di processo e tabelle " + [(@qtaprc)],
     ),
     (
       vers: "0.3.0",
       date: datetime(day: 27, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiornamento metriche di processo",
+      descr: "Aggiornamento metriche di processo " + [(@qtaprc)],
     ),
     (
       vers: "0.2.0",
       date: datetime(day: 19, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiunte metriche di processo",
+      descr: "Aggiunte metriche di processo " + [(@qtaprc)],
     ),
     (
       vers: "0.2.0",
       date: datetime(day: 11, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiunta sezione introduzione",
+      descr: "Aggiunta sezione introduzione " + [(@introduzione)],
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 5, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Redazione documento",
+      descr: "Prima redazione documento",
     ),
   ),
   stato: [In redazione],
@@ -91,7 +84,7 @@
   body,
 )
 
-= Introduzione
+= Introduzione <introduzione>
 == Scopo del documento
 Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _software_ e dei processi coinvolti nel suo ciclo di vita.\
 Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
@@ -146,8 +139,8 @@ rilevanti per il progetto.
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto: \
-  #link("alimitedgroup.github.io/norme-progetto.pdf")[alimitedgroup.github.io/norme-progetto.pdf]
+- Norme di Progetto ver. 1.0.0: \
+  #link("alimitedgroup.github.io/https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf]
 - Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito: \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
 
@@ -157,7 +150,7 @@ rilevanti per il progetto.
   #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
 
 
-= Qualità di processo
+= Qualità di processo <qtaprc>
 La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto software.
 Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
 Per garantire la qualità di processo, il progetto si avvale di:
@@ -308,13 +301,13 @@ Per garantire la qualità di processo, il progetto si avvale di:
 #metric(
   cod: [MPC09],
   formula: [
-    $"Requirements Stability Index" = (("R"_"initial"-("R"_"added" + "R"_"changed" + "R"_"deleted")) / "R"_"initial")*100$
+    $"Requirements Stability Index" = (("NINIZ"-("NAGG"+"NCAM"+"NCAN")) / "NINIZ")*100$
   ],
   desc: [
-    - *NCAM*: *N*\umero *Cam*\biamenti;
-    - *NCAN*: *N*\umero *Can*\cellati
-    - *NAGG*: *N*\umero *Agg*\iunti
-    - *NTOT*: *N*\umero *Tot*\ali
+    - *NINIZ*: *N*\umero *Iniz*\iali di Requisiti
+    - *NCAM*: *N*\umero *Cam*\biamenti di Requisiti
+    - *NCAN*: *N*\umero *Can*\cellati di Requisiti
+    - *NAGG*: *N*\umero *Agg*\iunti di Requisiti
 
     Permette di misurare il numero di cambiamenti apportati ai requisiti nel corso del tempo.
   ],
@@ -489,7 +482,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
   desc: [Valutazione del rapporto tra le ore utilizzate e quelle effettivamente produttive.],
 )
 
-= Qualità di prodotto
+= Qualità di prodotto <qtaprd>
 La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto software e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
@@ -797,7 +790,7 @@ ALimitedGroup ha deciso di identificare i test di Unità, Integrazione, Accettaz
 = Cruscotto di valutazione
 /* DA FARE */
 
-= Iniziative di automiglioramento
+= Iniziative di automiglioramento <automiglioramento>
 == Introduzione
 Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto software.
 Di seguito, presenteremo i principali problemi individuati e le relative contromisure messe in atto per risolvere o ridurre gli ostacoli riscontrati.
