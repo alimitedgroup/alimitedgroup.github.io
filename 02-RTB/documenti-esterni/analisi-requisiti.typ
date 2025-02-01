@@ -1716,7 +1716,7 @@ Maggiori informazioni sono disponibili alla @UC34.
   attore: "Admin Globale",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente
+    - L'utente è riconosciuto dal Sistema come Admin Globale
   ],
   post: [Per la notifica selezionata viene visualizzato stato, ID, magazzino di destinazione e merce interessata dal rifornimento],
   scenari: [
