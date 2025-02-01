@@ -71,4 +71,5 @@ Il gruppo teneva, inoltre, ringraziare per i consigli forniti e gli esempi deriv
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
+
 #figure(image("../../../assets/firma_ve2801.png", width: auto))
