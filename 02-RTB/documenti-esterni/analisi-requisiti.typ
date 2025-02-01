@@ -4288,18 +4288,18 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC67[UC67, Sez.] \ @UC68[UC68, Sez.]],
 
     [R-124-F-De],
-    [L'Admin Globale deve avere la possibilità di aggiungere un utente al deSistema],
+    [L'Admin Globale deve avere la possibilità di aggiungere un Utente al Sistema],
     [@UC69[UC69, Sez.]],
 
-    [R-125-F-De], [L'Admin Globale, aggiungendo un nuovo utente, deve inserirne il nome], [@UC69[UC69, Sez.] \ @UC69.1[UC69.1, Sez.]],
-    [R-126-F-De], [L'Admin Globale, aggiungendo un nuovo utente, deve inserirne la Password], [@UC69[UC69, Sez.] \ @UC69.2[UC69.2, Sez.]],
-    [R-127-F-De], [L'Admin Globale, aggiungendo un nuovo utente, deve inserirne il ruolo], [@UC69[UC69, Sez.] \ @UC69.3[UC69.3, Sez.]],
+    [R-125-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne il nome], [@UC69[UC69, Sez.] \ @UC69.1[UC69.1, Sez.]],
+    [R-126-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne la Password], [@UC69[UC69, Sez.] \ @UC69.2[UC69.2, Sez.]],
+    [R-127-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne il ruolo], [@UC69[UC69, Sez.] \ @UC69.3[UC69.3, Sez.]],
 
-    [R-128-F-De], [L'Admin Globale deve poter eliminare un utente dal Sistema, selezionando quale], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
-    [R-129-F-De], [L'Admin Globale deve poter promuovere il ruolo di un utente, selezionando quale utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
+    [R-128-F-De], [L'Admin Globale deve poter eliminare un Utente dal Sistema, selezionando quale Utente], [@UC70[UC70, Sez.] \ @UC71[UC71, Sez.]],
+    [R-129-F-De], [L'Admin Globale deve poter promuovere il ruolo di un Utente, selezionando quale Utente], [@UC72[UC72, Sez.] \ @UC71[UC71, Sez.]],
 
     [R-130-F-Ob],
-    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibile],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibili],
     [@UC73[UC73, Sez.]],
 
     [R-131-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità localmente disponibile per ciascuna merce], [@UC74[UC74, Sez. ] \ @UC74.1[UC74.1, Sez.]],
@@ -4410,7 +4410,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [R-179-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'ID], [@UC88.1[UC88.1, Sez.] \ @UC88.1.1[UC88.1.1, Sez.]],
     [R-180-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica il magazzino destinatario], [@UC88.1[UC88.1, Sez.] \ @UC88.1.2[UC88.1.2, Sez.]],
     [R-181-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica lo stato], [@UC88.1[UC88.1, Sez.] \ @UC88.1.3[UC88.1.3, Sez.]],
-    [R-182-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'elenco], [@UC88.1[UC88.1, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
+    [R-182-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'elenco delle merci interessate], [@UC88.1[UC88.1, Sez.] \ @UC88.1.4[UC88.1.4, Sez.]],
 
     [R-183-F-Ob],
     [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare l'ID della merce],
