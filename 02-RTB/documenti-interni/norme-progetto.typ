@@ -1,13 +1,21 @@
 #import "../../lib/importantdocs.typ": *
+#import "../../lib/metriche.typ": *
 
-#let ver = [0.14.0]
+#let ver = [0.15.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 06, month: 01, year: 2025),
+  data: datetime(day: 02, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "0.15.0",
+      date: datetime(day: 02, month: 02, year: 2025),
+      autore: p.matteo,
+      verifica: p.emanuele,
+      descr: "Aggiunte" + [@metriche, @metriche-qt-processo e @metriche-qt-prodotto],
+    ),
     (
       vers: "0.14.0",
       date: datetime(day: 06, month: 01, year: 2025),
@@ -892,6 +900,26 @@ Le principali tipologie di Test#super[g] sono:
 - *Test di Sistema*;
 - *Test di Regressione*.
 
+La numenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]) è la seguente:
+
+#align(center)[`T-#-Tipo`]
+
+dove:
+
+- *T* indica la parola *T*\esterno
+- *\#* è un numero crescente che identifica, all'interno del tipo, un determinato test
+- *Tipo* classifica il test in una delle seguenti tipologie:
+  - *U* per Test di *U*\nità
+  - *I* per Test di *I*\ntegrazione
+  - *S* per Test di *S*\istema
+  - *A* per Test di *A*\ccettazione
+
+Ogni test ha poi uno stato tra i seguenti:
+
+- *S* ovvero *S*\uperato
+- *I* ovvero *I*\mplementato
+- *NI* ovvero *N*\on *I*\mplementato
+
 ====== Test di Unità
 
 I *Test di Unità* verificano la correttezza delle unità del codice, ovvero parti del Sistema che, eventualmente avvalendosi di moduli, costituiscono una componentre piccola ma con una responsabilità unica, non condivisa e sufficientemente grande per poter essere testata.
@@ -1393,8 +1421,324 @@ _ALimitedGroup_ si promette di permettere durante la durata del progetto apposit
 
 _ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di pianificare degli spazi temporali durante gli _sprint_#super[g] dedicati esclusivamente allo studio di queste tecnologie, pur restando consapevole che un forte aiuto sarà dato dalla realizzazione effettiva del _Proof of Concept_ e del progetto finale.
 
-= Metriche <metriche>
+= Standard per la Qualità <metriche>
 
-== Metriche di qualità del Processo <metriche-qt-processo>
+La nomenclatura utilizzata per le metriche è la seguente:
 
-== Metriche di qualità del Prodotto <metriche-qt-prodotto>
+#align(center)[`MTipo##`]
+
+dove:
+
+- *M* sta per *M*\etrica
+- *Tipo* può assumere uno dtra questi valori:
+  - *PC* ovvero *P*\ro#text()[*c*]esso
+  - *PD* ovvero *P*\ro#text()[*d*]otto
+- *\#\#* è un numero crescente da 0. Il conteggio per il tipo *PC* e *PD* è separato.
+
+Per tutte le definizioni, acronimi e abbreviazioni utilizzati in questo documento, si faccia
+riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni
+necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.
+
+= Metriche di Qualità del Processo <metriche-qt-processo>
+== Processi primari
+=== Fornitura
+==== Earned Value (EV)
+#metric(
+  cod: [MPC01],
+  formula: [
+    $"Earned Value" = "Budget at Completion" * "Percentuale di lavoro completato nello sprint"$
+  ],
+  desc: [L'indicatore Earned Value rappresenta il valore del lavoro _completato_ rispetto al budget totale previsto.\
+    L'indicatore è utile per monitorare l'andamento del progetto e valutare se il lavoro svolto è in linea con le aspettative.],
+)
+
+==== Planned Value (PV)
+#metric(
+  cod: [MPC02],
+  formula: [
+    $"Planned Value" = "Budget at Completion" * "Percentuale di lavoro pianificato nello sprint"$
+  ],
+  desc: [L'indicatore Planned Value rappresenta il valore del lavoro _pianificato_ rispetto al budget totale previsto.\
+    L'indicatore è utile per monitorare l'andamento del progetto e valutare se la pianificazione è rispettata.
+    Il valore pianificato non può essere negativo e deve essere inferiore al BAC],
+)
+
+==== Actual Cost (AC)
+#metric(
+  cod: [MPC03],
+  formula: [
+    $"Actual Cost" = "Costo effettivo sostenuto nello sprint"$
+  ],
+  desc: [L'indicatore Actual Cost rappresenta il costo effettivo sostenuto per completare il lavoro nello sprint#super[g] .\
+    L'indicatore è utile per monitorare l'andamento del progetto e valutare se i costi sono in linea con le aspettative.],
+)
+
+==== Cost Performance Index (CPI)
+#metric(
+  cod: [MPC04],
+  formula: [
+    $"Cost Performance Index" = "Earned Value" / "Actual Cost"$
+  ],
+  desc: [Il Cost Performance Index rappresenta il rapporto tra il valore del lavoro completato e il costo effettivo sostenuto.\
+    Un valore maggiore di 1 indica che il progetto sta rispettando il budget, un valore minore di 1 indica che il progetto sta superando il budget.],
+)
+
+==== Schedule Performance Index (SPI)
+#metric(
+  cod: [MPC05],
+  formula: [
+    $"Schedule Performance Index" = "Earned Value" / "Planned Value"$
+  ],
+  desc: [Lo Schedule Performance Index rappresenta il rapporto tra il valore del lavoro completato e il valore del lavoro pianificato.\
+    Un valore maggiore di 1 indica che il progetto sta rispettando la pianificazione, un valore minore di 1 indica che il progetto sta accumulando ritardi.],
+)
+
+==== Estimate At Completion (EAC)
+#metric(
+  cod: [MPC06],
+  formula: [
+    $"Estimate At Completion" = "Budget at Completion" / "Cost Performance Index"$
+  ],
+  desc: [La metrica Estimate At Completion rappresenta una proiezione del costo finale totale del progetto basata sulla performance attuale.
+    Utilizza il CPI come indicatore di efficienza per correggere la stima iniziale (BAC).
+    Se CPI < 1, EAC sarà maggiore del BAC, indicando un probabile sforamento del budget.],
+)
+
+==== Estimate To Complete (ETC)
+#metric(
+  cod: [MPC07],
+  formula: [
+    $"Estimate To Complete" = "Estimate At Completion" - "Actual Cost"$
+  ],
+  desc: [La metrica Estimate To Complete stima quanto costerà completare il lavoro rimanente del progetto.
+    Si calcola sottraendo i costi già sostenuti (AC) dalla stima del costo finale totale (EAC).
+    Utile per la pianificazione del budget residuo necessario.],
+)
+
+==== Time Estimate At Completion (TEAC)
+#metric(
+  cod: [MPC08],
+  formula: [
+    $"Time Estimate At Completion" = "Durata pianificata" / "Schedule Performance Index"$
+  ],
+  desc: [La metrica Time Estimate At Completion proietta la durata finale del progetto basandosi sulla performance temporale attuale.
+    Utilizza SPI come indicatore di efficienza temporale per correggere la stima iniziale.
+    Se SPI < 1, TEAC sarà maggiore della durata pianificata, indicando un probabile ritardo.],
+)
+
+=== Sviluppo
+==== Requirements Stability Index
+
+#metric(
+  cod: [MPC09],
+  formula: [
+    $"Requirements Stability Index" = (("NINIZ"-("NAGG"+"NCAM"+"NCAN")) / "NINIZ")*100$
+  ],
+  desc: [
+    - *NINIZ*: *N*\umero *Iniz*\iali di Requisiti
+    - *NCAM*: *N*\umero *Cam*\biamenti di Requisiti
+    - *NCAN*: *N*\umero *Can*\cellati di Requisiti
+    - *NAGG*: *N*\umero *Agg*\iunti di Requisiti
+
+    Permette di misurare il numero di cambiamenti apportati ai requisiti nel corso del tempo.
+  ],
+)
+
+== Processi di supporto
+=== Documentazione
+==== Indice di Gulpease
+#metric(
+  cod: [MPC10],
+  formula: [
+    $"Indice Gulpease" = 89 - "numero di lettere" / "numero di parole" *100 + "numero di frasi" / "numero di parole" * 300$
+  ],
+  desc: [L'Indice Gulpease è un indice di leggibilità del testo.
+    È utile per capire quanto un testo sia facile o difficile da leggere per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.\
+
+    _Intervalli e interpretazioni_
+    - Indice $gt.eq$ 80:
+      Il testo è molto facile da leggere, comprensibile per chi ha completato solo la scuola elementare.
+
+    - Indice compreso 60 e 80:
+      Il testo è di media difficoltà, adatto a chi ha completato la scuola dell'obbligo.
+
+    - Indice compreso 40 e 60:
+      Il testo è abbastanza difficile, comprensibile per chi ha almeno un'istruzione di livello superiore.
+
+    - Indice $lt$ 40:
+      Il testo è molto difficile da leggere, comprensibile per lettori con un'istruzione universitaria.],
+)
+
+==== Correttezza ortografica
+#metric(
+  cod: [MPC11],
+  formula: [
+    $"Correttezza ortografica" = "numero di errori ortografici"$
+  ],
+  desc: [La correttezza ortografica è un indicatore della qualità della documentazione.
+    I documenti devono essere privi di errori ortografici.],
+)
+
+=== Verifica
+==== Code Coverage
+#metric(
+  cod: [MPC12],
+  formula: [
+    $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
+  ],
+  desc: [Percentuale di codice coperto da test automatizzati. Si raccomanda un coverage minimo del 80%.],
+)
+
+==== Test Success Rate
+#metric(
+  cod: [MPC13],
+  formula: [
+    $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
+  ],
+  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi al 100% data la natura del progetto],
+)
+
+=== Gestione della Qualità
+==== Quality metrics satisfied
+#metric(
+  cod: [MPC14],
+  formula: [
+    $"Quality metrics satisfied" = ("Numero metriche soddisfatte" / "Numero metriche totali") * 100$
+  ],
+  desc: [Percentuale di soddisfacimento delle metriche],
+)
+
+== Processi organizzativi
+=== Gestione dei Processi
+==== Time Efficiency
+#metric(
+  cod: [MPC15],
+  formula: [
+    $"Time Efficiency" = ("Ore produttive" / "Ore totali")*100$
+  ],
+  desc: [Valutazione del rapporto tra le ore utilizzate e quelle effettivamente produttive.],
+)
+
+= Metriche di Qualità del Prodotto <metriche-qt-prodotto>
+== Funzionalità
+=== Requisiti obbligatori soddisfatti
+#metric(
+  cod: [MPD01],
+  formula: [
+    $"Requisiti obbligatori soddisfatti" = "Numero di requisiti obbligatori soddisfatti" / "Numero di requisiti obbligatori totali" * 100$
+  ],
+  desc: [L'indicatore Requisiti obbligatori soddisfatti rappresenta la percentuale di requisiti obbligatori soddisfatti rispetto al totale dei requisiti obbligatori.\
+    L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti essenziali del progetto.],
+)
+
+=== Requisiti desiderabili soddisfatti
+#metric(
+  cod: [MPD02],
+  formula: [
+    $"Requisiti desiderabili soddisfatti" = "Numero di requisiti desiderabili soddisfatti" / "Numero di requisiti desiderabili totali" * 100$
+  ],
+  desc: [L'indicatore Requisiti desiderabili soddisfatti rappresenta la percentuale di requisiti desiderabili soddisfatti rispetto al totale dei requisiti desiderabili.\
+    L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti opzionali del progetto.],
+)
+
+=== Requisiti opzionali soddisfatti
+#metric(
+  cod: [MPD03],
+  formula: [
+    $"Requisiti opzionali soddisfatti" = "Numero di requisiti opzionali soddisfatti" / "Numero di requisiti opzionali totali" * 100$
+  ],
+  desc: [L'indicatore Requisiti opzionali soddisfatti rappresenta la percentuale di requisiti opzionali soddisfatti rispetto al totale dei requisiti opzionali.\
+    L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti aggiuntivi del progetto.],
+)
+
+== Affidabilità
+=== Branch Coverage
+#metric(
+  cod: [MPD04],
+  formula: [
+    $"Branch Coverage" = ("Rami testati" / "Rami totali") * 100$
+  ],
+  desc: [Percentuale di rami del codice coperti da test automatizzati. Si raccomanda un coverage minimo del 60%.],
+)
+
+=== Statement Coverage
+#metric(
+  cod: [MPD05],
+  formula: [
+    $"Statement Coverage" = ("Istruzioni testate" / "Istruzioni totali") * 100$
+  ],
+  desc: [Percentuale di istruzioni del codice coperte da test automatizzati. Si raccomanda un coverage minimo del 70%.],
+)
+
+=== Failure Density
+#metric(
+  cod: [MPD06],
+  formula: [
+    $"Failure Density" = ("Numero di difetti rilevati" / "KLOC")$
+  ],
+  desc: [Numero di failure per 1000 linee di codice (*KLOC*, _*K*\ilo *L*\ines *O*\f *C*\ode_). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
+)
+
+== Usabilità
+=== Time on Task
+#metric(
+  cod: [MPD07],
+  formula: [
+    $"Time on Task" = "Tempo medio per completare un'attività"$
+  ],
+  desc: [Tempo medio impiegato per completare un'attività. Indica l'usabilità del prodotto.],
+)
+
+=== Error Rate
+#metric(
+  cod: [MPD08],
+  formula: [
+    $"Error Rate" = ("Errori totali" / "Azioni totali") * 100$
+  ],
+  desc: [Percentuale di errori commessi durante l'utilizzo del prodotto. Dovrebbe essere inferiore al 5%.],
+)
+
+== Efficienza
+=== Response Time
+#metric(
+  cod: [MPD09],
+  formula: [
+    $"Response Time" = "Tempo medio di risposta"$
+  ],
+  desc: [Tempo medio impiegato per rispondere a una richiesta. Indica l'efficienza del prodotto. Un tempo di risposta inferiore a 2 secondi è considerato accettabile, mentre un tempo inferiore a 1 secondo è considerato ottimo.],
+)
+
+== Manutenibilità
+=== Code Smells
+#metric(
+  cod: [MPD10],
+  formula: [
+    $"Code Smells" = ("Numero di code smells" / "KLOC")$
+  ],
+  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del software. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
+  desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
+)
+
+=== Coefficient of Coupling (CoC)
+#metric(
+  cod: [MPD11],
+  formula: [
+    $"Coefficient of Coupling" = ("Numero di dipendenze" / "Numero di componenti")$
+  ],
+  desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
+)
+
+==== Cyclomatic Complexity
+
+#metric(
+  cod: [MPD12],
+  formula: [
+    $"Cyclomatic Complexity" = E - N + P$
+
+  ],
+  desc: [
+    - E = numero di archi nel grafo di controllo
+    - N = numero di nodi nel grafo di controllo
+    - P = numero di componenti connesse da ogni arco\
+    Misura la complessità del codice contando i percorsi linearmente indipendenti. Un valore superiore a 10 indica codice complesso che potrebbe richiedere refactoring.],
+)
