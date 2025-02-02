@@ -799,7 +799,7 @@ Il Caso d'Uso UC4 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 
 Il Caso d'Uso UC10 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("10-incl", "Inclusione del Caso d'Uso n.10: UC9")
-Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
+Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente in @UC9.
 
 === UC11: Conferma ordine non confermato <UC11>
 
@@ -834,7 +834,7 @@ Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso 
 
 Il Caso d'Uso UC11 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("11-incl", "Inclusione del Caso d'Uso n.11: UC9")
-Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente alla @UC9.
+Per maggiori informazioni è possibile consultare la descrizione del Caso d'Uso sopra presente in @UC9.
 
 === UC12: Visualizza elenco ordini non confermati per l'utente corrente <UC12>
 
@@ -1063,7 +1063,7 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
 
 Il Caso d'Uso UC18 include un ulteriore Caso d'Uso come raffigurato nell'immagine alla pagina successiva.
 #use-case-diagram("18-incl", "Inclusione del Caso d'Uso n.18: UC18.1", width: 75%)
-Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, sempre rappresentate in figura, ad eccezione del Caso d'Uso n. 17, la cui descrizione è disponibile alla @UC17.
+Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, sempre rappresentate in figura, ad eccezione del Caso d'Uso n. 17, la cui descrizione è disponibile in @UC17.
 
 ==== UC18.1: Visualizza elemento lista delle merci <UC18.1>
 #use-case(
@@ -1164,7 +1164,7 @@ Tale Caso d'Uso sarà descritto qui di seguito assieme alle sue inclusioni, semp
 
 Il Caso d'Uso UC22 include cinque ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("22-incl", "Inclusioni del Caso d'Uso n.22: UC17, UC19, UC20, UC21 e UC22.1")
-Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19, 20 e 21 reperibili, rispettivamente, alla @UC17, @UC19, @UC20 e @UC21.
+Tali Casi d'Uso saranno descritti qui di seguito ad eccezione degli UC n.17, 19, 20 e 21 reperibili, rispettivamente, in @UC17, @UC19, @UC20 e @UC21.
 
 ==== UC22.1: Visualizza descrizione della merce <UC22.1>
 
@@ -1284,7 +1284,7 @@ Tali Casi d'Uso saranno descritti qui di seguito:
 
 Il Caso d'Uso UC24 include tre ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("24-incl", "Inclusioni del Caso d'Uso n.24: UC5 , UC6 e UC25")
-Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, reperibili, rispettivamente, alla @UC5 e alla @UC6.
+Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, reperibili, rispettivamente, in @UC5 e in @UC6.
 
 #pagebreak()
 
@@ -1337,7 +1337,7 @@ Tali Casi d'Uso saranno descritti qui di seguito ad eccezione di UC5 e UC6, repe
 
 Il Caso d'Uso UC26 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("26-incl", "Inclusione del Caso d'Uso n.26: UC25")
-Tale Caso d'Uso è reperibile alla @UC25.
+Tale Caso d'Uso è reperibile in @UC25.
 
 #pagebreak()
 
@@ -1389,7 +1389,7 @@ Tale Caso d'Uso è reperibile alla @UC25.
 
 Il Caso d'Uso UC28 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram("28-incl", "Inclusione del Caso d'Uso n.28: UC25")
-Tale Caso d'Uso è reperibile alla @UC25.
+Tale Caso d'Uso è reperibile in @UC25.
 
 === UC29: Visualizza elenco dei trasferimenti <UC29>
 #use-case(
@@ -1553,7 +1553,7 @@ Tali Casi d'Uso saranno ora descritti ad eccezione degli UC30 e UC31 la cui desc
 
 Il Caso d'Uso UC32.3 include un ulteriore Caso d'Uso come rappresentato dalla seguente immagine:
 #use-case-diagram("32-incl-2", "Inclusione del Caso d'Uso n.32.3: UC32.3.1 e relative inclusioni", width: 70%)
-Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell'UC17, una cui descrizione è reperibile alla @UC17.
+Tale Caso d'Uso e le relative inclusioni saranno ora descritte ad eccezione dell'UC17, una cui descrizione è reperibile in @UC17.
 
 ===== UC32.3.1: Visualizza elemento lista merce trasferimento <UC32.3.1>
 #use-case(
@@ -1724,7 +1724,7 @@ Tale caso d'uso con le rispettive inclusioni saranno analizzati qui di seguito.
 
 \ \ \
 Il Caso d'Uso UC38 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("38-incl","Inclusione del Caso d'Uso n.38: UC34")
-Maggiori informazioni sono disponibili alla @UC34.
+Maggiori informazioni sono disponibili in @UC34.
 
 === UC39: Visualizza notifica rifornimento <UC39>
 #use-case(
@@ -1752,7 +1752,7 @@ Maggiori informazioni sono disponibili alla @UC34.
 )[#use-case-diagram("39", "UC39 - Visualizza notifica di rifornimento")]
 
 Il Caso d'Uso UC39 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine: #use-case-diagram("39-incl","Inclusione del Caso d'Uso n.39: UC35, UC36, UC39.1 e UC39.2", width: 75%)
-Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni alla @UC35 e alla @UC36.
+Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni in @UC35 e in @UC36.
 
 ==== UC39.1: Visualizza magazzino di destinazione <UC39.1>
 
@@ -1816,7 +1816,7 @@ Tale Caso d'Uso sarà esposto qui di seguito.
 )[]
 
 Il Caso d'Uso UC39.2.1 include tre ulteriori Casi d'Uso come descritto sopra.
-In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivamente, alla @UC17 e alla @UC19, i rimanenti saranno invece esposti qui di seguito.
+In merito a UC17 e UC19 è possibile avere maggiori informazioni, rispettivamente, in @UC17 e in @UC19, i rimanenti saranno invece esposti qui di seguito.
 
 
 ====== UC39.2.1.1: Visualizza quantità merce da rifornire <UC39.2.1.1>
@@ -1914,7 +1914,7 @@ Il Caso d'Uso UC40 include un ulteriore Caso d'Uso come raffigurato nella seguen
 ]
 
 Il Caso d'Uso UC42 include un ulteriore Caso d'Uso come mostrato nella seguente figura: #use-case-diagram("42-incl", "Inclusione del Caso d'Uso n.42: UC41", width: 60%)
-Tale caso d'uso è disponibile per la consultazione alla @UC41.
+Tale caso d'uso è disponibile per la consultazione in @UC41.
 
 === UC43: Visualizza elenco microservizi <UC43>
 
@@ -2183,7 +2183,7 @@ Tali Casi d'Uso saranno di seguito esposti.
 ]
 
 Il Caso d'Uso 51 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("51-incl","Inclusioni del Caso d'Uso n.51: UC49 e UC51.1")
-L'UC49 è consultabile alla @UC49, UC51.1 sarà invece ora esposto.
+L'UC49 è consultabile in @UC49, UC51.1 sarà invece ora esposto.
 
 ==== UC51.1: Seleziona q.tà da aggiungere alla merce esistente <UC51.1>
 #use-case(
@@ -2293,7 +2293,7 @@ Saranno di seguito esposti.
 ]
 
 Il Caso d'Uso 55 include tre ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("55-incl","Inclusioni del Caso d'Uso n.55: UC49, UC53 e UC54", width: 75%)
-Sono stati esposti alla @UC49, @UC53 e alla @UC54 rispettivamente.
+Sono stati esposti in @UC49, @UC53 e in @UC54 rispettivamente.
 
 === UC56: Visualizza elenco ordini eseguiti <UC56>
 
@@ -3106,7 +3106,7 @@ Tali Casi d'Uso con relative inclusioni saranno ora esposti.
 
 Il Caso d'Uso 76 include un ulteriore Caso d'Uso come mostrato in figura:
 #use-case-diagram("76-incl", "Inclusioni del Caso d'Uso n.76: UC74")
-Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
+Le informazioni su tale Caso d'Uso sono reperibili in @UC74
 
 === UC77: Sincronizza eliminazione merce <UC77> //include sync singola merce
 
@@ -3131,7 +3131,7 @@ Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
 Il Caso d'Uso 77 include un ulteriore Caso d'Uso come mostrato in figura:
 #use-case-diagram("77-incl", "Inclusioni del Caso d'Uso n.77: UC74")
-Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
+Le informazioni su tale Caso d'Uso sono reperibili in @UC74
 
 === UC78: Sincronizza modifica informazioni merce <UC78> //include sync singola merce
 
@@ -3156,7 +3156,7 @@ Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
 
 Il Caso d'Uso 78 include un ulteriore Caso d'Uso come mostrato in figura:
 #use-case-diagram("78-incl", "Inclusioni del Caso d'Uso n.78: UC74")
-Le informazioni su tale Caso d'Uso sono reperibili alla @UC74
+Le informazioni su tale Caso d'Uso sono reperibili in @UC74
 
 === UC79: Sincronizza elenco ordini <UC79>
 
@@ -3333,7 +3333,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte.
 
 Il Caso d'Uso 82 include due ulteriori Casi d'Uso come mostrato in figura:
 #use-case-diagram("82-incl", "Inclusioni del Caso d'Uso n.82: UC75 e UC82.1")
-Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre lo UC82.1 sarà di seguito esposto.
+Le informazioni riguardo il caso d'uso UC75 sono reperibili in @UC75, mentre lo UC82.1 sarà di seguito esposto.
 
 ==== UC82.1: Sincronizza quantità merce ordine/trasferimento <UC82.1>
 #use-case(
@@ -3375,7 +3375,7 @@ Le informazioni riguardo il caso d'uso UC75 sono reperibili alla @UC75, mentre l
 
 Il Caso d'Uso n. 83 include un ulteriore Caso d'Uso come mostrato in figura:
 #use-case-diagram("83-incl", "Inclusioni del Caso d'Uso n.83: UC79", width: 50%)
-Le informazioni riguardanti tale Caso d'Uso sono disponibili alla @UC79.
+Le informazioni riguardanti tale Caso d'Uso sono disponibili in @UC79.
 
 === UC84: Sincronizza ordini cancellati <UC84>
 #use-case(
@@ -3532,7 +3532,7 @@ Le informazioni su tale Caso d'Uso e le relative inclusioni saranno ora esposte.
 
 Il Caso d'Uso n. 86 include un ulteriore Caso d'Uso come mostrato in figura:\
 #use-case-diagram("86-incl", "Inclusione nel Caso d'Uso n.86: UC85")
-Le informazioni riguardanti il Caso d'Uso UC85 sono reperibili alla @UC85.
+Le informazioni riguardanti il Caso d'Uso UC85 sono reperibili in @UC85.
 
 === UC87: Sincronizza trasferimenti cancellati <UC87>
 
@@ -3556,7 +3556,7 @@ Le informazioni riguardanti il Caso d'Uso UC85 sono reperibili alla @UC85.
 
 Il Caso d'Uso n. 87 include un ulteriore Caso d'Uso come mostrato in figura:\
 #use-case-diagram("87-incl", "Inclusione nel Caso d'Uso n.87: UC85")
-Le informazioni riguardanti il Caso d'Uso incluso sono disponibili alla @UC85.
+Le informazioni riguardanti il Caso d'Uso incluso sono disponibili in @UC85.
 
 === UC88: Sincronizza notifiche di rifornimento <UC88>
 
@@ -3757,7 +3757,7 @@ Le informazioni riguardanti il caso d'uso e le sue inclusioni verranno qui di se
 
 Il Caso d'Uso n. 89 include due ulteriori Casi d'Uso come mostrato in figura:\
 #use-case-diagram("89-incl", "Inclusione nel Caso d'Uso n.89: UC88")
-Le informazioni riguardanti il Caso d'Uso 88 sono reperibili alla @UC88.
+Le informazioni riguardanti il Caso d'Uso 88 sono reperibili in @UC88.
 
 === UC90: Sincronizza notifica rifornimento cancellata <UC90>
 
@@ -3781,7 +3781,7 @@ Le informazioni riguardanti il Caso d'Uso 88 sono reperibili alla @UC88.
 
 Il Caso d'Uso n. 90 include un ulteriore Caso d'Uso come mostrato in figura:\
 #use-case-diagram("90-incl", "Inclusione nel Caso d'Uso n.90: UC88")
-Le informazioni riguardanti il caso d'uso UC88 è reperibile alla @UC88.
+Le informazioni riguardanti il caso d'uso UC88 sono reperibili a @UC88.
 
 === UC91: Sincronizza elenco microservizi <UC91>
 
