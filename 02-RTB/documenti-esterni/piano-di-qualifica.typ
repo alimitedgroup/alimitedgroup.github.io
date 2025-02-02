@@ -11,6 +11,13 @@
     (
       vers: "0.8.0",
       date: datetime(day: 10, month: 01, year: 2025),
+      autore: p.matteo,
+      verifica: p.sara,
+      descr: "Aggiunte misurazioni " + [(@dashboard)],
+    ),
+    (
+      vers: "0.8.0",
+      date: datetime(day: 10, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
       descr: "Aggiornamento qualità del processo e prodotto, soglie e tabelle " + [(@qtaprc e @qtaprd)],
@@ -928,8 +935,48 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
   caption: [Test di Accettazione],
 )
 
-= Cruscotto di valutazione
-/* DA FARE */
+= Cruscotto di Valutazione <dashboard>
+
+== MPC01 - Earned Value (EV)
+
+#metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
+
+== MPC03 e MPC07 - Actual Cost (AC) e Estimate To Complete (ETC)
+
+#metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
+
+== MPC04 e MPC05 - Cost Performance Index (CPI) e Schedule Performance Index (SPI)
+
+#metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
+
+== MPC06 - Estimate At Completion (EAC)
+
+#metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
+
+== MPC08 - Time Estimate At Completion (TEAC)
+
+#metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
+
+== MPC09 - Requirements Stability Index
+
+#metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
+
+== MPC10 - Indice di Gulpease
+
+#metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
+
+== MPC11 - Correttezza ortografica
+
+#metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
+
+== MPC14 - Quality metrics satisfied
+
+#metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
+
+== MPC15 - Time Efficiency
+
+#metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
+
 
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione

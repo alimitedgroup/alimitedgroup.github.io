@@ -178,6 +178,8 @@ _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permette
 === Riferimenti normativi
 - Capitolato d'appalto C6: Sistema di gestione di un magazzino distribuito \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+- Standard ISO/IEC 9126 \
+  #link("https://it.wikipedia.org/wiki/ISO/IEC_9126")
 - Standard ISO/IEC 12207:1995 \
   #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
