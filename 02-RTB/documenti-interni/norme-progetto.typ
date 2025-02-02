@@ -14,7 +14,7 @@
       date: datetime(day: 02, month: 02, year: 2025),
       autore: p.matteo,
       verifica: p.emanuele,
-      descr: "Aggiunte" + [@metriche, @metriche-qt-processo e @metriche-qt-prodotto],
+      descr: "Aggiunte " + [@metriche, @metriche-qt-processo e @metriche-qt-prodotto],
     ),
     (
       vers: "0.14.0",
@@ -1421,7 +1421,72 @@ _ALimitedGroup_ si promette di permettere durante la durata del progetto apposit
 
 _ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di pianificare degli spazi temporali durante gli _sprint_#super[g] dedicati esclusivamente allo studio di queste tecnologie, pur restando consapevole che un forte aiuto sarà dato dalla realizzazione effettiva del _Proof of Concept_ e del progetto finale.
 
-= Standard per la Qualità <metriche>
+= Metriche e standard per la Qualità <metriche>
+
+_ALimitedGroup_ ha deciso di seguire lo _Standard ISO/IEC 9126_ per definire le metriche e i parametri che determinano la qualità di quanto realizzato. Lo standard identifica sei caratteristiche generali:
+
+- *Funzionalità*;
+- *Affidabilità*;
+- *Efficienza*;
+- *Usabilità*;
+- *Manutenibilità*;
+- *Portabilità*.
+
+== Funzionalità
+
+In merito alla *Funzionalità*, lo scopo è misurare quanto un prodotto soddisfa le esigenze del proponente. Nello specifico misura:
+- *Adeguatezza*, ovvero se il prodotto offre le funzioni necessarie a svolgere i compiti prefissati dal proponente;
+- *Accuratezza*, ovvero se il prodotto fornisce i precisi effetti richiesti;
+- *Interoperabilità*, ovvero se il prodotto riesce ad interagire con altri Sistemi definiti;
+- *Conformità*, ovvero se il prodotto aderisce a determinati standard richiesti dal dominio d'uso del prodotto;
+- *Sicurezza*, ovvero se il prodotto mette in sicurezza i dati degli Utenti, impedendone il reperimento ad individui non autorizzati.
+
+== Affidabilità
+
+In merito all'*Affidabilità*, è la capacità del prodotto di mantenere un determinato livello di prestazioni in qualsiasi momento, anche in periodi d'uso particolarmente intensi. Nello specifico misura:
+
+- *Maturità*, ovvero l'arginare la possibilità si verifichino errori o malfunzionamenti;
+- *Tolleranza agli errori*, ovvero l'obiettivo di mantenere la prestazionalità del prodotto anche in caso di malfunzionamenti;
+- *Recuperabilità*, ovvero la capacità del prodotto di ritornare al normale comportamento prestazionale a seguito di un malfunzionamento;
+- *Aderenza*, ovvero la capacità di aderire a standard di affidabilità.
+
+== Efficienza
+
+L'*Efficienza* misura la capacità di fornire delle prestazioni che siano direttamente proporzionate alle risorse utilizzate. Nello specifico misura:
+
+- *Comportamento temporale*, ovvero la capacità di fornire una risposta in tempi adeguati;
+- *Utilizzo delle risorse*, ovvero un uso proporzionale delle risorse in rapporto all'utilizzo;
+- *Conformità*, ovvero l'aderenza del prodotto a standard riguardanti l'efficienza.
+
+== Usabilità
+
+L'*Usabilità* consiste nel misurare quanto l'Utente finale è in grado di apprendere la modalità di utilizzo del prodotto. Si misura:
+
+- *Comprensibilità*, ovvero quanto è facile comprendere i concetti del prodotto;
+- *Apprendibilità*, ovvero quanto è semplice apprendere l'uso delle funzionalità del prodotto;
+- *Operabilità*, ovvero se è semplice per gli Utenti utilizzare il prodotto;
+- *Attrattività*, ovvero se l'Utente trova positivo l'uso del prodotto;
+- *Conformità*, ovvero se il prodotto aderisce a standard relativi all'usabilità.
+
+== Manutenibilità
+
+La *Manutenibilità* misura quanto il prodotto è semplice da modificare per permetterne l'evoluzione o correzione. Nello specifico misura:
+
+- *Analizzabilità*, ovvero la facilità d'ispezione del codice con lo scopo di cercare un errore;
+- *Modificabilità*, ovvero quanto è difficile apportare una modifica;
+- *Stabilità*, ovvero se il prodotto è in grado di arginare effetti indesiderati determinati da modifiche non corrette;
+- *Testabilità*, ovvero la semplicità con cui il prodotto può essere testato.
+
+== Portabilità
+
+La *Portabilità* è la facilità con cui il prodotto può essere spostato da un ambiente di esecuzione ad un altro. Specificatamente si misura:
+
+- *Adattabilità*, ovvero con che facilità il prodotto può essere adattato ad un diverso ambiente d'esecuzione;
+- *Installabilità*, ovvero con che facilità il prodotto può essere installato su un altro ambiente d'esecuzione;
+- *Conformità*, ovvero se il prodotto aderisce a convenzioni sulla portabilità;
+- *Sostituibilità*, ovvero quanto è semplice sostituire un prodotto esistente con il prodotto da noi sviluppato. \ \ \ \
+
+== Nomenclatura delle Metriche
 
 La nomenclatura utilizzata per le metriche è la seguente:
 
