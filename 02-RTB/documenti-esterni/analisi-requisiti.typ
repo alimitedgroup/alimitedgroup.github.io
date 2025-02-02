@@ -35,7 +35,7 @@
       date: datetime(day: 15, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Redatti Casi d'Uso riguardanti sincronizzazione merci, ordini e trasferimenti" + [(da @UC73 a @UC87)],
+      descr: "Redatti Casi d'Uso riguardanti sincronizzazione merci, ordini e trasferimenti " + [(da @UC73 a @UC87)],
     ),
     (
       vers: "0.24.0",
@@ -4551,7 +4551,7 @@ In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Architettura"],
 
     [R-3-V-Ob],
-    [È necessario l'utilizzo di Go per la realizzazione dei microservizi],
+    [È necessario l'utilizzo di Typescript o Go per la realizzazione dei microservizi],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-4-V-Ob],
@@ -4559,7 +4559,7 @@ In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-5-V-Ob],
-    [È necessario l'utilizzo di PostgreSQL per la persistenza dei dati strutturati],
+    [È necessario l'utilizzo di Kafka o NATS per lo scambio di messaggi tra i microservizi],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
   ),
   caption: [Requisiti di Vincolo],
