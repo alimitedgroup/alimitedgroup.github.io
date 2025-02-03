@@ -3,7 +3,7 @@
 #let ver = [0.28.0]
 
 #show ref: it => if str(it.target).starts-with("UC") {
-  str(it.target)
+  link(it.target, "[" + str(it.target) + "]")
 } else {
   it
 }
