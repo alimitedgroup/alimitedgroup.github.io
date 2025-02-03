@@ -322,8 +322,8 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - Standard IEEE: \ https://ieeexplore.ieee.org/document/720574
 - Analisi dei requisiti: \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
 - Diagrammi Casi d'Uso: \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf
-- _Repository GitHub_ del #prof(p.cardin): #link("https://github.com/rcardin/swe-imdb")[github.com/rcardin/swe-imdb]
-- Glossario: \ #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
+- _Repository GitHub_ del #prof(p.cardin): \ https://github.com/rcardin/swe-imdb
+- Glossario: \ https://alimitedgroup.github.io/Glossario.pdf
 
 #pagebreak()
 
@@ -1739,8 +1739,8 @@ Maggiori informazioni sono disponibili in @UC34.
     - L'Admin Globale visualizza della suddetta notifica:
       - Lo stato della notifica (ad esempio confermata o non confermata) $arrow$ Vedi @UC35
       - L'ID della notifica $arrow$ Vedi @UC36
+      - Il magazzino di destinazione $arrow$ Vedi @UC39.1
       - L'elenco della merce il cui rifornimento è consigliato $arrow$ Vedi @UC39.2
-      - Magazzino di destinazione $arrow$ Vedi @UC39.1
   ],
   inclusioni: [
     - @UC35
@@ -1748,11 +1748,11 @@ Maggiori informazioni sono disponibili in @UC34.
     - @UC39.1
     - @UC39.2
   ],
-  trigger: "L'Admin Globale una notifica di rifornimento specifica registrata nel Sistema",
+  trigger: "L'Admin Globale seleziona una notifica di rifornimento specifica registrata nel Sistema",
 )[#use-case-diagram("39", "UC39 - Visualizza notifica di rifornimento")]
 
 Il Caso d'Uso UC39 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine: #use-case-diagram("39-incl","Inclusione del Caso d'Uso n.39: UC35, UC36, UC39.1 e UC39.2", width: 75%)
-Riguardo UC34.1.1 e UC36 è possibile avere maggiori informazioni in @UC35 e in @UC36.
+I casi d'uso UC39.1 e UC39.2 sono esposti qui di seguito. Per gli altri, si faccia riferimento a @UC35 ed a @UC36.
 
 ==== UC39.1: Visualizza magazzino di destinazione <UC39.1>
 
@@ -1935,7 +1935,7 @@ Tale caso d'uso è disponibile per la consultazione in @UC41.
   trigger: "L'Admin Globale vuole visualizzare l'elenco dei microservizi del Sistema",
 )[#use-case-diagram("43", "UC43 - Visualizza elenco microservizi")]
 
-Il Caso d'Uso UC39 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("43-incl","Inclusioni del Caso d'Uso n.43: UC43.1")
+Il Caso d'Uso UC43 include un ulteriore Caso d'Uso come raffigurato nella seguente immagine: #use-case-diagram("43-incl","Inclusioni del Caso d'Uso n.43: UC43.1")
 Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito.
 
 ==== UC43.1: Visualizza elemento lista microservizi <UC43.1>
@@ -2005,10 +2005,10 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin Globale seleziona dal menu la voce relativa all'esportazione degli ordini eseguiti
   ],
   scenari_alternativi: [
-    - L'Admin Globale cerca di esportare gli ordini eseguiti ma non ci sono dati da esportare $arrow$ Vedi @UC45
+    - L'Admin Globale cerca di esportare gli ordini eseguiti ma non ci sono ordini da esportare $arrow$ Vedi @UC45
   ],
   estensioni: [
-    - UC45 @UC45
+    - @UC45
   ],
   trigger: "L'Admin Globale richiede l'esportazione degli ordini eseguiti tramite l'apposita funzionalità.",
 )[
@@ -2026,7 +2026,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin Globale ha selezionato dal menu la voce relativa all'esportazione degli ordini eseguiti
   ],
   post: [
-    -Il Sistema invia una notifica informando che non c'è alcun ordine da esportare
+    - Il Sistema invia una notifica informando che non c'è alcun ordine da esportare
   ],
   scenari: [
     - L'Admin Globale seleziona dal menù la voce relativa all'esportazione degli ordini eseguiti ma nessun ordine è stato eseguito
@@ -2050,7 +2050,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin Globale cerca di esportare l'inventario ma non ci sono dati da esportare $arrow$ Vedi @UC47
   ],
   estensioni: [
-    - UC47 @UC47
+    - @UC47
   ],
   trigger: "L'Admin Globale richiede l'esportazione del report dell'inventario tramite l'apposita funzionalità.",
 )[
@@ -2066,7 +2066,7 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
     - L'Admin Globale ha selezionato dal menu la voce relativa all'esportazione del report dell'inventario
   ],
   post: [
-    -Il Sistema invia una notifica informando che non c'è alcun dato dell'inventario disponibile
+    - Il Sistema invia una notifica informando che non c'è alcun dato dell'inventario disponibile
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa all'esportazione del report dell'inventario ma nessun dato è disponibile
@@ -2085,15 +2085,15 @@ Il presente Caso d'Uso sarà esposto, con le relative inclusioni, qui di seguito
   ],
   scenari: [
     - L'Admin Globale accede dal menù alla sezione gestione inventario.
-    - L'Admin seleziona la merce per cui vuole impostare una soglia minima Vedi @UC49
-    - L'Admin inserisce il valore della soglia minima desiderata Vedi @UC48.1
+    - L'Admin seleziona la merce per cui vuole impostare una soglia minima $arrow$ Vedi @UC49
+    - L'Admin inserisce il valore della soglia minima desiderata $arrow$ Vedi @UC48.1
   ],
   scenari_alternativi: [
     - L'Admin Globale inserisce una soglia minima non valida $arrow$ Vedi @UC50
   ],
   inclusioni: [
-    - @UC49
     - @UC48.1
+    - @UC49
   ],
   estensioni: [
     - @UC50
@@ -2170,7 +2170,7 @@ Tali Casi d'Uso saranno di seguito esposti.
     - Il Sistema registra l'aggiunta di stock a quella determinata merce
   ],
   scenari: [
-    - L'Admin Locale seleziona la merce a cui verrà aggiornata la quantità (stock) $arrow$ Vedi @UC49
+    - L'Admin Locale seleziona la merce di cui verrà aggiornata la quantità (stock) $arrow$ Vedi @UC49
     - L'Admin Locale seleziona la quantità da aggiungere a tale merce $arrow$ Vedi @UC51.1
   ],
   inclusioni: [
@@ -2191,7 +2191,7 @@ L'UC49 è consultabile in @UC49, UC51.1 sarà invece ora esposto.
   pre: [
     - Il Sistema è attivo, in modalità online o offline
     - L'utente è riconosciuto dal Sistema come Admin Locale
-    - l'Admin Locale ha avviato un'operazione di aggiornamento dello stock di una merce
+    - L'Admin Locale ha avviato un'operazione di aggiornamento dello stock di una merce
   ],
   post: [
     - Il Sistema conosce la quantità di stock da aggiungere
@@ -2229,8 +2229,8 @@ L'UC49 è consultabile in @UC49, UC51.1 sarà invece ora esposto.
   #use-case-diagram("52", "UC52 - Creazione di una nuova merce", width: 40%)
 ]
 
-Il Caso d'Uso 52 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("52-incl","Inclusioni del Caso d'Uso n.52: UC53 e UC54")
-Saranno di seguito esposti.
+Il Caso d'Uso n.52 include due ulteriori Casi d'Uso, come raffigurato nella seguente immagine: #use-case-diagram("52-incl","Inclusioni del Caso d'Uso n.52: UC53 e UC54")
+Essi saranno di seguito esposti.
 
 === UC53: Inserimento nome merce <UC53>
 
@@ -2278,9 +2278,9 @@ Saranno di seguito esposti.
   ],
   scenari: [
     - L'Admin Globale seleziona dal menu la voce relativa alla modifica di una merce esistente
-    - L'Admin Globale seleziona la merce da modificare Vedi @UC49
-    - L'Admin Globale seleziona il nome da assegnare Vedi @UC53
-    - L'Admin Globale seleziona la descrizione da assegnare Vedi @UC54
+    - L'Admin Globale seleziona la merce da modificare $arrow$ Vedi @UC49
+    - L'Admin Globale seleziona il nome da assegnare $arrow$ Vedi @UC53
+    - L'Admin Globale seleziona la descrizione da assegnare $arrow$ Vedi @UC54
   ],
   inclusioni: [
     - @UC49
@@ -2314,9 +2314,9 @@ Sono stati esposti in @UC49, @UC53 e in @UC54 rispettivamente.
   trigger: "Il Cliente vuole visualizzare gli ordini eseguiti registrati nel Sistema per l'utente corrente",
 )[#use-case-diagram("56", "UC56 - Visualizza elenco ordini eseguiti")]
 
-Il Caso d'Uso UC56 include cinque ulteriori Casi d'Uso come raffigurato nell'immagine alla pagina successiva.
+Il Caso d'Uso UC56 include un ulteriore Caso d'Uso come raffigurato nell'immagine alla pagina successiva.
 #use-case-diagram("56-incl", "Inclusioni del Caso d'Uso n.56: UC56.1", width: 75%)
-Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già state esposte precedentemente).
+Tale Caso d'Uso e relative inclusioni saranno ora esposte.
 
 ==== UC56.1: Visualizza singolo elemento lista ordini eseguiti <UC56.1>
 
@@ -2368,7 +2368,7 @@ Tale Caso d'Uso e relative inclusioni saranno ora esposte (salvo non siano già 
   trigger: "Il Cliente vuole vedere un ordine eseguito specifico registrato nel Sistema per l'utente corrente",
 )[#use-case-diagram("57", "UC57 - Visualizza ordine eseguito", width: 60%)]
 
-Il Caso d'Uso UC57 include cinque ulteriori Casi d'Uso come raffigurato nella seguente immagine:
+Il Caso d'Uso UC57 include quattro ulteriori Casi d'Uso come raffigurato nella seguente immagine:
 #use-case-diagram(
   "57-incl",
   "Inclusioni del Caso d'Uso n.57: UC13, UC14, UC15, UC57.1 e relative inclusioni",
@@ -2488,7 +2488,7 @@ I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno Sch
   trigger: "L'Admin Locale vuole attivare un Backup periodico del Sistema",
 )[#use-case-diagram("59", "UC59 - Attiva Backup periodico")]
 
-Il Caso d'Uso 59 include un ulteriore Caso d'Uso come mostrato di seguito:
+Il Caso d'Uso n.59 include un ulteriore Caso d'Uso come mostrato di seguito:
 #use-case-diagram("59-incl", "Inclusioni del Caso d'Uso n.59: UC59.1")
 Tale Caso d'Uso sarà ora esposto.
 
@@ -2547,7 +2547,7 @@ Tale Caso d'Uso sarà ora esposto.
     - L'Admin Locale vuole eliminare (disattivare) un Backup periodico ma nessun Backup periodico è attivo $arrow$ @UC62
   ],
   estensioni: [
-    - UC62 @UC62
+    - @UC62
   ],
   trigger: "L'Admin Locale vuole eliminare il Backup periodico del Sistema",
 )[#use-case-diagram("61", "UC61 - Elimina Backup periodico")]
@@ -2587,7 +2587,7 @@ Tale Caso d'Uso sarà ora esposto.
     - L'Admin Locale ha selezionato dal menu principale l'opzione relativa al ripristino dell'ultimo Backup effettuato, ma nessun Backup è presente $arrow$ UC64[Vedi UC64, Sez.];
   ],
   estensioni: [
-    - UC64 @UC64
+    - @UC64
   ],
   trigger: "L'Admin Locale vuole ripristinare il Sistema all'ultimo Backup effettuato",
 )[#use-case-diagram("63", "UC63 - Ripristino dati da ultimo Backup effettuato")]
@@ -2929,7 +2929,7 @@ Tale Caso d'Uso sarà ora esposto.
     - L'Admin Globale seleziona il nome dell'utente a cui verrà promosso il ruolo $arrow$ Vedi @UC71
   ],
   inclusioni: [
-    - UC71 @UC71
+    - @UC71
   ],
   trigger: "L'Admin Globale vuole modificare il ruolo di un determinato utente registrato nel Sistema",
 )[]
