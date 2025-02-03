@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [0.28.0]
+#let ver = [1.0.0]
 
 #show ref: it => if str(it.target).starts-with("UC") {
   link(it.target, "[" + str(it.target) + "]")
@@ -9,10 +9,17 @@
 }
 
 #show: body => importantdocs(
-  data: datetime(day: 26, month: 01, year: 2025),
+  data: datetime(day: 03, month: 02, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 03, month: 02, year: 2025),
+      autore: p.matteo,
+      verifica: p.samuele,
+      descr: "Approvazione per RTB",
+    ),
     (
       vers: "0.28.0",
       date: datetime(day: 26, month: 01, year: 2025),
@@ -231,8 +238,8 @@
       descr: "Creazione struttura e template documento",
     ),
   ),
-  stato: [In redazione],
-  responsabile: ((p.loris),),
+  stato: [Approvato per RTB],
+  responsabile: ((p.samuele),),
   verificatore: ((p.samuele), (p.lorenzo)),
   redattori: (
     (p.matteo),
@@ -252,7 +259,6 @@
     it
   }
 }
-
 
 = Introduzione
 == Scopo del documento
@@ -316,14 +322,14 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto \ #link("https://alimitedgroup.github.io/norme-progetto.pdf")[https://alimitedgroup.github.io/norme-progetto.pdf]
-- Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_: \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
+- *Norme di Progetto* \ #link("https://alimitedgroup.github.io/norme-progetto.pdf")[https://alimitedgroup.github.io/norme-progetto.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
+- *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_* \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 === Riferimenti informativi
-- Standard IEEE: \ https://ieeexplore.ieee.org/document/720574
-- Analisi dei requisiti: \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
-- Diagrammi Casi d'Uso: \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf
-- _Repository GitHub_ del #prof(p.cardin): \ https://github.com/rcardin/swe-imdb
-- Glossario: \ https://alimitedgroup.github.io/Glossario.pdf
+- *Standard IEEE* \ https://ieeexplore.ieee.org/document/720574 \ *Ultimo Accesso 3 Febbraio 2025*
+- *Analisi dei requisiti* \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf \ *Ultimo Accesso 3 Febbraio 2025*
+- *Diagrammi Casi d'Uso* \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf - *Ultimo Accesso 3 Febbraio 2025*
+- *_Repository GitHub_ del #prof(p.cardin)* \ https://github.com/rcardin/swe-imdb \ *Ultimo Accesso 3 Febbraio 2025*
+- *Glossario* \ https://alimitedgroup.github.io/Glossario.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 
 #pagebreak()
 
