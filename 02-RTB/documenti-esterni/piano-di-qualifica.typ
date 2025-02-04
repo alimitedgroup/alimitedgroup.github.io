@@ -937,9 +937,12 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 
 = Cruscotto di Valutazione <dashboard>
 
-== MPC01 - Earned Value (EV)
+== MPC01 e MPC02 - Earned Value (EV) e Planned Value(PV)
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
+
+Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto sprint. Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 
 == MPC03 e MPC07 - Actual Cost (AC) e Estimate To Complete (ETC)
 
