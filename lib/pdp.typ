@@ -301,6 +301,7 @@
   let ore-spese-sprint = 0
   let budget-speso-sprint = 0
   let tot-budget-speso-prec = 0
+  let ore-spese-tot = 0
   let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
   let budget-tot = ruoli.values().map(ruolo => ruolo.max-ore * ruolo.costo).sum()
   let sprint-idx = sprints.keys().position(x => x == sprint)
@@ -323,11 +324,14 @@
           .map(sprint => sprint.consuntivo.map(row => row.at(i + 1)).sum())
           .sum(default: 0)
         let budget-speso-prec = ruolo.costo * ore-spese-prev
-        tot-budget-speso-prec += budget-speso-prec
         let ore-rimanenti = ruolo.max-ore - ore-spese-prev - ore-spese
         let ore-rimanenti-prev = ruolo.max-ore - ore-spese-prev
         let budget-rimanente = ruolo.costo * ore-rimanenti
         let budget-rimanente-prev = budget-rimanente + ruolo.costo * ore-spese
+
+        tot-budget-speso-prec += budget-speso-prec
+        ore-spese-tot += ore-rimanenti-prev
+
         (
           ruolo.nome,
           str(ruolo.costo) + "€/h",
@@ -356,7 +360,7 @@
       [-],
       str(ore-spese-sprint),
       str(budget-speso-sprint) + "€",
-      str(ore-tot - ore-spese-sprint) + text(red)[ (#{-ore-spese-sprint})],
+      str(ore-spese-tot) + text(red)[ (#{-ore-spese-sprint})],
       str(budget-tot - tot-budget-speso-prec - budget-speso-sprint) + text(red)[ (#{-budget-speso-sprint}€)],
     ),
     caption: descrizione,
