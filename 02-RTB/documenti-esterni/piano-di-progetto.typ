@@ -393,28 +393,53 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
   table(
     columns: (1fr, 1fr, 1fr, 1fr),
     inset: (x: 1.1em, y: 0.6em),
-    fill: (x, y) => if calc.rem(y, 2) == 0 {
-      luma(235)
-    },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     table.header(
-      [*Ruolo*],
-      [*Costo Orario*],
-      [*Ore*],
-      [*Costo*],
+      text(fill: white)[*Ruolo*],
+      text(fill: white)[*Costo Orario*],
+      text(fill: white)[*Ore*],
+      text(fill: white)[*Costo*],
     ),
 
-    [Responsabile], [30€/h], [58h], [1.740€],
-    [Amministratore], [20€/h], [60h], [1.200€],
-    [Analista], [25€/h], [60h], [1.500€],
-    [Progettista], [25€/h], [150h], [3.750€],
-    [Programmatore], [15€/h], [180h], [2.700€],
-    [Verificatore], [15€/h], [136h], [2.040€],
-    [*Totale*], [-], [*644h*], [*12.930€*],
+    text(fill: white)[*Responsabile*], [30€/h], [58h], [1.740€],
+    text(fill: white)[*Amministratore*], [20€/h], [60h], [1.200€],
+    text(fill: white)[*Analista*], [25€/h], [60h], [1.500€],
+    text(fill: white)[*Progettista*], [25€/h], [150h], [3.750€],
+    text(fill: white)[*Programmatore*], [15€/h], [180h], [2.700€],
+    text(fill: white)[*Verificatore*], [15€/h], [136h], [2.040€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.930€*],
   ),
-  caption: [Riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi previsti derivanti dalle ore assegnate a ciascun ruolo],
 )
 \
-In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[g] .
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[g], come qui riportato:
+
+#figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    table.header(
+      text(fill: white)[*Ruolo*],
+      text(fill: white)[*Costo Orario*],
+      text(fill: white)[*Ore*],
+      text(fill: white)[*Costo*],
+    ),
+
+    text(fill: white)[*Responsabile*], [30€/h], [50h], [1.500€],
+    text(fill: white)[*Amministratore*], [20€/h], [72h], [1.440€],
+    text(fill: white)[*Analista*], [25€/h], [83h], [2.075€],
+    text(fill: white)[*Progettista*], [25€/h], [132h], [3.300€],
+    text(fill: white)[*Programmatore*], [15€/h], [175h], [2.625€],
+    text(fill: white)[*Verificatore*], [15€/h], [132h], [1.980€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.920€*],
+  ),
+  caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
+)
 
 Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline_ (RTB)* entro il *3 febbraio 2025*.
 
@@ -835,16 +860,16 @@ A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme d
 
 ==== Informazioni generali e attività da svolgere <sprint6intro>
 
-Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti e della finitura del PoC; ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
+Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[g] e della finitura del PoC#super[g] ;ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
 
 Le attività pianificate nel dettaglio includono:
-- La redazione e correzione dell'Analisi dei Requisiti a seguito della riunione esterna con #M31, effettuata in data 28/01;
+- La redazione e correzione dell'Analisi dei Requisiti#super[g] a seguito della riunione esterna con #M31, effettuata in data 28/01;
 - Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
 - Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto;
-- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC;
+- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[g] ;
 - Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
 
-Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB.
+Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[g] .
 
 ==== Rischi attesi
 
@@ -858,14 +883,14 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(6, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
+#impegni(6, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
 
 ==== Consuntivo
 
 #impegni(
   6,
   preventivo: true,
-  posizioni-legenda: (2, 2, -2, 2, -2, -2),
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
   "Sprint 6 - Consuntivo per componente",
   "Sprint 6 - Consuntivo",
 )
@@ -879,10 +904,10 @@ Si prospetta l'utilizzo delle seguenti risorse:
 ==== Rischi incontrati
 
 Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguio della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
-Inoltre, in merito all'Analisi dei Requisiti si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
+Inoltre, in merito all'Analisi dei Requisiti#super[g] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
 
 === Retrospettiva
 
-In questo sesto sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC.\
+In questo sesto sprint#super[g] ,ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g] .\
 
-La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
+La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[g]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
