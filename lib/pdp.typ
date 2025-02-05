@@ -330,7 +330,7 @@
         let budget-rimanente-prev = budget-rimanente + ruolo.costo * ore-spese
 
         tot-budget-speso-prec += budget-speso-prec
-        ore-spese-tot += ore-rimanenti-prev
+        ore-spese-tot += ore-rimanenti
 
         (
           ruolo.nome,
