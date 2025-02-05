@@ -86,14 +86,28 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 === Riferimenti normativi
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdfhttps://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31]
-- #link-norme("Norme di progetto")
+- *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Norme di Progetto ver. 1.0.0* \
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")
+  *Ultimo Accesso 5 Febbraio 2025*
 
 === Riferimenti informativi
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")[T2 - I processi di ciclo di vita del software]
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")[T4 - Gestione di progetto]
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[Lezione rovesciata - Documentazione]
+- *I processi di ciclo di vita del software* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Gestione di progetto* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Lezione rovesciata - Documentazione* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Glossario ver. 1.0.0* \
+  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+
 
 #pagebreak()
 
