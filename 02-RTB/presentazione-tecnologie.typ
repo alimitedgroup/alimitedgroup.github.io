@@ -26,7 +26,7 @@
 == Sistema di Gestione di un Magazzino Distribuito
 
 - Capitolato C6: Sistema di Gestione di un Magazzino Distribuito
-- Garantire interoperabilità tra magazzini: ordini in uscita o ingresso,
+- Garantire interoperabilità tra magazzini: ordini,
   ordini tra magazzini (trasferimenti), notificare se ordini vanno sotto soglia
 - Gestione utenti (aggiunta, rimozione e promozione ruolo)
 - Consigli ML sono facoltativi
