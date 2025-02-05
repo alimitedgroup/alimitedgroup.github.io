@@ -117,6 +117,26 @@
       (p.emanuele, 0, 3, 1, 0, 0, 0),
     ),
   ),
+  "6": (
+    preventivo: (
+      (p.loris, 0, 4, 0, 0, 5, 0),
+      (p.samuele, 0, 0, 0, 0, 5, 0),
+      (p.sara, 0, 2, 0, 0, 0, 6),
+      (p.lorenzo, 0, 0, 3, 0, 0, 1),
+      (p.marco, 2, 0, 0, 0, 0, 0),
+      (p.matteo, 0, 0, 0, 0, 0, 7),
+      (p.emanuele, 0, 0, 0, 0, 0, 5),
+    ),
+    consuntivo: (
+      (p.loris, 0, 4, 0, 0, 4, 0),
+      (p.samuele, 0, 0, 0, 0, 4, 0),
+      (p.sara, 0, 2, 0, 0, 0, 7),
+      (p.lorenzo, 0, 0, 3, 0, 0, 1),
+      (p.marco, 2, 0, 0, 0, 0, 0),
+      (p.matteo, 0, 0, 0, 0, 0, 9),
+      (p.emanuele, 0, 0, 0, 0, 0, 7),
+    ),
+  ),
 )
 
 #let cella(dati, preventivo, i, j) = {
@@ -280,6 +300,7 @@
   let sprint = str(sprint)
   let ore-spese-sprint = 0
   let budget-speso-sprint = 0
+  let tot-budget-speso-prec = 0
   let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
   let budget-tot = ruoli.values().map(ruolo => ruolo.max-ore * ruolo.costo).sum()
   let sprint-idx = sprints.keys().position(x => x == sprint)
@@ -302,12 +323,11 @@
           .map(sprint => sprint.consuntivo.map(row => row.at(i + 1)).sum())
           .sum(default: 0)
         let budget-speso-prec = ruolo.costo * ore-spese-prev
-
+        tot-budget-speso-prec += budget-speso-prec
         let ore-rimanenti = ruolo.max-ore - ore-spese-prev - ore-spese
         let ore-rimanenti-prev = ruolo.max-ore - ore-spese-prev
         let budget-rimanente = ruolo.costo * ore-rimanenti
         let budget-rimanente-prev = budget-rimanente + ruolo.costo * ore-spese
-
         (
           ruolo.nome,
           str(ruolo.costo) + "€/h",
@@ -332,13 +352,12 @@
             },
         )
       },
-
       [Totale],
       [-],
       str(ore-spese-sprint),
       str(budget-speso-sprint) + "€",
       str(ore-tot - ore-spese-sprint) + text(red)[ (#{-ore-spese-sprint})],
-      str(budget-tot - budget-speso-sprint) + text(red)[ (#{-budget-speso-sprint}€)],
+      str(budget-tot - tot-budget-speso-prec - budget-speso-sprint) + text(red)[ (#{-budget-speso-sprint}€)],
     ),
     caption: descrizione,
   )

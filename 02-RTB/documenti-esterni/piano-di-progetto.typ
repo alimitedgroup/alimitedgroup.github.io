@@ -2,12 +2,19 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [0.6.0]
+#let ver = [0.7.0]
 #show: body => importantdocs(
-  data: datetime(day: 24, month: 1, year: 2025),
+  data: datetime(day: 05, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "0.7.0",
+      date: datetime(day: 05, month: 02, year: 2025),
+      autore: p.marco,
+      verifica: p.samuele,
+      descr: "Redazione per il sesto sprint",
+    ),
     (
       vers: "0.6.0",
       date: datetime(day: 24, month: 1, year: 2025),
@@ -521,6 +528,7 @@ Tra le attività previste, elencate nella @sprint1intro,
 solo l'attività _Inizio stesura Analisi dei Requisiti#super[g]_ non è stata svolta,
 in quanto rimandata allo sprint successivo.
 
+#pagebreak()
 === Sprint 2
 
 #table(
@@ -555,7 +563,6 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
 
-#pagebreak()
 
 ==== Preventivo
 
@@ -663,6 +670,7 @@ Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della re
 
 I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
 
+#pagebreak()
 === Sprint 4
 
 #table(
@@ -698,8 +706,6 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
-
-#pagebreak()
 
 ==== Preventivo
 
@@ -812,3 +818,71 @@ Inoltre #M31 è stata aggiornata sui progressi realizzati e ha predisposto una r
 Anche il PoC ha subito degli importanti progressi ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
 
 A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto e le prime misurazioni del Piano di Qualifica.
+#pagebreak()
+
+=== Sprint 6
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[19-01-2025],
+  [Fine prevista:], strong[01-02-2025],
+  [Fine reale:], strong[01-02-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint6intro>
+
+Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti e della finitura del PoC; ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
+
+Le attività pianificate nel dettaglio includono:
+- La redazione e correzione dell'Analisi dei Requisiti a seguito della riunione esterna con #M31, effettuata in data 28/01;
+- Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
+- Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto;
+- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC;
+- Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
+
+Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB.
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RG3: Rischio Globale derivato da sottostima di attività
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(6, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  6,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, -2, -2),
+  "Sprint 6 - Consuntivo per componente",
+  "Sprint 6 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(6, "Sprint 6 - Variazione nelle risorse disponibili")
+
+#v(1em)
+
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguio della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+Inoltre, in merito all'Analisi dei Requisiti si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
+
+=== Retrospettiva
+
+In questo sesto sprint, ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC.\
+
+La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
