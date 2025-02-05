@@ -948,7 +948,7 @@ Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, se
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
-Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato, raggiungendo il suo picco durante il sesto _sprint_.
+Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[g] ,raggiungendo il suo picco durante il sesto _sprint_#super[g] .
 Come prevedibile, ciò ha portato tuttavia ad una diminuizione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
 
 == MPC04 e MPC05 - Cost Performance Index (CPI) e Schedule Performance Index (SPI)
