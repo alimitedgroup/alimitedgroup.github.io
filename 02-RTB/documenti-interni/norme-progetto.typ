@@ -826,7 +826,7 @@ Le attività previste dal processo di *Accertamento della qualità* sono le segu
 
 _ALimitedGroup_ per assicurare qualità ha individuato specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una Sezione apposita tali misurazioni per renderle più velocemente consultabili.
 
-Le misurazioni dovranno essere realizzate alla fine di ogni _Sprint_#super[g] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[g] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
 
 Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodotto mentre quelle di processo alla @metriche-qt-processo.
 
@@ -1083,7 +1083,7 @@ Per svolgere adeguatamente questa attività è necessario prevedere e svolgere r
 
 Le riunioni sono di due tipi: *interne* ed *esterne*.
 
-_ALimitedGroup_ realizza periodicamente, generalmente all'inizio di ogni _Sprint_#super[g], riunioni interne per il coordinamento interno: durante le stesse viene effettuato un punto della situazione sul progetto, un momento in cui i componenti si aggiornano sulle attività svolte e su quelle non terminate in tempo.
+_ALimitedGroup_ realizza periodicamente, generalmente all'inizio di ogni _sprint_#super[g], riunioni interne per il coordinamento interno: durante le stesse viene effettuato un punto della situazione sul progetto, un momento in cui i componenti si aggiornano sulle attività svolte e su quelle non terminate in tempo.
 L'attività di dialogo permetterà al *Responsabile*#super[g] di avere una panoramica attuale su quanto svolto, permettendogli così di gestire al meglio il periodo successivo.
 In queste occasioni è anche possibile effettuare la rotazione dei ruoli in caso di necessità (quali, a mero titolo di esempio, il termine delle ore di un determinato ruolo per una determinata persona oppure l'esaurimento di compiti appartenenti a quel ruolo).
 
@@ -1157,7 +1157,7 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
     [Per condividere con il gruppo tutti gli appuntamenti _ALimitedGroup_ utilizza *Google Calendar*.],
 
     [*Google Fogli*],
-    [_ALimitedGroup_ ha deciso di utilizzare un documento di *Google Fogli* per tenere traccia delle attività svolte settimanalmente durante gli _Sprint_],
+    [_ALimitedGroup_ ha deciso di utilizzare un documento di *Google Fogli* per tenere traccia delle attività svolte settimanalmente durante gli _sprint_],
 
     [*Google Mail*],
     [Il servizio di posta elettronica utilizzato da _ALimitedGroup_ per tutte le comunicazione verso l'esterno],
@@ -1245,7 +1245,7 @@ Rimane responsabilità di ogni membro controllarlo periodicamente.
 
 Il file condiviso di *Google Fogli* prevede tre schede:
 
-- *Dashboard*: fornisce un prospetto aggiornato delle ore preventivate, quelle utilizzate e quelle rimanenti per ogni ruolo, nonché un dettaglio per ogni _Sprint_#super[g] .È responsabilità di ogni componente aggiornare l'impegno orario effettivo durante lo _Sprint_#super[g] ad ogni ora produttiva svolta, annotando l'elenco delle attività svolte;
+- *Dashboard*: fornisce un prospetto aggiornato delle ore preventivate, quelle utilizzate e quelle rimanenti per ogni ruolo, nonché un dettaglio per ogni _sprint_#super[g] .È responsabilità di ogni componente aggiornare l'impegno orario effettivo durante lo _sprint_#super[g] ad ogni ora produttiva svolta, annotando l'elenco delle attività svolte;
 - *Grafico*: fornisce una rappresentazione grafica delle informazioni contenute nella *Dashboard*.
 
 ==== Google Mail

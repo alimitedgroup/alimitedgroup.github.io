@@ -941,16 +941,22 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
-Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto sprint#super[g] .Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g] .Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
 Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 
 == MPC03 e MPC07 - Actual Cost (AC) e Estimate To Complete (ETC)
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
+Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato, raggiungendo il suo picco durante il sesto _sprint_.
+Come prevedibile, ciò ha portato tuttavia ad una diminuizione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
+
 == MPC04 e MPC05 - Cost Performance Index (CPI) e Schedule Performance Index (SPI)
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
+
+Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il budget: questo si ricava dal fatto che il _Cost Performance Index_ sia minore di 1. La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
+La situazione è andata progressivamente a migliorare, come dentotato dal _Cost Performance Index_ (superiore a 1, indice di buon utilizzo del budget) e dallo _Schedule Performance Index_ (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
 
 == MPC06 - Estimate At Completion (EAC)
 
@@ -1006,9 +1012,9 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     // Data rows
     [Mancanza di tracciabilità delle attività rende complicato l'avanzamento produttivo e la pianificazione del lavoro], [Implementazione del sistema di ticketing su GitHub per migliorare la gestione e il monitoraggio delle attività],
     [Assenza di controllo sulle modifiche dirette al branch principale può causare problemi di integrazione e qualità del codice], [Implementazione di branch protection su GitHub per evitare modifiche non autorizzate e garantire la revisione del codice],
-    [Comunicare la rendicontazione ore separatamente durante la retrospettiva dello sprint rallenta ed appesantisce il flusso organizzativo], [Utilizzo di Foglio Google condiviso in cui annotare le ore impiegate di ciascun ruolo in ogni periodo asincronamente],
+    [Comunicare la rendicontazione ore separatamente durante la retrospettiva dello _sprint_ rallenta ed appesantisce il flusso organizzativo], [Utilizzo di Foglio Google condiviso in cui annotare le ore impiegate di ciascun ruolo in ogni periodo asincronamente],
     [Nominare le risorse con formati arbitrari crea problemi di consistenza e rallenta notevolmente qualsiasi attività di ricerca], [Ideazione ed utilizzo di convenzioni per la nomenclatura di issue, branch, file e decisioni prese per garantire una maggiore chiarezza e uniformità],
-    [La scelta delle attività non è sufficientemente specifica], [I membri di ALimitedGroup valuteranno di Sprint in Sprint le attività svolte e ancora da svolgere, deciderà il grado di qualità da raggiungere e in base a quello determinerà il tempo di svolgimento assegnato a ciascuna attività]
+    [La scelta delle attività non è sufficientemente specifica], [I membri di ALimitedGroup valuteranno di _sprint_ in _sprint_ le attività svolte e ancora da svolgere, deciderà il grado di qualità da raggiungere e in base a quello determinerà il tempo di svolgimento assegnato a ciascuna attività]
   ),
   caption: [contromisure adottate per migliorare l'organizzazione],
 )
