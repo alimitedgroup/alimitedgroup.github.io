@@ -125,7 +125,7 @@ Un'analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
 È assolutamente ragionevole pensare che, causa ridotta esperienza, gli effetti di mitigazione possano rivelarsi inefficaci: per questo motivo è necessario prendere atto degli errori di mitigazione rilevati durante la fase di controllo per poter apportare miglioramenti alle strategie adottate.
 
-In seguito saranno quindi illustrati i possibili rischi individuati da ALimitedGroup, divi in tre categorie:
+In seguito saranno quindi illustrati i possibili rischi individuati da _ALimitedGroup_, divi in tre categorie:
 
 - *RT* ossia *R*\ischio *T*\ecnologico
 - *RI* ossia *R*\ischio *I*\ndividuale
@@ -188,7 +188,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
     [*Codice*], [RT2],
     [*Nome*], [Rischio Tecnologico legato a errori nel codice],
     [*Descrizione*],
-    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo una riesaminazione di quanto scritto],
+    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo una nuova verifica di quanto scritto],
 
     [*Mitigazione*],
     [In caso di codice non funzionante, il programmatore cerca di risolvere il problema. Qualora questo risulti troppo complesso il programmatore chiederà aiuto a programmatori più esperti. In caso di problema particolarmente grave, le attività meno urgenti verranno posticipate per lasciare spazio alla risoluzione del problema.],
@@ -588,9 +588,9 @@ Il secondo sprint#super[g] è focalizzato principalmente sulla redazione dell'An
 Le attività pianificate nel dettaglio includono:
 
 - Redazione dell'Analisi dei Requisiti#super[g];
-- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli _use-case_;
+- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli Casi d'Uso;
 - Studio delle tecnologie _Golang_ e _NATS_;
-- Ottimizzazione del sistema di _ticketing_ e del *way of working#super[g]*;
+- Ottimizzazione del sistema di _ticketing_ e del *Way of Working#super[g]*;
 - Riorganizzazione delle Norme di Progetto;
 - Verifica del Piano di Progetto.
 
@@ -656,7 +656,7 @@ Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei R
 Le attività pianificate nel dettaglio includono:
 
 - Continuo redazione dell'Analisi dei Requisiti#super[g];
-- Discussione del Poc e dell'Analisi dei Requisiti#super[g] con l'azienda proponente #M31;
+- Discussione del PoC e dell'Analisi dei Requisiti#super[g] con l'azienda proponente #M31;
 - Inizio redazione Piano di Qualifica;
 - Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC#super[g];
 - Setup della repository con divisione del progetto in più microservizi
@@ -730,7 +730,7 @@ Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Ana
 Le attività pianificate nel dettaglio includono:
 
 - Aggiungere la sezione sulla codifica nelle Norme di Progetto;
-- Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti#super[g];
+- Completare la redazione dei Casi d'Uso opzionali nell'Analisi dei Requisiti#super[g];
 - Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[g];
 - Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
 - Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
@@ -777,9 +777,9 @@ In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla real
 
 La riunione con il professor Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[g],
 come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
-tra Use Case del backend e del frontend che devono essere rappresentati separatamente.
+tra Casi d'Uso del backend e del frontend che devono essere rappresentati separatamente.
 
-Non è stata completata la redazione degli Use Case non obbligatori a causa di problemi con la numerazione degli Use Case e la creazione dei relativi grafici in formato SVG.
+Non è stata completata la redazione degli Casi d'Uso non obbligatori a causa di problemi con la numerazione degli Casi d'Uso e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
 
 === Sprint 5 <sprint5>
@@ -917,7 +917,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguio della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguo della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
 Inoltre, in merito all'Analisi dei Requisiti#super[g] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
 
 === Retrospettiva
