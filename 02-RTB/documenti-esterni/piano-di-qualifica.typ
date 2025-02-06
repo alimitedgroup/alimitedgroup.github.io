@@ -960,20 +960,20 @@ Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, se
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
 Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[g] ,raggiungendo il suo picco durante il sesto _sprint_#super[g] .
-Come prevedibile, ciò ha portato tuttavia ad una diminuizione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
+Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
 
 == MPC04 e MPC05 - Cost Performance Index (CPI) e Schedule Performance Index (SPI)
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
 
 Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il budget: questo si ricava dal fatto che il _Cost Performance Index_ sia minore di 1. La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
-La situazione è andata progressivamente a migliorare, come dentotato dal _Cost Performance Index_ (superiore a 1, indice di buon utilizzo del budget) e dallo _Schedule Performance Index_ (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
+La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (superiore a 1, indice di buon utilizzo del budget) e dallo _Schedule Performance Index_ (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
 
 == MPC06 - Estimate At Completion (EAC)
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
-Come prevedibile dalle misurazioni precedenti, una gestiona non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
+Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
 
 == MPC08 - Time Estimate At Completion (TEAC)
 
@@ -991,9 +991,9 @@ Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g]
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
-In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per rendorlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
+In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per renderlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
 
-Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento, cercando di aumentare la tenedenza a crescere della misurazione specialmente per questo documento.
+Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento, cercando di aumentare la tendenza a crescere della misurazione specialmente per questo documento.
 
 == MPC11 - Correttezza ortografica
 
@@ -1011,7 +1011,7 @@ Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il s
 
 #metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
 
-Dal grafico si ricava che i componenti di _ALimitedGroup_ non hanno sin da subito gestito adeguatamente il tempo a disposizione: la metrica infatti riporta dei valori al di sotto della soglia accettabile, probabilmente anche per via dell'inesperienza. Gli stessi componenti hanno però compreso tale problematica e si sono impeganti a migliorare, portatndo a migliorare anche la metrica analizzata. Si denota però anche margine per un miglioramento: i componenti di _ALimitedGroup_ si impegneranno ulteriormente per aumentare la propria efficienza.
+Dal grafico si osserva un progressivo miglioramento dell’efficienza temporale dei componenti di ALimitedGroup. Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all’inesperienza e all’adattamento alle richieste del progetto. Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza e una riduzione del tempo necessario per completare le attività.
 
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
