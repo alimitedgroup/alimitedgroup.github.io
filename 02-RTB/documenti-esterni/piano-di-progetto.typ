@@ -13,28 +13,28 @@
       date: datetime(day: 05, month: 02, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Redazione per il sesto sprint",
+      descr: "Redazione per il sesto sprint " + [(@sprint6)],
     ),
     (
       vers: "0.6.0",
       date: datetime(day: 24, month: 1, year: 2025),
       autore: p.matteo,
       verifica: p.emanuele,
-      descr: "Redazione per il quinto sprint",
+      descr: "Redazione per il quinto sprint " + [(@sprint5)],
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 16, month: 1, year: 2025),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il quarto sprint",
+      descr: "Redazione per il quarto sprint " + [(@sprint4)],
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 29, month: 12, year: 2024),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il terzo sprint",
+      descr: "Redazione per il terzo sprint " + [(@sprint3)],
     ),
     (
       vers: "0.3.0",
@@ -48,14 +48,14 @@
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il secondo sprint",
+      descr: "Redazione per il secondo sprint " + [(@sprint2)],
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 27, month: 11, year: 2024),
       autore: p.samuele,
       verifica: p.lorenzo,
-      descr: "Redazione documento",
+      descr: "Redazione documento e redazione primo sprint " + [(@introduzione, @agr, @plt, @pbti, @sprint1)],
     ),
   ),
   versione: ver,
@@ -67,7 +67,7 @@
   body,
 )
 
-= Introduzione
+= Introduzione <introduzione>
 == Informazioni generali
 
 Il *Piano di Progetto* è un documento che cerca di esprimere le attività svolte e da svolgere durante la realizzazione del progetto di *Ingegneria del Software*.
@@ -111,7 +111,7 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 #pagebreak()
 
-= Analisi e gestione dei rischi
+= Analisi e gestione dei rischi <agr>
 
 == Introduzione
 Parte fondamentale per la redazione di un piano di progetto è il poter analizzare e classificare in maniera efficace i possibili rischi delle attività da svolgere: realizzarne una buona analisi permette di prevedere quali attività richiedono più tempo del previsto e, conseguentemente, valutare se il numero complessivo di attività inserite nel backlog settimanale sono in numero eccessivo o adeguato.
@@ -396,7 +396,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 
 #pagebreak()
 
-= Pianificazione nel lungo termine
+= Pianificazione nel lungo termine <plt>
 
 Come anticipato nella #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[Dichiarazione degli Impegni], Il gruppo prevede di terminare il progetto entro e non oltre il giorno *31 Marzo 2025* con un budget di spesa fissato a *Euro 12.930*.
 
@@ -461,7 +461,7 @@ Si stima inoltre ad una candidatura per la *_Requirements and Technology Baselin
 
 = Pianificazione nel breve termine
 
-== Introduzione
+== Introduzione <pbti>
 
 _ALimitedGroup_ ha stabilito di procedere con un *approccio Agile* allo svolgimento del progetto, riconoscendo che un periodo efficace per produrre sviluppi utili si aggira intorno alle 2 settimane: stabilisce dunque di realizzare *_sprint_*#super[g] di *circa 2 settimane*.
 
@@ -485,7 +485,7 @@ Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno e
 
 == Requirements and Technology Baseline (RTB)
 
-=== Sprint 1
+=== Sprint 1 <sprint1>
 
 #table(
   columns: 2,
@@ -568,7 +568,7 @@ solo l'attività _Inizio stesura Analisi dei Requisiti#super[g]_ non è stata sv
 in quanto rimandata allo sprint successivo.
 
 #pagebreak()
-=== Sprint 2
+=== Sprint 2 <sprint2>
 
 #table(
   columns: 2,
@@ -636,7 +636,7 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 
 In questo secondo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
 
-=== Sprint 3
+=== Sprint 3 <sprint3>
 
 #table(
   columns: 2,
@@ -710,7 +710,7 @@ Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della re
 I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
 
 #pagebreak()
-=== Sprint 4
+=== Sprint 4 <sprint4>
 
 #table(
   columns: 2,
@@ -782,7 +782,7 @@ tra Use Case del backend e del frontend che devono essere rappresentati separata
 Non è stata completata la redazione degli Use Case non obbligatori a causa di problemi con la numerazione degli Use Case e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
 
-=== Sprint 5
+=== Sprint 5 <sprint5>
 
 #table(
   columns: 2,
@@ -859,7 +859,7 @@ Anche il PoC ha subito degli importanti progressi ma sono stati rilevate delle c
 A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto e le prime misurazioni del Piano di Qualifica.
 #pagebreak()
 
-=== Sprint 6
+=== Sprint 6 <sprint6>
 
 #table(
   columns: 2,
