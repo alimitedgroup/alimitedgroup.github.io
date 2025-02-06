@@ -1,12 +1,13 @@
 #import "../../lib/common.typ": *
-#metadata[Glossario] <titolo>
 
 #set text(lang: "it", font: "Hanken Grotesk")
 #let versione = [0.4.0]
 
+#metadata[Glossario v#versione] <titolo>
+
 // Prima pagina
 #prima-pagina(
-  "Glossario",
+  [_Glossario_ \ Versione #versione],
   [],
   [Stato],
   [Redazione],

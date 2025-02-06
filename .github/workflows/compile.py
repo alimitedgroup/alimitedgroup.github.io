@@ -129,7 +129,12 @@ def main():
         categorie = "/".join(filename.split("/")[:-1])
 
         titolo = query(filename.replace(".pdf", ".typ"), "<titolo>")
-        output = f"dist/{titolo}".strip() + ".pdf"
+        # TODO: rimuovere la riga seguente
+        if 'Glossario' not in titolo:
+            output = f"dist/{titolo}".strip() + ".pdf"
+        # TODO: rimuovere le due righe seguenti
+        else:
+            output = "dist/Glossario.pdf"
 
         if ".typ" in filename and Path(filename_pdf).exists():
             copyfile(filename_pdf, output)
