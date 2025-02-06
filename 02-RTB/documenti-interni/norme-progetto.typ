@@ -156,7 +156,7 @@ Per realizzare il _Way of Working#super[g]_, i componenti hanno deciso di prende
 
 La stesura di questo documento è incrementale, cioè una stesura passo passo con modifiche, aggiunte e cancellazioni a seguito di miglioramenti del metodo di lavoro.
 
-I membri dell'intero gruppo si impegnano a visionare constantemente questo documento e a rispettare rigorosamente le regole definite in esso, per svolgere il progetto in modo professionale, coerente ed uniforme.
+I membri dell'intero gruppo si impegnano a visionare costantemente questo documento e a rispettare rigorosamente le regole definite in esso, per svolgere il progetto in modo professionale, coerente ed uniforme.
 
 == Scopo del prodotto
 
@@ -166,33 +166,38 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 
 == Glossario
 
-La realizzazione di un sistema software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivanti da questa attività saranno appositamente documentate.
+La realizzazione di un sistema Software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivanti da questa attività saranno appositamente documentate.
 
 Per evitare ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, viene utilizzato un Glossario in cui è trascritta, per ogni parola, la definizione. \
 La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
-#align(center)[parola#super[g]]
+#align(center, text(1.2em)[*`parola`*#super[g]])
 
 _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permetter la più completa comprensione di ogni tipo di documento pubblicato dal gruppo.
 
 == Riferimenti
 === Riferimenti normativi
-- Capitolato d'appalto C6: Sistema di gestione di un magazzino distribuito \
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
-- Standard ISO/IEC 9126 \
-  #link("https://it.wikipedia.org/wiki/ISO/IEC_9126")
-- Standard ISO/IEC 12207:1995 \
-  #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
+- *Capitolato d'appalto C6: Sistema di gestione di un magazzino distribuito* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf") \
+  *Ultimo Accesso 6 Febbraio 2025*
+- *Standard ISO/IEC 9126* \
+  #link("https://it.wikipedia.org/wiki/ISO/IEC_9126") \
+  *Ultimo Accesso 6 Febbraio 2025*
+- *Standard ISO/IEC 12207:1995* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf") \
+  *Ultimo Accesso 6 Febbraio 2025*
 
 === Riferimenti informativi
-- I processi di ciclo di vita del software \
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")
-- Glossario \
-  #link("https://alimitedgroup.github.io/Glossario.pdf")
+- *I processi di ciclo di vita del Software* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") \
+  *Ultimo Accesso 6 Febbraio 2025*
+- *Glossario* \
+  #link("https://alimitedgroup.github.io/Glossario.pdf") \
+  *Ultimo Accesso 6 Febbraio 2025*
 
 #pagebreak()
 
 = Processi Primari
-Per sviluppare un buon sistema software la sola scrittura di codice e lo svolgimento di alcuni Test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ossia che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
+Per sviluppare un buon sistema Software la sola scrittura di codice e lo svolgimento di alcuni Test non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ossia che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
 
 Tra i processi primari definiti dallo _standard ISO/IEC 12207_ si distinguono i processi di:
 
@@ -224,10 +229,10 @@ La fornitura prevede varie attività, qui di seguito descritte:
 - *Inizializzazione*: questa prevede l'analisi, da parte del fornitore, delle richieste da parte del proponente, tenendo in considerazione eventuali vincoli organizzativi o di altra natura. È Il momento in cui il fornitore valuta la capacità di realizzare quanto proposto, determinando gli eventuali requisiti da contrattare con il proponente;
 - *Preparazione risposte*: questa attività prevede la realizzazione di una contro-proposta per il proponente che tenga conto di quanto derivato dall'attività di inizializzazione;
 - *Contrattazione*: è l'attività che prevede un colloquio con il proponente durante il quale verranno presentate al proponente le risposte precedentemente realizzate, con l'obiettivo di giungere alla formalizzazione di un contratto;
-- *Pianificazione*: il fornitore, stabiliti i requisiti finali, deve adesso stabilire un'organizzazione e un metodo di lavoro in grado di assicurare la qualità del sistema da realizzare, scegliendo, qualora non lo sia da contratto, il modello di ciclo di vita del software da seguire. La pianificazione include anche l'individuazione delle risorse e le tecnologie necessarie allo sviluppo, considerando anche i potenziali rischi ad esse associate;
+- *Pianificazione*: il fornitore, stabiliti i requisiti finali, deve adesso stabilire un'organizzazione e un metodo di lavoro in grado di assicurare la qualità del sistema da realizzare, scegliendo, qualora non lo sia da contratto, il modello di ciclo di vita del Software da seguire. La pianificazione include anche l'individuazione delle risorse e le tecnologie necessarie allo sviluppo, considerando anche i potenziali rischi ad esse associate;
 - *Esecuzione e controllo*: Il fornitore deve, messo a documenti la pianificazione, realizzare quanto stabilito, monitorando nel frattempo la qualità di quanto prodotto e il progresso raggiunto;
 - *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente: questo è necessario per avere feedback su quanto realizzato, con annessa quindi una valutazione sullo stato di lavoro;
-- *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, garantedogli supporto.
+- *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente, garantendogli supporto.
 
 === Documentazione Fornita <elenco-documenti>
 
@@ -421,7 +426,7 @@ Descrive i metodi di qualifica (Verifica e Validazione) adottate da _ALimitedGro
 ==== Valutazione dei Capitolati
 
 La #link("https://alimitedgroup.github.io/Valutazione%20dei%20capitolati%201.0.0.pdf")[*Valutazione dei Capitolati*] è un documento pubblicato da _ALimitedGroup_ in data 2024-10-31. \
-Quest'ultimo fornisce, per ogni capitolato#super[g] ,una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. É suddiviso nelle seguenti sezioni:
+Quest'ultimo fornisce, per ogni capitolato#super[g] ,una dettagliata analisi evidenziando i suoi punti di forza e le sue criticità. È suddiviso nelle seguenti sezioni:
 - *Panoramica*: che indica l'azienda proponente, il nome del capitolato e delle informazioni generali sul prodotto da realizzare;
 - *Scopo*: indica che vantaggi porta la realizzazione del prodotto;
 - *Punti di forza*
@@ -499,7 +504,7 @@ Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di
 Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 12207:1995_ sono le seguenti:
 
 - *Implementazione del processo*: ovvero la scelta del *Ciclo di Vita* del Software più appropriato in base allo scopo, l'importanza e la complessità del progetto;
-- *Analisi dei Requisiti#super[g]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità che il software deve offrire. Un'Analisi dei Requisiti#super[g] completa deve descrivere le funzionalità del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente;
+- *Analisi dei Requisiti#super[g]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità che il Software deve offrire. Un'Analisi dei Requisiti#super[g] completa deve descrivere le funzionalità del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente;
 - *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _Software_ del prodotto finale, affinché tutti i requisiti individuati siano soddisfatti (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
 - *Analisi dei Requisiti#super[g] Software*: ovvero l'analisi del modo in cui il Software soddisfa i requisiti lato utente. Deve includere anche le caratteristiche di qualità: caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento Software e requisiti di sicurezza;
 - *Progettazione dell'architettura Software*: consiste nel definire le diverse componenti del Sistema e il loro funzionamento, ponendo l'attenzione sulla struttura generale, non nel dettaglio implementativo;
@@ -525,7 +530,7 @@ In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requi
 
 Per i casi d'Uso viene utilizzata la seguente nomenclatura:
 
-#align(center)[*`UCPrincipale.Secondario`*]
+#align(center, text(1.2em)[*`UCPrincipale.Secondario`*])
 
 dove:
 
@@ -544,10 +549,10 @@ Ogni Caso d'Uso è inoltre accompagnato da un nome che ne riassume lo scopo e un
 
 ==== Requisiti
 
-Identificati i Casi d'Uso, il documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] si concentra sull'individuazione dei requisiti traibili dagli stessi e dal capitolato#super[g] .
+Identificati i Casi d'Uso, il documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] si concentra sull'individuazione dei requisiti deducibili dagli stessi e dal capitolato#super[g] .
 I requisiti sono anch'essi identificati da una nomenclatura:
 
-#align(center)[*`R-Numero-Tipolgia-Priorità`*]
+#align(center, text(1.2em)[*`R-Numero-Tipolgia-Priorità`*])
 
 dove:
 - *R* è per abbreviare la parola *R*\equisito;
@@ -576,7 +581,7 @@ Questa sezione descrive le regole e le convenzioni che i programmatori devono se
 
 La struttura di un file sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
 
-Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite Github Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del main branch#super[g] .
+Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite Github Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del branch#super[g] principale.
 
 ===== Pratiche di programmazione
 - Variabili globali: evitare l'uso di variabili globali dove possibile
@@ -613,7 +618,7 @@ Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppan
 Per redigere la documentazione il gruppo utilizza due strumenti in particolare:
 
 - *_Typst_*: si tratta di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX* per la redazione di documenti a carattere scientifico e non solo.
-  _Typst_ permette la realizzazione di una preview istantanea, senza necessità di compilare ogni volta il documento, inoltre la sintassi è molto vicina ai linguaggi di programmazione. _ALimitedGroup_ lo utilizza in tutti i documenti.
+  _Typst_ permette la realizzazione di una anteprima istantanea, senza necessità di compilare ogni volta il documento, inoltre la sintassi è molto vicina ai linguaggi di programmazione. _ALimitedGroup_ lo utilizza in tutti i documenti.
   Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_ appositamente implementate dai componenti di _ALimitedGroup_ presenti all'interno della cartella _lib_ del _repository_#super[g] .\
   La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa Sezione saranno invece descritte le strutture dei vari documenti.
 
@@ -623,7 +628,7 @@ Per redigere la documentazione il gruppo utilizza due strumenti in particolare:
 
 Il processo di documentazione è un processo assai delicato, e molto importante. Le attività cardine di questo processo sono due:
 - *Produzione*: l'attività che stabilisce con quale metodo il documento deve essere redatto, per ulteriori informazioni vedere la @regole-branch-issue;
-- *Manutenzione*: l'attività che definisce come un documeto viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
+- *Manutenzione*: l'attività che definisce come un documento viene, eventualmente, modificato; per ulteriori informazioni vedere la @sezione_manutenzione.
 
 === Verbali <desc-templ-verbale>
 
@@ -659,7 +664,7 @@ In ultima istanza, i *verbali esterni* devono includere una sezione dedicata all
 
 === Diari di bordo
 
-Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progesso per ogni singolo gruppo iscritto al I lotto.
+Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progresso per ogni singolo gruppo iscritto al I lotto.
 
 In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Risultati raggiunti e confronto con le previsioni*, che elenca quanto abbiamo fatto nel periodo corrente;
@@ -708,7 +713,7 @@ Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni,
 
 Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
-#align(center)[*TIPO AAAA-MM-GG** \# VERSIONE*]
+#align(center, text(1.2em)[*`TIPO AAAA-MM-GG # VERSIONE`*])
 
 dove:
 - *TIPO* è una sigla che identifica il tipo di documento. Le possibili scelte sono:
@@ -730,7 +735,7 @@ Eventuali identificatori dovranno sempre seguire la regola del *_Kebab Case_*, o
 
 L'attività di manutenzione è necessaria nel momento in cui un documento ha bisogno di essere aggiornato con nuove informazioni. Il processo di aggiornamento non differisce di molto rispetto al processo di prima redazione, prevedendo infatti la realizzazione di una issue dedicata e di un processo di Verifica mediante _Pull Request_.
 
-Per le regole sulla nomenclatura da utilizzare per _Branch_#super[g] e _Issue_#super[g] si veda @creazione-github nella parte precedente di questo documento.
+Per le regole sulla nomenclatura da utilizzare per _branch_#super[g] e _Issue_#super[g] si veda @creazione-github nella parte precedente di questo documento.
 
 == Gestione delle Configurazioni <gest-config>
 
@@ -791,7 +796,7 @@ L'attività di *Registrazione dello Stato di Configurazione* si occupa proprio d
 
 Come verbalizzato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024* ed esteso poi a tutta la documentazione, i documenti utilizzeranno il seguente sistema di versionamento:
 
-#align(center)[*MAJOR.MINOR.PATCH*]
+#align(center, text(1.2em)[*`MAJOR.MINOR.PATCH`*])
 
 dove:
 
@@ -805,7 +810,7 @@ In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di
 
 === Valutazione della configurazione <valutazione-della-configurazione> //tracciamento dei requisiti, non sono i Test
 
-La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del software prodotto rispetto ai suoi requisiti e al design scelto.
+La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del Software prodotto rispetto ai suoi requisiti e al design scelto.
 
 _ALimitedGroup_ intende realizzare un *Tracciamento dei Requisiti* per controllare l'aderenza di quanto sviluppato con le aspettative. Più nello specifico, l'obiettivo è realizzare un Prodotto che sia efficiente, cioè soddisfa tutti i requisiti e sufficiente nel senso che soddisfa solo i requisiti necessari.
 Il gruppo, durante la parte di sviluppo effettiva, si impegnerà a tracciare, anche nel codice tramite commenti, cosa intende realizzare.
@@ -882,7 +887,7 @@ L'*Analisi Statica* può essere realizzata mediante *metodi formali*, ovvero med
 
 I *metodi di lettura* sono due:
 
-- *Walkthrought*, che suppone di essere consapevoli dell'esistenza di un problema, ma di non sapere di che cosa si tratta e dove si trova. Richiede dunque un'analisi approfondita di tutto l'oggetto di verifica#super[g] :è una metodologia costosa e poco applicabile perché difficilmente automatizzabile;
+- *Walkthrough*, che suppone di essere consapevoli dell'esistenza di un problema, ma di non sapere di che cosa si tratta e dove si trova. Richiede dunque un'analisi approfondita di tutto l'oggetto di verifica#super[g] :è una metodologia costosa e poco applicabile perché difficilmente automatizzabile;
 - *Ispezione*, si basa sulla conoscenza dei possibili problemi senza però verificarne la presenza, risulta meno efficace rispetto al primo sistema, in quanto non è completamente esaustiva, soprattutto per attività appena avviate. Tuttavia, consente di creare una lista di controllo da applicare all’oggetto di verifica#super[g] ,permettendo così di individuare potenziali errori o problemi.
 
 Tra i due, data l'alta mole di oggetti da verificare, l'*ispezione* è preferibile in quanto, potendola realizzare mediante una lista di controllo, è automatizzabile.
@@ -892,7 +897,7 @@ Tra i due, data l'alta mole di oggetti da verificare, l'*ispezione* è preferibi
 L'*Analisi Dinamica* è così chiamata perché prevede, per poter essere effettuata, l'esecuzione dell'oggetto da verificare.
 L'intento è quello di rimuovere i _fault_, ovvero elementi che hanno determinato un comportamento inatteso, mediante l'esecuzione del codice e la rilevazione delle _failure_, ovvero esecuzioni il cui esito non era quello atteso.
 
-L'*Analisi Dinamica* assolve il proprio compito mediante i Test#super[g] ,che deveono essere *ripetibili* (poiché se si presenta un _failure_ e i _fault_ che lo ha causato viene risolto è necessario eseguire nuovamente il Test per verificarne l'effettiva correzione) e automatizzabili (questo ottenibile mediante _driver_ che chiamano le parti di codice non direttamente eseguibili, _stub_ che sostituiscono parti di codice richiamabili per testare la componente che le chiama e _logger_ che registrano l'esito dei Test in un formato comprensibile da un automa).
+L'*Analisi Dinamica* assolve il proprio compito mediante i Test#super[g] ,che devono essere *ripetibili* (poiché se si presenta un _failure_ e i _fault_ che lo ha causato viene risolto è necessario eseguire nuovamente il Test per verificarne l'effettiva correzione) e automatizzabili (questo ottenibile mediante _driver_ che chiamano le parti di codice non direttamente eseguibili, _stub_ che sostituiscono parti di codice richiamabili per testare la componente che le chiama e _logger_ che registrano l'esito dei Test in un formato comprensibile da un automa).
 
 Per essere corretto, un Test#super[g] deve essere indipendente dall'ambiente di esecuzione e restituire, dato uno stesso input, lo stesso output, che deve essere corretto rispetto all'input fornito.
 
@@ -902,9 +907,9 @@ Le principali tipologie di Test#super[g] sono:
 - *Test di Sistema*;
 - *Test di Regressione*.
 
-La numenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]) è la seguente:
+La nomenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]) è la seguente:
 
-#align(center)[`T-#-Tipo`]
+#align(center, text(1.2em)[*`T-#-Tipo`*])
 
 dove:
 
@@ -924,7 +929,7 @@ Ogni test ha poi uno stato tra i seguenti:
 
 ====== Test di Unità
 
-I *Test di Unità* verificano la correttezza delle unità del codice, ovvero parti del Sistema che, eventualmente avvalendosi di moduli, costituiscono una componentre piccola ma con una responsabilità unica, non condivisa e sufficientemente grande per poter essere testata.
+I *Test di Unità* verificano la correttezza delle unità del codice, ovvero parti del Sistema che, eventualmente avvalendosi di moduli, costituiscono una componente piccola ma con una responsabilità unica, non condivisa e sufficientemente grande per poter essere testata.
 
 Questi Test#super[g] sono di due tipologie:
 
@@ -986,7 +991,7 @@ Tra i processi organizzativi si individuano:
 
 == Gestione dei Processi <gest-process>
 
-La *Gestione dei Processi* ha l'obbiettvo di individuare i compiti da svolgere e i ruoli ai quali questi saranno assegnati, nonché permettere una comunicazione interna ed esterna efficace e altresì garantire lo svolgimento delle varie attività in maniera efficace mediante un'opportuna pianificazione.
+La *Gestione dei Processi* ha l'obiettivo di individuare i compiti da svolgere e i ruoli ai quali questi saranno assegnati, nonché permettere una comunicazione interna ed esterna efficace e altresì garantire lo svolgimento delle varie attività in maniera efficace mediante un'opportuna pianificazione.
 
 === Attività previste
 
@@ -995,7 +1000,7 @@ Le attività principali, osservate da _ALimitedGroup_, previste da questo proces
 - *Pianificazione*: è necessario, stabiliti i requisiti, comprendere il tempo necessario per completare le attività, così come è necessario anche stimare i costi economici e temporali necessari allo svolgimento. Per facilitare questo compito, è stato scelto di dividere le responsabilità in vari ruoli, vedi @ruoli.
 - *Esecuzione e controllo*: l'esecuzione delle attività è affidata quindi ai vari ruoli e il *Responsabile*#super[g] dovrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
 - *Revisione e valutazione*: una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del *Verificatore*#super[g] .Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice.
-- *Finalizzazione*: un'attività è da reputarsi conclusa solo nel momento in cui viene definitivamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica#super[g], con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_#super[g] e del _Branch_#super[g] utilizzato per la redazione/modifica della componente.
+- *Finalizzazione*: un'attività è da reputarsi conclusa solo nel momento in cui viene definitivamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica#super[g], con la sola eccezione che la risoluzione della _Pull Request_ associata determina la chiusura della _Issue_#super[g] e del _branch_#super[g] utilizzato per la redazione/modifica della componente.
 
 Nell'interesse dello scopo del presente documento saranno ora descritti i ruoli prima citati e le loro responsabilità, previsti in particolar modo dall'attività di *pianificazione*.
 Sarà quindi dato spazio ad una parte fondamentale del gruppo, ovvero i metodi di *coordinamento*.
@@ -1046,7 +1051,7 @@ In ultima istanza, è sempre compito di questo ruolo "
     "Verificatore",
     (
       "Ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
-Si occupa di eseguire Test approfonditi e revisioni del software, identificando eventuali aree di miglioramento specie in ambito qualitativo. È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata."
+Si occupa di eseguire Test approfonditi e revisioni del Software, identificando eventuali aree di miglioramento specie in ambito qualitativo. È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata."
     ),
 
     "Analista",
@@ -1054,14 +1059,14 @@ Si occupa di eseguire Test approfonditi e revisioni del software, identificando 
       "Questo ruolo è Responsabile nell'identificazione dei requisiti obbligatori, desiderabili e facoltativi del progetto, considerando quanto discusso nelle riunioni esterne con l'azienda proponente "
         + [#M31]
         + ".
-È sempre affidato a questo ruolo il compito di regidere l'"
+È sempre affidato a questo ruolo il compito di redigere l'"
         + [*Analisi dei Requisiti*]
         + "."
     ),
 
     "Programmatore",
     (
-      "Il Programmatore è Responsabile dello sviluppo del software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
+      "Il Programmatore è Responsabile dello sviluppo del Software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
     Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate. È affidata a questo ruolo anche la responsabilità di realizzare Test automatici per verificare il corretto funzionamento del codice sviluppato."
     ),
 
@@ -1096,7 +1101,7 @@ L'esito degli incontri dovrà sempre essere documentato mediante la redazione di
 In merito ai metodi comunicativi, _ALimitedGroup_ utilizza *Telegram* e *Discord*#super[g] per, rispettivamente, comunicazioni asincrone e sincrone (riunioni).
 In genere una comunicazione urgente ma che non richiede approfondita discussione o per comunicazioni di servizio minori (come, a titolo di esempio, dubbi minori e non urgenti su particolari argomenti) i componenti utilizzeranno l'apposito gruppo realizzato su *Telegram* o messaggi diretti ad un componente specifico sempre utilizzando la medesima piattaforma, mentre la realizzazione di riunioni interne e la discussione di criticità complesse richiederanno lo svolgimento di una riunione presso il _Server_ *Discord*#super[g] appositamente realizzato.
 
-Per quanto riguarda invece le comunicazioni esterne, queste verranno sempre realizzate dal *Responsabile*#super[g] mediante l'utilizzo dell'inidirizzo di posta elettronica di _ALimitedGroup_ #link("mailto:alimitedgroup@gmail.com")[alimitedgroup\@gmail.com].
+Per quanto riguarda invece le comunicazioni esterne, queste verranno sempre realizzate dal *Responsabile*#super[g] mediante l'utilizzo dell'indirizzo di posta elettronica di _ALimitedGroup_ #link("mailto:alimitedgroup@gmail.com")[alimitedgroup\@gmail.com].
 
 Per maggiori informazioni si consiglia la lettura del processo di *Infrastruttura* alla @infrastruttura.
 
@@ -1106,7 +1111,7 @@ Il processo di *Infrastruttura* è responsabile della creazione e del mantenimen
 
 === Attività previste
 
-Si compone delle seguenti atività:
+Si compone delle seguenti attività:
 
 - *Implementazione*
 - *Creazione*
@@ -1116,7 +1121,7 @@ Tali attività saranno descritte nel dettaglio nelle prossime Sezioni.
 
 === Implementazione <implementazione>
 
-_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'iniseme di tutti gli strumenti utilizzati.
+_ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la necessità di adottare appositi strumenti per permettere il lavoro asincrono dei suoi componenti. Di seguito vengono elencati l'insieme di tutti gli strumenti utilizzati.
 
 - _Discord_#super[g]
 - _Git_
@@ -1143,11 +1148,11 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
     },
     table.header(text(white)[*Strumento*], text(white)[*Descrizione*]),
     [*Discord*],
-    [_Discord_ è un programma di messagistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.],
+    [_Discord_ è un programma di messaggistica istantanea e videoconferenza utilizzato da _ALimitedGroup_ per realizzare le proprie riunioni interne in modalità *virtuale*.],
 
     [*Git*],
     [Programma originariamente sviluppato da Linus Torvalds per il versionamento del codice: _ALimitedGroup_ ha deciso di impiegarlo come strumento di versionamento per il sorgente della propria documentazione e il codice prodotto.
-      Git è dunque un potente _Version Control System (VCS)_ che permette di versionare efficacemente tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _Branch_ separati.],
+      Git è dunque un potente _Version Control System (VCS)_ che permette di versionare efficacemente tutto ciò che viene prodotto grazie anche alla possibilità di organizzare gli sviluppi in _branch_ separati.],
 
     [*GitHub*],
     [*GitHub* è un prodotto che permette principalmente la memorizzazione su dispositivo remoto di _repository_ Git, ma non solo: esso infatti si è evoluto nel corso del tempo per permettere la collaborazione asincrona tra _developer_.
@@ -1206,11 +1211,11 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 
 Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
 
-#align(center)[*\#-azione-documento-data*]
+#align(center, text(1.2em)[*`\#-azione-documento-data`*])
 
 Dove:
 - Al posto di *\#* va inserito il numero della _Issue_#super[g] le cui modifiche operate nel branch determineranno la chiusura
-- Al posto di *azione* va inserita l'azione fatta nel _Branch_#super[g] ossia:
+- Al posto di *azione* va inserita l'azione fatta nel _branch_#super[g] ossia:
   - *redazione* per indicare la redazione di un nuovo documento
   - *aggiornamento* per indicare la modifica di un documento esistente
 - Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
@@ -1218,14 +1223,14 @@ Dove:
 
 Il gruppo ha poi deciso di utilizzare le _Issue_#super[g] di GitHub per tracciare le attività da fare. Generalmente, il nome di una _Issue_#super[g] segue il seguente schema:
 
-#align(center)[*azione documento data*]
+#align(center, text(1.2em)[*`azione documento data`*])
 
-Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_#super[g] .
+Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _branch_#super[g] .
 
 Ogni _Issue_#super[g] è inoltre legata ad una _Project Board_, uno strumento di GitHub che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso.
 
-La chiusura di una _Issue_#super[g] avviene sempre ed esclusivamente mediante l'apertura di una _Pull Request_ e al seguito di una verifica con esito positivo: in tal caso il *Verificatore*#super[g] che ha effettuato la verifica o il *Responsabile*#super[g] potrà procedere alla chiusura della stessa con conseguente entrata delle modifiche nel _Branch_#super[g] principale e questa azione determinerà la chiusura automatica della _Issue_#super[g]. Qualora _GitHub_#super[g] non segnalasse tale automazione, sarà necessario procedere ad aggiungere al commento di chiusura della _Pull Request_ la dicitura
-#align(center)[*fix #issue*]
+La chiusura di una _Issue_#super[g] avviene sempre ed esclusivamente mediante l'apertura di una _Pull Request_ e al seguito di una verifica con esito positivo: in tal caso il *Verificatore*#super[g] che ha effettuato la verifica o il *Responsabile*#super[g] potrà procedere alla chiusura della stessa con conseguente entrata delle modifiche nel _branch_#super[g] principale e questa azione determinerà la chiusura automatica della _Issue_#super[g]. Qualora _GitHub_#super[g] non segnalasse tale automazione, sarà necessario procedere ad aggiungere al commento di chiusura della _Pull Request_ la dicitura
+#align(center, text(1.2em)[*`fix #issue`*])
 
 dove al posto di *_issue_*#super[g] va inserito il numero della issue associata alla _Pull Request_.
 
@@ -1300,7 +1305,7 @@ I vari documenti sono spesso accomunati da esigenze particolari servibili median
 Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*_common.typ_*]:
 - *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
 - *M31* : permette di visualizzare il nome dell'azienda proponente. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
-- *abbrev* : preso un _output_ fornito dalla funzione _p_, inseriesce nome e cognome della persona selezionata;
+- *abbrev* : preso un _output_ fornito dalla funzione _p_, inserisce nome e cognome della persona selezionata;
 - *prof* : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
 - *issue*#super[g] : fornisce la possibilità di inserire il _link_ che si riferisce ad una determinata _issue_#super[g] ,tramite il numero associato a quest'ultima (e opzionalmente il _repository_#super[g] ,altrimenti viene di _default_ inserito quella della documentazione);
 - *pr*#super[g] : come sopra, ma per indicare le _pull request_;
@@ -1355,7 +1360,7 @@ In base a quanto previsto dallo standard _ISO/IEC 12207:1995_ è necessario veng
 _ALimitedGroup_ ha perciò sin da subito analizzato i requisiti e compreso quali tecnologie sarà necessario approfondire dal punto di vista del progetto vero e proprio:
 
 - Il linguaggio di programmazione *Go*#super[g] ;
-- Il sistema di messaggistica per sistemi distribuiti *Nats*;
+- Il sistema di messaggistica per sistemi distribuiti *NATS*;
 - Il sistema di containerizzazione *Docker*.
 
 e dal punto di vista della produzione della documentazione:
@@ -1365,7 +1370,7 @@ e dal punto di vista della produzione della documentazione:
 
 Saranno inoltre utili i seguenti servizi:
 
-- Il _software_ per il versionamento *Git*;
+- Il _Software_ per il versionamento *Git*;
 - Il servizio di _hosting_ per progetti *GitHub*#super[g].
 
 === Sviluppo di materiale per la formazione
@@ -1425,7 +1430,7 @@ _ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di pianific
 
 = Metriche e standard per la Qualità <metriche>
 
-_ALimitedGroup_ ha deciso di seguire lo _Standard ISO/IEC 9126_ per definire le metriche e i parametri che determinano la qualità di quanto realizzato. Lo standard identifica sei caratteristiche generali:
+_ALimitedGroup_ ha deciso di seguire lo _standard ISO/IEC 9126_ per definire le metriche e i parametri che determinano la qualità di quanto realizzato. Lo standard identifica sei caratteristiche generali:
 
 - *Funzionalità*;
 - *Affidabilità*;
@@ -1492,12 +1497,12 @@ La *Portabilità* è la facilità con cui il prodotto può essere spostato da un
 
 La nomenclatura utilizzata per le metriche è la seguente:
 
-#align(center)[`MTipo##`]
+#align(center, text(1.2em)[*`MTipo##`*])
 
 dove:
 
 - *M* sta per *M*\etrica
-- *Tipo* può assumere uno dtra questi valori:
+- *Tipo* può assumere uno tra questi valori:
   - *PC* ovvero *P*\ro#text()[*c*]esso
   - *PD* ovvero *P*\ro#text()[*d*]otto
 - *\#\#* è un numero crescente da 0. Il conteggio per il tipo *PC* e *PD* è separato.
@@ -1782,7 +1787,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Code Smells" = ("Numero di code smells" / "KLOC")$
   ],
-  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del software. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
+  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del Software. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
   desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
 )
 

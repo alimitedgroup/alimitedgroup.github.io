@@ -93,7 +93,7 @@
 
 = Introduzione <introduzione>
 == Scopo del documento
-Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _software_ e dei processi coinvolti nel suo ciclo di vita.\
+Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _Software_ e dei processi coinvolti nel suo ciclo di vita.\
 Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
 
 + *Piano della Qualità*
@@ -127,19 +127,27 @@ I destinatari del documento sono:
 
 == Riferimenti
 === Riferimenti normativi
-- Norme di Progetto ver. 1.0.0: \
-  #link("alimitedgroup.github.io/https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf]
-- Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito: \
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
-
+- *Norme di Progetto ver. 1.0.0*: \
+  #link("alimitedgroup.github.io/https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf] \
+  *Ultimo Accesso 6 Febbraio 2025*
+- *Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito*: \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf") \
+  *Ultimo Accesso 6 Febbraio 2025*
 
 === Riferimenti informativi
-- Glossario: \
-  #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf]
+- *Glossario*: \
+  #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf] \
+  *Ultimo Accesso 6 Febbraio 2025*
+- *Standard ISO/IEC 9126* \
+  #link("https://it.wikipedia.org/wiki/ISO/IEC_9126") \
+  *Ultimo Accesso 6 Febbraio 2025*
+- *Standard ISO/IEC 12207:1995* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf") \
+  *Ultimo Accesso 6 Febbraio 2025*
 
 
 = Qualità di processo <qtaprc>
-La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto software.
+La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto Software.
 Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
 Per garantire la qualità di processo, il progetto si avvale di:
 - *Modelli di riferimento*: CMMI (Capability Maturity Model Integration) e ISO/IEC 12207.
@@ -302,10 +310,10 @@ Per garantire la qualità di processo, il progetto si avvale di:
 )
 
 = Qualità di prodotto <qtaprd>
-La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto software e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
+La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto Software e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
-Un prodotto software è considerato di alta qualità quando:
+Un prodotto Software è considerato di alta qualità quando:
 - È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nell'analisi.
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori.
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali.
@@ -935,7 +943,10 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
   caption: [Test di Accettazione],
 )
 
+#pagebreak()
 = Cruscotto di Valutazione <dashboard>
+
+Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline (PB)_.
 
 == MPC01 e MPC02 - Earned Value (EV) e Planned Value(PV)
 
@@ -962,34 +973,49 @@ La situazione è andata progressivamente a migliorare, come dentotato dal _Cost 
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
+Come prevedibile dalle misurazioni precedenti, una gestiona non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_ 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
+
 == MPC08 - Time Estimate At Completion (TEAC)
 
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
+
+Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_, il tempo stimato al completamento risultava superiore alla durata pianificata. Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata, arrivando poi a coincidere verso lo _sprint_ 6.
 
 == MPC09 - Requirements Stability Index
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
+Il grafico registra un peggioramento della misurazione tra gli _sprint_ 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin), che ha portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_ 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+
 == MPC10 - Indice di Gulpease
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
+
+In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per rendorlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
+
+Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento, cercando di aumentare la tenedenza a crescere della misurazione specialmente per questo documento.
 
 == MPC11 - Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
+Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema ti importanza assolutamente critica e vi ha posto rimedio, correggendo tali criticità tra gli _sprint_ 4 e 6.
+
 == MPC14 - Quality metrics satisfied
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
+
+Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza, dall'aggiudicazione del Capitolato allo _sprint_ 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo. _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working_.
 
 == MPC15 - Time Efficiency
 
 #metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
 
+Dal grafico si ricava che i componenti di _ALimitedGroup_ non hanno sin da subito gestito adeguatamente il tempo a disposizione: la metrica infatti riporta dei valori al di sotto della soglia accettabile, probabilmente anche per via dell'inesperienza. Gli stessi componenti hanno però compreso tale problematica e si sono impeganti a migliorare, portatndo a migliorare anche la metrica analizzata. Si denota però anche margine per un miglioramento: i componenti di _ALimitedGroup_ si impegneranno ulteriormente per aumentare la propria efficienza.
 
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
-Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto software.
+Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto Software.
 Di seguito, presenteremo i principali problemi individuati e le relative contromisure messe in atto per risolvere o ridurre gli ostacoli riscontrati.
 
 == Valutazioni sull'organizzazione
