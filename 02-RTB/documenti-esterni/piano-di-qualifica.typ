@@ -973,25 +973,25 @@ La situazione è andata progressivamente a migliorare, come dentotato dal _Cost 
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
-Come prevedibile dalle misurazioni precedenti, una gestiona non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_ 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
+Come prevedibile dalle misurazioni precedenti, una gestiona non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
 
 == MPC08 - Time Estimate At Completion (TEAC)
 
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
-Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_, il tempo stimato al completamento risultava superiore alla durata pianificata. Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata, arrivando poi a coincidere verso lo _sprint_ 6.
+Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[g] ,il tempo stimato al completamento risultava superiore alla durata pianificata. Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata, arrivando poi a coincidere verso lo _sprint_#super[g] 6.
 
 == MPC09 - Requirements Stability Index
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
-Il grafico registra un peggioramento della misurazione tra gli _sprint_ 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin), che ha portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_ 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin), che ha portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
 
 == MPC10 - Indice di Gulpease
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
-In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per rendorlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
+In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per rendorlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
 
 Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento, cercando di aumentare la tenedenza a crescere della misurazione specialmente per questo documento.
 
@@ -999,13 +999,13 @@ Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegn
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
-Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema ti importanza assolutamente critica e vi ha posto rimedio, correggendo tali criticità tra gli _sprint_ 4 e 6.
+Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema ti importanza assolutamente critica e vi ha posto rimedio, correggendo tali criticità tra gli _sprint_#super[g] 4 e 6.
 
 == MPC14 - Quality metrics satisfied
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
-Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza, dall'aggiudicazione del Capitolato allo _sprint_ 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo. _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working_.
+Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza, dall'aggiudicazione del Capitolato allo _sprint_#super[g] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo. _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[g]_.
 
 == MPC15 - Time Efficiency
 
