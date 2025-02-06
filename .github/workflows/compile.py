@@ -93,6 +93,9 @@ def compile(filename: str, compile_options: list[str]) -> bool:
 
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
+    # TODO: rimuovere le due righe seguenti
+    if 'Glossario' in titolo:
+        return TEMPLATE.replace("{{link}}", "Glossario.pdf").replace("{{name}}", titolo)
     return TEMPLATE.replace("{{link}}", titolo + ".pdf").replace("{{name}}", titolo)
 
 
@@ -118,7 +121,12 @@ def main():
         categorie = "/".join(filename.split("/")[:-1])
 
         titolo = query(filename.replace(".pdf", ".typ"), "<titolo>")
-        output = f"dist/{titolo}".strip() + ".pdf"
+        # TODO: rimuovere la riga seguente
+        if 'Glossario' not in titolo:
+            output = f"dist/{titolo}".strip() + ".pdf"
+        # TODO: rimuovere le due righe seguenti
+        else:
+            output = "dist/Glossario.pdf"
 
         if ".typ" in filename and Path(filename_pdf).exists():
             copyfile(filename_pdf, output)
