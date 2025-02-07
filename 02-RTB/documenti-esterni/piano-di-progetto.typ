@@ -59,10 +59,10 @@
     ),
   ),
   versione: ver,
-  responsabile: ((p.loris),),
-  verificatore: ((p.lorenzo),),
-  redattori: ((p.samuele), (p.loris), (p.marco)),
-  descrizione: [Il seguente documento contiene il _Piano di Progetto_ utilizzato, da _ALimitedGroup_, per la realizzazione di un magazzino distribuito presentato da parte di #M31],
+  responsabile: ((p.samuele),),
+  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele)),
+  redattori: ((p.loris), (p.marco), (p.matteo), (p.samuele)),
+  descrizione: [Il _Piano di Progetto_ contiene il resoconto delle attività svolte e da svolgere da _ALimitedGroup_],
   titolo: "Piano di Progetto",
   body,
 )
@@ -635,7 +635,7 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 === Retrospettiva
 
 In questo secondo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
-
+#pagebreak()
 === Sprint 3 <sprint3>
 
 #table(
@@ -781,7 +781,7 @@ tra Casi d'Uso del backend e del frontend che devono essere rappresentati separa
 
 Non è stata completata la redazione degli Casi d'Uso non obbligatori a causa di problemi con la numerazione degli Casi d'Uso e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
-
+#pagebreak()
 === Sprint 5 <sprint5>
 
 #table(
@@ -789,7 +789,7 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma
   stroke: none,
   inset: (x: 0pt),
   column-gutter: 1em,
-  [Inizio:], strong[06-1-2025],
+  [Inizio:], strong[06-01-2025],
   [Fine prevista:], strong[18-01-2025],
   [Fine reale:], strong[18-01-2025],
   [Giorni di ritardo:], strong[0],
