@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [0.8.0]
+#let ver = [0.10.0]
 
 #show: body => importantdocs(
   data: datetime(day: 10, month: 01, year: 2025),
@@ -9,56 +9,56 @@
   versione: ver,
   versioni: (
     (
-      vers: "0.8.0",
+      vers: "0.10.0",
       date: datetime(day: 10, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.sara,
       descr: "Aggiunte misurazioni " + [(@dashboard)],
     ),
     (
-      vers: "0.8.0",
+      vers: "0.9.0",
       date: datetime(day: 10, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
       descr: "Aggiornamento qualità del processo e prodotto, soglie e tabelle " + [(@qtaprc e @qtaprd)],
     ),
     (
-      vers: "0.7.0",
+      vers: "0.8.0",
       date: datetime(day: 09, month: 01, year: 2025),
       autore: p.emanuele,
       verifica: p.matteo,
       descr: "Aggiunta sezione automiglioramento " + [(@automiglioramento)],
     ),
     (
-      vers: "0.6.0",
+      vers: "0.7.0",
       date: datetime(day: 08, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
       descr: "Aggiornamento sezione qualità di processo " + [(@qtaprc)],
     ),
     (
-      vers: "0.5.0",
+      vers: "0.6.0",
       date: datetime(day: 04, month: 01, year: 2025),
       autore: p.emanuele,
       verifica: p.matteo,
       descr: "Aggiunta metriche qualità di prodotto e tabelle " + [(@qtaprd)],
     ),
     (
-      vers: "0.4.0",
+      vers: "0.5.0",
       date: datetime(day: 3, month: 01, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
       descr: "Aggiornamento metriche di processo e tabelle " + [(@qtaprc)],
     ),
     (
-      vers: "0.3.0",
+      vers: "0.4.0",
       date: datetime(day: 27, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.matteo,
       descr: "Aggiornamento metriche di processo " + [(@qtaprc)],
     ),
     (
-      vers: "0.2.0",
+      vers: "0.3.0",
       date: datetime(day: 19, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.matteo,
@@ -80,11 +80,12 @@
     ),
   ),
   stato: [In redazione],
-  responsabile: ((p.loris),),
-  verificatore: ((p.samuele), (p.lorenzo)),
+  responsabile: ((p.samuele),),
+  verificatore: ((p.matteo), (p.sara)),
   redattori: (
     (p.sara),
     (p.emanuele),
+    (p.matteo),
   ),
   descrizione: [Questo documento contiene il _Piano di Qualifica_ descritto dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
   titolo: "Piano di Qualifica",
@@ -954,39 +955,39 @@ Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggi
 
 Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g] .Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
 Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
-
+#pagebreak()
 == MPC03 e MPC07 - Actual Cost (AC) e Estimate To Complete (ETC)
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
 Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[g] ,raggiungendo il suo picco durante il sesto _sprint_#super[g] .
 Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
-
+#pagebreak()
 == MPC04 e MPC05 - Cost Performance Index (CPI) e Schedule Performance Index (SPI)
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
 
 Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il budget: questo si ricava dal fatto che il _Cost Performance Index_ sia minore di 1. La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
 La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (superiore a 1, indice di buon utilizzo del budget) e dallo _Schedule Performance Index_ (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
-
+#pagebreak()
 == MPC06 - Estimate At Completion (EAC)
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
 Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
-
+#pagebreak()
 == MPC08 - Time Estimate At Completion (TEAC)
 
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
 Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[g] ,il tempo stimato al completamento risultava superiore alla durata pianificata. Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata, arrivando poi a coincidere verso lo _sprint_#super[g] 6.
-
+#pagebreak()
 == MPC09 - Requirements Stability Index
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
 Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin), che ha portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
-
+#pagebreak()
 == MPC10 - Indice di Gulpease
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
@@ -994,25 +995,25 @@ Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g]
 In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per renderlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
 
 Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento, cercando di aumentare la tendenza a crescere della misurazione specialmente per questo documento.
-
+#pagebreak()
 == MPC11 - Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
 Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema ti importanza assolutamente critica e vi ha posto rimedio, correggendo tali criticità tra gli _sprint_#super[g] 4 e 6.
-
+#pagebreak()
 == MPC14 - Quality metrics satisfied
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
 Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza, dall'aggiudicazione del Capitolato allo _sprint_#super[g] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo. _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[g]_.
-
+#pagebreak()
 == MPC15 - Time Efficiency
 
 #metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
 
 Dal grafico si osserva un progressivo miglioramento dell’efficienza temporale dei componenti di ALimitedGroup. Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all’inesperienza e all’adattamento alle richieste del progetto. Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza e una riduzione del tempo necessario per completare le attività.
-
+#pagebreak()
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
 Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto Software.

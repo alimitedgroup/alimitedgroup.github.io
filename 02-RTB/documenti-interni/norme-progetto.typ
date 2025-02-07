@@ -132,9 +132,8 @@
   versione: ver,
   stato: [Verificato],
   responsabile: ((p.samuele),),
-  verificatore: ((p.lorenzo),),
+  verificatore: ((p.lorenzo), (p.samuele), (p.emanuele), (p.sara)),
   redattori: (
-    (p.emanuele),
     (p.marco),
     (p.matteo),
   ),
@@ -594,6 +593,7 @@ Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di un
 - Indentazione: usare quattro spazi per l'indentazione
 - Più istruzioni su una linea: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice
 
+#pagebreak()
 = Processi di Supporto
 Tra i processi di supporto utilizzati nel progetto distinguiamo:
 
@@ -976,7 +976,7 @@ _ALimitedGroup_, per realizzare l'attività di Validazione vera e propria, si im
 ===== Attività di Validazione
 
 _ALimitedGroup_, per realizzare l'attività di Validazione vera e propria, di realizzare dunque il *tracciamento dei Requisiti* ed eventuali *Test di Accettazione* per controllare l'efficacia di quanto sviluppato e già verificato, simulando scenari di utilizzo da parte di #M31.
-
+#pagebreak()
 = Processi Organizzativi
 
 I *Processi Organizzativi* sono dei processi a supporto del progetto che assicurano il buon andamento dell'intero progetto.
@@ -1427,7 +1427,7 @@ Data la natura del progetto, ovvero a fini didattici, _ALimitedGroup_ ha optato 
 _ALimitedGroup_ si promette di permettere durante la durata del progetto appositi spazi per permettere la formazione dei membri: durante i vari _sprint_#super[g] sarà possibile sfruttare i momenti in cui è stata assegnata un'attività di peso minore per poter dare maggior peso alla formazione personale.
 
 _ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di pianificare degli spazi temporali durante gli _sprint_#super[g] dedicati esclusivamente allo studio di queste tecnologie, pur restando consapevole che un forte aiuto sarà dato dalla realizzazione effettiva del _Proof of Concept_ e del progetto finale.
-
+#pagebreak()
 = Metriche e standard per la Qualità <metriche>
 
 _ALimitedGroup_ ha deciso di seguire lo _standard ISO/IEC 9126_ per definire le metriche e i parametri che determinano la qualità di quanto realizzato. Lo standard identifica sei caratteristiche generali:
@@ -1491,7 +1491,7 @@ La *Portabilità* è la facilità con cui il prodotto può essere spostato da un
 - *Adattabilità*, ovvero con che facilità il prodotto può essere adattato ad un diverso ambiente d'esecuzione;
 - *Installabilità*, ovvero con che facilità il prodotto può essere installato su un altro ambiente d'esecuzione;
 - *Conformità*, ovvero se il prodotto aderisce a convenzioni sulla portabilità;
-- *Sostituibilità*, ovvero quanto è semplice sostituire un prodotto esistente con il prodotto da noi sviluppato. \ \ \ \
+- *Sostituibilità*, ovvero quanto è semplice sostituire un prodotto esistente con il prodotto da noi sviluppato.
 
 == Nomenclatura delle Metriche
 
@@ -1510,7 +1510,7 @@ dove:
 Per tutte le definizioni, acronimi e abbreviazioni utilizzati in questo documento, si faccia
 riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni
 necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.
-
+#pagebreak()
 = Metriche di Qualità del Processo <metriche-qt-processo>
 == Processi primari
 === Fornitura
@@ -1690,7 +1690,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   ],
   desc: [Valutazione del rapporto tra le ore utilizzate e quelle effettivamente produttive.],
 )
-
+#pagebreak()
 = Metriche di Qualità del Prodotto <metriche-qt-prodotto>
 == Funzionalità
 === Requisiti obbligatori soddisfatti
