@@ -83,11 +83,11 @@
   responsabile: ((p.samuele),),
   verificatore: ((p.matteo), (p.sara)),
   redattori: (
-    (p.sara),
     (p.emanuele),
     (p.matteo),
+    (p.sara),
   ),
-  descrizione: [Questo documento contiene il _Piano di Qualifica_ descritto dal gruppo _ALimitedGroup_ per il capitolato C6 proposto da #M31],
+  descrizione: [Questo documento contiene il _Piano di Qualifica_ descritto dal gruppo _ALimitedGroup_ per il Capitolato numero 6 proposto da #M31],
   titolo: "Piano di Qualifica",
   body,
 )

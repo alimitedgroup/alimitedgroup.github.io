@@ -132,7 +132,7 @@
   versione: ver,
   stato: [Verificato],
   responsabile: ((p.samuele),),
-  verificatore: ((p.lorenzo), (p.samuele), (p.emanuele), (p.sara)),
+  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele), (p.sara)),
   redattori: (
     (p.marco),
     (p.matteo),
