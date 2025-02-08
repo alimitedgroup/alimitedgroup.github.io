@@ -26,9 +26,9 @@
   let titolo = [_Verbale_ #tipo #data.display("[day]/[month]/[year]")]
   let versione = versioni.at(0).vers
   if tipo == [interno] {
-    [ #metadata[VI #data.display("[day]-[month]-[year]") v#versione #disambiguatore] <titolo>]
+    [ #metadata[VI #data.display("[day]-[month]-[year]") #disambiguatore] <titolo>]
   } else if tipo == [esterno] {
-    [ #metadata[VE #data.display("[day]-[month]-[year]") v#versione #disambiguatore] <titolo>]
+    [ #metadata[VE #data.display("[day]-[month]-[year]") #disambiguatore] <titolo>]
   } else {
     panic("Tipo di verbale sconosciuto: " + tipo)
   }
@@ -43,13 +43,11 @@
   prima-pagina(
     titolo,
     {
-      v(2em)
+      v(4em)
       text(14pt, weight: "black", fill: black)[Ordine del giorno]
       v(0.5em)
       text(10pt)[#odg]
     },
-    [Stato], stato,
-    [Versione], versione,
     [Presenze], grid(align: left, gutter: 8pt, ..presenze.map(persona)),
     [Destinatari],
     if tipo == [esterno]
@@ -65,9 +63,6 @@
   set heading(numbering: "1.")
   set page(numbering: "1", header: header(titolo), footer: footer())
   counter(page).update(1)
-  pagebreak()
-
-  registro-modifiche(versioni)
   pagebreak()
 
   indice()
