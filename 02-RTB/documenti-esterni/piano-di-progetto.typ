@@ -874,16 +874,16 @@ A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme d
 
 ==== Informazioni generali e attività da svolgere <sprint6intro>
 
-Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[g] e della finitura del PoC#super[g] ;ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
+Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[g] e della finitura del PoC#super[g]; ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
 
 Le attività pianificate nel dettaglio includono:
 - La redazione e correzione dell'Analisi dei Requisiti#super[g] a seguito della riunione esterna con #M31, effettuata in data 28/01;
 - Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
 - Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto;
-- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[g] ;
+- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[g];
 - Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
 
-Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[g] .
+Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[g].
 
 ==== Rischi attesi
 
@@ -922,6 +922,6 @@ Inoltre, in merito all'Analisi dei Requisiti#super[g] si è concretizzato il ris
 
 === Retrospettiva
 
-In questo sesto sprint#super[g] ,ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g] .\
+In questo sesto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g].\
 
 La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[g]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
