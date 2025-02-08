@@ -161,10 +161,6 @@
                 <ul>
                   {{01-candidatura}}
                 </ul>
-                <h3>Diari di bordo</h3>
-                <ul>
-                  {{01-candidatura/diari}}
-                </ul>
                 <h3>Verbali interni</h3>
                 <ul>
                   {{01-candidatura/verbali-interni}}
@@ -210,17 +206,13 @@
                 <ul>
                   {{02-RTB/documenti-interni}}
                 </ul>
-                <h3>Diari di bordo</h3>
+                <h3>Verbali esterni</h3>
                 <ul>
-                  {{02-RTB/diari}}
+                  {{02-RTB/documenti-esterni/verbali}}
                 </ul>
                 <h3>Verbali interni</h3>
                 <ul>
                   {{02-RTB/documenti-interni/verbali}}
-                </ul>
-                <h3>Verbali esterni</h3>
-                <ul>
-                  {{02-RTB/documenti-esterni/verbali}}
                 </ul>
               </div>
             </div>
@@ -270,7 +262,7 @@
               aria-controls="chiSiamo"
             >
               <h2 class="mb-0">
-                Chi siamo?
+                Diapositive
                 <img
                   src="./images/arrow.svg"
                   alt="Freccia"
@@ -280,23 +272,35 @@
             </button>
             <div id="chiSiamo" class="collapse">
               <div class="card-body">
-                <p>
-                  Siamo il gruppo 8 di Ingegneria del Software all'Università
-                  degli Studi di Padova, noto come ALimitedGroup. Il nostro
-                  obiettivo è sviluppare soluzioni software innovative e di alta
-                  qualità, combinando competenze tecniche e lavoro di squadra.
-                </p>
-                <p>
-                  Avete bisogno di contattarci? Scriveteci una email
-                  all'indirizzo:
-                </p>
-                <a id="mail-link" href="mailto:alimitedgroup@gmail.com"
-                  >alimitedgroup@gmail.com</a
-                >
+                <h3>RTB</h3>
+                <ul>
+                  {{02-RTB/slides}} {{02-RTB/diari}}
+                </ul>
+                <h3>Candidatura</h3>
+                <ul>
+                  {{01-candidatura/diari}}
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="row mt-4">
+        <h3>Chi siamo?</h3>
+
+        <p>
+          Siamo il gruppo 8 di Ingegneria del Software all'Università degli
+          Studi di Padova, noto come ALimitedGroup. Il nostro obiettivo è
+          sviluppare soluzioni software innovative e di alta qualità, combinando
+          competenze tecniche e lavoro di squadra.
+        </p>
+        <p>
+          Avete bisogno di contattarci? Scriveteci una email all'indirizzo:
+          <a id="mail-link" href="mailto:alimitedgroup@gmail.com">
+            alimitedgroup@gmail.com
+          </a>
+        </p>
       </div>
     </div>
 
