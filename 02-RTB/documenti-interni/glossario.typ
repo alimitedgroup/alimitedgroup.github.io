@@ -24,25 +24,26 @@
 #counter(page).update(1)
 
 #registro-modifiche((
-  (vers: "0.3.0",
+  (
+    vers: "0.3.0",
     date: datetime(day: 09, month: 12, year: 2024),
     autore: p.marco,
     verifica: p.lorenzo,
-    descr: "Aggiunte nuove definizioni al glossario."
+    descr: "Aggiunte nuove definizioni al glossario.",
   ),
   (
     vers: "0.2.0",
     date: datetime(day: 29, month: 11, year: 2024),
     autore: p.matteo,
     verifica: p.sara,
-    descr: "Risolto problema nella pagina di copertina e uniformato header del documento",
+    descr: "Risolto problema nella pagina di copertina e uniformato header del documento.",
   ),
   (
     vers: "0.1.0",
     date: datetime(day: 07, month: 11, year: 2024),
     autore: p.emanuele,
     verifica: p.lorenzo,
-    descr: "Redazione documento",
+    descr: "Redazione documento.",
   ),
 ))
 #pagebreak()
@@ -54,7 +55,8 @@
   #heading(letter, level: 1) // Intestazione per ogni lettera
 
   #for (word, definition) in words [
-    #if (word != "") [ // Lascia vuoto se nessuna definizione da mostrare
+    #if (word != "") [
+      // Lascia vuoto se nessuna definizione da mostrare
       #strong[#list(word)] // Intestazione per ogni parola
       #label(word)
       #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione
