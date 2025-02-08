@@ -14,3 +14,11 @@
 
   - *Descrizione*: #desc
 ]
+
+#let metriche-graph(
+  nome: [],
+  desc: [],
+  width: none,
+) = [
+  #figure(image("../assets/measurements/" + nome + ".svg", width: width), caption: desc)
+]
