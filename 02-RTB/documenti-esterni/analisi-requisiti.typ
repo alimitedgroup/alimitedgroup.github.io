@@ -18,7 +18,7 @@
       date: datetime(day: 03, month: 02, year: 2025),
       autore: p.matteo,
       verifica: p.sara,
-      approvazione: p.marco,
+      approvazione: p.samuele,
       descr: "Correzioni minori e approfondimento requisiti funzionali.",
     ),
     (
@@ -234,7 +234,7 @@
   ),
   stato: [Approvato per RTB],
   responsabile: ((p.samuele),),
-  verificatore: ((p.samuele), (p.lorenzo)),
+  verificatore: ((p.samuele), (p.lorenzo), (p.loris), (p.sara)),
   redattori: (
     (p.matteo),
     (p.sara),
@@ -316,7 +316,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto* \ #link("https://alimitedgroup.github.io/norme-progetto.pdf")[https://alimitedgroup.github.io/norme-progetto.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
+- *Norme di Progetto versione 1.0.0* \ #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[https://alimitedgroup.github.io/norme-progetto.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
 - *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_* \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 === Riferimenti informativi
 - *Standard IEEE* \ https://ieeexplore.ieee.org/document/720574 \ *Ultimo Accesso 3 Febbraio 2025*

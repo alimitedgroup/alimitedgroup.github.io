@@ -159,7 +159,7 @@
 
   // Prima pagina
   image("../assets/altd.png", height: 7cm)
-  v(4em)
+  v(1em)
   text(24pt, weight: "bold", fill: black)[#titolo]
   v(2.25em)
 
