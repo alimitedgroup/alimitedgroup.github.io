@@ -12,7 +12,7 @@
       vers: "0.7.0",
       date: datetime(day: 05, month: 02, year: 2025),
       autore: p.marco,
-      verifica: p.samuele,
+      verifica: p.loris,
       descr: "Redazione per il sesto sprint " + [(@sprint6)],
     ),
     (
