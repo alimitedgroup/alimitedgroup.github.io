@@ -18,13 +18,7 @@
       date: datetime(day: 03, month: 02, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Approvazione per RTB",
-    ),
-    (
-      vers: "0.28.0",
-      date: datetime(day: 26, month: 01, year: 2025),
-      autore: p.matteo,
-      verifica: p.samuele,
+      approvazione: p.samuele,
       descr: "Correzioni minori e approfondimento requisiti funzionali.",
     ),
     (
@@ -32,7 +26,7 @@
       date: datetime(day: 17, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Completato l'inserimento dei diagrammi per i Casi d'Uso relativi al Backend. Completati i requisiti e la sezione Riassunto",
+      descr: "Completato l'inserimento dei diagrammi per i Casi d'Uso relativi al Backend. Completati i requisiti e la sezione Riassunto.",
     ),
     (
       vers: "0.26.0",
@@ -41,7 +35,7 @@
       verifica: p.samuele,
       descr: "Terminati i Casi d'Uso relativi alle attività del Backend "
         + [(da @UC88 a @UC92)]
-        + ". Cambiata la numerazione dal template per una corretta visualizzazione",
+        + ". Cambiata la numerazione dal template per una corretta visualizzazione.",
     ),
     (
       vers: "0.25.0",
@@ -63,14 +57,14 @@
       autore: p.marco,
       verifica: p.samuele,
       descr: "Terminata la redazione dei Casi d'Uso riguardanti la creazione e la modifica degli utenti, la ricezione dei tentativi di accesso e dell'eliminazione degli utenti "
-        + [(da @UC67 a @UC72)],
+        + [(da @UC67 a @UC72).],
     ),
     (
       vers: "0.22.0",
       date: datetime(day: 11, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Iniziata redazione sezione Requisiti",
+      descr: "Iniziata redazione sezione Requisiti.",
     ),
     (
       vers: "0.21.0",
@@ -78,21 +72,21 @@
       autore: p.matteo,
       verifica: p.samuele,
       descr: "terminati Casi d'Uso relativi a backup del Sistema locale. Realizzati UC relativi a controllo accessi al Sistema "
-        + [(da @UC61 a @UC66.1)],
+        + [(da @UC61 a @UC66.1).],
     ),
     (
       vers: "0.20.0",
       date: datetime(day: 08, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.samuele,
-      descr: "Realizzati primi Casi d'Uso relativi a backup del Sistema locale " + [da @UC58 a @UC60],
+      descr: "Realizzati primi Casi d'Uso relativi a backup del Sistema locale " + [da @UC58 a @UC60.],
     ),
     (
       vers: "0.19.0",
       date: datetime(day: 03, month: 01, year: 2025),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "completati diagrammi per ogni singolo Caso d'Uso. Migliorie generali",
+      descr: "completati diagrammi per ogni singolo Caso d'Uso. Migliorie generali.",
     ),
     (
       vers: "0.18.0",
@@ -113,7 +107,7 @@
       date: datetime(day: 23, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.samuele,
-      descr: "Ristrutturato ulteriormente l'indice per una maggiore fruibilità",
+      descr: "Ristrutturato ulteriormente l'indice per una maggiore fruibilità.",
     ),
     (
       vers: "0.15.0",
@@ -121,7 +115,7 @@
       autore: p.marco,
       verifica: p.samuele,
       descr: "Ristrutturato l'indice per una sua corretta visualizzazione e fruibilità. Inseriti Casi d'Uso riguardanti gli ordini eseguiti "
-        + [(da @UC56 a @UC57.1.1.1)],
+        + [(da @UC56 a @UC57.1.1.1).],
     ),
     (
       vers: "0.14.0",
@@ -135,7 +129,7 @@
       date: datetime(day: 13, month: 12, year: 2024),
       autore: p.sara,
       verifica: p.samuele,
-      descr: "Redatto Caso d'Uso relativo soglia minima e inclusioni/estensioni " + [(da @UC48 a @UC50)],
+      descr: "Redatto Caso d'Uso relativo soglia minima e inclusioni/estensioni " + [(da @UC48 a @UC50).],
     ),
     (
       vers: "0.12.0",
@@ -143,7 +137,7 @@
       autore: p.matteo,
       verifica: p.samuele,
       descr: "Redatti Casi d'Uso relativi alle richieste al secondo per microservizi e Casi d'Uso correlati "
-        + [(da @UC43 a @UC43.1.2)],
+        + [(da @UC43 a @UC43.1.2).],
     ),
     (
       vers: "0.11.0",
@@ -152,7 +146,7 @@
       verifica: p.samuele,
       descr: "Redatti Casi d'Uso relativi alla visualizzazione della singola notifica di rifornimento e Casi d'Uso riguardanti i trasferimenti, con inclusioni ed estensioni (da "
         + [@UC23 a @UC32.3.1.1 e da @UC39 a @UC39.2.1.1]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.10.0",
@@ -160,7 +154,7 @@
       autore: p.sara,
       verifica: p.samuele,
       descr: "Redatto Caso d'Uso relativo all'esportazione ordini eseguiti e report di inventario ("
-        + [da @UC44 a @UC47)],
+        + [da @UC44 a @UC47).],
     ),
     (
       vers: "0.9.0",
@@ -169,7 +163,7 @@
       verifica: p.samuele,
       descr: "Redatto Caso d'Uso relativo all'aggiornamento delle quantità disponibili di una merce (stock) e redatto Casi d'Uso relativi alla creazione/visualizzazione di una merce globale con rispettive inclusioni/estensioni (da "
         + [@UC18 a @UC22.1 e da @UC51 a @UC55]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.8.0",
@@ -178,7 +172,7 @@
       verifica: p.samuele,
       descr: "Redatto Caso d'Uso relativo alla visualizzazione delle notifiche di rifornimento e Casi d'Uso relativi all'accettazione e al rifiuto di una notifica di rifornimento ("
         + [da @UC33 a @UC38 e da @UC40 e @UC42]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.7.0",
@@ -187,7 +181,7 @@
       verifica: p.samuele,
       descr: "Aggiunti Casi d'Uso su visualizzazione ordini non confermati con relative inclusioni/estensioni (fino a "
         + [@UC17]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.6.0",
@@ -196,7 +190,7 @@
       verifica: p.samuele,
       descr: "Aggiunti Casi d'Uso su cancellazione/conferma ordine non confermato e visualizzazione ordini sino e relative inclusioni/estensioni (fino a "
         + [@UC15]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.5.0",
@@ -205,7 +199,7 @@
       verifica: p.lorenzo,
       descr: "Aggiunti Casi d'Uso sulla creazione di un ordine, sull'aggiunta di merci ad un ordine e rispettive inclusioni/estensioni (fino a "
         + [@UC9]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.4.0",
@@ -214,28 +208,28 @@
       verifica: p.lorenzo,
       descr: "Redazione Capitolo 2 e Sezioni 3.1 e 3.2. Aggiunti Casi d'Uso relativi all'autenticazione (fino a "
         + [@UC2]
-        + ")",
+        + ").",
     ),
     (
       vers: "0.3.0",
       date: datetime(day: 05, month: 12, year: 2024),
       autore: p.marco,
       verifica: p.lorenzo,
-      descr: "Rivoluzionata la struttura del documento secondo il template creato appositamente",
+      descr: "Rivoluzionata la struttura del documento secondo il template creato appositamente.",
     ),
     (
       vers: "0.2.0",
       date: datetime(day: 13, month: 11, year: 2024),
       autore: p.sara,
       verifica: p.lorenzo,
-      descr: "Aggiornamento indice - Aggiornamento contenuto: sezione Introduzione",
+      descr: "Aggiornamento indice - Aggiornamento contenuto: sezione Introduzione.",
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 12, month: 11, year: 2024),
       autore: p.loris,
       verifica: p.lorenzo,
-      descr: "Creazione struttura e template documento",
+      descr: "Creazione struttura e template documento.",
     ),
   ),
   stato: [Approvato per RTB],
