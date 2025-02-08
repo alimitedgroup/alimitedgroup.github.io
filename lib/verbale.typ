@@ -51,14 +51,14 @@
     [Stato], stato,
     [Versione], versione,
     [Presenze], grid(align: left, gutter: 8pt, ..presenze.map(persona)),
-    [Distribuzione],
+    [Destinatari],
     if tipo == [esterno]
     {
       grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin))
     }
     else
     {
-      grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin))
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_])
     },
   )
 
