@@ -97,34 +97,29 @@
 Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _Software_ e dei processi coinvolti nel suo ciclo di vita.\
 Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
 
-+ *Piano della Qualità*
-  - Definisce gli obiettivi qualitativi
-  - Stabilisce gli standard di riferimento
-  - Delinea le politiche e le strategie per raggiungere l'eccellenza
++ *Piano della Qualità*:
+  - Definisce gli obiettivi qualitativi;
+  - Stabilisce gli standard di riferimento;
+  - Delinea le politiche e le strategie per raggiungere l'eccellenza.
 
 
-+ *Controllo di Qualità*
-  - Implementa meccanismi di misurazione oggettivi
-  - Verifica la conformità ai requisiti
-  - Monitora le prestazioni attraverso metriche predefinite
++ *Controllo di Qualità*:
+  - Implementa meccanismi di misurazione oggettivi;
+  - Verifica la conformità ai requisiti;
+  - Monitora le prestazioni attraverso metriche predefinite.
 
 
-+ *Miglioramento Continuo*
-  - Analizza periodicamente i risultati
-  - Identifica opportunità di ottimizzazione
-  - Adatta costantemente processi e obiettivi
++ *Miglioramento Continuo*:
+  - Analizza periodicamente i risultati;
+  - Identifica opportunità di ottimizzazione;
+  - Adatta costantemente processi e obiettivi.
 
 Il Piano di Qualifica rappresenta uno strumento strategico volto a garantire che il progetto:
-- Rispetti integralmente i requisiti definiti
-- Consegua gli obiettivi prefissati
-- Mantenga elevati standard qualitativi
+- Rispetti integralmente i requisiti definiti;
+- Consegua gli obiettivi prefissati;
+- Mantenga elevati standard qualitativi.
 
 L'approccio metodologico adottato non configura la qualità come un elemento statico, bensì come un processo dinamico di apprendimento, miglioramento e ottimizzazione continua.
-
-I destinatari del documento sono:
-- Team di sviluppo
-- Committenti
-- Utenti finali
 
 == Riferimenti
 === Riferimenti normativi
@@ -146,13 +141,13 @@ I destinatari del documento sono:
   #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf") \
   *Ultimo Accesso 6 Febbraio 2025*
 
-
+#pagebreak()
 = Qualità di processo <qtaprc>
-La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto Software.
+La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto _Software_.
 Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
 Per garantire la qualità di processo, il progetto si avvale di:
-- *Modelli di riferimento*: CMMI (Capability Maturity Model Integration) e ISO/IEC 12207.
-- *Metriche di processo*: strumenti per valutare le prestazioni e l’efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità.
+- *Modelli di riferimento*: CMMI (Capability Maturity Model Integration) e ISO/IEC 12207;
+- *Metriche di processo*: strumenti per valutare le prestazioni e l’efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità;
 - *Revisioni periodiche*: sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
 == Processi primari
 === Fornitura
@@ -310,15 +305,16 @@ Per garantire la qualità di processo, il progetto si avvale di:
   caption: [Soglie metriche processo Gestione dei Processi],
 )
 
+#pagebreak()
 = Qualità di prodotto <qtaprd>
-La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto Software e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
+La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto _Software_ e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
-Un prodotto Software è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nell'analisi.
-- È *affidabile*, garantendo prestazioni consistenti e prive di errori.
-- È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali.
-- È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste.
+Un prodotto _Software_ è considerato di alta qualità quando:
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nell'#link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] *(Sezione 3)*;
+- È *affidabile*, garantendo prestazioni consistenti e prive di errori;
+- È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
+- È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
 - È *manutenibile*, ossia progettato per consentire aggiornamenti, correzioni e modifiche senza compromettere la stabilità.
 
 == Funzionalità
@@ -444,14 +440,15 @@ Un prodotto Software è considerato di alta qualità quando:
   caption: [Soglie metriche manutenibilità del prodotto],
 )
 
+#pagebreak()
 = Metodi di testing
-Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*], alla quale è disponibile anche la nomenclatura utilizzata, i test effettuati saranno:
+Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test effettuati saranno:
 
-- Test di Unità
-- Test di Integrazione
-- Test di Sistema
-- Test di Regressione
-- Test di Accettazione
+- Test di Unità;
+- Test di Integrazione;
+- Test di Sistema;
+- Test di Regressione;
+- Test di Accettazione.
 
 ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test di Regressione, nonché le altre tipologie di Test qui non presenti, durante lo svolgimento delle attività per la _Product Baseline (PB)_.
 
@@ -953,7 +950,7 @@ Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggi
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
-Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g] .Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g]. Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*].
 Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 #pagebreak()
 == MPC03 e MPC07 - Actual Cost (AC) e Estimate To Complete (ETC)
@@ -967,7 +964,7 @@ Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessar
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
 
-Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il budget: questo si ricava dal fatto che il _Cost Performance Index_ sia minore di 1. La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
+Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il _budget_: questo si ricava dal fatto che il _Cost Performance Index_ sia minore di 1. La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
 La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (superiore a 1, indice di buon utilizzo del budget) e dallo _Schedule Performance Index_ (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
 #pagebreak()
 == MPC06 - Estimate At Completion (EAC)
@@ -986,21 +983,22 @@ Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
-Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin), che ha portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
 #pagebreak()
 == MPC10 - Indice di Gulpease
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
-In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto al fatto che tale documento ha subito varie riorganizzazioni per renderlo più facilmente fruibile, ma anche perché esprimere un numero elevato di regole e spiegazioni ha necessariamente un impatto sulla leggibilità dello stesso.
+In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto alle varie riorganizzazioni subite dal documento per renderlo più facilmente fruibile, ma anche per la natura a scopo regolamentativo del documento.
 
-Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento, cercando di aumentare la tendenza a crescere della misurazione specialmente per questo documento.
+Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento in questione.
+
 #pagebreak()
 == MPC11 - Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
-Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema ti importanza assolutamente critica e vi ha posto rimedio, correggendo tali criticità tra gli _sprint_#super[g] 4 e 6.
+Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[g] 4 e 6.
 #pagebreak()
 == MPC14 - Quality metrics satisfied
 
@@ -1012,11 +1010,13 @@ Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il s
 
 #metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
 
-Dal grafico si osserva un progressivo miglioramento dell’efficienza temporale dei componenti di ALimitedGroup. Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all’inesperienza e all’adattamento alle richieste del progetto. Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza e una riduzione del tempo necessario per completare le attività.
+Dal grafico si osserva un progressivo miglioramento dell’efficienza temporale dei componenti di ALimitedGroup.
+Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all’inesperienza e all’adattamento alle richieste del progetto.
+Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza e una riduzione del tempo necessario per completare le attività.
 #pagebreak()
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
-Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto Software.
+Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto _Software_.
 Di seguito, presenteremo i principali problemi individuati e le relative contromisure messe in atto per risolvere o ridurre gli ostacoli riscontrati.
 
 == Valutazioni sull'organizzazione
@@ -1038,8 +1038,8 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
 
     // Data rows
     [Mancanza di tracciabilità delle attività rende complicato l'avanzamento produttivo e la pianificazione del lavoro], [Implementazione del sistema di ticketing su GitHub per migliorare la gestione e il monitoraggio delle attività],
-    [Assenza di controllo sulle modifiche dirette al branch principale può causare problemi di integrazione e qualità del codice], [Implementazione di branch protection su GitHub per evitare modifiche non autorizzate e garantire la revisione del codice],
-    [Comunicare la rendicontazione ore separatamente durante la retrospettiva dello _sprint_ rallenta ed appesantisce il flusso organizzativo], [Utilizzo di Foglio Google condiviso in cui annotare le ore impiegate di ciascun ruolo in ogni periodo asincronamente],
+    [Assenza di controllo sulle modifiche dirette al branch principale può causare problemi di integrazione e qualità del codice], [Implementazione della _branch protection_ su GitHub per evitare modifiche non autorizzate e garantire la revisione del codice],
+    [Comunicare la rendicontazione delle ore durante la retrospettiva dello _sprint_ rallenta ed appesantisce il flusso organizzativo], [Utilizzo di un Foglio Google condiviso in cui annotare le ore impiegate di ciascun ruolo in ogni periodo, asincronamente],
     [Nominare le risorse con formati arbitrari crea problemi di consistenza e rallenta notevolmente qualsiasi attività di ricerca], [Ideazione ed utilizzo di convenzioni per la nomenclatura di issue, branch, file e decisioni prese per garantire una maggiore chiarezza e uniformità],
     [La scelta delle attività non è sufficientemente specifica], [I membri di ALimitedGroup valuteranno di _sprint_ in _sprint_ le attività svolte e ancora da svolgere, deciderà il grado di qualità da raggiungere e in base a quello determinerà il tempo di svolgimento assegnato a ciascuna attività]
   ),

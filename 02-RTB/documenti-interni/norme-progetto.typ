@@ -239,7 +239,7 @@ Vengono ora elencati tutti i documenti che _ALimitedGroup_ consegnerà all'azien
 
 ==== Analisi dei Requisiti#super[g]
 
-L'#link("")[*Analisi dei Requisiti#super[g]*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato e, infine, informazioni utili al loro tracciamento.
+L'#link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g]*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato e, infine, informazioni utili al loro tracciamento.
 
 #figure(
   table(
@@ -379,7 +379,7 @@ Il presente documento: stabilisce il _Way of Working#super[g]_ e le pratiche di 
 
 ==== Piano di Progetto
 
-Il #link("https://alimitedgroup.github.io/Piano%20di%20progetto%200.1.0.pdf")[*Piano di Progetto*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[g] in _sprint_#super[g] ,nonché l'analisi dei rischi associati a ciascuna attività.\
+Il #link("https://alimitedgroup.github.io/Piano%20di%20progetto%201.0.0.pdf")[*Piano di Progetto ver. 1.0.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[g] in _sprint_#super[g] ,nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
 #figure(
@@ -521,7 +521,7 @@ Apportando lo scopo del processo alle _Baseline_ previste dal progetto (_Require
 === Analisi dei Requisiti#super[g]
 
 L'*Analisi dei Requisiti#super[g]* è tra le attività cardine della _Requirements and Technology Baseline (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
-Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] che, contenendo i Test e il loro stato, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
+Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] che, contenendo i Test e il loro stato alla *Sezione 4*, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
 
 In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requisiti ad essi associati. Per una più rapida consultazione sarà ora discussa la nomenclatura nel dettaglio.
 
@@ -544,11 +544,11 @@ Si noti, inoltre, che un Caso d'Uso#super[g] *Secondario* può avere a sua volta
 La nomenclatura utilizzata è volta ad assicurare l'unicità di ogni Caso d'Uso.
 
 
-Ogni Caso d'Uso è inoltre accompagnato da un nome che ne riassume lo scopo e una descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*].
+Ogni Caso d'Uso è inoltre accompagnato da un nome che ne riassume lo scopo e una descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] *(Sezione 2.1)*.
 
 ==== Requisiti
 
-Identificati i Casi d'Uso, il documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] si concentra sull'individuazione dei requisiti deducibili dagli stessi e dal capitolato#super[g] .
+Identificati i Casi d'Uso, il documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] si concentra sull'individuazione dei requisiti deducibili dagli stessi e dal capitolato#super[g] *(Sezione 3)*.
 I requisiti sono anch'essi identificati da una nomenclatura:
 
 #align(center, text(1.2em)[*`R-Numero-Tipolgia-Priorità`*])
@@ -565,7 +565,7 @@ dove:
   - *De* per *De*\siderabile;
   - *Op* per *Op*\zionale;
 
-Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*].
+Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] *(Sezione 1.1)*.
 
 === Codifica
 
@@ -620,7 +620,7 @@ Per redigere la documentazione il gruppo utilizza due strumenti in particolare:
 - *_Typst_*: si tratta di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX* per la redazione di documenti a carattere scientifico e non solo.
   _Typst_ permette la realizzazione di una anteprima istantanea, senza necessità di compilare ogni volta il documento, inoltre la sintassi è molto vicina ai linguaggi di programmazione. _ALimitedGroup_ lo utilizza in tutti i documenti.
   Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_ appositamente implementate dai componenti di _ALimitedGroup_ presenti all'interno della cartella _lib_ del _repository_#super[g] .\
-  La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa Sezione saranno invece descritte le strutture dei vari documenti.
+  La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa sezione saranno invece descritte le strutture dei vari documenti.
 
 - *_GitHub_*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request_ di _GitHub_#super[g] per permettere la redazione, Verifica e approvazione di tutti i documenti. Per ulteriori dettagli consultare la @infrastruttura.
 
@@ -711,7 +711,7 @@ Nell'ambito della redazione dei documenti vengono utilizzate alcune convenzioni,
 
 ==== Denominazione e datazione dei documenti <denanddatdoc>
 
-Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, Sezione 2.3.1 e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
+Come osservato nel #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[*verbale interno*] del *4 Novembre 2024*, *Sezione 2.3.1* e in seguito estesa a tutti i documenti, la denominazione dei file seguirà la seguente sintassi:
 
 #align(center, text(1.2em)[*`TIPO AAAA-MM-GG # VERSIONE`*])
 
@@ -829,9 +829,9 @@ Le attività previste dal processo di *Accertamento della qualità* sono le segu
 - *Accertamento qualità prodotto*, che prevede il controllo di tutto il materiale prodotto per verificare che questo rispetti gli standard decisi;
 - *Accertamento qualità processo*, che prevede il controllo di tutti i processi eseguiti dal gruppo per verificare che questi rispettino gli standard decisi.
 
-_ALimitedGroup_ per assicurare qualità ha individuato specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una Sezione apposita tali misurazioni per renderle più velocemente consultabili.
+_ALimitedGroup_ per assicurare qualità ha individuato specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una sezione apposita tali misurazioni per renderle più velocemente consultabili.
 
-Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[g] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[g] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 5)*.
 
 Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodotto mentre quelle di processo alla @metriche-qt-processo.
 
@@ -842,7 +842,7 @@ Il processo di *Verifica*#super[g] ha come scopo quello di verificare che quanto
 
 Possiamo racchiudere l'obiettivo di questo processo nella risposta alla domanda _"Did I build the System right?"_, ovvero _"Ho realizzato il Sistema correttamente?_.
 
-Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 4)*.
 
 ==== Strumenti a supporto
 
@@ -875,7 +875,7 @@ Per maggiori informazioni sul processo di redazione di un documento si consiglia
 
 In merito invece alle verifiche relative al *Codice*, questo sarà un argomento che _ALimitedGroup_ affronterà maggiormente nel dettaglio non appena raggiunta la _Requirements and Technology Baseline_.
 
-In generale tutte le informazioni relative alla Verifica#super[g] ,dalle misurazioni agli esiti dei Test effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*].
+In generale tutte le informazioni relative alla Verifica#super[g] ,dalle misurazioni agli esiti dei Test effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 4)*.
 
 La Verifica#super[g] ,in generale può essere realizzata in due modi: mediante *Analisi Statica* e mediante *Analisi Dinamica*, qui di seguito descritte.
 
@@ -907,21 +907,21 @@ Le principali tipologie di Test#super[g] sono:
 - *Test di Sistema*;
 - *Test di Regressione*.
 
-La nomenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]) è la seguente:
+La nomenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] alla *Sezione 4*) è la seguente:
 
 #align(center, text(1.2em)[*`T-#-Tipo`*])
 
 dove:
 
 - *T* indica la parola *T*\esterno
-- *\#* è un numero crescente che identifica, all'interno del tipo, un determinato test
-- *Tipo* classifica il test in una delle seguenti tipologie:
+- *\#* è un numero crescente che identifica, all'interno del tipo, un determinato Test
+- *Tipo* classifica il Testin una delle seguenti tipologie:
   - *U* per Test di *U*\nità
   - *I* per Test di *I*\ntegrazione
   - *S* per Test di *S*\istema
   - *A* per Test di *A*\ccettazione
 
-Ogni test ha poi uno stato tra i seguenti:
+Ogni Testha poi uno stato tra i seguenti:
 
 - *S* ovvero *S*\uperato
 - *I* ovvero *I*\mplementato
@@ -967,7 +967,7 @@ In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo proc
 
 ===== Implementazione del processo
 
-_ALimitedGroup_ ha studiato le esigenze di #M31 e ha racchiuso tutti i requisiti da soddisfare all'interno dell'#link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*].
+_ALimitedGroup_ ha studiato le esigenze di #M31 e ha racchiuso tutti i requisiti da soddisfare all'interno dell'#link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] *(Sezione 3)*.
 
 Come già previsto da quanto descritto alla @valutazione-della-configurazione, il *Tracciamento dei Requisiti* sarà un elemento valido anche al processo di Validazione: permette infatti di controllare se il prodotto funziona correttamente (un requisito è soddisfatto solo se il codice che lo implementa funziona correttamente) ed è conforme ai requisiti (perché il loro soddisfacimento è, per l'appunto, tracciato).
 
@@ -1452,7 +1452,7 @@ In merito alla *Funzionalità*, lo scopo è misurare quanto un prodotto soddisfa
 
 In merito all'*Affidabilità*, è la capacità del prodotto di mantenere un determinato livello di prestazioni in qualsiasi momento, anche in periodi d'uso particolarmente intensi. Nello specifico misura:
 
-- *Maturità*, ovvero l'arginare la possibilità si verifichino errori o malfunzionamenti;
+- *Maturità*, ovvero l'arginare la possibilità che si verifichino errori o malfunzionamenti;
 - *Tolleranza agli errori*, ovvero l'obiettivo di mantenere la prestazionalità del prodotto anche in caso di malfunzionamenti;
 - *Recuperabilità*, ovvero la capacità del prodotto di ritornare al normale comportamento prestazionale a seguito di un malfunzionamento;
 - *Aderenza*, ovvero la capacità di aderire a standard di affidabilità.
@@ -1477,7 +1477,7 @@ L'*Usabilità* consiste nel misurare quanto l'Utente finale è in grado di appre
 
 == Manutenibilità
 
-La *Manutenibilità* misura quanto il prodotto è semplice da modificare per permetterne l'evoluzione o correzione. Nello specifico misura:
+La *Manutenibilità* misura quanto il prodotto è semplice da modificare per permetterne l'evoluzione o la correzione. Nello specifico misura:
 
 - *Analizzabilità*, ovvero la facilità d'ispezione del codice con lo scopo di cercare un errore;
 - *Modificabilità*, ovvero quanto è difficile apportare una modifica;
@@ -1658,7 +1658,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
   ],
-  desc: [Percentuale di codice coperto da test automatizzati. Si raccomanda un coverage minimo del 80%.],
+  desc: [Percentuale di codice coperto da Test automatizzati. Si raccomanda un coverage minimo del 80%.],
 )
 
 ==== Test Success Rate
@@ -1667,7 +1667,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Test Success Rate" = ("Test passati" / "Test totali") * 100$
   ],
-  desc: [Percentuale di test automatizzati che passano con successo. Dovrebbe mantenersi al 100% data la natura del progetto],
+  desc: [Percentuale di Test automatizzati che passano con successo. Dovrebbe mantenersi al 100% data la natura del progetto],
 )
 
 === Gestione della Qualità
@@ -1730,7 +1730,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Branch Coverage" = ("Rami testati" / "Rami totali") * 100$
   ],
-  desc: [Percentuale di rami del codice coperti da test automatizzati. Si raccomanda un coverage minimo del 60%.],
+  desc: [Percentuale di rami del codice coperti da Test automatizzati. Si raccomanda un coverage minimo del 60%.],
 )
 
 === Statement Coverage
@@ -1739,7 +1739,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Statement Coverage" = ("Istruzioni testate" / "Istruzioni totali") * 100$
   ],
-  desc: [Percentuale di istruzioni del codice coperte da test automatizzati. Si raccomanda un coverage minimo del 70%.],
+  desc: [Percentuale di istruzioni del codice coperte da Test automatizzati. Si raccomanda un coverage minimo del 70%.],
 )
 
 === Failure Density
