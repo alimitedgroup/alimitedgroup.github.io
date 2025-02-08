@@ -2,32 +2,39 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [0.6.0]
+#let ver = [0.7.0]
 #show: body => importantdocs(
-  data: datetime(day: 24, month: 1, year: 2025),
+  data: datetime(day: 05, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "0.7.0",
+      date: datetime(day: 05, month: 02, year: 2025),
+      autore: p.marco,
+      verifica: p.loris,
+      descr: "Redazione per il sesto sprint " + [(@sprint6)],
+    ),
     (
       vers: "0.6.0",
       date: datetime(day: 24, month: 1, year: 2025),
       autore: p.matteo,
       verifica: p.emanuele,
-      descr: "Redazione per il quinto sprint",
+      descr: "Redazione per il quinto sprint " + [(@sprint5)],
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 16, month: 1, year: 2025),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il quarto sprint",
+      descr: "Redazione per il quarto sprint " + [(@sprint4)],
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 29, month: 12, year: 2024),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il terzo sprint",
+      descr: "Redazione per il terzo sprint " + [(@sprint3)],
     ),
     (
       vers: "0.3.0",
@@ -41,26 +48,26 @@
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il secondo sprint",
+      descr: "Redazione per il secondo sprint " + [(@sprint2)],
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 27, month: 11, year: 2024),
       autore: p.samuele,
       verifica: p.lorenzo,
-      descr: "Redazione documento",
+      descr: "Redazione documento e redazione primo sprint " + [(@introduzione, @agr, @plt, @pbti, @sprint1)],
     ),
   ),
   versione: ver,
-  responsabile: ((p.loris),),
-  verificatore: ((p.lorenzo),),
-  redattori: ((p.samuele), (p.loris), (p.marco)),
-  descrizione: [Il seguente documento contiene il _Piano di Progetto_ utilizzato, da _ALimitedGroup_, per la realizzazione di un magazzino distribuito presentato da parte di #M31],
+  responsabile: ((p.samuele),),
+  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele)),
+  redattori: ((p.loris), (p.marco), (p.matteo), (p.samuele)),
+  descrizione: [Il _Piano di Progetto_ contiene il resoconto delle attività svolte e da svolgere da _ALimitedGroup_],
   titolo: "Piano di Progetto",
   body,
 )
 
-= Introduzione
+= Introduzione <introduzione>
 == Informazioni generali
 
 Il *Piano di Progetto* è un documento che cerca di esprimere le attività svolte e da svolgere durante la realizzazione del progetto di *Ingegneria del Software*.
@@ -79,18 +86,32 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 === Riferimenti normativi
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdfhttps://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31]
-- #link-norme("Norme di progetto")
+- *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Norme di Progetto ver. 1.0.0* \
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")
+  *Ultimo Accesso 5 Febbraio 2025*
 
 === Riferimenti informativi
 
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")[T2 - I processi di ciclo di vita del software]
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")[T4 - Gestione di progetto]
-- #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[Lezione rovesciata - Documentazione]
+- *I processi di ciclo di vita del software* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Gestione di progetto* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Lezione rovesciata - Documentazione* \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+- *Glossario ver. 1.0.0* \
+  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
+  *Ultimo Accesso 5 Febbraio 2025*
+
 
 #pagebreak()
 
-= Analisi e gestione dei rischi
+= Analisi e gestione dei rischi <agr>
 
 == Introduzione
 Parte fondamentale per la redazione di un piano di progetto è il poter analizzare e classificare in maniera efficace i possibili rischi delle attività da svolgere: realizzarne una buona analisi permette di prevedere quali attività richiedono più tempo del previsto e, conseguentemente, valutare se il numero complessivo di attività inserite nel backlog settimanale sono in numero eccessivo o adeguato.
@@ -104,7 +125,7 @@ Un'analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
 È assolutamente ragionevole pensare che, causa ridotta esperienza, gli effetti di mitigazione possano rivelarsi inefficaci: per questo motivo è necessario prendere atto degli errori di mitigazione rilevati durante la fase di controllo per poter apportare miglioramenti alle strategie adottate.
 
-In seguito saranno quindi illustrati i possibili rischi individuati da ALimitedGroup, divi in tre categorie:
+In seguito saranno quindi illustrati i possibili rischi individuati da _ALimitedGroup_, divi in tre categorie:
 
 - *RT* ossia *R*\ischio *T*\ecnologico
 - *RI* ossia *R*\ischio *I*\ndividuale
@@ -167,7 +188,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
     [*Codice*], [RT2],
     [*Nome*], [Rischio Tecnologico legato a errori nel codice],
     [*Descrizione*],
-    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo una riesaminazione di quanto scritto],
+    [Risulta essere molto bassa la probabilità venga scritto del codice funzionante alla prima esecuzione. Inoltre, anche se in un primo momento potrebbe apparire funzionante, l'esecuzione di ulteriori test potrebbe ben presto far svanire questa impressione, richiedendo una nuova verifica di quanto scritto],
 
     [*Mitigazione*],
     [In caso di codice non funzionante, il programmatore cerca di risolvere il problema. Qualora questo risulti troppo complesso il programmatore chiederà aiuto a programmatori più esperti. In caso di problema particolarmente grave, le attività meno urgenti verranno posticipate per lasciare spazio alla risoluzione del problema.],
@@ -375,7 +396,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 
 #pagebreak()
 
-= Pianificazione nel lungo termine
+= Pianificazione nel lungo termine <plt>
 
 Come anticipato nella #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[Dichiarazione degli Impegni], Il gruppo prevede di terminare il progetto entro e non oltre il giorno *31 Marzo 2025* con un budget di spesa fissato a *Euro 12.930*.
 
@@ -386,28 +407,53 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
   table(
     columns: (1fr, 1fr, 1fr, 1fr),
     inset: (x: 1.1em, y: 0.6em),
-    fill: (x, y) => if calc.rem(y, 2) == 0 {
-      luma(235)
-    },
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
     table.header(
-      [*Ruolo*],
-      [*Costo Orario*],
-      [*Ore*],
-      [*Costo*],
+      text(fill: white)[*Ruolo*],
+      text(fill: white)[*Costo Orario*],
+      text(fill: white)[*Ore*],
+      text(fill: white)[*Costo*],
     ),
 
-    [Responsabile], [30€/h], [58h], [1.740€],
-    [Amministratore], [20€/h], [60h], [1.200€],
-    [Analista], [25€/h], [60h], [1.500€],
-    [Progettista], [25€/h], [150h], [3.750€],
-    [Programmatore], [15€/h], [180h], [2.700€],
-    [Verificatore], [15€/h], [136h], [2.040€],
-    [*Totale*], [-], [*644h*], [*12.930€*],
+    text(fill: white)[*Responsabile*], [30€/h], [58h], [1.740€],
+    text(fill: white)[*Amministratore*], [20€/h], [60h], [1.200€],
+    text(fill: white)[*Analista*], [25€/h], [60h], [1.500€],
+    text(fill: white)[*Progettista*], [25€/h], [150h], [3.750€],
+    text(fill: white)[*Programmatore*], [15€/h], [180h], [2.700€],
+    text(fill: white)[*Verificatore*], [15€/h], [136h], [2.040€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.930€*],
   ),
-  caption: [Riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi previsti derivanti dalle ore assegnate a ciascun ruolo],
 )
 \
-In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[g] .
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[g], come qui riportato:
+
+#figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    table.header(
+      text(fill: white)[*Ruolo*],
+      text(fill: white)[*Costo Orario*],
+      text(fill: white)[*Ore*],
+      text(fill: white)[*Costo*],
+    ),
+
+    text(fill: white)[*Responsabile*], [30€/h], [50h], [1.500€],
+    text(fill: white)[*Amministratore*], [20€/h], [72h], [1.440€],
+    text(fill: white)[*Analista*], [25€/h], [83h], [2.075€],
+    text(fill: white)[*Progettista*], [25€/h], [132h], [3.300€],
+    text(fill: white)[*Programmatore*], [15€/h], [175h], [2.625€],
+    text(fill: white)[*Verificatore*], [15€/h], [132h], [1.980€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.920€*],
+  ),
+  caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
+)
 
 Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline_ (RTB)* entro il *3 febbraio 2025*.
 
@@ -415,7 +461,7 @@ Si stima inoltre ad una candidatura per la *_Requirements and Technology Baselin
 
 = Pianificazione nel breve termine
 
-== Introduzione
+== Introduzione <pbti>
 
 _ALimitedGroup_ ha stabilito di procedere con un *approccio Agile* allo svolgimento del progetto, riconoscendo che un periodo efficace per produrre sviluppi utili si aggira intorno alle 2 settimane: stabilisce dunque di realizzare *_sprint_*#super[g] di *circa 2 settimane*.
 
@@ -439,7 +485,7 @@ Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno e
 
 == Requirements and Technology Baseline (RTB)
 
-=== Sprint 1
+=== Sprint 1 <sprint1>
 
 #table(
   columns: 2,
@@ -521,7 +567,8 @@ Tra le attività previste, elencate nella @sprint1intro,
 solo l'attività _Inizio stesura Analisi dei Requisiti#super[g]_ non è stata svolta,
 in quanto rimandata allo sprint successivo.
 
-=== Sprint 2
+#pagebreak()
+=== Sprint 2 <sprint2>
 
 #table(
   columns: 2,
@@ -541,9 +588,9 @@ Il secondo sprint#super[g] è focalizzato principalmente sulla redazione dell'An
 Le attività pianificate nel dettaglio includono:
 
 - Redazione dell'Analisi dei Requisiti#super[g];
-- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli _use-case_;
+- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli Casi d'Uso;
 - Studio delle tecnologie _Golang_ e _NATS_;
-- Ottimizzazione del sistema di _ticketing_ e del *way of working#super[g]*;
+- Ottimizzazione del sistema di _ticketing_ e del *Way of Working#super[g]*;
 - Riorganizzazione delle Norme di Progetto;
 - Verifica del Piano di Progetto.
 
@@ -555,7 +602,6 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
 
-#pagebreak()
 
 ==== Preventivo
 
@@ -589,8 +635,8 @@ Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti se
 === Retrospettiva
 
 In questo secondo sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei Requisiti#super[g], considerata una priorità immediata per il progetto e un passaggio fondamentale per le successive fasi di progettazione e sviluppo.
-
-=== Sprint 3
+#pagebreak()
+=== Sprint 3 <sprint3>
 
 #table(
   columns: 2,
@@ -610,7 +656,7 @@ Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei R
 Le attività pianificate nel dettaglio includono:
 
 - Continuo redazione dell'Analisi dei Requisiti#super[g];
-- Discussione del Poc e dell'Analisi dei Requisiti#super[g] con l'azienda proponente #M31;
+- Discussione del PoC e dell'Analisi dei Requisiti#super[g] con l'azienda proponente #M31;
 - Inizio redazione Piano di Qualifica;
 - Studio e sperimentazione delle tecnologie _Golang_ e _NATS_ per cominciare la creazione di un PoC#super[g];
 - Setup della repository con divisione del progetto in più microservizi
@@ -663,7 +709,8 @@ Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della re
 
 I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
 
-=== Sprint 4
+#pagebreak()
+=== Sprint 4 <sprint4>
 
 #table(
   columns: 2,
@@ -683,7 +730,7 @@ Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Ana
 Le attività pianificate nel dettaglio includono:
 
 - Aggiungere la sezione sulla codifica nelle Norme di Progetto;
-- Completare la redazione degli Use Case opzionali nell'Analisi dei Requisiti#super[g];
+- Completare la redazione dei Casi d'Uso opzionali nell'Analisi dei Requisiti#super[g];
 - Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[g];
 - Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
 - Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
@@ -698,8 +745,6 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RG2: Rischio Globale derivato da malcomprensione del capitolato
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
-
-#pagebreak()
 
 ==== Preventivo
 
@@ -732,19 +777,19 @@ In questo quarto sprint#super[g], ci siamo concentrati principalmente sulla real
 
 La riunione con il professor Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[g],
 come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
-tra Use Case del backend e del frontend che devono essere rappresentati separatamente.
+tra Casi d'Uso del backend e del frontend che devono essere rappresentati separatamente.
 
-Non è stata completata la redazione degli Use Case non obbligatori a causa di problemi con la numerazione degli Use Case e la creazione dei relativi grafici in formato SVG.
+Non è stata completata la redazione degli Casi d'Uso non obbligatori a causa di problemi con la numerazione degli Casi d'Uso e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto, ma si è praticamente conclusa la redazione delle sezioni mancanti.
-
-=== Sprint 5
+#pagebreak()
+=== Sprint 5 <sprint5>
 
 #table(
   columns: 2,
   stroke: none,
   inset: (x: 0pt),
   column-gutter: 1em,
-  [Inizio:], strong[06-1-2025],
+  [Inizio:], strong[06-01-2025],
   [Fine prevista:], strong[18-01-2025],
   [Fine reale:], strong[18-01-2025],
   [Giorni di ritardo:], strong[0],
@@ -812,3 +857,71 @@ Inoltre #M31 è stata aggiornata sui progressi realizzati e ha predisposto una r
 Anche il PoC ha subito degli importanti progressi ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
 
 A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto e le prime misurazioni del Piano di Qualifica.
+#pagebreak()
+
+=== Sprint 6 <sprint6>
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[19-01-2025],
+  [Fine prevista:], strong[01-02-2025],
+  [Fine reale:], strong[01-02-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint6intro>
+
+Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[g] e della finitura del PoC#super[g]; ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
+
+Le attività pianificate nel dettaglio includono:
+- La redazione e correzione dell'Analisi dei Requisiti#super[g] a seguito della riunione esterna con #M31, effettuata in data 28/01;
+- Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
+- Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto;
+- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[g];
+- Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
+
+Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[g].
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RG3: Rischio Globale derivato da sottostima di attività
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(6, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
+
+==== Consuntivo
+
+#impegni(
+  6,
+  preventivo: true,
+  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  "Sprint 6 - Consuntivo per componente",
+  "Sprint 6 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(6, "Sprint 6 - Variazione nelle risorse disponibili")
+
+#v(1em)
+
+==== Rischi incontrati
+
+Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguo della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+Inoltre, in merito all'Analisi dei Requisiti#super[g] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
+
+=== Retrospettiva
+
+In questo sesto sprint#super[g], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[g].\
+
+La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[g]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
