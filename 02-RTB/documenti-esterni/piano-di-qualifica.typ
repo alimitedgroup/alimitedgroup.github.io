@@ -146,9 +146,10 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto _Software_.
 Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
 Per garantire la qualità di processo, il progetto si avvale di:
-- *Modelli di riferimento*: CMMI (Capability Maturity Model Integration) e ISO/IEC 12207;
-- *Metriche di processo*: strumenti per valutare le prestazioni e l’efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità;
-- *Revisioni periodiche*: sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
+- *Modelli di riferimento*: _Capability Maturity Model Integration_ (CMMI) e _ISO/IEC 12207_;
+- *Metriche di processo*: Strumenti per valutare le prestazioni e l'efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità;
+- *Revisioni periodiche*: Sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
+
 == Processi primari
 === Fornitura
 #figure(
@@ -307,11 +308,11 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
 #pagebreak()
 = Qualità di prodotto <qtaprd>
-La qualità del prodotto rappresenta l’obiettivo centrale di ogni progetto _Software_ e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
+La qualità del prodotto rappresenta l'obiettivo centrale di ogni progetto _Software_ e si riferisce alla capacità del prodotto finale di soddisfare pienamente i requisiti, le aspettative e le esigenze degli utenti e dei committenti.
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto _Software_ è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nell'#link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] *(Sezione 3)*;
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.0.0*] *(Sezione 3)*;
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori;
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
@@ -946,73 +947,94 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 
 Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline (PB)_.
 
-== MPC01 e MPC02 - Earned Value (EV) e Planned Value(PV)
+== MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
-Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g]. Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*].
-Si nota inoltre che l'Earned Value e la Planned Value per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
+Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g].
+Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*].
+Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
+
 #pagebreak()
-== MPC03 e MPC07 - Actual Cost (AC) e Estimate To Complete (ETC)
+== MPC03 e MPC07: _Actual Cost_ e _Estimate To Complete_
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
-Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[g] ,raggiungendo il suo picco durante il sesto _sprint_#super[g] .
+Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[g],
+raggiungendo il suo picco durante il sesto _sprint_#super[g] .
 Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
 #pagebreak()
-== MPC04 e MPC05 - Cost Performance Index (CPI) e Schedule Performance Index (SPI)
+== MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
 
-Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il _budget_: questo si ricava dal fatto che il _Cost Performance Index_ sia minore di 1. La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
-La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (superiore a 1, indice di buon utilizzo del budget) e dallo _Schedule Performance Index_ (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
+Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il _budget_: questo si ricava dal fatto che il _Cost Performance Index_ (CPI) sia minore di 1.
+La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo
+e non ha portato al completamento di tutte le attività previste.
+La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (CPI) (superiore a 1, indice di buon utilizzo del budget) e
+dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
 #pagebreak()
-== MPC06 - Estimate At Completion (EAC)
+== MPC06: _Estimate At Completion_
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
-Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa: tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del periodo della _Requirements and Technology Baseline (RTB)_.
+Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa:
+tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
+periodo della _Requirements and Technology Baseline (RTB)_.
 #pagebreak()
-== MPC08 - Time Estimate At Completion (TEAC)
-
+== MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
-Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[g] ,il tempo stimato al completamento risultava superiore alla durata pianificata. Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata, arrivando poi a coincidere verso lo _sprint_#super[g] 6.
+Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[g] ,il tempo stimato al completamento risultava superiore alla durata pianificata.
+Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata,
+arrivando poi a coincidere verso lo _sprint_#super[g] 6.
 #pagebreak()
-== MPC09 - Requirements Stability Index
+== MPC09: _Requirements Stability Index_
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
-Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche. Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti. Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica, che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti
+i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche.
+Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti.
+Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica,
+che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
 #pagebreak()
-== MPC10 - Indice di Gulpease
+== MPC10: Indice di _Gulpease_
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
-In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile. Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto,specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità. I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto alle varie riorganizzazioni subite dal documento per renderlo più facilmente fruibile, ma anche per la natura a scopo regolamentativo del documento.
+In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile.
+Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto, specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità.
+I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto alle varie riorganizzazioni subite dal documento per renderlo più facilmente fruibile, ma anche per la natura
+a scopo regolamentativo del documento.
 
 Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento in questione.
 
 #pagebreak()
-== MPC11 - Correttezza ortografica
+== MPC11: Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
-Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[g] 4 e 6.
+Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema
+di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[g] 4 e 6.
 #pagebreak()
-== MPC14 - Quality metrics satisfied
+== MPC14: _Quality metrics satisfied_
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
-Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza, dall'aggiudicazione del Capitolato allo _sprint_#super[g] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo. _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[g]_.
+Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza,
+dall'aggiudicazione del Capitolato allo _sprint_#super[g] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
+_ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[g]_.
 #pagebreak()
-== MPC15 - Time Efficiency
+== MPC15: _Time Efficiency_
 
 #metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
 
-Dal grafico si osserva un progressivo miglioramento dell’efficienza temporale dei componenti di ALimitedGroup.
-Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all’inesperienza e all’adattamento alle richieste del progetto.
+Dal grafico si osserva un progressivo miglioramento dell'efficienza temporale dei componenti di ALimitedGroup.
+Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all'inesperienza e all'adattamento alle richieste del progetto.
 Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza e una riduzione del tempo necessario per completare le attività.
+
+
 #pagebreak()
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
@@ -1043,7 +1065,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     [Nominare le risorse con formati arbitrari crea problemi di consistenza e rallenta notevolmente qualsiasi attività di ricerca], [Ideazione ed utilizzo di convenzioni per la nomenclatura di issue, branch, file e decisioni prese per garantire una maggiore chiarezza e uniformità],
     [La scelta delle attività non è sufficientemente specifica], [I membri di ALimitedGroup valuteranno di _sprint_ in _sprint_ le attività svolte e ancora da svolgere, deciderà il grado di qualità da raggiungere e in base a quello determinerà il tempo di svolgimento assegnato a ciascuna attività]
   ),
-  caption: [contromisure adottate per migliorare l'organizzazione],
+  caption: [Contromisure adottate per migliorare l'organizzazione],
 )
 
 == Valutazioni sui ruoli
@@ -1065,11 +1087,11 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
 
     // Data rows
     [Tutti i ruoli], [In fasi più avanzate del progetto diventa limitante dover ricoprire lo stesso ruolo per due settimane, lasciando insoddisfatte delle necessità e sfruttando male le ore produttive], [I ruoli possono cambiare ad ogni settimana, previo accordo tra le
-      parti qualora questo si renda necessario, e con l’unico vincolo di non coprire due ruoli
+      parti qualora questo si renda necessario, e con l'unico vincolo di non coprire due ruoli
       simultaneamente],
     [Verificatore], [Modificare o aggiornare documenti senza prima averlo sottoposto a verifica non è conforme ai buoni standard progettuali], [Il verificatore è tenuto a compilare ad ogni modifica la tabella relativa per ciascun documento],
   ),
-  caption: [contromisure adottate per migliorare la gestione dei ruoli],
+  caption: [Contromisure adottate per migliorare la gestione dei ruoli],
 )
 
 == Valutazioni sugli strumenti
@@ -1096,7 +1118,7 @@ Di seguito, presenteremo i principali problemi individuati e le relative controm
     [Tramite script Python è stato implementato un controllo automatico che verifica la presenza di ogni parola definita nel glossario e la sua corretta scrittura con l'aggiunta di una lettera "g" in apice al termine in tutti i documenti],
     [Sito], [La navigazione del sito è macchinosa e la presentazione non supporta la visualizzazione sugli schermi più piccoli], [Il sito è ristrutturato per garantire una navigazione più fluida e una visualizzazione ottimale su tutti i dispositivi],
   ),
-  caption: [contromisure adottate per migliorare il rapporto con gli strumenti di lavoro],
+  caption: [Contromisure adottate per migliorare il rapporto con gli strumenti di lavoro],
 )
 
 == Considerazioni finali
