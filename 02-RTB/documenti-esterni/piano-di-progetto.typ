@@ -459,7 +459,96 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tu
   caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline_ (RTB)* entro il *3 febbraio 2025*.
+Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
+
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_.
+
+== Attività previste per la Requirements and Technology Baseline (RTB)
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    align: (x, y) => if y == 0 or (x != 1 and x != 2) { center + horizon } else { left },
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    table.header(
+      text(fill: white)[*Attività*],
+      text(fill: white)[*Descrizione*],
+      text(fill: white)[*Periodo di svolgimento*],
+      text(fill: white)[*Stato*],
+    ),
+
+    [*Redazione Analisi dei Requisiti*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Casi d'Uso relativi a requisiti obbligatori;
+      - Casi d'Uso relativi a requisiti non obbligatori;
+      - Casi d'Uso attività _Backend_;
+      - Requisiti.],
+    [Introduzione: _sprint_ 1 \ \
+      Casi d'Uso obbligatori: \
+      da _sprint_ 2 a _sprint_ 4 \ \
+      Casi d'Uso non obbligatori: \ _sprint 5_ \ \
+      Casi d'Uso attività _Backend_: \ _sprint_ 5 \ \
+      Redazione Requisiti: \ _sprint_ 5],
+    [Completato per RTB],
+
+    [*Redazione Piano di Progetto*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Analisi e gestione dei rischi
+      - Pianificazione nel lungo e breve termine],
+    [Introduzione: _sprint_ 2 \ \
+      Analisi e gestione dei rischi: \ tutti gli _sprint_ \ \
+      Pianificazione nel lungo e breve termine: \ tutti gli _sprint_
+    ],
+    [Completato per RTB],
+
+    [*Redazione Piano di Qualifica*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Soglie delle misurazioni;
+      - Auto-miglioramento;
+      - Metodi di testing;
+      - Cruscotto di valutazione.],
+    [Introduzione: _sprint_ 2 \ \
+      Soglie delle misurazioni: \ da _sprint_ 2 a _sprint_ 5 \ \
+      Automiglioramento: \ _sprint_ 5 \ \
+      Metodi di testing: \ _sprint_ 6 \ \
+      Cruscotto di valutazione: \ Tutti gli _sprint_
+    ],
+    [Completato per RTB],
+
+    [*Redazione Norme di Progetto*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Processi Primari;
+      - Processi di Supporto;
+      - Processi Organizzativi;
+      - Metriche utilizzate;
+    ],
+    [],
+    [Completato per RTB],
+
+    [*Redazione del Glossario*],
+    [Redazione delle seguenti parti:
+      - Termini.],
+    [Termini: \ Tutti gli _sprint_],
+    [Completato per RTB],
+  ),
+  caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
+)
+
+== Attività previste per la Product Baseline (PB)
+
+La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
 
 #pagebreak()
 
