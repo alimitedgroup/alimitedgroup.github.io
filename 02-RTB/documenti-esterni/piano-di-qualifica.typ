@@ -13,7 +13,7 @@
       date: datetime(day: 10, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.sara,
-      descr: "Aggiunte misurazioni " + [(@dashboard)],
+      descr: "Aggiunte misurazioni e sezione metodi di testing " + [(@dashboard e @test)],
     ),
     (
       vers: "0.9.0",
@@ -442,7 +442,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 )
 
 #pagebreak()
-= Metodi di testing
+= Metodi di testing <test>
 Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test effettuati saranno:
 
 - Test di Unità;
