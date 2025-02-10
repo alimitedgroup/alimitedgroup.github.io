@@ -112,7 +112,6 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 
-
 #pagebreak()
 
 = Analisi e gestione dei rischi <agr>
@@ -534,7 +533,12 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Processi Organizzativi;
       - Metriche utilizzate;
     ],
-    [],
+    [Introduzione: _sprint_ 1 \ \
+      Processi Primari: \ da _sprint_ 1 a _sprint_ 3 \ \
+      Processi di Supporto: \ da _sprint_ 1 a _sprint_ 6 \ \
+      Processi Organizzativi: \ da _sprint_ 1 a _sprint_ 4 \ \
+      Metriche utilizzate: \ _sprint 6_
+    ],
     [Completato per RTB],
 
     [*Redazione del Glossario*],
@@ -542,6 +546,17 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Termini.],
     [Termini: \ Tutti gli _sprint_],
     [Completato per RTB],
+
+    [*Realizzazione del Proof of Concept (PoC)*],
+    [Testing delle seguenti tecnologie:
+      - _Golang_;
+      - NATS;
+      - Docker;
+      - Observability stack (Grafana,);
+      Testing della sincronizzazione],
+    [Tecnologie: \ da _sprint_ 3 a _sprint_ 5 \ \
+      sincronizzazione: \ _sprint_ 6],
+    [Completato],
   ),
   caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
 )
@@ -600,7 +615,7 @@ In particolare, le attività previste sono:
 - Aggiornamento del sito web
 - Sistemazione del sistema di versionamento dei documenti
 - Miglioramento del processo di redazione e verifica dei verbali
-- Formalizzazione del legame tra decisioni intraprese nelle riunioni e backlog
+- Formalizzazione del legame tra decisioni intraprese nelle riunioni e _backlog_
 - Prima redazione del Glossario
 - Prima redazione delle Norme di Progetto
 - Prima redazione del Piano di Progetto
