@@ -1,9 +1,7 @@
-#import "../../lib/diario.typ": *
+#import "../../lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 13, month: 1, year: 2025),
   contenuto1: [
     - Proseguita la redazione Analisi dei Requisiti, verso il termine la stesura dei requisiti obbligatori
