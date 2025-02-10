@@ -460,7 +460,7 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tu
 
 Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
 
-Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_.
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
 == Attività previste per la Requirements and Technology Baseline (RTB)
 
