@@ -159,7 +159,7 @@
 
   // Prima pagina
   image("../assets/altd.png", height: 7cm)
-  v(4em)
+  v(1em)
   text(24pt, weight: "bold", fill: black)[#titolo]
   v(2.25em)
 
@@ -238,6 +238,10 @@
       text(12pt, fill: white)[*Descrizione*],
     ),
     ..for mod in modifiche {
+      if (type(mod.descr) == str and not mod.descr.ends-with(".")) {
+        panic("La descrizione di una modifica dovrebbe terminare con un punto. Versione: " + mod.vers)
+      }
+
       (
         mod.vers,
         mod.date.display("[year]-[month]-[day]"),
@@ -247,7 +251,11 @@
         } else {
           [-]
         },
-        mod.descr,
+        if "approvazione" in mod {
+          mod.descr + [ Approvazione da parte di #abbrev(mod.approvazione).]
+        } else {
+          mod.descr
+        },
       )
     },
   )

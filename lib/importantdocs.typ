@@ -52,7 +52,7 @@
   prima-pagina(
     titolo,
     {
-      v(2em)
+      v(1em)
       text(14pt, weight: "black", fill: black)[Descrizione]
       v(0.5em)
       text(10pt)[#descrizione]
@@ -64,7 +64,7 @@
     [Distribuzione],
     if tipo == [esterno]
     {
-      grid(align: left, gutter: 8pt, [_ALimitedGroup_], [M31], prof(p.tullio), prof(p.cardin))
+      grid(align: left, gutter: 8pt, [_ALimitedGroup_], [#M31], prof(p.tullio), prof(p.cardin))
     }
     else
     {

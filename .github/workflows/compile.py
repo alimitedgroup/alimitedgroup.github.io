@@ -93,7 +93,18 @@ def compile(filename: str, compile_options: list[str]) -> bool:
 
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
-    return TEMPLATE.replace("{{link}}", titolo + ".pdf").replace("{{name}}", titolo)
+    nomefile = titolo + ".pdf"
+
+    if "PQ " in titolo:
+        titolo = titolo.replace('PQ ', 'Piano di Qualifica ')
+    elif "PP " in titolo:
+        titolo = titolo.replace('PP ', 'Piano di Progetto ')
+    elif "AR " in titolo:
+        titolo = titolo.replace('AR ', 'Analisi dei Requisiti ')
+    elif "NP " in titolo:
+        titolo = titolo.replace('NP ', 'Norme di Progetto ')
+
+    return TEMPLATE.replace("{{link}}", nomefile).replace("{{name}}", titolo)
 
 
 def main():

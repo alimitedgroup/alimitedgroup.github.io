@@ -41,10 +41,32 @@ body {
   animation: fadeInUp 1.5s ease-out forwards;
 }
 
-.fade-in-text {
+.fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s ease-out 0.5s forwards;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.delay-1 {
+  animation-delay: 200ms;
+}
+.delay-2 {
+  animation-delay: 250ms;
+}
+.delay-3 {
+  animation-delay: 300ms;
+}
+.delay-4 {
+  animation-delay: 350ms;
+}
+.delay-5 {
+  animation-delay: 400ms;
+}
+.delay-6 {
+  animation-delay: 450ms;
+}
+.delay-7 {
+  animation-delay: 500ms;
 }
 
 @keyframes fadeInUp {

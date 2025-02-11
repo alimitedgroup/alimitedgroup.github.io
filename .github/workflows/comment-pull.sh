@@ -10,8 +10,7 @@ fi
 
 COMMIT=$(git rev-parse HEAD)
 BODY=$(gh pr view --json body --jq '.body' | grep -v '^Artefatti: ')
-BODY=$(echo "$BODY" | grep -v '^Artefatti: ')
-BODY+=$(printf '%s\n%s' "$BODY" "Artefatti: https://sbkd.us.to/altd/$COMMIT")
+BODY=$(printf '%s\n%s' "$BODY" "Artefatti: https://sbkd.us.to/altd/$COMMIT")
 
 scp -i ~/.ssh/altd_ed25519 -r ./dist "altd@sbkd.us.to:deploys/$COMMIT"
 gh pr edit --body "$BODY"
