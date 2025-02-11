@@ -1,9 +1,7 @@
-#import "../../lib/diario.typ": *
+#import "../../lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 8, month: 1, year: 2025),
   contenuto1: [
     - Proseguita la redazione Analisi dei Requisiti, tutti i Casi d'Uso relativi a requisiti non obbligatori sono stati realizzati

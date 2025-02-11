@@ -1,11 +1,9 @@
 // DB 28-10-2024
 
-#import "/lib/diario.typ": *
+#import "/lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 28, month: 10, year: 2024),
   contenuto1: [
     - Definizione del nome del gruppo

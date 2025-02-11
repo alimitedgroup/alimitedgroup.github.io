@@ -1,9 +1,7 @@
-#import "../../lib/diario.typ": *
+#import "../../lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 18, month: 12, year: 2024),
   contenuto1: [
     - Svolta la riunione con il proponente M31 in cui è stato discusso il PoC e una possibile architettura che il sistema potrebbe avere: date le complessità del progetto tale studio è necessario per un PoC che davvero dimostri la fattibilità del progetto con le tecnologie che intendiamo utilizzare

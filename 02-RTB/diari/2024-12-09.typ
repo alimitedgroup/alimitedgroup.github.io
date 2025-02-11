@@ -1,9 +1,7 @@
-#import "../../lib/diario.typ": *
+#import "../../lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 9, month: 12, year: 2024),
   contenuto1: [
     - Svolto la riunione con il proponente M31 in cui sono stati chiariti dei requisiti e sono stati avuti i primi riscontri sui Casi d'Uso sino ad ora rilevati

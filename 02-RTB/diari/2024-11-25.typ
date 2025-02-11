@@ -1,9 +1,7 @@
-#import "../../lib/diario.typ": *
+#import "../../lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 25, month: 11, year: 2024),
   contenuto1: [
     - Si è tenuta la prima riunione con l'azienda proponente (martedì 19 Novembre) in cui abbiamo discusso i requisiti e le modalità del progetto
