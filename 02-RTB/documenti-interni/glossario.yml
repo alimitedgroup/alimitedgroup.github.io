@@ -2,57 +2,32 @@
 # segnaposto "": "" per evitare errori di compilazione, da sostituire eventualmente 
 # con la coppia parola: "definizione"
 A:
-  Action: "In GitHub, un 'action' (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi
-  nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora.
-  Tale servizio è direttamente integrato nella piattaforma GitHub."
-  Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività
-  amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire
-  che il progetto abbia gli strumenti per essere gestito in modo efficiente e conforme ai requisiti definiti."
-  Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare
-  e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto
-  deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel
-  successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi
-  utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi
-  aziendali, delle tecnologie e delle esigenze degli utenti."
+  Action: "In GitHub, un 'action' (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora. Tale servizio è direttamente integrato nella piattaforma GitHub."
+  Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire che il progetto abbia gli strumenti per essere gestito in modo efficiente e conforme ai requisiti definiti."
+  Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi aziendali, delle tecnologie e delle esigenze degli utenti."
   Analisi dei Requisiti: "Documento contenente tutti i Casi d'Uso identificati da ALimitedGroup per il capitolato e i relativi requisiti."
-  Angular: "Framework open-source per lo sviluppo di applicazioni web basato su 
-  TypeScript, mantenuto da Google."
-  AP: "Attività Passata: un'attività (dunque una decisione che dovrebbe
-  avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare
-  il sistema di ticketing."
-  API: "Application Programming Interface, interfaccia che consente la comunicazione 
-  tra diverse applicazioni o servizi."
-  Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da 
-  parte di un responsabile."
+  Angular: "Framework open-source per lo sviluppo di applicazioni web basato su TypeScript, mantenuto da Google."
+  AP: "Acronimo di Attività Passata; è un'attività (dunque una decisione che dovrebbe avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing."
+  API: "Acronimo di Application Programming Interface; è un'interfaccia che consente la comunicazione tra diverse applicazioni o servizi."
+  Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da parte di un responsabile."
   Architettura: "Insieme delle parti che comporranno il Sistema."
-  Attore: " Entità esterna e non modificabile dal Sistema che interagisce con il Sistema: ha obiettivi o interessi specifici nell'utilizzo del sistema ma non è parte del sistema stesso. 
-  Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere.
-  Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
-  AWS: "Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata 
-  per archiviazione, elaborazione e gestione dati."
+  Attore: "Entità esterna e non modificabile dal Sistema che interagisce con il Sistema: ha obiettivi o interessi specifici nell'utilizzo del sistema ma non è parte del sistema stesso. Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere. Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
+  AWS: "Acronimo di Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata per archiviazione, elaborazione e gestione dati."
 B:
   Backend: "Insieme delle componenti del Sistema che, mediante il loro funzionamento, forniscono la logica del Sistema stesso. È sostanzialmente il responsabile dell'elaborazione dei vari dati."
   Baseline: "La Baseline è un punto concreto di sviluppo, un nuovo punto di riferimento considerato di sufficiente qualità e dalla quale tornare indietro rappresenterebbe un costo estremamente elevato."
   Best Practice: "Una Buona Pratica, ovvero un modo di fare che è efficiente (ovvero consuma solo le risorse di cui ha bisogno, senza sprecarne nessuna) ed efficace (ovvero che soddisfa le necessità per cui è eseguita)."
   Board: "In GitHub, una board è uno strumento molto importante per vedere velocemente le attività (Issue) da svolgere (To-do), in corso (In Progress) e terminate (Done)."
-  Branch: "Nello sviluppo software un branch è una copia separata del codice sorgente che consente agli sviluppatori di lavorare alle modifiche su un ramo a parte senza influenzare direttamente il ramo principale.
-  I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di Git, e, di conseguenza, di GitHub."
+  Branch: "Nello sviluppo software un branch è una copia separata del codice sorgente che consente agli sviluppatori di lavorare alle modifiche su un ramo a parte senza influenzare direttamente il ramo principale. I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di Git, e, di conseguenza, di GitHub."
 C:
-  Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un
-  progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una
-  base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte
-  abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
+  Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
   Caso d'Uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
   Consuntivo: "Esiti finali delle risorse temporali e monetarie utilizzati, spesso in riferimento al bilancio preventivato."
   Cruscotto: "In inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
 D:
   Dashboard: "Vedi Cruscotto."
-  DI: "Decisione Interna: una decisione intrapresa con effetto immediato:
-  potrebbe, per questo motivo, non avere un'issue associata."
-  Discord: "Discord è una piattaforma di comunicazione online che combina chat testuale, vocale e video. Consente
-  agli utenti di creare server, organizzare discussioni in canali e personalizzare l'esperienza di comunicazione. Discord, inoltre, offre un sistema di ruoli e autorizzazioni che consente di controllare l'accesso
-  agli utenti e di definire chi può fare cosa all'interno del server. Inoltre supporta bot e integrazioni di
-  terze parti che consentono di aggiungere funzionalità personalizzate ai server."
+  DI: "Acronimo di Decisione Interna; è una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'issue associata."
+  Discord: "Discord è una piattaforma di comunicazione online che combina chat testuale, vocale e video. Consente agli utenti di creare server, organizzare discussioni in canali e personalizzare l'esperienza di comunicazione. Discord, inoltre, offre un sistema di ruoli e autorizzazioni che consente di controllare l'accesso agli utenti e di definire chi può fare cosa all'interno del server. Inoltre supporta bot e integrazioni di terze parti che consentono di aggiungere funzionalità personalizzate ai server."
   Docker: "Piattaforma che permette la containerizzazione del Software, rendendolo isolato e facilmente replicabile in varie istanze."
 E:
   Economicità: "Si dice raggiungere l'economicità di processo quando lo stesso è efficiente ed efficace, ovvero quando, senza spreco di risorse, è in grado di produrre un risultato che soddisfa i bisogni iniziali."
@@ -61,98 +36,68 @@ E:
 F:
   Funzionalità: "Una caratteristica offerta da un Sistema, spesso con lo scopo di soddisfare un bisogno."
 G:
-  GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, 
-  facilitando la condivisione e lo sviluppo di progetti software."
-  GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), 
-  che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
-  Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e 
-  semplicità, particolarmente adatto per sistemi e applicazioni cloud."
-  Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include 
-  servizi di elaborazione, archiviazione e analisi dei dati."
-  Grafana: "Piattaforma open-source di visualizzazione, monitoraggio e analisi di dati, progettata per aggregare, 
-  rappresentare graficamente e interpretare metriche provenienti da diverse sorgenti attraverso dashboard configurabili e dinamiche."
+  GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, facilitando la condivisione e lo sviluppo di progetti software."
+  GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
+  Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e semplicità, particolarmente adatto per sistemi e applicazioni cloud."
+  Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include servizi di elaborazione, archiviazione e analisi dei dati."
+  Grafana: "Piattaforma open-source di visualizzazione, monitoraggio e analisi di dati, progettata per aggregare, rappresentare graficamente e interpretare metriche provenienti da diverse sorgenti attraverso dashboard configurabili e dinamiche."
 H:
   "": ""
 I:
-  IDE: "Integrated Development Environment, ambiente di sviluppo integrato che 
-  fornisce strumenti come editor di codice, debugger e compilatori."
-  Issue: "Problema o attività registrata in un sistema di tracciamento per 
-  monitorare e risolvere bug o richieste di funzionalità."
-  ISO: "International Organization for Standardization, ente di standardizzazione fondato nel 1947."
+  IDE: "Acronimo di Integrated Development Environment; è un ambiente di sviluppo integrato che fornisce strumenti come editor di codice, debugger e compilatori."
+  Issue: "Problema o attività registrata in un sistema di tracciamento per monitorare e risolvere bug o richieste di funzionalità."
+  ISO: "Acronimo di International Organization for Standardization; è un'ente di standardizzazione fondato nel 1947."
 J:
   "": ""
 K:
-  Kubernetes: "Piattaforma open-source per l'automazione della gestione, del 
-  deployment e del dimensionamento di applicazioni containerizzate."
+  Kubernetes: "Piattaforma open-source per l'automazione della gestione, del deployment e del dimensionamento di applicazioni containerizzate."
 L:
-  LaTeX: "Linguaggio di marcatura compilato per la realizzazione di documenti."
-  LGTM: "Looks good to me, acronimo utilizzato dal verificatore per indicare che il documento è pronto per essere approvato."
-  LLM: "Modello linguistico di grandi dimensioni, come ChatGPT, 
-  addestrato su enormi quantità di testo per comprendere e generare 
-  linguaggio naturale."
+  LaTeX: "Linguaggio di marcatura (mark-down) compilato per la realizzazione di documenti."
+  LGTM: "Acronimo di Looks Good To Me; solitamente viene utilizzato dal verificatore per indicare che il documento è pronto per essere approvato."
+  LLM: "Acronimo di Large Language Model; è un modello addestrato su enormi quantità di testo per comprendere e generare linguaggio naturale, un esempio di LLM è ChatGPT di OpenAI."
 M:
   Manutenzione: "Attività di mantenimento correttivo, evolutivo e adattivo di un prodotto con lo scopo di mantenerlo buono."
   Milestone: "Breve periodo di tempo, generalmente di circa 2 setttimane, in cui ci si pone di raggiungere degli obiettivi (che devono essere temporalmente consoni). Il raggiungimento degli obiettivi delle varie Milestone permette di raggiungere una Baseline."
-  MVP: "Minimum Viable Product, versione base di un prodotto con le minime funzionalità per soddisfare i requisiti obbligatori del Cliente."
+  MVP: "Acronimo di Minimum Viable Product; è una versione base di un prodotto con le minime funzionalità per soddisfare i requisiti obbligatori del Cliente."
 N:
-  NATS: "NATS (Neural Architecture Transfer System) è un sistema di middleware open-source progettato
-  per la messaggistica distribuita e la gestione dei servizi."
+  NATS: "Acronimo di Neural Architecture Transfer System; è un sistema di middleware open-source progettato per la messaggistica distribuita e la gestione dei servizi."
   Norme di Progetto: "Documento contenente tutte le regole che ALimitedGroup intende rispettare per realizzare un lavoro di qualità, efficiente ed efficace. Costituisce in sostanza il punto di riferimento per apprendere il Way of Working del gruppo."
 O:
-  Ordine: "Spostamento verso l’esterno di un insieme di merci. Almeno un prodotto deve essere trasferito.
-  Un ordine può essere soddisfatto da più magazzini."
+  Ordine: "Spostamento verso l'esterno di un insieme di merci. Almeno un prodotto deve essere trasferito. Un ordine può essere soddisfatto da più magazzini."
 P:
-  PoC: "Vedi Proof of Concept."
-  Proof of Concept: "prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia"
-  PR: "Pull Request, richiesta di revisione e integrazione di codice 
-  modificato in un repository condiviso."
+  PoC: "Acronimo di Proof of Concept, per la sua definizione vedere la parola che segue."
+  Proof of Concept: "Prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia"
+  PR: "Acronimo di Pull Request; è una richiesta di revisione e integrazione di codice modificato in un repository condiviso."
   Progettista: "Ruolo che si occupa di progettare l'architettura del Sistema allo scopo di giungere alla codifica avendo correttezza per costruzione e non per correzione"
   Programmatore: "Ruolo che si occupa di programmare a codice l'architettura progettata."
-  Prompt: "Testo o input fornito a un modello linguistico (come un LLM) 
-  per generare una risposta o eseguire un'azione."
+  Prompt: "Testo o input fornito a un modello linguistico (come un LLM) per generare una risposta o eseguire un'azione."
   Proponente: "Colui che propone la realizzazione di un Progetto per soddisfare una propria necessità. Per ALimitedGroup il proponente è M31."
   Pull Request: "Strumento di GitHub per permettere una verifica intermedia e un'eventuale richiesta di cambiamenti prima di pubblicare nel Branch principale delle modifiche apportate."
 Q:
   "": ""
 R:
-  React: "Una libreria JavaScript open-source sviluppata da Meta (ex Facebook) 
-  per creare interfacce utente dinamiche, soprattutto per applicazioni web single-page."
-  Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza,
-  occupandosi di correggere eventuali errori segnalati dal Verificatore."
-  Repository: "Archivio centralizzato in cui viene memorizzato e 
-  gestito il codice sorgente."
+  React: "Una libreria JavaScript open-source sviluppata da Meta (ex Facebook) per creare interfacce utente dinamiche, soprattutto per applicazioni web single-page."
+  Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza, occupandosi di correggere eventuali errori segnalati dal Verificatore."
+  Repository: "Archivio centralizzato in cui viene memorizzato e gestito il codice sorgente."
   Responsabile: "Ruolo centrale nella gestione del gruppo: ha il compito di coordinare le attività e lo stato di progresso, nonché di tenere le comunicazioni verso l'esterno del gruppo."
   Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
-  RTB: "Requirements and Technology Baseline è un riferimento iniziale e stabilito 
-  di requisiti e tecnologie   approvate per un progetto. Questa baseline include 
-  requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, 
-  e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme 
-  e infrastrutture approvati per lo sviluppo del progetto.
-  Una volta stabilita, questa baseline rappresenta una base di confronto per valutare 
-  il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. 
-  Modifiche alla baseline richiedono una revisione e approvazione formale."
+  RTB: "Acronimo di Requirements and Technology Baseline; è un riferimento iniziale e stabilito di requisiti e tecnologie approvate per un progetto. Questa baseline include requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme e infrastrutture approvati per lo sviluppo del progetto. Una volta stabilita, questa baseline rappresenta una base di confronto per valutare il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. Modifiche alla baseline richiedono una revisione e approvazione formale."
 S:
-  SAL: "Stato avanzamento lavori, riunioni periodiche svolte con l'azienda proponente."
-  SCRUM: "Metodo agile per la gestione di progetti complessi, basato 
-  su iterazioni e collaborazioni continue."
-  Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare 
-  un set di attività."
+  SAL: "Acronimo di Stato avanzamento lavori; indica riunioni periodiche svolte con l'azienda proponente."
+  SCRUM: "Metodo agile per la gestione di progetti complessi, basato su iterazioni e collaborazioni continue."
+  Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare un set di attività."
 T:
   Telegram: "Applicazione di messaggistica istantanea multipiattaforma utilizzata da ALimitedGroup per comunicazioni veloci."
   Test: "Attività inclusa nello sviluppo di un software consona a verificarne le funzionalità, individuando eventuali problemi."
-  Trasferimento: "Spostamento di un insieme di merci da un magazzino all’altro. Almeno un prodotto deve essere trasferito.
-  Il trasferimento ha solo due magazzini che partecipano all’operazione."
-  TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato 
-  su JavaScript, con supporto per tipizzazione statica."
+  Trasferimento: "Spostamento di un insieme di merci da un magazzino all'altro. Almeno un prodotto deve essere trasferito. Il trasferimento ha solo due magazzini che partecipano all'operazione."
+  TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato su JavaScript, con supporto per tipizzazione statica."
   Typst: "Linguaggio di markup per la redazione di documenti moderno è di utlizzo più semplice rispetto ad altri linguaggi di markup."
 U:
-  Unit Test: "Test automatizzato per verificare il corretto 
-  funzionamento di una singola unità o componente del software."
+  Unit Test: "Test automatizzato per verificare il corretto funzionamento di una singola unità o componente del software."
 V:
   Validazione: "Controllo atto a determinare che quanto sviluppato soddisfi le esigenze per cui è stato realizzato."
-  Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi 
-  determinati requisiti."
+  Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi determinati requisiti."
   Verificatore: "Colui che si occupa di segnalare eventuali errori commessi dal Redattore/Programmatore, in fase di redazione/codifica, di un qualsiasi documento/codice."
 W:
   Way of Working: "Metodo di lavoro o approccio operativo adottato da un team o organizzazione."
