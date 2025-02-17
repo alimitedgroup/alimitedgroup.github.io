@@ -1,7 +1,10 @@
 TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a></li>'
+LETTER_TEMPLATE = '</dl><h2 id="{{letter}}">{{letter}}</h2><dl>'
+WORD_TEMPLATE = '<dt>{{word}}</dt><dd>{{definition}}</dd>'
 
 import re
 import sys
+import yaml
 import json
 import logging
 import subprocess
@@ -91,8 +94,20 @@ def compile(filename: str, compile_options: list[str]) -> bool:
     return True
 
 
+# Functions for writing the html
+
+
+def loadGlossary() -> dict:
+    with open('02-RTB/documenti-interni/glossario.yml','r') as f:
+        output = yaml.safe_load(f)
+    return output
+
+
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
+    # TODO: rimuovere le due righe seguenti
+    if 'Glossario' in titolo:
+        return TEMPLATE.replace("{{link}}", "Glossario.pdf").replace("{{name}}", titolo)
     return TEMPLATE.replace("{{link}}", titolo + ".pdf").replace("{{name}}", titolo)
 
 
@@ -102,6 +117,18 @@ def main():
     # Setup `dist` directory
     rmtree("dist", ignore_errors=True)
     copytree("website", "dist", symlinks=False)
+
+    # Handle glossary
+
+    html = Path("dist/glossario.html").read_text()
+    for start_letter, entries in sorted(loadGlossary().items()):
+        if len(entries) == 1 and '' in entries: continue
+        html = html.replace('{{content}}', LETTER_TEMPLATE.replace('{{letter}}', start_letter) + '{{content}}')
+        for word, definition in entries.items():
+            html = html.replace('{{content}}', WORD_TEMPLATE.replace('{{word}}', word).replace('{{definition}}', definition) + '{{content}}')
+    Path("dist/glossario.html").write_text(html)
+
+    # Handle index page
 
     success = True
     documenti = defaultdict(list)
@@ -118,7 +145,12 @@ def main():
         categorie = "/".join(filename.split("/")[:-1])
 
         titolo = query(filename.replace(".pdf", ".typ"), "<titolo>")
-        output = f"dist/{titolo}".strip() + ".pdf"
+        # TODO: rimuovere la riga seguente
+        if 'Glossario' not in titolo:
+            output = f"dist/{titolo}".strip() + ".pdf"
+        # TODO: rimuovere le due righe seguenti
+        else:
+            output = "dist/Glossario.pdf"
 
         if ".typ" in filename and Path(filename_pdf).exists():
             copyfile(filename_pdf, output)
