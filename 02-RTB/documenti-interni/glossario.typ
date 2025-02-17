@@ -1,12 +1,13 @@
 #import "../../lib/common.typ": *
-#metadata[Glossario] <titolo>
 
 #set text(lang: "it", font: "Hanken Grotesk")
-#let versione = [0.3.0]
+#let versione = [0.4.0]
+
+#metadata[Glossario v#versione] <titolo>
 
 // Prima pagina
 #prima-pagina(
-  "Glossario",
+  [_Glossario_ \ Versione #versione],
   [],
   [Stato],
   [Redazione],
@@ -24,11 +25,19 @@
 #counter(page).update(1)
 
 #registro-modifiche((
-  (vers: "0.3.0",
+  (
+    vers: "0.4.0",
+    date: datetime(day: 25, month: 01, year: 2025),
+    autore: p.marco,
+    verifica: p.lorenzo,
+    descr: "Aggiunte nuove definizioni al glossario.",
+  ),
+  (
+    vers: "0.3.0",
     date: datetime(day: 09, month: 12, year: 2024),
     autore: p.marco,
     verifica: p.lorenzo,
-    descr: "Aggiunte nuove definizioni al glossario."
+    descr: "Aggiunte nuove definizioni al glossario.",
   ),
   (
     vers: "0.2.0",
@@ -54,7 +63,8 @@
   #heading(letter, level: 1) // Intestazione per ogni lettera
 
   #for (word, definition) in words [
-    #if (word != "") [ // Lascia vuoto se nessuna definizione da mostrare
+    #if (word != "") [
+      // Lascia vuoto se nessuna definizione da mostrare
       #strong[#list(word)] // Intestazione per ogni parola
       #label(word)
       #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione
