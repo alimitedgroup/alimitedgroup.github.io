@@ -16,8 +16,8 @@ def loadGlossary():
 def substitute_line(filename, linenum, line, filtered_glossary):
     for sub in filtered_glossary:
         origLine = line
-        line = line.replace(sub, f"{sub}#super[g]")
-        line = line.replace('#super[g]#super[g]', f'#super[g]')
+        line = line.replace(sub, f"{sub}#super[G]")
+        line = line.replace('#super[G]#super[G]', f'#super[G]')
         if line != origLine:
             logging.error(f'Found un-tagged word at {filename}:{linenum}')
 
@@ -80,16 +80,16 @@ def substitute(filePath,glossaryYml):
                     stop=False
                 if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
                     if word[:-1] in glossary and word[len(word)-1] in specialChar:
-                        newText += word[:-1] + "#super[g] " + word[-1:]
+                        newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
-                        newText += word[:-2] + "#super[g] " + word[-2:]
+                        newText += word[:-2] + "#super[G] " + word[-2:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0]=="_" or word[0]=="*":
-                        newText += word + "#super[g] "
+                        newText += word + "#super[G] "
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0] == "(" and word[len(word)-1] == ")":
-                        newText += word[:-1] + "#super[g] " + word[-1:]
+                        newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     else:
                         newText += word
