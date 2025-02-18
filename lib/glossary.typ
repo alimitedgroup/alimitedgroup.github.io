@@ -10,6 +10,7 @@
   body,
 ) = {
   [#metadata[Glossario] <titolo>]
+  set text(lang: "it", font: "Hanken Grotesk")
   prima-pagina(
     [_Glossario_ \ Versione #versione],
     [],
@@ -27,7 +28,6 @@
     grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
   )
 
-  set text(lang: "it", font: "Hanken Grotesk")
   set enum(indent: 1em)
   set heading(numbering: none, hanging-indent: 1em)
   set page(numbering: "1", header: header("Glossario" + "\n Versione " + versione), footer: footer())
