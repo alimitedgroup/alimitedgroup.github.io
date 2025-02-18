@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [1.0.0]
+#let ver = [1.1.0]
 
 #show ref: it => if str(it.target).starts-with("UC") {
   link(it.target, "[" + str(it.target) + "]")
@@ -323,7 +323,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto versione 1.0.0* \ #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[https://alimitedgroup.github.io/norme-progetto.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
+- *Norme di Progetto versione 1.0.0* \ #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[https://alimitedgroup.github.io/NP%20v1.0.0.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
 - *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_* \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 === Riferimenti informativi
 - *Standard IEEE* \ https://ieeexplore.ieee.org/document/720574 \ *Ultimo Accesso 3 Febbraio 2025*
@@ -4245,7 +4245,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
 
     [R-100-F-Ob],
     [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti],
-    [@UC56 \ @UC56.1 \ @UC13 \ @UC14 \ @UC15],
+    [@UC56],
 
     [R-101-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne l'ID], [@UC56.1 \ @UC13],
     [R-102-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne la data di creazione], [@UC56.1 \ @UC14],
