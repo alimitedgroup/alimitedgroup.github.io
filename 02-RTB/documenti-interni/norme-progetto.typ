@@ -1,20 +1,28 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [0.15.0]
+#let ver = [1.0.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 02, month: 02, year: 2025),
+  data: datetime(day: 18, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 18, month: 02, year: 2025),
+      autore: p.matteo,
+      verifica: p.emanuele,
+      approvazione: p.samuele,
+      descr: "Correzioni minori.",
+    ),
     (
       vers: "0.15.0",
       date: datetime(day: 02, month: 02, year: 2025),
       autore: p.matteo,
       verifica: p.emanuele,
-      descr: "Aggiunte " + [@metriche, @metriche-qt-processo e @metriche-qt-prodotto],
+      descr: "Aggiunte " + [@metriche, @metriche-qt-processo e @metriche-qt-prodotto.],
     ),
     (
       vers: "0.14.0",
@@ -287,6 +295,8 @@ La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[
 I componenti di _ALimitedGroup_ ritengono necessario avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
 
 Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.io/Glossario.pdf")[*Glossario*], rivelatosi molto utile nel corso del tempo.
+
+#pagebreak()
 
 #figure(
   table(
