@@ -4587,7 +4587,467 @@ In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno
   caption: [Requisiti di Vincolo],
 )
 
-== Riassunto
+== Tracciamento dei Casi d'Uso e Riepilogo
+
+#show figure: set block(breakable: true)
+#show table.cell.where(x: 0): strong
+#figure(
+  table(
+    align: center + horizon,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: (1fr, 1fr),
+    inset: 8pt,
+    table.header(
+      [#text(fill: white)[*Requisito*]],
+      [#text(fill: white)[*Casi d'Uso*]],
+    ),
+
+    [R-1-F-Ob], [@UC1],
+    [R-2-F-Ob],
+    [@UC1 \ @UC1.1],
+
+    [R-3-F-De],
+    [@UC1 \ @UC1.2],
+
+    [R-4-F-De],
+    [@UC1 \ @UC1.3],
+
+    [R-5-F-Ob],
+    [@UC2],
+
+    [R-6-F-Ob], [@UC3],
+    [R-7-F-Ob],
+    [@UC3 \ @UC3.1],
+
+    [R-8-F-Ob],
+    [@UC3 \ @UC3.2],
+
+    [R-9-F-Ob],
+    [@UC3 \ @UC3.3],
+
+    [R-10-F-Ob],
+    [@UC4],
+
+    [R-11-F-Ob],
+    [@UC4 \ @UC5],
+
+    [R-12-F-Ob],
+    [@UC4 \ @UC6],
+
+    [R-13-F-Ob],
+    [@UC4 \ @UC9],
+
+    [R-14-F-Ob],
+    [@UC7],
+
+    [R-15-F-Ob],
+    [@UC8],
+
+    [R-16-F-Ob],
+    [@UC10 \ @UC9],
+
+    [R-17-F-Ob],
+    [@UC11 \ @UC9],
+
+    [R-18-F-Ob],
+    [@UC12],
+
+    [R-19-F-Ob],
+    [@UC12.1 \ @UC13],
+
+    [R-20-F-Ob],
+    [@UC12.1 \ @UC14],
+
+    [R-21-F-Ob],
+    [@UC12.1 \ @UC15],
+
+    [R-22-F-Ob], [@UC16],
+    [R-23-F-Ob],
+    [@UC16 \ @UC13],
+
+    [R-24-F-Ob],
+    [@UC16 \ @UC14],
+
+    [R-25-F-Ob],
+    [@UC16 \ @UC15],
+
+    [R-26-F-Ob],
+    [@UC16 \ @UC16.1],
+
+    [R-27-F-Ob],
+    [@UC16.1.1 \ @UC16.1.1.1],
+
+    [R-28-F-Ob],
+    [@UC16.1.1 \ @UC17],
+
+    [R-29-F-Ob],
+    [@UC18],
+
+    [R-30-F-Ob], [@UC18.1 \ @UC19],
+    [R-31-F-Ob], [@UC18.1 \ @UC17],
+    [R-32-F-Ob], [@UC18.1 \ @UC20],
+    [R-33-F-Ob], [@UC18.1 \ @UC21],
+
+    [R-34-F-Ob],
+    [@UC22],
+
+    [R-35-F-Ob], [@UC22 \ @UC19],
+    [R-36-F-Ob], [@UC22 \ @UC17],
+    [R-37-F-Ob], [@UC22 \ @UC20],
+    [R-38-F-Ob], [@UC22 \ @UC21],
+    [R-39-F-Ob], [@UC22 \ @UC22.1],
+
+    [R-40-F-Ob],
+
+    [@UC23],
+
+    [R-41-F-Ob],
+
+    [@UC23 \ @UC23.1],
+
+    [R-42-F-Ob],
+
+    [@UC23 \ @UC23.2],
+
+    [R-43-F-Ob],
+
+    [@UC24],
+
+    [R-44-F-Ob],
+    [@UC24 \ @UC5],
+
+    [R-45-F-Ob],
+    [@UC24 \ @UC6],
+
+    [R-46-F-Ob],
+    [@UC24 \ @UC25],
+
+    [R-47-F-Ob],
+    [@UC26 \ @UC25],
+
+    [R-48-F-Ob],
+    [@UC7],
+
+    [R-49-F-Ob],
+    [@UC27],
+
+    [R-50-F-Ob],
+    [@UC28 \ @UC25],
+
+    [R-51-F-Ob],
+    [@UC29],
+
+    [R-52-F-Ob],
+    [@UC29.1 \ @UC30],
+
+    [R-53-F-Ob],
+    [@UC29.1 \ @UC31],
+
+    [R-54-F-Ob],
+    [@UC32],
+
+    [R-55-F-Ob], [@UC32 \ @UC30],
+    [R-56-F-Ob], [@UC32 \ @UC32.1],
+    [R-57-F-Ob], [@UC32 \ @UC32.2],
+    [R-58-F-Ob], [@UC32 \ @UC31],
+    [R-59-F-Ob], [@UC32 \ @UC32.3],
+
+    [R-60-F-Ob],
+    [@UC32.3.1 \ @UC17],
+
+    [R-61-F-Ob],
+    [@UC32.3.1 \ @UC32.3.1.1],
+
+    [R-62-F-Ob],
+    [@UC33],
+
+    [R-63-F-Ob],
+    [@UC34 \ @UC36],
+
+    [R-64-F-Ob],
+    [@UC34 \ @UC35],
+
+    [R-65-F-Ob],
+    [@UC37],
+
+    [R-66-F-De],
+    [@UC38],
+
+    [R-67-F-Ob],
+    [@UC34 \ @UC36],
+
+    [R-68-F-Ob],
+    [@UC34 \ @UC35],
+
+    [R-69-F-Ob],
+    [@UC39],
+
+    [R-70-F-Ob], [@UC39 \ @UC36],
+    [R-71-F-Ob], [@UC39 \ @UC35],
+    [R-72-F-Ob], [@UC39 \ @UC39.1],
+    [R-73-F-Ob], [@UC39 \ @UC39.2],
+
+    [R-74-F-Ob],
+    [@UC39.2.1 \ @UC19],
+
+    [R-75-F-Ob],
+    [@UC39.2.1 \ @UC17],
+
+    [R-76-F-Ob],
+    [@UC39.2.1 \ @UC39.2.1.1],
+
+    [R-77-F-Ob],
+    [@UC40 \ @UC41],
+
+    [R-78-F-Ob],
+    [@UC42 \ @UC41],
+
+    [R-79-F-Ob],
+    [@UC43],
+
+    [R-80-F-Ob], [@UC43.1 \ @UC43.1.2],
+    [R-81-F-Ob], [@UC43.1 \ @UC43.1.1],
+
+    [R-82-F-Ob],
+    [@UC44],
+
+    [R-83-F-Ob],
+    [@UC45],
+
+    [R-84-F-Ob],
+    [@UC46],
+
+    [R-85-F-Ob],
+    [@UC47],
+
+    [R-86-F-Ob],
+    [@UC48],
+
+    [R-87-F-Ob], [@UC48 \ @UC49],
+    [R-88-F-Ob], [@UC48 \ @UC48.1],
+
+    [R-89-F-Ob],
+    [@UC50],
+    //
+    [R-90-F-Ob],
+    [@UC51],
+
+    [R-91-F-Ob], [@UC51 \ @UC49],
+    [R-92-F-Ob], [@UC51 \ @UC51.1],
+
+    [R-93-F-Ob],
+    [@UC52],
+
+    [R-94-F-Ob], [@UC52 \ @UC53],
+    [R-95-F-Ob], [@UC52 \ @UC54],
+
+    [R-96-F-Ob],
+    [@UC55],
+
+    [R-97-F-Ob], [@UC55 \ @UC49],
+    [R-98-F-Ob], [@UC55 \ @UC53],
+    [R-99-F-Ob], [@UC55 \ @UC54],
+
+    [R-100-F-Ob],
+    [@UC56],
+
+    [R-101-F-Ob], [@UC56.1 \ @UC13],
+    [R-102-F-Ob], [@UC56.1 \ @UC14],
+    [R-103-F-Ob], [@UC56.1 \ @UC15],
+
+    [R-104-F-Ob],
+    [@UC57],
+
+    [R-105-F-Ob], [@UC57 \ @UC13],
+    [R-106-F-Ob], [@UC57 \ @UC14],
+    [R-107-F-Ob], [@UC57 \ @UC15],
+    [R-108-F-Ob], [@UC57 \ @UC57.1],
+
+    [R-109-F-Ob],
+    [@UC57.1.1 \ @UC17],
+    [R-110-F-Ob],
+    [@UC57.1.1 \ @UC57.1.1.1],
+
+    [R-111-F-De],
+    [@UC58],
+
+    [R-112-F-De],
+    [@UC59 \ @UC59.1],
+
+    [R-113-F-De],
+    [@UC60],
+
+    [R-114-F-De], [@UC61],
+
+    [R-115-F-De],
+    [@UC62],
+
+    [R-116-F-De],
+    [@UC63],
+
+    [R-117-F-De],
+    [@UC64],
+
+    [R-118-F-De],
+    [@UC65],
+
+    [R-119-F-De], [@UC65.1 \ @UC65.1.1],
+    [R-120-F-De], [@UC65.1 \ @UC65.1.2],
+    [R-121-F-De], [@UC65.1 \ @UC65.1.3],
+
+    [R-122-F-De],
+    [@UC66 \ @UC66.1],
+
+    [R-123-F-De],
+    [@UC67 \ @UC68],
+
+    [R-124-F-De],
+    [@UC69],
+
+    [R-125-F-De], [@UC69 \ @UC69.1],
+    [R-126-F-De], [@UC69 \ @UC69.2],
+    [R-127-F-De], [@UC69 \ @UC69.3],
+
+    [R-128-F-De], [@UC70 \ @UC71],
+    [R-129-F-De], [@UC72 \ @UC71],
+
+    [R-130-F-Ob],
+    [@UC73],
+
+    [R-131-F-Ob], [@UC74 \ @UC74.1],
+    [R-132-F-Ob], [@UC74 \ @UC74.2],
+    [R-133-F-Ob], [@UC74 \ @UC74.3],
+    [R-134-F-Ob], [@UC74 \ @UC74.4],
+    [R-135-F-Ob], [@UC74 \ @UC75],
+
+    [R-136-F-Ob],
+    [@UC76],
+
+    [R-137-F-Ob], [@UC74 \ @UC74.1],
+    [R-138-F-Ob], [@UC74 \ @UC74.2],
+    [R-139-F-Ob], [@UC74 \ @UC74.3],
+    [R-140-F-Ob], [@UC74 \ @UC74.4],
+    [R-141-F-Ob], [@UC74 \ @UC75],
+
+
+    [R-142-F-Ob],
+    [@UC77],
+
+    [R-143-F-Ob], [@UC74 \ @UC74.1],
+    [R-144-F-Ob], [@UC74 \ @UC74.2],
+    [R-145-F-Ob], [@UC74 \ @UC74.3],
+    [R-146-F-Ob], [@UC74 \ @UC74.4],
+    [R-147-F-Ob], [@UC74 \ @UC75],
+
+    [R-148-F-Ob],
+    [@UC78],
+
+    [R-149-F-Ob], [@UC74 \ @UC74.1],
+    [R-150-F-Ob], [@UC74 \ @UC74.2],
+    [R-151-F-Ob], [@UC74 \ @UC74.3],
+    [R-152-F-Ob], [@UC74 \ @UC74.4],
+    [R-153-F-Ob], [@UC74 \ @UC75],
+
+    [R-154-F-Ob],
+    [@UC79],
+
+    [R-155-F-Ob], [ @UC79.1 \ @UC79.1.1],
+    [R-156-F-Ob], [ @UC79.1 \ @UC79.1.2],
+    [R-157-F-Ob], [ @UC79.1 \ @UC80],
+    [R-158-F-Ob], [ @UC79.1 \ @UC81],
+    [R-159-F-Ob], [ @UC79.1 \ @UC79.1.3],
+
+    [R-160-F-Ob],
+    [@UC82 \ @UC75],
+
+    [R-161-F-Ob],
+    [@UC82 \ @UC82.1],
+
+    [R-162-F-Ob],
+    [@UC83],
+
+    [R-163-F-Ob], [@UC79],
+
+    [R-164-F-Ob],
+    [@UC84],
+
+    [R-165-F-Ob], [@UC79],
+
+    [R-166-F-Ob],
+    [@UC85],
+
+    [R-167-F-Ob], [@UC85.1 \ @UC85.1.1],
+    [R-168-F-Ob], [@UC85.1 \ @UC85.1.2],
+    [R-169-F-Ob], [@UC85.1 \ @UC80],
+    [R-170-F-Ob], [@UC85.1 \ @UC81],
+    [R-171-F-Ob], [@UC85.1 \ @UC85.1.3],
+
+    [R-172-F-Ob],
+    [@UC82 \ @UC75],
+
+    [R-173-F-Ob],
+    [@UC82 \ @UC82.1],
+
+    [R-174-F-Ob],
+    [@UC86],
+
+    [R-175-F-Ob],
+    [@UC85],
+
+    [R-176-F-Ob],
+    [@UC87],
+
+    [R-177-F-Ob],
+    [@UC85],
+
+    [R-178-F-Ob],
+    [@UC88],
+
+    [R-179-F-Ob], [@UC88.1 \ @UC88.1.1],
+    [R-180-F-Ob], [@UC88.1 \ @UC88.1.2],
+    [R-181-F-Ob], [@UC88.1 \ @UC88.1.3],
+    [R-182-F-Ob], [@UC88.1 \ @UC88.1.4],
+
+    [R-183-F-Ob],
+    [@UC88.1.4.1 \ @UC75],
+
+    [R-184-F-Ob],
+    [@UC88.1.4.1 \ @UC88.1.4.1.1],
+
+    [R-185-F-Ob],
+    [@UC89],
+
+    [R-186-F-Ob], [@UC88],
+
+    [R-187-F-Ob],
+    [@UC90],
+
+    [R-188-F-Ob], [@UC88],
+
+    [R-189-F-Ob],
+    [@UC91],
+
+    [R-190-F-Ob], [@UC91.1 \ @UC91.1.1],
+    [R-191-F-Ob], [@UC91.1 \ @UC91.1.2],
+
+    [R-192-F-Ob],
+    [@UC92],
+  ),
+  caption: [Tracciamento dei Casi d'Uso],
+)
+
 
 #figure(
   table(
