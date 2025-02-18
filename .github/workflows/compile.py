@@ -134,6 +134,7 @@ def main():
         html = html.replace('{{content}}', LETTER_TEMPLATE.replace('{{letter}}', start_letter) + '{{content}}')
         for word, definition in entries.items():
             html = html.replace('{{content}}', WORD_TEMPLATE.replace('{{word}}', word).replace('{{definition}}', definition) + '{{content}}')
+    html = html.replace('{{content}}', '')
     Path("dist/glossario.html").write_text(html)
 
     # Handle index page
