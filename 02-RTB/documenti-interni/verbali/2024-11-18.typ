@@ -30,7 +30,7 @@
 
 #inizio-verbale-interno([*virtuale*], [*18 Novembre 2024*], [*14.40*], [*15.30*])
 
-+ Convenzioni sulla nomenclatura di _Branch_#super[g] e _Issue_#super[g] di _GitHub_#super[g]
++ Convenzioni sulla nomenclatura di _Branch_#super[G] e _Issue_#super[G] di _GitHub_#super[G]
 + Aggiornamento sui lavori in corso
 + Assegnazione dei ruoli sino al giorno 25-11-2024
 
@@ -38,29 +38,29 @@
 = Dettaglio riunione
 == Convenzioni sulla nomenclatura di _Branch_ e _Issue_ di _GitHub_
 
-I componenti di _ALimitedGroup_ hanno deciso di utilizzare, da ora in avanti, una convenzione riguardante la denominazione di _Branch_#super[g] e _Issue_#super[g].
+I componenti di _ALimitedGroup_ hanno deciso di utilizzare, da ora in avanti, una convenzione riguardante la denominazione di _Branch_#super[G] e _Issue_#super[G].
 \
-Da ora in avanti i *_Branch_*#super[g] seguiranno la seguente nomenclatura:
+Da ora in avanti i *_Branch_*#super[G] seguiranno la seguente nomenclatura:
 
 #align(center)[*`#-azione-documento-data`*]
 
 Dove:
-- Al posto di *\#* va inserito il numero della _Issue_#super[g] le cui modifiche operate nel branch determineranno la chiusura
-- Al posto di *azione* va inserita l'azione fatta nel _Branch_#super[g] ovvero:
+- Al posto di *\#* va inserito il numero della _Issue_#super[G] le cui modifiche operate nel branch determineranno la chiusura
+- Al posto di *azione* va inserita l'azione fatta nel _Branch_#super[G] ovvero:
   - *redazione* per indicare la redazione di un nuovo documento
   - *aggiornamento* per indicare la modifica di un documento esistente
 - Al posto di *documento* va inserito la tipologia di documento interessato dalla modifica, come, a mero scopo esemplificativo, *verbale* oppure *norme-progetto*
 - Al posto di *data* la data del documento, se tale documento la prevede (ad esempio i *verbali*)
 
-Le *_Issue_*#super[g] avranno una nomenclatura molto simile:
+Le *_Issue_*#super[G] avranno una nomenclatura molto simile:
 
 #align(center)[*azione documento data*]
 
-Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_#super[g].
+Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _Branch_#super[G].
 
 == Aggiornamento sui lavori in corso
 
-Il gruppo si è aggiornato sugli esiti del lavoro asincrono svolto e ha iniziato a mettere in forma definitiva tutto il materiale raccolto riguardante l'*Analisi dei Requisiti#super[g]*, il *Piano di Progetto*, il *Glossario* e le *Norme di progetto*.
+Il gruppo si è aggiornato sugli esiti del lavoro asincrono svolto e ha iniziato a mettere in forma definitiva tutto il materiale raccolto riguardante l'*Analisi dei Requisiti#super[G]*, il *Piano di Progetto*, il *Glossario* e le *Norme di progetto*.
 
 Data la necessità di redigere stabilmente tali documenti sono stati nominati degli amministratori aventi tale compito, come descritto nella @sez2.3.
 
@@ -70,14 +70,14 @@ I componenti di _ALimitedGroup_ hanno infine riguardato le domande, descritte ne
 
 I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 25-11-2024, saranno assegnati ai seguenti componenti questi ruoli: \
 
-#align(center)[*#persona(p.samuele)* $arrow.r$ *Responsabile*#super[g]]
-#align(center)[*#persona(p.marco)* $arrow.r$ *Amministratore*#super[g] \ *#persona(p.emanuele)* $arrow.r$ *Amministratore*#super[g] \ *#persona(p.matteo)* $arrow.r$ *Amministratore*#super[g]]
-#align(center)[*#persona(p.sara)* $arrow.r$ *Analista*#super[g] \ *#persona(p.loris)* $arrow.r$ *Analista*#super[g]]
-#align(center)[*#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[g]]
+#align(center)[*#persona(p.samuele)* $arrow.r$ *Responsabile*#super[G]]
+#align(center)[*#persona(p.marco)* $arrow.r$ *Amministratore*#super[G] \ *#persona(p.emanuele)* $arrow.r$ *Amministratore*#super[G] \ *#persona(p.matteo)* $arrow.r$ *Amministratore*#super[G]]
+#align(center)[*#persona(p.sara)* $arrow.r$ *Analista*#super[G] \ *#persona(p.loris)* $arrow.r$ *Analista*#super[G]]
+#align(center)[*#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[G]]
 
-Gli *amministratori* avranno compito di redigere il *presente verbale*, il *verbale* della *riunione* futura con #M31 e le *Norme di Progetto*, suddividendosi eventualmente tali compiti.
+Gli *amministratori* avranno compito di redigere il *presente verbale*, il *verbale* della *riunione* futura con #M31 e le *Norme di Progetto#super[G]*, suddividendosi eventualmente tali compiti.
 
-Agli *analisti* è dato il compito di proseguire l'*Analisi dei Requisiti#super[g]*.
+Agli *analisti* è dato il compito di proseguire l'*Analisi dei Requisiti#super[G]*.
 
 #pagebreak()
 = Esiti della riunione

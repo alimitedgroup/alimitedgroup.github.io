@@ -47,18 +47,18 @@
 
 _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'analisi è risultato che:
 
-- *Analisi dei Requisiti#super[g]*: sono stati completati tutti i casi d'uso non obbligatori e anche quelli relativi alle attività svolte dal Backend;
+- *Analisi dei Requisiti#super[G]*: sono stati completati tutti i casi d'uso non obbligatori e anche quelli relativi alle attività svolte dal Backend#super[G];
 - *Piano di Qualifica*: è stato completato il documento, mancano solo le misurazioni di alcune metriche;
 - *Tecnologie e PoC*: è proseguita la realizzazione del PoC che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
-- *Norme di Progetto*: è stato completata la redazione del documento.
+- *Norme di Progetto#super[G]*: è stato completata la redazione del documento.
 
-Per maggiori informazioni è consigliata la lettura del *Piano di Progetto* relativamente al quinto Sprint#super[g], la cui stesura dovrà avvenire entro la fine del sesto Sprint#super[g].
+Per maggiori informazioni è consigliata la lettura del *Piano di Progetto* relativamente al quinto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del sesto Sprint#super[G].
 
 == Decisioni relative alle attività del prossimo periodo
 
 I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà necessario:
 
-#align(center)[*Norme di Progetto*:]
+#align(center)[*Norme di Progetto#super[G]*:]
 - Iniziare la verifica di quanto redatto entro il giorno *27 Gennaio 2025*;
 - Finalizzare la verifica di quanto redatto entro il giorno *2 Febbraio 2025*.
 
@@ -79,19 +79,19 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà
 
 Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono così i ruoli:
 
-#align(center)[*#persona(p.marco)* $arrow.r$ *Responsabile*#super[g]]
+#align(center)[*#persona(p.marco)* $arrow.r$ *Responsabile*#super[G]]
 #align(center)[
-  *#persona(p.loris)* $arrow.r$ *Amministratore*#super[g] \
-  *#persona(p.lorenzo)* $arrow.r$ *Amministratore*#super[g]
+  *#persona(p.loris)* $arrow.r$ *Amministratore*#super[G] \
+  *#persona(p.lorenzo)* $arrow.r$ *Amministratore*#super[G]
 ]
-#align(center)[*#persona(p.samuele)* $arrow.r$ *Programmatore*#super[g]]
+#align(center)[*#persona(p.samuele)* $arrow.r$ *Programmatore*#super[G]]
 #align(center)[
-  *#persona(p.matteo)* $arrow.r$ *Verificatore*#super[g] \
-  *#persona(p.sara)* $arrow.r$ *Verificatore*#super[g] \
-  *#persona(p.emanuele)* $arrow.r$ *Verificatore*#super[g] \
+  *#persona(p.matteo)* $arrow.r$ *Verificatore*#super[G] \
+  *#persona(p.sara)* $arrow.r$ *Verificatore*#super[G] \
+  *#persona(p.emanuele)* $arrow.r$ *Verificatore*#super[G] \
 ]\
 
-Eventuali compiti di *Programmatore*#super[g] sono affidati anche a *#persona(p.loris)* dopo aver completato le attività di *Amministratore*#super[g].
+Eventuali compiti di *Programmatore*#super[G] sono affidati anche a *#persona(p.loris)* dopo aver completato le attività di *Amministratore*#super[G].
 
 = Esiti della riunione
 

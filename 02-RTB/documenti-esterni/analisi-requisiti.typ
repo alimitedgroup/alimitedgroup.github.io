@@ -264,7 +264,7 @@
 = Introduzione
 == Scopo del documento
 
-Il presente documento di _Analisi dei Requisiti#super[g]_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali#super[g] e non funzionali del Sistema software da sviluppare.
+Il presente documento di _Analisi dei Requisiti#super[G]_ ha lo scopo di definire in maniera precisa e dettagliata i requisiti funzionali#super[G] e non funzionali del Sistema software da sviluppare.
 
 Per tale scopo, il documento include una descrizione approfondita dei Casi d'Uso, che sono fonte dei requisiti infine elencati.
 Verranno utilizzati, per agevolare la comprensione, i *Diagrammi dei Casi d'Uso* per visualizzare le interazioni tra attori e Sistema.
@@ -276,11 +276,11 @@ I requisiti identificati sono classificati in:
 - *Desiderabili*: non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile;
 - *Opzionali*: relativamente utili oppure contrattabili per essere implementati in futuro.
 
-Il documento di _Analisi dei Requisiti#super[g]_ viene redatto dagli _Analisti_ del team di progetto ed è rivolto ai seguenti principali destinatari:
+Il documento di _Analisi dei Requisiti#super[G]_ viene redatto dagli _Analisti_ del team di progetto ed è rivolto ai seguenti principali destinatari:
 
 - Il *_Committente_*, che potrà verificare che i requisiti siano stati correttamente interpretati e documentati secondo le sue specifiche;
 - Il _Team di_ *_Progettisti_* e di *_Programmatori_*, che utilizzerà questo documento come guida fondamentale per la realizzazione del Sistema software;
-- Il _Team_ di *_Verificatori_*, che baserà sull'Analisi dei Requisiti#super[g] la definizione dei casi di Test e la verifica del corretto funzionamento del prodotto.
+- Il _Team_ di *_Verificatori_*, che baserà sull'Analisi dei Requisiti#super[G] la definizione dei casi di Test e la verifica del corretto funzionamento del prodotto.
 
 Inoltre, il documento potrà essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori e Responsabili di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del Sistema.
 
@@ -292,9 +292,9 @@ Per questo è necessario che il prodotto sia reattivo alle molteplici operazioni
 Fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di approvvigionamento merci e la messa a disposizione di opzioni dedicate al trasferimento di merci tra magazzini connessi al Sistema.
 
 == Funzioni del prodotto
-Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità:
+Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità#super[G]:
 
-- Avere una _Command Line Interface_ per interagire con le _API_#super[g] del Sistema
+- Avere una _Command Line Interface_ per interagire con le _API_#super[G] del Sistema
 - Possibilità di realizzare un ordine con prodotti disponibili sia localmente che globalmente;
 - Possibilità di realizzare trasferimenti tra magazzini;
 - Possibilità di ricevere suggerimenti di riassortimento quando la disponibilità locale di merce sia sotto una certa soglia;
@@ -308,7 +308,7 @@ Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~
 - Il riassortimento predittivo basato su _Machine Learning_;
 - Il monitoraggio della telemetria;
 - Il riconoscimento di traffico anomalo;
-- La creazione di una _Graphic User Interface_ (a vantaggio di _API_#super[g] con la quale la _Command Line Interface_ dovrà interagire)
+- La creazione di una _Graphic User Interface_ (a vantaggio di _API_#super[G] con la quale la _Command Line Interface_ dovrà interagire)
 
 Nel seguente documento saranno comunque riportati tutti i requisiti, debitamente segnando a mezzo di nomenclatura i requisiti obbligatori, desiderabili e opzionali.
 
@@ -323,7 +323,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto versione 1.0.0* \ #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[https://alimitedgroup.github.io/NP%20v1.0.0.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
+- *Norme di Progetto#super[G] versione 1.0.0* \ #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[https://alimitedgroup.github.io/NP%20v1.0.0.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
 - *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_* \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 === Riferimenti informativi
 - *Standard IEEE* \ https://ieeexplore.ieee.org/document/720574 \ *Ultimo Accesso 3 Febbraio 2025*
@@ -338,7 +338,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 == Introduzione
 
 I casi d'uso si compongono di un grafico UML e una descrizione testuale che permetta di comprendere al meglio cosa il prodotto deve fornire.
-La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti rilevante (ad esempio, un Caso d'Uso che non prevede la possibilità di errori non avrà Scenari secondari):
+La descrizione testuale, in particolar modo, dovrà contenere le informazioni nella tabella qui presente, salvo i casi in cui lo specifico campo non risulti rilevante (ad esempio, un Caso d'Uso#super[G] che non prevede la possibilità di errori non avrà Scenari secondari):
 
 #figure(
   table(
@@ -1504,8 +1504,8 @@ Tale Caso d'Uso sarà qui di seguito descritto insieme alle sue inclusioni (semp
   )
 ]
 
-Il Caso d'Uso UC32 include cinque ulteriori Casi d'Uso come rappresentato dalla seguente immagine:
-#use-case-diagram("32-incl", "Inclusione del Caso d'Uso n.32: UC30, UC31, UC32.1, UC32.2 e UC32.3", width: 75%)
+Il Caso d'Uso#super[G] UC32 include cinque ulteriori Casi d'Uso come rappresentato dalla seguente immagine:
+#use-case-diagram("32-incl", [Inclusione del Caso d'Uso#super[G] n.32: UC30, UC31, UC32.1, UC32.2 e UC32.3], width: 75%)
 Tali Casi d'Uso saranno ora descritti ad eccezione degli UC30 e UC31 la cui descrizione è reperibile alla, rispettivamente, @UC30 e @UC31.
 
 #pagebreak()
@@ -2381,7 +2381,7 @@ Il Caso d'Uso UC57 include quattro ulteriori Casi d'Uso come raffigurato nella s
   "Inclusioni del Caso d'Uso n.57: UC13, UC14, UC15, UC57.1 e relative inclusioni",
   width: 79%,
 )
-Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive descrizioni (@UC13, @UC14 e @UC15), mentre per il Caso d'Uso UC57.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
+Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive descrizioni (@UC13, @UC14 e @UC15), mentre per il Caso d'Uso#super[G] UC57.1 sarà qui di seguito descritto assieme ai Casi d'Uso che lo stesso a sua volta include.
 
 ==== UC57.1: Visualizza lista merci ordine eseguito <UC57.1>
 #use-case(
@@ -4536,7 +4536,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[g] ,questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
 
 == Requisiti di Vincolo
 

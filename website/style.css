@@ -97,6 +97,10 @@ body {
   color: var(--accent) !important;
 }
 
+.navbar-brand {
+  display: flex;
+}
+
 .navbar-toggler {
   border-color: var(--accent);
 }
@@ -181,4 +185,38 @@ footer {
 #mail-link {
   display: block;
   text-align: center;
+}
+
+#indice {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+#indice div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 1000px;
+}
+
+#indice a {
+  display: inline-block;
+  border: 1px solid black;
+  background-color: #494949;
+  width: 3ch;
+  height: 2em;
+  line-height: 1.6em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--header);
+}
+
+.mw-main {
+  display: flex;
+  justify-content: center;
+}
+
+.mw-main div {
+  max-width: 1000px;
 }
