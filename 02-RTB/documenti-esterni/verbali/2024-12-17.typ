@@ -38,9 +38,8 @@ In questa riunione hanno partecipato, per conto di #M31:
 
 = Dettagli riunione
 == Esposizione degli avanzamenti sullo studio delle tecnologie e possibile architettura del Sistema
-Nel corso della riunione i componenti di _ALimitedGroup_ presenti all'incontro hanno esposto ad #M31 gli avanzamenti fatti in merito all'uso di *Go*#super[g] e *Nats*:
-nel dettaglio, è stata presentata un'istanza di funzionamento di un pacchetto *Docker* che comunicava, mediante *Nats*, ad un Database localmente presente, il tutto gestito mediante codice in *Go*#super[g] .
-
+Nel corso della riunione i componenti di _ALimitedGroup_ presenti all'incontro hanno esposto ad #M31 gli avanzamenti fatti in merito all'uso di *Go*#super[G] e *Nats*:
+nel dettaglio, è stata presentata un'istanza di funzionamento di un pacchetto *Docker*#super[G] che comunicava, mediante *Nats*, ad un Database localmente presente, il tutto gestito mediante codice in *Go*#super[G].
 In seguito è stata esposta una prima idea architetturale, idea che, data la complessità del progetto, è necessaria per adeguatamente testare le tecnologie da utilizzare nel progetto.
 
 #M31 ha accolto positivamente entrambi gli eventi, esprimendosi in maniera positiva su quanto realizzato.
@@ -49,7 +48,7 @@ I rappresentanti di #M31 hanno consigliato, in merito alla bozza architetturale,
 
 == Prossimi incontri con #M31
 
-Viene stabilito di fissare il prossimi incontri con #M31 ad *Analisi dei Requisiti#super[g]* conclusa e/o quando il PoC avrà raggiunto un buon stato di sviluppo.
+Viene stabilito di fissare il prossimi incontri con #M31 ad *Analisi dei Requisiti#super[G]* conclusa e/o quando il PoC avrà raggiunto un buon stato di sviluppo.
 
 #pagebreak()
 

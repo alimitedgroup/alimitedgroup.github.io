@@ -50,9 +50,9 @@ Il gruppo prevede che nel prossimo futuro il cambiamento dei ruoli *non potrà s
 
 == Migliorie alla parte pubblica del repository
 
-Il gruppo accoglie il suggerimento riguardante l'apertura delle risorse in una scheda dedicata: decide, perciò, di modificare la parte pubblica del _repository_#super[g] (sito web) quanto prima per ottenere questo effetto.
+Il gruppo accoglie il suggerimento riguardante l'apertura delle risorse in una scheda dedicata: decide, perciò, di modificare la parte pubblica del _repository_#super[G] (sito web) quanto prima per ottenere questo effetto.
 
-Per migliorare ulteriormente l'organizzazione del _repository_#super[g], stabilisce altresì di inserire tutti i nuovi documenti prodotti dal giorno 04-11-2024 sino al superamento della _Requirements and Tecnology Baseline_ (RTB#super[g]) in una sezione appositamente realizzata: la parte pubblica del _repository_#super[g] (sito web) dovrà riflettere questo cambiamento.
+Per migliorare ulteriormente l'organizzazione del _repository_#super[G], stabilisce altresì di inserire tutti i nuovi documenti prodotti dal giorno 04-11-2024 sino al superamento della _Requirements and Tecnology Baseline_ (RTB#super[G]) in una sezione appositamente realizzata: la parte pubblica del _repository_#super[G] (sito web) dovrà riflettere questo cambiamento.
 
 #pagebreak()
 
@@ -63,8 +63,7 @@ Per questo ed altri motivi a carattere principalmente migliorativo, il gruppo ha
 
 === Modifiche alla struttura dei verbali
 
-Nel corso della redazione dei verbali, il gruppo ha determinato che il commento iniziale stabilito dal *verbale interno* del #doc("VI 23-10-2024 1.0.0")[*23-10-2024*] alla *sezione 2.4* non risulta essere di alcuna utilità: lo sviluppo del repository ha rimosso l'esigenza di inserirlo nel documento grazie a meccanismi di querying automatici forniti da typst.
-Ha tuttavia trovato molto positiva la nomenclatura adottata: per questo motivo il gruppo ha deciso sarà *mantenuta* con lo scopo di nominare i file prodotti. \ \
+Nel corso della redazione dei verbali, il gruppo ha determinato che il commento iniziale stabilito dal *verbale interno* del #doc("VI 23-10-2024 1.0.0")[*23-10-2024*] alla *sezione 2.4* non risulta essere di alcuna utilità: lo sviluppo del repository ha rimosso l'esigenza di inserirlo nel documento grazie a meccanismi di querying automatici forniti da typst#super[G]. Ha tuttavia trovato molto positiva la nomenclatura adottata: per questo motivo il gruppo ha deciso sarà *mantenuta* con lo scopo di nominare i file prodotti. \ \
 
 #pagebreak()
 
@@ -83,7 +82,7 @@ Per soddisfare l'esigenza di verificare un verbale subito a seguito di una modif
   ),
 )
 
-Con la data che indica il momento in cui la modifica effetuata dall'*autore* è stata verificata dal *verificatore*#super[g]
+Con la data che indica il momento in cui la modifica effetuata dall'*autore* è stata verificata dal *verificatore*#super[G]
 
 Il gruppo ha anche stabilito delle modifiche relative al metodo di stesura dei verbali contenute nella @metodo_stesura di questo documento. \
 
@@ -103,11 +102,11 @@ dove:
 
 - *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
   - *DI\#* ovvero *Decisione Interna*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
-  - *AP\#* ovvero *Attività Passata*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[g]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[g] prima di procedere ad eventuali modifiche);
-  - *REPOSITORY\#* con, al posto di *REPOSITORY*, il nome della repository ospitante l'_issue_ associata (per convenzione, il nome *DOCS* sarà riservato per riferirsi alla repository contenente la documentazione), e con, al posto di *\#*, il numero di tale _issue_#super[g]. Viene utilizzata con lo stesso scopo di *AP\#* ma per le decisioni che comportano un'azione avente effettivamente una _issue_#super[g] associata nel sistema di ticketing.
+  - *AP\#* ovvero *Attività Passata*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
+  - *REPOSITORY\#* con, al posto di *REPOSITORY*, il nome della repository ospitante l'_issue_ associata (per convenzione, il nome *DOCS* sarà riservato per riferirsi alla repository contenente la documentazione), e con, al posto di *\#*, il numero di tale _issue_#super[G]. Viene utilizzata con lo stesso scopo di *AP\#* ma per le decisioni che comportano un'azione avente effettivamente una _issue_#super[G] associata nel sistema di ticketing.
 - *Dettaglio* è una breve descrizione della decisione o azione intrapresa. \ \
 
-Per convenzione, la tabella dovrà elencare prima le *DI*#super[g], poi le *AP*#super[g] e infine le *REPOSITORY*.
+Per convenzione, la tabella dovrà elencare prima le *DI*#super[G], poi le *AP*#super[G] e infine le *REPOSITORY*.
 
 #pagebreak()
 
@@ -115,12 +114,12 @@ Per convenzione, la tabella dovrà elencare prima le *DI*#super[g], poi le *AP*#
 
 La stesura di un verbale adesso seguirà il seguente procedimento:
 
-+ Viene aperta una _issue_#super[g] di GitHub#super[g]. Tale _issue_#super[g] non dovrà avere alcun _tag_;
-+ Viene realizzato un branch secondario dedicato alla sola redazione del verbale: il verbale può essere redatto sul nuovo branch#super[g];
-+ Quando la redazione è conclusa ed è stato eseguito il _push_ delle modifiche, viene aperta una _Draft Pull Request_ legata al nuovo branch#super[g];
-+ Aperta la _Draft Pull Request_, il redattore può eventualmente proseguire la redazione per apportare migliorie. Nel momento in cui ritiene il documento redatto, egli marcherà la _Draft Pull Request_ come pronta per essere verificata;
-+ Il verificatore verifica il documento: se corretto segnalerà, mediante commento nella _Draft Pull Request_, al responsabile di procedere all'approvazione, se da modificare verrà sfruttato il sistema messo a disposizione da GitHub appositamente realizzato per permettere di comunicare con facilità i cambiamenti da effettuare. Completate le modifiche, il verificatore procederà nuovamente come spiegato;
-+ Una volta notificato il responsabile#super[g], questo procederà ad effettuare il merge del branch secondario in quello principale completando quindi la _Draft Pull Request_ e chiudendo la issue#super[g].
++ Viene aperta una _issue_#super[G] di GitHub#super[G]. Tale _issue_#super[G] non dovrà avere alcun _tag_;
++ Viene realizzato un branch secondario dedicato alla sola redazione del verbale: il verbale può essere redatto sul nuovo branch#super[G];
++ Quando la redazione è conclusa ed è stato eseguito il _push_ delle modifiche, viene aperta una _Draft Pull Request#super[G]_ legata al nuovo branch#super[G];
++ Aperta la _Draft Pull Request#super[G]_, il redattore può eventualmente proseguire la redazione per apportare migliorie. Nel momento in cui ritiene il documento redatto, egli marcherà la _Draft Pull Request#super[G]_ come pronta per essere verificata;
++ Il verificatore verifica il documento: se corretto segnalerà, mediante commento nella _Draft Pull Request#super[G]_, al responsabile di procedere all'approvazione, se da modificare verrà sfruttato il sistema messo a disposizione da GitHub appositamente realizzato per permettere di comunicare con facilità i cambiamenti da effettuare. Completate le modifiche, il verificatore procederà nuovamente come spiegato;
++ Una volta notificato il responsabile#super[G], questo procederà ad effettuare il merge del branch secondario in quello principale completando quindi la _Draft Pull Request#super[G]_ e chiudendo la issue#super[G].
 
 === Cambiamento al sistema di versionamento
 
@@ -228,9 +227,9 @@ Il gruppo ha deciso di iniziare la redazione di questo verbale e di un nuovo doc
 
 Anche osservando quanto definito nella sezione 5, si decide che sino all'11-11-2024, saranno assegnati i seguenti ruoli: \
 
-*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile*#super[g] \
-*#p.sara.nome #p.sara.cognome* $arrow.r$ *Verificatore*#super[g] \
-*#p.marco.nome #p.marco.cognome* $arrow.r$ *Verificatore*#super[g] \
+*#p.samuele.nome #p.samuele.cognome* $arrow.r$ *Responsabile*#super[G] \
+*#p.sara.nome #p.sara.cognome* $arrow.r$ *Verificatore*#super[G] \
+*#p.marco.nome #p.marco.cognome* $arrow.r$ *Verificatore*#super[G] \
 
 Sarà assegnato a *#p.matteo.nome #p.matteo.cognome* il compito di redazione di questo verbale, mentre ai rimanenti componenti la redazione del Glossario.
 
@@ -238,7 +237,7 @@ Sarà assegnato a *#p.matteo.nome #p.matteo.cognome* il compito di redazione di 
 
 = Esiti della riunione
 
-Il gruppo conclude la riunione con i compiti assegnati e le decisioni e azioni intraprese, riservandosi anche il compito di iniziare ad analizzare i requisiti del capitolato da eventualmente contrattare leggendo attentamente, in maniera asincrona, il capitolato#super[g]: i risultati saranno discussi e messi per forma scritta nelle prossime riunioni.
+Il gruppo conclude la riunione con i compiti assegnati e le decisioni e azioni intraprese, riservandosi anche il compito di iniziare ad analizzare i requisiti del capitolato da eventualmente contrattare leggendo attentamente, in maniera asincrona, il capitolato#super[G]: i risultati saranno discussi e messi per forma scritta nelle prossime riunioni.
 
 #pagebreak()
 

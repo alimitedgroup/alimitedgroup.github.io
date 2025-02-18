@@ -123,7 +123,7 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto ver. 1.0.0*: \
+- *Norme di Progetto#super[G] ver. 1.0.0*: \
   #link("alimitedgroup.github.io/https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf] \
   *Ultimo Accesso 6 Febbraio 2025*
 - *Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito*: \
@@ -312,7 +312,7 @@ La qualità del prodotto rappresenta l'obiettivo centrale di ogni progetto _Soft
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto _Software_ è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[g] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[g] ver. 1.1.0*] *(Sezione 3)*;
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.0.0*] *(Sezione 3)*;
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori;
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
@@ -443,7 +443,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 
 #pagebreak()
 = Metodi di testing <test>
-Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test effettuati saranno:
+Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto#super[G] ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test effettuati saranno:
 
 - Test di Unità;
 - Test di Integrazione;
@@ -951,7 +951,7 @@ Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggi
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
-Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[g].
+Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
 Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*].
 Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 
@@ -960,9 +960,8 @@ Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più 
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
-Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[g],
-raggiungendo il suo picco durante il sesto _sprint_#super[g] .
-Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
+Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
+raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
 #pagebreak()
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
@@ -979,32 +978,32 @@ dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopr
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
 Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa:
-tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[g] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
+tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[G] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
 periodo della _Requirements and Technology Baseline (RTB)_.
 #pagebreak()
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
-Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[g] ,il tempo stimato al completamento risultava superiore alla durata pianificata.
+Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[G], il tempo stimato al completamento risultava superiore alla durata pianificata.
 Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata,
-arrivando poi a coincidere verso lo _sprint_#super[g] 6.
+arrivando poi a coincidere verso lo _sprint_#super[G] 6.
 #pagebreak()
 == MPC09: _Requirements Stability Index_
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
-Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[g] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti
+Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[G] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti
 i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche.
 Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti.
 Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica,
-che è migliorata tra gli _sprint_#super[g] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+che è migliorata tra gli _sprint_#super[G] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
 #pagebreak()
 == MPC10: Indice di _Gulpease_
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
 In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile.
-Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[g] e del Piano di Progetto, specialmente il documento delle Norme di Progetto rimane distante dalla soglia di ottimalità.
+Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[G] e del Piano di Progetto, specialmente il documento delle Norme di Progetto#super[G] rimane distante dalla soglia di ottimalità.
 I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto alle varie riorganizzazioni subite dal documento per renderlo più facilmente fruibile, ma anche per la natura
 a scopo regolamentativo del documento.
 
@@ -1016,15 +1015,15 @@ Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegn
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
 Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema
-di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[g] 4 e 6.
+di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[G] 4 e 6.
 #pagebreak()
 == MPC14: _Quality metrics satisfied_
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
 Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza,
-dall'aggiudicazione del Capitolato allo _sprint_#super[g] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
-_ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[g]_.
+dall'aggiudicazione del Capitolato allo _sprint_#super[G] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
+_ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[G]_.
 #pagebreak()
 == MPC15: _Time Efficiency_
 

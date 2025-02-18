@@ -46,20 +46,20 @@
 == Aggiornamenti sui lavori in corso
 
 Il gruppo _ALimitedGroup_, in questa settimana, ha proseguito la redazione e l'analisi dei
-seguenti documenti: Norme di Progetto, Piano di Progetto, Glossario e Analisi dei Requisiti#super[g]. \
+seguenti documenti: Norme di Progetto#super[G], Piano di Progetto, Glossario e Analisi dei Requisiti#super[G]. \
 _ALimitedGroup_ decide, inoltre, che segnalerà ogni qualvolta una parola sia contenuta nel Glossario utilizzando la seguente nomenclatura:
-#align(center)[parola#super[g]]
+#align(center)[parola#super[G]]
 così facendo viene segnalato al lettore che la definizione di essa è presente in quest'ultimo.\
 Viene deciso, successivamente, di implementare uno _script_ in _Python_ per verificare che tutte le parole presenti nei documenti seguano la regola citata sopra.
 
 == Assegnate scadenze per la redazione dei documenti
 
 I presenti del gruppo decidono che la redazione dei seguenti documenti:
-- Analisi dei Requisiti#super[g]
-- Norme di Progetto
+- Analisi dei Requisiti#super[G]
+- Norme di Progetto#super[G]
 - Glossario
 venga terminata non oltre il 06-12-2024, con la successiva pubblicazione nel sito di tali documenti.\
-La conclusione, invece, della progettazione viene fissata entro il 31-12-2024 così da rispettare tutte le _milestone_ create.
+La conclusione, invece, della progettazione viene fissata entro il 31-12-2024 così da rispettare tutte le _milestone_#super[G] create.
 
 Per quanto riguarda la _Requirements and Baseline Tecnology_, il gruppo prevede di avere tutta la documentazione necessaria entro e non oltre il 26-01-2025.
 
@@ -67,12 +67,12 @@ Per quanto riguarda la _Requirements and Baseline Tecnology_, il gruppo prevede 
 == Vengono assegnati i ruoli sino al giorno 02-12-2024
 
 I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 02-12-2024, saranno assegnati ai seguenti componenti questi ruoli:
-#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*#super[g]] \
-#align(center)[*#persona(p.samuele)* $arrow.r$ *Amministratore*#super[g] \ *#persona(p.marco)* $arrow.r$ *Amministratore*#super[g]] \
-#align(center)[*#persona(p.sara)* $arrow.r$ *Verificatore*#super[g] \ *#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[g]] \
-#align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista*#super[g] \ *#persona(p.matteo)* $arrow.r$ *Analista*#super[g]] \
+#align(center)[*#persona(p.loris)* $arrow.r$ *Responsabile*#super[G]] \
+#align(center)[*#persona(p.samuele)* $arrow.r$ *Amministratore*#super[G] \ *#persona(p.marco)* $arrow.r$ *Amministratore*#super[G]] \
+#align(center)[*#persona(p.sara)* $arrow.r$ *Verificatore*#super[G] \ *#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[G]] \
+#align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista*#super[G] \ *#persona(p.matteo)* $arrow.r$ *Analista*#super[G]] \
 
-Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, agli *analisti* viene assegnata la continuazione di analisi per il documento di _Analisi dei Requisiti#super[g]_, agli *amministratori* viene assegnata la continuazione del documento di _Norme di Progetto_ e del _Piano di Progetto_.
+Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, agli *analisti* viene assegnata la continuazione di analisi per il documento di _Analisi dei Requisiti#super[G]_, agli *amministratori* viene assegnata la continuazione del documento di _Norme di Progetto#super[G]_ e del _Piano di Progetto_.
 
 #pagebreak()
 = Esiti della riunione
