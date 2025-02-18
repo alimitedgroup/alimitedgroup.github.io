@@ -47,7 +47,7 @@ All'interno si possono trovare i seguenti documenti:
     - Lettera di presentazione (questo documento);
     - Piano di Qualifica v1.0.0;
     - Piano di Progetto v1.0.0;
-    - Analisi dei Requisiti v1.0.0;
+    - Analisi dei Requisiti v1.1.0;
     - Norme di Progetto v1.0.0;
     - Verbale interno del 24/01/2025 v1.0.0;
     - Verbale interno del 07/01/2025 v1.0.0;

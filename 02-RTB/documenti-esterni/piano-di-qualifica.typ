@@ -320,7 +320,7 @@ La qualità del prodotto rappresenta l'obiettivo centrale di ogni progetto _Soft
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto _Software_ è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.0.0*] *(Sezione 3)*;
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*] *(Sezione 3)*;
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori;
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
