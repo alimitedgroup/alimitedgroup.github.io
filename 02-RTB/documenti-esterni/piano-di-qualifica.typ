@@ -1,13 +1,21 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [0.10.0]
+#let ver = [1.0.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 10, month: 01, year: 2025),
+  data: datetime(day: 18, month: 02, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 18, month: 02, year: 2025),
+      autore: p.matteo,
+      verifica: p.sara,
+      approvazione: p.samuele,
+      descr: "Correzioni minori.",
+    ),
     (
       vers: "0.10.0",
       date: datetime(day: 10, month: 01, year: 2025),
@@ -312,7 +320,7 @@ La qualità del prodotto rappresenta l'obiettivo centrale di ogni progetto _Soft
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto _Software_ è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.0.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.0.0*] *(Sezione 3)*;
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*] *(Sezione 3)*;
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori;
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;

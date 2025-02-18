@@ -2,12 +2,20 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [0.7.0]
+#let ver = [1.0.0]
 #show: body => importantdocs(
-  data: datetime(day: 05, month: 02, year: 2025),
+  data: datetime(day: 18, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Redatto],
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 18, month: 02, year: 2025),
+      autore: p.marco,
+      verifica: p.loris,
+      approvazione: p.samuele,
+      descr: "Correzioni minori.",
+    ),
     (
       vers: "0.7.0",
       date: datetime(day: 05, month: 02, year: 2025),
