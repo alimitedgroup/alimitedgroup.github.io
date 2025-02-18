@@ -49,11 +49,11 @@
             class="img-fluid logomain"
           />
         </div>
-        <div class="col-md-6 mb-3 mt-2 fade-in-text">
+        <div class="col-md-6 mb-3 mt-2">
           <div class="row">
             <div class="col-12">
               <div class="row">
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-1">
                   <a href="https://github.com/mpiccoli18" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -64,7 +64,7 @@
                   </a>
                   <div class="profile-name">Marco Piccoli</div>
                 </div>
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-2">
                   <a href="https://github.com/esposm03" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -75,7 +75,7 @@
                   </a>
                   <div class="profile-name">Samuele Esposito</div>
                 </div>
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-3">
                   <a href="https://github.com/saraferraro18" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -86,7 +86,7 @@
                   </a>
                   <div class="profile-name">Sara Ferraro</div>
                 </div>
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-4">
                   <a href="https://github.com/lorst97" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -97,7 +97,7 @@
                   </a>
                   <div class="profile-name">Lorenzo Stefani</div>
                 </div>
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-5">
                   <a href="https://github.com/lorislibralato" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -108,7 +108,7 @@
                   </a>
                   <div class="profile-name">Loris Libralato</div>
                 </div>
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-6">
                   <a href="https://github.com/EM123AR" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -119,7 +119,7 @@
                   </a>
                   <div class="profile-name">Emanuele Artusi</div>
                 </div>
-                <div class="col-4 col-md-3 mb-4">
+                <div class="col-4 col-md-3 mb-4 fade-in delay-7">
                   <a href="https://github.com/FireStoat3" target="_blank">
                     <div class="profile-circle">
                       <img
@@ -160,10 +160,6 @@
               <div class="card-body">
                 <ul>
                   {{01-candidatura}}
-                </ul>
-                <h3>Diari di bordo</h3>
-                <ul>
-                  {{01-candidatura/diari}}
                 </ul>
                 <h3>Verbali interni</h3>
                 <ul>
@@ -210,17 +206,13 @@
                 <ul>
                   {{02-RTB/documenti-interni}}
                 </ul>
-                <h3>Diari di bordo</h3>
+                <h3>Verbali esterni</h3>
                 <ul>
-                  {{02-RTB/diari}}
+                  {{02-RTB/documenti-esterni/verbali}}
                 </ul>
                 <h3>Verbali interni</h3>
                 <ul>
                   {{02-RTB/documenti-interni/verbali}}
-                </ul>
-                <h3>Verbali esterni</h3>
-                <ul>
-                  {{02-RTB/documenti-esterni/verbali}}
                 </ul>
               </div>
             </div>
@@ -270,7 +262,7 @@
               aria-controls="chiSiamo"
             >
               <h2 class="mb-0">
-                Chi siamo?
+                Diapositive
                 <img
                   src="./images/arrow.svg"
                   alt="Freccia"
@@ -280,23 +272,35 @@
             </button>
             <div id="chiSiamo" class="collapse">
               <div class="card-body">
-                <p>
-                  Siamo il gruppo 8 di Ingegneria del Software all'Università
-                  degli Studi di Padova, noto come ALimitedGroup. Il nostro
-                  obiettivo è sviluppare soluzioni software innovative e di alta
-                  qualità, combinando competenze tecniche e lavoro di squadra.
-                </p>
-                <p>
-                  Avete bisogno di contattarci? Scriveteci una email
-                  all'indirizzo:
-                </p>
-                <a id="mail-link" href="mailto:alimitedgroup@gmail.com"
-                  >alimitedgroup@gmail.com</a
-                >
+                <h3>RTB</h3>
+                <ul>
+                  {{02-RTB/slides}} {{02-RTB/diari}}
+                </ul>
+                <h3>Candidatura</h3>
+                <ul>
+                  {{01-candidatura/diari}}
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="row mt-4">
+        <h3>Chi siamo?</h3>
+
+        <p>
+          Siamo il gruppo 8 di Ingegneria del Software all'Università degli
+          Studi di Padova, noto come ALimitedGroup. Il nostro obiettivo è
+          sviluppare soluzioni software innovative e di alta qualità, combinando
+          competenze tecniche e lavoro di squadra.
+        </p>
+        <p>
+          Avete bisogno di contattarci? Scriveteci una email all'indirizzo:
+          <a id="mail-link" href="mailto:alimitedgroup@gmail.com">
+            alimitedgroup@gmail.com
+          </a>
+        </p>
       </div>
     </div>
 

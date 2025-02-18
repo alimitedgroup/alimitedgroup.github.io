@@ -13,28 +13,28 @@
       date: datetime(day: 05, month: 02, year: 2025),
       autore: p.marco,
       verifica: p.loris,
-      descr: "Redazione per il sesto sprint " + [(@sprint6)],
+      descr: "Redazione per il sesto sprint " + [(@sprint6).],
     ),
     (
       vers: "0.6.0",
       date: datetime(day: 24, month: 1, year: 2025),
       autore: p.matteo,
       verifica: p.emanuele,
-      descr: "Redazione per il quinto sprint " + [(@sprint5)],
+      descr: "Redazione per il quinto sprint " + [(@sprint5).],
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 16, month: 1, year: 2025),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il quarto sprint " + [(@sprint4)],
+      descr: "Redazione per il quarto sprint " + [(@sprint4).],
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 29, month: 12, year: 2024),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il terzo sprint " + [(@sprint3)],
+      descr: "Redazione per il terzo sprint " + [(@sprint3).],
     ),
     (
       vers: "0.3.0",
@@ -48,14 +48,14 @@
       date: datetime(day: 07, month: 12, year: 2024),
       autore: p.loris,
       verifica: p.samuele,
-      descr: "Redazione per il secondo sprint " + [(@sprint2)],
+      descr: "Redazione per il secondo sprint " + [(@sprint2).],
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 27, month: 11, year: 2024),
       autore: p.samuele,
       verifica: p.lorenzo,
-      descr: "Redazione documento e redazione primo sprint " + [(@introduzione, @agr, @plt, @pbti, @sprint1)],
+      descr: "Redazione documento e redazione primo sprint " + [(@introduzione, @agr, @plt, @pbti, @sprint1).],
     ),
   ),
   versione: ver,
@@ -76,11 +76,15 @@ Il documento è di importanza sostanziale per permettere una corretta pianificaz
 
 Data la necessità di pianificare le attività volta per volta, in quanto una progettazione dettagliata sul lungo termine certamente si rivelerebbe assai inefficace, il *Piano di Progetto* è per sua natura un documento che non potrà dirsi mai terminato sino alla fine del progetto: per questo motivo sarà realizzato con un approccio incrementale, aggiungendo informazioni volta per volta.
 
+Si noti inoltre che all'inizio del quarto _sprint_#super[g] _ALimitedGroup_ ha cambiato la modalità di pianificazione rendendola più specifica e utile: si veda il #link("https://alimitedgroup.github.io/VI%2018-12-2024%20v1.0.0.pdf")[*verbale interno del 18 Dicembre 2024*].
+
 == Glossario
 
 La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
 
 È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, al seguente #link-glossario("indirizzo").
+
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #text(size: 1.2em)[*`parola`#super("g")*].
 
 == Fonti
 
@@ -108,7 +112,6 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
   #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 
-
 #pagebreak()
 
 = Analisi e gestione dei rischi <agr>
@@ -119,7 +122,7 @@ Parte fondamentale per la redazione di un piano di progetto è il poter analizza
 Un'analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
 - *Identificazione*: ossia l'identificazione dei possibili rischi legati ad un'attività in tutti i vari domini, non solo quello progettuale, ma anche riguardante la sfera personale;
-- *Analisi*: individuati i rischi è necessario valutare quanto ciascun di questi sia probabile, ossia che possibilità ha di effettivamente presentarsi, e che possibili risvolti questo potrebbe avere sulla buona riuscita dello sprint e del progetto;
+- *Analisi*: individuati i rischi è necessario valutare quanto ciascun di questi sia probabile, ossia che possibilità ha di effettivamente presentarsi, e che possibili risvolti questo potrebbe avere sulla buona riuscita dello _sprint_#super[g] e del progetto;
 - *Pianificazione*: analizzati rischi e possibile ricadute, è necessario pensare ai possibili metodi atti alla diminuzione della possibilità che tali rischi si avverino o, ove questo non possa essere applicabile, mitigarne gli effetti negativi;
 - *Controllo*: la parte attiva della gestione del rischio che prevede il continuo monitoraggio delle varie attività per poter rilevare quanto prima possibile l'insorgere di un rischio e applicare le procedure di mitigazione definite in precedenza
 
@@ -455,7 +458,112 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[g] è tu
   caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline_ (RTB)* entro il *3 febbraio 2025*.
+Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
+
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
+
+== Attività previste per la Requirements and Technology Baseline (RTB)
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    align: (x, y) => if y == 0 or (x != 1 and x != 2) { center + horizon } else { left },
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    table.header(
+      text(fill: white)[*Attività*],
+      text(fill: white)[*Descrizione*],
+      text(fill: white)[*Periodo di svolgimento*],
+      text(fill: white)[*Stato*],
+    ),
+
+    [*Redazione Analisi dei Requisiti*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Casi d'Uso relativi a requisiti obbligatori;
+      - Casi d'Uso relativi a requisiti non obbligatori;
+      - Casi d'Uso attività _Backend_;
+      - Requisiti.],
+    [Introduzione: _sprint_ 1 \ \
+      Casi d'Uso obbligatori: \
+      da _sprint_ 2 a _sprint_ 4 \ \
+      Casi d'Uso non obbligatori: \ _sprint 5_ \ \
+      Casi d'Uso attività _Backend_: \ _sprint_ 5 \ \
+      Redazione Requisiti: \ _sprint_ 5],
+    [Completato per RTB],
+
+    [*Redazione Piano di Progetto*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Analisi e gestione dei rischi
+      - Pianificazione nel lungo e breve termine],
+    [Introduzione: _sprint_ 2 \ \
+      Analisi e gestione dei rischi: \ tutti gli _sprint_ \ \
+      Pianificazione nel lungo e breve termine: \ tutti gli _sprint_
+    ],
+    [Completato per RTB],
+
+    [*Redazione Piano di Qualifica*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Soglie delle misurazioni;
+      - Auto-miglioramento;
+      - Metodi di testing;
+      - Cruscotto di valutazione.],
+    [Introduzione: _sprint_ 2 \ \
+      Soglie delle misurazioni: \ da _sprint_ 2 a _sprint_ 5 \ \
+      Automiglioramento: \ _sprint_ 5 \ \
+      Metodi di testing: \ _sprint_ 6 \ \
+      Cruscotto di valutazione: \ Tutti gli _sprint_
+    ],
+    [Completato per RTB],
+
+    [*Redazione Norme di Progetto*],
+    [Redazione delle seguenti parti:
+      - Parte introduttiva del documento;
+      - Processi Primari;
+      - Processi di Supporto;
+      - Processi Organizzativi;
+      - Metriche utilizzate;
+    ],
+    [Introduzione: _sprint_ 1 \ \
+      Processi Primari: \ da _sprint_ 1 a _sprint_ 3 \ \
+      Processi di Supporto: \ da _sprint_ 1 a _sprint_ 6 \ \
+      Processi Organizzativi: \ da _sprint_ 1 a _sprint_ 4 \ \
+      Metriche utilizzate: \ _sprint 6_
+    ],
+    [Completato per RTB],
+
+    [*Redazione del Glossario*],
+    [Redazione delle seguenti parti:
+      - Termini.],
+    [Termini: \ Tutti gli _sprint_],
+    [Completato per RTB],
+
+    [*Realizzazione del Proof of Concept (PoC)*],
+    [Testing delle seguenti tecnologie:
+      - _Golang_;
+      - NATS;
+      - Docker;
+      - Observability stack (Grafana,);
+      Testing della sincronizzazione],
+    [Tecnologie: \ da _sprint_ 3 a _sprint_ 5 \ \
+      sincronizzazione: \ _sprint_ 6],
+    [Completato],
+  ),
+  caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
+)
+
+== Attività previste per la Product Baseline (PB)
+
+La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
 
 #pagebreak()
 
@@ -507,7 +615,7 @@ In particolare, le attività previste sono:
 - Aggiornamento del sito web
 - Sistemazione del sistema di versionamento dei documenti
 - Miglioramento del processo di redazione e verifica dei verbali
-- Formalizzazione del legame tra decisioni intraprese nelle riunioni e backlog
+- Formalizzazione del legame tra decisioni intraprese nelle riunioni e _backlog_
 - Prima redazione del Glossario
 - Prima redazione delle Norme di Progetto
 - Prima redazione del Piano di Progetto
@@ -729,12 +837,12 @@ Il quarto sprint#super[g] è focalizzato principalmente sulla redazione dell'Ana
 
 Le attività pianificate nel dettaglio includono:
 
-- Aggiungere la sezione sulla codifica nelle Norme di Progetto;
-- Completare la redazione dei Casi d'Uso opzionali nell'Analisi dei Requisiti#super[g];
+- Aggiungere la sezione sulla codifica nelle Norme di Progetto $arrow$ *2 ore stimate*;
+- Revisionare i Casi d'Uso redatti $arrow$ entro *29 Dicembre 2024*, *3 ore stimate*
+- Completare la redazione dei Casi d'Uso opzionali nell'Analisi dei Requisiti#super[g] $arrow$ *11 ore stimate*;
 - Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[g];
-- Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
-- Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] ;
-- Proseguire con il Piano di Qualifica
+- Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità e sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[g] $arrow$ *8 ore stimate*;
+- Proseguire con il Piano di Qualifica, effettuando la redazione dell'introduzione del documento e riportando le misurazioni rilevate $arrow$ *5 ore stimate*
 
 
 ==== Rischi attesi
@@ -801,11 +909,12 @@ Il quinto sprint#super[g] è focalizzato principalmente sulla redazione dell'Ana
 
 Le attività pianificate nel dettaglio includono:
 
-- Terminare la stesura dei Casi d'Uso relativi a requisiti non obbligatori e riguardanti le attività di _Backend_ del Sistema;
-- Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni;
-- Effettuare le prime misurazioni da riportare nel Piano di Qualifica;
-- Effettuare la verifica di quanto redatto nelle Norme di Progetto;
-- Terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
+- Terminare la stesura dei Casi d'Uso relativi a requisiti non obbligatori e riguardanti le attività di _Backend_ del Sistema $arrow$ *17 ore stimate*;
+- Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni $arrow$ *3 ore stimate*;
+- Effettuare le prime misurazioni da riportare nel Piano di Qualifica $arrow$ *1 ora stimata*;
+- Aggiungere le informazioni riguardanti la Codifica nelle Norme di Progetto $arrow$ *2 ore stimate*
+- Effettuare la verifica di quanto redatto nelle Norme di Progetto $arrow$ *1 ora stimata*;
+- Terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema $arrow$ *8 ore stimate*;
 
 Il Responsabile dello sprint dovrà inoltre contattare #M31 al fine di predisporre una riunione per discutere dell'efficacia dell'Analisi dei Requisiti#super[g] e del PoC realizzato.
 
@@ -877,11 +986,11 @@ A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme d
 Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[g] e della finitura del PoC#super[g]; ma anche sulla verifica delle Norme di Progetto e del Piano di Qualifica.
 
 Le attività pianificate nel dettaglio includono:
-- La redazione e correzione dell'Analisi dei Requisiti#super[g] a seguito della riunione esterna con #M31, effettuata in data 28/01;
-- Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
-- Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto;
-- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[g];
-- Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
+- Verificare l'Analisi dei Requisiti#super[g] a seguito della riunione esterna con #M31, effettuata in data 28/01 $arrow$ *5 ore stimate*;
+- Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni $arrow$ *9 ore stimate*;
+- Verificare il Piano di Qualifica $arrow$ *5 ore stimate*
+- Effettuare la verifica di quanto redatto all'interno delle Norme di Progetto $arrow$ *9 ore stimate*;
+- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[g], terminandone la realizzazione $arrow$ *10 ore stimate*;
 
 Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[g].
 
@@ -893,6 +1002,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RG3: Rischio Globale derivato da sottostima di attività
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
+#pagebreak()
 ==== Preventivo
 
 Si prospetta l'utilizzo delle seguenti risorse:
