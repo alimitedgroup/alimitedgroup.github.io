@@ -132,7 +132,7 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 == Riferimenti
 === Riferimenti normativi
 - *Norme di Progetto#super[G] ver. 1.0.0*: \
-  #link("alimitedgroup.github.io/https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf] \
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf] \
   *Ultimo Accesso 6 Febbraio 2025*
 - *Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito*: \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf") \

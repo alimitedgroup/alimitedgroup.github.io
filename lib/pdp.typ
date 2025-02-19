@@ -13,7 +13,7 @@
 #let link-norme(
   link-text,
 ) = {
-  link("https://alimitedgroup.github.io/norme%20di%progetto%200.7.0")[#link-text]
+  link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[#link-text]
 }
 
 #let sprints = (

@@ -389,7 +389,7 @@ Il presente documento: stabilisce il _Way of Working#super[G]_ e le pratiche di 
 
 ==== Piano di Progetto
 
-Il #link("https://alimitedgroup.github.io/Piano%20di%20progetto%201.0.0.pdf")[*Piano di Progetto ver. 1.0.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[G] in _sprint_#super[G], nonché l'analisi dei rischi associati a ciascuna attività.\
+Il #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[G] in _sprint_#super[G], nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
 #figure(
@@ -922,7 +922,7 @@ La nomenclatura utilizzata per descrivere tali Test (reperibili nel #link("https
 
 dove:
 
-- *T* indica la parola *T*\esterno
+- *T* indica la parola *T*\est
 - *\#* è un numero crescente che identifica, all'interno del tipo, un determinato Test
 - *Tipo* classifica il Testin una delle seguenti tipologie:
   - *U* per Test di *U*\nità
@@ -1220,7 +1220,7 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 
 Come descritto nella @regole-branch-issue, la redazione o modifica di un documento richiede la creazione di un branch secondario. Tale branch avrà un nome che segue il seguente schema:
 
-#align(center, text(1.2em)[*`\#-azione-documento-data`*])
+#align(center, text(1.2em)[*`#-azione-documento-data`*])
 
 Dove:
 - Al posto di *\#* va inserito il numero della _Issue_#super[G] le cui modifiche operate nel branch determineranno la chiusura
