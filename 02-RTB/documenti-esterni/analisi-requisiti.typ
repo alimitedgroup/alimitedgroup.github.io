@@ -4518,15 +4518,15 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-7-Q-Ob],
-    [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] oppure in un _Test Book_ dedicato],
+    [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] oppure in un _Test Book_ dedicato],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
     [R-8-Q-Ob],
-    [È necessario perseguire al raggiungimento degli obiettivi posti dal #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*])],
+    [È necessario perseguire al raggiungimento degli obiettivi posti dal #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*])],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto] e Interno],
 
     [R-9-Q-Ob],
-    [È necessario rispettare tutte le norme presenti nelle #link("https://alimitedgroup.github.io/NP%201.0.0.pdf")[*Norme di Progetto ver. 1.0.0*]],
+    [È necessario rispettare tutte le norme presenti nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*]],
     [Interno],
 
     [R-10-Q-Ob],
@@ -4536,7 +4536,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%201.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
 
 == Requisiti di Vincolo
 

@@ -49,20 +49,21 @@ All'interno si possono trovare i seguenti documenti:
     - #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[Piano di Progetto v1.0.0];
     - #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[Analisi dei Requisiti v1.1.0];
     - #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[Norme di Progetto v1.0.0];
+    - #link("https://alimitedgroup.github.io/Glossario.pdf")[Glossario v0.5.0] (disponibile anche nel #link("https://alimitedgroup.github.io/glossario.html")[sito del gruppo])
     - #link("https://alimitedgroup.github.io/VI%2022-01-2025%20v1.0.0.pdf")[Verbale interno del 22/01/2025 v1.0.0];
     - #link("https://alimitedgroup.github.io/VI%2007-01-2025%20v1.0.0.pdf")[Verbale interno del 07/01/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2018-12-2025%20v1.0.0.pdf")[Verbale interno del 18/12/2025 v1.0.0];
   ],
   [
-    - #link("https://alimitedgroup.github.io/VI%2004-12-2024%20v1.0.0.pdf")[Verbale interno del 04/12/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[Verbale interno del 26/11/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[Verbale interno del 18/11/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2011-11-2024%20v1.0.0.pdf")[Verbale interno del 11/11/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[Verbale interno del 04/11/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2028-01-2024%20v1.0.0.pdf")[Verbale esterno del 28/01/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2017-12-2024%20v1.0.0.pdf")[Verbale esterno del 17/12/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2003-12-2024%20v1.0.0.pdf")[Verbale esterno del 03/12/2025 v1.0.0];
-    - #link("https://alimitedgroup.github.io/VI%2019-11-2024%20v1.0.0.pdf")[Verbale esterno del 19/11/2025 v1.0.0].
+    - #link("https://alimitedgroup.github.io/VI%2018-12-2024%20v1.0.0.pdf")[Verbale interno del 18/12/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VI%2004-12-2024%20v1.0.0.pdf")[Verbale interno del 04/12/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[Verbale interno del 26/11/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VI%2018-11-2024%20v1.0.0.pdf")[Verbale interno del 18/11/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VI%2011-11-2024%20v1.0.0.pdf")[Verbale interno del 11/11/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VI%2004-11-2024%20v1.0.0.pdf")[Verbale interno del 04/11/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VE%2028-01-2025%20v1.0.0.pdf")[Verbale esterno del 28/01/2025 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VE%2017-12-2024%20v1.0.0.pdf")[Verbale esterno del 17/12/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VE%2003-12-2024%20v1.0.0.pdf")[Verbale esterno del 03/12/2024 v1.0.0];
+    - #link("https://alimitedgroup.github.io/VE%2019-11-2024%20v1.0.0.pdf")[Verbale esterno del 19/11/2024 v1.0.0].
   ],
 )
 
