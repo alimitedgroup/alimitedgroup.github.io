@@ -176,7 +176,16 @@
 
 #let presentazione(title, date, body) = {
   set text(font: "Inria Sans")
-  set page(paper: "presentation-16-9", margin: 0em, header: none, footer: none)
+  set page(
+    paper: "presentation-16-9",
+    margin: 0em,
+    header: none,
+    footer: none,
+    background: gradient.linear(
+      black,
+      white,
+    ),
+  )
   set text(size: 25pt, font: "Inria Sans")
 
   title-slide(
@@ -227,3 +236,5 @@
     slide(title: "Difficoltà riscontrate e questioni aperte", contenuto3)
   }
 }
+
+#presentazione("ciao", datetime.today(), [])
