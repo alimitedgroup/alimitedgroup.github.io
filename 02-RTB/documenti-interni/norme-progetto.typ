@@ -138,7 +138,7 @@
     ),
   ),
   versione: ver,
-  stato: [Verificato],
+  stato: [Approvato per RTB],
   responsabile: ((p.samuele),),
   verificatore: ((p.emanuele), (p.lorenzo), (p.samuele), (p.sara)),
   redattori: (
@@ -1645,7 +1645,8 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
       Il testo è abbastanza difficile, comprensibile per chi ha almeno un'istruzione di livello superiore.
 
     - Indice $lt$ 40:
-      Il testo è molto difficile da leggere, comprensibile per lettori con un'istruzione universitaria.],
+      Il testo è molto difficile da leggere, comprensibile per lettori con un'istruzione universitaria.
+  ],
 )
 
 ==== Correttezza ortografica

@@ -6,7 +6,7 @@
 #show: body => importantdocs(
   data: datetime(day: 18, month: 02, year: 2025),
   tipo: [esterno],
-  stato: [Redatto],
+  stato: [Approvato per RTB],
   versioni: (
     (
       vers: "1.0.0",
@@ -498,7 +498,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Casi d'Uso relativi a requisiti obbligatori;
       - Casi d'Uso relativi a requisiti non obbligatori;
       - Casi d'Uso attività _Backend_;
-      - Requisiti.],
+      - Requisiti.
+    ],
     [Introduzione: _sprint_ 1 \ \
       Casi d'Uso obbligatori: \
       da _sprint_ 2 a _sprint_ 4 \ \
@@ -511,7 +512,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [Redazione delle seguenti parti:
       - Parte introduttiva del documento;
       - Analisi e gestione dei rischi
-      - Pianificazione nel lungo e breve termine],
+      - Pianificazione nel lungo e breve termine
+    ],
     [Introduzione: _sprint_ 2 \ \
       Analisi e gestione dei rischi: \ tutti gli _sprint_ \ \
       Pianificazione nel lungo e breve termine: \ tutti gli _sprint_
@@ -524,7 +526,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Soglie delle misurazioni;
       - Auto-miglioramento;
       - Metodi di testing;
-      - Cruscotto di valutazione.],
+      - Cruscotto di valutazione.
+    ],
     [Introduzione: _sprint_ 2 \ \
       Soglie delle misurazioni: \ da _sprint_ 2 a _sprint_ 5 \ \
       Automiglioramento: \ _sprint_ 5 \ \
@@ -551,7 +554,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
 
     [*Redazione del Glossario*],
     [Redazione delle seguenti parti:
-      - Termini.],
+      - Termini.
+    ],
     [Termini: \ Tutti gli _sprint_],
     [Completato per RTB],
 
