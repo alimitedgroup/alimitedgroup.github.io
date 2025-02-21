@@ -3,7 +3,7 @@
 #set page(paper: "presentation-16-9", margin: 0pt)
 #set text(fill: white, size: 24pt, font: "Hanken Grotesk")
 
-#metadata("Presentazione RTB") <title>
+#metadata("Presentazione RTB") <titolo>
 
 #let slide(body) = {
   body

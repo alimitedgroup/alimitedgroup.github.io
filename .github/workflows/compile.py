@@ -21,6 +21,7 @@ options = ["--root", ".", "--ignore-system-fonts", "--font-path", "assets"]
 
 
 def handle(outp):
+    if type(outp) == str: return outp
     match outp["func"]:
         case "metadata":
             return handle_metadata(outp)
