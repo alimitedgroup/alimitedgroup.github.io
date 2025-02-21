@@ -16,12 +16,6 @@
 ///  - `cristian`
 ///
 /// Ogni persona ha le proprietà `nome`, `cognome` e, se è uno studente `matricola`, se è di M31 `ruolo`
-///
-/// #example(```
-///  p.samuele.cognome
-///  " | "
-///  str(p.samuele.matricola)
-/// ```)
 #let p = (
   // Professori
   tullio: (nome: "Tullio", cognome: "Vardanega"),
@@ -76,13 +70,9 @@
 )
 
 /// Inserisce un simbolo che rappresenta M31
-///
-/// #example(`M31`)
 #let M31 = text(font: "Futura", weight: 500)[M31]
 
 /// Mostra una persona, con nome e cognome
-///
-/// #example(`persona(p.samuele)`)
 ///
 /// - p (persona):
 #let persona(p) = {
@@ -93,8 +83,6 @@
 
 /// Abbrevia il nome di una persona, mostrando solo la prima lettera del nome
 ///
-/// #example(`abbrev(p.samuele)`)
-///
 /// - p (persona):
 #let abbrev(p) = {
   p.nome.at(0)
@@ -104,8 +92,6 @@
 
 /// Mostra il nome e cognome di un professore, preceduto da Prof.
 ///
-/// #example(`prof(p.tullio)`)
-///
 /// - p (persona):
 #let prof(p) = {
   "Prof. " + p.nome + " " + p.cognome
@@ -113,16 +99,12 @@
 
 /// Mostra il cognome di un professore, preceduto da Prof.
 ///
-/// #example(`prof(p.tullio)`)
-///
 /// - p (persona):
 #let profBreve(p) = {
   "Prof. " + p.cognome
 }
 
 /// Una issue su GitHub. Notare che la repository ha un valore di default
-///
-/// #example(`issue(16, repo: repo.docs)`)
 ///
 /// - n (integer): Numero della issue su GitHub
 /// - repo (repository): Repository di riferimento
@@ -132,8 +114,6 @@
 
 /// Una Pull Request su GitHub
 ///
-/// #example(`pr(16, repo: repo.docs)`)
-///
 /// - n (integer): Numero della issue su GitHub
 /// - repo (repository): Repository di riferimento
 #let pr(n, repo: repo.docs) = {
@@ -141,8 +121,6 @@
 }
 
 /// Un PDF hostato sul sito
-///
-/// #example(`doc("VI 2024-10-18 1.0.0")[VI 2024-10-18]`)
 ///
 /// - nome (string): Titolo del documento, senza il ".pdf" alla fine
 /// - body (content): Testo da mostrare al posto dell'indirizzo
