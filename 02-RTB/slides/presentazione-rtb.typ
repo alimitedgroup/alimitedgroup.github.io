@@ -34,9 +34,9 @@
 
 - Ristrutturate Norme di Progetto per favorire leggibilità e fruizione->suddivisione troppo eccessiva, dettagliata prima descrizione nel dettaglio di ogni singolo processo
 - Ristrutturata Analisi dei Requisiti, suddivisione backend e frontend
-- Ristrutturato sito (+inserimento glossario)
-- organizzazione inizialmente non molto specifica
-- PR troppo ampie
+- Ristrutturato sito
+- Irganizzazione più specifica
+- PR meno ampie
 
 
 == Autovalutazione
