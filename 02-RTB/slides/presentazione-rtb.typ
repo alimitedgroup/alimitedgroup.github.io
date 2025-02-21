@@ -35,7 +35,7 @@
 - Ristrutturate Norme di Progetto per favorire leggibilità e fruizione->suddivisione troppo eccessiva, dettagliata prima descrizione nel dettaglio di ogni singolo processo
 - Ristrutturata Analisi dei Requisiti, suddivisione backend e frontend
 - Ristrutturato sito
-- Irganizzazione più specifica
+- Organizzazione più specifica
 - PR meno ampie
 
 
