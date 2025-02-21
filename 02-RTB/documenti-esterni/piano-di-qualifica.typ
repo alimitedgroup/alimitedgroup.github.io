@@ -87,7 +87,7 @@
       descr: "Prima redazione documento.",
     ),
   ),
-  stato: [In redazione],
+  stato: [Approvato per RTB],
   responsabile: ((p.samuele),),
   verificatore: ((p.matteo), (p.sara)),
   redattori: (
