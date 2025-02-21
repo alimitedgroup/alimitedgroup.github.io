@@ -42,7 +42,7 @@
     ),
   ),
   stato: [In redazione],
-  responsabile: ((p.samuele), (p.loris)),
+  responsabile: ((p.samuele),),
   verificatore: ((p.sara), (p.lorenzo)),
   redattori: ((p.emanuele), (p.marco), (p.matteo)),
   versione: vers,
