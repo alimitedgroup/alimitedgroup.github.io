@@ -113,7 +113,7 @@ def find_files(fileList,path=ROOT):
         if os.path.isdir(full_path):
             find_files(fileList,full_path)
         else:
-            if full_path.endswith(EXT):
+            if full_path.endswith(EXT) and 'slide' not in full_path:
                 fileList.append(full_path)
 
 def main():

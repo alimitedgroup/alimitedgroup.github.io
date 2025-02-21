@@ -1,11 +1,9 @@
 // DB 12-11-2024
 
-#import "../../lib/diario.typ": *
+#import "../../lib/slides.typ": *
 
-#show: ppt => presentazione(
+#show: ppt => ddb(
   intestazioni: true,
-  motto: true,
-  pseudoanimazioni: false,
   date: datetime(day: 12, month: 11, year: 2024),
   contenuto1: [
     - Miglioramento repository: organizzazione interna e parte pubblica

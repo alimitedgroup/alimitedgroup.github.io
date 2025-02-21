@@ -1,4 +1,4 @@
-#import "@preview/tidy:0.3.0"
+#import "@preview/tidy:0.4.1"
 #import tidy.utilities: *
 
 // Color to highlight function names in
@@ -67,9 +67,12 @@
     } else {
       ",\n  "
     })
-    if not inline-args {
-      "\n"
-    } + ")"
+    (
+      if not inline-args {
+        "\n"
+      }
+        + ")"
+    )
     if fn.return-types != none {
       " -> "
       fn.return-types.map(x => display-type-function(x)).join(" ")

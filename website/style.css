@@ -203,7 +203,7 @@ footer {
 #indice a {
   display: inline-block;
   border: 1px solid black;
-  background-color: #494949;
+  background-color: var(--bg2);
   width: 3ch;
   height: 2em;
   line-height: 1.6em;

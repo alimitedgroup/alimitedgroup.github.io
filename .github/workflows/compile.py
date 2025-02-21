@@ -21,6 +21,7 @@ options = ["--root", ".", "--ignore-system-fonts", "--font-path", "assets"]
 
 
 def handle(outp):
+    if type(outp) == str: return outp
     match outp["func"]:
         case "metadata":
             return handle_metadata(outp)
@@ -106,6 +107,7 @@ def loadGlossary() -> dict:
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
     nomefile = titolo + ".pdf"
+    if 'Glossario' in nomefile: nomefile = 'Glossario.pdf'
 
     if "PQ " in titolo:
         titolo = titolo.replace('PQ ', 'Piano di Qualifica ')
