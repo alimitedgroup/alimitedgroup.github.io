@@ -49,7 +49,7 @@
 
 I membri di _ALimitedGroup_ si sono aggiornati sul progresso del progetto in seguito al superamento della _Requirements and Technology Baseline (RTB)_.
 
-_ALimitedGroup_ ha appreso la necessità di correggere gli errori rilevati dal #profBreve(p.cardin) nell'Analisi dei Requisiti e dal #profBreve(p.tullio) negli altri documenti.
+_ALimitedGroup_ ha appreso la necessità di correggere gli errori rilevati dal #profBreve(p.cardin) nell'Analisi dei Requisiti#super[G] e dal #profBreve(p.tullio) negli altri documenti.
 
 Si è determinato, per lo svolgimento della _Product Baseline (PB)_, che sarà necessario produrre un documento atto a spiegare come avviare ed utilizzare l'applicativo/gli applicativi sviluppati (denominato *Manuale Utente*) e un ulteriore documento atto a descrivere le caratteristiche degli stessi (denominato *Specifica Tecnica*).
 
@@ -63,7 +63,7 @@ Il gruppo ha analizzato che è necessario svolgere più riunioni interne ed este
 
 I membri di _ALimitedGroup_ hanno inoltre compreso che, per rispettare la data prevista di consegna del progetto (31 Marzo 2025), sarà necessario svolgere più spesso riunioni interne per aggiornare con maggiore velocità sui progressi e pianificare così il periodo futuro: per questo _ALimitedGroup_ ha deciso che terrà maggiori riunioni, all'incirca una a settimana, interne per aggiornare i membri sullo stato di lavoro complessivo e programmare quindi il periodo successivo.
 
-Dall'analisi del periodo trascorso è stato rilevato che poche riunioni sono state realizzate con #M31: _ALimitedGroup_ prevede di realizzare maggiori riunioni con #M31, cercando di ricoprirne almeno una ad ogni _sprint_.
+Dall'analisi del periodo trascorso è stato rilevato che poche riunioni sono state realizzate con #M31: _ALimitedGroup_ prevede di realizzare maggiori riunioni con #M31, cercando di ricoprirne almeno una ad ogni _sprint_#super[G] .
 
 == Decisioni in merito alla codifica del codice
 
@@ -78,19 +78,19 @@ I membri di _ALimitedGroup_ hanno stabilito che per la codifica del codice saran
 
 == Decisioni relative alle attività del prossimo periodo
 
-I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che tali attività potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint, come stablitio alla @f:
+I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che tali attività potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] ,come stablitio alla @f:
 
 #align(center)[*Amministrazione*]
 
-- Configurare il _repository_ dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test, al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
+- Configurare il _repository_#super[G] dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test#super[G] ,al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Manuale Utente*]
 - Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ (entro il giorno *2 Marzo 2025*)
 
-#align(center)[*Norme di Progetto*]
+#align(center)[*Norme di Progetto#super[G]*]
 
-- Aggiungere la Sezione "Strumenti a Supporto" a tutti i processi presenti nelle *Norme di Progetto* entro il giorno *2 Marzo 2025*
-- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto ver. 1.0.0*) con le informazioni prese in questa riunione in merito alla Codifica.
+- Aggiungere la Sezione "Strumenti a Supporto" a tutti i processi presenti nelle *Norme di Progetto#super[G]* entro il giorno *2 Marzo 2025*
+- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni prese in questa riunione in merito alla Codifica.
 
 #align(center)[*Piano di Progetto*]
 - Effettuare la redazione delle informazioni relative al settimo sprint entro il giorno *9 Marzo 2025*.
