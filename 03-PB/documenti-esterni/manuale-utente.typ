@@ -1,6 +1,8 @@
 #import "@preview/cmarker:0.1.2"
 #import "../../lib/importantdocs.typ": *
 
+#metadata("Manuale Utente") <titolo>
+
 #let render(filepath, level) = {
   let basename = "../manuale-utente/" + filepath
   basename = basename.split("/").slice(0, -1).join("/")
