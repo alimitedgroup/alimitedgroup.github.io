@@ -9,7 +9,7 @@ EXT=".typ"
 #LINK="https://alimitedgroup.github.io/glossario%200.1.0.pdf"
 
 def loadGlossary():
-    with open('02-RTB/documenti-interni/glossario.yml','r') as f:
+    with open('03-PB/documenti-interni/glossario.yml','r') as f:
         output = yaml.safe_load(f)
     return output
 
@@ -127,7 +127,7 @@ def main():
     else:
         find_files(fileList)
         for file in fileList:
-            if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
+            if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
                 continue
             substitute(file,loadGlossary())
 

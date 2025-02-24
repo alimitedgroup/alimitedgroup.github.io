@@ -99,7 +99,7 @@ def compile(filename: str, compile_options: list[str]) -> bool:
 
 
 def loadGlossary() -> dict:
-    with open('02-RTB/documenti-interni/glossario.yml','r') as f:
+    with open('03-PB/documenti-interni/glossario.yml','r') as f:
         output = yaml.safe_load(f)
     return output
 
