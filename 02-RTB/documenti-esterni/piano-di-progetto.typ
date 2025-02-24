@@ -2,20 +2,12 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [1.1.0]
+#let ver = [1.0.0]
 #show: body => importantdocs(
-  data: datetime(day: 24, month: 02, year: 2025),
+  data: datetime(day: 18, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Approvato per RTB],
   versioni: (
-    (
-      vers: "1.1.0",
-      date: datetime(day: 24, month: 02, year: 2025),
-      autore: p.marco,
-      verifica: p.loris,
-      approvazione: p.samuele,
-      descr: "Redazione per il settimo sprint " + [(@sprint7).],
-    ),
     (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
@@ -447,7 +439,7 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
   caption: [Riassunto dei costi previsti derivanti dalle ore assegnate a ciascun ruolo],
 )
 \
-In seguito a quanto suggerito in merito all'Analisi dei Requisiti#super[G] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
 
 #figure(
   table(
@@ -478,7 +470,6 @@ Si stima inoltre ad una candidatura per la *_Requirements and Technology Baselin
 
 Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
-#pagebreak()
 == Attività previste per la Requirements and Technology Baseline (RTB)
 
 #show figure: set block(breakable: true)
@@ -579,48 +570,12 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       sincronizzazione: \ _sprint_ 6],
     [Completato],
   ),
-  caption: [Attività previste per la _Requirements and Technology Baseline (RTB)_],
+  caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
 )
 
-#pagebreak()
 == Attività previste per la Product Baseline (PB)
 
-#figure(
-  table(
-    columns: 4,
-    align: (x, y) => if y == 0 or (x != 1 and x != 2) { center + horizon } else { left },
-    inset: (x: 1.1em, y: 0.6em),
-    fill: (x, y) => if (y == 0) {
-      rgb("#800080")
-    } else if (calc.gcd(y, 2) == 2) {
-      rgb("#bf7fbf")
-    } else {
-      rgb("#d8b2d8")
-    },
-    table.header(
-      text(fill: white)[*Attività*],
-      text(fill: white)[*Descrizione*],
-      text(fill: white)[*Periodo di svolgimento*],
-      text(fill: white)[*Stato*],
-    ),
-    [*Redazione Specifica Tecnica*],
-    [],
-    [],
-    [In redazione],
-    [*Redazione Manuale Utente*],
-    [],
-    [],
-    [In redazione],
-    [*Correzione Analisi dei Requisiti*],
-    [Correzione delle seguenti parti:
-    - Correzione degli use-case n. 32, 67 e 68;
-    - Correzione con l'aggiunta del tracciamento dei Casi d'Uso;
-    - Correzione dei requisiti non funzionali.],
-    [],
-    [In redazione],
-  ),
-  caption: [Attività previste per la _Product Baseline (PB)_],
-)
+La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
 
 #pagebreak()
 
@@ -941,9 +896,7 @@ tra Casi d'Uso del backend e del frontend che devono essere rappresentati separa
 
 Non è stata completata la redazione degli Casi d'Uso non obbligatori a causa di problemi con la numerazione degli Casi d'Uso e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto#super[G], ma si è praticamente conclusa la redazione delle sezioni mancanti.
-
 #pagebreak()
-
 === Sprint 5 <sprint5>
 
 #table(
@@ -957,7 +910,7 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto#sup
   [Giorni di ritardo:], strong[0],
 )
 
-==== Informazioni generali e attività da svolgere <sprint5intro>
+==== Informazioni generali e attività da svolgere <sprint4intro>
 
 Il quinto sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G], sul completamento del PoC#super[G] e sul proseguimento del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto#super[G].
 
@@ -1084,85 +1037,6 @@ Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale d
 Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
 
 === Retrospettiva
-
-In questo sesto sprint#super[G], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[G].\
-
-La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[G]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
-
-#pagebreak()
-
-== Product Baseline (PB)
-=== Sprint 7 <sprint7>
-
-#table(
-  columns: 2,
-  stroke: none,
-  inset: (x: 0pt),
-  column-gutter: 1em,
-  [Inizio:], strong[23-02-2025],
-  [Fine prevista:], strong[08-03-2025],
-  [Fine reale:], strong[08-03-2025],
-  [Giorni di ritardo:], strong[0],
-)
-
-==== Informazioni generali e attività da svolgere <sprint7intro>
-
-Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone_ del progetto: la _Product Baseline_. In questo sprint vengono pianificate le seguenti attività:
-- Redigere il verbale interno della riunione effettuata in data 24/02;
-- Realizzare il servizio di autenticazione per gli utenti;
-- Progettare il servizio di _Stock Notifications_;
-- Continuare con l'utilizzo della _Continuous Integration_ e _Dependency Injection_;
-- Correggere il documento delle Norme di Progetto, dopo la visione da parte del #profBreve(p.tullio) e la sua valutazione per l'_RTB_;
-- Correggere il documento di Analisi dei Requisiti, dopo la visione da parte del #profBreve(p.cardin) e la sua valutazione per l'_RTB_;
-- Iniziare a redigere il documento di "Specifica Tecnica" iniziando a stilare:
-  - Struttura base del documento;
-  - Tecnologie per la codifica;
-  - Archittetura logica;
-  - Archittetura di _deployment_;
-- Iniziare a redigere il "Manuale Utente" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
-
-Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle scelte affrontate per la PB.
-==== Rischi attesi (DA MODIFICARE)
-
-I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
-
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RG3: Rischio Globale derivato da sottostima di attività
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
-
-#pagebreak()
-==== Preventivo (DA MODIFICARE)
-
-Si prospetta l'utilizzo delle seguenti risorse:
-
-#impegni(6, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
-
-==== Consuntivo (DA MODIFICARE)
-
-#impegni(
-  6,
-  preventivo: true,
-  posizioni-legenda: (2, 2, -2, 2, 2, -2),
-  "Sprint 6 - Consuntivo per componente",
-  "Sprint 6 - Consuntivo",
-)
-
-#v(1em)
-==== Aggiornamento delle risorse rimanenti (DA MODIFICARE)
-#prospetto-orario(6, "Sprint 6 - Variazione nelle risorse disponibili")
-
-#v(1em)
-
-==== Rischi incontrati (DA MODIFICARE)
-
-Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguo della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
-Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
-
-===== Valutazione di efficacia delle strategie di mitigazione dei rischi
-
-==== Rivisitazione migliorativa del piano per le attività future
-
-=== Retrospettiva (DA MODIFICARE)
 
 In questo sesto sprint#super[G], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[G].\
 
