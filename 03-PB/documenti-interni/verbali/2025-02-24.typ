@@ -53,7 +53,7 @@ _ALimitedGroup_ ha appreso la necessità di correggere gli errori rilevati dal #
 
 Si è determinato, per lo svolgimento della _Product Baseline (PB)_, che sarà necessario produrre un documento atto a spiegare come avviare ed utilizzare l'applicativo/gli applicativi sviluppati (denominato *Manuale Utente*) e un ulteriore documento atto a descrivere le caratteristiche degli stessi (denominato *Specifica Tecnica*).
 
-È stato deciso, in seguito a consiglio di #persona(p.samuele) e #persona(p.marco) che risulta esser possibile senza particolari sforzi aggiuntivi, la realizzazione di un *Manuale Utente* disponibile anche in versione _web_.
+È stato deciso, in seguito a consiglio di #persona(p.samuele) e #persona(p.marco) che risulta esser possibile, senza particolari sforzi aggiuntivi, la realizzazione di un *Manuale Utente* disponibile anche in versione _web_.
 
 È stato deciso che è necessario approfondire lo studio del _framework_ *fx*, utilizzato per la _Dependency Injection_.
 
@@ -61,9 +61,9 @@ Il gruppo ha analizzato che è necessario svolgere più riunioni interne ed este
 
 == Decisioni in merito alle riunioni future <f>
 
-I membri di _ALimitedGroup_ hanno inoltre compreso che, per rispettare la data prevista di consegna del progetto (31 Marzo 2025), sarà necessario svolgere più spesso riunioni interne per aggiornare con maggiore velocità sui progressi e pianificare così il periodo futuro: per questo _ALimitedGroup_ ha deciso che terrà maggiori riunioni, all'incirca una a settimana, interne per aggiornare i membri sullo stato di lavoro complessivo e programmare quindi il periodo successivo.
+I membri di _ALimitedGroup_ hanno compreso che, per rispettare la data prevista di consegna del progetto (31 Marzo 2025), sarà necessario svolgere più spesso riunioni interne per aggiornarsi a vicenda sui progressi fatti e pianificare di conseguenza il periodo futuro: per questo motivo, _ALimitedGroup_ ha deciso che terrà maggiori riunioni interne, all'incirca una a settimana, per aggiornare i membri sullo stato di lavoro complessivo e programmare il periodo successivo.
 
-Dall'analisi del periodo trascorso è stato rilevato che poche riunioni sono state realizzate con #M31: _ALimitedGroup_ prevede di realizzare maggiori riunioni con #M31, cercando di ricoprirne almeno una ad ogni _sprint_#super[G] .
+Dall'analisi del periodo trascorso è stato rilevato che poche riunioni esterne sono state realizzate con #M31: _ALimitedGroup_ prevede di realizzare maggiori riunioni con #M31, cercando di svolgerne almeno una ad ogni _sprint_#super[G] .
 
 == Decisioni in merito alla codifica del codice
 
@@ -71,14 +71,14 @@ I membri di _ALimitedGroup_ hanno stabilito che per la codifica del codice saran
 
 - Il _package_ di ogni file contenente codice sorgente deve essere diverso per ogni cartella
 - Le interfacce devono avere un nome che inizia con la lettera *I* (ad esempio _*I*\UseCase_)
-- Le interfacce devono essere su un file separato dagli altri file contenenti codice sorgente;
+- Le interfacce devono essere poste su un file separato dagli altri file contenenti codice sorgente;
 - Le strutture che implementano le interfacce devono essere su un file separato dagli altri file contenenti codice sorgente;
-- Le strutture rappresentanti attributi delle strutture che implementano le interfacce devono essere su un file separato dagli altri file contenenti codice sorgente;
+- Le strutture rappresentanti attributi delle strutture che implementano le interfacce devono essere poste su un file separato dagli altri file contenenti codice sorgente;
 - I file contenenti strutture che sono utilizzati dai _Controller_ dei microservizi devono essere inseriti all'interno di una cartella comune.
 
 == Decisioni relative alle attività del prossimo periodo
 
-I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che tali attività potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] ,come stablitio alla @f:
+I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che le stesse potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] ,come stablitio alla @f:
 
 #align(center)[*Amministrazione*]
 
