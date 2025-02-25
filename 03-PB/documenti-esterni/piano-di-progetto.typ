@@ -2,6 +2,7 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
+#set list(indent: 0.5em)
 #let ver = [1.1.0]
 #show: body => importantdocs(
   data: datetime(day: 24, month: 02, year: 2025),
@@ -14,7 +15,7 @@
       autore: p.marco,
       verifica: p.loris,
       approvazione: p.samuele,
-      descr: "Redazione per il settimo sprint " + [(@sprint7).],
+      descr: "Redazione per il settimo sprint " + [(@sprint7).\ ],
     ),
     (
       vers: "1.0.0",
@@ -22,7 +23,7 @@
       autore: p.marco,
       verifica: p.loris,
       approvazione: p.samuele,
-      descr: "Correzioni minori.",
+      descr: "Correzioni minori." + [ \ ],
     ),
     (
       vers: "0.7.0",
@@ -83,6 +84,7 @@
   body,
 )
 
+#set list(indent: 0.5em)
 = Introduzione <introduzione>
 == Informazioni generali
 
@@ -100,17 +102,17 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, al seguente #link-glossario("indirizzo").
 
-Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #text(size: 1.2em)[*`parola`#super("g")*].
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[#text(size: 1.2em)[*`parola`#super("g")*]]
 
 == Fonti
 
 === Riferimenti normativi
 
-- *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*
+- *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 - *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")\
   *Ultimo Accesso 5 Febbraio 2025*
 
 === Riferimenti informativi
@@ -604,13 +606,37 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       text(fill: white)[*Stato*],
     ),
 
-    [*Redazione Specifica Tecnica*], [], [], [In redazione],
-    [*Redazione Manuale Utente*], [], [], [In redazione],
+    [*Redazione della Specifica Tecnica*], 
+    [Redazione delle seguenti parti:
+    - Struttura base del documento;
+    - Inserire le tecnologie per la codifica
+    - Capitolo "Architettura Logica";
+    - Capitolo "Architettura di Deployment".], 
+    [Redigere la struttura base del documento: _sprint_ 7. \ \ 
+    Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \ 
+    Inserire all'interno del documento le tecnologie per la codifica: _sprint 7_.], 
+    [In redazione],
+    [*Redazione del Manuale Utente*], [], [], [In redazione],
     [*Correzione Analisi dei Requisiti*],
     [Correzione delle seguenti parti:
       - Correzione degli use-case n. 32, 67 e 68;
       - Correzione con l'aggiunta del tracciamento dei Casi d'Uso;
       - Correzione dei requisiti non funzionali.],
+    [Correzione dei Casi d'Uso n. 32, 67 e 68: _sprint_ 7. \ \ 
+    Aggiunta del tracciamento dei Casi d'Uso: _sprint_ 7. \ \ 
+    Correzione dei requisiti non funzionali: _sprint_ 7.],
+    [In redazione],
+    [*Correzione Norme di Progetto*],
+    [Correzione delle seguenti parti: 
+    - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
+    - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.],
+    [Correzione con aggiunta della sezione "Strumenti a supporto" : _sprint_ 7. \ \ 
+    Correzione con integrazione della sezione "Sviluppo": _sprint 7_.],
+    [In redazione],
+    [*Correzione Piano di Qualifica*],
+    [Correzione delle seguenti parti: 
+    - Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare;
+    - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.],
     [],
     [In redazione],
   ),
@@ -1106,52 +1132,50 @@ Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone
 - Redigere il verbale interno della riunione effettuata in data 24/02;
 - Realizzare il servizio di autenticazione per gli utenti;
 - Progettare il servizio di _Stock Notifications_;
-- Continuare con l'utilizzo della _Continuous Integration_ e _Dependency Injection_;
+- Continuare con l'utilizzo della _Continuous Integration_ e della _Dependency Injection_;
 - Correggere il documento delle Norme di Progetto#super[G], dopo la visione da parte del #profBreve(p.tullio) e la sua valutazione per l'_RTB_;
 - Correggere il documento di Analisi dei Requisiti#super[G], dopo la visione da parte del #profBreve(p.cardin) e la sua valutazione per l'_RTB_;
 - Iniziare a redigere il documento di "Specifica Tecnica" iniziando a stilare:
   - Struttura base del documento;
   - Tecnologie per la codifica;
   - Archittetura logica;
-  - Archittetura di _deployment_;
+  - Archittetura di _deployment_.
 - Iniziare a redigere il "Manuale Utente" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
 
-Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle scelte affrontate per la PB.
+Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle prossime scelte da attuare nella fase della _Product Baseline_.
 ==== Rischi attesi (DA MODIFICARE)
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RG3: Rischio Globale derivato da sottostima di attività
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RG3: Rischio Globale derivato da sottostima di attività;
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 #pagebreak()
 ==== Preventivo (DA MODIFICARE)
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(6, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
+#impegni(7, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 7 - Preventivo per componente", "Sprint 7 - Preventivo")
 
+#v(2em)
 ==== Consuntivo (DA MODIFICARE)
 
 #impegni(
-  6,
+  7,
   preventivo: true,
   posizioni-legenda: (2, 2, -2, 2, 2, -2),
-  "Sprint 6 - Consuntivo per componente",
-  "Sprint 6 - Consuntivo",
+  "Sprint 7 - Consuntivo per componente",
+  "Sprint 7 - Consuntivo",
 )
 
 #v(1em)
 ==== Aggiornamento delle risorse rimanenti (DA MODIFICARE)
-#prospetto-orario(6, "Sprint 6 - Variazione nelle risorse disponibili")
+#prospetto-orario(7, "Sprint 7 - Variazione nelle risorse disponibili")
 
 #v(1em)
 
 ==== Rischi incontrati (DA MODIFICARE)
-
-Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguo della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
-Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
 
 ===== Valutazione di efficacia delle strategie di mitigazione dei rischi
 
@@ -1159,6 +1183,4 @@ Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il ris
 
 === Retrospettiva (DA MODIFICARE)
 
-In questo sesto sprint#super[G], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[G].\
 
-La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[G]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
