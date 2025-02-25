@@ -606,15 +606,15 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       text(fill: white)[*Stato*],
     ),
 
-    [*Redazione della Specifica Tecnica*], 
+    [*Redazione della Specifica Tecnica*],
     [Redazione delle seguenti parti:
     - Struttura base del documento;
     - Inserire le tecnologie per la codifica
     - Capitolo "Architettura Logica";
-    - Capitolo "Architettura di Deployment".], 
-    [Redigere la struttura base del documento: _sprint_ 7. \ \ 
-    Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \ 
-    Inserire all'interno del documento le tecnologie per la codifica: _sprint 7_.], 
+    - Capitolo "Architettura di Deployment".],
+    [Redigere la struttura base del documento: _sprint_ 7. \ \
+    Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \
+    Inserire all'interno del documento le tecnologie per la codifica: _sprint 7_.],
     [In redazione],
     [*Redazione del Manuale Utente*], [], [], [In redazione],
     [*Correzione Analisi dei Requisiti*],
@@ -622,19 +622,19 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione degli use-case n. 32, 67 e 68;
       - Correzione con l'aggiunta del tracciamento dei Casi d'Uso;
       - Correzione dei requisiti non funzionali.],
-    [Correzione dei Casi d'Uso n. 32, 67 e 68: _sprint_ 7. \ \ 
-    Aggiunta del tracciamento dei Casi d'Uso: _sprint_ 7. \ \ 
+    [Correzione dei Casi d'Uso n. 32, 67 e 68: _sprint_ 7. \ \
+    Aggiunta del tracciamento dei Casi d'Uso: _sprint_ 7. \ \
     Correzione dei requisiti non funzionali: _sprint_ 7.],
     [In redazione],
     [*Correzione Norme di Progetto*],
-    [Correzione delle seguenti parti: 
+    [Correzione delle seguenti parti:
     - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
     - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.],
-    [Correzione con aggiunta della sezione "Strumenti a supporto" : _sprint_ 7. \ \ 
+    [Correzione con aggiunta della sezione "Strumenti a supporto" : _sprint_ 7. \ \
     Correzione con integrazione della sezione "Sviluppo": _sprint 7_.],
     [In redazione],
     [*Correzione Piano di Qualifica*],
-    [Correzione delle seguenti parti: 
+    [Correzione delle seguenti parti:
     - Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare;
     - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.],
     [],
