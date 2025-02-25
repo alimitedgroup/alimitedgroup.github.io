@@ -4,18 +4,18 @@
   data: datetime(day: 24, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
-    /*(
+    (
       vers: "1.0.0",
-      date: datetime(day: 24, month: 01, year: 2025),
+      date: datetime(day: 26, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.marco,
       descr: "Approvazione del documento.",
-    ),*/
+    ),
     (
       vers: "0.1.0",
       date: datetime(day: 24, month: 02, year: 2025),
       autore: p.matteo,
-      //verifica: p.emanuele,
+      verifica: p.emanuele,
       descr: "Redazione del contenuto.",
     ),
   ),
@@ -57,57 +57,57 @@ Si è determinato, per lo svolgimento della _Product Baseline (PB)_, che sarà n
 
 È stato deciso che è necessario approfondire lo studio del _framework_ *fx*, utilizzato per la _Dependency Injection_.
 
-Il gruppo ha analizzato che è necessario svolgere più riunioni interne ed esterne.
+Il gruppo ha evidenziato la necessità di organizzare un maggior numero di riunioni, sia interne che esterne.
 
 == Decisioni in merito alle riunioni future <f>
 
-I membri di _ALimitedGroup_ hanno compreso che, per rispettare la data prevista di consegna del progetto (31 Marzo 2025), sarà necessario svolgere più spesso riunioni interne per aggiornarsi a vicenda sui progressi fatti e pianificare di conseguenza il periodo futuro: per questo motivo, _ALimitedGroup_ ha deciso che terrà maggiori riunioni interne, all'incirca una a settimana, per aggiornare i membri sullo stato di lavoro complessivo e programmare il periodo successivo.
+I membri di _ALimitedGroup_ hanno compreso che, per rispettare la data prevista di consegna del progetto (31 Marzo 2025), sarà necessario svolgere più spesso riunioni interne per aggiornarsi a vicenda sui progressi fatti e pianificare di conseguenza il periodo futuro: per questo motivo, _ALimitedGroup_ ha deciso che terrà più frequentemente riunioni interne, all'incirca una a settimana, per aggiornare i membri sullo stato di lavoro complessivo e programmare il periodo successivo.
 
-Dall'analisi del periodo trascorso è stato rilevato che poche riunioni esterne sono state realizzate con #M31: _ALimitedGroup_ prevede di realizzare maggiori riunioni con #M31, cercando di svolgerne almeno una ad ogni _sprint_#super[G] .
+Dall'analisi del periodo trascorso è stato rilevato che sono state realizzate poche riunioni esterne con #M31: _ALimitedGroup_ prevede di organizzare più riunioni con #M31, cercando di svolgerne almeno una ad ogni _sprint_#super[G] .
 
 == Decisioni in merito alla codifica del codice
 
 I membri di _ALimitedGroup_ hanno stabilito che per la codifica del codice saranno seguite le seguenti regole:
 
-- Il _package_ di ogni file contenente codice sorgente deve essere diverso per ogni cartella
-- Le interfacce devono avere un nome che inizia con la lettera *I* (ad esempio _*I*\UseCase_)
-- Le interfacce devono essere poste su un file separato dagli altri file contenenti codice sorgente;
-- Le strutture che implementano le interfacce devono essere su un file separato dagli altri file contenenti codice sorgente;
-- Le strutture rappresentanti attributi delle strutture che implementano le interfacce devono essere poste su un file separato dagli altri file contenenti codice sorgente;
-- I file contenenti strutture che sono utilizzati dai _Controller_ dei microservizi devono essere inseriti all'interno di una cartella comune.
+- il _package_ di ogni file contenente codice sorgente deve essere diverso per ogni cartella;
+- le interfacce devono avere un nome che inizia con la lettera *I* (ad esempio _*I*\UseCase_);
+- le interfacce devono essere poste su un file separato dagli altri file contenenti codice sorgente;
+- le strutture che implementano le interfacce devono essere su un file separato dagli altri file contenenti codice sorgente;
+- le strutture rappresentanti attributi delle strutture che implementano le interfacce devono essere poste su un file separato dagli altri file contenenti codice sorgente;
+- i file contenenti strutture che sono utilizzati dai _Controller_ dei microservizi devono essere inseriti all'interno di una cartella comune.
 
 == Decisioni relative alle attività del prossimo periodo
 
-I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che le stesse potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] ,come stablitio alla @f:
+I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che le stesse potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] , come stabilito alla @f:
 
 #align(center)[*Amministrazione*]
 
-- Configurare il _repository_#super[G] dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test#super[G] ,al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
+- Configurare il _repository_#super[G] dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test#super[G] , al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Manuale Utente*]
-- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ (entro il giorno *2 Marzo 2025*)
+- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ (entro il giorno *2 Marzo 2025*).
 
 #align(center)[*Norme di Progetto#super[G]*]
 
-- Aggiungere la Sezione "Strumenti a Supporto" a tutti i processi presenti nelle *Norme di Progetto#super[G]* entro il giorno *2 Marzo 2025*
-- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni prese in questa riunione in merito alla Codifica.
+- Aggiungere la Sezione "Strumenti a Supporto" a tutti i processi presenti nelle *Norme di Progetto#super[G]* entro il giorno *2 Marzo 2025*.
+- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica.
 
 #align(center)[*Piano di Progetto*]
 - Effettuare la redazione delle informazioni relative al settimo sprint entro il giorno *9 Marzo 2025*.
 
 #align(center)[*Progettazione*]
 
-- Effettuare la progettazione del microservizio dedicato alle notifiche di rifornimento entro il giorno *2 Marzo 2025*
-- Effettuare la progettazione del microservizio dedicato all'autenticazione di un _client_, limitando tale servizio alla verifica della tipologia di utente entro il giorno *2 Marzo 2025*
+- Effettuare la progettazione del microservizio dedicato alle notifiche di rifornimento entro il giorno *2 Marzo 2025*.
+- Effettuare la progettazione del microservizio dedicato all'autenticazione di un _client_, limitando tale servizio alla verifica della tipologia di utente entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Programmazione*]
 
-- Completare lo studio del framework *fx* per la _Dependency Injection_ entro il giorno *2 Marzo 2025*
+- Completare lo studio del framework *fx* per la _Dependency Injection_ entro il giorno *2 Marzo 2025*.
 
 #pagebreak()
 
 #align(center)[*Specifica Tecnica*]
-- Effettuare la redazione della struttura base del documento e delle Sezioni relative alle tecnologie utilizzate, all'Architettura logica e quella di Deployment entro il giorno *2 Marzo 2025*
+- Effettuare la redazione della struttura base del documento e delle Sezioni relative alle tecnologie utilizzate, all'Architettura logica e quella di Deployment entro il giorno *2 Marzo 2025*.
 
 == Assegnazione prevista dei ruoli sino al 02-03-2025
 
