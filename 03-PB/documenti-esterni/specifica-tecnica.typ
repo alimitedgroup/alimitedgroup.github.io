@@ -139,7 +139,7 @@ I microservizi comunicano tra loro tramite NATS, un sistema di messaggistica pub
 
 - Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
 
-Oltre a NATS, i microservizi possono esporre API REST per comunicazioni sincrone quando necessario.
+Oltre a NATS, i microservizi possono esporre API REST per le comunicazioni con il client.
 
 
 Il deployment dei microservizi avviene in ambienti containerizzati tramite Docker.
