@@ -35,6 +35,8 @@
     [#metadata[AR v#versione] <titolo> ]
   } else if titolo == "Piano di Progetto" {
     [#metadata[PP v#versione] <titolo> ]
+  } else if titolo == "Specifica Tecnica" {
+    [#metadata[ST v#versione] <titolo> ]
   } else {
     panic("Unknown title: " + titolo)
   }
