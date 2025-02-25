@@ -13,7 +13,7 @@
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Prima redazione documento.Sezione introduzione.",
+      descr: "Prima redazione documento. Sezione introduzione.",
     ),
   ),
   stato: [In redazione],
