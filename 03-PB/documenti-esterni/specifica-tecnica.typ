@@ -30,7 +30,8 @@
 = Introduzione
 == Scopo del documento
 Il presente documento ha l'obiettivo di descrivere in dettaglio l'_architettura_ del prodotto software, fornendo una visione chiara e strutturata delle sue componenti, della loro interazione e della loro distribuzione nel sistema.\
-Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il Proof of Concept (PoC) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
+
+Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il Proof of Concept#super[G] (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
 
 Nello specifico, questo documento si propone di:
 
@@ -47,7 +48,7 @@ Nello specifico, questo documento si propone di:
 
 == Glossario
 Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo documento, si faccia riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.
-Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #text(size: 1.2em)[*`parola`#super("g")*].
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #text(size: 1.2em)[*`parola`#super("G")*].
 
 == Riferimenti
 === Riferimenti normativi
