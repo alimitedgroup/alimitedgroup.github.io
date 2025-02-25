@@ -116,10 +116,10 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
 #align(center)[*#persona(p.marco)* $arrow.r$ *Responsabile*#super[G]]
 #align(center)[
   *#persona(p.loris)* $arrow.r$ *Amministratore*#super[G] \
-  *#persona(p.sara)* $arrow.r$ *Amministratore*#super[G] \
   *#persona(p.samuele)* $arrow.r$ *Amministratore*#super[G]
 ]
 #align(center)[
+  *#persona(p.sara)* $arrow.r$ *Progettista*#super[G] \
   *#persona(p.matteo)* $arrow.r$ *Progettista*#super[G] \
   *#persona(p.lorenzo)* $arrow.r$ *Progettista*#super[G] \
   *#persona(p.emanuele)* $arrow.r$ *Progettista*#super[G] \
