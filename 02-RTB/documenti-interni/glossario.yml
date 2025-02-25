@@ -24,8 +24,6 @@ C:
   Caso d'Uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
   Consuntivo: "Esiti finali delle risorse temporali e monetarie utilizzati, spesso in riferimento al bilancio preventivato."
   Cruscotto: "In inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
-  CTO: "Chief Technology Officer, manager di primo livello e membro del consiglio direttivo di un’azienda che seleziona, valuta e suggerirsce
-        le migliori tecnologie da applicare ai prodotti o ai servizi che l’azienda produce."
 D:
   Dashboard: "Vedi Cruscotto."
   DI: "Acronimo di Decisione Interna; è una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'issue associata."
@@ -37,24 +35,7 @@ E:
   Efficienza: "Che non utilizza più risorse di quanto effettivamente necessario, senza spreco di risorse."
 F:
   Funzionalità: "Una caratteristica offerta da un Sistema, spesso con lo scopo di soddisfare un bisogno."
-  DI: "Decisione Interna: una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un’issue associata."
-  Diagramma dei casi d'uso : "Strumento di modellazione grafica appartenente al linguaggio UML (Unified Modeling Language) che rappresenta le interazioni tra un sistema e i suoi attori esterni,
-  illustrando le funzionalità principali di un sistema dal punto di vista degli utenti."
-E:
-  "": ""
-F:
-  "": ""
 G:
-  GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, 
-  facilitando la condivisione e lo sviluppo di progetti software."
-  GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), 
-  che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
-  Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e 
-  semplicità, particolarmente adatto per sistemi e applicazioni cloud."
-  Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include 
-  servizi di elaborazione, archiviazione e analisi dei dati."
-  Grafana: "Piattaforma open-source di visualizzazione, monitoraggio e analisi di dati, progettata per aggregare, 
-  rappresentare graficamente e interpretare metriche provenienti da diverse sorgenti attraverso dashboard configurabili e dinamiche."
   GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, facilitando la condivisione e lo sviluppo di progetti software."
   GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
   Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e semplicità, particolarmente adatto per sistemi e applicazioni cloud."
@@ -71,25 +52,10 @@ J:
 K:
   Kubernetes: "Piattaforma open-source per l'automazione della gestione, del deployment e del dimensionamento di applicazioni containerizzate."
 L:
-  LGTM: "Looks good to me, acronimo utilizzato dal verificatore per indicare che il documento è pronto per essere approvato."
-  LLM: "Modello linguistico di grandi dimensioni, come ChatGPT, 
-  addestrato su enormi quantità di testo per comprendere e generare 
-  linguaggio naturale."
   LaTeX: "Linguaggio di marcatura (mark-down) compilato per la realizzazione di documenti."
   LGTM: "Acronimo di Looks Good To Me; solitamente viene utilizzato dal verificatore per indicare che il documento è pronto per essere approvato."
   LLM: "Acronimo di Large Language Model; è un modello addestrato su enormi quantità di testo per comprendere e generare linguaggio naturale, un esempio di LLM è ChatGPT di OpenAI."
 M:
-  Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento,
-   che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria,
-   mantenendo allineati codice, branch e metadati."
-  MVP: "Minimum Viable Product, versione base di un prodotto con funzionalità minime, 
-  rilasciata per ottenere feedback."
-N:
-  NATS: "NATS (Neural Architecture Transfer System) è un sistema di middleware open-source progettato
-   per la messaggistica distribuita e la gestione dei servizi."
-O:
-  Ordine: "Spostamento verso l’esterno di un insieme di merci. Almeno un prodotto deve essere trasferito.
-  Un ordine può essere soddisfatto da più magazzini."
   Manutenzione: "Attività di mantenimento correttivo, evolutivo e adattivo di un prodotto con lo scopo di mantenerlo buono."
   Milestone: "Breve periodo di tempo, generalmente di circa 2 setttimane, in cui ci si pone di raggiungere degli obiettivi (che devono essere temporalmente consoni). Il raggiungimento degli obiettivi delle varie Milestone permette di raggiungere una Baseline."
   MVP: "Acronimo di Minimum Viable Product; è una versione base di un prodotto con le minime funzionalità per soddisfare i requisiti obbligatori del Cliente."
@@ -118,16 +84,6 @@ R:
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
   RTB: "Acronimo di Requirements and Technology Baseline; è un riferimento iniziale e stabilito di requisiti e tecnologie approvate per un progetto. Questa baseline include requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme e infrastrutture approvati per lo sviluppo del progetto. Una volta stabilita, questa baseline rappresenta una base di confronto per valutare il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. Modifiche alla baseline richiedono una revisione e approvazione formale."
 S:
-  SAL: "Stato avanzamento lavori, riunioni periodiche svolte con l'azienda proponente."
-  SCRUM: "Metodo agile per la gestione di progetti complessi, basato 
-  su iterazioni e collaborazioni continue."
-  Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare 
-  un set di attività."
-T:
-  Trasferimento: "Spostamento di un insieme di merci da un magazzino all’altro. Almeno un prodotto deve essere trasferito.
-  Il trasferimento ha solo due magazzini che partecipano all’operazione."
-  TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato 
-  su JavaScript, con supporto per tipizzazione statica."
   SAL: "Acronimo di Stato avanzamento lavori; indica riunioni periodiche svolte con l'azienda proponente."
   SCRUM: "Metodo agile per la gestione di progetti complessi, basato su iterazioni e collaborazioni continue."
   Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare un set di attività."
