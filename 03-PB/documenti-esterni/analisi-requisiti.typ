@@ -410,8 +410,9 @@ Di seguito sono esposti gli attori utilizzati:
       text(fill: white)[*Descrizione*],
     ),
 
-    [*Dispositivo GSM*], [Rappresenta un dispositivo GSM registrato al Sistema e in grado di ricevere SMS],
-    [*Client Email*], [Rappresenta un Client Email registrato al Sistema],
+    [*Sistema di rilevamento*],
+    [Rappresenta un sistema che rileva e segnala eventi o condizioni specifiche all'interno del magazzino],
+
     [*Utente*], [Rappresenta un utente che vuole accedere al Sistema],
     [*Admin Locale*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al Sistema con interessi nel singolo magazzino che superano quelle del normale utilizzatore],
@@ -2440,8 +2441,8 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
 
 /*
 APPUNTI VARI
-Invio SMS, E-Mail e notifiche interne da parte del BE. -> opzionale ma fatto dal BE. Le notifiche sono già state modellate.
-L'attore potrebbe essere un dispositivo GSM e un client Email che riceve la notifica, questo rivolterebbe effettivamente il fatto di esser fatto dal BE
+Invio SMS, email e notifiche interne da parte del BE. -> opzionale ma fatto dal BE. Le notifiche sono già state modellate.
+L'attore potrebbe essere un dispositivo GSM e un client email che riceve la notifica, questo rivolterebbe effettivamente il fatto di esser fatto dal BE
 Legato a questo c'è il fatto che l'Admin Locale e quello Globale vogliono registrare un Sistema GSM e un client email presso il Sistema
 
 I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno Scheduler. Esempi sono aggiorna informazioni merci disponibili, aggiorna informazioni notifiche rifornimento, aggiorna elenco transazioni (ordini/trasferimenti) non completate, invia conferma ordini, invia conferma transazioni (ordini/trasferimenti), invia notifica email, invia notifica sms, crea backup regolare ecc.
@@ -2761,38 +2762,36 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[]
 
-=== UC67: Ricezione E-mail evento critico <UC67>
+=== UC67: Invio email evento critico <UC67>
 #use-case(
-  attore: "Client Email",
+  attore: "Sistema di rilevamento",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
   ],
   post: [
-    - Il Client Email riceve una email dal Sistema con le informazioni critiche
+    - I Client email registrati ricevono una email dal Sistema con le informazioni dell'evento critico
   ],
   scenari: [
-    - Il Sistema rileva un'informazione critica da segnalare agli Utenti registrati
-    - Il Sistema invia un'email ai Client email registrati
+    - Il Sistema di rilevamento invia un'email ai Client email registrati
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via e-mail di un evento critico",
-)[#use-case-diagram("67", "UC67 - Ricezione E-mail evento critico")]
+  trigger: "Il Sistema di rilevamento rileva un'informazione critica da segnalare agli Utenti registrati",
+)[#use-case-diagram("67", "UC67 - Invio email evento critico")]
 
-=== UC68: Ricezione SMS evento critico <UC68>
+=== UC68: Invio SMS evento critico <UC68>
 
 #use-case(
-  attore: "Dispositivo GSM",
+  attore: "Sistema di rilevamento",
   pre: [
     - Il Sistema è attivo, in modalità online o offline
   ],
   post: [
-    - Il dispositivo GSM riceve una un sms dal Sistema con le informazioni richieste
+    - Il dispositivo GSM riceve un sms dal Sistema con le informazioni dell'evento critico
   ],
   scenari: [
-    - Il Sistema rileva un'informazione critica da segnalare agli Utenti registrati
     - Il Sistema invia un sms ai dispositivi GSM registrati
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via sms di un evento critico",
-)[#use-case-diagram("68", "UC68 - Ricezione SMS evento critico")]
+  trigger: "Il Sistema di rilevamento rileva un'informazione critica da segnalare agli Utenti registrati",
+)[#use-case-diagram("68", "UC68 - Invio SMS evento critico")]
 
 === UC69: Aggiungi nuovo utente <UC69>
 
@@ -4306,7 +4305,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC66 \ @UC66.1],
 
     [R-123-F-De],
-    [Gli Admin Globali devono ricevere notifiche email/sms per attività di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
+    [Il Sistema deve notificare via email/sms gli Admin globali eventi di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
     [@UC67 \ @UC68],
 
     [R-124-F-De],
