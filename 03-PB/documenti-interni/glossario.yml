@@ -3,7 +3,7 @@
 # con la coppia parola: "definizione"
 A:
   Action: "In GitHub, un 'action' (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora. Tale servizio è direttamente integrato nella piattaforma GitHub."
-  Agile: ""
+  Agile: "Metodologia software che propone un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, in tempi brevi e frequentemente, software funzionante e di qualità."
   Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire che il progetto abbia gli strumenti per essere gestito in modo efficiente e conforme ai requisiti definiti."
   Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi aziendali, delle tecnologie e delle esigenze degli utenti."
   Analisi dei Requisiti: "Documento contenente tutti i Casi d'Uso identificati da ALimitedGroup per il capitolato e i relativi requisiti."
@@ -12,6 +12,7 @@ A:
   API: "Acronimo di Application Programming Interface; è un'interfaccia che consente la comunicazione tra diverse applicazioni o servizi."
   Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da parte di un responsabile."
   Architettura: "Insieme delle parti che comporranno il Sistema."
+  Architettura di Deployment: "L'Architettura di Deployment è la struttura e l'organizzazione delle componenti di un'applicazione o di un sistema software all'interno dell'ambiente di produzione o di esecuzione. Stabilisce la disposizione e la gestione delle risorse (come eseguibili, configurazioni, dati) e può includere strategie per la distribuzione, la gestione, la scalabilità e il monitoraggio dell'applicazione nel contesto di un ambiente operativo reale"
   Attore: "Entità esterna e non modificabile dal Sistema che interagisce con il Sistema: ha obiettivi o interessi specifici nell'utilizzo del sistema ma non è parte del sistema stesso. Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere. Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
   AWS: "Acronimo di Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata per archiviazione, elaborazione e gestione dati."
 B:
