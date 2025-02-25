@@ -12,8 +12,8 @@
       vers: "0.1.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.sara,
-      verifica: p.matteo,
-      descr: "Prima redazione documento. Sezione introduzione.",
+      // verifica: ,
+      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura.",
     ),
   ),
   stato: [In redazione],
@@ -104,4 +104,63 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 [*Loki*],[],[Loki è un sistema di log aggregation sviluppato da Grafana Labs, ottimizzato per la gestione dei log in modo scalabile ed efficiente. Si integra con Grafana per la visualizzazione e utilizza un'architettura simile a Prometheus, semplificando la correlazione tra metriche e log.],
 [*Mimir*],[],[Mimir è un'estensione di Prometheus sviluppata da Grafana Labs per la gestione di metriche su larga scala. Consente lo storage e la gestione distribuita di serie temporali, migliorando la scalabilità e la resilienza rispetto a un'istanza standalone di Prometheus.],*/
 
+= Architettura
+== Architettura logica
+Il sistema è progettato seguendo l’*architettura esagonale*, un modello che promuove una netta separazione tra la logica di business e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
+Questo approccio organizza il sistema attorno a un nucleo centrale, circondato da porte che fungono da interfacce con il mondo esterno, garantendo modularità e testabilità.
+
+Il *nucleo* dell’applicazione contiene la logica di dominio e le regole di business, progettato per essere indipendente dai dettagli tecnologici esterni, in modo da favorire la manutenibilità e l'estendibilità del sistema.
+
+Le *porte* costituiscono il punto di connessione tra il nucleo e il mondo esterno, consentendo una comunicazione strutturata:
+
+- Inbound Ports (o _Use Cases_): consentono l'invocazione della logica del nucleo da parte di componenti esterni, definendo i punti di accesso all'applicazione e isolando la logica di dominio da implementazioni tecnologiche specifiche.
+
+- _Outbound Ports_: permettono al nucleo di interagire con servizi esterni, mantenendo un'astrazione che preserva l’indipendenza della logica di business dai dettagli di implementazione.
+
+I *services* implementano le inbound ports e fanno parte della business logic, concentrandosi esclusivamente sulla logica di dominio senza dipendenze tecnologiche specifiche.
+
+Gli *adapters* rappresentano lo strato esterno del sistema e si suddividono in:
+
+- Input Adapters (o _Controllers_): ricevono input dall’esterno e invocano le operazioni sulle porte in ingresso, traducendo le richieste esterne in operazioni comprensibili per il nucleo.
+
+- _Output Adapters_: gestiscono la comunicazione con l’esterno attraverso le porte in uscita, traducendo le risposte del nucleo in formati comprensibili per i servizi esterni.
+
+== Architettura di deployment
+
+L'architettura di deployment adottata è basata su *microservizi*, come richiesto dal capitolato.\
+Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel deployment dei componenti software.
+
+Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità.
+I microservizi comunicano tra loro tramite NATS, un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
+
+- Comunicazione asincrona ed event-driven, riducendo l'accopiamento tra i servizi.
+
+- Maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo.
+
+- Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
+
+Oltre a NATS, i microservizi possono esporre API REST per comunicazioni sincrone quando necessario.
+
+
+Il deployment dei microservizi avviene in ambienti containerizzati tramite Docker.
+Questo garantisce:
+
+- Scalabilità dinamica, adattando le risorse ai carichi di lavoro.
+
+- Isolamento dei servizi, evitando impatti negativi tra componenti.
+
+- Gestione semplificata del ciclo di vita dei servizi.
+
+
+/*Per garantire visibilità e gestione ottimale dell'infrastruttura:
+
+Prometheus raccoglie metriche di performance e disponibilità dei microservizi.
+
+Grafana fornisce dashboard interattive per visualizzare le metriche in tempo reale.
+
+Loki gestisce i log centralizzati, consentendo un'analisi efficiente degli eventi di sistema.
+
+Mimir permette di scalare la gestione delle metriche per grandi volumi di dati.*/
+
+Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
