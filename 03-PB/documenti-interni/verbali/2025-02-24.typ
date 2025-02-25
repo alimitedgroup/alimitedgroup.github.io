@@ -1,7 +1,7 @@
 #import "../../../lib/verbale.typ": *
 
 #show: body => verbale(
-  data: datetime(day: 22, month: 01, year: 2025),
+  data: datetime(day: 24, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
     /*(
