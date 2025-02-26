@@ -41,6 +41,7 @@
   pagebreak()
 
   body
+
   for (letter, words) in yaml("../02-RTB/documenti-interni/glossario.yml") [
     #heading(letter, level: 1) // Intestazione per ogni lettera
 
@@ -52,6 +53,8 @@
         #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione
       ]
     ]
-    #pagebreak()
+    #if (letter != "Z") [
+      #pagebreak()
+    ]
   ]
 }
