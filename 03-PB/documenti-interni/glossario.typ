@@ -1,10 +1,17 @@
 #import "../../lib/glossary.typ": *
 
-#let vers = [0.5.0]
+#let vers = [0.6.0]
 
 #show: body => glossario(
-  data: datetime(day: 17, month: 02, year: 2025),
+  data: datetime(day: 25, month: 02, year: 2025),
   versioni: (
+    (
+      vers: "0.6.0",
+      date: datetime(day: 25, month: 02, year: 2025),
+      autore: p.marco,
+      verifica: p.lorenzo,
+      descr: "Aggiunte nuove definizioni al glossario.",
+    ),
     (
       vers: "0.5.0",
       date: datetime(day: 17, month: 02, year: 2025),
