@@ -85,12 +85,12 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint sar
 - Configurare il _repository_#super[G] dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test#super[G] , al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Manuale Utente*]
-- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ (entro il giorno *2 Marzo 2025*).
+- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Norme di Progetto#super[G]*]
 
 - Aggiungere la Sezione "Strumenti a Supporto" a tutti i processi presenti nelle *Norme di Progetto#super[G]* entro il giorno *2 Marzo 2025*.
-- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica.
+- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Piano di Progetto*]
 - Effettuare la redazione delle informazioni relative al settimo sprint entro il giorno *9 Marzo 2025*.
@@ -142,7 +142,7 @@ La riunione si conclude ricordando la necessità di rispettare le scadenze poste
   "DI29",
   "Sarà necessario produrre un documento di Specifica Tecnica",
   "DI30",
-  "Sarà necessario utilizzare il _framework_ fx ove necessario",
+  "Sarà necessario utilizzare il framework fx ove necessario",
   "DI31",
   "Sarà necessario svolgere una riunione interna a settimana",
   "DI32",
