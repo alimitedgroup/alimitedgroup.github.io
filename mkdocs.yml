@@ -1,0 +1,46 @@
+site_name: My Docs
+copyright: Copyright &copy; 2024 - 2025 ALimitedGroup
+docs_dir: 03-PB/manuale-utente
+site_dir: dist/docs
+
+nav:
+  - Home: index.md
+  - Iniziare: 01-getting-started/index.md
+  - Guide:
+      - Guide: 02-guides/index.md
+      - Registrare un utente: 02-guides/registrazione.md
+
+theme:
+  name: material
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - toc.follow
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ALimitedGroup
+    - icon: material/web
+      link: https://alimitedgroup.github.io
