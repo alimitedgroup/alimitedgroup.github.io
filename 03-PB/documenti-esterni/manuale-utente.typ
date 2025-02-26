@@ -1,8 +1,6 @@
 #import "@preview/cmarker:0.1.2"
 #import "../../lib/importantdocs.typ": *
 
-#metadata("Manuale Utente") <titolo>
-
 #show: body => importantdocs(
   titolo: "Manuale Utente",
   data: datetime.today(),
