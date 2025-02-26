@@ -3,6 +3,20 @@
 
 #metadata("Manuale Utente") <titolo>
 
+#show: body => importantdocs(
+  titolo: "Manuale Utente",
+  data: datetime.today(),
+  descrizione: "Ciao",
+  responsabile: (p.samuele,),
+  verificatore: (p.samuele,),
+  stato: [In redazione],
+  redattori: (p.samuele,),
+  versioni: (
+    (vers: "0.1.0", date: datetime.today(), descr: "Ciao.", autore: p.samuele),
+  ),
+  body,
+)
+
 #let render(filepath, level) = {
   let basename = "../manuale-utente/" + filepath
   basename = basename.split("/").slice(0, -1).join("/")
