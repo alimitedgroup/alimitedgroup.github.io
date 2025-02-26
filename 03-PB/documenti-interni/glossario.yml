@@ -61,10 +61,11 @@ L:
   LLM: "Acronimo di Large Language Model; è un modello addestrato su enormi quantità di testo per comprendere e generare linguaggio naturale, un esempio di LLM è ChatGPT di OpenAI."
 M:
   Manuale Utente: "Nota come guida utente (user guide) o manuale d'uso (user manual), ha lo scopo di assistere gli utenti nell'utilizzo di un particolare prodotto, servizio o applicazione: è scritta con un gergo semplice, diretto e comprensibile."
-  Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento, che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria, mantenendo allineati codice, branch e metadati."
   Manutenzione: "Attività di mantenimento correttivo, evolutivo e adattivo di un prodotto con lo scopo di mantenerlo buono."
+  Minimum Viable Product: "È una versione base di un prodotto con le minime funzionalità per soddisfare i requisiti obbligatori del Cliente."
   Milestone: "Breve periodo di tempo, generalmente di circa 2 setttimane, in cui ci si pone di raggiungere degli obiettivi (che devono essere temporalmente consoni). Il raggiungimento degli obiettivi delle varie Milestone permette di raggiungere una Baseline."
-  MVP: "Acronimo di Minimum Viable Product; è una versione base di un prodotto con le minime funzionalità per soddisfare i requisiti obbligatori del Cliente."
+  Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento, che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria, mantenendo allineati codice, branch e metadati."
+  MVP: "Acronimo di Minimum Viable Product, per la sua definizione vedere la parola Minimum Viable Product."
 N:
   NATS: "Acronimo di Neural Architecture Transfer System; è un sistema di middleware open-source progettato per la messaggistica distribuita e la gestione dei servizi."
   Norme di Progetto: "Documento contenente tutte le regole che ALimitedGroup intende rispettare per realizzare un lavoro di qualità, efficiente ed efficace. Costituisce in sostanza il punto di riferimento per apprendere il Way of Working del gruppo."
