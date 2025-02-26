@@ -474,12 +474,12 @@ In seguito a quanto suggerito in merito all'Analisi dei Requisiti#super[G] è tu
   caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline#super[G] (RTB)_* entro il *3 febbraio 2025*.
+Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
 
-Seguiranno ora le attività previste per la *_Requirements and Technology Baseline#super[G] (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
 #pagebreak()
-== Attività previste per la Requirements and Technology Baseline#super[G] (RTB)
+== Attività previste per la Requirements and Technology Baseline (RTB)
 
 #show figure: set block(breakable: true)
 #figure(
@@ -583,7 +583,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
 )
 
 #pagebreak()
-== Attività previste per la Product Baseline#super[G] (PB)
+== Attività previste per la Product Baseline (PB)
 
 #figure(
   table(
@@ -642,7 +642,7 @@ Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno e
 
 #pagebreak()
 
-== Requirements and Technology Baseline#super[G] (RTB)
+== Requirements and Technology Baseline (RTB)
 
 === Sprint 1 <sprint1>
 
@@ -1086,7 +1086,7 @@ La riunione con l'azienda proponente #M31 è stata positiva ed informativa per c
 
 #pagebreak()
 
-== Product Baseline#super[G] (PB)
+== Product Baseline (PB)
 === Sprint 7 <sprint7>
 
 #table(
@@ -1102,21 +1102,21 @@ La riunione con l'azienda proponente #M31 è stata positiva ed informativa per c
 
 ==== Informazioni generali e attività da svolgere <sprint7intro>
 
-Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline#super[G]_. In questo sprint vengono pianificate le seguenti attività:
+Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline_. In questo sprint vengono pianificate le seguenti attività:
 - Redigere il verbale interno della riunione effettuata in data 24/02;
 - Realizzare il servizio di autenticazione per gli utenti;
 - Progettare il servizio di _Stock Notifications_;
 - Continuare con l'utilizzo della _Continuous Integration_ e _Dependency Injection_;
 - Correggere il documento delle Norme di Progetto#super[G], dopo la visione da parte del #profBreve(p.tullio) e la sua valutazione per l'_RTB_;
 - Correggere il documento di Analisi dei Requisiti#super[G], dopo la visione da parte del #profBreve(p.cardin) e la sua valutazione per l'_RTB_;
-- Iniziare a redigere il documento di "Specifica Tecnica#super[G]" iniziando a stilare:
+- Iniziare a redigere il documento di "Specifica Tecnica" iniziando a stilare:
   - Struttura base del documento;
   - Tecnologie per la codifica;
   - Archittetura logica;
   - Archittetura di _deployment_;
-- Iniziare a redigere il "Manuale Utente#super[G]" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
+- Iniziare a redigere il "Manuale Utente" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
 
-Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle scelte affrontate per la PB#super[G] .
+Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle scelte affrontate per la PB.
 ==== Rischi attesi (DA MODIFICARE)
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
