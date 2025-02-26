@@ -1,12 +1,12 @@
 #import "../../../lib/verbale.typ": *
 
 #show: body => verbale(
-  data: datetime(day: 24, month: 02, year: 2025),
+  data: datetime(day: 26, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
     (
       vers: "1.0.0",
-      date: datetime(day: 26, month: 01, year: 2025),
+      date: datetime(day: 26, month: 02, year: 2025),
       autore: p.matteo,
       verifica: p.marco,
       descr: "Approvazione del documento.",
