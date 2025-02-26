@@ -1,4 +1,4 @@
-#import "../../lib/glossary.typ": *
+#import "../../lib/glossaryPB.typ": *
 
 #let vers = [0.6.0]
 

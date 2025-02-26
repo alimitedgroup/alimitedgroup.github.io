@@ -24,12 +24,16 @@ B:
 C:
   Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
   Caso d'Uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
+  CI: "Acronimo per Continuous Integration, per la sua definizione vedere la parola che segue."
+  Continuous Integration: "È una pratica che si applica in contesti in cui lo sviluppo del software avviene attraverso un sistema di controllo versione, perciò consiste nell'allineamento frequente dagli ambienti di lavoro degli sviluppatori verso l'ambiente condiviso (detto anche mainline)."
   Consuntivo: "Esiti finali delle risorse temporali e monetarie utilizzati, spesso in riferimento al bilancio preventivato."
   Cruscotto: "In inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
   CTO: "Acronimo per Chief Technology Officer, manager di primo livello e membro del consiglio direttivo di un'azienda che seleziona, valuta e suggerisce le migliori tecnologie da applicare ai prodotti o ai servizi che l'azienda produce."
 D:
-  Dashboard: "Vedi Cruscotto."
-  DI: "Acronimo di Decisione Interna; è una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'issue associata."
+  Dashboard: "Vedi Cruscotto."  
+  Decisione Interna: "È una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'issue associata."
+  Dependency Injection: "È un design pattern della programmazione orientata agli oggetti, il cui scopo è quello di semplificare lo sviluppo e migliorare la testabilità di software di grandi dimentsioni. Si realizza quando un componente software richiede le dipendenze da una fonte esterna, senza prendersi in carico di crearsi le proprie."
+  DI: "Acronimo di Decisione Interna e Dependency Injection; per le loro definizioni vedere, rispettivamente, le parole 'Decisione Interna' e 'Dependency Injection'."
   Diagramma dei casi d'uso : "Strumento di modellazione grafica appartenente al linguaggio UML (Unified Modeling Language) che rappresenta le interazioni tra un sistema e i suoi attori esterni, illustrando le funzionalità principali di un sistema dal punto di vista degli utenti."
   Discord: "Discord è una piattaforma di comunicazione online che combina chat testuale, vocale e video. Consente agli utenti di creare server, organizzare discussioni in canali e personalizzare l'esperienza di comunicazione. Discord, inoltre, offre un sistema di ruoli e autorizzazioni che consente di controllare l'accesso agli utenti e di definire chi può fare cosa all'interno del server. Inoltre supporta bot e integrazioni di terze parti che consentono di aggiungere funzionalità personalizzate ai server."
   Docker: "Piattaforma che permette la containerizzazione del Software, rendendolo isolato e facilmente replicabile in varie istanze."
@@ -65,7 +69,7 @@ M:
   Minimum Viable Product: "È una versione base di un prodotto con le minime funzionalità per soddisfare i requisiti obbligatori del Cliente."
   Milestone: "Breve periodo di tempo, generalmente di circa 2 setttimane, in cui ci si pone di raggiungere degli obiettivi (che devono essere temporalmente consoni). Il raggiungimento degli obiettivi delle varie Milestone permette di raggiungere una Baseline."
   Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento, che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria, mantenendo allineati codice, branch e metadati."
-  MVP: "Acronimo di Minimum Viable Product, per la sua definizione vedere la parola Minimum Viable Product."
+  MVP: "Acronimo di Minimum Viable Product, per la sua definizione vedere la parola 'Minimum Viable Product'."
 N:
   NATS: "Acronimo di Neural Architecture Transfer System; è un sistema di middleware open-source progettato per la messaggistica distribuita e la gestione dei servizi."
   Norme di Progetto: "Documento contenente tutte le regole che ALimitedGroup intende rispettare per realizzare un lavoro di qualità, efficiente ed efficace. Costituisce in sostanza il punto di riferimento per apprendere il Way of Working del gruppo."
@@ -73,7 +77,7 @@ O:
   Ordine: "Spostamento verso l'esterno di un insieme di merci. Almeno un prodotto deve essere trasferito. Un ordine può essere soddisfatto da più magazzini."
 P:
   PB: "Acronimo di Product Baseline, per la sua definizione vedere la parola 'Product Baseline'."
-  PoC: "Acronimo di Proof of Concept, per la sua definizione vedere la parola che segue."
+  PoC: "Acronimo di Proof of Concept, per la sua definizione vedere la parola 'Proof of Concept'."
   Product Baseline: ""
   Proof of Concept: "Prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia"
   PR: "Acronimo di Pull Request; è una richiesta di revisione e integrazione di codice modificato in un repository condiviso."
