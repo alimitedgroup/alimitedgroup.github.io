@@ -67,12 +67,6 @@
     issues: "/issues/",
     pulls: "/pull/",
   ),
-  mvp: (
-    abbrev: "MVP",
-    link: "https://github.com/alimitedgroup/MVP",
-    issues: "/issues/",
-    pulls: "/pull/",
-  ),
 )
 
 /// Inserisce un simbolo che rappresenta M31
