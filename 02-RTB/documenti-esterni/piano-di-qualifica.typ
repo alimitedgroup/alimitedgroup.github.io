@@ -459,7 +459,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 - Test di Regressione;
 - Test di Accettazione.
 
-ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test di Regressione, nonché le altre tipologie di Test qui non presenti, durante lo svolgimento delle attività per la _Product Baseline (PB)_.
+ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test di Regressione, nonché le altre tipologie di Test qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
 
 == Test di Sistema
 
@@ -953,7 +953,7 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
 
-Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline (PB)_.
+Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline#super[G] (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
 
 == MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
@@ -968,8 +968,8 @@ Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più 
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
-Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
-raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
+Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline#super[G] (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
+raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline#super[G] (PB)_.
 #pagebreak()
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
@@ -987,7 +987,7 @@ dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopr
 
 Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa:
 tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[G] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
-periodo della _Requirements and Technology Baseline (RTB)_.
+periodo della _Requirements and Technology Baseline#super[G] (RTB)_.
 #pagebreak()
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);

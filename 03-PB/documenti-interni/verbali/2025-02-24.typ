@@ -47,13 +47,13 @@
 
 == Aggiornamenti sui lavori in corso <alc>
 
-I membri di _ALimitedGroup_ si sono aggiornati sul progresso del progetto in seguito al superamento della _Requirements and Technology Baseline (RTB)_.
+I membri di _ALimitedGroup_ si sono aggiornati sul progresso del progetto in seguito al superamento della _Requirements and Technology Baseline#super[G] (RTB)_.
 
 _ALimitedGroup_ ha appreso la necessità di correggere gli errori rilevati dal #profBreve(p.cardin) nell'Analisi dei Requisiti#super[G] e dal #profBreve(p.tullio) negli altri documenti.
 
-Si è determinato, per lo svolgimento della _Product Baseline (PB)_, che sarà necessario produrre un documento atto a spiegare come avviare ed utilizzare l'applicativo/gli applicativi sviluppati (denominato *Manuale Utente*) e un ulteriore documento atto a descrivere le caratteristiche degli stessi (denominato *Specifica Tecnica*).
+Si è determinato, per lo svolgimento della _Product Baseline#super[G] (PB)_, che sarà necessario produrre un documento atto a spiegare come avviare ed utilizzare l'applicativo/gli applicativi sviluppati (denominato *Manuale Utente#super[G]*) e un ulteriore documento atto a descrivere le caratteristiche degli stessi (denominato *Specifica Tecnica#super[G]*).
 
-È stato deciso, in seguito a consiglio di #persona(p.samuele) e #persona(p.marco) che risulta esser possibile, senza particolari sforzi aggiuntivi, la realizzazione di un *Manuale Utente* disponibile anche in versione _web_.
+È stato deciso, in seguito a consiglio di #persona(p.samuele) e #persona(p.marco) che risulta esser possibile, senza particolari sforzi aggiuntivi, la realizzazione di un *Manuale Utente#super[G]* disponibile anche in versione _web_.
 
 È stato deciso che è necessario approfondire lo studio del _framework_ *fx*, utilizzato per la _Dependency Injection_.
 
@@ -84,8 +84,8 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint sar
 
 - Configurare il _repository_#super[G] dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test#super[G] , al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
 
-#align(center)[*Manuale Utente*]
-- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ (entro il giorno *2 Marzo 2025*).
+#align(center)[*Manuale Utente#super[G]*]
+- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente#super[G] in versione _pdf_ e _web_ (entro il giorno *2 Marzo 2025*).
 
 #align(center)[*Norme di Progetto#super[G]*]
 
@@ -106,7 +106,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint sar
 
 #pagebreak()
 
-#align(center)[*Specifica Tecnica*]
+#align(center)[*Specifica Tecnica#super[G]*]
 - Effettuare la redazione della struttura base del documento e delle Sezioni relative alle tecnologie utilizzate, all'Architettura logica e quella di Deployment entro il giorno *2 Marzo 2025*.
 
 == Assegnazione prevista dei ruoli sino al 02-03-2025

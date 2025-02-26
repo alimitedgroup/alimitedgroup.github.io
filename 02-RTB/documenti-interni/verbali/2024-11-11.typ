@@ -68,7 +68,7 @@ A tal proposito, le categorie presenti nel sito sono:
   - Valutazione dei capitolati
   - Dichiarazione degli impegni
 - *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Tecnology Baseline_;
-- *_PB_* : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline_.
+- *_PB_*#super[G] : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline#super[G]_.
 Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _smartphone_ e _tablet_ per rendere l'accesso, alle risorse e documenti, più facile. \
 Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_#super[G] di ogni membro di _ALimitedGroup_.
 

@@ -96,7 +96,7 @@ Si conclude tenendo conto che in caso di esaurimento delle ore per il ruolo asse
 #pagebreak()
 = Esiti della riunione
 
-La riunione si conclude con l'affermare la necessità di intensificare gli sforzi produttivi per arrivare quanto prima possibile alla _Requirements and Technology Baseline_
+La riunione si conclude con l'affermare la necessità di intensificare gli sforzi produttivi per arrivare quanto prima possibile alla _Requirements and Technology Baseline#super[G]_
 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
