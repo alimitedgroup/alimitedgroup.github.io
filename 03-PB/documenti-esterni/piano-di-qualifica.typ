@@ -9,6 +9,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.1.0",
+      date: datetime(day: 25, month: 02, year: 2025),
+      autore: p.emanuele,
+      verifica: p.matteo,
+      descr: "Correzione di T-123-S.",
+    ),
+    (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
       autore: p.matteo,
@@ -603,7 +610,7 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
     [T-120-S], [Verificare che un Admin Globale, visualizzando l'elenco delle attività di accesso, visualizzi per ciascuna il proprio ID], [R-120-F-De], [NI],
     [T-121-S], [Verificare che un Admin Globale, visualizzando l'elenco delle attività di accesso, visualizzi per ciascuna lo stato (riuscito, bloccato o negato)], [R-121-F-De], [NI],
     [T-122-S], [Verificare che un Admin Globale possa bloccare un tentativo di accesso inserendo l'ID di tale tentativo], [R-122-F-De], [NI],
-    [T-123-S], [Verificare che un Admin Globale riceva notifiche email/sms per attività importanti come il raggiungimento di scorte minime o la necessità di approvare un rifornimento], [R-123-F-De], [NI],
+    [T-123-S], [Verificare che il Sistema di rilevamento possa inviare notifiche email/sms per attività importanti come il raggiungimento di scorte minime o la necessità di approvare un rifornimento], [R-123-F-De], [NI],
     [T-124-S], [Verificare che un Admin Globale possa aggiungere un Utente al Sistema], [R-124-F-De], [NI],
     [T-125-S], [Verificare che un Admin Globale, aggiungendo un Utente al sistema, ne inserisca il nome], [R-125-F-De], [NI],
     [T-126-S], [Verificare che un Admin Globale, aggiungendo un Utente al sistema, ne inserisca la Password], [R-126-F-De], [NI],

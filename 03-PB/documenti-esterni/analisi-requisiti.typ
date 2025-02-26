@@ -14,6 +14,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.2.0",
+      date: datetime(day: 25, month: 02, year: 2025),
+      autore: p.emanuele,
+      verifica: p.matteo,
+      descr: "Correzione degli Use Case 67 e 68.",
+    ),
+    (
       vers: "1.1.0",
       date: datetime(day: 18, month: 02, year: 2025),
       autore: p.matteo,
@@ -2766,13 +2773,13 @@ Tale Caso d'Uso sarà ora esposto.
 #use-case(
   attore: "Sistema di rilevamento",
   pre: [
-    - Il Sistema è attivo, in modalità online o offline
+    - Il Sistema è attivo, in modalità online
   ],
   post: [
     - I Client email registrati ricevono una email dal Sistema con le informazioni dell'evento critico
   ],
   scenari: [
-    - Il Sistema di rilevamento invia un'email ai Client email registrati
+    - Il Sistema invia un'email ai Client email registrati
   ],
   trigger: "Il Sistema di rilevamento rileva un'informazione critica da segnalare agli Utenti registrati",
 )[#use-case-diagram("67", "UC67 - Invio email evento critico")]
@@ -2782,7 +2789,7 @@ Tale Caso d'Uso sarà ora esposto.
 #use-case(
   attore: "Sistema di rilevamento",
   pre: [
-    - Il Sistema è attivo, in modalità online o offline
+    - Il Sistema è attivo, in modalità online
   ],
   post: [
     - Il dispositivo GSM riceve un sms dal Sistema con le informazioni dell'evento critico
@@ -4305,7 +4312,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC66 \ @UC66.1],
 
     [R-123-F-De],
-    [Il Sistema deve notificare via email/sms gli Admin globali eventi di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
+    [Il Sistema di rilevamento deve notificare via email/sms gli Admin globali eventi di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
     [@UC67 \ @UC68],
 
     [R-124-F-De],
