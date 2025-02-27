@@ -64,7 +64,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
   *Ultimo Accesso 25 Febbraio 2025*
 - *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf") \
   *Ultimo Accesso 25 Febbraio 2025*
 
 === Riferimenti informativi
