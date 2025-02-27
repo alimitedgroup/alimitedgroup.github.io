@@ -110,7 +110,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone],
+    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
   ),
   caption: [Tecnologie per la programmazione e lo sviluppo software],
 )
