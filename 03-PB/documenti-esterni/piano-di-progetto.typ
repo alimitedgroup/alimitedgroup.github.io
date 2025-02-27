@@ -575,10 +575,10 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - _Golang_;
       - NATS;
       - Docker;
-      - Observability stack (Grafana,);
+      - Observability stack (Grafana);
       Testing della sincronizzazione],
     [Tecnologie: \ da _sprint_ 3 a _sprint_ 5 \ \
-      sincronizzazione: \ _sprint_ 6],
+      Sincronizzazione: \ _sprint_ 6],
     [Completato],
   ),
   caption: [Attività previste per la _Requirements and Technology Baseline (RTB)_],
@@ -608,37 +608,66 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
 
     [*Redazione della Specifica Tecnica*],
     [Redazione delle seguenti parti:
-    - Struttura base del documento;
-    - Inserire le tecnologie per la codifica
-    - Capitolo "Architettura Logica";
-    - Capitolo "Architettura di Deployment".],
+      - Struttura base del documento;
+      - Inserire le tecnologie per la codifica
+      - Capitolo "Architettura Logica";
+      - Capitolo "Architettura di Deployment".
+    ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
-    Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \
-    Inserire all'interno del documento le tecnologie per la codifica: _sprint 7_.],
+      Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \
+      Inserire all'interno del documento le tecnologie per la codifica: _sprint 7_.],
     [In redazione],
-    [*Redazione del Manuale Utente*], [], [], [In redazione],
+
+    [*Redazione del Manuale Utente*],
+    [Redazione delle seguenti parti:
+      - Struttura base del documento;
+      - Introduzione e scopo del documento.
+      Inoltre, verrà reso fruibile, questo documento, dal sito di _ALimitedGroup_.],
+    [Redigere la struttura base del documento: _sprint_ 7. \ \
+      Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7.\ \
+      Rendere fruibile, tramite il sito di _ALimitedGroup_, il Manuale Utente: da _sprint_ 7 a _sprint_ 9.],
+    [In redazione],
+
     [*Correzione Analisi dei Requisiti*],
     [Correzione delle seguenti parti:
       - Correzione degli use-case n. 32, 67 e 68;
       - Correzione con l'aggiunta del tracciamento dei Casi d'Uso;
-      - Correzione dei requisiti non funzionali.],
+      - Correzione dei requisiti non funzionali.
+    ],
     [Correzione dei Casi d'Uso n. 32, 67 e 68: _sprint_ 7. \ \
-    Aggiunta del tracciamento dei Casi d'Uso: _sprint_ 7. \ \
-    Correzione dei requisiti non funzionali: _sprint_ 7.],
+      Aggiunta del tracciamento dei Casi d'Uso: _sprint_ 7. \ \
+      Correzione dei requisiti non funzionali: _sprint_ 7.],
     [In redazione],
+
     [*Correzione Norme di Progetto*],
     [Correzione delle seguenti parti:
-    - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
-    - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.],
+      - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
+      - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.
+    ],
     [Correzione con aggiunta della sezione "Strumenti a supporto" : _sprint_ 7. \ \
-    Correzione con integrazione della sezione "Sviluppo": _sprint 7_.],
+      Correzione con integrazione della sezione "Sviluppo": _sprint 7_.],
     [In redazione],
+
     [*Correzione Piano di Qualifica*],
     [Correzione delle seguenti parti:
-    - Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare;
-    - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.],
+      - Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare;
+      - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.
+    ],
     [],
     [In redazione],
+
+    [*Ampliamento del Glossario*],
+    [Redazione, con conseguente ampliamento del Glossario, delle seguenti parti:
+      - Termini.
+    ],
+    [Ampliamento del Glossario: tutti gli _sprint_.],
+    [In redazione],
+
+    [*Realizzazione del Minimum Viable Product (MVP)*],
+    [Realizzazione del prodotto finale con conseguente consegna all'azienda proponente (#M31), successivamente aver fatto ogni _test_ descritto nel Piano di Qualifica. ],
+    [Realizzazione del MVP: da _sprint 7_ a _sprint 9_. \ \
+    ],
+    [In fase di implementazione],
   ),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
@@ -703,9 +732,9 @@ In particolare, le attività previste sono:
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
-- RG3: Rischio Globale derivato da sottostima di attività
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale;
+- RG2: Rischio Globale derivato da malcomprensione del capitolato;
+- RG3: Rischio Globale derivato da sottostima di attività.
 
 #pagebreak()
 
@@ -716,7 +745,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(1, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 1 - Preventivo per componente", "Sprint 1 - Preventivo")
 
 ==== Consuntivo
-
+#v(1em)
 #impegni(
   1,
   preventivo: true,
@@ -781,9 +810,9 @@ Le attività pianificate nel dettaglio includono:
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività universitarie;
+- RG2: Rischio Globale derivato da malcomprensione del capitolato.
 
 
 ==== Preventivo
@@ -793,7 +822,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(2, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 2 - Preventivo per componente", "Sprint 2 - Preventivo")
 
 ==== Consuntivo
-
+#v(1em)
 #impegni(
   2,
   preventivo: true,
@@ -849,9 +878,9 @@ Le attività pianificate nel dettaglio includono:
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività universitarie;
+- RG2: Rischio Globale derivato da malcomprensione del capitolato.
 
 #pagebreak()
 
@@ -862,7 +891,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(3, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 3 - Preventivo per componente", "Sprint 3 - Preventivo")
 
 ==== Consuntivo
-
+#v(1em)
 #impegni(
   3,
   preventivo: true,
@@ -923,9 +952,9 @@ Le attività pianificate nel dettaglio includono:
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
-- RI1: Rischio Individuale derivante dalle altre attività universitarie
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RG2: Rischio Globale derivato da malcomprensione del capitolato;
+- RI1: Rischio Individuale derivante dalle altre attività universitarie;
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
 ==== Preventivo
@@ -935,7 +964,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(4, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 4 - Preventivo per componente", "Sprint 4 - Preventivo")
 
 ==== Consuntivo
-
+#v(1em)
 #impegni(
   4,
   preventivo: true,
@@ -1009,7 +1038,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(5, posizioni-legenda: (2, 2, -2, 2, -2, -2), "Sprint 5 - Preventivo per componente", "Sprint 5 - Preventivo")
 
 ==== Consuntivo
-
+#v(1em)
 #impegni(
   5,
   preventivo: true,
@@ -1072,9 +1101,9 @@ Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di pr
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RG3: Rischio Globale derivato da sottostima di attività
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RG3: Rischio Globale derivato da sottostima di attività;
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 #pagebreak()
 ==== Preventivo
@@ -1084,7 +1113,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(6, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 6 - Preventivo per componente", "Sprint 6 - Preventivo")
 
 ==== Consuntivo
-
+#v(1em)
 #impegni(
   6,
   preventivo: true,
@@ -1160,6 +1189,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 #v(2em)
 ==== Consuntivo (DA MODIFICARE)
+#v(1em)
 
 #impegni(
   7,
@@ -1176,6 +1206,12 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 
 ==== Rischi incontrati (DA MODIFICARE)
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RT2: Rischio Tecnologico legato a errori nel codice;
+- RG3: Rischio Globale derivato da sottostima di attività;
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 ===== Valutazione di efficacia delle strategie di mitigazione dei rischi
 
