@@ -1,13 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.0.1]
+#let ver = [0.2.0]
 
 #show: body => importantdocs(
   data: datetime(day: 25, month: 02, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.2.0",
+      date: datetime(day: 27, month: 02, year: 2025),
+      autore: p.sara,
+      // verifica: ,
+      descr: "Continuazione sezione architettura.",
+    ),
     (
       vers: "0.1.0",
       date: datetime(day: 25, month: 02, year: 2025),
@@ -47,7 +54,7 @@ Nello specifico, questo documento si propone di:
 
 
 == Glossario
-Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo documento, si faccia riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.
+Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo documento, si faccia riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.\
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #text(size: 1.2em)[*`parola`#super("G")*].
 
 == Riferimenti
@@ -75,7 +82,16 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 #pagebreak()
 
 = Tecnologie
-== Tecnologie utilizzate
+
+Il progetto si basa su un insieme di tecnologie moderne e robuste, selezionate per le loro capacità di supportare efficacemente un'architettura a microservizi e garantire scalabilità, affidabilità e manutenibilità del sistema.
+
+La scelta tecnologica è stata guidata dalla necessità di creare un sistema di gestione del magazzino distribuito che possa operare in modo efficiente anche in condizioni di carico variabile, mantenendo elevati standard di prestazioni e resilienza.
+
+Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la containerizzazione e il deployment, e piattaforme per il monitoraggio del sistema.
+
+Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
+== Linguaggi di programmazione e framework
+
 #figure(
   table(
     columns: (1fr, 0.60fr, 3.5fr),
@@ -95,12 +111,65 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
     //table row
     [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone],
+  ),
+  caption: [Tecnologie per la programmazione e lo sviluppo software],
+)
+
+
+== Tecnologie per la comunicazione e messaggistica
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
     [*NATS*], [], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
+  ),
+  caption: [Tecnologie per la comunicazione e messaggistica],
+)
+
+
+== Tecnologie per la containerizzazione e deployment
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
     [*Docker*], [], [Docker è una piattaforma di containerizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
-  caption: [Tecnologie utilizzate nel progetto],
+  caption: [Tecnologie per la containerizzazione e deployment],
 )
+
+
 == Tecnologie per il monitoraggio dei microservizi
+
 #figure(
   table(
     columns: (1fr, 0.60fr, 3.5fr),
@@ -155,14 +224,15 @@ Gli *adapters* rappresentano lo strato esterno del sistema e si suddividono in:
 - _Output Adapters_: gestiscono la comunicazione con l’esterno attraverso le porte in uscita, traducendo le risposte del nucleo in formati comprensibili per i servizi esterni.
 
 == Architettura di deployment
+=== Backend a microservizi
 
-L'architettura di deployment adottata è basata su *microservizi*, come richiesto dal capitolato.\
+L'architettura di deployment adottata per il backend è basata su *microservizi*, come richiesto dal capitolato.\
 Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel deployment dei componenti software.
 
 Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità.
 I microservizi comunicano tra loro tramite NATS, un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
-- Comunicazione asincrona ed event-driven, riducendo l'accopiamento tra i servizi.
+- Comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi.
 
 - Maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo.
 
@@ -180,16 +250,15 @@ Questo garantisce:
 
 - Gestione semplificata del ciclo di vita dei servizi.
 
-
-/*Per garantire visibilità e gestione ottimale dell'infrastruttura:
-
-Prometheus raccoglie metriche di performance e disponibilità dei microservizi.
-
-Grafana fornisce dashboard interattive per visualizzare le metriche in tempo reale.
-
-Loki gestisce i log centralizzati, consentendo un'analisi efficiente degli eventi di sistema.
-
-Mimir permette di scalare la gestione delle metriche per grandi volumi di dati.*/
-
 Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
+
+=== Frontend monolitico
+
+Il client è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend. Questa scelta architetturale offre diversi vantaggi:
+
+- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema.
+
+- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati è facilitata.
+
+- Ottimizzazione delle comunicazioni: il client gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
