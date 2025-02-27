@@ -104,7 +104,7 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[#text(size: 1.2em)[*`parola`#super("g")*]]
 
-== Fonti
+== Riferimenti
 
 === Riferimenti normativi
 
