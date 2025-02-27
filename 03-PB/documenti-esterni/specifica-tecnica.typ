@@ -229,7 +229,8 @@ Gli *adapters* rappresentano lo strato esterno del sistema e si suddividono in:
 L'architettura di deployment adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
 Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel deployment dei componenti software.
 
-Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità.
+Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità#super[G].
+
 I microservizi comunicano tra loro tramite NATS#super[G] ,un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
 - Comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi.
