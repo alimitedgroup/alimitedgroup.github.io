@@ -75,9 +75,10 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 #pagebreak()
 
 = Tecnologie
+== Tecnologie utilizzate
 #figure(
   table(
-    columns: (1fr, 0.50fr, 3.5fr),
+    columns: (1fr, 0.60fr, 3.5fr),
 
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
@@ -99,10 +100,38 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   ),
   caption: [Tecnologie utilizzate nel progetto],
 )
-/* [*Grafana*],[],[Grafana è una piattaforma open-source per la visualizzazione e l'analisi di dati di monitoraggio. Supporta diverse fonti di dati (come Prometheus, Loki e Mimir) e consente la creazione di dashboard interattive per il monitoraggio in tempo reale.],
-[*Prometheus*],[],[Prometheus è un sistema di monitoraggio e allerta open-source focalizzato sulla raccolta di metriche attraverso un modello pull. Utilizza un database time-series e un linguaggio di query potente (PromQL) per l'analisi dei dati.],
-[*Loki*],[],[Loki è un sistema di log aggregation sviluppato da Grafana Labs, ottimizzato per la gestione dei log in modo scalabile ed efficiente. Si integra con Grafana per la visualizzazione e utilizza un'architettura simile a Prometheus, semplificando la correlazione tra metriche e log.],
-[*Mimir*],[],[Mimir è un'estensione di Prometheus sviluppata da Grafana Labs per la gestione di metriche su larga scala. Consente lo storage e la gestione distribuita di serie temporali, migliorando la scalabilità e la resilienza rispetto a un'istanza standalone di Prometheus.],*/
+== Tecnologie per il monitoraggio dei microservizi
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+    [*Grafana*],
+    [],
+    [Grafana è una piattaforma open-source per la visualizzazione e l'analisi di dati di monitoraggio. Supporta diverse fonti di dati (come Prometheus, Loki e Mimir) e consente la creazione di dashboard interattive per il monitoraggio in tempo reale.],
+    [*Prometheus*],
+    [],
+    [Prometheus è un sistema di monitoraggio e allerta open-source focalizzato sulla raccolta di metriche attraverso un modello pull.],
+    [*Loki*],
+    [],
+    [Loki è un sistema di log aggregation sviluppato da Grafana Labs, ottimizzato per la gestione dei log in modo scalabile ed efficiente. Si integra con Grafana per la visualizzazione e utilizza un'architettura simile a Prometheus, semplificando la correlazione tra metriche e log.],
+    [*Mimir*],
+    [],
+    [Mimir è un'estensione di Prometheus sviluppata da Grafana Labs per la gestione di metriche su larga scala. Consente lo storage e la gestione distribuita di serie temporali, migliorando la scalabilità e la resilienza rispetto a un'istanza standalone di Prometheus.],
+  ),
+  caption: [Tecnologie per il monitoraggio dei microservizi],
+)
 
 = Architettura
 == Architettura logica
