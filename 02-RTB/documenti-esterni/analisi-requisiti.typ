@@ -389,7 +389,7 @@ Di seguito sono esposti gli attori utilizzati:
 #v(1em)
 
 #figure(
-  image("../../assets/diagrams/attori.png", width: 60%),
+  image("../../assets/diagrams/attori-old.png", width: 60%),
   caption: [Diagramma degli attori principali],
 )
 #v(1em)
@@ -2775,7 +2775,7 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema invia un'email ai Client email registrati
   ],
   trigger: "L'Admin Globale/Locale riceve la notifica via e-mail di un evento critico",
-)[#use-case-diagram("67", "UC67 - Ricezione E-mail evento critico")]
+)[#use-case-diagram("67-old", "UC67 - Ricezione E-mail evento critico")]
 
 === UC68: Ricezione SMS evento critico <UC68>
 
@@ -2792,7 +2792,7 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema invia un sms ai dispositivi GSM registrati
   ],
   trigger: "L'Admin Globale/Locale riceve la notifica via sms di un evento critico",
-)[#use-case-diagram("68", "UC68 - Ricezione SMS evento critico")]
+)[#use-case-diagram("68-old", "UC68 - Ricezione SMS evento critico")]
 
 === UC69: Aggiungi nuovo utente <UC69>
 
