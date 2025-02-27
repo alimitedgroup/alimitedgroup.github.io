@@ -1181,14 +1181,14 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 #pagebreak()
-==== Preventivo (DA MODIFICARE)
+==== Preventivo
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
 #impegni(7, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 7 - Preventivo per componente", "Sprint 7 - Preventivo")
 
 #v(2em)
-==== Consuntivo (DA MODIFICARE)
+==== Consuntivo
 #v(1em)
 
 #impegni(
@@ -1205,7 +1205,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 #v(1em)
 
-==== Rischi incontrati (DA MODIFICARE)
+==== Rischi incontrati
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
