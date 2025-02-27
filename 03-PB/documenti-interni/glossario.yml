@@ -3,6 +3,7 @@
 # con la coppia parola: "definizione"
 A:
   Action: "In GitHub, un 'action' (azione) si riferisce a GitHub Actions, che permette l'automazione di vari processi nel ciclo di vita dello sviluppo del software tra cui, per esempio, la compilazione del codice, i test automatici, la distribuzione e altro ancora. Tale servizio è direttamente integrato nella piattaforma GitHub."
+  AdR: "Acronimo per Analisi dei Requisiti, per la sua definizione vedere la parola 'Analisi dei Requisiti'."
   Agile: "Metodologia software che propone un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, in tempi brevi e frequentemente, software funzionante e di qualità."
   Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire che il progetto abbia gli strumenti per essere gestito in modo efficiente e conforme ai requisiti definiti."
   Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi aziendali, delle tecnologie e delle esigenze degli utenti."
@@ -77,8 +78,10 @@ O:
   Ordine: "Spostamento verso l'esterno di un insieme di merci. Almeno un prodotto deve essere trasferito. Un ordine può essere soddisfatto da più magazzini."
 P:
   PB: "Acronimo di Product Baseline, per la sua definizione vedere la parola 'Product Baseline'."
+  PdP: "Acronimo di Piano di Progetto, per la sua definizione vedere la parola 'Piano di Progetto'."
+  Piano di Progetto: "È un documento che cerca di esprimere le attività svolte e le attività future programmate all'interno di un progetto commissionato, tenendo conto dei costi e delle ore preventivate per farlo."
   PoC: "Acronimo di Proof of Concept, per la sua definizione vedere la parola 'Proof of Concept'."
-  Product Baseline: ""
+  Product Baseline: "È la fase finale di realizzazione di un prodotto commissionato da un'azienda o pubblica amministrazione, in cui viene realizzato un Minimum Viable Product dopo aver completato e superato tutti i test preventivati nella Requirements and Technology Baseline."
   Proof of Concept: "Prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia"
   PR: "Acronimo di Pull Request; è una richiesta di revisione e integrazione di codice modificato in un repository condiviso."
   Progettista: "Ruolo che si occupa di progettare l'architettura del Sistema allo scopo di giungere alla codifica avendo correttezza per costruzione e non per correzione"
@@ -96,10 +99,10 @@ R:
   Requirements and Technology Baseline: "È un riferimento iniziale e stabilito di requisiti e tecnologie approvate per un progetto. Questa baseline include requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme e infrastrutture approvati per lo sviluppo del progetto. Una volta stabilita, questa baseline rappresenta una base di confronto per valutare il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. Modifiche alla baseline richiedono una revisione e approvazione formale."
   Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
-  RTB: "Acronimo di Requirements and Technology Baseline, per la sua definizione vedere 'Requirements and Technology Baseline'"
+  RTB: "Acronimo di Requirements and Technology Baseline, per la sua definizione vedere 'Requirements and Technology Baseline'."
 S:
-  SAL: "Acronimo di Stato avanzamento lavori; indica riunioni periodiche svolte con l'azienda proponente."
-  SCRUM: "Metodo agile per la gestione di progetti complessi, basato su iterazioni e collaborazioni continue."
+  SAL: "Acronimo di Stato Avanzamento Lavori; indica riunioni periodiche svolte con l'azienda proponente."
+  SCRUM: "Metodo Agile per la gestione di progetti complessi, basato su iterazioni e collaborazioni continue."
   Specifica Tecnica: "È un documento che correda disegni, schemi e altro relativi ad un prodotto o progetto, al fine di prescriverne una specifica funzionalità o un determinato impiego o livelli prestazionali determinati."
   Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare un set di attività."
 T:
