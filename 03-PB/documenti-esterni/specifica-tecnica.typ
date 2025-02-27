@@ -224,13 +224,13 @@ Gli *adapters* rappresentano lo strato esterno del sistema e si suddividono in:
 - _Output Adapters_: gestiscono la comunicazione con l’esterno attraverso le porte in uscita, traducendo le risposte del nucleo in formati comprensibili per i servizi esterni.
 
 == Architettura di deployment
-=== Backend a microservizi
+=== Sistema a microservizi
 
-L'architettura di deployment adottata per il backend è basata su *microservizi*, come richiesto dal capitolato.\
+L'architettura di deployment adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
 Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel deployment dei componenti software.
 
 Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità.
-I microservizi comunicano tra loro tramite NATS, un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
+I microservizi comunicano tra loro tramite NATS#super[G] ,un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
 - Comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi.
 
@@ -242,7 +242,7 @@ I microservizi comunicano tra loro tramite NATS, un sistema di messaggistica pub
 Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il client.
 
 
-Il deployment dei microservizi avviene in ambienti containerizzati tramite Docker.
+Il deployment dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
 Questo garantisce:
 
 - Scalabilità dinamica, adattando le risorse ai carichi di lavoro.
@@ -253,9 +253,9 @@ Questo garantisce:
 
 Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
-=== Frontend monolitico
+=== Client monolitico
 
-Il client è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend. Questa scelta architetturale offre diversi vantaggi:
+Il client è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend#super[G] .Questa scelta architetturale offre diversi vantaggi:
 
 - Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema.
 
