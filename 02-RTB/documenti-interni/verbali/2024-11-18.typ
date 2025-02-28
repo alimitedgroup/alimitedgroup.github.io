@@ -60,7 +60,7 @@ Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatu
 
 == Aggiornamento sui lavori in corso
 
-Il gruppo si è aggiornato sugli esiti del lavoro asincrono svolto e ha iniziato a mettere in forma definitiva tutto il materiale raccolto riguardante l'*Analisi dei Requisiti#super[G]*, il *Piano di Progetto*, il *Glossario* e le *Norme di progetto*.
+Il gruppo si è aggiornato sugli esiti del lavoro asincrono svolto e ha iniziato a mettere in forma definitiva tutto il materiale raccolto riguardante l'*Analisi dei Requisiti#super[G]*, il *Piano di Progetto#super[G]*, il *Glossario* e le *Norme di progetto*.
 
 Data la necessità di redigere stabilmente tali documenti sono stati nominati degli amministratori aventi tale compito, come descritto nella @sez2.3.
 

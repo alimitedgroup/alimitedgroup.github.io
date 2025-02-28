@@ -4536,7 +4536,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline#super[G] (PB)_.
 
 == Requisiti di Vincolo
 
