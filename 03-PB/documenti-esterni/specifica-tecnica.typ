@@ -50,7 +50,7 @@ Nello specifico, questo documento si propone di:
 
 - Identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice.
 
-- Fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
+- fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
 
 
 == Glossario
