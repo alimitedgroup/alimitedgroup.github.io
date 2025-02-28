@@ -1,18 +1,18 @@
 #import "../../../lib/verbale.typ": *
 
 #show: body => verbale(
-  data: datetime(day: 28, month: 01, year: 2025),
+  data: datetime(day: 28, month: 02, year: 2025),
   tipo: [esterno],
   versioni: (
     (
       vers: "0.1.0",
       date: datetime(day: 28, month: 02, year: 2025),
       autore: p.sara,
-      //verifica: p.matteo,
+      //verifica: ,
       descr: "Prima redazione del documento.",
     ),
   ),
-  stato: [Approvato],
+  stato: [In redazione],
   presenze: (p.sara, p.samuele, p.lorenzo, p.loris, p.matteo, p.marco, p.emanuele),
   odg: [Quinta riunione con #M31: aggiornamento sullo stato avanzamento lavori, discussione test],
   body,
