@@ -12,14 +12,14 @@
       vers: "0.2.0",
       date: datetime(day: 27, month: 02, year: 2025),
       autore: p.sara,
-      // verifica: ,
+      verifica: p.marco,
       descr: "Continuazione sezione architettura.",
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.sara,
-      // verifica: ,
+      verifica: p.emanuele,
       descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura.",
     ),
   ),
@@ -38,7 +38,7 @@
 == Scopo del documento
 Il presente documento ha l'obiettivo di descrivere in dettaglio l'_architettura_ del prodotto software, fornendo una visione chiara e strutturata delle sue componenti, della loro interazione e della loro distribuzione nel sistema.\
 
-Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il Proof of Concept#super[G] (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
+Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il _Proof of Concept_#super[G] (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
 
 Nello specifico, questo documento si propone di:
 
@@ -87,7 +87,7 @@ Il progetto si basa su un insieme di tecnologie moderne e robuste, selezionate p
 
 La scelta tecnologica è stata guidata dalla necessità di creare un sistema di gestione del magazzino distribuito che possa operare in modo efficiente anche in condizioni di carico variabile, mantenendo elevati standard di prestazioni e resilienza.
 
-Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la containerizzazione e il deployment, e piattaforme per il monitoraggio del sistema.
+Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la containerizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
 
 Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
 == Linguaggi di programmazione e framework
@@ -204,14 +204,14 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
 
 = Architettura
 == Architettura logica
-Il sistema è progettato seguendo l’*architettura esagonale*, un modello che promuove una netta separazione tra la logica di business e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
+Il sistema è progettato seguendo l’*architettura esagonale*, un modello che promuove una netta separazione tra la logica di _business_ e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
 Questo approccio organizza il sistema attorno a un nucleo centrale, circondato da porte che fungono da interfacce con il mondo esterno, garantendo modularità e testabilità.
 
-Il *nucleo* dell’applicazione contiene la logica di dominio e le regole di business, progettato per essere indipendente dai dettagli tecnologici esterni, in modo da favorire la manutenibilità e l'estendibilità del sistema.
+Il *nucleo* dell’applicazione contiene la logica di dominio e le regole di _business_, progettato per essere indipendente dai dettagli tecnologici esterni, in modo da favorire la manutenibilità e l'estendibilità del sistema.
 
 Le *porte* costituiscono il punto di connessione tra il nucleo e il mondo esterno, consentendo una comunicazione strutturata:
 
-- Inbound Ports (o _Use Cases_): consentono l'invocazione della logica del nucleo da parte di componenti esterni, definendo i punti di accesso all'applicazione e isolando la logica di dominio da implementazioni tecnologiche specifiche.
+- _Inbound Ports_ (o _Use Cases_): consentono l'invocazione della logica del nucleo da parte di componenti esterni, definendo i punti di accesso all'applicazione e isolando la logica di dominio da implementazioni tecnologiche specifiche.
 
 - _Outbound Ports_: permettono al nucleo di interagire con servizi esterni, mantenendo un'astrazione che preserva l’indipendenza della logica di business dai dettagli di implementazione.
 
@@ -219,7 +219,7 @@ I *services* implementano le inbound ports e fanno parte della business logic, c
 
 Gli *adapters* rappresentano lo strato esterno del sistema e si suddividono in:
 
-- Input Adapters (o _Controllers_): ricevono input dall’esterno e invocano le operazioni sulle porte in ingresso, traducendo le richieste esterne in operazioni comprensibili per il nucleo.
+- _Input Adapters_ (o _Controllers_): ricevono input dall’esterno e invocano le operazioni sulle porte in ingresso, traducendo le richieste esterne in operazioni comprensibili per il nucleo.
 
 - _Output Adapters_: gestiscono la comunicazione con l’esterno attraverso le porte in uscita, traducendo le risposte del nucleo in formati comprensibili per i servizi esterni.
 
@@ -243,7 +243,7 @@ I microservizi comunicano tra loro tramite NATS#super[G] ,un sistema di messaggi
 Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il client.
 
 
-Il deployment dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
+Il _deployment_ dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
 Questo garantisce:
 
 - Scalabilità dinamica, adattando le risorse ai carichi di lavoro.
@@ -254,9 +254,9 @@ Questo garantisce:
 
 Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
-=== Client monolitico
+=== _Client_ monolitico
 
-Il client è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend#super[G] .Questa scelta architetturale offre diversi vantaggi:
+Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend#super[G] .Questa scelta architetturale offre diversi vantaggi:
 
 - Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema.
 
