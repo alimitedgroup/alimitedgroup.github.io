@@ -248,7 +248,7 @@ Questo garantisce:
 
 - scalabilità dinamica, adattando le risorse ai carichi di lavoro;
 
-- Isolamento dei servizi, evitando impatti negativi tra componenti.
+- isolamento dei servizi, evitando impatti negativi tra componenti;
 
 - gestione semplificata del ciclo di vita dei servizi.
 
