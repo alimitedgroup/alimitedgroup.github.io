@@ -250,7 +250,7 @@ Questo garantisce:
 
 - Isolamento dei servizi, evitando impatti negativi tra componenti.
 
-- Gestione semplificata del ciclo di vita dei servizi.
+- gestione semplificata del ciclo di vita dei servizi.
 
 Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
