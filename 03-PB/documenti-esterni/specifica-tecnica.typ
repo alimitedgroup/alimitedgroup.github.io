@@ -235,7 +235,7 @@ I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messagg
 
 - comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi;
 
-- Maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo.
+- maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo;
 
 - Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
 
