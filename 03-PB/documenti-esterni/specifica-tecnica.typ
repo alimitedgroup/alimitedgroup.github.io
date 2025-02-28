@@ -25,7 +25,7 @@
   ),
   stato: [In redazione],
   responsabile: ((p.marco),),
-  verificatore: (),
+  verificatore: ((p.emanuele), (p.marco)),
   redattori: (
     (p.sara),
   ),
@@ -42,15 +42,15 @@ Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ 
 
 Nello specifico, questo documento si propone di:
 
-- Definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse.
+- definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse;
 
-- Esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione.
+- esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione;
 
-- Documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate.
+- documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate;
 
-- Identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice.
+- identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice;
 
-- Fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
+- fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
 
 
 == Glossario
@@ -64,7 +64,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
   *Ultimo Accesso 25 Febbraio 2025*
 - *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf") \
   *Ultimo Accesso 25 Febbraio 2025*
 
 === Riferimenti informativi
@@ -110,7 +110,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone],
+    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
   ),
   caption: [Tecnologie per la programmazione e lo sviluppo software],
 )
@@ -231,13 +231,13 @@ Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nell
 
 Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità#super[G].
 
-I microservizi comunicano tra loro tramite NATS#super[G] ,un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
+I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
-- Comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi.
+- comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi;
 
-- Maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo.
+- maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo;
 
-- Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
+- affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
 
 
 Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il client.
@@ -246,11 +246,11 @@ Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicaz
 Il _deployment_ dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
 Questo garantisce:
 
-- Scalabilità dinamica, adattando le risorse ai carichi di lavoro.
+- scalabilità dinamica, adattando le risorse ai carichi di lavoro;
 
-- Isolamento dei servizi, evitando impatti negativi tra componenti.
+- isolamento dei servizi, evitando impatti negativi tra componenti;
 
-- Gestione semplificata del ciclo di vita dei servizi.
+- gestione semplificata del ciclo di vita dei servizi.
 
 Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
@@ -258,9 +258,9 @@ Questa architettura consente di ottenere un sistema altamente scalabile, resilie
 
 Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend#super[G] .Questa scelta architetturale offre diversi vantaggi:
 
-- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema.
+- esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema;
 
-- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate.
+- semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
 
-- Ottimizzazione delle comunicazioni: il client gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
+- ottimizzazione delle comunicazioni: il client gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
