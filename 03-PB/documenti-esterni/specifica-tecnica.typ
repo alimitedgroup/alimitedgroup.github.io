@@ -246,7 +246,7 @@ Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicaz
 Il deployment dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
 Questo garantisce:
 
-- Scalabilità dinamica, adattando le risorse ai carichi di lavoro.
+- scalabilità dinamica, adattando le risorse ai carichi di lavoro;
 
 - Isolamento dei servizi, evitando impatti negativi tra componenti.
 
