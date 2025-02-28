@@ -40,7 +40,7 @@
 == Scopo del documento
 Il presente documento ha l'obiettivo di descrivere in dettaglio l'_architettura_ del prodotto software, fornendo una visione chiara e strutturata delle sue componenti, della loro interazione e della loro distribuzione nel sistema.\
 
-Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il _Proof of Concept_#super[G] (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
+Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il _Proof of Concept#super[G]_ (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
 
 Nello specifico, questo documento si propone di:
 
