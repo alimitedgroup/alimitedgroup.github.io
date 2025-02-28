@@ -260,7 +260,7 @@ Il client è progettato come un'applicazione monolitica che funge da interfaccia
 
 - Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema.
 
-- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate.
+- semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
 
 - ottimizzazione delle comunicazioni: il client gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
