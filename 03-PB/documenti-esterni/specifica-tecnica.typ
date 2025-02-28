@@ -44,7 +44,7 @@ Nello specifico, questo documento si propone di:
 
 - definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse;
 
-- Esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione.
+- esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione;
 
 - Documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate.
 
