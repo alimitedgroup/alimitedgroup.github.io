@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [1.1.0]
+#let ver = [1.2.0]
 
 #show ref: it => if str(it.target).starts-with("UC") {
   link(it.target, "[" + str(it.target) + "]")
@@ -468,9 +468,13 @@ Vengono inoltre utilizzati i seguenti Attori Secondari:
 === UC1: Autenticazione <UC1>
 #use-case(
   attore: "Utente",
-  pre: [- Il Sistema è attivo, in modalità online o offline
-    - L'Utente non è autenticato con il Sistema],
-  post: [- L'utente ha eseguito l'accesso al Sistema ed è dallo stesso riconosciuto come Cliente, come Admin Locale o come Admin Globale],
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'Utente non è autenticato con il Sistema
+  ],
+  post: [
+    - L'utente ha eseguito l'accesso al Sistema ed è dallo stesso riconosciuto come Cliente, come Admin Locale o come Admin Globale
+  ],
   scenari: [
     - L'Utente seleziona la tipologia di utente $arrow$ Vedi @UC1.1
     - L'Utente inserisce l'Username $arrow$ Vedi @UC1.2
@@ -560,11 +564,15 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 === UC2: Autenticazione non riuscita <UC2>
 #use-case(
   attore: "Utente",
-  pre: [- Il Sistema è attivo, in modalità online o offline;
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline;
     - L'attore principale non è autenticato al Sistema (Vedi @UC1)
-    - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata],
-  post: [- Il Sistema annulla il tentativo di autenticazione
-    - Il Sistema mostra un errore a schermo],
+    - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata
+  ],
+  post: [
+    - Il Sistema annulla il tentativo di autenticazione
+    - Il Sistema mostra un errore a schermo
+  ],
   scenari: [
     - Il Sistema ha ricevuto Username, Password e tipologia di utente, ma non è riuscito a verificare tali credenziali
   ],
@@ -573,8 +581,10 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 === UC3: Creazione di un ordine da confermare <UC3>
 #use-case(
   attore: "Cliente",
-  pre: [- Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente],
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
   post: [- Il Sistema memorizza l'esistenza di un nuovo ordine non confermato con le relative informazioni],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa alla creazione di un nuovo ordine da confermare

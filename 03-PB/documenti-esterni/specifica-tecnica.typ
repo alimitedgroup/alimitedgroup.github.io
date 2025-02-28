@@ -12,17 +12,15 @@
       vers: "0.2.0",
       date: datetime(day: 27, month: 02, year: 2025),
       autore: p.sara,
-      verifica: p.emanuele,
-      approvazione: p.marco,
-      descr: "Continuazione sezione architettura." + [ \ ],
+      verifica: p.marco,
+      descr: "Continuazione sezione architettura.",
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.sara,
       verifica: p.emanuele,
-      approvazione: p.marco,
-      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura." + [ \ ],
+      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura.",
     ),
   ),
   stato: [In redazione],
@@ -92,7 +90,7 @@ La scelta tecnologica è stata guidata dalla necessità di creare un sistema di 
 Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la containerizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
 
 Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
-== Linguaggi di programmazione e framework
+== Linguaggi di programmazione e _framework_
 
 #figure(
   table(
@@ -144,7 +142,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
 )
 
 
-== Tecnologie per la containerizzazione e deployment
+== Tecnologie per la containerizzazione e _deployment_
 
 #figure(
   table(
@@ -204,6 +202,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
   caption: [Tecnologie per il monitoraggio dei microservizi],
 )
 
+#pagebreak()
 = Architettura
 == Architettura logica
 Il sistema è progettato seguendo l'*architettura esagonale*, un modello che promuove una netta separazione tra la logica di _business_ e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
