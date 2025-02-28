@@ -237,7 +237,7 @@ I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messagg
 
 - maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo;
 
-- Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
+- affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
 
 
 Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il client.
