@@ -46,7 +46,7 @@ Nello specifico, questo documento si propone di:
 
 - esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione;
 
-- Documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate.
+- documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate;
 
 - identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice;
 
