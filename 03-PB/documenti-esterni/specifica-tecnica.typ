@@ -12,24 +12,26 @@
       vers: "0.2.0",
       date: datetime(day: 27, month: 02, year: 2025),
       autore: p.sara,
-      verifica: p.marco,
-      descr: "Continuazione sezione architettura.",
+      verifica: p.emanuele,
+      approvazione: p.marco,
+      descr: "Continuazione sezione architettura." + [ \ ],
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.sara,
       verifica: p.emanuele,
-      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura.",
+      approvazione: p.marco,
+      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura." + [ \ ],
     ),
   ),
   stato: [In redazione],
   responsabile: ((p.marco),),
-  verificatore: ((p.emanuele), (p.marco)),
+  verificatore: ((p.emanuele),),
   redattori: (
     (p.sara),
   ),
-  descrizione: [Questo documento contiene la _Specifica_Tecnica_ descritto dal gruppo _ALimitedGroup_ per il Capitolato numero 6 proposto da #M31],
+  descrizione: [Questo documento contiene la _Specifica Tecnica_ descritto dal gruppo _ALimitedGroup_ per il Capitolato numero 6 proposto da #M31],
   titolo: "Specifica Tecnica",
   body,
 )
@@ -42,20 +44,20 @@ Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ 
 
 Nello specifico, questo documento si propone di:
 
-- definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse;
+- Definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse;
 
-- esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione;
+- Esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione;
 
-- documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate;
+- Documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate;
 
-- identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice;
+- Identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice;
 
-- fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
+- Fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
 
 
 == Glossario
 Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo documento, si faccia riferimento al *Glossario*, fornito come documento separato, che contiene tutte le spiegazioni necessarie per garantire una comprensione uniforme dei termini tecnici e dei concetti rilevanti per il progetto.\
-Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #text(size: 1.2em)[*`parola`#super("G")*].
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[#text(size: 1.2em)[*`parola`#super("G")*]]
 
 == Riferimenti
 === Riferimenti normativi
@@ -164,7 +166,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     //table row
     [*Docker*], [], [Docker è una piattaforma di containerizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
-  caption: [Tecnologie per la containerizzazione e deployment],
+  caption: [Tecnologie per la containerizzazione e _deployment_],
 )
 
 
@@ -204,63 +206,63 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
 
 = Architettura
 == Architettura logica
-Il sistema è progettato seguendo l’*architettura esagonale*, un modello che promuove una netta separazione tra la logica di _business_ e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
+Il sistema è progettato seguendo l'*architettura esagonale*, un modello che promuove una netta separazione tra la logica di _business_ e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
 Questo approccio organizza il sistema attorno a un nucleo centrale, circondato da porte che fungono da interfacce con il mondo esterno, garantendo modularità e testabilità.
 
-Il *nucleo* dell’applicazione contiene la logica di dominio e le regole di _business_, progettato per essere indipendente dai dettagli tecnologici esterni, in modo da favorire la manutenibilità e l'estendibilità del sistema.
+Il *nucleo* dell'applicazione contiene la logica di dominio e le regole di _business_, progettato per essere indipendente dai dettagli tecnologici esterni, in modo da favorire la manutenibilità e l'estendibilità del sistema.
 
 Le *porte* costituiscono il punto di connessione tra il nucleo e il mondo esterno, consentendo una comunicazione strutturata:
 
 - _Inbound Ports_ (o _Use Cases_): consentono l'invocazione della logica del nucleo da parte di componenti esterni, definendo i punti di accesso all'applicazione e isolando la logica di dominio da implementazioni tecnologiche specifiche.
 
-- _Outbound Ports_: permettono al nucleo di interagire con servizi esterni, mantenendo un'astrazione che preserva l’indipendenza della logica di business dai dettagli di implementazione.
+- _Outbound Ports_: permettono al nucleo di interagire con servizi esterni, mantenendo un'astrazione che preserva l'indipendenza della logica di business dai dettagli di implementazione.
 
-I *services* implementano le inbound ports e fanno parte della business logic, concentrandosi esclusivamente sulla logica di dominio senza dipendenze tecnologiche specifiche.
+I *_services_* implementano le inbound ports e fanno parte della business logic, concentrandosi esclusivamente sulla logica di dominio senza dipendenze tecnologiche specifiche.
 
-Gli *adapters* rappresentano lo strato esterno del sistema e si suddividono in:
+Gli *_adapters_* rappresentano lo strato esterno del sistema e si suddividono in:
 
-- _Input Adapters_ (o _Controllers_): ricevono input dall’esterno e invocano le operazioni sulle porte in ingresso, traducendo le richieste esterne in operazioni comprensibili per il nucleo.
+- _Input Adapters_ (o _Controllers_): ricevono input dall'esterno e invocano le operazioni sulle porte in ingresso, traducendo le richieste esterne in operazioni comprensibili per il nucleo.
 
-- _Output Adapters_: gestiscono la comunicazione con l’esterno attraverso le porte in uscita, traducendo le risposte del nucleo in formati comprensibili per i servizi esterni.
+- _Output Adapters_: gestiscono la comunicazione con l'esterno attraverso le porte in uscita, traducendo le risposte del nucleo in formati comprensibili per i servizi esterni.
 
-== Architettura di deployment
+== Architettura di _deployment_
 === Sistema a microservizi
 
 L'architettura di deployment adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
-Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel deployment dei componenti software.
+Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel _deployment_ dei componenti software.
 
 Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità#super[G].
 
 I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
-- comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi;
+- Comunicazione asincrona, sincrona ed _event-driven_, riducendo l'accopiamento tra i servizi;
 
-- maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo;
+- Maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo;
 
-- affidabilità nella trasmissione dei dati grazie alla capacità di gestire il buffering e il re-invio dei messaggi in caso di errore.
+- Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il _buffering_ e il re-invio dei messaggi in caso di errore.
 
 
-Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il client.
+Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il _client_.
 
 
 Il _deployment_ dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
 Questo garantisce:
 
-- scalabilità dinamica, adattando le risorse ai carichi di lavoro;
+- Scalabilità dinamica, adattando le risorse ai carichi di lavoro;
 
-- isolamento dei servizi, evitando impatti negativi tra componenti;
+- Isolamento dei servizi, evitando impatti negativi tra componenti;
 
-- gestione semplificata del ciclo di vita dei servizi.
+- Gestione semplificata del ciclo di vita dei servizi.
 
 Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
 === _Client_ monolitico
 
-Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend#super[G] .Questa scelta architetturale offre diversi vantaggi:
+Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G] .Questa scelta architetturale offre diversi vantaggi:
 
-- esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema;
+- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema;
 
-- semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
+- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
 
-- ottimizzazione delle comunicazioni: il client gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
+- Ottimizzazione delle comunicazioni: il _client_ gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
