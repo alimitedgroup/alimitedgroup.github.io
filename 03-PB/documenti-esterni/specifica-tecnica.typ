@@ -42,7 +42,7 @@ Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ 
 
 Nello specifico, questo documento si propone di:
 
-- Definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse.
+- definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse;
 
 - Esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione.
 
