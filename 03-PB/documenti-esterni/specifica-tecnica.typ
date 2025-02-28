@@ -258,7 +258,7 @@ Questa architettura consente di ottenere un sistema altamente scalabile, resilie
 
 Il client è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del backend#super[G] . Questa scelta architetturale offre diversi vantaggi:
 
-- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema.
+- esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema;
 
 - semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
 
