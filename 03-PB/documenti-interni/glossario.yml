@@ -13,7 +13,6 @@ A:
   API: "Acronimo di Application Programming Interface; è un'interfaccia che consente la comunicazione tra diverse applicazioni o servizi."
   Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da parte di un responsabile."
   Architettura: "Insieme delle parti che comporranno il Sistema."
-  Architettura di Deployment: "L'Architettura di Deployment è la struttura e l'organizzazione delle componenti di un'applicazione o di un sistema software all'interno dell'ambiente di produzione o di esecuzione. Stabilisce la disposizione e la gestione delle risorse (come eseguibili, configurazioni, dati) e può includere strategie per la distribuzione, la gestione, la scalabilità e il monitoraggio dell'applicazione nel contesto di un ambiente operativo reale"
   Attore: "Entità esterna e non modificabile dal Sistema che interagisce con il Sistema: ha obiettivi o interessi specifici nell'utilizzo del sistema ma non è parte del sistema stesso. Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere. Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
   AWS: "Acronimo di Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata per archiviazione, elaborazione e gestione dati."
 B:
@@ -29,7 +28,6 @@ C:
   Continuous Integration: "È una pratica che si applica in contesti in cui lo sviluppo del software avviene attraverso un sistema di controllo versione, perciò consiste nell'allineamento frequente dagli ambienti di lavoro degli sviluppatori verso l'ambiente condiviso (detto anche mainline)."
   Consuntivo: "Esiti finali delle risorse temporali e monetarie utilizzati, spesso in riferimento al bilancio preventivato."
   Cruscotto: "In inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
-  CTO: "Acronimo per Chief Technology Officer, manager di primo livello e membro del consiglio direttivo di un'azienda che seleziona, valuta e suggerisce le migliori tecnologie da applicare ai prodotti o ai servizi che l'azienda produce."
 D:
   Dashboard: "Vedi Cruscotto."  
   Decisione Interna: "È una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'issue associata."
@@ -96,7 +94,6 @@ R:
   Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza, occupandosi di correggere eventuali errori segnalati dal Verificatore."
   Repository: "Archivio centralizzato in cui viene memorizzato e gestito il codice sorgente."
   Responsabile: "Ruolo centrale nella gestione del gruppo: ha il compito di coordinare le attività e lo stato di progresso, nonché di tenere le comunicazioni verso l'esterno del gruppo."
-  Requirements and Technology Baseline: "È un riferimento iniziale e stabilito di requisiti e tecnologie approvate per un progetto. Questa baseline include requisiti, che possono essere requisiti funzionali, non funzionali, di sicurezza, e conformità normativa, e tecnologie, strumenti, linguaggi di programmazione, piattaforme e infrastrutture approvati per lo sviluppo del progetto. Una volta stabilita, questa baseline rappresenta una base di confronto per valutare il progresso e verificare che il progetto rimanga allineato agli obiettivi iniziali. Modifiche alla baseline richiedono una revisione e approvazione formale."
   Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
   RTB: "Acronimo di Requirements and Technology Baseline, per la sua definizione vedere 'Requirements and Technology Baseline'."

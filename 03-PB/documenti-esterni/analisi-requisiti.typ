@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [1.1.0]
+#let ver = [1.2.0]
 
 #show ref: it => if str(it.target).starts-with("UC") {
   link(it.target, "[" + str(it.target) + "]")
@@ -13,6 +13,13 @@
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "1.2.0",
+      date: datetime(day: 25, month: 02, year: 2025),
+      autore: p.emanuele,
+      verifica: p.matteo,
+      descr: "Correzione degli Use Case 67 e 68.",
+    ),
     (
       vers: "1.1.0",
       date: datetime(day: 18, month: 02, year: 2025),
@@ -410,8 +417,9 @@ Di seguito sono esposti gli attori utilizzati:
       text(fill: white)[*Descrizione*],
     ),
 
-    [*Dispositivo GSM*], [Rappresenta un dispositivo GSM registrato al Sistema e in grado di ricevere SMS],
-    [*Client Email*], [Rappresenta un Client Email registrato al Sistema],
+    [*Sistema di rilevamento*],
+    [Rappresenta un sistema che rileva e segnala eventi o condizioni specifiche all'interno del magazzino],
+
     [*Utente*], [Rappresenta un utente che vuole accedere al Sistema],
     [*Admin Locale*],
     [Rappresenta una tipologia di utente che ha eseguito l'accesso al Sistema con interessi nel singolo magazzino che superano quelle del normale utilizzatore],
@@ -460,9 +468,13 @@ Vengono inoltre utilizzati i seguenti Attori Secondari:
 === UC1: Autenticazione <UC1>
 #use-case(
   attore: "Utente",
-  pre: [- Il Sistema è attivo, in modalità online o offline
-    - L'Utente non è autenticato con il Sistema],
-  post: [- L'utente ha eseguito l'accesso al Sistema ed è dallo stesso riconosciuto come Cliente, come Admin Locale o come Admin Globale],
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'Utente non è autenticato con il Sistema
+  ],
+  post: [
+    - L'utente ha eseguito l'accesso al Sistema ed è dallo stesso riconosciuto come Cliente, come Admin Locale o come Admin Globale
+  ],
   scenari: [
     - L'Utente seleziona la tipologia di utente $arrow$ Vedi @UC1.1
     - L'Utente inserisce l'Username $arrow$ Vedi @UC1.2
@@ -552,11 +564,15 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 === UC2: Autenticazione non riuscita <UC2>
 #use-case(
   attore: "Utente",
-  pre: [- Il Sistema è attivo, in modalità online o offline;
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline;
     - L'attore principale non è autenticato al Sistema (Vedi @UC1)
-    - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata],
-  post: [- Il Sistema annulla il tentativo di autenticazione
-    - Il Sistema mostra un errore a schermo],
+    - L'attore principale ha immesso in fase di autenticazione uno Username o una Password non corretta oppure ha selezionato una tipologia di utente sbagliata
+  ],
+  post: [
+    - Il Sistema annulla il tentativo di autenticazione
+    - Il Sistema mostra un errore a schermo
+  ],
   scenari: [
     - Il Sistema ha ricevuto Username, Password e tipologia di utente, ma non è riuscito a verificare tali credenziali
   ],
@@ -565,8 +581,10 @@ Il Caso d'Uso UC1 include tre ulteriori Casi d'Uso come raffigurato nella seguen
 === UC3: Creazione di un ordine da confermare <UC3>
 #use-case(
   attore: "Cliente",
-  pre: [- Il Sistema è attivo, in modalità online o offline
-    - L'utente è riconosciuto dal Sistema come Cliente],
+  pre: [
+    - Il Sistema è attivo, in modalità online o offline
+    - L'utente è riconosciuto dal Sistema come Cliente
+  ],
   post: [- Il Sistema memorizza l'esistenza di un nuovo ordine non confermato con le relative informazioni],
   scenari: [
     - Il Cliente seleziona dal menu principale l'opzione relativa alla creazione di un nuovo ordine da confermare
@@ -2440,8 +2458,8 @@ Per maggiori informazioni sui Casi d'Uso 13, 14 e 15 si rimanda alle rispettive 
 
 /*
 APPUNTI VARI
-Invio SMS, E-Mail e notifiche interne da parte del BE. -> opzionale ma fatto dal BE. Le notifiche sono già state modellate.
-L'attore potrebbe essere un dispositivo GSM e un client Email che riceve la notifica, questo rivolterebbe effettivamente il fatto di esser fatto dal BE
+Invio SMS, email e notifiche interne da parte del BE. -> opzionale ma fatto dal BE. Le notifiche sono già state modellate.
+L'attore potrebbe essere un dispositivo GSM e un client email che riceve la notifica, questo rivolterebbe effettivamente il fatto di esser fatto dal BE
 Legato a questo c'è il fatto che l'Admin Locale e quello Globale vogliono registrare un Sistema GSM e un client email presso il Sistema
 
 I requisiti del BE sono più di aggiornamento e l'attore potrebbe essere uno Scheduler. Esempi sono aggiorna informazioni merci disponibili, aggiorna informazioni notifiche rifornimento, aggiorna elenco transazioni (ordini/trasferimenti) non completate, invia conferma ordini, invia conferma transazioni (ordini/trasferimenti), invia notifica email, invia notifica sms, crea backup regolare ecc.
@@ -2761,38 +2779,36 @@ Tale Caso d'Uso sarà ora esposto.
   trigger: "L'Admin Globale vuole bloccare un tentativo di accesso tramite l'identificativo unico",
 )[]
 
-=== UC67: Ricezione E-mail evento critico <UC67>
+=== UC67: Invio email evento critico <UC67>
 #use-case(
-  attore: "Client Email",
+  attore: "Sistema di rilevamento",
   pre: [
-    - Il Sistema è attivo, in modalità online o offline
+    - Il Sistema è attivo, in modalità online
   ],
   post: [
-    - Il Client Email riceve una email dal Sistema con le informazioni critiche
+    - I Client email registrati ricevono una email dal Sistema con le informazioni dell'evento critico
   ],
   scenari: [
-    - Il Sistema rileva un'informazione critica da segnalare agli Utenti registrati
     - Il Sistema invia un'email ai Client email registrati
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via e-mail di un evento critico",
-)[#use-case-diagram("67", "UC67 - Ricezione E-mail evento critico")]
+  trigger: "Il Sistema di rilevamento rileva un'informazione critica da segnalare agli Utenti registrati",
+)[#use-case-diagram("67", "UC67 - Invio email evento critico")]
 
-=== UC68: Ricezione SMS evento critico <UC68>
+=== UC68: Invio SMS evento critico <UC68>
 
 #use-case(
-  attore: "Dispositivo GSM",
+  attore: "Sistema di rilevamento",
   pre: [
-    - Il Sistema è attivo, in modalità online o offline
+    - Il Sistema è attivo, in modalità online
   ],
   post: [
-    - Il dispositivo GSM riceve una un sms dal Sistema con le informazioni richieste
+    - Il dispositivo GSM riceve un sms dal Sistema con le informazioni dell'evento critico
   ],
   scenari: [
-    - Il Sistema rileva un'informazione critica da segnalare agli Utenti registrati
     - Il Sistema invia un sms ai dispositivi GSM registrati
   ],
-  trigger: "L'Admin Globale/Locale riceve la notifica via sms di un evento critico",
-)[#use-case-diagram("68", "UC68 - Ricezione SMS evento critico")]
+  trigger: "Il Sistema di rilevamento rileva un'informazione critica da segnalare agli Utenti registrati",
+)[#use-case-diagram("68", "UC68 - Invio SMS evento critico")]
 
 === UC69: Aggiungi nuovo utente <UC69>
 
@@ -4306,7 +4322,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [@UC66 \ @UC66.1],
 
     [R-123-F-De],
-    [Gli Admin Globali devono ricevere notifiche email/sms per attività di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
+    [Il Sistema di rilevamento deve notificare via email/sms gli Admin globali eventi di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
     [@UC67 \ @UC68],
 
     [R-124-F-De],
