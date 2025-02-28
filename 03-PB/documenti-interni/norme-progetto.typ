@@ -1,14 +1,27 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.0.0]
+#let ver = [1.1.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 18, month: 02, year: 2025),
+  data: datetime(day: 28, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "1.1.0",
+      date: datetime(day: 28, month: 02, year: 2025),
+      autore: p.matteo,
+      verifica: p.emanuele,
+      descr: "Aggiornata la "
+        + [@elenco-documenti]
+        + " e la "
+        + [@codifica]
+        + " con le informazioni del "
+        + link("https://alimitedgroup.github.io/VI%2024-02-2025%20v1.0.0.pdf")[Verbale Interno del 24-02-2025]
+        + ".",
+    ),
     (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
@@ -365,6 +378,28 @@ Lo scopo del documento è quello di presentare formalmente la candidatura di _AL
   caption: [Proprietà del documento "Lettera di Presentazione"],
 )
 
+==== Manuale Utente
+
+Lo scopo del *Manuale Utente* è quello di esporre le istruzioni per l'avvio e la configurazione del Sistema sviluppato.
+
+#figure(
+  table(
+    table.cell(colspan: 2, text(white)[*Manuale Utente*]),
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    stroke: none,
+    gutter: 0.2em,
+    text(white)[*Redattore*], [Amministratori, Progettisti],
+    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Manuale Utente"],
+)
+
 ==== Norme di Progetto#super[G]
 
 Il presente documento: stabilisce il _Way of Working#super[G]_ e le pratiche di sviluppo adottate dal gruppo.
@@ -430,6 +465,28 @@ Descrive i metodi di qualifica (Verifica e Validazione#super[G]) adottate da _AL
     text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Piano di Qualifica"],
+)
+
+==== Specifica Tecnica
+
+Lo scopo della *Specifica Tecnica* è quello di descrivere le caratteristiche progettuali delle componenti del Sistema sviluppato.
+
+#figure(
+  table(
+    table.cell(colspan: 2, text(white)[*Specifica Tecnica*]),
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    stroke: none,
+    gutter: 0.2em,
+    text(white)[*Redattore*], [Progettisti],
+    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Manuale Utente"],
 )
 
 ==== Valutazione dei Capitolati
@@ -576,7 +633,7 @@ dove:
 
 Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*] *(Sezione 1.1)*.
 
-=== Codifica
+=== Codifica <codifica>
 
 ==== Scopo
 La codifica svolta dai programmatori di _ALimitedGroup_ ha come scopo la realizzazione di quanto progettato dagli analisti e dai progettisti.
@@ -591,16 +648,37 @@ La struttura di un file sorgente Golang deve seguire lo standard prodotto dall'e
 
 Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite Github Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del branch#super[G] principale.
 
-===== Pratiche di programmazione
-- Variabili globali: evitare l'uso di variabili globali dove possibile
-- Funzioni: evitare funzioni troppo lunghe, preferire funzioni brevi e ben definite
+===== Buone pratiche di programmazione
 
-===== Convenzioni sintattiche
-- Lingua: usare la lingua inglese per tutti i costrutti e commenti
-- Nomi: usare nomi significativi per variabili, funzioni, metodi e strutture
-- Commenti: commentare il codice in modo chiaro e conciso, ogni funzione deve avere un commento che ne descriva lo scopo e i suoi argomenti
-- Indentazione: usare quattro spazi per l'indentazione
-- Più istruzioni su una linea: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice
+- *Variabili* globali: evitare l'uso di variabili globali dove possibile;
+- *Funzioni*: evitare funzioni troppo lunghe, preferire funzioni brevi e ben definite;
+- *Lingua*: usare la lingua inglese per tutti i costrutti e commenti;
+- *Nomi*: usare nomi significativi per variabili, funzioni, metodi e strutture;
+- *Commenti*: commentare il codice in modo chiaro e conciso, ogni funzione deve avere un commento che ne descriva lo scopo e i suoi argomenti;
+- *Indentazione*: usare quattro spazi per l'indentazione;
+- *Istruzioni per linea di codice*: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice.
+
+Sarà inoltre necessario sfruttare il _framework_ *fx* per applicare l'_Injection Pattern_.
+
+===== Convenzioni sulle nomenclature e sulla posizione dei file
+
+Considerando la necessità di sviluppare microservizi ad architettura esagonale e dato l'alto numero di componenti, si adottano le seguenti convenzioni di nomenclatura:
+
+- *Package*: ogni cartella deve contenere oggetti esistenti all'interno dello stesso _package_, che deve essere diverso per ogni cartella;
+- *Interfacce*: il nome delle interfacce devono sempre essere precedute dalla lettera *I* (ad esempio, *`I`*`UseCase`);
+- *Componenti dell'architettura esagonale*: le tre componenti principali dell'architettura esagonale devono avere, nella parte finale del nome, i seguenti nomi:
+  - *Controller*, per indicare la componente responsabile dell'_Application Logic_;
+  - *Service*, per indicare la componente responsabile della _Business Logic_;
+  - *Repository*, per indicare la componente responsabile della _Persistance Logic_;
+  - *UseCase*, per indicare le interfacce con cui il _Controller_ comunica con il _Service_;
+  - *Port*, per indicare le interfacce con cui il _Service_ comunica con il _Repository_.
+- *Oggetti dell'architettura esagonale*: è preferibile, nella misura possibile, utilizzare, nella parte finale del nome degli oggetti, le sigle *DTO* e *CMD* per indicare gli oggetti dell'_Application Logic_ e della _Business Logic_ rispettivamente
+
+In merito al posizionamento dei file, è necessario mantenere le seguenti convenzioni:
+- *Interfacce*: devono essere inserite in file separati rispetto alla restante parte del codice sorgente;
+- *Strutture che implementano interfacce*: devono essere poste su file separato rispetto al restante codice sorgente;
+- *Strutture che rappresentano attributi di altre strutture*: devono essere poste su un file separato rispetto al restante codice sorgente;
+- *Strutture utilizzate dai _Controller_*: devono essere poste all'interno di una cartella comune.
 
 #pagebreak()
 = Processi di Supporto
@@ -664,7 +742,21 @@ cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
 
 La seconda sezione, che segue quanto appena scritto, esplicita quanto discusso per ogni punto dell'ordine del giorno.\
 
-Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato. \ L'ultima sezione è dedicata alla _tabella delle decisioni e delle azioni_, che riassume in modo strutturato tutte le decisioni prese e le azioni concordate.\ Queste informazioni vengono integrate e tracciate nel _sistema di ticketing_. \ La tabella è creata tramite la funzione "tabella-decisioni".\
+Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato. \ L'ultima sezione è dedicata alla _tabella delle decisioni e delle azioni_, che riassume in modo strutturato tutte le decisioni prese e le azioni concordate.\ Queste informazioni vengono integrate e tracciate nel _sistema di ticketing_.
+
+La tabella utilizza, per tracciare le decisioni, la seguente nomenclatura:
+
+#align(center)[`ID#`]
+
+- *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
+  - *DI* ovvero *Decisione Interna*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
+  - *AP* ovvero *Attività Passata*: viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
+  - *DOCS*, indica una decisione che ha un'_issue_ associata nel repository dei documenti;
+  - *POC*, indica una decisione che ha un'_issue_ associata nel reppository del _Proof Of Concept_;
+  - *MVP*, indica una decisione che ha un'_issue_ associata nel reppository del _Minimum Viable Product_.
+- *\#* è un numero crescente da 1, univoco a seconda dell'ID.
+
+La tabella è creata tramite la funzione "tabella-decisioni".\
 
 In ultima istanza, i *verbali esterni* devono includere una sezione dedicata all'approvazione esterna.\ Ogni pagina, ad eccezione della copertina, deve riportare il numero e un _header_ con:
 - *Nome del gruppo*;
@@ -732,7 +824,10 @@ dove:
   - *NP* per *N*\orme di *P*\rogetto;
   - *PP* per *P*\iano di *P*\rogetto;
   - *AR* per *A*\nalisi dei *R*\equisiti;
-  - *PQ* per *P*\iano di *Q*\ualifica.
+  - *PQ* per *P*\iano di *Q*\ualifica;
+  - *MU* per *M*\anuale *U*\tente;
+  - *SP* per *S*\pecifica *T*\ecnica.
+
 - *AAAA-MM-GG* indica la data in formato anno-mese-giorno (con due cifre per giorno e mese e 4 cifre per l'anno);
 - *\#* è un modificatore, ossia un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico;
 - *VERSIONE* indica la versione corrente del documento.
@@ -1017,7 +1112,7 @@ Sarà quindi dato spazio ad una parte fondamentale del gruppo, ovvero i metodi d
 === Ruoli <ruoli>
 #figure(
   table(
-    columns: (1fr, 4fr),
+    columns: (0.5fr, 1.5fr),
     inset: 5pt,
     align: horizon,
     fill: (x, y) => if (y == 0) {
@@ -1054,7 +1149,9 @@ In ultima istanza, è sempre compito di questo ruolo "
         + [_Way of Working_]
         + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il "
         + [*Piano di Qualifica*]
-        + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."
+        + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni. Redige anche il "
+        + [*Manuale Utente*]
+        + " con l'aiuto dei Progettisti."
     ),
 
     "Verificatore",
@@ -1081,7 +1178,8 @@ Si occupa di eseguire Test approfonditi e revisioni del Software, identificando 
 
     "Progettista",
     (
-      "È un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche."
+      "È un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche. Ha il compito, inoltre, di scrivere la "
+        + [*Specifica Tecnica*.]
     ),
   ),
   caption: [Compiti e responsabilità di ogni singolo ruolo],
@@ -1808,7 +1906,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
 )
 
-==== Cyclomatic Complexity
+=== Cyclomatic Complexity
 
 #metric(
   cod: [MPD12],
