@@ -669,9 +669,9 @@ Considerando la necessità di sviluppare microservizi ad architettura esagonale 
 - *Componenti dell'architettura esagonale*: le tre componenti principali dell'architettura esagonale devono avere, nella parte finale del nome, i seguenti nomi:
   - *Controller*, per indicare la componente responsabile dell'_Application Logic_;
   - *Service*, per indicare la componente responsabile della _Business Logic_;
-  - *Repository*, per indicare la componente responsabile della _Persistance Logic_;
+  - *Repository*#super[G] ,per indicare la componente responsabile della _Persistance Logic_;
   - *UseCase*, per indicare le interfacce con cui il _Controller_ comunica con il _Service_;
-  - *Port*, per indicare le interfacce con cui il _Service_ comunica con il _Repository_.
+  - *Port*, per indicare le interfacce con cui il _Service_ comunica con il _Repository_#super[G] .
 - *Oggetti dell'architettura esagonale*: è preferibile, nella misura possibile, utilizzare, nella parte finale del nome degli oggetti, le sigle *DTO* e *CMD* per indicare gli oggetti dell'_Application Logic_ e della _Business Logic_ rispettivamente
 
 In merito al posizionamento dei file, è necessario mantenere le seguenti convenzioni:
@@ -749,11 +749,11 @@ La tabella utilizza, per tracciare le decisioni, la seguente nomenclatura:
 #align(center)[`ID#`]
 
 - *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
-  - *DI* ovvero *Decisione Interna*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
-  - *AP* ovvero *Attività Passata*: viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
+  - *DI*#super[G] ovvero *Decisione Interna*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
+  - *AP*#super[G] ovvero *Attività Passata*: viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
   - *DOCS*, indica una decisione che ha un'_issue_ associata nel repository dei documenti;
   - *POC*, indica una decisione che ha un'_issue_ associata nel reppository del _Proof Of Concept_;
-  - *MVP*, indica una decisione che ha un'_issue_ associata nel reppository del _Minimum Viable Product_.
+  - *MVP*#super[G] ,indica una decisione che ha un'_issue_ associata nel reppository del _Minimum Viable Product_.
 - *\#* è un numero crescente da 1, univoco a seconda dell'ID.
 
 La tabella è creata tramite la funzione "tabella-decisioni".\
