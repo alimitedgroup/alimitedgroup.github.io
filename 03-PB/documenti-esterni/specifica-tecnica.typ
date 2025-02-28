@@ -231,7 +231,7 @@ Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nell
 
 Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità#super[G].
 
-I microservizi comunicano tra loro tramite NATS#super[G] ,un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
+I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
 - Comunicazione asincrona, sincrona ed event-driven, riducendo l'accopiamento tra i servizi.
 
