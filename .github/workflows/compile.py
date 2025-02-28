@@ -117,6 +117,10 @@ def process_template(titolo: str) -> str:
         titolo = titolo.replace('AR ', 'Analisi dei Requisiti ')
     elif "NP " in titolo:
         titolo = titolo.replace('NP ', 'Norme di Progetto ')
+    elif "MU " in titolo:
+        titolo = titolo.replace('MU ', 'Manuale Utente ')
+    elif "ST " in titolo:
+        titolo = titolo.replace('ST ', 'Specifica Tecnica ')
 
     return TEMPLATE.replace("{{link}}", nomefile).replace("{{name}}", titolo)
 
