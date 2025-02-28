@@ -38,13 +38,13 @@
 == Scopo del documento
 Il presente documento ha l'obiettivo di descrivere in dettaglio l'_architettura_ del prodotto software, fornendo una visione chiara e strutturata delle sue componenti, della loro interazione e della loro distribuzione nel sistema.\
 
-Il documento di *Specifica Tecnica* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il _Proof of Concept#super[G]_ (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
+Il documento di *Specifica Tecnica#super[G]* funge da riferimento per la _progettazione_ e _realizzazione del prodotto_, garantendo coerenza con il _Proof of Concept#super[G]_ (PoC#super[G]) iniziale e introducendo miglioramenti volti a consolidarne la maturità architetturale.
 
 Nello specifico, questo documento si propone di:
 
 - Definire l'*architettura logica* del prodotto, illustrando le componenti principali, i loro ruoli e le interconnessioni tra di esse;
 
-- Esporre l'*architettura di deployment*, delineando la distribuzione delle componenti nel sistema in esecuzione;
+- Esporre l'*architettura di deployment#super[G]*, delineando la distribuzione delle componenti nel sistema in esecuzione;
 
 - Documentare i *design pattern architetturali* adottati, evidenziando le scelte progettuali derivate dalle tecnologie selezionate;
 
@@ -227,7 +227,7 @@ Gli *_adapters_* rappresentano lo strato esterno del sistema e si suddividono in
 == Architettura di _deployment_
 === Sistema a microservizi
 
-L'architettura di deployment adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
+L'architettura di deployment#super[G] adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
 Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel _deployment_ dei componenti software.
 
 Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità#super[G].

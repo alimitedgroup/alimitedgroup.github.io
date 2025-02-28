@@ -51,11 +51,11 @@ I membri di _ALimitedGroup_ si sono aggiornati sul progresso del progetto in seg
 
 _ALimitedGroup_ ha appreso la necessità di correggere gli errori rilevati dal #profBreve(p.cardin) nell'Analisi dei Requisiti#super[G] e dal #profBreve(p.tullio) negli altri documenti.
 
-Si è determinato, per lo svolgimento della _Product Baseline (PB)_, che sarà necessario produrre un documento atto a spiegare come avviare ed utilizzare l'applicativo/gli applicativi sviluppati (denominato *Manuale Utente*) e un ulteriore documento atto a descrivere le caratteristiche degli stessi (denominato *Specifica Tecnica*).
+Si è determinato, per lo svolgimento della _Product Baseline#super[G] (PB)_, che sarà necessario produrre un documento atto a spiegare come avviare ed utilizzare l'applicativo/gli applicativi sviluppati (denominato *Manuale Utente#super[G]*) e un ulteriore documento atto a descrivere le caratteristiche degli stessi (denominato *Specifica Tecnica#super[G]*).
 
-È stato deciso, in seguito a consiglio di #persona(p.samuele) e #persona(p.marco) che risulta esser possibile, senza particolari sforzi aggiuntivi, la realizzazione di un *Manuale Utente* disponibile anche in versione _web_.
+È stato deciso, in seguito a consiglio di #persona(p.samuele) e #persona(p.marco) che risulta esser possibile, senza particolari sforzi aggiuntivi, la realizzazione di un *Manuale Utente#super[G]* disponibile anche in versione _web_.
 
-È stato deciso che è necessario approfondire lo studio del _framework_ *fx*, utilizzato per la _Dependency Injection_.
+È stato deciso che è necessario approfondire lo studio del _framework_ *fx*, utilizzato per la _Dependency Injection#super[G]_.
 
 Il gruppo ha evidenziato la necessità di organizzare un maggior numero di riunioni, sia interne che esterne.
 
@@ -82,17 +82,17 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint sar
 
 #align(center)[*Amministrazione*]
 
-- Configurare il _repository_#super[G] dedicato al _Minimum Viable Product (MVP)_ per permettere la _Continuous Integration (CI)_ con quanto necessario all'esecuzione dei Test#super[G] , al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
+- Configurare il _repository_#super[G] dedicato al _Minimum Viable Product#super[G] (MVP)_ per permettere la _Continuous Integration#super[G] (CI)_ con quanto necessario all'esecuzione dei Test#super[G] , al calcolo del _Code Covergae_ e della Complessità Ciclomatica e alla realizzazione delle _build_ entro il giorno *2 Marzo 2025*.
 
-#align(center)[*Manuale Utente*]
-- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente in versione _pdf_ e _web_ entro il giorno *2 Marzo 2025*.
+#align(center)[*Manuale Utente#super[G]*]
+- Configurare il #link("https://github.com/alimitedgroup/alimitedgroup.github.io")[_repository_ dei documenti] per la realizzazione del manuale utente#super[G] in versione _pdf_ e _web_ entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Norme di Progetto#super[G]*]
 
 - Aggiungere la Sezione "Strumenti a Supporto" a tutti i processi presenti nelle *Norme di Progetto#super[G]* entro il giorno *2 Marzo 2025*.
 - Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica entro il giorno *2 Marzo 2025*.
 
-#align(center)[*Piano di Progetto*]
+#align(center)[*Piano di Progetto#super[G]*]
 - Effettuare la redazione delle informazioni relative al settimo sprint entro il giorno *9 Marzo 2025*.
 
 #align(center)[*Progettazione*]
@@ -102,11 +102,11 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint sar
 
 #align(center)[*Programmazione*]
 
-- Completare lo studio del framework *fx* per la _Dependency Injection_ entro il giorno *2 Marzo 2025*.
+- Completare lo studio del framework *fx* per la _Dependency Injection#super[G]_ entro il giorno *2 Marzo 2025*.
 
 #pagebreak()
 
-#align(center)[*Specifica Tecnica*]
+#align(center)[*Specifica Tecnica#super[G]*]
 - Effettuare la redazione della struttura base del documento e delle Sezioni relative alle tecnologie utilizzate, all'Architettura logica e quella di Deployment entro il giorno *2 Marzo 2025*.
 
 == Assegnazione prevista dei ruoli sino al 02-03-2025
