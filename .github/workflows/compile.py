@@ -15,7 +15,7 @@ from pathlib import Path
 from shutil import rmtree, copytree, copyfile
 from collections import defaultdict
 
-os.rename("03-PB/documenti-interni/glossario.typ","03-PB/documenti-interni/glossarioPB.typ")
+os.rename("03-PB/documenti-interni/glossario.typ","03-PB/documenti-interni/glossаrio.typ")
 source_files = glob("*/**/*.typ", recursive=True) + ["docs.typ"]
 options = ["--root", ".", "--ignore-system-fonts", "--font-path", "assets"]
 
@@ -109,9 +109,9 @@ def loadGlossary() -> dict:
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
     nomefile = titolo + ".pdf"
-    if 'GlossarioPB' in nomefile: 
-        titolo = titolo.replace('GlossarioPB','Glossario ')
-        nomefile = 'GlossarioPB.pdf'
+    if 'Glossаrio' in nomefile: 
+        titolo = titolo.replace('Glossаrio','Glossario')
+        nomefile = 'Glossаrio.pdf'
     elif 'Glossario' in nomefile: nomefile = 'Glossario.pdf'
 
     if "PQ " in titolo:
