@@ -165,7 +165,7 @@ def main():
 
         titolo = query(filename.replace(".pdf", ".typ"), "<titolo>")
         # TODO: rimuovere la riga seguente
-        if 'Glossario' not in titolo:
+        if 'Glossario' or 'Glossаrio' not in titolo:
             output = f"dist/{titolo}".strip() + ".pdf"
         # TODO: rimuovere le due righe seguenti
         elif 'Glossаrio' in titolo:
