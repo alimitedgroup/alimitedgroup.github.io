@@ -168,8 +168,8 @@ def main():
         if 'Glossario' not in titolo:
             output = f"dist/{titolo}".strip() + ".pdf"
         # TODO: rimuovere le due righe seguenti
-        elif 'GlossarioPB' in titolo:
-            output ="dist/GlossarioPB.pdf"   
+        elif 'Glossаrio' in titolo:
+            output ="dist/Glossаrio.pdf"   
         else:
             output = "dist/Glossario.pdf"
         
