@@ -5,7 +5,7 @@
 #set list(indent: 0.5em)
 #let ver = [1.1.0]
 #show: body => importantdocs(
-  data: datetime(day: 18, month: 02, year: 2025),
+  data: datetime(day: 24, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Approvato per RTB],
   versioni: (
