@@ -6,6 +6,7 @@ import logging
 ALPHABET="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ROOT="./"
 EXT=".typ"
+EXT2=".md"
 #LINK="https://alimitedgroup.github.io/glossario%200.1.0.pdf"
 
 def loadGlossary():
@@ -16,8 +17,12 @@ def loadGlossary():
 def substitute_line(filename, linenum, line, filtered_glossary):
     for sub in filtered_glossary:
         origLine = line
-        line = line.replace(sub, f"{sub}#super[G]")
-        line = line.replace('#super[G]#super[G]', f'#super[G]')
+        if 'manuale-utente' not in filename:
+            line = line.replace(sub, f"{sub}#super[G]")
+            line = line.replace('#super[G]#super[G]', f'#super[G]')
+        else:
+            line = line.replace(sub, f"{sub}<!--raw-typst #super(\"G\")-->")
+            line = line.replace('<!--raw-typst #super(\"G\")--><!--raw-typst #super(\"G\")-->', f'<!--raw-typst #super(\"G\")-->')
         if line != origLine:
             logging.error(f'Found un-tagged word at {filename}:{linenum}')
 
@@ -55,8 +60,7 @@ def substitute(filePath,glossaryYml):
 
     while line:
         linenum += 1
-        #print(f"read:{line}")
-        if(bodyFound==False or parFound==False):
+        if(bodyFound==False or parFound==False) and (".md" not in filePath):
             startText+=line
             if "body" in line and "=>" not in line:
                 bodyFound=True
@@ -80,16 +84,28 @@ def substitute(filePath,glossaryYml):
                     stop=False
                 if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
                     if word[:-1] in glossary and word[len(word)-1] in specialChar:
-                        newText += word[:-1] + "#super[G] " + word[-1:]
+                        if "manuale-utente" in filePath:
+                            newText += word[:-1] + "<!--raw-typst #super(\"G\")--> " + word[-1:]
+                        else: 
+                            newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
-                        newText += word[:-2] + "#super[G] " + word[-2:]
+                        if "manuale-utente" in filePath:
+                            newText += word[:-2] + "<!--raw-typst #super(\"G\")--> " + word[-2:]
+                        else:
+                            newText += word[:-2] + "#super[G] " + word[-2:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0]=="_" or word[0]=="*":
-                        newText += word + "#super[G] "
+                        if "manuale-utente" in filePath:
+                            newText += word + "<!--raw-typst #super(\"G\")--> "
+                        else:
+                            newText += word + "#super[G] "
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0] == "(" and word[len(word)-1] == ")":
-                        newText += word[:-1] + "#super[G] " + word[-1:]
+                        if "manuale-utente" in filePath:
+                            newText += word[:-1] + "<!--raw-typst #super(\"G\")--> " + word[-1:]
+                        else:
+                            newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     else:
                         newText += word
@@ -113,7 +129,7 @@ def find_files(fileList,path=ROOT):
         if os.path.isdir(full_path):
             find_files(fileList,full_path)
         else:
-            if full_path.endswith(EXT) and 'slide' not in full_path:
+            if (full_path.endswith(EXT) or full_path.endswith(EXT2)) and 'slide' not in full_path:
                 fileList.append(full_path)
 
 def main():
@@ -127,7 +143,7 @@ def main():
     else:
         find_files(fileList)
         for file in fileList:
-            if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
+            if "docs.typ" in file or "README.md" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
                 continue
             substitute(file,loadGlossary())
 

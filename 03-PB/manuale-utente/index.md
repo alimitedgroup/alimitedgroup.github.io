@@ -2,11 +2,12 @@
 
 ## Informazioni generali
 
-Lo scopo del **Manuale Utente** è quello di introdurre l'utilizzatore finale del Sistema sviluppato da _ALimitedGroup_ per il **[Capitolato C6: Sistema di Gestione di un Magazzino Distribuito](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)**
+Lo scopo del **Manuale Utente<!--raw-typst #super("G")-->** è quello di introdurre l'utilizzatore finale del Sistema sviluppato da _ALimitedGroup_ per il **[Capitolato C6: Sistema di Gestione di un Magazzino Distribuito](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)**
 
 A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il Sistema, a partire dai programmi necessari alla sua esecuzione, per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e, infine, come avviare lo stesso.
 
-## Glossario
+<!--raw-typst
+== Glossario
 
 La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un’importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
 
@@ -14,9 +15,11 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: parolaᴳ
 
+-->
+
 ## Riferimenti
 ### Riferimenti normativi
-- **Norme di Progetto versione 1.0.0**
+- **Norme di Progetto<!--raw-typst #super("G")--> versione 1.0.0**
 
   [https://alimitedgroup.github.io/NP%20v1.0.0.pdf](https://alimitedgroup.github.io/NP%20v1.0.0.pdf)
 
@@ -36,8 +39,4 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
     **Ultimo Accesso 3 Febbraio 2025**
 
-<!--typst-begin-exclude-->
-   #pagebreak()
-<!--typst-end-exclude-->
-
-ciao
+<!--raw-typst #pagebreak()-->
