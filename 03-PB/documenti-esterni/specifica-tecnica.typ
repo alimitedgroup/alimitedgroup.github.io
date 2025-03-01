@@ -76,7 +76,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   *Ultimo Accesso 25 Febbraio 2025*
 
 - *Glossario ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
+  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[https://alimitedgroup.github.io/Glossаrio.pdf] \
   *Ultimo Accesso 25 Febbraio 2025*
 
 #pagebreak()
