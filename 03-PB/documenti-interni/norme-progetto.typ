@@ -378,9 +378,9 @@ Lo scopo del documento è quello di presentare formalmente la candidatura di _AL
   caption: [Proprietà del documento "Lettera di Presentazione"],
 )
 
-==== Manuale Utente
+==== Manuale Utente#super[G]
 
-Lo scopo del *Manuale Utente* è quello di esporre le istruzioni per l'avvio e la configurazione del Sistema sviluppato.
+Lo scopo del *Manuale Utente#super[G]* è quello di esporre le istruzioni per l'avvio e la configurazione del Sistema sviluppato.
 
 #figure(
   table(
@@ -467,9 +467,9 @@ Descrive i metodi di qualifica (Verifica e Validazione#super[G]) adottate da _AL
   caption: [Proprietà del documento "Piano di Qualifica"],
 )
 
-==== Specifica Tecnica
+==== Specifica Tecnica#super[G]
 
-Lo scopo della *Specifica Tecnica* è quello di descrivere le caratteristiche progettuali delle componenti del Sistema sviluppato.
+Lo scopo della *Specifica Tecnica#super[G]* è quello di descrivere le caratteristiche progettuali delle componenti del Sistema sviluppato.
 
 #figure(
   table(
@@ -749,11 +749,11 @@ La tabella utilizza, per tracciare le decisioni, la seguente nomenclatura:
 #align(center)[`ID#`]
 
 - *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
-  - *DI*#super[G] ovvero *Decisione Interna*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
+  - *DI*#super[G] ovvero *Decisione Interna#super[G]*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
   - *AP*#super[G] ovvero *Attività Passata*: viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
   - *DOCS*, indica una decisione che ha un'_issue_ associata nel repository dei documenti;
   - *POC*, indica una decisione che ha un'_issue_ associata nel reppository del _Proof Of Concept_;
-  - *MVP*#super[G] ,indica una decisione che ha un'_issue_ associata nel reppository del _Minimum Viable Product_.
+  - *MVP*#super[G] ,indica una decisione che ha un'_issue_ associata nel reppository del _Minimum Viable Product#super[G]_.
 - *\#* è un numero crescente da 1, univoco a seconda dell'ID.
 
 La tabella è creata tramite la funzione "tabella-decisioni".\
