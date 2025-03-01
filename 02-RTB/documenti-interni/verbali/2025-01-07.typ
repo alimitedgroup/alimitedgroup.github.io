@@ -55,7 +55,7 @@ In merito all'*Analisi dei Requisiti#super[G]*, non è stata rispettata la scade
 
 In merito alle *Norme di Progetto#super[G]*, non è stata rispettata la scadenza relativa alla redazione delle informazioni sulla codifica del codice, ma è sostanzialmente completa la redazione delle Sezioni mancanti.
 
-Per maggiori informazioni è consigliata la lettura del *Piano di Progetto* relativamente al quarto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del quinto Sprint#super[G].
+Per maggiori informazioni è consigliata la lettura del *Piano di Progetto#super[G]* relativamente al quarto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del quinto Sprint#super[G].
 == Decisioni relative alle attività del prossimo periodo
 
 I membri di _ALimitedGroup_ hanno stabilito che nel corso del quinto Sprint sarà necessario:
@@ -67,7 +67,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del quinto Sprint sar�
 #align(center)[*Norme di Progetto#super[G]*]
 - Effettuare la verifica di quanto redatto entro il giorno *19 Gennaio 2025*
 
-#align(center)[*Piano di Progetto*]
+#align(center)[*Piano di Progetto#super[G]*]
 - Effettuare la redazione delle informazioni relative al quarto sprint entro il giorno *19 Gennaio 2025*
 
 #align(center)[*Piano di Qualifica*]

@@ -52,7 +52,7 @@ _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'anal
 - *Tecnologie e PoC*: è proseguita la realizzazione del PoC che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
 - *Norme di Progetto#super[G]*: è stato completata la redazione del documento.
 
-Per maggiori informazioni è consigliata la lettura del *Piano di Progetto* relativamente al quinto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del sesto Sprint#super[G].
+Per maggiori informazioni è consigliata la lettura del *Piano di Progetto#super[G]* relativamente al quinto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del sesto Sprint#super[G].
 
 == Decisioni relative alle attività del prossimo periodo
 
@@ -62,7 +62,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà
 - Iniziare la verifica di quanto redatto entro il giorno *27 Gennaio 2025*;
 - Finalizzare la verifica di quanto redatto entro il giorno *2 Febbraio 2025*.
 
-#align(center)[*Piano di Progetto*:]
+#align(center)[*Piano di Progetto#super[G]*:]
 - Effettuare la redazione delle informazioni relative al quinto sprint entro il giorno *27 Gennaio 2025*.
 
 #align(center)[*Piano di Qualifica*:]

@@ -46,7 +46,7 @@
 == Aggiornamenti sui lavori in corso
 
 Il gruppo _ALimitedGroup_, in questa settimana, ha proseguito la redazione e l'analisi dei
-seguenti documenti: Norme di Progetto#super[G], Piano di Progetto, Glossario e Analisi dei Requisiti#super[G]. \
+seguenti documenti: Norme di Progetto#super[G], Piano di Progetto#super[G], Glossario e Analisi dei Requisiti#super[G]. \
 _ALimitedGroup_ decide, inoltre, che segnalerà ogni qualvolta una parola sia contenuta nel Glossario utilizzando la seguente nomenclatura:
 #align(center)[parola#super[G]]
 così facendo viene segnalato al lettore che la definizione di essa è presente in quest'ultimo.\
@@ -72,7 +72,7 @@ I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 02-12-2024, s
 #align(center)[*#persona(p.sara)* $arrow.r$ *Verificatore*#super[G] \ *#persona(p.lorenzo)* $arrow.r$ *Verificatore*#super[G]] \
 #align(center)[*#persona(p.emanuele)* $arrow.r$ *Analista*#super[G] \ *#persona(p.matteo)* $arrow.r$ *Analista*#super[G]] \
 
-Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, agli *analisti* viene assegnata la continuazione di analisi per il documento di _Analisi dei Requisiti#super[G]_, agli *amministratori* viene assegnata la continuazione del documento di _Norme di Progetto#super[G]_ e del _Piano di Progetto_.
+Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, agli *analisti* viene assegnata la continuazione di analisi per il documento di _Analisi dei Requisiti#super[G]_, agli *amministratori* viene assegnata la continuazione del documento di _Norme di Progetto#super[G]_ e del _Piano di Progetto#super[G]_.
 
 #pagebreak()
 = Esiti della riunione

@@ -78,11 +78,11 @@
 = Introduzione <introduzione>
 == Informazioni generali
 
-Il *Piano di Progetto* è un documento che cerca di esprimere le attività svolte e da svolgere durante la realizzazione del progetto di *Ingegneria del Software*.
+Il *Piano di Progetto#super[G]* è un documento che cerca di esprimere le attività svolte e da svolgere durante la realizzazione del progetto di *Ingegneria del Software*.
 
 Il documento è di importanza sostanziale per permettere una corretta pianificazione del da farsi, analizzando il tempo previsto ed effettivo per ogni attività, nonché i potenziali rischi legati a quanto da svolgere.
 
-Data la necessità di pianificare le attività volta per volta, in quanto una progettazione dettagliata sul lungo termine certamente si rivelerebbe assai inefficace, il *Piano di Progetto* è per sua natura un documento che non potrà dirsi mai terminato sino alla fine del progetto: per questo motivo sarà realizzato con un approccio incrementale, aggiungendo informazioni volta per volta.
+Data la necessità di pianificare le attività volta per volta, in quanto una progettazione dettagliata sul lungo termine certamente si rivelerebbe assai inefficace, il *Piano di Progetto#super[G]* è per sua natura un documento che non potrà dirsi mai terminato sino alla fine del progetto: per questo motivo sarà realizzato con un approccio incrementale, aggiungendo informazioni volta per volta.
 
 Si noti inoltre che all'inizio del quarto _sprint_#super[g] _ALimitedGroup_ ha cambiato la modalità di pianificazione rendendola più specifica e utile: si veda il #link("https://alimitedgroup.github.io/VI%2018-12-2024%20v1.0.0.pdf")[*verbale interno del 18 Dicembre 2024*].
 
@@ -125,7 +125,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 = Analisi e gestione dei rischi <agr>
 
 == Introduzione
-Parte fondamentale per la redazione di un piano di progetto è il poter analizzare e classificare in maniera efficace i possibili rischi delle attività da svolgere: realizzarne una buona analisi permette di prevedere quali attività richiedono più tempo del previsto e, conseguentemente, valutare se il numero complessivo di attività inserite nel backlog settimanale sono in numero eccessivo o adeguato.
+Parte fondamentale per la redazione di un piano di progetto#super[G] è il poter analizzare e classificare in maniera efficace i possibili rischi delle attività da svolgere: realizzarne una buona analisi permette di prevedere quali attività richiedono più tempo del previsto e, conseguentemente, valutare se il numero complessivo di attività inserite nel backlog settimanale sono in numero eccessivo o adeguato.
 
 Un'analisi e gestione dei rischi adeguata prevede lo svolgimento di 4 fasi:
 
@@ -468,7 +468,7 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tu
 
 Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
 
-Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
 == Attività previste per la Requirements and Technology Baseline (RTB)
 
@@ -573,7 +573,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
   caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
 )
 
-== Attività previste per la Product Baseline (PB)
+== Attività previste per la Product Baseline#super[G] (PB)
 
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
 
@@ -629,7 +629,7 @@ In particolare, le attività previste sono:
 - Formalizzazione del legame tra decisioni intraprese nelle riunioni e _backlog_
 - Prima redazione del Glossario
 - Prima redazione delle Norme di Progetto#super[G]
-- Prima redazione del Piano di Progetto
+- Prima redazione del Piano di Progetto#super[G]
 - Stabilire un incontro con l'azienda proponente #M31
 - Inizio stesura Analisi dei requisiti
 
@@ -709,7 +709,7 @@ Le attività pianificate nel dettaglio includono:
 - Studio delle tecnologie _Golang_ e _NATS_#super[G];
 - Ottimizzazione del sistema di _ticketing_ e del *Way of Working#super[G]*;
 - Riorganizzazione delle Norme di Progetto#super[G];
-- Verifica del Piano di Progetto.
+- Verifica del Piano di Progetto#super[G].
 
 ==== Rischi attesi
 
