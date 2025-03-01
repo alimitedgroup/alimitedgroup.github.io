@@ -2,6 +2,7 @@
 #import "../../lib/importantdocs.typ": *
 
 #show: body => importantdocs(
+  versione: "0.2.0",
   titolo: "Manuale Utente",
   data: datetime.today(),
   descrizione: "Questo documento contiene le informazioni utili per l'utilizzo del "
