@@ -4,13 +4,28 @@
 #show: body => importantdocs(
   titolo: "Manuale Utente",
   data: datetime.today(),
-  descrizione: "Ciao",
+  descrizione: "Questo documento contiene le informazioni utili per l'utilizzo del "
+    + [_Minimum Viable Product_]
+    + " realizzato da AlimitedGroup",
   responsabile: (p.samuele,),
-  verificatore: (p.samuele,),
+  verificatore: (p.emanuele,),
   stato: [In redazione],
-  redattori: (p.samuele,),
+  redattori: (p.samuele, p.matteo),
   versioni: (
-    (vers: "0.1.0", date: datetime.today(), descr: "Ciao.", autore: p.samuele),
+    (
+      vers: "0.1.0",
+      date: datetime.today(),
+      descr: "Stesura parte introduttiva del documento.",
+      autore: p.matteo,
+      verifica: p.emanuele,
+    ),
+    (
+      vers: "0.1.0",
+      date: datetime.today(),
+      descr: "Preparazione base documento.",
+      autore: p.samuele,
+      verifica: p.emanuele,
+    ),
   ),
   body,
 )
