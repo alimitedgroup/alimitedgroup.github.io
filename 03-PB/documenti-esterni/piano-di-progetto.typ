@@ -731,7 +731,7 @@ In particolare, le attività previste sono:
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale;
-- RG2: Rischio Globale derivato da malcomprensione del capitolato;
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G] ;
 - RG3: Rischio Globale derivato da sottostima di attività.
 
 #pagebreak()
@@ -810,7 +810,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RI1: Rischio Individuale derivante dalle altre attività universitarie;
-- RG2: Rischio Globale derivato da malcomprensione del capitolato.
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G] .
 
 
 ==== Preventivo
@@ -878,7 +878,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RI1: Rischio Individuale derivante dalle altre attività universitarie;
-- RG2: Rischio Globale derivato da malcomprensione del capitolato.
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G] .
 
 #pagebreak()
 
@@ -951,7 +951,7 @@ Le attività pianificate nel dettaglio includono:
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
-- RG2: Rischio Globale derivato da malcomprensione del capitolato;
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G] ;
 - RI1: Rischio Individuale derivante dalle altre attività universitarie;
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
