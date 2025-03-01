@@ -2,6 +2,7 @@ TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a></li>'
 LETTER_TEMPLATE = '</dl><h2 id="{{letter}}">{{letter}}</h2><dl>'
 WORD_TEMPLATE = '<dt>{{word}}</dt><dd>{{definition}}</dd>'
 
+import os
 import re
 import sys
 import yaml
@@ -128,7 +129,7 @@ def process_template(titolo: str) -> str:
 
 def main():
     logging.basicConfig(level=getenv("LOGLEVEL", "INFO"))
-
+    os.rename("03-PB/documenti-interni/glossario.typ","03-PB/documenti-interni/glossarioPB.typ")
     # Setup `dist` directory
     rmtree("dist", ignore_errors=True)
     copytree("website", "dist", symlinks=False)
@@ -165,11 +166,11 @@ def main():
         if 'Glossario' not in titolo:
             output = f"dist/{titolo}".strip() + ".pdf"
         # TODO: rimuovere le due righe seguenti
-        elif 'Glossario' in titolo and '03-PB' in filename:
+        elif 'GlossarioPB' in titolo:
             output ="dist/GlossarioPB.pdf"   
         else:
             output = "dist/Glossario.pdf"
-
+        
         if ".typ" in filename and Path(filename_pdf).exists():
             copyfile(filename_pdf, output)
             status = True

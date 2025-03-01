@@ -9,7 +9,7 @@
   redattori: (),
   body,
 ) = {
-  [#metadata[Glossario #versione] <titolo>]
+  [#metadata[GlossarioPB #versione] <titolo>]
   set text(lang: "it", font: "Hanken Grotesk")
   prima-pagina(
     [_Glossario_ \ Versione #versione],
