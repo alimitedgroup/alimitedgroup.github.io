@@ -1137,7 +1137,7 @@ La riunione con l'azienda proponente #M31 è stata positiva ed informativa per c
 
 #pagebreak()
 
-== Product Baseline (PB)
+== Product Baseline#super[G] (PB)
 === Sprint 7 <sprint7>
 
 #table(
@@ -1153,21 +1153,21 @@ La riunione con l'azienda proponente #M31 è stata positiva ed informativa per c
 
 ==== Informazioni generali e attività da svolgere <sprint7intro>
 
-Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline_. In questo sprint vengono pianificate le seguenti attività:
+Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline#super[G]_. In questo sprint vengono pianificate le seguenti attività:
 - Redigere il verbale interno della riunione effettuata in data 24/02;
 - Realizzare il servizio di autenticazione per gli utenti;
 - Progettare il servizio di _Stock Notifications_;
-- Continuare con l'utilizzo della _Continuous Integration_ e della _Dependency Injection_;
+- Continuare con l'utilizzo della _Continuous Integration#super[G]_ e della _Dependency Injection#super[G]_;
 - Correggere il documento delle Norme di Progetto#super[G], dopo la visione da parte del #profBreve(p.tullio) e la sua valutazione per l'_RTB_;
 - Correggere il documento di Analisi dei Requisiti#super[G], dopo la visione da parte del #profBreve(p.cardin) e la sua valutazione per l'_RTB_;
-- Iniziare a redigere il documento di "Specifica Tecnica" iniziando a stilare:
+- Iniziare a redigere il documento di "Specifica Tecnica#super[G]" iniziando a stilare:
   - Struttura base del documento;
   - Tecnologie per la codifica;
   - Archittetura logica;
   - Archittetura di _deployment_.
-- Iniziare a redigere il "Manuale Utente" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
+- Iniziare a redigere il "Manuale Utente#super[G]" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
 
-Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle prossime scelte da attuare nella fase della _Product Baseline_.
+Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle prossime scelte da attuare nella fase della _Product Baseline#super[G]_.
 ==== Rischi attesi (DA MODIFICARE)
 
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
