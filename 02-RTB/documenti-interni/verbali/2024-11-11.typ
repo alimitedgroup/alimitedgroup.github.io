@@ -68,7 +68,7 @@ A tal proposito, le categorie presenti nel sito sono:
   - Valutazione dei capitolati
   - Dichiarazione degli impegni
 - *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Tecnology Baseline_;
-- *_PB_* : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline_.
+- *_PB_*#super[G] : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline#super[G]_.
 Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _smartphone_ e _tablet_ per rendere l'accesso, alle risorse e documenti, più facile. \
 Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_#super[G] di ogni membro di _ALimitedGroup_.
 
@@ -80,7 +80,7 @@ I presenti del gruppo _ALimitedGroup_ decidono che, sino al giorno 18-11-2024, s
 #align(center)[*#p.sara.nome #p.sara.cognome* $arrow.r$ *Analista*#super[G]]
 #align(center)[*#p.loris.nome #p.loris.cognome* $arrow.r$ *Analista*#super[G]]
 
-Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, mentre ai rimanenti componenti di _ALimitedGroup_ il proseguio della redazione del glossario e l'inizio delle norme e del piano di progetto.
+Sarà assegnato a *#persona(p.marco)* il compito di redigere questo verbale, mentre ai rimanenti componenti di _ALimitedGroup_ il proseguio della redazione del glossario e l'inizio delle norme e del piano di progetto#super[G].
 
 #pagebreak()
 = Esiti della riunione

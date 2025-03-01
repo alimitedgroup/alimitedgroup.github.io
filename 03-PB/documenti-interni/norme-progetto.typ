@@ -356,7 +356,7 @@ Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti 
 
 Di due tipologie:
 - La Lettera di presentazione per la *_Requirements and Technology Baseline (RTB)_*
-- La lettera di presentazione per la *_Product Baseline (PB)_*
+- La lettera di presentazione per la *_Product Baseline#super[G] (PB)_*
 
 Lo scopo del documento è quello di presentare formalmente la candidatura di _ALimitedGroup_ alle rispettive _Baseline_#super[G].
 
@@ -422,9 +422,9 @@ Il presente documento: stabilisce il _Way of Working#super[G]_ e le pratiche di 
   caption: [Proprietà del documento "Norme di Progetto"],
 )
 
-==== Piano di Progetto
+==== Piano di Progetto#super[G]
 
-Il #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[G] in _sprint_#super[G], nonché l'analisi dei rischi associati a ciascuna attività.\
+Il #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[G] in _sprint_#super[G], nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
 #figure(
@@ -582,7 +582,7 @@ Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 
 - *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente concordato;
 - *Supporto per approvazione del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti siano effettivamente soddisfatti.
 
-Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto (_Requirements and Technology Baseline (RTB)_ e _Product Baseline (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[G]* e *Codifica* per la _RTB_#super[G] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_: _ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[G] raggiunta).
+Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto (_Requirements and Technology Baseline (RTB)_ e _Product Baseline#super[G] (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[G]* e *Codifica* per la _RTB_#super[G] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_#super[G] :_ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[G] raggiunta).
 
 === Analisi dei Requisiti#super[G]
 
@@ -864,7 +864,7 @@ L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle s
 
 === Identificazione della configurazione
 
-Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell'architettura del sistema da sviluppare e allegare il risultato di quanto compreso in un documento apposito da determinare durante la _Product Baseline (PB)_.
+Il capitolato sviluppato dal nostro gruppo è formato da molte parti, motivo per cui l'identificazione della configurazione si renderà essenziale: per questo motivo, durante la fase di progettazione, sarà necessario schematizzare le varie parti dell'architettura del sistema da sviluppare e allegare il risultato di quanto compreso in un documento apposito da determinare durante la _Product Baseline#super[G] (PB)_.
 
 Per quanto riguarda invece la parte di documentazione, le parti componenti tale sezione del progetto sono state descritte nella @documentazione.
 
@@ -950,7 +950,7 @@ Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente
 
 ==== Strumenti a supporto
 
-Questa sezione sarà ampliata durante lo svolgimento della _Product Baseline (PB)_.
+Questa sezione sarà ampliata durante lo svolgimento della _Product Baseline#super[G] (PB)_.
 
 Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio #link("https://farfalla-project.org/readability_static/")[farfalla-project.org/readability_static/]
 
@@ -1400,7 +1400,7 @@ Per i rimanenti *documenti* funzioni di interesse sono contenute nel template #l
 
 Per i seguenti documenti:
 - *Norme di Progetto#super[G]*;
-- *Piano di Progetto*;
+- *Piano di Progetto#super[G]*;
 - *Piano di Qualifica*;
 - *Analisi dei Requisiti#super[G]*;
 

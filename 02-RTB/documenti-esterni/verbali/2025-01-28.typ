@@ -61,7 +61,7 @@ Durante l'incontro il gruppo _ALimitedGroup_ ha effettuato una dimostrazione com
 
 = Esiti della riunione
 
-La riunione si conclude con parere positivo su quanto svolto. Si è inoltre deciso, durante lo svolgimento delle attività per la _Product Baseline (PB)_ di discutere più approfonditamente delle soglie accettabili per alcune tipologie di Test#super[G].
+La riunione si conclude con parere positivo su quanto svolto. Si è inoltre deciso, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_ di discutere più approfonditamente delle soglie accettabili per alcune tipologie di Test#super[G].
 _ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per la disponibilità e la professionalità mostrataci durante tutto l'arco della riunione.
 
 Il gruppo teneva, inoltre, ringraziare per i consigli forniti e gli esempi derivanti dall'esperienza lavorativa dei rappresentanti di #M31.
