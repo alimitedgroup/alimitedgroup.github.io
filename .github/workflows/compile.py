@@ -15,6 +15,7 @@ from pathlib import Path
 from shutil import rmtree, copytree, copyfile
 from collections import defaultdict
 
+os.rename("03-PB/documenti-interni/glossario.typ","03-PB/documenti-interni/glossarioPB.typ")
 source_files = glob("*/**/*.typ", recursive=True) + ["docs.typ"]
 options = ["--root", ".", "--ignore-system-fonts", "--font-path", "assets"]
 
@@ -129,7 +130,6 @@ def process_template(titolo: str) -> str:
 
 def main():
     logging.basicConfig(level=getenv("LOGLEVEL", "INFO"))
-    os.rename("03-PB/documenti-interni/glossario.typ","03-PB/documenti-interni/glossarioPB.typ")
     # Setup `dist` directory
     rmtree("dist", ignore_errors=True)
     copytree("website", "dist", symlinks=False)
