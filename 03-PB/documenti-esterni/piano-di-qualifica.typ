@@ -9,6 +9,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.1.0",
+      date: datetime(day: 25, month: 02, year: 2025),
+      autore: p.emanuele,
+      verifica: p.matteo,
+      descr: "Correzione di T-123-S.",
+    ),
+    (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
       autore: p.matteo,
@@ -459,7 +466,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 - Test di Regressione;
 - Test di Accettazione.
 
-ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test di Regressione, nonché le altre tipologie di Test qui non presenti, durante lo svolgimento delle attività per la _Product Baseline (PB)_.
+ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test di Regressione, nonché le altre tipologie di Test qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
 
 == Test di Sistema
 
@@ -603,7 +610,7 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
     [T-120-S], [Verificare che un Admin Globale, visualizzando l'elenco delle attività di accesso, visualizzi per ciascuna il proprio ID], [R-120-F-De], [NI],
     [T-121-S], [Verificare che un Admin Globale, visualizzando l'elenco delle attività di accesso, visualizzi per ciascuna lo stato (riuscito, bloccato o negato)], [R-121-F-De], [NI],
     [T-122-S], [Verificare che un Admin Globale possa bloccare un tentativo di accesso inserendo l'ID di tale tentativo], [R-122-F-De], [NI],
-    [T-123-S], [Verificare che un Admin Globale riceva notifiche email/sms per attività importanti come il raggiungimento di scorte minime o la necessità di approvare un rifornimento], [R-123-F-De], [NI],
+    [T-123-S], [Verificare che il Sistema di rilevamento possa avviare l'invio di notifiche email/sms per attività importanti come il raggiungimento di scorte minime o la necessità di approvare un rifornimento], [R-123-F-De], [NI],
     [T-124-S], [Verificare che un Admin Globale possa aggiungere un Utente al Sistema], [R-124-F-De], [NI],
     [T-125-S], [Verificare che un Admin Globale, aggiungendo un Utente al sistema, ne inserisca il nome], [R-125-F-De], [NI],
     [T-126-S], [Verificare che un Admin Globale, aggiungendo un Utente al sistema, ne inserisca la Password], [R-126-F-De], [NI],
@@ -682,7 +689,7 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 #show figure: set block(breakable: true)
 #figure(
   table(
-    columns: (auto, auto),
+    columns: (1fr, 1fr),
 
     fill: (col, row) => if row == 0 {
       rgb(128, 0, 128)
@@ -953,14 +960,14 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
 
-Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline (PB)_.
+Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
 
 == MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
 Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
-Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto ver. 1.0.0*].
+Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].
 Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 
 #pagebreak()
@@ -969,7 +976,7 @@ Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
 Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
-raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline (PB)_.
+raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline#super[G] (PB)_.
 #pagebreak()
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
@@ -1011,7 +1018,7 @@ che è migliorata tra gli _sprint_#super[G] 4, 5 e 6, periodo a cui effettivamen
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
 In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile.
-Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[G] e del Piano di Progetto, specialmente il documento delle Norme di Progetto#super[G] rimane distante dalla soglia di ottimalità.
+Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[G] e del Piano di Progetto#super[G], specialmente il documento delle Norme di Progetto#super[G] rimane distante dalla soglia di ottimalità.
 I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto alle varie riorganizzazioni subite dal documento per renderlo più facilmente fruibile, ma anche per la natura
 a scopo regolamentativo del documento.
 

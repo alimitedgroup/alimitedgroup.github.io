@@ -389,7 +389,7 @@ Di seguito sono esposti gli attori utilizzati:
 #v(1em)
 
 #figure(
-  image("../../assets/diagrams/attori.png", width: 60%),
+  image("../../assets/diagrams/attori-old.png", width: 60%),
   caption: [Diagramma degli attori principali],
 )
 #v(1em)
@@ -2775,7 +2775,7 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema invia un'email ai Client email registrati
   ],
   trigger: "L'Admin Globale/Locale riceve la notifica via e-mail di un evento critico",
-)[#use-case-diagram("67", "UC67 - Ricezione E-mail evento critico")]
+)[#use-case-diagram("67-old", "UC67 - Ricezione E-mail evento critico")]
 
 === UC68: Ricezione SMS evento critico <UC68>
 
@@ -2792,7 +2792,7 @@ Tale Caso d'Uso sarà ora esposto.
     - Il Sistema invia un sms ai dispositivi GSM registrati
   ],
   trigger: "L'Admin Globale/Locale riceve la notifica via sms di un evento critico",
-)[#use-case-diagram("68", "UC68 - Ricezione SMS evento critico")]
+)[#use-case-diagram("68-old", "UC68 - Ricezione SMS evento critico")]
 
 === UC69: Aggiungi nuovo utente <UC69>
 
@@ -4536,7 +4536,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline#super[G] (PB)_.
 
 == Requisiti di Vincolo
 

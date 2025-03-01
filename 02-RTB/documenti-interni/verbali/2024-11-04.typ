@@ -101,7 +101,7 @@ Per la necessità di tracciamento delle decisioni e delle azioni intraprese, vie
 dove:
 
 - *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
-  - *DI\#* ovvero *Decisione Interna*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
+  - *DI\#* ovvero *Decisione Interna#super[G]*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
   - *AP\#* ovvero *Attività Passata*, con, al posto di *\#*, un numero crescente che parte da 1. Viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
   - *REPOSITORY\#* con, al posto di *REPOSITORY*, il nome della repository ospitante l'_issue_ associata (per convenzione, il nome *DOCS* sarà riservato per riferirsi alla repository contenente la documentazione), e con, al posto di *\#*, il numero di tale _issue_#super[G]. Viene utilizzata con lo stesso scopo di *AP\#* ma per le decisioni che comportano un'azione avente effettivamente una _issue_#super[G] associata nel sistema di ticketing.
 - *Dettaglio* è una breve descrizione della decisione o azione intrapresa. \ \

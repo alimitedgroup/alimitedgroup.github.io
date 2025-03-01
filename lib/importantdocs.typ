@@ -35,12 +35,16 @@
     [#metadata[AR v#versione] <titolo> ]
   } else if titolo == "Piano di Progetto" {
     [#metadata[PP v#versione] <titolo> ]
+  } else if titolo == "Specifica Tecnica" {
+    [#metadata[ST v#versione] <titolo> ]
+  } else if titolo == "Manuale Utente" {
+    [#metadata[MU v#versione] <titolo> ]
   } else {
     panic("Unknown title: " + titolo)
   }
 
-  let titolo = [#emph[#titolo] \ Versione #versione]
   let versione = versioni.at(0).vers
+  let titolo = [#emph[#titolo] \ Versione #versione]
 
   set list(indent: 1em)
   set enum(indent: 1em)

@@ -42,12 +42,13 @@
 
   body
 
-  for (letter, words) in yaml("../02-RTB/documenti-interni/glossario.yml") [
+  for (letter, words) in yaml("../03-PB/documenti-interni/glossario.yml") [
     #heading(letter, level: 1) // Intestazione per ogni lettera
 
     #for (word, definition) in words [
       #if (word != "") [
         // Lascia vuoto se nessuna definizione da mostrare
+        #v(0.75em)
         #strong[#list(word)] // Intestazione per ogni parola
         #label(word)
         #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione

@@ -47,9 +47,9 @@
 
 == Aggiornamenti sui lavori in corso
 
-I componenti di _ALimitedGroup_ si sono impegnati nel proseguo della redazione dell'*Analisi dei Requisiti#super[G]* e del *Piano di Progetto*, nonché al miglioramento dell'organizzazione delle *Norme di Progetto#super[G]*.
+I componenti di _ALimitedGroup_ si sono impegnati nel proseguo della redazione dell'*Analisi dei Requisiti#super[G]* e del *Piano di Progetto#super[G]*, nonché al miglioramento dell'organizzazione delle *Norme di Progetto#super[G]*.
 
-In merito all'*Analisi dei Requisiti#super[G]* sono stati fatti importanti avanzamenti in merito all'individuazione degli _Use Case_ del capitolato#super[G], mentre è stata definitivamente completata la redazione del *Piano di Progetto* (sino alla retrospettiva del primo periodo), che adesso dovrà essere verificato.
+In merito all'*Analisi dei Requisiti#super[G]* sono stati fatti importanti avanzamenti in merito all'individuazione degli _Use Case_ del capitolato#super[G], mentre è stata definitivamente completata la redazione del *Piano di Progetto#super[G]* (sino alla retrospettiva del primo periodo), che adesso dovrà essere verificato.
 
 Le *Norme di Progetto#super[G]* sono state rese molto più fruibili.
 
@@ -59,7 +59,7 @@ Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato me
 
 Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 2024 con #M31, comprende la necessità di proseguire con l'*Analisi dei Requisiti#super[G]*, espandendo più nel dettaglio gli _Use Case_ rilevati e aggiungendo quelli relativi ai requisiti considerati desiderabili o opzionali.
 
-Sarà necessario verificare il *Piano di Progetto* e le *Norme di Progetto#super[G]* sino ad ora redatte e proseguire la loro redazione.
+Sarà necessario verificare il *Piano di Progetto#super[G]* e le *Norme di Progetto#super[G]* sino ad ora redatte e proseguire la loro redazione.
 
 I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept#super[G] (PoC)_, specie riguardo il linguaggio *Go*#super[G] e la tecnologia *NATS*#super[G].
 Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica*.
