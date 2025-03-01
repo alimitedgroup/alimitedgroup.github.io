@@ -337,7 +337,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - *Analisi dei requisiti* \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 - *Diagrammi Casi d'Uso* \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf - *Ultimo Accesso 3 Febbraio 2025*
 - *_Repository GitHub_ del #prof(p.cardin)* \ https://github.com/rcardin/swe-imdb \ *Ultimo Accesso 3 Febbraio 2025*
-- *Glossario* \ https://alimitedgroup.github.io/Glossario.pdf \ *Ultimo Accesso 3 Febbraio 2025*
+- *Glossario* \ https://alimitedgroup.github.io/Glossаrio.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 
 #pagebreak()
 
