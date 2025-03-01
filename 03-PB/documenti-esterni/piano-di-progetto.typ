@@ -14,8 +14,7 @@
       date: datetime(day: 24, month: 02, year: 2025),
       autore: p.marco,
       verifica: p.loris,
-      approvazione: p.samuele,
-      descr: "Redazione per il settimo sprint " + [(@sprint7).\ ],
+      descr: "Redazione per il settimo sprint " + [(@sprint7). ],
     ),
     (
       vers: "1.0.0",
