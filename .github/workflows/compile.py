@@ -108,6 +108,7 @@ def process_template(titolo: str) -> str:
     titolo = titolo.strip()
     nomefile = titolo + ".pdf"
     if 'Glossario' in nomefile: nomefile = 'Glossario.pdf'
+    if 'GlossarioPB' in nomefile: nomefile = 'Glossario .pdf'
 
     if "PQ " in titolo:
         titolo = titolo.replace('PQ ', 'Piano di Qualifica ')
@@ -164,6 +165,8 @@ def main():
         if 'Glossario' not in titolo:
             output = f"dist/{titolo}".strip() + ".pdf"
         # TODO: rimuovere le due righe seguenti
+        elif 'Glossario' in titolo and '03-PB' in filename:
+            output ="dist/GlossarioPB.pdf"   
         else:
             output = "dist/Glossario.pdf"
 
