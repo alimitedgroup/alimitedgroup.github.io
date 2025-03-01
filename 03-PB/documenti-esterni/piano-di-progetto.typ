@@ -2,12 +2,19 @@
 #import "../../lib/pdp.typ": *
 #let nome-documento = [Piano di Progetto]
 
-#let ver = [1.0.0]
+#let ver = [1.1.0]
 #show: body => importantdocs(
   data: datetime(day: 18, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Approvato per RTB],
   versioni: (
+    (
+      vers: "1.1.0",
+      date: datetime(day: 01, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.marco,
+      descr: "Correzioni link.",
+    ),
     (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
@@ -117,7 +124,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 - *Glossario* \
-  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[https://alimitedgroup.github.io/Glossаrio.pdf] \
+  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 
 #pagebreak()
