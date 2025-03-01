@@ -2,7 +2,6 @@
 #import "../../lib/importantdocs.typ": *
 
 #show: body => importantdocs(
-  versione: "0.2.0",
   titolo: "Manuale Utente",
   data: datetime.today(),
   descrizione: "Questo documento contiene le informazioni utili per l'utilizzo del "
@@ -14,7 +13,7 @@
   redattori: (p.samuele, p.matteo),
   versioni: (
     (
-      vers: "0.1.0",
+      vers: "0.2.0",
       date: datetime.today(),
       descr: "Stesura parte introduttiva del documento.",
       autore: p.matteo,

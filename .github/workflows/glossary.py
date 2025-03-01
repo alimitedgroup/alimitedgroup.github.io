@@ -21,8 +21,8 @@ def substitute_line(filename, linenum, line, filtered_glossary):
             line = line.replace(sub, f"{sub}#super[G]")
             line = line.replace('#super[G]#super[G]', f'#super[G]')
         else:
-            line = line.replace(sub, f"{sub}<!--raw-typst #super(\"G\")-->")
-            line = line.replace('<!--raw-typst #super(\"G\")--><!--raw-typst #super(\"G\")-->', f'<!--raw-typst #super(\"G\")-->')
+            line = line.replace(sub, f"{sub}<!--raw-typst#super(\"G\")-->")
+            line = line.replace('<!--raw-typst#super(\"G\")--><!--raw-typst#super(\"G\")-->', f'<!--raw-typst#super(\"G\")-->')
         if line != origLine:
             logging.error(f'Found un-tagged word at {filename}:{linenum}')
 
@@ -85,25 +85,25 @@ def substitute(filePath,glossaryYml):
                 if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
                     if word[:-1] in glossary and word[len(word)-1] in specialChar:
                         if "manuale-utente" in filePath:
-                            newText += word[:-1] + "<!--raw-typst #super(\"G\")--> " + word[-1:]
+                            newText += word[:-1] + "<!--raw-typst#super(\"G\")--> " + word[-1:]
                         else: 
                             newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
                         if "manuale-utente" in filePath:
-                            newText += word[:-2] + "<!--raw-typst #super(\"G\")--> " + word[-2:]
+                            newText += word[:-2] + "<!--raw-typst#super(\"G\")--> " + word[-2:]
                         else:
                             newText += word[:-2] + "#super[G] " + word[-2:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0]=="_" or word[0]=="*":
                         if "manuale-utente" in filePath:
-                            newText += word + "<!--raw-typst #super(\"G\")--> "
+                            newText += word + "<!--raw-typst#super(\"G\")--> "
                         else:
                             newText += word + "#super[G] "
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0] == "(" and word[len(word)-1] == ")":
                         if "manuale-utente" in filePath:
-                            newText += word[:-1] + "<!--raw-typst #super(\"G\")--> " + word[-1:]
+                            newText += word[:-1] + "<!--raw-typst#super(\"G\")--> " + word[-1:]
                         else:
                             newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
