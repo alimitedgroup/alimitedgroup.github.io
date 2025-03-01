@@ -5,7 +5,7 @@
 #set list(indent: 0.5em)
 #let ver = [1.1.0]
 #show: body => importantdocs(
-  data: datetime(day: 24, month: 02, year: 2025),
+  data: datetime(day: 18, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Approvato per RTB],
   versioni: (
@@ -449,7 +449,7 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
   caption: [Riassunto dei costi previsti derivanti dalle ore assegnate a ciascun ruolo],
 )
 \
-In seguito a quanto suggerito in merito all'Analisi dei Requisiti#super[G] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
 
 #figure(
   table(
@@ -480,7 +480,6 @@ Si stima inoltre ad una candidatura per la *_Requirements and Technology Baselin
 
 Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
-#pagebreak()
 == Attività previste per la Requirements and Technology Baseline (RTB)
 
 #show figure: set block(breakable: true)
@@ -581,10 +580,9 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       Sincronizzazione: \ _sprint_ 6],
     [Completato],
   ),
-  caption: [Attività previste per la _Requirements and Technology Baseline (RTB)_],
+  caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
 )
 
-#pagebreak()
 == Attività previste per la Product Baseline (PB)
 
 #figure(
@@ -991,9 +989,7 @@ tra Casi d'Uso del backend e del frontend che devono essere rappresentati separa
 
 Non è stata completata la redazione degli Casi d'Uso non obbligatori a causa di problemi con la numerazione degli Casi d'Uso e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto#super[G], ma si è praticamente conclusa la redazione delle sezioni mancanti.
-
 #pagebreak()
-
 === Sprint 5 <sprint5>
 
 #table(
@@ -1007,7 +1003,7 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto#sup
   [Giorni di ritardo:], strong[0],
 )
 
-==== Informazioni generali e attività da svolgere <sprint5intro>
+==== Informazioni generali e attività da svolgere <sprint4intro>
 
 Il quinto sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G], sul completamento del PoC#super[G] e sul proseguimento del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto#super[G].
 
