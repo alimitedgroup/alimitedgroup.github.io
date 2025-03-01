@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.1.0]
+#let ver = [1.0.0]
 
 #show figure: set block(breakable: true)
 
@@ -9,13 +9,6 @@
   data: datetime(day: 18, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
-    (
-      vers: "1.1.0",
-      date: datetime(day: 01, month: 03, year: 2025),
-      autore: p.matteo,
-      verifica: p.marco,
-      descr: "Correzioni link.",
-    ),
     (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
