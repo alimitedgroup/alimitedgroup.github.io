@@ -167,7 +167,7 @@ def main():
         # TODO: rimuovere la riga seguente
         if 'Glossаrio' in titolo:
             output ="dist/Glossаrio.pdf"
-        if 'Glossario' not in titolo:
+        elif 'Glossario' not in titolo:
             output = f"dist/{titolo}".strip() + ".pdf"
         # TODO: rimuovere le due righe seguenti   
         else:
