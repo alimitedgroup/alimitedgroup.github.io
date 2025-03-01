@@ -109,7 +109,9 @@ def loadGlossary() -> dict:
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
     nomefile = titolo + ".pdf"
-    if 'GlossarioPB' in nomefile: titolo = 'Glossario .pdf'
+    if 'GlossarioPB' in nomefile: 
+        titolo = titolo.replace('GlossarioPB','Glossario ')
+        nomefile = 'GlossarioPB.pdf'
     elif 'Glossario' in nomefile: nomefile = 'Glossario.pdf'
 
     if "PQ " in titolo:
