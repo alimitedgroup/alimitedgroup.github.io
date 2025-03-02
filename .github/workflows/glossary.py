@@ -129,7 +129,7 @@ def find_files(fileList,path=ROOT):
         if os.path.isdir(full_path):
             find_files(fileList,full_path)
         else:
-            if (full_path.endswith(EXT) or full_path.endswith(EXT2)) and 'slide' not in full_path:
+            if (full_path.endswith(EXT) or (full_path.endswith(EXT2) and 'manuale-utente' in full_path)) and 'slide' not in full_path:
                 fileList.append(full_path)
 
 def main():
