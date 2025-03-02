@@ -1,7 +1,3 @@
-# Requisiti
-
-## Requisiti Hardware
-
 ## Requisiti Software
 
 In merito al Sistema Operativo, le componenti del sistema non fanno distinzione in quanto il Sistema si appoggia completamente a **Docker**<!--raw-typst#super("G")--> per garantire la sua esecuzione e le immagini utilizzate provengono direttamente dai _repository_<!--raw-typst#super("G")--> di Docker o vengono compilate mediante il compilatore di Go scaricato anch'esso dai _repository_<!--raw-typst#super("G")--> di Docker<!--raw-typst#super("G")--> .
@@ -14,12 +10,11 @@ I comandi che **Just** esegue sono reperibili nel file `JustFile`.
 
 Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con le versioni utilizzate da _ALimitedGroup_.
 
-[COMPLETARE ELENCO E METTERE VERSIONI CORRETTE]
-
 <!--typst-begin-exclude-->
-  - `Docker`, con versione `1.0.0`
-  - `Go (compilatore)`, con versione `1.0.0`
-  - `NATS`, con versione `1.0.0`
+  - `Docker Engine`, con versione `28.0.1`
+  - `Go (compilatore)`, con versione `1.24.0`
+  - `Just`, con versione `1.39.0`
+  - `NATS`, con versione `2.10.25`
 <!--typst-end-exclude-->
 
 <!--raw-typst
@@ -39,11 +34,12 @@ Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con 
       text(12pt, fill: white)[*Software*],
       text(12pt, fill: white)[*Versione*],
     ),
-    "Docker","",
-    "Go (compilatore)","",
-    "NATS","",
-)
+    "Docker Engine","28.0.1",
+    "Just","1.39.0",
+    "Go (compilatore)","1.24.0",
+    "NATS","2.10.25",
+  ),
+  caption: [Elenco dei _Software_ utilizzati e loro versioni]
 )
 
 -->
-
