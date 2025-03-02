@@ -198,7 +198,7 @@ _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permette
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") \
   *Ultimo Accesso 6 Febbraio 2025*
 - *Glossario* \
-  #link("https://alimitedgroup.github.io/Glossаrio.pdf") \
+  #link("https://alimitedgroup.github.io/Glossario.pdf") \
   *Ultimo Accesso 6 Febbraio 2025*
 
 #pagebreak()

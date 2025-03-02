@@ -117,7 +117,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 - *Glossario* \
-  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[https://alimitedgroup.github.io/Glossаrio.pdf] \
+  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
 
 #pagebreak()
