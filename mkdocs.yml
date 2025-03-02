@@ -5,7 +5,7 @@ site_dir: dist/docs
 
 nav:
   - Home: index.md
-  - Iniziare: 01-getting-started/index.md
+  - Requisiti: 01-requisiti/requisiti.md
   - Guide:
       - Guide: 02-guides/index.md
       - Registrare un utente: 02-guides/registrazione.md
