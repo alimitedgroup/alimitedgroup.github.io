@@ -2,6 +2,7 @@ TEMPLATE = '<li><a href="{{link}}" target="_blank">{{name}}</a></li>'
 LETTER_TEMPLATE = '</dl><h2 id="{{letter}}">{{letter}}</h2><dl>'
 WORD_TEMPLATE = '<dt>{{word}}</dt><dd>{{definition}}</dd>'
 
+import os
 import re
 import sys
 import yaml
@@ -14,6 +15,7 @@ from pathlib import Path
 from shutil import rmtree, copytree, copyfile
 from collections import defaultdict
 
+os.rename("03-PB/documenti-interni/glossario.typ","03-PB/documenti-interni/glossаrio.typ")
 source_files = glob("*/**/*.typ", recursive=True) + ["docs.typ"]
 options = ["--root", ".", "--ignore-system-fonts", "--font-path", "assets"]
 
@@ -107,7 +109,10 @@ def loadGlossary() -> dict:
 def process_template(titolo: str) -> str:
     titolo = titolo.strip()
     nomefile = titolo + ".pdf"
-    if 'Glossario' in nomefile: nomefile = 'Glossario.pdf'
+    if 'Glossаrio' in nomefile: 
+        titolo = titolo.replace('Glossаrio','Glossario')
+        nomefile = 'Glossаrio.pdf'
+    elif 'Glossario' in nomefile: nomefile = 'Glossario.pdf'
 
     if "PQ " in titolo:
         titolo = titolo.replace('PQ ', 'Piano di Qualifica ')
@@ -127,7 +132,6 @@ def process_template(titolo: str) -> str:
 
 def main():
     logging.basicConfig(level=getenv("LOGLEVEL", "INFO"))
-
     # Setup `dist` directory
     rmtree("dist", ignore_errors=True)
     copytree("website", "dist", symlinks=False)
@@ -161,12 +165,14 @@ def main():
 
         titolo = query(filename.replace(".pdf", ".typ"), "<titolo>")
         # TODO: rimuovere la riga seguente
-        if 'Glossario' not in titolo:
+        if 'Glossаrio' in titolo:
+            output ="dist/Glossаrio.pdf"
+        elif 'Glossario' not in titolo:
             output = f"dist/{titolo}".strip() + ".pdf"
-        # TODO: rimuovere le due righe seguenti
+        # TODO: rimuovere le due righe seguenti   
         else:
             output = "dist/Glossario.pdf"
-
+        
         if ".typ" in filename and Path(filename_pdf).exists():
             copyfile(filename_pdf, output)
             status = True

@@ -140,7 +140,7 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 
 === Riferimenti informativi
 - *Glossario*: \
-  #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf] \
+  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
   *Ultimo Accesso 6 Febbraio 2025*
 - *Standard ISO/IEC 9126* \
   #link("https://it.wikipedia.org/wiki/ISO/IEC_9126") \
