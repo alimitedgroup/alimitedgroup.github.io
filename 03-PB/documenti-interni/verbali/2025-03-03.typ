@@ -46,16 +46,16 @@
 
 == Aggiornamenti sui lavori in corso <alc>
 
-I componenti di _ALimitedGroup_ hanno constatato il completamento di tutte le attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto, della sezione dedicata agli strumenti in ogni processo.
+I componenti di _ALimitedGroup_ hanno constatato il completamento di tutte le attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto#super[G], della sezione dedicata agli strumenti in ogni processo.
 
-Dalla riunione è inoltre risultato che progressi sono stati realizzati anche in merito al *Manuale Utente*, per cui è stata anticipata la stesura della parte introduttiva: nel corso della settimana attuale sarà necessario verificare quanto realizzato nel *Manuale Utente*, nonché verificare la restante parte dei documenti scritti nel corso della settimana trascorsa.
+Dalla riunione è inoltre risultato che progressi sono stati realizzati anche in merito al *Manuale Utente#super[G]*, per cui è stata anticipata la stesura della parte introduttiva: nel corso della settimana attuale sarà necessario verificare quanto realizzato nel *Manuale Utente#super[G]*, nonché verificare la restante parte dei documenti scritti nel corso della settimana trascorsa.
 
 == Aggiornamenti sui lavori futuri
 
-I componenti hanno considerato il tempo a disposizione: hanno per questo motivo fatto il punto sui microservizi da realizzare e stabilito che questi dovranno essere realizzati, testati e descritti nel documento di *Specifica Tecnica* in un numero non inferiore a 3 per settimana.
+I componenti hanno considerato il tempo a disposizione: hanno per questo motivo fatto il punto sui microservizi da realizzare e stabilito che questi dovranno essere realizzati, testati e descritti nel documento di *Specifica Tecnica#super[G]* in un numero non inferiore a 3 per settimana.
 
 I microservizi individuati sono i seguenti:
-- *API Gateway*, per gestire le richieste HTTP e verificare la validità dei _Token_;
+- *API#super[G] Gateway*, per gestire le richieste HTTP e verificare la validità dei _Token_;
 - *Auth*, per gestire il rilascio di _Token_ di autenticazione;
 - *Catalog*, per gestire l'inventario globale e le informazioni su ciascuna merce;
 - *Order*, per gestire gli ordini;
@@ -67,7 +67,9 @@ Sarà inoltre necessario realizzare un *Client* per la gestione del Sistema.
 
 Come citato in @alc, sarà necessario verificare i documenti realizzati la settimana appena trascorsa.
 
-Infine, data la presenza del documento di Specifica Tecnica nel _repository_ dedicato ai documenti, le issue di realizzazione architetturale saranno spostate nel _repository_ appena citato.
+È stato deciso che le _issue_#super[G] riguardanti la progettazione saranno inserite nel _repository_#super[G] dedicato ai documenti in quanto qui è presente il documento di *Specifica Tecnica#super[G]*.
+
+Infine, data la presenza del documento di Specifica Tecnica#super[G] nel _repository_#super[G] dedicato ai documenti, le issue di realizzazione architetturale saranno spostate nel _repository_#super[G] appena citato.
 
 == Decisioni relative alle attività del prossimo periodo
 
@@ -76,13 +78,13 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 #align(center)[*Norme di Progetto#super[G]*]
 - Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica entro il giorno *9 Marzo 2025*.
 
-#align(center)[*Specifica Tecnica*]
-- Progettare e descrivere il microservizio di *API Gateway* entro il giorno *9 Marzo 2025*
+#align(center)[*Specifica Tecnica#super[G]*]
+- Progettare e descrivere il microservizio di *API#super[G] Gateway* entro il giorno *9 Marzo 2025*
 - Progettare e descrivere il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
 - Progettare e descrivere il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
 
 #align(center)[*Programmazione*]
-- Codificare il microservizio di *API Gateway* entro il giorno *9 Marzo 2025*
+- Codificare il microservizio di *API#super[G] Gateway* entro il giorno *9 Marzo 2025*
 - Codificare il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
 - Codificare il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
 - Realizzare i Test di unità e di integrazione per il microservizio di *Api Gateway* entro il giorno *9 Marzo 2025*
