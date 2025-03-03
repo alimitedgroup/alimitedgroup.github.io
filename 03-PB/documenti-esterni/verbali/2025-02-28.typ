@@ -28,7 +28,7 @@
 
 In questa riunione hanno partecipato, per conto di #M31:
 - #persona(p.luca);
-- #persona(p.moones) ;
+- #persona(p.moones);
 - #persona(p.cristian).
 
 #pagebreak()
