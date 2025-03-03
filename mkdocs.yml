@@ -3,11 +3,14 @@ copyright: Copyright &copy; 2024 - 2025 ALimitedGroup
 docs_dir: 03-PB/manuale-utente
 site_dir: dist/docs
 
+hooks:
+  - 03-PB/manuale-utente/markdown_replacer.py
+
 nav:
   - Home: index.md
   - Requisiti:
-    - Requisiti Hardware: 01-requisiti/requisiti-hw.md
-    - Requisiti Software: 01-requisiti/requisiti-sw.md
+      - Requisiti Hardware: 01-requisiti/requisiti-hw.md
+      - Requisiti Software: 01-requisiti/requisiti-sw.md
   - Preparazione del Sistema:
       - Installazione del Software: 02-preparazione-del-sistema/01-installazione-sw.md
       - Personalizzare la configurazione: 02-preparazione-del-sistema/02-configurare-ms.md

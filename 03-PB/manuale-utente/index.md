@@ -1,8 +1,8 @@
-# Introduzione <!--raw-typst <introduzione>-->
+# Introduzione <introduzione>
 
 ## Informazioni generali
 
-Lo scopo del **Manuale Utente<!--raw-typst#super("G")-->** è quello di introdurre l'utilizzatore finale del Sistema sviluppato da _ALimitedGroup_ per il **[Capitolato C6: Sistema di Gestione di un Magazzino Distribuito](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)**
+Lo scopo del **Manuale Utente#super[G]** è quello di introdurre l'utilizzatore finale del Sistema sviluppato da _ALimitedGroup_ per il **[Capitolato C6: Sistema di Gestione di un Magazzino Distribuito](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)**
 
 A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il Sistema, a partire dai programmi necessari alla sua esecuzione, per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e, infine, come avviare lo stesso.
 
@@ -18,27 +18,21 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 -->
 
 ## Riferimenti
+
 ### Riferimenti normativi
-- **Norme di Progetto<!--raw-typst#super("G")--> versione 1.0.0**
 
-  [https://alimitedgroup.github.io/NP%20v1.0.0.pdf](https://alimitedgroup.github.io/NP%20v1.0.0.pdf)
+- [**Norme di Progetto#super[G] versione 1.0.0**](https://alimitedgroup.github.io/NP%20v1.0.0.pdf)
 
-  **Ultimo Accesso 3 Febbraio 2025**
+    Ultimo Accesso 3 Febbraio 2025
 
-- **Capitolato C6: Sistema di Gestione di un Magazzino Distribuito**
+- [**Capitolato C6: Sistema di Gestione di un Magazzino Distribuito**](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)
 
-    [https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)
-
-  **Ultimo Accesso 3 Febbraio 2025**
+    Ultimo Accesso 3 Febbraio 2025
 
 ### Riferimenti informativi
 
-- **Glossario**
-  <!--typst-begin-exclude-->
-    [https://alimitedgroup.github.io/Glossario.pdf](https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf)
-  <!--typst-end-exclude-->
-  <!--raw-typst #link("https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] #v(0.1em)-->
+- [**Glossario**](https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf)
 
-  **Ultimo Accesso 3 Febbraio 2025**
+    Ultimo Accesso 3 Febbraio 2025
 
-<!--raw-typst #pagebreak()-->
+<!--raw-typst #pagebreak() -->

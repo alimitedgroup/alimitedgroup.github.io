@@ -17,12 +17,8 @@ def loadGlossary():
 def substitute_line(filename, linenum, line, filtered_glossary):
     for sub in filtered_glossary:
         origLine = line
-        if 'manuale-utente' not in filename:
-            line = line.replace(sub, f"{sub}#super[G]")
-            line = line.replace('#super[G]#super[G]', f'#super[G]')
-        else:
-            line = line.replace(sub, f"{sub}<!--raw-typst#super(\"G\")-->")
-            line = line.replace('<!--raw-typst#super(\"G\")--><!--raw-typst#super(\"G\")-->', f'<!--raw-typst#super(\"G\")-->')
+        line = line.replace(sub, f"{sub}#super[G]")
+        line = line.replace('#super[G]#super[G]', f'#super[G]')
         if line != origLine:
             logging.error(f'Found un-tagged word at {filename}:{linenum}')
 
