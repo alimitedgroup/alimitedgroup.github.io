@@ -99,9 +99,9 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
 
 #align(center)[*#persona(p.marco)* $arrow.r$ *Responsabile*#super[G]]
 #align(center)[
-  *#persona(p.loris)* $arrow.r$ *Amministratore*#super[G] \
-  *#persona(p.samuele)* $arrow.r$ *Amministratore*#super[G] \
-  *#persona(p.matteo)* $arrow.r$ *Amministratore*#super[G]
+  *#persona(p.loris)* $arrow.r$ *Programmatore*#super[G] \
+  *#persona(p.samuele)* $arrow.r$ *Programmatore*#super[G] \
+  *#persona(p.matteo)* $arrow.r$ *Programmatore*#super[G]
 ]
 #align(center)[
   *#persona(p.sara)* $arrow.r$ *Progettista*#super[G] \
