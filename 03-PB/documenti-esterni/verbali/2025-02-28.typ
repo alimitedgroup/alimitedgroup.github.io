@@ -21,7 +21,7 @@
 = Informazioni generali
 #inizio-verbale-esterno([*virtuale*], [*28 Febbraio 2025*], [*10.00*], [*11.00*], [#M31])
 
-+ Aggiornamento stato avanzamento lavori
++ aggiornamento stato avanzamento lavori;
 + Repository _Minimum Viable Product#super[G] (MVP)_
 + Discussione test
 + Presentazione alcuni microservizi
