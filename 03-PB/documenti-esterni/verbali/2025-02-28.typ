@@ -54,12 +54,12 @@ L'azienda #M31 ha richiesto di fornire dei rilasci periodici inviando via mail l
 #M31 ha ribadito al gruppo _ALimitedGroup_ l'importanza di fornire un *_test book_* dettagliato per la verifica del corretto funzionamento del sistema.\
 Questo documento dovrà includere una descrizione dei casi di _test_#super[G] ,
 delle condizioni iniziali, dei passaggi eseguiti, dei risultati attesi e ottenuti, nonché dei criteri di validazione utilizzati per verificare il corretto funzionamento del sistema.
-I _test_ che dovranno essere inclusi sono:
-- _Test_ di sincronizzazione;
+I _test_#super[G] che dovranno essere inclusi sono:
+- _Test_#super[G] di sincronizzazione;
 - _Unit test_#super[G] e _code coverage_: viene stabilito il *_code coverage_* pari al *75%*;
-- _Test_ di carico e scalabilità: per quanto riguarda la scalabilità è sufficiente che più istanze dello stesso servizio possano essere eseguite contemporaneamente;
-- _Test_ di sicurezza.
-Il *95%* dei _test_ devono essere eseguiti con successo.
+- _Test_#super[G] di carico e scalabilità: per quanto riguarda la scalabilità è sufficiente che più istanze dello stesso servizio possano essere eseguite contemporaneamente;
+- _Test_#super[G] di sicurezza.
+Il *95%* dei _test_#super[G] devono essere eseguiti con successo.
 
 
 == Presentazione architettura microservizi realizzati
