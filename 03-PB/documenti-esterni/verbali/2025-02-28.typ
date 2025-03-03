@@ -23,7 +23,7 @@
 
 + aggiornamento stato avanzamento lavori;
 + repository _Minimum Viable Product#super[G] (MVP)_;
-+ Discussione test
++ discussione test;
 + Presentazione alcuni microservizi
 
 In questa riunione hanno partecipato, per conto di #M31:
