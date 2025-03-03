@@ -125,8 +125,8 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 - *Lezione rovesciata - Documentazione* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
   *Ultimo Accesso 5 Febbraio 2025*
-- *Glossario ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
+- *Glossario*: \
+  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
   *Ultimo Accesso 5 Febbraio 2025*
 
 #pagebreak()

@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.0.0]
+#let ver = [1.1.0]
 
 #show: body => importantdocs(
   data: datetime(day: 18, month: 02, year: 2025),
@@ -147,7 +147,7 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 
 === Riferimenti informativi
 - *Glossario*: \
-  #link("alimitedgroup.github.io/Glossario.pdf")[alimitedgroup.github.io/Glossario.pdf] \
+  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
   *Ultimo Accesso 6 Febbraio 2025*
 - *Standard ISO/IEC 9126* \
   #link("https://it.wikipedia.org/wiki/ISO/IEC_9126") \
