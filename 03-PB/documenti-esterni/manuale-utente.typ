@@ -94,7 +94,7 @@
     wrap-replacer(content, match => match.captures.first() + "<!-- raw-typst " + match.captures.at(1) + " -->"),
   )
   content = content.replace(
-    "#super(\"G\")",
+    "#super[G]",
     wrap-replacer(content, match => "<!-- raw-typst #super(\"G\") -->"),
   )
   cmarker.render(
