@@ -8,11 +8,11 @@
       vers: "0.1.0",
       date: datetime(day: 28, month: 02, year: 2025),
       autore: p.sara,
-      //verifica: ,
+      verifica: p.emanuele,
       descr: "Prima redazione del documento.",
     ),
   ),
-  stato: [In redazione],
+  stato: [Verificato],
   presenze: (p.sara, p.samuele, p.lorenzo, p.loris, p.matteo, p.marco, p.emanuele),
   odg: [Quinta riunione con #M31: aggiornamento sullo stato avanzamento lavori, discussione test],
   body,
@@ -23,7 +23,7 @@
 
 + aggiornamento stato avanzamento lavori;
 + repository _Minimum Viable Product#super[G] (MVP)_;
-+ discussione test;
++ discussione test#super[G] ;
 + presentazione alcuni microservizi.
 
 In questa riunione hanno partecipato, per conto di #M31:
