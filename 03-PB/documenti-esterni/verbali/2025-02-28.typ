@@ -42,7 +42,7 @@ Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avan
 
 == Repository _Minimum Viable Product#super[G] (MVP)_
 Il codice sorgente del _Minimum Viable Product#super[G] (MVP)_ è caricato su un #link("https://github.com/alimitedgroup/MVP")[repository GitHub#super[G] ]del gruppo _ALimitedGroup_.
-L'azienda #M31 ha richiesto di fare dei rilasci periodici fornendo via mail l'archivio compresso contenente il codice sorgente e un file README.md con le istruzioni per l'esecuzione del software.
+L'azienda #M31 ha richiesto di fornire dei rilasci periodici inviando via mail l'archivio compresso contenente il codice sorgente e un file README.md con le istruzioni per l'esecuzione del software.
 == Discussione test
 #M31 ha ribadito al gruppo _ALimitedGroup_ l'importanza di fornire un *test book* dettagliato per la verifica del corretto funzionamento del sistema.\
 Questo documento dovrà includere una descrizione dei casi di test#super[G] ,
