@@ -15,15 +15,16 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 <!--raw-typst
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[*parola#super[G]*]
 -->
-<!-- begin-typst-exclude -->
+<!--typst-begin-exclude-->
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo seguente:
 <p align="center">parola#super[G]</p>
-<!-- end-typst-exclude -->
+<!--typst-end-exclude-->
 
 ## Riferimenti
 
 ### Riferimenti normativi
 
+<!--typst-begin-exclude-->
 - [**Norme di Progetto#super[G] versione 1.0.0**](https://alimitedgroup.github.io/NP%20v1.0.0.pdf)
 
     Ultimo Accesso 3 Febbraio 2025
@@ -31,11 +32,38 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 - [**Capitolato C6: Sistema di Gestione di un Magazzino Distribuito**](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)
 
     Ultimo Accesso 3 Febbraio 2025
+<!--typst-end-exclude-->
+
+<!--raw-typst
+- *Norme di Progetto#super[G] versione 1.0.0*
+
+    https://alimitedgroup.github.io/NP%20v1.0.0.pdf
+
+    *Ultimo Accesso 3 Febbraio 2025*
+
+- *Capitolato C6: Sistema di Gestione di un Magazzino Distribuito*
+
+    https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
+
+    *Ultimo Accesso 3 Febbraio 2025*
+-->
 
 ### Riferimenti informativi
 
+<!--raw-typst
+- *Glossario*
+
+    https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf
+
+    *Ultimo Accesso 3 Febbraio 2025*
+-->
+
+<!--typst-begin-exclude-->
 - [**Glossario**](https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf)
 
     Ultimo Accesso 3 Febbraio 2025
+<!--typst-end-exclude-->
 
-<!--raw-typst #pagebreak() -->
+<!--raw-typst
+#pagebreak()
+-->

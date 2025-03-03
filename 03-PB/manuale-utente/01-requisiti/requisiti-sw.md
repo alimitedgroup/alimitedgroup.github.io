@@ -15,15 +15,14 @@ I comandi che **Just** esegue sono reperibili nel file `JustFile`.
 
 Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con le versioni utilizzate da _ALimitedGroup_.
 
-| Software | Versione |
-|:-------------:|:--------:|
-| Docker Engine | 28.0.1 |
-| Just | 1.39.0 |
-| Go | 1.24.0 |
-| NATS | 2.10.25 |
+<!--typst-begin-exclude-->
+  - `Docker Engine`, con versione `28.0.1`
+  - `Go (compilatore)`, con versione `1.24.0`
+  - `Just`, con versione `1.39.0`
+  - `NATS`, con versione `2.10.25`
+<!--typst-end-exclude-->
 
 <!--raw-typst
-
 #figure(
   table(
     columns: (1fr, 1fr),
@@ -35,5 +34,4 @@ Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con 
   ),
   caption: [Elenco dei _Software_ utilizzati e loro versioni]
 )
-
 -->

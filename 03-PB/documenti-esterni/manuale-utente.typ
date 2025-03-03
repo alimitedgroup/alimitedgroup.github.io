@@ -16,8 +16,7 @@
     (
       vers: "0.2.0",
       date: datetime(day: 02, month: 03, year: 2025),
-      descr: "Stesura parte introduttiva del documento e requisiti del Sistema " /* + [(@introduzione e @requisiti)] */
-        + ".",
+      descr: "Stesura parte introduttiva del documento e requisiti del Sistema " + [(@introduzione e @requisiti)] + ".",
       autore: p.matteo,
       verifica: p.emanuele,
     ),
@@ -49,7 +48,7 @@
   let i = 0
   while i < position and i < content.len() {
     res += repr(i)
-    let start = content.slice(i).position(regex("<!--\s*raw-typst"))
+    let start = content.slice(i).position(regex("<!--raw-typst"))
     if start == none {
       return false
     }
@@ -72,9 +71,9 @@
   // return res
   return false
 }
-#assert(is-inside-raw-typst("<!-- raw-typst ciao -->", 15))
-#assert(not is-inside-raw-typst("<!-- raw-typst ciao -->", 0))
-#assert(not is-inside-raw-typst("<!-- raw-typst ciao -->", 23))
+#assert(is-inside-raw-typst("<!--raw-typst ciao -->", 15))
+#assert(not is-inside-raw-typst("<!--raw-typst ciao -->", 0))
+#assert(not is-inside-raw-typst("<!--raw-typst ciao -->", 23))
 
 #let wrap-replacer(content, replacer) = {
   return match => if is-inside-raw-typst(content, match.start) {
@@ -88,15 +87,15 @@
   let basename = ("../manuale-utente/" + filepath).split("/").slice(0, -1).join("/")
   let content = read("../manuale-utente/" + filepath)
 
-
-  content = content.replace(
-    regex(`^(#+.*)(<[\w:\.]+>)\n`.text),
-    wrap-replacer(content, match => match.captures.first() + "<!-- raw-typst " + match.captures.at(1) + " -->"),
-  )
-  content = content.replace(
-    "#super[G]",
-    wrap-replacer(content, match => "<!-- raw-typst #super(\"G\") -->"),
-  )
+  content = content
+    .replace(
+      regex(`^(#+.*)<([\w:\.]+)>\n`.text),
+      match => match.captures.first() + "<!--raw-typst <" + match.captures.at(1) + ">-->",
+    )
+    .replace(
+      "#super[G]",
+      wrap-replacer(content, match => "<!--raw-typst #super(\"G\")-->"),
+    )
   cmarker.render(
     content,
     scope: (image: (path, alt: none) => align(center, image(basename + "/" + path, alt: alt, height: 30%))),
