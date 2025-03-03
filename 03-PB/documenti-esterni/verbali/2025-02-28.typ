@@ -22,7 +22,7 @@
 #inizio-verbale-esterno([*virtuale*], [*28 Febbraio 2025*], [*10.00*], [*11.00*], [#M31])
 
 + Aggiornamento stato avanzamento lavori
-+ Repository _Minimum Viable Product (MVP)_
++ Repository _Minimum Viable Product#super[G] (MVP)_
 + Discussione test
 + Presentazione alcuni microservizi
 
@@ -38,18 +38,18 @@ In questa riunione hanno partecipato, per conto di #M31:
 Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avanzamento dei lavori:
 - il _Proof of Concept#super[G] (PoC)_ e la documentazione sono state valutate positivamente;
 - è stata raggiunta la _Requirement Technology Baseline (RTB)_;
-- sono state avviate le attività per la _Product Baseline (PB)_.
+- sono state avviate le attività per la _Product Baseline#super[G] (PB)_.
 
-== Repository _Minimum Viable Product (MVP)_
-Il codice sorgente del _Minimum Viable Product (MVP)_ è caricato su un #link("https://github.com/alimitedgroup/MVP")[repository GitHub] del gruppo _ALimitedGroup_.
+== Repository _Minimum Viable Product#super[G] (MVP)_
+Il codice sorgente del _Minimum Viable Product#super[G] (MVP)_ è caricato su un #link("https://github.com/alimitedgroup/MVP")[repository GitHub#super[G] ]del gruppo _ALimitedGroup_.
 L'azienda #M31 ha richiesto di fare dei rilasci periodici fornendo via mail l'archivio compresso contenente il codice sorgente e un file README.md con le istruzioni per l'esecuzione del software.
 == Discussione test
 #M31 ha ribadito al gruppo _ALimitedGroup_ l'importanza di fornire un *test book* dettagliato per la verifica del corretto funzionamento del sistema.\
-Questo documento dovrà includere una descrizione dei casi di test,
+Questo documento dovrà includere una descrizione dei casi di test#super[G] ,
 delle condizioni iniziali, dei passaggi eseguiti, dei risultati attesi e ottenuti, nonché dei criteri di validazione utilizzati per verificare il corretto funzionamento del sistema.
 I test che dovranno essere inclusi sono:
 - test di sincronizzazione;
-- unit test e code coverage: viene stabilito il *code coverage* pari al *75%*;
+- unit test#super[G] e code coverage: viene stabilito il *code coverage* pari al *75%*;
 - test di carico e scalabilità: per quanto riguarda la scalabilità è sufficiente che più istanze dello stesso servizio possano essere eseguite contemporaneamente;
 - test di sicurezza.
 Il *95%* dei test devono essere eseguiti con successo.
