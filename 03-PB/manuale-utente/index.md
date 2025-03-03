@@ -6,16 +6,19 @@ Lo scopo del **Manuale Utente#super[G]** è quello di introdurre l'utilizzatore 
 
 A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il Sistema, a partire dai programmi necessari alla sua esecuzione, per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e, infine, come avviare lo stesso.
 
-<!--raw-typst
-== Glossario
+## Glossario
 
 La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un’importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
 
-È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, al seguente #link("https://alimitedgroup.github.io/glossario.html")[indirizzo].
+È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, all'indirizzo [https://alimitedgroup.github.io/glossario.html](https://alimitedgroup.github.io/glossario.html).
 
-Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[*parola#super("G")*]
-
+<!--raw-typst
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[*parola#super[G]*]
 -->
+<!-- begin-typst-exclude -->
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo seguente:
+<p align="center">parola#super[G]</p>
+<!-- end-typst-exclude -->
 
 ## Riferimenti
 
