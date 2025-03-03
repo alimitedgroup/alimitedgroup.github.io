@@ -22,7 +22,7 @@
 #inizio-verbale-esterno([*virtuale*], [*28 Febbraio 2025*], [*10.00*], [*11.00*], [#M31])
 
 + aggiornamento stato avanzamento lavori;
-+ Repository _Minimum Viable Product#super[G] (MVP)_
++ repository _Minimum Viable Product#super[G] (MVP)_;
 + Discussione test
 + Presentazione alcuni microservizi
 
