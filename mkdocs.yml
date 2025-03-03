@@ -18,6 +18,7 @@ nav:
 
 theme:
   name: material
+  language: it
 
   features:
     - navigation.instant
