@@ -646,7 +646,7 @@ Questa sezione descrive le regole e le convenzioni che i programmatori devono se
 
 La struttura di un file sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
 
-Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite Github Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del branch#super[G] principale.
+Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite GitHub Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del branch#super[G] principale.
 
 ===== Buone pratiche di programmazione
 
@@ -751,9 +751,9 @@ La tabella utilizza, per tracciare le decisioni, la seguente nomenclatura:
 - *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
   - *DI*#super[G] ovvero *Decisione Interna#super[G]*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
   - *AP*#super[G] ovvero *Attività Passata*: viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
-  - *DOCS*, indica una decisione che ha un'_issue_ associata nel repository dei documenti;
-  - *POC*, indica una decisione che ha un'_issue_ associata nel reppository del _Proof Of Concept_;
-  - *MVP*#super[G] ,indica una decisione che ha un'_issue_ associata nel reppository del _Minimum Viable Product#super[G]_.
+  - *DOCS*, indica una decisione che ha un'_issue_ associata nel _repository_ dei documenti;
+  - *POC*, indica una decisione che ha un'_issue_ associata nel _repository_ del _Proof Of Concept_;
+  - *MVP*#super[G] ,indica una decisione che ha un'_issue_ associata nel _repository_ del _Minimum Viable Product#super[G]_.
 - *\#* è un numero crescente da 1, univoco a seconda dell'ID.
 
 La tabella è creata tramite la funzione "tabella-decisioni".\
@@ -1025,7 +1025,7 @@ dove:
   - *S* per Test di *S*\istema
   - *A* per Test di *A*\ccettazione
 
-Ogni Testha poi uno stato tra i seguenti:
+Ogni Test ha poi uno stato tra i seguenti:
 
 - *S* ovvero *S*\uperato
 - *I* ovvero *I*\mplementato
