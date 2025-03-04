@@ -35,3 +35,4 @@ Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con 
   caption: [Elenco dei _Software_ utilizzati e loro versioni]
 )
 -->
+

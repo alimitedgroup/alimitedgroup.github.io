@@ -1,10 +1,34 @@
 # Introduzione <introduzione>
 
-## Informazioni generali
+## Scopo del _software_
 
-Lo scopo del **Manuale Utente#super[G]** è quello di introdurre l'utilizzatore finale del Sistema sviluppato da _ALimitedGroup_ per il **[Capitolato C6: Sistema di Gestione di un Magazzino Distribuito](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)**
+## Scopo del documento
 
-A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il Sistema, a partire dai programmi necessari alla sua esecuzione, per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e, infine, come avviare lo stesso.
+Lo scopo del **Manuale Utente#super[G]** è quello di introdurre il lettore al Sistema sviluppato da _ALimitedGroup_ per il
+**[Capitolato C6: Sistema di Gestione di un Magazzino Distribuito](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)**.
+
+A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il Sistema,
+a partire dai programmi necessari alla sua esecuzione,
+per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e come avviare lo stesso.
+
+Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione del sistema,
+in particolare su periodi di tempo prolungati.
+
+La parte finale di questo manuale ha l'obiettivo di
+esporre tutte le conoscenze necessarie per un utilizzo efficace del Sistema.
+Ciò è fatto seguendo i principi di Diátaxis, un "Approccio sistematico alla produzione di documentazione tecnica".
+In particolare, sono presenti le seguenti sezioni:
+- **_Quickstart_**: una lezione rapida sull'utilizzo del software,
+  che può essere completata indicativamente in una decina di minuti.
+  Essa segue la forma di documentazione _Tutorial_, come indicato dal Diátaxis;
+- **Concetti**: una spiegazione completa dei concetti chiave che potrebbe
+  essere necessario conoscere per usare il Sistema.
+  Essa segue la forma di documentazione _Explanation_, come indicato dal Diátaxis;
+- **Guide**: delle guide rapide con l'obiettivo di guidare l'utente mentre effettua una particolare azione.
+  Essa segue la forma di documentazione _How-to guides_, come indicato dal Diátaxis; e infine
+- **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_ possibili;
+  utile per l'utente che necessita di una specifica dettagliata del funzionamento dell'_API_.
+  Essa segue la forma di documentazione _Reference_, come indicato dal Diátaxis.
 
 ## Glossario
 
@@ -13,7 +37,7 @@ La realizzazione di un sistema software richiede, ancor prima della scrittura de
 È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, all'indirizzo [https://alimitedgroup.github.io/glossario.html](https://alimitedgroup.github.io/glossario.html).
 
 <!--raw-typst
-Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo che segue: #align(center)[*parola#super[G]*]
+Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo seguente: #align(center)[*parola#super[G]*]
 -->
 <!--typst-begin-exclude-->
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo seguente:
