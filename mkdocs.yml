@@ -4,14 +4,38 @@ docs_dir: 03-PB/manuale-utente
 site_dir: dist/docs
 
 nav:
-  - Home: index.md
-  - Iniziare: 01-getting-started/index.md
+  - Introduzione: index.md
+  - Installazione:
+    - Requisiti:
+      - Requisiti Hardware: installazione/requisiti/requisiti-hw.md
+      - Requisiti Software: installazione/requisiti/requisiti-sw.md
+    - Preparazione del Sistema:
+      - Installazione del Software: installazione/preparazione-del-sistema/01-installazione-sw.md
+      - Personalizzare la configurazione: installazione/preparazione-del-sistema/02-configurare-ms.md
+      - Avviare il Sistema: installazione/preparazione-del-sistema/03-avvio-sistema.md
+    # Forse: aggiungere "Installazione con Kubernetes" 👀
+  - Operazione:
+    - Backup: operazione/backup.md
+  - Quickstart: quickstart.md # tutorial, per iniziare in 5 minuti ad usare il software
+  - Concetti:
+    - Tipi di utenti: concetti/tipi-utenti.md
+    - Merci: concetti/merci.md
+    - Ordini: concetti/ordini.md
+    - Riassortimenti: concetti/riassortimenti.md
+    - Trasferimenti: concetti/trasferimenti.md
   - Guide:
-      - Guide: 02-guides/index.md
-      - Registrare un utente: 02-guides/registrazione.md
+    - Registrare un nuovo utente: guide/registrazione.md
+    - Effettuare il login: guide/login.md
+    - Aggiungere una merce: guide/aggiunta-merce.md
+  - Riferimento API:
+    - /api/stock/:number: reference/stock_warehouse.md
+
+hooks:
+  - 03-PB/manuale-utente/preprocess.py
 
 theme:
   name: material
+  language: it
 
   features:
     - navigation.instant
