@@ -1,3 +1,3 @@
 # Ordini
 
-Spiegare che cos'è un ordine, la differenza con trasferimento e riassortimento
+Spiegare che cos'è un ordine#super("G"), la differenza con trasferimento e riassortimento
