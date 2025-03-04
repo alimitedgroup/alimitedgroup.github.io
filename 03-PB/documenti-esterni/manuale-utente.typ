@@ -99,6 +99,7 @@
   cmarker.render(
     content,
     scope: (image: (path, alt: none) => align(center, image(basename + "/" + path, alt: alt, height: 30%))),
+    h1-level: level,
   )
 }
 
@@ -108,6 +109,13 @@
     if type(a2) == str {
       render(a2, level)
     } else {
+      [
+        #heading(
+          value.keys().at(0),
+          level: level,
+        )
+        #label(lower(value.keys().at(0)))
+      ]
       walk_nav(a2, level + 1)
     }
   }

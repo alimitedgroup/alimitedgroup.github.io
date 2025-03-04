@@ -1,1 +1,1 @@
-## Avviare il Sistema configurato
+# Avviare il Sistema configurato

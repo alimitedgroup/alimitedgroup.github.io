@@ -1,4 +1,4 @@
-## Requisiti Software
+# Requisiti Software
 
 In merito al Sistema Operativo, le componenti del sistema non fanno distinzione in quanto
 il Sistema si appoggia completamente a **Docker**#super[G] per garantire la sua esecuzione

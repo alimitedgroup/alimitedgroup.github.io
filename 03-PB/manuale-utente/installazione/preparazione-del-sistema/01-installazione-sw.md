@@ -1,3 +1,1 @@
-# Preparazione del Sistema
-
-## Installazione del Software
+# Installazione del Software

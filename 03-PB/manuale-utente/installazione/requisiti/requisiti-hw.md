@@ -1,6 +1,4 @@
-# Requisiti <requisiti>
-
-## Requisiti Hardware
+# Requisiti Hardware
 
 In merito agli applicativi sviluppati da _ALimitedGroup_, questi sono relativamente recenti è possono essere eseguiti senza particolari esigenze anche su macchine con comparto tecnico non particolarmente elevato: la macchina con meno risorse su cui il Sistema era stato eseguito era dotata di una _CPU_ a 3.400GHz e 8Gb di memoria _RAM_.
 
