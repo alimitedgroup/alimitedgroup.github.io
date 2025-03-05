@@ -4,18 +4,18 @@
   data: datetime(day: 03, month: 03, year: 2025),
   tipo: [interno],
   versioni: (
-    /*(
+    (
       vers: "1.0.0",
       date: datetime(day: 26, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.marco,
       descr: "Approvazione del documento.",
-    ),*/
+    ),
     (
       vers: "0.1.0",
       date: datetime(day: 03, month: 03, year: 2025),
       autore: p.matteo,
-      //verifica: p.emanuele,
+      verifica: p.sara,
       descr: "Redazione del contenuto.",
     ),
   ),
@@ -48,11 +48,12 @@
 
 I componenti di _ALimitedGroup_ hanno constatato il completamento di tutte le attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto#super[G], della sezione dedicata agli strumenti in ogni processo.
 
-Dalla riunione è inoltre risultato che progressi sono stati realizzati anche in merito al *Manuale Utente#super[G]*, per cui è stata anticipata la stesura della parte introduttiva: nel corso della settimana attuale sarà necessario verificare quanto realizzato nel *Manuale Utente#super[G]*, nonché verificare la restante parte dei documenti scritti nel corso della settimana trascorsa.
+Dalla riunione è inoltre risultato che progressi sono stati realizzati anche in merito al *Manuale Utente#super[G]*, per cui è stata anticipata la stesura della parte introduttiva.\
+Durante la settimana attuale sarà necessario verificare quanto realizzato nel *Manuale Utente#super[G]* e gli altri documenti redatti e modificati nel corso della settimana trascorsa.
 
 == Aggiornamenti sui lavori futuri
 
-I componenti hanno considerato il tempo a disposizione: hanno per questo motivo fatto il punto sui microservizi da realizzare e stabilito che questi dovranno essere realizzati, testati e descritti nel documento di *Specifica Tecnica#super[G]* in un numero non inferiore a 3 per settimana.
+I componenti, considerando il tempo a disposizione, hanno riepilogato i microservizi da implementare e stabilito che questi dovranno essere realizzati, testati e descritti nel documento di *Specifica Tecnica#super[G]* in un numero non inferiore a 3 per settimana.
 
 I microservizi individuati sono i seguenti:
 - *API#super[G] Gateway*, per gestire le richieste HTTP e verificare la validità dei _Token_;
@@ -67,9 +68,7 @@ Sarà inoltre necessario realizzare un *Client* per la gestione del Sistema.
 
 Come citato in @alc, sarà necessario verificare i documenti realizzati la settimana appena trascorsa.
 
-È stato deciso che le _issue_#super[G] riguardanti la progettazione saranno inserite nel _repository_#super[G] dedicato ai documenti in quanto qui è presente il documento di *Specifica Tecnica#super[G]*.
-
-Infine, data la presenza del documento di Specifica Tecnica#super[G] nel _repository_#super[G] dedicato ai documenti, le issue di realizzazione architetturale saranno spostate nel _repository_#super[G] appena citato.
+È stato deciso che le _issue_#super[G] riguardanti la progettazione, comprese quelle di realizzazione architetturale, saranno inserite nel _repository_#super[G] dedicato ai documenti, dove è presente il documento di *Specifica Tecnica#super[G]*.
 
 == Decisioni relative alle attività del prossimo periodo
 
