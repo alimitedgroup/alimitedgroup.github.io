@@ -573,7 +573,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
   caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
 )
 
-== Attività previste per la Product Baseline#super[G] (PB)
+== Attività previste per la Product Baseline (PB)
 
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
 

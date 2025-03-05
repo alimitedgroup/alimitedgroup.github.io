@@ -39,13 +39,13 @@ In questa riunione hanno partecipato, per conto di #M31:
 #pagebreak()
 
 = Dettagli riunione
-== Esposizione Analisi dei Requisiti#super[G]
+== Esposizione Analisi dei Requisiti
 
 Nel corso della riunione _ALimitedGroup_ ha richiesto ad #M31 dei feedback sull'Analisi dei Requisiti#super[G], inviata precedentemente via email.
 #M31 ha espresso parere positivo per la qualità del documento, sottolineando la completezza dei requisiti esposti.
 
 
-== Discussione _Proof of Concept#super[G] (PoC)_
+== Discussione _Proof of Concept (PoC)_
 Durante l'incontro il gruppo _ALimitedGroup_ ha effettuato una dimostrazione completa che ha incluso:
 
 - _Proof of Concept#super[G] (PoC)_: presentazione del programma in esecuzione, dimostrando concretamente la fattibilità delle soluzioni proposte;

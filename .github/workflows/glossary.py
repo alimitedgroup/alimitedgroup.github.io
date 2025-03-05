@@ -55,7 +55,6 @@ def substitute(filePath,glossaryYml):
 
     while line:
         linenum += 1
-        #print(f"read:{line}")
         if(bodyFound==False or parFound==False):
             startText+=line
             if "body" in line and "=>" not in line:
@@ -63,7 +62,7 @@ def substitute(filePath,glossaryYml):
             if bodyFound==True and ")" in line:
                 parFound=True
         else:
-            if(stop == False):
+            if(stop == False and line[0] not in stopCheckingWords):
                 line = substitute_line(filePath, linenum, line, filtered_glossary)
 
             if len(line.strip()) > 0 and line.strip()[0] == '=':
@@ -118,7 +117,6 @@ def find_files(fileList,path=ROOT):
 
 def main():
     fileList = []
-
     # If any filename was passed on the command line, only proces those files
     if len(sys.argv) > 1:
         for file in sys.argv[1:]:

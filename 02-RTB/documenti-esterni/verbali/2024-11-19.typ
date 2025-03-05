@@ -49,7 +49,7 @@ I membri si sono tutti presentati qualificandosi con il proprio ruolo attuale, r
 
 #pagebreak()
 
-== Concordare way of working#super[G]
+== Concordare way of working
 Abbiamo discusso principalmente con #persona(p.luca) i dettagli del way of working#super[G]. L'azienda sottolinea l'importanza di *redarre un'ottima documentazione*, sia quella di progetto che quella nel codice. Sono invece disposti ad essere meno stringenti sull'implementazione software e sulla creazione di interfacce utente per rispettare la scadenza preventivata.
 
 Abbiamo concordato l'utilizzo del *metodo agile* con sprint di *due settimane*, presentando però anche una panoramica generale del lavoro.
@@ -59,7 +59,7 @@ Abbiamo concordato l'utilizzo del *metodo agile* con sprint di *due settimane*, 
 == Discutere i requisiti del capitolato
 La riunione si è concentrata nel fissare i requisiti minimi ed opzionali con #persona(p.cristian) e #persona(p.moones).
 
-=== Requisiti funzionali#super[G]
+=== Requisiti funzionali
 Il *riassortimento predittivo basato su machine learning* diventa requisito *desiderabile* visto che _M31_ non è interessata ad un progetto di ML ed è un processo che richiede molto tempo. Rimane però *obbligatorio il riassortimento automatico* (non predittivo). \
 Per quanto riguarda la *risoluzione dei conflitti negli aggiornamenti concorrenti* verranno discussi più nel dettaglio i comportamenti da seguire in alcuni casi limite come ad esempio lo stato offline di un magazzino interessato da ordini o richieste di rifornimento. *Rimane requisito obbligatorio, come i #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=8")[rimanenti requisiti funzionali#super[G] obbligatori]*#footnote("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=8"). \
 Verrà discusso nel dettaglio anche la frequenza del *backup dei dati*, che *rimane requisito opzionale, come i #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=9")[rimanenti requisiti funzionali#super[G] opzionali]*#footnote("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=9").
@@ -68,7 +68,7 @@ Verrà discusso nel dettaglio anche la frequenza del *backup dei dati*, che *rim
 Il requisito *monitoraggio del sistema* diventa *opzionale* e si traduce in: implementare un monitoraggio della telemetria e riconoscere il traffico anomalo (per esempio sfruttando Grafana#super[G]). \
 I *#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=9")[requisiti di sicurezza rimanenti]#footnote("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=9") mantengono la proprietà* obbligatorio od opzionale.
 
-=== Requisiti non funzionali#super[G]
+=== Requisiti non funzionali
 La *scalabilità dei microservizi* è *l'unico #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=10")[requisito non funzionale]#footnote("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf#page=10") opzionale*, purché venga fornita almeno una progettazione del sistema. \
 Verranno fissate linee guida per la creazione pratica del *test book*, oltre che per l'organizzazione delle *repository*#super[G] (la proposta, al momento, è quella di utilizzare GitLab come mirror e GitHub per l'automazione). \
 
