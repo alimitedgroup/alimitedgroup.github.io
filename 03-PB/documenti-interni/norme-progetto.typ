@@ -394,7 +394,7 @@ Lo scopo del *Manuale Utente#super[G]* è quello di esporre le istruzioni per l'
     stroke: none,
     gutter: 0.2em,
     text(white)[*Redattore*], [Amministratori, Progettisti],
-    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
     text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Manuale Utente"],
@@ -483,7 +483,7 @@ Lo scopo della *Specifica Tecnica#super[G]* è quello di descrivere le caratteri
     stroke: none,
     gutter: 0.2em,
     text(white)[*Redattore*], [Progettisti],
-    text(white)[*Destinatari*], [_ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
     text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Manuale Utente"],
@@ -644,9 +644,9 @@ Questa sezione descrive le regole e le convenzioni che i programmatori devono se
 
 ===== Formattazione del codice
 
-La struttura di un file sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
+La struttura di un _file_ sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
 
-Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite GitHub Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del branch#super[G] principale.
+Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di salvataggio del _file_) sia in ambiente di CI/CD tramite GitHub Action#super[G] ,le quali bloccheranno l'errata introduzione di codice non formattato secondo lo standard all'interno del _branch_#super[G] principale.
 
 ===== Buone pratiche di programmazione
 
@@ -1619,7 +1619,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 = Metriche di Qualità del Processo <metriche-qt-processo>
 == Processi primari
 === Fornitura
-==== Earned Value (EV)
+==== _Earned Value_ (EV)
 #metric(
   cod: [MPC01],
   formula: [
@@ -1629,7 +1629,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se il lavoro svolto è in linea con le aspettative.],
 )
 
-==== Planned Value (PV)
+==== _Planned Value_ (PV)
 #metric(
   cod: [MPC02],
   formula: [
@@ -1640,7 +1640,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Il valore pianificato non può essere negativo e deve essere inferiore al BAC],
 )
 
-==== Actual Cost (AC)
+==== _Actual Cost_ (AC)
 #metric(
   cod: [MPC03],
   formula: [
@@ -1650,7 +1650,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se i costi sono in linea con le aspettative.],
 )
 
-==== Cost Performance Index (CPI)
+==== _Cost Performance Index_ (CPI)
 #metric(
   cod: [MPC04],
   formula: [
@@ -1660,7 +1660,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Un valore maggiore di 1 indica che il progetto sta rispettando il budget, un valore minore di 1 indica che il progetto sta superando il budget.],
 )
 
-==== Schedule Performance Index (SPI)
+==== _Schedule Performance Index_ (SPI)
 #metric(
   cod: [MPC05],
   formula: [
@@ -1670,7 +1670,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Un valore maggiore di 1 indica che il progetto sta rispettando la pianificazione, un valore minore di 1 indica che il progetto sta accumulando ritardi.],
 )
 
-==== Estimate At Completion (EAC)
+==== _Estimate At Completion_ (EAC)
 #metric(
   cod: [MPC06],
   formula: [
@@ -1681,7 +1681,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Se CPI < 1, EAC sarà maggiore del BAC, indicando un probabile sforamento del budget.],
 )
 
-==== Estimate To Complete (ETC)
+==== _Estimate To Complete_ (ETC)
 #metric(
   cod: [MPC07],
   formula: [
@@ -1692,7 +1692,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Utile per la pianificazione del budget residuo necessario.],
 )
 
-==== Time Estimate At Completion (TEAC)
+==== _Time Estimate At Completion_ (TEAC)
 #metric(
   cod: [MPC08],
   formula: [
@@ -1704,7 +1704,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 === Sviluppo
-==== Requirements Stability Index
+==== _Requirements Stability Index_
 
 #metric(
   cod: [MPC09],
@@ -1758,7 +1758,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 === Verifica
-==== Code Coverage
+==== _Code Coverage_
 #metric(
   cod: [MPC12],
   formula: [
@@ -1767,7 +1767,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Percentuale di codice coperto da Test automatizzati. Si raccomanda un coverage minimo del 80%.],
 )
 
-==== Test Success Rate
+==== _Test Success Rate_
 #metric(
   cod: [MPC13],
   formula: [
@@ -1777,7 +1777,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 === Gestione della Qualità
-==== Quality metrics satisfied
+==== _Quality metrics satisfied_
 #metric(
   cod: [MPC14],
   formula: [
@@ -1788,7 +1788,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 
 == Processi organizzativi
 === Gestione dei Processi
-==== Time Efficiency
+==== _Time Efficiency_
 #metric(
   cod: [MPC15],
   formula: [
@@ -1830,7 +1830,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Affidabilità
-=== Branch Coverage
+=== _Branch Coverage_
 #metric(
   cod: [MPD04],
   formula: [
@@ -1839,7 +1839,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Percentuale di rami del codice coperti da Test automatizzati. Si raccomanda un coverage minimo del 60%.],
 )
 
-=== Statement Coverage
+=== _Statement Coverage_
 #metric(
   cod: [MPD05],
   formula: [
@@ -1848,7 +1848,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Percentuale di istruzioni del codice coperte da Test automatizzati. Si raccomanda un coverage minimo del 70%.],
 )
 
-=== Failure Density
+=== _Failure Density_
 #metric(
   cod: [MPD06],
   formula: [
@@ -1858,7 +1858,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Usabilità
-=== Time on Task
+=== _Time on Task_
 #metric(
   cod: [MPD07],
   formula: [
@@ -1867,7 +1867,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Tempo medio impiegato per completare un'attività. Indica l'usabilità del prodotto.],
 )
 
-=== Error Rate
+=== _Error Rate_
 #metric(
   cod: [MPD08],
   formula: [
@@ -1877,7 +1877,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Efficienza
-=== Response Time
+=== _Response Time_
 #metric(
   cod: [MPD09],
   formula: [
@@ -1887,7 +1887,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Manutenibilità
-=== Code Smells
+=== _Code Smells_
 #metric(
   cod: [MPD10],
   formula: [
@@ -1897,7 +1897,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
 )
 
-=== Coefficient of Coupling (CoC)
+=== _Coefficient of Coupling_ (CoC)
 #metric(
   cod: [MPD11],
   formula: [
@@ -1906,7 +1906,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
 )
 
-=== Cyclomatic Complexity
+=== _Cyclomatic Complexity_
 
 #metric(
   cod: [MPD12],
