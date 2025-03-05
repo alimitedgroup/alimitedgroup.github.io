@@ -161,7 +161,7 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto _Software_.
 Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
 Per garantire la qualità di processo, il progetto si avvale di:
-- *Modelli di riferimento*: _Capability Maturity Model Integration_ (CMMI) e _ISO/IEC 12207_;
+- *Modelli di riferimento*: _Capability Maturity Model Integration#super[G]_ (CMMI#super[G] )e _ISO/IEC 12207_;
 - *Metriche di processo*: Strumenti per valutare le prestazioni e l'efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità;
 - *Revisioni periodiche*: Sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
 

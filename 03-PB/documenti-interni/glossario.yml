@@ -9,11 +9,12 @@ A:
   Analisi dei Requisiti: "Documento contenente tutti i Casi d'Uso identificati da ALimitedGroup per il capitolato e i relativi requisiti."
   Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi aziendali, delle tecnologie e delle esigenze degli utenti."
   Angular: "Framework open-source per lo sviluppo di applicazioni web basato su TypeScript, mantenuto da Google."
-  AP: "Acronimo di Attività Passata; è un'attività (dunque una decisione che dovrebbe avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing."
+  AP: "Acronimo di Attività Passata, per la sua definizione vedere la parola 'Attività Passata'."
   API: "Acronimo di Application Programming Interface; è un'interfaccia che consente la comunicazione tra diverse applicazioni o servizi."
   Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da parte di un responsabile."
   Architettura: "Insieme delle parti che comporranno il Sistema."
   Architettura di Deployment: "L'Architettura di Deployment è la struttura e l'organizzazione delle componenti di un'applicazione o di un sistema software all'interno dell'ambiente di produzione o di esecuzione. Stabilisce la disposizione e la gestione delle risorse (come eseguibili, configurazioni, dati) e può includere strategie per la distribuzione, la gestione, la scalabilità e il monitoraggio dell'applicazione nel contesto di un ambiente operativo reale."
+  Attività Passata: "È un'attività (dunque una decisione che dovrebbe avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing."
   Attore: "Entità esterna e non modificabile dal Sistema che interagisce con il Sistema: ha obiettivi o interessi specifici nell'utilizzo del sistema ma non è parte del sistema stesso. Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere. Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
   AWS: "Acronimo di Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata per archiviazione, elaborazione e gestione dati."
 B:
@@ -49,6 +50,7 @@ E:
   Economicità: "Si dice raggiungere l'economicità di processo quando lo stesso è efficiente ed efficace, ovvero quando, senza spreco di risorse, è in grado di produrre un risultato che soddisfa i bisogni iniziali."
   Efficacia: "Che soddisfa dei bisogni/obiettivi."
   Efficienza: "Che non utilizza più risorse di quanto effettivamente necessario, senza spreco di risorse."
+  Estimated At Completation: "."
 F:
   Funzionalità: "Una caratteristica offerta da un Sistema, spesso con lo scopo di soddisfare un bisogno."
 G:
