@@ -38,7 +38,7 @@ def substitute(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table("]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "="]
     specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
