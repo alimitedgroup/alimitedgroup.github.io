@@ -378,7 +378,7 @@ Lo scopo del documento è quello di presentare formalmente la candidatura di _AL
   caption: [Proprietà del documento "Lettera di Presentazione"],
 )
 
-==== Norme di Progetto#super[G]
+==== Norme di Progetto
 
 Il presente documento: stabilisce il _Way of Working#super[G]_ e le pratiche di sviluppo adottate dal gruppo.
 
@@ -445,7 +445,7 @@ Descrive i metodi di qualifica (Verifica e Validazione#super[G]) adottate da _AL
   caption: [Proprietà del documento "Piano di Qualifica"],
 )
 
-==== Specifica Tecnica#super[G]
+==== Specifica Tecnica
 
 Lo scopo della *Specifica Tecnica#super[G]* è quello di descrivere le caratteristiche progettuali delle componenti del Sistema sviluppato.
 
