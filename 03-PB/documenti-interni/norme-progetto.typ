@@ -1,14 +1,27 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.0.0]
+#let ver = [1.1.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 18, month: 02, year: 2025),
+  data: datetime(day: 28, month: 02, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "1.1.0",
+      date: datetime(day: 28, month: 02, year: 2025),
+      autore: p.matteo,
+      verifica: p.emanuele,
+      descr: "Aggiornata la "
+        + [@elenco-documenti]
+        + " e la "
+        + [@codifica]
+        + " con le informazioni del "
+        + link("https://alimitedgroup.github.io/VI%2024-02-2025%20v1.0.0.pdf")[Verbale Interno del 24-02-2025]
+        + ".",
+    ),
     (
       vers: "1.0.0",
       date: datetime(day: 18, month: 02, year: 2025),
@@ -197,8 +210,8 @@ _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permette
 - *I processi di ciclo di vita del Software* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") \
   *Ultimo Accesso 6 Febbraio 2025*
-- *Glossario* \
-  #link("https://alimitedgroup.github.io/Glossario.pdf") \
+- *Glossario*: \
+  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
   *Ultimo Accesso 6 Febbraio 2025*
 
 #pagebreak()
@@ -365,7 +378,7 @@ Lo scopo del documento è quello di presentare formalmente la candidatura di _AL
   caption: [Proprietà del documento "Lettera di Presentazione"],
 )
 
-==== Norme di Progetto
+==== Norme di Progetto#super[G]
 
 Il presente documento: stabilisce il _Way of Working#super[G]_ e le pratiche di sviluppo adottate dal gruppo.
 
@@ -430,6 +443,28 @@ Descrive i metodi di qualifica (Verifica e Validazione#super[G]) adottate da _AL
     text(white)[*Uso*], [Esterno],
   ),
   caption: [Proprietà del documento "Piano di Qualifica"],
+)
+
+==== Specifica Tecnica#super[G]
+
+Lo scopo della *Specifica Tecnica#super[G]* è quello di descrivere le caratteristiche progettuali delle componenti del Sistema sviluppato.
+
+#figure(
+  table(
+    table.cell(colspan: 2, text(white)[*Specifica Tecnica*]),
+    columns: (1fr, 4fr),
+    inset: 5pt,
+    align: horizon,
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    stroke: none,
+    gutter: 0.2em,
+    text(white)[*Redattore*], [Progettisti],
+    text(white)[*Destinatari*], [#M31, _ALimitedGroup_, #profBreve(p.tullio), #profBreve(p.cardin)],
+    text(white)[*Uso*], [Esterno],
+  ),
+  caption: [Proprietà del documento "Manuale Utente"],
 )
 
 ==== Valutazione dei Capitolati
@@ -576,7 +611,7 @@ dove:
 
 Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*] *(Sezione 1.1)*.
 
-=== Codifica
+=== Codifica <codifica>
 
 ==== Scopo
 La codifica svolta dai programmatori di _ALimitedGroup_ ha come scopo la realizzazione di quanto progettato dagli analisti e dai progettisti.
@@ -587,20 +622,41 @@ Questa sezione descrive le regole e le convenzioni che i programmatori devono se
 
 ===== Formattazione del codice
 
-La struttura di un file sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
+La struttura di un _file_ sorgente Golang deve seguire lo standard prodotto dall'eseguibile *gofmt*, un tool sviluppato dal team del linguaggio Golang.
 
-Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di Save File) sia in ambiente di CI/CD tramite Github Action che bloccano l'errata introduzione di codice non formattato secondo lo standard all'interno del branch#super[G] principale.
+Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di uno sviluppatore (possibilmente dopo l'azione di salvataggio del _file_) sia in ambiente di CI/CD tramite GitHub Action#super[G] ,le quali bloccheranno l'errata introduzione di codice non formattato secondo lo standard all'interno del _branch_#super[G] principale.
 
-===== Pratiche di programmazione
-- Variabili globali: evitare l'uso di variabili globali dove possibile
-- Funzioni: evitare funzioni troppo lunghe, preferire funzioni brevi e ben definite
+===== Buone pratiche di programmazione
 
-===== Convenzioni sintattiche
-- Lingua: usare la lingua inglese per tutti i costrutti e commenti
-- Nomi: usare nomi significativi per variabili, funzioni, metodi e strutture
-- Commenti: commentare il codice in modo chiaro e conciso, ogni funzione deve avere un commento che ne descriva lo scopo e i suoi argomenti
-- Indentazione: usare quattro spazi per l'indentazione
-- Più istruzioni su una linea: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice
+- *Variabili* globali: evitare l'uso di variabili globali dove possibile;
+- *Funzioni*: evitare funzioni troppo lunghe, preferire funzioni brevi e ben definite;
+- *Lingua*: usare la lingua inglese per tutti i costrutti e commenti;
+- *Nomi*: usare nomi significativi per variabili, funzioni, metodi e strutture;
+- *Commenti*: commentare il codice in modo chiaro e conciso, ogni funzione deve avere un commento che ne descriva lo scopo e i suoi argomenti;
+- *Indentazione*: usare quattro spazi per l'indentazione;
+- *Istruzioni per linea di codice*: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice.
+
+Sarà inoltre necessario sfruttare il _framework_ *fx* per applicare l'_Injection Pattern_.
+
+===== Convenzioni sulle nomenclature e sulla posizione dei file
+
+Considerando la necessità di sviluppare microservizi ad architettura esagonale e dato l'alto numero di componenti, si adottano le seguenti convenzioni di nomenclatura:
+
+- *Package*: ogni cartella deve contenere oggetti esistenti all'interno dello stesso _package_, che deve essere diverso per ogni cartella;
+- *Interfacce*: il nome delle interfacce devono sempre essere precedute dalla lettera *I* (ad esempio, *`I`*`UseCase`);
+- *Componenti dell'architettura esagonale*: le tre componenti principali dell'architettura esagonale devono avere, nella parte finale del nome, i seguenti nomi:
+  - *Controller*, per indicare la componente responsabile dell'_Application Logic_;
+  - *Service*, per indicare la componente responsabile della _Business Logic_;
+  - *Repository*#super[G] ,per indicare la componente responsabile della _Persistance Logic_;
+  - *UseCase*, per indicare le interfacce con cui il _Controller_ comunica con il _Service_;
+  - *Port*, per indicare le interfacce con cui il _Service_ comunica con il _Repository_#super[G] .
+- *Oggetti dell'architettura esagonale*: è preferibile, nella misura possibile, utilizzare, nella parte finale del nome degli oggetti, le sigle *DTO* e *CMD* per indicare gli oggetti dell'_Application Logic_ e della _Business Logic_ rispettivamente
+
+In merito al posizionamento dei file, è necessario mantenere le seguenti convenzioni:
+- *Interfacce*: devono essere inserite in file separati rispetto alla restante parte del codice sorgente;
+- *Strutture che implementano interfacce*: devono essere poste su file separato rispetto al restante codice sorgente;
+- *Strutture che rappresentano attributi di altre strutture*: devono essere poste su un file separato rispetto al restante codice sorgente;
+- *Strutture utilizzate dai _Controller_*: devono essere poste all'interno di una cartella comune.
 
 #pagebreak()
 = Processi di Supporto
@@ -664,7 +720,21 @@ cui seguirà, in elenco, l'ordine del giorno nei vari punti.\
 
 La seconda sezione, che segue quanto appena scritto, esplicita quanto discusso per ogni punto dell'ordine del giorno.\
 
-Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato. \ L'ultima sezione è dedicata alla _tabella delle decisioni e delle azioni_, che riassume in modo strutturato tutte le decisioni prese e le azioni concordate.\ Queste informazioni vengono integrate e tracciate nel _sistema di ticketing_. \ La tabella è creata tramite la funzione "tabella-decisioni".\
+Segue quindi la penultima sezione, denominata "Esiti della riunione", che riassume quanto concordato. \ L'ultima sezione è dedicata alla _tabella delle decisioni e delle azioni_, che riassume in modo strutturato tutte le decisioni prese e le azioni concordate.\ Queste informazioni vengono integrate e tracciate nel _sistema di ticketing_.
+
+La tabella utilizza, per tracciare le decisioni, la seguente nomenclatura:
+
+#align(center)[`ID#`]
+
+- *ID* è un codice univoco che rappresenta la decisione o l'azione. Questo valore può assumere significati diversi:
+  - *DI*#super[G] ovvero *Decisione Interna#super[G]*: viene utilizzato per indicare una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'_issue_ associata;
+  - *AP*#super[G] ovvero *Attività Passata*: viene utilizzato per segnalare un'attività (dunque una decisione che _dovrebbe avere_ associata una _issue_#super[G]) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing (o che, per errore, non è stata associata ad una _issue_#super[G] prima di procedere ad eventuali modifiche);
+  - *DOCS*, indica una decisione che ha un'_issue_ associata nel _repository_#super[G] dei documenti;
+  - *POC*, indica una decisione che ha un'_issue_ associata nel _repository_#super[G] del _Proof Of Concept_;
+  - *MVP*#super[G] ,indica una decisione che ha un'_issue_ associata nel _repository_#super[G] del _Minimum Viable Product#super[G]_.
+- *\#* è un numero crescente da 1, univoco a seconda dell'ID.
+
+La tabella è creata tramite la funzione "tabella-decisioni".\
 
 In ultima istanza, i *verbali esterni* devono includere una sezione dedicata all'approvazione esterna.\ Ogni pagina, ad eccezione della copertina, deve riportare il numero e un _header_ con:
 - *Nome del gruppo*;
@@ -732,7 +802,10 @@ dove:
   - *NP* per *N*\orme di *P*\rogetto;
   - *PP* per *P*\iano di *P*\rogetto;
   - *AR* per *A*\nalisi dei *R*\equisiti;
-  - *PQ* per *P*\iano di *Q*\ualifica.
+  - *PQ* per *P*\iano di *Q*\ualifica;
+  - *MU* per *M*\anuale *U*\tente;
+  - *SP* per *S*\pecifica *T*\ecnica.
+
 - *AAAA-MM-GG* indica la data in formato anno-mese-giorno (con due cifre per giorno e mese e 4 cifre per l'anno);
 - *\#* è un modificatore, ossia un numero crescente a partire da 2 per indicare eventuali documenti dello stesso tipo redatti lo stesso giorno. Viene omesso sempre per il primo documento in ordine cronologico;
 - *VERSIONE* indica la versione corrente del documento.
@@ -930,7 +1003,7 @@ dove:
   - *S* per Test di *S*\istema
   - *A* per Test di *A*\ccettazione
 
-Ogni Testha poi uno stato tra i seguenti:
+Ogni Test ha poi uno stato tra i seguenti:
 
 - *S* ovvero *S*\uperato
 - *I* ovvero *I*\mplementato
@@ -1017,7 +1090,7 @@ Sarà quindi dato spazio ad una parte fondamentale del gruppo, ovvero i metodi d
 === Ruoli <ruoli>
 #figure(
   table(
-    columns: (1fr, 4fr),
+    columns: (0.5fr, 1.5fr),
     inset: 5pt,
     align: horizon,
     fill: (x, y) => if (y == 0) {
@@ -1054,7 +1127,9 @@ In ultima istanza, è sempre compito di questo ruolo "
         + [_Way of Working_]
         + " adottato dal gruppo, necessario per poter al meglio gestire le infrastrutture, è di questo ruolo il compito di redigere il presente documento e il "
         + [*Piano di Qualifica*]
-        + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni."
+        + ", ma può risultare un ruolo adatto anche a redigere sia i verbali interni sia quelli esterni. Redige anche il "
+        + [*Manuale Utente*]
+        + " con l'aiuto dei Progettisti."
     ),
 
     "Verificatore",
@@ -1081,7 +1156,8 @@ Si occupa di eseguire Test approfonditi e revisioni del Software, identificando 
 
     "Progettista",
     (
-      "È un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche."
+      "È un ruolo cruciale per lo svolgimento del capitolato: esso infatti ha il compito di trasformare requisiti in un design architetturale, producendo documenti e schemi esplicativi e definendo le scelte tecnologiche. Ha il compito, inoltre, di scrivere la "
+        + [*Specifica Tecnica*.]
     ),
   ),
   caption: [Compiti e responsabilità di ogni singolo ruolo],
@@ -1521,7 +1597,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 = Metriche di Qualità del Processo <metriche-qt-processo>
 == Processi primari
 === Fornitura
-==== Earned Value (EV)
+==== _Earned Value_ (EV)
 #metric(
   cod: [MPC01],
   formula: [
@@ -1531,7 +1607,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se il lavoro svolto è in linea con le aspettative.],
 )
 
-==== Planned Value (PV)
+==== _Planned Value_ (PV)
 #metric(
   cod: [MPC02],
   formula: [
@@ -1542,7 +1618,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Il valore pianificato non può essere negativo e deve essere inferiore al BAC],
 )
 
-==== Actual Cost (AC)
+==== _Actual Cost_ (AC)
 #metric(
   cod: [MPC03],
   formula: [
@@ -1552,7 +1628,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     L'indicatore è utile per monitorare l'andamento del progetto e valutare se i costi sono in linea con le aspettative.],
 )
 
-==== Cost Performance Index (CPI)
+==== _Cost Performance Index_ (CPI)
 #metric(
   cod: [MPC04],
   formula: [
@@ -1562,7 +1638,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Un valore maggiore di 1 indica che il progetto sta rispettando il budget, un valore minore di 1 indica che il progetto sta superando il budget.],
 )
 
-==== Schedule Performance Index (SPI)
+==== _Schedule Performance Index_ (SPI)
 #metric(
   cod: [MPC05],
   formula: [
@@ -1572,7 +1648,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Un valore maggiore di 1 indica che il progetto sta rispettando la pianificazione, un valore minore di 1 indica che il progetto sta accumulando ritardi.],
 )
 
-==== Estimate At Completion (EAC)
+==== _Estimate At Completion_ (EAC)
 #metric(
   cod: [MPC06],
   formula: [
@@ -1583,7 +1659,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Se CPI < 1, EAC sarà maggiore del BAC, indicando un probabile sforamento del budget.],
 )
 
-==== Estimate To Complete (ETC)
+==== _Estimate To Complete_ (ETC)
 #metric(
   cod: [MPC07],
   formula: [
@@ -1594,7 +1670,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     Utile per la pianificazione del budget residuo necessario.],
 )
 
-==== Time Estimate At Completion (TEAC)
+==== _Time Estimate At Completion_ (TEAC)
 #metric(
   cod: [MPC08],
   formula: [
@@ -1606,7 +1682,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 === Sviluppo
-==== Requirements Stability Index
+==== _Requirements Stability Index_
 
 #metric(
   cod: [MPC09],
@@ -1660,7 +1736,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 === Verifica
-==== Code Coverage
+==== _Code Coverage_
 #metric(
   cod: [MPC12],
   formula: [
@@ -1669,7 +1745,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Percentuale di codice coperto da Test automatizzati. Si raccomanda un coverage minimo del 80%.],
 )
 
-==== Test Success Rate
+==== _Test Success Rate_
 #metric(
   cod: [MPC13],
   formula: [
@@ -1679,7 +1755,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 === Gestione della Qualità
-==== Quality metrics satisfied
+==== _Quality metrics satisfied_
 #metric(
   cod: [MPC14],
   formula: [
@@ -1690,7 +1766,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 
 == Processi organizzativi
 === Gestione dei Processi
-==== Time Efficiency
+==== _Time Efficiency_
 #metric(
   cod: [MPC15],
   formula: [
@@ -1732,7 +1808,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Affidabilità
-=== Branch Coverage
+=== _Branch Coverage_
 #metric(
   cod: [MPD04],
   formula: [
@@ -1741,7 +1817,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Percentuale di rami del codice coperti da Test automatizzati. Si raccomanda un coverage minimo del 60%.],
 )
 
-=== Statement Coverage
+=== _Statement Coverage_
 #metric(
   cod: [MPD05],
   formula: [
@@ -1750,7 +1826,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Percentuale di istruzioni del codice coperte da Test automatizzati. Si raccomanda un coverage minimo del 70%.],
 )
 
-=== Failure Density
+=== _Failure Density_
 #metric(
   cod: [MPD06],
   formula: [
@@ -1760,7 +1836,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Usabilità
-=== Time on Task
+=== _Time on Task_
 #metric(
   cod: [MPD07],
   formula: [
@@ -1769,7 +1845,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Tempo medio impiegato per completare un'attività. Indica l'usabilità del prodotto.],
 )
 
-=== Error Rate
+=== _Error Rate_
 #metric(
   cod: [MPD08],
   formula: [
@@ -1779,7 +1855,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Efficienza
-=== Response Time
+=== _Response Time_
 #metric(
   cod: [MPD09],
   formula: [
@@ -1789,7 +1865,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Manutenibilità
-=== Code Smells
+=== _Code Smells_
 #metric(
   cod: [MPD10],
   formula: [
@@ -1799,7 +1875,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
 )
 
-=== Coefficient of Coupling (CoC)
+=== _Coefficient of Coupling_ (CoC)
 #metric(
   cod: [MPD11],
   formula: [
@@ -1808,7 +1884,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
 )
 
-==== Cyclomatic Complexity
+=== _Cyclomatic Complexity_
 
 #metric(
   cod: [MPD12],
