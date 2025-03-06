@@ -49,7 +49,7 @@
 Il gruppo ha proseguito le attività previste nel terzo _Sprint_#super[G]: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica#super[G]* e dell'*Analisi dei Requisiti#super[G]* sono stati per la maggior parte raggiunti.
 Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica#super[G]* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti#super[G]*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
 
-Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test sulle stesse.
+Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test#super[G] sulle stesse.
 
 Infine, anche le *Norme di Progetto#super[G]* hanno raggiunto quella che sembra essere la struttura finale del documento, inoltre nuove informazioni sono state aggiunte riguardo il Processo di Sviluppo.
 
@@ -72,7 +72,7 @@ Nel dettaglio è stato deciso che:
 #align(center)[*Tecnologie e PoC*]
 - Sarà necessario proseguire con lo studio delle tecnologie e relativi testing basandosi sui requisiti descritti nel capitolato#super[G], eventualmente iniziando la realizzazione del PoC#super[G], sino al giorno *5 Gennaio 2025*
 
-Per l'assegnazione delle attività saranno mantenute le issue generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.
+Per l'assegnazione delle attività saranno mantenute le issue#super[G] generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.
 
 #pagebreak()
 == Assegnazione prevista dei ruoli sino al 05-01-2025

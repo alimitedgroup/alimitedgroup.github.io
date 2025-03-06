@@ -78,7 +78,7 @@ I membri di _ALimitedGroup_ hanno stabilito che per la codifica del codice saran
 
 == Decisioni relative alle attività del prossimo periodo
 
-I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint saranno svolte le seguenti attività, tenendo conto che le stesse potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] , come stabilito alla @f:
+I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint#super[G] saranno svolte le seguenti attività, tenendo conto che le stesse potrebbero subire modifiche e/o aggiunte ed integrazioni nel corso della prossima riunione, che si svolgerà verso l'inizio della seconda settimana del settimo sprint#super[G] , come stabilito alla @f:
 
 #align(center)[*Amministrazione*]
 
@@ -93,12 +93,12 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del settimo sprint sar
 - Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Piano di Progetto#super[G]*]
-- Effettuare la redazione delle informazioni relative al settimo sprint entro il giorno *9 Marzo 2025*.
+- Effettuare la redazione delle informazioni relative al settimo sprint#super[G] entro il giorno *9 Marzo 2025*.
 
 #align(center)[*Progettazione*]
 
 - Effettuare la progettazione del microservizio dedicato alle notifiche di rifornimento entro il giorno *2 Marzo 2025*.
-- Effettuare la progettazione del microservizio dedicato all'autenticazione di un _client_, limitando tale servizio alla verifica della tipologia di utente entro il giorno *2 Marzo 2025*.
+- Effettuare la progettazione del microservizio dedicato all'autenticazione di un _client_, limitando tale servizio alla verifica#super[G] della tipologia di utente entro il giorno *2 Marzo 2025*.
 
 #align(center)[*Programmazione*]
 
@@ -125,7 +125,7 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
   *#persona(p.emanuele)* $arrow.r$ *Progettista*#super[G] \
 ]\
 
-Eventuali compiti di verifica sono affidati a #persona(p.emanuele) e a #persona(p.marco) quando questi non svolgono i ruoli assegnati.
+Eventuali compiti di verifica#super[G] sono affidati a #persona(p.emanuele) e a #persona(p.marco) quando questi non svolgono i ruoli assegnati.
 
 Tutti i componenti devono svolgere formazione personale per comprendere il _framework_ *fx*.
 

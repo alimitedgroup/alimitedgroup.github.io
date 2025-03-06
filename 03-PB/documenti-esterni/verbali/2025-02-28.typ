@@ -29,7 +29,7 @@
 #inizio-verbale-esterno([*virtuale*], [*28 Febbraio 2025*], [*10.00*], [*11.00*], [#M31])
 
 + aggiornamento stato avanzamento lavori;
-+ repository _Minimum Viable Product#super[G] (MVP)_;
++ repository#super[G] _Minimum Viable Product#super[G] (MVP)_;
 + discussione test#super[G] ;
 + presentazione alcuni microservizi.
 
@@ -43,17 +43,17 @@ In questa riunione hanno partecipato, per conto di #M31:
 = Dettagli riunione
 == Aggiornamento stato avanzamento lavori
 Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avanzamento dei lavori:
-- il _Proof of Concept#super[G] (PoC)_ e la documentazione sono state valutate positivamente;
-- è stata raggiunta la _Requirement Technology Baseline (RTB)_;
-- sono state avviate le attività per la _Product Baseline#super[G] (PB)_.
+- Il _Proof of Concept#super[G] (PoC)_ e la documentazione sono state valutate positivamente;
+- È stata raggiunta la _Requirement Technology Baseline#super[G] (RTB)_;
+- Sono state avviate le attività per la _Product Baseline#super[G] (PB)_.
 
 == Repository _Minimum Viable Product#super[G] (MVP)_
 Il codice sorgente del _Minimum Viable Product#super[G] (MVP)_ è caricato su un #link("https://github.com/alimitedgroup/MVP")[_repository_ GitHub#super[G] ]del gruppo _ALimitedGroup_.
 L'azienda #M31 ha richiesto di fornire dei rilasci periodici inviando via mail l'archivio compresso contenente il codice sorgente e un file _README.md_ con le istruzioni per l'esecuzione del _software_.
 == Discussione test
-#M31 ha ribadito al gruppo _ALimitedGroup_ l'importanza di fornire un *_test book_* dettagliato per la verifica del corretto funzionamento del sistema.\
+#M31 ha ribadito al gruppo _ALimitedGroup_ l'importanza di fornire un *_test book_* dettagliato per la verifica#super[G] del corretto funzionamento del sistema.\
 Questo documento dovrà includere una descrizione dei casi di _test_#super[G] ,
-delle condizioni iniziali, dei passaggi eseguiti, dei risultati attesi e ottenuti, nonché dei criteri di validazione utilizzati per verificare il corretto funzionamento del sistema.
+delle condizioni iniziali, dei passaggi eseguiti, dei risultati attesi e ottenuti, nonché dei criteri di validazione#super[G] utilizzati per verificare il corretto funzionamento del sistema.
 I _test_#super[G] che dovranno essere inclusi sono:
 - _Test_#super[G] di sincronizzazione;
 - _Unit test_#super[G] e _code coverage_: viene stabilito il *_code coverage_* pari al *75%*;

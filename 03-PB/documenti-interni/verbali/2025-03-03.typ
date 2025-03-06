@@ -86,9 +86,9 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 - Codificare il microservizio di *API#super[G] Gateway* entro il giorno *9 Marzo 2025*
 - Codificare il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
 - Codificare il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
-- Realizzare i Test di unità e di integrazione per il microservizio di *Api Gateway* entro il giorno *9 Marzo 2025*
-- Realizzare i Test di unità e di integrazione per il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
-- Realizzare i Test di unità e di integrazione per il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
+- Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Api Gateway* entro il giorno *9 Marzo 2025*
+- Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
+- Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
 
 
 
@@ -108,7 +108,7 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
   *#persona(p.lorenzo)* $arrow.r$ *Progettista*#super[G] \
 ]\
 
-La verifica è affidata reciprocamente a persone appartenenti a gruppi di lavoro distinti.
+La verifica#super[G] è affidata reciprocamente a persone appartenenti a gruppi di lavoro distinti.
 
 = Esiti della riunione
 

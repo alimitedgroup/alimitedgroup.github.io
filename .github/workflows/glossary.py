@@ -38,7 +38,7 @@ def substitute(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show"]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni("]
     specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
@@ -89,6 +89,9 @@ def substitute(filePath,glossaryYml):
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word[0] == "(" and word[len(word)-1] == ")":
                         newText += word[:-1] + "#super[G] " + word[-1:]
+                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    elif word in glossary:
+                        newText += word + "#super[G] "
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     else:
                         newText += word

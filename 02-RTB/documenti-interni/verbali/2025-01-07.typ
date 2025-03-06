@@ -49,7 +49,7 @@ _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'anal
 
 - *Analisi dei Requisiti#super[G]*: Sono stati riesaminati tutti i casi d'uso redatti ed è stata completata la redazione di tutti i Casi d'Uso relativi a requisiti obbligatori;
 - *Piano di Qualifica#super[G]*: è stata completata la ricerca delle misurazioni da effettuare;
-- *Tecnologie e PoC*: è proseguita la realizzazione del PoC che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
+- *Tecnologie e PoC*: è proseguita la realizzazione del PoC#super[G] che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
 
 In merito all'*Analisi dei Requisiti#super[G]*, non è stata rispettata la scadenza relativa alla redazione dei requisiti non obbligatori per il sopraggiungere di alcune complicazioni.
 
@@ -58,24 +58,24 @@ In merito alle *Norme di Progetto#super[G]*, non è stata rispettata la scadenza
 Per maggiori informazioni è consigliata la lettura del *Piano di Progetto#super[G]* relativamente al quarto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del quinto Sprint#super[G].
 == Decisioni relative alle attività del prossimo periodo
 
-I membri di _ALimitedGroup_ hanno stabilito che nel corso del quinto Sprint sarà necessario:
+I membri di _ALimitedGroup_ hanno stabilito che nel corso del quinto Sprint#super[G] sarà necessario:
 
 #align(center)[*Analisi dei Requisiti#super[G]*]
 - Effettuare la redazione dei Casi d'Uso relativi ai requisiti non obbligatori entro il giorno *12 Gennaio 2025*
-- Effettuare la redazione dei Casi d'Uso relativi alle attività svolte dal Backend entro il giorno *19 Gennaio 2025*
+- Effettuare la redazione dei Casi d'Uso relativi alle attività svolte dal Backend#super[G] entro il giorno *19 Gennaio 2025*
 
 #align(center)[*Norme di Progetto#super[G]*]
-- Effettuare la verifica di quanto redatto entro il giorno *19 Gennaio 2025*
+- Effettuare la verifica#super[G] di quanto redatto entro il giorno *19 Gennaio 2025*
 
 #align(center)[*Piano di Progetto#super[G]*]
-- Effettuare la redazione delle informazioni relative al quarto sprint entro il giorno *19 Gennaio 2025*
+- Effettuare la redazione delle informazioni relative al quarto sprint#super[G] entro il giorno *19 Gennaio 2025*
 
 #align(center)[*Piano di Qualifica#super[G]*]
 - Effettuare la redazione del documento con le informazioni aggiuntive rispetto alle misurazioni entro il giorno *12 Gennaio 2025*, integrando eventualmente con le Norme di Progetto#super[G] ove necessario;
 - Effettuare le prime misurazioni entro il giorno *19 Gennaio 2025*
 \
 #align(center)[*Tecnologie e PoC*]
-- Terminare la realizzazione del PoC completando l'analisi di quanto necessario a realizzare l'aggiornamento delle informazioni tra i vari elementi del Sistema entro il giorno *19 Gennaio 2025*
+- Terminare la realizzazione del PoC#super[G] completando l'analisi di quanto necessario a realizzare l'aggiornamento delle informazioni tra i vari elementi del Sistema entro il giorno *19 Gennaio 2025*
 
 == Assegnazione prevista dei ruoli sino al 19-01-2025
 
