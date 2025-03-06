@@ -29,11 +29,11 @@ C:
   Capability Maturity Model Integration: "È un approccio al miglioramento dei processi il cui obiettivo è di aiutare una divisione o un'intera organizzazione all'interno di un progetto."
   Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
   Caso d'Uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
-  CI: "Acronimo per Continuous Integration, per la sua definizione vedere la parola che segue."
+  CI: "Acronimo per Continuous Integration, per la sua definizione vedere la parola 'Continuous Integration'."
   CMMI: "Acronimo di Capability Maturity Model Integration, per la sua definizione vedere la parola 'Capability Maturity Model Integration'."
   Continuous Integration: "È una pratica che si applica in contesti in cui lo sviluppo del software avviene attraverso un sistema di controllo versione, perciò consiste nell'allineamento frequente dagli ambienti di lavoro degli sviluppatori verso l'ambiente condiviso (detto anche mainline)."
   Consuntivo: "Esiti finali delle risorse temporali e monetarie utilizzati, spesso in riferimento al bilancio preventivato."
-  Cruscotto: "In inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
+  Cruscotto: "In Inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
   CTO: "Acronimo per Chief Technology Officer, manager di primo livello e membro del consiglio direttivo di un'azienda che seleziona, valuta e suggerisce le migliori tecnologie da applicare ai prodotti o ai servizi che l'azienda produce."
 D:
   Dashboard: "Vedi Cruscotto."  
@@ -63,8 +63,10 @@ H:
   "": ""
 I:
   IDE: "Acronimo di Integrated Development Environment; è un ambiente di sviluppo integrato che fornisce strumenti come editor di codice, debugger e compilatori."
-  Issue: "Problema o attività registrata in un sistema di tracciamento per monitorare e risolvere bug o richieste di funzionalità."
   ISO: "Acronimo di International Organization for Standardization; è un'ente di standardizzazione fondato nel 1947."
+  IEC: "Acronimo di International Electrotechnical Commission, è un'organizzazione internazionale che studia e pubblica standard per ogni tecnologia elettrica, elettronica e correlate. L’IEC gestisce inoltre quattro sistemi globali di valutazione che certificano la conformità di apparecchiature, sistemi e componenti rispetto agli standard internazionali."
+  Issue: "Problema o attività registrata in un sistema di tracciamento per monitorare e risolvere bug o richieste di funzionalità."
+  
 J:
   "": ""
 K:
@@ -106,6 +108,7 @@ R:
   Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza, occupandosi di correggere eventuali errori segnalati dal Verificatore."
   Repository: "Archivio centralizzato in cui viene memorizzato e gestito il codice sorgente."
   Responsabile: "Ruolo centrale nella gestione del gruppo: ha il compito di coordinare le attività e lo stato di progresso, nonché di tenere le comunicazioni verso l'esterno del gruppo."
+  Requirements and Technology Baseline: "È una baseline di un progetto software che definisce i requisiti e le tecnologie utilizzate per realizzarli. Identifica i requisiti funzionali e non funzionali del sistema, le tecnologie, le librerie e le piattaforme utilizzate per implementare tali requisiti, così come le strategie di sviluppo e di testing del software. Questa baseline è fondamentale per il controllo del lavoro svolto e per verificarne la sua conformità ai requisiti richiesti dal cliente."
   Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
   RTB: "Acronimo di Requirements and Technology Baseline, per la sua definizione vedere 'Requirements and Technology Baseline'."

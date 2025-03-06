@@ -66,5 +66,5 @@
 = Introduzione
 Questo documento nasce con lo scopo di evitare qualsiasi tipo di ambiguità o dubbi riguardanti la terminologia adoperata all'interno dei documenti del progetto. Per questo motivo, vengono di seguito esposte le definizioni dei termini specifici adottando una struttura alfabetica per facilitare la navigazione del documento.\
 La nomenclatura utilizzata per evidenziare che una parola, con annessa la sua definizione, è presente all'interno del Glossario viene indicata come segue:
-#align(center)[parola#super[G]]
+#align(center, text(1.2em)[*`parola`*#super[G]])
 #pagebreak()

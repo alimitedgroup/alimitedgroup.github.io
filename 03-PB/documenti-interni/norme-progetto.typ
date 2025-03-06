@@ -342,7 +342,7 @@ Essa contiene, in forma riassunta, i punti chiave che hanno spinto i componenti 
 ==== Lettera di Presentazione
 
 Di due tipologie:
-- La Lettera di presentazione per la *_Requirements and Technology Baseline (RTB)_*
+- La Lettera di presentazione per la *_Requirements and Technology Baseline#super[G] (RTB)_*
 - La lettera di presentazione per la *_Product Baseline#super[G] (PB)_*
 
 Lo scopo del documento è quello di presentare formalmente la candidatura di _ALimitedGroup_ alle rispettive _Baseline_#super[G].
@@ -525,11 +525,11 @@ Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 
 - *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente concordato;
 - *Supporto per approvazione del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti siano effettivamente soddisfatti.
 
-Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto (_Requirements and Technology Baseline (RTB)_ e _Product Baseline#super[G] (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[G]* e *Codifica* per la _RTB_#super[G] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_#super[G] :_ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[G] raggiunta).
+Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto (_Requirements and Technology Baseline#super[G] (RTB)_ e _Product Baseline#super[G] (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[G]* e *Codifica* per la _RTB_#super[G] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_#super[G] :_ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[G] raggiunta).
 
 === Analisi dei Requisiti
 
-L'*Analisi dei Requisiti#super[G]* è tra le attività cardine della _Requirements and Technology Baseline (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
+L'*Analisi dei Requisiti#super[G]* è tra le attività cardine della _Requirements and Technology Baseline#super[G] (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
 Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] che, contenendo i Test e il loro stato alla *Sezione 4*, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
 
 In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requisiti ad essi associati. Per una più rapida consultazione sarà ora discussa la nomenclatura nel dettaglio.
@@ -882,7 +882,7 @@ Iniziando dalla *Documentazione*, attività in cui il gruppo si è particolarmen
 
 Per maggiori informazioni sul processo di redazione di un documento si consiglia la lettura della @regole-branch-issue.
 
-In merito invece alle verifiche relative al *Codice*, questo sarà un argomento che _ALimitedGroup_ affronterà maggiormente nel dettaglio non appena raggiunta la _Requirements and Technology Baseline_.
+In merito invece alle verifiche relative al *Codice*, questo sarà un argomento che _ALimitedGroup_ affronterà maggiormente nel dettaglio non appena raggiunta la _Requirements and Technology Baseline#super[G]_.
 
 In generale tutte le informazioni relative alla Verifica#super[G], dalle misurazioni agli esiti dei Test effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 4)*.
 
@@ -1211,7 +1211,7 @@ Il #link("https://github.com/alimitedgroup/alimitedgroup.github.io/tree/main")[_
 - *.github/workflows*: contiene lo script in _Python_ che si occupa di compilare i files _Typst_#super[G] dei documenti ed aggiornare il sito di conseguenza. Contiene inoltre lo script python per applicare i riferimenti delle parole presenti nel Glossario;
 - *.vscode*: contiene informazioni utili per l'_IDE_ di sviluppo _Microsoft Visual Studio Code_, se questo viene utilizzato per la stesura dei documenti;
 - *01-candidatura*: contiene, con le eventuali _sub-directories_ i file della candidatura, ossia la prima fase del progetto;
-- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della _Requirements and Technology Baseline_ (RTB), ossia la seconda fase del progetto;
+- *02-RTB*: contiene, con le eventuali _sub-directories_ i file della _Requirements and Technology Baseline#super[G]_ (RTB), ossia la seconda fase del progetto;
 - *assets*: contiene _files_ utili per il sito web e i documenti, come loghi e _fonts_;
 - *lib*: contiene i file _template_ per la redazione dei documenti;
 - *website*: contiene i file relativi al sito web del gruppo.

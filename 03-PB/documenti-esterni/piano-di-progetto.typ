@@ -466,9 +466,9 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tu
   caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
+Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline#super[G] (RTB)_* entro il *3 febbraio 2025*.
 
-Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline#super[G] (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
 == Attività previste per la Requirements and Technology Baseline (RTB)
 
@@ -575,7 +575,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
 
 == Attività previste per la Product Baseline (PB)
 
-La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
+La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline#super[G] (RTB)_*.
 
 #pagebreak()
 

@@ -38,7 +38,7 @@ def substitute(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "="]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show"]
     specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
@@ -125,7 +125,7 @@ def main():
     else:
         find_files(fileList)
         for file in fileList:
-            if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
+            if "docs.typ" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/lettera-rtb.typ" in file or "/02-RTB/slides" in file or "/02-RTB\\slides" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
                 continue
             substitute(file,loadGlossary())
 

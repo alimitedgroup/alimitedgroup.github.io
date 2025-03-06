@@ -47,7 +47,7 @@
 
 == Aggiornamenti sui lavori in corso <alc>
 
-I membri di _ALimitedGroup_ si sono aggiornati sul progresso del progetto in seguito al superamento della _Requirements and Technology Baseline (RTB)_.
+I membri di _ALimitedGroup_ si sono aggiornati sul progresso del progetto in seguito al superamento della _Requirements and Technology Baseline#super[G] (RTB)_.
 
 _ALimitedGroup_ ha appreso la necessità di correggere gli errori rilevati dal #profBreve(p.cardin) nell'Analisi dei Requisiti#super[G] e dal #profBreve(p.tullio) negli altri documenti.
 
