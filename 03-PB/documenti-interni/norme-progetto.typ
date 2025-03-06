@@ -547,7 +547,7 @@ Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di
 Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 12207:1995_ sono le seguenti:
 
 - *Implementazione del processo*: ovvero la scelta del *Ciclo di Vita* del Software più appropriato in base allo scopo, l'importanza e la complessità del progetto;
-- *Analisi dei Requisiti#super[G]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità che il Software deve offrire. Un'Analisi dei Requisiti#super[G] completa deve descrivere le funzionalità del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente#super[G];
+- *Analisi dei Requisiti#super[G]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità#super[G] che il Software deve offrire. Un'Analisi dei Requisiti#super[G] completa deve descrivere le funzionalità#super[G] del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente#super[G];
 - *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _Software_ del prodotto finale, affinché tutti i requisiti individuati siano soddisfatti (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
 - *Analisi dei Requisiti#super[G] Software*: ovvero l'analisi del modo in cui il Software soddisfa i requisiti lato utente. Deve includere anche le caratteristiche di qualità: caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento Software e requisiti di sicurezza;
 - *Progettazione dell'architettura Software*: consiste nel definire le diverse componenti del Sistema e il loro funzionamento, ponendo l'attenzione sulla struttura generale, non nel dettaglio implementativo;
@@ -1320,7 +1320,7 @@ dove al posto di *_issue_*#super[G] va inserito il numero della issue#super[G] a
 
 È bene sottolineare che seppur la chiusura di una _Issue_#super[G] può essere effettuata manualmente in caso di necessità, questo *compromette fortemente* la *tracciabilità* di quanto effettuato.
 
-In ultima istanza, il gruppo ha configurato anche la funzionalità fornita da GitHub#super[G] denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch#super[G] di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
+In ultima istanza, il gruppo ha configurato anche la funzionalità#super[G] fornita da GitHub#super[G] denominata *GitHub Actions*, che permette di realizzare azioni automatiche quando un commit viene realizzato nel branch#super[G] di sviluppo principale (*main*): nello specifico, l'action esegue, grazie anche all'ausilio di uno script Python, la compilazione dei documenti e la pubblicazione nel #link("https://alimitedgroup.github.io/")[sito web] del gruppo.
 
 ==== Google Calendar
 
@@ -1397,7 +1397,7 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 
 === Manutenzione
 
-A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato all'*Amministratore* il compito di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità qualora errori o cambiamenti lo rendano necessario.
+A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato all'*Amministratore* il compito di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità#super[G] qualora errori o cambiamenti lo rendano necessario.
 
 == Processo di Miglioramento <miglioramento>
 
@@ -1553,7 +1553,7 @@ L'*Efficienza* misura la capacità di fornire delle prestazioni che siano dirett
 L'*Usabilità* consiste nel misurare quanto l'Utente finale è in grado di apprendere la modalità di utilizzo del prodotto. Si misura:
 
 - *Comprensibilità*, ovvero quanto è facile comprendere i concetti del prodotto;
-- *Apprendibilità*, ovvero quanto è semplice apprendere l'uso delle funzionalità del prodotto;
+- *Apprendibilità*, ovvero quanto è semplice apprendere l'uso delle funzionalità#super[G] del prodotto;
 - *Operabilità*, ovvero se è semplice per gli Utenti utilizzare il prodotto;
 - *Attrattività*, ovvero se l'Utente trova positivo l'uso del prodotto;
 - *Conformità*, ovvero se il prodotto aderisce a standard relativi all'usabilità.

@@ -58,7 +58,7 @@ consigliando di ispirarsi a sistemi di e-commerce già esistenti.
 Inoltre, ha suggerito l'implementazione di un _catalogo centrale_ riportante i prodotti.\
 
 Infine, l'azienda ha raccomandato di optare per _scelte semplici_,
-rimandando alcune funzionalità avanzate a sviluppi futuri.
+rimandando alcune funzionalità#super[G] avanzate a sviluppi futuri.
 Tra queste, si includono:
 - La gestione dei magazzini offline.
 - La possibilità di gestire più ordini contemporanei per lo stesso utente.

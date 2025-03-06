@@ -53,7 +53,7 @@ In merito all'*Analisi dei Requisiti#super[G]* sono stati fatti importanti avanz
 
 Le *Norme di Progetto#super[G]* sono state rese molto più fruibili.
 
-Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub*#super[G] inserendo una miglior cruscotto#super[G] sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità di _branch protection_.
+Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub*#super[G] inserendo una miglior cruscotto#super[G] sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità#super[G] di _branch protection_.
 
 == Decisioni relative alle attività del prossimo periodo
 
