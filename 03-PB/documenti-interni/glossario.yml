@@ -84,6 +84,7 @@ M:
   Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento, che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria, mantenendo allineati codice, branch e metadati."
   MVP: "Acronimo di Minimum Viable Product, per la sua definizione vedere la parola 'Minimum Viable Product'."
 N:
+  NdP: "Acronimo di Norme di Progetto, per la sua definizione vedere la parola 'Norme di Progetto'."
   NATS: "Acronimo di Neural Architecture Transfer System; è un sistema di middleware open-source progettato per la messaggistica distribuita e la gestione dei servizi."
   Norme di Progetto: "Documento contenente tutte le regole che ALimitedGroup intende rispettare per realizzare un lavoro di qualità, efficiente ed efficace. Costituisce in sostanza il punto di riferimento per apprendere il Way of Working del gruppo."
 O:
@@ -91,7 +92,9 @@ O:
 P:
   PB: "Acronimo di Product Baseline, per la sua definizione vedere la parola 'Product Baseline'."
   PdP: "Acronimo di Piano di Progetto, per la sua definizione vedere la parola 'Piano di Progetto'."
+  PdQ: "Acronimo di Piano di Qualifica, per la sua definizione vedere la parola 'Piano di Qualifica'."
   Piano di Progetto: "È un documento che cerca di esprimere le attività svolte e le attività future programmate all'interno di un progetto commissionato, tenendo conto dei costi e delle ore preventivate per farlo."
+  Piano di Qualifica: "È un documento che consente di descrivere il proprio sistema di qualità per garantire il raggiungimento di certi standard e performance di tutti i requisiti previsti in uno specifico contratto."
   PoC: "Acronimo di Proof of Concept, per la sua definizione vedere la parola 'Proof of Concept'."
   Product Baseline: "È la fase finale di realizzazione di un prodotto commissionato da un'azienda o pubblica amministrazione, in cui viene realizzato un Minimum Viable Product dopo aver completato e superato tutti i test preventivati nella Requirements and Technology Baseline."
   Proof of Concept: "Prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia."

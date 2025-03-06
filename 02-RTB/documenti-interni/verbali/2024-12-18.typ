@@ -46,8 +46,8 @@
 
 == Aggiornamenti sui lavori in corso
 
-Il gruppo ha proseguito le attività previste nel terzo _Sprint_#super[G]: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica* e dell'*Analisi dei Requisiti#super[G]* sono stati per la maggior parte raggiunti.
-Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti#super[G]*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
+Il gruppo ha proseguito le attività previste nel terzo _Sprint_#super[G]: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica#super[G]* e dell'*Analisi dei Requisiti#super[G]* sono stati per la maggior parte raggiunti.
+Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica#super[G]* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti#super[G]*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
 
 Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test sulle stesse.
 
@@ -66,7 +66,7 @@ Nel dettaglio è stato deciso che:
 #align(center)[*Norme di Progetto#super[G]*]
 - Sarà necessario aggiungere le informazioni di codifica del codice entro il giorno *5 Gennaio 2025*
 
-#align(center)[*Piano di Qualifica*]
+#align(center)[*Piano di Qualifica#super[G]*]
 - Sarà necessario effettuare la stesura dell'introduzione del documento e di tutte le misurazioni rilevate entro il giorno *5 Gennaio 2025*
 
 #align(center)[*Tecnologie e PoC*]

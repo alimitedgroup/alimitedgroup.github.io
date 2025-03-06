@@ -102,8 +102,8 @@
 
 = Introduzione <introduzione>
 == Scopo del documento
-Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _Software_ e dei processi coinvolti nel suo ciclo di vita.\
-Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
+Il presente Piano di Qualifica#super[G] rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _Software_ e dei processi coinvolti nel suo ciclo di vita.\
+Il Piano di Qualifica#super[G] si sviluppa attraverso tre dimensioni interconnesse:
 
 + *Piano della Qualità*:
   - Definisce gli obiettivi qualitativi;
@@ -122,7 +122,7 @@ Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
   - Identifica opportunità di ottimizzazione;
   - Adatta costantemente processi e obiettivi.
 
-Il Piano di Qualifica rappresenta uno strumento strategico volto a garantire che il progetto:
+Il Piano di Qualifica#super[G] rappresenta uno strumento strategico volto a garantire che il progetto:
 - Rispetti integralmente i requisiti definiti;
 - Consegua gli obiettivi prefissati;
 - Mantenga elevati standard qualitativi.

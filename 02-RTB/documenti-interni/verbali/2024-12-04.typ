@@ -62,7 +62,7 @@ Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 
 Sarà necessario verificare il *Piano di Progetto#super[G]* e le *Norme di Progetto#super[G]* sino ad ora redatte e proseguire la loro redazione.
 
 I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept#super[G] (PoC)_, specie riguardo il linguaggio *Go*#super[G] e la tecnologia *NATS*#super[G].
-Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica*.
+Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica#super[G]*.
 
 == Modifiche al sistema di assegnazione dei ruoli e rendicontazione ore produttive <nuove_regole>
 

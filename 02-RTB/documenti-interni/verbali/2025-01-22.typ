@@ -48,7 +48,7 @@
 _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'analisi è risultato che:
 
 - *Analisi dei Requisiti#super[G]*: sono stati completati tutti i casi d'uso non obbligatori e anche quelli relativi alle attività svolte dal Backend#super[G];
-- *Piano di Qualifica*: è stato completato il documento, mancano solo le misurazioni di alcune metriche;
+- *Piano di Qualifica#super[G]*: è stato completato il documento, mancano solo le misurazioni di alcune metriche;
 - *Tecnologie e PoC*: è proseguita la realizzazione del PoC che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
 - *Norme di Progetto#super[G]*: è stato completata la redazione del documento.
 
@@ -65,7 +65,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà
 #align(center)[*Piano di Progetto#super[G]*:]
 - Effettuare la redazione delle informazioni relative al quinto sprint entro il giorno *27 Gennaio 2025*.
 
-#align(center)[*Piano di Qualifica*:]
+#align(center)[*Piano di Qualifica#super[G]*:]
 - Verificare il documento entro il giorno *27 Gennaio 2025*;
 - Completare le misurazioni entro il giorno *2 Febbraio 2025*.
 

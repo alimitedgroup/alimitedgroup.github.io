@@ -774,7 +774,7 @@ Le attività pianificate nel dettaglio includono:
 
 - Continuo redazione dell'Analisi dei Requisiti#super[G];
 - Discussione del PoC e dell'Analisi dei Requisiti#super[G] con l'azienda proponente #M31;
-- Inizio redazione Piano di Qualifica;
+- Inizio redazione Piano di Qualifica#super[G];
 - Studio e sperimentazione delle tecnologie _Golang_ e _NATS_#super[G] per cominciare la creazione di un PoC#super[G];
 - Setup della repository con divisione del progetto in più microservizi
 - Setup dell'ambiente di sviluppo locale in modo da renderlo replicabile per tutti i componenti del gruppo
@@ -850,7 +850,7 @@ Le attività pianificate nel dettaglio includono:
 - Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[G];
 - Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
 - Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[G];
-- Proseguire con il Piano di Qualifica
+- Proseguire con il Piano di Qualifica#super[G]
 
 
 ==== Rischi attesi
@@ -912,13 +912,13 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto#sup
 
 ==== Informazioni generali e attività da svolgere <sprint4intro>
 
-Il quinto sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G], sul completamento del PoC#super[G] e sul proseguimento del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto#super[G].
+Il quinto sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G], sul completamento del PoC#super[G] e sul proseguimento del Piano di Qualifica#super[G], nonché sulla verifica delle Norme di Progetto#super[G].
 
 Le attività pianificate nel dettaglio includono:
 
 - Terminare la stesura dei Casi d'Uso relativi a requisiti non obbligatori e riguardanti le attività di _Backend_#super[G] del Sistema;
-- Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni;
-- Effettuare le prime misurazioni da riportare nel Piano di Qualifica;
+- Proseguire con la stesura del Piano di Qualifica#super[G] inserendo le informazioni aggiuntive rispetto alle misurazioni;
+- Effettuare le prime misurazioni da riportare nel Piano di Qualifica#super[G];
 - Effettuare la verifica di quanto redatto nelle Norme di Progetto#super[G];
 - Terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
 
@@ -967,11 +967,11 @@ In merito alle attività riguardanti l'Analisi dei Requisiti#super[G], sono stat
 
 Inoltre #M31 è stata aggiornata sui progressi realizzati e ha predisposto una riunione il giorno 28 Gennaio 2025 alle ore 15:00.
 
-È stata completata la redazione del Piano di Qualifica sulle sezioni preventivate; occorre ora verificare quanto redatto.
+È stata completata la redazione del Piano di Qualifica#super[G] sulle sezioni preventivate; occorre ora verificare quanto redatto.
 
 Anche il PoC ha subito degli importanti progressi ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
 
-A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto#super[G] e le prime misurazioni del Piano di Qualifica.
+A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto#super[G] e le prime misurazioni del Piano di Qualifica#super[G].
 #pagebreak()
 
 === Sprint 6 <sprint6>
@@ -989,12 +989,12 @@ A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme d
 
 ==== Informazioni generali e attività da svolgere <sprint6intro>
 
-Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[G] e della finitura del PoC#super[G]; ma anche sulla verifica delle Norme di Progetto#super[G] e del Piano di Qualifica.
+Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[G] e della finitura del PoC#super[G]; ma anche sulla verifica delle Norme di Progetto#super[G] e del Piano di Qualifica#super[G].
 
 Le attività pianificate nel dettaglio includono:
 - La redazione e correzione dell'Analisi dei Requisiti#super[G] a seguito della riunione esterna con #M31, effettuata in data 28/01;
-- Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
-- Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto#super[G];
+- Terminare la stesura del Piano di Qualifica#super[G] controllando e correggendo le informazioni rispetto alle misurazioni;
+- Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica#super[G] e delle Norme di Progetto#super[G];
 - Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[G];
 - Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
 

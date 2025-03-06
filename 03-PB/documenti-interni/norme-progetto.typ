@@ -530,7 +530,7 @@ Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto 
 === Analisi dei Requisiti
 
 L'*Analisi dei Requisiti#super[G]* è tra le attività cardine della _Requirements and Technology Baseline#super[G] (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
-Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] che, contenendo i Test e il loro stato alla *Sezione 4*, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
+Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*] che, contenendo i Test e il loro stato alla *Sezione 4*, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
 
 In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requisiti ad essi associati. Per una più rapida consultazione sarà ora discussa la nomenclatura nel dettaglio.
 
@@ -840,7 +840,7 @@ Le attività previste dal processo di *Accertamento della qualità* sono le segu
 
 _ALimitedGroup_ per assicurare qualità ha individuato specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una sezione apposita tali misurazioni per renderle più velocemente consultabili.
 
-Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[G] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 5)*.
+Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[G] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*] *(Sezione 5)*.
 
 Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodotto mentre quelle di processo alla @metriche-qt-processo.
 
@@ -851,7 +851,7 @@ Il processo di *Verifica*#super[G] ha come scopo quello di verificare che quanto
 
 Possiamo racchiudere l'obiettivo di questo processo nella risposta alla domanda _"Did I build the System right?"_, ovvero _"Ho realizzato il Sistema correttamente?_.
 
-Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 4)*.
+Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*] *(Sezione 4)*.
 
 ==== Strumenti a supporto
 
@@ -884,7 +884,7 @@ Per maggiori informazioni sul processo di redazione di un documento si consiglia
 
 In merito invece alle verifiche relative al *Codice*, questo sarà un argomento che _ALimitedGroup_ affronterà maggiormente nel dettaglio non appena raggiunta la _Requirements and Technology Baseline#super[G]_.
 
-In generale tutte le informazioni relative alla Verifica#super[G], dalle misurazioni agli esiti dei Test effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] *(Sezione 4)*.
+In generale tutte le informazioni relative alla Verifica#super[G], dalle misurazioni agli esiti dei Test effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*] *(Sezione 4)*.
 
 La Verifica#super[G], in generale può essere realizzata in due modi: mediante *Analisi Statica* e mediante *Analisi Dinamica*, qui di seguito descritte.
 
@@ -916,7 +916,7 @@ Le principali tipologie di Test#super[G] sono:
 - *Test di Sistema*;
 - *Test di Regressione*.
 
-La nomenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] alla *Sezione 4*) è la seguente:
+La nomenclatura utilizzata per descrivere tali Test (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*] alla *Sezione 4*) è la seguente:
 
 #align(center, text(1.2em)[*`T-#-Tipo`*])
 
@@ -1303,7 +1303,7 @@ Per i rimanenti *documenti* funzioni di interesse sono contenute nel template #l
 Per i seguenti documenti:
 - *Norme di Progetto#super[G]*;
 - *Piano di Progetto#super[G]*;
-- *Piano di Qualifica*;
+- *Piano di Qualifica#super[G]*;
 - *Analisi dei Requisiti#super[G]*;
 
 che assumono, all'interno del progetto, un'importanza significativa rispetto ad altri (verbali, diari di bordo etc...) abbiamo realizzato un _template_ apposito, che permette di automatizzare la realizzazione della struttura adatta a loro.\
