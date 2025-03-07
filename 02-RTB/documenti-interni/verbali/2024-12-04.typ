@@ -53,7 +53,7 @@ In merito all'*Analisi dei Requisiti#super[G]* sono stati fatti importanti avanz
 
 Le *Norme di Progetto#super[G]* sono state rese molto più fruibili.
 
-Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub*#super[G] inserendo una miglior cruscotto sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità di _branch protection_.
+Sono stati apportati miglioramenti anche al sistema di _ticketing_ realizzato mediante *GitHub*#super[G] inserendo una miglior cruscotto#super[G] sulle attività nel _backlog_ e quelle in corso e attivando le funzionalità#super[G] di _branch protection_.
 
 == Decisioni relative alle attività del prossimo periodo
 
@@ -62,7 +62,7 @@ Il gruppo, anche a seguito di quanto verificato con la riunione del 03 Dicembre 
 Sarà necessario verificare il *Piano di Progetto#super[G]* e le *Norme di Progetto#super[G]* sino ad ora redatte e proseguire la loro redazione.
 
 I componenti di _ALimitedGroup_ hanno inoltre deciso di iniziare ad approfondire meglio le tecnologie da utilizzare nel _Proof of Concept#super[G] (PoC)_, specie riguardo il linguaggio *Go*#super[G] e la tecnologia *NATS*#super[G].
-Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica*.
+Infine, il gruppo stabilisce la necessità di redigere il verbale della riunione esterna del 03 Dicembre 2024 con #M31, del verbale interno relativo alla presente riunione e di iniziare la stesura del *Piano di Qualifica#super[G]*.
 
 == Modifiche al sistema di assegnazione dei ruoli e rendicontazione ore produttive <nuove_regole>
 

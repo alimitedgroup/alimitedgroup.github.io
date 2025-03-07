@@ -27,7 +27,7 @@
 
 = Informazioni generali
 #inizio-verbale-esterno([*ibrida*], [*17 Dicembre 2024*], [*14:30*], [*15:30*], [#M31])
-+ Esposizione degli avanzamenti sullo studio delle tecnologie e possibile architettura del Sistema
++ Esposizione degli avanzamenti sullo studio delle tecnologie e possibile architettura#super[G] del Sistema
 + Prossimi incontri con #M31
 
 In questa riunione hanno partecipato, per conto di #M31:
@@ -48,7 +48,7 @@ I rappresentanti di #M31 hanno consigliato, in merito alla bozza architetturale,
 
 == Prossimi incontri con #M31
 
-Viene stabilito di fissare il prossimi incontri con #M31 ad *Analisi dei Requisiti#super[G]* conclusa e/o quando il PoC avrà raggiunto un buon stato di sviluppo.
+Viene stabilito di fissare il prossimi incontri con #M31 ad *Analisi dei Requisiti#super[G]* conclusa e/o quando il PoC#super[G] avrà raggiunto un buon stato di sviluppo.
 
 #pagebreak()
 

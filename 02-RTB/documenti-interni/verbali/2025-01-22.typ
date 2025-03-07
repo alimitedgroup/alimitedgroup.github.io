@@ -48,24 +48,24 @@
 _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'analisi è risultato che:
 
 - *Analisi dei Requisiti#super[G]*: sono stati completati tutti i casi d'uso non obbligatori e anche quelli relativi alle attività svolte dal Backend#super[G];
-- *Piano di Qualifica*: è stato completato il documento, mancano solo le misurazioni di alcune metriche;
-- *Tecnologie e PoC*: è proseguita la realizzazione del PoC che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
+- *Piano di Qualifica#super[G]*: è stato completato il documento, mancano solo le misurazioni di alcune metriche;
+- *Tecnologie e PoC*: è proseguita la realizzazione del PoC#super[G] che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
 - *Norme di Progetto#super[G]*: è stato completata la redazione del documento.
 
 Per maggiori informazioni è consigliata la lettura del *Piano di Progetto#super[G]* relativamente al quinto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del sesto Sprint#super[G].
 
 == Decisioni relative alle attività del prossimo periodo
 
-I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà necessario:
+I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint#super[G] sarà necessario:
 
 #align(center)[*Norme di Progetto#super[G]*:]
-- Iniziare la verifica di quanto redatto entro il giorno *27 Gennaio 2025*;
-- Finalizzare la verifica di quanto redatto entro il giorno *2 Febbraio 2025*.
+- Iniziare la verifica#super[G] di quanto redatto entro il giorno *27 Gennaio 2025*;
+- Finalizzare la verifica#super[G] di quanto redatto entro il giorno *2 Febbraio 2025*.
 
 #align(center)[*Piano di Progetto#super[G]*:]
-- Effettuare la redazione delle informazioni relative al quinto sprint entro il giorno *27 Gennaio 2025*.
+- Effettuare la redazione delle informazioni relative al quinto sprint#super[G] entro il giorno *27 Gennaio 2025*.
 
-#align(center)[*Piano di Qualifica*:]
+#align(center)[*Piano di Qualifica#super[G]*:]
 - Verificare il documento entro il giorno *27 Gennaio 2025*;
 - Completare le misurazioni entro il giorno *2 Febbraio 2025*.
 
@@ -73,7 +73,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del sesto Sprint sarà
 - Aggiornare il glossario ed i relativi documenti entro il giorno *2 Febbraio 2025*.
 
 #align(center)[*Tecnologie e PoC*:]
-- Terminare la funzionalità di esecuzione degli ordini entro il giorno *2 Febbraio 2025*.
+- Terminare la funzionalità#super[G] di esecuzione degli ordini entro il giorno *2 Febbraio 2025*.
 
 == Assegnazione prevista dei ruoli sino al 02-02-2025
 

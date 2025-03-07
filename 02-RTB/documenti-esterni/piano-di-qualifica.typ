@@ -102,8 +102,8 @@
 
 = Introduzione <introduzione>
 == Scopo del documento
-Il presente Piano di Qualifica rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _Software_ e dei processi coinvolti nel suo ciclo di vita.\
-Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
+Il presente Piano di Qualifica#super[G] rappresenta un documento fondamentale per la gestione e il monitoraggio continuo della qualità del progetto _Software_ e dei processi coinvolti nel suo ciclo di vita.\
+Il Piano di Qualifica#super[G] si sviluppa attraverso tre dimensioni interconnesse:
 
 + *Piano della Qualità*:
   - Definisce gli obiettivi qualitativi;
@@ -113,7 +113,7 @@ Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
 
 + *Controllo di Qualità*:
   - Implementa meccanismi di misurazione oggettivi;
-  - Verifica la conformità ai requisiti;
+  - Verifica#super[G] la conformità ai requisiti;
   - Monitora le prestazioni attraverso metriche predefinite.
 
 
@@ -122,7 +122,7 @@ Il Piano di Qualifica si sviluppa attraverso tre dimensioni interconnesse:
   - Identifica opportunità di ottimizzazione;
   - Adatta costantemente processi e obiettivi.
 
-Il Piano di Qualifica rappresenta uno strumento strategico volto a garantire che il progetto:
+Il Piano di Qualifica#super[G] rappresenta uno strumento strategico volto a garantire che il progetto:
 - Rispetti integralmente i requisiti definiti;
 - Consegua gli obiettivi prefissati;
 - Mantenga elevati standard qualitativi.
@@ -154,9 +154,9 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 La qualità di processo rappresenta un'esigenza primaria per garantire il successo del progetto _Software_.
 Assicura che i processi utilizzati siano efficaci, efficienti e conformi agli standard di qualità prefissati.
 Per garantire la qualità di processo, il progetto si avvale di:
-- *Modelli di riferimento*: _Capability Maturity Model Integration_ (CMMI) e _ISO/IEC 12207_;
+- *Modelli di riferimento*: _Capability Maturity Model Integration#super[G]_ (CMMI#super[G] )e _ISO/IEC 12207_;
 - *Metriche di processo*: Strumenti per valutare le prestazioni e l'efficienza dei processi. Per ogni metrica definita, vengono fissate soglie quantitative che rappresentano i livelli minimi accettabili di qualità;
-- *Revisioni periodiche*: Sessioni di verifica e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
+- *Revisioni periodiche*: Sessioni di verifica#super[G] e controllo che analizzano i risultati ottenuti rispetto agli obiettivi stabiliti.
 
 == Processi primari
 === Fornitura
@@ -451,15 +451,15 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 
 #pagebreak()
 = Metodi di testing <test>
-Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto#super[G] ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test effettuati saranno:
+Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto#super[G] ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
 
-- Test di Unità;
-- Test di Integrazione;
-- Test di Sistema;
-- Test di Regressione;
-- Test di Accettazione.
+- Test#super[G] di Unità;
+- Test#super[G] di Integrazione;
+- Test#super[G] di Sistema;
+- Test#super[G] di Regressione;
+- Test#super[G] di Accettazione.
 
-ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test di Regressione, nonché le altre tipologie di Test qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i relativi Test#super[G] di Regressione, nonché le altre tipologie di Test#super[G] qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
 
 == Test di Sistema
 
@@ -953,13 +953,13 @@ ALimitedGroup ha deciso di identificare i Test di Integrazione e i relativi Test
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
 
-Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato sino alla _Requirements and Technology Baseline (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato#super[G] sino alla _Requirements and Technology Baseline#super[G] (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
 
 == MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
-Dall'aggiudicazione del Capitolato si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
+Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
 Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].
 Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 
@@ -968,7 +968,7 @@ Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più 
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
-Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
+Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline#super[G] (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
 raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline#super[G] (PB)_.
 #pagebreak()
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
@@ -987,7 +987,7 @@ dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopr
 
 Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa:
 tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[G] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
-periodo della _Requirements and Technology Baseline (RTB)_.
+periodo della _Requirements and Technology Baseline#super[G] (RTB)_.
 #pagebreak()
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
@@ -1030,7 +1030,7 @@ di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
 Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza,
-dall'aggiudicazione del Capitolato allo _sprint_#super[G] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
+dall'aggiudicazione del Capitolato#super[G] allo _sprint_#super[G] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
 _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[G]_.
 #pagebreak()
 == MPC15: _Time Efficiency_
@@ -1039,7 +1039,7 @@ _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correg
 
 Dal grafico si osserva un progressivo miglioramento dell'efficienza temporale dei componenti di ALimitedGroup.
 Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all'inesperienza e all'adattamento alle richieste del progetto.
-Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza e una riduzione del tempo necessario per completare le attività.
+Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza#super[G] e una riduzione del tempo necessario per completare le attività.
 
 
 #pagebreak()

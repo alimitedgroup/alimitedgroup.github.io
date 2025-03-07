@@ -466,9 +466,9 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tu
   caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline (RTB)_* entro il *3 febbraio 2025*.
+Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline#super[G] (RTB)_* entro il *3 febbraio 2025*.
 
-Seguiranno ora le attività previste per la *_Requirements and Technology Baseline (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
+Seguiranno ora le attività previste per la *_Requirements and Technology Baseline#super[G] (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
 == Attività previste per la Requirements and Technology Baseline (RTB)
 
@@ -573,9 +573,9 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
   caption: [Attività previste per la Requirements and Technology Baseline (RTB)],
 )
 
-== Attività previste per la Product Baseline#super[G] (PB)
+== Attività previste per la Product Baseline (PB)
 
-La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline (RTB)_*.
+La redazione di questo paragrafo sarà effettuato in seguito al superamento della *_Requirements and Technology Baseline#super[G] (RTB)_*.
 
 #pagebreak()
 
@@ -587,7 +587,7 @@ _ALimitedGroup_ ha stabilito di procedere con un *approccio Agile* allo svolgime
 
 Seguendo questo principio, il gruppo si impegna a stabilire all'inizio di ogni _sprint_#super[G] le attività per le due settimane successive, ruotando nelle medesime occasioni i ruoli ricoperti, seppur mantenendo la possibilità di effettuare il cambiamento anche durante il suddetto periodo qualora le esigenze organizzative lo imponessero: tutto questo ha lo scopo di acquisire esperienza in ciascun ruolo e comprendere il periodo di rotazione ottimale.
 
-Il gruppo si impegna altresì a concordare riunioni con il proponente #M31 per ricevere feedback su quanto realizzato in momenti quanto più vicini possibili alla scadenza degli _sprint_#super[G].
+Il gruppo si impegna altresì a concordare riunioni con il proponente#super[G] #M31 per ricevere feedback su quanto realizzato in momenti quanto più vicini possibili alla scadenza degli _sprint_#super[G].
 Complessivamente riteniamo che il *modello Agile* possa rivelarsi il più efficace per portare a termine il progetto nei tempi prestabiliti, al contempo assicurandosi che quanto fatto sia realizzato conformemente alle volontà del proponente#super[G].
 
 Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno esposte:
@@ -625,12 +625,12 @@ successivamente, avverrà la redazione dei documenti necessari per un buon inizi
 In particolare, le attività previste sono:
 - Aggiornamento del sito web
 - Sistemazione del sistema di versionamento dei documenti
-- Miglioramento del processo di redazione e verifica dei verbali
+- Miglioramento del processo di redazione e verifica#super[G] dei verbali
 - Formalizzazione del legame tra decisioni intraprese nelle riunioni e _backlog_
 - Prima redazione del Glossario
 - Prima redazione delle Norme di Progetto#super[G]
 - Prima redazione del Piano di Progetto#super[G]
-- Stabilire un incontro con l'azienda proponente #M31
+- Stabilire un incontro con l'azienda proponente#super[G] #M31
 - Inizio stesura Analisi dei requisiti
 
 ==== Rischi attesi
@@ -638,7 +638,7 @@ In particolare, le attività previste sono:
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G]
 - RG3: Rischio Globale derivato da sottostima di attività
 
 #pagebreak()
@@ -666,23 +666,23 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint abbiamo avuto difficoltà con la stima iniziale del numero di ore per ruolo.
+Durante questo sprint#super[G] abbiamo avuto difficoltà con la stima iniziale del numero di ore per ruolo.
 Come si può evincere dalle tabelle 10 e 11, nel preventivo avevamo fortemente
 sottostimato le ore necessarie per svolgere le fasi iniziali.
 Questa è un istanza del rischio _RG3: Rischio Globale derivato da sottostima di attività_,
 che avevamo previsto come possibile per questo periodo in quanto primo sprint#super[G].
 Inoltre, abbiamo incontrato il rischio
 _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_.
-Il responsabile per questo sprint#super[G], #persona(p.samuele),
-ha dovuto ridimensionare notevolmente il proprio impegno per l'ultima settimana dello sprint#super[G]. Per questo motivo, questa sezione del documento è redatta con qualche giorno di ritardo rispetto all'inizio dello sprint successivo.
+Il responsabile#super[G] per questo sprint#super[G], #persona(p.samuele),
+ha dovuto ridimensionare notevolmente il proprio impegno per l'ultima settimana dello sprint#super[G]. Per questo motivo, questa sezione del documento è redatta con qualche giorno di ritardo rispetto all'inizio dello sprint#super[G] successivo.
 
 === Retrospettiva
 
-Questo primo sprint è stato dedicato alla realizzazione di automazioni e alla redazione di documenti;
+Questo primo sprint#super[G] è stato dedicato alla realizzazione di automazioni e alla redazione di documenti;
 entrambi gli obiettivi sono stati raggiunti.
 Tra le attività previste, elencate nella @sprint1intro,
 solo l'attività _Inizio stesura Analisi dei Requisiti#super[G]_ non è stata svolta,
-in quanto rimandata allo sprint successivo.
+in quanto rimandata allo sprint#super[G] successivo.
 
 #pagebreak()
 === Sprint 2 <sprint2>
@@ -700,16 +700,16 @@ in quanto rimandata allo sprint successivo.
 
 ==== Informazioni generali e attività da svolgere <sprint2intro>
 
-Il secondo sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G] e sulla relativa discussione con il proponente #M31.
+Il secondo sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G] e sulla relativa discussione con il proponente#super[G] #M31.
 
 Le attività pianificate nel dettaglio includono:
 
 - Redazione dell'Analisi dei Requisiti#super[G];
-- Incontro con l'azienda proponente #M31 per discutere i requisiti e gli Casi d'Uso;
+- Incontro con l'azienda proponente#super[G] #M31 per discutere i requisiti e gli Casi d'Uso;
 - Studio delle tecnologie _Golang_ e _NATS_#super[G];
 - Ottimizzazione del sistema di _ticketing_ e del *Way of Working#super[G]*;
 - Riorganizzazione delle Norme di Progetto#super[G];
-- Verifica del Piano di Progetto#super[G].
+- Verifica#super[G] del Piano di Progetto#super[G].
 
 ==== Rischi attesi
 
@@ -717,7 +717,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G]
 
 
 ==== Preventivo
@@ -745,9 +745,9 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 Durante questo sprint#super[G] si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[G].
 
-Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente #M31.
+Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente#super[G] #M31.
 
-Entrambi i rischi erano stati previsti per questo sprint e sono stati gestiti seguendo le linee guida delineate nella sezione @rischio_globale.
+Entrambi i rischi erano stati previsti per questo sprint#super[G] e sono stati gestiti seguendo le linee guida delineate nella sezione @rischio_globale.
 
 === Retrospettiva
 
@@ -768,15 +768,15 @@ In questo secondo sprint#super[G], ci siamo concentrati principalmente sulla rea
 
 ==== Informazioni generali e attività da svolgere <sprint3intro>
 
-Il terzo sprint è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G] e sull'inizio dello sviluppo del PoC
+Il terzo sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G] e sull'inizio dello sviluppo del PoC#super[G]
 
 Le attività pianificate nel dettaglio includono:
 
 - Continuo redazione dell'Analisi dei Requisiti#super[G];
-- Discussione del PoC e dell'Analisi dei Requisiti#super[G] con l'azienda proponente #M31;
-- Inizio redazione Piano di Qualifica;
+- Discussione del PoC#super[G] e dell'Analisi dei Requisiti#super[G] con l'azienda proponente#super[G] #M31;
+- Inizio redazione Piano di Qualifica#super[G];
 - Studio e sperimentazione delle tecnologie _Golang_ e _NATS_#super[G] per cominciare la creazione di un PoC#super[G];
-- Setup della repository con divisione del progetto in più microservizi
+- Setup della repository#super[G] con divisione del progetto in più microservizi
 - Setup dell'ambiente di sviluppo locale in modo da renderlo replicabile per tutti i componenti del gruppo
 
 ==== Rischi attesi
@@ -785,7 +785,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G]
 
 #pagebreak()
 
@@ -822,9 +822,9 @@ In questo terzo sprint#super[G], ci siamo concentrati principalmente sulla reali
 
 L'obiettivo principale è stato raggiungere uno stato avanzato dell'Analisi dei Requisiti#super[G] per poter discutere con il professor Cardin la validità del lavoro svolto.
 
-Per quanto riguarda lo svolgimento del PoC è stata creata la struttura della repository e sono state sviluppate le prime demo che utilizzano gli applicativi NATS & PostgreSQL.
+Per quanto riguarda lo svolgimento del PoC#super[G] è stata creata la struttura della repository#super[G] e sono state sviluppate le prime demo che utilizzano gli applicativi NATS#super[G] & PostgreSQL.
 
-I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC a fine Gennaio.
+I componenti del gruppo che hanno dichiarato poche ore rispetto alla media sono stati impegnati nello studio delle tecnologie per aumentare la produttività di sviluppo in previsione del completamento del PoC#super[G] a fine Gennaio.
 
 #pagebreak()
 === Sprint 4 <sprint4>
@@ -848,9 +848,9 @@ Le attività pianificate nel dettaglio includono:
 - Aggiungere la sezione sulla codifica nelle Norme di Progetto#super[G];
 - Completare la redazione dei Casi d'Uso opzionali nell'Analisi dei Requisiti#super[G];
 - Svolgere un incontro con il professor Cardin per discutere l'Analisi dei Requisiti#super[G];
-- Utilizzare tutte le tecnologie scelte nel PoC per valutarne l'usabilità;
+- Utilizzare tutte le tecnologie scelte nel PoC#super[G] per valutarne l'usabilità;
 - Sviluppare una prima versione di sincronizzazione tra due microservizi nel PoC#super[G];
-- Proseguire con il Piano di Qualifica
+- Proseguire con il Piano di Qualifica#super[G]
 
 
 ==== Rischi attesi
@@ -858,7 +858,7 @@ Le attività pianificate nel dettaglio includono:
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RG2: Rischio Globale derivato da malcomprensione del capitolato
+- RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G]
 - RI1: Rischio Individuale derivante dalle altre attività universitarie
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
 
@@ -885,14 +885,14 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_, a causa delle vacanze natalizie che hanno rallentato il lavoro generale dell'intero gruppo. Il rischio era stato preventivato in quanto è stato deciso di svolgere comunque uno sprint durante il periodo festivo.
+Durante questo sprint#super[G] si è concretizzato il rischio _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_, a causa delle vacanze natalizie che hanno rallentato il lavoro generale dell'intero gruppo. Il rischio era stato preventivato in quanto è stato deciso di svolgere comunque uno sprint#super[G] durante il periodo festivo.
 
 === Retrospettiva
 
 In questo quarto sprint#super[G], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[G].
 La riunione con il professor Cardin ha permesso di chiarire alcuni dubbi riguardo l'Analisi dei Requisiti#super[G],
 come risultato di questa discussione sono state apportate alcune modifiche al documento, nello specifico la separazione
-tra Casi d'Uso del backend e del frontend che devono essere rappresentati separatamente.
+tra Casi d'Uso del backend#super[G] e del frontend che devono essere rappresentati separatamente.
 
 Non è stata completata la redazione degli Casi d'Uso non obbligatori a causa di problemi con la numerazione degli Casi d'Uso e la creazione dei relativi grafici in formato SVG.
 Non è stata completata anche la sezione di codifica nelle Norme di Progetto#super[G], ma si è praticamente conclusa la redazione delle sezioni mancanti.
@@ -912,17 +912,17 @@ Non è stata completata anche la sezione di codifica nelle Norme di Progetto#sup
 
 ==== Informazioni generali e attività da svolgere <sprint4intro>
 
-Il quinto sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G], sul completamento del PoC#super[G] e sul proseguimento del Piano di Qualifica, nonché sulla verifica delle Norme di Progetto#super[G].
+Il quinto sprint#super[G] è focalizzato principalmente sulla redazione dell'Analisi dei Requisiti#super[G], sul completamento del PoC#super[G] e sul proseguimento del Piano di Qualifica#super[G], nonché sulla verifica#super[G] delle Norme di Progetto#super[G].
 
 Le attività pianificate nel dettaglio includono:
 
 - Terminare la stesura dei Casi d'Uso relativi a requisiti non obbligatori e riguardanti le attività di _Backend_#super[G] del Sistema;
-- Proseguire con la stesura del Piano di Qualifica inserendo le informazioni aggiuntive rispetto alle misurazioni;
-- Effettuare le prime misurazioni da riportare nel Piano di Qualifica;
-- Effettuare la verifica di quanto redatto nelle Norme di Progetto#super[G];
-- Terminare la realizzazione del PoC completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
+- Proseguire con la stesura del Piano di Qualifica#super[G] inserendo le informazioni aggiuntive rispetto alle misurazioni;
+- Effettuare le prime misurazioni da riportare nel Piano di Qualifica#super[G];
+- Effettuare la verifica#super[G] di quanto redatto nelle Norme di Progetto#super[G];
+- Terminare la realizzazione del PoC#super[G] completando l’analisi di quanto necessario a realizzare l’aggiornamento delle informazioni tra i vari elementi del Sistema;
 
-Il Responsabile dello sprint dovrà inoltre contattare #M31 al fine di predisporre una riunione per discutere dell'efficacia dell'Analisi dei Requisiti#super[G] e del PoC realizzato.
+Il Responsabile#super[G] dello sprint#super[G] dovrà inoltre contattare #M31 al fine di predisporre una riunione per discutere dell'efficacia dell'Analisi dei Requisiti#super[G] e del PoC#super[G] realizzato.
 
 ==== Rischi attesi
 
@@ -957,7 +957,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa dell'inizio della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+Durante questo sprint#super[G] si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa dell'inizio della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
 
 In merito all'Analisi dei Requisiti#super[G] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, che tuttavia è stato superato anticipando la redazione dei requisiti.
 
@@ -967,11 +967,11 @@ In merito alle attività riguardanti l'Analisi dei Requisiti#super[G], sono stat
 
 Inoltre #M31 è stata aggiornata sui progressi realizzati e ha predisposto una riunione il giorno 28 Gennaio 2025 alle ore 15:00.
 
-È stata completata la redazione del Piano di Qualifica sulle sezioni preventivate; occorre ora verificare quanto redatto.
+È stata completata la redazione del Piano di Qualifica#super[G] sulle sezioni preventivate; occorre ora verificare quanto redatto.
 
-Anche il PoC ha subito degli importanti progressi ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
+Anche il PoC#super[G] ha subito degli importanti progressi ma sono stati rilevate delle componenti che necessitano di un approfondimento ulteriore, specie in merito alla gestione degli ordini.
 
-A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme di Progetto#super[G] e le prime misurazioni del Piano di Qualifica.
+A causa dei rischi riscontrati non è stata effettuata la verifica#super[G] delle Norme di Progetto#super[G] e le prime misurazioni del Piano di Qualifica#super[G].
 #pagebreak()
 
 === Sprint 6 <sprint6>
@@ -989,16 +989,16 @@ A causa dei rischi riscontrati non è stata effettuata la verifica delle Norme d
 
 ==== Informazioni generali e attività da svolgere <sprint6intro>
 
-Il sesto sprint è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[G] e della finitura del PoC#super[G]; ma anche sulla verifica delle Norme di Progetto#super[G] e del Piano di Qualifica.
+Il sesto sprint#super[G] è stato focalizzato principalmente sul termine della redazione, e la successiva pubblicazione nel sito, dell'Analisi dei Requisiti#super[G] e della finitura del PoC#super[G]; ma anche sulla verifica#super[G] delle Norme di Progetto#super[G] e del Piano di Qualifica#super[G].
 
 Le attività pianificate nel dettaglio includono:
 - La redazione e correzione dell'Analisi dei Requisiti#super[G] a seguito della riunione esterna con #M31, effettuata in data 28/01;
-- Terminare la stesura del Piano di Qualifica controllando e correggendo le informazioni rispetto alle misurazioni;
-- Effettuare la verifica di quanto redatto all'interno del Piano di Qualifica e delle Norme di Progetto#super[G];
-- Effettuare i test sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[G];
-- Terminare la realizzazione del PoC prima della _deadline_ dell'RTB;
+- Terminare la stesura del Piano di Qualifica#super[G] controllando e correggendo le informazioni rispetto alle misurazioni;
+- Effettuare la verifica#super[G] di quanto redatto all'interno del Piano di Qualifica#super[G] e delle Norme di Progetto#super[G];
+- Effettuare i test#super[G] sulle attività di sincronizzazione dei microservizi all'interno del PoC#super[G];
+- Terminare la realizzazione del PoC#super[G] prima della _deadline_ dell'RTB;
 
-Il Responsabile dello sprint dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[G].
+Il Responsabile#super[G] dello sprint#super[G] dovrà contattare il professor Cardin al fine di predisporre una riunione per la valutazione alla prima fase della RTB#super[G].
 
 ==== Rischi attesi
 
@@ -1033,11 +1033,11 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Rischi incontrati
 
-Durante questo sprint si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguo della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
-Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica all'interno di questo documento.
+Durante questo sprint#super[G] si è concretizzato il rischio _RI1: Rischio Individuale derivante dalle altre attività universitarie_, a causa del proseguo della sessione e al progressivo avvicinarsi delle scadenze di altri progetti universitari.
+Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il rischio _RG3: Rischio Globale derivato da sottostima di attività_, causando del lavoro ulteriore di redazione e verifica#super[G] all'interno di questo documento.
 
 === Retrospettiva
 
 In questo sesto sprint#super[G], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[G].\
 
-La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[G]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
+La riunione con l'azienda proponente#super[G] #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[G]. Abbiamo, inoltre, mostrato il funzionamento del PoC#super[G] all'azienda con annessa l'idea di architettura#super[G] realizzata a tale scopo.
