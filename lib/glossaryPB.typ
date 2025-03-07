@@ -9,7 +9,7 @@
   redattori: (),
   body,
 ) = {
-  [#metadata[Glossario #versione] <titolo>]
+  [#metadata[Glossаrio #versione] <titolo>]
   set text(lang: "it", font: "Hanken Grotesk")
   prima-pagina(
     [_Glossario_ \ Versione #versione],
@@ -48,7 +48,7 @@
     #for (word, definition) in words [
       #if (word != "") [
         // Lascia vuoto se nessuna definizione da mostrare
-        #v(0.75em)
+        #v(0.5em)
         #strong[#list(word)] // Intestazione per ogni parola
         #label(word)
         #definition.replace("\n", "").replace(regex(" +"), " ") // Definizione

@@ -337,7 +337,7 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 - *Analisi dei requisiti* \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf \ *Ultimo Accesso 3 Febbraio 2025*
 - *Diagrammi Casi d'Uso* \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf - *Ultimo Accesso 3 Febbraio 2025*
 - *_Repository GitHub_ del #prof(p.cardin)* \ https://github.com/rcardin/swe-imdb \ *Ultimo Accesso 3 Febbraio 2025*
-- *Glossario* \ https://alimitedgroup.github.io/Glossario.pdf \ *Ultimo Accesso 3 Febbraio 2025*
+- *Glossario* \ #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \ *Ultimo Accesso 3 Febbraio 2025*
 
 #pagebreak()
 
@@ -4552,7 +4552,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*]durante lo svolgimento della _Product Baseline#super[G] (PB)_.
+In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*]durante lo svolgimento della _Product Baseline#super[G] (PB)_.
 
 == Requisiti di Vincolo
 

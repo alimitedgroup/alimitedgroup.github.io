@@ -30,7 +30,7 @@
 
 #inizio-verbale-interno([*virtuale*], [*11 Novembre 2024*], [*14.15*], [*16.30*])
 + Accordare la cadenza degli incontri con l'azienda #M31
-+ Domandare ad #M31 ulteriori dubbi riguardante i requisiti esposti nel capitolato
++ Domandare ad #M31 ulteriori dubbi riguardante i requisiti esposti nel capitolato#super[G]
 + Importanti migliorie nel sito web
 + Assegnazione dei ruoli sino al giorno 18-11-2024
 
@@ -52,7 +52,7 @@ Come scritto nell'ultimo #link("https://alimitedgroup.github.io/VI%2004-11-2024%
 - Il *riassortimento predittivo basato sul _Machine Learning_*, proponendo ad #M31 di semplificarlo utilizzando altre tecnologie a discapito del _ML_;
 - La *risoluzione dei conflitti negli aggiornamenti concorrenti*, discutendo su come approcciare tale requisito.
 
-Mentre, per la sezione "Requisiti di Sicurezza", _ALimitedGroup_ chiederà all'azienda proponente informazioni riguardo:
+Mentre, per la sezione "Requisiti di Sicurezza", _ALimitedGroup_ chiederà all'azienda proponente#super[G] informazioni riguardo:
 - Il *monitoraggio del sistema*, che viene posto come requisito obbligatorio ma che senza il requisito facoltativo "Sicurezza e controllo degli accessi", posto nella sezione antecedente, perde di significato.
 
 Successivamente aver avuto un riscontro da parte di #M31, come scritto nella @riscontro, ogni nuova informazione riguardo i requisiti richiesti verrà scritta nei verbali futuri.
@@ -67,7 +67,7 @@ A tal proposito, le categorie presenti nel sito sono:
   - Lettera di candidatura
   - Valutazione dei capitolati
   - Dichiarazione degli impegni
-- *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Tecnology Baseline_;
+- *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Technology Baseline#super[G]_;
 - *_PB_*#super[G] : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline#super[G]_.
 Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _smartphone_ e _tablet_ per rendere l'accesso, alle risorse e documenti, più facile. \
 Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_#super[G] di ogni membro di _ALimitedGroup_.

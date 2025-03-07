@@ -6,42 +6,49 @@ A:
   AdR: "Acronimo per Analisi dei Requisiti, per la sua definizione vedere la parola 'Analisi dei Requisiti'."
   Agile: "Metodologia software che propone un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, in tempi brevi e frequentemente, software funzionante e di qualità."
   Amministratore: "Un Amministratore all'interno di un progetto è una figura professionale che si occupa di tutte le attività amministrative e logistiche necessarie al suo svolgimento. In altre parole, è responsabile di garantire che il progetto abbia gli strumenti per essere gestito in modo efficiente e conforme ai requisiti definiti."
-  Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi aziendali, delle tecnologie e delle esigenze degli utenti."
   Analisi dei Requisiti: "Documento contenente tutti i Casi d'Uso identificati da ALimitedGroup per il capitolato e i relativi requisiti."
+  Analista: "Un Analista all'interno di un progetto è una figura professionale che si occupa di raccogliere, analizzare e definire i requisiti di un progetto. I requisiti sono le caratteristiche e le funzionalità che il progetto deve avere per soddisfare le esigenze dei suoi stakeholder. L'Analista svolge un ruolo fondamentale nel successo di un progetto, poiché è responsabile di garantire che il progetto soddisfi le esigenze dei suoi utenti. Per svolgere questo compito, l'Analista deve avere una profonda comprensione dei processi aziendali, delle tecnologie e delle esigenze degli utenti."
   Angular: "Framework open-source per lo sviluppo di applicazioni web basato su TypeScript, mantenuto da Google."
-  AP: "Acronimo di Attività Passata; è un'attività (dunque una decisione che dovrebbe avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing."
+  AP: "Acronimo di Attività Passata, per la sua definizione vedere la parola 'Attività Passata'."
   API: "Acronimo di Application Programming Interface; è un'interfaccia che consente la comunicazione tra diverse applicazioni o servizi."
   Approvazione: "Processo di conferma o accettazione di un'attività, documento o progetto da parte di un responsabile."
   Architettura: "Insieme delle parti che comporranno il Sistema."
   Architettura di Deployment: "L'Architettura di Deployment è la struttura e l'organizzazione delle componenti di un'applicazione o di un sistema software all'interno dell'ambiente di produzione o di esecuzione. Stabilisce la disposizione e la gestione delle risorse (come eseguibili, configurazioni, dati) e può includere strategie per la distribuzione, la gestione, la scalabilità e il monitoraggio dell'applicazione nel contesto di un ambiente operativo reale."
+  Attività Passata: "È un'attività (dunque una decisione che dovrebbe avere associata una issue) ma intrapresa prima che il gruppo decidesse di utilizzare il sistema di ticketing."
   Attore: "Entità esterna e non modificabile dal Sistema che interagisce con il Sistema: ha obiettivi o interessi specifici nell'utilizzo del sistema ma non è parte del sistema stesso. Gli attori primari interagiscono direttamente con il sistema ed hanno un obiettivo da raggiungere. Gli attori secondari forniscono supporto o servizi al sistema, non avendo un obiettivo diretto da soddisfare."
   AWS: "Acronimo di Amazon Web Services, piattaforma di servizi cloud offerti da Amazon, utilizzata per archiviazione, elaborazione e gestione dati."
 B:
+  BAC: "Acronimo di Budget At Completion, per la sua definizione vedere la parola 'Budget At Completation'."
   Backend: "Insieme delle componenti del Sistema che, mediante il loro funzionamento, forniscono la logica del Sistema stesso. È sostanzialmente il responsabile dell'elaborazione dei vari dati."
   Baseline: "La Baseline è un punto concreto di sviluppo, un nuovo punto di riferimento considerato di sufficiente qualità e dalla quale tornare indietro rappresenterebbe un costo estremamente elevato."
   Best Practice: "Una Buona Pratica, ovvero un modo di fare che è efficiente (ovvero consuma solo le risorse di cui ha bisogno, senza sprecarne nessuna) ed efficace (ovvero che soddisfa le necessità per cui è eseguita)."
   Board: "In GitHub, una board è uno strumento molto importante per vedere velocemente le attività (Issue) da svolgere (To-do), in corso (In Progress) e terminate (Done)."
   Branch: "Nello sviluppo software un branch è una copia separata del codice sorgente che consente agli sviluppatori di lavorare alle modifiche su un ramo a parte senza influenzare direttamente il ramo principale. I branch facilitano lo sviluppo parallelo e la gestione del versionamento all'interno di Git, e, di conseguenza, di GitHub."
+  Budget At Completion: "È una misura utilizzata per tracciare il costo effettivo di un progetto rispetto al budget prefissato."
 C:
+  Capability Maturity Model Integration: "È un approccio al miglioramento dei processi il cui obiettivo è di aiutare una divisione o un'intera organizzazione all'interno di un progetto."
   Capitolato: "Un capitolato è un documento che stabilisce le specifiche, i requisiti e le condizioni principali di un progetto o di un'appalto. Viene utilizzato per definire in modo dettagliato ciò che deve essere realizzato, quali sono le prestazioni attese e le regole che devono essere seguite. Il capitolato fornisce una base solida per la pianificazione e l'esecuzione di un progetto, assicurando che tutte le parti coinvolte abbiano una chiara comprensione delle aspettative, esponendo un problema/bisogno a cui trovare soluzione."
   Caso d'Uso: "Insieme di scenari (sequenze di azioni) che hanno in comune uno scopo finale (obiettivo) per un utente (attore)."
-  CI: "Acronimo per Continuous Integration, per la sua definizione vedere la parola che segue."
+  CMMI: "Acronimo di Capability Maturity Model Integration, per la sua definizione vedere la parola 'Capability Maturity Model Integration'."
   Continuous Integration: "È una pratica che si applica in contesti in cui lo sviluppo del software avviene attraverso un sistema di controllo versione, perciò consiste nell'allineamento frequente dagli ambienti di lavoro degli sviluppatori verso l'ambiente condiviso (detto anche mainline)."
   Consuntivo: "Esiti finali delle risorse temporali e monetarie utilizzati, spesso in riferimento al bilancio preventivato."
-  Cruscotto: "In inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
+  Cruscotto: "In Inglese Dashboard, indica una piattaforma contenente indicatori sullo stato di salute/qualità delle pratiche utilizzate."
   CTO: "Acronimo per Chief Technology Officer, manager di primo livello e membro del consiglio direttivo di un'azienda che seleziona, valuta e suggerisce le migliori tecnologie da applicare ai prodotti o ai servizi che l'azienda produce."
 D:
   Dashboard: "Vedi Cruscotto."  
   Decisione Interna: "È una decisione intrapresa con effetto immediato: potrebbe, per questo motivo, non avere un'issue associata."
   Dependency Injection: "È un design pattern della programmazione orientata agli oggetti, il cui scopo è quello di semplificare lo sviluppo e migliorare la testabilità di software di grandi dimentsioni. Si realizza quando un componente software richiede le dipendenze da una fonte esterna, senza prendersi in carico di crearsi le proprie."
-  DI: "Acronimo di Decisione Interna e Dependency Injection; per le loro definizioni vedere, rispettivamente, le parole 'Decisione Interna' e 'Dependency Injection'."
+  Design Input: "È il punto di partenza per la progettazione del prodotto. I requisiti che formano il design input hanno lo scopo di avere una base per l'esecuzione di attività di design future, e la convalida della progettazione."
+  Design Output: "È il risultato di un lavoro di progettazione fatto in ogni fase di progettazione e alla fine del design."
   Diagramma dei casi d'uso : "Strumento di modellazione grafica appartenente al linguaggio UML (Unified Modeling Language) che rappresenta le interazioni tra un sistema e i suoi attori esterni, illustrando le funzionalità principali di un sistema dal punto di vista degli utenti."
   Discord: "Discord è una piattaforma di comunicazione online che combina chat testuale, vocale e video. Consente agli utenti di creare server, organizzare discussioni in canali e personalizzare l'esperienza di comunicazione. Discord, inoltre, offre un sistema di ruoli e autorizzazioni che consente di controllare l'accesso agli utenti e di definire chi può fare cosa all'interno del server. Inoltre supporta bot e integrazioni di terze parti che consentono di aggiungere funzionalità personalizzate ai server."
   Docker: "Piattaforma che permette la containerizzazione del Software, rendendolo isolato e facilmente replicabile in varie istanze."
 E:
+  EAC: "Acronimo di Estimated At Completion, per la sua definizione vedere la parola 'Estimated At Completation'."
   Economicità: "Si dice raggiungere l'economicità di processo quando lo stesso è efficiente ed efficace, ovvero quando, senza spreco di risorse, è in grado di produrre un risultato che soddisfa i bisogni iniziali."
   Efficacia: "Che soddisfa dei bisogni/obiettivi."
   Efficienza: "Che non utilizza più risorse di quanto effettivamente necessario, senza spreco di risorse."
+  Estimated At Completion: "È l'aspettativa attuale dei costi totali di un progetto una volta completato."
 F:
   Funzionalità: "Una caratteristica offerta da un Sistema, spesso con lo scopo di soddisfare un bisogno."
 G:
@@ -54,11 +61,14 @@ H:
   "": ""
 I:
   IDE: "Acronimo di Integrated Development Environment; è un ambiente di sviluppo integrato che fornisce strumenti come editor di codice, debugger e compilatori."
-  Issue: "Problema o attività registrata in un sistema di tracciamento per monitorare e risolvere bug o richieste di funzionalità."
   ISO: "Acronimo di International Organization for Standardization; è un'ente di standardizzazione fondato nel 1947."
+  IEC: "Acronimo di International Electrotechnical Commission, è un'organizzazione internazionale che studia e pubblica standard per ogni tecnologia elettrica, elettronica e correlate. L’IEC gestisce inoltre quattro sistemi globali di valutazione che certificano la conformità di apparecchiature, sistemi e componenti rispetto agli standard internazionali."
+  Issue: "Problema o attività registrata in un sistema di tracciamento per monitorare e risolvere bug o richieste di funzionalità."
+  
 J:
   "": ""
 K:
+  KLOC: "È una metrica utilizzata per misurare la grandezza di un progetto software, indica più precisamente quante linee di codice sorgente il software contiene (nelle migliaia solitamente)."
   Kubernetes: "Piattaforma open-source per l'automazione della gestione, del deployment e del dimensionamento di applicazioni containerizzate."
 L:
   LaTeX: "Linguaggio di marcatura (mark-down) compilato per la realizzazione di documenti."
@@ -72,6 +82,7 @@ M:
   Mirror : "Meccanismo di sincronizzazione automatica tra repository di diversi sistemi di versionamento, che consente la duplicazione completa e periodica di un repository sorgente verso una destinazione secondaria, mantenendo allineati codice, branch e metadati."
   MVP: "Acronimo di Minimum Viable Product, per la sua definizione vedere la parola 'Minimum Viable Product'."
 N:
+  NdP: "Acronimo di Norme di Progetto, per la sua definizione vedere la parola 'Norme di Progetto'."
   NATS: "Acronimo di Neural Architecture Transfer System; è un sistema di middleware open-source progettato per la messaggistica distribuita e la gestione dei servizi."
   Norme di Progetto: "Documento contenente tutte le regole che ALimitedGroup intende rispettare per realizzare un lavoro di qualità, efficiente ed efficace. Costituisce in sostanza il punto di riferimento per apprendere il Way of Working del gruppo."
 O:
@@ -79,7 +90,9 @@ O:
 P:
   PB: "Acronimo di Product Baseline, per la sua definizione vedere la parola 'Product Baseline'."
   PdP: "Acronimo di Piano di Progetto, per la sua definizione vedere la parola 'Piano di Progetto'."
+  PdQ: "Acronimo di Piano di Qualifica, per la sua definizione vedere la parola 'Piano di Qualifica'."
   Piano di Progetto: "È un documento che cerca di esprimere le attività svolte e le attività future programmate all'interno di un progetto commissionato, tenendo conto dei costi e delle ore preventivate per farlo."
+  Piano di Qualifica: "È un documento che consente di descrivere il proprio sistema di qualità per garantire il raggiungimento di certi standard e performance di tutti i requisiti previsti in uno specifico contratto."
   PoC: "Acronimo di Proof of Concept, per la sua definizione vedere la parola 'Proof of Concept'."
   Product Baseline: "È la fase finale di realizzazione di un prodotto commissionato da un'azienda o pubblica amministrazione, in cui viene realizzato un Minimum Viable Product dopo aver completato e superato tutti i test preventivati nella Requirements and Technology Baseline."
   Proof of Concept: "Prototipo o dimostrazione per verificare la fattibilità di un'idea o tecnologia."
@@ -96,6 +109,7 @@ R:
   Redattore: "Colui che si occupa di redigere un documento, organizzandone le parti per creare una bozza, occupandosi di correggere eventuali errori segnalati dal Verificatore."
   Repository: "Archivio centralizzato in cui viene memorizzato e gestito il codice sorgente."
   Responsabile: "Ruolo centrale nella gestione del gruppo: ha il compito di coordinare le attività e lo stato di progresso, nonché di tenere le comunicazioni verso l'esterno del gruppo."
+  Requirements and Technology Baseline: "È una baseline di un progetto software che definisce i requisiti e le tecnologie utilizzate per realizzarli. Identifica i requisiti funzionali e non funzionali del sistema, le tecnologie, le librerie e le piattaforme utilizzate per implementare tali requisiti, così come le strategie di sviluppo e di testing del software. Questa baseline è fondamentale per il controllo del lavoro svolto e per verificarne la sua conformità ai requisiti richiesti dal cliente."
   Requisiti funzionali: "Funzionalità che il sistema deve offrire, ovvero i servizi che deve essere in grado di erogare."
   Requisiti non funzionali: "Essi definiscono come deve funzionare il sistema stabilendo le caratteristiche e le qualità che il sistema deve possedere per soddisfare le aspettative degli utenti."
   RTB: "Acronimo di Requirements and Technology Baseline, per la sua definizione vedere 'Requirements and Technology Baseline'."
@@ -112,6 +126,7 @@ T:
   Typst: "Linguaggio di markup per la redazione di documenti moderno è di utlizzo più semplice rispetto ad altri linguaggi di markup."
 U:
   Unit Test: "Test automatizzato per verificare il corretto funzionamento di una singola unità o componente del software."
+  User Need: "Sono i desideri, le preferenze, le aspettative e gli obiettivi degli utenti quando interagiscono o usufruiscono di un prodotto o servizio."
 V:
   Validazione: "Controllo atto a determinare che quanto sviluppato soddisfi le esigenze per cui è stato realizzato."
   Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi determinati requisiti."

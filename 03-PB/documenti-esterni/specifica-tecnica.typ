@@ -50,7 +50,7 @@ Nello specifico, questo documento si propone di:
 
 - Identificare eventuali *idiomi* (pattern di livello inferiore) utilizzati per ottimizzare la qualità del codice;
 
-- Fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione del prodotto.
+- Fornire ulteriori *dettagli progettuali* che valorizzino le scelte architetturali e facilitino la comprensione e manutenzione#super[G] del prodotto.
 
 
 == Glossario
@@ -75,8 +75,8 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf] \
   *Ultimo Accesso 25 Febbraio 2025*
 
-- *Glossario ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/Glossario.pdf")[https://alimitedgroup.github.io/Glossario.pdf] \
+- *Glossario* \
+  #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
   *Ultimo Accesso 25 Febbraio 2025*
 
 #pagebreak()
@@ -230,7 +230,7 @@ Gli *_adapters_* rappresentano lo strato esterno del sistema e si suddividono in
 L'architettura di deployment#super[G] adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
 Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel _deployment_ dei componenti software.
 
-Ogni microservizio è indipendente e responsabile di un insieme specifico di funzionalità#super[G].
+Ogni microservizio è indipendente e responsabile#super[G] di un insieme specifico di funzionalità#super[G].
 
 I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
@@ -241,7 +241,7 @@ I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messagg
 - Affidabilità nella trasmissione dei dati grazie alla capacità di gestire il _buffering_ e il re-invio dei messaggi in caso di errore.
 
 
-Oltre a NATS #super[G], i microservizi possono esporre API REST per le comunicazioni con il _client_.
+Oltre a NATS#super[G], i microservizi possono esporre API#super[G] REST per le comunicazioni con il _client_.
 
 
 Il _deployment_ dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
@@ -253,13 +253,13 @@ Questo garantisce:
 
 - Gestione semplificata del ciclo di vita dei servizi.
 
-Questa architettura consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
+Questa architettura#super[G] consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
 === _Client_ monolitico
 
 Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G] .Questa scelta architetturale offre diversi vantaggi:
 
-- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità del sistema;
+- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità#super[G] del sistema;
 
 - Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
 

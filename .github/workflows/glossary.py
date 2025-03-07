@@ -39,7 +39,7 @@ def substitute(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table("]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni("]
     specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
@@ -63,7 +63,7 @@ def substitute(filePath,glossaryYml):
             if bodyFound==True and ")" in line:
                 parFound=True
         else:
-            if(stop == False):
+            if(stop == False and line[0] not in stopCheckingWords):
                 line = substitute_line(filePath, linenum, line, filtered_glossary)
 
             if len(line.strip()) > 0 and line.strip()[0] == '=':
@@ -103,6 +103,9 @@ def substitute(filePath,glossaryYml):
                         else:
                             newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    elif word in glossary:
+                        newText += word + "#super[G] "
+                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     else:
                         newText += word
                         if i != len(line.split()) - 1: newText += ' '
@@ -130,7 +133,6 @@ def find_files(fileList,path=ROOT):
 
 def main():
     fileList = []
-
     # If any filename was passed on the command line, only proces those files
     if len(sys.argv) > 1:
         for file in sys.argv[1:]:
