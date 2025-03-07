@@ -104,7 +104,10 @@ def substitute(filePath,glossaryYml):
                             newText += word[:-1] + "#super[G] " + word[-1:]
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word in glossary:
-                        newText += word + "#super[G] "
+                        if "manuale-utente" in filePath:
+                            newText += word + "<!--raw-typst#super(\"G\")--> "
+                        else:
+                            newText += word + "#super[G] "
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     else:
                         newText += word

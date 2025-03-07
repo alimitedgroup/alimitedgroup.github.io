@@ -11,7 +11,7 @@ A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il S
 a partire dai programmi necessari alla sua esecuzione,
 per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e come avviare lo stesso.
 
-Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione del sistema,
+Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione<!--raw-typst#super("G")--> del sistema,
 in particolare su periodi di tempo prolungati.
 
 La parte finale di questo manuale ha l'obiettivo di

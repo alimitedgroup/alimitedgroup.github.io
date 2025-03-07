@@ -2,8 +2,8 @@
 
 In merito al Sistema Operativo, le componenti del sistema non fanno distinzione in quanto
 il Sistema si appoggia completamente a **Docker**#super[G] per garantire la sua esecuzione
-e le immagini utilizzate provengono direttamente dai _repository_#super[G] di Docker o
-vengono compilate mediante il compilatore di Go scaricato anch'esso dai
+e le immagini utilizzate provengono direttamente dai _repository_#super[G] di Docker<!--raw-typst#super("G")--> o
+vengono compilate mediante il compilatore di Go<!--raw-typst#super("G")--> scaricato anch'esso dai
 _repository_#super[G] di Docker#super[G] .
 
 Per assicurare dunque il corretto funzionamento delle componenti del Sistema è dunque
