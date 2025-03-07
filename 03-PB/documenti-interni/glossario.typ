@@ -1,23 +1,30 @@
 #import "../../lib/glossaryPB.typ": *
 
-#let vers = [0.7.0]
+#let vers = [0.8.0]
 
 #show: body => glossario(
   data: datetime(day: 03, month: 03, year: 2025),
   versioni: (
     (
-      vers: "0.7.0",
-      date: datetime(day: 03, month: 03, year: 2025),
+      vers: "0.8.0",
+      date: datetime(day: 07, month: 03, year: 2025),
       autore: p.marco,
-      verifica: p.lorenzo,
+      verifica: p.sara,
       descr: "Aggiunta di nuovi termini all'interno del Glossario.",
     ),
     (
-      vers: "0.6.0",
+      vers: "0.7.0",
       date: datetime(day: 27, month: 02, year: 2025),
       autore: p.marco,
       verifica: p.lorenzo,
       descr: "Aggiunta di nuovi termini di questa prima fase di progettazione.",
+    ),
+    (
+      vers: "0.6.0",
+      date: datetime(day: 20, month: 02, year: 2025),
+      autore: p.sara,
+      verifica: p.marco,
+      descr: "Aggiunta di nuovi termini nel Glossario.",
     ),
     (
       vers: "0.5.0",
