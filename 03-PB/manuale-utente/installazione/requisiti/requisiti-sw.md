@@ -13,7 +13,7 @@ Per facilitare l'avvio del Sistema è possibile utilizzare l'applicativo **Just*
 Il suo utilizzo resta tuttavia completamente facoltativo in quanto è pur sempre possibile inserire manualmente i comandi.
 I comandi che **Just** esegue sono reperibili nel file `JustFile`.
 
-Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con le versioni utilizzate da _ALimitedGroup_.
+Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con le versioni utilizzate da _ALimitedGroup_:
 
 <!--typst-begin-exclude-->
   - `Docker Engine`, con versione `28.0.1`

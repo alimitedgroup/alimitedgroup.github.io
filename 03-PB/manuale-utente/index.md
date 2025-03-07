@@ -25,7 +25,7 @@ In particolare, sono presenti le seguenti sezioni:
   essere necessario conoscere per usare il Sistema.
   Essa segue la forma di documentazione _Explanation_, come indicato dal Diátaxis;
 - **Guide**: delle guide rapide con l'obiettivo di guidare l'utente mentre effettua una particolare azione.
-  Essa segue la forma di documentazione _How-to guides_, come indicato dal Diátaxis; e infine
+  Essa segue la forma di documentazione _How-to guides_, come indicato dal Diátaxis;
 - **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_#super("G") possibili;
   utile per l'utente che necessita di una specifica dettagliata del funzionamento dell'_API_.
   Essa segue la forma di documentazione _Reference_, come indicato dal Diátaxis.
@@ -34,7 +34,7 @@ In particolare, sono presenti le seguenti sezioni:
 
 La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un’importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
 
-È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, all'indirizzo [https://alimitedgroup.github.io/glossario.html](https://alimitedgroup.github.io/glossario.html).
+È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, all'indirizzo [https://alimitedgroup.github.io/glossario.html](https://alimitedgroup.github.io/glossario.html). È disponibile anche una versione in [formato pdf](https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf).
 
 <!--raw-typst
 Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo seguente: #align(center)[*parola#super[G]*]
