@@ -473,6 +473,93 @@ Rappresenta il _Command_ utilizzato per modificare le quantità di una serie di 
 
 - *`GetWarehouseID() string`*: permette di ottenere l'id del magazzino su cui effettuare le modifiche.
 
+===== AddOrChangeResponse
+
+Rappresenta la Risposta alla richiesta di aggiunta o modifica informazioni di una merce.
+
+*Descrizione degli attributi della struttura:*
+
+- *`result string`*: viene qui memorizzato l'esito dell'operazione, se positivo o non.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewAddOrChangeResponse(text string) *AddOrChangeResponse`*: rappresenta il costruttore della Risposta. *`result`* viene inizializzato fornendo al costruttore l'esito dell'operazione;
+
+- *`GetOperationResult() string`*: permette di ottenere dalla Risposta l'esito dell'operazione.
+
+===== GetGoodsInfoResponse
+
+Rappresenta la Risposta all'operazione di richiesta informazioni su una merce.
+
+*Descrizione degli attributi della struttura:*
+
+- *`goodMap map[string]catalogCommon.Good`*: rappresenta la mappa delle merci ottenuta;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetGoodsInfoResponse(goodMap map[string]catalogCommon.Good) *GetGoodsInfoResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro al costruttore;
+
+- *`GetMap() map[string]catalogCommon.Good`*: permette di ottenere la mappa memorizzata nella Risposta.
+
+===== GetGoodsQuantityResponse
+
+Rappresenta la Risposta all'operazione di richiesta informazioni sulla quantità delle merci memorizzate nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+- *`goodMap map[string]int64`*: mappa che contiene, per ogni id di merce memorizzata, la rispettiva quantità globale, memorizzata in *int64*;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetGoodsQuantityResponse(goodMap map[string]int64) *GetGoodsQuantityResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro nel costruttore.
+
+- *`GetMap() map[string]int64`*: permette di ottenere la mappa memorizzata nella Risposta.
+
+===== GetWarehousesResponse
+
+Rappresenta la Risposta all'operazione di richiesta informazioni sull'inventario dei magazzini memorizzati nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+- *`warehouseMap map[string]catalogCommon.Warehouse`*: mappa che contiene, per ogni id di magazzino memorizzato nel Sistema, le informazioni sullo stesso.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetWarehousesResponse(warehouseMap map[string]catalogCommon.Warehouse) *GetWarehousesResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro nel costruttore.
+
+- *`GetWarehouseMap() map[string]catalogCommon.Warehouse`*: permette di ottenere la mappa memorizzata nella Risposta.
+
+===== SetGoodQuantityResponse
+
+Rappresenta la Risposta alla richiesta di modifica quantità di una merce.
+
+*Descrizione degli attributi della struttura:*
+
+- *`result string`*: viene qui memorizzato l'esito dell'operazione, se positivo o non.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewSetGoodQuantityResponse(text string) *SetGoodQuantityResponse`*: rappresenta il costruttore della Risposta. *`result`* viene inizializzato fornendo al costruttore l'esito dell'operazione;
+
+- *`GetOperationResult() string`*: permette di ottenere dalla Risposta l'esito dell'operazione.
+
+===== SetMultipleGoodsQuantityResponse
+
+Rappresenta la Risposta alla richiesta di modifica quantità di un insieme di merci.
+
+*Descrizione degli attributi della struttura:*
+
+- *`result string`*: viene qui memorizzato l'esito dell'operazione, se positivo o non.
+- *`wrongID []string`*: rappresenta uno slice con gli id delle merci la cui modifica della quantità non è riusita.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewSetMultipleGoodsQuantityResponse(result string, wrongID []string) *SetMultipleGoodsQuantityResponse`*: costruttore della Risposta. Gli attributi vengono inizializzati con i valori passati come parametri al costruttore;
+
+- *`GetOperationResult() string`*: permette di ottenere dalla Risposta l'esito dell'operazione;
+
+- *`GetWrongIDSlice() []string`*: permette di ottenere la _slice_ degli id la cui modifica non è riuscita.
+
 ==== CatalogRepository
 
 [PROSEGUIRE] inserire uml
@@ -589,5 +676,94 @@ Implementa le seguenti interfacce (porte):
 
 - *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata.
 
+==== IService <IService>
+
+Interfaccia che descrive i metodi che devono essere implementati da una struttura che si propone di soddisfare la _Business Logic_ del microservizio Catalog.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve permettere di aggiungere o modificare le informazioni di una merce;
+
+- *`SetMultipleGoodsQuantity(cmd *service_Cmd.SetMultipleGoodsQuantityCmd) *service_Response.SetMultipleGoodsQuantityResponse`*: il metodo deve permettere di aggiornare la quantità di un gruppo di merci;
+
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere la quantità delle merci registrate nel Sistema e ottenerne la risposta;
+
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: il metodo deve permettere di richiedere le informazioni sulle merci memorizzate nel sistema e ottenerne la risposta;
+
+- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazione sull'inventario dei magazzini memorizzati nel Sistema e ottenerne la risposta;
+
+==== IGetGoodsInfoUseCase <IGetGoodsInfoUseCase>
+
+Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di ottenere informazioni sulle merci memorizzate.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: il metodo deve permettere di richiedere le informazioni sulle merci memorizzate nel sistema e ottenerne la risposta;
+
+==== IGetGoodsQuantityUseCase <IGetGoodsQuantityUseCase>
+
+Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di ottenere informazioni sulla quantità delle merci memorizzate.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere la quantità delle merci registrate nel Sistema e ottenerne la risposta;
+
+==== IGetWarehousesUseCase <IGetWarehousesUseCase>
+
+Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di ottenere informazioni sull'inventario dei magazzini memorizzati nel Sistema.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazione sull'inventario dei magazzini memorizzati nel Sistema e ottenerne la risposta;
+
+==== ISetMultipleGoodsQuantityUseCase <ISetMultipleGoodsQuantityUseCase>
+
+Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di impostare la quantità di varie merci.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`SetMultipleGoodsQuantity(cmd *service_Cmd.SetMultipleGoodsQuantityCmd) *service_Response.SetMultipleGoodsQuantityResponse`*: il metodo deve permettere di aggiornare la quantità di un gruppo di merci;
+
+==== IUpdateGoodDataUseCase <IUpdateGoodDataUseCase>
+
+Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di modificare le informazioni di una merce nel Sistema.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve permettere di aggiungere o modificare le informazioni di una merce;
+
 ==== CatalogService
 
+Si occupa di gestire la _Business Logic_ del microservizio _Catalog_ e implementa, per questo motivo, *IService* (@IService).
+
+Implementa le seguenti interfacce (_Use Case_):
+
+- *IGetGoodsInfoUseCase*, @IGetGoodsInfoUseCase;
+- *IGetGoodsQuantityUseCase*, @IGetGoodsQuantityUseCase;
+- *IGetWarehousesUseCase*, @IGetWarehousesUseCase;
+- *ISetMultipleGoodsQuantityUseCase*, @ISetMultipleGoodsQuantityUseCase;
+- *IUpdateGoodDataUseCase*, @IUpdateGoodDataUseCase.
+
+*Descrizione degli attributi della struttura:*
+
+- *`addOrChangeGoodDataPort service_portOut.IAddOrChangeGoodDataPort`*: vedere la descrizione alla @IAddOrChangeGoodDataPort;
+- *`setGoodQuantityPort service_portOut.ISetGoodQuantityPort`*: vedere la descrizione alla @ISetGoodQuantityPort;
+- *`getGoodsQuantityPort service_portOut.IGetGoodsQuantityPort`*: vedere la descrizione alla @IGetGoodsQuantityPort;
+- *`getGoodsInfoPort service_portOut.IGetGoodsInfoPort`*: vedere la descrizione alla @IGetGoodsInfoPort;
+- *`getWarehousesPort service_portOut.IGetWarehousesInfoPort`*: vedere la descrizione alla @IGetWarehousesInfoPort.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogService(AddOrChangeGoodDataPort service_portOut.IAddOrChangeGoodDataPort, SetGoodQuantityPort service_portOut.ISetGoodQuantityPort, GetGoodsQuantityPort service_portOut.IGetGoodsQuantityPort, GetGoodsInfoPort service_portOut.IGetGoodsInfoPort, getWarehousesPort service_portOut.IGetWarehousesInfoPort) *CatalogService`*: Costruttore della struttura. Le porte (_Use Case_) devono essere fornite come parametri al costruttore;
+
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: prende un _Command_ per la richiesta di aggiunta o cambiamento informazioni di una merce e attiva la porta adibita allo scopo per svolgere la richiesta. Ritrona quindi l'esito dell'operazione;
+
+- *`SetMultipleGoodsQuantity(cmd *service_Cmd.SetMultipleGoodsQuantityCmd)`*: prende un _Command_ per la richiesta di modifica quantità di un gruppo di merce e trasmette la richiesta per ciascuna di tali merci alla porta adibita allo scopo. Richiama la funzione *`checkErrinSlice`* per controllare l'esito di ciascuna delle operazioni;
+
+- *`checkErrinSlice(errorSlice []string) []int`*: controlla la _slice_ passata come parametro per comprendere se un'operazione di modifica quantità merce non è andata a buon fine. Ritorna una _slice_ con le posizioni nella _slice_ contenente le merci da modificae in cui è stato riscontrato un esito negativo;
+
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: prende un _Command_ per la richiesta delle informazioni sulla quantità delle merci memorizzate nel Sistema e ne chiede esecuzione mediante l'apposita porta. Ritorna quindi la risposta;
+
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: prende un _Command_ per la richiesta delle informazioni sulle merci memorizzate nel Sistema. Inoltra la richiesta alla porta opportuna e ritorna quindi la risposta.
+
+- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: prende un _Command_ per la richiesta delle informazioni sull'inventario dei magazzini memorizzati nel Sistema. Procede ad inoltrare la richiesta sulla porta opportuna e ritorna quindi la risposta.
