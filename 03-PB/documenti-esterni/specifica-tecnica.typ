@@ -317,6 +317,42 @@ Struttura utile per rappresentare le variazioni di quantità durante l'invio di 
 
 - *`Delta int64`*: rappresenta la differenza di quantità per la merce in questione.
 
+==== GoodUpdateData
+
+Struttura utile per rappresentare una modifica alle informazioni di una merce o all'aggiunta di una merce.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'id della merce da aggiungere o da modificare;
+- *`GoodNewName string`*: rappresenta il nome da dare alla merce in questione;
+- *`GoodNewDescription string`*: rappresenta la descrizione da dare alla merce in questione.
+
+==== GetGoodsDataResponseDTO
+
+Rappresenta la risposta fornita alla richiesta di ottenimento informazioni sulle merci presenti nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+- *`GoodMap map[string]catalogCommon.Good`*: è la mappa fornita in risposta alla richiesta. Come chiave ha una *string* che rappresenta l'id della merce, mentre come valore ha un oggetto descritto alla @Good
+- *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
+
+==== GetWarehouseResponseDTO
+
+Rappresenta la risposta alla richiesta di ottenimento informazioni sull'inventario dei magazzini memorizzati nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+- *`WarehouseMap map[string]catalogCommon.Warehouse`*: mappa avente come chiave una *string* rappresentante l'id del magazzino, mentre valore un oggetto descritto alla @Warehouse
+- *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
+
+==== GetGoodsQuantityResponseDTO
+
+Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantità globale delle merci.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodMap map[string]int64`*: mappa avente come chiave una *string* che rappresenta l'id della merce, mentre come valore un *int64* che ne rappresenta la quantità;
+- *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
+
 === Router dei microservizi
 
 //descrizione generale delle classi router
@@ -324,6 +360,10 @@ Struttura utile per rappresentare le variazioni di quantità durante l'invio di 
 === Configurazioni dei microservizi
 
 //descrizione generale delle classi config
+
+=== `Main` dei microservizi
+
+//descrivere cosa genericamente accade nel Main dei vari microservizi
 
 === Catalog
 
@@ -345,7 +385,7 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 
 [PROSEGUIRE] inserire uml di tutti gli oggetti
 
-===== Warehouse
+===== Warehouse <Warehouse>
 
 Rappresenta un magazzino registrato nel Sistema.
 
@@ -358,7 +398,7 @@ Rappresenta un magazzino registrato nel Sistema.
 - *`SetStock(ID string, newQuantity int64)`*: per modificare la quantità della merce con id pari al parametro *string* nel valore passato come parametro *int64*;
 - *`addGood(ID string)`*: per aggiungere una merce nel magazzino, impostando il rispettivo id nel valore di tipo *string* passato come parametro.
 
-===== Good
+===== Good <Good>
 
 Rappresenta una merce registrata nel Sistema.
 
@@ -767,3 +807,27 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: prende un _Command_ per la richiesta delle informazioni sulle merci memorizzate nel Sistema. Inoltra la richiesta alla porta opportuna e ritorna quindi la risposta.
 
 - *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: prende un _Command_ per la richiesta delle informazioni sull'inventario dei magazzini memorizzati nel Sistema. Procede ad inoltrare la richiesta sulla porta opportuna e ritorna quindi la risposta.
+
+==== CatalogController
+
+Si occupa di gestire l'_Application Logic_ del microservizio Catalog.
+
+*Descrizione degli attributi della struttura:*
+
+- *`getGoodsInfoUseCase service_portIn.IGetGoodsInfoUseCase`*: la descrizione è disponibile alla @IGetGoodsInfoUseCase;
+- *`getGoodsQuantityUseCase service_portIn.IGetGoodsQuantityUseCase`*: la descrizione è disponibile alla @IGetGoodsQuantityUseCase;
+- *`getWarehouseInfoUseCase service_portIn.IGetWarehousesUseCase`*: la descrizione è disponibile alla @IGetWarehousesUseCase;
+- *`setMultipleGoodsQuantityUseCase service_portIn.ISetMultipleGoodsQuantityUseCase`*: la descrizione è disponibile alla @ISetMultipleGoodsQuantityUseCase;
+- *`updateGoodDataUseCase service_portIn.IUpdateGoodDataUseCase`*: la descrizione è disponibile alla @IUpdateGoodDataUseCase;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogController(getGoodsInfoUseCase service_portIn.IGetGoodsInfoUseCase, getGoodsQuantityUseCase service_portIn.IGetGoodsQuantityUseCase, getWarehouseInfoUseCase service_portIn.IGetWarehousesUseCase, setMultipleGoodsQuantityUseCase service_portIn.ISetMultipleGoodsQuantityUseCase, updateGoodDataUseCase service_portIn.IUpdateGoodDataUseCase) *catalogController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati al costruttore;
+
+- *`getGoodsRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulle merci presenti nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`getWarehouseRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sui magazzini presenti nel Sistema e il loro inventario. La richiesta arriva direttamente mediante un messaggio su *NATS*. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`getGoodsGlobalQuantityRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulla quantità globalmente disponibile delle merci memorizzate nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`setGoodDataRequest(ctx context.Context, msg jetstream.Msg)`*: metodo utilizzato per recuperare le richieste di aggiunta merce o modifica informazioni su una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodDataRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`checkSetGoodDataRequest(request *stream.GoodUpdateData) error`*: controlla le richieste di aggiornamento dati o aggiunta merce. Ritorna un errore se la richiesta non è valida;
+- *`setGoodQuantityRequest(ctx context.Context, msg jetstream.Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`checkSetGoodQuantityRequest(request *stream.StockUpdate) error`*: controlla le richieste di aggiornamento quantità di una merce. Ritorna un errore se la richiesta non è valida.
