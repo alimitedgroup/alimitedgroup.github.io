@@ -299,6 +299,24 @@ Si noti come dunque, in questo documento, i termini struttura e classe saranno u
 
 Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_.
 
+Infine, si ricorda che, nel linguaggio Go, un nome di funzione o attributo che inizia con lettera minuscola simbolegga che lo stesso è visibile solo all'interno dello stesso _package_.
+
+=== Oggetti comuni tra microservizi
+
+[PROSEGUIRE] inserire uml
+
+==== StockUpdateGood
+
+Struttura utile per rappresentare le variazioni di quantità durante l'invio di questa informazione al microservizio *Catalog*.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'id della merce che ha subito una variazione di quantità;
+
+- *`Quantity int64`*: rappresenta la nuova quantità della merce in questione;
+
+- *`Delta int64`*: rappresenta la differenza di quantità per la merce in questione.
+
 === Router dei microservizi
 
 //descrizione generale delle classi router
@@ -329,6 +347,8 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 
 ===== Warehouse
 
+Rappresenta un magazzino registrato nel Sistema.
+
 *Descrizione degli attributi della struttura:*
 - *`ID string`*, attributo di tipo *string* che rappresenta l'Id del magazzino;
 - *`Stock map[string]int64`*, mappa che ha come chiave una *string* (identificativo della merce) e come valore un *int64* (la quantità della rispettiva merce nel presente magazzino)
@@ -339,6 +359,8 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 - *`addGood(ID string)`*: per aggiungere una merce nel magazzino, impostando il rispettivo id nel valore di tipo *string* passato come parametro.
 
 ===== Good
+
+Rappresenta una merce registrata nel Sistema.
 
 *Descrizione degli attributi della struttura:*
 - *`Name string`*: attributo *string* che rappresenta il nome della merce;
@@ -358,9 +380,104 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 
 Rappresenta una struttura che implementa l'interfaccia error di Go#super[G] .Per la descrizione dei metodi si rimanda alla documentazione del linguaggio di programmazione Go#super[G] .
 
+===== AddChangeGoodCmd
+
+Rappresenta il _Command_ per aggiungere o modificare le informazioni di una merce.
+
+*Descrizione degli attributi della struttura:*
+
+- *`id string`*: rappresenta l'id della merce da aggiungere o modificare;
+- *`name string`*: rappresenta il nuovo nome da assegnare alla merce in questione;
+- *`description`*: rappresenta la nuova descrizione da assegnare alla merce in questione;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *` NewAddChangeGoodCmd(id string, name string, description string) *AddChangeGoodCmd`*: rappresenta il costruttore della struttura, che viene inizializzata in base ai parametri richiesti (*id* per identificare l'id della merce interessata, *name* per indicarne il nome e *description* per rappresentarne la descrizione);
+- *`GetId() string`*: ritorna l'id registrato nel _Command_;
+- *`GetName() string`*: ritorna il nome registrato nel _Command_;
+- *`GetDescription() string`*: ritorna la descrizione registrata nel _Command_;
+
+===== GetGoodsInfoCmd
+
+Rappresenta il _Command_ per richiedere i dati delle merci registrate nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+questa struttura non possiede attributi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetGoodsInfoCmd() *GetGoodsInfoCmd`*: rappresenta il costruttore del _Command_.
+
+===== GetGoodsQuantityCmd
+
+Rappresenta il _Command_ per richiedere la quantità globale delle merci registrate nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+questa struttura non possiede attributi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetGoodsQuantityCmd() *GetGoodsQuantityCmd`*: rappresenta il costruttore del _Command_.
+
+===== GetWarehousesCmd
+
+Rappresenta il _Command_ per richiedere l'inventario dei magazzini registrati nel Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+questa struttura non possiede attributi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetWarehousesCmd() *GetWarehousesCmd`*: rappresenta il costruttore del _Command_.
+
+===== SetGoodQuantityCmd
+
+Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzina e, conseguentemente, la quantità globale della merce stessa.
+
+*Descrizione degli attributi della struttura:*
+
+- *`warehouseId string`*: rappresenta l'id del magazzino dove la quantità della merce va modificata;
+
+- *`goodId string`*: rappresenta l'id della merce la cui quantità va modificata;
+
+- *`newQuantity int64`*: rappresenta la nuova quantità della merce in questione.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewSetGoodQuantityCmd(warehouseId string, goodId string, newQuantity int64) *SetGoodQuantityCmd`*: rappresenta il costruttore del _Command_;
+
+- *`GetGoodId() string`*: permette di ottenere l'id della merce registrata nel _Command_;
+
+- *`GetWarehouseId() string`*: permette di ottenere il magazzino registrato nel _Command_;
+
+- *`GetNewQuantity() int64`*: permette di ottenere la quantità registrata nel _Command_.
+
+===== SetMultipleGoodsQuantityCmd
+
+Rappresenta il _Command_ utilizzato per modificare le quantità di una serie di merci registrate nel magazzino.
+
+*Descrizione degli attributi della struttura:*
+
+- *`warehouseID string`*: rappresenta il magazzino interessato dalla modifica delle quantità delle merci;
+
+- *`goods []stream.StockUpdateGood`*: rappresenta uno _slice_ contenente le informazioni sulle merci da modificare.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewSetMultipleGoodsQuantityCmd(warehouseID string, goods []stream.StockUpdateGood) *SetMultipleGoodsQuantityCmd`*: è il costruttore del _Command_;
+
+- *`GetGoods() []stream.StockUpdateGood`*: permette di ottenere lo _slice_ delle merci da modificare;
+
+- *`GetWarehouseID() string`*: permette di ottenere l'id del magazzino su cui effettuare le modifiche.
+
 ==== CatalogRepository
 
 [PROSEGUIRE] inserire uml
+
+Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepository.
 
 *Descrizione degli attributi della struttura:*
 
@@ -373,3 +490,104 @@ Rappresenta una struttura che implementa l'interfaccia error di Go#super[G] .Per
 - *`NewCatalogRepository() *CatalogRepository`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote;
 
 - *`GetGoods() map[string]catalogCommon.Good`*: restituisce la mappa delle merci internamente memorizzata;
+
+- *`GetGoodsGlobalQuantity() map[string]int64`*: restituisce la mappa della quantità globale delle merci;
+
+- *`GetWarehouses() map[string]catalogCommon.Warehouse`*: restituisce la mappa dei magazzini riconosciuti dal Sistema;
+
+- *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: imposta la quantità della merce con id *goodID* del magazzino con id *warehouseID* alla quantità memorizzata nel parametro *newQuantity*. In caso la merce sia nuova, questa viene automaticamente aggiunta, ma senza nome e descrizione. Ritrona sempre *nil*;
+
+- *`addWarehouse(warehouseID string)`*: aggiunge magazzino al sistema con id pari a *warehouseID*. Questa operazione è effettuata automaticamente quando si cerca di aggiunge _stock_ ad un magazzino non ancora registrato;
+
+- *`AddGood(goodID string, name string, description string) error`*: aggiunge una merce al Sistema con id *goodID*, nome *name* e descrizione *description*. Se la merce è già presente nel Sistema, chiama automaticamente la funzione `changeGoodData` per modificarne le informazioni. Ritorna sempre *nil*;
+
+- *`changeGoodData(goodID string, newName string, newDescription string) error`*: cambia le informazioni della merce con id *goodID*, impostando il nome a *newName* e la descrizione a *newDescription*. Ritorna un errore se l'id della merce non è registrato.
+
+==== IGoodRepository <igoodrepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistance logic_ del microservizio _Catalog_.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGoods() map[string]catalogCommon.Good`*: il metodo deve dare possibilità di ottenere i dati delle merci registrate nel Sistema;
+
+- *`GetGoodsGlobalQuantity() map[string]int64`*: il metodo deve dare la possibilità di ottenere la quantità globale delle merci nel Sistema;
+
+- *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: il metodo deve dare la possibilità di impostare la quantità di una merce in un magazzino e, conseguentemente, la quantità globale;
+
+- *`AddGood(goodID string, name string, description string) error`*: il metodo deve dare la possibilità di aggiungere una merce al Sistema;
+
+- *`GetWarehouses() map[string]catalogCommon.Warehouse`*: il metodo deve dare la possibilià di ottenre i magazzini registrati nel Sistema.
+
+==== IAddOrChangeGoodDataPort <IAddOrChangeGoodDataPort>
+
+Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di voler aggiungere o modificare i dati di una merce.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve dare la possibilità di aggiungere e/o modificare i dati di una merce;
+
+==== IGetGoodsInfoPort <IGetGoodsInfoPort>
+
+Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: il metodo deve permettere di richiedere i dati sulle merci registrate nel Sistema e di ottenerle in risposta.
+
+==== IGetGoodsQuantityPort <IGetGoodsQuantityPort>
+
+Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere i dati sulla quantità delle merci registrate nel Sistema e di ottenerle in risposta;
+
+==== IGetWarehousesInfoPort <IGetWarehousesInfoPort>
+
+Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazioni sull'inventario dei magazzini registrati nel Sistema e ottenere tali informazioni in risposta;
+
+==== ISetGoodQuantityPort <ISetGoodQuantityPort>
+
+Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di impostare la quantità di una merce.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`SetGoodQuantity(agqc *service_Cmd.SetGoodQuantityCmd) *service_Response.SetGoodQuantityResponse`*: il metodo deve permettere di modificare la quantità di una merce.
+
+==== CatalogAdapter
+
+Adapter che mette in comunicazione la _Business Logic_ di catalog con la _Persistance Logic_ dello stesso.
+
+Implementa le seguenti interfacce (porte):
+
+- *IAddOrChangeGoodDataPort*, @IAddOrChangeGoodDataPort;
+- *IGetGoodsInfoPort*, @IGetGoodsInfoPort;
+- *IGetGoodsQuantityPort*, @IGetGoodsQuantityPort;
+- *IGetWarehousesInfoPort*, @IGetWarehousesInfoPort;
+- *ISetGoodQuantityPort*, @ISetGoodQuantityPort.
+
+*Descrizione degli attributi della struttura:*
+
+- *`repo IGoodRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistance logic_ di Catalog. Per le informazioni riguardo IGoodRepository vedere la @igoodrepository.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogRepositoryAdapter(repo IGoodRepository) *CatalogRepositoryAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `repo` con quello passato come parametro al costruttore;
+
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+
+- *`SetGoodQuantity(agqc *service_Cmd.SetGoodQuantityCmd) *service_Response.SetGoodQuantityResponse`*:converte il _Command_ per la modifica della quantità di una merce in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: converte il _Command_ per ottenere la quantità delle varie merci registrate nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+
+- *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata.
+
+==== CatalogService
+
