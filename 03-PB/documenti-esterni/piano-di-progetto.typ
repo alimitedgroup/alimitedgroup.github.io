@@ -1196,12 +1196,12 @@ Si prospetta l'utilizzo delle seguenti risorse:
 )
 
 #v(1em)
-==== Aggiornamento delle risorse rimanenti (DA MODIFICARE)
+==== Aggiornamento delle risorse rimanenti
 #prospetto-orario(7, "Sprint 7 - Variazione nelle risorse disponibili")
 
 #v(1em)
 
-==== Rischi incontrati (DA MODIFICARE)
+==== Rischi incontrati
 Durante questo sprint si sono concretizzati i seguenti rischi:
 - RT2: Rischio Tecnologico legato a errori nel codice;
 - RG3: Rischio Globale derivato da sottostima di attività;
