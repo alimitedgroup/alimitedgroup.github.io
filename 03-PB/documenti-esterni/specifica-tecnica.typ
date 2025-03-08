@@ -265,3 +265,111 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 
 - Ottimizzazione delle comunicazioni: il _client_ gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
+== Design pattern
+
+=== Dependency injection
+
+==== Descrizione del pattern
+
+==== Motivazioni dell'utilizzo del pattern
+
+==== Framework Fx di _Uber_
+
+===== Costrutti principali
+
+//includere anche il fatto che esistono file *.module.go
+
+==== Utilizzo del pattern nel progetto
+
+=== Object adapter
+
+==== Descrizione del pattern
+
+==== Motivazioni dell'utilizzo del pattern
+
+==== Utilizzo del pattern nel progetto
+
+== Microservizi sviluppati
+
+Saranno ora esposti i microservizi sviluppati.
+
+Sebbene *Go*#super[G] non abbia il concetto di "classe", comunque è possibile realizzare *strutture* e *funzioni* invocabili solo da quelle specifiche strutture, potendo così imitare, nel senso largo del termine, il funzionamento delle classi in un linguaggio di programmazione ad oggetti.
+
+Si noti come dunque, in questo documento, i termini struttura e classe saranno utilizzati come sinonimi per il motivo sopra citato.
+
+Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_.
+
+=== Router dei microservizi
+
+//descrizione generale delle classi router
+
+=== Configurazioni dei microservizi
+
+//descrizione generale delle classi config
+
+=== Catalog
+
+[PROSEGUIRE] inserire uml
+
+Il microservizio *Catalog* viene utilizzato per tenere traccia dell'inventario globale e della situazione di ciascun singolo magazzino.
+
+Il microservizio tiene traccia dell'aggiunta e della modfica delle informazioni delle merci, prestando attenzione anche all'aggiunta di _stock_ delle merci stesse.
+
+È formato da tre componenti principali:
+
+- *CatalogController*, che rappresenta l'_application logic_
+- *CatalogService*, che rappresenta la _business logic_;
+- *CatalogRepository*, che rappresenta la _persistance logic_.
+
+Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esposti.
+
+==== Oggetti comuni del microservizio
+
+[PROSEGUIRE] inserire uml di tutti gli oggetti
+
+===== Warehouse
+
+*Descrizione degli attributi della struttura:*
+- *`ID string`*, attributo di tipo *string* che rappresenta l'Id del magazzino;
+- *`Stock map[string]int64`*, mappa che ha come chiave una *string* (identificativo della merce) e come valore un *int64* (la quantità della rispettiva merce nel presente magazzino)
+
+*Descrizione dei metodi invocabili dalla struttura:*
+- *`NewWarehouse(ID string) *Warehouse`*: rappresenta il costruttore della classe, prende una *string* come parametro per inizializzare l'id del magazzino;
+- *`SetStock(ID string, newQuantity int64)`*: per modificare la quantità della merce con id pari al parametro *string* nel valore passato come parametro *int64*;
+- *`addGood(ID string)`*: per aggiungere una merce nel magazzino, impostando il rispettivo id nel valore di tipo *string* passato come parametro.
+
+===== Good
+
+*Descrizione degli attributi della struttura:*
+- *`Name string`*: attributo *string* che rappresenta il nome della merce;
+- *`Description string`*: attributo *string* che rappresenta la descrizione della merce;
+- *`ID string`*: attributo *string* che rappresenta l'id della merce
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGood(ID string, name string, description string) *Good`*: rappresenta il costruttore della struttura, restituisce un *Good* inizializzato ai valori passati come parametro;
+- *`GetID() string`*: restituisce l'id della merce;
+- *`GetName() string`*: restituisce il nome della merce;
+- *`GetDescription() string`*: restituisce la descrizione della merce;
+- *`SetDescription(newDescription string) error`*: imposta la descrizione della merce al valore passato come parametro. Restituisce un errore se il parametro è una stringa vuota;
+- *`SetName(newName string) error`*: imposta il nome della merce al valore passato come parametro. Restituisce un errore se il parametro è una stringa vuota.
+
+===== CustomError
+
+Rappresenta una struttura che implementa l'interfaccia error di Go#super[G] .Per la descrizione dei metodi si rimanda alla documentazione del linguaggio di programmazione Go#super[G] .
+
+==== CatalogRepository
+
+[PROSEGUIRE] inserire uml
+
+*Descrizione degli attributi della struttura:*
+
+- *`warehouseMap map[string]*catalogCommon.Warehouse`*: è una mappa che ha come chiave una *string* (l'identificativo del magazzino) e come valore un oggetto *Warehouse*, rappresentante un magazzino;
+- *`goodMap map[string]*catalogCommon.Good`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un oggetto *Good*, rappresentante una merce;
+- *`goodStockMap map[string]int64`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un *int64* (la quantità di quella merce tra tutti i magazzini)
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogRepository() *CatalogRepository`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote;
+
+- *`GetGoods() map[string]catalogCommon.Good`*: restituisce la mappa delle merci internamente memorizzata;
