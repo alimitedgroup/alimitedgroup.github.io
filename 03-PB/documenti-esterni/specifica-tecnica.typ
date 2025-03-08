@@ -299,7 +299,7 @@ Si noti come dunque, in questo documento, i termini struttura e classe saranno u
 
 Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_.
 
-Infine, si ricorda che, nel linguaggio Go, un nome di funzione o attributo che inizia con lettera minuscola simbolegga che lo stesso è visibile solo all'interno dello stesso _package_.
+Infine, si ricorda che, nel linguaggio Go#super[G] ,un nome di funzione o attributo che inizia con lettera minuscola simbolegga che lo stesso è visibile solo all'interno dello stesso _package_.
 
 === Oggetti comuni tra microservizi
 
