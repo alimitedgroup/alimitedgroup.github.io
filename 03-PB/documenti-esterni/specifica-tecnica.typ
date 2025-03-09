@@ -310,7 +310,7 @@ Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile 
 
 Se la descrizione di un oggetto è assente questo implica che tale oggetto è una *struttura vuota*, ovvero senza alcun attributo e funzione da lei solamente invocabile.
 
-Infine, si ricorda che, nel linguaggio Go#super[G] ,un nome di funzione o attributo che inizia con lettera minuscola simbolegga che lo stesso è visibile solo all'interno dello stesso _package_.
+Infine, si ricorda che, nel linguaggio Go#super[G] ,un nome di funzione o attributo che inizia con lettera minuscola simboleggia che lo stesso è visibile solo all'interno dello stesso _package_.
 
 === Oggetti comuni tra microservizi
 
@@ -408,7 +408,7 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 Il microservizio *Catalog* viene utilizzato per tenere traccia dell'inventario globale e della situazione di ciascun singolo magazzino.
 
-Il microservizio tiene traccia dell'aggiunta e della modfica delle informazioni delle merci, prestando attenzione anche all'aggiunta di _stock_ delle merci stesse.
+Il microservizio tiene traccia dell'aggiunta e della modifica delle informazioni delle merci, prestando attenzione anche all'aggiunta di _stock_ delle merci stesse.
 
 È formato da tre componenti principali:
 
@@ -545,7 +545,7 @@ questa struttura non possiede attributi
   caption: "Catalog - SetGoodQuantityCmd",
 )
 
-Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzina e, conseguentemente, la quantità globale della merce stessa.
+Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzino e, conseguentemente, la quantità globale della merce stessa.
 
 *Descrizione degli attributi della struttura:*
 
@@ -695,7 +695,7 @@ Rappresenta la Risposta alla richiesta di modifica quantità di un insieme di me
 *Descrizione degli attributi della struttura:*
 
 - *`result string`*: viene qui memorizzato l'esito dell'operazione, se positivo o non.
-- *`wrongID []string`*: rappresenta uno slice con gli id delle merci la cui modifica della quantità non è riusita.
+- *`wrongID []string`*: rappresenta uno slice con gli id delle merci la cui modifica della quantità non è riuscita.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -725,7 +725,7 @@ Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepos
 
 - *`GetWarehouses() map[string]catalogCommon.Warehouse`*: restituisce la mappa dei magazzini riconosciuti dal Sistema;
 
-- *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: imposta la quantità della merce con id *goodID* del magazzino con id *warehouseID* alla quantità memorizzata nel parametro *newQuantity*. In caso la merce sia nuova, questa viene automaticamente aggiunta, ma senza nome e descrizione. Ritrona sempre *nil*;
+- *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: imposta la quantità della merce con id *goodID* del magazzino con id *warehouseID* alla quantità memorizzata nel parametro *newQuantity*. In caso la merce sia nuova, questa viene automaticamente aggiunta, ma senza nome e descrizione. Ritorna sempre *nil*;
 
 - *`addWarehouse(warehouseID string)`*: aggiunge magazzino al sistema con id pari a *warehouseID*. Questa operazione è effettuata automaticamente quando si cerca di aggiunge _stock_ ad un magazzino non ancora registrato;
 
@@ -747,11 +747,11 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistance 
 
 - *`AddGood(goodID string, name string, description string) error`*: il metodo deve dare la possibilità di aggiungere una merce al Sistema;
 
-- *`GetWarehouses() map[string]catalogCommon.Warehouse`*: il metodo deve dare la possibilià di ottenre i magazzini registrati nel Sistema.
+- *`GetWarehouses() map[string]catalogCommon.Warehouse`*: il metodo deve dare la possibilità di ottenere i magazzini registrati nel Sistema.
 
 ==== IAddOrChangeGoodDataPort <IAddOrChangeGoodDataPort>
 
-Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di voler aggiungere o modificare i dati di una merce.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di voler aggiungere o modificare i dati di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -759,7 +759,7 @@ Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persi
 
 ==== IGetGoodsInfoPort <IGetGoodsInfoPort>
 
-Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -767,7 +767,7 @@ Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persi
 
 ==== IGetGoodsQuantityPort <IGetGoodsQuantityPort>
 
-Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -775,7 +775,7 @@ Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persi
 
 ==== IGetWarehousesInfoPort <IGetWarehousesInfoPort>
 
-Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -783,7 +783,7 @@ Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persi
 
 ==== ISetGoodQuantityPort <ISetGoodQuantityPort>
 
-Rappresenta la porta che consete alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di impostare la quantità di una merce.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di impostare la quantità di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -899,11 +899,11 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`NewCatalogService(AddOrChangeGoodDataPort service_portOut.IAddOrChangeGoodDataPort, SetGoodQuantityPort service_portOut.ISetGoodQuantityPort, GetGoodsQuantityPort service_portOut.IGetGoodsQuantityPort, GetGoodsInfoPort service_portOut.IGetGoodsInfoPort, getWarehousesPort service_portOut.IGetWarehousesInfoPort) *CatalogService`*: Costruttore della struttura. Le porte (_Use Case_) devono essere fornite come parametri al costruttore;
 
-- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: prende un _Command_ per la richiesta di aggiunta o cambiamento informazioni di una merce e attiva la porta adibita allo scopo per svolgere la richiesta. Ritrona quindi l'esito dell'operazione;
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: prende un _Command_ per la richiesta di aggiunta o cambiamento informazioni di una merce e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione;
 
 - *`SetMultipleGoodsQuantity(cmd *service_Cmd.SetMultipleGoodsQuantityCmd)`*: prende un _Command_ per la richiesta di modifica quantità di un gruppo di merce e trasmette la richiesta per ciascuna di tali merci alla porta adibita allo scopo. Richiama la funzione *`checkErrinSlice`* per controllare l'esito di ciascuna delle operazioni;
 
-- *`checkErrinSlice(errorSlice []string) []int`*: controlla la _slice_ passata come parametro per comprendere se un'operazione di modifica quantità merce non è andata a buon fine. Ritorna una _slice_ con le posizioni nella _slice_ contenente le merci da modificae in cui è stato riscontrato un esito negativo;
+- *`checkErrinSlice(errorSlice []string) []int`*: controlla la _slice_ passata come parametro per comprendere se un'operazione di modifica quantità merce non è andata a buon fine. Ritorna una _slice_ con le posizioni nella _slice_ contenente le merci da modificare in cui è stato riscontrato un esito negativo;
 
 - *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: prende un _Command_ per la richiesta delle informazioni sulla quantità delle merci memorizzate nel Sistema e ne chiede esecuzione mediante l'apposita porta. Ritorna quindi la risposta;
 
