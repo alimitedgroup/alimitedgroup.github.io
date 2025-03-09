@@ -6,7 +6,7 @@ molti sistemi richiedono agli utenti di identificarsi, prima di svolgere molte d
 Questo processo viene chiamato **autenticazione**.
 Il fatto che un utente sia autenticato, però,
 non garantisce che esso possa effettuare ogni operazione implementata dal sistema.
-Il processo che verifica se l'utente ha i privilegi di effettuare le operazioni che richiede si chiama **autorizzazione**.
+Il processo che controlla se l'utente ha i privilegi di effettuare le operazioni che richiede si chiama **autorizzazione**.
 
 Nel Sistema descritto dal presente manuale, i processi di Autenticazione e di Autorizzazione sono parzialmente separati
 mediante l'utilizzo di _token_, stringhe di testo che solo il Sistema può generare, utilizzate appunto per identificare l'utente.
@@ -16,12 +16,12 @@ ed ogni utente assegnato ad uno stesso ruolo può effettuare le stesse operazion
 L'interazione tra utente e Sistema può quindi essere riassunta nelle seguenti fasi:
 
 1. L'utente effettua una richiesta di login;
-2. Il Sistema verifica le credenziali fornite. Se sono valide, genera e restituisce un _token_;
+2. Il Sistema controlla le credenziali fornite. Se sono valide, genera e restituisce un _token_;
 3. L'utente allega, nelle richieste successive, il _token_;
-4. Il Sistema verifica che la richiesta abbia un _token_ associato, e che sia valido;
+4. Il Sistema controlla che la richiesta abbia un _token_ associato, e che sia valido;
    se non lo è, restituisce un messaggio d'errore;
 5. Il Sistema recupera il ruolo dell'utente autenticato,
-   verifica che l'operazione sia consentita ad esso,
+   controlla che l'operazione sia consentita ad esso,
    e consente o nega l'operazione di conseguenza.
 
 ## _Token_
