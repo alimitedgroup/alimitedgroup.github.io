@@ -1216,6 +1216,10 @@ Per i seguenti motivi:
 
 ==== Rivisitazione migliorativa del piano per le attività future
 
-=== Retrospettiva (DA MODIFICARE)
+=== Retrospettiva
+Durante tutto questo sprint ci siamo concentrati sulla realizzazione ed implementazione dei servizi che andranno a comporre il _Minimum Viable Product_ finale per questo progetto. \
+Inoltre, abbiamo realizzato le prime versioni dei documenti di "Manuale Utente" e "Specifica Tecnica".\
+Abbiamo provveduto tempestivamente a correggere le Norme di Progetto e l'Analisi dei Requisiti, successivamente aver ricevuto la valutazione della RTB ricevuta dal #profBreve(p.tullio) e dal #profBreve(p.cardin). \
+La riunione con l'azienda proponente #M31, svolta in data 28/02, è stata positiva ed efficace per capire quali saranno i prossimi passaggi e i prossimi obiettivi durante tutto l'arco della PB.
 
 
