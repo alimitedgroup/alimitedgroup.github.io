@@ -28,7 +28,9 @@ nav:
     - Effettuare il login: guide/login.md
     - Aggiungere una merce: guide/aggiunta-merce.md
   - Riferimento API:
-    - /api/stock/:number: reference/stock_warehouse.md
+    - GET /api/v1/ping: reference/ping.md
+    - POST /api/v1/login: reference/login.md
+    - GET /api/v1/is_logged: reference/is_logged.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py
