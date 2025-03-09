@@ -19,6 +19,7 @@ nav:
   - Quickstart: quickstart.md # tutorial, per iniziare in 5 minuti ad usare il software
   - Concetti:
     - Tipi di utenti: concetti/tipi-utenti.md
+    - Autenticazione: concetti/autenticazione.md
     - Merci: concetti/merci.md
     - Ordini: concetti/ordini.md
     - Riassortimenti: concetti/riassortimenti.md

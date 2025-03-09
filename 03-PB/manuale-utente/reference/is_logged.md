@@ -4,7 +4,8 @@ Questa route consente di verificare lo stato di autenticazione. Inoltre, consent
 
 ### Richiesta autenticazione
 
-Sì.
+Sì. Per ulteriori dettagli, fare riferimento a "autenticazione e autorizzazione", all'interno dei concetti.
+<!-- TODO: passare ad usare la citazione @procedura_autenticazione -->
 
 ### Corpo della richiesta
 
