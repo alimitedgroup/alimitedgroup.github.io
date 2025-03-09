@@ -297,15 +297,20 @@ Sebbene *Go*#super[G] non abbia il concetto di "classe", comunque è possibile r
 
 Si noti come dunque, in questo documento, i termini struttura e classe saranno utilizzati come sinonimi per il motivo sopra citato.
 
-Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_.
+Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_, specie in caso l'oggetto in questione abbia necessità di essere serializzato in formato _Json_. Inoltre, nel linguaggio go, la privatezza di un attributo resta comunque limitata al di fuori del _package_.
+
+Se la descrizione di un oggetto è assente questo implica che tale oggetto è una *struttura vuota*, ovvero senza alcun attributo e funzione da lei solamente invocabile.
 
 Infine, si ricorda che, nel linguaggio Go#super[G] ,un nome di funzione o attributo che inizia con lettera minuscola simbolegga che lo stesso è visibile solo all'interno dello stesso _package_.
 
 === Oggetti comuni tra microservizi
 
-[PROSEGUIRE] inserire uml
-
 ==== StockUpdateGood
+
+#figure(
+  image("../../assets/catalog/StockUpdate.png", width: 20%),
+  caption: "StockUpdateGood",
+)
 
 Struttura utile per rappresentare le variazioni di quantità durante l'invio di questa informazione al microservizio *Catalog*.
 
@@ -319,6 +324,11 @@ Struttura utile per rappresentare le variazioni di quantità durante l'invio di 
 
 ==== GoodUpdateData
 
+#figure(
+  image("../../assets/catalog/GoodUpdateData.png", width: 25%),
+  caption: "GoodUpdateData",
+)
+
 Struttura utile per rappresentare una modifica alle informazioni di una merce o all'aggiunta di una merce.
 
 *Descrizione degli attributi della struttura:*
@@ -329,6 +339,11 @@ Struttura utile per rappresentare una modifica alle informazioni di una merce o 
 
 ==== GetGoodsDataResponseDTO
 
+#figure(
+  image("../../assets/catalog/GetGoodsDataResponseDTO.png", width: 35%),
+  caption: "GetGoodsDataResponseDTO",
+)
+
 Rappresenta la risposta fornita alla richiesta di ottenimento informazioni sulle merci presenti nel Sistema.
 
 *Descrizione degli attributi della struttura:*
@@ -336,6 +351,11 @@ Rappresenta la risposta fornita alla richiesta di ottenimento informazioni sulle
 - *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
 
 ==== GetWarehouseResponseDTO
+
+#figure(
+  image("../../assets/catalog/GetWarehouseResponseDTO.png", width: 40%),
+  caption: "GetWarehouseResponseDTO",
+)
 
 Rappresenta la risposta alla richiesta di ottenimento informazioni sull'inventario dei magazzini memorizzati nel Sistema.
 
@@ -345,6 +365,11 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sull'inventar
 - *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
 
 ==== GetGoodsQuantityResponseDTO
+
+#figure(
+  image("../../assets/catalog/GetGoodsQuantityResponseDTO.png", width: 40%),
+  caption: "GetGoodsQuantityResponseDTO",
+)
 
 Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantità globale delle merci.
 
@@ -364,10 +389,13 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 === `Main` dei microservizi
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
-
+#pagebreak()
 === Catalog
 
-[PROSEGUIRE] inserire uml
+#figure(
+  image("../../assets/catalog/Catalog.png", width: 125%),
+  caption: "Componenti del microservizio Catalog",
+)
 
 Il microservizio *Catalog* viene utilizzato per tenere traccia dell'inventario globale e della situazione di ciascun singolo magazzino.
 
@@ -383,9 +411,12 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 
 ==== Oggetti comuni del microservizio
 
-[PROSEGUIRE] inserire uml di tutti gli oggetti
-
 ===== Warehouse <Warehouse>
+
+#figure(
+  image("../../assets/catalog/Warehouse.png", width: 35%),
+  caption: "Catalog - Warehouse",
+)
 
 Rappresenta un magazzino registrato nel Sistema.
 
@@ -399,6 +430,11 @@ Rappresenta un magazzino registrato nel Sistema.
 - *`addGood(ID string)`*: per aggiungere una merce nel magazzino, impostando il rispettivo id nel valore di tipo *string* passato come parametro.
 
 ===== Good <Good>
+
+#figure(
+  image("../../assets/catalog/Good.png", width: 45%),
+  caption: "Catalog - Good",
+)
 
 Rappresenta una merce registrata nel Sistema.
 
@@ -422,6 +458,11 @@ Rappresenta una struttura che implementa l'interfaccia error di Go#super[G] .Per
 
 ===== AddChangeGoodCmd
 
+#figure(
+  image("../../assets/catalog/AddChangeGoodCmd.png", width: 75%),
+  caption: "Catalog - AddChangeGoodCmd",
+)
+
 Rappresenta il _Command_ per aggiungere o modificare le informazioni di una merce.
 
 *Descrizione degli attributi della struttura:*
@@ -439,6 +480,11 @@ Rappresenta il _Command_ per aggiungere o modificare le informazioni di una merc
 
 ===== GetGoodsInfoCmd
 
+#figure(
+  image("../../assets/catalog/GetGoodsInfoCmd.png", width: 75%),
+  caption: "Catalog - GetGoodsInfoCmd",
+)
+
 Rappresenta il _Command_ per richiedere i dati delle merci registrate nel Sistema.
 
 *Descrizione degli attributi della struttura:*
@@ -450,6 +496,11 @@ questa struttura non possiede attributi
 - *`NewGetGoodsInfoCmd() *GetGoodsInfoCmd`*: rappresenta il costruttore del _Command_.
 
 ===== GetGoodsQuantityCmd
+
+#figure(
+  image("../../assets/catalog/GetGoodsQuantityCmd.png", width: 75%),
+  caption: "Catalog - GetGoodsQuantityCmd",
+)
 
 Rappresenta il _Command_ per richiedere la quantità globale delle merci registrate nel Sistema.
 
@@ -463,6 +514,11 @@ questa struttura non possiede attributi
 
 ===== GetWarehousesCmd
 
+#figure(
+  image("../../assets/catalog/GetWarehousesCmd.png", width: 75%),
+  caption: "Catalog - GetWarehousesCmd",
+)
+
 Rappresenta il _Command_ per richiedere l'inventario dei magazzini registrati nel Sistema.
 
 *Descrizione degli attributi della struttura:*
@@ -474,6 +530,11 @@ questa struttura non possiede attributi
 - *`NewGetWarehousesCmd() *GetWarehousesCmd`*: rappresenta il costruttore del _Command_.
 
 ===== SetGoodQuantityCmd
+
+#figure(
+  image("../../assets/catalog/SetGoodQuantityCmd.png", width: 75%),
+  caption: "Catalog - SetGoodQuantityCmd",
+)
 
 Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzina e, conseguentemente, la quantità globale della merce stessa.
 
@@ -497,6 +558,11 @@ Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzin
 
 ===== SetMultipleGoodsQuantityCmd
 
+#figure(
+  image("../../assets/catalog/SetMultipleGoodsQuantityCmd.png", width: 85%),
+  caption: "Catalog - SetMultipleGoodsQuantityCmd",
+)
+
 Rappresenta il _Command_ utilizzato per modificare le quantità di una serie di merci registrate nel magazzino.
 
 *Descrizione degli attributi della struttura:*
@@ -515,6 +581,11 @@ Rappresenta il _Command_ utilizzato per modificare le quantità di una serie di 
 
 ===== AddOrChangeResponse
 
+#figure(
+  image("../../assets/catalog/AddOrChangeResponse.png", width: 55%),
+  caption: "Catalog - AddOrChangeResponse",
+)
+
 Rappresenta la Risposta alla richiesta di aggiunta o modifica informazioni di una merce.
 
 *Descrizione degli attributi della struttura:*
@@ -528,6 +599,11 @@ Rappresenta la Risposta alla richiesta di aggiunta o modifica informazioni di un
 - *`GetOperationResult() string`*: permette di ottenere dalla Risposta l'esito dell'operazione.
 
 ===== GetGoodsInfoResponse
+
+#figure(
+  image("../../assets/catalog/GetGoodsInfoResponse.png", width: 85%),
+  caption: "Catalog - GetGoodsInfoResponse",
+)
 
 Rappresenta la Risposta all'operazione di richiesta informazioni su una merce.
 
@@ -543,6 +619,11 @@ Rappresenta la Risposta all'operazione di richiesta informazioni su una merce.
 
 ===== GetGoodsQuantityResponse
 
+#figure(
+  image("../../assets/catalog/GetGoodsQuantityResponse.png", width: 75%),
+  caption: "Catalog - GetGoodsQuantityResponse",
+)
+
 Rappresenta la Risposta all'operazione di richiesta informazioni sulla quantità delle merci memorizzate nel Sistema.
 
 *Descrizione degli attributi della struttura:*
@@ -556,6 +637,11 @@ Rappresenta la Risposta all'operazione di richiesta informazioni sulla quantità
 - *`GetMap() map[string]int64`*: permette di ottenere la mappa memorizzata nella Risposta.
 
 ===== GetWarehousesResponse
+
+#figure(
+  image("../../assets/catalog/GetWarehousesResponse.png", width: 95%),
+  caption: "Catalog - GetWarehousesResponse",
+)
 
 Rappresenta la Risposta all'operazione di richiesta informazioni sull'inventario dei magazzini memorizzati nel Sistema.
 
@@ -571,6 +657,11 @@ Rappresenta la Risposta all'operazione di richiesta informazioni sull'inventario
 
 ===== SetGoodQuantityResponse
 
+#figure(
+  image("../../assets/catalog/SetGoodQuantityResponse.png", width: 75%),
+  caption: "Catalog - SetGoodQuantityResponse",
+)
+
 Rappresenta la Risposta alla richiesta di modifica quantità di una merce.
 
 *Descrizione degli attributi della struttura:*
@@ -584,6 +675,11 @@ Rappresenta la Risposta alla richiesta di modifica quantità di una merce.
 - *`GetOperationResult() string`*: permette di ottenere dalla Risposta l'esito dell'operazione.
 
 ===== SetMultipleGoodsQuantityResponse
+
+#figure(
+  image("../../assets/catalog/SetMultipleGoodsQuantityResponse.png", width: 85%),
+  caption: "Catalog - SetMultipleGoodsQuantityResponse",
+)
 
 Rappresenta la Risposta alla richiesta di modifica quantità di un insieme di merci.
 
@@ -601,8 +697,6 @@ Rappresenta la Risposta alla richiesta di modifica quantità di un insieme di me
 - *`GetWrongIDSlice() []string`*: permette di ottenere la _slice_ degli id la cui modifica non è riuscita.
 
 ==== CatalogRepository
-
-[PROSEGUIRE] inserire uml
 
 Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepository.
 
