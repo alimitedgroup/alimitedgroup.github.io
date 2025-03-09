@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.2.0]
+#let ver = [0.3.0]
 
 #show: body => importantdocs(
   data: datetime(day: 25, month: 02, year: 2025),
@@ -9,18 +9,27 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.3.0",
+      date: datetime(day: 09, month: 03, year: 2025),
+      autore: p.matteo,
+      //verifica: p.marco,
+      descr: "Descrizione del microservizio Catalog" + [ (@catalog)] + ".",
+    ),
+    (
       vers: "0.2.0",
       date: datetime(day: 27, month: 02, year: 2025),
       autore: p.sara,
       verifica: p.marco,
-      descr: "Continuazione sezione architettura.",
+      descr: "Continuazione sezione architettura" + [ (@architettura)] + ".",
     ),
     (
       vers: "0.1.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.sara,
       verifica: p.emanuele,
-      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura.",
+      descr: "Prima redazione documento. Sezione introduzione. Sezione tecnologie. Sezione architettura"
+        + [ (@introduzione e @architettura)]
+        + ".",
     ),
   ),
   stato: [In redazione],
@@ -34,7 +43,7 @@
   body,
 )
 
-= Introduzione
+= Introduzione <introduzione>
 == Scopo del documento
 Il presente documento ha l'obiettivo di descrivere in dettaglio l'_architettura_ del prodotto software, fornendo una visione chiara e strutturata delle sue componenti, della loro interazione e della loro distribuzione nel sistema.\
 
@@ -203,7 +212,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
 )
 
 #pagebreak()
-= Architettura
+= Architettura <architettura>
 == Architettura logica
 Il sistema è progettato seguendo l'*architettura esagonale*, un modello che promuove una netta separazione tra la logica di _business_ e le interazioni con servizi esterni, fonti di dati e interfacce utente.\
 Questo approccio organizza il sistema attorno a un nucleo centrale, circondato da porte che fungono da interfacce con il mondo esterno, garantendo modularità e testabilità.
@@ -297,7 +306,7 @@ Sebbene *Go*#super[G] non abbia il concetto di "classe", comunque è possibile r
 
 Si noti come dunque, in questo documento, i termini struttura e classe saranno utilizzati come sinonimi per il motivo sopra citato.
 
-Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_, specie in caso l'oggetto in questione abbia necessità di essere serializzato in formato _Json_. Inoltre, nel linguaggio go, la privatezza di un attributo resta comunque limitata al di fuori del _package_.
+Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile utilizzare il concetto di _Information Hiding_, specie in caso l'oggetto in questione abbia necessità di essere serializzato in formato _Json_. Inoltre, nel linguaggio Go#super[G] ,la privatezza di un attributo resta comunque limitata al di fuori del _package_.
 
 Se la descrizione di un oggetto è assente questo implica che tale oggetto è una *struttura vuota*, ovvero senza alcun attributo e funzione da lei solamente invocabile.
 
@@ -390,7 +399,7 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
 #pagebreak()
-=== Catalog
+=== Catalog <catalog>
 
 #figure(
   image("../../assets/catalog/Catalog.png", width: 125%),
