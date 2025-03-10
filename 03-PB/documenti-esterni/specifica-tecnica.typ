@@ -12,7 +12,7 @@
       vers: "0.3.0",
       date: datetime(day: 09, month: 03, year: 2025),
       autore: p.matteo,
-      //verifica: p.marco,
+      verifica: p.marco,
       descr: "Descrizione del microservizio Catalog" + [ (@catalog)] + ".",
     ),
     (
