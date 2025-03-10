@@ -1136,7 +1136,7 @@ La riunione con l'azienda proponente #M31 è stata positiva ed informativa per c
 
 #pagebreak()
 
-== Product Baseline#super[G] (PB)
+== Product Baseline (PB)
 === Sprint 7 <sprint7>
 
 #table(
@@ -1202,6 +1202,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #v(1em)
 
 ==== Rischi incontrati
+
 Durante questo sprint si sono concretizzati i seguenti rischi:
 - RT2: Rischio Tecnologico legato a errori nel codice;
 - RG3: Rischio Globale derivato da sottostima di attività;
@@ -1214,7 +1215,16 @@ Per i seguenti motivi:
 
 ===== Valutazione di efficacia delle strategie di mitigazione dei rischi
 
+Per la mitigazione dei rischi incontrati, sono state adottate le seguenti strategie:
+- RT2: per la mitigazione di questo rischio si è attuata una politica di intenso studio delle varie tecnologie adottate, con aiuto della documentazione ufficiale accessibile dai siti web;
+- RG3: per la mitigazione di questo rischio, abbiamo cercato di evitare di sottostimare il tempo necessario per la realizzazione delle attività prefissate;
+- RI2: per la mitigazione di questo rischio, abbiamo attuato un piano per coprire le eventuali assenze dei componenti di _ALimitedGroup_.
+
+Nel complesso, le strategie adottate sono state efficaci per la maggior parte dei rischi incontrati dal gruppo.
 ==== Rivisitazione migliorativa del piano per le attività future
+
+Nel prossimo _sprint_ il gruppo dovrà affrontare la seconda fase di progettazione e programmazione, che andrà ad implementare ulteriormente il _Minimum Viable Product_ che consegneremo all'azienda proponente #M31. \
+Questa fase sarà cruciale per il gruppo e, soprattutto, per il budget preventivato in fase di candidatura. Per questo, le ore di ogni singolo componente che verranno utilizzate saranno ponderate alle attività prefissate ad inizio dello _sprint_ 8.
 
 === Retrospettiva
 Durante tutto questo sprint ci siamo concentrati sulla realizzazione ed implementazione dei servizi che andranno a comporre il _Minimum Viable Product_ finale per questo progetto. \
