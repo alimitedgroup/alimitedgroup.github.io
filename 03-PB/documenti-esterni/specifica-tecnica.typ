@@ -9,6 +9,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.4.0",
+      date: datetime(day: 11, month: 03, year: 2025),
+      autore: p.loris,
+      // verifica: p.matteo,
+      descr: "Descrizione del microservizio Warehouse" + [ (@micro_warehouse)] + ".",
+    ),
+    (
       vers: "0.3.0",
       date: datetime(day: 09, month: 03, year: 2025),
       autore: p.matteo,
@@ -96,7 +103,7 @@ Il progetto si basa su un insieme di tecnologie moderne e robuste, selezionate p
 
 La scelta tecnologica è stata guidata dalla necessità di creare un sistema di gestione del magazzino distribuito che possa operare in modo efficiente anche in condizioni di carico variabile, mantenendo elevati standard di prestazioni e resilienza.
 
-Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la containerizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
+Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la virtualizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
 
 Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
 == Linguaggi di programmazione e _framework_
@@ -151,7 +158,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
 )
 
 
-== Tecnologie per la containerizzazione e _deployment_
+== Tecnologie per la virtualizzazione e _deployment_
 
 #figure(
   table(
@@ -171,9 +178,9 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*Docker*], [], [Docker è una piattaforma di containerizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
+    [*Docker*], [], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
-  caption: [Tecnologie per la containerizzazione e _deployment_],
+  caption: [Tecnologie per la virtualizzazione e _deployment_],
 )
 
 
@@ -243,7 +250,7 @@ Ogni microservizio è indipendente e responsabile#super[G] di un insieme specifi
 
 I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
-- Comunicazione asincrona, sincrona ed _event-driven_, riducendo l'accopiamento tra i servizi;
+- Comunicazione asincrona, sincrona ed _event-driven_, riducendo l'accoppiamento tra i servizi;
 
 - Maggiore scalabilità, in quanto i messaggi possono essere gestiti in parallelo;
 
@@ -253,7 +260,7 @@ I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messagg
 Oltre a NATS#super[G], i microservizi possono esporre API#super[G] REST per le comunicazioni con il _client_.
 
 
-Il _deployment_ dei microservizi avviene in ambienti containerizzati tramite Docker#super[G] .
+Il _deployment_ dei microservizi avviene in ambienti virtualizzati tramite Docker#super[G] .
 Questo garantisce:
 
 - Scalabilità dinamica, adattando le risorse ai carichi di lavoro;
@@ -414,7 +421,7 @@ Il microservizio tiene traccia dell'aggiunta e della modifica delle informazioni
 
 - *CatalogController*, che rappresenta l'_application logic_
 - *CatalogService*, che rappresenta la _business logic_;
-- *CatalogRepository*, che rappresenta la _persistance logic_.
+- *CatalogRepository*, che rappresenta la _persistence logic_.
 
 Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esposti.
 
@@ -735,7 +742,7 @@ Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepos
 
 ==== IGoodRepository <igoodrepository>
 
-Rappresenta l'interfaccia generica di un oggetto che implementa la _persistance logic_ del microservizio _Catalog_.
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ del microservizio _Catalog_.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -751,7 +758,7 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistance 
 
 ==== IAddOrChangeGoodDataPort <IAddOrChangeGoodDataPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di voler aggiungere o modificare i dati di una merce.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di voler aggiungere o modificare i dati di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -759,7 +766,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetGoodsInfoPort <IGetGoodsInfoPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -767,7 +774,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetGoodsQuantityPort <IGetGoodsQuantityPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -775,7 +782,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetWarehousesInfoPort <IGetWarehousesInfoPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -783,7 +790,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== ISetGoodQuantityPort <ISetGoodQuantityPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistance Logic_ la volontà di impostare la quantità di una merce.
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di impostare la quantità di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -791,7 +798,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== CatalogAdapter
 
-Adapter che mette in comunicazione la _Business Logic_ di catalog con la _Persistance Logic_ dello stesso.
+Adapter che mette in comunicazione la _Business Logic_ di catalog con la _Persistence Logic_ dello stesso.
 
 Implementa le seguenti interfacce (porte):
 
@@ -803,21 +810,21 @@ Implementa le seguenti interfacce (porte):
 
 *Descrizione degli attributi della struttura:*
 
-- *`repo IGoodRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistance logic_ di Catalog. Per le informazioni riguardo IGoodRepository vedere la @igoodrepository.
+- *`repo IGoodRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Catalog. Per le informazioni riguardo IGoodRepository vedere la @igoodrepository.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewCatalogRepositoryAdapter(repo IGoodRepository) *CatalogRepositoryAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `repo` con quello passato come parametro al costruttore;
 
-- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`SetGoodQuantity(agqc *service_Cmd.SetGoodQuantityCmd) *service_Response.SetGoodQuantityResponse`*:converte il _Command_ per la modifica della quantità di una merce in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+- *`SetGoodQuantity(agqc *service_Cmd.SetGoodQuantityCmd) *service_Response.SetGoodQuantityResponse`*:converte il _Command_ per la modifica della quantità di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: converte il _Command_ per ottenere la quantità delle varie merci registrate nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: converte il _Command_ per ottenere la quantità delle varie merci registrate nel Sistema in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata;
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _Persistance Logic_, quindi richiama la _Persistance Logic_ ad eseguire l'operazione desiderata.
+- *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
 
 ==== IService <IService>
 
@@ -934,3 +941,12 @@ Si occupa di gestire l'_Application Logic_ del microservizio Catalog.
 - *`checkSetGoodDataRequest(request *stream.GoodUpdateData) error`*: controlla le richieste di aggiornamento dati o aggiunta merce. Ritorna un errore se la richiesta non è valida;
 - *`setGoodQuantityRequest(ctx context.Context, msg jetstream.Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
 - *`checkSetGoodQuantityRequest(request *stream.StockUpdate) error`*: controlla le richieste di aggiornamento quantità di una merce. Ritorna un errore se la richiesta non è valida.
+
+#pagebreak()
+=== Warehouse <micro_warehouse>
+
+#figure(
+  image("../../assets/warehouse/warehouse.png", width: 125%),
+  caption: "Componenti del microservizio Warehouse",
+)
+
