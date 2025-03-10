@@ -641,7 +641,7 @@ Rappresenta la Risposta all'operazione di richiesta informazioni sulla quantità
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewGetGoodsQuantityResponse(goodMap map[string]int64) *GetGoodsQuantityResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro nel costruttore.
+- *`NewGetGoodsQuantityResponse(goodMap map[string]int64) *GetGoodsQuantityResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro nel costruttore;
 
 - *`GetMap() map[string]int64`*: permette di ottenere la mappa memorizzata nella Risposta.
 
@@ -660,7 +660,7 @@ Rappresenta la Risposta all'operazione di richiesta informazioni sull'inventario
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewGetWarehousesResponse(warehouseMap map[string]catalogCommon.Warehouse) *GetWarehousesResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro nel costruttore.
+- *`NewGetWarehousesResponse(warehouseMap map[string]catalogCommon.Warehouse) *GetWarehousesResponse`*: rappresenta il costruttore della Risposta. La mappa viene inizializzata con quella passata come parametro nel costruttore;
 
 - *`GetWarehouseMap() map[string]catalogCommon.Warehouse`*: permette di ottenere la mappa memorizzata nella Risposta.
 
@@ -755,7 +755,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve dare la possibilità di aggiungere e/o modificare i dati di una merce;
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve dare la possibilità di aggiungere e/o modificare i dati di una merce.
 
 ==== IGetGoodsInfoPort <IGetGoodsInfoPort>
 
@@ -771,7 +771,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere i dati sulla quantità delle merci registrate nel Sistema e di ottenerle in risposta;
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere i dati sulla quantità delle merci registrate nel Sistema e di ottenerle in risposta.
 
 ==== IGetWarehousesInfoPort <IGetWarehousesInfoPort>
 
@@ -779,7 +779,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazioni sull'inventario dei magazzini registrati nel Sistema e ottenere tali informazioni in risposta;
+- *`GetWarehouses(*service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazioni sull'inventario dei magazzini registrati nel Sistema e ottenere tali informazioni in risposta.
 
 ==== ISetGoodQuantityPort <ISetGoodQuantityPort>
 
@@ -833,7 +833,7 @@ Interfaccia che descrive i metodi che devono essere implementati da una struttur
 
 - *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: il metodo deve permettere di richiedere le informazioni sulle merci memorizzate nel sistema e ottenerne la risposta;
 
-- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazione sull'inventario dei magazzini memorizzati nel Sistema e ottenerne la risposta;
+- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazione sull'inventario dei magazzini memorizzati nel Sistema e ottenerne la risposta.
 
 ==== IGetGoodsInfoUseCase <IGetGoodsInfoUseCase>
 
@@ -841,7 +841,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: il metodo deve permettere di richiedere le informazioni sulle merci memorizzate nel sistema e ottenerne la risposta;
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: il metodo deve permettere di richiedere le informazioni sulle merci memorizzate nel sistema e ottenerne la risposta.
 
 ==== IGetGoodsQuantityUseCase <IGetGoodsQuantityUseCase>
 
@@ -849,7 +849,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere la quantità delle merci registrate nel Sistema e ottenerne la risposta;
+- *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: il metodo deve permettere di richiedere la quantità delle merci registrate nel Sistema e ottenerne la risposta.
 
 ==== IGetWarehousesUseCase <IGetWarehousesUseCase>
 
@@ -857,7 +857,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazione sull'inventario dei magazzini memorizzati nel Sistema e ottenerne la risposta;
+- *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: il metodo deve permettere di richiedere le informazione sull'inventario dei magazzini memorizzati nel Sistema e ottenerne la risposta.
 
 ==== ISetMultipleGoodsQuantityUseCase <ISetMultipleGoodsQuantityUseCase>
 
@@ -865,7 +865,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`SetMultipleGoodsQuantity(cmd *service_Cmd.SetMultipleGoodsQuantityCmd) *service_Response.SetMultipleGoodsQuantityResponse`*: il metodo deve permettere di aggiornare la quantità di un gruppo di merci;
+- *`SetMultipleGoodsQuantity(cmd *service_Cmd.SetMultipleGoodsQuantityCmd) *service_Response.SetMultipleGoodsQuantityResponse`*: il metodo deve permettere di aggiornare la quantità di un gruppo di merci.
 
 ==== IUpdateGoodDataUseCase <IUpdateGoodDataUseCase>
 
@@ -873,7 +873,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve permettere di aggiungere o modificare le informazioni di una merce;
+- *`AddOrChangeGoodData(agc *service_Cmd.AddChangeGoodCmd) *service_Response.AddOrChangeResponse`*: il metodo deve permettere di aggiungere o modificare le informazioni di una merce.
 
 ==== CatalogService
 
@@ -907,7 +907,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`GetGoodsQuantity(ggqc *service_Cmd.GetGoodsQuantityCmd) *service_Response.GetGoodsQuantityResponse`*: prende un _Command_ per la richiesta delle informazioni sulla quantità delle merci memorizzate nel Sistema e ne chiede esecuzione mediante l'apposita porta. Ritorna quindi la risposta;
 
-- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: prende un _Command_ per la richiesta delle informazioni sulle merci memorizzate nel Sistema. Inoltra la richiesta alla porta opportuna e ritorna quindi la risposta.
+- *`GetGoodsInfo(ggqc *service_Cmd.GetGoodsInfoCmd) *service_Response.GetGoodsInfoResponse`*: prende un _Command_ per la richiesta delle informazioni sulle merci memorizzate nel Sistema. Inoltra la richiesta alla porta opportuna e ritorna quindi la risposta;
 
 - *`GetWarehouses(gwc *service_Cmd.GetWarehousesCmd) *service_Response.GetWarehousesResponse`*: prende un _Command_ per la richiesta delle informazioni sull'inventario dei magazzini memorizzati nel Sistema. Procede ad inoltrare la richiesta sulla porta opportuna e ritorna quindi la risposta.
 
@@ -921,7 +921,7 @@ Si occupa di gestire l'_Application Logic_ del microservizio Catalog.
 - *`getGoodsQuantityUseCase service_portIn.IGetGoodsQuantityUseCase`*: la descrizione è disponibile alla @IGetGoodsQuantityUseCase;
 - *`getWarehouseInfoUseCase service_portIn.IGetWarehousesUseCase`*: la descrizione è disponibile alla @IGetWarehousesUseCase;
 - *`setMultipleGoodsQuantityUseCase service_portIn.ISetMultipleGoodsQuantityUseCase`*: la descrizione è disponibile alla @ISetMultipleGoodsQuantityUseCase;
-- *`updateGoodDataUseCase service_portIn.IUpdateGoodDataUseCase`*: la descrizione è disponibile alla @IUpdateGoodDataUseCase;
+- *`updateGoodDataUseCase service_portIn.IUpdateGoodDataUseCase`*: la descrizione è disponibile alla @IUpdateGoodDataUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
