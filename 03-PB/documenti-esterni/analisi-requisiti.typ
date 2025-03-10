@@ -4514,7 +4514,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
     [R-2-Q-Ob],
-    [È necessario realizzare opportuni Test di sincronizzazione],
+    [È necessario realizzare opportuni Test di Accettazione in merito alla sincronizzazione dei vari magazzini],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-3-Q-De],
@@ -4522,16 +4522,16 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-4-Q-Ob],
-    [È necessario realizzare opportuni Test di Unità],
+    [È necessario realizzare opportuni Test di Unità che testino ogni componente dei vari microservizi singolarmente],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
 
     [R-5-Q-Ob],
-    [È necessario realizzare opportuni Test di carico],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
+    [È necessario testare che il Sistema riesca a supportare un minimo di 5 chiamate al secondo],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione" e #link("https://alimitedgroup.github.io/VE%2028-02-2025%20v1.0.0.pdf")[Verbale esterno del 28 Febbraio 2025]],
 
     [R-6-Q-Ob],
-    [È necessario realizzare opportuni Test di scalabilità],
-    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione"],
+    [È necessario testare che il Sistema, se provvisto di due microservizi dello stesso tipo, funzioni correttamente, ovvero non ci sia conflitto tra i suddetti microservizi dato un compito assolvibile da entrambi],
+    [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione" e #link("https://alimitedgroup.github.io/VE%2028-02-2025%20v1.0.0.pdf")[Verbale esterno del 28 Febbraio 2025]],
 
     [R-7-Q-Ob],
     [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] oppure in un _Test Book_ dedicato],
@@ -4548,11 +4548,15 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [R-10-Q-Ob],
     [È necessario versionare il codice con appositi _Software_ di versionamento.],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Requisiti non Funzionali"],
+
+    [R-11-Q-Ob],
+    [È necessario raggiungere un _Code Coverage_ del 75%],
+    [#link("https://alimitedgroup.github.io/VE%2028-02-2025%20v1.0.0.pdf")[Verbale esterno del 28 Febbraio 2025]],
   ),
   caption: [Requisiti di Qualità],
 )
 
-In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno concordati con #M31 e definiti nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*]durante lo svolgimento della _Product Baseline#super[G] (PB)_.
+Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*].
 
 == Requisiti di Vincolo
 
@@ -4593,12 +4597,20 @@ In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-4-V-Ob],
-    [È necessario l'utilizzo di NATS per lo scambio di messaggi tra i microservizi],
+    [È necessario l'utilizzo di Kafka o NATS per lo scambio di messaggi tra i microservizi],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-5-V-Ob],
-    [È necessario l'utilizzo di Kafka o NATS per lo scambio di messaggi tra i microservizi],
+    [È necessario l'utilizzo di Docker],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
+
+    [R-6-V-Ob],
+    [È necessario che i microservizi sviluppati riescano ad eseguire su macchine dotate al minimo delle seguenti caratteristiche:
+      - CPU a 3.400 GHz, architettura x86
+      - 8GB di memoria RAM
+      - Sistema Operativo Ubuntu 24.10
+    ],
+    [Interno],
   ),
   caption: [Requisiti di Vincolo],
 )
@@ -5091,8 +5103,8 @@ In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno
     ),
 
     [Funzionali], [170], [22], [0],
-    [Qualità], [9], [1], [0],
-    [Vincolo], [5], [0], [0],
+    [Qualità], [10], [1], [0],
+    [Vincolo], [6], [0], [0],
   ),
   caption: [Riepilogo dei Requisiti],
 )
