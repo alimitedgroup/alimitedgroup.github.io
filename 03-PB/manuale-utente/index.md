@@ -11,7 +11,7 @@ A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il S
 a partire dai programmi necessari alla sua esecuzione,
 per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e come avviare lo stesso.
 
-Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione<!--raw-typst#super("G")--> del sistema,
+Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione del sistema,
 in particolare su periodi di tempo prolungati.
 
 La parte finale di questo manuale ha l'obiettivo di
@@ -26,7 +26,7 @@ In particolare, sono presenti le seguenti sezioni:
   Essa segue la forma di documentazione _Explanation_, come indicato dal Diátaxis;
 - **Guide**: delle guide rapide con l'obiettivo di guidare l'utente mentre effettua una particolare azione.
   Essa segue la forma di documentazione _How-to guides_, come indicato dal Diátaxis;
-- **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_#super("G") possibili;
+- **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_#super[G] possibili;
   utile per l'utente che necessita di una specifica dettagliata del funzionamento dell'_API_.
   Essa segue la forma di documentazione _Reference_, come indicato dal Diátaxis.
 
