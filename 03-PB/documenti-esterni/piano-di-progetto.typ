@@ -1132,7 +1132,7 @@ Inoltre, in merito all'Analisi dei Requisiti#super[G] si è concretizzato il ris
 
 In questo sesto sprint#super[G], ci siamo concentrati principalmente sulla realizzazione dell'Analisi dei requisiti e del PoC#super[G].\
 
-La riunione con l'azienda proponente #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[G]. Abbiamo, inoltre, mostrato il funzionamento del PoC all'azienda con annessa l'idea di architettura realizzata a tale scopo.
+La riunione con l'azienda proponente#super[G] #M31 è stata positiva ed informativa per capire, soprattutto, l'efficacia del lavoro fatto all'interno dell'Analisi dei Requisiti#super[G]. Abbiamo, inoltre, mostrato il funzionamento del PoC#super[G] all'azienda con annessa l'idea di architettura#super[G] realizzata a tale scopo.
 
 #pagebreak()
 
@@ -1152,8 +1152,8 @@ La riunione con l'azienda proponente #M31 è stata positiva ed informativa per c
 
 ==== Informazioni generali e attività da svolgere <sprint7intro>
 
-Il settimo sprint marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline#super[G]_. \
-In questo sprint vengono pianificate le seguenti attività:
+Il settimo sprint#super[G] marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline#super[G]_. \
+In questo sprint#super[G] vengono pianificate le seguenti attività:
 - Redigere il verbale interno della riunione effettuata in data 24/02;
 - Realizzare il servizio di autenticazione per gli utenti;
 - Progettare il servizio di _Stock Notifications_;
@@ -1167,7 +1167,7 @@ In questo sprint vengono pianificate le seguenti attività:
   - Archittetura di _deployment_.
 - Iniziare a redigere il "Manuale Utente#super[G]" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
 
-Il Responsabile dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle prossime scelte da attuare nella fase della _Product Baseline#super[G]_.
+Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle prossime scelte da attuare nella fase della _Product Baseline#super[G]_.
 ==== Rischi attesi
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
@@ -1203,7 +1203,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 ==== Rischi incontrati
 
-Durante questo sprint si sono concretizzati i seguenti rischi:
+Durante questo sprint#super[G] si sono concretizzati i seguenti rischi:
 - RT2: Rischio Tecnologico legato a errori nel codice;
 - RG3: Rischio Globale derivato da sottostima di attività;
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
@@ -1223,13 +1223,13 @@ Per la mitigazione dei rischi incontrati, sono state adottate le seguenti strate
 Nel complesso, le strategie adottate sono state efficaci per la maggior parte dei rischi incontrati dal gruppo.
 ==== Rivisitazione migliorativa del piano per le attività future
 
-Nel prossimo _sprint_ il gruppo dovrà affrontare la seconda fase di progettazione e programmazione, che andrà ad implementare ulteriormente il _Minimum Viable Product_ che consegneremo all'azienda proponente #M31. \
-Questa fase sarà cruciale per il gruppo e, soprattutto, per il budget preventivato in fase di candidatura. Per questo, le ore di ogni singolo componente che verranno utilizzate saranno ponderate alle attività prefissate ad inizio dello _sprint_ 8.
+Nel prossimo _sprint_#super[G] il gruppo dovrà affrontare la seconda fase di progettazione e programmazione, che andrà ad implementare ulteriormente il _Minimum Viable Product#super[G]_ che consegneremo all'azienda proponente#super[G] #M31. \
+Questa fase sarà cruciale per il gruppo e, soprattutto, per il budget preventivato in fase di candidatura. Per questo, le ore di ogni singolo componente che verranno utilizzate saranno ponderate alle attività prefissate ad inizio dello _sprint_#super[G] 8.
 
 === Retrospettiva
-Durante tutto questo sprint ci siamo concentrati sulla realizzazione ed implementazione dei servizi che andranno a comporre il _Minimum Viable Product_ finale per questo progetto. \
-Inoltre, abbiamo realizzato le prime versioni dei documenti di "Manuale Utente" e "Specifica Tecnica".\
-Abbiamo provveduto tempestivamente a correggere le Norme di Progetto e l'Analisi dei Requisiti, successivamente aver ricevuto la valutazione della RTB ricevuta dal #profBreve(p.tullio) e dal #profBreve(p.cardin). \
-La riunione con l'azienda proponente #M31, svolta in data 28/02, è stata positiva ed efficace per capire quali saranno i prossimi passaggi e i prossimi obiettivi durante tutto l'arco della PB.
+Durante tutto questo sprint#super[G] ci siamo concentrati sulla realizzazione ed implementazione dei servizi che andranno a comporre il _Minimum Viable Product#super[G]_ finale per questo progetto. \
+Inoltre, abbiamo realizzato le prime versioni dei documenti di "Manuale Utente#super[G]" e "Specifica Tecnica#super[G]".\
+Abbiamo provveduto tempestivamente a correggere le Norme di Progetto#super[G] e l'Analisi dei Requisiti#super[G], successivamente aver ricevuto la valutazione della RTB#super[G] ricevuta dal #profBreve(p.tullio) e dal #profBreve(p.cardin). \
+La riunione con l'azienda proponente#super[G] #M31, svolta in data 28/02, è stata positiva ed efficace per capire quali saranno i prossimi passaggi e i prossimi obiettivi durante tutto l'arco della PB#super[G] .
 
 
