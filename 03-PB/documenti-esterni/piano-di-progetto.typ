@@ -13,7 +13,7 @@
       vers: "1.1.0",
       date: datetime(day: 24, month: 02, year: 2025),
       autore: p.marco,
-      verifica: p.loris,
+      verifica: p.matteo,
       descr: "Redazione per il settimo sprint " + [(@sprint7). ],
     ),
     (
@@ -612,7 +612,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
       Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \
-      Inserire all'interno del documento le tecnologie per la codifica: _sprint 7_.],
+      Inserire all'interno del documento le tecnologie per la codifica: \ _sprint 7_. \ \
+      Inserire informazioni sui microservizi implementati all'interno dell'MVP: \ _sprint_ 7.],
     [In redazione],
 
     [*Redazione del Manuale Utente*],
@@ -631,9 +632,9 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione con l'aggiunta del tracciamento dei Casi d'Uso;
       - Correzione dei requisiti non funzionali.
     ],
-    [Correzione dei Casi d'Uso n. 32, 67 e 68: _sprint_ 7. \ \
-      Aggiunta del tracciamento dei Casi d'Uso: _sprint_ 7. \ \
-      Correzione dei requisiti non funzionali: _sprint_ 7.],
+    [Correzione dei Casi d'Uso n. 32, 67 e 68: \ _sprint_ 7. \ \
+      Aggiunta del tracciamento dei Casi d'Uso: \ _sprint_ 7. \ \
+      Correzione dei requisiti non funzionali: \ _sprint_ 7.],
     [In redazione],
 
     [*Correzione Norme di Progetto*],
@@ -641,8 +642,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
       - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.
     ],
-    [Correzione con aggiunta della sezione "Strumenti a supporto" : _sprint_ 7. \ \
-      Correzione con integrazione della sezione "Sviluppo": _sprint 7_.],
+    [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 8. \ \
+      Correzione con integrazione della sezione "Sviluppo": \ _sprint 8_.],
     [In redazione],
 
     [*Correzione Piano di Qualifica*],
@@ -654,15 +655,36 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [In redazione],
 
     [*Ampliamento del Glossario*],
-    [Redazione, con conseguente ampliamento del Glossario, delle seguenti parti:
+    [Aggiornamento del glossario con l'aggiunta delle seguenti parti:
       - Termini.
     ],
     [Ampliamento del Glossario: tutti gli _sprint_.],
     [In redazione],
 
     [*Realizzazione del Minimum Viable Product (MVP)*],
-    [Realizzazione del prodotto finale con conseguente consegna all'azienda proponente (#M31), successivamente aver fatto ogni _test_ descritto nel Piano di Qualifica. ],
+    [Codifica di:
+      - Client;
+      - Microservizi, più precisamente i seguenti:
+        - Warehouse;
+        - Catalog;
+        - Authenticator;
+        - Api Gateway;
+        - Order;
+        - Transfer;
+        - Notification.
+      Esecuzione dei test previsti dal Piano di Qualifica
+    ],
     [Realizzazione del MVP: da _sprint 7_ a _sprint 9_. \ \
+      Codifica di:
+      - Client: da _sprint_ 7 a _sprint_ 9;
+      - Microservizi, più precisamente i seguenti:
+        - Warehouse: _sprint_ 7;
+        - Catalog: _sprint_ 7;
+        - Authenticator;
+        - Api Gateway;
+        - Order;
+        - Transfer;
+        - Notification.
     ],
     [In fase di implementazione],
   ),
@@ -952,7 +974,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RG2: Rischio Globale derivato da malcomprensione del capitolato#super[G] ;
 - RI1: Rischio Individuale derivante dalle altre attività universitarie;
-- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 ==== Preventivo
 
@@ -1155,19 +1177,21 @@ La riunione con l'azienda proponente#super[G] #M31 è stata positiva ed informat
 Il settimo sprint#super[G] marca l'inizio delle attività riguardanti l'ultima _milestone_#super[G] del progetto: la _Product Baseline#super[G]_. \
 In questo sprint#super[G] vengono pianificate le seguenti attività:
 - Redigere il verbale interno della riunione effettuata in data 24/02;
-- Realizzare il servizio di autenticazione per gli utenti;
-- Progettare il servizio di _Stock Notifications_;
-- Continuare con l'utilizzo della _Continuous Integration#super[G]_ e della _Dependency Injection#super[G]_;
+- Redigere il verbale interno della riunione effettuata in data 03/03;
+- Redigere il verbale esterno della riunione effettuata in data 28/02;
+- Progettare il microservizio _Authenticator_;
+- Progettare il microservizio di _Notifications_;
+- Continuare con la configurazione della _Continuous Integration#super[G]_ e lo studio del _framework_ *fx* per la _Dependency Injection#super[G]_;
 - Correggere il documento delle Norme di Progetto#super[G], dopo la visione da parte del #profBreve(p.tullio) e la sua valutazione per la _RTB_#super[G] ;
 - Correggere il documento di Analisi dei Requisiti#super[G], dopo la visione da parte del #profBreve(p.cardin) e la sua valutazione per la _RTB_#super[G] ;
-- Iniziare a redigere il documento di "Specifica Tecnica#super[G]" iniziando a stilare:
+- Iniziare la redazione del documento di "Specifica Tecnica#super[G]" iniziando a stilare:
   - Struttura base del documento;
   - Tecnologie per la codifica;
   - Archittetura logica;
   - Archittetura di _deployment_.
-- Iniziare a redigere il "Manuale Utente#super[G]" fruibile sia nella sua versione _.pdf_ sia nella versione _web_ nel sito di _ALimitedGroup_.
+- Iniziare la redazione del "Manuale Utente#super[G]", rendendolo fruibile sia in sua versione _.pdf_ sia nella versione _web_ nel sito del gruppo.
 
-Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere e dialogare sulle prossime scelte da attuare nella fase della _Product Baseline#super[G]_.
+Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere sulle prossime scelte da attuare nella fase della _Product Baseline#super[G]_.
 ==== Rischi attesi
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
@@ -1181,7 +1205,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(7, posizioni-legenda: (2, 2, -2, 2, 2, -2), "Sprint 7 - Preventivo per componente", "Sprint 7 - Preventivo")
+#impegni(7, posizioni-legenda: (1, 4, -2, 2, -2, -2), "Sprint 7 - Preventivo per componente", "Sprint 7 - Preventivo")
 
 #v(2em)
 ==== Consuntivo
@@ -1190,7 +1214,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(
   7,
   preventivo: true,
-  posizioni-legenda: (2, 2, -2, 2, 2, -2),
+  posizioni-legenda: (1, 3, 1, 1, -1, -2),
   "Sprint 7 - Consuntivo per componente",
   "Sprint 7 - Consuntivo",
 )
@@ -1216,8 +1240,8 @@ Per i seguenti motivi:
 ===== Valutazione di efficacia delle strategie di mitigazione dei rischi
 
 Per la mitigazione dei rischi incontrati, sono state adottate le seguenti strategie:
-- RT2: per la mitigazione di questo rischio si è attuata una politica di intenso studio delle varie tecnologie adottate, con aiuto della documentazione ufficiale accessibile dai siti web;
-- RG3: per la mitigazione di questo rischio, abbiamo cercato di evitare di sottostimare il tempo necessario per la realizzazione delle attività prefissate;
+- RT2: per la mitigazione di questo rischio abbiamo approfondito maggiormente le tecnologie adottate, con aiuto della documentazione ufficiale accessibile dai siti web;
+- RG3: per la mitigazione di questo rischio, abbiamo cercato di evitare di sottostimare il tempo necessario per la realizzazione delle attività prefissate, presupponendo del tempo in più per effettuare eventuali correzioni;
 - RI2: per la mitigazione di questo rischio, abbiamo attuato un piano per coprire le eventuali assenze dei componenti di _ALimitedGroup_.
 
 Nel complesso, le strategie adottate sono state efficaci per la maggior parte dei rischi incontrati dal gruppo.
@@ -1227,9 +1251,9 @@ Nel prossimo _sprint_#super[G] il gruppo dovrà affrontare la seconda fase di pr
 Questa fase sarà cruciale per il gruppo e, soprattutto, per il budget preventivato in fase di candidatura. Per questo, le ore di ogni singolo componente che verranno utilizzate saranno ponderate alle attività prefissate ad inizio dello _sprint_#super[G] 8.
 
 === Retrospettiva
-Durante tutto questo sprint#super[G] ci siamo concentrati sulla realizzazione ed implementazione dei servizi che andranno a comporre il _Minimum Viable Product#super[G]_ finale per questo progetto. \
+Durante tutto questo sprint#super[G] ci siamo concentrati sulla realizzazione ed implementazione dei microservizi che andranno a comporre il _Minimum Viable Product#super[G]_ finale per questo progetto. \
 Inoltre, abbiamo realizzato le prime versioni dei documenti di "Manuale Utente#super[G]" e "Specifica Tecnica#super[G]".\
-Abbiamo provveduto tempestivamente a correggere le Norme di Progetto#super[G] e l'Analisi dei Requisiti#super[G], successivamente aver ricevuto la valutazione della RTB#super[G] ricevuta dal #profBreve(p.tullio) e dal #profBreve(p.cardin). \
+Abbiamo provveduto tempestivamente a correggere le Norme di Progetto#super[G] e parzialmente il documento di Analisi dei Requisiti#super[G], successivamente aver ricevuto la valutazione della RTB#super[G] ricevuta dal #profBreve(p.tullio) e dal #profBreve(p.cardin). \
 La riunione con l'azienda proponente#super[G] #M31, svolta in data 28/02, è stata positiva ed efficace per capire quali saranno i prossimi passaggi e i prossimi obiettivi durante tutto l'arco della PB#super[G] .
 
 
