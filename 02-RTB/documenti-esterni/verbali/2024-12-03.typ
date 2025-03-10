@@ -46,10 +46,10 @@ L'azienda ha consigliato di concentrare l'attenzione sulla descrizione testuale,
 
 Visto che il progetto riguarda un *sistema distribuito*, è stato evidenziato come prioritario affrontare la gestione della concorrenza, con particolare attenzione al trattamento delle eccezioni e degli errori correlati.
 
-Il CTO #persona(p.luca) ha illustrato la metodologia seguita da #M31 durante l'analisi dei requisiti#super[G]:
-+ Individuazione degli *User Need*: si identificano le richieste e le necessità espresse dall'utente in relazione al prodotto.
-+ Definizione dei *Design Input*: gli user need vengono tradotti in requisiti specifici e misurabili.
-+ Definizione dei *Design Output*: si progettano soluzioni tecniche mirate a soddisfare i requisiti individuati e a risolvere i problemi emersi.
+Il CTO#super[G] #persona(p.luca) ha illustrato la metodologia seguita da #M31 durante l'analisi dei requisiti#super[G]:
++ Individuazione degli *User Need#super[G]*: si identificano le richieste e le necessità espresse dall'utente in relazione al prodotto.
++ Definizione dei *Design Input#super[G]*: gli user need#super[G] vengono tradotti in requisiti specifici e misurabili.
++ Definizione dei *Design Output#super[G]*: si progettano soluzioni tecniche mirate a soddisfare i requisiti individuati e a risolvere i problemi emersi.
 
 L'azienda ha enfatizzato l'importanza di produrre _documenti leggibili e facilmente fruibili_.\
 
@@ -58,7 +58,7 @@ consigliando di ispirarsi a sistemi di e-commerce già esistenti.
 Inoltre, ha suggerito l'implementazione di un _catalogo centrale_ riportante i prodotti.\
 
 Infine, l'azienda ha raccomandato di optare per _scelte semplici_,
-rimandando alcune funzionalità avanzate a sviluppi futuri.
+rimandando alcune funzionalità#super[G] avanzate a sviluppi futuri.
 Tra queste, si includono:
 - La gestione dei magazzini offline.
 - La possibilità di gestire più ordini contemporanei per lo stesso utente.

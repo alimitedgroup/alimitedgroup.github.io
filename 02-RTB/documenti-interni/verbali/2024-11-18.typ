@@ -45,7 +45,7 @@ Da ora in avanti i *_Branch_*#super[G] seguiranno la seguente nomenclatura:
 #align(center)[*`#-azione-documento-data`*]
 
 Dove:
-- Al posto di *\#* va inserito il numero della _Issue_#super[G] le cui modifiche operate nel branch determineranno la chiusura
+- Al posto di *\#* va inserito il numero della _Issue_#super[G] le cui modifiche operate nel branch#super[G] determineranno la chiusura
 - Al posto di *azione* va inserita l'azione fatta nel _Branch_#super[G] ovvero:
   - *redazione* per indicare la redazione di un nuovo documento
   - *aggiornamento* per indicare la modifica di un documento esistente

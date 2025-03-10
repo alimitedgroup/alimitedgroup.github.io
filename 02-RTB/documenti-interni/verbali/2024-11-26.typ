@@ -61,7 +61,7 @@ I presenti del gruppo decidono che la redazione dei seguenti documenti:
 venga terminata non oltre il 06-12-2024, con la successiva pubblicazione nel sito di tali documenti.\
 La conclusione, invece, della progettazione viene fissata entro il 31-12-2024 così da rispettare tutte le _milestone_#super[G] create.
 
-Per quanto riguarda la _Requirements and Baseline Tecnology_, il gruppo prevede di avere tutta la documentazione necessaria entro e non oltre il 26-01-2025.
+Per quanto riguarda la _Requirements and Technology Baseline#super[G]_, il gruppo prevede di avere tutta la documentazione necessaria entro e non oltre il 26-01-2025.
 
 
 == Vengono assegnati i ruoli sino al giorno 02-12-2024

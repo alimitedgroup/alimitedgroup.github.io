@@ -46,10 +46,10 @@
 
 == Aggiornamenti sui lavori in corso
 
-Il gruppo ha proseguito le attività previste nel terzo _Sprint_#super[G]: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica* e dell'*Analisi dei Requisiti#super[G]* sono stati per la maggior parte raggiunti.
-Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti#super[G]*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
+Il gruppo ha proseguito le attività previste nel terzo _Sprint_#super[G]: ad ora gli obiettivi posti in merito alla redazione del *Piano di Qualifica#super[G]* e dell'*Analisi dei Requisiti#super[G]* sono stati per la maggior parte raggiunti.
+Nel dettaglio, è proseguito il lavoro di documentazione sulle metriche da inserire nel *Piano di Qualifica#super[G]* e la stesura dei principali Casi d'Uso dell'*Analisi dei Requisiti#super[G]*, con l'individuazione dei primi Casi d'Uso che poi daranno origine ai requisiti desiderabili e opzionali.
 
-Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test sulle stesse.
+Grandi avanzamenti sono stati fatti anche in merito allo studio delle tecnologie, con anche i primi test#super[G] sulle stesse.
 
 Infine, anche le *Norme di Progetto#super[G]* hanno raggiunto quella che sembra essere la struttura finale del documento, inoltre nuove informazioni sono state aggiunte riguardo il Processo di Sviluppo.
 
@@ -66,13 +66,13 @@ Nel dettaglio è stato deciso che:
 #align(center)[*Norme di Progetto#super[G]*]
 - Sarà necessario aggiungere le informazioni di codifica del codice entro il giorno *5 Gennaio 2025*
 
-#align(center)[*Piano di Qualifica*]
+#align(center)[*Piano di Qualifica#super[G]*]
 - Sarà necessario effettuare la stesura dell'introduzione del documento e di tutte le misurazioni rilevate entro il giorno *5 Gennaio 2025*
 
 #align(center)[*Tecnologie e PoC*]
 - Sarà necessario proseguire con lo studio delle tecnologie e relativi testing basandosi sui requisiti descritti nel capitolato#super[G], eventualmente iniziando la realizzazione del PoC#super[G], sino al giorno *5 Gennaio 2025*
 
-Per l'assegnazione delle attività saranno mantenute le issue generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.
+Per l'assegnazione delle attività saranno mantenute le issue#super[G] generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.
 
 #pagebreak()
 == Assegnazione prevista dei ruoli sino al 05-01-2025
@@ -96,7 +96,7 @@ Si conclude tenendo conto che in caso di esaurimento delle ore per il ruolo asse
 #pagebreak()
 = Esiti della riunione
 
-La riunione si conclude con l'affermare la necessità di intensificare gli sforzi produttivi per arrivare quanto prima possibile alla _Requirements and Technology Baseline_
+La riunione si conclude con l'affermare la necessità di intensificare gli sforzi produttivi per arrivare quanto prima possibile alla _Requirements and Technology Baseline#super[G]_
 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
