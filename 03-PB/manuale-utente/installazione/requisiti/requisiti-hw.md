@@ -9,6 +9,6 @@ A scopo esemplificativo, il _Software_ funzionava correttamente su una macchina 
 - _RAM_: 8GB di memoria;
 
 
-Le caratteristiche _Hardware_ minime sono dunque più legate all'utilizzo della macchina in questione come server NATS e/o con dei microservizi, i quali è caldamente consigliato siano avviati con Docker .
+Le caratteristiche _Hardware_ minime sono dunque più legate all'utilizzo della macchina in questione come server NATS#super[G] e/o con dei microservizi, i quali è caldamente consigliato siano avviati con Docker#super[G] .
 
 A tale scopo si rimanda la lettura della documentazione ufficiale di [Docker]("https://docs.docker.com/manuals/") e di [NATS]("https://docs.nats.io/running-a-nats-service/introduction/installation")
