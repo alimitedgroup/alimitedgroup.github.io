@@ -37,7 +37,6 @@
 #inizio-verbale-interno([*virtuale*], [*11 Marzo 2025*], [*10.15*], [*11.15*])
 
 + Aggiornamenti sui lavori in corso
-+ Aggiornamenti sui lavori futuri
 + Decisioni relative alle attività del prossimo periodo
 + Assegnazione prevista dei ruoli sino al 16-03-2025
 
@@ -48,13 +47,6 @@
 I componenti di _ALimitedGroup_ hanno constatato il completamento parziale delle attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto#super[G], della sezione dedicata agli strumenti in ogni processo.
 
 Le attività di progettazione e codifica del periodo precedente sono state per lo più completate, ad eccezione della stesura di alcune parti della Specifica Tecnica e alcuni ultimi Test.
-
-== Aggiornamenti sui lavori futuri
-
-Il gruppo ha deciso di completare la codifica dei test#super[G], la progettazione e la descrizione dei microservizi *Warehouse* e *Api Gateway* entro il giorno *12 Marzo 2025*.
-
-Inoltre, si è deciso di completare la progettazione, descrizione e codifica dei microservizi di *Auth* e *Notification* entro il giorno *16 Marzo 2025*, e di iniziare la progettazione e codifica del microservizio di *Order* entro il giorno *16 Marzo 2025*.
-
 
 == Decisioni relative alle attività del prossimo periodo
 
@@ -82,7 +74,12 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 
 Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono così i ruoli:
 
-#align(center)[*#persona(p.emanuele)* $arrow.r$ *Responsabile*#super[G]
+#align(center)[
+  *#persona(p.emanuele)* $arrow.r$ *Responsabile*#super[G]
+]
+#align(center)[
+  *#persona(p.marco)* $arrow.r$ *Amministratore*#super[G]
+]
 #align(center)[
   *#persona(p.loris)* $arrow.r$ *Progettista*#super[G] \
   *#persona(p.samuele)* $arrow.r$ *Progettista*#super[G] \
@@ -101,7 +98,7 @@ La riunione si conclude ricordando la necessità di rispettare le scadenze poste
 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
-  issue(138),
+  issue(186),
   "Aggiungere la Sezione \"Strumenti a Supporto\" a tutti i processi presenti nelle Norme di Progetto (entro 23 Marzo 2025)",
   issue(185),
   "Aggiungere informazioni generali alla Specifica Tecnica (entro 23 Marzo 2025)",
@@ -113,8 +110,16 @@ La riunione si conclude ricordando la necessità di rispettare le scadenze poste
   "Redigere Piano di progetto del 8 Sprint (entro 23 Marzo 2025)",
   issue(181),
   "Redigere il verbale per questa riunione interna (entro 16 Marzo 2025)",
+  issue(170),
+  "Completare la progettazione e descrizione per il microservizio di API Gateway (entro 12 Marzo 2025)",
+  issue(171),
+  "Completare la progettazione e descrizione per il microservizio di Warehouse (entro 12 Marzo 2025)",
+  issue(11, repo: repo.mvp),
+  "Completare i Test di unità e di integrazione per il microservizio di *Api Gateway* (entro 12 Marzo 2025)",
+  issue(23, repo: repo.mvp),
+  "Completare i Test di unità e di integrazione per il microservizio di *Warehouse* (entro 12 Marzo 2025)",
   issue(19, repo: repo.mvp),
-  "Codifica microservizio Order (entro 23 Marzo 2025)",
+  "Inizio codifica microservizio Order (entro 23 Marzo 2025)",
   issue(7, repo: repo.mvp),
   "Codifica microservizio Auth (entro 16 Marzo 2025)",
   issue(2, repo: repo.mvp),
