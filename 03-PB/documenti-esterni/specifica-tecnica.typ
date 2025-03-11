@@ -950,3 +950,311 @@ Si occupa di gestire l'_Application Logic_ del microservizio Catalog.
   caption: "Componenti del microservizio Warehouse",
 )
 
+Il microservizio *Warehouse* viene utilizzato per gestire un determinato magazzino, tenendo traccia delle merci presenti al suo interno e della quantità di ciascuna di esse.
+
+Il microservizio tiene traccia dell'aggiunta e della modifica delle informazioni delle merci.
+
+Può funzionare anche in caso di mancanza di connessione con gli altri microservizi in quanto mantiene uno stato interno aggiornato all'ultima versione prima della disconnessione.
+
+È formato da tre sotto aree di componenti principali:
+
+- I *Controller* e *Listener*, che rappresentano l'_application logic_
+- I *Service*, che rappresentano la _business logic_;
+- I *Repository*, che rappresentano la _persistence logic_.
+
+Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esposti.
+
+==== IStockRepository <IStockRepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ degli stock per il microservizio _Warehouse_.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetStock(goodId string) int64`*: il metodo deve dare possibilità di ottenere la quantità di una merce presente nel magazzino;
+
+- *`SetStock(goodId string, stock int64)`*: il metodo deve dare la possibilità di impostare la quantità di una merce nel magazzino;
+
+- *`AddStock(goodId string, stock int64)`*: il metodo deve dare la possibilità di aggiungere una quantità di una merce ad un magazzino;
+
+==== StockRepositoryImpl
+
+Questa struttura implementa l'interfaccia *IStockRepository*, vedi la @IStockRepository.
+
+*Descrizione degli attributi della struttura:*
+
+- *`goodToStock map[string]int64`*: è una mappa che ha come chiave una *string* (l'identificativo della merce) e come valore un intero, rappresentante la quantità di stock di quella merce;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStockRepositoryIml() *NewStockRepositoryIml`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote;
+
+- *`GetStock(goodId string) int64`*: restituisce la quantità di una merce presente nel magazzino;
+
+- *`SetStock(goodId string, stock int64)`*: imposta la quantità di una merce nel magazzino;
+
+- *`AddStock(goodId string, stock int64)`*: aggiunge una quantità di una merce ad un magazzino;
+
+==== ICatalogRepository <ICatalogRepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ delle informazioni del catalogo per il microservizio _Warehouse_.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGood(goodId string) *Good`*: il metodo deve dare la possibilità di ottenere i dati di una merce registrata nel magazzino tramite il suo ID.
+- *`SetGood(goodId string, name string, description string) bool`*: il metodo deve dare la possibilità di aggiungere o modificare una merce nel magazzino.
+
+==== CatalogRepositoryImpl
+
+Questa struttura implementa l'interfaccia *ICatalogRepository*, vedi la @ICatalogRepository.
+
+*Descrizione degli attributi della struttura:*
+
+- *`goodMap map[string]Good`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un oggetto *Good*, rappresentante una merce.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogRepositoryImpl() *CatalogRepositoryImpl`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote.
+- *`GetGood(goodId string) *Good`*: restituisce i dati di una merce registrata nel magazzino tramite il suo ID.
+- *`SetGood(goodId string, name string, description string) bool`*: aggiunge o modifica una merce nel magazzino con l'ID, nome e descrizione forniti.
+
+==== ICreateStockUpdatePort <ICreateStockUpdatePort>
+
+Rappresenta la porta che consente alla _Business Logic_ di comunicare con l'esterno per creare un aggiornamento dello stock.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: il metodo deve permettere di creare un aggiornamento dello stock.
+
+==== PublishStockUpdateAdapter
+
+Questa struttura implementa l'interfaccia *ICreateStockUpdatePort*, vedi la @ICreateStockUpdatePort.
+
+Adapter che mette in comunicazione la _Business Logic_ con il sistema di messaggistica per pubblicare gli aggiornamenti dello stock.
+
+*Descrizione degli attributi della struttura:*
+
+- *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS utilizzato per pubblicare i messaggi.
+- *`cfg WarehouseConfig`*: rappresenta la configurazione del magazzino.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewPublishStockUpdateAdapter(broker: NatsMessageBroker, cfg: WarehouseConfig) *PublishStockUpdateAdapter`*: costruttore dell'adapter. Inizializza gli attributi `broker` e `cfg` con i valori passati come parametri.
+- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: pubblica un aggiornamento dello stock utilizzando il broker di messaggistica NATS.
+
+==== IApplyStockUpdatePort <IApplyStockUpdatePort>
+
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di applicare un aggiornamento dello stock.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`ApplyStockUpdate(goods: *GoodStock) error`*: il metodo deve permettere di applicare un aggiornamento dello stock.
+
+==== IGetStockPort <IGetStockPort>
+
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere la quantità di una merce presente nel magazzino.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetStock(goodId: string) int64`*: il metodo deve permettere di ottenere la quantità di una merce presente nel magazzino.
+
+==== StockPersistenceAdapter
+
+Adapter che mette in comunicazione la _Business Logic_ di Warehouse con la _Persistence Logic_ dello stesso.
+
+Implementa le seguenti interfacce (porte):
+
+- *IApplyStockUpdatePort*, @IApplyStockUpdatePort;
+- *IGetStockPort*, @IGetStockPort.
+
+*Descrizione degli attributi della struttura:*
+
+- *`stockRepo IStockRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Warehouse. Per le informazioni riguardo IStockRepository vedere la @IStockRepository.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStockPersistenceAdapter(stockRepo: IStockRepository) *StockPersistenceAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `stockRepo` con quello passato come parametro al costruttore;
+
+- *`ApplyStockUpdate(goods: *GoodStock) error`*: converte l'aggiornamento dello stock in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
+
+- *`GetStock(goodId: string) int64`*: converte la richiesta di ottenimento della quantità di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
+
+==== IApplyCatalogUpdatePort <IApplyCatalogUpdatePort>
+
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di applicare un aggiornamento del catalogo.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`ApplyCatalogUpdate(good: GoodInfo) error`*: il metodo deve permettere di applicare un aggiornamento del catalogo.
+
+==== IGetGoodPort <IGetGoodPort>
+
+Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere le informazioni di una merce.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetGood(goodId: string) GoodInfo`*: il metodo deve permettere di ottenere le informazioni di una merce tramite il suo ID.
+
+==== CatalogPersistenceAdapter
+
+Adapter che mette in comunicazione la _Business Logic_ di Warehouse con la _Persistence Logic_ dello stesso.
+
+Implementa le seguenti interfacce (porte):
+
+- *IApplyCatalogUpdatePort*, @IApplyCatalogUpdatePort;
+- *IGetGoodPort*, @IGetGoodPort.
+
+*Descrizione degli attributi della struttura:*
+
+- *`catalogRepo ICatalogRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Warehouse. Per le informazioni riguardo ICatalogRepository vedere la @ICatalogRepository.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogPersistenceAdapter(catalogRepo: ICatalogRepository) *CatalogPersistenceAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `catalogRepo` con quello passato come parametro al costruttore;
+
+- *`ApplyCatalogUpdate(good: GoodInfo) error`*: converte l'aggiornamento del catalogo in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
+
+- *`GetGood(goodId: string) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
+
+==== IRemoveStockUseCase
+
+Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di rimuovere una quantità di una merce dal magazzino.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`RemoveStock(ctx: Context, cmd: RemoveStockCmd) error`*: il metodo deve permettere di rimuovere una quantità di una merce dal magazzino.
+
+==== IAddStockUseCase
+
+Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di aggiungere una quantità di una merce al magazzino.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`AddStock(ctx: Context, cmd: AddStockCmd) error`*: il metodo deve permettere di aggiungere una quantità di una merce al magazzino.
+
+==== ManageStockService
+
+Si occupa di gestire la _Business Logic_ per l'aggiunta e la rimozione di stock nel microservizio _Warehouse_.
+
+*Descrizione degli attributi della struttura:*
+
+- *`createStockUpdatePort ICreateStockUpdatePort`*: vedere la descrizione alla @ICreateStockUpdatePort;
+- *`getGoodPort IGetGoodPort`*: vedere la descrizione alla @IGetGoodPort;
+- *`getStockPort IGetStockPort`*: vedere la descrizione alla @IGetStockPort.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewManageStockService(createStockUpdatePort: ICreateStockUpdatePort, getGoodPort: IGetGoodPort, getStockPort: IGetStockPort) *ManageStockService`*: Costruttore della struttura. Le porte devono essere fornite come parametri al costruttore;
+
+- *`RemoveStock(ctx: Context, cmd: RemoveStockCmd) error`*: prende un _Command_ per la richiesta di rimozione di stock e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione;
+
+- *`AddStock(ctx: Context, cmd: AddStockCmd) error`*: prende un _Command_ per la richiesta di aggiunta di stock e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
+==== StockController
+
+Il *StockController* gestisce l'_Application Logic_ per le operazioni di aggiunta e rimozione di stock nel microservizio *Warehouse*.
+
+*Descrizione degli attributi della struttura:*
+
+- *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS utilizzato per ricevere i messaggi.
+- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso per l'aggiunta di stock.
+- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso per la rimozione di stock.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStockController(broker: NatsMessageBroker, addStockUseCase: IAddStockUseCase, removeStockUseCase: IRemoveStockUseCase) *StockController`*: costruttore della struttura. Inizializza gli attributi `broker`, `addStockUseCase` e `removeStockUseCase` con i valori passati come parametri.
+
+- *`RemoveStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per la rimozione di stock. Ritorna un errore in caso l'operazione non venga completata correttamente.
+
+- *`AddStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'aggiunta di stock. Ritorna un errore in caso l'operazione non venga completata correttamente.
+
+==== IApplyStockUpdateUseCase <IApplyStockUpdateUseCase>
+
+Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di applicare un aggiornamento dello stock.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`ApplyStockUpdate(ctx: Context, cmd: StockUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento dello stock.
+
+==== ApplyStockUpdateService
+
+Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti dello stock nel microservizio _Warehouse_.
+
+*Descrizione degli attributi della struttura:*
+
+- *`applyStockUpdatePort IApplyStockUpdatePort`*: vedere la descrizione alla @IApplyStockUpdatePort.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewApplyStockUpdateService(applyStockUpdatePort: IApplyStockUpdatePort) *ApplyStockUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore.
+
+- *`ApplyStockUpdate(ctx: Context, cmd: StockUpdateCmd) error`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento dello stock e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
+
+==== StockUpdateListener
+
+Il *StockUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggiornamenti dello stock nel microservizio *Warehouse*.
+
+*Descrizione degli attributi della struttura:*
+
+- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso per l'applicazione degli aggiornamenti dello stock.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStockUpdateListener(applyStockUpdateUseCase: IApplyStockUpdateUseCase) *StockUpdateListener`*: costruttore della struttura. Inizializza l'attributo `applyStockUpdateUseCase` con il valore passato come parametro.
+
+- *`ListenStockUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti dello stock. Ritorna un errore in caso l'operazione non venga completata correttamente.
+
+==== IApplyCatalogUpdateUseCase <IApplyCatalogUpdateUseCase>
+
+Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di applicare un aggiornamento del catalogo.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`ApplyCatalogUpdate(ctx: Context, cmd: CatalogUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento del catalogo.
+
+==== ApplyCatalogUpdateService
+
+Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti del catalogo nel microservizio _Warehouse_.
+
+*Descrizione degli attributi della struttura:*
+
+- *`applyCatalogUpdatePort IApplyCatalogUpdatePort`*: vedere la descrizione alla @IApplyCatalogUpdatePort.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort: IApplyCatalogUpdatePort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore.
+
+- *`ApplyCatalogUpdate(ctx: Context, cmd: CatalogUpdateCmd) error`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento del catalogo e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
+
+==== CatalogListener
+
+Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiornamenti del catalogo nel microservizio *Warehouse*.
+
+*Descrizione degli attributi della struttura:*
+
+- *`applyCatalogUpdateUseCase IApplyCatalogUpdateUseCase`*: rappresenta il caso d'uso per l'applicazione degli aggiornamenti del catalogo.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogListener(applyCatalogUpdateUseCase: IApplyCatalogUpdateUseCase) *CatalogListener`*: costruttore della struttura. Inizializza l'attributo `applyCatalogUpdateUseCase` con il valore passato come parametro.
+
+- *`ListenGoodUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti del catalogo. Ritorna un errore in caso l'operazione non venga completata correttamente.
+
+==== HealthCheckController
+
+Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di controllo dello stato di salute del microservizio *Warehouse*.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewHealthCheckController() *HealthCheckController`*: costruttore della struttura. Inizializza gli attributi necessari per il controllo dello stato di salute.
+
+- *`PingHandler(ctx: Context, msg: Msg) error`*: gestisce le richieste di controllo dello stato di salute del microservizio. Ritorna un errore in caso l'operazione non venga completata correttamente.
+
+==== ReservationController
+
+Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di creazione delle prenotazioni nel microservizio *Warehouse*.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewReservationController() *ReservationController`*: costruttore della struttura. Inizializza gli attributi necessari per la gestione delle prenotazioni.
+
+- *`CreateReservationHandler(ctx: Context, msg: Msg) error`*: gestisce le richieste di creazione delle prenotazioni. Ritorna un errore in caso l'operazione non venga completata correttamente.
+
