@@ -68,7 +68,7 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 - Completare la progettazione e descrizione per il microservizio di *Warehouse* entro il giorno *12 Marzo 2025*
 - Progettare e descrivere il microservizio di *Auth* entro il giorno *16 Marzo 2025*
 - Progettare e descrivere il microservizio di *Notification* entro il giorno *16 Marzo 2025*
-- Progettare e descrivere il microservizio di *Order* entro il giorno *23 Marzo 2025*
+- Iniziare la progettazione del microservizio di *Order* entro il giorno *23 Marzo 2025*
 - Aggiungere le informazioni generali a tutti i microservizi entro il giorno *23 Marzo 2025*
 
 #align(center)[*Programmazione*]
