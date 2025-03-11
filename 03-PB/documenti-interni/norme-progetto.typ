@@ -195,7 +195,7 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 
 == Glossario
 
-La realizzazione di un sistema Software richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivanti da questa attività saranno appositamente documentate.
+La realizzazione di un sistema _software_ richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivanti da questa attività saranno appositamente documentate.
 
 Per evitare ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, viene utilizzato un Glossario in cui è trascritta, per ogni parola, la definizione. \
 La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
@@ -216,7 +216,7 @@ _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permette
   *Ultimo Accesso 6 Febbraio 2025*
 
 === Riferimenti informativi
-- *I processi di ciclo di vita del Software* \
+- *I processi di ciclo di vita del _software_* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") \
   *Ultimo Accesso 6 Febbraio 2025*
 - *Glossario*: \
@@ -226,7 +226,7 @@ _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permette
 #pagebreak()
 
 = Processi Primari
-Per sviluppare un buon sistema Software la sola scrittura di codice e lo svolgimento di alcuni Test#super[G] non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ossia che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
+Per sviluppare un buon sistema _software_ la sola scrittura di codice e lo svolgimento di alcuni Test#super[G] non garantisce affatto la realizzazione di un prodotto che possa essere considerato buono, ossia che continuerà ad essere utilizzato da molte persone: per realizzare un prodotto che possa essere in grado di raggiungere tale obiettivo è necessario adottare un modello che fornisca a sua volta dei processi da seguire.\
 
 Tra i processi primari definiti dallo _standard ISO/IEC 12207_ si distinguono i processi di:
 
@@ -258,7 +258,7 @@ La fornitura prevede varie attività, qui di seguito descritte:
 - *Inizializzazione*: questa prevede l'analisi, da parte del fornitore, delle richieste da parte del proponente#super[G], tenendo in considerazione eventuali vincoli organizzativi o di altra natura. È Il momento in cui il fornitore valuta la capacità di realizzare quanto proposto, determinando gli eventuali requisiti da contrattare con il proponente#super[G];
 - *Preparazione risposte*: questa attività prevede la realizzazione di una contro-proposta per il proponente#super[G] che tenga conto di quanto derivato dall'attività di inizializzazione;
 - *Contrattazione*: è l'attività che prevede un colloquio con il proponente#super[G] durante il quale verranno presentate al proponente#super[G] le risposte precedentemente realizzate, con l'obiettivo di giungere alla formalizzazione di un contratto;
-- *Pianificazione*: il fornitore, stabiliti i requisiti finali, deve adesso stabilire un'organizzazione e un metodo di lavoro in grado di assicurare la qualità del sistema da realizzare, scegliendo, qualora non lo sia da contratto, il modello di ciclo di vita del Software da seguire. La pianificazione include anche l'individuazione delle risorse e le tecnologie necessarie allo sviluppo, considerando anche i potenziali rischi ad esse associate;
+- *Pianificazione*: il fornitore, stabiliti i requisiti finali, deve adesso stabilire un'organizzazione e un metodo di lavoro in grado di assicurare la qualità del sistema da realizzare, scegliendo, qualora non lo sia da contratto, il modello di ciclo di vita del _software_ da seguire. La pianificazione include anche l'individuazione delle risorse e le tecnologie necessarie allo sviluppo, considerando anche i potenziali rischi ad esse associate;
 - *Esecuzione e controllo*: Il fornitore deve, messo a documenti la pianificazione, realizzare quanto stabilito, monitorando nel frattempo la qualità di quanto prodotto e il progresso raggiunto;
 - *Revisione e valutazione*: il fornitore deve, anche durante lo sviluppo, tenersi in contatto con il proponente#super[G]: questo è necessario per avere feedback su quanto realizzato, con annessa quindi una valutazione sullo stato di lavoro;
 - *Consegna e completamento*: il fornitore, completato il progetto, deve fornire quanto prodotto al proponente#super[G], garantendogli supporto.
@@ -314,7 +314,7 @@ La #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[
 
 ==== Glossario
 
-I componenti di _ALimitedGroup_ ritengono necessario avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del Software.
+I componenti di _ALimitedGroup_ ritengono necessario avere un documento di facile consultazione per ricordare, in maniera rapida ed efficace, i termini utilizzati nei vari ambiti di realizzazione del progetto di Ingegneria del _software_.
 
 Per questo motivo, il gruppo ha prodotto un #link("https://alimitedgroup.github.io/Glossario.pdf")[*Glossario*], rivelatosi molto utile nel corso del tempo.
 
@@ -549,27 +549,33 @@ Verbali delle riunioni svolte senza la presenza di persone esterne al gruppo.
 
 == Sviluppo <sviluppo>
 
-Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di Analisi dei Requisiti#super[G], la progettazione, la codifica del Software, l'installazione e l'accettazione di quanto prodotto.
+Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di Analisi dei Requisiti#super[G], la progettazione, la codifica del _software_, l'installazione e l'accettazione di quanto prodotto.
+
+=== Strumenti a supporto (DA MODIFICARE)
+Per le attività previste nel processo di Sviluppo, abbiamo deciso di utilizzare i seguenti strumenti:
+- *GO*: per la codifica del _software_ e dei microservizi;
+- *Draw.io*: per realizzare i diagrammi _UML_ degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti;
+- *StarUML*: per progettare l'architettura di tutto l'ecosistema riguardante il _software_ e i microservizi che andremo a realizzare.
 
 === Attività previste
 
 Le attività previste dal *Processo di Sviluppo* in base allo standard _ISO/IEC 12207:1995_ sono le seguenti:
 
-- *Implementazione del processo*: ovvero la scelta del *Ciclo di Vita* del Software più appropriato in base allo scopo, l'importanza e la complessità del progetto;
-- *Analisi dei Requisiti#super[G]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità#super[G] che il Software deve offrire. Un'Analisi dei Requisiti#super[G] completa deve descrivere le funzionalità#super[G] del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente#super[G];
-- *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _Software_ del prodotto finale, affinché tutti i requisiti individuati siano soddisfatti (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
-- *Analisi dei Requisiti#super[G] Software*: ovvero l'analisi del modo in cui il Software soddisfa i requisiti lato utente. Deve includere anche le caratteristiche di qualità: caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento Software e requisiti di sicurezza;
-- *Progettazione dell'architettura Software*: consiste nel definire le diverse componenti del Sistema e il loro funzionamento, ponendo l'attenzione sulla struttura generale, non nel dettaglio implementativo;
-- *Progettazione in dettaglio del Software*: ovvero la progettazione in dettaglio delle singole componenti Software, fino ad individuare le singole unità di ciascuna;
-- *Codifica e _testing_ del Software*: ovvero la produzione di tutte le unità di tutte le componenti individuate. Ciascuna di queste parti dovrà essere adeguatamente testata per assicurare il suo corretto funzionamento;
-- *Integrazione del Software*: ovvero l'integrazione delle varie parti di una componente nella sua componente completa. Essenziali sono i Test#super[G] per assicurare il corretto funzionamento;
-- *Test di qualifica del Software*: ovvero la realizzazione di appositi Test#super[G] per assicurare la conformità del Software agli obiettivi di qualità attesi;
+- *Implementazione del processo*: ovvero la scelta del *Ciclo di Vita* del _software_ più appropriato in base allo scopo, l'importanza e la complessità del progetto;
+- *Analisi dei Requisiti#super[G]*: consiste nell'identificazione e nella definizione delle necessità dell'utente finale in relazione alle funzionalità#super[G] che il _software_ deve offrire. Un'Analisi dei Requisiti#super[G] completa deve descrivere le funzionalità#super[G] del Sistema, i bisogni degli utilizzatori finali e vincoli imposti dal proponente#super[G];
+- *Progettazione dell'architettura*: ovvero l'individuazione degli elementi _Hardware_ e _software_ del prodotto finale, affinché tutti i requisiti individuati siano soddisfatti (a questo proposito, fondamentale è il tracciamento dei requisiti stessi);
+- *Analisi dei Requisiti#super[G] _software_*: ovvero l'analisi del modo in cui il _software_ soddisfa i requisiti lato utente. Deve includere anche le caratteristiche di qualità: caratteristiche funzionali (includendo anche eventuali requisiti prestazionali), le interfacce di ogni elemento _software_ e requisiti di sicurezza;
+- *Progettazione dell'architettura _software_*: consiste nel definire le diverse componenti del Sistema e il loro funzionamento, ponendo l'attenzione sulla struttura generale, non nel dettaglio implementativo;
+- *Progettazione in dettaglio del _software_*: ovvero la progettazione in dettaglio delle singole componenti _software_, fino ad individuare le singole unità di ciascuna;
+- *Codifica e _testing_ del _software_*: ovvero la produzione di tutte le unità di tutte le componenti individuate. Ciascuna di queste parti dovrà essere adeguatamente testata per assicurare il suo corretto funzionamento;
+- *Integrazione del _software_*: ovvero l'integrazione delle varie parti di una componente nella sua componente completa. Essenziali sono i Test#super[G] per assicurare il corretto funzionamento;
+- *Test di qualifica del _software_*: ovvero la realizzazione di appositi Test#super[G] per assicurare la conformità del _software_ agli obiettivi di qualità attesi;
 - *Integrazione del Sistema*: ovvero l'integrazione di tutte le componenti realizzati nel Sistema finale;
 - *Test di qualifica del Sistema*: ovvero il Test#super[G] dell'intero Sistema per assicurarne il corretto funzionamento;
-- *Installazione del Software*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente concordato;
-- *Supporto per approvazione#super[G] del Software*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti siano effettivamente soddisfatti.
+- *Installazione del _software_*: ovvero la fornitura di quanto realizzato al cliente finale nell'ambiente concordato;
+- *Supporto per approvazione#super[G] del _software_*: ovvero l'attività per cui il fornitore dovrà supportare l'utilizzatore finale al fine di comprendere se nell'effettivo tutti i requisiti richiesti siano effettivamente soddisfatti.
 
-Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto (_Requirements and Technology Baseline#super[G] (RTB)_ e _Product Baseline#super[G] (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[G]* e *Codifica* per la _RTB_#super[G] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura Software* e *Codifica* per la _PB_#super[G] :_ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura Software* saranno inserite a _RTB_#super[G] raggiunta).
+Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto (_Requirements and Technology Baseline#super[G] (RTB)_ e _Product Baseline#super[G] (PB)_), riteniamo particolarmente di interesse le attività di *Analisi dei Requisiti#super[G]* e *Codifica* per la _RTB_#super[G] mentre *Progettazione dell'architettura*, *Progettazione dell'architettura _software_* e *Codifica* per la _PB_#super[G] : _ALimitedGroup_ ha quindi deciso di discutere maggiormente nel dettaglio queste attività, aggiungendo e aggiornando le loro sezioni nel momento opportuno (nel dettaglio, le attività di *Progettazione dell'architettura* e *Progettazione dell'architettura _software_* saranno inserite a _RTB_#super[G] raggiunta).
 
 === Analisi dei Requisiti
 
@@ -752,7 +758,7 @@ In ultima istanza, i *verbali esterni* devono includere una sezione dedicata all
 
 === Diari di bordo
 
-Nell'ambito del progetto di Ingegneria del Software, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progresso per ogni singolo gruppo iscritto al I lotto.
+Nell'ambito del progetto di Ingegneria del _software_, il _#prof(p.tullio)_ ha previsto delle attività volte ad accertare, in maniera condivisa, lo stato di progresso per ogni singolo gruppo iscritto al I lotto.
 
 In genere, la struttura di un diario di bordo è composta dalle seguenti parti:
 - *Risultati raggiunti e confronto con le previsioni*, che elenca quanto abbiamo fatto nel periodo corrente;
@@ -832,7 +838,7 @@ Per le regole sulla nomenclatura da utilizzare per _branch_#super[G] e _Issue_#s
 
 La gestione delle configurazioni è un processo fondamentale in un progetto: essa permette di identificare le singole componenti del sistema sviluppato e controllarne le modifiche e i rilasci, nonché registrare lo stato di sviluppo di ciascuna. Complessivamente, il processo permette di avere un buon sviluppo.
 
-=== Strumenti a Supporto
+=== Strumenti a supporto
 
 Per ogni attività prevista dal processo, _ALimitedGroup_ utilizza:
 
@@ -840,7 +846,7 @@ Per ogni attività prevista dal processo, _ALimitedGroup_ utilizza:
 
 Per ulteriori informazioni si veda la @implementazione.
 
-=== Attività Previste
+=== Attività previste
 
 L'attività di gestione delle configurazioni svolta dal gruppo si avvale delle seguenti attività:
 
@@ -879,7 +885,7 @@ Una _issue_#super[G] può essere chiusa solo nel momento in cui l'attività che 
   - Verificatori;
   - Redattori.
 
-=== Registrazione dello Stato di Configurazione
+=== Registrazione dello stato di configurazione
 
 _ALimitedGroup_ è consapevole della necessità di tracciare i cambiamenti effettuati a documentazione e codice.
 
@@ -901,7 +907,7 @@ In aggiunta, ogni documento avrà un allegato contenente l'elenco cronologico di
 
 === Valutazione della configurazione <valutazione-della-configurazione> //tracciamento dei requisiti, non sono i Test
 
-La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del Software prodotto rispetto ai suoi requisiti e al design scelto.
+La *Valutazione della configurazione* è l'attività che prevede di controllare la completezza del _software_ prodotto rispetto ai suoi requisiti e al design scelto.
 
 _ALimitedGroup_ intende realizzare un *Tracciamento dei Requisiti* per controllare l'aderenza di quanto sviluppato con le aspettative. Più nello specifico, l'obiettivo è realizzare un Prodotto che sia efficiente, cioè soddisfa tutti i requisiti e sufficiente nel senso che soddisfa solo i requisiti necessari.
 Il gruppo, durante la parte di sviluppo effettiva, si impegnerà a tracciare, anche nel codice tramite commenti, cosa intende realizzare.
@@ -910,15 +916,19 @@ Il gruppo, durante la parte di sviluppo effettiva, si impegnerà a tracciare, an
 
 L'*Accertamento della Qualità* (detto anche _*Quality Assurance*_) è un processo che ha come scopo quello di attestare che la realizzazione dei processi e dei prodotti finali sia stata fatta a regola d'arte: i processi e prodotti devono soddisfare determinati requisiti minimi affinché siano efficienti ed efficaci.
 
-Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard _ISO/IEC 12207:1995_ attività di Verifica#super[G] (@verifica) e Validazione#super[G] (@validazione).
+Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard _ISO/IEC 12207:1995_, le attività di Verifica#super[G] (@verifica) e Validazione#super[G] (@validazione).
+
+=== Strumenti a supporto (DA MODIFICARE)
+Per le attività previste nel processo di Accertamento della Qualità, abbiamo deciso di utilizzare i seguenti strumenti:
+-
 
 === Attività previste
 
 Le attività previste dal processo di *Accertamento della qualità* sono le seguenti:
 
-- *Implementazione del processo*, che prevede l'individuazione degli standard di qualità da rispettare, nonché le procedure da eseguire per raccogliere le valutazioni;
-- *Accertamento qualità prodotto*, che prevede il controllo di tutto il materiale prodotto per verificare che questo rispetti gli standard decisi;
-- *Accertamento qualità processo*, che prevede il controllo di tutti i processi eseguiti dal gruppo per verificare che questi rispettino gli standard decisi.
+- *Implementazione del processo*: che prevede l'individuazione degli standard di qualità da rispettare, nonché le procedure da eseguire per raccogliere le valutazioni;
+- *Accertamento qualità prodotto*: che prevede il controllo di tutto il materiale prodotto per verificare che questo rispetti gli standard decisi;
+- *Accertamento qualità processo*: che prevede il controllo di tutti i processi eseguiti dal gruppo per verificare che questi rispettino gli standard decisi.
 
 _ALimitedGroup_ per assicurare qualità ha individuato specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una sezione apposita tali misurazioni per renderle più velocemente consultabili.
 
@@ -931,7 +941,8 @@ Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodo
 
 Il processo di *Verifica*#super[G] ha come scopo quello di verificare che quanto prodotto sia stato svolto a regola d'arte, in conformità con i requisiti imposti.
 
-Possiamo racchiudere l'obiettivo di questo processo nella risposta alla domanda _"Did I build the System right?"_, ovvero _"Ho realizzato il Sistema correttamente?_.
+Possiamo racchiudere l'obiettivo di questo processo nella risposta alla domanda:
+#align(center)[_"Did I build the System right?"_] ovvero, _"Ho realizzato il Sistema correttamente?_.
 
 Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*] *(Sezione 4)*.
 
@@ -939,7 +950,7 @@ Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente
 
 Questa sezione sarà ampliata durante lo svolgimento della _Product Baseline#super[G] (PB)_.
 
-Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio #link("https://farfalla-project.org/readability_static/")[farfalla-project.org/readability_static/]
+Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio: #align(center)[#link("https://farfalla-project.org/readability_static/")[farfalla-project.org/readability_static/]]
 
 ==== Attività previste
 
@@ -1049,6 +1060,9 @@ Durante l'esecuzione dei Test#super[G] descritti in precedenza, è possibile che
 Lo scopo del processo di *Validazione*#super[G] è quello di tracciare l'efficacia di quanto sviluppato, ovvero comprendere se quanto realizzato soddisfa le esigenze di #M31.
 Potremmo riassumere lo scopo della *Validazione*#super[G] nella risposta alla domanda _"Did I build the right System?"_, ovvero _"Ho realizzato il giusto Sistema?_.
 
+==== Strumenti a supporto (DA MODIFICARE)
+Per le attività previste nel processo di Validazione, abbiamo deciso di utilizzare i seguenti strumenti:
+-
 ==== Attività previste
 
 In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo processo sono:
@@ -1084,13 +1098,19 @@ Tra i processi organizzativi si individuano:
 
 La *Gestione dei Processi* ha l'obiettivo di individuare i compiti da svolgere e i ruoli ai quali questi saranno assegnati, nonché permettere una comunicazione interna ed esterna efficace e altresì garantire lo svolgimento delle varie attività in maniera efficace mediante un'opportuna pianificazione.
 
+=== Strumenti a supporto (DA MODIFICARE)
+
+Per le attività previste nella Gestione dei Processi, abbiamo deciso di utilizzare i seguenti strumenti:
+- *Git* e *GitHub*: per la gestione delle attività programmate e assegnate ad ogni singolo componente del gruppo, tramite _issue_, nonchè la pianificazione degli _sprint_, delle attività e _milestone_ future;
+- *Google Keep*: per tenere traccia di tutte le attività completate, tra quelle programmate, e gestire nel miglior modo possibile le _task_ all'interno di ogni _sprint_.
+
 === Attività previste
 
 Le attività principali, osservate da _ALimitedGroup_, previste da questo processo sono:
-- *Inizializzazione*: è necessario stabilire i requisiti delle attività da svolgere, cercando di comprendere quali risorse esse richiedono. È compito del *Responsabile*#super[G] determinare queste caratteristiche che vengono comunque discusse internamente durante le riunioni interne.
+- *Inizializzazione*: è necessario stabilire i requisiti delle attività da svolgere, cercando di comprendere quali risorse esse richiedono. È compito del *Responsabile*#super[G] determinare queste caratteristiche che vengono comunque discusse internamente durante le riunioni interne;
 - *Pianificazione*: è necessario, stabiliti i requisiti, comprendere il tempo necessario per completare le attività, così come è necessario anche stimare i costi economici e temporali necessari allo svolgimento. Per facilitare questo compito, è stato scelto di dividere le responsabilità in vari ruoli, vedi @ruoli.
-- *Esecuzione e controllo*: l'esecuzione delle attività è affidata quindi ai vari ruoli e il *Responsabile*#super[G] dovrà costantemente monitorare lo stato di progresso e avanzamento complessivo.
-- *Revisione e valutazione*: una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del *Verificatore*#super[G]. Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice.
+- *Esecuzione e controllo*: l'esecuzione delle attività è affidata quindi ai vari ruoli e il *Responsabile*#super[G] dovrà costantemente monitorare lo stato di progresso e avanzamento complessivo;
+- *Revisione e valutazione*: una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del *Verificatore*#super[G]. Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice;
 - *Finalizzazione*: un'attività è da reputarsi conclusa solo nel momento in cui viene definitivamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica#super[G], con la sola eccezione che la risoluzione della _Pull Request#super[G]_ associata determina la chiusura della _Issue_#super[G] e del _branch_#super[G] utilizzato per la redazione/modifica della componente.
 
 Nell'interesse dello scopo del presente documento saranno ora descritti i ruoli prima citati e le loro responsabilità, previsti in particolar modo dall'attività di *pianificazione*.
@@ -1144,7 +1164,9 @@ In ultima istanza, è sempre compito di questo ruolo "
     "Verificatore",
     (
       "Ha il compito di garantire che tutto ciò che è prodotto, dalla documentazione alla più piccola attività, sia svolta a regola d'arte.
-Si occupa di eseguire Test approfonditi e revisioni del Software, identificando eventuali aree di miglioramento specie in ambito qualitativo. È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata."
+Si occupa di eseguire Test approfonditi e revisioni del "
+        + [_software_]
+        + ", identificando eventuali aree di miglioramento specie in ambito qualitativo. È sempre di questo ruolo la responsabilità di verificare la correttezza dei vari documenti ad ogni modifica effettuata."
     ),
 
     "Analista",
@@ -1159,7 +1181,9 @@ Si occupa di eseguire Test approfonditi e revisioni del Software, identificando 
 
     "Programmatore",
     (
-      "Il Programmatore è Responsabile dello sviluppo del Software, traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
+      "Il Programmatore è Responsabile dello sviluppo del "
+        + [_software_]
+        + ", traducendo il design architetturale in codice funzionante. Collabora strettamente con il progettista per assicurarsi che tutte le funzionalità siano implementate secondo le specifiche.
     Il suo lavoro è fondamentale per il progresso del progetto e richiede una buona conoscenza delle tecnologie adottate. È affidata a questo ruolo anche la responsabilità di realizzare Test automatici per verificare il corretto funzionamento del codice sviluppato."
     ),
 
@@ -1201,7 +1225,11 @@ Per maggiori informazioni si consiglia la lettura del processo di *Infrastruttur
 
 == Infrastruttura <infrastruttura>
 
-Il processo di *Infrastruttura* è responsabile#super[G] della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _Software_) necessari per permettere tutti gli altri processi.
+Il processo di *Infrastruttura* è responsabile#super[G] della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _software_) necessari per permettere tutti gli altri processi.
+
+=== Strumenti a supporto (DA MODIFICARE)
+
+Per le attività previste nel processo di Infrastruttura, abbiamo deciso di utilizzare i seguenti strumenti:
 
 === Attività previste
 
@@ -1396,7 +1424,7 @@ Tuttavia, l'utilizzo di tale _template_, denominato #link("https://github.com/al
 
 I vari documenti sono spesso accomunati da esigenze particolari servibili mediante l'utilizzo di funzioni non caratteristiche di alcun documento.\
 Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimitedgroup.github.io/blob/main/lib/common.typ")[*_common.typ_*]:
-- *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del Software, utile per evitare erroneamente di inserire informazioni non veritiere;
+- *p* : permette l'inserimento delle informazioni riguardanti ogni persona coinvolta in questo progetto, quali i componenti del gruppo o i docenti di Ingegneria del _software_, utile per evitare erroneamente di inserire informazioni non veritiere;
 - *M31* : permette di visualizzare il nome dell'azienda proponente#super[G]. Il nome è personalizzato con il font _"Futura"_ e messo sempre in grassetto;
 - *abbrev* : preso un _output_ fornito dalla funzione _p_, inserisce nome e cognome della persona selezionata;
 - *prof* : permette la visualizzazione, da un _output_ della funzione _p_, del nome e cognome del docente selezionato preceduti dalla dicitura "Prof.";
@@ -1408,9 +1436,13 @@ Tali funzioni sono sempre nel file #link("https://github.com/alimitedgroup/alimi
 
 A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'infrastruttura subirà nel tempo cambiamenti e potrà causare possibili problemi: è per questo affidato all'*Amministratore* il compito di presiedere al controllo del regolare funzionamento della stessa, aggiornandone le funzionalità#super[G] qualora errori o cambiamenti lo rendano necessario.
 
-== Processo di Miglioramento <miglioramento>
+== Processo di miglioramento <miglioramento>
 
-Il Processo di *Miglioramento* consiste, in base allo standard _ISO/IEC 12207:1995_, nello stabilire, consolidare, misurare, controllare e migliorare i processi utilizzati durante il ciclo di sviluppo di un Software.
+Il Processo di *Miglioramento* consiste, in base allo standard _ISO/IEC 12207:1995_, nello stabilire, consolidare, misurare, controllare e migliorare i processi utilizzati durante il ciclo di sviluppo di un _software_.
+
+=== Strumenti a supporto (DA MODIFICARE)
+
+Per le attività previste nel processo di Miglioramento, abbiamo deciso di utilizzare i seguenti strumenti:
 
 === Attività previste
 
@@ -1438,6 +1470,10 @@ Effettuate le misurazioni e controllate le stesse è necessario dedurre i proces
 
 Il processo di formazione ha lo scopo di mantenere i membri di _ALimitedGroup_ aggiornati sui cambiamenti effettuati, nonché definire come gli stessi debbano apprendere le nozioni necessarie allo svolgimento del Progetto.
 
+=== Strumenti a supporto (DA MODIFICARE)
+
+Per le attività previste nel processo di Formazione, abbiamo deciso di utilizzare i seguenti strumenti:
+
 === Attività previste
 
 Il processo di formazione include le seguenti attività:
@@ -1462,7 +1498,7 @@ e dal punto di vista della produzione della documentazione:
 
 Saranno inoltre utili i seguenti servizi:
 
-- Il _Software_ per il versionamento *Git*;
+- Il _software_ per il versionamento *Git*;
 - Il servizio di _hosting_ per progetti *GitHub*#super[G].
 
 === Sviluppo di materiale per la formazione
@@ -1508,7 +1544,7 @@ Data la natura del progetto, ovvero a fini didattici, _ALimitedGroup_ ha optato 
 
     [*Git* e *GitHub*],
     [Viene consigliata la lettura del materiale messo a disposizione per il corso di
-      *Metodi e Tecnologie per lo Sviluppo Software* reperibili nel
+      *Metodi e Tecnologie per lo Sviluppo _software_* reperibili nel
       #link("https://stem.elearning.unipd.it/course/view.php?id=8278")[Moodle STEM] dell'Università di Padova],
   ),
   caption: [Materiale per la formazione dei membri di _ALimitedGroup_],
@@ -1880,7 +1916,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Code Smells" = ("Numero di code smells" / "KLOC")$
   ],
-  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del Software. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
+  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del _software_. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
   desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
 )
 
