@@ -46,7 +46,7 @@
 
 I componenti di _ALimitedGroup_ hanno constatato il completamento parziale delle attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto#super[G], della sezione dedicata agli strumenti in ogni processo.
 
-Le attività di progettazione e codifica del periodo precedente sono state per lo più completate, ad eccezione della stesura di alcune parti della Specifica Tecnica e alcuni ultimi Test.
+Le attività di progettazione e codifica del periodo precedente sono state per lo più completate, ad eccezione della stesura di alcune parti della Specifica Tecnica#super[G] e alcuni ultimi Test#super[G] .
 
 == Decisioni relative alle attività del prossimo periodo
 
