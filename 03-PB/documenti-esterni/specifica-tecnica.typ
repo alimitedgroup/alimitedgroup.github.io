@@ -962,7 +962,7 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 - I *Service*, che rappresentano la _business logic_;
 - I *Repository*, che rappresentano la _persistence logic_.
 
-Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esposti.
+Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
 ==== IStockRepository <IStockRepository>
 
