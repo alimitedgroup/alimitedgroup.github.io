@@ -90,7 +90,7 @@ Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono co
 ]
 #align(center)[
   *#persona(p.sara)* $arrow.r$ *Amministratore*#super[G] \
-  *#persona(p.lorenzo)* $arrow.r$ *Amministratore*#super[G] \
+  *#persona(p.lorenzo)* $arrow.r$ *Programmatore*#super[G] \
 ]\
 
 La verifica#super[G] è affidata reciprocamente a persone appartenenti a gruppi di lavoro distinti.
