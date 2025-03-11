@@ -112,7 +112,7 @@ La riunione si conclude ricordando la necessità di rispettare le scadenze poste
   issue(184),
   "Redarre Piano di progetto del 8 Sprint (entro 23 Marzo 2025)",
   issue(181),
-  "Redarre il verbale per questa riunione interna (entro 16 Marzo 2025)",
+  "Redigere il verbale per questa riunione interna (entro 16 Marzo 2025)",
   issue(19, repo: repo.mvp),
   "Codifica microservizio Order (entro 23 Marzo 2025)",
   issue(7, repo: repo.mvp),
