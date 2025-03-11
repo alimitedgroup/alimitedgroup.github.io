@@ -1,14 +1,23 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.1.0]
+#let ver = [1.2.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 28, month: 02, year: 2025),
+  data: datetime(day: 11, month: 03, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "1.2.0",
+      date: datetime(day: 11, month: 03, year: 2025),
+      autore: p.marco,
+      //verifica: p.emanuele,
+      descr: "Modificato il documento secondo quanto riportato nella valutazione della RTB, aggiungendo per ogni processo la sezione "
+        + ["Strumenti a supporto"]
+        + ".",
+    ),
     (
       vers: "1.1.0",
       date: datetime(day: 28, month: 02, year: 2025),
