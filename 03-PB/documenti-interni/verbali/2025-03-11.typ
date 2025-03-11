@@ -82,7 +82,7 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 
 Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono così i ruoli:
 
-#align(center)[*#persona(p.emanuele)* $arrow.r$ *Responsabile*#super[G] e *Amministratore*#super[G]]
+#align(center)[*#persona(p.emanuele)* $arrow.r$ *Responsabile*#super[G]
 #align(center)[
   *#persona(p.loris)* $arrow.r$ *Programmatore*#super[G] e *Progettista*#super[G] \
   *#persona(p.samuele)* $arrow.r$ *Programmatore*#super[G] e *Progettista*#super[G] \
