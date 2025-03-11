@@ -76,7 +76,7 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 - Completare i Test#super[G] di unità e di integrazione per il microservizio di *Warehouse* entro il giorno *12 Marzo 2025*
 - Codificare il microservizio di *Notification* entro il giorno *16 Marzo 2025*
 - Codificare il microservizio di *Auth* entro il giorno *16 Marzo 2025*
-- Codificare il microservizio di *Order* entro il giorno *23 Marzo 2025*
+- Iniziare la codifica del microservizio *Order* entro il giorno *23 Marzo 2025*
 
 == Assegnazione prevista dei ruoli sino al 16-03-2025
 
