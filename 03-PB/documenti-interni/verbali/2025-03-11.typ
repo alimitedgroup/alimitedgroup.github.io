@@ -61,7 +61,7 @@ Inoltre, si è deciso di completare la progettazione, descrizione e codifica dei
 Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 
 #align(center)[*Norme di Progetto#super[G]*]
-- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.0.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica entro il giorno *23 Marzo 2025*.
+- Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.1.0*) con le informazioni aggiornate a questa riunione in merito alla Codifica entro il giorno *23 Marzo 2025*.
 
 #align(center)[*Specifica Tecnica#super[G]*]
 - Completare la progettazione e descrizione per il microservizio di *API#super[G] Gateway* entro il giorno *12 Marzo 2025*
