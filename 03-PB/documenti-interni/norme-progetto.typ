@@ -554,7 +554,7 @@ Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di
 === Strumenti a supporto (DA MODIFICARE)
 Per le attività previste nel processo di Sviluppo, abbiamo deciso di utilizzare i seguenti strumenti:
 - *GO*: per la codifica del _software_ e dei microservizi;
-- *Draw.io*: per realizzare i diagrammi _UML_ degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti;
+- *Draw.io*: per realizzare i diagrammi _UML_ degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti#super[G];
 - *StarUML*: per progettare l'architettura di tutto l'ecosistema riguardante il _software_ e i microservizi che andremo a realizzare.
 
 === Attività previste
@@ -1061,7 +1061,7 @@ Lo scopo del processo di *Validazione*#super[G] è quello di tracciare l'efficac
 Potremmo riassumere lo scopo della *Validazione*#super[G] nella risposta alla domanda _"Did I build the right System?"_, ovvero _"Ho realizzato il giusto Sistema?_.
 
 ==== Strumenti a supporto (DA MODIFICARE)
-Per le attività previste nel processo di Validazione, abbiamo deciso di utilizzare i seguenti strumenti:
+Per le attività previste nel processo di Validazione#super[G] ,abbiamo deciso di utilizzare i seguenti strumenti:
 -
 ==== Attività previste
 
@@ -1101,8 +1101,8 @@ La *Gestione dei Processi* ha l'obiettivo di individuare i compiti da svolgere e
 === Strumenti a supporto (DA MODIFICARE)
 
 Per le attività previste nella Gestione dei Processi, abbiamo deciso di utilizzare i seguenti strumenti:
-- *Git* e *GitHub*: per la gestione delle attività programmate e assegnate ad ogni singolo componente del gruppo, tramite _issue_, nonchè la pianificazione degli _sprint_, delle attività e _milestone_ future;
-- *Google Keep*: per tenere traccia di tutte le attività completate, tra quelle programmate, e gestire nel miglior modo possibile le _task_ all'interno di ogni _sprint_.
+- *Git* e *GitHub*#super[G] :per la gestione delle attività programmate e assegnate ad ogni singolo componente del gruppo, tramite _issue_#super[G] ,nonchè la pianificazione degli _sprint_#super[G] ,delle attività e _milestone_#super[G] future;
+- *Google Keep*: per tenere traccia di tutte le attività completate, tra quelle programmate, e gestire nel miglior modo possibile le _task_ all'interno di ogni _sprint_#super[G] .
 
 === Attività previste
 
