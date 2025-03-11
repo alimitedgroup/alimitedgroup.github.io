@@ -45,7 +45,7 @@
 
 == Aggiornamenti sui lavori in corso
 
-I componenti di _ALimitedGroup_ hanno constatato il completamento parziale di tutte le attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto#super[G], della sezione dedicata agli strumenti in ogni processo.
+I componenti di _ALimitedGroup_ hanno constatato il completamento parziale delle attività previste nel precedente verbale, fatta eccezione per l'aggiunta, alle Norme di Progetto#super[G], della sezione dedicata agli strumenti in ogni processo.
 
 Le attività di progettazione e codifica del periodo precedente sono state svolte con successo, ma necessitano di alcuni giorni per completarle definitivamente.
 
