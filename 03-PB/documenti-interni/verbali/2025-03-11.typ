@@ -51,7 +51,7 @@ Le attività di progettazione e codifica del periodo precedente sono state svolt
 
 == Aggiornamenti sui lavori futuri
 
-Il gruppo ha deciso di completare la codifica dei test, la progettazione e la descrizione dei microservizi *Warehouse* e *Api Gateway* entro il giorno *12 Marzo 2025*.
+Il gruppo ha deciso di completare la codifica dei test#super[G], la progettazione e la descrizione dei microservizi *Warehouse* e *Api Gateway* entro il giorno *12 Marzo 2025*.
 
 Inoltre, si è deciso di completare la progettazione, descrizione e codifica dei microservizi di *Auth* e *Notification* entro il giorno *16 Marzo 2025*, e di iniziare la progettazione e codifica del microservizio di *Order* entro il giorno *16 Marzo 2025*.
 
