@@ -244,7 +244,7 @@ e poter comunicare allo stesso una possibile pianificazione del lavoro da svolge
 
 Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strumenti:
 - *Google Calendar*: per segnalare tutti gli appuntamenti previsti;
-- *GitHub*: per la gestione del _Backlog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da fare. GitHub#super[G] offre inoltre una visualizzazione specifica per avere dei diagrammi di Gantt, utili per fini di pianificazione;
+- *GitHub*#super[G] :per la gestione del _Backlog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da fare. GitHub#super[G] offre inoltre una visualizzazione specifica per avere dei diagrammi di Gantt, utili per fini di pianificazione;
 - *_Discord_*#super[G] e *_Telegram_*: per concordare internamente pianificazioni mediante riunioni interne.
 Le comunicazioni verso l'azienda proponente#super[G] richiedono, invece, l'utilizzo di:
 - _*Google Mail*_ per le comunicazioni scritte;
@@ -702,7 +702,7 @@ Per redigere la documentazione il gruppo utilizza due strumenti in particolare:
   Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_#super[G] appositamente implementate dai componenti di _ALimitedGroup_ presenti all'interno della cartella _lib_ del _repository_#super[G].\
   La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa sezione saranno invece descritte le strutture dei vari documenti.
 
-- *GitHub*: il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request#super[G]_ di _GitHub_#super[G] per permettere la redazione, Verifica#super[G] e approvazione#super[G] di tutti i documenti. Per ulteriori dettagli consultare la @infrastruttura.
+- *GitHub*#super[G] :il gruppo ha deciso di utilizzare il sistema di _ticketing_ e le _pull request#super[G]_ di _GitHub_#super[G] per permettere la redazione, Verifica#super[G] e approvazione#super[G] di tutti i documenti. Per ulteriori dettagli consultare la @infrastruttura.
 
 === Attività previste
 
@@ -920,7 +920,7 @@ Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard
 
 === Metriche e strumenti a supporto (DA MODIFICARE)
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
-Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica v1.1.0*] *(Sezione 5)*.
+Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*.
 
 === Attività previste
 
