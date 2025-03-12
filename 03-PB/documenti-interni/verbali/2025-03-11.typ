@@ -19,7 +19,7 @@
       descr: "Redazione del contenuto.",
     ),
   ),
-  stato: [Redazione],
+  stato: [Approvato],
   presenze: (
     p.emanuele,
     p.samuele,
