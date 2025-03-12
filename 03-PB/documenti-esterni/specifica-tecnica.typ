@@ -960,7 +960,7 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 
 - I *Controller* e *Listener*, che rappresentano l'_application logic_
 - I *Service*, che rappresentano la _business logic_;
-- I *Repository*, che rappresentano la _persistence logic_.
+- I *Repository*#super[G] ,che rappresentano la _persistence logic_.
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
@@ -1069,13 +1069,13 @@ Adapter che mette in comunicazione la _Business Logic_ con il sistema di messagg
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker *NatsMessageBroker`*: rappresenta il broker di messaggistica NATS utilizzato per pubblicare i messaggi.
+- *`broker *NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per pubblicare i messaggi.
 - *`cfg *WarehouseConfig`*: rappresenta la configurazione del magazzino.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewPublishStockUpdateAdapter(broker: *NatsMessageBroker, cfg: *WarehouseConfig) *PublishStockUpdateAdapter`*: costruttore dell'adapter. Inizializza gli attributi `broker` e `cfg` con i valori passati come parametri.
-- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: pubblica un aggiornamento dello stock utilizzando il broker di messaggistica NATS.
+- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: pubblica un aggiornamento dello stock utilizzando il broker di messaggistica NATS#super[G] .
 
 ==== GoodStock <GoodStock>
 #figure(
@@ -1181,7 +1181,7 @@ Implementa le seguenti interfacce (porte):
   caption: "Warehouse - RemoveStockCmd",
 )
 
-Questo _Command_ viene utilizzato per rappresentare la richiesta di rimozione di stock, e viene utilizzato dal caso d'uso @IRemoveStockUseCase.
+Questo _Command_ viene utilizzato per rappresentare la richiesta di rimozione di stock, e viene utilizzato dal caso d'uso#super[G] @IRemoveStockUseCase.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1202,7 +1202,7 @@ Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare all
   caption: "Warehouse - AddStockCmd",
 )
 
-Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di stock, e viene utilizzato dal caso d'uso @IAddStockUseCase.
+Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di stock, e viene utilizzato dal caso d'uso#super[G] @IAddStockUseCase.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1268,9 +1268,9 @@ Il *StockController* gestisce l'_Application Logic_ per le operazioni di aggiunt
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS utilizzato per ricevere i messaggi.
-- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso per l'aggiunta di stock.
-- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso per la rimozione di stock.
+- *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per ricevere i messaggi.
+- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso#super[G] per l'aggiunta di stock.
+- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso#super[G] per la rimozione di stock.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1294,7 +1294,7 @@ Rappresenta il comando per aggiornare lo stock nel microservizio *Warehouse*.
 - *`ID string`*: rappresenta l'identificativo univoco del comando di aggiornamento dello stock;
 - *`Type string`*: rappresenta il tipo di aggiornamento dello stock;
 - *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock;
-- *`TransferID string`*: rappresenta l'identificativo del trasferimento associato all'aggiornamento dello stock;
+- *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock;
 - *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock;
 - *`Goods []StockUpdateCmdGood`*: rappresenta una lista di oggetti `StockUpdateCmdGood` che contengono le informazioni sulle merci aggiornate.
 
@@ -1336,7 +1336,7 @@ Il *StockUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso per l'applicazione degli aggiornamenti dello stock.
+- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti dello stock.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1386,7 +1386,7 @@ Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiorna
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyCatalogUpdateUseCase IApplyCatalogUpdateUseCase`*: rappresenta il caso d'uso per l'applicazione degli aggiornamenti del catalogo.
+- *`applyCatalogUpdateUseCase IApplyCatalogUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti del catalogo.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
