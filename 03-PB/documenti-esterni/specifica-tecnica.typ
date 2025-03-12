@@ -960,7 +960,7 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 
 - I *Controller* e *Listener*, che rappresentano l'_application logic_
 - I *Service*, che rappresentano la _business logic_;
-- I *Repository*#super[G] ,che rappresentano la _persistence logic_.
+- I *Repository*#super[G], che rappresentano la _persistence logic_.
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
@@ -1075,7 +1075,7 @@ Adapter che mette in comunicazione la _Business Logic_ con il sistema di messagg
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewPublishStockUpdateAdapter(broker: *NatsMessageBroker, cfg: *WarehouseConfig) *PublishStockUpdateAdapter`*: costruttore dell'adapter. Inizializza gli attributi `broker` e `cfg` con i valori passati come parametri.
-- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: pubblica un aggiornamento dello stock utilizzando il broker di messaggistica NATS#super[G] .
+- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: pubblica un aggiornamento dello stock utilizzando il broker di messaggistica NATS#super[G].
 
 ==== GoodStock <GoodStock>
 #figure(
