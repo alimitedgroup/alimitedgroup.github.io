@@ -651,7 +651,7 @@ Tale eseguibile dev'essere eseguito in automatico sia nell'ambiente locale di un
 - *Indentazione*: usare quattro spazi per l'indentazione;
 - *Istruzioni per linea di codice*: evitare più istruzioni su una linea in quanto rendono difficile la lettura del codice.
 
-Sarà inoltre necessario sfruttare il _framework_ *fx* per applicare l'_Injection Pattern_.
+Sarà inoltre necessario sfruttare il _framework_ *fx* per applicare il _pattern_ della _Dependency Injection#super[G]_.
 
 ===== Convenzioni sulle nomenclature e sulla posizione dei file
 
@@ -840,7 +840,7 @@ La gestione delle configurazioni è un processo fondamentale in un progetto: ess
 
 === Strumenti a supporto
 
-Per ogni attività prevista dal processo, _ALimitedGroup_ utilizza:
+Per ogni attività prevista nel processo di Manutenzione#super[G] ,_ALimitedGroup_ utilizza:
 
 - *GitHub*#super[G]: per gestire i cambiamenti da effettuare ai documenti e al codice, nonché per garantire a tutti i membri di _ALimitedGroup_ di accedere ai compiti da svolgere;
 
@@ -918,7 +918,7 @@ L'*Accertamento della Qualità* (detto anche _*Quality Assurance*_) è un proces
 
 Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard _ISO/IEC 12207:1995_, le attività di Verifica#super[G] (@verifica) e Validazione#super[G] (@validazione).
 
-=== Metriche e strumenti a supporto (DA MODIFICARE)
+=== Strumenti a supporto (DA MODIFICARE)
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
 Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*.
 
@@ -948,9 +948,12 @@ Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente
 
 ==== Strumenti a supporto
 
-Questa sezione sarà ampliata durante lo svolgimento della _Product Baseline#super[G] (PB)_.
+/*Questa sezione sarà ampliata durante lo svolgimento della _Product Baseline#super[G] (PB)_.*/
+Per verificare che quanto prodotto dal gruppo, sia stato realizzato ed implementato secondo i requisiti richiesti ed imposti da #M31, ovvero che risponda correttamente alla domanda citata precedentemente. \
+Per questo, all'interno del documento del #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] nella sezione 4, vengono esposti e descritti dettagliatamente tutti i _test_#super[G] che il gruppo effettuerà, per verificare che il prodotto realizzato sia conforme ai requisiti imposti da #M31.
 
-Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio: #align(center)[#link("https://farfalla-project.org/readability_static/")[farfalla-project.org/readability_static/]]
+Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio:
+#align(center)[#link("https://farfalla-project.org/readability_static/")[farfalla-project.org/readability_static/]]
 
 ==== Attività previste
 
@@ -1058,11 +1061,11 @@ Durante l'esecuzione dei Test#super[G] descritti in precedenza, è possibile che
 === Validazione <validazione>
 
 Lo scopo del processo di *Validazione*#super[G] è quello di tracciare l'efficacia di quanto sviluppato, ovvero comprendere se quanto realizzato soddisfa le esigenze di #M31.
-Potremmo riassumere lo scopo della *Validazione*#super[G] nella risposta alla domanda _"Did I build the right System?"_, ovvero _"Ho realizzato il giusto Sistema?_.
+Potremmo riassumere lo scopo della *Validazione*#super[G] nella risposta alla domanda:
+#align(center)[_"Did I build the right System?"_]
+ovvero, _"Ho realizzato il giusto Sistema?_.
 
-==== Strumenti a supporto (DA MODIFICARE)
-Per le attività previste nel processo di Validazione#super[G] ,abbiamo deciso di utilizzare i seguenti strumenti:
--
+
 ==== Attività previste
 
 In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo processo sono:
@@ -1226,10 +1229,6 @@ Per maggiori informazioni si consiglia la lettura del processo di *Infrastruttur
 == Infrastruttura <infrastruttura>
 
 Il processo di *Infrastruttura* è responsabile#super[G] della creazione e del mantenimento dei componenti (di qualsiasi natura, sia _Hardware_ che _software_) necessari per permettere tutti gli altri processi.
-
-=== Strumenti a supporto (DA MODIFICARE)
-
-Per le attività previste nel processo di Infrastruttura, abbiamo deciso di utilizzare i seguenti strumenti:
 
 === Attività previste
 
@@ -1443,6 +1442,7 @@ Il Processo di *Miglioramento* consiste, in base allo standard _ISO/IEC 12207:19
 === Strumenti a supporto (DA MODIFICARE)
 
 Per le attività previste nel processo di Miglioramento, abbiamo deciso di utilizzare i seguenti strumenti:
+- *GiHub*: per tenere traccia, tramite un sistema di _ticketing_, con _issue_#super[G] e _milestone_#super[G] le attività svolte e il loro tempo per completarle. Inoltre, vengono automatizzate alcune azioni ripetitive nel processo di sviluppo come, per esempio, la _build_ degli artefatti migliorando sia l'efficienza produttiva sia l'efficienza complessiva.
 
 === Attività previste
 
@@ -1472,15 +1472,16 @@ Il processo di formazione ha lo scopo di mantenere i membri di _ALimitedGroup_ a
 
 === Strumenti a supporto (DA MODIFICARE)
 
-Per le attività previste nel processo di Formazione, abbiamo deciso di utilizzare i seguenti strumenti:
+Per facilitare il processo di Formazione, è previsto che ogni singolo membro del gruppo acquisisca le competenze e le conoscenze fondamentali per il corretto svolgimento del progetto. Questo comprende sia le tecnologie necessarie per il progetto, sia ogni aspetto coinvolto nell'ingegneria del _software_. \
+Inoltre, per agevolare ulteriormente questo tipo di processo, tutti i membri del gruppo hanno accesso ad una _repository_#super[G] ,divisa nelle tre _milestone_#super[G] del progetto, in cui poter lavorare ed accedere alle risorse in modo facile e ordinato.
 
 === Attività previste
 
 Il processo di formazione include le seguenti attività:
 
-- *Implementazione del processo* ovvero la realizzazione dei meccanismi necessari alla formazione del personale;
-- *Sviluppo di materiale per la formazione* ovvero lo sviluppo di materiale atto alla formazione del gruppo;
-- *Implementazione del piano per la formazione* ovvero la realizzazione di un piano per formare e mantenere formato il gruppo.
+- *Implementazione del processo*: ovvero la realizzazione dei meccanismi necessari alla formazione del personale;
+- *Sviluppo di materiale per la formazione*: ovvero lo sviluppo di materiale atto alla formazione del gruppo;
+- *Implementazione del piano per la formazione*: ovvero la realizzazione di un piano per formare e mantenere formato il gruppo.
 
 === Implementazione del processo
 
