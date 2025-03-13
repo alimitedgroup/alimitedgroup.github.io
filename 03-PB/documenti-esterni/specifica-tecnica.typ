@@ -955,15 +955,15 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 
 È formato da tre sotto-aree di componenti principali:
 
-- I *Controller* e *Listener*, che rappresentano l'_application logic_
-- I *Service*, che rappresentano la _business logic_;
-- I *Repository*#super[G], che rappresentano la _persistence logic_.
+- I *Controller* e *Listener*, che rappresentano l'_Application Logic_
+- I *Service*, che rappresentano la _Business Logic_;
+- I *Repository*#super[G], che rappresentano la _Persistence Logic_.
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
 ==== IStockRepository <IStockRepository>
 
-Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ degli stock per il microservizio _Warehouse_.
+Rappresenta l'interfaccia generica di un oggetto che implementa la _Persistence Logic_ degli stock per il microservizio _Warehouse_.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1024,8 +1024,8 @@ Questa struttura implementa l'interfaccia *ICatalogRepository*, vedi la @ICatalo
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewCatalogRepositoryImpl() *CatalogRepositoryImpl`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote.
-- *`GetGood(goodId string) *Good`*: restituisce i dati di una merce registrata nel magazzino tramite il suo ID.
+- *`NewCatalogRepositoryImpl() *CatalogRepositoryImpl`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote;
+- *`GetGood(goodId string) *Good`*: restituisce i dati di una merce registrata nel magazzino tramite il suo ID;
 - *`SetGood(goodId string, name string, description string) bool`*: aggiunge o modifica una merce nel magazzino con l'ID, nome e descrizione forniti.
 
 ==== CreateStockUpdateCmd <CreateStockUpdateCmd>
@@ -1052,8 +1052,8 @@ Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiorna
 *Descrizione degli attributi della struttura:*
 
 - *`GoodId string`*: attributo di tipo *string* che rappresenta l'identificativo della merce aggiornata;
-- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità attuale della merce.
-- *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato;
+- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità attuale della merce;
+- *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
 
 ==== ICreateStockUpdatePort <ICreateStockUpdatePort>
 
@@ -1071,7 +1071,7 @@ Adapter che mette in comunicazione la _Business Logic_ con il sistema di messagg
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker *NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per pubblicare i messaggi.
+- *`broker *NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per pubblicare i messaggi;
 - *`cfg *WarehouseConfig`*: rappresenta la configurazione del magazzino.
 
 *Descrizione dei metodi invocabili dalla struttura:*
