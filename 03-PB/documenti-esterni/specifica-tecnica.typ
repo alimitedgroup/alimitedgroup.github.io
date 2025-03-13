@@ -289,10 +289,39 @@ Esistono principalmente due tipi di _dependency injection_:
 Nel progetto viene utilizzata la *Constructor Injection*.
 
 ==== Motivazioni dell'utilizzo del pattern
+L'utilizzo del pattern _Dependency Injection_ nel progetto porta numerosi vantaggi:
+
+- *disaccoppiamento*: i componenti sono meno legati tra loro, facilitando la manutenzione e l'estensione del codice;
+- *testabilità*: è possibile sostituire le dipendenze reali con mock durante i test;
+- *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
+- *flessibilità*: è più semplice sostituire un'implementazione con un'altra senza modificare il codice client;
+- *gestione centralizzata*: tutte le dipendenze sono configurate e gestite in un unico punto (nel nostro caso, attraverso *Fx*);
+- separazione delle responsabilità: ogni componente ha responsabilità ben definite.
 
 ==== Framework Fx di _Uber_
+*Fx* è un framework di application _lifecycle_ e _dependency injection_ per _Go_ sviluppato da _Uber_.\
+Permette di definire componenti e lascia al framework il compito di costruirli nell'ordine corretto e di avviare/arrestare l’applicazione.
+
+
+
 
 ===== Costrutti principali
+I costrutti principali di Fx utilizzati nel progetto sono:
+
+- *fx.Provide*: registra una funzione costruttore che crea e restituisce una dipendenza.;
+
+- *fx.Supply*: inserisce direttamente valori nel container _Dependecy Injection_, utile per configurazioni;
+
+- *fx.Invoke*: esegue una funzione dopo la costruzione di tutte le dipendenze;
+
+- *fx.Options*: raggruppa più opzioni Fx;
+
+- *fx.Lifecycle*: gestisce il ciclo di vita dell'applicazione con hook OnStart e OnStop;
+
+- *fx.In/fx.Out*: strutture utilizzate per il parameter/result object pattern, utili per iniettare o fornire più dipendenze contemporaneamente.
+
+Un aspetto importante del progetto è l'uso di file \*.module.go in cui vengono definiti moduli *Fx* per organizzare le dipendenze in modo gerarchico.\
+Ogni modulo espone un'istanza _Module_ che aggrega tutte le opzioni Fx relative a quel componente.
 
 //includere anche il fatto che esistono file *.module.go
 
