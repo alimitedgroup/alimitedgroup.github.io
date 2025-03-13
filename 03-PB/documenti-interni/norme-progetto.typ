@@ -551,11 +551,10 @@ Verbali delle riunioni svolte senza la presenza di persone esterne al gruppo.
 
 Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di Analisi dei Requisiti#super[G], la progettazione, la codifica del _software_, l'installazione e l'accettazione di quanto prodotto.
 
-=== Strumenti a supporto (DA MODIFICARE)
+=== Strumenti a supporto
 Per le attività previste nel processo di Sviluppo, abbiamo deciso di utilizzare i seguenti strumenti:
 - *GO* e *Visual Studio Code*: per la codifica del _software_ e dei microservizi;
-- *Draw.io*: per realizzare i diagrammi _UML_ degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti#super[G];
-- *StarUML*: per progettare l'architettura di tutto l'ecosistema riguardante il _software_ e i microservizi che andremo a realizzare.
+- *Draw.io*: per realizzare i diagrammi _UML_ degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti#super[G], e per progettare l'architettura di tutto l'ecosistema riguardante il _software_ e i microservizi che andremo a realizzare.
 
 === Attività previste
 
@@ -918,9 +917,11 @@ L'*Accertamento della Qualità* (detto anche _*Quality Assurance*_) è un proces
 
 Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard _ISO/IEC 12207:1995_, le attività di Verifica#super[G] (@verifica) e Validazione#super[G] (@validazione).
 
-=== Strumenti a supporto (DA MODIFICARE)
+=== Strumenti a supporto
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
-Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*.
+Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*. \
+Inoltre, durante il processo di Accertamento della Qualità verrà utilizzata una funzionalità di *Grafana*: le _dashboard_. \
+Quest'ultima, permette di visualizzare, analizzare e monitorare in tempo reale come vengono memorizzati i dati e, soprattutto, come risponde il _software_ realizzato con livelli di carico alti.
 
 === Attività previste
 
@@ -948,7 +949,6 @@ Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente
 
 ==== Strumenti a supporto
 
-/*Questa sezione sarà ampliata durante lo svolgimento della _Product Baseline#super[G] (PB)_.*/
 Per verificare che quanto prodotto dal gruppo, sia stato realizzato ed implementato secondo i requisiti richiesti ed imposti da #M31, ovvero che risponda correttamente alla domanda citata precedentemente. \
 Per questo, all'interno del documento del #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] nella sezione 4, vengono esposti e descritti dettagliatamente tutti i _test_#super[G] che il gruppo effettuerà, per verificare che il prodotto realizzato sia conforme ai requisiti imposti da #M31.
 
@@ -1101,7 +1101,7 @@ Tra i processi organizzativi si individuano:
 
 La *Gestione dei Processi* ha l'obiettivo di individuare i compiti da svolgere e i ruoli ai quali questi saranno assegnati, nonché permettere una comunicazione interna ed esterna efficace e altresì garantire lo svolgimento delle varie attività in maniera efficace mediante un'opportuna pianificazione.
 
-=== Strumenti a supporto (DA MODIFICARE)
+=== Strumenti a supporto
 
 Per le attività previste nella Gestione dei Processi, abbiamo deciso di utilizzare i seguenti strumenti:
 - *Git* e *GitHub*#super[G] :per la gestione delle attività programmate e assegnate ad ogni singolo componente del gruppo, tramite _issue_#super[G] ,nonchè la pianificazione degli _sprint_#super[G] ,delle attività e _milestone_#super[G] future;
@@ -1439,10 +1439,10 @@ A causa dei continui sviluppi nel progetto _ALimitedGroup_ è consapevole che l'
 
 Il Processo di *Miglioramento* consiste, in base allo standard _ISO/IEC 12207:1995_, nello stabilire, consolidare, misurare, controllare e migliorare i processi utilizzati durante il ciclo di sviluppo di un _software_.
 
-=== Strumenti a supporto (DA MODIFICARE)
+=== Strumenti a supporto
 
 Per le attività previste nel processo di Miglioramento, abbiamo deciso di utilizzare i seguenti strumenti:
-- *GiHub*: per tenere traccia, tramite un sistema di _ticketing_, con _issue_#super[G] e _milestone_#super[G] le attività svolte e il loro tempo per completarle. Inoltre, vengono automatizzate alcune azioni ripetitive nel processo di sviluppo come, per esempio, la _build_ degli artefatti migliorando sia l'efficienza produttiva sia l'efficienza complessiva.
+- *GitHub*: per tenere traccia, tramite un sistema di _ticketing_, con _issue_#super[G] e _milestone_#super[G] le attività svolte e il loro tempo per completarle.In aggiunta a questo, successivamente il periodo di "Retrospettiva", vengono individuate delle _issue_ per delle attività volte a migliorare il contenuto di ogni singolo documento prodotto dal grouppo.\ Inoltre, vengono automatizzate alcune azioni ripetitive nel processo di sviluppo come, per esempio, la _build_ degli artefatti migliorando sia l'efficienza produttiva sia l'efficienza complessiva.
 
 === Attività previste
 
@@ -1470,9 +1470,10 @@ Effettuate le misurazioni e controllate le stesse è necessario dedurre i proces
 
 Il processo di formazione ha lo scopo di mantenere i membri di _ALimitedGroup_ aggiornati sui cambiamenti effettuati, nonché definire come gli stessi debbano apprendere le nozioni necessarie allo svolgimento del Progetto.
 
-=== Strumenti a supporto (DA MODIFICARE)
+=== Strumenti a supporto
 
 Per facilitare il processo di Formazione, è previsto che ogni singolo membro del gruppo acquisisca le competenze e le conoscenze fondamentali per il corretto svolgimento del progetto. Questo comprende sia le tecnologie necessarie per il progetto, sia ogni aspetto coinvolto nell'ingegneria del _software_. \
+In più, all'interno del gruppo viene utilizzato il _*pair programming*_ per imparare ulteriormente le tecnologie adoperate nel progetto, da membri del gruppo più esperti. \
 Inoltre, per agevolare ulteriormente questo tipo di processo, tutti i membri del gruppo hanno accesso ad una _repository_#super[G] ,divisa nelle tre _milestone_#super[G] del progetto, in cui poter lavorare ed accedere alle risorse in modo facile e ordinato.
 
 === Attività previste
