@@ -1042,9 +1042,13 @@ Rappresenta il _Command_ per creare un aggiornamento dello stock.
 *Descrizione degli attributi della struttura:*
 
 - *`Type string`*: attributo di tipo *string* che rappresenta il tipo di aggiornamento dello stock;
-- *`Goods []CreateStockUpdateCmdGood`*: rappresenta una lista di oggetti `CreateStockUpdateCmdGood` che contengono le quantità delle merci aggiornate.
+- *`Goods []CreateStockUpdateGood`*: rappresenta una lista di oggetti `CreateStockUpdateGood` che contengono le quantità delle merci aggiornate.
 
-==== CreateStockUpdateCmdGood <CreateStockUpdateCmdGood>
+==== CreateStockUpdateGood <CreateStockUpdateGood>
+#figure(
+  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 75%),
+  caption: "Warehouse - CreateStockUpdateGood",
+)
 
 Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiornamento dello stock.
 
@@ -1086,7 +1090,7 @@ Questa classe è utilizzata nella _Business Logic_.
 Rappresenta una merce con la sua quantità presente nel magazzino.
 
 *Descrizione degli attributi della struttura:*
-- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
+- *`ID GoodId`*: attributo di tipo *GoodId* che rappresenta l'Id della merce;
 - *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
 
 ==== IApplyStockUpdatePort <IApplyStockUpdatePort>
@@ -1103,7 +1107,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetStock(goodId: string) int64`*: il metodo deve permettere di ottenere la quantità di una merce presente nel magazzino.
+- *`GetStock(goodId: GoodId) GoodStock`*: il metodo deve permettere di ottenere la quantità di una merce presente nel magazzino.
 
 ==== StockPersistenceAdapter
 
@@ -1124,7 +1128,7 @@ Implementa le seguenti interfacce (porte):
 
 - *`ApplyStockUpdate(goods: *GoodStock) error`*: converte l'aggiornamento dello stock in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetStock(goodId: string) int64`*: converte la richiesta di ottenimento della quantità di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
+- *`GetStock(goodId: GoodId) GoodStock`*: converte la richiesta di ottenimento della quantità di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
 
 ==== GoodInfo <GoodInfo>
 #figure(
@@ -1135,7 +1139,7 @@ Questa classe è utilizzata nella _Business Logic_.
 Rappresenta una merce con le sue informazioni.
 
 *Descrizione degli attributi della struttura:*
-- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
+- *`ID GoodId`*: attributo di tipo *GoodId* che rappresenta l'Id della merce;
 - *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
 
 ==== IApplyCatalogUpdatePort <IApplyCatalogUpdatePort>
@@ -1152,7 +1156,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetGood(goodId: string) GoodInfo`*: il metodo deve permettere di ottenere le informazioni di una merce tramite il suo ID.
+- *`GetGood(goodId: GoodId) GoodInfo`*: il metodo deve permettere di ottenere le informazioni di una merce tramite il suo ID.
 
 ==== CatalogPersistenceAdapter
 
@@ -1173,7 +1177,7 @@ Implementa le seguenti interfacce (porte):
 
 - *`ApplyCatalogUpdate(good: GoodInfo) error`*: converte l'aggiornamento del catalogo in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetGood(goodId: string) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
+- *`GetGood(goodId: GoodId) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
 
 ==== RemoveStockCmd <RemoveStockCmd>
 #figure(
@@ -1296,9 +1300,14 @@ Rappresenta il comando per aggiornare lo stock nel microservizio *Warehouse*.
 - *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock;
 - *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock;
 - *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock;
-- *`Goods []StockUpdateCmdGood`*: rappresenta una lista di oggetti `StockUpdateCmdGood` che contengono le informazioni sulle merci aggiornate.
+- *`Goods []StockUpdateGood`*: rappresenta una lista di oggetti `StockUpdateGood` che contengono le informazioni sulle merci aggiornate.
 
-==== StockUpdateCmdGood
+==== StockUpdateGood
+
+#figure(
+  image("../../assets/warehouse/StockUpdateGood.png", width: 75%),
+  caption: "Warehouse - StockUpdateGood",
+)
 
 Rappresenta una merce aggiornata nel comando di aggiornamento dello stock.
 
@@ -1395,6 +1404,10 @@ Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiorna
 - *`ListenGoodUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti del catalogo. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
 ==== HealthCheckController
+#figure(
+  image("../../assets/warehouse/HealthCheckController.png", width: 75%),
+  caption: "Warehouse - HealthCheckController",
+)
 
 Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di controllo dello stato di salute del microservizio *Warehouse*.
 
@@ -1405,6 +1418,10 @@ Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di c
 - *`PingHandler(ctx: Context, msg: Msg) error`*: gestisce le richieste di controllo dello stato di salute del microservizio. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
 ==== ReservationController
+#figure(
+  image("../../assets/warehouse/ReservationController.png", width: 75%),
+  caption: "Warehouse - ReservationController",
+)
 
 Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di creazione delle prenotazioni nel microservizio *Warehouse*.
 
