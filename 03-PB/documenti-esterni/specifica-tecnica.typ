@@ -1011,7 +1011,7 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence 
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetGood(goodId string) *Good`*: il metodo deve dare la possibilità di ottenere i dati di una merce registrata nel magazzino tramite il suo ID.
+- *`GetGood(goodId string) *Good`*: il metodo deve dare la possibilità di ottenere i dati di una merce registrata nel magazzino tramite il suo ID;
 - *`SetGood(goodId string, name string, description string) bool`*: il metodo deve dare la possibilità di aggiungere o modificare una merce nel magazzino.
 
 ==== CatalogRepositoryImpl
