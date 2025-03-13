@@ -13,7 +13,7 @@
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),
       autore: p.marco,
-      //verifica: p.emanuele,
+      verifica: p.sara,
       descr: "Modificato il documento secondo quanto riportato nella valutazione della RTB, aggiungendo per ogni processo la sezione "
         + ["Strumenti a supporto"]
         + ".",
