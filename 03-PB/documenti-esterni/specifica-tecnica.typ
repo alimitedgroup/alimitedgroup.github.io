@@ -12,7 +12,7 @@
       vers: "0.4.0",
       date: datetime(day: 13, month: 03, year: 2025),
       autore: p.loris,
-      // verifica: p.matteo,
+      verifica: p.marco,
       descr: "Descrizione del microservizio Warehouse" + [ (@micro_warehouse)] + ".",
     ),
     (
