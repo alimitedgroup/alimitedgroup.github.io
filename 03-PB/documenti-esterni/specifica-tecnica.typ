@@ -997,7 +997,7 @@ Questa struttura implementa l'interfaccia *IStockRepository*, vedi la @IStockRep
   caption: "Warehouse - Good",
 )
 Rappresenta una merce registrata nel magazzino.
-Vieni utilizzato dall'interfaccia @ICatalogRepository per memorizzare le informazioni delle merci.
+Vieni utilizzato dall'interfaccia ICatalogRepository, vedi @ICatalogRepository, per memorizzare le informazioni delle merci.
 
 *Descrizione degli attributi della struttura:*
 - *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
