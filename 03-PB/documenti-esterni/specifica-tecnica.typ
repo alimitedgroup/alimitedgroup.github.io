@@ -1054,8 +1054,9 @@ Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiorna
 
 *Descrizione degli attributi della struttura:*
 
+- *`GoodId string`*: attributo di tipo *string* che rappresenta l'identificativo della merce aggiornata;
+- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità attuale della merce.
 - *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato;
-- *`Good GoodStock`*: attributo di tipo *GoodStock* (vedi @GoodStock) che rappresenta la merce aggiornata e la quantità attuale.
 
 ==== ICreateStockUpdatePort <ICreateStockUpdatePort>
 
@@ -1083,7 +1084,7 @@ Adapter che mette in comunicazione la _Business Logic_ con il sistema di messagg
 
 ==== GoodStock <GoodStock>
 #figure(
-  image("../../assets/warehouse/GoodStock.png", width: 75%),
+  image("../../assets/warehouse/GoodStock.png", width: 30%),
   caption: "Warehouse - GoodStock",
 )
 Questa classe è utilizzata nella _Business Logic_.
