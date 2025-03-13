@@ -1270,15 +1270,15 @@ Il *StockController* gestisce l'_Application Logic_ per le operazioni di aggiunt
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per ricevere i messaggi.
-- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso#super[G] per l'aggiunta di stock.
+- *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per ricevere i messaggi;
+- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso#super[G] per l'aggiunta di stock;
 - *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso#super[G] per la rimozione di stock.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockController(broker: NatsMessageBroker, addStockUseCase: IAddStockUseCase, removeStockUseCase: IRemoveStockUseCase) *StockController`*: costruttore della struttura. Inizializza gli attributi `broker`, `addStockUseCase` e `removeStockUseCase` con i valori passati come parametri.
+- *`NewStockController(broker: NatsMessageBroker, addStockUseCase: IAddStockUseCase, removeStockUseCase: IRemoveStockUseCase) *StockController`*: costruttore della struttura. Inizializza gli attributi `broker`, `addStockUseCase` e `removeStockUseCase` con i valori passati come parametri;
 
-- *`RemoveStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per la rimozione di stock. Ritorna un errore in caso l'operazione non venga completata correttamente.
+- *`RemoveStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per la rimozione di stock. Ritorna un errore in caso l'operazione non venga completata correttamente;
 
 - *`AddStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'aggiunta di stock. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
@@ -1293,11 +1293,11 @@ Rappresenta il comando per aggiornare lo stock nel microservizio *Warehouse*.
 
 *Descrizione degli attributi della struttura:*
 
-- *`ID string`*: rappresenta l'identificativo univoco del comando di aggiornamento dello stock;
-- *`Type string`*: rappresenta il tipo di aggiornamento dello stock;
-- *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock;
-- *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock;
-- *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock;
+- *`ID string`*: rappresenta l'identificativo univoco del comando di aggiornamento dello _stock_;
+- *`Type string`*: rappresenta il tipo di aggiornamento dello _stock_;
+- *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello _stock_;
+- *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello _stock_;
+- *`Timestamp int64`*: rappresenta il _timestamp_ dell'aggiornamento dello _stock_;
 - *`Goods []StockUpdateGood`*: rappresenta una lista di oggetti `StockUpdateGood` che contengono le informazioni sulle merci aggiornate.
 
 ==== StockUpdateGood
@@ -1317,7 +1317,7 @@ Rappresenta una merce aggiornata nel comando di aggiornamento dello stock.
 
 ==== IApplyStockUpdateUseCase <IApplyStockUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di applicare un aggiornamento dello stock.
+Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di applicare un aggiornamento dello _stock_.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1333,7 +1333,7 @@ Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti 
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyStockUpdateService(applyStockUpdatePort: IApplyStockUpdatePort) *ApplyStockUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore.
+- *`NewApplyStockUpdateService(applyStockUpdatePort: IApplyStockUpdatePort) *ApplyStockUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore;
 
 - *`ApplyStockUpdate(ctx: Context, cmd: StockUpdateCmd) error`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento dello stock e utilizza la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
 
@@ -1347,7 +1347,7 @@ Il *StockUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockUpdateListener(applyStockUpdateUseCase: IApplyStockUpdateUseCase) *StockUpdateListener`*: costruttore della struttura. Inizializza l'attributo `applyStockUpdateUseCase` con il valore passato come parametro.
+- *`NewStockUpdateListener(applyStockUpdateUseCase: IApplyStockUpdateUseCase) *StockUpdateListener`*: costruttore della struttura. Inizializza l'attributo `applyStockUpdateUseCase` con il valore passato come parametro;
 
 - *`ListenStockUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti dello stock. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
@@ -1383,7 +1383,7 @@ Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti 
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort: IApplyCatalogUpdatePort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore.
+- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort: IApplyCatalogUpdatePort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore;
 
 - *`ApplyCatalogUpdate(ctx: Context, cmd: CatalogUpdateCmd) error`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento del catalogo e utilizza la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
 
@@ -1411,7 +1411,7 @@ Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di c
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewHealthCheckController() *HealthCheckController`*: costruttore della struttura. Inizializza gli attributi necessari per il controllo dello stato di salute.
+- *`NewHealthCheckController() *HealthCheckController`*: costruttore della struttura. Inizializza gli attributi necessari per il controllo dello stato di salute;
 
 - *`PingHandler(ctx: Context, msg: Msg) error`*: gestisce le richieste di controllo dello stato di salute del microservizio. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
@@ -1425,7 +1425,7 @@ Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di c
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewReservationController() *ReservationController`*: costruttore della struttura. Inizializza gli attributi necessari per la gestione delle prenotazioni.
+- *`NewReservationController() *ReservationController`*: costruttore della struttura. Inizializza gli attributi necessari per la gestione delle prenotazioni;
 
 - *`CreateReservationHandler(ctx: Context, msg: Msg) error`*: gestisce le richieste di creazione delle prenotazioni. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
