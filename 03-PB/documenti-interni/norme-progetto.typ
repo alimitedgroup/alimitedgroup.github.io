@@ -920,7 +920,7 @@ Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard
 === Strumenti a supporto
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
 Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*. \
-Inoltre, durante il processo di Accertamento della Qualità verrà utilizzata una funzionalità di *Grafana*: le _dashboard_. \
+Inoltre, durante il processo di Accertamento della Qualità verrà utilizzata una funzionalità di *Grafana*#super[G] :le _dashboard_#super[G] .\
 Quest'ultima, permette di visualizzare, analizzare e monitorare in tempo reale come vengono memorizzati i dati e, soprattutto, come risponde il _software_ realizzato con livelli di carico alti.
 
 === Attività previste
@@ -1442,7 +1442,7 @@ Il Processo di *Miglioramento* consiste, in base allo standard _ISO/IEC 12207:19
 === Strumenti a supporto
 
 Per le attività previste nel processo di Miglioramento, abbiamo deciso di utilizzare i seguenti strumenti:
-- *GitHub*: per tenere traccia, tramite un sistema di _ticketing_, con _issue_#super[G] e _milestone_#super[G] le attività svolte e il loro tempo per completarle.In aggiunta a questo, successivamente il periodo di "Retrospettiva", vengono individuate delle _issue_ per delle attività volte a migliorare il contenuto di ogni singolo documento prodotto dal grouppo.\ Inoltre, vengono automatizzate alcune azioni ripetitive nel processo di sviluppo come, per esempio, la _build_ degli artefatti migliorando sia l'efficienza produttiva sia l'efficienza complessiva.
+- *GitHub*#super[G] :per tenere traccia, tramite un sistema di _ticketing_, con _issue_#super[G] e _milestone_#super[G] le attività svolte e il loro tempo per completarle.In aggiunta a questo, successivamente il periodo di "Retrospettiva", vengono individuate delle _issue_#super[G] per delle attività volte a migliorare il contenuto di ogni singolo documento prodotto dal grouppo.\ Inoltre, vengono automatizzate alcune azioni ripetitive nel processo di sviluppo come, per esempio, la _build_ degli artefatti migliorando sia l'efficienza produttiva sia l'efficienza complessiva.
 
 === Attività previste
 
