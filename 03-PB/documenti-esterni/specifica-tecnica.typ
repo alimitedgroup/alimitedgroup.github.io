@@ -953,7 +953,7 @@ Il microservizio tiene traccia dell'aggiunta e della modifica delle informazioni
 
 Può funzionare anche in caso di mancanza di connessione con gli altri microservizi in quanto mantiene uno stato interno aggiornato all'ultima versione prima della disconnessione.
 
-È formato da tre sotto aree di componenti principali:
+È formato da tre sotto-aree di componenti principali:
 
 - I *Controller* e *Listener*, che rappresentano l'_application logic_
 - I *Service*, che rappresentano la _business logic_;
