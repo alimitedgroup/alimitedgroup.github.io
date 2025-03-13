@@ -920,7 +920,7 @@ Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard
 === Strumenti a supporto
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
 Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*. \
-Inoltre, durante il processo di Accertamento della Qualità verrà utilizzata una funzionalità di *Grafana*#super[G] :le _dashboard_#super[G] .\
+Inoltre, durante il processo di Accertamento della Qualità verrà utilizzata una funzionalità#super[G] di *Grafana*#super[G] :le _dashboard_#super[G] .\
 Quest'ultima, permette di visualizzare, analizzare e monitorare in tempo reale come vengono memorizzati i dati e, soprattutto, come risponde il _software_ realizzato con livelli di carico alti.
 
 === Attività previste
