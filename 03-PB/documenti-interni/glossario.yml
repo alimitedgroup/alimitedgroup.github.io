@@ -88,6 +88,7 @@ N:
 O:
   Ordine: "Spostamento verso l'esterno di un insieme di merci. Almeno un prodotto deve essere trasferito. Un ordine può essere soddisfatto da più magazzini."
 P:
+  Pair Programming: "È una metodologia di sviluppo Agile, in cui due programmatori lavorano insieme sulla stessa postazione di lavoro. Uno, detto 'conducente', ha il compito di scrivere il codice mentre il secondo, detto 'osservatore' o 'navigatore', controlla attentamente e corregge il codice man mano che viene scritto."
   PB: "Acronimo di Product Baseline, per la sua definizione vedere la parola 'Product Baseline'."
   PdP: "Acronimo di Piano di Progetto, per la sua definizione vedere la parola 'Piano di Progetto'."
   PdQ: "Acronimo di Piano di Qualifica, per la sua definizione vedere la parola 'Piano di Qualifica'."
@@ -125,8 +126,10 @@ T:
   TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato su JavaScript, con supporto per tipizzazione statica."
   Typst: "Linguaggio di markup per la redazione di documenti moderno è di utlizzo più semplice rispetto ad altri linguaggi di markup."
 U:
+  UML: "Acronimo per Unified Modeling Language, utilizzato solitamente nello sviluppo software per descrivere ed analizzare le azioni compiute dagli attori principali, individuati in fase di analisi, nel contesto di un progetto. "
   Unit Test: "Test automatizzato per verificare il corretto funzionamento di una singola unità o componente del software."
   User Need: "Sono i desideri, le preferenze, le aspettative e gli obiettivi degli utenti quando interagiscono o usufruiscono di un prodotto o servizio."
+
 V:
   Validazione: "Controllo atto a determinare che quanto sviluppato soddisfi le esigenze per cui è stato realizzato."
   Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi determinati requisiti."
