@@ -1474,8 +1474,8 @@ Il processo di formazione ha lo scopo di mantenere i membri di _ALimitedGroup_ a
 
 Per facilitare il processo di Formazione, è previsto che ogni singolo membro del gruppo acquisisca le competenze e le conoscenze fondamentali per il corretto svolgimento del progetto. Questo comprende sia le tecnologie necessarie per il progetto, sia ogni aspetto coinvolto nell'ingegneria del _software_. \
 In più, all'interno del gruppo, oltre alla formazione individuale, viene utilizzato il _*pair programming*_ per consolidare l'utilizzo delle tecnologie e condividere le conoscenze apprese tra i membri del gruppo. \
-Tutti i membri del gruppo hanno accesso ai  _repository_#super[G]  relativi alla documentazione,  _Poc_#super[G] e _MVP_#super[G] che consentono di  poter lavorare ed accedere alle risorse in modo facile e ordinato.\
-Inoltre, vengono utilizzate anche  _repository_#super[G] private per testare aspetti nuovi delle tecnologie e condividere con il gruppo quanto imparato.
+Tutti i membri del gruppo hanno accesso ai _repository_#super[G] relativi alla documentazione, _Poc_#super[G] e _MVP_#super[G] che consentono di poter lavorare ed accedere alle risorse in modo facile e ordinato.\
+Inoltre, vengono utilizzate anche _repository_#super[G] private per testare aspetti nuovi delle tecnologie e condividere con il gruppo quanto imparato.
 
 === Attività previste
 
