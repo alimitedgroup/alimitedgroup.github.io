@@ -4577,11 +4577,11 @@ In merito agli obiettivi da raggiungere con i vari Test#super[G], questi saranno
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-4-V-Ob],
-    [È necessario l'utilizzo di NATS per lo scambio di messaggi tra i microservizi],
+    [È necessario l'utilizzo di Kafka o NATS per lo scambio di messaggi tra i microservizi],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
 
     [R-5-V-Ob],
-    [È necessario l'utilizzo di Kafka o NATS per lo scambio di messaggi tra i microservizi],
+    [È necessario l'utilizzo di Docker],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Tecnologie di Riferimento"],
   ),
   caption: [Requisiti di Vincolo],
