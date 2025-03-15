@@ -1306,7 +1306,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(8, posizioni-legenda: (1, 1, 1, 1, 1), "Sprint 8 - Preventivo per componente", "Sprint 8 - Preventivo")
+#impegni(8, "Sprint 8 - Preventivo per componente", "Sprint 8 - Preventivo")
 
 #v(2em)
 ==== Consuntivo
@@ -1315,7 +1315,6 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(
   8,
   preventivo: true,
-  posizioni-legenda: (2, 1, 1, 1, 1),
   "Sprint 8 - Consuntivo per componente",
   "Sprint 8 - Consuntivo",
 )
