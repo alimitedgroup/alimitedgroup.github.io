@@ -621,6 +621,255 @@ Rappresenta la risposta alla richiesta di ottenimento Token.
 - *`GetError() error`*: permette di ottenere l'errore memorizzato nella risposta.
 
 
+===== PublishPublicKeyResponse <PublishPublicKeyResponse>
+
+[PROSEGUIRE] img
+
+Rappresenta la risposta alla richiesta di pubblicazione della chiave pubblica.
+
+*Descrizione degli attributi della struttura:*
+
+- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewPublishPublicKeyResponse(err error) *PublishPublicKeyResponse`*: è il costruttore dell'oggetto;
+- *`GetError() error`*: restituisce l'errore memorizzato nella risposta.
+
+===== StorePemKeyPairResponse <StorePemKeyPairResponse>
+
+[PROSEGUIRE] img
+
+Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
+
+*Descrizione degli attributi della struttura:*
+
+- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStorePemKeyPairResponse(err error) *StorePemKeyPairResponse`*: è il costruttore dell'oggetto;
+- *`GetError() error`*: restituisce l'errore memorizzato nella risposta.
+
+===== PemPrivateKey <PemPrivateKey>
+
+[PROSEGUIRE] img
+
+Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_ della stessa.
+
+*Descrizione degli attributi della struttura:*
+
+- *`prk *[]byte`*: rappresenta la chiave privata, in formato Pem e memorizzata in byte;
+- *`issuer string`*: rappresenta l'_issuer_, ovvero l'uuid generato al momento della creazione delle chiavi.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewPemPrivateKey(puk *[]byte, issuer string) *PemPrivateKey`*: è il costruttore dell'oggetto;
+- *`GetIssuer() string`*: permette di ottenere l'_issuer_ memorizzato;
+- *`GetBytes() []byte`*: permette di ottenere una copia dei _bytes_ memorizzati della chiave privata;
+
+===== PemPublicKey <PemPublicKey>
+
+[PROSEGUIRE] img
+
+Oggetto utilizzato per memorizzare la chiave pubblica in formato Pem e l'_issuer_ della stessa.
+
+*Descrizione degli attributi della struttura:*
+
+- *`prk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
+- *`issuer string`*: rappresenta l'_issuer_, ovvero l'uuid generato al momento della creazione delle chiavi.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewPemPublicKey(puk *[]byte, issuer string) *PemPublicKey`*: è il costruttore dell'oggetto;
+- *`GetIssuer() string`*: permette di ottenere l'_issuer_ memorizzato;
+- *`GetBytes() []byte`*: permette di ottenere una copia dei _bytes_ memorizzati della chiave pubblica;
+
+==== IAuthPersistance <IAuthPersistance>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ del microservizio _Authenticator_.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`StorePemKeyPair(prk []byte, puk []byte, emit string) error`*: il metodo deve dare la possibilità di memorizzare una coppia di chiavi ECDSA in formato Pem e l'identificatore (uuid) che verrà poi associato come _issuer_ delle chiavi generate;
+- *`GetPemPublicKey() (PemPublicKey, error)`*: il metodo deve dare la possibilità di ottenere l'oggetto `PemPublicKey` memorizzato. Se non presente, error deve essere diverso da `nil`;
+- *`GetPemPrivateKey() (PemPrivateKey, error)`*: il metodo deve dare la possibilità di ottenere l'oggetto `PemPrivateKey` memorizzato. Se non presente, error deve essere diverso da `nil`;
+- *`CheckKeyPairExistence() error`*: il metodo deve restituire un errore se non è memorizzata una coppia di chiavi, altrimenti deve restituire `nil`.
+
+==== AuthRepository <AuthRepository>
+
+Questa struttura implementa l'interfaccia *IAuthPersistance*, vedi la @IAuthPersistance.
+
+*Descrizione degli attributi della struttura:*
+
+- *`prk *PemPrivateKey`*: un puntatore all'oggetto `PemPrivateKey` che contiene la chiave privata, se questa è stata memorizzata, altrimenti è `nil`;
+- *`prk *PemPublicKey`*: un puntatore all'oggetto `PemPublicKey` che contiene la chiave pubblica, se questa è stata memorizzata, altrimenti è `nil`;
+- *`issuer string`*: è l'identificatore (uuid) di chi ha emesso le chiavi al momento della loro memorizzazione. Se le chiavi non sono ancora state memorizzate, la stringa è vuota;
+- *`mutex sync.Mutex`*: variabile utilizzata per il corretto funzionamento di alcuni metodi. Si rimanda alla #link("https://go.dev/tour/concurrency/9")[documentazione del linguaggio Go#super[G] ]per ulteriori informazioni.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewAuthRepo() *AuthRepository`*: costruttore della struttura. Non prende alcun parametro e inizializza i puntatori a `nil` e la stringa come stringa vuota;
+- *`checkKeyPair(prk *[]byte, puk *[]byte) bool`*: metodo che assolve al compito di controllo validità delle chiavi passate come parametro in fromato Pem. Se le chiavi non sono in formato Pem e/o non sono chiavi ECDSA allora viene restituito `false`, altrimenti viene restituito `true`;
+- *`StorePemKeyPair(prk []byte, puk []byte, emit string) error`*: il metodo controlla la validità delle chiavi passate utilizzando la funzione `checkKeyPair` e, se il controllo è positivo, le memorizza assieme all'_issuer_;
+- *`GetPemPublicKey() (PemPublicKey, error)`*: permette di ottenere l'oggetto `PemPublicKey`, se presente, altrimenti viene restituito un oggetto vuoto e un errore;
+- *`GetPemPrivateKey() (PemPrivateKey, error)`*: permette di ottenere l'oggetto `PemPrivateKey`, se presente, altrimenti viene restituito un oggetto vuoto e un errore;
+- *`CheckKeyPairExistence() error`*: restituisce un errore se non vi è una coppia di chiavi memorizzata, altrimenti `nil`.
+
+==== ICheckKeyPairExistance <ICheckKeyPairExistance>
+
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di voler verificare l'esistenza di una coppia di chiavi.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+*`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: il metodo deve offrire la possibilità di richidedere la verifica dell'esistenza di una coppia di chiavi memorizzata e ricevere adeguata risposta.
+
+==== IGetPemPrivateKeyPort <IGetPemPrivateKeyPort>
+
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere la chiave privata, se memorizzata.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetPemPrivateKey(cmd *servicecmd.GetPemPrivateKeyCmd) *serviceresponse.GetPemPrivateKeyResponse`*: il metodo deve offrire la possibilità di richiedere la chiave privata memorizzata e ottenere un'adeguata risposta;
+
+==== IGetPemPublicKeyPort <IGetPemPublicKeyPort>
+
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere la chiave pubblica, se memorizzata.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetPemPublicKey(cmd *servicecmd.GetPemPublicKeyCmd) *serviceresponse.GetPemPublicKeyResponse`*: il metodo deve offrire la possibilità di richiedere la chiave pubblica memorizzata e ottenere un'adeguata risposta;
+
+==== IStorePemKeyPair <IStorePemKeyPair>
+
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di memorizzare una coppia di chiavi e l'_issuer_ associato.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: il metodo deve permettere di richiedere la memorizzazione di una coppia di chiavi e l'_issuer_ associato e ricevere una risposta in merito all'esito dell'operazione
+
+==== AuthAdapter
+
+Adapter che mette in comunicazione la _business logic_ con la _persistence logic_. Implementa le seguenti interfacce (porte):
+
+- *`ICheckKeyPairExistance`*, @ICheckKeyPairExistance;
+- *`IGetPemPrivateKeyPort`*, @IGetPemPrivateKeyPort;
+- *`IGetPemPublicKeyPort`*, @IGetPemPublicKeyPort;
+- *`IStorePemKeyPair`*, @IStorePemKeyPair.
+
+*Descrizione degli attributi della struttura:*
+
+- *`repo persistence.IAuthPersistance`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Authenticator. Per ulteriori informazioni si veda la @IAuthPersistance.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewAuthAdapter(repo persistence.IAuthPersistance) *AuthAdapter`*: costruttore dell'oggetto. Prende l'oggetto che implementa la _persistence logic_ come parametro;
+- *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: converte il _Command_ per la memorizzazione della coppia di chiavi in formato Pem e l'issuer associato in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`GetPemPrivateKey(cmd *servicecmd.GetPemPrivateKeyCmd) *serviceresponse.GetPemPrivateKeyResponse`*: converte il _Command_ per l'ottenimento della chiave privata e del suo issuer in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`GetPemPublicKey(cmd *servicecmd.GetPemPublicKeyCmd) *serviceresponse.GetPemPublicKeyResponse`*: converte il _Command_ per l'ottenimento della chiave pubblica e del suo issuer in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: converte il _Command_ per la verifica della presenza di una coppia di chiavi memorizzata in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata.
+
+==== IPublishPort <IPublishPort>
+
+Rappresenta la porta che consente alla _business logic_ di comunicare al Publisher la volontà di pubblicare la propria chiave pubblica.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`PublishKey(cmd *servicecmd.PublishPublicKeyCmd) *serviceresponse.PublishPublicKeyResponse`*: il metodo deve dare la possibilità di richiedere la pubblicazione della chiave pubblica e ricevere una risposta sull'esito dell'operazione.
+
+==== PublishAdapter
+
+Rappresenta l'_Adapter_ atto a convertire il _Command_ per la richiesta di pubblicazione della chiave pubblica al Publisher.
+
+Implementa l'interfaccia IPublishPort, descritta alla @IPublishPort.
+
+*Descrizione degli attributi della struttura:*
+
+- *`pb publisher.IAuthPublisher`*: istanza di una struttura che rappresenta il Publisher, vedi @IAuthPublisher per maggiori informazioni.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewAuthPublisherAdapter(pb publisher.IAuthPublisher) *AuthPublisherAdapter `*: costruttore dell'_Adapter_. Prende un oggetto che implementa l'interfaccia per i _Publisher_ come parametro;
+- *`PublishKey(cmd *servicecmd.PublishPublicKeyCmd) *serviceresponse.PublishPublicKeyResponse`*: prende come parametro il _Command_ per la pubblicazione della chiave pubblica, ne prende la chiave pubblica e l'issuer e li passa al _Publisher_ per la pubblicazione.
+
+==== IAuthPublisher <IAuthPublisher>
+
+Interfaccia che gli oggetti rappresentanti un Publisher per le chiavi pubbliche devono soddisfare.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`PublishKey(puk crypto.PublicKey, issuer string) error`*: il metodo deve permettere la pubblicazione della chiave pubblica e dell'_issuer_ associato come parametro, quindi deve restituire un errore se la richiesta non è stata completata, o `nil` altrimenti.
+
+==== AuthPublisher <AuthPublisher>
+
+Un _Publisher_ che permette di pubblicare su un JetStream NATS chiave pubblica e issuer associato.
+
+Implementa l'interfaccia *IAuthPublisher*: per maggiori informazioni vedere la @IAuthPublisher.
+
+*Descrizione degli attributi della struttura:*
+
+- *`mb *broker.NatsMessageBroker`*: un'istanza di un _message broker_ di NATS, necessario per la pubblicazione delle chiavi e dell'_issuer_;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewPublisher(mb *broker.NatsMessageBroker) *AuthPublisher`*: costruttore della struttura, prende un _message broker_ di NATS come parametro;
+- *`PublishKey(puk crypto.PublicKey, issuer string) error`*: permette di pubblicare la chiave e l'issuer passati come parametro in un apposito JetStream di NATS, ritornando un errore se l'operazione non va a buon fine.
+
+==== IAuthenticateUserStrategy <IAuthenticateUserStrategy>
+
+Interfaccia che le strutture che possiedo l'algoritmo per valutare i dati di autenticazione forniti devono soddisfare.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`Authenticate(us serviceobject.UserData) (string, error)`*: il metodo deve ospitare l'algoritmo che verifica i dati di autenticazione. Deve restituire uno stringa con il ruolo e `nil` se la verifica ha esito positivo, una stringa vuota e un errore altrimenti.
+
+==== SimpleAuthAlg
+
+Implementazione di un semplice algoritmo per verificare i dati di autenticazione: con lo scopo di soddisfare l'MVP, questo algoritmo controlla se lo _username_ è tra quelli prestabiliti.
+
+*Descrizione degli attributi della struttura:*
+
+- *`usernameRoles map[string]string`*: mappa contenente gli username autorizzati e i rispettivi ruoli;
+- *`mutex sync.Mutex`*, variabile utilizzata per il corretto funzionamento di alcuni metodi. Si rimanda alla #link("https://go.dev/tour/concurrency/9")[documentazione del linguaggio Go#super[G] ]per ulteriori informazioni.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`Authenticate(us serviceobject.UserData) (string, error)`*: il metodo verifica lo username. Se la verifica va a buon fine viene ritornato il ruolo e `nil`, altrimenti viene ritornata una stringa vuota e un errore.
+
+==== IGetTokenUseCase <IGetTokenUseCase>
+
+Interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la necessità di ottenere un token.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: il metodo deve permettere, dato un _Command_ per la richiesta di un Token passato come parametro, di ottenere, sotto forma di risposta adeguata, il suddetto Token.
+
+==== AuthService
+
+Oggetto rappresentatnte la _business logic_ di *Authenticator*.
+
+Implementa l'interfaccia *IGetTokenUseCase*, per maggiori informazioni vedere la @IGetTokenUseCase.
+
+*Descrizione degli attributi della struttura:*
+
+- *`checkKeyPairExistancePort serviceportout.ICheckKeyPairExistance`*, si veda la @ICheckKeyPairExistance;
+- *`getPemPrivateKeyPort serviceportout.IGetPemPrivateKeyPort`*, si veda la @IGetPemPrivateKeyPort;
+- *`getPemPublicKeyPort serviceportout.IGetPemPublicKeyPort`*, si veda la @IGetPemPublicKeyPort;
+- *`storePemKeyPairPort serviceportout.IStorePemKeyPair`*, si veda la @IStorePemKeyPair;
+- *`publishPort serviceportout.IPublishPort`*, si veda la @IPublishPort;
+- *`authenticatorStrategy serviceauthenticator.IAuthenticateUserStrategy`*, si veda la @IAuthenticateUserStrategy;
+- *`mutex sync.Mutex`*, variabile utilizzata per il corretto funzionamento di alcuni metodi. Si rimanda alla #link("https://go.dev/tour/concurrency/9")[documentazione del linguaggio Go#super[G] ]per ulteriori informazioni.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewAuthService(p AuthServiceParams) *AuthService`*: costruttore dell'oggetto. Le porte (_Use Case_) devono essere fornite come parametri al costruttore e, per farlo, si utilizza la struttura *`AuthServiceParams`*, struttura con i medesimi attributi di CatalogService con l'istruzione `fx.in` per permettere al _framework_ *fx* di fornire automaticamente le dipendenze necessarie;
+- *`generatePemKey() (*[]byte, *[]byte, error)`*: genera una coppia di chiavi ECDSA e le converte in formato Pem, quindi le ritorna con `nil` come errore. Se la richiesta non va a buon fine vengono ritornati due puntatori a `nil` e un errore;
+- *`storePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) error`*: gestisce la memorizzazione delle chiavi, quando generate;
+- *`getPrivateKeyFromPem(prk *[]byte) (*ecdsa.PrivateKey, error)`*: si occupa di convertire una chiave privata passata in formato Pem in una chiave privata ECDSA a tutti gli effetti;
+- *`generateToken(username string, role string) (string, error)`*: si occupa di generare e firmare un Token;
+- *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: esegue la verifica delle credenziali e, se la verifica ha esito positivo, fa generare un Token.
+
+
 === Catalog <catalog>
 
 #figure(
@@ -817,7 +1066,7 @@ Rappresenta la Risposta alla richiesta di aggiunta o modifica informazioni di un
 
 *Descrizione degli attributi della struttura:*
 
-- *`result error`*: viene qui memorizzato l'esito dell'operazione, se positivo (nil) o non.
+- *`result error`*: viene qui memorizzato l'esito dell'operazione, se positivo (`nil`) o non.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -893,7 +1142,7 @@ Rappresenta la Risposta alla richiesta di modifica quantità di una merce.
 
 *Descrizione degli attributi della struttura:*
 
-- *`result error`*: viene qui memorizzato l'esito dell'operazione, se positivo (nil) o non.
+- *`result error`*: viene qui memorizzato l'esito dell'operazione, se positivo (`nil`) o non.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -912,7 +1161,7 @@ Rappresenta la Risposta alla richiesta di modifica quantità di un insieme di me
 
 *Descrizione degli attributi della struttura:*
 
-- *`result error`*: viene qui memorizzato l'esito dell'operazione, se positivo (nil) o non.
+- *`result error`*: viene qui memorizzato l'esito dell'operazione, se positivo (`nil`) o non.
 - *`wrongID []string`*: rappresenta uno slice con gli id delle merci la cui modifica della quantità non è riuscita.
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -944,11 +1193,11 @@ Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepos
 
 - *`GetWarehouses() map[string]catalogCommon.Warehouse`*: restituisce la mappa dei magazzini riconosciuti dal Sistema;
 
-- *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: imposta la quantità della merce con id *goodID* del magazzino con id *warehouseID* alla quantità memorizzata nel parametro *newQuantity*. In caso la merce sia nuova, questa viene automaticamente aggiunta, ma senza nome e descrizione. Ritorna sempre *nil*;
+- *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: imposta la quantità della merce con id *goodID* del magazzino con id *warehouseID* alla quantità memorizzata nel parametro *newQuantity*. In caso la merce sia nuova, questa viene automaticamente aggiunta, ma senza nome e descrizione. Ritorna sempre *`nil`*;
 
 - *`addWarehouse(warehouseID string)`*: aggiunge magazzino al sistema con id pari a *warehouseID*. Questa operazione è effettuata automaticamente quando si cerca di aggiunge _stock_ ad un magazzino non ancora registrato;
 
-- *`AddGood(goodID string, name string, description string) error`*: aggiunge una merce al Sistema con id *goodID*, nome *name* e descrizione *description*. Se la merce è già presente nel Sistema, chiama automaticamente la funzione `changeGoodData` per modificarne le informazioni. Ritorna sempre *nil*;
+- *`AddGood(goodID string, name string, description string) error`*: aggiunge una merce al Sistema con id *goodID*, nome *name* e descrizione *description*. Se la merce è già presente nel Sistema, chiama automaticamente la funzione `changeGoodData` per modificarne le informazioni. Ritorna sempre `nil`;
 
 - *`changeGoodData(goodID string, newName string, newDescription string) error`*: cambia le informazioni della merce con id *goodID*, impostando il nome a *newName* e la descrizione a *newDescription*. Ritorna un errore se l'id della merce non è registrato.
 
@@ -1116,7 +1365,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewCatalogService(p CatalogServiceParams) *CatalogService`*: Costruttore della struttura. Le porte (_Use Case_) devono essere fornite come parametri al costruttore e, per farlo, si utilizza la struttura *`CatalogServiceParams`*, struttura con i medesimi attributi di CatalogService con l'istruzione `fx.in` per permettere al _framewor_ *fx* di fornire automaticamente le dipendenze necessarie;
+- *`NewCatalogService(p CatalogServiceParams) *CatalogService`*: Costruttore della struttura. Le porte (_Use Case_) devono essere fornite come parametri al costruttore e, per farlo, si utilizza la struttura *`CatalogServiceParams`*, struttura con i medesimi attributi di CatalogService con l'istruzione `fx.in` per permettere al _framework_ *fx* di fornire automaticamente le dipendenze necessarie;
 
 - *`AddOrChangeGoodData(agc *servicecmd.AddChangeGoodCmd) *serviceresponse.AddOrChangeResponse`*: prende un _Command_ per la richiesta di aggiunta o cambiamento informazioni di una merce e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione;
 
