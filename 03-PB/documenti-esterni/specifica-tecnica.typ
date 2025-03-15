@@ -305,6 +305,20 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 
 ==== Utilizzo del pattern nel progetto
 
+=== Strategy
+
+==== Descrizione del pattern
+
+Il pattern _Strategy_ consiste nell'incapsulare una parte di codice all'interno di una classe specifica. Tale classe deve soddisfare un'interfaccia che viene poi utilizzata dal Sistema per invocarne i metodi esposti: questo pattern permette di cambiare in maniera semplice e veloce parti di codice soggette a modifiche.
+
+==== Motivazioni dell'utilizzo del pattern
+
+Il pattern _Strategy_ viene utilizzato quando una componente di natura algoritmica del Sistema sviluppato non è definitiva ma soggetta a cambiamenti futuri: eseguirne la codifica forzata all'interno della funzione che la utilizza potrebbe risultare controproducente, in quanto, un suo cambiamento, potrebbe determinare uno stravolgimento del codice: per questo motivo, la parte algoritmica viene incapsulata all'interno di un oggetto che può essere facilmente sostituito.
+
+==== Utilizzo del pattern nel progetto
+
+Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti avrebbe necessitato sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto la verifica di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e alcun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
+
 == Microservizi sviluppati
 
 Saranno ora esposti i microservizi sviluppati.
@@ -394,6 +408,24 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 - *`GoodMap map[string]int64`*: mappa avente come chiave una *string* che rappresenta l'id della merce, mentre come valore un *int64* che ne rappresenta la quantità;
 - *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
 
+==== AuthLoginRequest
+
+[PROSEGUIRE] img
+
+Rappresenta la richiesta di ottenimento di un Token, necessario per operare con il Sistema.
+
+*Descrizione degli attributi della struttura:*
+
+- *`Username string`*: username dell'utente che vuole ottenere un Token
+
+- *`AuthLoginResponse struct`*
+
+Rappresenta la risposta alla richiesta di un Token.
+
+*Descrizione degli attributi della struttura:*
+
+- *`Token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
+
 === Router dei microservizi
 
 //descrizione generale delle classi router
@@ -406,6 +438,189 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
 #pagebreak()
+
+=== Authenticator <auth>
+
+[PROSEGUIRE] img
+
+Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
+
+I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i token, viene pubblicata in un JetStream di NATS ed è utilizzata dagli API Gateway per verificare l'autenticità dei Token.
+
+È formato dalle seguenti componenti:
+
+- *AuthController*, che rappresenta l'_application logic_;
+- *AuthService*, che rappresenta la _business logic_;
+- *AuthRepository*, che rappresenta la _persistence logic_.
+
+Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esposti.
+
+==== Oggetti comuni del microservizio
+
+===== CheckPemKeyPairExistenceCmd <CheckPemKeyPairExistenceCmd>
+
+[PROSEGUIRE] img
+
+Rappresenta il _Command_ per verificare l'esistenza della chiave pubblia e della chiave privata. Viene utilizzata dalla _business logic_ per verificarne la presenza, necessaria per firmare il Token.
+
+*Descrizione degli attributi della struttura:*
+
+questa struttura non possiede attributi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCheckPemKeyPairExistence() *CheckPemKeyPairExistenceCmd`*: rappresenta il costruttore del _Command_.
+
+===== GetPemPrivateKeyCmd <GetPemPrivateKeyCmd>
+
+[PROSEGUIRE] img
+
+Rappresenta il _Command_ per ottenere la chiave privata, necessaria alla _business logic_ per firmare il Token.
+
+*Descrizione degli attributi della struttura:*
+
+questa struttura non possiede attributi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetPemPrivateKeyCmd() *GetPemPrivateKeyCmd`*: rappresenta il costruttore del _Command_.
+
+===== GetPemPublicKeyCmd <GetPemPublicKeyCmd>
+
+[PROSEGUIRE] img
+
+Rappresenta il _Command_ per ottenere la chiave pubblica, necessaria alla _business logic_ in quanto deve da questa essere pubblicata in un JetStream NATS apposito.
+
+*Descrizione degli attributi della struttura:*
+
+questa struttura non possiede attributi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetPemPublicKeyCmd() *GetPemPublicKeyCmd`*: rappresenta il costruttore del _Command_.
+
+===== GetTokenCmd <GetTokenCmd>
+
+[PROSEGUIRE] img
+
+Rappresenta il _Command_ per ottenere la generazione di un Token.
+
+*Descrizione degli attributi della struttura:*
+
+- *`username string`*: rappresenta lo _username_ dell'utente che ha richiesto il Token.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetTokenCmd(username string) *GetTokenCmd`*: rappresenta il costruttore del _Command_;
+- *`GetUsername() string`*: permette di ottenere lo _username_ registrato nel _Command_.
+
+===== PublishPublicKeyCmd <PublishPublicKeyCmd>
+
+[PROSEGUIRE] img
+
+Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
+
+*Descrizione degli attributi della struttura:*
+
+- *`pemPuk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
+- *`issuer string`*: rappresenta l'issuer, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewPublishPublicKeyCmd(pemPuk *[]byte, issuer string) *PublishPublicKeyCmd`*: rappresenta il costruttore del _Command_;
+- *`GetKey() *[]byte`*: permette di ottenere la chiave registrata nel _Command_;
+- *`GetIssuer() string`*: permette di ottenere lo _issuer_ registrato nel _Command_.
+
+===== StorePemKeyPairCmd <StorePemKeyPairCmd>
+
+[PROSEGUIRE] img
+
+Rappresenta il _Command_ per ottenere la memorizzazzione in _persistence logic_ della coppia di chiavi generate dalla _business logic_.
+
+*Descrizione degli attributi della struttura:*
+
+- *`prk *[]byte`*: rappresenta la chiave privata, in formato Pem e memorizzata in byte;
+- *`puk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
+- *`issuer string`*: rappresenta l'issuer, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStorePemKeyPairCmd(prk *[]byte, puk *[]byte, issuer string) *StorePemKeyPairCmd`*: rappresenta il costruttore del _Command_;
+- *`GetPemPrivateKey() *[]byte`*: permette di ottenere la chiave privata registrata nel _Command_;
+- *`GetPemPublicKey() *[]byte`*: permette di ottenere la chiave privata registrata nel _Command_;
+- *`GetIssuer() string`*: permette di ottenere lo _issuer_ registrato nel _Command_.
+
+===== CheckKeyPairExistenceResponse <CheckKeyPairExistenceResponse>
+
+[PROSEGUIRE] img
+
+Rappresenta la risposta della _persistence logic_ alla richiesta di verifica della presenza delle chiavi.
+
+*Descrizione degli attributi della struttura:*
+
+- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCheckKeyPairExistenceResponse(err error) *CheckKeyPairExistenceResponse`*: è il costruttore dell'oggetto;
+- *`GetError() error`*: restituisce l'errore memorizzato nella risposta.
+
+===== GetPemPrivateKeyResponse <GetPemPrivateKeyResponse>
+
+[PROSEGUIRE] img
+
+Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento della chiave privata.
+
+*Descrizione degli attributi della struttura:*
+
+- *`prk *[]byte`*: rappresenta la chiave privata, in formato Pem e memorizzata in byte;
+- *`issuer string`*: rappresenta l'_issuer_, ovvero l'uuid generato al momento della creazione delle chiavi;
+- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetPemPrivateKeyResponse(prk *[]byte, issuer string, err error) *GetPemPrivateKeyResponse`*: rappresenta il costruttore della risposta;
+- *`GetIssuer() string`*: permette di ottenere l'_issuer_ memorizzato nella risposta;
+- *`GetPemPrivateKey() *[]byte`*: permette di ottenere la chiave privata memorizzata nella risposta;
+- *`GetError() error`*: permette di ottenere l'errore memorizzato nella risposta.
+
+===== GetPemPublicKeyResponse <GetPemPublicKeyResponse>
+
+[PROSEGUIRE] img
+
+Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento della chiave pubblica.
+
+*Descrizione degli attributi della struttura:*
+
+- *`puk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
+- *`issuer string`*: rappresenta l'_issuer_, ovvero l'uuid generato al momento della creazione delle chiavi;
+- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetPemPublicKeyResponse(prk *[]byte, issuer string, err error) *GetPemPublicKeyResponse`*: rappresenta il costruttore della risposta;
+- *`GetIssuer() string`*: permette di ottenere l'_issuer_ memorizzato nella risposta;
+- *`GetPemPublicKey() *[]byte`*: permette di ottenere la chiave pubblica memorizzata nella risposta;
+- *`GetError() error`*: permette di ottenere l'errore memorizzato nella risposta.
+
+===== GetTokenResponse <GetTokenResponse>
+
+[PROSEGUIRE] img
+
+Rappresenta la risposta alla richiesta di ottenimento Token.
+
+*Descrizione degli attributi della struttura:*
+
+- *`token string`*: rappresenta il Token generato e firmato, se presente;
+- *`err error`*: rappresenta l'errore verificato durante l'elaborazione della richiesta, se presente, altrimenti è `nil`;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewGetTokenResponse(token string, err error) *GetTokenResponse`*: rappresenta il costruttore della risposta;
+- *`GetToken() string`*: permette di ottenere il Token firmato memorizzato nella risosta;
+- *`GetError() error`*: permette di ottenere l'errore memorizzato nella risposta.
+
+
 === Catalog <catalog>
 
 #figure(
@@ -419,7 +634,7 @@ Il microservizio tiene traccia dell'aggiunta e della modifica delle informazioni
 
 È formato da tre componenti principali:
 
-- *CatalogController*, che rappresenta l'_application logic_
+- *CatalogController*, che rappresenta l'_application logic_;
 - *CatalogService*, che rappresenta la _business logic_;
 - *CatalogRepository*, che rappresenta la _persistence logic_.
 
@@ -901,7 +1116,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewCatalogService(p CatalogServiceParams) *CatalogService`*: Costruttore della struttura. Le porte (_Use Case_) devono essere fornite come parametri al costruttore;
+- *`NewCatalogService(p CatalogServiceParams) *CatalogService`*: Costruttore della struttura. Le porte (_Use Case_) devono essere fornite come parametri al costruttore e, per farlo, si utilizza la struttura *`CatalogServiceParams`*, struttura con i medesimi attributi di CatalogService con l'istruzione `fx.in` per permettere al _framewor_ *fx* di fornire automaticamente le dipendenze necessarie;
 
 - *`AddOrChangeGoodData(agc *servicecmd.AddChangeGoodCmd) *serviceresponse.AddOrChangeResponse`*: prende un _Command_ per la richiesta di aggiunta o cambiamento informazioni di una merce e attiva la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione;
 
