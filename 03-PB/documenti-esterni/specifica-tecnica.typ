@@ -671,7 +671,7 @@ Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewPemPrivateKey(puk *[]byte, issuer string) *PemPrivateKey`*: è il costruttore dell'oggetto;
+- *`NewPemPrivateKey(prk *[]byte, issuer string) *PemPrivateKey`*: è il costruttore dell'oggetto;
 - *`GetIssuer() string`*: permette di ottenere l'_issuer_ memorizzato;
 - *`GetBytes() []byte`*: permette di ottenere una copia dei _bytes_ memorizzati della chiave privata;
 
