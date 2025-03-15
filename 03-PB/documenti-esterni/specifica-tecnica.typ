@@ -9,6 +9,12 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.5.0",
+      date: datetime(day: 15, month: 03, year: 2025),
+      autore: p.emanuele,
+      descr: "Continuazione sezione architettura" + [ (@architettura)] + ".",
+    ),
+    (
       vers: "0.4.0",
       date: datetime(day: 13, month: 03, year: 2025),
       autore: p.loris,
