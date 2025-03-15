@@ -1,13 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.4.0]
+#let ver = [0.5.0]
 
 #show: body => importantdocs(
   data: datetime(day: 25, month: 02, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.5.0",
+      date: datetime(day: 13, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.marco,
+      descr: "Descrizione del microservizio authenticator" + [ (@auth)] + ".",
+    ),
     (
       vers: "0.4.0",
       date: datetime(day: 13, month: 03, year: 2025),
@@ -1420,7 +1427,7 @@ Si occupa di gestire l'_Application Logic_ del microservizio Catalog.
 === Warehouse <micro_warehouse>
 
 #figure(
-  image("../../assets/warehouse/warehouse.png", width: 125%),
+  image("../../assets/warehouse/warehouse.png", width: 130%),
   caption: "Componenti del microservizio Warehouse",
 )
 
@@ -1470,7 +1477,7 @@ Questa struttura implementa l'interfaccia *IStockRepository*, vedi la @IStockRep
 
 ==== Good <WarehouseRepoGood>
 #figure(
-  image("../../assets/warehouse/Good.png", width: 30%),
+  image("../../assets/warehouse/Good.png", width: 25%),
   caption: "Warehouse - Good",
 )
 Rappresenta una merce registrata nel magazzino.
@@ -1520,7 +1527,7 @@ Rappresenta il _Command_ per creare un aggiornamento dello stock.
 
 ==== CreateStockUpdateGood <CreateStockUpdateGood>
 #figure(
-  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 40%),
+  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 30%),
   caption: "Warehouse - CreateStockUpdateGood",
 )
 
@@ -1558,7 +1565,7 @@ Adapter che mette in comunicazione la _Business Logic_ con il sistema di messagg
 
 ==== GoodStock <GoodStock>
 #figure(
-  image("../../assets/warehouse/GoodStock.png", width: 40%),
+  image("../../assets/warehouse/GoodStock.png", width: 25%),
   caption: "Warehouse - GoodStock",
 )
 Questa classe è utilizzata nella _Business Logic_.
@@ -1607,7 +1614,7 @@ Implementa le seguenti interfacce (porte):
 
 ==== GoodInfo <GoodInfo>
 #figure(
-  image("../../assets/warehouse/GoodInfo.png", width: 40%),
+  image("../../assets/warehouse/GoodInfo.png", width: 20%),
   caption: "Warehouse - GoodInfo",
 )
 Questa classe è utilizzata nella _Business Logic_.
@@ -1656,7 +1663,7 @@ Implementa le seguenti interfacce (porte):
 
 ==== RemoveStockCmd <RemoveStockCmd>
 #figure(
-  image("../../assets/warehouse/RemoveStockCmd.png", width: 40%),
+  image("../../assets/warehouse/RemoveStockCmd.png", width: 25%),
   caption: "Warehouse - RemoveStockCmd",
 )
 
@@ -1677,7 +1684,7 @@ Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare all
 
 ==== AddStockCmd <AddStockCmd>
 #figure(
-  image("../../assets/warehouse/AddStockCmd.png", width: 40%),
+  image("../../assets/warehouse/AddStockCmd.png", width: 25%),
   caption: "Warehouse - AddStockCmd",
 )
 
@@ -1717,7 +1724,7 @@ Si occupa di gestire la _Business Logic_ per l'aggiunta e la rimozione di stock 
 
 ==== AddStockRequestDTO <AddStockRequestDTO>
 #figure(
-  image("../../assets/warehouse/AddStockRequestDTO.png", width: 40%),
+  image("../../assets/warehouse/AddStockRequestDTO.png", width: 25%),
   caption: "Warehouse - AddStockRequestDTO",
 )
 
@@ -1730,7 +1737,7 @@ Questo DTO viene utilizzato per rappresentare la richiesta di aggiunta di stock,
 
 ==== RemoveStockRequestDTO <RemoveStockRequestDTO>
 #figure(
-  image("../../assets/warehouse/RemoveStockRequestDTO.png", width: 40%),
+  image("../../assets/warehouse/RemoveStockRequestDTO.png", width: 25%),
   caption: "Warehouse - RemoveStockRequestDTO",
 )
 
@@ -1762,7 +1769,7 @@ Il *StockController* gestisce l'_Application Logic_ per le operazioni di aggiunt
 ==== StockUpdateCmd <StockUpdateCmd>
 
 #figure(
-  image("../../assets/warehouse/StockUpdateCmd.png", width: 40%),
+  image("../../assets/warehouse/StockUpdateCmd.png", width: 30%),
   caption: "Warehouse - StockUpdateCmd",
 )
 
@@ -1780,7 +1787,7 @@ Rappresenta il comando per aggiornare lo stock nel microservizio *Warehouse*.
 ==== StockUpdateGood
 
 #figure(
-  image("../../assets/warehouse/StockUpdateGood.png", width: 40%),
+  image("../../assets/warehouse/StockUpdateGood.png", width: 35%),
   caption: "Warehouse - StockUpdateGood",
 )
 
@@ -1830,7 +1837,7 @@ Il *StockUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 ==== CatalogUpdateCmd <CatalogUpdateCmd>
 #figure(
-  image("../../assets/warehouse/CatalogUpdateCmd.png", width: 40%),
+  image("../../assets/warehouse/CatalogUpdateCmd.png", width: 25%),
   caption: "CatalogUpdateCmd",
 )
 
@@ -1880,7 +1887,7 @@ Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiorna
 
 ==== HealthCheckController
 #figure(
-  image("../../assets/warehouse/HealthCheckController.png", width: 75%),
+  image("../../assets/warehouse/HealthCheckController.png", width: 55%),
   caption: "Warehouse - HealthCheckController",
 )
 
