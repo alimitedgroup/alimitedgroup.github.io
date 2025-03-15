@@ -317,7 +317,7 @@ Il pattern _Strategy_ viene utilizzato quando una componente di natura algoritmi
 
 ==== Utilizzo del pattern nel progetto
 
-Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti avrebbe necessitato sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto la verifica di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e alcun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
+Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti necessita sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto il controllo di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e alcun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
 
 == Microservizi sviluppati
 
@@ -445,7 +445,7 @@ Rappresenta la risposta alla richiesta di un Token.
 
 Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
 
-I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i token, viene pubblicata in un JetStream di NATS ed è utilizzata dagli API Gateway per verificare l'autenticità dei Token.
+I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
 
 È formato dalle seguenti componenti:
 
@@ -489,7 +489,7 @@ questa struttura non possiede attributi
 
 [PROSEGUIRE] img
 
-Rappresenta il _Command_ per ottenere la chiave pubblica, necessaria alla _business logic_ in quanto deve da questa essere pubblicata in un JetStream NATS apposito.
+Rappresenta il _Command_ per ottenere la chiave pubblica, necessaria alla _business logic_ in quanto deve da questa essere pubblicata in un JetStream NATS#super[G] apposito.
 
 *Descrizione degli attributi della struttura:*
 
@@ -554,11 +554,11 @@ Rappresenta il _Command_ per ottenere la memorizzazzione in _persistence logic_ 
 
 [PROSEGUIRE] img
 
-Rappresenta la risposta della _persistence logic_ alla richiesta di verifica della presenza delle chiavi.
+Rappresenta la risposta della _persistence logic_ alla richiesta di controllo della presenza delle chiavi.
 
 *Descrizione degli attributi della struttura:*
 
-- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+- *`err error`*: rappresenta l'errore dell'operazione, se questo si controllo ,altrimenti il campo viene popolato con `nil`.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -575,7 +575,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 
 - *`prk *[]byte`*: rappresenta la chiave privata, in formato Pem e memorizzata in byte;
 - *`issuer string`*: rappresenta l'_issuer_, ovvero l'uuid generato al momento della creazione delle chiavi;
-- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+- *`err error`*: rappresenta l'errore dell'operazione, altrimenti il campo viene popolato con `nil`.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -594,7 +594,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 
 - *`puk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
 - *`issuer string`*: rappresenta l'_issuer_, ovvero l'uuid generato al momento della creazione delle chiavi;
-- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+- *`err error`*: rappresenta l'errore dell'operazione, altrimenti il campo viene popolato con `nil`.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -629,7 +629,7 @@ Rappresenta la risposta alla richiesta di pubblicazione della chiave pubblica.
 
 *Descrizione degli attributi della struttura:*
 
-- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+- *`err error`*: rappresenta l'errore dell'operazione, altrimenti il campo viene popolato con `nil`.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -644,7 +644,7 @@ Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
 
 *Descrizione degli attributi della struttura:*
 
-- *`err error`*: rappresenta l'errore dell'operazione, se questo si verifica, altrimenti il campo viene popolato con `nil`.
+- *`err error`*: rappresenta l'errore dell'operazione, altrimenti il campo viene popolato con `nil`.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -722,7 +722,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-*`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: il metodo deve offrire la possibilità di richidedere la verifica dell'esistenza di una coppia di chiavi memorizzata e ricevere adeguata risposta.
+*`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: il metodo deve offrire la possibilità di richidedere il controllo dell'esistenza di una coppia di chiavi memorizzata e ricevere adeguata risposta.
 
 ==== IGetPemPrivateKeyPort <IGetPemPrivateKeyPort>
 
@@ -767,7 +767,7 @@ Adapter che mette in comunicazione la _business logic_ con la _persistence logic
 - *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: converte il _Command_ per la memorizzazione della coppia di chiavi in formato Pem e l'issuer associato in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
 - *`GetPemPrivateKey(cmd *servicecmd.GetPemPrivateKeyCmd) *serviceresponse.GetPemPrivateKeyResponse`*: converte il _Command_ per l'ottenimento della chiave privata e del suo issuer in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
 - *`GetPemPublicKey(cmd *servicecmd.GetPemPublicKeyCmd) *serviceresponse.GetPemPublicKeyResponse`*: converte il _Command_ per l'ottenimento della chiave pubblica e del suo issuer in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
-- *`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: converte il _Command_ per la verifica della presenza di una coppia di chiavi memorizzata in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata.
+- *`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: converte il _Command_ per il controllo della presenza di una coppia di chiavi memorizzata in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata.
 
 ==== IPublishPort <IPublishPort>
 
@@ -802,18 +802,18 @@ Interfaccia che gli oggetti rappresentanti un Publisher per le chiavi pubbliche 
 
 ==== AuthPublisher <AuthPublisher>
 
-Un _Publisher_ che permette di pubblicare su un JetStream NATS chiave pubblica e issuer associato.
+Un _Publisher_ che permette di pubblicare su un JetStream NATS#super[G] chiave pubblica e issuer associato.
 
 Implementa l'interfaccia *IAuthPublisher*: per maggiori informazioni vedere la @IAuthPublisher.
 
 *Descrizione degli attributi della struttura:*
 
-- *`mb *broker.NatsMessageBroker`*: un'istanza di un _message broker_ di NATS, necessario per la pubblicazione delle chiavi e dell'_issuer_;
+- *`mb *broker.NatsMessageBroker`*: un'istanza di un _message broker_ di NATS#super[G] ,necessario per la pubblicazione delle chiavi e dell'_issuer_;
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewPublisher(mb *broker.NatsMessageBroker) *AuthPublisher`*: costruttore della struttura, prende un _message broker_ di NATS come parametro;
-- *`PublishKey(puk crypto.PublicKey, issuer string) error`*: permette di pubblicare la chiave e l'issuer passati come parametro in un apposito JetStream di NATS, ritornando un errore se l'operazione non va a buon fine.
+- *`NewPublisher(mb *broker.NatsMessageBroker) *AuthPublisher`*: costruttore della struttura, prende un _message broker_ di NATS#super[G] come parametro;
+- *`PublishKey(puk crypto.PublicKey, issuer string) error`*: permette di pubblicare la chiave e l'issuer passati come parametro in un apposito JetStream di NATS#super[G] ,ritornando un errore se l'operazione non va a buon fine.
 
 ==== IAuthenticateUserStrategy <IAuthenticateUserStrategy>
 
@@ -821,7 +821,7 @@ Interfaccia che le strutture che possiedo l'algoritmo per valutare i dati di aut
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`Authenticate(us serviceobject.UserData) (string, error)`*: il metodo deve ospitare l'algoritmo che verifica i dati di autenticazione. Deve restituire uno stringa con il ruolo e `nil` se la verifica ha esito positivo, una stringa vuota e un errore altrimenti.
+- *`Authenticate(us serviceobject.UserData) (string, error)`*: il metodo deve ospitare l'algoritmo che controlla i dati di autenticazione. Deve restituire uno stringa con il ruolo e `nil` se il controllo ha esito positivo, una stringa vuota e un errore altrimenti.
 
 ==== SimpleAuthAlg
 
@@ -834,7 +834,7 @@ Implementazione di un semplice algoritmo per verificare i dati di autenticazione
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`Authenticate(us serviceobject.UserData) (string, error)`*: il metodo verifica lo username. Se la verifica va a buon fine viene ritornato il ruolo e `nil`, altrimenti viene ritornata una stringa vuota e un errore.
+- *`Authenticate(us serviceobject.UserData) (string, error)`*: il metodo controlla lo username. Se il controllo va a buon fine viene ritornato il ruolo e `nil`, altrimenti viene ritornata una stringa vuota e un errore.
 
 ==== IGetTokenUseCase <IGetTokenUseCase>
 
@@ -867,7 +867,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 - *`storePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) error`*: gestisce la memorizzazione delle chiavi, quando generate;
 - *`getPrivateKeyFromPem(prk *[]byte) (*ecdsa.PrivateKey, error)`*: si occupa di convertire una chiave privata passata in formato Pem in una chiave privata ECDSA a tutti gli effetti;
 - *`generateToken(username string, role string) (string, error)`*: si occupa di generare e firmare un Token;
-- *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: esegue la verifica delle credenziali e, se la verifica ha esito positivo, fa generare un Token.
+- *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: esegue un controllo delle credenziali e, se lil controllo ha esito positivo, fa generare un Token.
 
 ==== AuthController
 
