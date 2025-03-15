@@ -848,7 +848,7 @@ Interfaccia che permette all'_application logic_ di comunicare alla _business lo
 
 Oggetto rappresentatnte la _business logic_ di *Authenticator*.
 
-Implementa l'interfaccia *IGetTokenUseCase*, per maggiori informazioni vedere la @IGetTokenUseCase.
+Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazioni vedere la @IGetTokenUseCase.
 
 *Descrizione degli attributi della struttura:*
 
@@ -869,6 +869,19 @@ Implementa l'interfaccia *IGetTokenUseCase*, per maggiori informazioni vedere la
 - *`generateToken(username string, role string) (string, error)`*: si occupa di generare e firmare un Token;
 - *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: esegue la verifica delle credenziali e, se la verifica ha esito positivo, fa generare un Token.
 
+==== AuthController
+
+È l'oggetto che gestisce l'_application logic_.
+
+*Descrizione degli attributi della struttura:*
+
+- *`tokenUseCase serviceportin.IGetTokenUseCase`*: vedi @IGetTokenUseCase.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewAuthController(tokenUseCase serviceportin.IGetTokenUseCase) *authController`*: costruttore dell'oggetto. Prende un oggetto che soddisfa `IGetTokenUseCase` come parametro;
+- *`checkGetTokenRequest(dto *common.AuthLoginRequest) error`*: controlla la correttezza della richiesta per ottenere un Token e restituisce un errore in caso di risultato negativo o `nil` altrimenti;
+- *`NewTokenRequest(ctx context.Context, msg *nats.Msg) error`*: si occupa di gestire una richiesta di ottenimento Token e rispondere alla stessa con il Token o con una stringa vuota se la procedura non va a buon fine.
 
 === Catalog <catalog>
 
