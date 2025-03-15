@@ -281,6 +281,16 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 
 - Ottimizzazione delle comunicazioni: il _client_ gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
+=== API _Gateway_
+Per facilitare la gestione delle richieste e migliorare la sicurezza e la scalabilità del sistema, è stato introdotto un *API Gateway*. Questo componente funge da intermediario tra il _client_ e i microservizi, offrendo diversi vantaggi:
+
+- **Aggregazione delle richieste**: l'API Gateway può combinare più richieste ai microservizi in una singola richiesta, riducendo il numero di chiamate tra il _client_ e il _backend_.
+- **Sicurezza**: l'API Gateway può gestire l'autenticazione e l'autorizzazione, proteggendo i microservizi da accessi non autorizzati.
+- **Bilanciamento del carico**: distribuisce le richieste tra i vari microservizi per ottimizzare l'uso delle risorse e migliorare le prestazioni.
+- **Monitoraggio e logging**: centralizza il monitoraggio e il logging delle richieste, facilitando la diagnosi e la risoluzione dei problemi.
+
+L'API Gateway è configurato per gestire le richieste in modo efficiente, garantendo che il sistema sia sicuro, scalabile e facile da mantenere.
+
 == Design pattern
 
 === Dependency injection
