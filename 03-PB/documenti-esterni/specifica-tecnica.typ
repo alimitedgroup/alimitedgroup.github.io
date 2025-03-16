@@ -1,5 +1,4 @@
 #import "../../lib/importantdocs.typ": *
-#import "../../lib/importantdocs.typ": *
 #let ver = [0.5.0]
 #show: body => importantdocs(
   data: datetime(day: 25, month: 02, year: 2025),
