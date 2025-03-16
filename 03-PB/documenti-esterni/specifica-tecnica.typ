@@ -10,14 +10,14 @@
       date: datetime(day: 16, month: 03, year: 2025),
       autore: p.sara,
       //verifica: p.marco,
-      descr: "Descrizione pattern Adapter",
+      descr: "Descrizione pattern Adapter" + [ (@adapter)] + ".",
     ),
     (
       vers: "0.4.0",
       date: datetime(day: 12, month: 03, year: 2025),
       autore: p.sara,
       //verifica: p.marco,
-      descr: "Descrizione Pattern Dependency Injection",
+      descr: "Descrizione Pattern Dependency Injection" + [ (@di)] + ".",
     ),
     (
       vers: "0.3.0",
@@ -287,7 +287,7 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 
 == Design pattern
 
-=== Dependency injection
+=== Dependency injection <di>
 
 ==== Descrizione del pattern
 Il pattern _Dependency Injection#super[G]_ è un design pattern strutturale che consente di implementare l'Inversione del Controllo per gestire le dipendenze tra gli oggetti.\
@@ -338,7 +338,7 @@ Nel progetto, il pattern _Dependency Injection#super[G]_ viene applicato in modo
 Ogni microservizio utilizza *Fx* per gestire le proprie dipendenze, dalla configurazione fino ai componenti applicativi.
 I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente.
 
-=== Object adapter
+=== Object adapter<adapter>
 ==== Descrizione del pattern
 Il pattern _Object Adapter_ è un design pattern strutturale che permette ad oggetti con interfacce incompatibili di collaborare.\
 Questo pattern utilizza la composizione per "adattare" l'interfaccia di una classe a un'altra interfaccia attesa dai _client_.
