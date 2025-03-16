@@ -302,9 +302,6 @@ L'utilizzo del pattern _Dependency Injection_ nel progetto porta numerosi vantag
 *Fx* è un framework di application _lifecycle_ e _dependency injection_ per _Go_ sviluppato da _Uber_.\
 Permette di definire componenti e lascia al framework il compito di costruirli nell'ordine corretto e di avviare/arrestare l’applicazione.
 
-
-
-
 ===== Costrutti principali
 I costrutti principali di Fx utilizzati nel progetto sono:
 
@@ -326,14 +323,42 @@ Ogni modulo espone un'istanza _Module_ che aggrega tutte le opzioni Fx relative 
 //includere anche il fatto che esistono file *.module.go
 
 ==== Utilizzo del pattern nel progetto
+Nel progetto, il pattern _Dependency Injection_ viene applicato in modo estensivo utilizzandolo praticamente in ogni componente dell'architettura.
+Ogni microservizio utilizza *Fx* per gestire le proprie dipendenze, dalla configurazione fino ai componenti applicativi.
+I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente.
+
 
 === Object adapter
 
 ==== Descrizione del pattern
 
+=== Object adapter
+==== Descrizione del pattern
+Il pattern _Object Adapter_ è un design pattern strutturale che permette ad oggetti con interfacce incompatibili di collaborare.\
+Questo pattern utilizza la composizione per "adattare" l'interfaccia di una classe a un'altra interfaccia attesa dai _client_.
+L'adapter agisce come un intermediario, convertendo le richieste del client in chiamate compatibili con l'oggetto adattato.
+A differenza del _Class Adapter_ (che utilizza l'ereditarietà), l'_Object Adapter_ mantiene un riferimento all'oggetto da adattare (_adaptee_), delegando a quest'ultimo le operazioni necessarie dopo aver effettuato le opportune conversioni.
+La struttura tipica dell'Object Adapter include:
+- una _Target Interface_ che definisce l'interfaccia che il client si aspetta di utilizzare;
+- un _Adaptee_ che è l'oggetto con l'interfaccia incompatibile;
+- un _Adapter_ che implementa l'interfaccia Target e mantiene un riferimento all'_Adaptee_.
+
+
 ==== Motivazioni dell'utilizzo del pattern
+L'utilizzo del pattern _Object adapter_ nel progetto porta diversi vantaggi:
+
+- *flessibilità maggiore*: l'_adapter_ può lavorare con qualsiasi sottoclasse dell'oggetto adattato;
+
+- *riutilizzabilità*: l'_adapter_ può essere riutilizzato per adattare diverse implementazioni dell'interfaccia attesa;
+
+- *manutenzione facilitata*: separando l'_adapter_ dall'oggetto concreto, eventuali modifiche all'oggetto non impattano direttamente sull'_adapter_.
+
 
 ==== Utilizzo del pattern nel progetto
+Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente negli strati esterni del sistema, come parte degli _Input e Output Adapter_:
+
+- _Input Adapter_: implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS) in chiamate alle _inbound ports_ del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
+- _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
 
 == Microservizi sviluppati
 
