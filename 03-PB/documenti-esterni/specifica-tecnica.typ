@@ -279,9 +279,9 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 === Dependency injection
 
 ==== Descrizione del pattern
-Il pattern _Dependency Injection_ è un design pattern strutturale che consente di implementare l'Inversione del Controllo per gestire le dipendenze tra gli oggetti.\
+Il pattern _Dependency Injection#super[G]_ è un design pattern strutturale che consente di implementare l'Inversione del Controllo per gestire le dipendenze tra gli oggetti.\
 Invece di creare direttamente le dipendenze all'interno delle classi o dei componenti, queste vengono "iniettate" dall'esterno. In questo modo, un componente dichiara le sue dipendenze senza doversi preoccupare di come crearle, permettendo così una maggiore modularità e un disaccoppiamento tra i diversi componenti del sistema.
-Esistono principalmente due tipi di _dependency injection_:
+Esistono principalmente due tipi di _dependency injection#super[G]_:
 
 - _Constructor Injection_: le dipendenze vengono passate attraverso il costruttore;
 - _Setter Injection_: le dipendenze vengono impostate tramite metodi setter.
@@ -289,17 +289,17 @@ Esistono principalmente due tipi di _dependency injection_:
 Nel progetto viene utilizzata la *Constructor Injection*.
 
 ==== Motivazioni dell'utilizzo del pattern
-L'utilizzo del pattern _Dependency Injection_ nel progetto porta numerosi vantaggi:
+L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numerosi vantaggi:
 
-- *disaccoppiamento*: i componenti sono meno legati tra loro, facilitando la manutenzione e l'estensione del codice;
-- *testabilità*: è possibile sostituire le dipendenze reali con mock durante i test;
+- *disaccoppiamento*: i componenti sono meno legati tra loro, facilitando la manutenzione#super[G] e l'estensione del codice;
+- *testabilità*: è possibile sostituire le dipendenze reali con mock durante i test#super[G] ;
 - *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
 - *flessibilità*: è più semplice sostituire un'implementazione con un'altra senza modificare il codice client;
 - *gestione centralizzata*: tutte le dipendenze sono configurate e gestite in un unico punto (nel nostro caso, attraverso *Fx*);
 - separazione delle responsabilità: ogni componente ha responsabilità ben definite.
 
 ==== Framework Fx di _Uber_
-*Fx* è un framework di application _lifecycle_ e _dependency injection_ per _Go_ sviluppato da _Uber_.\
+*Fx* è un framework di application _lifecycle_ e _dependency injection#super[G]_ per _Go_#super[G] sviluppato da _Uber_.\
 Permette di definire componenti e lascia al framework il compito di costruirli nell'ordine corretto e di avviare/arrestare l’applicazione.
 
 ===== Costrutti principali
@@ -323,7 +323,7 @@ Ogni modulo espone un'istanza _Module_ che aggrega tutte le opzioni Fx relative 
 //includere anche il fatto che esistono file *.module.go
 
 ==== Utilizzo del pattern nel progetto
-Nel progetto, il pattern _Dependency Injection_ viene applicato in modo estensivo utilizzandolo praticamente in ogni componente dell'architettura.
+Nel progetto, il pattern _Dependency Injection#super[G]_ viene applicato in modo estensivo utilizzandolo praticamente in ogni componente dell'architettura.
 Ogni microservizio utilizza *Fx* per gestire le proprie dipendenze, dalla configurazione fino ai componenti applicativi.
 I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente.
 
@@ -357,8 +357,8 @@ L'utilizzo del pattern _Object adapter_ nel progetto porta diversi vantaggi:
 ==== Utilizzo del pattern nel progetto
 Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente negli strati esterni del sistema, come parte degli _Input e Output Adapter_:
 
-- _Input Adapter_: implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS) in chiamate alle _inbound ports_ del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
-- _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
+- _Input Adapter_: implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS#super[G] )in chiamate alle _inbound ports_ del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
+- _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API#super[G] di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
 
 == Microservizi sviluppati
 
