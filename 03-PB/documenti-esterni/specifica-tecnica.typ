@@ -9,6 +9,20 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.5.0",
+      date: datetime(day: 16, month: 03, year: 2025),
+      autore: p.sara,
+      //verifica: p.marco,
+      descr: "Descrizione pattern Adapter",
+    ),
+    (
+      vers: "0.4.0",
+      date: datetime(day: 12, month: 03, year: 2025),
+      autore: p.sara,
+      //verifica: p.marco,
+      descr: "Descrizione Pattern Dependency Injection",
+    ),
+    (
       vers: "0.3.0",
       date: datetime(day: 09, month: 03, year: 2025),
       autore: p.matteo,
@@ -326,11 +340,6 @@ Ogni modulo espone un'istanza _Module_ che aggrega tutte le opzioni Fx relative 
 Nel progetto, il pattern _Dependency Injection#super[G]_ viene applicato in modo estensivo utilizzandolo praticamente in ogni componente dell'architettura.
 Ogni microservizio utilizza *Fx* per gestire le proprie dipendenze, dalla configurazione fino ai componenti applicativi.
 I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente.
-
-
-=== Object adapter
-
-==== Descrizione del pattern
 
 === Object adapter
 ==== Descrizione del pattern
