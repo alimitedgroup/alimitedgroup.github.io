@@ -48,8 +48,10 @@
   ),
   stato: [In redazione],
   responsabile: ((p.marco),),
-  verificatore: ((p.emanuele),),
+  verificatore: ((p.emanuele), (p.marco)),
   redattori: (
+    (p.loris),
+    (p.matteo),
     (p.sara),
   ),
   descrizione: [Questo documento contiene la _Specifica Tecnica_ descritto dal gruppo _ALimitedGroup_ per il Capitolato numero 6 proposto da #M31],
@@ -345,7 +347,7 @@ Infine, si ricorda che, nel linguaggio Go#super[G] ,un nome di funzione o attrib
 ==== StockUpdateGood
 
 #figure(
-  image("../../assets/catalog/StockUpdate.png", width: 20%),
+  image("../../assets/catalog/StockUpdate.png", width: 27%),
   caption: "StockUpdateGood",
 )
 
@@ -362,7 +364,7 @@ Struttura utile per rappresentare le variazioni di quantità durante l'invio di 
 ==== GoodUpdateData
 
 #figure(
-  image("../../assets/catalog/GoodUpdateData.png", width: 25%),
+  image("../../assets/catalog/GoodUpdateData.png", width: 35%),
   caption: "GoodUpdateData",
 )
 
@@ -377,7 +379,7 @@ Struttura utile per rappresentare una modifica alle informazioni di una merce o 
 ==== GetGoodsDataResponseDTO
 
 #figure(
-  image("../../assets/catalog/GetGoodsDataResponseDTO.png", width: 35%),
+  image("../../assets/catalog/GetGoodsDataResponseDTO.png", width: 55%),
   caption: "GetGoodsDataResponseDTO",
 )
 
@@ -390,7 +392,7 @@ Rappresenta la risposta fornita alla richiesta di ottenimento informazioni sulle
 ==== GetWarehouseResponseDTO
 
 #figure(
-  image("../../assets/catalog/GetWarehouseResponseDTO.png", width: 40%),
+  image("../../assets/catalog/GetWarehouseResponseDTO.png", width: 60%),
   caption: "GetWarehouseResponseDTO",
 )
 
@@ -404,7 +406,7 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sull'inventar
 ==== GetGoodsQuantityResponseDTO
 
 #figure(
-  image("../../assets/catalog/GetGoodsQuantityResponseDTO.png", width: 40%),
+  image("../../assets/catalog/GetGoodsQuantityResponseDTO.png", width: 60%),
   caption: "GetGoodsQuantityResponseDTO",
 )
 
@@ -417,7 +419,10 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 ==== AuthLoginRequest
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/AuthLoginRequest.png", width: 30%),
+  caption: "AuthLoginRequest",
+)
 
 Rappresenta la richiesta di ottenimento di un Token, necessario per operare con il Sistema.
 
@@ -425,7 +430,12 @@ Rappresenta la richiesta di ottenimento di un Token, necessario per operare con 
 
 - *`Username string`*: username dell'utente che vuole ottenere un Token
 
-- *`AuthLoginResponse struct`*
+==== AuthLoginResponse
+
+#figure(
+  image("../../assets/authenticator/AuthLoginResponse.png", width: 30%),
+  caption: "AuthLoginResponse",
+)
 
 Rappresenta la risposta alla richiesta di un Token.
 
@@ -448,7 +458,10 @@ Rappresenta la risposta alla richiesta di un Token.
 
 === Authenticator <auth>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/Auth.png", width: 130%),
+  caption: "Authenticator",
+)
 
 Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
 
@@ -466,7 +479,10 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 
 ===== CheckPemKeyPairExistenceCmd <CheckPemKeyPairExistenceCmd>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/CheckPemKeyPairExistenceCmd.png", width: 70%),
+  caption: "CheckPemKeyPairExistenceCmd",
+)
 
 Rappresenta il _Command_ per verificare l'esistenza della chiave pubblia e della chiave privata. Viene utilizzata dalla _business logic_ per verificarne la presenza, necessaria per firmare il Token.
 
@@ -480,7 +496,10 @@ questa struttura non possiede attributi
 
 ===== GetPemPrivateKeyCmd <GetPemPrivateKeyCmd>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/GetPemPrivateKeyCmd.png", width: 60%),
+  caption: "GetPemPrivateKeyCmd",
+)
 
 Rappresenta il _Command_ per ottenere la chiave privata, necessaria alla _business logic_ per firmare il Token.
 
@@ -494,7 +513,10 @@ questa struttura non possiede attributi
 
 ===== GetPemPublicKeyCmd <GetPemPublicKeyCmd>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/GetPemPublicKeyCmd.png", width: 60%),
+  caption: "GetPemPublicKeyCmd",
+)
 
 Rappresenta il _Command_ per ottenere la chiave pubblica, necessaria alla _business logic_ in quanto deve da questa essere pubblicata in un JetStream NATS#super[G] apposito.
 
@@ -508,7 +530,10 @@ questa struttura non possiede attributi
 
 ===== GetTokenCmd <GetTokenCmd>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/GetTokenCmd.png", width: 57%),
+  caption: "GetTokenCmd",
+)
 
 Rappresenta il _Command_ per ottenere la generazione di un Token.
 
@@ -523,7 +548,10 @@ Rappresenta il _Command_ per ottenere la generazione di un Token.
 
 ===== PublishPublicKeyCmd <PublishPublicKeyCmd>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/PublishPublicKeyCmd.png", width: 80%),
+  caption: "PublishPublicKeyCmd",
+)
 
 Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
 
@@ -540,7 +568,10 @@ Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
 
 ===== StorePemKeyPairCmd <StorePemKeyPairCmd>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/StorePemKeyPairCmd.png", width: 80%),
+  caption: "StorePemKeyPairCmd",
+)
 
 Rappresenta il _Command_ per ottenere la memorizzazzione in _persistence logic_ della coppia di chiavi generate dalla _business logic_.
 
@@ -559,7 +590,10 @@ Rappresenta il _Command_ per ottenere la memorizzazzione in _persistence logic_ 
 
 ===== CheckKeyPairExistenceResponse <CheckKeyPairExistenceResponse>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/CheckKeyPairExistenceResponse.png", width: 80%),
+  caption: "CheckKeyPairExistenceResponse",
+)
 
 Rappresenta la risposta della _persistence logic_ alla richiesta di controllo della presenza delle chiavi.
 
@@ -574,7 +608,10 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di controllo de
 
 ===== GetPemPrivateKeyResponse <GetPemPrivateKeyResponse>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/GetPemPrivateKeyResponse.png", width: 80%),
+  caption: "GetPemPrivateKeyResponse",
+)
 
 Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento della chiave privata.
 
@@ -593,7 +630,10 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 
 ===== GetPemPublicKeyResponse <GetPemPublicKeyResponse>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/GetPemPublicKeyResponse.png", width: 80%),
+  caption: "GetPemPublicKeyResponse",
+)
 
 Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento della chiave pubblica.
 
@@ -612,7 +652,10 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 
 ===== GetTokenResponse <GetTokenResponse>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/GetTokenResponse.png", width: 40%),
+  caption: "GetTokenResponse",
+)
 
 Rappresenta la risposta alla richiesta di ottenimento Token.
 
@@ -630,7 +673,10 @@ Rappresenta la risposta alla richiesta di ottenimento Token.
 
 ===== PublishPublicKeyResponse <PublishPublicKeyResponse>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/PublishPublicKeyResponse.png", width: 70%),
+  caption: "PublishPublicKeyResponse",
+)
 
 Rappresenta la risposta alla richiesta di pubblicazione della chiave pubblica.
 
@@ -645,7 +691,10 @@ Rappresenta la risposta alla richiesta di pubblicazione della chiave pubblica.
 
 ===== StorePemKeyPairResponse <StorePemKeyPairResponse>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/StorePemKeyPairResponse.png", width: 70%),
+  caption: "StorePemKeyPairResponse",
+)
 
 Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
 
@@ -660,7 +709,10 @@ Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
 
 ===== PemPrivateKey <PemPrivateKey>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/PemPrivateKey.png", width: 55%),
+  caption: "PemPrivateKey",
+)
 
 Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_ della stessa.
 
@@ -677,7 +729,10 @@ Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_
 
 ===== PemPublicKey <PemPublicKey>
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/authenticator/PemPublicKey.png", width: 55%),
+  caption: "PemPublicKey",
+)
 
 Oggetto utilizzato per memorizzare la chiave pubblica in formato Pem e l'_issuer_ della stessa.
 
@@ -821,6 +876,24 @@ Implementa l'interfaccia *IAuthPublisher*: per maggiori informazioni vedere la @
 
 - *`NewPublisher(mb *broker.NatsMessageBroker) *AuthPublisher`*: costruttore della struttura, prende un _message broker_ di NATS#super[G] come parametro;
 - *`PublishKey(puk crypto.PublicKey, issuer string) error`*: permette di pubblicare la chiave e l'issuer passati come parametro in un apposito JetStream di NATS#super[G] ,ritornando un errore se l'operazione non va a buon fine.
+
+==== UserData
+
+#figure(
+  image("../../assets/authenticator/UserData.png", width: 40%),
+  caption: "UserData",
+)
+
+Oggetto utilizzato da IAuthenticateUserStrategy, vedi @IAuthenticateUserStrategy.
+
+*Descrizione degli attributi della struttura:*
+
+- *`username string`*: nome utente da verificare.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewUserData(username string) *UserData`*: costruttore della struttura;
+- *`GetUsername() string`*: fornisce il nome utente memorizzato nell'istanza della struttura che lo invoca.
 
 ==== IAuthenticateUserStrategy <IAuthenticateUserStrategy>
 
