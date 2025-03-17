@@ -6,4 +6,4 @@ Qui bisogna spiegare i tipi di utenti:
 - Admin globale
 
 Spiegare le differenze tra di essi, le cose in comune, che cosa ognuno può e non può fare.
-Inoltre specificare a che api<!--raw-typst#super("G")--> gateway si possono connettere, se non possono farlo a tutti.
+Inoltre specificare a che api#super[G] gateway si possono connettere, se non possono farlo a tutti.

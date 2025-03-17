@@ -55,6 +55,7 @@ G:
   GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, facilitando la condivisione e lo sviluppo di progetti software."
   GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
   Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e semplicità, particolarmente adatto per sistemi e applicazioni cloud."
+  Good: "È l'effettivo numero della merce disponibile ai clienti per l'acquisto e/o disponibile al trasferimento ad un altro magazzino (warehouse)."
   Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include servizi di elaborazione, archiviazione e analisi dei dati."
   Grafana: "Piattaforma open-source di visualizzazione, monitoraggio e analisi di dati, progettata per aggregare, rappresentare graficamente e interpretare metriche provenienti da diverse sorgenti attraverso dashboard configurabili e dinamiche."
 H:
@@ -88,6 +89,7 @@ N:
 O:
   Ordine: "Spostamento verso l'esterno di un insieme di merci. Almeno un prodotto deve essere trasferito. Un ordine può essere soddisfatto da più magazzini."
 P:
+  Pair Programming: "È una metodologia di sviluppo Agile, in cui due programmatori lavorano insieme sulla stessa postazione di lavoro. Uno, detto 'conducente', ha il compito di scrivere il codice mentre il secondo, detto 'osservatore' o 'navigatore', controlla attentamente e corregge il codice man mano che viene scritto."
   PB: "Acronimo di Product Baseline, per la sua definizione vedere la parola 'Product Baseline'."
   PdP: "Acronimo di Piano di Progetto, per la sua definizione vedere la parola 'Piano di Progetto'."
   PdQ: "Acronimo di Piano di Qualifica, per la sua definizione vedere la parola 'Piano di Qualifica'."
@@ -118,6 +120,7 @@ S:
   SCRUM: "Metodo Agile per la gestione di progetti complessi, basato su iterazioni e collaborazioni continue."
   Specifica Tecnica: "È un documento che correda disegni, schemi e altro relativi ad un prodotto o progetto, al fine di prescriverne una specifica funzionalità o un determinato impiego o livelli prestazionali determinati."
   Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare un set di attività."
+  Stock: "È la quantità totale di una determinata merce presente all'interno di un WareHouse (magazzino)."
 T:
   Telegram: "Applicazione di messaggistica istantanea multipiattaforma utilizzata da ALimitedGroup per comunicazioni veloci."
   Test: "Attività inclusa nello sviluppo di un software consona a verificarne le funzionalità, individuando eventuali problemi."
@@ -125,14 +128,17 @@ T:
   TypeScript: "Linguaggio di programmazione sviluppato da Microsoft, basato su JavaScript, con supporto per tipizzazione statica."
   Typst: "Linguaggio di markup per la redazione di documenti moderno è di utlizzo più semplice rispetto ad altri linguaggi di markup."
 U:
+  UML: "Acronimo per Unified Modeling Language, utilizzato solitamente nello sviluppo software per descrivere ed analizzare le azioni compiute dagli attori principali, individuati in fase di analisi, nel contesto di un progetto. "
   Unit Test: "Test automatizzato per verificare il corretto funzionamento di una singola unità o componente del software."
   User Need: "Sono i desideri, le preferenze, le aspettative e gli obiettivi degli utenti quando interagiscono o usufruiscono di un prodotto o servizio."
+
 V:
   Validazione: "Controllo atto a determinare che quanto sviluppato soddisfi le esigenze per cui è stato realizzato."
   Verifica: "Controllo o ispezione per garantire che un processo o prodotto soddisfi determinati requisiti."
   Verificatore: "Colui che si occupa di segnalare eventuali errori commessi dal Redattore/Programmatore, in fase di redazione/codifica, di un qualsiasi documento/codice."
 W:
   Way of Working: "Metodo di lavoro o approccio operativo adottato da un team o organizzazione."
+  Warehouse: "È il magazzino dove la merce (good) viene immagazzinata."
 X:
   "": ""
 Y:

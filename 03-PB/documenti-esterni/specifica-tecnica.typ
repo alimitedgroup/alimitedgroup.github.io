@@ -1577,7 +1577,7 @@ Questa struttura implementa l'interfaccia *ICatalogRepository*, vedi la @ICatalo
 
 *Descrizione degli attributi della struttura:*
 
-- *`goodMap map[string]Good`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un oggetto *Good*#super[G] ,rappresentante una merce.
+- *`goodMap map[string]Good`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un oggetto *Good*#super[G],rappresentante una merce.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1614,7 +1614,7 @@ Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiorna
 
 ==== ICreateStockUpdatePort <ICreateStockUpdatePort>
 
-Rappresenta la porta che consente alla _business logic_ di comunicare con l'esterno per creare un aggiornamento dello stock#super[G] .
+Rappresenta la porta che consente alla _business logic_ di comunicare con l'esterno per creare un aggiornamento dello stockRappresenta l'interfaccia generica di un oggetto che implementa la _Persistence Logic_ degli stock#super[G] per il microservizio _Warehouse_#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1624,7 +1624,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare con l'este
 
 Questa struttura implementa l'interfaccia *ICreateStockUpdatePort*, vedi la @ICreateStockUpdatePort.
 
-_Adapter_ che mette in comunicazione la _business logic_ con il sistema di messaggistica per pubblicare gli aggiornamenti dello stock#super[G] .
+_Adapter_ che mette in comunicazione la _business logic_ con il sistema di messaggistica per pubblicare gli aggiornamenti dello stockRappresenta l'interfaccia generica di un oggetto che implementa la _Persistence Logic_ degli stock#super[G] per il microservizio _Warehouse_#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1650,7 +1650,7 @@ Rappresenta una merce con la sua quantità presente nel magazzino.
 
 ==== IApplyStockUpdatePort <IApplyStockUpdatePort>
 
-Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento dello stock#super[G] .
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento dello stock#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1779,7 +1779,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ManageStockService
 
-Si occupa di gestire la _business logic_ per l'aggiunta e la rimozione di stock#super[G] nel microservizio _Warehouse_#super[G] .
+Si occupa di gestire la _business logic_ per l'aggiunta e la rimozione di stock nel microservizio _Warehouse_#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1823,7 +1823,7 @@ Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock
 
 ==== StockController <StockController>
 
-Il *StockController* gestisce l'_application logic_ per le operazioni di aggiunta e rimozione di stock#super[G] nel microservizio *Warehouse*#super[G] .
+Lo *StockController* gestisce l'_application logic_ per le operazioni di aggiunta e rimozione di stock nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1874,7 +1874,7 @@ Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[
 
 ==== IApplyStockUpdateUseCase <IApplyStockUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento dello _stock_#super[G] .
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento dello _stock_.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1882,7 +1882,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ApplyStockUpdateService
 
-Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti dello stock#super[G] nel microservizio _Warehouse_#super[G] .
+Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti dello stock nel microservizio _Warehouse_#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1896,7 +1896,7 @@ Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti 
 
 ==== StockUpdateListener
 
-Il *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti dello stock#super[G] nel microservizio *Warehouse*#super[G] .
+Lo *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti dello stock nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1932,7 +1932,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ApplyCatalogUpdateService
 
-Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti del catalogo nel microservizio _Warehouse_#super[G] .
+Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti del catalogo nel microservizio _Warehouse_#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1946,7 +1946,7 @@ Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti 
 
 ==== CatalogListener
 
-Il *CatalogListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti del catalogo nel microservizio *Warehouse*#super[G] .
+Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiornamenti del catalogo nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1964,7 +1964,7 @@ Il *CatalogListener* gestisce l'_application logic_ per l'ascolto degli aggiorna
   caption: "Warehouse - HealthCheckController",
 )
 
-Il *HealthCheckController* gestisce l'_application logic_ per le operazioni di controllo dello stato di salute del microservizio *Warehouse*#super[G] .
+Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di controllo dello stato di salute del microservizio *Warehouse*#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1978,7 +1978,7 @@ Il *HealthCheckController* gestisce l'_application logic_ per le operazioni di c
   caption: "Warehouse - ReservationController",
 )
 
-Il *ReservationController* gestisce l'_application logic_ per le operazioni di creazione delle prenotazioni nel microservizio *Warehouse*#super[G] .
+Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di creazione delle prenotazioni nel microservizio *Warehouse*#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
