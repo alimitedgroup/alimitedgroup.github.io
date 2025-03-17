@@ -57,7 +57,7 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 
 #align(center)[*Specifica Tecnica#super[G]*]
 - Completare la progettazione e descrizione per il microservizio di *API#super[G] Gateway* entro il giorno *12 Marzo 2025*
-- Completare la progettazione e descrizione per il microservizio di *Warehouse* entro il giorno *12 Marzo 2025*
+- Completare la progettazione e descrizione per il microservizio di *Warehouse*#super[G] entro il giorno *12 Marzo 2025*
 - Progettare e descrivere il microservizio di *Auth* entro il giorno *16 Marzo 2025*
 - Progettare e descrivere il microservizio di *Notification* entro il giorno *16 Marzo 2025*
 - Iniziare la progettazione del microservizio di *Order* entro il giorno *23 Marzo 2025*
@@ -65,7 +65,7 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 
 #align(center)[*Programmazione*]
 - Completare i Test#super[G] di unità e di integrazione per il microservizio di *Api Gateway* entro il giorno *12 Marzo 2025*
-- Completare i Test#super[G] di unità e di integrazione per il microservizio di *Warehouse* entro il giorno *12 Marzo 2025*
+- Completare i Test#super[G] di unità e di integrazione per il microservizio di *Warehouse*#super[G] entro il giorno *12 Marzo 2025*
 - Codificare il microservizio di *Notification* entro il giorno *16 Marzo 2025*
 - Codificare il microservizio di *Auth* entro il giorno *16 Marzo 2025*
 - Iniziare la codifica del microservizio *Order* entro il giorno *23 Marzo 2025*
