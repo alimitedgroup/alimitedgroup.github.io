@@ -9,7 +9,7 @@
       vers: "0.9.0",
       date: datetime(day: 14, month: 03, year: 2025),
       autore: p.marco,
-      //verifica: p.sara,
+      verifica: p.samuele,
       descr: "Aggiunta di nuovi termini all'interno del Glossario.",
     ),
     (
