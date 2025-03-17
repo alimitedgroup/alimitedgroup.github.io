@@ -55,6 +55,7 @@ G:
   GitHub: "Piattaforma di hosting per repository Git basata su cloud, che offre strumenti di collaborazione per sviluppatori, controllo versione e gestione del codice sorgente, facilitando la condivisione e lo sviluppo di progetti software."
   GitLab : "Piattaforma DevOps open-source per il controllo versione, l'integrazione continua e il deployment continuo (CI/CD), che offre un'infrastruttura completa per lo sviluppo, il testing e il rilascio di software."
   Go: "Linguaggio di programmazione sviluppato da Google, noto per la sua efficienza e semplicità, particolarmente adatto per sistemi e applicazioni cloud."
+  Good: "È l'effettivo numero della merce disponibile ai clienti per l'acquisto e/o disponibile al trasferimento ad un altro magazzino (warehouse)."
   Google Cloud Platform: "Piattaforma di servizi cloud offerta da Google, che include servizi di elaborazione, archiviazione e analisi dei dati."
   Grafana: "Piattaforma open-source di visualizzazione, monitoraggio e analisi di dati, progettata per aggregare, rappresentare graficamente e interpretare metriche provenienti da diverse sorgenti attraverso dashboard configurabili e dinamiche."
 H:
@@ -119,6 +120,7 @@ S:
   SCRUM: "Metodo Agile per la gestione di progetti complessi, basato su iterazioni e collaborazioni continue."
   Specifica Tecnica: "È un documento che correda disegni, schemi e altro relativi ad un prodotto o progetto, al fine di prescriverne una specifica funzionalità o un determinato impiego o livelli prestazionali determinati."
   Sprint: "Ciclo di lavoro breve e pianificato in SCRUM, per completare un set di attività."
+  Stock: "È la quantità totale di una determinata merce presente all'interno di un WareHouse (magazzino)."
 T:
   Telegram: "Applicazione di messaggistica istantanea multipiattaforma utilizzata da ALimitedGroup per comunicazioni veloci."
   Test: "Attività inclusa nello sviluppo di un software consona a verificarne le funzionalità, individuando eventuali problemi."
@@ -136,6 +138,7 @@ V:
   Verificatore: "Colui che si occupa di segnalare eventuali errori commessi dal Redattore/Programmatore, in fase di redazione/codifica, di un qualsiasi documento/codice."
 W:
   Way of Working: "Metodo di lavoro o approccio operativo adottato da un team o organizzazione."
+  Warehouse: "È il magazzino dove la merce (good) viene immagazzinata."
 X:
   "": ""
 Y:
