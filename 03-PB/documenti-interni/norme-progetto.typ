@@ -554,7 +554,7 @@ Il *Processo di Sviluppo* stabilisce le attività che hanno come scopo quello di
 === Strumenti a supporto
 Per le attività previste nel processo di Sviluppo, abbiamo deciso di utilizzare i seguenti strumenti:
 - *GO* e *Visual Studio Code*: per la codifica del _software_ e dei microservizi;
-- *Draw.io*: per realizzare i diagrammi _UML_ degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti#super[G], e per progettare l'architettura di tutto l'ecosistema riguardante il _software_ e i microservizi che andremo a realizzare.
+- *Draw.io*: per realizzare i diagrammi _UML_#super[G] degli _use-case_ individuati in fase di analisi, che verranno pubblicati nel documento di Analisi dei Requisiti#super[G], e per progettare l'architettura di tutto l'ecosistema riguardante il _software_ e i microservizi che andremo a realizzare.
 
 === Attività previste
 
@@ -1473,7 +1473,7 @@ Il processo di formazione ha lo scopo di mantenere i membri di _ALimitedGroup_ a
 === Strumenti a supporto
 
 Per facilitare il processo di Formazione, è previsto che ogni singolo membro del gruppo acquisisca le competenze e le conoscenze fondamentali per il corretto svolgimento del progetto. Questo comprende sia le tecnologie necessarie per il progetto, sia ogni aspetto coinvolto nell'ingegneria del _software_. \
-In più, all'interno del gruppo, oltre alla formazione individuale, viene utilizzato il _*pair programming*_ per consolidare l'utilizzo delle tecnologie e condividere le conoscenze apprese tra i membri del gruppo. \
+In più, all'interno del gruppo, oltre alla formazione individuale, viene utilizzato il _*pair programming#super[G]*_ per consolidare l'utilizzo delle tecnologie e condividere le conoscenze apprese tra i membri del gruppo. \
 Tutti i membri del gruppo hanno accesso ai _repository_#super[G] relativi alla documentazione, _Poc_#super[G] e _MVP_#super[G] che consentono di poter lavorare ed accedere alle risorse in modo facile e ordinato.\
 Inoltre, vengono utilizzate anche _repository_#super[G] private per testare aspetti nuovi delle tecnologie e condividere con il gruppo quanto imparato.
 

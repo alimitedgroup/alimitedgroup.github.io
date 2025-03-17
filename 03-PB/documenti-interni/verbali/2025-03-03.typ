@@ -62,7 +62,7 @@ I microservizi individuati sono i seguenti:
 - *Order*, per gestire gli ordini;
 - *Transfer*, per gestire i trasferimenti;
 - *Notificator*, per gestire il sistema di notifiche;
-- *Warehouse*, per la gestione di un singolo magazzino.
+- *Warehouse*#super[G] ,per la gestione di un singolo magazzino.
 
 Sarà inoltre necessario realizzare un *Client* per la gestione del Sistema.
 
@@ -79,15 +79,15 @@ Dato quanto discusso, il gruppo si assegna i seguenti compiti:
 
 #align(center)[*Specifica Tecnica#super[G]*]
 - Progettare e descrivere il microservizio di *API#super[G] Gateway* entro il giorno *9 Marzo 2025*
-- Progettare e descrivere il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
+- Progettare e descrivere il microservizio di *Warehouse*#super[G] entro il giorno *9 Marzo 2025*
 - Progettare e descrivere il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
 
 #align(center)[*Programmazione*]
 - Codificare il microservizio di *API#super[G] Gateway* entro il giorno *9 Marzo 2025*
-- Codificare il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
+- Codificare il microservizio di *Warehouse*#super[G] entro il giorno *9 Marzo 2025*
 - Codificare il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
 - Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Api Gateway* entro il giorno *9 Marzo 2025*
-- Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Warehouse* entro il giorno *9 Marzo 2025*
+- Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Warehouse*#super[G] entro il giorno *9 Marzo 2025*
 - Realizzare i Test#super[G] di unità e di integrazione per il microservizio di *Catalog* entro il giorno *9 Marzo 2025*
 
 
