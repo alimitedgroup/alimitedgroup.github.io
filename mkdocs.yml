@@ -32,6 +32,8 @@ nav:
     - GET /api/v1/ping: reference/ping.md
     - POST /api/v1/login: reference/login.md
     - GET /api/v1/is_logged: reference/is_logged.md
+    - GET /api/v1/goods: reference/get_goods.md
+    - GET /api/v1/warehouses: reference/get_warehouses.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py
