@@ -252,7 +252,7 @@ Gli *_adapters_* rappresentano lo strato esterno del sistema e si suddividono in
 == Architettura di _deployment_
 === Sistema a microservizi
 
-L'architettura di deployment#super[G] adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G] .\
+L'architettura di deployment#super[G] adottata per il sistema è basata su *microservizi*, come richiesto dal capitolato#super[G].\
 Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nello sviluppo e nel _deployment_ dei componenti software.
 
 Ogni microservizio è indipendente e responsabile#super[G] di un insieme specifico di funzionalità#super[G].
@@ -269,7 +269,7 @@ I microservizi comunicano tra loro tramite NATS#super[G] , un sistema di messagg
 Oltre a NATS#super[G], i microservizi possono esporre API#super[G] REST per le comunicazioni con il _client_.
 
 
-Il _deployment_ dei microservizi avviene in ambienti virtualizzati tramite Docker#super[G] .
+Il _deployment_ dei microservizi avviene in ambienti virtualizzati tramite Docker#super[G].
 Questo garantisce:
 
 - Scalabilità dinamica, adattando le risorse ai carichi di lavoro;
@@ -282,7 +282,7 @@ Questa architettura#super[G] consente di ottenere un sistema altamente scalabile
 
 === _Client_ monolitico
 
-Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G] .Questa scelta architetturale offre diversi vantaggi:
+Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G]. Questa scelta architetturale offre diversi vantaggi:
 
 - Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità#super[G] del sistema;
 
@@ -1488,9 +1488,9 @@ Si occupa di gestire l'_application logic_ del microservizio Catalog.
 
 - *`NewCatalogController(p CatalogControllerParams) *catalogController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati al costruttore;
 
-- *`getGoodsRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulle merci presenti nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G] .Ritorna un errore in caso l'operazione non venga completata correttamente;
-- *`getWarehouseRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sui magazzini presenti nel Sistema e il loro inventario. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G] .Ritorna un errore in caso l'operazione non venga completata correttamente;
-- *`getGoodsGlobalQuantityRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulla quantità globalmente disponibile delle merci memorizzate nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G] .Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`getGoodsRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulle merci presenti nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`getWarehouseRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sui magazzini presenti nel Sistema e il loro inventario. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`getGoodsGlobalQuantityRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulla quantità globalmente disponibile delle merci memorizzate nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
 - *`setGoodDataRequest(ctx context.Context, msg jetstream.Msg)`*: metodo utilizzato per recuperare le richieste di aggiunta merce o modifica informazioni su una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodDataRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
 - *`checkSetGoodDataRequest(request *stream.GoodUpdateData) error`*: controlla le richieste di aggiornamento dati o aggiunta merce. Ritorna un errore se la richiesta non è valida;
 - *`setGoodQuantityRequest(ctx context.Context, msg jetstream.Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
@@ -1520,7 +1520,7 @@ Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
 ==== IStockRepository <IStockRepository>
 
-Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ degli stock#super[G] per il microservizio _Warehouse_#super[G] .
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ degli stock#super[G] per il microservizio _Warehouse_#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1564,7 +1564,7 @@ Vieni utilizzato dall'interfaccia ICatalogRepository, vedi @ICatalogRepository, 
 
 ==== ICatalogRepository <ICatalogRepository>
 
-Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ delle informazioni del catalogo per il microservizio _Warehouse_#super[G] .
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ delle informazioni del catalogo per il microservizio _Warehouse_#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1591,7 +1591,7 @@ Questa struttura implementa l'interfaccia *ICatalogRepository*, vedi la @ICatalo
   caption: "Warehouse - CreateStockUpdateCmd",
 )
 
-Rappresenta il _Command_ per creare un aggiornamento dello stock#super[G] .
+Rappresenta il _Command_ per creare un aggiornamento dello stock#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1604,7 +1604,7 @@ Rappresenta il _Command_ per creare un aggiornamento dello stock#super[G] .
   caption: "Warehouse - CreateStockUpdateGood",
 )
 
-Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiornamento dello stock#super[G] .
+Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiornamento dello stock#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1618,7 +1618,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare con l'este
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: il metodo deve permettere di creare un aggiornamento dello stock#super[G] .
+- *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: il metodo deve permettere di creare un aggiornamento dello stock#super[G].
 
 ==== PublishStockUpdateAdapter
 
@@ -1654,7 +1654,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`ApplyStockUpdate(goods: []GoodStock) error`*: il metodo deve permettere di applicare un aggiornamento dello stock#super[G] .
+- *`ApplyStockUpdate(goods: []GoodStock) error`*: il metodo deve permettere di applicare un aggiornamento dello stock#super[G].
 
 ==== IGetStockPort <IGetStockPort>
 
@@ -1675,7 +1675,7 @@ Implementa le seguenti interfacce (porte):
 
 *Descrizione degli attributi della struttura:*
 
-- *`stockRepo IStockRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Warehouse#super[G] .Per le informazioni riguardo IStockRepository vedere la @IStockRepository.
+- *`stockRepo IStockRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Warehouse#super[G]. Per le informazioni riguardo IStockRepository vedere la @IStockRepository.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1724,7 +1724,7 @@ Implementa le seguenti interfacce (porte):
 
 *Descrizione degli attributi della struttura:*
 
-- *`catalogRepo ICatalogRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Warehouse#super[G] .Per le informazioni riguardo ICatalogRepository vedere la @ICatalogRepository.
+- *`catalogRepo ICatalogRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Warehouse#super[G]. Per le informazioni riguardo ICatalogRepository vedere la @ICatalogRepository.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1779,7 +1779,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ManageStockService
 
-Si occupa di gestire la _business logic_ per l'aggiunta e la rimozione di stock nel microservizio _Warehouse_#super[G].
+Si occupa di gestire la _business logic_ per l'aggiunta e la rimozione di stock#super[G] nel microservizio _Warehouse_#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1823,21 +1823,21 @@ Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock
 
 ==== StockController <StockController>
 
-Lo *StockController* gestisce l'_application logic_ per le operazioni di aggiunta e rimozione di stock nel microservizio *Warehouse*#super[G].
+Lo *StockController* gestisce l'_application logic_ per le operazioni di aggiunta e rimozione di stock#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`broker NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per ricevere i messaggi;
 - *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso#super[G] per l'aggiunta di stock#super[G] ;
-- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso#super[G] per la rimozione di stock#super[G] .
+- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso#super[G] per la rimozione di stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewStockController(broker: NatsMessageBroker, addStockUseCase: IAddStockUseCase, removeStockUseCase: IRemoveStockUseCase) *StockController`*: costruttore della struttura. Inizializza gli attributi `broker`, `addStockUseCase` e `removeStockUseCase` con i valori passati come parametri;
 
-- *`RemoveStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per la rimozione di stock#super[G] .Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`RemoveStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per la rimozione di stock#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
 
-- *`AddStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'aggiunta di stock#super[G] .Ritorna un errore in caso l'operazione non venga completata correttamente.
+- *`AddStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'aggiunta di stock#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
 ==== StockUpdateCmd <StockUpdateCmd>
 
@@ -1846,7 +1846,7 @@ Lo *StockController* gestisce l'_application logic_ per le operazioni di aggiunt
   caption: "Warehouse - StockUpdateCmd",
 )
 
-Rappresenta il comando per aggiornare lo stock#super[G] nel microservizio *Warehouse*#super[G] .
+Rappresenta il comando per aggiornare lo stock#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1864,7 +1864,7 @@ Rappresenta il comando per aggiornare lo stock#super[G] nel microservizio *Wareh
   caption: "Warehouse - StockUpdateGood",
 )
 
-Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[G] .
+Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1874,15 +1874,15 @@ Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[
 
 ==== IApplyStockUpdateUseCase <IApplyStockUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento dello _stock_.
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento dello _stock_#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`ApplyStockUpdate(ctx: Context, cmd: StockUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento dello stock#super[G] .
+- *`ApplyStockUpdate(ctx: Context, cmd: StockUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento dello stock#super[G].
 
 ==== ApplyStockUpdateService
 
-Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti dello stock nel microservizio _Warehouse_#super[G].
+Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti dello stock#super[G] nel microservizio _Warehouse_#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1896,17 +1896,17 @@ Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti 
 
 ==== StockUpdateListener
 
-Lo *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti dello stock nel microservizio *Warehouse*#super[G].
+Lo *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti dello stock#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti dello stock#super[G] .
+- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti dello stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewStockUpdateListener(applyStockUpdateUseCase: IApplyStockUpdateUseCase) *StockUpdateListener`*: costruttore della struttura. Inizializza l'attributo `applyStockUpdateUseCase` con il valore passato come parametro;
 
-- *`ListenStockUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti dello stock#super[G] .Ritorna un errore in caso l'operazione non venga completata correttamente.
+- *`ListenStockUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti dello stock#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
 ==== CatalogUpdateCmd <CatalogUpdateCmd>
 #figure(
@@ -1914,7 +1914,7 @@ Lo *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggi
   caption: "CatalogUpdateCmd",
 )
 
-Rappresenta il comando per aggiornare le informazioni di un catalogo nel microservizio *Warehouse*#super[G] .
+Rappresenta il comando per aggiornare le informazioni di un catalogo nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
