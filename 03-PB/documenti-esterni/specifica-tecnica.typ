@@ -441,7 +441,7 @@ Rappresenta la risposta alla richiesta di un Token.
 
 *Descrizione degli attributi della struttura:*
 
-- *`Token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
+- *`token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
 
 === Router dei microservizi
 
@@ -465,7 +465,7 @@ Rappresenta la risposta alla richiesta di un Token.
 
 Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
 
-I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
+I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
 
 È formato dalle seguenti componenti:
 
@@ -484,7 +484,7 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
   caption: "CheckPemKeyPairExistenceCmd",
 )
 
-Rappresenta il _Command_ per verificare l'esistenza della chiave pubblia e della chiave privata. Viene utilizzata dalla _business logic_ per verificarne la presenza, necessaria per firmare il Token.
+Rappresenta il _Command_ per verificare l'esistenza della chiave pubblica e della chiave privata. Viene utilizzata dalla _business logic_ per verificarne la presenza, necessaria per firmare il Token.
 
 *Descrizione degli attributi della struttura:*
 
@@ -573,7 +573,7 @@ Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
   caption: "StorePemKeyPairCmd",
 )
 
-Rappresenta il _Command_ per ottenere la memorizzazzione in _persistence logic_ della coppia di chiavi generate dalla _business logic_.
+Rappresenta il _Command_ per ottenere la memorizzazione in _persistence logic_ della coppia di chiavi generate dalla _business logic_.
 
 *Descrizione degli attributi della struttura:*
 
@@ -666,8 +666,8 @@ Rappresenta la risposta alla richiesta di ottenimento Token.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewGetTokenResponse(token string, err error) *GetTokenResponse`*: rappresenta il costruttore della risposta;
-- *`GetToken() string`*: permette di ottenere il Token firmato memorizzato nella risosta;
+- *`NewGetTokenResponse(Token string, err error) *GetTokenResponse`*: rappresenta il costruttore della risposta;
+- *`GetToken() string`*: permette di ottenere il Token firmato memorizzato nella risposta;
 - *`GetError() error`*: permette di ottenere l'errore memorizzato nella risposta.
 
 
@@ -772,7 +772,7 @@ Questa struttura implementa l'interfaccia *IAuthPersistance*, vedi la @IAuthPers
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewAuthRepo() *AuthRepository`*: costruttore della struttura. Non prende alcun parametro e inizializza i puntatori a `nil` e la stringa come stringa vuota;
-- *`checkKeyPair(prk *[]byte, puk *[]byte) bool`*: metodo che assolve al compito di controllo validità delle chiavi passate come parametro in fromato Pem. Se le chiavi non sono in formato Pem e/o non sono chiavi ECDSA allora viene restituito `false`, altrimenti viene restituito `true`;
+- *`checkKeyPair(prk *[]byte, puk *[]byte) bool`*: metodo che assolve al compito di controllo validità delle chiavi passate come parametro in formato Pem. Se le chiavi non sono in formato Pem e/o non sono chiavi ECDSA allora viene restituito `false`, altrimenti viene restituito `true`;
 - *`StorePemKeyPair(prk []byte, puk []byte, emit string) error`*: il metodo controlla la validità delle chiavi passate utilizzando la funzione `checkKeyPair` e, se il controllo è positivo, le memorizza assieme all'_issuer_;
 - *`GetPemPublicKey() (PemPublicKey, error)`*: permette di ottenere l'oggetto `PemPublicKey`, se presente, altrimenti viene restituito un oggetto vuoto e un errore;
 - *`GetPemPrivateKey() (PemPrivateKey, error)`*: permette di ottenere l'oggetto `PemPrivateKey`, se presente, altrimenti viene restituito un oggetto vuoto e un errore;
@@ -784,7 +784,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-*`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: il metodo deve offrire la possibilità di richidedere il controllo dell'esistenza di una coppia di chiavi memorizzata e ricevere adeguata risposta.
+*`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: il metodo deve offrire la possibilità di richiedere il controllo dell'esistenza di una coppia di chiavi memorizzata e ricevere adeguata risposta.
 
 ==== IGetPemPrivateKeyPort <IGetPemPrivateKeyPort>
 
@@ -812,7 +812,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 ==== AuthAdapter
 
-Adapter che mette in comunicazione la _business logic_ con la _persistence logic_. Implementa le seguenti interfacce (porte):
+_Adapter_ che mette in comunicazione la _business logic_ con la _persistence logic_. Implementa le seguenti interfacce (porte):
 
 - *`ICheckKeyPairExistance`*, @ICheckKeyPairExistance;
 - *`IGetPemPrivateKeyPort`*, @IGetPemPrivateKeyPort;
@@ -826,14 +826,14 @@ Adapter che mette in comunicazione la _business logic_ con la _persistence logic
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewAuthAdapter(repo persistence.IAuthPersistance) *AuthAdapter`*: costruttore dell'oggetto. Prende l'oggetto che implementa la _persistence logic_ come parametro;
-- *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: converte il _Command_ per la memorizzazione della coppia di chiavi in formato Pem e l'issuer associato in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
-- *`GetPemPrivateKey(cmd *servicecmd.GetPemPrivateKeyCmd) *serviceresponse.GetPemPrivateKeyResponse`*: converte il _Command_ per l'ottenimento della chiave privata e del suo issuer in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
-- *`GetPemPublicKey(cmd *servicecmd.GetPemPublicKeyCmd) *serviceresponse.GetPemPublicKeyResponse`*: converte il _Command_ per l'ottenimento della chiave pubblica e del suo issuer in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
-- *`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: converte il _Command_ per il controllo della presenza di una coppia di chiavi memorizzata in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata.
+- *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: converte il _Command_ per la memorizzazione della coppia di chiavi in formato Pem e l'issuer associato in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
+- *`GetPemPrivateKey(cmd *servicecmd.GetPemPrivateKeyCmd) *serviceresponse.GetPemPrivateKeyResponse`*: converte il _Command_ per l'ottenimento della chiave privata e del suo issuer in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
+- *`GetPemPublicKey(cmd *servicecmd.GetPemPublicKeyCmd) *serviceresponse.GetPemPublicKeyResponse`*: converte il _Command_ per l'ottenimento della chiave pubblica e del suo issuer in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
+- *`CheckKeyPairExistance(cmd *servicecmd.CheckPemKeyPairExistenceCmd) *serviceresponse.CheckKeyPairExistenceResponse`*: converte il _Command_ per il controllo della presenza di una coppia di chiavi memorizzata in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata.
 
 ==== IPublishPort <IPublishPort>
 
-Rappresenta la porta che consente alla _business logic_ di comunicare al Publisher la volontà di pubblicare la propria chiave pubblica.
+Rappresenta la porta che consente alla _business logic_ di comunicare al _Publisher_ la volontà di pubblicare la propria chiave pubblica.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -841,13 +841,13 @@ Rappresenta la porta che consente alla _business logic_ di comunicare al Publish
 
 ==== PublishAdapter
 
-Rappresenta l'_Adapter_ atto a convertire il _Command_ per la richiesta di pubblicazione della chiave pubblica al Publisher.
+Rappresenta l'_Adapter_ atto a convertire il _Command_ per la richiesta di pubblicazione della chiave pubblica al _Publisher_.
 
 Implementa l'interfaccia IPublishPort, descritta alla @IPublishPort.
 
 *Descrizione degli attributi della struttura:*
 
-- *`pb publisher.IAuthPublisher`*: istanza di una struttura che rappresenta il Publisher, vedi @IAuthPublisher per maggiori informazioni.
+- *`pb publisher.IAuthPublisher`*: istanza di una struttura che rappresenta il _Publisher_, vedi @IAuthPublisher per maggiori informazioni.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -856,7 +856,7 @@ Implementa l'interfaccia IPublishPort, descritta alla @IPublishPort.
 
 ==== IAuthPublisher <IAuthPublisher>
 
-Interfaccia che gli oggetti rappresentanti un Publisher per le chiavi pubbliche devono soddisfare.
+Interfaccia che gli oggetti rappresentanti un _Publisher_ per le chiavi pubbliche devono soddisfare.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -897,7 +897,7 @@ Oggetto utilizzato da IAuthenticateUserStrategy, vedi @IAuthenticateUserStrategy
 
 ==== IAuthenticateUserStrategy <IAuthenticateUserStrategy>
 
-Interfaccia che le strutture che possiedo l'algoritmo per valutare i dati di autenticazione forniti devono soddisfare.
+Interfaccia che le strutture che implementano l'algoritmo per valutare i dati di autenticazione forniti devono soddisfare.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -918,7 +918,7 @@ Implementazione di un semplice algoritmo per verificare i dati di autenticazione
 
 ==== IGetTokenUseCase <IGetTokenUseCase>
 
-Interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la necessità di ottenere un token.
+Interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la necessità di ottenere un Token.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -926,7 +926,7 @@ Interfaccia che permette all'_application logic_ di comunicare alla _business lo
 
 ==== AuthService
 
-Oggetto rappresentatnte la _business logic_ di *Authenticator*.
+Oggetto rappresentante la _business logic_ di *Authenticator*.
 
 Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazioni vedere la @IGetTokenUseCase.
 
@@ -947,7 +947,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 - *`storePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) error`*: gestisce la memorizzazione delle chiavi, quando generate;
 - *`getPrivateKeyFromPem(prk *[]byte) (*ecdsa.PrivateKey, error)`*: si occupa di convertire una chiave privata passata in formato Pem in una chiave privata ECDSA a tutti gli effetti;
 - *`generateToken(username string, role string) (string, error)`*: si occupa di generare e firmare un Token;
-- *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: esegue un controllo delle credenziali e, se lil controllo ha esito positivo, fa generare un Token.
+- *`GetToken(cmd *servicecmd.GetTokenCmd) *serviceresponse.GetTokenResponse`*: esegue un controllo delle credenziali e, se il controllo ha esito positivo, fa generare un Token.
 
 ==== AuthController
 
@@ -1312,7 +1312,7 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence 
 
 ==== IAddOrChangeGoodDataPort <IAddOrChangeGoodDataPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di voler aggiungere o modificare i dati di una merce.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di voler aggiungere o modificare i dati di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1320,7 +1320,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetGoodsInfoPort <IGetGoodsInfoPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere i dati delle merci registrate nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1328,7 +1328,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetGoodsQuantityPort <IGetGoodsQuantityPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere le informazioni sulla quantità delle merci registrate nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1336,7 +1336,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetWarehousesInfoPort <IGetWarehousesInfoPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere le informazioni sull'inventario dei magazzini registrati nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1344,7 +1344,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== ISetGoodQuantityPort <ISetGoodQuantityPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di impostare la quantità di una merce.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di impostare la quantità di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1352,7 +1352,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== CatalogAdapter
 
-Adapter che mette in comunicazione la _Business Logic_ di catalog con la _Persistence Logic_ dello stesso.
+_Adapter_ che mette in comunicazione la _business logic_ di catalog con la _persistence logic_ dello stesso.
 
 Implementa le seguenti interfacce (porte):
 
@@ -1370,19 +1370,19 @@ Implementa le seguenti interfacce (porte):
 
 - *`NewCatalogRepositoryAdapter(repo persistence.IGoodRepository) *CatalogRepositoryAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `repo` con quello passato come parametro al costruttore;
 
-- *`AddOrChangeGoodData(agc *servicecmd.AddChangeGoodCmd) *serviceresponse.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`AddOrChangeGoodData(agc *servicecmd.AddChangeGoodCmd) *serviceresponse.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 
-- *`SetGoodQuantity(agqc *servicecmd.SetGoodQuantityCmd) *serviceresponse.SetGoodQuantityResponse`*:converte il _Command_ per la modifica della quantità di una merce in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`SetGoodQuantity(agqc *servicecmd.SetGoodQuantityCmd) *serviceresponse.SetGoodQuantityResponse`*:converte il _Command_ per la modifica della quantità di una merce in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 
-- *`GetGoodsQuantity(ggqc *servicecmd.GetGoodsQuantityCmd) *serviceresponse.GetGoodsQuantityResponse`*: converte il _Command_ per ottenere la quantità delle varie merci registrate nel Sistema in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`GetGoodsQuantity(ggqc *servicecmd.GetGoodsQuantityCmd) *serviceresponse.GetGoodsQuantityResponse`*: converte il _Command_ per ottenere la quantità delle varie merci registrate nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 
-- *`GetGoodsInfo(ggqc *servicecmd.GetGoodsInfoCmd) *serviceresponse.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata;
+- *`GetGoodsInfo(ggqc *servicecmd.GetGoodsInfoCmd) *serviceresponse.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 
-- *`GetWarehouses(*servicecmd.GetWarehousesCmd) *serviceresponse.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _Persistence Logic_, quindi richiama la _Persistence Logic_ ad eseguire l'operazione desiderata.
+- *`GetWarehouses(*servicecmd.GetWarehousesCmd) *serviceresponse.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata.
 
 ==== IService <IService>
 
-Interfaccia che descrive i metodi che devono essere implementati da una struttura che si propone di soddisfare la _Business Logic_ del microservizio Catalog.
+Interfaccia che descrive i metodi che devono essere implementati da una struttura che si propone di soddisfare la _business logic_ del microservizio Catalog.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1398,7 +1398,7 @@ Interfaccia che descrive i metodi che devono essere implementati da una struttur
 
 ==== IGetGoodsInfoUseCase <IGetGoodsInfoUseCase>
 
-Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di ottenere informazioni sulle merci memorizzate.
+Rappresenta l'interfaccia che permette, all'_application logic_ di comunicare alla _business logic_ la volontà di ottenere informazioni sulle merci memorizzate.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1406,7 +1406,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 ==== IGetGoodsQuantityUseCase <IGetGoodsQuantityUseCase>
 
-Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di ottenere informazioni sulla quantità delle merci memorizzate.
+Rappresenta l'interfaccia che permette, all'_application logic_ di comunicare alla _business logic_ la volontà di ottenere informazioni sulla quantità delle merci memorizzate.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1414,7 +1414,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 ==== IGetWarehousesUseCase <IGetWarehousesUseCase>
 
-Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di ottenere informazioni sull'inventario dei magazzini memorizzati nel Sistema.
+Rappresenta l'interfaccia che permette, all'_application logic_ di comunicare alla _business logic_ la volontà di ottenere informazioni sull'inventario dei magazzini memorizzati nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1422,7 +1422,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 ==== ISetMultipleGoodsQuantityUseCase <ISetMultipleGoodsQuantityUseCase>
 
-Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di impostare la quantità di varie merci.
+Rappresenta l'interfaccia che permette, all'_application logic_ di comunicare alla _business logic_ la volontà di impostare la quantità di varie merci.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1430,7 +1430,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 ==== IUpdateGoodDataUseCase <IUpdateGoodDataUseCase>
 
-Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di modificare le informazioni di una merce nel Sistema.
+Rappresenta l'interfaccia che permette, all'_application logic_ di comunicare alla _business logic_ la volontà di modificare le informazioni di una merce nel Sistema.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1438,7 +1438,7 @@ Rappresenta l'interfaccia che permette, all'_Application Logic_ di comunicare al
 
 ==== CatalogService
 
-Si occupa di gestire la _Business Logic_ del microservizio _Catalog_ e implementa, per questo motivo, *IService* (@IService).
+Si occupa di gestire la _business logic_ del microservizio _Catalog_ e implementa, per questo motivo, *IService* (@IService).
 
 Implementa le seguenti interfacce (_Use Case_):
 
@@ -1474,7 +1474,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 ==== CatalogController
 
-Si occupa di gestire l'_Application Logic_ del microservizio Catalog.
+Si occupa di gestire l'_application logic_ del microservizio Catalog.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1512,15 +1512,15 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 
 È formato da tre sotto-aree di componenti principali:
 
-- I *Controller* e *Listener*, che rappresentano l'_Application Logic_
-- I *Service*, che rappresentano la _Business Logic_;
-- I *Repository*#super[G], che rappresentano la _Persistence Logic_.
+- I *Controller* e *Listener*, che rappresentano l'_application logic_
+- I *Service*, che rappresentano la _business logic_;
+- I *Repository*#super[G], che rappresentano la _persistence logic_.
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
 ==== IStockRepository <IStockRepository>
 
-Rappresenta l'interfaccia generica di un oggetto che implementa la _Persistence Logic_ degli stock per il microservizio _Warehouse_.
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ degli stock per il microservizio _Warehouse_.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1614,7 +1614,7 @@ Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiorna
 
 ==== ICreateStockUpdatePort <ICreateStockUpdatePort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare con l'esterno per creare un aggiornamento dello stock.
+Rappresenta la porta che consente alla _business logic_ di comunicare con l'esterno per creare un aggiornamento dello stock.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1624,7 +1624,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare con l'este
 
 Questa struttura implementa l'interfaccia *ICreateStockUpdatePort*, vedi la @ICreateStockUpdatePort.
 
-Adapter che mette in comunicazione la _Business Logic_ con il sistema di messaggistica per pubblicare gli aggiornamenti dello stock.
+_Adapter_ che mette in comunicazione la _business logic_ con il sistema di messaggistica per pubblicare gli aggiornamenti dello stock.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1641,7 +1641,7 @@ Adapter che mette in comunicazione la _Business Logic_ con il sistema di messagg
   image("../../assets/warehouse/GoodStock.png", width: 25%),
   caption: "Warehouse - GoodStock",
 )
-Questa classe è utilizzata nella _Business Logic_.
+Questa classe è utilizzata nella _business logic_.
 Rappresenta una merce con la sua quantità presente nel magazzino.
 
 *Descrizione degli attributi della struttura:*
@@ -1650,7 +1650,7 @@ Rappresenta una merce con la sua quantità presente nel magazzino.
 
 ==== IApplyStockUpdatePort <IApplyStockUpdatePort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di applicare un aggiornamento dello stock.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento dello stock.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1658,7 +1658,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetStockPort <IGetStockPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere la quantità di una merce presente nel magazzino.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere la quantità di una merce presente nel magazzino.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1666,7 +1666,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== StockPersistenceAdapter
 
-Adapter che mette in comunicazione la _Business Logic_ di Warehouse con la _Persistence Logic_ dello stesso.
+_Adapter_ che mette in comunicazione la _business logic_ di Warehouse con la _persistence logic_ dello stesso.
 
 Implementa le seguenti interfacce (porte):
 
@@ -1690,7 +1690,7 @@ Implementa le seguenti interfacce (porte):
   image("../../assets/warehouse/GoodInfo.png", width: 20%),
   caption: "Warehouse - GoodInfo",
 )
-Questa classe è utilizzata nella _Business Logic_.
+Questa classe è utilizzata nella _business logic_.
 Rappresenta una merce con le sue informazioni.
 
 *Descrizione degli attributi della struttura:*
@@ -1699,7 +1699,7 @@ Rappresenta una merce con le sue informazioni.
 
 ==== IApplyCatalogUpdatePort <IApplyCatalogUpdatePort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di applicare un aggiornamento del catalogo.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento del catalogo.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1707,7 +1707,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== IGetGoodPort <IGetGoodPort>
 
-Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Persistence Logic_ la volontà di ottenere le informazioni di una merce.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere le informazioni di una merce.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1715,7 +1715,7 @@ Rappresenta la porta che consente alla _Business Logic_ di comunicare alla _Pers
 
 ==== CatalogPersistenceAdapter
 
-Adapter che mette in comunicazione la _Business Logic_ di Warehouse con la _Persistence Logic_ dello stesso.
+_Adapter_ che mette in comunicazione la _business logic_ di Warehouse con la _persistence logic_ dello stesso.
 
 Implementa le seguenti interfacce (porte):
 
@@ -1749,7 +1749,7 @@ Questo _Command_ viene utilizzato per rappresentare la richiesta di rimozione di
 
 ==== IRemoveStockUseCase <IRemoveStockUseCase>
 
-Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di rimuovere una quantità di una merce dal magazzino.
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di rimuovere una quantità di una merce dal magazzino.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1771,7 +1771,7 @@ Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di 
 
 ==== IAddStockUseCase <IAddStockUseCase>
 
-Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di aggiungere una quantità di una merce al magazzino.
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di aggiungere una quantità di una merce al magazzino.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1779,7 +1779,7 @@ Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare all
 
 ==== ManageStockService
 
-Si occupa di gestire la _Business Logic_ per l'aggiunta e la rimozione di stock nel microservizio _Warehouse_.
+Si occupa di gestire la _business logic_ per l'aggiunta e la rimozione di stock nel microservizio _Warehouse_.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1823,7 +1823,7 @@ Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock
 
 ==== StockController <StockController>
 
-Il *StockController* gestisce l'_Application Logic_ per le operazioni di aggiunta e rimozione di stock nel microservizio *Warehouse*.
+Il *StockController* gestisce l'_application logic_ per le operazioni di aggiunta e rimozione di stock nel microservizio *Warehouse*.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1874,7 +1874,7 @@ Rappresenta una merce aggiornata nel comando di aggiornamento dello stock.
 
 ==== IApplyStockUpdateUseCase <IApplyStockUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di applicare un aggiornamento dello _stock_.
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento dello _stock_.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1882,7 +1882,7 @@ Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare all
 
 ==== ApplyStockUpdateService
 
-Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti dello stock nel microservizio _Warehouse_.
+Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti dello stock nel microservizio _Warehouse_.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1896,7 +1896,7 @@ Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti 
 
 ==== StockUpdateListener
 
-Il *StockUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggiornamenti dello stock nel microservizio *Warehouse*.
+Il *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti dello stock nel microservizio *Warehouse*.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1924,7 +1924,7 @@ Rappresenta il comando per aggiornare le informazioni di un catalogo nel microse
 
 ==== IApplyCatalogUpdateUseCase <IApplyCatalogUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare alla _Business Logic_ la volontà di applicare un aggiornamento del catalogo.
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento del catalogo.
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -1932,7 +1932,7 @@ Rappresenta l'interfaccia che permette all'_Application Logic_ di comunicare all
 
 ==== ApplyCatalogUpdateService
 
-Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti del catalogo nel microservizio _Warehouse_.
+Si occupa di gestire la _business logic_ per l'applicazione degli aggiornamenti del catalogo nel microservizio _Warehouse_.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1946,7 +1946,7 @@ Si occupa di gestire la _Business Logic_ per l'applicazione degli aggiornamenti 
 
 ==== CatalogListener
 
-Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiornamenti del catalogo nel microservizio *Warehouse*.
+Il *CatalogListener* gestisce l'_application logic_ per l'ascolto degli aggiornamenti del catalogo nel microservizio *Warehouse*.
 
 *Descrizione degli attributi della struttura:*
 
@@ -1964,7 +1964,7 @@ Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiorna
   caption: "Warehouse - HealthCheckController",
 )
 
-Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di controllo dello stato di salute del microservizio *Warehouse*.
+Il *HealthCheckController* gestisce l'_application logic_ per le operazioni di controllo dello stato di salute del microservizio *Warehouse*.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1978,7 +1978,7 @@ Il *HealthCheckController* gestisce l'_Application Logic_ per le operazioni di c
   caption: "Warehouse - ReservationController",
 )
 
-Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di creazione delle prenotazioni nel microservizio *Warehouse*.
+Il *ReservationController* gestisce l'_application logic_ per le operazioni di creazione delle prenotazioni nel microservizio *Warehouse*.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
