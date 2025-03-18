@@ -300,7 +300,7 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 === Dependency injection <di>
 
 ==== Descrizione del pattern
-Il pattern _Dependency Injection#super[G]_ è un design pattern strutturale che consente di implementare l'Inversione del Controllo per gestire le dipendenze tra gli oggetti.\
+Il pattern _Dependency Injection#super[G]_ è un design pattern strutturale che consente di rendere esplicite le dipendenze di un oggetto.\
 Invece di creare direttamente le dipendenze all'interno delle classi o dei componenti, queste possono essere fornite dall'esterno: in questo modo, un componente dichiara le sue dipendenze senza doversi preoccupare di istanziarle, permettendo dunque una maggiore modularità tra i diversi componenti del Sistema.
 Esistono principalmente due tipi di _dependency injection#super[G]_:
 
@@ -313,47 +313,47 @@ Nel progetto viene utilizzata la *Constructor Injection*.
 L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numerosi vantaggi:
 
 - *disaccoppiamento*: i componenti sono meno legati tra loro, facilitando la manutenzione#super[G] e l'estensione del codice;
-- *testabilità*: è possibile sostituire le dipendenze reali con mock durante i test#super[G] ;
-- *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
 - *flessibilità*: è più semplice sostituire un'implementazione con un'altra senza modificare il codice client;
-- *gestione centralizzata*: tutte le dipendenze sono configurate e gestite in un unico punto (nel nostro caso, attraverso *Fx*);
-- separazione delle responsabilità: ogni componente ha responsabilità ben definite.
+- *testabilità*: è possibile sostituire le istanze reali degli oggetti richiesti con _mock_ durante i test#super[G] ;
+- *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
+- *gestione centralizzata*:la _dependency injection_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
 
-==== Framework Fx di _Uber_
-*Fx* è un framework di application _lifecycle_ e _dependency injection#super[G]_ per _Go_#super[G] sviluppato da _Uber_.\
-Permette di definire componenti e lascia al framework il compito di costruirli nell'ordine corretto e di avviare/arrestare l’applicazione.
+==== Framework Fx di _Uber_ <fwfx>
+*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.
 
 ===== Costrutti principali
 I costrutti principali di Fx utilizzati nel progetto sono:
 
-- *fx.Provide*: registra una funzione costruttore che crea e restituisce una dipendenza.;
+- *fx.Provide*: registra una funzione costruttore, ovvero una funzione che crea e restituisce un'istanza di un oggetto. Tale istanza verrà poi riutilizzata ovunque sarà richiesta come dipendenza;
 
-- *fx.Supply*: inserisce direttamente valori nel container _Dependecy Injection_, utile per configurazioni;
+- *fx.Supply*: fornisce valori istanziati per _Dependency Injection_ come se fossero stati restituiti da un costruttore.
+Viene utilizzato il tipo più specifico di ogni valore;
 
 - *fx.Invoke*: esegue una funzione dopo la costruzione di tutte le dipendenze;
 
-- *fx.Options*: raggruppa più opzioni Fx;
+- *fx.Options*: raggruppa più opzioni Fx, quindi dipendenze già dichiarate, garantendo una configurazione modulare, rapida e flessibile.
 
 - *fx.Lifecycle*: gestisce il ciclo di vita dell'applicazione con hook OnStart e OnStop;
 
-- *fx.In/fx.Out*: strutture utilizzate per il parameter/result object pattern, utili per iniettare o fornire più dipendenze contemporaneamente.
+- *fx.In*: sono espressioni da inserire all'interno di strutture con un insieme di dipendenze da fornire ad un oggetto. Molto utile per ridurre il numero di parametri richiesti da un costruttore.
 
 Un aspetto importante del progetto è l'uso di file \*.module.go in cui vengono definiti moduli *Fx* per organizzare le dipendenze in modo gerarchico.\
-Ogni modulo espone un'istanza _Module_ che aggrega tutte le opzioni Fx relative a quel componente.
+Ogni modulo espone una variabile _Module_ che aggrega tutte le opzioni Fx relative a quel componente mediante fx.Options.
 
 //includere anche il fatto che esistono file *.module.go
 
 ==== Utilizzo del pattern nel progetto
-Nel progetto, il pattern _Dependency Injection#super[G]_ viene applicato in modo estensivo utilizzandolo praticamente in ogni componente dell'architettura.
+Nel progetto, il pattern _Dependency Injection#super[G]_ viene applicato in modo estensivo, utilizzandolo praticamente in ogni componente dell'architettura.
 Ogni microservizio utilizza *Fx* per gestire le proprie dipendenze, dalla configurazione fino ai componenti applicativi.
-I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente.
+I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente mediante *Fx*.
 
 === Object adapter<adapter>
 ==== Descrizione del pattern
-Il pattern _Object Adapter_ è un design pattern strutturale che permette ad oggetti con interfacce incompatibili di collaborare.\
+Il pattern _Object Adapter_ è un design pattern di tipo strutturale che permette ad oggetti con interfacce incompatibili di collaborare tra loro.\
 Questo pattern utilizza la composizione per "adattare" l'interfaccia di una classe a un'altra interfaccia attesa dai _client_.
 L'adapter agisce come un intermediario, convertendo le richieste del client in chiamate compatibili con l'oggetto adattato.
-A differenza del _Class Adapter_ (che utilizza l'ereditarietà), l'_Object Adapter_ mantiene un riferimento all'oggetto da adattare (_adaptee_), delegando a quest'ultimo le operazioni necessarie dopo aver effettuato le opportune conversioni.
+A differenza del _Class Adapter_ (che utilizza l'ereditarietà), l'_Object Adapter_ mantiene un riferimento all'oggetto da adattare (_adaptee_), delegando a quest'ultimo l'esecuzione della richiesta appena convertita.
 La struttura tipica dell'Object Adapter include:
 - una _Target Interface_ che definisce l'interfaccia che il client si aspetta di utilizzare;
 - un _Adaptee_ che è l'oggetto con l'interfaccia incompatibile;
@@ -365,16 +365,17 @@ L'utilizzo del pattern _Object adapter_ nel progetto porta diversi vantaggi:
 
 - *flessibilità maggiore*: l'_adapter_ può lavorare con qualsiasi sottoclasse dell'oggetto adattato;
 
-- *riutilizzabilità*: l'_adapter_ può essere riutilizzato per adattare diverse implementazioni dell'interfaccia attesa;
+- *riutilizzabilità*: l'_adapter_ può adattare diverse interfacce;
 
-- *manutenzione facilitata*: separando l'_adapter_ dall'oggetto concreto, eventuali modifiche all'oggetto non impattano direttamente sull'_adapter_.
+- *manutenibilità*: separando l'_adapter_ dall'oggetto concreto, eventuali modifiche all'oggetto non impattano direttamente sull'_adapter_.
 
 
 ==== Utilizzo del pattern nel progetto
-Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente negli strati esterni del sistema, come parte degli _Input e Output Adapter_:
+Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente tra gli oggetti che assolvono i compiti della _business logic_ e della _persistence logic_, ma anche per le comunicazioni dalla _business logic_ all'esterno del microservizio.
 
 - _Input Adapter_: implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS#super[G] )in chiamate alle _inbound ports_ del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
 - _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API#super[G] di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
+
 
 == Microservizi sviluppati
 
