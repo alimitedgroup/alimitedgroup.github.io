@@ -4,7 +4,7 @@
 #let ver = [0.7.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 25, month: 02, year: 2025),
+  data: datetime(day: 17, month: 03, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
@@ -62,7 +62,7 @@
   ),
   stato: [In redazione],
   responsabile: ((p.marco),),
-  verificatore: ((p.emanuele), (p.marco)),
+  verificatore: ((p.emanuele), (p.marco), (p.matteo), (p.sara)),
   redattori: (
     (p.loris),
     (p.matteo),
@@ -383,7 +383,7 @@ L'utilizzo del pattern _Object adapter_ nel progetto porta diversi vantaggi:
 Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente tra gli oggetti che assolvono i compiti della _business logic_ e della _persistence logic_, ma anche per le comunicazioni dalla _business logic_ all'esterno del microservizio.
 
 - _Input Adapter_ (o _Controller_): implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS#super[G] )in chiamate alle _inbound ports_ (o _Use Cases_) del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
-- _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API#super[G] di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
+- _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API#super[G] di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni. Un esempio è *AuthAdapter*, le cui informazioni sono disponibili alla @authadapter.
 
 === Strategy
 
@@ -396,7 +396,7 @@ Il pattern _Strategy_ consiste nell'incapsulare una parte di codice all'interno 
 Il pattern _Strategy_ viene utilizzato quando una componente di natura algoritmica del Sistema sviluppato non è definitiva ma soggetta a cambiamenti futuri: eseguirne la codifica forzata all'interno della funzione che la utilizza potrebbe risultare controproducente, in quanto, un suo cambiamento, potrebbe determinare uno stravolgimento del codice: per questo motivo, la parte algoritmica viene incapsulata all'interno di un oggetto che può essere facilmente sostituito.
 
 ==== Utilizzo del pattern nel progetto
-Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti necessita sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto il controllo di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e alcun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
+Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti necessita sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto il controllo di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e nessun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
 
 == Microservizi sviluppati
 
@@ -880,7 +880,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: il metodo deve permettere di richiedere la memorizzazione di una coppia di chiavi e l'_issuer_ associato e ricevere una risposta in merito all'esito dell'operazione
 
-==== AuthAdapter
+==== AuthAdapter <authadapter>
 
 _Adapter_ che mette in comunicazione la _business logic_ con la _persistence logic_. Implementa le seguenti interfacce (porte):
 
