@@ -301,7 +301,7 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 
 ==== Descrizione del pattern
 Il pattern _Dependency Injection#super[G]_ è un design pattern strutturale che consente di implementare l'Inversione del Controllo per gestire le dipendenze tra gli oggetti.\
-Invece di creare direttamente le dipendenze all'interno delle classi o dei componenti, queste vengono "iniettate" dall'esterno. In questo modo, un componente dichiara le sue dipendenze senza doversi preoccupare di come crearle, permettendo così una maggiore modularità e un disaccoppiamento tra i diversi componenti del sistema.
+Invece di creare direttamente le dipendenze all'interno delle classi o dei componenti, queste possono essere fornite dall'esterno: in questo modo, un componente dichiara le sue dipendenze senza doversi preoccupare di istanziarle, permettendo dunque una maggiore modularità tra i diversi componenti del Sistema.
 Esistono principalmente due tipi di _dependency injection#super[G]_:
 
 - _Constructor Injection_: le dipendenze vengono passate attraverso il costruttore;
