@@ -420,7 +420,7 @@ Il microservizio *Order* viene utilizzato per realizzare gli ordini quando quest
 
 ==== Oggetti comuni del microservizio
 
-[PROSEGUIRE] inserire gli oggetti quali cmd, dto e response, per ogni oggetto il suo uml#super[G] 
+//[PROSEGUIRE] inserire gli oggetti quali cmd, dto e response, per ogni oggetto il suo uml#super[G]
 
 ===== OrderWarehouseUsed
 
