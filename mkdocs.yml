@@ -19,6 +19,7 @@ nav:
   - Quickstart: quickstart.md # tutorial, per iniziare in 5 minuti ad usare il software
   - Concetti:
     - Tipi di utenti: concetti/tipi-utenti.md
+    - Autenticazione: concetti/autenticazione.md
     - Merci: concetti/merci.md
     - Ordini: concetti/ordini.md
     - Riassortimenti: concetti/riassortimenti.md
@@ -28,7 +29,11 @@ nav:
     - Effettuare il login: guide/login.md
     - Aggiungere una merce: guide/aggiunta-merce.md
   - Riferimento API:
-    - /api/stock/:number: reference/stock_warehouse.md
+    - GET /api/v1/ping: reference/ping.md
+    - POST /api/v1/login: reference/login.md
+    - GET /api/v1/is_logged: reference/is_logged.md
+    - GET /api/v1/goods: reference/get_goods.md
+    - GET /api/v1/warehouses: reference/get_warehouses.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py

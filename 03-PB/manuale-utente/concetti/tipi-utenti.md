@@ -1,6 +1,7 @@
 # Tipi di utenti
 
 Qui bisogna spiegare i tipi di utenti:
+
 - Cliente
 - Admin locale
 - Admin globale
