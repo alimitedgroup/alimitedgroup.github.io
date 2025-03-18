@@ -12,14 +12,14 @@
       vers: "0.6.0",
       date: datetime(day: 16, month: 03, year: 2025),
       autore: p.sara,
-      //verifica: p.marco,
+      verifica: p.matteo,
       descr: "Descrizione pattern Adapter" + [ (@adapter)] + ".",
     ),
     (
       vers: "0.5.0",
       date: datetime(day: 12, month: 03, year: 2025),
       autore: p.sara,
-      //verifica: p.marco,
+      verifica: p.matteo,
       descr: "Descrizione Pattern Dependency Injection" + [ (@di)] + ".",
     ),
     (
@@ -351,7 +351,7 @@ I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte
 === Object adapter<adapter>
 ==== Descrizione del pattern
 Il pattern _Object Adapter_ è un design pattern di tipo strutturale che permette ad oggetti con interfacce incompatibili di collaborare tra loro.\
-Questo pattern utilizza la composizione per "adattare" l'interfaccia di una classe a un'altra interfaccia attesa dai _client_.
+In particolare, il _client_ comunica con un'interfaccia _target_ implementata dall'_adapter_, il quale, tramite composizione, contiene l'oggetto _adaptee_.\
 L'adapter agisce come un intermediario, convertendo le richieste del client in chiamate compatibili con l'oggetto adattato.
 A differenza del _Class Adapter_ (che utilizza l'ereditarietà), l'_Object Adapter_ mantiene un riferimento all'oggetto da adattare (_adaptee_), delegando a quest'ultimo l'esecuzione della richiesta appena convertita.
 La struttura tipica dell'Object Adapter include:
@@ -373,7 +373,7 @@ L'utilizzo del pattern _Object adapter_ nel progetto porta diversi vantaggi:
 ==== Utilizzo del pattern nel progetto
 Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente tra gli oggetti che assolvono i compiti della _business logic_ e della _persistence logic_, ma anche per le comunicazioni dalla _business logic_ all'esterno del microservizio.
 
-- _Input Adapter_: implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS#super[G] )in chiamate alle _inbound ports_ del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
+- _Input Adapter_ (o _Controller_): implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS#super[G] )in chiamate alle _inbound ports_ (o _Use Cases_) del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
 - _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API#super[G] di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
 
 
