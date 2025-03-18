@@ -316,7 +316,7 @@ L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numero
 - *flessibilità*: è più semplice sostituire un'implementazione con un'altra senza modificare il codice client;
 - *testabilità*: è possibile sostituire le istanze reali degli oggetti richiesti con _mock_ durante i test#super[G] ;
 - *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
-- *gestione centralizzata*:la _dependency injection_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
+- *gestione centralizzata*:la _dependency injection#super[G]_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
 
 ==== Framework Fx di _Uber_ <fwfx>
 *Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
@@ -327,7 +327,7 @@ I costrutti principali di Fx utilizzati nel progetto sono:
 
 - *fx.Provide*: registra una funzione costruttore, ovvero una funzione che crea e restituisce un'istanza di un oggetto. Tale istanza verrà poi riutilizzata ovunque sarà richiesta come dipendenza;
 
-- *fx.Supply*: fornisce valori istanziati per _Dependency Injection_ come se fossero stati restituiti da un costruttore.
+- *fx.Supply*: fornisce valori istanziati per _Dependency Injection#super[G]_ come se fossero stati restituiti da un costruttore.
 Viene utilizzato il tipo più specifico di ogni valore;
 
 - *fx.Invoke*: esegue una funzione dopo la costruzione di tutte le dipendenze;
