@@ -50,9 +50,6 @@
       ),
       ..for cell in test {
         count = count + 1
-        if (not cell.desc.contains("Implementato dalla funzione")) {
-          panic(cell.desc + " Non contiene quale funzione esegue il test")
-        }
         (
           "T-" + str(count) + "-" + unit,
           //cell.code,
