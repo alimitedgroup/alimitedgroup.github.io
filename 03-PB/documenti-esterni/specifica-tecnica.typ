@@ -406,6 +406,525 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
 #pagebreak()
+=== Order
+
+[PROSEGUIRE] img
+
+Il microservizio *Order* viene utilizzato per realizzare gli ordini quando questi vengono confermati, andando a verificare la disponibilità di una merce e organizzando da quali magazzini prendere la merce per completare l'ordine.
+
+È sempre di questo microservizio assolvere ai trasferimenti, particolari tipi di ordini il cui destinatario è un altro magazzino.
+
+È formato dalle seguenti componenti:
+
+[PROSEGUIRE] lista
+
+==== Oggetti comuni del microservizio
+
+[PROSEGUIRE] inserire gli oggetti quali cmd, dto e response, per ogni oggetto il suo uml#super[G] 
+
+===== OrderWarehouseUsed
+
+*Descrizione degli attributi della struttura:*
+
+- *`WarehouseID`*:
+- *`Goods map[GoodId]int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== Order
+
+*Descrizione degli attributi della struttura:*
+
+- *`Id GoodId`*: dove GoodID è una stringa, rappresenta l'id della merce in questione;
+- *`Status string`*:
+- *`UpdateTime int64`*:
+- *`CreationTime int64`*:
+- *`Name string`*:
+- *`FullName string`*:
+- *`Address string`*:
+- *`Goods []GoodStock`*:
+- *`Reservations []string`*:
+- *`Warehouses []OrderWarehouseUsed`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`IsCompleted() bool`*:
+
+===== ApplyOrderUpdateCmd
+
+- *`Id string`*:
+- *`Status string`*:
+- *`UpdateTime int64`*:
+- *`CreationTime int64`*:
+- *`Name string`*:
+- *`FullName string`*:
+- *`Address string`*:
+- *`Goods []model.GoodStock`*:
+- *`Reservations []string`*:
+
+===== OrderUpdateGood
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== OrderUpdateCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: dove GoodID è una stringa, rappresenta l'id della merce in questione;
+- *`Status string`*:
+- *`UpdateTime int64`*:
+- *`CreationTime int64`*:
+- *`Name string`*:
+- *`FullName string`*:
+- *`Address string`*:
+- *`Goods []OrderUpdateGood`*:
+- *`Reservations []string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== GoodStock
+
+Rappresenta lo stock#super[G] di una merce, ovvero la sua quantità.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID GoodId`*: dove GoodID è una stringa, rappresenta l'id della merce in questione;
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== GoodInfo
+
+Rappresenta lo stock#super[G] di una merce, ovvero la sua quantità.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID GoodId`*: dove GoodID è una stringa, rappresenta l'id della merce in questione;
+- *`Name string`*:
+- *`Description string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== StockUpdateCmdGood
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: dove GoodID è una stringa, rappresenta l'id della merce in questione;
+- *`Quantity int64`*:
+- *`Delta int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+
+===== StockUpdateCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*:
+- *`WarehouseID string`*:
+- *`Type StockUpdateCmdType`*: dove `StockUpdateCmdType` è una string;
+- *`Goods []StockUpdateCmdGood`*:
+- *`OrderID string`*:
+- *`TransferID string`*:
+- *`ReservationID string`*:
+- *`Timestamp int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== GetStockCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID model.GoodId`*: dove GoodID è una stringa, rappresenta l'id della merce in questione;
+- *`WarehouseID string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== ContactWarehousesOrder
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*:
+- *`Status string`*:
+- *`Name string`*:
+- *`FullName string`*:
+- *`Address string`*:
+- *`UpdateTime int64`*:
+- *`CreationTime int64`*:
+- *`Goods []ContactWarehousesGood`*:
+- *`Reservations []string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== ContactWarehousesCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`Order ContactWarehousesOrder`*:
+- *`LastContact int64`*:
+- *`ConfirmedReservations []ConfirmedReservation`*:
+- *`ExcludeWarehouses []string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== SendOrderUpdateCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*:
+- *`Status string`*:
+- *`Name string`*:
+- *`FullName string`*:
+- *`Address string`*:
+- *`CreationTime int64`*:
+- *`Goods []SendOrderUpdateGood`*:
+- *`Reservations []string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== SendOrderUpdateGood
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodId string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== ContactWarehousesGood
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodId string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== ConfirmedReservation
+
+*Descrizione degli attributi della struttura:*
+
+- *`WarehouseId string`*:
+- *`ReservationID string`*:
+- *`Goods map[string]int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== SendContactWarehouseCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`Order model.Order`*:
+- *`TransferId string`*:
+- *`LastContact int64`*:
+- *`ConfirmedReservations []ConfirmedReservation`*:
+- *`ExcludeWarehouses []string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== CreateOrderGood
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== CreateOrderCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`Name string`*:
+- *`FullName string`*:
+- *`Address string`*:
+- *`Goods []CreateOrderGood`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== CreateOrderResponse
+
+*Descrizione degli attributi della struttura:*
+
+- *`OrderID string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+====== RequestedGood
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== CalculateAvailabilityCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`Goods []RequestedGood`*:
+- *`ExcludedWarehouses []string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== WarehouseAvailability
+
+*Descrizione degli attributi della struttura:*
+
+- *`WarehouseID string`*:
+- *`Goods map[string]int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== CalculateAvailabilityResponse
+
+*Descrizione degli attributi della struttura:*
+
+- *`Warehouses []WarehouseAvailability`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== ApplyStockUpdateCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`WarehouseID string`*:
+- *`Goods []model.GoodStock`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== ReservationItem
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodId string`*:
+- *`Quantity int64`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== RequestReservationCmd
+
+*Descrizione degli attributi della struttura:*
+
+- *`WarehouseID string`*:
+- *`Items []ReservationItem`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== RequestReservationResponse
+
+*Descrizione degli attributi della struttura:*
+
+- *`Id string`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+//Inizio oggetti normali
+==== IGetStockPort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`GetStock(GetStockCmd) (model.GoodStock, error)`*:
+- *`GetGlobalStock(GoodID model.GoodId) model.GoodStock`*:
+- *`GetWarehouses() []model.Warehouse`*:
+
+==== SimpleCalculateAvailabilityService
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione degli attributi della struttura:*
+
+- *`getStockPort port.IGetStockPort`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewSimpleCalculateAvailabilityService(getStockPort port.IGetStockPort) *SimpleCalculateAvailabilityService`*:
+- *`GetAvailable(ctx context.Context, cmd port.CalculateAvailabilityCmd) (port.CalculateAvailabilityResponse, error)`*:
+
+==== IGetOrderPort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`GetOrder(model.OrderID) (model.Order, error)`*:
+- *`GetAllOrder() ([]model.Order, error)`*:
+
+==== ISendOrderUpdatePort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`SendOrderUpdate(context.Context, SendOrderUpdateCmd) (model.Order, error)`*:
+
+==== ISendContactWarehousePort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`SendContactWarehouses(context.Context, SendContactWarehouseCmd) error`*:
+
+==== IRequestReservationPort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`RequestReservation(context.Context, RequestReservationCmd) (RequestReservationResponse, error)`*:
+
+==== ICalculateAvailabilityUseCase
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`GetAvailable(context.Context, CalculateAvailabilityCmd) (CalculateAvailabilityResponse, error)`*:
+
+==== ManageOrderService
+
+*Descrizione degli attributi della struttura:*
+
+- *`getOrderPort port.IGetOrderPort`*:
+- *`sendOrderUpdatePort port.ISendOrderUpdatePort`*:
+- *`sendContactWarehousePort port.ISendContactWarehousePort`*:
+- *`requestReservationPort port.IRequestReservationPort`*:
+- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*:
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewManageStockService(p ManageOrderServiceParams) *ManageOrderService`*:
+- *`CreateOrder(ctx context.Context, cmd port.CreateOrderCmd) (port.CreateOrderResponse, error)`*:
+- *`GetOrder(ctx context.Context, orderId string) (model.Order, error)`*:
+- *`GetAllOrders(ctx context.Context) ([]model.Order, error)`*:
+- *`ContactWarehouses(ctx context.Context, cmd port.ContactWarehousesCmd) error`*:
+- *`createOrderCmdToSendOrderUpdateCmd(orderId string, cmd port.CreateOrderCmd) port.SendOrderUpdateCmd`*:
+- *`contactCmdToCalculateAvailabilityCmd(cmd port.ContactWarehousesCmd) port.CalculateAvailabilityCmd`*:
+- *`warehouseAvailabilityToReservationCmd(warehouse port.WarehouseAvailability) port.RequestReservationCmd`*:
+- *`contactCmdAndConfirmedToSendOrderUpdateCmd(cmd port.ContactWarehousesCmd, confirmed []port.ConfirmedReservation) port.SendOrderUpdateCmd`*:
+- *`contactCmdToSendOrderUpdateCmdForCancel(cmd port.ContactWarehousesCmd) port.SendOrderUpdateCmd`*:
+
+==== IGetOrderUseCase
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`GetOrder(context.Context, string) (model.Order, error)`*:
+- *`GetAllOrders(context.Context) ([]model.Order, error)`*:
+
+==== IContactWarehousesUseCase
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`ContactWarehouses(context.Context, ContactWarehousesCmd) error`*:
+
+==== ICreateOrderUseCase
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`GetOrder(context.Context, string) (model.Order, error)`*:
+
+==== IApplyStockUpdateUseCase
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`ApplyStockUpdate(context.Context, StockUpdateCmd) error`*:
+
+==== IApplyStockUpdatePort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`ApplyStockUpdate(ApplyStockUpdateCmd) error`*:
+
+==== IApplyOrderUpdateUseCase
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`ApplyOrderUpdate(context.Context, OrderUpdateCmd) error`*:
+
+==== IApplyOrderUpdatePort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`ApplyOrderUpdate(ApplyOrderUpdateCmd) error`*:
+
+
+
 === Catalog <catalog>
 
 #figure(
