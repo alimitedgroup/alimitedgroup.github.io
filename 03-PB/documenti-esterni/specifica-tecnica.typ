@@ -1,13 +1,27 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.4.0]
+#let ver = [0.6.0]
 
 #show: body => importantdocs(
   data: datetime(day: 25, month: 02, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.6.0",
+      date: datetime(day: 16, month: 03, year: 2025),
+      autore: p.sara,
+      verifica: p.matteo,
+      descr: "Descrizione pattern Adapter" + [ (@adapter)] + ".",
+    ),
+    (
+      vers: "0.5.0",
+      date: datetime(day: 12, month: 03, year: 2025),
+      autore: p.sara,
+      verifica: p.matteo,
+      descr: "Descrizione Pattern Dependency Injection" + [ (@di)] + ".",
+    ),
     (
       vers: "0.4.0",
       date: datetime(day: 13, month: 03, year: 2025),
@@ -283,27 +297,85 @@ Il _client_ è progettato come un'applicazione monolitica che funge da interfacc
 
 == Design pattern
 
-=== Dependency injection
+=== Dependency injection <di>
 
 ==== Descrizione del pattern
+Il pattern _Dependency Injection#super[G]_ è un design pattern strutturale che consente di rendere esplicite le dipendenze di un oggetto.\
+Invece di creare direttamente le dipendenze all'interno delle classi o dei componenti, queste possono essere fornite dall'esterno: in questo modo, un componente dichiara le sue dipendenze senza doversi preoccupare di istanziarle, permettendo dunque una maggiore modularità tra i diversi componenti del Sistema.
+Esistono principalmente due tipi di _dependency injection#super[G]_:
+
+- _Constructor Injection_: le dipendenze vengono passate attraverso il costruttore;
+- _Setter Injection_: le dipendenze vengono impostate tramite metodi setter.
+
+Nel progetto viene utilizzata la *Constructor Injection*.
 
 ==== Motivazioni dell'utilizzo del pattern
+L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numerosi vantaggi:
 
-==== Framework Fx di _Uber_
+- *disaccoppiamento*: i componenti sono meno legati tra loro, facilitando la manutenzione#super[G] e l'estensione del codice;
+- *flessibilità*: è più semplice sostituire un'implementazione con un'altra senza modificare il codice client;
+- *testabilità*: è possibile sostituire le istanze reali degli oggetti richiesti con _mock_ durante i test#super[G] ;
+- *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
+- *gestione centralizzata*:la _dependency injection#super[G]_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
+
+==== Framework Fx di _Uber_ <fwfx>
+*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.
 
 ===== Costrutti principali
+I costrutti principali di Fx utilizzati nel progetto sono:
+
+- *fx.Provide*: registra una funzione costruttore, ovvero una funzione che crea e restituisce un'istanza di un oggetto. Tale istanza verrà poi riutilizzata ovunque sarà richiesta come dipendenza;
+
+- *fx.Supply*: fornisce valori istanziati per _Dependency Injection#super[G]_ come se fossero stati restituiti da un costruttore.
+Viene utilizzato il tipo più specifico di ogni valore;
+
+- *fx.Invoke*: esegue una funzione dopo la costruzione di tutte le dipendenze;
+
+- *fx.Options*: raggruppa più opzioni Fx, quindi dipendenze già dichiarate, garantendo una configurazione modulare, rapida e flessibile.
+
+- *fx.Lifecycle*: gestisce il ciclo di vita dell'applicazione con hook OnStart e OnStop;
+
+- *fx.In*: sono espressioni da inserire all'interno di strutture con un insieme di dipendenze da fornire ad un oggetto. Molto utile per ridurre il numero di parametri richiesti da un costruttore.
+
+Un aspetto importante del progetto è l'uso di file \*.module.go in cui vengono definiti moduli *Fx* per organizzare le dipendenze in modo gerarchico.\
+Ogni modulo espone una variabile _Module_ che aggrega tutte le opzioni Fx relative a quel componente mediante fx.Options.
 
 //includere anche il fatto che esistono file *.module.go
 
 ==== Utilizzo del pattern nel progetto
+Nel progetto, il pattern _Dependency Injection#super[G]_ viene applicato in modo estensivo, utilizzandolo praticamente in ogni componente dell'architettura.
+Ogni microservizio utilizza *Fx* per gestire le proprie dipendenze, dalla configurazione fino ai componenti applicativi.
+I servizi vengono costruiti dinamicamente all'avvio dell'applicazione, con tutte le dipendenze iniettate automaticamente mediante *Fx*.
 
-=== Object adapter
-
+=== Object adapter<adapter>
 ==== Descrizione del pattern
+Il pattern _Object Adapter_ è un design pattern di tipo strutturale che permette ad oggetti con interfacce incompatibili di collaborare tra loro.\
+In particolare, il _client_ comunica con un'interfaccia _target_ implementata dall'_adapter_, il quale, tramite composizione, contiene l'oggetto _adaptee_.\
+L'adapter agisce come un intermediario, convertendo le richieste del client in chiamate compatibili con l'oggetto adattato.
+A differenza del _Class Adapter_ (che utilizza l'ereditarietà), l'_Object Adapter_ mantiene un riferimento all'oggetto da adattare (_adaptee_), delegando a quest'ultimo l'esecuzione della richiesta appena convertita.
+La struttura tipica dell'Object Adapter include:
+- una _Target Interface_ che definisce l'interfaccia che il client si aspetta di utilizzare;
+- un _Adaptee_ che è l'oggetto con l'interfaccia incompatibile;
+- un _Adapter_ che implementa l'interfaccia Target e mantiene un riferimento all'_Adaptee_.
+
 
 ==== Motivazioni dell'utilizzo del pattern
+L'utilizzo del pattern _Object adapter_ nel progetto porta diversi vantaggi:
+
+- *flessibilità maggiore*: l'_adapter_ può lavorare con qualsiasi sottoclasse dell'oggetto adattato;
+
+- *riutilizzabilità*: l'_adapter_ può adattare diverse interfacce;
+
+- *manutenibilità*: separando l'_adapter_ dall'oggetto concreto, eventuali modifiche all'oggetto non impattano direttamente sull'_adapter_.
+
 
 ==== Utilizzo del pattern nel progetto
+Nel contesto dell'architettura esagonale adottata, gli _Object Adapter_ sono utilizzati principalmente tra gli oggetti che assolvono i compiti della _business logic_ e della _persistence logic_, ma anche per le comunicazioni dalla _business logic_ all'esterno del microservizio.
+
+- _Input Adapter_ (o _Controller_): implementati come _adapter_ che traducono le richieste esterne (come richieste HTTP o messaggi NATS#super[G] )in chiamate alle _inbound ports_ (o _Use Cases_) del nucleo applicativo. Questi _adapter_ convertono i formati di richiesta esterni in oggetti di dominio comprensibili per il nucleo;
+- _Output Adapter_: implementano le _outbound ports_ e adattano le chiamate del nucleo verso servizi esterni come sistemi di messaggistica o API#super[G] di terze parti. Questi _adapter_ convertono gli oggetti di dominio in formati compatibili con i sistemi esterni.
+
 
 == Microservizi sviluppati
 
