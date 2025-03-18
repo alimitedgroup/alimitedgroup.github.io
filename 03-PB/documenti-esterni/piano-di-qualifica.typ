@@ -466,7 +466,220 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 - Test#super[G] di Regressione;
 - Test#super[G] di Accettazione.
 
-ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i relativi Test#super[G] di Regressione, nonché le altre tipologie di Test#super[G] qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+== Test di Unità
+
+#test-table(
+  unit: "U",
+  tipo-test: "Test di Unità",
+  (
+    (
+      desc: "Implementato dalla funzione TestGetGoodsGlobalQt, testare se il repository del microservizio Catalog restituisce la quantità globali delle merci memorizzate",
+      va: [- 16 per la merce con id "test-ID";
+        - 10 per "2test-ID";
+        - 3 per la merce "3test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestAddGoodQuantity, testare se il repository del microservizio Catalog aggiunge la quantità corretta di una merce",
+      va: [7 unità globali della merce con id "test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestAddGood, testare se il repository del microservizio Catalog inserisce i dati di una merce",
+      va: [- id della merce è "test-ID";
+        - nome della merce è "test-name";
+        - descrizione della merce è "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestChangeGoodData, testare se il repository del microservizio Catalog modifica i dati di una merce",
+      va: [- id della merce è "test-ID"
+        - nome della merce è "new-test-name"
+        - descrizione della merce è "new-test-description";
+        - la quantità della merce è invariata a 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestChangeGoodData WrongID, testare se il repository del microservizio Catalog restituise un errore se l'id della merce da modificare non esiste",
+      va: [il repository restituisce l'errore `ErrGoodIdNotValid`],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestChangeGoodData EmptyName, testare se il repository del microservizio Catalog restituise un errore se il nome della merce è vuoto",
+      va: [il repository restituisce l'errore `ErrEmptyName`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestChange
+      GoodDataEmpty Description, testare se il repository del microservizio Catalog restituise un errore se la descrizione della merce è vuota",
+      va: [il repository restituisce l'errore `ErrEmptyDescription`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestAddWarehouse, testare se il repository del microservizio Catalog aggiunge correttamente un nuovo magazzino",
+      va: [il repository restituisce la mappa dei magazzini e il magazzino con id `test-warehouse-ID` sia presente.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetWarehouses, testare se catalogAdapter del microservizio Catalog restituisce un GetWarehousesResponse valido",
+      va: [nella risposta prodotta è presente il magazzino con id "test-warehouse-id".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetWarehouses, testare se catalogAdapter del microservizio Catalog restituisce un AddOrChangeResponse valido",
+      va: [nella risposta prodotta lo stato dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetWarehouses, testare se catalogAdapter del microservizio Catalog restituisce un AddOrChangeResponse valido (considerando un possibile errore nell'id fornito)",
+      va: [nella risposta prodotta lo stato dell'operazione è `ErrGoodIdNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestSetGoodQuantity, testare se catalogAdapter del microservizio Catalog restituisce un TestSetGoodQuantity Response valido",
+      va: [nella risposta prodotta lo stato dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestSetGoodQuantity WithWrongID, testare se catalogAdapter del microservizio Catalog restituisce un TestSetGoodQuantity Response valido (considerando un possibile errore nell'id fornito)",
+      va: [nella risposta prodotta lo stato dell'operazione è `ErrGoodIdNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetGoodsQuantity, testare se catalogAdapter del microservizio Catalog restituisce un GetGoodsQuantity Response valido",
+      va: [nella risposta fornita è presente la mappa all'interno della quale la quantità della merce con id "test-id" è 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetGoodsInfo, testare se catalogAdapter del microservizio Catalog restituisce un GetGoodsInfoResponse valido",
+      va: [nella risposta fornita è presente la mappa all'interno della quale è presente la mece con id "test-id", nome "test-name" e descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetWarehouses, testare se CatalogService riesce ad ottenere l'elenco dei magazzini",
+      va: [nella risposta fornita è presente la mappa dei magazzini contenente il magazzino con id "test-warehouse-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestAddOrChangeGood Data, testare se CatalogService riesce a modificare i dati di una merce",
+      va: [nella risposta fornita è l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestAddOrChangeGood Data_WrongID, testare se CatalogService riporta una risposta con errore quando l'id fornito non è valido",
+      va: [nella risposta fornita è l'esito dell'operazione è `ErrGoodIdNoValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestSetMultipleGoods Quantity, testare se CatalogService riesce con successo ad avviare la modifica della quantità di due merci",
+      va: [nella risposta fornita è l'esito dell'operazione è `nil` e non vi sono id con modifica sbagliata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestSetMultipleGoods QuantityWithWrongID, testare se CatalogService riesce con successo a riportare un errore nella modifica della quantità di una merce",
+      va: [nella risposta fornita è l'esito dell'operazione è `ErrGeneric` `Failure` ed è riportato un errore alla merce con id `test-wrong-id`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetGoodsQuantity, testare se CatalogService riesce con successo ad ottenere la lista delle merci e delle loro quantità",
+      va: [nella mappa della risposta fornita è presente la merce con id `test-id` e la quantità è 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetGoodsInfo, testare se CatalogService riesce con successo ad ottenere la lista delle merci e delle loro informazioni",
+      va: [nella mappa della risposta fornita è presente la merce con id `test-id`, nome "test-name" e descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestSetMultipleGood QuantityRequest, testare se CatalogController riesce con successo a modificare la quantità di più merci",
+      va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestSetGoodDataRequest, testare se CatalogController riesce con successo a modificare le informazioni di una merce",
+      va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetGoodsRequest, testare se CatalogController riesce con successo ad ottenere le informazioni delle merci",
+      va: [Nella risposta è presente una mappa che possiede una merce con:
+        - id "test-ID";
+        - nome "test-name";
+        - descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetWarehouses Request, testare se CatalogController riesce con successo ad ottenere le informazioni dei magazzini",
+      va: [Nella risposta è presente una mappa che possiede un magazzino con id "test-warehouse-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestGetGoodsGlobal Quantity Request, testare se CatalogController riesce con successo ad ottenere sulla quantità globale delle merci",
+      va: [Nella risposta è presente una mappa che possiede la merce con id "test-ID" a quantità 7.],
+      vr: "",
+      st: "S",
+    ),
+  ),
+)
+
+== Test di Integrazione
+
+#test-table(
+  unit: "I",
+  tipo-test: "Test di Integrazione",
+  (
+    (
+      desc: "Implementato dalla funzione TestInsertGetWarehouses Quantity, verificare che il microservizio Catalog inserisca correttamente la quantità delle merci nei magazzini",
+      va: [Dopo la modifica, ottenendo la lista dei magazzini ed il loro inventario risulta che:
+      - nel magazzino con id "test-warehouse-ID" ci sono 2 unità della merce con id "test-ID" e 0 unità della merce "2test-ID";
+      - nel magazzino con id "2test-warehouse-ID" ci sono 3 unità della merce "test-ID" e 3 unità della merce "2test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestInsertGetGoods Quantity, verificare che il microservizio Catalog inserisca correttamente la quantità delle merci",
+      va: [Dopo la modifica è presente la seguente situazione:
+      - la merce con id "test-ID" ha globalmente 5 unità;
+      - la merce con id "2test-ID" ha 3 unità.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: "Implementato dalla funzione TestInsertGetGoods, verificare che il microservizio Catalog inserisca correttamente la informazioni delle merci",
+      va: [Dopo la modifica è presente la merce con id "test-id" avente:
+      - nome "test-name";
+      - descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+  )
+),
 
 == Test di Sistema
 
@@ -898,6 +1111,8 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
   ),
   caption: [Tracciamento dei Test di Sistema],
 )
+
+== Test di Regressione
 
 == Test di Accettazione
 
