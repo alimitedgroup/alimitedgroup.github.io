@@ -26,12 +26,13 @@ Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà de
     - La **Quantità** disponibile nel magazzino più vicino al Cliente.
 
 ## Admin Locale
-L'**Admin Locale** è la persona responsabile per un singolo magazzino, con un interesse "locale" alla situazione di quest'ultimo. Inoltre, rispetto al Cliente, l'Admin Locale ha un maggior potere decisionale sulle azioni da intraprendere all'interno del magazzino. Le operazioni che questo tipo di utente ha la possibilità di effettuare, sono le seguenti:
-- **Aggiungere** ed aumentare lo _stock_ disponibile per una merce, inserendone la quantità;
+L'**Admin Locale** è la persona responsabile#super[G] per un singolo magazzino, con un interesse "locale" alla situazione di quest'ultimo. Inoltre, rispetto al Cliente, l'Admin Locale ha un maggior potere decisionale sulle azioni da intraprendere all'interno del magazzino. Le operazioni che questo tipo di utente ha la possibilità di effettuare, sono le seguenti:
+- **Aggiungere** ed aumentare lo _stock_#super[G] disponibile per una merce, inserendone la quantità;
 - **Creazione** di un sistema di _Backup_ per il ripristino dei dati, in caso di cyberattacchi;
 - **Attivazione** del sistema di _Backup_, specificandone la periodicità con cui si attiva;
 - **Eliminazione** del sistema di _Backup_, in caso ne esista uno precedentemente creato;
 - **Ripristinare** i dati dall'ultimo _Backup_ effettuato e disponibile nel magazzino, in caso ne esista uno;
+
 ## Admin Globale
 
 
