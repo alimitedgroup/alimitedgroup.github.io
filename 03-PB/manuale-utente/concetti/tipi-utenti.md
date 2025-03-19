@@ -1,4 +1,4 @@
-# Tipi di utenti <tipi_utenti>
+# Tipi di utenti <tipi-utenti>
 
 Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre tipi di utenti:
 - Il **Cliente**;
@@ -90,15 +90,3 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
     - Il **Ruolo** del nuovo utente.
 - **Eliminare** un utente nel Sistema, selezionando il nome utente;
 - **Promuovere il Ruolo** di un utente nel Sistema.
-
-
-
-<!--
-Qui bisogna spiegare i tipi di utenti:
-
-- Cliente
-- Admin locale
-- Admin globale
-
-Spiegare le differenze tra di essi, le cose in comune, che cosa ognuno può e non può fare.
-Inoltre specificare a che api#super[G] gateway si possono connettere, se non possono farlo a tutti.
