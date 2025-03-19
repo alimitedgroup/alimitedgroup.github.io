@@ -11,8 +11,15 @@
   responsabile: (p.samuele,),
   verificatore: (p.emanuele, p.matteo),
   stato: [In redazione],
-  redattori: (p.samuele, p.matteo),
+  redattori: (p.samuele, p.matteo, p.marco),
   versioni: (
+    (
+      vers: "0.3.0",
+      date: datetime(day: 19, month: 03, year: 2025),
+      descr: "Redazione sezione Tipi di Utenti, " + [(@tipi_utenti)] + ".",
+      autore: p.matteo,
+      verifica: p.samuele,
+    ),
     (
       vers: "0.2.0",
       date: datetime(day: 02, month: 03, year: 2025),
