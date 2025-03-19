@@ -16,7 +16,7 @@
     (
       vers: "0.3.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, " + [(@tipi-utenti)] + ".",
+      descr: "Redazione sezione Tipi di Utenti, " + [(@tipiutenti)] + ".",
       autore: p.marco,
       verifica: p.samuele,
     ),

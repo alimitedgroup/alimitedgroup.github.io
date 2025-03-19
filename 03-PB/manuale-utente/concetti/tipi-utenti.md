@@ -1,4 +1,4 @@
-# Tipi di utenti <tipi-utenti>
+# Tipi di utenti <tipiutenti>
 
 Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre tipi di utenti:
 - Il **Cliente**;
