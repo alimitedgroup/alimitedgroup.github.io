@@ -1,6 +1,6 @@
 # Merci
 
-Spiegare cosa intendiamo noi con "merce" (un good, quindi una tupla con ID, nome, metadati extra).
+Spiegare cosa intendiamo noi con "merce" (un good#super[G] ,quindi una tupla con ID, nome, metadati extra).
 
 Specificare che i metadati sono salvati come stringa utf-8, quindi consigliare di salvarli in JSON.
 
