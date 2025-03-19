@@ -743,7 +743,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestCheckKey PairExistence, testare che AuthAdapter trasmetta correttamente la richiesta di verifica presenza di una coppia di chiavi memorizzata],
+      desc: [Implementato da TestCheckKey PairExistence, testare che AuthAdapter trasmetta correttamente la richiesta di controllo della presenza di una coppia di chiavi memorizzata],
       va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
       vr: "",
       st: "S",
