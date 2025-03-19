@@ -1902,8 +1902,8 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`GetStock(warehouseId string, goodId string) (int64, error)`*:
-- *`SetStock(warehouseId string, goodId string, stock int64) bool`*:
-- *`AddStock(warehouseId string, goodId string, stock int64) (bool, error)`*:
+- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*:
+- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*:
 - *`GetGlobalStock(goodId string) int64`*:
 - *`GetWarehouses() []string`*:
 
@@ -1919,8 +1919,8 @@ Questa struttura non ha metodi invocabili.
 
 - *`NewStockRepositoryImpl() *StockRepositoryImpl`*:
 - *`GetStock(warehouseId string, goodId string) (int64, error)`*:
-- *`SetStock(warehouseId string, goodId string, stock int64) bool`*:
-- *`AddStock(warehouseId string, goodId string, stock int64) (bool, error)`*:
+- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*:
+- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*:
 - *`GetGlobalStock(goodId string) int64`*:
 - *`GetWarehouses() []string`*:
 
