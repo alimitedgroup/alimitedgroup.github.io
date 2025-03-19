@@ -94,7 +94,7 @@
     )
     .replace(
       "#super[G]",
-      wrap-replacer(content, match => "<!--raw-typst #super(\"G\")-->"),
+      wrap-replacer(content, match => "<!--raw-typst#super(\"G\")-->"),
     )
   cmarker.render(
     content,
