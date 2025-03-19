@@ -474,9 +474,11 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
   (
     (
       desc: [Implementato dalla funzione TestGetGoodsGlobalQt, testare se il repository#super[G] del microservizio Catalog restituisce la quantità globali delle merci memorizzate],
-      va: [- 16 per la merce con id "test-ID";
+      va: [
+        - 16 per la merce con id "test-ID";
         - 10 per "2test-ID";
-        - 3 per la merce "3test-ID".],
+        - 3 per la merce "3test-ID".
+      ],
       vr: "",
       st: "S",
     ),
@@ -488,18 +490,22 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Implementato dalla funzione TestAddGood, testare se il repository#super[G] del microservizio Catalog inserisce i dati di una merce],
-      va: [- id della merce è "test-ID";
+      va: [
+        - id della merce è "test-ID";
         - nome della merce è "test-name";
-        - descrizione della merce è "test-description".],
+        - descrizione della merce è "test-description".
+      ],
       vr: "",
       st: "S",
     ),
     (
       desc: [Implementato dalla funzione TestChangeGoodData, testare se il repository#super[G] del microservizio Catalog modifica i dati di una merce],
-      va: [- id della merce è "test-ID"
+      va: [
+        - id della merce è "test-ID"
         - nome della merce è "new-test-name"
         - descrizione della merce è "new-test-description";
-        - la quantità della merce è invariata a 7.],
+        - la quantità della merce è invariata a 7.
+      ],
       vr: "",
       st: "S",
     ),
@@ -629,7 +635,8 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       va: [Nella risposta è presente una mappa che possiede una merce con:
         - id "test-ID";
         - nome "test-name";
-        - descrizione "test-description".],
+        - descrizione "test-description".
+      ],
       vr: "",
       st: "S",
     ),
@@ -642,6 +649,168 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato dalla funzione TestGetGoodsGlobal Quantity Request, testare se CatalogController riesce con successo ad ottenere sulla quantità globale delle merci],
       va: [Nella risposta è presente una mappa che possiede la merce con id "test-ID" a quantità 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStorePemKeyPair, testare che AuthRepository registri correttamente una coppia di chiavi in formato Pem],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStoreWrongKeyPair, testare che AuthRepository ritorni un errore se si cerca di memorizzare una coppia di chiavi non di tipo ecdsa],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStoreGarbageKeyPair, testare che AuthRepository ritorni un errore se si cerca di memorizzare una coppia non in formato Pem],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublicKey, testare che AuthRepository ritorni correttamente la chiave pubblica],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornata la chiave pubblica e l'issuer.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPrivateKey, testare che AuthRepository ritorni correttamente la chiave privata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornata la chiave privata e l'issuer.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublicKey WithNoKey, testare che AuthRepository ritorni un errore se si prova ad ottenere la chiave pubblica ma questa non è stata precedentemente memorizzata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoPublicKey`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPrivateKey WithNoKey, testare che AuthRepository ritorni un errore se si prova ad ottenere la chiave privata ma questa non è stata precedentemente memorizzata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoPrivateKey`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCheckKeyPair, testare che AuthRepository non ritorni errore se si invoca `CheckKeyPairExistence` e la coppia di chiavi è presente],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCheckKeyPair WithNoKey, testare che AuthRepository ritorni errore se si invoca `CheckKeyPairExistence` e la coppia di chiavi non è presente],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoKeyPair`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStorePemKeyPair, testare che AuthAdapter trasmetta correttamente la richiesta di memorizzazione di una coppia di chiavi],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStoreWrong PemKeyPair, testare che AuthAdapter ritorni l'esito negativo di un'operazione di memorizzazione coppia di chiavi non corretta],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublicKey, testare che AuthAdapter trasmetta correttamente la richiesta di ottenimento chiave pubblica],
+      va: [Nella risposta fornita dall'_Adapter_ è presente la chiave pubblica.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublic Key_NoKey, testare che AuthAdapter ritorni l'esito negativo di un'operazione di ottenimento chiave pubblica quando nessuna chiave pubblica è memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ la chiave pubblica è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPrivateKey, testare che AuthAdapter trasmetta correttamente la richiesta di ottenimento chiave privata],
+      va: [Nella risposta fornita dall'_Adapter_ è presente la chiave privata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPem PrivateKey_NoKey, testare che AuthAdapter ritorni l'esito negativo di un'operazione di ottenimento chiave privata quando nessuna chiave privata è memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ la chiave privata è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCheckKey PairExistence, testare che AuthAdapter trasmetta correttamente la richiesta di verifica presenza di una coppia di chiavi memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptKey, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptKeyWith WrongIssuer, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore simulando che qualcosa non ha funzionato come previsto],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `test error`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptKeyWith WrongIssuer, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è in formato Pem],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptWithWrongKey, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è di tipo ecdsa],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetToken, testare che AuthService generi correttamente un token],
+      va: [AuthService genera una coppia di chiavi valida e ritorna un token correttamente firmato.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestPublishing, testare che AuthPublisher pubblichi correttamente una chiave pubblica],
+      va: [Nello stream di pubblicazione chiavi pubblichi è presente la chiave pubblica.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestPublishingWrongKey, testare che AuthPublisher ritorni un errore quando la pubblicazione di una chiave non va a buon fine],
+      va: [Il Publisher ritorna l'errore `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetToken, testare che AuthController ritorni il token quando arriva una richiesta valida],
+      va: [La risposta ritornata dal Controller contiene il token di prova `test-token`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetTokenWith WrongUser, testare che AuthController funzioni come previsto se il mock del service rileva un nome utente non corretto],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetTokenEmpty Username, testare che AuthController funzioni come previsto se il nome utente fornito è vuoto.],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetTokenWrong Request, testare che AuthController funzioni come previsto se la richiesta fornita non è corretta.],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
       vr: "",
       st: "S",
     ),
@@ -678,8 +847,34 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato dalla funzione TestGetTokenEmpty Username, verificare che il microservizio Authenticator si comporti correttamente se nella richiesta non viene fornito il nome utente],
+      va: [Nella risposta fornita il token è vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetTokenWrong Username, verificare che il microservizio Authenticator si comporti correttamente se nella richiesta viene incluso un nome utente non valido],
+      va: [Nella risposta fornita il token è vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetToken, verificare che il microservizio Authenticator ritorni il token generato in caso di richiesta corretta],
+      va: [Nella risposta fornita il token fornito è un token valido.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetTwoToken, verificare che il microservizio Authenticator ritorni due token validi e firmati con la medesima chiave privata],
+      va: [NI token forniti sono validi e firmati con la stessa chiave privata.],
+      vr: "",
+      st: "S",
+    ),
   )
 ),
+
+#pagebreak()
 
 == Test di Sistema
 
