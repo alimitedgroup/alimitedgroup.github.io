@@ -939,6 +939,30 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato da TestIdempotentAdapterGet, testare che IDempotentAdapter trasmetta correttamente la richiesta di ottenimento informazioni sullo svolgimento di un evento],
+      va: [
+        La funzione `IsAlreadyProcessed` ritorna `false`
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotentAdapterSet, testare che IDempotentAdapter trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
+      va: [
+        Il mock del repository#super[G] riceve la richiesta con successo.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    /*(
+      desc: [Implementato da TestIdempotentAdapterSet, testare che IDempotentAdapter trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
+      va: [
+        Il mock del repository#super[G] riceve la richiesta con successo.
+      ],
+      vr: "",
+      st: "S",
+    ),*/
   ),
 )
 
