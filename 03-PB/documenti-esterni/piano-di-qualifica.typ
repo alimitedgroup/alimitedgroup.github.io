@@ -819,7 +819,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       va: [Sono presenti le seguenti quantità:
         - la merce con id "1" ha 10 unità totali, tutte non riservate;
         - la merce con id "1" ha 0 unità totali, tutte non riservate;
-        Inoltre, un tentativo di reservation per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal repository.
+        Inoltre, un tentativo di reservation per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal repository#super[G] .
       ],
       vr: "",
       st: "S",
@@ -873,15 +873,15 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApply, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di aggiunta stock],
+      desc: [Implementato da TestStockPersistance AdapterApply, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di aggiunta stock#super[G] ],
       va: [
-        Viene aggiunta correttamente la merce, il mock del repository ritorna `true`.
+        Viene aggiunta correttamente la merce, il mock del repository#super[G] ritorna `true`.
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterGet, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock],
+      desc: [Implementato da TestStockPersistance AdapterGet, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] ],
       va: [
         Nella risposta fornita dall'adapter sono persenti:
         - merce con id "1" con quantità totale pari a 10
@@ -891,7 +891,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterGetReserv, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock in reservation],
+      desc: [Implementato da TestStockPersistance AdapterGetReserv, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation],
       va: [
         Nella risposta fornita dall'adapter sono persenti:
         - merce con id "1" con quantità riservata pari a 10
@@ -900,7 +900,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStock PersistanceAdapter GetReservNotFound, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock in reservation e gestisca correttamente il caso in cui la reservation richiesta non esista],
+      desc: [Implementato da TestStock PersistanceAdapter GetReservNotFound, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation e gestisca correttamente il caso in cui la reservation richiesta non esista],
       va: [
         L'adapter ritorna un errore `ErrReservationNotFound` e la reservation non contiene nulla
       ],
@@ -924,7 +924,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApplyOrder, testare che StockPersistanceAdapter riesca a gestire una richiesta di conferma ordine],
+      desc: [Implementato da TestStockPersistance AdapterApplyOrder, testare che StockPersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] ],
       va: [
         L'adapter ritorna `nil` successivamente alla richiesta.
       ],
@@ -932,7 +932,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApplyOrderErr, testare che StockPersistanceAdapter riesca a gestire una richiesta di conferma ordine con richiesta non corretta],
+      desc: [Implementato da TestStockPersistance AdapterApplyOrderErr, testare che StockPersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] con richiesta non corretta],
       va: [
         L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
       ],
