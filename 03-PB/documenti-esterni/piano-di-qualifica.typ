@@ -814,6 +814,131 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato da TestStockRepository ImplGetAndSet, testare che StockRepositoryImpl aggiunga correttamente quantità di merce e registri correttamente le reservation],
+      va: [Sono presenti le seguenti quantità:
+        - la merce con id "1" ha 10 unità totali, tutte non riservate;
+        - la merce con id "1" ha 0 unità totali, tutte non riservate;
+        Inoltre, un tentativo di reservation per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal repository.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockRepositoryImpl ReserveAndUnreserve, testare che StockRepositoryImpl riesca a gestire correttamente le reservation],
+      va: [La quantità non riservata della merce con id "1" è 5 con 10 unità totali.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockRepositoryImpl ReserveNotExistingGood, testare che StockRepositoryImpl ritorni un errore se la reservation è effettuata su una merce non esistente nel magazzino],
+      va: [Il metodo `ReserveStock` ritorna un errore, il tentativo di ottenere la quantità di merce disponibile ritorna 0.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockRepository ImplUnreserveNotEnough, testare che StockRepositoryImpl gestisca correttamente una richiesta di rimozione di reservation di una quantità maggiore di quella riservata],
+      va: [Il metodo `UnReserveStock` ritorna un errore.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCatalogRepositoryImpl, testare che CatalogRepositoryImpl gestisca correttamente l'aggiunta di una merce],
+      va: [Dopo l'operazione di aggiunta, invocando il metodo `GetGood` sulla merce con id "1", questa risulta presente e con le seguenti caratteristiche:
+        - nome "blue_hat"
+        - descrizione "very beautiful hat"
+        Inoltre non risulta esistere la merce con id "2" in quanto non aggiunta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotente RepositoryImpl, testare che IdempotentRepositoryImpl gestisca correttamente la gestione degli eventi],
+      va: [
+        - L'evento "event" con id "id" risulta essere processato
+        - L'evento "event" con id "id2" non risulta essere processato
+        - L'evento "event2" con id "id" non risulta essere processato
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotente RepositoryImpl, testare che IdempotentRepositoryImpl gestisca correttamente la gestione degli eventi],
+      va: [
+        - L'evento "event" con id "id" risulta essere processato
+        - L'evento "event" con id "id2" non risulta essere processato
+        - L'evento "event2" con id "id" non risulta essere processato
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApply, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di aggiunta stock],
+      va: [
+        Viene aggiunta correttamente la merce, il mock del repository ritorna `true`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterGet, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock],
+      va: [
+        Nella risposta fornita dall'adapter sono persenti:
+        - merce con id "1" con quantità totale pari a 10
+        - merce con id "1" con quantità libera da reservation pari a 10
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterGetReserv, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock in reservation],
+      va: [
+        Nella risposta fornita dall'adapter sono persenti:
+        - merce con id "1" con quantità riservata pari a 10
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStock PersistanceAdapter GetReservNotFound, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock in reservation e gestisca correttamente il caso in cui la reservation richiesta non esista],
+      va: [
+        L'adapter ritorna un errore `ErrReservationNotFound` e la reservation non contiene nulla
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyReserv, testare che StockPersistanceAdapter riesca a trasmettere la richiesta di reservation],
+      va: [
+        L'adapter ritorna `nil` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyReservErr, testare che StockPersistanceAdapter riesca a gestire una richiesta di reservation con quantità non disponibile di una merce],
+      va: [
+        L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyOrder, testare che StockPersistanceAdapter riesca a gestire una richiesta di conferma ordine],
+      va: [
+        L'adapter ritorna `nil` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyOrderErr, testare che StockPersistanceAdapter riesca a gestire una richiesta di conferma ordine con richiesta non corretta],
+      va: [
+        L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
   ),
 )
 
