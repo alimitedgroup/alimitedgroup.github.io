@@ -36,26 +36,26 @@ L'**Admin Locale** è la persona responsabile#super[G] per un singolo magazzino,
 ## Admin Globale
 L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini presenti, ha quindi un interesse "globale" sul Sistema e tutte le sue componenti. Questa tipologia di utente è la **più importante**, dal punto di vista decisionale, ma soprattutto la **più delicata** richiedendo che ci sia un'elevata attenzione ad ogni azione presa. La lista di operazioni disponibili per questo tipo di utente, è la seguente:
 - **Creazione** di un trasferimento#super[G] di merci da confermare, scegliendo per ognuno:
-    - Il **magazzino mittente** del trasferimento#super[G] ;
-    - Il **magazzino destinatario** del trasferimento#super[G] .
+    - Il **magazzino mittente** del trasferimento#super[G];
+    - Il **magazzino destinatario** del trasferimento#super[G].
 - **Aggiungere** la merce ad un trasferimento#super[G] non confermato, a patto che:
-    - Il magazzino mittente del trasferimento#super[G] ,abbia la quantità di merce sufficiente nell _stock_#super[G] ;
-    - Esista un trasferimento#super[G] precedentemente creato.
+    - Il **magazzino mittente** del trasferimento#super[G], abbia la quantità di merce sufficiente nell _stock_#super[G];
+    - **Esista** un trasferimento#super[G] precedentemente creato.
 - **Confermare** un trasferimento#super[G] così da procedere con la richiesta, a patto che:
-    - Il magazzino mittente del trasferimento#super[G] ,abbia la quantità di merce sufficiente nell _stock_#super[G] ;
+    - Il magazzino mittente del trasferimento#super[G], abbia la quantità di merce sufficiente nell _stock_#super[G];
     - Esista un trasferimento#super[G] non confermato nel Sistema.
 - **Cancellare** un trasferimento#super[G] non ancora confermato, a patto che ne esista uno;
 - **Visualizzare** l'elenco di tutti trasferimenti presenti nel Sistema, visualizzando per ognuno:
-    - L'**ID** del trasferimento#super[G] ;
-    - Lo **Stato** del trasferimento#super[G] .
-- **Visualizzare** nel dettaglio un particolare trasferimento#super[G] ,visualizzando:
-    - L'**ID** del trasferimento#super[G] ;
-    - Lo **Stato** del trasferimento#super[G] ;
-    - Il **Magazzino mittente** del trasferimento#super[G] ;
-    - Il **Magazzino destinatario** del trasferimento#super[G] ;
-    - L'**Elenco delle merci** interessate nel trasferimento#super[G] ,e per ognuna di queste:
-        - Il **Nome** della singola merce nel traferimento;
-        - La **Quantità** della singola merce nel trasferimento#super[G] .
+    - L'**ID** del trasferimento#super[G];
+    - Lo **Stato** del trasferimento#super[G].
+- **Visualizzare** nel dettaglio un particolare trasferimento#super[G],visualizzando:
+    - L'**ID** del trasferimento#super[G];
+    - Lo **Stato** del trasferimento#super[G];
+    - Il **Magazzino mittente** del trasferimento#super[G];
+    - Il **Magazzino destinatario** del trasferimento#super[G];
+    - L'**Elenco delle merci** interessate nel trasferimento#super[G], e per ognuna di queste:
+        - Il **Nome** della singola merce nel trasferimento#super[G];
+        - La **Quantità** della singola merce nel trasferimento#super[G].
 - **Visualizzare** l'elenco delle notifiche di rifornimento, a patto che ne esistano, e per ognuna visualizzare:
     - L'**ID** della notifica di rifornimento;
     - Lo **Stato** della notifica di rifornimento.
@@ -72,8 +72,8 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
 - **Visualizzare** l'elenco dei microservizi, e per ognuno di essi visualizzare:
     - Il **Numero di richieste al secondo** del microservizio;
     - Il **Nome** del microservizio.
-- **Esportare** gli ordini eseguiti, purché ce ne siano, in un _file .csv_;
-- **Esportare** il _report_ dell'inventario, a patto che ce ne esista uno, in un _file .csv_;
+- **Esportare** gli ordini eseguiti, purché ce ne siano, in un _file_ .csv;
+- **Esportare** il _report_ dell'inventario, a patto che ce ne esista uno, in un _file_ .csv;
 - **Creazione** di una soglia minima, a condizione che sia valida, in una determinata merce;
 - **Creazione** di una nuova merce, inserendo:
     - Il **Nome** della nuova merce;
@@ -97,12 +97,6 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
   table(
     columns: (1fr, 1.75fr, 3fr),
     align: horizon,
-    stroke: (x, y) => (
-      left: if (x > 0) { 0pt } else { 1pt },
-      right: 1pt,
-      top: if (y < 2) { 1pt } else { 0pt },
-      bottom: 1pt,
-    ),
     inset: 5pt,
     table.header(
       [#text(fill: white)[*Tipo di Utente*]],
