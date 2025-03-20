@@ -265,7 +265,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPC12*], [Code Coverage], [≥ 80%], [100%],
+    [*MPC12*], [Code Coverage], [≥ 75%], [100%],
     [*MPC13*], [Test Success Rate], [100%], [100%],
   ),
   caption: [Soglie metriche processo di Verifica],
