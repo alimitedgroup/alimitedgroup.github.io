@@ -977,7 +977,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestStockUpdateAdapter, testare che PublishStockUpdateAdapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
       va: [
-        Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS.
+        Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
       ],
       vr: "",
       st: "S",
@@ -993,7 +993,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestReservationEventAdapter, testare che PublishReservationEventAdapter pubblichi correttamente una richiesta di reservation],
       va: [
-        Il metodo `StoreReservationEvent` ritorna `nil` è il messaggio risulta inviato su NATS.
+        Il metodo `StoreReservationEvent` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
       ],
       vr: "",
       st: "S",
@@ -1026,7 +1026,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestOrderUpdateListenerForOrder, testare che OrderUpdateListener riceva le richieste di aggiornamento su un ordine],
+      desc: [Implementato da TestOrderUpdateListenerForOrder, testare che OrderUpdateListener riceva le richieste di aggiornamento su un ordine#super[G] ],
       va: [
         Viene ricevuto l'ack sulla richiesta inviata.
       ],
@@ -1034,7 +1034,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestOrderUpdateListenerForTransfer, testare che OrderUpdateListener riceva le richieste di aggiornamento su un trasferimento],
+      desc: [Implementato da TestOrderUpdateListenerForTransfer, testare che OrderUpdateListener riceva le richieste di aggiornamento su un trasferimento#super[G] ],
       va: [
         Viene ricevuto l'ack sulla richiesta inviata.
       ],
