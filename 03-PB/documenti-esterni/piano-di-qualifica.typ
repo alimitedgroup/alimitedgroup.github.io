@@ -942,7 +942,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestIdempotentAdapterGet, testare che IDempotentAdapter trasmetta correttamente la richiesta di ottenimento informazioni sullo svolgimento di un evento],
       va: [
-        La funzione `IsAlreadyProcessed` ritorna `false`
+        La funzione `IsAlreadyProcessed` ritorna `false`.
       ],
       vr: "",
       st: "S",
@@ -955,14 +955,100 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
-    /*(
-      desc: [Implementato da TestIdempotentAdapterSet, testare che IDempotentAdapter trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
+    (
+      desc: [Implementato da TestCatalogPersistanceAdapterSetAndGet, testare che CatalogPersistanceAdapter trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
       va: [
-        Il mock del repository#super[G] riceve la richiesta con successo.
+        Il metodo `GetGood` ritorna un oggetto `GoodInfo` contenente una merce con le seguenti informazioni:
+        - id pari a 1;
+        - nome pari a "blue-hat";
+        - descrizione pari a "very beautiful hat".
       ],
       vr: "",
       st: "S",
-    ),*/
+    ),
+    (
+      desc: [Implementato da TestCatalogPersistanceAdapterGetNotExist, testare che CatalogPersistanceAdapter gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
+      va: [
+        Il metodo `GetGood` ritorna un oggetto `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockUpdateAdapter, testare che PublishStockUpdateAdapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
+      va: [
+        Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockUpdateAdapter, testare che PublishStockUpdateAdapter gestisca correttamente un errore di rete],
+      va: [
+        Il metodo `CreateStockUpdate` ritorna l'errore verificatosi.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservationEventAdapter, testare che PublishReservationEventAdapter pubblichi correttamente una richiesta di reservation],
+      va: [
+        Il metodo `StoreReservationEvent` ritorna `nil` è il messaggio risulta inviato su NATS.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservationEventAdapterNetworkErr, testare che PublishReservationEventAdapter pubblichi correttamente una richiesta di reservation],
+      va: [
+        Il metodo `StoreReservationEvent` ritorna l'errore verificatosi.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      //Utilizzato per quando le notifiche di assortimento vengono accettate
+      desc: [Implementato da TestStockUpdateListener, testare che StockUpdateListener gestisca correttamente un evento di aggiornamento quantità merce disponibile],
+      va: [
+        Il mock che implementa `IApplyStockUpdateUseCase` registra:
+        - 10 unità della merce con id "1";
+        - 20 unità della merce con id "2".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservationEventListener, testare che ReservationEventListener riceva le richieste di reservation],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderUpdateListenerForOrder, testare che OrderUpdateListener riceva le richieste di aggiornamento su un ordine],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderUpdateListenerForTransfer, testare che OrderUpdateListener riceva le richieste di aggiornamento su un trasferimento],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCatalogUpdateListener, testare che CatalogListener riceva le richieste di aggiornamento infromazioni su una merce],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal mock di `IApplyCatalogUpdateUseCase`, il nome di tale merce è "hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
   ),
 )
 
