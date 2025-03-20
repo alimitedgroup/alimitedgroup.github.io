@@ -16,14 +16,16 @@
     (
       vers: "0.3.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, " + [(@tipiutenti)] + ".",
+      descr: "Redazione sezione Tipi di Utenti, " + [(/*@tipiutenti*/)] + ".",
       autore: p.marco,
       verifica: p.samuele,
     ),
     (
       vers: "0.2.0",
       date: datetime(day: 02, month: 03, year: 2025),
-      descr: "Stesura parte introduttiva del documento e requisiti del Sistema " + [(@introduzione e @requisiti)] + ".",
+      descr: "Stesura parte introduttiva del documento e requisiti del Sistema "
+        + [(/*@introduzione e @requisiti*/)]
+        + ".",
       autore: p.matteo,
       verifica: p.emanuele,
     ),

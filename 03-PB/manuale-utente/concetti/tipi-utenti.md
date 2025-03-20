@@ -90,3 +90,42 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
     - Il **Ruolo** del nuovo utente.
 - **Eliminare** un utente nel Sistema, selezionando il nome utente;
 - **Promuovere il Ruolo** di un utente nel Sistema.
+
+## Riepilogo degli Utenti presenti
+<!--raw-typst
+#figure(
+  table(
+    columns: (1fr, 1.75fr, 3fr),
+    align: horizon,
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    inset: 5pt,
+    table.header(
+      [#text(fill: white)[*Tipo di Utente*]],
+      [#text(fill: white)[*Descrizione*]],
+      [#text(fill: white)[*Operazioni*]],
+    ),
+    [Cliente],
+    [È la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema, con delle limitazioni.],
+    [Può effettuare ordini? Sì.\ Può visualizzare le merci nel Sistema? Sì.\ Può confermare gli ordini? Sì.\ Può visualizzare gli ordini effettuati? Sì.\ Può cambiare il ruolo ad un Utente nel Sistema? No. \ Può creare un sistema di Backup? No.\ Può aumentare lo stock di una certa merce? No.  \ Può creare una nuova merce? No.\ Può creare un trasferimento tra magazzini? No. \ Può bloccare un tentativo di accesso anomalo? No.],
+    [Admin \ Locale],
+    [È la persona responsabile di un singolo magazzino, \ con un interesse "locale" verso di esso.],
+    [Può effettuare ordini? No. \ Può visualizzare le merci nel Sistema? Sì. \ Può confermare gli ordini? No. \ Può visualizzare gli ordini effettuati? No. \ Può cambiare il ruolo ad un Utente nel Sistema? Sì. \ Può creare un sistema di Backup? Sì. \ Può aumentare lo stock di una certa merce? Sì. \ Può creare una nuova merce? No. \ Può creare un trasferimento tra magazzini? No. \ Può bloccare un tentativo di accesso anomalo? No.],
+    [Admin \ Globale],
+    [È la persona che ha la responsabilità di supervisionare su tutti i magazzini presenti nel Sistema; \ è la persona più importante e più delicata dal punto di vista decisionale.],
+    [Può effettuare ordini? No. \ Può visualizzare le merci nel Sistema? Sì. \ Può confermare gli ordini? No. \ Può visualizzare gli ordini effettuati? No. \ Può cambiare il ruolo ad un Utente nel Sistema? Sì. \ Può creare un sistema di Backup? Sì. \ Può aumentare lo stock di una certa merce? Sì. \ Può creare una nuova merce? Sì. \ Può creare un trasferimento tra magazzini? Sì. \ Può bloccare un tentativo di accesso anomalo? Sì. ],
+  ),
+  caption: [Riepilogo degli Utenti presenti nel Sistema]
+)
+-->
+<!--typst-begin-exclude-->
+| Tipo di Utente | Descrizione | Azioni |
+|---|:---:|:---|
+| Cliente | È la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema, con delle limitazioni. | Può effettuare ordini? Sì.<br>Può visualizzare le merci nel Sistema? Sì.<br>Può confermare gli ordini? Sì.<br>Può visualizzare gli ordini effettuati? Sì.<br>Può cambiare il ruolo ad un Utente nel Sistema? no. <br>Può creare un sistema di Backup? No.<br>Può aumentare lo stock di una certa merce? No.  <br>Può creare una nuova merce? No.<br>Può creare un trasferimento tra magazzini? No.<br>Può bloccare un tentativo di accesso anomalo? No. |
+| Admin Locale | È la persona responsabile di un singolo magazzino,<br> con un interesse "locale" verso di esso. | Può effettuare ordini? No.<br>Può visualizzare le merci nel Sistema? Sì.<br>Può confermare gli ordini? No.<br>Può visualizzare gli ordini effettuati? No.<br>Può cambiare il ruolo ad un Utente nel Sistema? Sì.<br>Può creare un sistema di Backup? Sì.<br>Può aumentare lo stock di una certa merce? Sì.<br>Può creare una nuova merce? No.<br>Può creare un trasferimento tra magazzini? No.<br>Può bloccare un tentativo di accesso anomalo? No. |
+| Admin Globale | È la persona che ha la responsabilità di supervisionare su tutti i magazzini presenti nel Sistema; <br> è la persona più importante e più delicata dal punto di vista decisionale. | Può effettuare ordini? No.<br>Può visualizzare le merci nel Sistema? Sì.<br>Può confermare gli ordini? No.<br>Può visualizzare gli ordini effettuati? No.<br>Può cambiare il ruolo ad un Utente nel Sistema? Sì.<br>Può creare un sistema di Backup? Sì.<br>Può aumentare lo stock di una certa merce? Sì.<br>Può creare una nuova merce? Sì.<br>Può creare un trasferimento tra magazzini? Sì.<br>Può bloccare un tentativo di accesso anomalo? Sì. |
+<!--typst-end-exclude-->
