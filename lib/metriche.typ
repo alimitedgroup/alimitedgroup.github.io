@@ -40,7 +40,7 @@
         rgb("#d8b2d8")
       },
       align: center + horizon,
-      columns: (10%, 30%, 25%, 25%, auto),
+      columns: (10%, 30%, 25%, 25%, 10%),
       table.header(
         text(12pt, fill: white)[*Codice*],
         text(12pt, fill: white)[*Descrizione*],

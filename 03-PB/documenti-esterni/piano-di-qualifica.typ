@@ -940,7 +940,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestIdempotentAdapterGet, testare che IDempotentAdapter trasmetta correttamente la richiesta di ottenimento informazioni sullo svolgimento di un evento],
+      desc: [Implementato da TestIdempotent AdapterGet, testare che IDempotentAdapter trasmetta correttamente la richiesta di ottenimento informazioni sullo svolgimento di un evento],
       va: [
         La funzione `IsAlreadyProcessed` ritorna `false`.
       ],
@@ -948,7 +948,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestIdempotentAdapterSet, testare che IDempotentAdapter trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
+      desc: [Implementato da TestIdempotent AdapterSet, testare che IDempotentAdapter trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
       va: [
         Il mock del repository#super[G] riceve la richiesta con successo.
       ],
@@ -956,7 +956,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestCatalogPersistanceAdapterSetAndGet, testare che CatalogPersistanceAdapter trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
+      desc: [Implementato da TestCatalogPersistance AdapterSetAndGet, testare che CatalogPersistance Adapter trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
       va: [
         Il metodo `GetGood` ritorna un oggetto `GoodInfo` contenente una merce con le seguenti informazioni:
         - id pari a 1;
@@ -967,7 +967,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestCatalogPersistanceAdapterGetNotExist, testare che CatalogPersistanceAdapter gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
+      desc: [Implementato da TestCatalogPersistance AdapterGetNotExist, testare che CatalogPersistance Adapter gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
       va: [
         Il metodo `GetGood` ritorna un oggetto `nil`.
       ],
@@ -975,7 +975,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockUpdateAdapter, testare che PublishStockUpdateAdapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
+      desc: [Implementato da TestStockUpdateAdapter, testare che PublishStockUpdate Adapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
       va: [
         Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
       ],
@@ -983,7 +983,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockUpdateAdapter, testare che PublishStockUpdateAdapter gestisca correttamente un errore di rete],
+      desc: [Implementato da TestStockUpdateAdapter, testare che PublishStock UpdateAdapter gestisca correttamente un errore di rete],
       va: [
         Il metodo `CreateStockUpdate` ritorna l'errore verificatosi.
       ],
@@ -991,7 +991,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestReservationEventAdapter, testare che PublishReservationEventAdapter pubblichi correttamente una richiesta di reservation],
+      desc: [Implementato da TestReservation EventAdapter, testare che PublishReservation EventAdapter pubblichi correttamente una richiesta di reservation],
       va: [
         Il metodo `StoreReservationEvent` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
       ],
@@ -999,7 +999,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestReservationEventAdapterNetworkErr, testare che PublishReservationEventAdapter pubblichi correttamente una richiesta di reservation],
+      desc: [Implementato da TestReservationEvent AdapterNetworkErr, testare che PublishReservation EventAdapter pubblichi correttamente una richiesta di reservation],
       va: [
         Il metodo `StoreReservationEvent` ritorna l'errore verificatosi.
       ],
@@ -1010,7 +1010,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       //Utilizzato per quando le notifiche di assortimento vengono accettate
       desc: [Implementato da TestStockUpdateListener, testare che StockUpdateListener gestisca correttamente un evento di aggiornamento quantità merce disponibile],
       va: [
-        Il mock che implementa `IApplyStockUpdateUseCase` registra:
+        Il mock che implementa `IApplyStock UpdateUseCase` registra:
         - 10 unità della merce con id "1";
         - 20 unità della merce con id "2".
       ],
@@ -1018,7 +1018,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestReservationEventListener, testare che ReservationEventListener riceva le richieste di reservation],
+      desc: [Implementato da TestReservation EventListener, testare che ReservationEventListener riceva le richieste di reservation],
       va: [
         Viene ricevuto l'ack sulla richiesta inviata.
       ],
@@ -1026,7 +1026,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestOrderUpdateListenerForOrder, testare che OrderUpdateListener riceva le richieste di aggiornamento su un ordine#super[G] ],
+      desc: [Implementato da TestOrderUpdate ListenerForOrder, testare che OrderUpdateListener riceva le richieste di aggiornamento su un ordine#super[G] ],
       va: [
         Viene ricevuto l'ack sulla richiesta inviata.
       ],
@@ -1034,7 +1034,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestOrderUpdateListenerForTransfer, testare che OrderUpdateListener riceva le richieste di aggiornamento su un trasferimento#super[G] ],
+      desc: [Implementato da TestOrderUpdate ListenerForTransfer, testare che OrderUpdateListener riceva le richieste di aggiornamento su un trasferimento#super[G] ],
       va: [
         Viene ricevuto l'ack sulla richiesta inviata.
       ],
@@ -1042,9 +1042,9 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestCatalogUpdateListener, testare che CatalogListener riceva le richieste di aggiornamento infromazioni su una merce],
+      desc: [Implementato da TestCatalogUpdate Listener, testare che CatalogListener riceva le richieste di aggiornamento infromazioni su una merce],
       va: [
-        Viene ricevuto l'ack sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal mock di `IApplyCatalogUpdateUseCase`, il nome di tale merce è "hat".
+        Viene ricevuto l'ack sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal mock di `IApplyCatalog UpdateUseCase`, il nome di tale merce è "hat".
       ],
       vr: "",
       st: "S",
@@ -1058,7 +1058,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockControllerAddStockErr, testare che StockController gestisca correttamente una richiesta di aggiunta merce non andata a buon fine],
+      desc: [Implementato da TestStockController AddStockErr, testare che StockController gestisca correttamente una richiesta di aggiunta merce non andata a buon fine],
       va: [
         La risposta fornita del controller contiene un errore.
       ],
@@ -1066,7 +1066,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockControllerRemStockErr, testare che StockController gestisca correttamente una richiesta di rimozione merce non andata a buon fine],
+      desc: [Implementato da TestStockController RemStockErr, testare che StockController gestisca correttamente una richiesta di rimozione merce non andata a buon fine],
       va: [
         La risposta fornita del controller contiene un errore.
       ],
@@ -1092,7 +1092,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservation ServiceApply ReservationEvent, testare che ManageReservationService applichi un evento reservation],
       va: [
-        Il metodo invocato `ApplyReservationEvent` ritorna `nil`.
+        Il metodo invocato `ApplyReservation Event` ritorna `nil`.
       ],
       vr: "",
       st: "S",
@@ -1100,13 +1100,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservation ServiceCreateReservation, testare che ManageReservationService gestisca correttamente la creazione di una reservation],
       va: [
-        Il metodo invocato `ApplyReservationEvent` ritorna l'id della resevation e `nil` come errore.
+        Il metodo invocato `ApplyReservation Event` ritorna l'id della resevation e `nil` come errore.
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da TestManageReservationServiceConfirmOrder, testare che ManageReservationService gestisca correttamente la conferma di un ordine#super[G] ,con opportune conseguenze sulle reservation],
+      desc: [Implementato da TestManageReservation ServiceConfirmOrder, testare che ManageReservationService gestisca correttamente la conferma di un ordine#super[G] ,con opportune conseguenze sulle reservation],
       va: [
         Il metodo invocato `ConfirmOrder` ritorna `nil`.
       ],
@@ -1114,7 +1114,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestManageReservationServiceConfirmTransferSender, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
+      desc: [Implementato da TestManageReservation ServiceConfirm TransferSender, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
       va: [
         Il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
@@ -1122,7 +1122,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestManageReservationServiceConfirmTransferReceiver, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
+      desc: [Implementato da TestManageReservation ServiceConfirm TransferReceiver, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
       va: [
         Il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
@@ -1130,7 +1130,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestApplyStockUpdateService, testare che ApplyStockUpdateService gestisca correttamente l'aggiunta di stock#super[G] di merce],
+      desc: [Implementato da TestApply StockUpdateService, testare che ApplyStockUpdateService gestisca correttamente l'aggiunta di stock#super[G] di merce],
       va: [
         La richiesta raggiunge correttamente il mock di `IIdempotentPort`
       ],
@@ -1138,15 +1138,15 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestApplyStockUpdateService, testare che ApplyCatalogUpdateService gestisca correttamente la modifica delle informazioni di una merce],
+      desc: [Implementato da TestApply StockUpdateService, testare che ApplyCatalog UpdateService gestisca correttamente la modifica delle informazioni di una merce],
       va: [
-        Interrogando il mock `IApplyCatalogUpdatePort` sul nome dell'oggetto con id "1", questo ritonra "hat".
+        Interrogando il mock `IApplyCatalog UpdatePort` sul nome dell'oggetto con id "1", questo ritonra "hat".
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferRepositoryImpl, testare che TransferRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
+      desc: [Implementato da TestTransferRepository Impl, testare che TransferRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
       va: [
         Inizialmente i trasferimenti con id "1" e "2" non sono presenti, quindi il loro completamento e modifica non devono determinare il ritorno di errori.
       ],
@@ -1194,7 +1194,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterGetAllTransfer, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
+      desc: [Implementato da TestTransferPersistence AdapterGetAllTransfer, testare che TransferPersistance Adapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
       va: [
         La risposta fornita dal metodo `GetTranfer` contiene un solo trasferimento#super[G] e tale trasferimento#super[G] ha id "1".
       ],
@@ -1202,7 +1202,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter trasmetta la richiesta di aggiornamento stato trasferimento#super[G] come completato],
+      desc: [Implementato da TestTransferPersistence AdapterSetComplete, testare che TransferPersistance Adapter trasmetta la richiesta di aggiornamento stato trasferimento#super[G] come completato],
       va: [
         La risposta fornita dal metodo `SetComplete` ritorna `nil`.
       ],
@@ -1210,7 +1210,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter gestisca correttamente una richiesta di aggiornamento stato trasferimento#super[G] come completato nel caso in cui tale trasferimento#super[G] non esista],
+      desc: [Implementato da TestTransferPersistence AdapterSetComplete, testare che TransferPersistance Adapter gestisca correttamente una richiesta di aggiornamento stato trasferimento#super[G] come completato nel caso in cui tale trasferimento#super[G] non esista],
       va: [
         La risposta fornita dal metodo `SetComplete` ritorna `ErrTransferNotFound`.
       ],
@@ -1218,17 +1218,161 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdate, testare che TransferPersistanceAdapter trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] ],
+      desc: [Implementato da TestTransferPersistence AdapterIncrement LinkedStockUpdate, testare che TransferPersistance Adapter trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] ],
       va: [
-        La risposta fornita dal metodo `IncrementLinkedStockUpdate` ritorna `nil`.
+        La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `nil`.
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdateErr, testare che TransferPersistanceAdapter gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] con un id trasferimento#super[G] non esistente],
+      desc: [Implementato da TestTransfer PersistenceAdapter Increment LinkedStockUpdateErr, testare che TransferPersistanceAdapter gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] con un id trasferimento#super[G] non esistente],
       va: [
-        La risposta fornita dal metodo `IncrementLinkedStockUpdate` ritorna `ErrTransferNotFound`.
+        La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStock PersistenceAdapter ApplyStockUpdate, testare che StockPersistanceAdapter gestisca correttamente una richiesta di aggiornamento stock#super[G] merce],
+      va: [
+        Il mock che implementa `IStockRepository` riceve la richiesta di aggiornamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence AdapterGetWarehouses, testare che StockPersistanceAdapter gestisca correttamente una richiesta di ottenimento lista dei magazzini],
+      va: [
+        La risposta fornita da `GetWarehouses` contiene due magazzini.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence AdapterGetGlobalStock, testare che StockPersistanceAdapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 10 unità per la merce con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence AdapterGetStockNotExist, testare che StockPersistanceAdapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino ma con id merce non esistente],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 0 unità per la merce con id "1" e ha ritornato l'errore `ErrGoodNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence AdapterGetStock WarehouseNotExist, testare che StockPersistanceAdapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino ma con un id magazzino non esistente],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 0 unità per la merce con id "1" e ha ritornato l'errore `ErrWarehouseNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder PersistenceAdapter ApplyOrderUpdate, testare che OrderPersistanceAdapter gestisca correttamente una richiesta di applicazione modifiche ad un ordine#super[G] ],
+      va: [
+        Il mock di `IOrderRepository` riceve correttamente la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder Persistence AdapterGetOrderExist, testare che OrderPersistanceAdapter gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G] ],
+      va: [
+        La risposta contiene un ordine#super[G] con id "1" e nessun errore (`nil`) viene ritornato.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder PersistenceAdapter GetOrderNotExist, testare che OrderPersistanceAdapter gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G] con "id" non esistente],
+      va: [
+        Viene ritornato un errore `ErrOrderNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterGetAllOrder, testare che OrderPersistanceAdapter gestisca correttamente una richiesta di ottenimento informazioni su tutti gli ordini],
+      va: [
+        La risposta contiene un ordine#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterSetComplete, testare che OrderPersistanceAdapter gestisca correttamente una richiesta di modifica stato ordine#super[G] a completato],
+      va: [
+        Il metodo invocato `SetComplete` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterSetCompleteErr, testare che OrderPersistanceAdapter gestisca correttamente una richiesta di modifica stato ordine#super[G] a completato ma l'id dell'ordine non esiste],
+      va: [
+        Il metodo invocato `SetComplete` ritorna `ErrOrderNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterAdd CompletedWarehouse, testare che OrderPersistanceAdapter gestisca correttamente una richiesta `SetCompletedWarehouseCmd`],
+      va: [
+        Il metodo invocato `SetCompletedWarehouse` ritorna un ordine#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder PersistenceAdapter AddCompleted WarehouseErr, testare che OrderPersistanceAdapter gestisca correttamente una richiesta `SetCompletedWarehouseCmd` con una merce con id non esistente],
+      va: [
+        Il metodo invocato `SetCompletedWarehouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStream AdapterSendOrderUpdate, testare che NatsStreamAdapter gestisca richieste di aggiornamento ordine#super[G] ],
+      va: [
+        L'adapter conferma l'operazione ritornando un ordine#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStreamAdapter SendTransferUpdate, testare che NatsStreamAdapter gestisca richieste di aggiornamento trasferimento#super[G] ],
+      va: [
+        L'adapter conferma l'operazione ritornando un trasferimento#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStreamAdapter SendTransferUpdate, testare che NatsStreamAdapter gestisca richieste di contatto di un magazzino per un ordine#super[G] ],
+      va: [
+        Il metodo invocato `SendContact Warehouses` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStreamAdapter SendContactTransfer, testare che NatsStreamAdapter gestisca richieste di contatto di un magazzino per un trasferimento#super[G] ],
+      va: [
+        Il metodo invocato `SendContactWarehouses` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStreamAdapter SendContactTransfer, testare che NatsStreamAdapter gestisca richieste di reservation],
+      va: [
+        Il metodo invocato `RequestReservation` ritorna una risposta con id pari a "1".
       ],
       vr: "",
       st: "S",
