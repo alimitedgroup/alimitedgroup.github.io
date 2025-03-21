@@ -817,7 +817,7 @@ Oggetto utilizzato per memorizzare la chiave pubblica in formato Pem e l'_issuer
 - *`GetIssuer() string`*: permette di ottenere l'_issuer_ memorizzato;
 - *`GetBytes() []byte`*: permette di ottenere una copia dei _bytes_ memorizzati della chiave pubblica;
 
-==== IAuthPersistance <IAuthPersistance>
+==== IAuthPersistence <IAuthPersistence>
 
 Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ del microservizio _Authenticator_.
 
@@ -830,7 +830,7 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence 
 
 ==== AuthRepository <AuthRepository>
 
-Questa struttura implementa l'interfaccia *IAuthPersistance*, vedi la @IAuthPersistance.
+Questa struttura implementa l'interfaccia *IAuthPersistence*, vedi la @IAuthPersistence.
 
 *Descrizione degli attributi della struttura:*
 
@@ -891,11 +891,11 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 *Descrizione degli attributi della struttura:*
 
-- *`repo persistence.IAuthPersistance`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Authenticator. Per ulteriori informazioni si veda la @IAuthPersistance.
+- *`repo persistence.IAuthPersistence`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Authenticator. Per ulteriori informazioni si veda la @IAuthPersistence.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewAuthAdapter(repo persistence.IAuthPersistance) *AuthAdapter`*: costruttore dell'oggetto. Prende l'oggetto che implementa la _persistence logic_ come parametro;
+- *`NewAuthAdapter(repo persistence.IAuthPersistence) *AuthAdapter`*: costruttore dell'oggetto. Prende l'oggetto che implementa la _persistence logic_ come parametro;
 - *`StorePemKeyPair(cmd *servicecmd.StorePemKeyPairCmd) *serviceresponse.StorePemKeyPairResponse`*: converte il _Command_ per la memorizzazione della coppia di chiavi in formato Pem e l'issuer associato in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 - *`GetPemPrivateKey(cmd *servicecmd.GetPemPrivateKeyCmd) *serviceresponse.GetPemPrivateKeyResponse`*: converte il _Command_ per l'ottenimento della chiave privata e del suo issuer in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 - *`GetPemPublicKey(cmd *servicecmd.GetPemPublicKeyCmd) *serviceresponse.GetPemPublicKeyResponse`*: converte il _Command_ per l'ottenimento della chiave pubblica e del suo issuer in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
@@ -1625,8 +1625,11 @@ Questa struttura non ha metodi invocabili.
 - *`NewManageStockService(p ManageOrderServiceParams) *ManageOrderService`*:
 - *`CreateOrder(ctx context.Context, cmd port.CreateOrderCmd) (port.CreateOrderResponse, error)`*:
 - *`GetOrder(ctx context.Context, orderId string) (model.Order, error)`*:
-- *`GetAllOrders(ctx context.Context) ([]model.Order, error)`*:
-- *`ContactWarehouses(ctx context.Context, cmd port.ContactWarehousesCmd) error`*:
+- *`GetAllOrders(ctx context.Context) []model.Order`*:
+- *`CreateTransfer(ctx context.Context, cmd port.CreateTransferCmd) (port.CreateTransferResponse, error)`*:
+- *`GetTransfer(ctx context.Context, transferId string) (model.Transfer, error`*:
+- *`GetAllTransfers(ctx context.Context) []model.Transfer`*:
+- *`ContactWarehouses(ctx context.Context, cmd port.ContactWarehousesCmd) (port.ContactWarehousesResponse, error)`*:
 - *`createOrderCmdToSendOrderUpdateCmd(orderId string, cmd port.CreateOrderCmd) port.SendOrderUpdateCmd`*:
 - *`contactCmdToCalculateAvailabilityCmd(cmd port.ContactWarehousesCmd) port.CalculateAvailabilityCmd`*:
 - *`warehouseAvailabilityToReservationCmd(warehouse port.WarehouseAvailability) port.RequestReservationCmd`*:
@@ -1657,7 +1660,7 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`GetTransfer(model.TransferID) (model.Transfer, error)`*:
-- *`GetAllTransfer() ([]model.Transfer, error)`*:
+- *`GetAllTransfer() []model.Transfer`*:
 
 ==== ISetCompleteTransferPort
 
@@ -1707,6 +1710,13 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`ApplyTransferUpdate(ApplyTransferUpdateCmd) error`*:
+==== ISendTransferUpdatePort
+
+[PROSEGUIRE] descrizione generale e descrizione metodi
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`SendTransferUpdate(context.Context, SendTransferUpdateCmd) (model.Transfer, error)`*:
 
 ==== ApplyOrderUpdateService
 
@@ -1718,8 +1728,8 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewApplyOrderUpdateService(applyOrderUpdatePort port.IApplyOrderUpdatePort, applyTransferUpdatePort port.IApplyTransferUpdatePort) *ApplyOrderUpdateService`*:
-- *`ApplyOrderUpdate(ctx context.Context, cmd port.OrderUpdateCmd) error`*:
-- *`ApplyTransferUpdate(ctx context.Context, cmd port.TransferUpdateCmd) error`*:
+- *`ApplyOrderUpdate(ctx context.Context, cmd port.OrderUpdateCmd)`*:
+- *`ApplyTransferUpdate(ctx context.Context, cmd port.TransferUpdateCmd)`*:
 - *`orderUpdateCmdToApplyOrderUpdateCmd(cmd port.OrderUpdateCmd) port.ApplyOrderUpdateCmd`*:
 - *`transferUpdateCmdToApplyTransferUpdateCmd(cmd port.TransferUpdateCmd) port.ApplyTransferUpdateCmd`*:
 
@@ -1730,7 +1740,7 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`GetOrder(context.Context, string) (model.Order, error)`*:
-- *`GetAllOrders(context.Context) ([]model.Order, error)`*:
+- *`GetAllOrders(context.Context) []model.Order`*:
 
 ==== ICreateOrderUseCase
 
@@ -1738,7 +1748,7 @@ Questa struttura non ha metodi invocabili.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetOrder(context.Context, string) (model.Order, error)`*:
+- *`CreateOrder(context.Context, CreateOrderCmd) (CreateOrderResponse, error)`*:
 
 ==== OrderController
 
@@ -1773,7 +1783,7 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`GetTransfer(context.Context, string) (model.Transfer, error)`*:
-- *`GetAllTransfers(context.Context) ([]model.Transfer, error)`*:
+- *`GetAllTransfers(context.Context) []model.Transfer`*:
 
 ==== TransferController
 
@@ -1803,7 +1813,7 @@ Questa struttura non ha metodi invocabili.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`ApplyTransferUpdate(context.Context, TransferUpdateCmd) error`*:
+- *`ApplyTransferUpdate(context.Context, TransferUpdateCmd)`*:
 
 ==== IContactWarehousesUseCase
 
@@ -1811,7 +1821,7 @@ Questa struttura non ha metodi invocabili.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`ContactWarehouses(context.Context, ContactWarehousesCmd) error`*:
+- *`ContactWarehouses(context.Context, ContactWarehousesCmd) (ContactWarehousesResponse, error)`*:
 
 ==== OrderListener
 
@@ -1878,7 +1888,7 @@ Questa struttura non ha metodi invocabili.
 - *`SetComplete(transferId string) error`*:
 - *`IncrementLinkedStockUpdate(transferId string) error`*:
 
-==== TransferPersistanceAdapter
+==== TransferPersistenceAdapter
 
 *Descrizione degli attributi della struttura:*
 
@@ -1886,7 +1896,7 @@ Questa struttura non ha metodi invocabili.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewTransferPersistanceAdapter(transferRepo ITransferRepository) *TransferPersistanceAdapter`*:
+- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*:
 - *`SetComplete(transferId model.TransferID) error`*:
 - *`IncrementLinkedStockUpdate(transferId model.TransferID) error`*:
 - *`ApplyTransferUpdate(cmd port.ApplyTransferUpdateCmd) error`*:
@@ -1902,8 +1912,8 @@ Questa struttura non ha metodi invocabili.
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`GetStock(warehouseId string, goodId string) (int64, error)`*:
-- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*:
-- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*:
+- *`SetStock(warehouseId string, goodId string, stock int64) bool`*:
+- *`AddStock(warehouseId string, goodId string, stock int64) (bool, error)`*:
 - *`GetGlobalStock(goodId string) int64`*:
 - *`GetWarehouses() []string`*:
 
@@ -1919,12 +1929,12 @@ Questa struttura non ha metodi invocabili.
 
 - *`NewStockRepositoryImpl() *StockRepositoryImpl`*:
 - *`GetStock(warehouseId string, goodId string) (int64, error)`*:
-- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*:
-- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*:
+- *`SetStock(warehouseId string, goodId string, stock int64) bool`*:
+- *`AddStock(warehouseId string, goodId string, stock int64) (bool, error)`*:
 - *`GetGlobalStock(goodId string) int64`*:
 - *`GetWarehouses() []string`*:
 
-==== StockPersistanceAdapter
+==== StockPersistenceAdapter
 
 *Descrizione degli attributi della struttura:*
 
@@ -1932,7 +1942,7 @@ Questa struttura non ha metodi invocabili.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockPersistanceAdapter(stockRepo IStockRepository) *StockPersistanceAdapter`*:
+- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*:
 - *`ApplyStockUpdate(cmd port.ApplyStockUpdateCmd) error`*:
 - *`GetStock(cmd port.GetStockCmd) (model.GoodStock, error)`*:
 - *`GetGlobalStock(GoodID model.GoodID) model.GoodStock`*:
@@ -1966,7 +1976,7 @@ Questa struttura non ha metodi invocabili.
 - *`AddCompletedWarehouse(orderId string, warehouseId string, goods map[string]int64) (Order, error)`*:
 - *`SetComplete(orderId string) error`*:
 
-==== OrderPersistanceAdapter
+==== OrderPersistenceAdapter
 
 *Descrizione degli attributi della struttura:*
 
@@ -1974,7 +1984,7 @@ Questa struttura non ha metodi invocabili.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderPersistanceAdapter(orderRepo IOrderRepository) *OrderPersistanceAdapter`*:
+- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*:
 - *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*:
 - *`SetComplete(orderId model.OrderID) error`*:
 - *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd) error`*:
