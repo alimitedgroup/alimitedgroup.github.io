@@ -1145,6 +1145,94 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato da TestTransferRepositoryImpl, testare che TransferRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
+      va: [
+        Inizialmente i trasferimenti con id "1" e "2" non sono presenti, quindi il loro completamento e modifica non devono determinare il ritorno di errori.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockRepositoryImpl, testare che StockRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock di merce, inclusa la gestione degli errori],
+      va: [
+        Inizialmente l'ottenimento di informazioni delle merci con id "1" e "2" non deve determinare un ritorno di `nil` in quanto non presenti. La successiva aggiunta e modifica quantità deve determinare il ritorno di `nil`. Inoltre deve risultare presente il magazzino con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderRepositoryImpl, testare che OrderRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e completamento ordini],
+      va: [
+        Inizialmente l'ottenimento di informazioni degli ordini con id "1" e "2" non deve determinare un ritono di `nil` in quanto non presenti. La successiva aggiunta e modifica di tali ordini deve determinare il ritorno di `nil`, così come il completamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistence AdapterApplyTransfer Update, testare che TransferPersistanceAdapter gestisca correttamente le richieste di aggiornamento stato dei trasferimenti],
+      va: [
+        Il mock di `ITransferRepository` riceve correttamente l'aggiornamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento con esito positivo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene il trasferimento con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento con esito negativo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene l'errore `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistenceAdapterGetAllTransfer, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento con esito negativo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene un solo trasferimento e tale trasferimento ha id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter trasmetta la richiesta di aggiornamento stato trasferimento come completato],
+      va: [
+        La risposta fornita dal metodo `SetComplete` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter gestisca correttamente una richiesta di aggiornamento stato trasferimento come completato nel caso in cui tale trasferimento non esista],
+      va: [
+        La risposta fornita dal metodo `SetComplete` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdate, testare che TransferPersistanceAdapter trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock],
+      va: [
+        La risposta fornita dal metodo `IncrementLinkedStockUpdate` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdateErr, testare che TransferPersistanceAdapter gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock con un id trasferimento non esistente],
+      va: [
+        La risposta fornita dal metodo `IncrementLinkedStockUpdate` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
   ),
 )
 
