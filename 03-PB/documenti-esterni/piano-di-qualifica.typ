@@ -1049,6 +1049,86 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato da TestStockController, testare che StockController riceva le richieste di aggiornamento quantità merce],
+      va: [
+        La risposta fornita del controller è "ok".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockControllerAddStockErr, testare che StockController gestisca correttamente una richiesta di aggiunta merce non andata a buon fine],
+      va: [
+        La risposta fornita del controller contiene un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockControllerRemStockErr, testare che StockController gestisca correttamente una richiesta di rimozione merce non andata a buon fine],
+      va: [
+        La risposta fornita del controller contiene un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservationController, testare che ReservationController gestisca correttamente una richiesta di reservation],
+      va: [
+        Il controller, nella risposta fornita, inserisce l'id della resevation pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageStockService, testare che ManageStockService gestisca correttamente una richiesta di aggiunta e rimozione merce],
+      va: [
+        il mock che implementa le porte del service verso il repository segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageReservation ServiceApply ReservationEvent, testare che ManageReservationService applichi un evento reservation],
+      va: [
+        il metodo invocato `ApplyReservationEvent` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageReservation ServiceCreateReservation, testare che ManageReservationService gestisca correttamente la creazione di una reservation],
+      va: [
+        il metodo invocato `ApplyReservationEvent` ritorna l'id della resevation e `nil` come errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageReservationServiceConfirmOrder, testare che ManageReservationService gestisca correttamente la conferma di un ordine, con opportune conseguenze sulle reservation],
+      va: [
+        il metodo invocato `ConfirmOrder` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageReservationServiceConfirmTransferSender, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento (lato mittente)],
+      va: [
+        il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageReservationServiceConfirmTransferReceiver, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento (lato destinatario)],
+      va: [
+        il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
   ),
 )
 
