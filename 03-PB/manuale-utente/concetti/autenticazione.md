@@ -92,7 +92,7 @@ Qualsiasi dettaglio più specifico può essere reperito all'interno
 dell'[RFC 7519](https://www.rfc-editor.org/rfc/rfc7519), il documento che descrive i JWT,
 e all'[RFC 7518](https://www.rfc-editor.org/rfc/rfc7518), il quale descrive `ES256`, l'algoritmo di firma che il Sistema utilizza.
 
-## Procedura di autenticazione <procedura_autenticazione>
+## Procedura di autenticazione <proceduradiautenticazione>
 
 L'utente che volesse autenticarsi presso il Sistema
 dovrà inviare una richiesta `POST` al percorso `/api/v1/login`,

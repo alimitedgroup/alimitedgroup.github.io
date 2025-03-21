@@ -39,7 +39,7 @@ def substitute(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni("]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni(", "<!--typst-begin-exclude-->"]
     specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
     stop=False
     newText=""
@@ -76,7 +76,7 @@ def substitute(filePath,glossaryYml):
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}, {stopCheckingWords}")
                     stop=True
-                elif word==")":
+                elif word == ")" or word == "<!--typst-end-exclude-->":
                     stop=False
                 if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
                     if word[:-1] in glossary and word[len(word)-1] in specialChar:
