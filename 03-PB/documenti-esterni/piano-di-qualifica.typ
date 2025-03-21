@@ -1084,7 +1084,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageStockService, testare che ManageStockService gestisca correttamente una richiesta di aggiunta e rimozione merce],
       va: [
-        il mock che implementa le porte del service verso il repository#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
+        Il mock che implementa le porte del service verso il repository#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
       ],
       vr: "",
       st: "S",
@@ -1092,7 +1092,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservation ServiceApply ReservationEvent, testare che ManageReservationService applichi un evento reservation],
       va: [
-        il metodo invocato `ApplyReservationEvent` ritorna `nil`.
+        Il metodo invocato `ApplyReservationEvent` ritorna `nil`.
       ],
       vr: "",
       st: "S",
@@ -1100,7 +1100,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservation ServiceCreateReservation, testare che ManageReservationService gestisca correttamente la creazione di una reservation],
       va: [
-        il metodo invocato `ApplyReservationEvent` ritorna l'id della resevation e `nil` come errore.
+        Il metodo invocato `ApplyReservationEvent` ritorna l'id della resevation e `nil` come errore.
       ],
       vr: "",
       st: "S",
@@ -1108,7 +1108,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservationServiceConfirmOrder, testare che ManageReservationService gestisca correttamente la conferma di un ordine#super[G] ,con opportune conseguenze sulle reservation],
       va: [
-        il metodo invocato `ConfirmOrder` ritorna `nil`.
+        Il metodo invocato `ConfirmOrder` ritorna `nil`.
       ],
       vr: "",
       st: "S",
@@ -1116,7 +1116,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservationServiceConfirmTransferSender, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
       va: [
-        il metodo invocato `ConfirmTransfer` ritorna `nil`.
+        Il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
       vr: "",
       st: "S",
@@ -1124,7 +1124,23 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageReservationServiceConfirmTransferReceiver, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
       va: [
-        il metodo invocato `ConfirmTransfer` ritorna `nil`.
+        Il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApplyStockUpdateService, testare che ApplyStockUpdateService gestisca correttamente l'aggiunta di stock di merce],
+      va: [
+        La richiesta raggiunge correttamente il mock di `IIdempotentPort`
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApplyStockUpdateService, testare che ApplyCatalogUpdateService gestisca correttamente la modifica delle informazioni di una merce],
+      va: [
+        Interrogando il mock `IApplyCatalogUpdatePort` sul nome dell'oggetto con id "1", questo ritonra "hat".
       ],
       vr: "",
       st: "S",
@@ -1182,7 +1198,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Implementato dalla funzione TestGetTwoToken, verificare che il microservizio Authenticator ritorni due token validi e firmati con la medesima chiave privata],
-      va: [NI token forniti sono validi e firmati con la stessa chiave privata.],
+      va: [I token forniti sono validi e firmati con la stessa chiave privata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestAddAndRemoveWarehouseStock, verificare che il microservizio Warehouse aggiunga e rimuova correttamente stock di merce],
+      va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
       vr: "",
       st: "S",
     ),
