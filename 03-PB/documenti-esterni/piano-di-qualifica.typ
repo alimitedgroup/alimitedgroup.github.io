@@ -1154,7 +1154,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockRepositoryImpl, testare che StockRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock di merce, inclusa la gestione degli errori],
+      desc: [Implementato da TestStockRepositoryImpl, testare che StockRepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock#super[G] di merce, inclusa la gestione degli errori],
       va: [
         Inizialmente l'ottenimento di informazioni delle merci con id "1" e "2" non deve determinare un ritorno di `nil` in quanto non presenti. La successiva aggiunta e modifica quantità deve determinare il ritorno di `nil`. Inoltre deve risultare presente il magazzino con id "1".
       ],
@@ -1178,15 +1178,15 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento con esito positivo],
+      desc: [Implementato da TestTransferPersistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito positivo],
       va: [
-        La risposta fornita dal metodo `GetTranfer` contiene il trasferimento con id "1".
+        La risposta fornita dal metodo `GetTranfer` contiene il trasferimento#super[G] con id "1".
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento con esito negativo],
+      desc: [Implementato da TestTransferPersistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
       va: [
         La risposta fornita dal metodo `GetTranfer` contiene l'errore `ErrTransferNotFound`.
       ],
@@ -1194,15 +1194,15 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterGetAllTransfer, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento con esito negativo],
+      desc: [Implementato da TestTransferPersistenceAdapterGetAllTransfer, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
       va: [
-        La risposta fornita dal metodo `GetTranfer` contiene un solo trasferimento e tale trasferimento ha id "1".
+        La risposta fornita dal metodo `GetTranfer` contiene un solo trasferimento#super[G] e tale trasferimento#super[G] ha id "1".
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter trasmetta la richiesta di aggiornamento stato trasferimento come completato],
+      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter trasmetta la richiesta di aggiornamento stato trasferimento#super[G] come completato],
       va: [
         La risposta fornita dal metodo `SetComplete` ritorna `nil`.
       ],
@@ -1210,7 +1210,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter gestisca correttamente una richiesta di aggiornamento stato trasferimento come completato nel caso in cui tale trasferimento non esista],
+      desc: [Implementato da TestTransferPersistenceAdapterSetComplete, testare che TransferPersistanceAdapter gestisca correttamente una richiesta di aggiornamento stato trasferimento#super[G] come completato nel caso in cui tale trasferimento#super[G] non esista],
       va: [
         La risposta fornita dal metodo `SetComplete` ritorna `ErrTransferNotFound`.
       ],
@@ -1218,7 +1218,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdate, testare che TransferPersistanceAdapter trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock],
+      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdate, testare che TransferPersistanceAdapter trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] ],
       va: [
         La risposta fornita dal metodo `IncrementLinkedStockUpdate` ritorna `nil`.
       ],
@@ -1226,7 +1226,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdateErr, testare che TransferPersistanceAdapter gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock con un id trasferimento non esistente],
+      desc: [Implementato da TestTransferPersistenceAdapterIncrementLinkedStockUpdateErr, testare che TransferPersistanceAdapter gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] con un id trasferimento#super[G] non esistente],
       va: [
         La risposta fornita dal metodo `IncrementLinkedStockUpdate` ritorna `ErrTransferNotFound`.
       ],
