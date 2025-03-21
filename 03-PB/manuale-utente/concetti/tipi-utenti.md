@@ -7,8 +7,8 @@ Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre 
 
 ## Cliente
 Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema con, chiaramente, delle limitazioni riguardo certe operazioni. Questo tipo di utente potrà effettuare le seguenti azioni all'interno del Sistema:
-- **Autenticazione**, immettendo _username_ e _password_ tramite l'apposita _API_#super[G] offerta;
-- **Creazione di un ordine** inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
+- **Autenticare**, immettendo _username_ e _password_ tramite l'apposita _API_#super[G] offerta;
+- **Creare un ordine** inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
 - **Selezionare la merce per l'ordine** inserendo la quantità, per ognuna delle merci aggiunte all'ordine;
 - **Confermare l'ordine** ed in questo modo far partire la richiesta per l'ordine, in attesa che venga elaborata;
 - **Visualizzare la lista degli ordini non confermati** e, per ognuno di essi, visualizzarne le informazioni come:
@@ -28,27 +28,27 @@ Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà de
 ## Admin Locale
 L'**Admin Locale** è la persona responsabile#super[G] per un singolo magazzino, con un interesse "locale" alla situazione di quest'ultimo. Inoltre, rispetto al Cliente, l'Admin Locale ha un maggior potere decisionale sulle azioni da intraprendere all'interno del magazzino. Le operazioni che questo tipo di utente ha la possibilità di effettuare, sono le seguenti:
 - **Aggiungere** ed aumentare lo _stock_#super[G] disponibile per una merce, inserendone la quantità;
-- **Creazione** di un sistema di _Backup_ per il ripristino dei dati, in caso di cyberattacchi;
-- **Attivazione** del sistema di _Backup_, specificandone la periodicità con cui si attiva;
-- **Eliminazione** del sistema di _Backup_, in caso ne esista uno precedentemente creato;
+- **Creare** un sistema di _Backup_ per il ripristino dei dati, in caso di cyberattacchi;
+- **Attivare** il sistema di _Backup_, specificandone la periodicità con cui si attiva;
+- **Eliminare** il sistema di _Backup_, in caso ne esista uno precedentemente creato;
 - **Ripristinare** i dati dall'ultimo _Backup_ effettuato e disponibile nel magazzino, in caso ne esista uno;
 
 ## Admin Globale
-L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini presenti, ha quindi un interesse "globale" sul Sistema e tutte le sue componenti. Questa tipologia di utente è la **più importante**, dal punto di vista decisionale, ma soprattutto la **più delicata** richiedendo che ci sia un'elevata attenzione ad ogni azione presa. La lista di operazioni disponibili per questo tipo di utente, è la seguente:
-- **Creazione** di un trasferimento#super[G] di merci da confermare, scegliendo per ognuno:
+L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini presenti, ha quindi un interesse "globale" sul Sistema e tutte le sue componenti. Questa tipologia di utente è la più importante, dal punto di vista decisionale, ma soprattutto la più delicata richiedendo che ci sia un'elevata attenzione ad ogni azione presa. La lista di operazioni disponibili per questo tipo di utente è la seguente:
+- **Creare** un trasferimento#super[G] di merci da confermare, scegliendo per ognuno:
     - Il **magazzino mittente** del trasferimento#super[G];
     - Il **magazzino destinatario** del trasferimento#super[G].
 - **Aggiungere** la merce ad un trasferimento#super[G] non confermato, a patto che:
-    - Il **magazzino mittente** del trasferimento#super[G], abbia la quantità di merce sufficiente nell _stock_#super[G];
+    - Il **magazzino mittente** del trasferimento#super[G], abbia la quantità di merce sufficiente nello _stock_#super[G];
     - **Esista** un trasferimento#super[G] precedentemente creato.
 - **Confermare** un trasferimento#super[G] così da procedere con la richiesta, a patto che:
-    - Il magazzino mittente del trasferimento#super[G], abbia la quantità di merce sufficiente nell _stock_#super[G];
+    - Il magazzino mittente del trasferimento#super[G], abbia la quantità di merce sufficiente nello _stock_#super[G];
     - Esista un trasferimento#super[G] non confermato nel Sistema.
 - **Cancellare** un trasferimento#super[G] non ancora confermato, a patto che ne esista uno;
 - **Visualizzare** l'elenco di tutti trasferimenti presenti nel Sistema, visualizzando per ognuno:
     - L'**ID** del trasferimento#super[G];
     - Lo **Stato** del trasferimento#super[G].
-- **Visualizzare** nel dettaglio un particolare trasferimento#super[G],visualizzando:
+- **Visualizzare** nel dettaglio un particolare trasferimento#super[G], visualizzando:
     - L'**ID** del trasferimento#super[G];
     - Lo **Stato** del trasferimento#super[G];
     - Il **Magazzino mittente** del trasferimento#super[G];
@@ -74,12 +74,12 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
     - Il **Nome** del microservizio.
 - **Esportare** gli ordini eseguiti, purché ce ne siano, in un _file_ .csv;
 - **Esportare** il _report_ dell'inventario, a patto che ce ne esista uno, in un _file_ .csv;
-- **Creazione** di una soglia minima, a condizione che sia valida, in una determinata merce;
-- **Creazione** di una nuova merce, inserendo:
+- **Creare** una soglia minima, a condizione che sia valida, in una determinata merce;
+- **Creare** una nuova merce, inserendo:
     - Il **Nome** della nuova merce;
     - La **Descrizione** della nuova merce.
 - **Aggiornamento** delle informazioni su una determinata merce;
-- **Visualizzazione** dell'elenco delle attività di accesso al Sistema, e per ognuna visualizzare:
+- **Visualizzare** l'elenco delle attività di accesso al Sistema, e per ognuna visualizzare:
     - L'**Indirizzo IP** del tentativo di accesso;
     - L'**ID** del tentativo di accesso;
     - Lo **Stato** del tentativo di accesso.

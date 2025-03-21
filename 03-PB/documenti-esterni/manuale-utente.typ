@@ -14,27 +14,22 @@
   redattori: (p.samuele, p.matteo, p.marco),
   versioni: (
     (
-      vers: "0.3.0",
+      vers: "0.2.0",
       date: datetime(day: 19, month: 03, year: 2025),
       descr: "Redazione sezione Tipi di Utenti, " + [(/*@tipiutenti*/)] + ".",
       autore: p.marco,
       verifica: p.samuele,
     ),
     (
-      vers: "0.2.0",
-      date: datetime(day: 02, month: 03, year: 2025),
-      descr: "Stesura parte introduttiva del documento e requisiti del Sistema "
+      vers: "0.1.0",
+      date: datetime(day: 02, month: 02, year: 2025),
+      descr: "Preparazione base documento."
+        + [ \ ]
+        + "Stesura parte introduttiva del documento e requisiti del Sistema "
         + [(/*@introduzione e @requisiti*/)]
         + ".",
-      autore: p.matteo,
-      verifica: p.emanuele,
-    ),
-    (
-      vers: "0.1.0",
-      date: datetime(day: 28, month: 02, year: 2025),
-      descr: "Preparazione base documento.",
       autore: p.samuele,
-      verifica: p.matteo,
+      verifica: p.emanuele,
     ),
   ),
   body,
