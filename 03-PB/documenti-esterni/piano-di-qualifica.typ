@@ -1130,7 +1130,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestApplyStockUpdateService, testare che ApplyStockUpdateService gestisca correttamente l'aggiunta di stock di merce],
+      desc: [Implementato da TestApplyStockUpdateService, testare che ApplyStockUpdateService gestisca correttamente l'aggiunta di stock#super[G] di merce],
       va: [
         La richiesta raggiunge correttamente il mock di `IIdempotentPort`
       ],
@@ -1203,7 +1203,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione TestAddAndRemoveWarehouseStock, verificare che il microservizio Warehouse aggiunga e rimuova correttamente stock di merce],
+      desc: [Implementato dalla funzione TestAddAndRemoveWarehouseStock, verificare che il microservizio Warehouse#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
       va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
       vr: "",
       st: "S",
