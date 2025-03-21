@@ -1084,7 +1084,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestManageStockService, testare che ManageStockService gestisca correttamente una richiesta di aggiunta e rimozione merce],
       va: [
-        il mock che implementa le porte del service verso il repository segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
+        il mock che implementa le porte del service verso il repository#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
       ],
       vr: "",
       st: "S",
@@ -1106,7 +1106,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestManageReservationServiceConfirmOrder, testare che ManageReservationService gestisca correttamente la conferma di un ordine, con opportune conseguenze sulle reservation],
+      desc: [Implementato da TestManageReservationServiceConfirmOrder, testare che ManageReservationService gestisca correttamente la conferma di un ordine#super[G] ,con opportune conseguenze sulle reservation],
       va: [
         il metodo invocato `ConfirmOrder` ritorna `nil`.
       ],
@@ -1114,7 +1114,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestManageReservationServiceConfirmTransferSender, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento (lato mittente)],
+      desc: [Implementato da TestManageReservationServiceConfirmTransferSender, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
       va: [
         il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
@@ -1122,7 +1122,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestManageReservationServiceConfirmTransferReceiver, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento (lato destinatario)],
+      desc: [Implementato da TestManageReservationServiceConfirmTransferReceiver, testare che ManageReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
       va: [
         il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
