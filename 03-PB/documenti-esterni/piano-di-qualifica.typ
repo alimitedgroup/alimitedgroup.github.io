@@ -266,7 +266,7 @@ Per garantire la qualità di processo, il progetto si avvale di:
 
     //table row
     [*MPC12*], [Code Coverage], [≥ 80%], [100%],
-    [*MPC13*], [Test Success Rate], [100%], [100%],
+    [*MPC13*], [Tеst Success Rate], [100%], [100%],
   ),
   caption: [Soglie metriche processo di Verifica],
 )
@@ -460,17 +460,17 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 = Metodi di testing <test>
 Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto#super[G] ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
 
-- Test#super[G] di Unità;
-- Test#super[G] di Integrazione;
-- Test#super[G] di Sistema;
-- Test#super[G] di Regressione;
-- Test#super[G] di Accettazione.
+- Tеst#super[G] di Unità;
+- Tеst#super[G] di Integrazione;
+- Tеst#super[G] di Sistema;
+- Tеst#super[G] di Regressione;
+- Tеst#super[G] di Accettazione.
 
-== Test di Unità
+== Tеst di Unità
 
 #test-table(
   unit: "U",
-  tipo-test: "Test di Unità",
+  tipo-test: "Tеst di Unità",
   (
     (
       desc: [Implementato dalla funzione TestGet GoodsGlobalQt, testare se il repository#super[G] del microservizio Catalog restituisce la quantità globali delle merci memorizzate],
@@ -565,7 +565,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione Test GetGoodsQuantity, testare se catalogAdapter del microservizio Catalog restituisce un GetGoodsQuantity Response valido],
+      desc: [Implementato dalla funzione Tеst GetGoodsQuantity, testare se catalogAdapter del microservizio Catalog restituisce un GetGoodsQuantity Response valido],
       va: [nella risposta fornita è presente la mappa all'interno della quale la quantità della merce con id "test-id" è 7.],
       vr: "",
       st: "S",
@@ -583,13 +583,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione Test AddOrChangeGood Data, testare se CatalogService riesce a modificare i dati di una merce],
+      desc: [Implementato dalla funzione Tеst AddOrChangeGood Data, testare se CatalogService riesce a modificare i dati di una merce],
       va: [nella risposta fornita è l'esito dell'operazione è `nil`.],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione Test AddOrChangeGood Data_WrongID, testare se CatalogService riporta una risposta con errore quando l'id fornito non è valido],
+      desc: [Implementato dalla funzione Tеst AddOrChangeGood Data_WrongID, testare se CatalogService riporta una risposta con errore quando l'id fornito non è valido],
       va: [nella risposta fornita è l'esito dell'operazione è `ErrGoodIdNoValid`.],
       vr: "",
       st: "S",
@@ -625,7 +625,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione Test SetGoodDataRequest, testare se CatalogController riesce con successo a modificare le informazioni di una merce],
+      desc: [Implementato dalla funzione Tеst SetGoodDataRequest, testare se CatalogController riesce con successo a modificare le informazioni di una merce],
       va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
       vr: "",
       st: "S",
@@ -731,7 +731,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test GetPemPrivateKey, testare che AuthAdapter trasmetta correttamente la richiesta di ottenimento chiave privata],
+      desc: [Implementato da Tеst GetPemPrivateKey, testare che AuthAdapter trasmetta correttamente la richiesta di ottenimento chiave privata],
       va: [Nella risposta fornita dall'_Adapter_ è presente la chiave privata.],
       vr: "",
       st: "S",
@@ -767,7 +767,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test AdaptWithWrongKey, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è di tipo ecdsa],
+      desc: [Implementato da Tеst AdaptWithWrongKey, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è di tipo ecdsa],
       va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
       vr: "",
       st: "S",
@@ -785,7 +785,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test PublishingWrongKey, testare che AuthPublisher ritorni un errore quando la pubblicazione di una chiave non va a buon fine],
+      desc: [Implementato da Tеst PublishingWrongKey, testare che AuthPublisher ritorni un errore quando la pubblicazione di una chiave non va a buon fine],
       va: [Il Publisher ritorna l'errore `ErrPublish`.],
       vr: "",
       st: "S",
@@ -825,13 +825,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test StockRepositoryImpl Reserve AndUnreserve, testare che StockRepositoryImpl riesca a gestire correttamente le reservation],
+      desc: [Implementato da Tеst StockRepositoryImpl Reserve AndUnreserve, testare che StockRepositoryImpl riesca a gestire correttamente le reservation],
       va: [La quantità non riservata della merce con id "1" è 5 con 10 unità totali.],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da Test StockRepositoryImpl ReserveNot ExistingGood, testare che StockRepositoryImpl ritorni un errore se la reservation è effettuata su una merce non esistente nel magazzino],
+      desc: [Implementato da Tеst StockRepositoryImpl ReserveNot ExistingGood, testare che StockRepositoryImpl ritorni un errore se la reservation è effettuata su una merce non esistente nel magazzino],
       va: [Il metodo `ReserveStock` ritorna un errore, il tentativo di ottenere la quantità di merce disponibile ritorna 0.],
       vr: "",
       st: "S",
@@ -873,7 +873,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApply, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di aggiunta stock#super[G] ],
+      desc: [Implementato da TestStockPersistance AdapterApply, testare che Stоck PersistanceAdapter riesca a trasmettere la richiesta di aggiunta stock#super[G] ],
       va: [
         Viene aggiunta correttamente la merce, il mock del repository#super[G] ritorna `true`.
       ],
@@ -881,7 +881,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterGet, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] ],
+      desc: [Implementato da TestStockPersistance AdapterGet, testare che Stоck PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] ],
       va: [
         Nella risposta fornita dall'adapter sono persenti:
         - merce con id "1" con quantità totale pari a 10
@@ -891,7 +891,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterGetReserv, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation],
+      desc: [Implementato da TestStockPersistance AdapterGetReserv, testare che Stоck PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation],
       va: [
         Nella risposta fornita dall'adapter sono persenti:
         - merce con id "1" con quantità riservata pari a 10
@@ -900,7 +900,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStock PersistanceAdapter GetReservNotFound, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation e gestisca correttamente il caso in cui la reservation richiesta non esista],
+      desc: [Implementato da TestStock PersistanceAdapter GetReservNotFound, testare che Stоck PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation e gestisca correttamente il caso in cui la reservation richiesta non esista],
       va: [
         L'adapter ritorna un errore `ErrReservationNotFound` e la reservation non contiene nulla
       ],
@@ -908,7 +908,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApplyReserv, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di reservation],
+      desc: [Implementato da TestStockPersistance AdapterApplyReserv, testare che Stоck PersistanceAdapter riesca a trasmettere la richiesta di reservation],
       va: [
         L'adapter ritorna `nil` successivamente alla richiesta.
       ],
@@ -916,7 +916,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApplyReservErr, testare che Stock PersistanceAdapter riesca a gestire una richiesta di reservation con quantità non disponibile di una merce],
+      desc: [Implementato da TestStockPersistance AdapterApplyReservErr, testare che Stоck PersistanceAdapter riesca a gestire una richiesta di reservation con quantità non disponibile di una merce],
       va: [
         L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
       ],
@@ -924,7 +924,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance AdapterApplyOrder, testare che Stock PersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] ],
+      desc: [Implementato da TestStockPersistance AdapterApplyOrder, testare che Stоck PersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] ],
       va: [
         L'adapter ritorna `nil` successivamente alla richiesta.
       ],
@@ -932,7 +932,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistance Adapter ApplyOrderErr, testare che Stock PersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] con richiesta non corretta],
+      desc: [Implementato da TestStockPersistance Adapter ApplyOrderErr, testare che Stоck PersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] con richiesta non corretta],
       va: [
         L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
       ],
@@ -956,7 +956,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test CatalogPersistance AdapterSetAndGet, testare che CatalogPersistance Adapter trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
+      desc: [Implementato da Tеst CatalogPersistance AdapterSetAndGet, testare che CatalogPersistance Adapter trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
       va: [
         Il metodo `GetGood` ritorna un oggetto `GoodInfo` contenente una merce con le seguenti informazioni:
         - id pari a 1;
@@ -967,7 +967,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test CatalogPersistance AdapterGetNotExist, testare che CatalogPersistance Adapter gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
+      desc: [Implementato da Tеst CatalogPersistance AdapterGetNotExist, testare che CatalogPersistance Adapter gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
       va: [
         Il metodo `GetGood` ritorna un oggetto `nil`.
       ],
@@ -975,7 +975,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test StockUpdateAdapter, testare che PublishStockUpdate Adapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
+      desc: [Implementato da Tеst StockUpdateAdapter, testare che PublishStockUpdate Adapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
       va: [
         Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
       ],
@@ -983,7 +983,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test StockUpdateAdapter, testare che PublishStock UpdateAdapter gestisca correttamente un errore di rete],
+      desc: [Implementato da Tеst StockUpdateAdapter, testare che PublishStock UpdateAdapter gestisca correttamente un errore di rete],
       va: [
         Il metodo `CreateStockUpdate` ritorna l'errore verificatosi.
       ],
@@ -1008,7 +1008,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       //Utilizzato per quando le notifiche di assortimento vengono accettate
-      desc: [Implementato da Test StockUpdateListener, testare che StockUpdateListener gestisca correttamente un evento di aggiornamento quantità merce disponibile],
+      desc: [Implementato da Tеst StockUpdateListener, testare che StockUpdateListener gestisca correttamente un evento di aggiornamento quantità merce disponibile],
       va: [
         Il mock che implementa `IApplyStock UpdateUseCase` registra:
         - 10 unità della merce con id "1";
@@ -1074,7 +1074,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test ReservationController, testare che ReservationController gestisca correttamente una richiesta di reservation],
+      desc: [Implementato da Tеst ReservationController, testare che ReservationController gestisca correttamente una richiesta di reservation],
       va: [
         Il controller, nella risposta fornita, inserisce l'id della resevation pari a "1".
       ],
@@ -1082,7 +1082,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test ManageStockService, testare che ManageStockService gestisca correttamente una richiesta di aggiunta e rimozione merce],
+      desc: [Implementato da Tеst ManageStockService, testare che ManageStockService gestisca correttamente una richiesta di aggiunta e rimozione merce],
       va: [
         Il mock che implementa le porte del service verso il repository#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
       ],
@@ -1090,7 +1090,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test ManageReservation ServiceApply ReservationEvent, testare che Manage ReservationService applichi un evento reservation],
+      desc: [Implementato da Tеst ManageReservation ServiceApply ReservationEvent, testare che Manage ReservationService applichi un evento reservation],
       va: [
         Il metodo invocato `ApplyReservation Event` ritorna `nil`.
       ],
@@ -1098,7 +1098,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test ManageReservation Service CreateReservation, testare che Manage ReservationService gestisca correttamente la creazione di una reservation],
+      desc: [Implementato da Tеst ManageReservation Service CreateReservation, testare che Manage ReservationService gestisca correttamente la creazione di una reservation],
       va: [
         Il metodo invocato `ApplyReservation Event` ritorna l'id della resevation e `nil` come errore.
       ],
@@ -1114,7 +1114,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test ManageReservation ServiceConfirm TransferSender, testare che Manage ReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
+      desc: [Implementato da Tеst ManageReservation ServiceConfirm TransferSender, testare che Manage ReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
       va: [
         Il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
@@ -1122,7 +1122,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test ManageReservation ServiceConfirm TransferReceiver, testare che ManageReservation Service gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
+      desc: [Implementato da Tеst ManageReservation ServiceConfirm TransferReceiver, testare che ManageReservation Service gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
       va: [
         Il metodo invocato `ConfirmTransfer` ritorna `nil`.
       ],
@@ -1146,7 +1146,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestTransfer Repository Impl, testare che TransferRepository Impl gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
+      desc: [Implementato da TestTransfer Rеpository Impl, testare che TransferRepository Impl gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
       va: [
         Inizialmente i trasferimenti con id "1" e "2" non sono presenti, quindi il loro completamento e modifica non devono determinare il ritorno di errori.
       ],
@@ -1154,7 +1154,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da Test StockRepositoryImpl, testare che Stock RepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock#super[G] di merce, inclusa la gestione degli errori],
+      desc: [Implementato da Tеst StockRepositoryImpl, testare che Stоck RepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock#super[G] di merce, inclusa la gestione degli errori],
       va: [
         Inizialmente l'ottenimento di informazioni delle merci con id "1" e "2" non deve determinare un ritorno di `nil` in quanto non presenti. La successiva aggiunta e modifica quantità deve determinare il ritorno di `nil`. Inoltre deve risultare presente il magazzino con id "1".
       ],
@@ -1234,7 +1234,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStock PersistenceAdapter ApplyStockUpdate, testare che Stock PersistanceAdapter gestisca correttamente una richiesta di aggiornamento stock#super[G] merce],
+      desc: [Implementato da TestStock PersistenceAdapter ApplyStockUpdate, testare che Stоck PersistanceAdapter gestisca correttamente una richiesta di aggiornamento stock#super[G] merce],
       va: [
         Il mock che implementa `IStockRepository` riceve la richiesta di aggiornamento.
       ],
@@ -1242,7 +1242,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistence Adapter GetWarehouses, testare che Stock PersistanceAdapter gestisca correttamente una richiesta di ottenimento lista dei magazzini],
+      desc: [Implementato da TestStockPersistence Adapter GetWarehouses, testare che Stоck PersistanceAdapter gestisca correttamente una richiesta di ottenimento lista dei magazzini],
       va: [
         La risposta fornita da `GetWarehouses` contiene due magazzini.
       ],
@@ -1250,7 +1250,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestStockPersistence Adapter GetGlobalStock, testare che Stock PersistanceAdapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino],
+      desc: [Implementato da TestStockPersistence Adapter GetGlobalStock, testare che Stоck PersistanceAdapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino],
       va: [
         La risposta fornita da `GetStock` ha memorizzato 10 unità per la merce con id "1".
       ],
@@ -1538,7 +1538,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestApplyStock UpdateService Stock, testare che ApplyStock UpdateService registri gli aggiornamenti di stock#super[G] per un ordine#super[G] ],
+      desc: [Implementato da TestApplyStock UpdateService Stоck,testare che ApplyStock UpdateService registri gli aggiornamenti di stock#super[G] per un ordine#super[G] ],
       va: [
         La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
       ],
@@ -1572,14 +1572,14 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
   ),
 )
 
-== Test di Integrazione
+== Tеst di Integrazione
 
 #test-table(
   unit: "I",
-  tipo-test: "Test di Integrazione",
+  tipo-test: "Tеst di Integrazione",
   (
     (
-      desc: [Implementato dalla funzione TestInsertGetWarehouses Quantity, verificare che il microservizio Catalog inserisca correttamente la quantità delle merci nei magazzini],
+      desc: [Implementato dalla funzione TestInsert GetWarehouses Quantity, verificare che il microservizio Catalog inserisca correttamente la quantità delle merci nei magazzini],
       va: [Dopo la modifica, ottenendo la lista dei magazzini ed il loro inventario risulta che:
       - nel magazzino con id "test-warehouse-ID" ci sono 2 unità della merce con id "test-ID" e 0 unità della merce "2test-ID";
       - nel magazzino con id "2test-warehouse-ID" ci sono 3 unità della merce "test-ID" e 3 unità della merce "2test-ID".],
@@ -1627,7 +1627,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione TestAddAndRemoveWarehouseStock, verificare che il microservizio Warehouse#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
+      desc: [Implementato dalla funzione TestAddAnd RemoveWarehouse Stоck ,verificare che il microservizio Warehouse#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
       va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
       vr: "",
       st: "S",
@@ -1637,7 +1637,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 
 #pagebreak()
 
-== Test di Sistema
+== Tеst di Sistema
 
 #show figure: set block(breakable: true)
 #figure(
@@ -1655,7 +1655,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     inset: 8pt,
 
     // Header row
-    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Requisito di riferimento*], text(white)[*Stato del Test*],
+    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Requisito di riferimento*], text(white)[*Stato del Tеst*],
     [T-1-S], [Verificare che un Utente non autenticato possa effettuare l'autenticazione con il Sistema], [R-1-F-Ob], [NI],
     [T-2-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito la tipologia di utente con la quale vuole essere riconosciuto], [R-2-F-Ob], [NI],
     [T-3-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito lo Username personale], [R-3-F-De], [NI],
@@ -1850,10 +1850,10 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     [T-191-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, possa avviare la sincronizzazione del numero di richieste al secondo di ciascun microservizio], [R-191-F-Ob], [NI],
     [T-192-S], [Verificare che lo Scheduler possa avviare la sincronizzazione della soglia minima di una merce quando questa viene aggiornata], [R-192-F-Ob], [NI],
   ),
-  caption: [Test di Sistema],
+  caption: [Tеst di Sistema],
 )
 
-=== Tracciamento dei Test di Sistema
+=== Tracciamento dei Tеst di Sistema
 
 #show figure: set block(breakable: true)
 #figure(
@@ -1871,7 +1871,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     inset: 8pt,
 
     // Header row
-    text(white)[*Codice Test*], text(white)[*Codice Requisito*],
+    text(white)[*Codice Tеst*], text(white)[*Codice Requisito*],
     [T-1-S], [R-1-F-Ob],
     [T-2-S], [R-2-F-Ob],
     [T-3-S], [R-3-F-De],
@@ -2065,12 +2065,12 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     [T-191-S], [R-191-F-Ob],
     [T-192-S], [R-192-F-Ob],
   ),
-  caption: [Tracciamento dei Test di Sistema],
+  caption: [Tracciamento dei Tеst di Sistema],
 )
 
-== Test di Regressione
+== Tеst di Regressione
 
-== Test di Accettazione
+== Tеst di Accettazione
 
 #show figure: set block(breakable: true)
 #figure(
@@ -2088,7 +2088,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     inset: 8pt,
 
     // Header row
-    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Stato del Test*],
+    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Stato del Tеst*],
     [T-1-A], [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale], [NI],
     [T-2-A], [Verificare che il prodotto dia la possibilità all'utente di essere riconosciuto inserendo Username e Password], [NI],
     [T-3-A], [Verificare che il prodotto dia la possibilità di visualizzare ordini], [NI],
@@ -2125,7 +2125,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     [T-34-A], [Verificare che il prodotto sia scalabile], [NI],
     [T-35-A], [Verificare che il prodotto sincronizzi le informazioni tra magazzini], [NI],
   ),
-  caption: [Test di Accettazione],
+  caption: [Tеst di Accettazione],
 )
 
 #pagebreak()
