@@ -466,7 +466,1176 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 - Test#super[G] di Regressione;
 - Test#super[G] di Accettazione.
 
-ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i relativi Test#super[G] di Regressione, nonché le altre tipologie di Test#super[G] qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+== Test di Unità
+
+#test-table(
+  unit: "U",
+  tipo-test: "Test di Unità",
+  (
+    (
+      desc: [Implementato dalla funzione TestGet GoodsGlobalQt, testare se il repository#super[G] del microservizio Catalog restituisce la quantità globali delle merci memorizzate],
+      va: [
+        - 16 per la merce con id "test-ID";
+        - 10 per "2test-ID";
+        - 3 per la merce "3test-ID".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestAddGoodQuantity, testare se il repository#super[G] del microservizio Catalog aggiunge la quantità corretta di una merce],
+      va: [7 unità globali della merce con id "test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestAddGood, testare se il repository#super[G] del microservizio Catalog inserisce i dati di una merce],
+      va: [
+        - id della merce è "test-ID";
+        - nome della merce è "test-name";
+        - descrizione della merce è "test-description".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestChangeGoodData, testare se il repository#super[G] del microservizio Catalog modifica i dati di una merce],
+      va: [
+        - id della merce è "test-ID"
+        - nome della merce è "new-test-name"
+        - descrizione della merce è "new-test-description";
+        - la quantità della merce è invariata a 7.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestChangeGoodData WrongID, testare se il repository#super[G] del microservizio Catalog restituise un errore se l'id della merce da modificare non esiste],
+      va: [il repository#super[G] restituisce l'errore `ErrGoodIdNotValid`],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestChangeGoodData EmptyName, testare se il repository#super[G] del microservizio Catalog restituise un errore se il nome della merce è vuoto],
+      va: [il repository#super[G] restituisce l'errore `ErrEmptyName`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestChange
+        GoodDataEmpty Description, testare se il repository#super[G] del microservizio Catalog restituise un errore se la descrizione della merce è vuota],
+      va: [il repository#super[G] restituisce l'errore `ErrEmptyDescription`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestAddWarehouse, testare se il repository#super[G] del microservizio Catalog aggiunge correttamente un nuovo magazzino],
+      va: [il repository#super[G] restituisce la mappa dei magazzini e il magazzino con id `test-warehouse-ID` sia presente.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetWarehouses, testare se catalogAdapter del microservizio Catalog restituisce un `Get WarehousesResponse` valido],
+      va: [nella risposta prodotta è presente il magazzino con id "test-warehouse-id".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetWarehouses, testare se catalogAdapter del microservizio Catalog restituisce un Add OrChangeResponse valido],
+      va: [nella risposta prodotta lo stato dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetWarehouses, testare se catalogAdapter del microservizio Catalog restituisce un Add OrChangeResponse valido (considerando un possibile errore nell'id fornito)],
+      va: [nella risposta prodotta lo stato dell'operazione è `ErrGoodIdNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestSetGoodQuantity, testare se catalogAdapter del microservizio Catalog restituisce un TestSetGoodQuantity Response valido],
+      va: [nella risposta prodotta lo stato dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestSetGoodQuantity WithWrongID, testare se catalogAdapter del microservizio Catalog restituisce un TestSetGoodQuantity Response valido (considerando un possibile errore nell'id fornito)],
+      va: [nella risposta prodotta lo stato dell'operazione è `ErrGoodIdNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione Test GetGoodsQuantity, testare se catalogAdapter del microservizio Catalog restituisce un GetGoodsQuantity Response valido],
+      va: [nella risposta fornita è presente la mappa all'interno della quale la quantità della merce con id "test-id" è 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetGoodsInfo, testare se catalogAdapter del microservizio Catalog restituisce un Get GoodsInfoResponse valido],
+      va: [nella risposta fornita è presente la mappa all'interno della quale è presente la mece con id "test-id", nome "test-name" e descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetWarehouses, testare se CatalogService riesce ad ottenere l'elenco dei magazzini],
+      va: [nella risposta fornita è presente la mappa dei magazzini contenente il magazzino con id "test-warehouse-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione Test AddOrChangeGood Data, testare se CatalogService riesce a modificare i dati di una merce],
+      va: [nella risposta fornita è l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione Test AddOrChangeGood Data_WrongID, testare se CatalogService riporta una risposta con errore quando l'id fornito non è valido],
+      va: [nella risposta fornita è l'esito dell'operazione è `ErrGoodIdNoValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestSetMultipleGoods Quantity, testare se CatalogService riesce con successo ad avviare la modifica della quantità di due merci],
+      va: [nella risposta fornita è l'esito dell'operazione è `nil` e non vi sono id con modifica sbagliata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestSetMultipleGoods QuantityWithWrongID, testare se CatalogService riesce con successo a riportare un errore nella modifica della quantità di una merce],
+      va: [nella risposta fornita è l'esito dell'operazione è `ErrGeneric` `Failure` ed è riportato un errore alla merce con id `test-wrong-id`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGet GoodsQuantity, testare se CatalogService riesce con successo ad ottenere la lista delle merci e delle loro quantità],
+      va: [nella mappa della risposta fornita è presente la merce con id `test-id` e la quantità è 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetGoodsInfo, testare se CatalogService riesce con successo ad ottenere la lista delle merci e delle loro informazioni],
+      va: [nella mappa della risposta fornita è presente la merce con id `test-id`, nome "test-name" e descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestSetMultipleGood QuantityRequest, testare se CatalogController riesce con successo a modificare la quantità di più merci],
+      va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione Test SetGoodDataRequest, testare se CatalogController riesce con successo a modificare le informazioni di una merce],
+      va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetGoodsRequest, testare se CatalogController riesce con successo ad ottenere le informazioni delle merci],
+      va: [Nella risposta è presente una mappa che possiede una merce con:
+        - id "test-ID";
+        - nome "test-name";
+        - descrizione "test-description".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetWarehouses Request, testare se CatalogController riesce con successo ad ottenere le informazioni dei magazzini],
+      va: [Nella risposta è presente una mappa che possiede un magazzino con id "test-warehouse-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetGoodsGlobal Quantity Request, testare se CatalogController riesce con successo ad ottenere sulla quantità globale delle merci],
+      va: [Nella risposta è presente una mappa che possiede la merce con id "test-ID" a quantità 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStorePemKeyPair, testare che AuthRepository registri correttamente una coppia di chiavi in formato Pem],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStore WrongKeyPair, testare che AuthRepository ritorni un errore se si cerca di memorizzare una coppia di chiavi non di tipo ecdsa],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStore GarbageKeyPair, testare che AuthRepository ritorni un errore se si cerca di memorizzare una coppia non in formato Pem],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublicKey, testare che AuthRepository ritorni correttamente la chiave pubblica],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornata la chiave pubblica e l'issuer.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPrivateKey, testare che AuthRepository ritorni correttamente la chiave privata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornata la chiave privata e l'issuer.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublicKey WithNoKey, testare che AuthRepository ritorni un errore se si prova ad ottenere la chiave pubblica ma questa non è stata precedentemente memorizzata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoPublicKey`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPrivateKey WithNoKey, testare che AuthRepository ritorni un errore se si prova ad ottenere la chiave privata ma questa non è stata precedentemente memorizzata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoPrivateKey`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCheckKeyPair, testare che AuthRepository non ritorni errore se si invoca `CheckKeyPairExistence` e la coppia di chiavi è presente],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCheckKeyPair WithNoKey, testare che AuthRepository ritorni errore se si invoca `CheckKeyPairExistence` e la coppia di chiavi non è presente],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoKeyPair`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStorePemKeyPair, testare che AuthAdapter trasmetta correttamente la richiesta di memorizzazione di una coppia di chiavi],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStoreWrong PemKeyPair, testare che AuthAdapter ritorni l'esito negativo di un'operazione di memorizzazione coppia di chiavi non corretta],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublicKey, testare che AuthAdapter trasmetta correttamente la richiesta di ottenimento chiave pubblica],
+      va: [Nella risposta fornita dall'_Adapter_ è presente la chiave pubblica.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPemPublic Key_NoKey, testare che AuthAdapter ritorni l'esito negativo di un'operazione di ottenimento chiave pubblica quando nessuna chiave pubblica è memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ la chiave pubblica è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test GetPemPrivateKey, testare che AuthAdapter trasmetta correttamente la richiesta di ottenimento chiave privata],
+      va: [Nella risposta fornita dall'_Adapter_ è presente la chiave privata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetPem PrivateKey_NoKey, testare che AuthAdapter ritorni l'esito negativo di un'operazione di ottenimento chiave privata quando nessuna chiave privata è memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ la chiave privata è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCheckKey PairExistence, testare che AuthAdapter trasmetta correttamente la richiesta di controllo della presenza di una coppia di chiavi memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptKey, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptKeyWith WrongIssuer, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore simulando che qualcosa non ha funzionato come previsto],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `test error`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestAdaptKeyWith WrongIssuer, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è in formato Pem],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test AdaptWithWrongKey, testare che AuthPublisherAdapter trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è di tipo ecdsa],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetToken, testare che AuthService generi correttamente un token],
+      va: [AuthService genera una coppia di chiavi valida e ritorna un token correttamente firmato.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestPublishing, testare che AuthPublisher pubblichi correttamente una chiave pubblica],
+      va: [Nello stream di pubblicazione chiavi pubblichi è presente la chiave pubblica.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test PublishingWrongKey, testare che AuthPublisher ritorni un errore quando la pubblicazione di una chiave non va a buon fine],
+      va: [Il Publisher ritorna l'errore `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetToken, testare che AuthController ritorni il token quando arriva una richiesta valida],
+      va: [La risposta ritornata dal Controller contiene il token di prova `test-token`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetTokenWith WrongUser, testare che AuthController funzioni come previsto se il mock del service rileva un nome utente non corretto],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetTokenEmpty Username, testare che AuthController funzioni come previsto se il nome utente fornito è vuoto.],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetTokenWrong Request, testare che AuthController funzioni come previsto se la richiesta fornita non è corretta.],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockRepository ImplGetAndSet, testare che StockRepositoryImpl aggiunga correttamente quantità di merce e registri correttamente le reservation],
+      va: [Sono presenti le seguenti quantità:
+        - la merce con id "1" ha 10 unità totali, tutte non riservate;
+        - la merce con id "1" ha 0 unità totali, tutte non riservate;
+        Inoltre, un tentativo di reservation per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal repository#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test StockRepositoryImpl Reserve AndUnreserve, testare che StockRepositoryImpl riesca a gestire correttamente le reservation],
+      va: [La quantità non riservata della merce con id "1" è 5 con 10 unità totali.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test StockRepositoryImpl ReserveNot ExistingGood, testare che StockRepositoryImpl ritorni un errore se la reservation è effettuata su una merce non esistente nel magazzino],
+      va: [Il metodo `ReserveStock` ritorna un errore, il tentativo di ottenere la quantità di merce disponibile ritorna 0.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockRepository Impl UnreserveNotEnough, testare che StockRepositoryImpl gestisca correttamente una richiesta di rimozione di reservation di una quantità maggiore di quella riservata],
+      va: [Il metodo `UnReserveStock` ritorna un errore.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCatalog RepositoryImpl, testare che Catalog RepositoryImpl gestisca correttamente l'aggiunta di una merce],
+      va: [Dopo l'operazione di aggiunta, invocando il metodo `GetGood` sulla merce con id "1", questa risulta presente e con le seguenti caratteristiche:
+        - nome "blue_hat"
+        - descrizione "very beautiful hat"
+        Inoltre non risulta esistere la merce con id "2" in quanto non aggiunta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotente RepositoryImpl, testare che Idempotent RepositoryImpl gestisca correttamente la gestione degli eventi],
+      va: [
+        - L'evento "event" con id "id" risulta essere processato
+        - L'evento "event" con id "id2" non risulta essere processato
+        - L'evento "event2" con id "id" non risulta essere processato
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotente RepositoryImpl, testare che Idempotent RepositoryImpl gestisca correttamente la gestione degli eventi],
+      va: [
+        - L'evento "event" con id "id" risulta essere processato
+        - L'evento "event" con id "id2" non risulta essere processato
+        - L'evento "event2" con id "id" non risulta essere processato
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApply, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di aggiunta stock#super[G] ],
+      va: [
+        Viene aggiunta correttamente la merce, il mock del repository#super[G] ritorna `true`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterGet, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] ],
+      va: [
+        Nella risposta fornita dall'adapter sono persenti:
+        - merce con id "1" con quantità totale pari a 10
+        - merce con id "1" con quantità libera da reservation pari a 10
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterGetReserv, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation],
+      va: [
+        Nella risposta fornita dall'adapter sono persenti:
+        - merce con id "1" con quantità riservata pari a 10
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStock PersistanceAdapter GetReservNotFound, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di ottenimento stock#super[G] in reservation e gestisca correttamente il caso in cui la reservation richiesta non esista],
+      va: [
+        L'adapter ritorna un errore `ErrReservationNotFound` e la reservation non contiene nulla
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyReserv, testare che Stock PersistanceAdapter riesca a trasmettere la richiesta di reservation],
+      va: [
+        L'adapter ritorna `nil` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyReservErr, testare che Stock PersistanceAdapter riesca a gestire una richiesta di reservation con quantità non disponibile di una merce],
+      va: [
+        L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance AdapterApplyOrder, testare che Stock PersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] ],
+      va: [
+        L'adapter ritorna `nil` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistance Adapter ApplyOrderErr, testare che Stock PersistanceAdapter riesca a gestire una richiesta di conferma ordine#super[G] con richiesta non corretta],
+      va: [
+        L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotent AdapterGet, testare che IDempotentAdapter trasmetta correttamente la richiesta di ottenimento informazioni sullo svolgimento di un evento],
+      va: [
+        La funzione `IsAlreadyProcessed` ritorna `false`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestIdempotent AdapterSet, testare che IDempotentAdapter trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
+      va: [
+        Il mock del repository#super[G] riceve la richiesta con successo.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test CatalogPersistance AdapterSetAndGet, testare che CatalogPersistance Adapter trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
+      va: [
+        Il metodo `GetGood` ritorna un oggetto `GoodInfo` contenente una merce con le seguenti informazioni:
+        - id pari a 1;
+        - nome pari a "blue-hat";
+        - descrizione pari a "very beautiful hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test CatalogPersistance AdapterGetNotExist, testare che CatalogPersistance Adapter gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
+      va: [
+        Il metodo `GetGood` ritorna un oggetto `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test StockUpdateAdapter, testare che PublishStockUpdate Adapter gestisca correttamente la richiesta di aggiornamento quantità di una merce],
+      va: [
+        Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test StockUpdateAdapter, testare che PublishStock UpdateAdapter gestisca correttamente un errore di rete],
+      va: [
+        Il metodo `CreateStockUpdate` ritorna l'errore verificatosi.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservation EventAdapter, testare che PublishReservation EventAdapter pubblichi correttamente una richiesta di reservation],
+      va: [
+        Il metodo `StoreReservationEvent` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservationEvent AdapterNetworkErr, testare che PublishReservation EventAdapter pubblichi correttamente una richiesta di reservation],
+      va: [
+        Il metodo `StoreReservationEvent` ritorna l'errore verificatosi.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      //Utilizzato per quando le notifiche di assortimento vengono accettate
+      desc: [Implementato da Test StockUpdateListener, testare che StockUpdateListener gestisca correttamente un evento di aggiornamento quantità merce disponibile],
+      va: [
+        Il mock che implementa `IApplyStock UpdateUseCase` registra:
+        - 10 unità della merce con id "1";
+        - 20 unità della merce con id "2".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestReservation EventListener, testare che Reservation EventListener riceva le richieste di reservation],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderUpdate ListenerForOrder, testare che OrderUpdateListener riceva le richieste di aggiornamento su un ordine#super[G] ],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderUpdate ListenerForTransfer, testare che OrderUpdateListener riceva le richieste di aggiornamento su un trasferimento#super[G] ],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestCatalogUpdate Listener, testare che CatalogListener riceva le richieste di aggiornamento infromazioni su una merce],
+      va: [
+        Viene ricevuto l'ack sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal mock di `IApplyCatalog UpdateUseCase`, il nome di tale merce è "hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockController, testare che StockController riceva le richieste di aggiornamento quantità merce],
+      va: [
+        La risposta fornita del controller è "ok".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockController AddStockErr, testare che StockController gestisca correttamente una richiesta di aggiunta merce non andata a buon fine],
+      va: [
+        La risposta fornita del controller contiene un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockController RemStockErr, testare che StockController gestisca correttamente una richiesta di rimozione merce non andata a buon fine],
+      va: [
+        La risposta fornita del controller contiene un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test ReservationController, testare che ReservationController gestisca correttamente una richiesta di reservation],
+      va: [
+        Il controller, nella risposta fornita, inserisce l'id della resevation pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test ManageStockService, testare che ManageStockService gestisca correttamente una richiesta di aggiunta e rimozione merce],
+      va: [
+        Il mock che implementa le porte del service verso il repository#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test ManageReservation ServiceApply ReservationEvent, testare che Manage ReservationService applichi un evento reservation],
+      va: [
+        Il metodo invocato `ApplyReservation Event` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test ManageReservation Service CreateReservation, testare che Manage ReservationService gestisca correttamente la creazione di una reservation],
+      va: [
+        Il metodo invocato `ApplyReservation Event` ritorna l'id della resevation e `nil` come errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManage Reservation ServiceConfirmOrder, testare che Manage ReservationService gestisca correttamente la conferma di un ordine#super[G] ,con opportune conseguenze sulle reservation],
+      va: [
+        Il metodo invocato `ConfirmOrder` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test ManageReservation ServiceConfirm TransferSender, testare che Manage ReservationService gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
+      va: [
+        Il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test ManageReservation ServiceConfirm TransferReceiver, testare che ManageReservation Service gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
+      va: [
+        Il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApply StockUpdateService, testare che ApplyStock UpdateService gestisca correttamente l'aggiunta di stock#super[G] di merce],
+      va: [
+        La richiesta raggiunge correttamente il mock di `IIdempotentPort`
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApply StockUpdateService, testare che ApplyCatalog UpdateService gestisca correttamente la modifica delle informazioni di una merce],
+      va: [
+        Interrogando il mock `IApplyCatalog UpdatePort` sul nome dell'oggetto con id "1", questo ritonra "hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Repository Impl, testare che TransferRepository Impl gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
+      va: [
+        Inizialmente i trasferimenti con id "1" e "2" non sono presenti, quindi il loro completamento e modifica non devono determinare il ritorno di errori.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da Test StockRepositoryImpl, testare che Stock RepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock#super[G] di merce, inclusa la gestione degli errori],
+      va: [
+        Inizialmente l'ottenimento di informazioni delle merci con id "1" e "2" non deve determinare un ritorno di `nil` in quanto non presenti. La successiva aggiunta e modifica quantità deve determinare il ritorno di `nil`. Inoltre deve risultare presente il magazzino con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder RepositoryImpl, testare che Order RepositoryImpl gestisca correttamente le richieste di ottenimento informazioni, modifica e completamento ordini],
+      va: [
+        Inizialmente l'ottenimento di informazioni degli ordini con id "1" e "2" non deve determinare un ritono di `nil` in quanto non presenti. La successiva aggiunta e modifica di tali ordini deve determinare il ritorno di `nil`, così come il completamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence AdapterApply TransferUpdate, testare che TransferPersistance Adapter gestisca correttamente le richieste di aggiornamento stato dei trasferimenti],
+      va: [
+        Il mock di `ITransferRepository` riceve correttamente l'aggiornamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence Adapter GetTransferExist, testare che TransferPersistance Adapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito positivo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene il trasferimento#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence AdapterGetTransferExist, testare che TransferPersistanceAdapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene l'errore `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence Adapter GetAllTransfer, testare che TransferPersistance Adapter restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene un solo trasferimento#super[G] e tale trasferimento#super[G] ha id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence AdapterSetComplete, testare che TransferPersistance Adapter trasmetta la richiesta di aggiornamento stato trasferimento#super[G] come completato],
+      va: [
+        La risposta fornita dal metodo `SetComplete` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence AdapterSetComplete, testare che TransferPersistance Adapter gestisca correttamente una richiesta di aggiornamento stato trasferimento#super[G] come completato nel caso in cui tale trasferimento#super[G] non esista],
+      va: [
+        La risposta fornita dal metodo `SetComplete` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Persistence AdapterIncrement LinkedStockUpdate, testare che TransferPersistance Adapter trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] ],
+      va: [
+        La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer PersistenceAdapter Increment LinkedStockUpdate Err, testare che Transfer PersistanceAdapter gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] con un id trasferimento#super[G] non esistente],
+      va: [
+        La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStock PersistenceAdapter ApplyStockUpdate, testare che Stock PersistanceAdapter gestisca correttamente una richiesta di aggiornamento stock#super[G] merce],
+      va: [
+        Il mock che implementa `IStockRepository` riceve la richiesta di aggiornamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence Adapter GetWarehouses, testare che Stock PersistanceAdapter gestisca correttamente una richiesta di ottenimento lista dei magazzini],
+      va: [
+        La risposta fornita da `GetWarehouses` contiene due magazzini.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence Adapter GetGlobalStock, testare che Stock PersistanceAdapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 10 unità per la merce con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence AdapterGet StockNotExist, testare che StockPersistance Adapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino ma con id merce non esistente],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 0 unità per la merce con id "1" e ha ritornato l'errore `ErrGoodNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestStockPersistence AdapterGetStock WarehouseNotExist, testare che StockPersistance Adapter gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino ma con un id magazzino non esistente],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 0 unità per la merce con id "1" e ha ritornato l'errore `ErrWarehouseNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder PersistenceAdapter ApplyOrderUpdate, testare che OrderPersistance Adapter gestisca correttamente una richiesta di applicazione modifiche ad un ordine#super[G] ],
+      va: [
+        Il mock di `IOrderRepository` riceve correttamente la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder Persistence AdapterGet OrderExist, testare che OrderPersistance Adapter gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G] ],
+      va: [
+        La risposta contiene un ordine#super[G] con id "1" e nessun errore (`nil`) viene ritornato.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder PersistenceAdapter GetOrderNotExist, testare che OrderPersistance Adapter gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G] con "id" non esistente],
+      va: [
+        Viene ritornato un errore `ErrOrderNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterGetAllOrder, testare che OrderPersistance Adapter gestisca correttamente una richiesta di ottenimento informazioni su tutti gli ordini],
+      va: [
+        La risposta contiene un ordine#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterSetComplete, testare che Order PersistanceAdapter gestisca correttamente una richiesta di modifica stato ordine#super[G] a completato],
+      va: [
+        Il metodo invocato `SetComplete` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterSet CompleteErr, testare che OrderPersistance Adapter gestisca correttamente una richiesta di modifica stato ordine#super[G] a completato ma l'id dell'ordine non esiste],
+      va: [
+        Il metodo invocato `SetComplete` ritorna `ErrOrderNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderPersistence AdapterAdd CompletedWarehouse, testare che OrderPersistance Adapter gestisca correttamente una richiesta `SetCompleted WarehouseCmd`],
+      va: [
+        Il metodo invocato `SetCompletedWarehouse` ritorna un ordine#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder PersistenceAdapter AddCompleted WarehouseErr, testare che OrderPersistance Adapter gestisca correttamente una richiesta `SetCompleted WarehouseCmd` con una merce con id non esistente],
+      va: [
+        Il metodo invocato `SetCompletedWarehouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStream AdapterSend OrderUpdate, testare che NatsStreamAdapter gestisca richieste di aggiornamento ordine#super[G] ],
+      va: [
+        L'adapter conferma l'operazione ritornando un ordine#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStream Adapter SendTransferUpdate, testare che NatsStreamAdapter gestisca richieste di aggiornamento trasferimento#super[G] ],
+      va: [
+        L'adapter conferma l'operazione ritornando un trasferimento#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStream Adapter SendTransferUpdate, testare che NatsStreamAdapter gestisca richieste di contatto di un magazzino per un ordine#super[G] ],
+      va: [
+        Il metodo invocato `SendContact Warehouses` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStream Adapter SendContactTransfer, testare che NatsStreamAdapter gestisca richieste di contatto di un magazzino per un trasferimento#super[G] ],
+      va: [
+        Il metodo invocato `SendContactWarehouses` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestNatsStream Adapter SendContactTransfer, testare che NatsStreamAdapter gestisca richieste di reservation],
+      va: [
+        Il metodo invocato `RequestReservation` ritorna una risposta con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder ListenerApply OrderUpdate, testare che OrderListener gestisca richieste di aggiornamento informazioni di un ordine#super[G] ],
+      va: [
+        Il mock di `applyOrderUpdate UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderListener ApplyTransferUpdate, testare che OrderListener gestisca richieste di aggiornamento informazioni di un trasferimento#super[G] ],
+      va: [
+        Il mock di `applyTransferUpdate UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrderListener ContactWarehouses Transfer, testare che OrderListener gestisca richieste di aggiornamento contatto di un magazzino per un trasferimento#super[G] ],
+      va: [
+        Il mock di `contactWarehouse UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder ListenerContact WarehousesTransfer, testare che OrderListener gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G] ],
+      va: [
+        Il mock di `contactWarehouse UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder ListenerContact WarehousesOrder WithRetry, testare che OrderListener gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G] al secondo tentativo],
+      va: [
+        Il mock di `contactWarehouse UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer Controller CreateTransfer, testare che TransferController gestisca richieste `CreateTransfer RequestDTO`],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene un trasferimento#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestTransfer ControllerGet Transfer, testare che TransferController gestisca richieste di ottenimento informazioni su tutti i trasferimenti],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene due trasferimenti, con id "1" e "2" rispettivamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder Controller CreateOrder, testare che OrderController gestisca richieste di creazione ordini],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene un ordine#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestOrder ControllerGetOrder, testare che OrderController gestisca richieste di creazione ordini],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene due ordini, con id "1" e "2" rispettivamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestSimpleCalculate AvailabilityService, testare che SimpleCalculate AvailabilityService riferisca quali mmagazzini hanno una certa quantità di una merce],
+      va: [
+        Viene restituito il magazzino con id "1", con esattamente 1 unità della merce con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManage OrderService GetAllTransfers, testare che ManageOrderService gestisca richieste di ottenimento informazioni su tutti i trasferimenti],
+      va: [
+        Viene restituito un trasferimento#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManage OrderService GetAllTransfers, testare che ManageOrderService gestisca richieste di ottenimento informazioni su un trasferimento#super[G] nello specifico],
+      va: [
+        Il trasferimento#super[G] con id "1" viene restituito correttamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManage OrderService GetAllOrders, testare che ManageOrderService gestisca richieste di ottenimento informazioni su tutti gli ordini],
+      va: [
+        Viene restituito un ordine#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageOrder ServiceGetOrder, testare che ManageOrderService gestisca richieste di ottenimento informazioni su un ordine#super[G] nello specifico],
+      va: [
+        Il trasferimento#super[G] con id "1" viene restituito correttamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageOrder ServiceCreateOrder, testare che ManageOrderService gestisca richieste di creazione di un ordine#super[G] ],
+      va: [
+        Viene ritornato l'id del nuovo ordine#super[G] (che non deve essere una stringa vuota).
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageOrder ServiceCreateTrasfer, testare che ManageOrderService gestisca richieste di creazione di un trasferimento#super[G] ],
+      va: [
+        Viene ritornato l'id del nuovo trasferimento#super[G] (che non deve essere una stringa vuota).
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManage OrderService ContactWarehouse Transfer, testare che ManageOrderService gestisca richieste di contatto magazzino per un trasferimento#super[G] ],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageOrder Service ContactWarehouse Transfer RetryLater, testare che ManageOrderService gestisca richieste di contatto magazzino per un trasferimento#super[G] al secondo tentativo],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManage OrderService Contact WarehouseOrder, testare che ManageOrderService gestisca richieste di contatto magazzino per un ordine#super[G] ],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestManageOrder ServiceContact WarehouseOrder RetryLater, testare che ManageOrderService gestisca richieste di contatto magazzino per un ordine#super[G] al secondo tentativo],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApplyStock UpdateService Stock, testare che ApplyStock UpdateService registri gli aggiornamenti di stock#super[G] per un ordine#super[G] ],
+      va: [
+        La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApplyStock UpdateService Transfer, testare che ApplyStock UpdateService registri gli aggiornamenti di stock#super[G] per un trasferimento#super[G] ],
+      va: [
+        La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApply OrderUpdate ServiceOrder, testare che ApplyOrder UpdateService registri gli aggiornamenti di un ordine#super[G] ],
+      va: [
+        Il mock di `applyOrder UpdatePort` riceve la richiesta come previsto.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestApply OrderUpdate ServiceOrder, testare che ApplyOrder UpdateService registri gli aggiornamenti di un trasferimento#super[G] ],
+      va: [
+        Il mock di `applyTransfer UpdatePort` riceve la richiesta come previsto.
+      ],
+      vr: "",
+      st: "S",
+    ),
+  ),
+)
+
+== Test di Integrazione
+
+#test-table(
+  unit: "I",
+  tipo-test: "Test di Integrazione",
+  (
+    (
+      desc: [Implementato dalla funzione TestInsertGetWarehouses Quantity, verificare che il microservizio Catalog inserisca correttamente la quantità delle merci nei magazzini],
+      va: [Dopo la modifica, ottenendo la lista dei magazzini ed il loro inventario risulta che:
+      - nel magazzino con id "test-warehouse-ID" ci sono 2 unità della merce con id "test-ID" e 0 unità della merce "2test-ID";
+      - nel magazzino con id "2test-warehouse-ID" ci sono 3 unità della merce "test-ID" e 3 unità della merce "2test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestInsertGetGoods Quantity, verificare che il microservizio Catalog inserisca correttamente la quantità delle merci],
+      va: [Dopo la modifica è presente la seguente situazione:
+      - la merce con id "test-ID" ha globalmente 5 unità;
+      - la merce con id "2test-ID" ha 3 unità.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestInsertGetGoods, verificare che il microservizio Catalog inserisca correttamente la informazioni delle merci],
+      va: [Dopo la modifica è presente la merce con id "test-id" avente:
+      - nome "test-name";
+      - descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetTokenEmpty Username, verificare che il microservizio Authenticator si comporti correttamente se nella richiesta non viene fornito il nome utente],
+      va: [Nella risposta fornita il token è vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetTokenWrong Username, verificare che il microservizio Authenticator si comporti correttamente se nella richiesta viene incluso un nome utente non valido],
+      va: [Nella risposta fornita il token è vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetToken, verificare che il microservizio Authenticator ritorni il token generato in caso di richiesta corretta],
+      va: [Nella risposta fornita il token fornito è un token valido.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestGetTwoToken, verificare che il microservizio Authenticator ritorni due token validi e firmati con la medesima chiave privata],
+      va: [I token forniti sono validi e firmati con la stessa chiave privata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione TestAddAndRemoveWarehouseStock, verificare che il microservizio Warehouse#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
+      va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
+      vr: "",
+      st: "S",
+    ),
+  )
+),
+
+#pagebreak()
 
 == Test di Sistema
 
@@ -898,6 +2067,8 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
   ),
   caption: [Tracciamento dei Test di Sistema],
 )
+
+== Test di Regressione
 
 == Test di Accettazione
 
