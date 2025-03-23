@@ -1569,6 +1569,108 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato da TestLogin, testare che Business di Api Gateway trasmetta correttamente richieste di login],
+      va: [
+        Il mock di `AuthenticationPortOut` riceve la richiesta e la risposta fornita dall'elemento testato contiene:
+        - "some.secure.jwt" come token;
+        - ruolo corrispondente a quello richiesto;
+        - data di scadenza fissata a 1 settimana.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestLoginNoSuchUser, testare che Business di Api Gateway trasmetta correttamente richieste di login con utente sconosciuto],
+      va: [
+        Il mock di `AuthenticationPortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorInvalidCredentials`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestLoginGetTokenError, testare che Business di Api Gateway trasmetta correttamente richieste di login che ritornano un errore],
+      va: [
+        Il mock di `AuthenticationPortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestLoginGetRoleError, testare che Business di Api Gateway trasmetta correttamente richieste di login che ritornano un errore relativo al ruolo],
+      va: [
+        Il mock di `AuthenticationPortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetRole`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestLoginVerifyTokenError, testare che Business di Api Gateway gestisca correttamente token non validi durante l'operazione di login],
+      va: [
+        Il mock di `AuthenticationPortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestVerifyRoleError, testare che Business di Api Gateway riesca a gestire token non validi],
+      va: [
+        La verifica di un token valido riporta un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetWarehouses, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento magazzini],
+      va: [
+        La risposta fornita possiede due magazzini:
+        - uno con id "abc";
+        - uno con id "def".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetWarehousesError, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento magazzini e risposte contenenti errore],
+      va: [
+        Il metodo invocato `GetWarehouses` ritorna l'errore `ErrorGetWarehouses`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetGoods, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento dati merce],
+      va: [
+        La risposta fornita possiede due merci. La prima merce ha:
+        - id "id1";
+        - nome "abc";
+        - descrizione "abcdesc";
+        - 20 unità di materiale.
+        La seconda merce ha:
+        - id "id2";
+        - nome "def";
+        - descrizione "defdesc";
+        - 10 unità di materiale.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetGoodsError, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante i dati],
+      va: [
+        Il metodo invocato `GetGoods` ritorna l'errore `ErrorGetGoods`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da TestGetGoodsStockError, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante lo stock],
+      va: [
+        Il metodo invocato `GetGoods` ritorna l'errore `ErrorGetStock`.
+      ],
+      vr: "",
+      st: "S",
+    ),
   ),
 )
 
