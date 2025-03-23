@@ -1615,7 +1615,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da TestVerifyRoleError, testare che Business di Api Gateway riesca a gestire token non validi],
       va: [
-        La verifica di un token valido riporta un errore.
+        La vеrifica di un token valido riporta un errore.
       ],
       vr: "",
       st: "S",
@@ -1664,7 +1664,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da TestGetGoodsStockError, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante lo stock],
+      desc: [Implementato da TestGetGoodsStockError, testare che Business di Api Gateway riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante lo stock#super[G] ],
       va: [
         Il metodo invocato `GetGoods` ritorna l'errore `ErrorGetStock`.
       ],
