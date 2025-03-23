@@ -891,7 +891,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestStock PersistanceAdapter GetReservNotFound`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G] in _reservation_ e gestisca correttamente il caso in cui la _reservation_ richiesta non esista],
       va: [
-        L'adapter ritorna un errore `ErrReservationNotFound` e la _reservation_ non contiene nulla
+        L'adapter ritorna un errore `ErrReservation NotFound` e la _reservation_ non contiene nulla
       ],
       vr: "",
       st: "S",
@@ -1313,7 +1313,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrderPersistence AdapterAdd CompletedWarehouse`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta `SetCompleted WarehouseCmd`],
       va: [
-        Il metodo invocato `SetCompletedWarehouse` ritorna un ordine#super[G] con id "1".
+        Il metodo invocato `SetCompleted Warehouse` ritorna un ordine#super[G] con id "1".
       ],
       vr: "",
       st: "S",
@@ -1321,7 +1321,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrder PersistenceAdapter AddCompleted WarehouseErr`, testare che `OrderPersistance` Adapter gestisca correttamente una richiesta `SetCompleted WarehouseCmd` con una merce con id non esistente],
       va: [
-        Il metodo invocato `SetCompletedWarehouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
+        Il metodo invocato `SetCompleted Warehouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
       ],
       vr: "",
       st: "S",
