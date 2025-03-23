@@ -78,17 +78,7 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
 - **Creare** una nuova merce, inserendo:
     - Il **Nome** della nuova merce;
     - La **Descrizione** della nuova merce.
-- **Aggiornamento** delle informazioni su una determinata merce;
-- **Visualizzare** l'elenco delle attività di accesso al Sistema, e per ognuna visualizzare:
-    - L'**Indirizzo IP** del tentativo di accesso;
-    - L'**ID** del tentativo di accesso;
-    - Lo **Stato** del tentativo di accesso.
-- **Aggiungere** un nuovo utente inserendo:
-    - Il **Nome** del nuovo utente;
-    - La **Password** del nuovo utente;
-    - Il **Ruolo** del nuovo utente.
-- **Eliminare** un utente nel Sistema, selezionando il nome utente;
-- **Promuovere il Ruolo** di un utente nel Sistema.
+- **Aggiornare** le informazioni su una determinata merce.
 
 ## Riepilogo degli Utenti presenti
 <!--raw-typst
