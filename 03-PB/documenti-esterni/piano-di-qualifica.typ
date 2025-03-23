@@ -862,7 +862,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestStockPersistance AdapterApply`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di aggiunta stock#super[G] ],
+      desc: [Implementato da `TestStockPersistance AdapterApply`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di aggiunta stock#super[G]],
       va: [
         Viene aggiunta correttamente la merce, il mock del repository#super[G] ritorna `true`.
       ],
@@ -870,7 +870,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestStockPersistance AdapterGet`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G] ],
+      desc: [Implementato da `TestStockPersistance AdapterGet`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G]],
       va: [
         Nella risposta fornita dall'adapter sono persenti:
         - merce con id "1" con quantità totale pari a 10
@@ -913,7 +913,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestStockPersistance AdapterApplyOrder`, testare che `Stоck PersistanceAdapter` riesca a gestire una richiesta di conferma ordine#super[G] ],
+      desc: [Implementato da `TestStockPersistance AdapterApplyOrder`, testare che `Stоck PersistanceAdapter` riesca a gestire una richiesta di conferma ordine#super[G]],
       va: [
         L'adapter ritorna `nil` successivamente alla richiesta.
       ],
@@ -1015,7 +1015,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrderUpdate ListenerForOrder`, testare che `OrderUpdateListener` riceva le richieste di aggiornamento su un ordine#super[G] ],
+      desc: [Implementato da `TestOrderUpdate ListenerForOrder`, testare che `OrderUpdateListener` riceva le richieste di aggiornamento su un ordine#super[G]],
       va: [
         Viene ricevuto l'_acknowledge_ sulla richiesta inviata.
       ],
@@ -1023,7 +1023,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrderUpdate ListenerForTransfer`, testare che `OrderUpdateListener` riceva le richieste di aggiornamento su un trasferimento#super[G] ],
+      desc: [Implementato da `TestOrderUpdate ListenerForTransfer`, testare che `OrderUpdateListener` riceva le richieste di aggiornamento su un trasferimento#super[G]],
       va: [
         Viene ricevuto l'_acknowledge_ sulla richiesta inviata.
       ],
@@ -1207,7 +1207,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestTransfer Persistence AdapterIncrement LinkedStockUpdate`, testare che `TransferPersistance Adapter` trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] ],
+      desc: [Implementato da `TestTransfer Persistence AdapterIncrement LinkedStockUpdate`, testare che `TransferPersistance Adapter` trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G]],
       va: [
         La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `nil`.
       ],
@@ -1263,7 +1263,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrder PersistenceAdapter ApplyOrderUpdate`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di applicazione modifiche ad un ordine#super[G] ],
+      desc: [Implementato da `TestOrder PersistenceAdapter ApplyOrderUpdate`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di applicazione modifiche ad un ordine#super[G]],
       va: [
         Il mock di `IOrderRepository` riceve correttamente la richiesta.
       ],
@@ -1271,7 +1271,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrder Persistence AdapterGet OrderExist`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G] ],
+      desc: [Implementato da `TestOrder Persistence AdapterGet OrderExist`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G]],
       va: [
         La risposta contiene un ordine#super[G] con id "1" e nessun errore (`nil`) viene ritornato.
       ],
@@ -1327,7 +1327,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream AdapterSend OrderUpdate`, testare che `NatsStreamAdapter` gestisca richieste di aggiornamento ordine#super[G] ],
+      desc: [Implementato da `TestNatsStream AdapterSend OrderUpdate`, testare che `NatsStreamAdapter` gestisca richieste di aggiornamento ordine#super[G]],
       va: [
         L'adapter conferma l'operazione ritornando un ordine#super[G] con id pari a "1".
       ],
@@ -1335,7 +1335,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter SendTransferUpdate`, testare che `NatsStreamAdapter` gestisca richieste di aggiornamento trasferimento#super[G] ],
+      desc: [Implementato da `TestNatsStream Adapter SendTransferUpdate`, testare che `NatsStreamAdapter` gestisca richieste di aggiornamento trasferimento#super[G]],
       va: [
         L'adapter conferma l'operazione ritornando un trasferimento#super[G] con id pari a "1".
       ],
@@ -1343,7 +1343,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter SendContactOrder`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un ordine#super[G] ],
+      desc: [Implementato da `TestNatsStream Adapter SendContactOrder`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un ordine#super[G]],
       va: [
         Il metodo invocato `SendContact Warehouses` ritorna `nil`.
       ],
@@ -1351,7 +1351,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter SendContactTransfer`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un trasferimento#super[G] ],
+      desc: [Implementato da `TestNatsStream Adapter SendContactTransfer`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un trasferimento#super[G]],
       va: [
         Il metodo invocato `SendContactWarehouses` ritorna `nil`.
       ],
@@ -1367,7 +1367,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrder ListenerApply OrderUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un ordine#super[G] ],
+      desc: [Implementato da `TestOrder ListenerApply OrderUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un ordine#super[G]],
       va: [
         Il mock di `applyOrderUpdate UseCase` riceve la richiesta.
       ],
@@ -1375,7 +1375,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrderListener ApplyTransferUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un trasferimento#super[G] ],
+      desc: [Implementato da `TestOrderListener ApplyTransferUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un trasferimento#super[G]],
       va: [
         Il mock di `applyTransferUpdate UseCase` riceve la richiesta.
       ],
@@ -1383,7 +1383,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrderListener ContactWarehouses Transfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un trasferimento#super[G] ],
+      desc: [Implementato da `TestOrderListener ContactWarehouses Transfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un trasferimento#super[G]],
       va: [
         Il mock di `contactWarehouse UseCase` riceve la richiesta.
       ],
@@ -1391,7 +1391,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestOrder ListenerContact WarehousesTransfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G] ],
+      desc: [Implementato da `TestOrder ListenerContact WarehousesTransfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G]],
       va: [
         Il mock di `contactWarehouse UseCase` riceve la richiesta.
       ],
@@ -1479,7 +1479,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestManageOrder ServiceCreateOrder`, testare che `ManageOrderService` gestisca richieste di creazione di un ordine#super[G] ],
+      desc: [Implementato da `TestManageOrder ServiceCreateOrder`, testare che `ManageOrderService` gestisca richieste di creazione di un ordine#super[G]],
       va: [
         Viene ritornato l'id del nuovo ordine#super[G] (che non deve essere una stringa vuota).
       ],
@@ -1487,7 +1487,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestManageOrder ServiceCreateTrasfer`, testare che `ManageOrderService` gestisca richieste di creazione di un trasferimento#super[G] ],
+      desc: [Implementato da `TestManageOrder ServiceCreateTrasfer`, testare che `ManageOrderService` gestisca richieste di creazione di un trasferimento#super[G]],
       va: [
         Viene ritornato l'id del nuovo trasferimento#super[G] (che non deve essere una stringa vuota).
       ],
@@ -1495,7 +1495,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestManage OrderService ContactWarehouse Transfer`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un trasferimento#super[G] ],
+      desc: [Implementato da `TestManage OrderService ContactWarehouse Transfer`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un trasferimento#super[G]],
       va: [
         La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
       ],
@@ -1511,7 +1511,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestManage OrderService Contact WarehouseOrder`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un ordine#super[G] ],
+      desc: [Implementato da `TestManage OrderService Contact WarehouseOrder`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un ordine#super[G]],
       va: [
         La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
       ],
@@ -1527,7 +1527,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestApplyStock UpdateService Stоck`,testare che `ApplyStock UpdateService` registri gli aggiornamenti di stock#super[G] per un ordine#super[G] ],
+      desc: [Implementato da `TestApplyStock UpdateService Stоck`,testare che `ApplyStock UpdateService` registri gli aggiornamenti di stock#super[G] per un ordine#super[G]],
       va: [
         La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
       ],
@@ -1535,7 +1535,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestApplyStock UpdateService Transfer`, testare che `ApplyStock UpdateService` registri gli aggiornamenti di stock#super[G] per un trasferimento#super[G] ],
+      desc: [Implementato da `TestApplyStock UpdateService Transfer`, testare che `ApplyStock UpdateService` registri gli aggiornamenti di stock#super[G] per un trasferimento#super[G]],
       va: [
         La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
       ],
@@ -1543,7 +1543,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestApply OrderUpdate ServiceOrder`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un ordine#super[G] ],
+      desc: [Implementato da `TestApply OrderUpdate ServiceOrder`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un ordine#super[G]],
       va: [
         Il mock di `applyOrder UpdatePort` riceve la richiesta come previsto.
       ],
@@ -1551,7 +1551,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestApply OrderUpdate ServiceTransfer`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un trasferimento#super[G] ],
+      desc: [Implementato da `TestApply OrderUpdate ServiceTransfer`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un trasferimento#super[G]],
       va: [
         Il mock di `applyTransfer UpdatePort` riceve la richiesta come previsto.
       ],
@@ -1653,7 +1653,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestGetGoods StockError`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante lo stock#super[G] ],
+      desc: [Implementato da `TestGetGoods StockError`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante lo stock#super[G]],
       va: [
         Il metodo invocato `GetGoods` ritorna l'errore `ErrorGetStock`.
       ],
@@ -1687,7 +1687,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLogin`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a tradurre richieste di login],
       va: [
-        `AuthAdapter` verifica con esito positivo il token fornito dal mock del microservizio `authenticator`. In particolare la risposta fornita dall'adapter presenta:
+        `AuthAdapter` vеrifica con esito positivo il token fornito dal mock del microservizio `authenticator`. In particolare la risposta fornita dall'adapter presenta:
         - il token è firmato con una firma valida;
         - lo username è "admin";
         - il ruolo è "global_admin".
@@ -1722,7 +1722,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestRevocation`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire richieste di revoca token],
       va: [
-        Dopo aver effettuato l'operazione di revoca (ottenibile riavviando il mock del microservizio `authenticator`) la verifica del token restituisce l'errore `ErrTokenInvalid`.
+        Dopo aver effettuato l'operazione di revoca (ottenibile riavviando il mock del microservizio `authenticator`) la vеrifica del token restituisce l'errore `ErrTokenInvalid`.
       ],
       vr: "",
       st: "S",
