@@ -414,22 +414,225 @@ Infine, si ricorda che, nel linguaggio Go#super[G] ,un nome di funzione o attrib
 
 === Oggetti comuni tra microservizi //COMMONOBJ
 
-==== StockUpdateGood
+==== ResponseDTO <ResponseDTO>
 
-#figure(
-  image("../../assets/catalog/StockUpdate.png", width: 27%),
-  caption: "StockUpdateGood",
-)
-
-Struttura utile per rappresentare le variazioni di quantità durante l'invio di questa informazione al microservizio *Catalog*.
+Rappresenta un DTO generico per le risposte, utilizzabile per incapsulare un messaggio di tipo generico `T` e un eventuale messaggio di errore.
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'id della merce che ha subito una variazione di quantità;
+- *`Message T`*: rappresenta il messaggio generico di tipo `T` incluso nella risposta;
+- *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-- *`Quantity int64`*: rappresenta la nuova quantità della merce in questione;
+==== ErrorResponseDTO <ErrorResponseDTO>
 
-- *`Delta int64`*: rappresenta la differenza di quantità per la merce in questione.
+Rappresenta un DTO specifico per le risposte di errore, derivato da `ResponseDTO` con un tipo generico `any`.
+
+*Descrizione degli attributi della struttura:*
+
+- *`Message any`*: rappresenta un messaggio generico incluso nella risposta di errore;
+- *`Error string`*: rappresenta un messaggio di errore, se presente.
+
+// WAREHOUSE
+
+==== StockUpdate
+// #figure(
+//   image("../../assets/warehouse/StreamStockUpdate.png", width: 35%),
+//   caption: "StockUpdate",
+// )
+
+Rappresenta un aggiornamento dello stock#super[G] nel sistema, utilizzato per comunicare variazioni di quantità di merci tra i microservizi.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco dell'aggiornamento dello stock#super[G];
+- *`WarehouseID string`*: rappresenta l'identificativo del magazzino coinvolto nell'aggiornamento dello stock#super[G];
+- *`Type StockUpdateType`*: rappresenta il tipo di aggiornamento dello stock#super[G]. Può assumere i seguenti valori:
+  - *`add`*: per aggiungere stock#super[G];
+  - *`remove`*: per rimuovere stock#super[G];
+  - *`order`*: per aggiornamenti legati a ordini;
+  - *`transfer`*: per aggiornamenti legati a trasferimenti;
+- *`Goods []StockUpdateGood`*: rappresenta una lista di oggetti `StockUpdateGood` che contengono le informazioni sulle merci aggiornate;
+- *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock#super[G];
+- *`TransferID string`*: rappresenta l'identificativo del trasferimento associato all'aggiornamento dello stock#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello stock#super[G];
+- *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock#super[G].
+
+==== StockUpdateType
+
+Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa con i seguenti valori possibili:
+
+- *`add`*: per aggiungere stock#super[G];
+- *`remove`*: per rimuovere stock#super[G];
+- *`order`*: per aggiornamenti legati a ordini;
+- *`transfer`*: per aggiornamenti legati a trasferimenti.
+
+==== StockUpdateGood
+
+#figure(
+  image("../../assets/warehouse/StreamStockUpdateGood.png", width: 27%),
+  caption: "StockUpdateGood",
+)
+
+Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce aggiornata;
+- *`Quantity int64`*: rappresenta la nuova quantità della merce aggiornata;
+- *`Delta int64`*: rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
+
+==== AddStockRequestDTO <WarehouseAddStockRequestDTO>
+#figure(
+  image("../../assets/warehouse/AddStockRequestDTO.png", width: 25%),
+  caption: "Warehouse - AddStockRequestDTO",
+)
+
+Questo DTO viene utilizzato per rappresentare la richiesta di aggiunta di stock#super[G] ,e viene utilizzato dal controller @WarehouseStockController
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G] ;
+- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da aggiungere alla merce.
+
+==== RemoveStockRequestDTO <WarehouseRemoveStockRequestDTO>
+#figure(
+  image("../../assets/warehouse/RemoveStockRequestDTO.png", width: 25%),
+  caption: "Warehouse - RemoveStockRequestDTO",
+)
+
+Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock#super[G] ,e viene utilizzato dal controller @WarehouseStockController
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'id della merce da cui rimuovere stock#super[G] ;
+- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
+
+==== ReserveStockRequestDTO <WarehouseReserveStockRequestDTO>
+
+// #figure(
+//   image("../../assets/warehouse/ReserveStockRequestDTO.png", width: 30%),
+//   caption: "Warehouse - ReserveStockRequestDTO",
+// )
+
+Questo DTO viene utilizzato per rappresentare la richiesta di prenotazione di stock#super[G] nel magazzino.
+
+*Descrizione degli attributi della struttura:*
+
+- *`Goods []ReserveStockItem`*: rappresenta una lista di oggetti `ReserveStockItem` che contengono le informazioni sulle merci da prenotare.
+
+==== ReserveStockItem <WarehouseReserveStockItem>
+
+// #figure(
+//   image("../../assets/warehouse/ReserveStockItem.png", width: 25%),
+//   caption: "Warehouse - ReserveStockItem",
+// )
+
+Rappresenta una merce coinvolta nella richiesta di prenotazione di stock#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce da prenotare;
+- *`Quantity int64`*: rappresenta la quantità della merce da prenotare.
+
+==== HealthCheckResponseDTO <WarehouseHealthCheckResponseDTO>
+
+Rappresenta un DTO specifico per le risposte di controllo dello stato di salute del microservizio *Warehouse*#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`Message string`*: rappresenta il messaggio di stato del microservizio *Warehouse*;
+- *`Error string`*: rappresenta un messaggio di errore, se presente.
+
+==== ReserveStockResponseDTO <WarehouseReserveStockResponseDTO>
+
+Rappresenta un DTO specifico per le risposte relative alla prenotazione di stock#super[G] nel microservizio *Warehouse*#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`Message ReserveStockInfo`*: rappresenta le informazioni sulla prenotazione dello stock#super[G] nel microservizio *Warehouse*;
+- *`Error string`*: rappresenta un messaggio di errore, se presente.
+
+==== ReserveStockInfo <WarehouseReserveStockInfo>
+
+Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel microservizio *Warehouse*#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`ReservationID string`*: rappresenta l'identificativo univoco della prenotazione nel microservizio *Warehouse*.
+
+// ORDER
+
+==== OrderUpdate <StreamOrderUpdate>
+
+// #figure(
+//   image("../../assets/order/StreamOrderUpdate.png", width: 50%),
+//   caption: "OrderUpdate",
+// )
+
+Rappresenta un aggiornamento di un ordine nel sistema.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco dell'ordine aggiornato;
+- *`Status string`*: rappresenta lo stato dell'ordine aggiornato (es. "Pending", "Completed");
+- *`Name string`*: rappresenta il nome del destinatario dell'ordine;
+- *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
+- *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
+- *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
+- *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
+- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine.
+
+==== OrderUpdateGood <StreamOrderUpdateGood>
+
+// #figure(
+//   image("../../assets/order/StreamOrderUpdateGood.png", width: 35%),
+//   caption: "OrderUpdateGood",
+// )
+
+Rappresenta una merce coinvolta in un aggiornamento di un ordine.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nell'ordine;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nell'ordine.
+
+==== TransferUpdate <StreamTransferUpdate>
+
+// #figure(
+//   image("../../assets/order/StreamTransferUpdate.png", width: 50%),
+//   caption: "TransferUpdate",
+// )
+
+Rappresenta un aggiornamento di un trasferimento nel sistema.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco del trasferimento aggiornato;
+- *`Status string`*: rappresenta lo stato del trasferimento aggiornato (es. "Pending", "Completed");
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento;
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento;
+- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento;
+- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento;
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento;
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento.
+
+==== TransferUpdateGood <StreamTransferUpdateGood>
+
+// #figure(
+//   image("../../assets/order/StreamTransferUpdateGood.png", width: 35%),
+//   caption: "TransferUpdateGood",
+// )
+
+Rappresenta una merce coinvolta in un aggiornamento di un trasferimento.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento.
+
+
+// CATALOG
 
 ==== GoodUpdateData
 
@@ -486,6 +689,9 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 - *`GoodMap map[string]int64`*: mappa avente come chiave una *string* che rappresenta l'id della merce, mentre come valore un *int64* che ne rappresenta la quantità;
 - *`Err string`*: quando compilato, esplicita l'errore riscontrato nell'elaborare la richiesta. Se nessun errore è presente, la stringa è vuota.
+
+
+// AUTH
 
 ==== AuthLoginRequest
 
@@ -3051,32 +3257,6 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`RemoveStock(ctx: Context, cmd: RemoveStockCmd) error`*: prende un _Command_ per la richiesta di rimozione di stock#super[G] e utilizza la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione;
 
 - *`AddStock(ctx: Context, cmd: AddStockCmd) error`*: prende un _Command_ per la richiesta di aggiunta di stock#super[G] e utilizza la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
-
-==== AddStockRequestDTO <WarehouseAddStockRequestDTO>
-#figure(
-  image("../../assets/warehouse/AddStockRequestDTO.png", width: 25%),
-  caption: "Warehouse - AddStockRequestDTO",
-)
-
-Questo DTO viene utilizzato per rappresentare la richiesta di aggiunta di stock#super[G] ,e viene utilizzato dal controller @WarehouseStockController
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da aggiungere alla merce.
-
-==== RemoveStockRequestDTO <WarehouseRemoveStockRequestDTO>
-#figure(
-  image("../../assets/warehouse/RemoveStockRequestDTO.png", width: 25%),
-  caption: "Warehouse - RemoveStockRequestDTO",
-)
-
-Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock#super[G] ,e viene utilizzato dal controller @WarehouseStockController
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'id della merce da cui rimuovere stock#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
 
 ==== StockController <WarehouseStockController>
 
