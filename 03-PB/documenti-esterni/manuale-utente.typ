@@ -1,6 +1,7 @@
 #import "@preview/cmarker:0.1.2"
 #import "../../lib/importantdocs.typ": *
 
+#let ver = [0.2.0]
 #show: body => importantdocs(
   titolo: "Manuale Utente",
   tipo: [esterno],
@@ -12,6 +13,7 @@
   verificatore: (p.emanuele, p.matteo),
   stato: [In redazione],
   redattori: (p.samuele, p.matteo, p.marco),
+  versione: ver,
   versioni: (
     (
       vers: "0.2.0",
