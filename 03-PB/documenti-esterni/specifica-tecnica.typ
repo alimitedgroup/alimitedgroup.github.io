@@ -2562,6 +2562,18 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
+==== Reservation <WarehouseRepoReservation>
+
+Rappresenta una prenotazione di merci nel magazzino. Viene utilizzata dalla _persistence logic_ e dall'interfaccia *IStockRepository* (@WarehouseIStockRepository).
+
+*Descrizione degli attributi della struttura:*
+
+- *`Goods map[string]int64`*: rappresenta una mappa che associa l'identificativo di una merce (*string*) alla quantità prenotata (*int64*).
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
 ==== IStockRepository <WarehouseIStockRepository>
 
 Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ degli stock#super[G] per il microservizio _Warehouse_#super[G].
@@ -2683,6 +2695,32 @@ Rappresenta la porta che consente alla _business logic_ di comunicare con l'este
 
 - *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: il metodo deve permettere di creare un aggiornamento dello stock#super[G].
 
+==== Reservation <WarehouseModelReservation>
+
+Rappresenta una prenotazione di merci nel magazzino.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco della prenotazione;
+- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci coinvolte nella prenotazione.
+
+==== ReservationId <WarehouseModelReservationId>
+
+Rappresenta un identificativo univoco per una prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`string`*: rappresenta l'identificativo univoco della prenotazione.
+
+==== ReservationGood <WarehouseModelReservationGood>
+
+Rappresenta una merce coinvolta in una prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nella prenotazione.
+
 ==== IStoreReservationEventPort <WarehouseIStoreReservationEventPort>
 
 Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di memorizzare un evento di prenotazione.
@@ -2771,7 +2809,7 @@ Questa classe è utilizzata nella _business logic_.
 Rappresenta una merce con la sua quantità presente nel magazzino.
 
 *Descrizione degli attributi della struttura:*
-- *`ID GoodId`*: attributo di tipo *GoodId* che rappresenta l'Id della merce;
+- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
 - *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
 
 ==== IApplyStockUpdatePort <WarehouseIApplyStockUpdatePort>
@@ -2784,11 +2822,13 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 ==== IGetStockPort <WarehouseIGetStockPort>
 
-Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere la quantità di una merce presente nel magazzino.
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere informazioni sulla quantità di una merce presente nel magazzino.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetStock(goodId: GoodId) GoodStock`*: il metodo deve permettere di ottenere la quantità di una merce presente nel magazzino.
+- *`GetStock(goodId: GoodID) GoodStock`*: il metodo deve permettere di ottenere la quantità totale di una merce presente nel magazzino, prendendo come parametro l'identificativo della merce (`goodId`) e restituendo un oggetto di tipo `GoodStock`.
+
+- *`GetFreeStock(goodId: GoodID) GoodStock`*: il metodo deve permettere di ottenere la quantità libera di una merce presente nel magazzino, ovvero la quantità non riservata. Prende come parametro l'identificativo della merce (`goodId`) e restituisce un oggetto di tipo `GoodStock`.
 
 ==== IGetReservationPort <WarehouseIGetReservationPort>
 
@@ -2873,7 +2913,9 @@ _Adapter_ che mette in comunicazione la _business logic_ di Warehouse#super[G] c
 Implementa le seguenti interfacce (porte):
 
 - *IApplyStockUpdatePort*, @WarehouseIApplyStockUpdatePort;
-- *IGetStockPort*, @WarehouseIGetStockPort.
+- *IGetStockPort*, @WarehouseIGetStockPort;
+- *IApplyReservationEventPort*, @WarehouseIApplyReservationEventPort;
+- *IGetReservationPort*, @WarehouseIGetReservationPort.
 
 *Descrizione degli attributi della struttura:*
 
@@ -2883,9 +2925,17 @@ Implementa le seguenti interfacce (porte):
 
 - *`NewStockPersistenceAdapter(stockRepo: IStockRepository) *StockPersistenceAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `stockRepo` con quello passato come parametro al costruttore;
 
-- *`ApplyStockUpdate(goods: *GoodStock) error`*: converte l'aggiornamento dello stock#super[G] in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
+- *`ApplyStockUpdate(goods: []model.GoodStock) error`*: converte l'aggiornamento dello stock#super[G] in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetStock(goodId: GoodId) GoodStock`*: converte la richiesta di ottenimento della quantità di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
+- *`ApplyReservationEvent(reservation: model.Reservation) error`*: converte l'evento di prenotazione in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata. Ritorna un errore in caso di fallimento;
+
+- *`ApplyOrderFilled(reservation: model.Reservation) error`*: gestisce l'applicazione degli ordini con stato `Filled`, liberando le quantità riservate. Ritorna un errore in caso di fallimento;
+
+- *`GetStock(goodId: model.GoodID) model.GoodStock`*: converte la richiesta di ottenimento della quantità di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata e ritorna un oggetto `GoodStock`;
+
+- *`GetFreeStock(goodId: model.GoodID) model.GoodStock`*: converte la richiesta di ottenimento della quantità libera di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata e ritorna un oggetto `GoodStock`;
+
+- *`GetReservation(reservationId: model.ReservationId) (model.Reservation, error)`*: converte la richiesta di ottenimento dei dettagli di una prenotazione in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata. Ritorna un oggetto `Reservation` e un eventuale errore.
 
 ==== GoodInfo <WarehouseGoodInfo>
 #figure(
@@ -2896,7 +2946,7 @@ Questa classe è utilizzata nella _business logic_.
 Rappresenta una merce con le sue informazioni.
 
 *Descrizione degli attributi della struttura:*
-- *`ID GoodId`*: attributo di tipo *GoodId* che rappresenta l'Id della merce;
+- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
 - *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
 
 ==== IApplyCatalogUpdatePort <WarehouseIApplyCatalogUpdatePort>
@@ -2934,7 +2984,7 @@ Implementa le seguenti interfacce (porte):
 
 - *`ApplyCatalogUpdate(good: GoodInfo) error`*: converte l'aggiornamento del catalogo in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata;
 
-- *`GetGood(goodId: GoodId) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
+- *`GetGood(goodId: GoodID) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
 
 ==== RemoveStockCmd <WarehouseRemoveStockCmd>
 #figure(
@@ -3034,8 +3084,8 @@ Lo *StockController* gestisce l'_application logic_ per le operazioni di aggiunt
 
 *Descrizione degli attributi della struttura:*
 
-- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso#super[G] per l'aggiunta di stock#super[G] ;
-- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso#super[G] per la rimozione di stock#super[G].
+- *`addStockUseCase IAddStockUseCase`*: rappresenta il caso d'uso#super[G] per l'aggiunta di stock#super[G]; vedere la @WarehouseIAddStockUseCase;
+- *`removeStockUseCase IRemoveStockUseCase`*: rappresenta il caso d'uso#super[G] per la rimozione di stock#super[G]; vedere la @WarehouseIRemoveStockUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -3124,7 +3174,7 @@ Lo *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggi
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti dello stock#super[G].
+- *`applyStockUpdateUseCase IApplyStockUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti dello stock#super[G]; vedere la @WarehouseIApplyStockUpdateUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -3293,7 +3343,7 @@ Il *CatalogListener* gestisce l'_Application Logic_ per l'ascolto degli aggiorna
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyCatalogUpdateUseCase IApplyCatalogUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti del catalogo.
+- *`applyCatalogUpdateUseCase IApplyCatalogUpdateUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli aggiornamenti del catalogo; vedere la @WarehouseIApplyCatalogUpdateUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -3321,7 +3371,7 @@ Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di c
 
 *Descrizione degli attributi della struttura:*
 
-- *`createReservationUseCase port.ICreateReservationUseCase`*: rappresenta il caso d'uso per la creazione delle prenotazioni.
+- *`createReservationUseCase port.ICreateReservationUseCase`*: rappresenta il caso d'uso per la creazione delle prenotazioni; vedere la @WarehouseICreateReservationUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -3329,13 +3379,14 @@ Il *ReservationController* gestisce l'_Application Logic_ per le operazioni di c
 
 - *`CreateReservationHandler(ctx: Context, msg: Msg) error`*: gestisce le richieste di creazione delle prenotazioni, trasformando i dati ricevuti in un comando e delegando l'operazione al caso d'uso. Risponde con un messaggio di successo o errore.
 
+
 ==== ReservationEventListener <WarehouseReservationEventListener>
 
 Il *ReservationEventListener* gestisce l'_Application Logic_ per l'ascolto degli eventi di prenotazione nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyReservationEventUseCase IApplyReservationUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli eventi di prenotazione.
+- *`applyReservationEventUseCase IApplyReservationUseCase`*: rappresenta il caso d'uso#super[G] per l'applicazione degli eventi di prenotazione; vedere la @WarehouseIApplyReservationUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -3343,14 +3394,14 @@ Il *ReservationEventListener* gestisce l'_Application Logic_ per l'ascolto degli
 
 - *`ListenReservationEvent(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli eventi di prenotazione. Decodifica il messaggio ricevuto in un oggetto `ReservationEvent`, lo trasforma in un comando `ApplyReservationEventCmd` e delega l'operazione al caso d'uso. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
-=== OrderUpdateListener <WarehouseOrderUpdateListener>
+==== OrderUpdateListener <WarehouseOrderUpdateListener>
 
 Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggiornamenti degli ordini e dei trasferimenti nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`confirmOrderUseCase port.IConfirmOrderUseCase`*: rappresenta il caso d'uso#super[G] per la conferma degli ordini;
-- *`confirmTransferUseCase port.IConfirmTransferUseCase`*: rappresenta il caso d'uso#super[G] per la conferma dei trasferimenti.
+- *`confirmOrderUseCase port.IConfirmOrderUseCase`*: rappresenta il caso d'uso#super[G] per la conferma degli ordini; vedere la @WarehouseIConfirmOrderUseCase;
+- *`confirmTransferUseCase port.IConfirmTransferUseCase`*: rappresenta il caso d'uso#super[G] per la conferma dei trasferimenti; vedere la @WarehouseIConfirmTransferUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
