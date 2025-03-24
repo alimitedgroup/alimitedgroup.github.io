@@ -2191,15 +2191,17 @@ Questa struttura non ha metodi invocabili.
 
 //Inizio oggetti normali
 
-==== IGetStockPort
+==== IGetStockPort <OrderIGetStockPort>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere informazioni sulla quantità di una merce presente nel magazzino, la quantità globale di una merce o l'elenco dei magazzini.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetStock(GetStockCmd) (model.GoodStock, error)`*:
-- *`GetGlobalStock(GoodID model.GoodId) model.GoodStock`*:
-- *`GetWarehouses() []model.Warehouse`*:
+- *`GetStock(cmd: GetStockCmd) (model.GoodStock, error)`*: il metodo deve permettere di ottenere la quantità totale di una merce presente in un magazzino specifico, prendendo come parametro un comando `GetStockCmd` e restituendo un oggetto `model.GoodStock` e un eventuale errore in caso di fallimento;
+
+- *`GetGlobalStock(goodId: model.GoodID) model.GoodStock`*: il metodo deve permettere di ottenere la quantità globale di una merce presente in tutti i magazzini, prendendo come parametro l'identificativo della merce (`goodId`) e restituendo un oggetto `model.GoodStock`;
+
+- *`GetWarehouses() []model.Warehouse`*: il metodo deve permettere di ottenere l'elenco di tutti i magazzini registrati nel sistema, restituendo una slice di oggetti `model.Warehouse`.
 
 ==== SimpleCalculateAvailabilityService
 
@@ -2222,13 +2224,13 @@ Questa struttura non ha metodi invocabili.
 
 - *`SendOrderUpdate(context.Context, SendOrderUpdateCmd) (model.Order, error)`*:
 
-==== ISendContactWarehousePort
+==== ISendContactWarehousePort <OrderISendContactWarehousePort>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un comando di contatto con i magazzini.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`SendContactWarehouses(context.Context, SendContactWarehouseCmd) error`*:
+- *`SendContactWarehouses(ctx: Context, cmd: SendContactWarehouseCmd) error`*: il metodo deve permettere di inviare un comando di contatto con i magazzini, prendendo come parametri il contesto e un oggetto `SendContactWarehouseCmd`. Deve restituire un errore in caso di fallimento.
 
 ==== IRequestReservationPort
 
@@ -2280,37 +2282,45 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`ApplyStockUpdate(ApplyStockUpdateCmd) error`*:
 
-==== IGetOrderPort
+==== IGetOrderPort <OrderIGetOrderPort>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
-
-*Descrizione dei metodi dell'interfaccia:*
-
-- *`GetOrder(model.OrderID) (model.Order, error)`*:
-- *`GetAllOrder() ([]model.Order, error)`*:
-
-==== IGetTransferPort
-
-[PROSEGUIRE] descrizione generale e descrizione metodi
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere informazioni sugli ordini.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetTransfer(model.TransferID) (model.Transfer, error)`*:
-- *`GetAllTransfer() []model.Transfer`*:
+- *`GetOrder(orderId: model.OrderID) (model.Order, error)`*: il metodo deve permettere di ottenere i dettagli di un ordine specifico, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un oggetto `model.Order` e un eventuale errore in caso di fallimento;
 
-==== ISetCompleteTransferPort
+- *`GetAllOrder() []model.Order`*: il metodo deve permettere di ottenere una lista di tutti gli ordini registrati nel sistema, restituendo una slice di oggetti `model.Order`.
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+==== IGetTransferPort <OrderIGetTransferPort>
+
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere informazioni sui trasferimenti.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`SetComplete(model.TransferID) error`*:
-- *`IncrementLinkedStockUpdate(model.TransferID) error`*:
+- *`GetTransfer(transferId: model.TransferID) (model.Transfer, error)`*: il metodo deve permettere di ottenere i dettagli di un trasferimento specifico, prendendo come parametro l'identificativo del trasferimento (`transferId`). Deve restituire un oggetto `model.Transfer` e un eventuale errore in caso di fallimento;
 
-==== ISetCompletedWarehouseOrderPort
+- *`GetAllTransfer() []model.Transfer`*: il metodo deve permettere di ottenere una lista di tutti i trasferimenti registrati nel sistema, restituendo una slice di oggetti `model.Transfer`.
 
-- *`SetCompletedWarehouse(SetCompletedWarehouseCmd) (model.Order, error)`*:
-- *`SetComplete(model.OrderID) error`*:
+==== ISetCompleteTransferPort <OrderISetCompleteTransferPort>
+
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di completare un trasferimento o incrementare il numero di aggiornamenti dello stock associati a un trasferimento.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`SetComplete(transferId: model.TransferID) error`*: il metodo deve permettere di segnare un trasferimento come completato, prendendo come parametro l'identificativo del trasferimento (`transferId`). Deve restituire un errore in caso di fallimento;
+
+- *`IncrementLinkedStockUpdate(transferId: model.TransferID) error`*: il metodo deve permettere di incrementare il numero di aggiornamenti dello stock associati a un trasferimento, prendendo come parametro l'identificativo del trasferimento (`transferId`). Deve restituire un errore in caso di fallimento.
+
+==== ISetCompletedWarehouseOrderPort <OrderISetCompletedWarehouseOrderPort>
+
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di completare un ordine o segnalare il completamento di un ordine da parte di un magazzino.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`SetCompletedWarehouse(cmd: SetCompletedWarehouseCmd) (model.Order, error)`*: il metodo deve permettere di segnalare il completamento di un ordine da parte di un magazzino, prendendo come parametro un comando `SetCompletedWarehouseCmd`. Deve restituire un oggetto `model.Order` e un eventuale errore in caso di fallimento;
+
+- *`SetComplete(orderId: model.OrderID) error`*: il metodo deve permettere di segnare un ordine come completato, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un errore in caso di fallimento.
 
 ==== ApplyStockUpdateService
 
@@ -2346,13 +2356,13 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`ApplyTransferUpdate(ApplyTransferUpdateCmd) error`*:
-==== ISendTransferUpdatePort
+==== ISendTransferUpdatePort <OrderISendTransferUpdatePort>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un trasferimento.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`SendTransferUpdate(context.Context, SendTransferUpdateCmd) (model.Transfer, error)`*:
+- *`SendTransferUpdate(ctx: Context, cmd: SendTransferUpdateCmd) (model.Transfer, error)`*: il metodo deve permettere di inviare un aggiornamento di un trasferimento, prendendo come parametri il contesto e un comando `SendTransferUpdateCmd`. Deve restituire un oggetto `model.Transfer` contenente le informazioni aggiornate sul trasferimento e un eventuale errore in caso di fallimento.
 
 ==== ApplyOrderUpdateService
 
