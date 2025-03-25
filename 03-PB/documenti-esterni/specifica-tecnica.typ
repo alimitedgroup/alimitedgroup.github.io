@@ -668,8 +668,8 @@ Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel mic
 
 *Descrizione degli attributi della struttura:*
 
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferGood`*: rappresenta una lista di oggetti `TransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 ==== TransferGood <WarehouseTransferGood>
@@ -1658,8 +1658,8 @@ Rappresenta il comando utilizzato per creare un nuovo trasferimento#super[G] nel
 
 *Descrizione degli attributi della struttura:*
 
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []CreateTransferGood`*: rappresenta una lista di oggetti `CreateTransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1698,12 +1698,15 @@ Rappresenta la risposta alla richiesta di creazione di un nuovo trasferimento#su
 Questa struttura non ha metodi invocabili.
 
 ===== ApplyOrderUpdateCmd <OrderApplyOrderUpdateCmd>
-
+#figure(
+  image("../../assets/order/ApplyOrderUpdateCmd.png", width: 80%),
+  caption: "Order - ApplyOrderUpdateCmd",
+)
 Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`Id string`*: rappresenta l'identificativo univoco dell'ordine da aggiornare;
+- *`ID string`*: rappresenta l'identificativo univoco dell'ordine da aggiornare;
 - *`Status string`*: rappresenta lo stato dell'ordine da aggiornare;
 - *`Name string`*: rappresenta il nome del destinatario dell'ordine;
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
@@ -1714,13 +1717,16 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 - *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine.
 
 ===== ApplyTransferUpdateCmd <OrderApplyTransferUpdateCmd>
-
+#figure(
+  image("../../assets/order/ApplyTransferUpdateCmd.png", width: 80%),
+  caption: "Order - ApplyTransferUpdateCmd",
+)
 *Descrizione degli attributi della struttura:*
 
-- *`Id string`*: rappresenta l'identificativo univoco dell'aggiornamento del trasferimento#super[G];
+- *`ID string`*: rappresenta l'identificativo univoco dell'aggiornamento del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato (es. "Created", "Filled", "Completed");
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []model.GoodStock`*: rappresenta una lista di oggetti `model.GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
@@ -1731,13 +1737,16 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 Questa struttura non ha metodi invocabili.
 
 ===== SetCompletedWarehouseCmd <OrderSetCompletedWarehouseCmd>
-
+#figure(
+  image("../../assets/order/SetCompletedWarehouseCmd.png", width: 80%),
+  caption: "Order - SetCompletedWarehouseCmd",
+)
 Rappresenta il comando utilizzato per segnalare il completamento di un ordine#super[G] da parte di un magazzino.
 
 *Descrizione degli attributi della struttura:*
 
-- *`OrderId model.OrderID`*: rappresenta l'identificativo univoco dell'ordine in questione;
-- *`WarehouseId string`*: rappresenta l'identificativo del magazzino che ha completato l'ordine;
+- *`OrderID string`*: rappresenta l'identificativo univoco dell'ordine in questione;
+- *`WarehouseID string`*: rappresenta l'identificativo del magazzino che ha completato l'ordine;
 - *`Goods []model.GoodStock`*: rappresenta una lista di oggetti `model.GoodStock` che contengono le informazioni sulle merci coinvolte nell'ordine completato.
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1745,14 +1754,17 @@ Rappresenta il comando utilizzato per segnalare il completamento di un ordine#su
 Questa struttura non ha metodi invocabili.
 
 ===== TransferUpdateCmd <OrderTransferUpdateCmd>
-
+#figure(
+  image("../../assets/order/TransferUpdateCmd.png", width: 80%),
+  caption: "Order - TransferUpdateCmd",
+)
 Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferimento#super[G] nel sistema.
 
 *Descrizione degli attributi della struttura:*
 
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] aggiornato;
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato;
@@ -1760,7 +1772,10 @@ Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferim
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
 
 ===== TransferUpdateGood <OrderTransferUpdateGood>
-
+#figure(
+  image("../../assets/order/TransferUpdateGood.png", width: 80%),
+  caption: "Order - TransferUpdateGood",
+)
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -1771,7 +1786,10 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 ===== OrderUpdateCmd <OrderOrderStockUpdateCmd>
 
 *Descrizione degli attributi della struttura:*
-
+#figure(
+  image("../../assets/order/OrderUpdateCmd.png", width: 80%),
+  caption: "Order - OrderUpdateCmd",
+)
 - *`ID string`*: rappresenta l'identificativo univoco dell'ordine aggiornato;
 - *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
@@ -1787,7 +1805,10 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 Questa struttura non ha metodi invocabili.
 
 ===== OrderUpdateGood <OrderOrderStockUpdateGood>
-
+#figure(
+  image("../../assets/order/OrderUpdateGood.png", width: 80%),
+  caption: "Order - OrderUpdateGood",
+)
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nell'ordine;
@@ -1874,7 +1895,10 @@ Rappresenta il comando per aggiornare lo stock#super[G].
 Questa struttura non ha metodi invocabili.
 
 ===== GetStockCmd <OrderGetStockCmd>
-
+#figure(
+  image("../../assets/order/GetStockCmd.png", width: 40%),
+  caption: "Order - GetStockCmd",
+)
 Rappresenta il comando utilizzato per ottenere la quantità di una merce specifica in un determinato magazzino.
 
 *Descrizione degli attributi della struttura:*
@@ -1955,7 +1979,7 @@ Rappresenta una prenotazione confermata per un magazzino.
 
 *Descrizione degli attributi della struttura:*
 
-- *`WarehouseId string`*: rappresenta l'identificativo del magazzino associato alla prenotazione;
+- *`WarehouseID string`*: rappresenta l'identificativo del magazzino associato alla prenotazione;
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione;
 - *`Goods map[string]int64`*: rappresenta una mappa che associa l'identificativo della merce (*string*) alla quantità prenotata (*int64*).
 
@@ -1967,7 +1991,6 @@ Rappresenta la risposta alla richiesta di contatto con i magazzini.
 
 - *`IsRetry bool`*: indica se è necessario effettuare un nuovo tentativo di contatto;
 - *`RetryAfter time.Duration`*: rappresenta il tempo da attendere prima di effettuare un nuovo tentativo.
-
 
 ===== SendOrderUpdateCmd <OrderSendOrderUpdateCmd>
 
@@ -2175,7 +2198,7 @@ Rappresenta il comando utilizzato per richiedere una prenotazione di merci in un
 
 *Descrizione degli attributi della struttura:*
 
-- *`WarehouseId string`*: rappresenta l'identificativo del magazzino in cui effettuare la prenotazione;
+- *`WarehouseID string`*: rappresenta l'identificativo del magazzino in cui effettuare la prenotazione;
 - *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci da prenotare.
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -2188,7 +2211,7 @@ Rappresenta la risposta alla richiesta di prenotazione di merci.
 
 *Descrizione degli attributi della struttura:*
 
-- *`Id string`*: rappresenta l'identificativo univoco della prenotazione creata.
+- *`ID string`*: rappresenta l'identificativo univoco della prenotazione creata.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2984,9 +3007,9 @@ Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzin
 
 *Descrizione degli attributi della struttura:*
 
-- *`warehouseId string`*: rappresenta l'id del magazzino dove la quantità della merce va modificata;
+- *`warehouseID string`*: rappresenta l'id del magazzino dove la quantità della merce va modificata;
 
-- *`goodId string`*: rappresenta l'id della merce la cui quantità va modificata;
+- *`goodID string`*: rappresenta l'id della merce la cui quantità va modificata;
 
 - *`newQuantity int64`*: rappresenta la nuova quantità della merce in questione.
 
@@ -3119,7 +3142,6 @@ Rappresenta la Risposta alla richiesta di modifica quantità di una merce.
 - *`GetOperationResult() string`*: permette di ottenere dalla Risposta l'esito dell'operazione.
 
 ===== SetMultipleGoodsQuantityResponse
-
 #figure(
   image("../../assets/catalog/SetMultipleGoodsQuantityResponse.png", width: 85%),
   caption: "Catalog - SetMultipleGoodsQuantityResponse",
@@ -3371,6 +3393,8 @@ Si occupa di gestire l'_application logic_ del microservizio Catalog.
 - *`setGoodQuantityRequest(ctx context.Context, msg jetstream.Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
 - *`checkSetGoodQuantityRequest(request *stream.StockUpdate) error`*: controlla le richieste di aggiornamento quantità di una merce. Ritorna un errore se la richiesta non è valida.
 
+==== FINE
+
 #pagebreak()
 === Warehouse <micro_warehouse>
 
@@ -3616,7 +3640,7 @@ Rappresenta il comando utilizzato per identificare un evento in modo univoco e g
 *Descrizione degli attributi della struttura:*
 
 - *`Event string`*: rappresenta il nome o il tipo dell'evento da identificare;
-- *`Id string`*: rappresenta l'identificativo univoco dell'evento.
+- *`ID string`*: rappresenta l'identificativo univoco dell'evento.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
