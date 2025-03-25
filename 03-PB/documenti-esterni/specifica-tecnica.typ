@@ -1911,7 +1911,10 @@ Rappresenta il comando utilizzato per ottenere la quantità di una merce specifi
 Questa struttura non ha metodi invocabili.
 
 ===== ContactWarehousesCmd <OrderContactWarehousesCmd>
-
+#figure(
+  image("../../assets/order/ContactWarehousesCmd.png", width: 40%),
+  caption: "Order - ContactWarehousesCmd",
+)
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
 
 *Descrizione degli attributi della struttura:*
@@ -1934,7 +1937,10 @@ Rappresenta il tipo di operazione per il comando *ContactWarehousesCmd*.
 - *`ContactWarehousesTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G].
 
 ===== ContactWarehousesOrder <OrderContactWarehousesOrder>
-
+#figure(
+  image("../../assets/order/ContactWarehousesOrder.png", width: 40%),
+  caption: "Order - ContactWarehousesOrder",
+)
 Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
 
 *Descrizione degli attributi della struttura:*
@@ -1950,7 +1956,10 @@ Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
 ===== ContactWarehousesTransfer <OrderContactWarehousesTransfer>
-
+#figure(
+  image("../../assets/order/ContactWarehousesTransfer.png", width: 40%),
+  caption: "Order - ContactWarehousesTransfer",
+)
 Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
 
 *Descrizione degli attributi della struttura:*
@@ -1965,7 +1974,10 @@ Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del 
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 ===== ContactWarehousesGood <OrderContactWarehousesGood>
-
+#figure(
+  image("../../assets/order/ContactWarehousesGood.png", width: 40%),
+  caption: "Order - ContactWarehousesGood",
+)
 Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -1974,7 +1986,10 @@ Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G].
 - *`Quantity int64`*: rappresenta la quantità della merce.
 
 ===== ConfirmedReservation <OrderConfirmedReservation>
-
+#figure(
+  image("../../assets/order/ConfirmedReservation.png", width: 40%),
+  caption: "Order - ConfirmedReservation",
+)
 Rappresenta una prenotazione confermata per un magazzino.
 
 *Descrizione degli attributi della struttura:*
@@ -1984,7 +1999,10 @@ Rappresenta una prenotazione confermata per un magazzino.
 - *`Goods map[string]int64`*: rappresenta una mappa che associa l'identificativo della merce (*string*) alla quantità prenotata (*int64*).
 
 ===== ContactWarehousesResponse <OrderContactWarehousesResponse>
-
+#figure(
+  image("../../assets/order/ContactWarehousesResponse.png", width: 40%),
+  caption: "Order - ContactWarehousesResponse",
+)
 Rappresenta la risposta alla richiesta di contatto con i magazzini.
 
 *Descrizione degli attributi della struttura:*
@@ -1993,7 +2011,10 @@ Rappresenta la risposta alla richiesta di contatto con i magazzini.
 - *`RetryAfter time.Duration`*: rappresenta il tempo da attendere prima di effettuare un nuovo tentativo.
 
 ===== SendOrderUpdateCmd <OrderSendOrderUpdateCmd>
-
+#figure(
+  image("../../assets/order/SendOrderUpdateCmd.png", width: 40%),
+  caption: "Order - SendOrderUpdateCmd",
+)
 Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -2012,7 +2033,10 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#supe
 Questa struttura non ha metodi invocabili.
 
 ===== SendOrderUpdateGood <OrderSendOrderUpdateGood>
-
+#figure(
+  image("../../assets/order/SendOrderUpdateGood.png", width: 40%),
+  caption: "Order - SendOrderUpdateGood",
+)
 Rappresenta una merce inclusa in un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -2025,7 +2049,10 @@ Rappresenta una merce inclusa in un aggiornamento di un ordine#super[G].
 Questa struttura non ha metodi invocabili.
 
 ===== SendContactWarehouseCmd <OrderSendContactWarehouseCmd>
-
+#figure(
+  image("../../assets/order/SendContactWarehouseCmd.png", width: 40%),
+  caption: "Order - SendContactWarehouseCmd",
+)
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
 
 *Descrizione degli attributi della struttura:*
@@ -2052,7 +2079,10 @@ Rappresenta il tipo di operazione per il comando *SendContactWarehouseCmd*.
 - *`SendContactWarehouseTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G].
 
 ===== CreateOrderGood <OrderCreateOrderGood>
-
+#figure(
+  image("../../assets/order/CreateOrderGood.png", width: 40%),
+  caption: "Order - CreateOrderGood",
+)
 Rappresenta una merce inclusa in un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -2065,7 +2095,10 @@ Rappresenta una merce inclusa in un ordine#super[G].
 Questa struttura non ha metodi invocabili.
 
 ===== CreateOrderCmd <OrderCreateOrderCmd>
-
+#figure(
+  image("../../assets/order/CreateOrderCmd.png", width: 40%),
+  caption: "Order - CreateOrderCmd",
+)
 Rappresenta il comando utilizzato per creare un nuovo ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -2116,7 +2149,10 @@ Rappresenta il comando utilizzato per richiedere i dettagli di un trasferimento#
 Questa struttura non ha metodi invocabili.
 
 ===== RequestedGood <OrderRequestedGood>
-
+#figure(
+  image("../../assets/order/RequestedGood.png", width: 40%),
+  caption: "Order - RequestedGood",
+)
 Rappresenta una merce richiesta per il calcolo della disponibilità.
 
 *Descrizione degli attributi della struttura:*
@@ -2129,7 +2165,10 @@ Rappresenta una merce richiesta per il calcolo della disponibilità.
 Questa struttura non ha metodi invocabili.
 
 ===== CalculateAvailabilityCmd <OrderCalculateAvailabilityCmd>
-
+#figure(
+  image("../../assets/order/CalculateAvailabilityCmd.png", width: 40%),
+  caption: "Order - CalculateAvailabilityCmd",
+)
 Rappresenta il comando utilizzato per calcolare la disponibilità delle merci richieste nei magazzini.
 
 *Descrizione degli attributi della struttura:*
@@ -2142,7 +2181,10 @@ Rappresenta il comando utilizzato per calcolare la disponibilità delle merci ri
 Questa struttura non ha metodi invocabili.
 
 ===== WarehouseAvailability <OrderWarehouseAvailability>
-
+#figure(
+  image("../../assets/order/WarehouseAvailability.png", width: 40%),
+  caption: "Order - WarehouseAvailability",
+)
 Rappresenta la disponibilità delle merci in un magazzino specifico.
 
 *Descrizione degli attributi della struttura:*
@@ -2155,7 +2197,10 @@ Rappresenta la disponibilità delle merci in un magazzino specifico.
 Questa struttura non ha metodi invocabili.
 
 ===== CalculateAvailabilityResponse <OrderCalculateAvailabilityResponse>
-
+#figure(
+  image("../../assets/order/CalculateAvailabilityResponse.png", width: 40%),
+  caption: "Order - CalculateAvailabilityResponse",
+)
 Rappresenta la risposta al comando di calcolo della disponibilità delle merci.
 
 *Descrizione degli attributi della struttura:*
@@ -2167,7 +2212,10 @@ Rappresenta la risposta al comando di calcolo della disponibilità delle merci.
 Questa struttura non ha metodi invocabili.
 
 ===== ApplyStockUpdateCmd <OrderApplyStockUpdateCmd>
-
+#figure(
+  image("../../assets/order/ApplyStockUpdateCmd.png", width: 80%),
+  caption: "Order - ApplyStockUpdateCmd",
+)
 Rappresenta il comando utilizzato per applicare un aggiornamento dello stock#super[G] in un magazzino specifico.
 
 *Descrizione degli attributi della struttura:*
@@ -2180,7 +2228,10 @@ Rappresenta il comando utilizzato per applicare un aggiornamento dello stock#sup
 Questa struttura non ha metodi invocabili.
 
 ===== ReservationGood <OrderReservationGood>
-
+#figure(
+  image("../../assets/order/ReservationGood.png", width: 40%),
+  caption: "Order - ReservationGood",
+)
 Rappresenta una merce coinvolta in una richiesta di prenotazione.
 
 *Descrizione degli attributi della struttura:*
@@ -2193,7 +2244,10 @@ Rappresenta una merce coinvolta in una richiesta di prenotazione.
 Questa struttura non ha metodi invocabili.
 
 ===== RequestReservationCmd <OrderRequestReservationCmd>
-
+#figure(
+  image("../../assets/order/RequestReservationCmd.png", width: 40%),
+  caption: "Order - RequestReservationCmd",
+)
 Rappresenta il comando utilizzato per richiedere una prenotazione di merci in un magazzino.
 
 *Descrizione degli attributi della struttura:*
@@ -2206,7 +2260,10 @@ Rappresenta il comando utilizzato per richiedere una prenotazione di merci in un
 Questa struttura non ha metodi invocabili.
 
 ===== RequestReservationResponse <OrderRequestReservationResponse>
-
+#figure(
+  image("../../assets/order/RequestReservationResponse.png", width: 40%),
+  caption: "Order - RequestReservationResponse",
+)
 Rappresenta la risposta alla richiesta di prenotazione di merci.
 
 *Descrizione degli attributi della struttura:*
@@ -2218,7 +2275,10 @@ Rappresenta la risposta alla richiesta di prenotazione di merci.
 Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateCmd <OrderSendTransferUpdateCmd>
-
+#figure(
+  image("../../assets/order/SendTransferUpdateCmd.png", width: 40%),
+  caption: "Order - SendTransferUpdateCmd",
+)
 Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -2236,7 +2296,10 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimen
 Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateGood <OrderSendTransferUpdateGood>
-
+#figure(
+  image("../../assets/order/SendTransferUpdateGood.png", width: 40%),
+  caption: "Order - SendTransferUpdateGood",
+)
 Rappresenta una merce inclusa in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
