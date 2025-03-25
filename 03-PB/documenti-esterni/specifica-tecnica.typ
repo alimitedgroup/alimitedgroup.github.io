@@ -573,11 +573,10 @@ Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel mi
 // ORDER
 
 ==== OrderUpdate <StreamOrderUpdate>
-
-// #figure(
-// image("../../assets/order/StreamOrderUpdate.png", width: 50%),
-// caption: "OrderUpdate",
-// )
+#figure(
+image("../../assets/order/OrderUpdate.png", width: 50%),
+caption: "OrderUpdate",
+)
 
 Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
 
@@ -594,11 +593,10 @@ Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine.
 
 ==== OrderUpdateGood <StreamOrderUpdateGood>
-
-// #figure(
-// image("../../assets/order/StreamOrderUpdateGood.png", width: 35%),
-// caption: "OrderUpdateGood",
-// )
+#figure(
+image("../../assets/order/OrderUpdateGood.png", width: 35%),
+caption: "OrderUpdateGood",
+)
 
 Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
@@ -608,11 +606,10 @@ Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 - *`Quantity int64`*: rappresenta la quantità della merce coinvolta nell'ordine.
 
 ==== TransferUpdate <StreamTransferUpdate>
-
-// #figure(
-// image("../../assets/order/StreamTransferUpdate.png", width: 50%),
-// caption: "TransferUpdate",
-// )
+#figure(
+image("../../assets/order/TransferUpdate.png", width: 50%),
+caption: "TransferUpdate",
+)
 
 Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 
@@ -628,11 +625,10 @@ Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
 
 ==== TransferUpdateGood <StreamTransferUpdateGood>
-
-// #figure(
-// image("../../assets/order/StreamTransferUpdateGood.png", width: 35%),
-// caption: "TransferUpdateGood",
-// )
+#figure(
+image("../../assets/order/TransferUpdateGood.png", width: 35%),
+caption: "TransferUpdateGood",
+)
 
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
 
@@ -643,7 +639,10 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 
 ==== CreateOrderRequestDTO <WarehouseCreateOrderRequestDTO>
-
+#figure(
+  image("../../assets/order/CreateOrderRequestDTO.png", width: 25%),
+  caption: "Warehouse - CreateOrderRequestDTO",
+)
 Rappresenta il DTO utilizzato per creare un nuovo ordine#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -654,7 +653,10 @@ Rappresenta il DTO utilizzato per creare un nuovo ordine#super[G] nel microservi
 - *`Goods []CreateOrderGood`*: rappresenta una lista di oggetti `CreateOrderGood` che contengono le informazioni sulle merci incluse nell'ordine.
 
 ==== CreateOrderGood <WarehouseCreateOrderGood>
-
+#figure(
+  image("../../assets/order/CreateOrderGood.png", width: 25%),
+  caption: "Warehouse - CreateOrderGood",
+)
 Rappresenta una merce inclusa in un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -663,7 +665,10 @@ Rappresenta una merce inclusa in un ordine#super[G].
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nell'ordine.
 
 ==== CreateTransferRequestDTO <WarehouseCreateTransferRequestDTO>
-
+#figure(
+  image("../../assets/order/CreateTransferRequestDTO.png", width: 25%),
+  caption: "Warehouse - CreateTransferRequestDTO",
+)
 Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -673,7 +678,10 @@ Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel mic
 - *`Goods []TransferGood`*: rappresenta una lista di oggetti `TransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 ==== TransferGood <WarehouseTransferGood>
-
+#figure(
+  image("../../assets/order/TransferGood.png", width: 25%),
+  caption: "Warehouse - TransferGood",
+)
 Rappresenta una merce inclusa in un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -682,7 +690,10 @@ Rappresenta una merce inclusa in un trasferimento#super[G].
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 ==== GetOrderRequestDTO <WarehouseGetOrderRequestDTO>
-
+#figure(
+  image("../../assets/order/GetOrderRequestDTO.png", width: 25%),
+  caption: "Warehouse - GetOrderRequestDTO",
+)
 Rappresenta il DTO utilizzato per richiedere i dettagli di un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -690,7 +701,10 @@ Rappresenta il DTO utilizzato per richiedere i dettagli di un ordine#super[G] ne
 - *`OrderID string`*: rappresenta l'identificativo univoco dell'ordine richiesto.
 
 ==== GetTransferRequestDTO <WarehouseGetTransferRequestDTO>
-
+#figure(
+  image("../../assets/order/GetTransferRequestDTO.png", width: 25%),
+  caption: "Warehouse - GetTransferRequestDTO",
+)
 Rappresenta il DTO utilizzato per richiedere i dettagli di un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -698,7 +712,10 @@ Rappresenta il DTO utilizzato per richiedere i dettagli di un trasferimento#supe
 - *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] richiesto.
 
 ==== OrderCreateResponseDTO <OrderCreateResponseDTO>
-
+#figure(
+  image("../../assets/order/OrderCreateResponseDTO.png", width: 25%),
+  caption: "OrderCreateResponseDTO",
+)
 Rappresenta la risposta alla richiesta di creazione di un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -706,8 +723,11 @@ Rappresenta la risposta alla richiesta di creazione di un ordine#super[G] nel mi
 - *`Message OrderCreateInfo`*: rappresenta le informazioni relative all'ordine creato;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-===== OrderCreateInfo <OrderCreateInfo>
-
+==== OrderCreateInfo <OrderCreateInfo>
+#figure(
+  image("../../assets/order/OrderCreateInfo.png", width: 25%),
+  caption: "OrderCreateInfo",
+)
 Rappresenta le informazioni relative all'ordine creato nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -715,7 +735,10 @@ Rappresenta le informazioni relative all'ordine creato nel microservizio *Wareho
 - *`OrderID string`*: rappresenta l'identificativo univoco dell'ordine creato.
 
 ==== GetOrderResponseDTO <GetOrderResponseDTO>
-
+#figure(
+  image("../../assets/order/GetOrderResponseDTO.png", width: 25%),
+  caption: "GetOrderResponseDTO",
+)
 Rappresenta la risposta alla richiesta di informazioni su un ordine#super[G] specifico nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -723,8 +746,11 @@ Rappresenta la risposta alla richiesta di informazioni su un ordine#super[G] spe
 - *`Message OrderInfo`*: rappresenta le informazioni relative all'ordine richiesto;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-===== OrderInfo <OrderInfo>
-
+==== OrderInfo <OrderInfo>
+#figure(
+  image("../../assets/order/OrderInfo.png", width: 25%),
+  caption: "OrderInfo",
+)
 Rappresenta le informazioni relative a un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -737,8 +763,11 @@ Rappresenta le informazioni relative a un ordine#super[G] nel microservizio *War
 - *`Goods []OrderInfoGood`*: rappresenta una lista di oggetti `OrderInfoGood` che contengono le informazioni sulle merci incluse nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
-===== OrderInfoGood <OrderInfoGood>
-
+==== OrderInfoGood <OrderInfoGood>
+#figure(
+  image("../../assets/order/OrderInfoGood.png", width: 25%),
+  caption: "OrderInfoGood",
+)
 Rappresenta una merce inclusa in un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -747,7 +776,10 @@ Rappresenta una merce inclusa in un ordine#super[G] nel microservizio *Warehouse
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nell'ordine.
 
 ==== GetAllOrderResponseDTO <GetAllOrderResponseDTO>
-
+#figure(
+  image("../../assets/order/GetAllOrderResponseDTO.png", width: 25%),
+  caption: "GetAllOrderResponseDTO",
+)
 Rappresenta la risposta alla richiesta di informazioni su tutti gli ordini nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -756,7 +788,10 @@ Rappresenta la risposta alla richiesta di informazioni su tutti gli ordini nel m
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 ==== TransferCreateResponseDTO <TransferCreateResponseDTO>
-
+#figure(
+  image("../../assets/order/TransferCreateResponseDTO.png", width: 25%),
+  caption: "TransferCreateResponseDTO",
+)
 Rappresenta la risposta alla richiesta di creazione di un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -764,8 +799,11 @@ Rappresenta la risposta alla richiesta di creazione di un trasferimento#super[G]
 - *`Message TransferCreateInfo`*: rappresenta le informazioni relative al trasferimento#super[G] creato;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-===== TransferCreateInfo <TransferCreateInfo>
-
+==== TransferCreateInfo <TransferCreateInfo>
+#figure(
+  image("../../assets/order/TransferCreateInfo.png", width: 25%),
+  caption: "TransferCreateInfo",
+)
 Rappresenta le informazioni relative al trasferimento#super[G] creato nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -773,7 +811,10 @@ Rappresenta le informazioni relative al trasferimento#super[G] creato nel micros
 - *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] creato.
 
 ==== GetTransferResponseDTO <GetTransferResponseDTO>
-
+#figure(
+  image("../../assets/order/GetTransferResponseDTO.png", width: 25%),
+  caption: "GetTransferResponseDTO",
+)
 Rappresenta la risposta alla richiesta di informazioni su un trasferimento#super[G] specifico nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -781,8 +822,11 @@ Rappresenta la risposta alla richiesta di informazioni su un trasferimento#super
 - *`Message TransferInfo`*: rappresenta le informazioni relative al trasferimento#super[G] richiesto;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-===== TransferInfo <TransferInfo>
-
+==== TransferInfo <TransferInfo>
+#figure(
+  image("../../assets/order/TransferInfo.png", width: 25%),
+  caption: "TransferInfo",
+)
 Rappresenta le informazioni relative a un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -793,8 +837,11 @@ Rappresenta le informazioni relative a un trasferimento#super[G] nel microserviz
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferInfoGood`*: rappresenta una lista di oggetti `TransferInfoGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
-===== TransferInfoGood <TransferInfoGood>
-
+==== TransferInfoGood <TransferInfoGood>
+#figure(
+  image("../../assets/order/TransferInfoGood.png", width: 25%),
+  caption: "TransferInfoGood",
+)
 Rappresenta una merce inclusa in un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -803,7 +850,10 @@ Rappresenta una merce inclusa in un trasferimento#super[G] nel microservizio *Wa
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 ==== GetAllTransferResponseDTO <GetAllTransferResponseDTO>
-
+#figure(
+  image("../../assets/order/GetAllTransferResponseDTO.png", width: 25%),
+  caption: "GetAllTransferResponseDTO",
+)
 Rappresenta la risposta alla richiesta di informazioni su tutti i trasferimenti nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
