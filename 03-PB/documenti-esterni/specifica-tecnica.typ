@@ -1410,7 +1410,10 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 
 === Order //ORDER
 
-[PROSEGUIRE] img
+#figure(
+  image("../../assets/order/order.png", width: 100%),
+  caption: "Order",
+)
 
 Il microservizio *Order* viene utilizzato per realizzare gli ordini quando questi vengono confermati, andando a verificare la disponibilità di una merce e organizzando da quali magazzini prendere la merce per completare l'ordine.
 
