@@ -2189,6 +2189,7 @@ Rappresenta una merce inclusa in un aggiornamento di un trasferimento.
 
 Questa struttura non ha metodi invocabili.
 
+
 //Inizio oggetti normali
 
 ==== IGetStockPort <OrderIGetStockPort>
@@ -2203,26 +2204,31 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`GetWarehouses() []model.Warehouse`*: il metodo deve permettere di ottenere l'elenco di tutti i magazzini registrati nel sistema, restituendo una slice di oggetti `model.Warehouse`.
 
-==== SimpleCalculateAvailabilityService
+==== SimpleCalculateAvailabilityService <OrderSimpleCalculateAvailabilityService>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+La struttura `SimpleCalculateAvailabilityService` rappresenta un servizio per calcolare la disponibilità delle merci nei magazzini. Questo servizio utilizza un approccio semplice per determinare quali magazzini possono soddisfare le richieste di quantità delle merci, tenendo conto delle scorte disponibili.
+
+Implementa le seguenti interfacce (_Use Case_):
+
+- *ICalculateAvailabilityUseCase*, @OrderICalculateAvailabilityUseCase.
 
 *Descrizione degli attributi della struttura:*
 
-- *`getStockPort port.IGetStockPort`*:
+- *`getStockPort port.IGetStockPort`*: rappresenta la porta che consente alla _business logic_ di comunicare con la _persistence logic_ per ottenere informazioni sulle scorte di merci nei magazzini. Per maggiori dettagli, vedere la @OrderIGetStockPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewSimpleCalculateAvailabilityService(getStockPort port.IGetStockPort) *SimpleCalculateAvailabilityService`*:
-- *`GetAvailable(ctx context.Context, cmd port.CalculateAvailabilityCmd) (port.CalculateAvailabilityResponse, error)`*:
+- *`NewSimpleCalculateAvailabilityService(getStockPort port.IGetStockPort) *SimpleCalculateAvailabilityService`*: costruttore della struttura. Inizializza l'attributo `getStockPort` con il valore fornito come parametro e restituisce un'istanza di `SimpleCalculateAvailabilityService`.
 
-==== ISendOrderUpdatePort
+- *`GetAvailable(ctx context.Context, cmd port.CalculateAvailabilityCmd) (port.CalculateAvailabilityResponse, error)`*: metodo che calcola la disponibilità delle merci richieste nei magazzini. Prende come parametri il contesto e un comando `CalculateAvailabilityCmd` contenente le informazioni sulle merci richieste e i magazzini esclusi. Restituisce un oggetto `CalculateAvailabilityResponse` contenente i dettagli sulla disponibilità delle merci nei vari magazzini e un eventuale errore in caso di fallimento.
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+==== ISendOrderUpdatePort <OrderISendOrderUpdatePort>
+
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un ordine.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`SendOrderUpdate(context.Context, SendOrderUpdateCmd) (model.Order, error)`*:
+- *`SendOrderUpdate(ctx: Context, cmd: SendOrderUpdateCmd) (model.Order, error)`*: il metodo deve permettere di inviare un aggiornamento di un ordine, prendendo come parametri il contesto e un comando `SendOrderUpdateCmd`. Deve restituire un oggetto `model.Order` contenente le informazioni aggiornate sull'ordine e un eventuale errore in caso di fallimento.
 
 ==== ISendContactWarehousePort <OrderISendContactWarehousePort>
 
@@ -2232,13 +2238,13 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l
 
 - *`SendContactWarehouses(ctx: Context, cmd: SendContactWarehouseCmd) error`*: il metodo deve permettere di inviare un comando di contatto con i magazzini, prendendo come parametri il contesto e un oggetto `SendContactWarehouseCmd`. Deve restituire un errore in caso di fallimento.
 
-==== IRequestReservationPort
+==== IRequestReservationPort <OrderIRequestReservationPort>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per richiedere una prenotazione di merci.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`RequestReservation(context.Context, RequestReservationCmd) (RequestReservationResponse, error)`*:
+- *`RequestReservation(ctx: Context, cmd: RequestReservationCmd) (RequestReservationResponse, error)`*: il metodo deve permettere di richiedere una prenotazione di merci, prendendo come parametri il contesto e un comando `RequestReservationCmd`. Deve restituire un oggetto `RequestReservationResponse` contenente l'identificativo della prenotazione creata e un eventuale errore in caso di fallimento.
 
 ==== ICalculateAvailabilityUseCase <OrderICalculateAvailabilityUseCase>
 
@@ -2248,39 +2254,63 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`GetAvailable(ctx: Context, cmd: CalculateAvailabilityCmd) (CalculateAvailabilityResponse, error)`*: il metodo deve permettere di calcolare la disponibilità delle merci richieste nei magazzini, prendendo come parametri il contesto e un comando `CalculateAvailabilityCmd`. Deve restituire un oggetto `CalculateAvailabilityResponse` contenente le informazioni sulla disponibilità delle merci e un eventuale errore in caso di fallimento.
 
-==== ManageOrderService
+==== ManageOrderService <OrderManageOrderService>
+
+La struttura `ManageOrderService` rappresenta un servizio per la gestione degli ordini e dei trasferimenti nel sistema. Si occupa di orchestrare le operazioni necessarie per creare, recuperare e gestire ordini e trasferimenti, interfacciandosi con la _business logic_ e la _persistence logic_ tramite le porte definite.
+
+Implementa le seguenti interfacce (_Use Case_):
+
+- *ICreateOrderUseCase*, @OrderICreateOrderUseCase;
+- *ICreateTransferUseCase*, @OrderICreateTransferUseCase;
+- *IGetOrderUseCase*, @OrderIGetOrderUseCase;
+- *IGetTransferUseCase*, @OrderIGetTransferUseCase;
+- *IContactWarehousesUseCase*, @OrderIContactWarehousesUseCase.
 
 *Descrizione degli attributi della struttura:*
 
-- *`getOrderPort port.IGetOrderPort`*:
-- *`sendOrderUpdatePort port.ISendOrderUpdatePort`*:
-- *`sendContactWarehousePort port.ISendContactWarehousePort`*:
-- *`requestReservationPort port.IRequestReservationPort`*:
-- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*:
+- *`getOrderPort port.IGetOrderPort`*: rappresenta la porta per ottenere informazioni sugli ordini. Per maggiori dettagli, vedere la @OrderIGetOrderPort;
+- *`getTransferPort port.IGetTransferPort`*: rappresenta la porta per ottenere informazioni sui trasferimenti. Per maggiori dettagli, vedere la @OrderIGetTransferPort;
+- *`sendOrderUpdatePort port.ISendOrderUpdatePort`*: rappresenta la porta per inviare aggiornamenti sugli ordini. Per maggiori dettagli, vedere la @OrderISendOrderUpdatePort;
+- *`sendTransferUpdatePort port.ISendTransferUpdatePort`*: rappresenta la porta per inviare aggiornamenti sui trasferimenti. Per maggiori dettagli, vedere la @OrderISendTransferUpdatePort;
+- *`sendContactWarehousePort port.ISendContactWarehousePort`*: rappresenta la porta per contattare i magazzini. Per maggiori dettagli, vedere la @OrderISendContactWarehousePort;
+- *`requestReservationPort port.IRequestReservationPort`*: rappresenta la porta per richiedere prenotazioni di merci. Per maggiori dettagli, vedere la @OrderIRequestReservationPort;
+- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*: rappresenta il caso d'uso per calcolare la disponibilità delle merci nei magazzini. Per maggiori dettagli, vedere la @OrderICalculateAvailabilityUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewManageStockService(p ManageOrderServiceParams) *ManageOrderService`*:
-- *`CreateOrder(ctx context.Context, cmd port.CreateOrderCmd) (port.CreateOrderResponse, error)`*:
-- *`GetOrder(ctx context.Context, orderId string) (model.Order, error)`*:
-- *`GetAllOrders(ctx context.Context) []model.Order`*:
-- *`CreateTransfer(ctx context.Context, cmd port.CreateTransferCmd) (port.CreateTransferResponse, error)`*:
-- *`GetTransfer(ctx context.Context, transferId string) (model.Transfer, error`*:
-- *`GetAllTransfers(ctx context.Context) []model.Transfer`*:
-- *`ContactWarehouses(ctx context.Context, cmd port.ContactWarehousesCmd) (port.ContactWarehousesResponse, error)`*:
-- *`createOrderCmdToSendOrderUpdateCmd(orderId string, cmd port.CreateOrderCmd) port.SendOrderUpdateCmd`*:
-- *`contactCmdToCalculateAvailabilityCmd(cmd port.ContactWarehousesCmd) port.CalculateAvailabilityCmd`*:
-- *`warehouseAvailabilityToReservationCmd(warehouse port.WarehouseAvailability) port.RequestReservationCmd`*:
-- *`contactCmdAndConfirmedToSendOrderUpdateCmd(cmd port.ContactWarehousesCmd, confirmed []port.ConfirmedReservation) port.SendOrderUpdateCmd`*:
-- *`contactCmdToSendOrderUpdateCmdForCancel(cmd port.ContactWarehousesCmd) port.SendOrderUpdateCmd`*:
+- *`NewManageOrderService(p ManageOrderServiceParams) *ManageOrderService`*: costruttore della struttura. Inizializza gli attributi con i valori forniti tramite `ManageOrderServiceParams` e restituisce un'istanza di `ManageOrderService`;
 
-==== IApplyStockUpdatePort
+- *`CreateOrder(ctx context.Context, cmd port.CreateOrderCmd) (port.CreateOrderResponse, error)`*: metodo per creare un nuovo ordine. Genera un identificativo univoco per l'ordine, salva i dettagli dell'ordine e avvia il processo di contatto con i magazzini;
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+- *`GetOrder(ctx context.Context, orderId string) (model.Order, error)`*: metodo per ottenere i dettagli di un ordine specifico tramite il suo identificativo;
+
+- *`GetAllOrders(ctx context.Context) []model.Order`*: metodo per ottenere una lista di tutti gli ordini registrati nel sistema;
+
+- *`CreateTransfer(ctx context.Context, cmd port.CreateTransferCmd) (port.CreateTransferResponse, error)`*: metodo per creare un nuovo trasferimento. Genera un identificativo univoco per il trasferimento, salva i dettagli del trasferimento e avvia il processo di contatto con i magazzini;
+
+- *`GetTransfer(ctx context.Context, transferId string) (model.Transfer, error)`*: metodo per ottenere i dettagli di un trasferimento specifico tramite il suo identificativo;
+
+- *`GetAllTransfers(ctx context.Context) []model.Transfer`*: metodo per ottenere una lista di tutti i trasferimenti registrati nel sistema;
+
+- *`ContactWarehouses(ctx context.Context, cmd port.ContactWarehousesCmd) (port.ContactWarehousesResponse, error)`*: metodo per contattare i magazzini al fine di gestire ordini o trasferimenti. Gestisce i tentativi di contatto e le prenotazioni delle merci necessarie;
+
+- *`createOrderCmdToSendOrderUpdateCmd(orderId string, cmd port.CreateOrderCmd) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di creazione ordine in un comando di aggiornamento ordine;
+
+- *`contactCmdToCalculateAvailabilityCmd(cmd port.ContactWarehousesCmd) port.CalculateAvailabilityCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini in un comando di calcolo della disponibilità;
+
+- *`warehouseAvailabilityToReservationCmd(warehouse port.WarehouseAvailability) port.RequestReservationCmd`*: funzione di utilità per convertire la disponibilità di un magazzino in un comando di prenotazione;
+
+- *`contactCmdAndConfirmedToSendOrderUpdateCmd(cmd port.ContactWarehousesCmd, confirmed []port.ConfirmedReservation) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini e le prenotazioni confermate in un comando di aggiornamento ordine;
+
+- *`contactCmdToSendOrderUpdateCmdForCancel(cmd port.ContactWarehousesCmd) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini in un comando di aggiornamento ordine per annullare l'ordine.
+
+==== IApplyStockUpdatePort <OrderIApplyStockUpdatePort>
+
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento dello stock#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`ApplyStockUpdate(ApplyStockUpdateCmd) error`*:
+- *`ApplyStockUpdate(cmd: ApplyStockUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento dello stock#super[G]. Prende come parametro un oggetto `ApplyStockUpdateCmd` che contiene tutte le informazioni necessarie per l'aggiornamento dello stock#super[G]. Deve restituire un errore in caso di fallimento.
 
 ==== IGetOrderPort <OrderIGetOrderPort>
 
@@ -2322,40 +2352,49 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla 
 
 - *`SetComplete(orderId: model.OrderID) error`*: il metodo deve permettere di segnare un ordine come completato, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un errore in caso di fallimento.
 
-==== ApplyStockUpdateService
+==== ApplyStockUpdateService <OrderApplyStockUpdateService>
+
+La struttura `ApplyStockUpdateService` rappresenta un servizio per gestire l'applicazione degli aggiornamenti relativi allo stock#super[G]. Questo servizio si occupa di elaborare gli aggiornamenti dello stock#super[G] provenienti da ordini o trasferimenti, applicandoli al magazzino e aggiornando lo stato degli ordini o dei trasferimenti associati.
+
+Implementa le seguenti interfacce (_Use Case_):
+
+- *IApplyStockUpdateUseCase*, @OrderIApplyStockUpdateUseCase.
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyStockUpdatePort port.IApplyStockUpdatePort`*:
-- *`applyOrderUpdatePort port.IApplyOrderUpdatePort`*:
-- *`getOrderPort port.IGetOrderPort`*:
-- *`getTransferPort port.IGetTransferPort`*:
-- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*:
-- *`setCompleteTransferPort port.ISetCompleteTransferPort`*:
-- *`setCompletedWarehousePort port.ISetCompletedWarehouseOrderPort`*:
+- *`applyStockUpdatePort port.IApplyStockUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento dello stock#super[G]. Per maggiori informazioni, vedere la @OrderIApplyStockUpdatePort;
+- *`applyOrderUpdatePort port.IApplyOrderUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine. Per maggiori informazioni, vedere la @OrderIApplyOrderUpdatePort;
+- *`getOrderPort port.IGetOrderPort`*: rappresenta la porta che consente alla _business logic_ di ottenere informazioni sugli ordini. Per maggiori informazioni, vedere la @OrderIGetOrderPort;
+- *`getTransferPort port.IGetTransferPort`*: rappresenta la porta che consente alla _business logic_ di ottenere informazioni sui trasferimenti. Per maggiori informazioni, vedere la @OrderIGetTransferPort;
+- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort;
+- *`setCompleteTransferPort port.ISetCompleteTransferPort`*: rappresenta la porta che consente alla _business logic_ di segnare un trasferimento come completato o incrementare il numero di aggiornamenti dello stock associati a un trasferimento. Per maggiori informazioni, vedere la @OrderISetCompleteTransferPort;
+- *`setCompletedWarehousePort port.ISetCompletedWarehouseOrderPort`*: rappresenta la porta che consente alla _business logic_ di segnalare il completamento di un ordine da parte di un magazzino o di segnare un ordine come completato. Per maggiori informazioni, vedere la @OrderISetCompletedWarehouseOrderPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyStockUpdateService(p ApplyStockUpdateServiceParams) *ApplyStockUpdateService`*:
-- *`ApplyStockUpdate(ctx context.Context, cmd port.StockUpdateCmd) error`*:
-- *`applyStockUpdateFromTransfer(cmd port.StockUpdateCmd) error`*:
-- *`applyStockUpdateFromOrder(cmd port.StockUpdateCmd) error`*:
+- *`NewApplyStockUpdateService(p ApplyStockUpdateServiceParams) *ApplyStockUpdateService`*: costruttore della struttura. Inizializza gli attributi con i valori forniti tramite `ApplyStockUpdateServiceParams` e restituisce un'istanza di `ApplyStockUpdateService`;
 
-==== IApplyOrderUpdatePort
+- *`ApplyStockUpdate(ctx context.Context, cmd port.StockUpdateCmd) error`*: metodo principale che gestisce l'applicazione di un aggiornamento dello stock#super[G]. Controlla se l'aggiornamento è relativo a un ordine o a un trasferimento e chiama i metodi appropriati per elaborarlo. Successivamente, applica l'aggiornamento dello stock al magazzino tramite la porta `applyStockUpdatePort`;
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+- *`applyStockUpdateFromTransfer(cmd port.StockUpdateCmd) error`*: metodo che gestisce l'applicazione di un aggiornamento dello stock#super[G] relativo a un trasferimento. Aggiorna lo stato del trasferimento e verifica se il trasferimento è completato;
 
-*Descrizione dei metodi dell'interfaccia:*
+- *`applyStockUpdateFromOrder(cmd port.StockUpdateCmd) error`*: metodo che gestisce l'applicazione di un aggiornamento dello stock#super[G] relativo a un ordine. Aggiorna lo stato dell'ordine e verifica se l'ordine è completato.
 
-- *`ApplyOrderUpdate(ApplyOrderUpdateCmd) error`*:
+==== IApplyOrderUpdatePort <OrderIApplyOrderUpdatePort>
 
-==== IApplyTransferUpdatePort
-
-[PROSEGUIRE] descrizione generale e descrizione metodi
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`ApplyTransferUpdate(ApplyTransferUpdateCmd) error`*:
+- *`ApplyOrderUpdate(cmd: ApplyOrderUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento di un ordine, prendendo come parametro un oggetto di tipo `ApplyOrderUpdateCmd`. Deve restituire un errore in caso di fallimento.
+
+==== IApplyTransferUpdatePort <OrderIApplyTransferUpdatePort>
+
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`ApplyTransferUpdate(cmd: ApplyTransferUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento di un trasferimento, prendendo come parametro un oggetto di tipo `ApplyTransferUpdateCmd`. Deve restituire un errore in caso di fallimento.
 ==== ISendTransferUpdatePort <OrderISendTransferUpdatePort>
 
 Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un trasferimento.
@@ -2364,20 +2403,31 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l
 
 - *`SendTransferUpdate(ctx: Context, cmd: SendTransferUpdateCmd) (model.Transfer, error)`*: il metodo deve permettere di inviare un aggiornamento di un trasferimento, prendendo come parametri il contesto e un comando `SendTransferUpdateCmd`. Deve restituire un oggetto `model.Transfer` contenente le informazioni aggiornate sul trasferimento e un eventuale errore in caso di fallimento.
 
-==== ApplyOrderUpdateService
+==== ApplyOrderUpdateService <OrderApplyOrderUpdateService>
+
+La struttura `ApplyOrderUpdateService` rappresenta un servizio per gestire l'applicazione degli aggiornamenti relativi agli ordini e ai trasferimenti. Questo servizio si occupa di convertire i comandi ricevuti in un formato compatibile con le porte della _persistence logic_ e di inoltrare tali comandi per l'elaborazione.
+
+Implementa le seguenti interfacce (_Use Case_):
+
+- *IApplyOrderUpdateUseCase*, @OrderIApplyOrderUpdateUseCase;
+- *IApplyTransferUpdateUseCase*, @OrderIApplyTransferUpdateUseCase.
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyOrderUpdatePort port.IApplyOrderUpdatePort`*:
-- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*:
+- *`applyOrderUpdatePort port.IApplyOrderUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine. Per maggiori informazioni, vedere la @OrderIApplyOrderUpdatePort;
+- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyOrderUpdateService(applyOrderUpdatePort port.IApplyOrderUpdatePort, applyTransferUpdatePort port.IApplyTransferUpdatePort) *ApplyOrderUpdateService`*:
-- *`ApplyOrderUpdate(ctx context.Context, cmd port.OrderUpdateCmd)`*:
-- *`ApplyTransferUpdate(ctx context.Context, cmd port.TransferUpdateCmd)`*:
-- *`orderUpdateCmdToApplyOrderUpdateCmd(cmd port.OrderUpdateCmd) port.ApplyOrderUpdateCmd`*:
-- *`transferUpdateCmdToApplyTransferUpdateCmd(cmd port.TransferUpdateCmd) port.ApplyTransferUpdateCmd`*:
+- *`NewApplyOrderUpdateService(applyOrderUpdatePort port.IApplyOrderUpdatePort, applyTransferUpdatePort port.IApplyTransferUpdatePort) *ApplyOrderUpdateService`*: costruttore della struttura. Inizializza gli attributi `applyOrderUpdatePort` e `applyTransferUpdatePort` con i valori forniti come parametri e restituisce un'istanza di `ApplyOrderUpdateService`;
+
+- *`ApplyOrderUpdate(ctx context.Context, cmd port.OrderUpdateCmd)`*: metodo che gestisce l'applicazione di un aggiornamento di un ordine. Converte il comando `OrderUpdateCmd` in un comando `ApplyOrderUpdateCmd` utilizzando la funzione `orderUpdateCmdToApplyOrderUpdateCmd` e lo inoltra alla porta `applyOrderUpdatePort` per l'elaborazione;
+
+- *`ApplyTransferUpdate(ctx context.Context, cmd port.TransferUpdateCmd)`*: metodo che gestisce l'applicazione di un aggiornamento di un trasferimento. Converte il comando `TransferUpdateCmd` in un comando `ApplyTransferUpdateCmd` utilizzando la funzione `transferUpdateCmdToApplyTransferUpdateCmd` e lo inoltra alla porta `applyTransferUpdatePort` per l'elaborazione;
+
+- *`orderUpdateCmdToApplyOrderUpdateCmd(cmd port.OrderUpdateCmd) port.ApplyOrderUpdateCmd`*: funzione di utilità che converte un comando `OrderUpdateCmd` in un comando `ApplyOrderUpdateCmd`. Mappa le informazioni sulle merci e i relativi dettagli dal comando originale al nuovo comando, rendendolo pronto per essere elaborato dalla _persistence logic_;
+
+- *`transferUpdateCmdToApplyTransferUpdateCmd(cmd port.TransferUpdateCmd) port.ApplyTransferUpdateCmd`*: funzione di utilità che converte un comando `TransferUpdateCmd` in un comando `ApplyTransferUpdateCmd`. Mappa le informazioni sulle merci e i relativi dettagli dal comando originale al nuovo comando, rendendolo pronto per essere elaborato dalla _persistence logic_.
 
 ==== IGetOrderUseCase <OrderIGetOrderUseCase>
 
@@ -2396,23 +2446,31 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`CreateOrder(ctx: Context, cmd: CreateOrderCmd) (CreateOrderResponse, error)`*: il metodo deve permettere di creare un nuovo ordine, prendendo come parametri il contesto e un comando `CreateOrderCmd`. Deve restituire un oggetto `CreateOrderResponse` contenente l'identificativo dell'ordine creato e un eventuale errore in caso di fallimento.
 
-==== OrderController
+==== OrderController <OrderOrderController>
+
+La struttura `OrderController` rappresenta l'_application logic_ del microservizio *Order*. Si occupa di gestire le richieste relative alla creazione, al recupero e alla gestione degli ordini, interfacciandosi con la _business logic_ attraverso i relativi _Use Case_.
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker *broker.NatsMessageBroker`*:
-- *`createOrderUseCase port.ICreateOrderUseCase`*:
-- *`getOrderUseCase port.IGetOrderUseCase`*:
+- *`broker *broker.NatsMessageBroker`*: rappresenta il broker di messaggistica NATS utilizzato per pubblicare e ricevere messaggi.
+- *`createOrderUseCase port.ICreateOrderUseCase`*: interfaccia per la creazione di un ordine.
+- *`getOrderUseCase port.IGetOrderUseCase`*: interfaccia per il recupero degli ordini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderController(p OrderControllerParams) *OrderController`*:
-- *`OrderCreateHandler(ctx context.Context, msg *nats.Msg) error`*:
-- *`OrderGetHandler(ctx context.Context, msg *nats.Msg) error`*:
-- *`OrderGetAllHandler(ctx context.Context, msg *nats.Msg) error`*:
-- *`checkCreateOrderRequestDTO(dto request.CreateOrderRequestDTO) error`*:
-- *`orderToGetGoodResponseDTO(order model.Order) response.GetOrderResponseDTO`*:
-- *`ordersToGetAllGoodResponseDTO(model []model.Order) response.GetAllOrderResponseDTO`*:
+- *`NewOrderController(p OrderControllerParams) *OrderController`*: costruttore della struttura. Inizializza gli attributi `createOrderUseCase` e `getOrderUseCase` con i valori forniti tramite `OrderControllerParams`.
+
+- *`OrderCreateHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di creazione di un ordine. Valida i dati della richiesta, invoca il _Use Case_ per la creazione dell'ordine e risponde con l'esito dell'operazione.
+
+- *`OrderGetHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di un ordine specifico. Valida i dati della richiesta, invoca il _Use Case_ per il recupero dell'ordine e risponde con i dettagli dell'ordine.
+
+- *`OrderGetAllHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di tutti gli ordini. Invoca il _Use Case_ per ottenere la lista degli ordini e risponde con i dettagli.
+
+- *`checkCreateOrderRequestDTO(dto request.CreateOrderRequestDTO) error`*: valida i dati della richiesta di creazione di un ordine. Restituisce un errore se i dati non sono validi.
+
+- *`orderToGetGoodResponseDTO(order model.Order) response.GetOrderResponseDTO`*: converte un oggetto `model.Order` in un oggetto `response.GetOrderResponseDTO`.
+
+- *`ordersToGetAllGoodResponseDTO(model []model.Order) response.GetAllOrderResponseDTO`*: converte una lista di oggetti `model.Order` in un oggetto `response.GetAllOrderResponseDTO`.
 
 ==== ICreateTransferUseCase <OrderICreateTransferUseCase>
 
@@ -2431,21 +2489,26 @@ Interfaccia che permette all'_application logic_ di comunicare alla _business lo
 - *`GetTransfer(context.Context, GetTransferCmd) (model.Transfer, error)`*: il metodo deve permettere di ottenere i dettagli di un trasferimento specifico, prendendo come parametri il contesto e un comando `GetTransferCmd`. Deve restituire un oggetto `model.Transfer` e un eventuale errore in caso di fallimento;
 - *`GetAllTransfers(context.Context) []model.Transfer`*: il metodo deve permettere di ottenere una lista di tutti i trasferimenti registrati nel sistema, prendendo come parametro il contesto e restituendo una slice di oggetti `model.Transfer`.
 
-==== TransferController
+==== TransferController <OrderTransferController>
+
+La struttura `TransferController` rappresenta l'_application logic_ del microservizio *Order*. Si occupa di gestire le richieste relative alla creazione, al recupero e alla gestione dei trasferimenti, interfacciandosi con la _business logic_ attraverso i relativi _Use Case_.
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker *broker.NatsMessageBroker`*:
-- *`createTransferUseCase port.ICreateTransferUseCase`*:
-- *`getTransferUseCase port.IGetTransferUseCase`*:
+- *`createTransferUseCase port.ICreateTransferUseCase`*: interfaccia per la creazione di un trasferimento.
+- *`getTransferUseCase port.IGetTransferUseCase`*: interfaccia per il recupero dei trasferimenti.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewTransferController(p TransferControllerParams) *TransferController`*:
-- *`TransferCreateHandler(ctx context.Context, msg *nats.Msg) error`*:
-- *`TransferGetHandler(ctx context.Context, msg *nats.Msg) error`*:
-- *`TransferGetAllHandler(ctx context.Context, msg *nats.Msg) error`*:
-- *`modelTransferToTransferInfoDTO(transfer model.Transfer) response.TransferInfo`*:
+- *`NewTransferController(p TransferControllerParams) *TransferController`*: costruttore della struttura. Inizializza gli attributi `createTransferUseCase` e `getTransferUseCase` con i valori forniti tramite `TransferControllerParams`.
+
+- *`TransferCreateHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di creazione di un trasferimento. Valida i dati della richiesta, invoca il _Use Case_ per la creazione del trasferimento e risponde con l'esito dell'operazione.
+
+- *`TransferGetHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di un trasferimento specifico. Valida i dati della richiesta, invoca il _Use Case_ per il recupero del trasferimento e risponde con i dettagli del trasferimento.
+
+- *`TransferGetAllHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di tutti i trasferimenti. Invoca il _Use Case_ per ottenere la lista dei trasferimenti e risponde con i dettagli.
+
+- *`modelTransferToTransferInfoDTO(transfer model.Transfer) response.TransferInfo`*: converte un oggetto `model.Transfer` in un oggetto `response.TransferInfo`.
 
 ==== IApplyOrderUpdateUseCase <OrderIApplyOrderUpdateUseCase>
 
@@ -2471,22 +2534,29 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`ContactWarehouses(ctx: Context, cmd: ContactWarehousesCmd) (ContactWarehousesResponse, error)`*: il metodo deve permettere di contattare i magazzini, prendendo come parametri il contesto e un comando `ContactWarehousesCmd`. Deve restituire un oggetto `ContactWarehousesResponse` contenente le informazioni sull'esito dell'operazione e un eventuale errore in caso di fallimento.
 
-==== OrderListener
+==== OrderListener <OrderOrderListener>
+
+La struttura `OrderListener` rappresenta un componente dell'_application logic_ del microservizio *Order*. È progettata per ascoltare eventi relativi agli aggiornamenti di ordini, trasferimenti e contatti con i magazzini, provenienti dal sistema di messaggistica NATS JetStream, e per inoltrare tali eventi alla _business logic_ per l'elaborazione.
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyOrderUpdateUseCase port.IApplyOrderUpdateUseCase`*:
-- *`applyTransferUpdateUseCase port.IApplyTransferUpdateUseCase`*:
-- *`contactWarehouseUseCase port.IContactWarehousesUseCase`*:
+- *`applyOrderUpdateUseCase port.IApplyOrderUpdateUseCase`*: rappresenta il caso d'uso per applicare aggiornamenti agli ordini. Per maggiori informazioni, vedere la @OrderIApplyOrderUpdateUseCase;
+- *`applyTransferUpdateUseCase port.IApplyTransferUpdateUseCase`*: rappresenta il caso d'uso per applicare aggiornamenti ai trasferimenti. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdateUseCase;
+- *`contactWarehouseUseCase port.IContactWarehousesUseCase`*: rappresenta il caso d'uso per contattare i magazzini. Per maggiori informazioni, vedere la @OrderIContactWarehousesUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderListener(applyOrderUpdateUseCase port.IApplyOrderUpdateUseCase, contactWarehouseUseCase port.IContactWarehousesUseCase, applyTransferUpdateUseCase port.IApplyTransferUpdateUseCase) *OrderListener`*:
-- *`ListenOrderUpdate(ctx context.Context, msg jetstream.Msg) error`*:
-- *`ListenTransferUpdate(ctx context.Context, msg jetstream.Msg) error`*:
-- *`ListenContactWarehouses(ctx context.Context, msg jetstream.Msg) error`*:
-- *`orderUpdateEventToApplyOrderUpdateCmd(event stream.OrderUpdate) port.OrderUpdateCmd`*:
-- *`transferUpdateEventToApplyTransferUpdateCmd(event stream.TransferUpdate) port.TransferUpdateCmd`*:
+- *`NewOrderListener(applyOrderUpdateUseCase port.IApplyOrderUpdateUseCase, contactWarehouseUseCase port.IContactWarehousesUseCase, applyTransferUpdateUseCase port.IApplyTransferUpdateUseCase) *OrderListener`*: costruttore della struttura. Inizializza gli attributi con i valori forniti come parametri e restituisce un'istanza di `OrderListener`;
+
+- *`ListenOrderUpdate(ctx context.Context, msg jetstream.Msg) error`*: metodo che gestisce gli eventi di aggiornamento degli ordini. Riceve un messaggio dal sistema di messaggistica NATS JetStream, lo deserializza in un oggetto `stream.OrderUpdate`, lo converte in un comando `port.OrderUpdateCmd` e lo inoltra alla _business logic_ tramite il metodo `ApplyOrderUpdate` dell'interfaccia `IApplyOrderUpdateUseCase`. Restituisce un errore in caso di fallimento durante una qualsiasi di queste operazioni;
+
+- *`ListenTransferUpdate(ctx context.Context, msg jetstream.Msg) error`*: metodo che gestisce gli eventi di aggiornamento dei trasferimenti. Riceve un messaggio dal sistema di messaggistica NATS JetStream, lo deserializza in un oggetto `stream.TransferUpdate`, lo converte in un comando `port.TransferUpdateCmd` e lo inoltra alla _business logic_ tramite il metodo `ApplyTransferUpdate` dell'interfaccia `IApplyTransferUpdateUseCase`. Restituisce un errore in caso di fallimento durante una qualsiasi di queste operazioni;
+
+- *`ListenContactWarehouses(ctx context.Context, msg jetstream.Msg) error`*: metodo che gestisce gli eventi di contatto con i magazzini. Riceve un messaggio dal sistema di messaggistica NATS JetStream, lo deserializza in un oggetto `internalStream.ContactWarehouses`, lo converte in un comando `port.ContactWarehousesCmd` e lo inoltra alla _business logic_ tramite il metodo `ContactWarehouses` dell'interfaccia `IContactWarehousesUseCase`. Se è necessario un nuovo tentativo, utilizza il metodo `NakWithDelay` per ritardare il messaggio e restituisce un errore specifico per indicare che il messaggio non è stato riconosciuto;
+
+- *`orderUpdateEventToApplyOrderUpdateCmd(event stream.OrderUpdate) port.OrderUpdateCmd`*: funzione di utilità che converte un evento `stream.OrderUpdate` in un comando `port.OrderUpdateCmd`. Mappa le informazioni sulle merci e i relativi dettagli dall'evento al comando, rendendolo pronto per essere elaborato dalla _business logic_;
+
+- *`transferUpdateEventToApplyTransferUpdateCmd(event stream.TransferUpdate) port.TransferUpdateCmd`*: funzione di utilità che converte un evento `stream.TransferUpdate` in un comando `port.TransferUpdateCmd`. Mappa le informazioni sulle merci e i relativi dettagli dall'evento al comando, rendendolo pronto per essere elaborato dalla _business logic_.
 
 ==== IApplyStockUpdateUseCase <OrderIApplyStockUpdateUseCase>
 
@@ -2496,164 +2566,238 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`ApplyStockUpdate(ctx: Context, cmd: StockUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento dello stock#super[G]. Prende come parametri il contesto e un oggetto `StockUpdateCmd` che contiene tutte le informazioni necessarie per l'aggiornamento dello stock#super[G].
 
-==== StockUpdateListener
+==== StockUpdateListener <OrderStockUpdateListener>
+
+La struttura `StockUpdateListener` rappresenta un componente dell'_application logic_ del microservizio *Warehouse*. È progettata per ascoltare eventi di aggiornamento dello stock#super[G] provenienti dal sistema di messaggistica NATS JetStream e per inoltrare tali eventi alla _business logic_ per l'elaborazione.
 
 *Descrizione degli attributi della struttura:*
 
-- *`applyStockUpdateUseCase port.IApplyStockUpdateUseCase`*:
+- *`applyStockUpdateUseCase port.IApplyStockUpdateUseCase`*: rappresenta l'interfaccia che consente alla _application logic_ di comunicare con la _business logic_ per applicare un aggiornamento dello stock#super[G]. Per maggiori informazioni, vedere la @OrderIApplyStockUpdateUseCase.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockUpdateListener(applyStockUpdateUseCase port.IApplyStockUpdateUseCase) *StockUpdateListener`*:
-- *`ListenStockUpdate(ctx context.Context, msg jetstream.Msg) error`*:
-- *`StockUpdateEventToApplyStockUpdateCmd(event stream.StockUpdate) port.StockUpdateCmd`*:
+- *`NewStockUpdateListener(applyStockUpdateUseCase port.IApplyStockUpdateUseCase) *StockUpdateListener`*: costruttore della struttura. Inizializza l'attributo `applyStockUpdateUseCase` con il valore fornito come parametro e restituisce un'istanza di `StockUpdateListener`.
 
-==== ITransferRepository
+- *`ListenStockUpdate(ctx context.Context, msg jetstream.Msg) error`*: metodo che gestisce gli eventi di aggiornamento dello stock#super[G]. Riceve un messaggio dal sistema di messaggistica NATS JetStream, lo deserializza in un oggetto `stream.StockUpdate`, lo converte in un comando `port.StockUpdateCmd` e lo inoltra alla _business logic_ tramite il metodo `ApplyStockUpdate` dell'interfaccia `IApplyStockUpdateUseCase`. Restituisce un errore in caso di fallimento durante una qualsiasi di queste operazioni.
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+- *`StockUpdateEventToApplyStockUpdateCmd(event stream.StockUpdate) port.StockUpdateCmd`*: funzione di utilità che converte un evento `stream.StockUpdate` in un comando `port.StockUpdateCmd`. Mappa le informazioni sulle merci e i relativi dettagli dall'evento al comando, rendendolo pronto per essere elaborato dalla _business logic_.
+
+==== ITransferRepository <OrderITransferRepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ per la gestione dei trasferimenti nel microservizio *Order*.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetTransfer(transferId string) (Transfer, error`*:
-- *`GetTransfers() []Transfer `*:
-- *`SetTransfer(transferId string, transfer Transfer) bool`*:
-- *`SetComplete(transferId string) error`*:
-- *`IncrementLinkedStockUpdate(transferId string) error`*:
+- *`GetTransfer(transferId string) (Transfer, error)`*: il metodo deve permettere di ottenere i dettagli di un trasferimento specifico, prendendo come parametro l'identificativo del trasferimento (`transferId`). Deve restituire un oggetto `Transfer` contenente i dettagli del trasferimento e un eventuale errore in caso di fallimento;
 
-==== TransferRepositoryImpl
+- *`GetTransfers() []Transfer`*: il metodo deve permettere di ottenere una lista di tutti i trasferimenti registrati nel sistema. Deve restituire una slice di oggetti `Transfer`;
 
-*Descrizione degli attributi della struttura:*
+- *`SetTransfer(transferId string, transfer Transfer) bool`*: il metodo deve permettere di impostare o aggiornare i dettagli di un trasferimento specifico, prendendo come parametri l'identificativo del trasferimento (`transferId`) e un oggetto `Transfer` contenente i dettagli aggiornati. Deve restituire `true` se l'operazione è andata a buon fine, `false` altrimenti;
 
-- *`transferMap map[string]Transfer`*:
-- *`m sync.Mutex`*:
+- *`SetComplete(transferId string) error`*: il metodo deve permettere di segnare un trasferimento come completato, prendendo come parametro l'identificativo del trasferimento (`transferId`). Deve restituire un errore in caso di fallimento;
 
-*Descrizione dei metodi invocabili dalla struttura:*
+- *`IncrementLinkedStockUpdate(transferId string) error`*: il metodo deve permettere di incrementare il numero di aggiornamenti dello stock associati a un trasferimento, prendendo come parametro l'identificativo del trasferimento (`transferId`). Deve restituire un errore in caso di fallimento.
 
-- *`NewTransferRepositoryImpl() *TransferRepositoryImpl`*:
-- *`GetTransfer(transferId string) (Transfer, error`*:
-- *`GetTransfers() []Transfer `*:
-- *`SetTransfer(transferId string, transfer Transfer) bool`*:
-- *`SetComplete(transferId string) error`*:
-- *`IncrementLinkedStockUpdate(transferId string) error`*:
+==== TransferRepositoryImpl <OrderTransferRepositoryImpl>
 
-==== TransferPersistenceAdapter
+La struttura `TransferRepositoryImpl` rappresenta l'implementazione della _persistence logic_ per la gestione dei trasferimenti nel microservizio *Order*. Questa struttura utilizza una mappa per memorizzare i trasferimenti e un mutex per garantire la sicurezza dei dati in caso di accesso concorrente.
 
 *Descrizione degli attributi della struttura:*
 
-- *`transferRepo ITransferRepository`*:
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente;
+- *`transferMap map[string]Transfer`*: mappa che associa l'identificativo di un trasferimento (*string*) all'oggetto `Transfer` corrispondente.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*:
-- *`SetComplete(transferId model.TransferID) error`*:
-- *`IncrementLinkedStockUpdate(transferId model.TransferID) error`*:
-- *`ApplyTransferUpdate(cmd port.ApplyTransferUpdateCmd) error`*:
-- *`GetTransfer(transferId model.TransferID) (model.Transfer, error)`*:
-- *`GetAllTransfer() []model.Transfer`*:
-- *`repoTransferToModelTransfer(transfer Transfer) model.Transfer`*:
-- *`repoTransfersToModelTransfers(transfers []Transfer) []model.Transfer`*:
+- *`NewTransferRepositoryImpl() *TransferRepositoryImpl`*: costruttore della struttura. Inizializza l'attributo `transferMap` come una mappa vuota e ritorna un puntatore alla struttura creata;
 
-==== IStockRepository
+- *`GetTransfer(transferId string) (Transfer, error)`*: restituisce i dettagli di un trasferimento specifico tramite il suo identificativo. Ritorna un errore `ErrTransferNotFound` se il trasferimento non esiste;
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+- *`GetTransfers() []Transfer`*: restituisce una lista di tutti i trasferimenti registrati nel sistema;
+
+- *`SetTransfer(transferId string, transfer Transfer) bool`*: aggiunge o aggiorna un trasferimento nella mappa. Ritorna `true` se il trasferimento esisteva già, `false` altrimenti;
+
+- *`SetComplete(transferId string) error`*: segna un trasferimento come completato. Ritorna un errore `ErrTransferNotFound` se il trasferimento non esiste;
+
+- *`IncrementLinkedStockUpdate(transferId string) error`*: incrementa il numero di aggiornamenti dello stock associati a un trasferimento. Ritorna un errore `ErrTransferNotFound` se il trasferimento non esiste.
+
+==== TransferPersistenceAdapter <OrderTransferPersistenceAdapter>
+
+_Adapter_ che mette in comunicazione la _business logic_ con la _persistence logic_ per la gestione dei trasferimenti.
+
+*Descrizione degli attributi della struttura:*
+
+- *`transferRepo ITransferRepository`*: rappresenta il repository utilizzato per accedere e gestire i dati relativi ai trasferimenti.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il repository fornito come parametro.
+
+- *`SetComplete(transferId model.TransferID) error`*: segna un trasferimento come completato. Prende come parametro l'identificativo del trasferimento (`transferId`) e restituisce un errore in caso di fallimento.
+
+- *`IncrementLinkedStockUpdate(transferId model.TransferID) error`*: incrementa il numero di aggiornamenti dello stock associati a un trasferimento. Prende come parametro l'identificativo del trasferimento (`transferId`) e restituisce un errore in caso di fallimento.
+
+- *`ApplyTransferUpdate(cmd port.ApplyTransferUpdateCmd) error`*: applica un aggiornamento di un trasferimento. Prende come parametro un comando `ApplyTransferUpdateCmd` contenente i dettagli dell'aggiornamento e restituisce un errore in caso di fallimento.
+
+- *`GetTransfer(transferId model.TransferID) (model.Transfer, error)`*: restituisce i dettagli di un trasferimento specifico. Prende come parametro l'identificativo del trasferimento (`transferId`) e restituisce un oggetto `model.Transfer` e un eventuale errore in caso di fallimento.
+
+- *`GetAllTransfer() []model.Transfer`*: restituisce una lista di tutti i trasferimenti registrati nel sistema. Restituisce una slice di oggetti `model.Transfer`.
+
+- *`repoTransferToModelTransfer(transfer Transfer) model.Transfer`*: converte un oggetto `Transfer` del repository in un oggetto `model.Transfer` utilizzato nella business logic.
+
+- *`repoTransfersToModelTransfers(transfers []Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del repository in una lista di oggetti `model.Transfer` utilizzati nella business logic.
+
+==== IStockRepository <OrderIStockRepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ per la gestione dello stock#super[G] nel microservizio *Order*.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetStock(warehouseId string, goodId string) (int64, error)`*:
-- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*:
-- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*:
-- *`GetGlobalStock(goodId string) int64`*:
-- *`GetWarehouses() []string`*:
+- *`GetStock(warehouseId string, goodId string) (int64, error)`*: il metodo deve permettere di ottenere la quantità di una merce specifica in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`) e l'identificativo della merce (`goodId`). Restituisce la quantità della merce come `int64` e un eventuale errore in caso di fallimento;
 
-==== StockRepositoryImpl
+- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*: il metodo deve permettere di impostare la quantità di una merce in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da impostare (`stock`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti;
 
-*Descrizione degli attributi della struttura:*
+- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*: il metodo deve permettere di aggiungere una quantità specifica di una merce a un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da aggiungere (`stock`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti, e un eventuale errore in caso di fallimento;
 
-- *`warehouseMap map[string]WarehouseStock`*
-- *`globalStockMap map[string]int64`*:
-- *`m sync.Mutex`*:
+- *`GetGlobalStock(goodId string) int64`*: il metodo deve permettere di ottenere la quantità globale di una merce presente in tutti i magazzini. Prende come parametro l'identificativo della merce (`goodId`) e restituisce la quantità globale come `int64`;
 
-*Descrizione dei metodi invocabili dalla struttura:*
+- *`GetWarehouses() []string`*: il metodo deve permettere di ottenere l'elenco di tutti i magazzini registrati nel sistema. Restituisce una slice di stringhe contenente gli identificativi dei magazzini.
 
-- *`NewStockRepositoryImpl() *StockRepositoryImpl`*:
-- *`GetStock(warehouseId string, goodId string) (int64, error)`*:
-- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*:
-- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*:
-- *`GetGlobalStock(goodId string) int64`*:
-- *`GetWarehouses() []string`*:
 
-==== StockPersistenceAdapter
+==== StockRepositoryImpl <OrderStockRepositoryImpl>
+
+La struttura `StockRepositoryImpl` rappresenta l'implementazione della _persistence logic_ per la gestione dello stock#super[G] nel microservizio *Order*. Questa struttura utilizza una mappa per tenere traccia dello stock di ciascun magazzino e una mappa globale per monitorare la quantità totale di ciascuna merce.
 
 *Descrizione degli attributi della struttura:*
 
-- *`stockRepo IStockRepository`*:
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente;
+- *`warehouseMap map[string]WarehouseStock`*: mappa che associa l'identificativo di un magazzino (*string*) a un oggetto `WarehouseStock`, contenente le informazioni sullo stock del magazzino;
+- *`globalStockMap map[string]int64`*: mappa che associa l'identificativo di una merce (*string*) alla quantità totale disponibile nei vari magazzini (*int64*).
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*:
-- *`ApplyStockUpdate(cmd port.ApplyStockUpdateCmd) error`*:
-- *`GetStock(cmd port.GetStockCmd) (model.GoodStock, error)`*:
-- *`GetGlobalStock(GoodID model.GoodID) model.GoodStock`*:
-- *`GetWarehouses() []model.Warehouse`*:
+- *`NewStockRepositoryImpl() *StockRepositoryImpl`*: costruttore della struttura. Inizializza le mappe `warehouseMap` e `globalStockMap` come mappe vuote e ritorna un puntatore alla struttura creata;
+- *`GetStock(warehouseId string, goodId string) (int64, error)`*: restituisce la quantità di una merce specifica in un determinato magazzino. Ritorna un errore `ErrWarehouseNotFound` se il magazzino non esiste e `ErrGoodNotFound` se la merce non è presente nel magazzino;
+- *`SetStock(warehouseId string, goodId string, stock int64) bool`*: imposta la quantità di una merce in un determinato magazzino. Se il magazzino non esiste, viene creato automaticamente. Ritorna `true` se la merce esisteva già, `false` altrimenti;
+- *`AddStock(warehouseId string, goodId string, stock int64) (bool, error)`*: aggiunge una quantità specifica di una merce a un determinato magazzino. Ritorna `true` se la merce esisteva già, `false` altrimenti, e un errore `ErrWarehouseNotFound` o `ErrGoodNotFound` in caso di fallimento;
+- *`GetGlobalStock(goodId string) int64`*: restituisce la quantità totale di una merce disponibile in tutti i magazzini. Se la merce non esiste, ritorna 0;
+- *`GetWarehouses() []string`*: restituisce una lista degli identificativi di tutti i magazzini registrati nel sistema.
 
-==== IOrderRepository
+==== StockPersistenceAdapter <OrderStockPersistenceAdapter>
 
-[PROSEGUIRE] descrizione generale e descrizione metodi
+_Adapter_ che mette in comunicazione la _business logic_ del microservizio *Order* con la _persistence logic_ per la gestione dello stock.
+
+*Descrizione degli attributi della struttura:*
+
+- *`stockRepo IStockRepository`*: rappresenta il repository utilizzato per accedere e gestire i dati relativi allo stock.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il repository fornito come parametro.
+
+- *`ApplyStockUpdate(cmd port.ApplyStockUpdateCmd) error`*: applica un aggiornamento dello stock. Per ogni merce inclusa nel comando, aggiorna la quantità nel magazzino specificato.
+
+- *`GetStock(cmd port.GetStockCmd) (model.GoodStock, error)`*: restituisce la quantità di una merce specifica in un determinato magazzino. Se il magazzino non esiste, restituisce un errore `ErrStockNotFound`.
+
+- *`GetGlobalStock(GoodID model.GoodID) model.GoodStock`*: restituisce la quantità globale di una merce presente in tutti i magazzini.
+
+- *`GetWarehouses() []model.Warehouse`*: restituisce una lista di tutti i magazzini registrati nel sistema.
+
+==== IOrderRepository <OrderIOrderRepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ per la gestione degli ordini nel microservizio *Order*.
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetOrder(orderId string) (Order, error)`*:
-- *`GetOrders() []Order`*:
-- *`SetOrder(orderId string, order Order) bool`*:
-- *`AddCompletedWarehouse(orderId string, warehouseId string, goods map[string]int64) (Order, error)`*:
-- *`SetComplete(orderId string) error`*:
+- *`GetOrder(orderId string) (Order, error)`*: il metodo deve permettere di ottenere i dettagli di un ordine specifico, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un oggetto `Order` contenente i dettagli dell'ordine e un eventuale errore in caso di fallimento;
 
-==== OrderRepositoryImpl
+- *`GetOrders() []Order`*: il metodo deve permettere di ottenere una lista di tutti gli ordini registrati nel sistema. Deve restituire una slice di oggetti `Order`;
 
-*Descrizione degli attributi della struttura:*
+- *`SetOrder(orderId string, order Order) bool`*: il metodo deve permettere di impostare o aggiornare i dettagli di un ordine specifico, prendendo come parametri l'identificativo dell'ordine (`orderId`) e un oggetto `Order` contenente i dettagli aggiornati. Deve restituire `true` se l'operazione è andata a buon fine, `false` altrimenti;
 
-- *`orderMap map[string]Order`*:
-- *`m sync.Mutex`*:
+- *`AddCompletedWarehouse(orderId string, warehouseId string, goods map[string]int64) (Order, error)`*: il metodo deve permettere di aggiungere un magazzino completato a un ordine specifico, aggiornando le quantità delle merci coinvolte. Deve restituire l'ordine aggiornato e un eventuale errore in caso di fallimento;
 
-*Descrizione dei metodi invocabili dalla struttura:*
+- *`SetComplete(orderId string) error`*: il metodo deve permettere di segnare un ordine come completato, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un errore in caso di fallimento.
 
-- *`NewOrderRepositoryImpl() *OrderRepositoryImpl`*:
-- *`GetOrder(orderId string) (Order, error)`*:
-- *`GetOrders() []Order`*:
-- *`SetOrder(orderId string, order Order) bool`*:
-- *`AddCompletedWarehouse(orderId string, warehouseId string, goods map[string]int64) (Order, error)`*:
-- *`SetComplete(orderId string) error`*:
+==== OrderRepositoryImpl <OrderOrderRepositoryImpl>
 
-==== OrderPersistenceAdapter
+Oggetto che implementa la _persistence logic_ per la gestione degli ordini nel microservizio *Order*.
 
 *Descrizione degli attributi della struttura:*
 
-- *`orderRepo IOrderRepository`*:
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente;
+- *`orderMap map[string]Order`*: mappa che associa l'identificativo di un ordine (*string*) all'oggetto `Order` corrispondente.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*:
-- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*:
-- *`SetComplete(orderId model.OrderID) error`*:
-- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd) error`*:
-- *`GetOrder(orderId model.OrderID) (model.Order, error)`*:
-- *`GetAllOrder() []model.Order`*:
-- *`repoOrderToModelOrder(order Order) model.Order`*:
-- *`repoOrdersToModelOrders(orders []Order) []model.Order`*:
+- *`NewOrderRepositoryImpl() *OrderRepositoryImpl`*: costruttore della struttura. Inizializza l'attributo `orderMap` come una mappa vuota e ritorna un puntatore alla struttura creata;
+- *`GetOrder(orderId string) (Order, error)`*: restituisce i dettagli di un ordine specifico tramite il suo identificativo. Ritorna un errore `ErrOrderNotFound` se l'ordine non esiste;
+- *`GetOrders() []Order`*: restituisce una lista di tutti gli ordini registrati nel sistema;
+- *`SetOrder(orderId string, order Order) bool`*: aggiunge o aggiorna un ordine nella mappa. Ritorna `true` se l'ordine esisteva già, `false` altrimenti;
+- *`AddCompletedWarehouse(orderId string, warehouseId string, goods map[string]int64) (Order, error)`*: aggiunge un magazzino completato a un ordine specifico, aggiornando le quantità delle merci coinvolte. Ritorna l'ordine aggiornato e un errore `ErrOrderNotFound` se l'ordine non esiste;
+- *`SetComplete(orderId string) error`*: segna un ordine come completato. Ritorna un errore `ErrOrderNotFound` se l'ordine non esiste.
 
-==== NatsStreamAdapter
+==== OrderPersistenceAdapter <OrderOrderPersistenceAdapter>
+
+_Adapter_ che mette in comunicazione la _business logic_ del microservizio *Order* con la _persistence logic_ per la gestione degli ordini.
 
 *Descrizione degli attributi della struttura:*
 
-- *`broker *broker.NatsMessageBroker`*:
+- *`orderRepo IOrderRepository`*: rappresenta il repository utilizzato per accedere e gestire i dati relativi agli ordini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewNatsStreamAdapter(broker *broker.NatsMessageBroker) *NatsStreamAdapter`*:
-- *`SendOrderUpdate(ctx context.Context, cmd port.SendOrderUpdateCmd)`*:
-- *`SendTransferUpdate(ctx context.Context, cmd port.SendTransferUpdateCmd) (model.Transfer, error)`*:
-- *`SendContactWarehouses(ctx context.Context, cmd port.SendContactWarehouseCmd) error`*:
-- *`RequestReservation(ctx context.Context, cmd port.RequestReservationCmd) (port.RequestReservationResponse, error)`*:
+- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il repository fornito come parametro.
+
+- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel repository. Restituisce l'ordine aggiornato in formato `model.Order` e un eventuale errore in caso di fallimento.
+
+- *`SetComplete(orderId model.OrderID) error`*: segna un ordine come completato nel repository. Restituisce un errore in caso di fallimento.
+
+- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine esistente o crea un nuovo ordine se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel repository.
+
+- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine specifico dal repository. Converte l'ordine dal formato del repository a `model.Order`. Restituisce un errore in caso di fallimento.
+
+- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel repository. Converte gli ordini dal formato del repository a `model.Order`.
+
+- *`repoOrderToModelOrder(order Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del repository in un oggetto `model.Order` utilizzato nella business logic.
+
+- *`repoOrdersToModelOrders(orders []Order) []model.Order`*: funzione di utilità che converte una lista di oggetti `Order` del repository in una lista di oggetti `model.Order` utilizzati nella business logic.
+
+==== NatsStreamAdapter <OrderNatsStreamAdapter>
+
+Rappresenta un _Adapter_ che mette in comunicazione la _business logic_ con il sistema di messaggistica NATS per gestire aggiornamenti di ordini, trasferimenti, contatti con i magazzini e richieste di prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`broker *broker.NatsMessageBroker`*: rappresenta il broker di messaggistica NATS utilizzato per pubblicare e ricevere messaggi.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewNatsStreamAdapter(broker *broker.NatsMessageBroker) *NatsStreamAdapter`*: costruttore della struttura. Inizializza l'attributo `broker` con il valore passato come parametro.
+
+- *`SendOrderUpdate(ctx context.Context, cmd port.SendOrderUpdateCmd) (model.Order, error)`*: invia un aggiornamento di un ordine al sistema di messaggistica NATS. Restituisce un oggetto `model.Order` contenente i dettagli dell'ordine aggiornato e un eventuale errore in caso di fallimento.
+
+- *`SendTransferUpdate(ctx context.Context, cmd port.SendTransferUpdateCmd) (model.Transfer, error)`*: invia un aggiornamento di un trasferimento al sistema di messaggistica NATS. Restituisce un oggetto `model.Transfer` contenente i dettagli del trasferimento aggiornato e un eventuale errore in caso di fallimento.
+
+- *`SendContactWarehouses(ctx context.Context, cmd port.SendContactWarehouseCmd) error`*: invia un comando per contattare i magazzini al sistema di messaggistica NATS. Restituisce un errore in caso di fallimento.
+
+- *`RequestReservation(ctx context.Context, cmd port.RequestReservationCmd) (port.RequestReservationResponse, error)`*: invia una richiesta di prenotazione di merci al sistema di messaggistica NATS. Restituisce un oggetto `port.RequestReservationResponse` contenente l'identificativo della prenotazione creata e un eventuale errore in caso di fallimento.
+
+==== HealthCheckController <OrderHealthCheckController>
+
+La struttura `HealthCheckController` rappresenta l'_application logic_ per la gestione delle richieste di controllo dello stato di salute del microservizio. È progettata per rispondere a richieste di tipo "ping" con una risposta "pong", indicando che il microservizio è attivo e funzionante.
+
+*Descrizione degli attributi della struttura:*
+
+Questa struttura non possiede attributi.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewHealthCheckController() *HealthCheckController`*: costruttore della struttura. Restituisce un'istanza di `HealthCheckController`.
+
+- *`PingHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di tipo "ping" ricevute tramite il sistema di messaggistica NATS. Risponde con un messaggio "pong". Ritorna un errore in caso di fallimento durante la serializzazione della risposta o l'invio del messaggio di risposta.
+
+
 
 === Catalog <catalog>
 
