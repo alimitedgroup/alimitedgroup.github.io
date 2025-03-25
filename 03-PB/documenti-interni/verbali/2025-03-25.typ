@@ -49,41 +49,41 @@ _ALimitedGroup_ ha verificato che la settimana trascorsa non è stato possibile 
 
 == Decisioni relative alle attività del prossimo periodo
 
-#align(center)[*Analisi dei Requisiti*]
+#align(center)[*Analisi dei Requisiti#super[G]*]
 
-- Modifica dell'Analisi dei Requisiti in seguito all'ultima riunione con M31 entro il giorno *30 Marzo 2025*
+- Modifica dell'Analisi dei Requisiti#super[G] in seguito all'ultima riunione con M31 entro il giorno *30 Marzo 2025*
 
-#align(center)[*Manuale Utente*]
+#align(center)[*Manuale Utente#super[G]*]
 - Aggiungere informazioni sulla configurazione e l'avvio dei microservizi entro il giorno *30 Marzo 2025*
 - Aggiunta informazioni sui nuovi endpoint entro il giorno *31 Marzo 2025*
-- Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test entro il giorno *3 Aprile 2025*
-- Aggiungere informazioni sull'uso di Grafana entro il giorno *4 Aprile 2025*
+- Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test#super[G] entro il giorno *3 Aprile 2025*
+- Aggiungere informazioni sull'uso di Grafana#super[G] entro il giorno *4 Aprile 2025*
 
-#align(center)[*Specifica Tecnica*]
+#align(center)[*Specifica Tecnica#super[G]*]
 
-- Completare la progettazione e descrizione per il microservizio Order/Transfer e Warehouse entro il giorno *26 Marzo 2025*
-- Completare la progettazione e descrizione per il microservizio di API Gateway entro il giorno *31 Marzo 2025*
+- Completare la progettazione e descrizione per il microservizio Order/Transfer e Warehouse#super[G] entro il giorno *26 Marzo 2025*
+- Completare la progettazione e descrizione per il microservizio di API#super[G] Gateway entro il giorno *31 Marzo 2025*
 - Completare la progettazione e descrizione per il microservizio Notification entro il giorno *31 Marzo 2025*
-- Completare la trascrizione dei test eseguiti nel Piano di Qualifica aggiungendo i test che verranno effettuati in questa settimana entro il giorno *31 Marzo 2025*
-- Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse entro il giorno *31 Marzo 2025*
+- Completare la trascrizione dei test#super[G] eseguiti nel Piano di Qualifica#super[G] aggiungendo i test#super[G] che verranno effettuati in questa settimana entro il giorno *31 Marzo 2025*
+- Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse#super[G] entro il giorno *31 Marzo 2025*
 - Aggiungere informazioni sul funzionamento dei router e del main dei vari microservizi entro il giorno *31 Marzo 2025*
 
-#align(center)[*Piano di Progetto*]
+#align(center)[*Piano di Progetto#super[G]*]
 
-- Aggiornare il Piano di Progetto con le informazioni per l'ottavo Sprint entro il giorno *31 Marzo 2025*
+- Aggiornare il Piano di Progetto#super[G] con le informazioni per l'ottavo Sprint#super[G] entro il giorno *31 Marzo 2025*
 - Aggiornare la pianificazione a lungo termine entro il giorno *3 Aprile 2025*
 
-#align(center)[*Piano di Qualifica*]
+#align(center)[*Piano di Qualifica#super[G]*]
 
-- Aggiungere le nuove misurazioni nel Piano di Qualifica entro il giorno *4 Aprile 2025*
+- Aggiungere le nuove misurazioni nel Piano di Qualifica#super[G] entro il giorno *4 Aprile 2025*
 
 #align(center)[*Programmazione*]
 
 - Completare la codifica del microservizio *Notification* entro il giorno *28 Marzo 2025*
 - Aggiornare il microservizio *Api Gateway* per supportare i nuovi microservizi entro il giorno *28 Marzo 2025*
-- Inserire i test di integrazione per il microservizio Order/Transfer entro il giorno *28 Marzo 2025*
-- Integrare Grafana nei vari microservizi entro il giorno *28 Marzo 2025*
-- Realizzare test automatici con curl per futuri test di accettazione entro il giorno *3 Aprile 2025*
+- Inserire i test#super[G] di integrazione per il microservizio Order/Transfer entro il giorno *28 Marzo 2025*
+- Integrare Grafana#super[G] nei vari microservizi entro il giorno *28 Marzo 2025*
+- Realizzare test#super[G] automatici con curl per futuri test#super[G] di accettazione entro il giorno *3 Aprile 2025*
 - Risolvere il problema di sicurezza *CVE-2025-30204* entro il giorno *3 Aprile 2025*
 
 
