@@ -323,7 +323,7 @@ L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numero
 
 - *disaccoppiamento*: i componenti sono meno legati tra loro, facilitando la manutenzione#super[G] e l'estensione del codice;
 - *flessibilità*: è più semplice sostituire un'implementazione con un'altra senza modificare il codice client;
-- *testabilità*: è possibile sostituire le istanze reali degli oggetti richiesti con _mock_ durante i test#super[G] ;
+- *testabilità*: è possibile sostituire le istanze reali degli oggetti richiesti con _mock_ durante i test#super[G];
 - *modularità*: i componenti possono essere sviluppati, testati e utilizzati in modo indipendente;
 - *gestione centralizzata*:la _dependency injection#super[G]_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
 
@@ -494,7 +494,7 @@ Questo DTO viene utilizzato per rappresentare la richiesta di aggiunta di stock#
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G] ;
+- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G];
 - *`Quantity int64`*: rappresenta la quantità di stock#super[G] da aggiungere alla merce.
 
 ==== RemoveStockRequestDTO <WarehouseRemoveStockRequestDTO>
@@ -507,7 +507,7 @@ Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'id della merce da cui rimuovere stock#super[G] ;
+- *`GoodID string`*: rappresenta l'id della merce da cui rimuovere stock#super[G];
 - *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
 
 ==== ReserveStockRequestDTO <WarehouseReserveStockRequestDTO>
@@ -544,7 +544,7 @@ Rappresenta un DTO specifico per le risposte di controllo dello stato di salute 
 
 *Descrizione degli attributi della struttura:*
 
-- *`Message string`*: rappresenta il messaggio di stato del microservizio *Warehouse*#super[G] ;
+- *`Message string`*: rappresenta il messaggio di stato del microservizio *Warehouse*#super[G];
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 ==== ReserveStockResponseDTO <WarehouseReserveStockResponseDTO>
@@ -556,7 +556,7 @@ Rappresenta un DTO specifico per le risposte relative alla prenotazione di stock
 
 *Descrizione degli attributi della struttura:*
 
-- *`Message ReserveStockInfo`*: rappresenta le informazioni sulla prenotazione dello stock#super[G] nel microservizio *Warehouse*#super[G] ;
+- *`Message ReserveStockInfo`*: rappresenta le informazioni sulla prenotazione dello stock#super[G] nel microservizio *Warehouse*#super[G];
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 ==== ReserveStockInfo <WarehouseReserveStockInfo>
@@ -620,11 +620,11 @@ Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] aggiornato;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato (es. "Pending", "Completed");
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
 
 ==== TransferUpdateGood <StreamTransferUpdateGood>
@@ -638,7 +638,7 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G] ;
+- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 
@@ -668,8 +668,8 @@ Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel mic
 
 *Descrizione degli attributi della struttura:*
 
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferGood`*: rappresenta una lista di oggetti `TransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 ==== TransferGood <WarehouseTransferGood>
@@ -678,7 +678,7 @@ Rappresenta una merce inclusa in un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G] ;
+- *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 ==== GetOrderRequestDTO <WarehouseGetOrderRequestDTO>
@@ -787,10 +787,10 @@ Rappresenta le informazioni relative a un trasferimento#super[G] nel microserviz
 
 *Descrizione degli attributi della struttura:*
 
-- *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] ;
-- *`Status string`*: rappresenta lo stato del trasferimento#super[G] ;
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G];
+- *`Status string`*: rappresenta lo stato del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferInfoGood`*: rappresenta una lista di oggetti `TransferInfoGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 ===== TransferInfoGood <TransferInfoGood>
@@ -1440,7 +1440,10 @@ Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 ==== Oggetti comuni del microservizio
 
 ===== OrderWarehouseUsed (Repo) <OrderRepoOrderWarehouseUsed>
-
+#figure(
+  image("../../assets/order/Repo-OrderWarehouseUsed.png", width: 80%),
+  caption: "Order - OrderWarehouseUsed (Repo)",
+)
 Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G]. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare le informazioni sui magazzini coinvolti nella gestione degli ordini.
 
 *Descrizione degli attributi della struttura:*
@@ -1452,7 +1455,10 @@ Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G]. Questo og
 Questa struttura non ha metodi invocabili.
 
 ===== OrderUpdateGood (Repo) <OrderRepoOrderUpdateGood>
-
+#figure(
+  image("../../assets/order/Repo-OrderUpdateGood.png", width: 80%),
+  caption: "Order - OrderUpdateGood (Repo)",
+)
 Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G]. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare i dettagli delle merci associate agli ordini.
 
 *Descrizione degli attributi della struttura:*
@@ -1465,7 +1471,10 @@ Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G]. Quest
 Questa struttura non ha metodi invocabili.
 
 ===== Order (Repo) <OrderRepoOrder>
-
+#figure(
+  image("../../assets/order/Repo-Order.png", width: 80%),
+  caption: "Order - Order (Repo)",
+)
 Rappresenta un ordine#super[G] nel sistema. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare e gestire le informazioni relative agli ordini, inclusi i dettagli delle merci, i magazzini coinvolti e le prenotazioni associate.
 
 *Descrizione degli attributi della struttura:*
@@ -1486,7 +1495,10 @@ Rappresenta un ordine#super[G] nel sistema. Questo oggetto è utilizzato nella _
 Questa struttura non ha metodi invocabili.
 
 ===== WarehouseStock (Repo) <OrderRepoWarehouseStock>
-
+#figure(
+  image("../../assets/order/Repo-WarehouseStock.png", width: 80%),
+  caption: "Order - WarehouseStock (Repo)",
+)
 *Descrizione degli attributi della struttura:*
 
 - *`goodToStock map[string]int64`*:
@@ -1496,12 +1508,15 @@ Questa struttura non ha metodi invocabili.
 Questa struttura non ha metodi invocabili.
 
 ===== TransferUpdateGood (Repo) <OrderRepoTransferUpdateGood>
-
+#figure(
+  image("../../assets/order/Repo-TransferUpdateGood.png", width: 80%),
+  caption: "Order - TransferUpdateGood (Repo)",
+)
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]. Questa struttura viene utilizzata per memorizzare i dettagli delle merci associate a un trasferimento#super[G], come l'identificativo della merce e la quantità coinvolta.
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G] ;
+- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1509,19 +1524,22 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 Questa struttura non ha metodi invocabili.
 
 ===== Transfer (Repo) <OrderRepoTransfer>
-
+#figure(
+  image("../../assets/order/Repo-Transfer.png", width: 80%),
+  caption: "Order - Transfer (Repo)",
+)
 Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare e gestire le informazioni relative ai trasferimenti, inclusi i dettagli delle merci, i magazzini coinvolti e le prenotazioni associate.
 
 *Descrizione degli attributi della struttura:*
 
-- *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] ;
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Pending", "Completed");
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G] ;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
-- *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G] ;
-- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1538,19 +1556,22 @@ Rappresenta un identificativo univoco per un trasferimento#super[G].
 - *`string`*: rappresenta l'identificativo univoco del trasferimento#super[G].
 
 ===== Transfer <OrderModelTransfer>
-
+#figure(
+  image("../../assets/order/Transfer.png", width: 80%),
+  caption: "Order - Transfer",
+)
 Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato nella _business logic_ per gestire le informazioni relative ai trasferimenti, inclusi i dettagli delle merci, i magazzini coinvolti e le prenotazioni associate.
 
 *Descrizione degli attributi della struttura:*
 
-- *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] ;
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Pending", "Completed");
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G] ;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
-- *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G] ;
-- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Goods []GoodStock`*: rappresenta una lista di oggetti `GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1566,7 +1587,10 @@ Rappresenta un identificativo univoco per un ordine#super[G].
 - *`string`*: rappresenta l'identificativo univoco dell'ordine.
 
 ===== Order <OrderModelOrder>
-
+#figure(
+  image("../../assets/order/Order.png", width: 80%),
+  caption: "Order - Order",
+)
 Rappresenta un ordine#super[G] nel sistema.
 
 *Descrizione degli attributi della struttura:*
@@ -1587,7 +1611,10 @@ Rappresenta un ordine#super[G] nel sistema.
 - *`IsCompleted() bool`*: verifica#super[G] se l'ordine è stato completato. Restituisce `true` se tutte le merci richieste sono state soddisfatte dai magazzini, altrimenti `false`.
 
 ===== OrderWarehouseUsed <OrderModelOrderWarehouseUsed>
-
+#figure(
+  image("../../assets/order/OrderWarehouseUsed.png", width: 80%),
+  caption: "Order - OrderWarehouseUsed",
+)
 Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -1608,7 +1635,10 @@ Rappresenta un identificativo univoco per un magazzino.
 - *`string`*: rappresenta l'identificativo univoco del magazzino.
 
 ===== Warehouse <OrderModelWarehouse>
-
+#figure(
+  image("../../assets/order/Warehouse.png", width: 80%),
+  caption: "Order - Warehouse",
+)
 Rappresenta un magazzino nel sistema.
 
 *Descrizione degli attributi della struttura:*
@@ -1620,13 +1650,16 @@ Rappresenta un magazzino nel sistema.
 Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferCmd <OrderCreateTransferCmd>
-
+#figure(
+  image("../../assets/order/CreateTransferCmd.png", width: 80%),
+  caption: "Order - CreateTransferCmd",
+)
 Rappresenta il comando utilizzato per creare un nuovo trasferimento#super[G] nel sistema.
 
 *Descrizione degli attributi della struttura:*
 
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []CreateTransferGood`*: rappresenta una lista di oggetti `CreateTransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1634,12 +1667,15 @@ Rappresenta il comando utilizzato per creare un nuovo trasferimento#super[G] nel
 Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferGood <OrderCreateTransferGood>
-
+#figure(
+  image("../../assets/order/CreateTransferGood.png", width: 80%),
+  caption: "Order - CreateTransferGood",
+)
 Rappresenta una merce inclusa in un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G] ;
+- *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1647,7 +1683,10 @@ Rappresenta una merce inclusa in un trasferimento#super[G].
 Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferResponse <OrderCreateTransferResponse>
-
+#figure(
+  image("../../assets/order/CreateTransferResponse.png", width: 80%),
+  caption: "Order - CreateTransferResponse",
+)
 Rappresenta la risposta alla richiesta di creazione di un nuovo trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -1678,13 +1717,13 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 
 *Descrizione degli attributi della struttura:*
 
-- *`Id string`*: rappresenta l'identificativo univoco dell'aggiornamento del trasferimento#super[G] ;
+- *`Id string`*: rappresenta l'identificativo univoco dell'aggiornamento del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato (es. "Created", "Filled", "Completed");
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []model.GoodStock`*: rappresenta una lista di oggetti `model.GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G] ;
+- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`Goods []model.GoodStock`*: rappresenta una lista di oggetti `model.GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
 - *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -1705,9 +1744,6 @@ Rappresenta il comando utilizzato per segnalare il completamento di un ordine#su
 
 Questa struttura non ha metodi invocabili.
 
-*Descrizione del tipo Go:*
-
-
 ===== TransferUpdateCmd <OrderTransferUpdateCmd>
 
 Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferimento#super[G] nel sistema.
@@ -1715,12 +1751,12 @@ Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferim
 *Descrizione degli attributi della struttura:*
 
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] aggiornato;
-- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
+- *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
 
 ===== TransferUpdateGood <OrderTransferUpdateGood>
@@ -1729,7 +1765,7 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G] ;
+- *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 ===== OrderUpdateCmd <OrderOrderStockUpdateCmd>
@@ -1770,7 +1806,10 @@ Rappresenta un identificativo univoco per una merce.
 - *`string`*: il tipo `GoodID` è un alias per il tipo `string`. Viene utilizzato per identificare in modo univoco una merce all'interno del sistema.
 
 ===== GoodStock <OrderGoodStock>
-
+#figure(
+  image("../../assets/order/GoodStock.png", width: 40%),
+  caption: "Order - GoodStock",
+)
 Rappresenta lo stock#super[G] di una merce, ovvero la sua quantità.
 
 *Descrizione degli attributi della struttura:*
@@ -1782,23 +1821,11 @@ Rappresenta lo stock#super[G] di una merce, ovvero la sua quantità.
 
 Questa struttura non ha metodi invocabili.
 
-===== GoodInfo <OrderGoodInfo>
-
-Rappresenta le informazioni di una merce, inclusa la sua quantità.
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'id della merce in questione;
-- *`Name string`*: rappresenta il nome della merce;
-- *`Description string`*: rappresenta la descrizione della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce.
-
-*Descrizione dei metodi invocabili dalla struttura:*
-
-Questa struttura non ha metodi invocabili.
-
-===== StockUpdateCmdGood <OrderStockUpdateCmdGood>
-
+===== StockUpdateGood <OrderStockUpdateGood>
+#figure(
+  image("../../assets/order/StockUpdateGood.png", width: 40%),
+  caption: "Order - StockUpdateGood",
+)
 Rappresenta una merce coinvolta in un aggiornamento dello stock#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -1812,7 +1839,7 @@ Rappresenta una merce coinvolta in un aggiornamento dello stock#super[G].
 Questa struttura non ha metodi invocabili.
 
 
-===== StockUpdateCmdType <OrderStockUpdateCmdType>
+===== StockUpdateType <OrderStockUpdateType>
 
 Rappresenta il tipo di aggiornamento dello stock#super[G].
 
@@ -1825,15 +1852,18 @@ Rappresenta il tipo di aggiornamento dello stock#super[G].
 
 
 ===== StockUpdateCmd <OrderStockUpdateCmd>
-
+#figure(
+  image("../../assets/order/StockUpdateCmd.png", width: 40%),
+  caption: "Order - StockUpdateCmd",
+)
 Rappresenta il comando per aggiornare lo stock#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`ID string`*: rappresenta l'identificativo univoco del comando di aggiornamento dello stock#super[G];
 - *`WarehouseID string`*: rappresenta l'identificativo del magazzino coinvolto nell'aggiornamento dello stock#super[G];
-- *`Type StockUpdateCmdType`*: rappresenta il tipo di aggiornamento dello stock#super[G]. Può assumere i valori descritti alla @OrderStockUpdateCmdType;
-- *`Goods []StockUpdateCmdGood`*: rappresenta una lista di oggetti `StockUpdateCmdGood` che contengono le informazioni sulle merci coinvolte nell'aggiornamento;
+- *`Type StockUpdateType`*: rappresenta il tipo di aggiornamento dello stock#super[G]. Può assumere i valori descritti alla @OrderStockUpdateType;
+- *`Goods []StockUpdateGood`*: rappresenta una lista di oggetti `StockUpdateGood` che contengono le informazioni sulle merci coinvolte nell'aggiornamento;
 - *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock#super[G];
 - *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello stock#super[G];
@@ -1863,8 +1893,8 @@ Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire 
 *Descrizione degli attributi della struttura:*
 
 - *`Type ContactWarehousesType`*: rappresenta il tipo di operazione, che può essere un ordine#super[G] (*order*) o un trasferimento#super[G] (*transfer*);
-- *`Order *ContactWarehousesOrder`*: rappresenta i dettagli dell'ordine da gestire, se l'operazione è di tipo ordine#super[G] ;
-- *`Transfer *ContactWarehousesTransfer`*: rappresenta i dettagli del trasferimento#super[G] da gestire, se l'operazione è di tipo trasferimento#super[G] ;
+- *`Order *ContactWarehousesOrder`*: rappresenta i dettagli dell'ordine da gestire, se l'operazione è di tipo ordine#super[G];
+- *`Transfer *ContactWarehousesTransfer`*: rappresenta i dettagli del trasferimento#super[G] da gestire, se l'operazione è di tipo trasferimento#super[G];
 - *`ConfirmedReservations []ConfirmedReservation`*: rappresenta una lista di prenotazioni confermate, utilizzate per ottimizzare la gestione delle risorse;
 - *`ExcludeWarehouses []string`*: rappresenta una lista di identificativi dei magazzini da escludere dall'operazione;
 - *`RetryUntil int64`*: rappresenta il timestamp fino al quale è possibile effettuare tentativi di contatto con i magazzini;
@@ -1876,7 +1906,7 @@ Rappresenta il tipo di operazione per il comando *ContactWarehousesCmd*.
 
 *Descrizione dei valori possibili:*
 
-- *`ContactWarehousesTypeOrder`*: indica che l'operazione è relativa a un ordine#super[G] ;
+- *`ContactWarehousesTypeOrder`*: indica che l'operazione è relativa a un ordine#super[G];
 - *`ContactWarehousesTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G].
 
 ===== ContactWarehousesOrder <OrderContactWarehousesOrder>
@@ -1901,14 +1931,14 @@ Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del 
 
 *Descrizione degli attributi della struttura:*
 
-- *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] ;
-- *`Status string`*: rappresenta lo stato del trasferimento#super[G] ;
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G] ;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
-- *`Goods []ContactWarehousesGood`*: rappresenta una lista di merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
+- *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G];
+- *`Status string`*: rappresenta lo stato del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`Goods []ContactWarehousesGood`*: rappresenta una lista di merci coinvolte nel trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 ===== ContactWarehousesGood <OrderContactWarehousesGood>
 
@@ -1977,8 +2007,8 @@ Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire 
 
 *Descrizione degli attributi della struttura:*
 
-- *`Order *model.Order`*: rappresenta i dettagli dell'ordine da gestire, se l'operazione è di tipo ordine#super[G] ;
-- *`Transfer *model.Transfer`*: rappresenta i dettagli del trasferimento#super[G] da gestire, se l'operazione è di tipo trasferimento#super[G] ;
+- *`Order *model.Order`*: rappresenta i dettagli dell'ordine da gestire, se l'operazione è di tipo ordine#super[G];
+- *`Transfer *model.Transfer`*: rappresenta i dettagli del trasferimento#super[G] da gestire, se l'operazione è di tipo trasferimento#super[G];
 - *`Type SendContactWarehouseType`*: rappresenta il tipo di operazione, che può essere un ordine#super[G] (*order*) o un trasferimento#super[G] (*transfer*);
 - *`ConfirmedReservations []ConfirmedReservation`*: rappresenta una lista di prenotazioni confermate, utilizzate per ottimizzare la gestione delle risorse;
 - *`ExcludeWarehouses []string`*: rappresenta una lista di identificativi dei magazzini da escludere dall'operazione;
@@ -1995,7 +2025,7 @@ Rappresenta il tipo di operazione per il comando *SendContactWarehouseCmd*.
 
 *Descrizione dei valori possibili:*
 
-- *`SendContactWarehouseTypeOrder`*: indica che l'operazione è relativa a un ordine#super[G] ;
+- *`SendContactWarehouseTypeOrder`*: indica che l'operazione è relativa a un ordine#super[G];
 - *`SendContactWarehouseTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G].
 
 ===== CreateOrderGood <OrderCreateOrderGood>
@@ -2061,7 +2091,6 @@ Rappresenta il comando utilizzato per richiedere i dettagli di un trasferimento#
 *Descrizione dei metodi invocabili dalla struttura:*
 
 Questa struttura non ha metodi invocabili.
-
 
 ===== RequestedGood <OrderRequestedGood>
 
@@ -2173,11 +2202,11 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimen
 
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da aggiornare;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Pending", "Completed");
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []SendTransferUpdateGood`*: rappresenta una lista di oggetti `SendTransferUpdateGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
+- *`Goods []SendTransferUpdateGood`*: rappresenta una lista di oggetti `SendTransferUpdateGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2189,14 +2218,14 @@ Rappresenta una merce inclusa in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G] ;
+- *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 Questa struttura non ha metodi invocabili.
 
-===== FINE
+
 
 //Inizio oggetti normali
 
@@ -2302,13 +2331,13 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`ContactWarehouses(ctx context.Context, cmd port.ContactWarehousesCmd) (port.ContactWarehousesResponse, error)`*: metodo per contattare i magazzini al fine di gestire ordini o trasferimenti. Gestisce i tentativi di contatto e le prenotazioni delle merci necessarie;
 
-- *`createOrderCmdToSendOrderUpdateCmd(orderId string, cmd port.CreateOrderCmd) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di creazione ordine#super[G] in un comando di aggiornamento ordine#super[G] ;
+- *`createOrderCmdToSendOrderUpdateCmd(orderId string, cmd port.CreateOrderCmd) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di creazione ordine#super[G] in un comando di aggiornamento ordine#super[G];
 
 - *`contactCmdToCalculateAvailabilityCmd(cmd port.ContactWarehousesCmd) port.CalculateAvailabilityCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini in un comando di calcolo della disponibilità;
 
 - *`warehouseAvailabilityToReservationCmd(warehouse port.WarehouseAvailability) port.RequestReservationCmd`*: funzione di utilità per convertire la disponibilità di un magazzino in un comando di prenotazione;
 
-- *`contactCmdAndConfirmedToSendOrderUpdateCmd(cmd port.ContactWarehousesCmd, confirmed []port.ConfirmedReservation) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini e le prenotazioni confermate in un comando di aggiornamento ordine#super[G] ;
+- *`contactCmdAndConfirmedToSendOrderUpdateCmd(cmd port.ContactWarehousesCmd, confirmed []port.ConfirmedReservation) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini e le prenotazioni confermate in un comando di aggiornamento ordine#super[G];
 
 - *`contactCmdToSendOrderUpdateCmdForCancel(cmd port.ContactWarehousesCmd) port.SendOrderUpdateCmd`*: funzione di utilità per convertire un comando di contatto con i magazzini in un comando di aggiornamento ordine#super[G] per annullare l'ordine.
 
@@ -2792,7 +2821,10 @@ Rappresenta un _Adapter_ che mette in comunicazione la _business logic_ con il s
 - *`RequestReservation(ctx context.Context, cmd port.RequestReservationCmd) (port.RequestReservationResponse, error)`*: invia una richiesta di prenotazione di merci al sistema di messaggistica NATS#super[G]. Restituisce un oggetto `port.RequestReservationResponse` contenente l'identificativo della prenotazione creata e un eventuale errore in caso di fallimento.
 
 ==== HealthCheckController <OrderHealthCheckController>
-
+#figure(
+  image("../../assets/order/HealthCheckController.png", width: 35%),
+  caption: "Order - HealthCheckController",
+)
 La struttura `HealthCheckController` rappresenta l'_application logic_ per la gestione delle richieste di controllo dello stato di salute del microservizio. È progettata per rispondere a richieste di tipo "ping" con una risposta "pong", indicando che il microservizio è attivo e funzionante.
 
 *Descrizione degli attributi della struttura:*
@@ -2804,7 +2836,6 @@ Questa struttura non possiede attributi.
 - *`NewHealthCheckController() *HealthCheckController`*: costruttore della struttura. Restituisce un'istanza di `HealthCheckController`.
 
 - *`PingHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di tipo "ping" ricevute tramite il sistema di messaggistica NATS#super[G]. Risponde con un messaggio "pong". Ritorna un errore in caso di fallimento durante la serializzazione della risposta o l'invio del messaggio di risposta.
-
 
 
 === Catalog <catalog>
@@ -3454,11 +3485,11 @@ Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
 *Descrizione degli attributi della struttura:*
 
 - *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da confermare;
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] da aggiornare;
-- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
+- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 ===== TransferUpdateGood <WarehouseTransferUpdateGood>
 #figure(
@@ -3570,7 +3601,7 @@ Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di 
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G] ;
+- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G];
 - *`Quantity int64`*: rappresenta la quantità di stock#super[G] da aggiungere alla merce.
 
 
@@ -3601,7 +3632,7 @@ Questo _Command_ viene utilizzato per rappresentare la richiesta di rimozione di
 
 *Descrizione degli attributi della struttura:*
 
-- *`GoodID string`*: rappresenta l'id della merce a cui rimuovere stock#super[G] ;
+- *`GoodID string`*: rappresenta l'id della merce a cui rimuovere stock#super[G];
 - *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
 
 ===== GoodID <WarehouseGoodID>
@@ -3862,7 +3893,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 *Descrizione dei metodi dell'interfaccia:*
 
-- *`GetReservation(reservationId: model.ReservationId) (model.Reservation, error)`*: il metodo deve permettere di ottenere i dettagli di una prenotazione specifica, prendendo come parametro l'identificativo della prenotazione (`reservationId`) e restituendo un oggetto di tipo `model.Reservation` e un eventuale errore in caso di fallimento.
+- *`GetReservation(reservationId: model.ReservationID) (model.Reservation, error)`*: il metodo deve permettere di ottenere i dettagli di una prenotazione specifica, prendendo come parametro l'identificativo della prenotazione (`reservationId`) e restituendo un oggetto di tipo `model.Reservation` e un eventuale errore in caso di fallimento.
 
 ==== IIdempotentPort <WarehouseIIdempotentPort>
 
@@ -3948,7 +3979,7 @@ Implementa le seguenti interfacce (porte):
 
 - *`GetFreeStock(goodId: model.GoodID) model.GoodStock`*: converte la richiesta di ottenimento della quantità libera di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata e ritorna un oggetto `GoodStock`;
 
-- *`GetReservation(reservationId: model.ReservationId) (model.Reservation, error)`*: converte la richiesta di ottenimento dei dettagli di una prenotazione in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata. Ritorna un oggetto `Reservation` e un eventuale errore.
+- *`GetReservation(reservationId: model.ReservationID) (model.Reservation, error)`*: converte la richiesta di ottenimento dei dettagli di una prenotazione in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata. Ritorna un oggetto `Reservation` e un eventuale errore.
 
 ==== IApplyCatalogUpdatePort <WarehouseIApplyCatalogUpdatePort>
 
