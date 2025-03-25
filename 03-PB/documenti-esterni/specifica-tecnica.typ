@@ -415,7 +415,10 @@ Infine, si ricorda che, nel linguaggio Go#super[G], un nome di funzione o attrib
 === Oggetti comuni tra microservizi //COMMONOBJ
 
 ==== ResponseDTO <ResponseDTO>
-
+#figure(
+  image("../../assets/warehouse/ResponseDTO.png", width: 25%),
+  caption: "Common - ResponseDTO",
+)
 Rappresenta un DTO generico per le risposte, utilizzabile per incapsulare un messaggio di tipo generico `T` e un eventuale messaggio di errore.
 
 *Descrizione degli attributi della struttura:*
@@ -423,22 +426,22 @@ Rappresenta un DTO generico per le risposte, utilizzabile per incapsulare un mes
 - *`Message T`*: rappresenta il messaggio generico di tipo `T` incluso nella risposta;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-==== ErrorResponseDTO <ErrorResponseDTO>
+// ==== ErrorResponseDTO <ErrorResponseDTO>
 
-Rappresenta un DTO specifico per le risposte di errore, derivato da `ResponseDTO` con un tipo generico `any`.
+// Rappresenta un DTO specifico per le risposte di errore, derivato da `ResponseDTO` con un tipo generico `any`.
 
-*Descrizione degli attributi della struttura:*
+// *Descrizione degli attributi della struttura:*
 
-- *`Message any`*: rappresenta un messaggio generico incluso nella risposta di errore;
-- *`Error string`*: rappresenta un messaggio di errore, se presente.
+// - *`Message any`*: rappresenta un messaggio generico incluso nella risposta di errore;
+// - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 // WAREHOUSE
 
-==== StockUpdate
-// #figure(
-// image("../../assets/warehouse/StreamStockUpdate.png", width: 35%),
-// caption: "StockUpdate",
-// )
+==== StockUpdate <WarehouseStockUpdate>
+#figure(
+image("../../assets/warehouse/StreamStockUpdate.png", width: 35%),
+caption: "Warehouse - StockUpdate",
+)
 
 Rappresenta un aggiornamento dello stock#super[G] nel sistema, utilizzato per comunicare variazioni di quantità di merci tra i microservizi.
 
@@ -457,7 +460,7 @@ Rappresenta un aggiornamento dello stock#super[G] nel sistema, utilizzato per co
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello stock#super[G];
 - *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock#super[G].
 
-==== StockUpdateType
+==== StockUpdateType <WarehouseStockUpdateType>
 
 Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa con i seguenti valori possibili:
 
@@ -466,11 +469,11 @@ Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa co
 - *`order`*: per aggiornamenti legati a ordini;
 - *`transfer`*: per aggiornamenti legati a trasferimenti.
 
-==== StockUpdateGood
+==== StockUpdateGood <WarehouseStockUpdateGood>
 
 #figure(
   image("../../assets/warehouse/StreamStockUpdateGood.png", width: 27%),
-  caption: "StockUpdateGood",
+  caption: "Warehouse - StockUpdateGood",
 )
 
 Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[G].
@@ -508,11 +511,10 @@ Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock
 - *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
 
 ==== ReserveStockRequestDTO <WarehouseReserveStockRequestDTO>
-
-// #figure(
-// image("../../assets/warehouse/ReserveStockRequestDTO.png", width: 30%),
-// caption: "Warehouse - ReserveStockRequestDTO",
-// )
+#figure(
+image("../../assets/warehouse/ReserveStockRequestDTO.png", width: 30%),
+caption: "Warehouse - ReserveStockRequestDTO",
+)
 
 Questo DTO viene utilizzato per rappresentare la richiesta di prenotazione di stock#super[G] nel magazzino.
 
@@ -521,11 +523,10 @@ Questo DTO viene utilizzato per rappresentare la richiesta di prenotazione di st
 - *`Goods []ReserveStockItem`*: rappresenta una lista di oggetti `ReserveStockItem` che contengono le informazioni sulle merci da prenotare.
 
 ==== ReserveStockItem <WarehouseReserveStockItem>
-
-// #figure(
-// image("../../assets/warehouse/ReserveStockItem.png", width: 25%),
-// caption: "Warehouse - ReserveStockItem",
-// )
+#figure(
+image("../../assets/warehouse/ReserveStockItem.png", width: 25%),
+caption: "Warehouse - ReserveStockItem",
+)
 
 Rappresenta una merce coinvolta nella richiesta di prenotazione di stock#super[G].
 
@@ -535,7 +536,10 @@ Rappresenta una merce coinvolta nella richiesta di prenotazione di stock#super[G
 - *`Quantity int64`*: rappresenta la quantità della merce da prenotare.
 
 ==== HealthCheckResponseDTO <WarehouseHealthCheckResponseDTO>
-
+#figure(
+  image("../../assets/warehouse/HealthCheckResponseDTO.png", width: 25%),
+  caption: "Warehouse - HealthCheckResponseDTO",
+)
 Rappresenta un DTO specifico per le risposte di controllo dello stato di salute del microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -544,7 +548,10 @@ Rappresenta un DTO specifico per le risposte di controllo dello stato di salute 
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 ==== ReserveStockResponseDTO <WarehouseReserveStockResponseDTO>
-
+#figure(
+  image("../../assets/warehouse/ReserveStockResponseDTO.png", width: 25%),
+  caption: "Warehouse - ReserveStockResponseDTO",
+)
 Rappresenta un DTO specifico per le risposte relative alla prenotazione di stock#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -553,7 +560,10 @@ Rappresenta un DTO specifico per le risposte relative alla prenotazione di stock
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 ==== ReserveStockInfo <WarehouseReserveStockInfo>
-
+#figure(
+  image("../../assets/warehouse/ReserveStockInfo.png", width: 25%),
+  caption: "Warehouse - ReserveStockInfo",
+)
 Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel microservizio *Warehouse*#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -1419,11 +1429,15 @@ Il microservizio *Order* viene utilizzato per realizzare gli ordini quando quest
 
 È sempre di questo microservizio il compito di assolvere ai trasferimenti, particolari tipi di ordini il cui destinatario è un altro magazzino.
 
-È formato dalle seguenti componenti:
+È formato da tre sotto-aree di componenti principali:
 
-[PROSEGUIRE] lista
+- I *Controller* e *Listener*, che rappresentano l'_application logic_
+- I *Service*, che rappresentano la _business logic_;
+- I *Repository*#super[G], che rappresentano la _persistence logic_.
 
-==== Oggetti comuni del microservizio //COMMONORDEROBJ
+Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
+
+==== Oggetti comuni del microservizio
 
 ===== OrderWarehouseUsed (Repo) <OrderRepoOrderWarehouseUsed>
 
@@ -2182,6 +2196,7 @@ Rappresenta una merce inclusa in un aggiornamento di un trasferimento#super[G].
 
 Questa struttura non ha metodi invocabili.
 
+===== FINE
 
 //Inizio oggetti normali
 
@@ -3329,7 +3344,7 @@ Si occupa di gestire l'_application logic_ del microservizio Catalog.
 === Warehouse <micro_warehouse>
 
 #figure(
-  image("../../assets/warehouse/warehouse.png", width: 130%),
+  image("../../assets/warehouse/warehouse.png", width: 100%),
   caption: "Componenti del microservizio Warehouse",
 )
 
@@ -3347,8 +3362,24 @@ Può funzionare anche in caso di mancanza di connessione con gli altri microserv
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
-==== Reservation <WarehouseRepoReservation>
+==== Oggetti comuni
+===== Good (Repo) <WarehouseRepoGood>
+#figure(
+  image("../../assets/warehouse/Good.png", width: 25%),
+  caption: "Warehouse - Good (Repo)",
+)
+Rappresenta una merce registrata nel magazzino.
+Vieni utilizzato dall'interfaccia ICatalogRepository, vedi @WarehouseICatalogRepository, per memorizzare le informazioni delle merci.
 
+*Descrizione degli attributi della struttura:*
+- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
+- *`Name string`*: attributo di tipo *string* che rappresenta il nome della merce;
+- *`Description string`*: attributo di tipo *string* che rappresenta la descrizione della merce.
+===== Reservation (Repo) <WarehouseRepoReservation>
+#figure(
+  image("../../assets/warehouse/Repo-Reservation.png", width: 25%),
+  caption: "Warehouse - Reservation (Repo)",
+)
 Rappresenta una prenotazione di merci nel magazzino. Viene utilizzata dalla _persistence logic_ e dall'interfaccia *IStockRepository* (@WarehouseIStockRepository).
 
 *Descrizione degli attributi della struttura:*
@@ -3358,6 +3389,313 @@ Rappresenta una prenotazione di merci nel magazzino. Viene utilizzata dalla _per
 *Descrizione dei metodi invocabili dalla struttura:*
 
 Questa struttura non ha metodi invocabili.
+
+===== Reservation <WarehouseModelReservation>
+#figure(
+  image("../../assets/warehouse/Reservation.png", width: 25%),
+  caption: "Warehouse - Reservation",
+)
+Rappresenta una prenotazione di merci nel magazzino.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco della prenotazione;
+- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci coinvolte nella prenotazione.
+
+===== ReservationID <WarehouseModelReservationId>
+
+Rappresenta un identificativo univoco per una prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`string`*: rappresenta l'identificativo univoco della prenotazione.
+
+===== ReservationGood <WarehouseModelReservationGood>
+#figure(
+  image("../../assets/warehouse/ReservationGood.png", width: 25%),
+  caption: "Warehouse - ReservationGood",
+)
+Rappresenta una merce coinvolta in una prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nella prenotazione.
+
+===== CreateReservationCmd <WarehouseCreateReservationCmd>
+#figure(
+  image("../../assets/warehouse/CreateReservationCmd.png", width: 25%),
+  caption: "Warehouse - CreateReservationCmd",
+)
+Rappresenta il comando utilizzato per creare una prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci da prenotare.
+
+===== CreateReservationResponse <WarehouseCreateReservationResponse>
+#figure(
+  image("../../assets/warehouse/CreateReservationResponse.png", width: 25%),
+  caption: "Warehouse - CreateReservationResponse",
+)
+Rappresenta la risposta alla richiesta di creazione di una prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ReservationID string`*: rappresenta l'identificativo univoco della prenotazione creata.
+
+===== ConfirmTransferCmd <WarehouseConfirmTransferCmd>
+#figure(
+  image("../../assets/warehouse/ConfirmTransferCmd.png", width: 25%),
+  caption: "Warehouse - ConfirmTransferCmd",
+)
+Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da confermare;
+- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
+- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
+- *`Status string`*: rappresenta lo stato del trasferimento#super[G] da aggiornare;
+- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
+- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
+
+===== TransferUpdateGood <WarehouseTransferUpdateGood>
+#figure(
+  image("../../assets/warehouse/TransferUpdateGood.png", width: 25%),
+  caption: "Warehouse - TransferUpdateGood",
+)
+Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
+
+===== ConfirmOrderCmd <WarehouseConfirmOrderCmd>
+#figure(
+  image("../../assets/warehouse/ConfirmOrderCmd.png", width: 25%),
+  caption: "Warehouse - ConfirmOrderCmd",
+)
+Rappresenta il comando utilizzato per confermare un ordine#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`OrderID string`*: rappresenta l'identificativo univoco dell'ordine da confermare;
+- *`Status string`*: rappresenta lo stato dell'ordine da aggiornare;
+- *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
+- *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
+
+===== OrderUpdateGood <WarehouseOrderUpdateGood>
+#figure(
+  image("../../assets/warehouse/OrderUpdateGood.png", width: 25%),
+  caption: "Warehouse - OrderUpdateGood",
+)
+Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nell'ordine.
+
+===== CatalogUpdateCmd <WarehouseCatalogUpdateCmd>
+#figure(
+  image("../../assets/warehouse/CatalogUpdateCmd.png", width: 25%),
+  caption: "Warehouse - CatalogUpdateCmd",
+)
+
+Rappresenta il comando per aggiornare le informazioni di un catalogo nel microservizio *Warehouse*#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce da aggiornare;
+- *`Name string`*: rappresenta il nuovo nome della merce;
+- *`Description string`*: rappresenta la nuova descrizione della merce.
+
+
+===== StockUpdateCmd <WarehouseStockUpdateCmd>
+
+#figure(
+  image("../../assets/warehouse/StockUpdateCmd.png", width: 30%),
+  caption: "Warehouse - StockUpdateCmd",
+)
+
+Rappresenta il comando per aggiornare lo stock#super[G] nel microservizio *Warehouse*#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco del comando di aggiornamento dello _stock_#super[G];
+- *`Type StockUpdateType`*: rappresenta il tipo di aggiornamento dello _stock_#super[G]. Può assumere i seguenti valori:
+  - *`add`*: per aggiungere stock#super[G];
+  - *`remove`*: per rimuovere stock#super[G];
+  - *`order`*: per aggiornamenti legati a ordini;
+  - *`transfer`*: per aggiornamenti legati a trasferimenti;
+- *`Goods []StockUpdateGood`*: rappresenta una lista di oggetti `StockUpdateGood` che contengono le informazioni sulle merci aggiornate;
+- *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello _stock_#super[G];
+- *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello _stock_#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello _stock_#super[G];
+- *`Timestamp int64`*: rappresenta il _timestamp_ dell'aggiornamento dello _stock_#super[G].
+
+===== StockUpdateGood <WarehouseStockUpdateGood>
+
+#figure(
+  image("../../assets/warehouse/StockUpdateGood.png", width: 35%),
+  caption: "Warehouse - StockUpdateGood",
+)
+
+Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce aggiornata;
+- *`Quantity int64`*: rappresenta la nuova quantità della merce aggiornata;
+- *`Delta int64`*: rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
+
+===== StockUpdateType <WarehouseStockUpdateType>
+
+Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa con i seguenti valori possibili:
+
+- *`add`*: per aggiungere stock#super[G];
+- *`remove`*: per rimuovere stock#super[G];
+- *`order`*: per aggiornamenti legati a ordini;
+- *`transfer`*: per aggiornamenti legati a trasferimenti.
+
+===== AddStockCmd <WarehouseAddStockCmd>
+#figure(
+  image("../../assets/warehouse/AddStockCmd.png", width: 25%),
+  caption: "Warehouse - AddStockCmd",
+)
+
+Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di stock#super[G], e viene utilizzato dal caso d'uso#super[G] @WarehouseIAddStockUseCase.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G] ;
+- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da aggiungere alla merce.
+
+
+===== IdempotentCmd <WarehouseIdempotentCmd>
+#figure(
+  image("../../assets/warehouse/IdempotentCmd.png", width: 25%),
+  caption: "Warehouse - IdempotentCmd",
+)
+
+Rappresenta il comando utilizzato per identificare un evento in modo univoco e gestire l'idempotenza.
+
+*Descrizione degli attributi della struttura:*
+
+- *`Event string`*: rappresenta il nome o il tipo dell'evento da identificare;
+- *`Id string`*: rappresenta l'identificativo univoco dell'evento.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+Questa struttura non ha metodi invocabili.
+
+===== RemoveStockCmd <WarehouseRemoveStockCmd>
+#figure(
+  image("../../assets/warehouse/RemoveStockCmd.png", width: 25%),
+  caption: "Warehouse - RemoveStockCmd",
+)
+
+Questo _Command_ viene utilizzato per rappresentare la richiesta di rimozione di stock#super[G], e viene utilizzato dal caso d'uso#super[G] @WarehouseIRemoveStockUseCase.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'id della merce a cui rimuovere stock#super[G] ;
+- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
+
+===== GoodID <WarehouseGoodID>
+Rappresenta un identificativo univoco per una merce.
+
+*Descrizione del tipo:*
+
+- *`string`*: il tipo `GoodID` è un alias per il tipo `string`. Viene utilizzato per identificare in modo univoco una merce all'interno del sistema.
+
+===== GoodInfo <WarehouseGoodInfo>
+#figure(
+  image("../../assets/warehouse/GoodInfo.png", width: 20%),
+  caption: "Warehouse - GoodInfo",
+)
+Questa classe è utilizzata nella _business logic_.
+Rappresenta una merce con le sue informazioni.
+
+*Descrizione degli attributi della struttura:*
+- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
+- *`Name string`*: attributo di tipo *string* che rappresenta il nome della merce;
+- *`Description string`*: attributo di tipo *string* che rappresenta la descrizione della merce.
+
+===== GoodStock <WarehouseGoodStock>
+#figure(
+  image("../../assets/warehouse/GoodStock.png", width: 25%),
+  caption: "Warehouse - GoodStock",
+)
+Questa classe è utilizzata nella _business logic_.
+Rappresenta una merce con la sua quantità presente nel magazzino.
+
+*Descrizione degli attributi della struttura:*
+- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
+- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
+
+===== ReservationGood <WarehouseReservationGood>
+#figure(
+  image("../../assets/warehouse/ReservationGood.png", width: 25%),
+  caption: "Warehouse - ReservationGood",
+)
+Rappresenta una merce coinvolta in un evento di prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GoodID string`*: rappresenta l'identificativo della merce;
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nell'evento di prenotazione.
+
+===== ApplyReservationEventCmd <WarehouseApplyReservationEventCmd>
+#figure(
+  image("../../assets/warehouse/ApplyReservationEventCmd.png", width: 25%),
+  caption: "Warehouse - ApplyReservationEventCmd",
+)
+Rappresenta il comando utilizzato per applicare un evento di prenotazione.
+
+*Descrizione degli attributi della struttura:*
+
+- *`ID string`*: rappresenta l'identificativo univoco dell'evento di prenotazione;
+- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci coinvolte nell'evento di prenotazione.
+
+===== CreateStockUpdateCmd <WarehouseCreateStockUpdateCmd>
+#figure(
+  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 40%),
+  caption: "Warehouse - CreateStockUpdateCmd",
+)
+
+Rappresenta il _Command_ per creare un aggiornamento dello stock#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`Type CreateStockUpdateType`*: rappresenta il tipo di aggiornamento dello stock#super[G]. Può assumere i seguenti valori:
+  - *`add`*: per aggiungere stock#super[G];
+  - *`remove`*: per rimuovere stock#super[G];
+  - *`order`*: per aggiornamenti legati a ordini;
+  - *`transfer`*: per aggiornamenti legati a trasferimenti;
+- *`Goods []CreateStockUpdateGood`*: rappresenta una lista di oggetti `CreateStockUpdateGood` che contengono le quantità delle merci aggiornate;
+- *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock#super[G];
+- *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock#super[G];
+- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello stock#super[G].
+
+===== CreateStockUpdateGood <WarehouseCreateStockUpdateGood>
+#figure(
+  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 30%),
+  caption: "Warehouse - CreateStockUpdateGood",
+)
+
+Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiornamento dello stock#super[G].
+
+*Descrizione degli attributi della struttura:*
+
+- *`Good model.GoodStock`*: attributo di tipo `model.GoodStock` che rappresenta la merce aggiornata;
+- *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
+
+===== FINE
+
+// oggetti
 
 ==== IStockRepository <WarehouseIStockRepository>
 
@@ -3408,20 +3746,6 @@ Questa struttura implementa l'interfaccia *IStockRepository*, vedi la @Warehouse
 
 - *`GetReservation(reservationId string) (Reservation, error)`*: restituisce i dettagli di una prenotazione specifica tramite il suo identificativo. Ritorna un errore se la prenotazione non esiste.
 
-==== Good <WarehouseRepoGood>
-#figure(
-  image("../../assets/warehouse/Good.png", width: 25%),
-  caption: "Warehouse - Good",
-)
-Rappresenta una merce registrata nel magazzino.
-Vieni utilizzato dall'interfaccia ICatalogRepository, vedi @WarehouseICatalogRepository, per memorizzare le informazioni delle merci.
-
-*Descrizione degli attributi della struttura:*
-- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
-- *`Name string`*: attributo di tipo *string* che rappresenta il nome della merce;
-- *`Description string`*: attributo di tipo *string* che rappresenta la descrizione della merce.
-
-
 ==== ICatalogRepository <WarehouseICatalogRepository>
 
 Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ delle informazioni del catalogo per il microservizio _Warehouse_#super[G].
@@ -3445,33 +3769,6 @@ Questa struttura implementa l'interfaccia *ICatalogRepository*, vedi la @Warehou
 - *`GetGood(goodId string) *Good`*: restituisce i dati di una merce registrata nel magazzino tramite il suo ID;
 - *`SetGood(goodId string, name string, description string) bool`*: aggiunge o modifica una merce nel magazzino con l'ID, nome e descrizione forniti.
 
-==== CreateStockUpdateCmd <WarehouseCreateStockUpdateCmd>
-#figure(
-  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 40%),
-  caption: "Warehouse - CreateStockUpdateCmd",
-)
-
-Rappresenta il _Command_ per creare un aggiornamento dello stock#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`Type string`*: attributo di tipo *string* che rappresenta il tipo di aggiornamento dello stock#super[G] ;
-- *`Goods []CreateStockUpdateGood`*: rappresenta una lista di oggetti `CreateStockUpdateGood` che contengono le quantità delle merci aggiornate.
-
-==== CreateStockUpdateGood <WarehouseCreateStockUpdateGood>
-#figure(
-  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 30%),
-  caption: "Warehouse - CreateStockUpdateGood",
-)
-
-Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiornamento dello stock#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodId string`*: attributo di tipo *string* che rappresenta l'identificativo della merce aggiornata;
-- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità attuale della merce;
-- *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
-
 ==== ICreateStockUpdatePort <WarehouseICreateStockUpdatePort>
 
 Rappresenta la porta che consente alla _business logic_ di comunicare con l'esterno per creare un aggiornamento dello stockRappresenta l'interfaccia generica di un oggetto che implementa la _Persistence Logic_ degli stock#super[G] per il microservizio _Warehouse_#super[G].
@@ -3479,32 +3776,6 @@ Rappresenta la porta che consente alla _business logic_ di comunicare con l'este
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: il metodo deve permettere di creare un aggiornamento dello stock#super[G].
-
-==== Reservation <WarehouseModelReservation>
-
-Rappresenta una prenotazione di merci nel magazzino.
-
-*Descrizione degli attributi della struttura:*
-
-- *`ID string`*: rappresenta l'identificativo univoco della prenotazione;
-- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci coinvolte nella prenotazione.
-
-==== ReservationId <WarehouseModelReservationId>
-
-Rappresenta un identificativo univoco per una prenotazione.
-
-*Descrizione degli attributi della struttura:*
-
-- *`string`*: rappresenta l'identificativo univoco della prenotazione.
-
-==== ReservationGood <WarehouseModelReservationGood>
-
-Rappresenta una merce coinvolta in una prenotazione.
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'identificativo della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nella prenotazione.
 
 ==== IStoreReservationEventPort <WarehouseIStoreReservationEventPort>
 
@@ -3531,24 +3802,6 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`ApplyReservationEvent(cmd: ApplyReservationEventCmd) error`*: il metodo deve permettere di applicare un evento di prenotazione, prendendo come parametro un oggetto di tipo `ApplyReservationEventCmd`. Deve restituire un errore in caso di fallimento.
-
-==== ApplyReservationEventCmd <WarehouseApplyReservationEventCmd>
-
-Rappresenta il comando utilizzato per applicare un evento di prenotazione.
-
-*Descrizione degli attributi della struttura:*
-
-- *`Id string`*: rappresenta l'identificativo univoco dell'evento di prenotazione;
-- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci coinvolte nell'evento di prenotazione.
-
-==== ReservationGood <WarehouseReservationGood>
-
-Rappresenta una merce coinvolta in un evento di prenotazione.
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'identificativo della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nell'evento di prenotazione.
 
 ==== PublishReservationEventAdapter <WarehousePublishReservationEventAdapter>
 
@@ -3585,18 +3838,6 @@ _Adapter_ che mette in comunicazione la _business logic_ con il sistema di messa
 - *`NewPublishStockUpdateAdapter(broker: *NatsMessageBroker, cfg: *WarehouseConfig) *PublishStockUpdateAdapter`*: costruttore dell'adapter. Inizializza gli attributi `broker` e `cfg` con i valori passati come parametri.
 - *`CreateStockUpdate(ctx: Context, cmd: CreateStockUpdateCmd) error`*: pubblica un aggiornamento dello stock#super[G] utilizzando il broker di messaggistica NATS#super[G].
 
-==== GoodStock <WarehouseGoodStock>
-#figure(
-  image("../../assets/warehouse/GoodStock.png", width: 25%),
-  caption: "Warehouse - GoodStock",
-)
-Questa classe è utilizzata nella _business logic_.
-Rappresenta una merce con la sua quantità presente nel magazzino.
-
-*Descrizione degli attributi della struttura:*
-- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
-- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
-
 ==== IApplyStockUpdatePort <WarehouseIApplyStockUpdatePort>
 
 Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento dello stock#super[G].
@@ -3632,19 +3873,6 @@ Rappresenta la porta che consente alla _business logic_ di gestire operazioni id
 - *`SaveEventID(cmd: IdempotentCmd)`*: il metodo deve permettere di salvare l'identificativo di un evento per garantire che non venga elaborato più volte;
 
 - *`IsAlreadyProcessed(cmd: IdempotentCmd) bool`*: il metodo deve permettere di verificare se un evento è già stato elaborato, restituendo se l'evento è già stato processato.
-
-==== IdempotentCmd <WarehouseIdempotentCmd>
-
-Rappresenta il comando utilizzato per identificare un evento in modo univoco e gestire l'idempotenza.
-
-*Descrizione degli attributi della struttura:*
-
-- *`Event string`*: rappresenta il nome o il tipo dell'evento da identificare;
-- *`Id string`*: rappresenta l'identificativo univoco dell'evento.
-
-*Descrizione dei metodi invocabili dalla struttura:*
-
-Questa struttura non ha metodi invocabili.
 
 ==== IIdempotentRepository <WarehouseIIdempotentRepository>
 
@@ -3722,18 +3950,6 @@ Implementa le seguenti interfacce (porte):
 
 - *`GetReservation(reservationId: model.ReservationId) (model.Reservation, error)`*: converte la richiesta di ottenimento dei dettagli di una prenotazione in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata. Ritorna un oggetto `Reservation` e un eventuale errore.
 
-==== GoodInfo <WarehouseGoodInfo>
-#figure(
-  image("../../assets/warehouse/GoodInfo.png", width: 20%),
-  caption: "Warehouse - GoodInfo",
-)
-Questa classe è utilizzata nella _business logic_.
-Rappresenta una merce con le sue informazioni.
-
-*Descrizione degli attributi della struttura:*
-- *`ID string`*: attributo di tipo *string* che rappresenta l'Id della merce;
-- *`Quantity int64`*: attributo di tipo *int64* che rappresenta la quantità della merce nel magazzino.
-
 ==== IApplyCatalogUpdatePort <WarehouseIApplyCatalogUpdatePort>
 
 Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento del catalogo.
@@ -3771,19 +3987,6 @@ Implementa le seguenti interfacce (porte):
 
 - *`GetGood(goodId: GoodID) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
 
-==== RemoveStockCmd <WarehouseRemoveStockCmd>
-#figure(
-  image("../../assets/warehouse/RemoveStockCmd.png", width: 25%),
-  caption: "Warehouse - RemoveStockCmd",
-)
-
-Questo _Command_ viene utilizzato per rappresentare la richiesta di rimozione di stock#super[G], e viene utilizzato dal caso d'uso#super[G] @WarehouseIRemoveStockUseCase.
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'id della merce a cui rimuovere stock#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da rimuovere dalla merce.
-
 ==== IRemoveStockUseCase <WarehouseIRemoveStockUseCase>
 
 Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di rimuovere una quantità di una merce dal magazzino.
@@ -3791,20 +3994,6 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`RemoveStock(ctx: Context, cmd: RemoveStockCmd) error`*: il metodo deve permettere di rimuovere una quantità di una merce dal magazzino.
-
-==== AddStockCmd <WarehouseAddStockCmd>
-#figure(
-  image("../../assets/warehouse/AddStockCmd.png", width: 25%),
-  caption: "Warehouse - AddStockCmd",
-)
-
-Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di stock#super[G], e viene utilizzato dal caso d'uso#super[G] @WarehouseIAddStockUseCase.
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'id della merce a cui aggiungere stock#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità di stock#super[G] da aggiungere alla merce.
-
 
 ==== IAddStockUseCase <WarehouseIAddStockUseCase>
 
@@ -3854,53 +4043,6 @@ Lo *StockController* gestisce l'_application logic_ per le operazioni di aggiunt
 
 - *`AddStockHandler(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'aggiunta di stock#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
-==== StockUpdateCmd <WarehouseStockUpdateCmd>
-
-#figure(
-  image("../../assets/warehouse/StockUpdateCmd.png", width: 30%),
-  caption: "Warehouse - StockUpdateCmd",
-)
-
-Rappresenta il comando per aggiornare lo stock#super[G] nel microservizio *Warehouse*#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`ID string`*: rappresenta l'identificativo univoco del comando di aggiornamento dello _stock_#super[G];
-- *`Type StockUpdateCmdType`*: rappresenta il tipo di aggiornamento dello _stock_#super[G]. Può assumere i seguenti valori:
-  - *`add`*: per aggiungere stock#super[G];
-  - *`remove`*: per rimuovere stock#super[G];
-  - *`order`*: per aggiornamenti legati a ordini;
-  - *`transfer`*: per aggiornamenti legati a trasferimenti;
-- *`Goods []StockUpdateGood`*: rappresenta una lista di oggetti `StockUpdateGood` che contengono le informazioni sulle merci aggiornate;
-- *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello _stock_#super[G];
-- *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello _stock_#super[G];
-- *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello _stock_#super[G];
-- *`Timestamp int64`*: rappresenta il _timestamp_ dell'aggiornamento dello _stock_#super[G].
-
-==== StockUpdateGood <WarehouseStockUpdateGood>
-
-#figure(
-  image("../../assets/warehouse/StockUpdateGood.png", width: 35%),
-  caption: "Warehouse - StockUpdateGood",
-)
-
-Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'identificativo della merce aggiornata;
-- *`Quantity int64`*: rappresenta la nuova quantità della merce aggiornata;
-- *`Delta int64`*: rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
-
-==== StockUpdateCmdType <WarehouseStockUpdateCmdType>
-
-Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa con i seguenti valori possibili:
-
-- *`add`*: per aggiungere stock#super[G];
-- *`remove`*: per rimuovere stock#super[G];
-- *`order`*: per aggiornamenti legati a ordini;
-- *`transfer`*: per aggiornamenti legati a trasferimenti.
-
 ==== IApplyStockUpdateUseCase <WarehouseIApplyStockUpdateUseCase>
 
 Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento dello _stock_#super[G].
@@ -3941,20 +4083,6 @@ Lo *StockUpdateListener* gestisce l'_application logic_ per l'ascolto degli aggi
 
 - *`ListenStockUpdate(ctx: Context, msg: Msg) error`*: gestisce i messaggi per l'applicazione degli aggiornamenti dello stock#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
-==== CatalogUpdateCmd <WarehouseCatalogUpdateCmd>
-#figure(
-  image("../../assets/warehouse/CatalogUpdateCmd.png", width: 25%),
-  caption: "CatalogUpdateCmd",
-)
-
-Rappresenta il comando per aggiornare le informazioni di un catalogo nel microservizio *Warehouse*#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodId string`*: rappresenta l'identificativo della merce da aggiornare;
-- *`Name string`*: rappresenta il nuovo nome della merce;
-- *`Description string`*: rappresenta la nuova descrizione della merce.
-
 ==== IApplyCatalogUpdateUseCase <WarehouseIApplyCatalogUpdateUseCase>
 
 Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento del catalogo.
@@ -3989,26 +4117,6 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`ConfirmOrder(ctx: Context, cmd: ConfirmOrderCmd) error`*: il metodo deve permettere di confermare un ordine#super[G], prendendo come parametri il contesto e un oggetto di tipo `ConfirmOrderCmd`. Deve restituire un errore in caso di fallimento.
 
-==== ConfirmOrderCmd <WarehouseConfirmOrderCmd>
-
-Rappresenta il comando utilizzato per confermare un ordine#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`OrderID string`*: rappresenta l'identificativo univoco dell'ordine da confermare;
-- *`Status string`*: rappresenta lo stato dell'ordine da aggiornare;
-- *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
-- *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
-
-==== OrderUpdateGood <WarehouseOrderUpdateGood>
-
-Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'identificativo della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nell'ordine.
-
 ==== IConfirmTransferUseCase <WarehouseIConfirmTransferUseCase>
 
 Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di confermare un trasferimento#super[G].
@@ -4017,28 +4125,6 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 - *`ConfirmTransfer(ctx: Context, cmd: ConfirmTransferCmd) error`*: il metodo deve permettere di confermare un trasferimento#super[G], prendendo come parametri il contesto e un oggetto di tipo `ConfirmTransferCmd`. Deve restituire un errore in caso di fallimento.
 
-==== ConfirmTransferCmd <WarehouseConfirmTransferCmd>
-
-Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da confermare;
-- *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
-- *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Status string`*: rappresenta lo stato del trasferimento#super[G] da aggiornare;
-- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
-
-==== TransferUpdateGood <WarehouseTransferUpdateGood>
-
-Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
-
-*Descrizione degli attributi della struttura:*
-
-- *`GoodID string`*: rappresenta l'identificativo della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
-
 ==== ICreateReservationUseCase <WarehouseICreateReservationUseCase>
 
 Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di creare una prenotazione.
@@ -4046,22 +4132,6 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`CreateReservation(ctx: Context, cmd: CreateReservationCmd) (CreateReservationResponse, error)`*: il metodo deve permettere di creare una prenotazione, prendendo come parametri il contesto e un oggetto di tipo `CreateReservationCmd`. Deve restituire un oggetto di tipo `CreateReservationResponse` contenente l'identificativo della prenotazione creata e un eventuale errore in caso di fallimento.
-
-==== CreateReservationCmd <WarehouseCreateReservationCmd>
-
-Rappresenta il comando utilizzato per creare una prenotazione.
-
-*Descrizione degli attributi della struttura:*
-
-- *`Goods []ReservationGood`*: rappresenta una lista di oggetti `ReservationGood` che contengono le informazioni sulle merci da prenotare.
-
-==== CreateReservationResponse <WarehouseCreateReservationResponse>
-
-Rappresenta la risposta alla richiesta di creazione di una prenotazione.
-
-*Descrizione degli attributi della struttura:*
-
-- *`ReservationID string`*: rappresenta l'identificativo univoco della prenotazione creata.
 
 ==== ManageReservationService <WarehouseManageReservationService>
 
