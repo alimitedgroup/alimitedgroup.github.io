@@ -271,7 +271,7 @@ Questa scelta consente una maggiore scalabilità, resilienza e indipendenza nell
 
 Ogni microservizio è indipendente e responsabile#super[G] di un insieme specifico di funzionalità#super[G].
 
-I microservizi comunicano tra loro tramite NATS#super[G],  un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
+I microservizi comunicano tra loro tramite NATS#super[G], un sistema di messaggistica publish-subscribe ad alte prestazioni. Questa soluzione permette:
 
 - Comunicazione asincrona, sincrona ed _event-driven_, riducendo l'accoppiamento tra i servizi;
 
@@ -558,7 +558,7 @@ Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel mi
 
 *Descrizione degli attributi della struttura:*
 
-- *`ReservationID string`*: rappresenta l'identificativo univoco della prenotazione nel microservizio *Warehouse*#super[G]. 
+- *`ReservationID string`*: rappresenta l'identificativo univoco della prenotazione nel microservizio *Warehouse*#super[G].
 
 // ORDER
 
@@ -590,7 +590,7 @@ Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
 // caption: "OrderUpdateGood",
 // )
 
-Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G]. 
+Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -615,7 +615,7 @@ Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
 - *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
 - *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G]. 
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
 
 ==== TransferUpdateGood <StreamTransferUpdateGood>
 
@@ -624,12 +624,12 @@ Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 // caption: "TransferUpdateGood",
 // )
 
-Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]. 
+Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 
 ==== CreateOrderRequestDTO <WarehouseCreateOrderRequestDTO>
@@ -645,7 +645,7 @@ Rappresenta il DTO utilizzato per creare un nuovo ordine#super[G] nel microservi
 
 ==== CreateOrderGood <WarehouseCreateOrderGood>
 
-Rappresenta una merce inclusa in un ordine#super[G]. 
+Rappresenta una merce inclusa in un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -660,16 +660,16 @@ Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel mic
 
 - *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
 - *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []TransferGood`*: rappresenta una lista di oggetti `TransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G]. 
+- *`Goods []TransferGood`*: rappresenta una lista di oggetti `TransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 ==== TransferGood <WarehouseTransferGood>
 
-Rappresenta una merce inclusa in un trasferimento#super[G]. 
+Rappresenta una merce inclusa in un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 ==== GetOrderRequestDTO <WarehouseGetOrderRequestDTO>
 
@@ -781,7 +781,7 @@ Rappresenta le informazioni relative a un trasferimento#super[G] nel microserviz
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] ;
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []TransferInfoGood`*: rappresenta una lista di oggetti `TransferInfoGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G]. 
+- *`Goods []TransferInfoGood`*: rappresenta una lista di oggetti `TransferInfoGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 ===== TransferInfoGood <TransferInfoGood>
 
@@ -790,7 +790,7 @@ Rappresenta una merce inclusa in un trasferimento#super[G] nel microservizio *Wa
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 ==== GetAllTransferResponseDTO <GetAllTransferResponseDTO>
 
@@ -1485,7 +1485,7 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1505,7 +1505,7 @@ Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato 
 - *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
 - *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G] ;
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
-- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G]. 
+- *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1514,11 +1514,11 @@ Questa struttura non ha metodi invocabili.
 
 ===== TransferID <OrderModelTransferID>
 
-Rappresenta un identificativo univoco per un trasferimento#super[G]. 
+Rappresenta un identificativo univoco per un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`string`*: rappresenta l'identificativo univoco del trasferimento#super[G]. 
+- *`string`*: rappresenta l'identificativo univoco del trasferimento#super[G].
 
 ===== Transfer <OrderModelTransfer>
 
@@ -1534,7 +1534,7 @@ Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato 
 - *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
 - *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G] ;
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
-- *`Goods []GoodStock`*: rappresenta una lista di oggetti `GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G]. 
+- *`Goods []GoodStock`*: rappresenta una lista di oggetti `GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1542,7 +1542,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== OrderID <OrderModelOrderID>
 
-Rappresenta un identificativo univoco per un ordine#super[G]. 
+Rappresenta un identificativo univoco per un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1571,7 +1571,7 @@ Rappresenta un ordine#super[G] nel sistema.
 
 ===== OrderWarehouseUsed <OrderModelOrderWarehouseUsed>
 
-Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G]. 
+Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1610,7 +1610,7 @@ Rappresenta il comando utilizzato per creare un nuovo trasferimento#super[G] nel
 
 - *`SenderId string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
 - *`ReceiverId string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
-- *`Goods []CreateTransferGood`*: rappresenta una lista di oggetti `CreateTransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G]. 
+- *`Goods []CreateTransferGood`*: rappresenta una lista di oggetti `CreateTransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1618,12 +1618,12 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferGood <OrderCreateTransferGood>
 
-Rappresenta una merce inclusa in un trasferimento#super[G]. 
+Rappresenta una merce inclusa in un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1631,7 +1631,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferResponse <OrderCreateTransferResponse>
 
-Rappresenta la risposta alla richiesta di creazione di un nuovo trasferimento#super[G]. 
+Rappresenta la risposta alla richiesta di creazione di un nuovo trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1643,7 +1643,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ApplyOrderUpdateCmd <OrderApplyOrderUpdateCmd>
 
-Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#super[G]. 
+Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1668,7 +1668,7 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 - *`Goods []model.GoodStock`*: rappresenta una lista di oggetti `model.GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
 - *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G] ;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G]. 
+- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1704,16 +1704,16 @@ Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferim
 - *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G] ;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato;
 - *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G]. 
+- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
 
 ===== TransferUpdateGood <OrderTransferUpdateGood>
 
-Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]. 
+Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce coinvolta nel trasferimento#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 ===== OrderUpdateCmd <OrderOrderStockUpdateCmd>
 
@@ -1860,7 +1860,7 @@ Rappresenta il tipo di operazione per il comando *ContactWarehousesCmd*.
 *Descrizione dei valori possibili:*
 
 - *`ContactWarehousesTypeOrder`*: indica che l'operazione è relativa a un ordine#super[G] ;
-- *`ContactWarehousesTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G]. 
+- *`ContactWarehousesTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G].
 
 ===== ContactWarehousesOrder <OrderContactWarehousesOrder>
 
@@ -1891,11 +1891,11 @@ Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del 
 - *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G] ;
 - *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G] ;
 - *`Goods []ContactWarehousesGood`*: rappresenta una lista di merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G]. 
+- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 ===== ContactWarehousesGood <OrderContactWarehousesGood>
 
-Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G]. 
+Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1924,7 +1924,7 @@ Rappresenta la risposta alla richiesta di contatto con i magazzini.
 
 ===== SendOrderUpdateCmd <OrderSendOrderUpdateCmd>
 
-Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#super[G]. 
+Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1943,7 +1943,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendOrderUpdateGood <OrderSendOrderUpdateGood>
 
-Rappresenta una merce inclusa in un aggiornamento di un ordine#super[G]. 
+Rappresenta una merce inclusa in un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1979,11 +1979,11 @@ Rappresenta il tipo di operazione per il comando *SendContactWarehouseCmd*.
 *Descrizione dei valori possibili:*
 
 - *`SendContactWarehouseTypeOrder`*: indica che l'operazione è relativa a un ordine#super[G] ;
-- *`SendContactWarehouseTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G]. 
+- *`SendContactWarehouseTypeTransfer`*: indica che l'operazione è relativa a un trasferimento#super[G].
 
 ===== CreateOrderGood <OrderCreateOrderGood>
 
-Rappresenta una merce inclusa in un ordine#super[G]. 
+Rappresenta una merce inclusa in un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -1996,7 +1996,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateOrderCmd <OrderCreateOrderCmd>
 
-Rappresenta il comando utilizzato per creare un nuovo ordine#super[G]. 
+Rappresenta il comando utilizzato per creare un nuovo ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -2011,7 +2011,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateOrderResponse <OrderCreateOrderResponse>
 
-Rappresenta la risposta alla richiesta di creazione di un nuovo ordine#super[G]. 
+Rappresenta la risposta alla richiesta di creazione di un nuovo ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -2150,7 +2150,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateCmd <OrderSendTransferUpdateCmd>
 
-Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimento#super[G]. 
+Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -2160,7 +2160,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimen
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G] ;
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
 - *`Goods []SendTransferUpdateGood`*: rappresenta una lista di oggetti `SendTransferUpdateGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G]. 
+- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2168,12 +2168,12 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateGood <OrderSendTransferUpdateGood>
 
-Rappresenta una merce inclusa in un aggiornamento di un trasferimento#super[G]. 
+Rappresenta una merce inclusa in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G] ;
-- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2214,7 +2214,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 ==== ISendOrderUpdatePort <OrderISendOrderUpdatePort>
 
-Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un ordine#super[G]. 
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un ordine#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2324,7 +2324,7 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla 
 
 ==== ISetCompleteTransferPort <OrderISetCompleteTransferPort>
 
-Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di completare un trasferimento#super[G] o incrementare il numero di aggiornamenti dello stock#super[G] associati a un trasferimento#super[G]. 
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di completare un trasferimento#super[G] o incrementare il numero di aggiornamenti dello stock#super[G] associati a un trasferimento#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2372,7 +2372,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 ==== IApplyOrderUpdatePort <OrderIApplyOrderUpdatePort>
 
-Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine#super[G]. 
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2380,14 +2380,14 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla 
 
 ==== IApplyTransferUpdatePort <OrderIApplyTransferUpdatePort>
 
-Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. 
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`ApplyTransferUpdate(cmd: ApplyTransferUpdateCmd) error`*: il metodo deve permettere di applicare un aggiornamento di un trasferimento#super[G], prendendo come parametro un oggetto di tipo `ApplyTransferUpdateCmd`. Deve restituire un errore in caso di fallimento.
 ==== ISendTransferUpdatePort <OrderISendTransferUpdatePort>
 
-Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un trasferimento#super[G]. 
+Rappresenta l'interfaccia che permette alla _business logic_ di comunicare con l'esterno per inviare un aggiornamento di un trasferimento#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2430,7 +2430,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ICreateOrderUseCase <OrderICreateOrderUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di creare un nuovo ordine#super[G]. 
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di creare un nuovo ordine#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2443,7 +2443,7 @@ La struttura `OrderController` rappresenta l'_application logic_ del microserviz
 *Descrizione degli attributi della struttura:*
 
 - *`broker *broker.NatsMessageBroker`*: rappresenta il broker di messaggistica NATS#super[G] utilizzato per pubblicare e ricevere messaggi.
-- *`createOrderUseCase port.ICreateOrderUseCase`*: interfaccia per la creazione di un ordine#super[G]. 
+- *`createOrderUseCase port.ICreateOrderUseCase`*: interfaccia per la creazione di un ordine#super[G].
 - *`getOrderUseCase port.IGetOrderUseCase`*: interfaccia per il recupero degli ordini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -2464,7 +2464,7 @@ La struttura `OrderController` rappresenta l'_application logic_ del microserviz
 
 ==== ICreateTransferUseCase <OrderICreateTransferUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di creare un nuovo trasferimento#super[G]. 
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di creare un nuovo trasferimento#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2485,7 +2485,7 @@ La struttura `TransferController` rappresenta l'_application logic_ del microser
 
 *Descrizione degli attributi della struttura:*
 
-- *`createTransferUseCase port.ICreateTransferUseCase`*: interfaccia per la creazione di un trasferimento#super[G]. 
+- *`createTransferUseCase port.ICreateTransferUseCase`*: interfaccia per la creazione di un trasferimento#super[G].
 - *`getTransferUseCase port.IGetTransferUseCase`*: interfaccia per il recupero dei trasferimenti.
 
 *Descrizione dei metodi invocabili dalla struttura:*
@@ -2494,7 +2494,7 @@ La struttura `TransferController` rappresenta l'_application logic_ del microser
 
 - *`TransferCreateHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di creazione di un trasferimento#super[G]. Valida i dati della richiesta, invoca il _Use Case_ per la creazione del trasferimento#super[G] e risponde con l'esito dell'operazione.
 
-- *`TransferGetHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di un trasferimento#super[G] specifico. Valida i dati della richiesta, invoca il _Use Case_ per il recupero del trasferimento#super[G] e risponde con i dettagli del trasferimento#super[G]. 
+- *`TransferGetHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di un trasferimento#super[G] specifico. Valida i dati della richiesta, invoca il _Use Case_ per il recupero del trasferimento#super[G] e risponde con i dettagli del trasferimento#super[G].
 
 - *`TransferGetAllHandler(ctx context.Context, msg *nats.Msg) error`*: gestisce le richieste di recupero di tutti i trasferimenti. Invoca il _Use Case_ per ottenere la lista dei trasferimenti e risponde con i dettagli.
 
@@ -2502,7 +2502,7 @@ La struttura `TransferController` rappresenta l'_application logic_ del microser
 
 ==== IApplyOrderUpdateUseCase <OrderIApplyOrderUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento di un ordine#super[G]. 
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento di un ordine#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2510,7 +2510,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== IApplyTransferUpdateUseCase <OrderIApplyTransferUpdateUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. 
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -2675,11 +2675,11 @@ La struttura `StockRepositoryImpl` rappresenta l'implementazione della _persiste
 
 ==== StockPersistenceAdapter <OrderStockPersistenceAdapter>
 
-_Adapter_ che mette in comunicazione la _business logic_ del microservizio *Order* con la _persistence logic_ per la gestione dello stock#super[G]. 
+_Adapter_ che mette in comunicazione la _business logic_ del microservizio *Order* con la _persistence logic_ per la gestione dello stock#super[G].
 
 *Descrizione degli attributi della struttura:*
 
-- *`stockRepo IStockRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G]. 
+- *`stockRepo IStockRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2743,7 +2743,7 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 - *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel repository#super[G]. Restituisce un errore in caso di fallimento.
 
-- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel repository#super[G]. 
+- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel repository#super[G].
 
 - *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal repository#super[G]. Converte l'ordine dal formato del repository#super[G] a `model.Order`. Restituisce un errore in caso di fallimento.
 
@@ -3980,7 +3980,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 ==== IConfirmOrderUseCase <WarehouseIConfirmOrderUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di confermare un ordine#super[G]. 
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di confermare un ordine#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -3988,7 +3988,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ConfirmOrderCmd <WarehouseConfirmOrderCmd>
 
-Rappresenta il comando utilizzato per confermare un ordine#super[G]. 
+Rappresenta il comando utilizzato per confermare un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -3999,7 +3999,7 @@ Rappresenta il comando utilizzato per confermare un ordine#super[G].
 
 ==== OrderUpdateGood <WarehouseOrderUpdateGood>
 
-Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G]. 
+Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -4008,7 +4008,7 @@ Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
 ==== IConfirmTransferUseCase <WarehouseIConfirmTransferUseCase>
 
-Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di confermare un trasferimento#super[G]. 
+Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di confermare un trasferimento#super[G].
 
 *Descrizione dei metodi dell'interfaccia:*
 
@@ -4016,7 +4016,7 @@ Rappresenta l'interfaccia che permette all'_application logic_ di comunicare all
 
 ==== ConfirmTransferCmd <WarehouseConfirmTransferCmd>
 
-Rappresenta il comando utilizzato per confermare un trasferimento#super[G]. 
+Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
@@ -4025,16 +4025,16 @@ Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G] ;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] da aggiornare;
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G] ;
-- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G]. 
+- *`ReservationId string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
 ==== TransferUpdateGood <WarehouseTransferUpdateGood>
 
-Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]. 
+Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
 
 *Descrizione degli attributi della struttura:*
 
 - *`GoodID string`*: rappresenta l'identificativo della merce;
-- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G]. 
+- *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 ==== ICreateReservationUseCase <WarehouseICreateReservationUseCase>
 
