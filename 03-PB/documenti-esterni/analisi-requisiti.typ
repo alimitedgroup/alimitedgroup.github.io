@@ -18,7 +18,7 @@
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
       //verifica: p.matteo,
-      descr: "Correzione alcuni requisiti",
+      descr: "Correzione alcuni requisiti.",
     ),
     (
       vers: "1.2.0",
