@@ -1281,18 +1281,19 @@ La riunione con l'azienda proponente#super[G] #M31, svolta in data 28/02, è sta
 Con l'ottavo sprint#super[G] si continuano le attività per la _Product Baseline#super[G]_. \
 Nel dettaglio:
 - Redigere il verbale interno della riunione effettuata in data 11/03;
-- Completare la progettazione ed i test del microservizio _Authenticator_;
-- Completare la progettazione ed i test del microservizio _Notifications_;
-- Completare la progettazione ed i test del microservizio _Order_;
-- Completare la progettazione ed i test del microservizio _Transfer_;
-- Completare la progettazione ed i test del microservizio _Client_;
+- Redigere il verbale interno della riunione effettuata in data 17/03;
+- Completare la progettazione ed i test#super[G] del microservizio _Authenticator_;
+- Completare la progettazione ed i test#super[G] del microservizio _Notifications_;
+- Completare la progettazione ed i test#super[G] del microservizio _Order_;
+- Completare la progettazione ed i test#super[G] del microservizio _Transfer_;
+- Completare la progettazione ed i test#super[G] del microservizio _Client_;
 - Continuare la redazione del documento di "Specifica Tecnica#super[G]":
   - Completare la sezione introduttiva;
   - Aggiungere _framework_ *fx*;
   - Aggiungere informazioni su analisi statica e dinamica;
 - Continuare la redazione del "Manuale Utente#super[G]".
 
-Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere i test di accettazione.
+Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere i test#super[G] di accettazione.
 ==== Rischi attesi
 I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
@@ -1346,13 +1347,13 @@ Nel complesso, le strategie adottate sono state efficaci per la maggior parte de
 ==== Rivisitazione migliorativa del piano per le attività future
 
 Il prossimo _sprint_#super[G] sarà l'ultimo prima della scadenza della consegna preventivata. \
-Per questo motivo, sarà fondamentale concentrare gli sforzi su attività che garantiscano la qualità del prodotto finale e la soddisfazione dei requisiti richiesti, completando e verificando tutti i microservizi effettuando quindi i test di accettazione per assicurare che tutte le componenti funzionino correttamente insieme. \
-Inoltre, sarà importante mantenere una comunicazione costante con il proponente#super[G] per risolvere eventuali dubbi o problemi che potrebbero emergere durante l'ultimo sprint#super[G]. 
+Per questo motivo, sarà fondamentale concentrare gli sforzi su attività che garantiscano la qualità del prodotto finale e la soddisfazione dei requisiti richiesti, completando e verificando tutti i microservizi effettuando quindi i test#super[G] di accettazione per assicurare che tutte le componenti funzionino correttamente insieme. \
+Inoltre, sarà importante mantenere una comunicazione costante con il proponente#super[G] per risolvere eventuali dubbi o problemi che potrebbero emergere durante l'ultimo sprint#super[G].
 
 
 === Retrospettiva
 In questo ottavo sprint#super[G], ci siamo concentrati principalmente sulla realizzazione e implementazione dei microservizi che andranno a comporre il _Minimum Viable Product#super[G]_ finale per questo progetto.
 
-Abbiamo completato la progettazione e i test dei microservizi _Authenticator_, _Notifications_, _Order_, _Transfer_, e _Client_. Inoltre, abbiamo continuato la redazione del documento di "Specifica Tecnica#super[G]" e del "Manuale Utente#super[G]".
+Abbiamo completato la progettazione e i test#super[G] dei microservizi _Authenticator_, _Notifications_, _Order_, _Transfer_, e _Client_. Inoltre, abbiamo continuato la redazione del documento di "Specifica Tecnica#super[G]" e del "Manuale Utente#super[G]".
 
 Durante questo sprint#super[G], abbiamo incontrato i rischi _RT2: Rischio Tecnologico legato a errori nel codice_ e _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_. Le strategie di mitigazione adottate si sono rivelate efficaci nel gestire questi rischi.
