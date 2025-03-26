@@ -10,7 +10,7 @@
   versioni: (
     (
       vers: "1.2.0",
-      date: datetime(day: 25, month: 02, year: 2025),
+      date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
       //verifica: p.matteo,
       descr: "Aggiornamento test di accettazione e di sistema.",
