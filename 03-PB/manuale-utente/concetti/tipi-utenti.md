@@ -1,9 +1,9 @@
 # Tipi di utenti <tipiutenti>
 
 Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre tipi di utenti:
-- Il <strong>Cliente</strong>;
-- L'__Admin Locale__;
-- L'__Admin Globale__.
++ Il <strong>Cliente</strong>;
++ L'__Admin Locale__;
++ L'__Admin Globale__.
 
 ## Cliente
 Il __Cliente__ è la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema con, chiaramente, delle limitazioni riguardo certe operazioni. Questo tipo di utente potrà effettuare le seguenti azioni all'interno del Sistema:
