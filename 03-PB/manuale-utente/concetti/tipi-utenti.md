@@ -2,83 +2,84 @@
 
 Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre tipi di utenti:
 + Il <strong>Cliente</strong>;
-+ L'__Admin Locale__;
-+ L'__Admin Globale__.
++ L'**Admin Locale**;
++ L'**Admin Globale**.
 
 ## Cliente
-Il __Cliente__ è la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema con, chiaramente, delle limitazioni riguardo certe operazioni. Questo tipo di utente potrà effettuare le seguenti azioni all'interno del Sistema:
-* __Autenticare__, immettendo _username_ e _password_ tramite l'apposita _API_#super[G] offerta;
-* __Creare un ordine__ inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
-* __Selezionare la merce per l'ordine__ inserendo la quantità, per ognuna delle merci aggiunte all'ordine;
-* __Confermare l'ordine__ ed in questo modo far partire la richiesta per l'ordine, in attesa che venga elaborata;
-* __Visualizzare la lista degli ordini non confermati__ e, per ognuno di essi, visualizzarne le informazioni come:
-    - L'__ID__ dell'ordine;
-    - La __Data di creazione__ dell'ordine;
-    - Il __Nome__ dell'ordine;
-    - La __Lista delle merci__ nell'ordine e, per ognuna di questa:
-        + Il __Nome__ della merce aggiunta all'ordine;
-        + La __Quantità__ della merce nell'ordine.
-* __Visualizzare la lista delle merci disponibili nel Sistema__ e, per ognuna di essa, visualizzare:
-    - Il __Nome__ della merce;
-    - L'__ID__ della merce;
-    - La __Descrizione__ della merce;
-    - La __Quantità Complessiva__ in tutti i magazzini presenti nel Sistema;
-    - La __Quantità__ disponibile nel magazzino più vicino al Cliente.
+
+Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema con, chiaramente, delle limitazioni riguardo certe operazioni. Questo tipo di utente potrà effettuare le seguenti azioni all'interno del Sistema:
+- **Autenticare**, immettendo _username_ e _password_ tramite l'apposita _API_#super[G] offerta;
+- **Creare un ordine** inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
+- **Selezionare la merce per l'ordine** inserendo la quantità, per ognuna delle merci aggiunte all'ordine;
+- **Confermare l'ordine** ed in questo modo far partire la richiesta per l'ordine, in attesa che venga elaborata;
+- **Visualizzare la lista degli ordini non confermati** e, per ognuno di essi, visualizzarne le informazioni come:
+    - L'**ID** dell'ordine;
+    - La **Data di creazione** dell'ordine;
+    - Il **Nome** dell'ordine;
+    - La **Lista delle merci** nell'ordine e, per ognuna di questa:
+        + Il **Nome** della merce aggiunta all'ordine;
+        + La **Quantità** della merce nell'ordine.
+- **Visualizzare la lista delle merci disponibili nel Sistema** e, per ognuna di essa, visualizzare:
+    - Il **Nome** della merce;
+    - L'**ID** della merce;
+    - La **Descrizione** della merce;
+    - La **Quantità Complessiva** in tutti i magazzini presenti nel Sistema;
+    - La **Quantità** disponibile nel magazzino più vicino al Cliente.
 
 ## Admin Locale
-L'__Admin Locale__ è la persona responsabile#super[G] per un singolo magazzino, con un interesse "locale" alla situazione di quest'ultimo. Inoltre, rispetto al Cliente, l'Admin Locale ha un maggior potere decisionale sulle azioni da intraprendere all'interno del magazzino. Le operazioni che questo tipo di utente ha la possibilità di effettuare, sono le seguenti:
-* __Aggiungere__ ed aumentare lo _stock_#super[G] disponibile per una merce, inserendone la quantità;
-* __Creare__ un sistema di _Backup_ per il ripristino dei dati, in caso di cyberattacchi;
-* __Attivare__ il sistema di _Backup_, specificandone la periodicità con cui si attiva;
-* __Eliminare__ il sistema di _Backup_, in caso ne esista uno precedentemente creato;
-* __Ripristinare__ i dati dall'ultimo _Backup_ effettuato e disponibile nel magazzino, in caso ne esista uno;
+L'**Admin Locale** è la persona responsabile#super[G] per un singolo magazzino, con un interesse "locale" alla situazione di quest'ultimo. Inoltre, rispetto al Cliente, l'Admin Locale ha un maggior potere decisionale sulle azioni da intraprendere all'interno del magazzino. Le operazioni che questo tipo di utente ha la possibilità di effettuare, sono le seguenti:
+- **Aggiungere** ed aumentare lo _stock_#super[G] disponibile per una merce, inserendone la quantità;
+- **Creare** un sistema di _Backup_ per il ripristino dei dati, in caso di cyberattacchi;
+- **Attivare** il sistema di _Backup_, specificandone la periodicità con cui si attiva;
+- **Eliminare** il sistema di _Backup_, in caso ne esista uno precedentemente creato;
+- **Ripristinare** i dati dall'ultimo _Backup_ effettuato e disponibile nel magazzino, in caso ne esista uno;
 
 ## Admin Globale
-L'__Admin Globale__ ha la responsabilità di supervisionare tutti i magazzini presenti, ha quindi un interesse "globale" sul Sistema e tutte le sue componenti. Questa tipologia di utente è la più importante, dal punto di vista decisionale, ma soprattutto la più delicata richiedendo che ci sia un'elevata attenzione ad ogni azione presa. La lista di operazioni disponibili per questo tipo di utente è la seguente:
-* __Creare__ un trasferimento#super[G] di merci da confermare, scegliendo per ognuno:
-    - Il __magazzino mittente__ del trasferimento#super[G];
-    - Il __magazzino destinatario__ del trasferimento#super[G].
-* __Aggiungere__ la merce ad un trasferimento#super[G] non confermato, a patto che:
-    - Il __magazzino mittente__ del trasferimento#super[G], abbia la quantità di merce sufficiente nello _stock_#super[G];
-    - __Esista__ un trasferimento#super[G] precedentemente creato.
-* __Confermare__ un trasferimento#super[G] così da procedere con la richiesta, a patto che:
+L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini presenti, ha quindi un interesse "globale" sul Sistema e tutte le sue componenti. Questa tipologia di utente è la più importante, dal punto di vista decisionale, ma soprattutto la più delicata richiedendo che ci sia un'elevata attenzione ad ogni azione presa. La lista di operazioni disponibili per questo tipo di utente è la seguente:
+- **Creare** un trasferimento#super[G] di merci da confermare, scegliendo per ognuno:
+    - Il **magazzino mittente** del trasferimento#super[G];
+    - Il **magazzino destinatario** del trasferimento#super[G].
+- **Aggiungere** la merce ad un trasferimento#super[G] non confermato, a patto che:
+    - Il **magazzino mittente** del trasferimento#super[G], abbia la quantità di merce sufficiente nello _stock_#super[G];
+    - **Esista** un trasferimento#super[G] precedentemente creato.
+- **Confermare** un trasferimento#super[G] così da procedere con la richiesta, a patto che:
     - Il magazzino mittente del trasferimento#super[G], abbia la quantità di merce sufficiente nello _stock_#super[G];
     - Esista un trasferimento#super[G] non confermato nel Sistema.
-* __Cancellare__ un trasferimento#super[G] non ancora confermato, a patto che ne esista uno;
-* __Visualizzare__ l'elenco di tutti trasferimenti presenti nel Sistema, visualizzando per ognuno:
-    - L'__ID__ del trasferimento#super[G];
-    - Lo __Stato__ del trasferimento#super[G].
-* __Visualizzare__ nel dettaglio un particolare trasferimento#super[G], visualizzando:
-    - L'__ID__ del trasferimento#super[G];
-    - Lo __Stato__ del trasferimento#super[G];
-    - Il __Magazzino mittente__ del trasferimento#super[G];
-    - Il __Magazzino destinatario__ del trasferimento#super[G];
-    - L'__Elenco delle merci__ interessate nel trasferimento#super[G], e per ognuna di queste:
-        + Il __Nome__ della singola merce nel trasferimento#super[G];
-        + La __Quantità__ della singola merce nel trasferimento#super[G].
-* __Visualizzare__ l'elenco delle notifiche di rifornimento, a patto che ne esistano, e per ognuna visualizzare:
-    - L'__ID__ della notifica di rifornimento;
-    - Lo __Stato__ della notifica di rifornimento.
-* __Visualizzare__ nel dettaglio una notifica di rifornimento, visualizzando:
-    - Lo __Stato__ della notifica;
-    - L'__ID__ della notifica;
-    - Il __Magazzino__ di destinazione del rifornimento;
-    - L'__Elenco delle merci__ che è consigliato rifornire, e per ognuna delle merci è possibile visualizzare:
-        + L'__ID__ della merce;
-        + La __Quantità__ consigliata da rifornire della merce;
-        + Il __Nome__ della merce.
-* __Accettare__ una notifica di rifornimento, purchè ne esista una;
-* __Rifiutare__ una notifica di rifornimento, a condizione che ne esista una;
-* __Visualizzare__ l'elenco dei microservizi, e per ognuno di essi visualizzare:
-    - Il __Numero di richieste al secondo__ del microservizio;
-    - Il __Nome__ del microservizio.
-* __Esportare__ gli ordini eseguiti, purché ce ne siano, in un _file_ .csv;
-* __Esportare__ il _report_ dell'inventario, a patto che ce ne esista uno, in un _file_ .csv;
-* __Creare__ una soglia minima, a condizione che sia valida, in una determinata merce;
-* __Creare__ una nuova merce, inserendo:
-    - Il __Nome__ della nuova merce;
-    - La __Descrizione__ della nuova merce.
-* __Aggiornare__ le informazioni su una determinata merce.
+- **Cancellare** un trasferimento#super[G] non ancora confermato, a patto che ne esista uno;
+- **Visualizzare** l'elenco di tutti trasferimenti presenti nel Sistema, visualizzando per ognuno:
+    - L'**ID** del trasferimento#super[G];
+    - Lo **Stato** del trasferimento#super[G].
+- **Visualizzare** nel dettaglio un particolare trasferimento#super[G], visualizzando:
+    - L'**ID** del trasferimento#super[G];
+    - Lo **Stato** del trasferimento#super[G];
+    - Il **Magazzino mittente** del trasferimento#super[G];
+    - Il **Magazzino destinatario** del trasferimento#super[G];
+    - L'**Elenco delle merci** interessate nel trasferimento#super[G], e per ognuna di queste:
+        + Il **Nome** della singola merce nel trasferimento#super[G];
+        + La **Quantità** della singola merce nel trasferimento#super[G].
+- **Visualizzare** l'elenco delle notifiche di rifornimento, a patto che ne esistano, e per ognuna visualizzare:
+    - L'**ID** della notifica di rifornimento;
+    - Lo **Stato** della notifica di rifornimento.
+- **Visualizzare** nel dettaglio una notifica di rifornimento, visualizzando:
+    - Lo **Stato** della notifica;
+    - L'**ID** della notifica;
+    - Il **Magazzino** di destinazione del rifornimento;
+    - L'**Elenco delle merci** che è consigliato rifornire, e per ognuna delle merci è possibile visualizzare:
+        + L'**ID** della merce;
+        + La **Quantità** consigliata da rifornire della merce;
+        + Il **Nome** della merce.
+- **Accettare** una notifica di rifornimento, purchè ne esista una;
+- **Rifiutare** una notifica di rifornimento, a condizione che ne esista una;
+- **Visualizzare** l'elenco dei microservizi, e per ognuno di essi visualizzare:
+    - Il **Numero di richieste al secondo** del microservizio;
+    - Il **Nome** del microservizio.
+- **Esportare** gli ordini eseguiti, purché ce ne siano, in un _file_ .csv;
+- **Esportare** il _report_ dell'inventario, a patto che ce ne esista uno, in un _file_ .csv;
+- **Creare** una soglia minima, a condizione che sia valida, in una determinata merce;
+- **Creare** una nuova merce, inserendo:
+    - Il **Nome** della nuova merce;
+    - La **Descrizione** della nuova merce.
+- **Aggiornare** le informazioni su una determinata merce.
 
 ## Riepilogo degli Utenti presenti
 <!--raw-typst
