@@ -1158,7 +1158,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 ===== GetTokenResponse <GetTokenResponse>
 
 #figure(
-  image("../../assets/authenticator/GetTokenResponse.png", width: 40%),
+  image("../../assets/authenticator/GetTokenResponse.png", width: 30%),
   caption: "GetTokenResponse",
 )
 
@@ -1385,7 +1385,7 @@ Implementa l'interfaccia *IAuthPublisher*: per maggiori informazioni vedere la @
 ==== UserData
 
 #figure(
-  image("../../assets/authenticator/UserData.png", width: 40%),
+  image("../../assets/authenticator/UserData.png", width: 30%),
   caption: "UserData",
 )
 
@@ -1878,7 +1878,7 @@ Rappresenta un identificativo univoco per una merce.
 
 ===== GoodStock <OrderGoodStock>
 #figure(
-  image("../../assets/order/GoodStock.png", width: 40%),
+  image("../../assets/order/GoodStock.png", width: 30%),
   caption: "Order - GoodStock",
 )
 Rappresenta lo stock#super[G] di una merce, ovvero la sua quantità.
@@ -1894,7 +1894,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== StockUpdateGood <OrderStockUpdateGood>
 #figure(
-  image("../../assets/order/StockUpdateGood.png", width: 40%),
+  image("../../assets/order/StockUpdateGood.png", width: 30%),
   caption: "Order - StockUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento dello stock#super[G].
@@ -1924,7 +1924,7 @@ Rappresenta il tipo di aggiornamento dello stock#super[G].
 
 ===== StockUpdateCmd <OrderStockUpdateCmd>
 #figure(
-  image("../../assets/order/StockUpdateCmd.png", width: 40%),
+  image("../../assets/order/StockUpdateCmd.png", width: 30%),
   caption: "Order - StockUpdateCmd",
 )
 Rappresenta il comando per aggiornare lo stock#super[G].
@@ -1946,7 +1946,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== GetStockCmd <OrderGetStockCmd>
 #figure(
-  image("../../assets/order/GetStockCmd.png", width: 40%),
+  image("../../assets/order/GetStockCmd.png", width: 30%),
   caption: "Order - GetStockCmd",
 )
 Rappresenta il comando utilizzato per ottenere la quantità di una merce specifica in un determinato magazzino.
@@ -1962,7 +1962,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ContactWarehousesCmd <OrderContactWarehousesCmd>
 #figure(
-  image("../../assets/order/ContactWarehousesCmd.png", width: 40%),
+  image("../../assets/order/ContactWarehousesCmd.png", width: 30%),
   caption: "Order - ContactWarehousesCmd",
 )
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
@@ -1988,7 +1988,7 @@ Rappresenta il tipo di operazione per il comando *ContactWarehousesCmd*.
 
 ===== ContactWarehousesOrder <OrderContactWarehousesOrder>
 #figure(
-  image("../../assets/order/ContactWarehousesOrder.png", width: 40%),
+  image("../../assets/order/ContactWarehousesOrder.png", width: 30%),
   caption: "Order - ContactWarehousesOrder",
 )
 Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
@@ -2007,7 +2007,7 @@ Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando
 
 ===== ContactWarehousesTransfer <OrderContactWarehousesTransfer>
 #figure(
-  image("../../assets/order/ContactWarehousesTransfer.png", width: 40%),
+  image("../../assets/order/ContactWarehousesTransfer.png", width: 30%),
   caption: "Order - ContactWarehousesTransfer",
 )
 Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
@@ -2025,7 +2025,7 @@ Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del 
 
 ===== ContactWarehousesGood <OrderContactWarehousesGood>
 #figure(
-  image("../../assets/order/ContactWarehousesGood.png", width: 40%),
+  image("../../assets/order/ContactWarehousesGood.png", width: 30%),
   caption: "Order - ContactWarehousesGood",
 )
 Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G].
@@ -2037,7 +2037,7 @@ Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G].
 
 ===== ConfirmedReservation <OrderConfirmedReservation>
 #figure(
-  image("../../assets/order/ConfirmedReservation.png", width: 40%),
+  image("../../assets/order/ConfirmedReservation.png", width: 30%),
   caption: "Order - ConfirmedReservation",
 )
 Rappresenta una prenotazione confermata per un magazzino.
@@ -2050,7 +2050,7 @@ Rappresenta una prenotazione confermata per un magazzino.
 
 ===== ContactWarehousesResponse <OrderContactWarehousesResponse>
 #figure(
-  image("../../assets/order/ContactWarehousesResponse.png", width: 40%),
+  image("../../assets/order/ContactWarehousesResponse.png", width: 30%),
   caption: "Order - ContactWarehousesResponse",
 )
 Rappresenta la risposta alla richiesta di contatto con i magazzini.
@@ -2062,7 +2062,7 @@ Rappresenta la risposta alla richiesta di contatto con i magazzini.
 
 ===== SendOrderUpdateCmd <OrderSendOrderUpdateCmd>
 #figure(
-  image("../../assets/order/SendOrderUpdateCmd.png", width: 40%),
+  image("../../assets/order/SendOrderUpdateCmd.png", width: 30%),
   caption: "Order - SendOrderUpdateCmd",
 )
 Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#super[G].
@@ -2084,7 +2084,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendOrderUpdateGood <OrderSendOrderUpdateGood>
 #figure(
-  image("../../assets/order/SendOrderUpdateGood.png", width: 40%),
+  image("../../assets/order/SendOrderUpdateGood.png", width: 30%),
   caption: "Order - SendOrderUpdateGood",
 )
 Rappresenta una merce inclusa in un aggiornamento di un ordine#super[G].
@@ -2100,7 +2100,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendContactWarehouseCmd <OrderSendContactWarehouseCmd>
 #figure(
-  image("../../assets/order/SendContactWarehouseCmd.png", width: 40%),
+  image("../../assets/order/SendContactWarehouseCmd.png", width: 30%),
   caption: "Order - SendContactWarehouseCmd",
 )
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
@@ -2130,7 +2130,7 @@ Rappresenta il tipo di operazione per il comando *SendContactWarehouseCmd*.
 
 ===== CreateOrderGood <OrderCreateOrderGood>
 #figure(
-  image("../../assets/order/CreateOrderGood.png", width: 40%),
+  image("../../assets/order/CreateOrderGood.png", width: 30%),
   caption: "Order - CreateOrderGood",
 )
 Rappresenta una merce inclusa in un ordine#super[G].
@@ -2146,7 +2146,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateOrderCmd <OrderCreateOrderCmd>
 #figure(
-  image("../../assets/order/CreateOrderCmd.png", width: 40%),
+  image("../../assets/order/CreateOrderCmd.png", width: 30%),
   caption: "Order - CreateOrderCmd",
 )
 Rappresenta il comando utilizzato per creare un nuovo ordine#super[G].
@@ -2163,7 +2163,10 @@ Rappresenta il comando utilizzato per creare un nuovo ordine#super[G].
 Questa struttura non ha metodi invocabili.
 
 ===== CreateOrderResponse <OrderCreateOrderResponse>
-
+#figure(
+  image("../../assets/order/CreateOrderResponse.png", width: 30%),
+  caption: "Order - CreateOrderResponse",
+)
 Rappresenta la risposta alla richiesta di creazione di un nuovo ordine#super[G].
 
 *Descrizione degli attributi della struttura:*
@@ -2200,7 +2203,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== RequestedGood <OrderRequestedGood>
 #figure(
-  image("../../assets/order/RequestedGood.png", width: 40%),
+  image("../../assets/order/RequestedGood.png", width: 30%),
   caption: "Order - RequestedGood",
 )
 Rappresenta una merce richiesta per il calcolo della disponibilità.
@@ -2216,7 +2219,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CalculateAvailabilityCmd <OrderCalculateAvailabilityCmd>
 #figure(
-  image("../../assets/order/CalculateAvailabilityCmd.png", width: 40%),
+  image("../../assets/order/CalculateAvailabilityCmd.png", width: 30%),
   caption: "Order - CalculateAvailabilityCmd",
 )
 Rappresenta il comando utilizzato per calcolare la disponibilità delle merci richieste nei magazzini.
@@ -2232,7 +2235,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== WarehouseAvailability <OrderWarehouseAvailability>
 #figure(
-  image("../../assets/order/WarehouseAvailability.png", width: 40%),
+  image("../../assets/order/WarehouseAvailability.png", width: 30%),
   caption: "Order - WarehouseAvailability",
 )
 Rappresenta la disponibilità delle merci in un magazzino specifico.
@@ -2248,7 +2251,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CalculateAvailabilityResponse <OrderCalculateAvailabilityResponse>
 #figure(
-  image("../../assets/order/CalculateAvailabilityResponse.png", width: 40%),
+  image("../../assets/order/CalculateAvailabilityResponse.png", width: 30%),
   caption: "Order - CalculateAvailabilityResponse",
 )
 Rappresenta la risposta al comando di calcolo della disponibilità delle merci.
@@ -2279,7 +2282,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ReservationGood <OrderReservationGood>
 #figure(
-  image("../../assets/order/ReservationGood.png", width: 40%),
+  image("../../assets/order/ReservationGood.png", width: 30%),
   caption: "Order - ReservationGood",
 )
 Rappresenta una merce coinvolta in una richiesta di prenotazione.
@@ -2295,7 +2298,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== RequestReservationCmd <OrderRequestReservationCmd>
 #figure(
-  image("../../assets/order/RequestReservationCmd.png", width: 40%),
+  image("../../assets/order/RequestReservationCmd.png", width: 30%),
   caption: "Order - RequestReservationCmd",
 )
 Rappresenta il comando utilizzato per richiedere una prenotazione di merci in un magazzino.
@@ -2311,7 +2314,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== RequestReservationResponse <OrderRequestReservationResponse>
 #figure(
-  image("../../assets/order/RequestReservationResponse.png", width: 40%),
+  image("../../assets/order/RequestReservationResponse.png", width: 30%),
   caption: "Order - RequestReservationResponse",
 )
 Rappresenta la risposta alla richiesta di prenotazione di merci.
@@ -2326,7 +2329,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateCmd <OrderSendTransferUpdateCmd>
 #figure(
-  image("../../assets/order/SendTransferUpdateCmd.png", width: 40%),
+  image("../../assets/order/SendTransferUpdateCmd.png", width: 30%),
   caption: "Order - SendTransferUpdateCmd",
 )
 Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimento#super[G].
@@ -2347,7 +2350,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateGood <OrderSendTransferUpdateGood>
 #figure(
-  image("../../assets/order/SendTransferUpdateGood.png", width: 40%),
+  image("../../assets/order/SendTransferUpdateGood.png", width: 30%),
   caption: "Order - SendTransferUpdateGood",
 )
 Rappresenta una merce inclusa in un aggiornamento di un trasferimento#super[G].
@@ -3506,8 +3509,6 @@ Si occupa di gestire l'_application logic_ del microservizio Catalog.
 - *`setGoodQuantityRequest(ctx Context, msg Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
 - *`checkSetGoodQuantityRequest(request *stream.StockUpdate) error`*: controlla le richieste di aggiornamento quantità di una merce. Ritorna un errore se la richiesta non è valida.
 
-==== FINE
-
 #pagebreak()
 === Warehouse <micro_warehouse>
 
@@ -3830,7 +3831,7 @@ Rappresenta il comando utilizzato per applicare un evento di prenotazione.
 
 ===== CreateStockUpdateCmd <WarehouseCreateStockUpdateCmd>
 #figure(
-  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 40%),
+  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 30%),
   caption: "Warehouse - CreateStockUpdateCmd",
 )
 
@@ -3861,7 +3862,6 @@ Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiorna
 - *`Good GoodStock`*: attributo di tipo `GoodStock` che rappresenta la merce aggiornata;
 - *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
 
-===== FINE
 
 // oggetti
 
