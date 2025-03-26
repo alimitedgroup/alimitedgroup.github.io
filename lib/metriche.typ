@@ -23,6 +23,18 @@
   #figure(image("../assets/measurements/" + nome + ".svg", width: width), caption: desc)
 ]
 
+#let to-string(content) = {
+  if content.has("text") {
+    content.text
+  } else if content.has("children") {
+    content.children.map(to-string).join("")
+  } else if content.has("body") {
+    to-string(content.body)
+  } else if content == [ ] {
+    " "
+  }
+}
+
 #let test-table(
   unit: [],
   tipo-test: [],
@@ -40,13 +52,13 @@
         rgb("#d8b2d8")
       },
       align: center + horizon,
-      columns: (auto, auto, auto, auto, auto),
+      columns: (auto, auto, auto, /*auto,*/ auto),
       //columns: (10%, 30%, 25%, 25%, 10%),
       table.header(
         text(12pt, fill: white)[*Codice*],
         text(12pt, fill: white)[*Descrizione*],
         text(12pt, fill: white)[*Valore atteso*],
-        text(12pt, fill: white)[*Valore ricevuto*],
+        //text(12pt, fill: white)[*Valore ricevuto*],
         text(12pt, fill: white)[*Stato del Test*],
       ),
       ..for cell in test {
@@ -55,12 +67,7 @@
           "T-" + str(count) + "-" + unit,
           //cell.code,
           cell.desc,
-          align(left)[#cell.va],
-          if (cell.vr == "") {
-            align(left)[#cell.va]
-          } else {
-            align(left)[#cell.vr]
-          },
+          cell.va,
           cell.st,
         )
       }
