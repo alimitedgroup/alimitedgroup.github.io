@@ -14,6 +14,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.3.0",
+      date: datetime(day: 26, month: 03, year: 2025),
+      autore: p.sara,
+      //verifica: p.matteo,
+      descr: "Correzione alcuni requisiti",
+    ),
+    (
       vers: "1.2.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.emanuele,
@@ -301,7 +308,6 @@ Fondamentale per il prodotto è la fornitura agli utilizzatori di consigli di ap
 == Funzioni del prodotto
 Dal punto di vista dell'utilizzatore finale, il prodotto dovrà fornire le seguenti funzionalità#super[G]:
 
-- Avere una _Command Line Interface_ per interagire con le _API_#super[G] del Sistema
 - Possibilità di realizzare un ordine con prodotti disponibili sia localmente che globalmente;
 - Possibilità di realizzare trasferimenti tra magazzini;
 - Possibilità di ricevere suggerimenti di riassortimento quando la disponibilità locale di merce sia sotto una certa soglia;
@@ -315,7 +321,7 @@ Rispetto a quanto originariamente scritto nel #link("https://www.math.unipd.it/~
 - Il riassortimento predittivo basato su _Machine Learning_;
 - Il monitoraggio della telemetria;
 - Il riconoscimento di traffico anomalo;
-- La creazione di una _Graphic User Interface_ (a vantaggio di _API_#super[G] con la quale la _Command Line Interface_ dovrà interagire)
+- La creazione di una _Graphic User Interface_ e una _Command Line Interface_.
 
 Nel seguente documento saranno comunque riportati tutti i requisiti, debitamente segnando a mezzo di nomenclatura i requisiti obbligatori, desiderabili e opzionali.
 
@@ -4210,15 +4216,15 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [R-80-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il nome di ciascun microservizio], [@UC43.1 \ @UC43.1.2],
     [R-81-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il numero di richieste al secondo di ciascun microservizio], [@UC43.1 \ @UC43.1.1],
 
-    [R-82-F-Ob],
+    [R-82-F-De],
     [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_],
     [@UC44],
 
-    [R-83-F-Ob],
+    [R-83-F-De],
     [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
     [@UC45],
 
-    [R-84-F-Ob],
+    [R-84-F-De],
     [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
     [@UC46],
 
@@ -4848,13 +4854,13 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
     [R-80-F-Ob], [@UC43.1 \ @UC43.1.2],
     [R-81-F-Ob], [@UC43.1 \ @UC43.1.1],
 
-    [R-82-F-Ob],
+    [R-82-F-De],
     [@UC44],
 
-    [R-83-F-Ob],
+    [R-83-F-De],
     [@UC45],
 
-    [R-84-F-Ob],
+    [R-84-F-De],
     [@UC46],
 
     [R-85-F-Ob],
@@ -5102,7 +5108,7 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
       [#text(fill: white)[*Opzionali*]],
     ),
 
-    [Funzionali], [170], [22], [0],
+    [Funzionali], [167], [25], [0],
     [Qualità], [10], [1], [0],
     [Vincolo], [6], [0], [0],
   ),
