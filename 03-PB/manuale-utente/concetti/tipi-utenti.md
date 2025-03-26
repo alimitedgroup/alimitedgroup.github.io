@@ -20,9 +20,9 @@ Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà de
     * La **Data di creazione** dell'ordine;
     * Il **Nome** dell'ordine;
     * La **Lista delle merci** nell'ordine e, per ognuna di questa:
+        + Il **Nome** della merce aggiunta all'ordine;
+        + La **Quantità** della merce nell'ordine.
 
-        <!-- - Il **Nome** della merce aggiunta all'ordine;
-        - La **Quantità** della merce nell'ordine.-->
 - **Visualizzare la lista delle merci disponibili nel Sistema** e, per ognuna di essa, visualizzare:
     - Il **Nome** della merce;
     - L'**ID** della merce;
