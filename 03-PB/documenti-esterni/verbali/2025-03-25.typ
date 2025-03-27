@@ -41,7 +41,7 @@ Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avan
 
 == Presentazione microservizi realizzati
 Il gruppo _ALimitedGroup_ ha presentato all'azienda #M31 i microservizi realizzati per l'autenticazione, la gestione degli ordini e i trasferimenti tra magazzini.
-#M31 ha valutato positivamente quanto svolto.
+#M31 ha valutato positivamente quanto svolto, suggerendo di includere nella Specifica Tecnica il funzionamento degli ordini e dei trasferimenti, specie facendo attenzione a descrivere come eventuali conflitti vengono risolti dal Sistema.
 
 == Discussione test accettazione
 _ALimitedGroup_ ha richiesto a #M31 informazioni sulla modalità di svolgimento dei test#super[G] di accettazione.
