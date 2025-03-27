@@ -24,12 +24,3 @@ Di seguito sono riportati alcuni esempi pratici nell'utilizzo dei metadati:
 - **Salvare** quando è avvenuto l'ultimo _restock_ nel magazzino di una merce selezionata.
 
 Questi sono solo alcuni esempi, ma potremmo scriverne ancora per comprenderne ulteriormente l'importanza. Perciò, _ALimitedGroup_ consiglia di salvare i metadati presenti all'interno della merce in un _file_ .json.
-<!---Spiegare cosa intendiamo noi con "merce" (un good#super[G] ,quindi una tupla con ID, nome, metadati extra).
-
-Specificare che i metadati sono salvati come stringa utf-8, quindi consigliare di salvarli in JSON.
-
-Fornire alcuni esempi di utilizzo dei metadati:
-- Salvare l'ID che la merce ha nel sito del fornitore
-- Salvare l'ID che la merce ha nel sito di un cliente
-- Salvare quando è avvenuto l'ultimo restock di una merce
-- ecc.-->
