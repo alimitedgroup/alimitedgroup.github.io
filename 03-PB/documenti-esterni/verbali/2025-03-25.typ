@@ -35,7 +35,7 @@ In questa riunione hanno partecipato, per conto di #M31:
 = Dettagli riunione
 == Aggiornamento stato avanzamento lavori
 Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avanzamento dei lavori:
-- resta da completare il servizio di notifiche e l'aggiornamento della _API_#super[G] ;
+- resta da completare il servizio di notifiche e l'aggiornamento del microservizio API Gateway;
 - è necessario aggiungere alla Specifica Tecnica le informazioni sul microservizio Order/Transfer, Warehouse e API Gateway;
 - è necessario proseguire la redazione del Manuale Utente;
 
