@@ -6,7 +6,7 @@
   versioni: (
     (
       vers: "1.0.0",
-      date: datetime(day: 03, month: 03, year: 2025),
+      date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
       verifica: p.lorenzo,
       descr: "Approvazione interna del documento.",
