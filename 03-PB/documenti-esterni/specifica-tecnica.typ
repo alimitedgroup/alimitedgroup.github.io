@@ -969,9 +969,9 @@ Rappresenta la risposta alla richiesta di un Token.
 
 
 === Funzionamento Ordini
-Ogni magazzino è gestito da un microservizio dedicato, respоnsabile della gestione dello stock#super[G] specifico di quel magazzino. La creazione e gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
+Ogni magazzino è gestito da un microservizio dedicato, respоnsabile della gestione dello stock#super[G] specifico di quel magazzino. La gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
 
-Quando viene creato un ordine#super[G], il microservizio Order genera un evento di tipo _order_update_ con stato _Created_, che viene salvato nello stream di NATS#super[G]. Contemporaneamente, viene inviato un evento sullo stream _contact_warehouses_, che sarà ascoltato da uno dei microservizi Order (@micro_order). Questo microservizio si occupa di contattare i magazzini coinvolti per prenotare le merci necessarie.
+Quando il client ha terminato di costruire un ordine#super[G] localmente, per confermarlo contatta il microservizio Order, che genera un evento di tipo _order_update_ con stato _Created_. Questo evento viene salvato nello stream di NATS#super[G]. Contemporaneamente, viene inviato un evento sullo stream _contact_warehouses_, che sarà ascoltato dai microservizi Order (@micro_order) tramite un consumer group, in modo che una sola istanza gestisca l'evento. Questo microservizio si occupa di contattare i magazzini coinvolti per prenotare le merci necessarie. La prenotazione avviene tramite una richiesta NATS#super[G].
 
 La selezione dei magazzini avviene in base alla disponibilità delle merci richieste, utilizzando un algoritmo che privilegia i magazzini con una quantità di merce più vicina a quella necessaria.
 
