@@ -1,13 +1,21 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.8.0]
+#let ver = [0.9.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 27, month: 03, year: 2025),
+  data: datetime(day: 28, month: 03, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.9.0",
+      date: datetime(day: 28, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.marco,
+      descr: "Aggiunte informazioni sulle versioni delle componenti utilizzate e aggiunte informazioni sul funzionamento di main e router"
+        + ".",
+    ),
     (
       vers: "0.8.0",
       date: datetime(day: 27, month: 03, year: 2025),
