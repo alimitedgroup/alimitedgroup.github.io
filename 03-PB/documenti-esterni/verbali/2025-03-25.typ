@@ -40,7 +40,7 @@ Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avan
 - è necessario proseguire la redazione del Manuale Utente;
 
 == Presentazione microservizi realizzati
-Il gruppo _ALimitedGroup_ ha presentato all'azienda #M31 alcuni microservizi realizzati per l'autenticazione, la gestione degli ordini, dei magazzini.
+Il gruppo _ALimitedGroup_ ha presentato all'azienda #M31 i microservizi realizzati per l'autenticazione, la gestione degli ordini e i trasferimenti tra magazzini.
 #M31 ha valutato positivamente quanto svolto.
 
 == Discussione test accettazione
