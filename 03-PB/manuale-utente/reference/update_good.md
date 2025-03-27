@@ -8,7 +8,7 @@ Si.
 
 ### Variabili PATH
 
-| Nome      | Tipo     | Descrizione                  | Esempio                                |
+| Nome | Tipo | Descrizione | Esempio |
 | --------- | -------- | ---------------------------- | -------------------------------------- |
 | `good_id` | `string` | L'identificativo della merce | `c8225f15-ba60-47f6-8f84-ee72ca3d3d73` |
 
@@ -16,9 +16,9 @@ Si.
 
 Codifica: `application/json`
 
-| Nome          | Tipo     | Descrizione             | Esempio                       |
+| Nome | Tipo | Descrizione | Esempio |
 | ------------- | -------- | ----------------------- | ----------------------------- |
-| `name`        | `string` | Nome della merce        | `"Abito blu"`                 |
+| `name` | `string` | Nome della merce | `"Abito blu"` |
 | `description` | `string` | Descrizione della merce | `"Abito blu di alta qualità"` |
 
 ### Risposta: 200
