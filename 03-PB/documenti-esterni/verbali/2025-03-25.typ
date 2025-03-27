@@ -62,7 +62,7 @@ _ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per la disponibilità e l
 = Tabella delle decisioni e delle azioni <tabella>
 #tabella-decisioni(
   issue(218),
-  "Redazione verbale esterno del 28 Febbraio 2025",
+  "Redazione verbale esterno del 25 Marzo 2025",
 )
 #pagebreak()
 
