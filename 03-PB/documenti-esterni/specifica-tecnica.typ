@@ -628,30 +628,30 @@ Rappresenta la risposta alla richiesta di un Token.
 
 //descrizione generale delle classi router
 
-Ogni microservizio fa uso di NATS, un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go* non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del Controller adibito alla gestione di una determinata richiesta.
+Ogni microservizio fa uso di NATS#super[G] ,un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go*#super[G] non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS#super[G] e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del Controller adibito alla gestione di una determinata richiesta.
 
-I vari microservizi utilizzano dunque codice esplicito che esegue questo processo, dalla registrazione del microservizio all'apposito canale di comunicazione NATS, sino a richiamare il giusto metodo del controller che deve gestire una specifica richiesta: la conversione al DTO trasmesso viene effettuata internamente alla funzione richiamata.
+I vari microservizi utilizzano dunque codice esplicito che esegue questo processo, dalla registrazione del microservizio all'apposito canale di comunicazione NATS#super[G] ,sino a richiamare il giusto metodo del controller che deve gestire una specifica richiesta: la conversione al DTO trasmesso viene effettuata internamente alla funzione richiamata.
 
 Nello specifico, ogni microservizio possiede:
 
-- dei *Router*: tale struttura ha il compito, mediante la funzione `Setup`, di registrare il controller con un _subject_ NATS o JetStream NATS, associandovi la funzione da eseguire all'arrivo di un nuovo messaggio
+- dei *Router*: tale struttura ha il compito, mediante la funzione `Setup`, di registrare il controller con un _subject_ NATS#super[G] o JetStream NATS#super[G] ,associandovi la funzione da eseguire all'arrivo di un nuovo messaggio
 - dei *Controller/Listener Router*: si tratta di una componente che possiede più `Router` e un metodo `Setup`. Dal momento che un microservizio potrebbe avere più controller e dunque più router, questa componente prende tutti i router del microservizio e vi invoca `Setup`. Per maggiori informazioni sul suo impiego, si veda la @main.
 
 ==== Esempio: catalogRouter
 
-//[PROSEGUIRE] inserire UML
+//[PROSEGUIRE] inserire UML#super[G] 
 
 *catalogRouter*, router del microservizio *Catalog*, possiede i seguenti attributi:
 
-- *`NatsMessageBroker`*: si occupa della completa gestione della connessione a NATS e JetStream NATS, nonché possiede un logger per l'integrazione con *Grafana*. Esso infatti possiede i seguenti attributi:
-  - *`Nats *nats.Conn`*: connessione a NATS;
-  - *`NatsJS nats.JetStream`*: struttura legacy per gestire connessioni a JetStream NATS (non utilizzato nel progetto e presente solo per compatibilità con progettazione iniziale);
-  - *`Js jetstream.JetStream`*: struttura per gestire connessioni a JetStream NATS;
+- *`NatsMessageBroker`*: si occupa della completa gestione della connessione a NATS#super[G] e JetStream NATS#super[G] ,nonché possiede un logger per l'integrazione con *Grafana*#super[G] .Esso infatti possiede i seguenti attributi:
+  - *`Nats *nats.Conn`*: connessione a NATS#super[G] ;
+  - *`NatsJS nats.JetStream`*: struttura legacy per gestire connessioni a JetStream NATS#super[G] (non utilizzato nel progetto e presente solo per compatibilità con progettazione iniziale);
+  - *`Js jetstream.JetStream`*: struttura per gestire connessioni a JetStream NATS#super[G] ;
   - *`Logger *zap.logger`*: logger.
   E può invocare le seguenti funzioni:
   - *`NewNatsMessageBroker(nc *nats.Conn, logger *zap.Logger) (*NatsMessageBroker, error)`*: costruttore della struttura;
   - *`RegisterRequest(ctx context.Context, subject Subject, queue Queue, handler RequestHandler) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ specificato;
-  - *`RegisterJsHandler(ctx context.Context, restore IRestoreStreamControl, streamCfg jetstream.StreamConfig, handler JsHandler, opts ...JsHandlerOpt) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ (del JetStream NATS) specificato;
+  - *`RegisterJsHandler(ctx context.Context, restore IRestoreStreamControl, streamCfg jetstream.StreamConfig, handler JsHandler, opts ...JsHandlerOpt) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ (del JetStream NATS#super[G] )specificato;
   - *`RegisterJsWithConsumerGroup(ctx context.Context, streamCfg jetstream.StreamConfig, consumerCfg jetstream.ConsumerConfig, handler JsHandler) error`*: come il precedente, ma permette di applicare un gruppo di _consumer_ (non viene utilizzato da questo router).
 - *`controller *catalogController`*: il controller del microservizio *Catalog*;
 - *`rsc *broker.RestoreStreamControl`*: una struttura che fa uso di `sync.WaitGroup` per gestire il recupero dei messaggi dai JetStream. È infatti necessario per l'invocazione di metodi quali `RegisterJsHandler`.
@@ -661,7 +661,7 @@ Può invocare le seguenti funzioni:
 - *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
 - *`Setup(ctx context.Context) error`*: esegue le associazioni _controller_ - _subject_ usando i metodi sopra descritti.
 
-Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del repository.
+Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS#super[G] sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del repository#super[G] .
 
 === Configurazioni dei microservizi
 
