@@ -2,16 +2,16 @@
 
 Questa route consente di verificare lo stato di autenticazione. Inoltre, consente di ottenere il proprio ruolo attuale, qualora non sia desiderabile ottenerlo estraendolo dal token JWT.
 
-### Richiesta autenticazione
+## Richiesta autenticazione
 
 Sì. Per ulteriori dettagli, fare riferimento a "autenticazione e autorizzazione", all'interno dei concetti.
 <!-- TODO: passare ad usare la citazione @procedura_autenticazione -->
 
-### Corpo della richiesta
+## Corpo della richiesta
 
 Nessuno.
 
-### Risposta: 200
+## Risposta: 200
 
 Il token fornito è valido
 

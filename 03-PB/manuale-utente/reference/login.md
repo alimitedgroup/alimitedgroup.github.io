@@ -2,11 +2,11 @@
 
 Questa route consente di autenticarsi presso il servizio `api_gateway`, in modo da poter accedere alle route che richiedono autenticazione.
 
-### Richiesta autenticazione
+## Richiesta autenticazione
 
 No.
 
-### Corpo della richiesta
+## Corpo della richiesta
 
 Codifica: `application/x-www-form-urlencoded`
 
@@ -14,7 +14,7 @@ Codifica: `application/x-www-form-urlencoded`
 |------------ |---------- |-------------------------------------------- |----------- |
 | `username` | `string` | L'username con cui ci si vuole autenticare | `admin` |
 
-### Risposta: 200
+## Risposta: 200
 
 L'operazione è stata eseguita con successo.
 

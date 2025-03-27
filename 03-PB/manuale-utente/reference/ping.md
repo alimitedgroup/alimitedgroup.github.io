@@ -2,19 +2,19 @@
 
 Questa route consente di verificare se il servizio `api_gateway` è correttamente in esecuzione.
 
-### Richiesta autenticazione
+## Richiesta autenticazione
 
 No.
 
-### Parametri
+## Parametri
 
 Nessuno.
 
-### Corpo della richiesta
+## Corpo della richiesta
 
 Nessuno.
 
-### Risposta: 200
+## Risposta: 200
 
 L'operazione è stata eseguita con successo.
 

@@ -2,11 +2,11 @@
 
 Questa route consente di creare una merce.
 
-### Richiesta autenticazione
+## Richiesta autenticazione
 
 Si.
 
-### Corpo della richiesta
+## Corpo della richiesta
 
 Codifica: `application/json`
 
@@ -15,7 +15,7 @@ Codifica: `application/json`
 | `name` | `string` | Nome della merce | `"Abito blu"` |
 | `description` | `string` | Descrizione della merce | `"Abito blu di alta qualità"` |
 
-### Risposta: 200
+## Risposta: 200
 
 L'operazione è stata eseguita con successo.
 

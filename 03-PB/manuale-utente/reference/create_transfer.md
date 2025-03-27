@@ -2,11 +2,11 @@
 
 Questa route consente di creare un trasferimento di merci da un magazzino all'altro.
 
-### Richiesta autenticazione
+## Richiesta autenticazione
 
 Si.
 
-### Corpo della richiesta
+## Corpo della richiesta
 
 Codifica: `application/json`
 
@@ -16,7 +16,7 @@ Codifica: `application/json`
 | `receiver_id` | `string` | Identificativo del magazzino destinatario | `"warehouse-2"` |
 | `goods` | `map[string]int64` | Mappa delle merci con quantità associate | `{"e6064c0c-4a0c-4f37-b810-7025510a6ecf": 10, "14794ce1-c418-42be-a564-d66e23833db8": 20}` |
 
-### Risposta: 200
+## Risposta: 200
 
 L'operazione è stata eseguita con successo.
 

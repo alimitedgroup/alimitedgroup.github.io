@@ -2,15 +2,15 @@
 
 Questa route consente di recuperare la lista di `warehouse`s (magazzini)
 
-### Richiesta autenticazione
+## Richiesta autenticazione
 
 No.
 
-### Corpo della richiesta
+## Corpo della richiesta
 
 Nessuno.
 
-### Risposta: 200
+## Risposta: 200
 
 L'operazione è stata eseguita con successo.
 
