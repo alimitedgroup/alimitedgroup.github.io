@@ -251,16 +251,15 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*zap*], [1.27.0], [Libreria realizzata da Uber per il logging],
-    [*zap-prettyconsole*], [0.5.2], [Libreria che rende maggiormente leggibile l'output di zap],
-    [*golang-jwt*], [5.2.2], [],
-    [*google uuid*], [1.6.0], [],
-    [*jwx*], [1.2.30], [Per il parsing delle chiavi pubbliche nel subject di pubblicazione],
-    [*nats-server*], [2.11.0], [],
-    [*nats*], [1.40.1], [],
-    [*viper*], [1.20.0], [lettura file yml config],
-    [*OpenTelemetry-Go*], [1.35.0], [https://pkg.go.dev/go.opentelemetry.io/otel],
-    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare Zap a OpenTelemetry-Go]
+    [*zap*], [1.27.0], [Libreria realizzata da Uber per il logging. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/zap")[pagina Go del progetto]],
+    [*zap-prettyconsole*], [0.5.2], [Libreria che rende maggiormente leggibile l'output di zap. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/thessem/zap-prettyconsole")[pagina Go del progetto]],
+    [*golang-jwt*], [5.2.2], [Libreria utilizzata per generare e verificare i Token JWT. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/golang-jwt/jwt/v5")[pagina Go del progetto]],
+    [*google uuid*], [1.6.0], [Libreria utilizzata per generare UUID, utili per identificare in maniera unica i vari servizi offerti dal Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/google/uuid#section-readme")[pagina Go del progetto]],
+    [*jwx*], [1.2.30], [Libreria utilizzata per il parsing delle chiavi pubbliche nel rese disponibili nell'apposito _subject_ JetStream NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/lestrrat-go/jwx")[pagina Go del progetto]],
+    [*nats*], [1.40.1], [Client Go per l'utilizzo di NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats.go")[pagina Go del progetto]],
+    [*viper*], [1.20.0], [Libreria utilizzata per permette la lettura di configurazione da file YAML. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/spf13/viper")[pagina Go del progetto]],
+    [*OpenTelemetry-Go*], [1.35.0], [Implementazione Go per OpenTelemetry: viene utilizzata per raccogliere dati dai vari microservizi del Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/otel")[pagina Go del progetto]],
+    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare zap a OpenTelemetry-Go. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelzap")[pagina Go del progetto]]
   ),
   caption: [Librerie utilizzate],
 )
@@ -317,12 +316,14 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*lint*], [], [],
+    [*gocyclo*], [0.6.0], [Strumento utile per il calcolo della complessità ciclomatica. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/fzipp/gocyclo/cmd/gocyclo")[pagina Go del progetto]],
+    [*staticcheck*], [0.6.0], [Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/honnef.co/go/tools/staticcheck")[pagina Go del progetto]],
+    [*lint*], [2.0.2], [Si tratta di una utility utile nell'ambito della _Continuous Integration_ per eseguire i vari _linter_ da esso stesso inclusi ed alcuni esterni come staticcheck. Per maggiori informazioni si rimanda alla #link("https://github.com/golangci/golangci-lint")[pagina GitHub del progetto]],
   ),
   caption: [Tecnologie per analisi statica],
 )
 
-== Tecnologie per analisi dinamica
+== Tecnologie per l'analisi dinamica
 
 #show figure: set block(breakable: true)
 #figure(
@@ -343,12 +344,13 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*go test*], [], [],
-    [*uber mock*], [0.5.0], [],
-    [*magiconair properties*], [1.8.9], [test assertion],
-    [*stretchr testify*], [1.10.0], [test request (es nil)],
+    [*go test*], [1.24.0], [Si tratta di una componente parte della libreria standard di Go per la realizzazione di test. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/testing")[pagina Go del progetto]],
+    [*GoMock*], [0.5.0], [GoMock è un framework utilizzato per realizzare Mock che implementano interfacce: questo risulta particolarmente utile nella realizzazione di test di unità. Deprecato da Google, adesso è sviluppato da Uber: per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/mock")[pagina Go del progetto]],
+    [*magiconair properties assert*], [1.8.9], [La libreria offre funzionalità per scrivere file con proprietà, ma offre anche strumenti utili per realizzare testing ed è per questo scopo che viene utilizzata. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/magiconair/properties")[pagina Go del progetto]],
+    [*stretchr testify*], [1.10.0], [Libreria specificatamente realizzata per permettere una più semplice realizzazione dei test, offrendo funzionalità per richiedere che un risultato sia di un certo tipo (esempio `nil`). Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/stretchr/testify")[pagina Go del progetto]],
+    [*nats-server*], [2.11.0], [Libreria utilizzata per permettere la realizzazione di un Server NATS Mock utilizzabile nei test di unità e di integrazione. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats-server/v2")[pagina Go del progetto]],
   ),
-  caption: [Tecnologie per analisi dinamica],
+  caption: [Tecnologie per l'analisi dinamica],
 )
 
 
@@ -667,9 +669,18 @@ Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto 
 
 //descrizione generale delle classi config
 
+La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS e per la raccolta di dati telemetrici, può avvenire mediante file di configurazioni o inserendo variabili di ambiente nel dockerfile.
+
+Anche se vuoto, per permettere l'avvio dei microservizi è necessario che il file `config.yml` sia presente nella root dei file. Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente].
+
 === `Main` dei microservizi <main>
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
+
+Ogni microservizio possiede il proprio `Main` che raccoglie i vari fil `*.mdoule.go` necessari all'esecuzione del microservizio e invoca la funzione di avvio denominata `RunLifeCycle`, il tutto utilizzando il _framework_ fx.
+
+Tale funzione prende solitamente il `ControllerRouter` e/o i `Listener` e li passa alla funzione `Run` che vi richiama il metodo Setup, perciò concretamente avviando il microservizio.
+
 #pagebreak()
 
 === Authenticator <auth>
