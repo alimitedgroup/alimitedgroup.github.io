@@ -129,7 +129,7 @@ La scelta tecnologica è stata guidata dalla necessità di creare un sistema di 
 Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la virtualizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
 
 Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
-== Linguaggi di programmazione e _framework_
+== Linguaggi di programmazione
 
 #figure(
   table(
@@ -149,11 +149,36 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
+    [*GO*], [1.24.0], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
   ),
-  caption: [Tecnologie per la programmazione e lo sviluppo software],
+  caption: [Linguaggi di programmazione],
 )
 
+== Framework per la codifica
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*fx*], [1.23.0], [*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+      Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.],
+  ),
+  caption: [Framework per la codifica],
+)
 
 == Tecnologie per la comunicazione e messaggistica
 
@@ -175,7 +200,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*NATS*], [], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
+    [*NATS*], [2.10.25], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
   ),
   caption: [Tecnologie per la comunicazione e messaggistica],
 )
@@ -201,11 +226,44 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*Docker*], [], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
+    [*Docker Engine*], [28.0.1], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
   caption: [Tecnologie per la virtualizzazione e _deployment_],
 )
 
+== Librerie
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*zap*], [1.27.0], [Libreria realizzata da Uber per il logging],
+    [*zap-prettyconsole*], [0.5.2], [Libreria che rende maggiormente leggibile l'output di zap],
+    [*golang-jwt*], [5.2.2], [],
+    [*google uuid*], [1.6.0], [],
+    [*jwx*], [1.2.30], [Per il parsing delle chiavi pubbliche nel subject di pubblicazione],
+    [*nats-server*], [2.11.0], [],
+    [*nats*], [1.40.1], [],
+    [*viper*], [1.20.0], [lettura file yml config],
+    [*OpenTelemetry-Go*], [1.35.0], [https://pkg.go.dev/go.opentelemetry.io/otel],
+    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare Zap a OpenTelemetry-Go]
+  ),
+  caption: [Librerie utilizzate],
+)
 
 == Tecnologie per il monitoraggio dei microservizi
 
@@ -226,20 +284,73 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     // Header row
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
     [*Grafana*],
-    [],
+    [11.6.0],
     [Grafana è una piattaforma open-source per la visualizzazione e l'analisi di dati di monitoraggio. Supporta diverse fonti di dati (come Prometheus, Loki e Mimir) e consente la creazione di dashboard interattive per il monitoraggio in tempo reale.],
     [*Prometheus*],
-    [],
+    [3.2.1],
     [Prometheus è un sistema di monitoraggio e allerta open-source focalizzato sulla raccolta di metriche attraverso un modello pull.],
     [*Loki*],
-    [],
+    [3.4.2],
     [Loki è un sistema di log aggregation sviluppato da Grafana Labs, ottimizzato per la gestione dei log in modo scalabile ed efficiente. Si integra con Grafana per la visualizzazione e utilizza un'architettura simile a Prometheus, semplificando la correlazione tra metriche e log.],
-    [*Mimir*],
-    [],
-    [Mimir è un'estensione di Prometheus sviluppata da Grafana Labs per la gestione di metriche su larga scala. Consente lo storage e la gestione distribuita di serie temporali, migliorando la scalabilità e la resilienza rispetto a un'istanza standalone di Prometheus.],
   ),
   caption: [Tecnologie per il monitoraggio dei microservizi],
 )
+
+== Tecnologie per analisi statica
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*lint*], [], [],
+  ),
+  caption: [Tecnologie per analisi statica],
+)
+
+== Tecnologie per analisi dinamica
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*go test*], [], [],
+    [*uber mock*], [0.5.0], [],
+    [*magiconair properties*], [1.8.9], [test assertion],
+    [*stretchr testify*], [1.10.0], [test request (es nil)],
+  ),
+  caption: [Tecnologie per analisi dinamica],
+)
+
 
 #pagebreak()
 = Architettura <architettura>
@@ -517,11 +628,46 @@ Rappresenta la risposta alla richiesta di un Token.
 
 //descrizione generale delle classi router
 
+Ogni microservizio fa uso di NATS, un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go* non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del Controller adibito alla gestione di una determinata richiesta.
+
+I vari microservizi utilizzano dunque codice esplicito che esegue questo processo, dalla registrazione del microservizio all'apposito canale di comunicazione NATS, sino a richiamare il giusto metodo del controller che deve gestire una specifica richiesta: la conversione al DTO trasmesso viene effettuata internamente alla funzione richiamata.
+
+Nello specifico, ogni microservizio possiede:
+
+- dei *Router*: tale struttura ha il compito, mediante la funzione `Setup`, di registrare il controller con un _subject_ NATS o JetStream NATS, associandovi la funzione da eseguire all'arrivo di un nuovo messaggio
+- dei *Controller/Listener Router*: si tratta di una componente che possiede più `Router` e un metodo `Setup`. Dal momento che un microservizio potrebbe avere più controller e dunque più router, questa componente prende tutti i router del microservizio e vi invoca `Setup`. Per maggiori informazioni sul suo impiego, si veda la @main.
+
+==== Esempio: catalogRouter
+
+//[PROSEGUIRE] inserire UML
+
+*catalogRouter*, router del microservizio *Catalog*, possiede i seguenti attributi:
+
+- *`NatsMessageBroker`*: si occupa della completa gestione della connessione a NATS e JetStream NATS, nonché possiede un logger per l'integrazione con *Grafana*. Esso infatti possiede i seguenti attributi:
+  - *`Nats *nats.Conn`*: connessione a NATS;
+  - *`NatsJS nats.JetStream`*: struttura legacy per gestire connessioni a JetStream NATS (non utilizzato nel progetto e presente solo per compatibilità con progettazione iniziale);
+  - *`Js jetstream.JetStream`*: struttura per gestire connessioni a JetStream NATS;
+  - *`Logger *zap.logger`*: logger.
+  E può invocare le seguenti funzioni:
+  - *`NewNatsMessageBroker(nc *nats.Conn, logger *zap.Logger) (*NatsMessageBroker, error)`*: costruttore della struttura;
+  - *`RegisterRequest(ctx context.Context, subject Subject, queue Queue, handler RequestHandler) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ specificato;
+  - *`RegisterJsHandler(ctx context.Context, restore IRestoreStreamControl, streamCfg jetstream.StreamConfig, handler JsHandler, opts ...JsHandlerOpt) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ (del JetStream NATS) specificato;
+  - *`RegisterJsWithConsumerGroup(ctx context.Context, streamCfg jetstream.StreamConfig, consumerCfg jetstream.ConsumerConfig, handler JsHandler) error`*: come il precedente, ma permette di applicare un gruppo di _consumer_ (non viene utilizzato da questo router).
+- *`controller *catalogController`*: il controller del microservizio *Catalog*;
+- *`rsc *broker.RestoreStreamControl`*: una struttura che fa uso di `sync.WaitGroup` per gestire il recupero dei messaggi dai JetStream. È infatti necessario per l'invocazione di metodi quali `RegisterJsHandler`.
+
+Può invocare le seguenti funzioni:
+
+- *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
+- *`Setup(ctx context.Context) error`*: esegue le associazioni _controller_ - _subject_ usando i metodi sopra descritti.
+
+Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del repository.
+
 === Configurazioni dei microservizi
 
 //descrizione generale delle classi config
 
-=== `Main` dei microservizi
+=== `Main` dei microservizi <main>
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
 #pagebreak()
