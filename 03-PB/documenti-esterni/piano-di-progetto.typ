@@ -10,6 +10,12 @@
   stato: [Approvato per RTB],
   versioni: (
     (
+      vers: "1.2.0",
+      date: datetime(day: 11, month: 03, year: 2025),
+      autore: p.emanuele,
+      descr: "Redazione per l'ottavo sprint " + [(@sprint8). ],
+    ),
+    (
       vers: "1.1.0",
       date: datetime(day: 24, month: 02, year: 2025),
       autore: p.marco,
@@ -77,7 +83,7 @@
   versione: ver,
   responsabile: ((p.samuele),),
   verificatore: ((p.emanuele), (p.lorenzo), (p.samuele)),
-  redattori: ((p.loris), (p.marco), (p.matteo), (p.samuele)),
+  redattori: ((p.loris), (p.marco), (p.matteo), (p.samuele), (p.emanuele)),
   descrizione: [Il _Piano di Progetto_ contiene il resoconto delle attività svolte e da svolgere da _ALimitedGroup_],
   titolo: "Piano di Progetto",
   body,
@@ -1255,5 +1261,99 @@ Durante tutto questo sprint#super[G] ci siamo concentrati sulla realizzazione ed
 Inoltre, abbiamo realizzato le prime versioni dei documenti di "Manuale Utente#super[G]" e "Specifica Tecnica#super[G]".\
 Abbiamo provveduto tempestivamente a correggere le Norme di Progetto#super[G] e parzialmente il documento di Analisi dei Requisiti#super[G], successivamente aver ricevuto la valutazione della RTB#super[G] ricevuta dal #profBreve(p.tullio) e dal #profBreve(p.cardin). \
 La riunione con l'azienda proponente#super[G] #M31, svolta in data 28/02, è stata positiva ed efficace per capire quali saranno i prossimi passaggi e i prossimi obiettivi durante tutto l'arco della PB#super[G] .
+#pagebreak()
+
+=== Sprint 8 <sprint8>
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[10-03-2025],
+  [Fine prevista:], strong[21-03-2025],
+  [Fine reale:], strong[21-03-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint7intro>
+
+Con l'ottavo sprint#super[G] si continuano le attività per la _Product Baseline#super[G]_. \
+Nel dettaglio:
+- Redigere il verbale interno della riunione effettuata in data 11/03;
+- Redigere il verbale interno della riunione effettuata in data 17/03;
+- Completare la progettazione ed i test#super[G] del microservizio _Authenticator_;
+- Completare la progettazione ed i test#super[G] del microservizio _Notifications_;
+- Completare la progettazione ed i test#super[G] del microservizio _Order_;
+- Completare la progettazione ed i test#super[G] del microservizio _Transfer_;
+- Completare la progettazione ed i test#super[G] del microservizio _Client_;
+- Continuare la redazione del documento di "Specifica Tecnica#super[G]":
+  - Completare la sezione introduttiva;
+  - Aggiungere _framework_ *fx*;
+  - Aggiungere informazioni su analisi statica e dinamica;
+- Continuare la redazione del "Manuale Utente#super[G]".
+
+Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere i test#super[G] di accettazione.
+==== Rischi attesi
+I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RT2: Rischio Tecnologico legato a errori nel codice;
+- RG3: Rischio Globale derivato da sottostima di attività;
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
+
+#pagebreak()
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(8, "Sprint 8 - Preventivo per componente", "Sprint 8 - Preventivo")
+
+#v(2em)
+==== Consuntivo
+#v(1em)
+
+#impegni(
+  8,
+  preventivo: true,
+  "Sprint 8 - Consuntivo per componente",
+  "Sprint 8 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(8, "Sprint 8 - Variazione nelle risorse disponibili")
+
+#v(1em)
+
+==== Rischi incontrati
+
+Durante questo sprint#super[G] si sono concretizzati i seguenti rischi:
+- RT2: Rischio Tecnologico legato a errori nel codice;
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
+
+Per i seguenti motivi:
+- RT2: è stato incontrato in fase di implementazione dell'MVP e dei relativi servizi che saranno presenti;
+- RI2: è stato incontrato per via di impegni personali dei singoli componenti di _ALimitedGroup_.
+
+===== Valutazione di efficacia delle strategie di mitigazione dei rischi
+
+Per la mitigazione dei rischi incontrati, sono state adottate le seguenti strategie:
+- RT2: per la mitigazione di questo rischio abbiamo approfondito maggiormente le tecnologie adottate, con aiuto della documentazione ufficiale accessibile dai siti web;
+- RI2: per la mitigazione di questo rischio, abbiamo attuato un piano per coprire le eventuali assenze dei componenti di _ALimitedGroup_.
+
+Nel complesso, le strategie adottate sono state efficaci per la maggior parte dei rischi incontrati dal gruppo.
+
+==== Rivisitazione migliorativa del piano per le attività future
+
+Il prossimo _sprint_#super[G] sarà l'ultimo prima della scadenza della consegna preventivata. \
+Per questo motivo, sarà fondamentale concentrare gli sforzi su attività che garantiscano la qualità del prodotto finale e la soddisfazione dei requisiti richiesti, completando e verificando tutti i microservizi effettuando quindi i test#super[G] di accettazione per assicurare che tutte le componenti funzionino correttamente insieme. \
+Inoltre, sarà importante mantenere una comunicazione costante con il proponente#super[G] per risolvere eventuali dubbi o problemi che potrebbero emergere durante l'ultimo sprint#super[G].
 
 
+=== Retrospettiva
+In questo ottavo sprint#super[G], ci siamo concentrati principalmente sulla realizzazione e implementazione dei microservizi che andranno a comporre il _Minimum Viable Product#super[G]_ finale per questo progetto.
+
+Abbiamo completato la progettazione e i test#super[G] dei microservizi _Authenticator_, _Notifications_, _Order_, _Transfer_, e _Client_. Inoltre, abbiamo continuato la redazione del documento di "Specifica Tecnica#super[G]" e del "Manuale Utente#super[G]".
+
+Durante questo sprint#super[G], abbiamo incontrato i rischi _RT2: Rischio Tecnologico legato a errori nel codice_ e _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_. Le strategie di mitigazione adottate si sono rivelate efficaci nel gestire questi rischi.
