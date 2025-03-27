@@ -639,7 +639,7 @@ Nello specifico, ogni microservizio possiede:
 
 ==== Esempio: catalogRouter
 
-//[PROSEGUIRE] inserire UML#super[G] 
+//[PROSEGUIRE] inserire UMLL
 
 *catalogRouter*, router del microservizio *Catalog*, possiede i seguenti attributi:
 
