@@ -981,6 +981,9 @@ Infine, quando i microservizi Order ricevono gli aggiornamenti degli stock#super
 
 Per evitare conflitti tra ordini, il sistema utilizza un meccanismo di prenotazioni che assicura la disponibilità delle merci al momento della conferma dell'ordine. Inoltre, la gestione distribuita degli stock#super[G] tra i vari magazzini elimina problemi di concorrenza e migliora la scalabilità complessiva del sistema.
 
+Una funzionalità#super[G] simile agli ordini è quella dei trasferimenti, dei particolari ordini che permettono di spostare della merce da un magazzino mittente a un magazzino destinatario.
+I trasferimenti vengono gestiti in modo simile agli ordini, con la differenza che non viene utilizzato nessun algoritmo per la selezione del magazzino destinatario, in quanto è già specificato nella richiesta di trasferimento#super[G] ,e vengono utilizzati gli eventi di tipo _transfer_update_.
+
 #pagebreak()
 
 === Authenticator <auth>
