@@ -20,10 +20,10 @@ nav:
   - Concetti:
       - Tipi di utenti: concetti/tipi-utenti.md
       - Autenticazione: concetti/autenticazione.md
-      - Merci: concetti/merci.md
-      - Ordini: concetti/ordini.md
-      - Riassortimenti: concetti/riassortimenti.md
-      - Trasferimenti: concetti/trasferimenti.md
+      - Merce: concetti/merci.md
+      - Ordine: concetti/ordini.md
+      - Riassortimento: concetti/riassortimenti.md
+      - Trasferimento: concetti/trasferimenti.md
   - Guide:
       - Registrare un nuovo utente: guide/registrazione.md
       - Effettuare il login: guide/login.md
