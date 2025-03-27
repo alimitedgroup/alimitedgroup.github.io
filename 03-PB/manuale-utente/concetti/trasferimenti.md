@@ -16,4 +16,4 @@ Un "Trasferimento" viene inteso come un qualsiasi scambio di merci, bilateralmen
 
 Queste sono le informazioni che devono essere presenti nello scambio, perché senza di queste il Trasferimento perderebbe di significato.
 
-A differenza dell'Ordine e del "Riassortimento", nella fase di "Trasferimento" la quantità necessaria per lo scambio è già presente nel magazzino (_warehouse_) e quindi l'"Ordine", antecedente a questa fase, è stato confermato ed è in fase di elaborazione in questa fase di "Trasferimento" .  
+A differenza dell'Ordine e del "Riassortimento", nella fase di "Trasferimento" la quantità necessaria per lo scambio è già presente nel magazzino (_warehouse_) e quindi l'"Ordine", antecedente a questa fase, è stato confermato ed è in fase di elaborazione in questa fase di "Trasferimento" .
