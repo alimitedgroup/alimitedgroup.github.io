@@ -6,34 +6,41 @@ site_dir: dist/docs
 nav:
   - Introduzione: index.md
   - Installazione:
-    - Requisiti:
-      - Requisiti Hardware: installazione/requisiti/requisiti-hw.md
-      - Requisiti Software: installazione/requisiti/requisiti-sw.md
-    - Preparazione del Sistema:
-      - Installazione del Software: installazione/preparazione-del-sistema/01-installazione-sw.md
-      - Personalizzare la configurazione: installazione/preparazione-del-sistema/02-configurare-ms.md
-      - Avviare il Sistema: installazione/preparazione-del-sistema/03-avvio-sistema.md
+      - Requisiti:
+          - Requisiti Hardware: installazione/requisiti/requisiti-hw.md
+          - Requisiti Software: installazione/requisiti/requisiti-sw.md
+      - Preparazione del Sistema:
+          - Installazione del Software: installazione/preparazione-del-sistema/01-installazione-sw.md
+          - Personalizzare la configurazione: installazione/preparazione-del-sistema/02-configurare-ms.md
+          - Avviare il Sistema: installazione/preparazione-del-sistema/03-avvio-sistema.md
     # Forse: aggiungere "Installazione con Kubernetes" 👀
   - Operazione:
-    - Backup: operazione/backup.md
+      - Backup: operazione/backup.md
   - Quickstart: quickstart.md # tutorial, per iniziare in 5 minuti ad usare il software
   - Concetti:
-    - Tipi di utenti: concetti/tipi-utenti.md
-    - Autenticazione: concetti/autenticazione.md
-    - Merci: concetti/merci.md
-    - Ordini: concetti/ordini.md
-    - Riassortimenti: concetti/riassortimenti.md
-    - Trasferimenti: concetti/trasferimenti.md
+      - Tipi di utenti: concetti/tipi-utenti.md
+      - Autenticazione: concetti/autenticazione.md
+      - Merci: concetti/merci.md
+      - Ordini: concetti/ordini.md
+      - Riassortimenti: concetti/riassortimenti.md
+      - Trasferimenti: concetti/trasferimenti.md
   - Guide:
-    - Registrare un nuovo utente: guide/registrazione.md
-    - Effettuare il login: guide/login.md
-    - Aggiungere una merce: guide/aggiunta-merce.md
+      - Registrare un nuovo utente: guide/registrazione.md
+      - Effettuare il login: guide/login.md
+      - Aggiungere una merce: guide/aggiunta-merce.md
   - Riferimento API:
-    - GET /api/v1/ping: reference/ping.md
-    - POST /api/v1/login: reference/login.md
-    - GET /api/v1/is_logged: reference/is_logged.md
-    - GET /api/v1/goods: reference/get_goods.md
-    - GET /api/v1/warehouses: reference/get_warehouses.md
+      - GET /api/v1/ping: reference/ping.md
+      - POST /api/v1/login: reference/login.md
+      - GET /api/v1/is_logged: reference/is_logged.md
+      - GET /api/v1/goods: reference/get_goods.md
+      - GET /api/v1/warehouses: reference/get_warehouses.md
+      - GET /api/v1/orders: reference/get_orders.md
+      - GET /api/v1/transfers: reference/get_transfers.md
+      - POST /api/v1/goods: reference/create_good.md
+      - POST /api/v1/orders: reference/create_order.md
+      - POST /api/v1/transfers: reference/create_transfer.md
+      - PUT /api/v1/goods/:good_id: reference/update_good.md
+      - POST /api/v1/goods/:good_id/warehouse/:warehouse_id/add: reference/add_stock.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py
