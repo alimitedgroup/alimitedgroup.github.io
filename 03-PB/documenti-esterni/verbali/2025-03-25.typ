@@ -8,7 +8,7 @@
       vers: "0.1.0",
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
-      //verifica: p.emanuele,
+      verifica: p.matteo,
       descr: "Redazione del documento.",
     ),
   ),
