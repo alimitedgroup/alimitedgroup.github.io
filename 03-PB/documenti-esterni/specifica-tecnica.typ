@@ -439,8 +439,8 @@ Rappresenta un DTO generico per le risposte, utilizzabile per incapsulare un mes
 
 ==== StockUpdate <WarehouseStockUpdate>
 #figure(
-image("../../assets/warehouse/StreamStockUpdate.png", width: 35%),
-caption: "Warehouse - StockUpdate",
+  image("../../assets/warehouse/StreamStockUpdate.png", width: 35%),
+  caption: "Warehouse - StockUpdate",
 )
 
 Rappresenta un aggiornamento dello stock#super[G] nel sistema, utilizzato per comunicare variazioni di quantità di merci tra i microservizi.
@@ -458,7 +458,7 @@ Rappresenta un aggiornamento dello stock#super[G] nel sistema, utilizzato per co
 - *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock#super[G];
 - *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello stock#super[G];
-- *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock#super[G].
+- *`Timestamp int64`*: rappresenta il _timestamp_ dell'aggiornamento dello stock#super[G].
 
 ==== StockUpdateType <WarehouseStockUpdateType>
 
@@ -512,8 +512,8 @@ Questo DTO viene utilizzato per rappresentare la richiesta di rimozione di stock
 
 ==== ReserveStockRequestDTO <WarehouseReserveStockRequestDTO>
 #figure(
-image("../../assets/warehouse/ReserveStockRequestDTO.png", width: 30%),
-caption: "Warehouse - ReserveStockRequestDTO",
+  image("../../assets/warehouse/ReserveStockRequestDTO.png", width: 30%),
+  caption: "Warehouse - ReserveStockRequestDTO",
 )
 
 Questo DTO viene utilizzato per rappresentare la richiesta di prenotazione di stock#super[G] nel magazzino.
@@ -524,8 +524,8 @@ Questo DTO viene utilizzato per rappresentare la richiesta di prenotazione di st
 
 ==== ReserveStockItem <WarehouseReserveStockItem>
 #figure(
-image("../../assets/warehouse/ReserveStockItem.png", width: 25%),
-caption: "Warehouse - ReserveStockItem",
+  image("../../assets/warehouse/ReserveStockItem.png", width: 25%),
+  caption: "Warehouse - ReserveStockItem",
 )
 
 Rappresenta una merce coinvolta nella richiesta di prenotazione di stock#super[G].
@@ -574,8 +574,8 @@ Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel mi
 
 ==== OrderUpdate <StreamOrderUpdate>
 #figure(
-image("../../assets/order/OrderUpdate.png", width: 50%),
-caption: "OrderUpdate",
+  image("../../assets/order/OrderUpdate.png", width: 50%),
+  caption: "OrderUpdate",
 )
 
 Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
@@ -589,13 +589,13 @@ Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine.
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine.
 
 ==== OrderUpdateGood <StreamOrderUpdateGood>
 #figure(
-image("../../assets/order/OrderUpdateGood.png", width: 35%),
-caption: "OrderUpdateGood",
+  image("../../assets/order/OrderUpdateGood.png", width: 35%),
+  caption: "OrderUpdateGood",
 )
 
 Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
@@ -607,8 +607,8 @@ Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
 ==== TransferUpdate <StreamTransferUpdate>
 #figure(
-image("../../assets/order/TransferUpdate.png", width: 50%),
-caption: "TransferUpdate",
+  image("../../assets/order/TransferUpdate.png", width: 50%),
+  caption: "TransferUpdate",
 )
 
 Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
@@ -621,13 +621,13 @@ Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G].
 
 ==== TransferUpdateGood <StreamTransferUpdateGood>
 #figure(
-image("../../assets/order/TransferUpdateGood.png", width: 35%),
-caption: "TransferUpdateGood",
+  image("../../assets/order/TransferUpdateGood.png", width: 35%),
+  caption: "TransferUpdateGood",
 )
 
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
@@ -1537,8 +1537,8 @@ Rappresenta un ordine#super[G] nel sistema. Questo oggetto è utilizzato nella _
 - *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Warehouses []OrderWarehouseUsed`*: rappresenta una lista di oggetti `OrderWarehouseUsed` che contengono le informazioni sui magazzini utilizzati per l'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine.
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1586,8 +1586,8 @@ Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato 
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Created", "Filled");
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
 - *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G].
@@ -1618,8 +1618,8 @@ Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato 
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Created", "Filled");
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
 - *`LinkedStockUpdate int`*: rappresenta il numero di aggiornamenti dello stock#super[G] associati al trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Goods []GoodStock`*: rappresenta una lista di oggetti `GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G].
@@ -1647,8 +1647,8 @@ Rappresenta un ordine#super[G] nel sistema.
 
 - *`ID string`*: rappresenta l'identificativo univoco dell'ordine;
 - *`Status string`*: rappresenta lo stato dell'ordine;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine;
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
 - *`Name string`*: rappresenta il nome dell'ordine;
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
@@ -1763,8 +1763,8 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`Goods []GoodStock`*: rappresenta una lista di oggetti `GoodStock` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine.
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine;
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine.
 
 ===== ApplyTransferUpdateCmd <OrderApplyTransferUpdateCmd>
 #figure(
@@ -1779,8 +1779,8 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []GoodStock`*: rappresenta una lista di oggetti `GoodStock` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G].
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1818,8 +1818,8 @@ Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferim
 - *`Goods []TransferUpdateGood`*: rappresenta una lista di oggetti `TransferUpdateGood` che contengono le informazioni sulle merci coinvolte nel trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G];
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] aggiornato;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G].
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G].
 
 ===== TransferUpdateGood <OrderTransferUpdateGood>
 #figure(
@@ -1847,8 +1847,8 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 - *`Name string`*: rappresenta il nome dell'ordine;
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine.
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1938,7 +1938,7 @@ Rappresenta il comando per aggiornare lo stock#super[G].
 - *`OrderID string`*: rappresenta l'identificativo dell'ordine associato all'aggiornamento dello stock#super[G];
 - *`TransferID string`*: rappresenta l'identificativo del trasferimento#super[G] associato all'aggiornamento dello stock#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata all'aggiornamento dello stock#super[G];
-- *`Timestamp int64`*: rappresenta il timestamp dell'aggiornamento dello stock#super[G].
+- *`Timestamp int64`*: rappresenta il _timestamp_ dell'aggiornamento dello stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1974,7 +1974,7 @@ Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire 
 - *`Transfer *ContactWarehousesTransfer`*: rappresenta i dettagli del trasferimento#super[G] da gestire, se l'operazione è di tipo trasferimento#super[G];
 - *`ConfirmedReservations []ConfirmedReservation`*: rappresenta una lista di prenotazioni confermate, utilizzate per ottimizzare la gestione delle risorse;
 - *`ExcludeWarehouses []string`*: rappresenta una lista di identificativi dei magazzini da escludere dall'operazione;
-- *`RetryUntil int64`*: rappresenta il timestamp fino al quale è possibile effettuare tentativi di contatto con i magazzini;
+- *`RetryUntil int64`*: rappresenta il _timestamp_ fino al quale è possibile effettuare tentativi di contatto con i magazzini;
 - *`RetryInTime int64`*: rappresenta l'intervallo di tempo, in millisecondi, tra un tentativo di contatto e il successivo.
 
 ===== ContactWarehousesType <OrderContactWarehousesType>
@@ -2000,8 +2000,8 @@ Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando
 - *`Name string`*: rappresenta il nome dell'ordine;
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento dell'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine;
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
 - *`Goods []ContactWarehousesGood`*: rappresenta una lista di merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
@@ -2018,8 +2018,8 @@ Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del 
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G];
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
-- *`UpdateTime int64`*: rappresenta il timestamp dell'ultimo aggiornamento del trasferimento#super[G];
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
 - *`Goods []ContactWarehousesGood`*: rappresenta una lista di merci coinvolte nel trasferimento#super[G];
 - *`ReservationID string`*: rappresenta l'identificativo della prenotazione associata al trasferimento#super[G].
 
@@ -2074,7 +2074,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#supe
 - *`Name string`*: rappresenta il nome dell'ordine;
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
-- *`CreationTime int64`*: rappresenta il timestamp di creazione dell'ordine;
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
 - *`Goods []SendOrderUpdateGood`*: rappresenta una lista di oggetti `SendOrderUpdateGood` che contengono le informazioni sulle merci incluse nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
@@ -2113,7 +2113,7 @@ Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire 
 - *`ConfirmedReservations []ConfirmedReservation`*: rappresenta una lista di prenotazioni confermate, utilizzate per ottimizzare la gestione delle risorse;
 - *`ExcludeWarehouses []string`*: rappresenta una lista di identificativi dei magazzini da escludere dall'operazione;
 - *`RetryInTime int64`*: rappresenta l'intervallo di tempo, in millisecondi, tra un tentativo di contatto e il successivo;
-- *`RetryUntil int64`*: rappresenta il timestamp fino al quale è possibile effettuare tentativi di contatto con i magazzini.
+- *`RetryUntil int64`*: rappresenta il _timestamp_ fino al quale è possibile effettuare tentativi di contatto con i magazzini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2338,7 +2338,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimen
 
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da aggiornare;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Created", "Filled");
-- *`CreationTime int64`*: rappresenta il timestamp di creazione del trasferimento#super[G];
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []SendTransferUpdateGood`*: rappresenta una lista di oggetti `SendTransferUpdateGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G];
