@@ -1479,7 +1479,7 @@ Il microservizio *Order* viene utilizzato per realizzare gli ordini quando quest
 
 È sempre di questo microservizio il compito di assolvere ai trasferimenti, particolari tipi di ordini il cui destinatario è un altro magazzino.
 
-È formato da tre sotto-aree di componenti principali:
+In particolare, è formato da tre sotto-componenti principali:
 
 - I *Controller* e *Listener*, che rappresentano l'_application logic_
 - I *Service*, che rappresentano la _business logic_;
