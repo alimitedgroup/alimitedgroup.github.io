@@ -46,7 +46,7 @@ Il gruppo _ALimitedGroup_ ha presentato all'azienda #M31 i microservizi realizza
 == Discussione test accettazione
 _ALimitedGroup_ ha richiesto a #M31 informazioni sulla modalità di svolgimento dei test#super[G] di accettazione.
 A tal proposito, l'azienda ha richiesto di specificare nel Piano di Qualifica anche i risultati attesi dal test, nonché le istruzioni per eseguire gli stessi.
-L'azienda ha richiesto di specificare anche il codice necessario per l'esecuzione dei test#super[G] .
+Il gruppo si impegnerà per fornire al più presto i test di accettazione proposti per far sì, nel prossimo incontro, di svolgere gli stessi.
 
 
 
