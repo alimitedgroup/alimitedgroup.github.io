@@ -669,9 +669,9 @@ Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto 
 
 //descrizione generale delle classi config
 
-La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS e per la raccolta di dati telemetrici, può avvenire mediante file di configurazioni o inserendo variabili di ambiente nel dockerfile.
+La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire mediante file di configurazioni o inserendo variabili di ambiente nel dockerfile.
 
-Anche se vuoto, per permettere l'avvio dei microservizi è necessario che il file `config.yml` sia presente nella root dei file. Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente].
+Anche se vuoto, per permettere l'avvio dei microservizi è necessario che il file `config.yml` sia presente nella root dei file. Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
 
 === `Main` dei microservizi <main>
 
