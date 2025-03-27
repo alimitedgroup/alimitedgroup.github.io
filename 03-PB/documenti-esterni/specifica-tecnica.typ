@@ -966,6 +966,20 @@ Rappresenta la risposta alla richiesta di un Token.
 === `Main` dei microservizi
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
+
+
+=== Funzionamento Ordini
+Ogni magazzino è gestito da un microservizio dedicato, responsabile della gestione dello stock#super[G] specifico di quel magazzino. La creazione e gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
+
+Quando viene creato un ordine, il microservizio Order genera un evento di tipo _order_update_ con stato _Created_, che viene salvato nello stream di NATS#super[G]. Contemporaneamente, viene inviato un evento sullo stream _contact_warehouses_, che sarà ascoltato da uno dei microservizi Order (@micro_order). Questo microservizio si occupa di contattare i magazzini coinvolti per prenotare le merci necessarie.
+
+La selezione dei magazzini avviene in base alla disponibilità delle merci richieste, utilizzando un algoritmo che privilegia i magazzini con una quantità di merce più vicina a quella necessaria.
+
+Dopo aver completato con successo la prenotazione delle merci presso i magazzini interessati, l'ordine viene aggiornato allo stato _Filled_. A questo punto, viene generato un nuovo evento di tipo _order_update_, che include la lista delle prenotazioni effettuate. I microservizi Warehouse (@micro_warehouse) coinvolti ricevono questo evento e aggiornano di conseguenza lo stock#super[G] disponibile.
+
+Infine, quando i microservizi Order ricevono gli aggiornamenti degli stock#super[G] dai magazzini, lo stato dell'ordine viene aggiornato internamente a _Completed_, informando così l'utente del completamento dell'ordine.
+
+
 #pagebreak()
 
 === Authenticator <auth>
