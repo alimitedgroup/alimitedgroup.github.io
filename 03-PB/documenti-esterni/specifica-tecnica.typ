@@ -1,13 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.7.0]
+#let ver = [0.8.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 17, month: 03, year: 2025),
+  data: datetime(day: 27, month: 03, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.8.0",
+      date: datetime(day: 27, month: 03, year: 2025),
+      autore: p.loris,
+      verifica: p.marco,
+      descr: "Descrizione del microservizio order" + [ (@micro_order)] + ".",
+    ),
     (
       vers: "0.7.0",
       date: datetime(day: 17, month: 03, year: 2025),
@@ -1468,7 +1475,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 - *`checkGetTokenRequest(dto *common.AuthLoginRequest) error`*: controlla la correttezza della richiesta per ottenere un Token e restituisce un errore in caso di risultato negativo o `nil` altrimenti;
 - *`NewTokenRequest(ctx Context, msg *Msg) error`*: si occupa di gestire una richiesta di ottenimento Token e rispondere alla stessa con il Token o con una stringa vuota se la procedura non va a buon fine.
 
-=== Order //ORDER
+=== Order <micro_order>
 
 #figure(
   image("../../assets/order/order.png", width: 100%),
