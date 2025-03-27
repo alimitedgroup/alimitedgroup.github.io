@@ -1,4 +1,4 @@
-# Ordine#super[G] 
+# Ordine
 
 <!--Spiegare che cos'è un ordine#super[G], la differenza con trasferimento#super[G] e riassortimento-->
 Nel _Minimum Viable Product#super[G]_, che _ALimitedGroup_ ha progettato ed implementato, e nei documenti annessi viene fatto riferimento ad una serie di termini, uno tra questi è: l'**Ordine**.
