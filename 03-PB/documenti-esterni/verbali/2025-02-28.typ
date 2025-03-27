@@ -4,13 +4,13 @@
   data: datetime(day: 28, month: 02, year: 2025),
   tipo: [esterno],
   versioni: (
-    /* (
+    (
       vers: "1.0.0",
       date: datetime(day: 03, month: 03, year: 2025),
       autore: p.sara,
       verifica: p.emanuele,
-      descr: "Approvazione interna ed esterna del documento.",
-    ),*/
+      descr: "Approvazione interna del documento.",
+    ),
     (
       vers: "0.1.0",
       date: datetime(day: 28, month: 02, year: 2025),

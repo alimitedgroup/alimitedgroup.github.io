@@ -5,6 +5,13 @@
   tipo: [esterno],
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 03, month: 03, year: 2025),
+      autore: p.sara,
+      verifica: p.lorenzo,
+      descr: "Approvazione interna del documento.",
+    ),
+    (
       vers: "0.1.0",
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
@@ -35,18 +42,18 @@ In questa riunione hanno partecipato, per conto di #M31:
 = Dettagli riunione
 == Aggiornamento stato avanzamento lavori
 Durante l'incontro il gruppo _ALimitedGroup_ ha aggiornato #M31 sullo stato avanzamento dei lavori:
-- resta da completare il servizio di notifiche e l'aggiornamento del microservizio API Gateway;
-- è necessario aggiungere alla Specifica Tecnica le informazioni sul microservizio Order/Transfer, Warehouse e API Gateway;
-- è necessario proseguire la redazione del Manuale Utente;
+- resta da completare il servizio di notifiche e l'aggiornamento del microservizio API#super[G] Gateway;
+- è necessario aggiungere alla Specifica Tecnica#super[G] le informazioni sul microservizio Order/Transfer, Warehouse e API#super[G] Gateway;
+- è necessario proseguire la redazione del Manuale Utente#super[G];
 
 == Presentazione microservizi realizzati
 Il gruppo _ALimitedGroup_ ha presentato all'azienda #M31 i microservizi realizzati per l'autenticazione, la gestione degli ordini e i trasferimenti tra magazzini.
-#M31 ha valutato positivamente quanto svolto, suggerendo di includere nella Specifica Tecnica il funzionamento degli ordini e dei trasferimenti, specie facendo attenzione a descrivere come eventuali conflitti vengono risolti dal Sistema.
+#M31 ha valutato positivamente quanto svolto, suggerendo di includere nella Specifica Tecnica#super[G] il funzionamento degli ordini e dei trasferimenti, specie facendo attenzione a descrivere come eventuali conflitti vengono risolti dal Sistema.
 
 == Discussione test accettazione
 _ALimitedGroup_ ha richiesto a #M31 informazioni sulla modalità di svolgimento dei test#super[G] di accettazione.
-A tal proposito, l'azienda ha richiesto di specificare nel Piano di Qualifica anche i risultati attesi dal test, nonché le istruzioni per eseguire gli stessi.
-Il gruppo si impegnerà per fornire al più presto i test di accettazione proposti per far sì, nel prossimo incontro, di svolgere gli stessi.
+A tal proposito, l'azienda ha richiesto di specificare nel Piano di Qualifica#super[G] anche i risultati attesi dal test#super[G] ,nonché le istruzioni per eseguire gli stessi.
+Il gruppo si impegnerà per fornire al più presto i test#super[G] di accettazione proposti per far sì, nel prossimo incontro, di svolgere gli stessi.
 
 
 
