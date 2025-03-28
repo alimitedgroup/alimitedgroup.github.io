@@ -19,7 +19,8 @@ Nessuno.
 L'operazione è stata eseguita con successo.
 
 Codifica: `application/json`
-
+<!--typst-begin-exclude-->
 | Nome | Tipo | Descrizione | Esempio |
 |------------ |---------- |-------------------------------------------- |----------- |
 | `message` | `string` | Valore fisso, sempre uguale a "pong". | `pong` |
+<!--typst-end-exclude-->

@@ -15,7 +15,8 @@ Nessuno.
 L'operazione è stata eseguita con successo.
 
 Codifica: `application/json`
-
+<!--typst-begin-exclude-->
 | Nome | Tipo | Descrizione | Esempio |
 |------------ |---------- |-------------------------------------------- |----------- |
 | `ids` | `string[]` | Una lista di ID dei magazzini. | `"ids": ["f7465619-4e3c-4a3e-8f0d-0379666bb47a", "2ecd185a-f7a6-4834-b29c-92657485d284"]` |
+<!--typst-end-exclude-->

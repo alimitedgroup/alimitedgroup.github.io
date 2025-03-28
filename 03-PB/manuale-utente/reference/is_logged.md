@@ -16,7 +16,8 @@ Nessuno.
 Il token fornito è valido
 
 Codifica: `application/json`
-
+<!--typst-begin-exclude-->
 | Nome | Tipo | Descrizione | Esempio |
 |------------ |---------- |-------------------------------------------- |----------- |
 | `role` | `string` | Il ruolo dell'utente associato al token fornito. Il ruolo può essere uno tra le tre stringhe `client`, `local_admin` e `global_admin`. | `global_admin` |
+<!--typst-end-exclude-->

@@ -15,7 +15,8 @@ Nessuno.
 L'operazione è stata eseguita con successo.
 
 Codifica: `application/json`
-
+<!--typst-begin-exclude-->
 | Nome | Tipo | Descrizione | Esempio |
 | -------- | --------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `orders` | `Order[]` | Una lista di ordini, con le relative informazioni. | `[{"order_id": "0353a051-f1a4-40fd-9189-aedbd28cb0a7", "status": "Filled", "name": "Order 1", "full_name": "Mario Rossi", "address": "Via Roma 1, Milano", "goods": {"002bcb63-32b3-4087-ab5b-2cbb881f8824": 2, "67209dcc-2103-49af-aeb1-4c81a8fb3ddd": 3}, "reservations": ["74092245-36b4-473a-bacc-b1bbe245a113", "f6410fea-7518-45ff-b39d-622a488f6304"]}]` |
+<!--typst-end-exclude-->
