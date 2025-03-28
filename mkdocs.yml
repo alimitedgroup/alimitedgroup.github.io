@@ -40,7 +40,8 @@ nav:
       - POST /api/v1/orders: reference/create_order.md
       - POST /api/v1/transfers: reference/create_transfer.md
       - PUT /api/v1/goods/:good_id: reference/update_good.md
-      - POST /api/v1/goods/:good_id/warehouse/:warehouse_id/add: reference/add_stock.md
+      - POST /api/v1/goods/:good_id/warehouse/:warehouse_id/stock: reference/add_stock.md
+      - DELETE /api/v1/goods/:good_id/warehouse/:warehouse_id/stock: reference/remove_stock.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py
