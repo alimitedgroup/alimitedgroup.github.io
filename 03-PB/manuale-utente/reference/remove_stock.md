@@ -1,6 +1,6 @@
-# POST `/api/v1/goods/:good_id/warehouse/:warehouse_id/stock`
+# DELETE `/api/v1/goods/:good_id/warehouse/:warehouse_id/stock`
 
-Questa route consente di aggiungere dello stock ad una merce del magazzino.
+Questa route consente di rimuovere dello stock ad una merce del magazzino.
 
 ## Richiesta autenticazione
 
@@ -18,8 +18,8 @@ Si.
 Codifica: `application/json`
 
 | Nome | Tipo | Descrizione | Esempio |
-| ---------- | ----- | ---------------------------------- | ------- |
-| `quantity` | `int` | La quantità di stock da aggiungere | `10` |
+| ---------- | ----- | --------------------------------- | ------- |
+| `quantity` | `int` | La quantità di stock da rimuovere | `10` |
 
 ## Risposta: 200
 
