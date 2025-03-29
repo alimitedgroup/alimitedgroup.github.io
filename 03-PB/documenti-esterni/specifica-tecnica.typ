@@ -1471,7 +1471,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewAuthController(tokenUseCase serviceportin.IGetTokenUseCase) *authController`*: costruttore dell'oggetto. Prende un oggetto che soddisfa `IGetTokenUseCase` come parametro;
+- *`NewAuthController(tokenUseCase serviceportin.IGetTokenUseCase, mp MetricParams) *authController`*: costruttore dell'oggetto. Prende un oggetto che soddisfa `IGetTokenUseCase` e una struttura, dotata di comando `fx.In`, contenente quanto necessario per effettuare misurazioni, come parametro;
 - *`checkGetTokenRequest(dto *common.AuthLoginRequest) error`*: controlla la correttezza della richiesta per ottenere un Token e restituisce un errore in caso di risultato negativo o `nil` altrimenti;
 - *`NewTokenRequest(ctx Context, msg *Msg) error`*: si occupa di gestire una richiesta di ottenimento Token e rispondere alla stessa con il Token o con una stringa vuota se la procedura non va a buon fine.
 
