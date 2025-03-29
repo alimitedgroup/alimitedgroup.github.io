@@ -13,7 +13,7 @@ Codifica: `application/json`
 <!--raw-typst
 #figure(
    table(
-        columns: (1fr, 1fr, 3fr, 2fr),
+        columns: (1fr, 1.5fr, 2fr, 4fr),
         inset: 8pt,
         align: horizon,
         table.header(

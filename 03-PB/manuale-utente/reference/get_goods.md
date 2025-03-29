@@ -1,6 +1,6 @@
 # GET `/api/v1/goods`
 
-Questa route consente di recuperare la lista di `good`s (merci)
+Questa route consente di recuperare la lista di `good`#super[G] (merci)
 
 ## Richiesta autenticazione
 
@@ -19,7 +19,7 @@ Codifica: `application/json`
 <!--raw-typst
 #figure(
    table(
-        columns: (1fr, 1fr, 3fr, 2fr),
+        columns: (1fr, 1.5fr, 2fr, 4fr),
         inset: 8pt,
         align: horizon,
         table.header(

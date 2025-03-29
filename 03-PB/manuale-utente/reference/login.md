@@ -42,7 +42,7 @@ Codifica: `application/json`
 <!--raw-typst
 #figure(
    table(
-        columns: (1fr, 1fr, 3fr, 2fr),
+        columns: (1fr, 1fr, 1.5fr, 4.5fr),
         inset: 8pt,
         align: horizon,
         table.header(

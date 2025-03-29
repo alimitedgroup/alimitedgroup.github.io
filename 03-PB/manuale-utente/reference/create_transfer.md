@@ -13,7 +13,7 @@ Codifica: `application/json`
 <!--raw-typst
 #figure(
    table(
-        columns: (1fr, 1fr, 3fr, 2fr),
+        columns: (1fr, 1.5fr, 2fr, 4fr),
         inset: 8pt,
         align: horizon,
         table.header(
@@ -46,7 +46,7 @@ Codifica: `application/json`
 <!--raw-typst
 #figure(
    table(
-        columns: (1fr, 1fr, 3fr, 2fr),
+        columns: (1fr, 1fr, 2fr, 4fr),
         inset: 8pt,
         align: horizon,
         table.header(
@@ -55,7 +55,7 @@ Codifica: `application/json`
             [#text(fill:white)[Descrizione]],
             [#text(fill:white)[Esempio]],
         ),
-        [`transfer_id`], [`string`], [Identificativo del trasferimento creato], [`a877f9f4-5f98-4ede-8284-8ea1f74195d5`],
+        [`transfer_id`], [`string`], [Identificativo del trasferimento creato],[`a877f9f4-5f98-4ede-8284-8ea1f74195d5`],
    ),
    caption: [Risposta di POST `/api/v1/orders`],
 )
