@@ -51,7 +51,7 @@
       date: datetime(day: 06, month: 01, year: 2025),
       autore: p.matteo,
       verifica: p.emanuele,
-      descr: "Aggiunto processo di Validazione " + [(@validazione).],
+      descr: "Aggiunto processo di Validazione " + [(@capitolovalidazione).],
     ),
     (
       vers: "0.13.0",
@@ -245,7 +245,7 @@ e poter comunicare allo stesso una possibile pianificazione del lavoro da svolge
 Per svolgere le attività previste abbiamo deciso di utilizzare i seguenti strumenti:
 - *Google Calendar*: per segnalare tutti gli appuntamenti previsti;
 - *GitHub*#super[G] :per la gestione del _Backlog_ e il sistema di _ticketing_, utili per tenere traccia e sotto controllo quanto fatto e quanto è ancora da fare. GitHub#super[G] offre inoltre una visualizzazione specifica per avere dei diagrammi di Gantt, utili per fini di pianificazione;
-- *_Discord_*#super[G] e *_Telegram_*: per concordare internamente pianificazioni mediante riunioni interne.
+- *_Discord_*#super[G] e *_Telegram#super[G]_*: per concordare internamente pianificazioni mediante riunioni interne.
 Le comunicazioni verso l'azienda proponente#super[G] richiedono, invece, l'utilizzo di:
 - _*Google Mail*_ per le comunicazioni scritte;
 - _*Microsoft Teams*_ per le riunioni totalmente e parzialmente svolte in remoto con #M31
@@ -696,7 +696,7 @@ Riguarda dunque l'insieme delle attività che pianificano, progettano, sviluppan
 
 Per redigere la documentazione il gruppo utilizza due strumenti in particolare:
 
-- *_Typst_*: si tratta di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX*#super[G] per la redazione di documenti a carattere scientifico e non solo.
+- *_Typst#super[G]_*: si tratta di un linguaggio _mark-up_ molto recente ma che si sta rivelando una valida alternativa a *LaTeX*#super[G] per la redazione di documenti a carattere scientifico e non solo.
   _Typst_#super[G] permette la realizzazione di una anteprima istantanea, senza necessità di compilare ogni volta il documento, inoltre la sintassi è molto vicina ai linguaggi di programmazione. _ALimitedGroup_ lo utilizza in tutti i documenti.
   Nello specifico, la redazione dei documenti sfrutta funzioni di _Typst_#super[G] appositamente implementate dai componenti di _ALimitedGroup_ presenti all'interno della cartella _lib_ del _repository_#super[G].\
   La descrizione dei vari template nel dettaglio è consultabile nella @creazione-typst, in questa sezione saranno invece descritte le strutture dei vari documenti.
@@ -796,7 +796,7 @@ La produzione di un documento segue questi passaggi:
 A questo punto il processo diviene differente per i verbali e i rimanenti documenti:
 
 - *Approvazione e pubblicazione (verbali)*: A modifiche ultimate o solo in caso di Verifica#super[G] positiva, il verificatore#super[G] richiede al Responsabile#super[G] di approvare il documento.
-Il Responsabile#super[G], una volta approvato il documento, risolve la pull request#super[G] e procede quindi al merge del branch#super[G] secondario in quello principale. L'azione scatenerà l'avvio di una *_GitHub Action_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, perciò il _ALimitedGroup_ ha deciso che i verbali saranno pubblicati solamente quando approvati.
+Il Responsabile#super[G], una volta approvato il documento, risolve la pull request#super[G] e procede quindi al merge del branch#super[G] secondario in quello principale. L'azione scatenerà l'avvio di una *_GitHub Action#super[G]_* che aggiornerà il sito web del progetto con i nuovi documenti approvati. \ Dal momento che un verbale descrive un evento trascorso, è poco probabile debba essere cambiato in futuro, perciò il _ALimitedGroup_ ha deciso che i verbali saranno pubblicati solamente quando approvati.
 - *Pubblicazione (altri documenti)*: una volta verificato, il documento può essere pubblicato nella sua versione attuale completando il _merge_ e risolvendo la _Pull Request#super[G]_. \ Questo processo differisce da quello dei verbali, in quanto questi ultimi possono essere integrati nel branch#super[G] principale (main) solo dopo l'approvazione formale. \ Al contrario, gli altri documenti, essendo di consultazione più frequente, possono essere pubblicati nel branch#super[G] principale semplicemente dopo la Verifica#super[G], per garantire l'accesso alla versione più aggiornata.
 - *Approvazione (altri documenti)*: l'approvazione di un documento implica il raggiungimento di determinati standard di qualità. Similmente a quanto avviene per i verbali, sarà il Responsabile#super[G] ad approvare il documento a seguito di opportuna _Pull Request#super[G]_.
 
@@ -865,9 +865,9 @@ Per quanto riguarda invece la parte di documentazione, le parti componenti tale 
 Il *Controllo della configurazione* è l'attività che disciplina le richieste di modifica che devono essere notificate per poi essere o meno approvate.
 Un buon controllo della configurazione dovrebbe prevedere un sistema che permetta di tracciare le modifiche da approvare, consigliando eventuali suggerimenti per ottenere l'approvazione.
 
-_ALimitedGroup_ ha deciso di attuare questa attività mediante l'utilizzo delle *_issue_*, delle *_board_*#super[G] e delle *_Pull Request#super[G]_* di *_GitHub_*, così come descritto qui di seguito:
+_ALimitedGroup_ ha deciso di attuare questa attività mediante l'utilizzo delle *_issue_#super[G]*, delle *_board_*#super[G] e delle *_Pull Request#super[G]_* di *_GitHub_#super[G]*, così come descritto qui di seguito:
 
-- _*Issue*_: ogni modifica da apportare deve essere documentata mediante una _issue_#super[G] da assegnare al componente che prenderà in carico la modifica o la redazione di un documento o di una parte di codice.
+- _*Issue#super[G]*_: ogni modifica da apportare deve essere documentata mediante una _issue_#super[G] da assegnare al componente che prenderà in carico la modifica o la redazione di un documento o di una parte di codice.
 Generalmente una issue#super[G] possiede:
 - un numero univoco nella _repository_#super[G] che funge da identificativo della _issue_#super[G];
 - un nome che esplicita in cosa consiste la _issue_#super[G];
@@ -877,7 +877,7 @@ Generalmente una issue#super[G] possiede:
 - un legame con la _board_#super[G] del progetto;
 Una _issue_#super[G] può essere chiusa solo nel momento in cui l'attività che prevedeva è stata verificata e portata dunque nel ramo principale dei _repository_#super[G] :tale operazione può essere effettuata in automatico inserendo, nel commento del _commit_ che esegue lo spostamento delle modifiche al ramo principale, il numero della _issue_#super[G] preceduto da `fix #` (esempio `fix #1` chiude in automatico la issue#super[G] numero 1).
 
-- _*Board*_: serve per stabilire se una _issue_#super[G] presa in carico è ancora da iniziare, in sviluppo o terminata. La _*Board*_#super[G] identifica in quale periodo è necessario svolgere le attività e, mediante dei diagrammi di Gantt generati da _GitHub_#super[G], aiuta a comprendere la loro durata preventivata ed effettiva, individuando eventuali ritardi;
+- _*Board#super[G]*_: serve per stabilire se una _issue_#super[G] presa in carico è ancora da iniziare, in sviluppo o terminata. La _*Board*_#super[G] identifica in quale periodo è necessario svolgere le attività e, mediante dei diagrammi di Gantt generati da _GitHub_#super[G], aiuta a comprendere la loro durata preventivata ed effettiva, individuando eventuali ritardi;
 - _*Pull Request#super[G]*_: un sistema che permette di chiedere la Verifica#super[G] e (eventualmente) l'approvazione prima di fondere la modifica nel ramo principale del _repository_#super[G]. Le _Pull Request#super[G]_ sono il cuore del controllo della configurazione: permettono infatti di generare un elenco dettagliato e una discussione sulle modifiche da effettuare, permettendo di suggerire cambiamenti prima di considerare le modifiche apportate come definitive.
 - _*Teams di GitHub*_: la struttura del _repository_#super[G] permettere solo ai verificatori (e al Responsabile#super[G] per eventuali approvazioni) la possibilità di poter trasportare delle modifiche nel ramo principale (previa verifica#super[G]).Per queste esigenze, i _repository_#super[G] prevedono tre categorie:
   - Responsabile#super[G];
@@ -915,7 +915,7 @@ Il gruppo, durante la parte di sviluppo effettiva, si impegnerà a tracciare, an
 
 L'*Accertamento della Qualità* (detto anche _*Quality Assurance*_) è un processo che ha come scopo quello di attestare che la realizzazione dei processi e dei prodotti finali sia stata fatta a regola d'arte: i processi e prodotti devono soddisfare determinati requisiti minimi affinché siano efficienti ed efficaci.
 
-Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard _ISO/IEC 12207:1995_, le attività di Verifica#super[G] (@verifica) e Validazione#super[G] (@validazione).
+Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard _ISO/IEC 12207:1995_, le attività di Verifica#super[G] (@verifica) e Validazione#super[G] (@capitolovalidazione).
 
 === Strumenti a supporto
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
@@ -960,7 +960,7 @@ Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio:
 In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo processo sono:
 
 - *Implementazione del processo*, che prevede la realizzazione di quanto necessario al perseguimento dell'attività di Verifica#super[G], dalla rilevazione delle criticità del Progetto da analizzare sino alla rilevazione delle problematiche e ai metodi di mitigazione;
-- *Attività di Verifica*, ovvero l'attività di Verifica#super[G] vera e propria in cui è necessario controllare l'efficacia di *Processi*, *Requisiti* (in termini di esaustività e consistenza), *Progettazione* (in termini di efficacia#super[G] rispetto ai requisiti ed esigenze di #M31), *Codice* (in termini di grado di soddisfacimento dei requisiti che una parte di codice dovrebbe soddisfare), *Integrazione* (delle varie parti del Sistema tra loro) e *Documentazione*.
+- *Attività di Verifica#super[G]*, ovvero l'attività di Verifica#super[G] vera e propria in cui è necessario controllare l'efficacia di *Processi*, *Requisiti* (in termini di esaustività e consistenza), *Progettazione* (in termini di efficacia#super[G] rispetto ai requisiti ed esigenze di #M31), *Codice* (in termini di grado di soddisfacimento dei requisiti che una parte di codice dovrebbe soddisfare), *Integrazione* (delle varie parti del Sistema tra loro) e *Documentazione*.
 
 ==== Implementazione del processo
 
@@ -1058,7 +1058,7 @@ Durante l'esecuzione dei Test#super[G] descritti in precedenza, è possibile che
 
 È tuttavia necessario assicurarsi che una correzione apportata non introduca un problema precedentemente risolto: a questo scopo non ci si limita all'esecuzione del solo Test#super[G] fallito, bensì di tutti i Test#super[G], per evitare, di fatto, una regressione.
 
-=== Validazione <validazione>
+=== Validazione <capitolovalidazione>>
 
 Lo scopo del processo di *Validazione*#super[G] è quello di tracciare l'efficacia di quanto sviluppato, ovvero comprendere se quanto realizzato soddisfa le esigenze di #M31.
 Potremmo riassumere lo scopo della *Validazione*#super[G] nella risposta alla domanda:
@@ -1071,7 +1071,7 @@ ovvero, _"Ho realizzato il giusto Sistema?_.
 In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo processo sono:
 
 - *Implementazione del processo*
-- *Attività di Validazione*
+- *Attività di Validazione*#super[G]
 
 ===== Implementazione del processo
 
@@ -1113,7 +1113,7 @@ Le attività principali, osservate da _ALimitedGroup_, previste da questo proces
 - *Inizializzazione*: è necessario stabilire i requisiti delle attività da svolgere, cercando di comprendere quali risorse esse richiedono. È compito del *Responsabile*#super[G] determinare queste caratteristiche che vengono comunque discusse internamente durante le riunioni interne;
 - *Pianificazione*: è necessario, stabiliti i requisiti, comprendere il tempo necessario per completare le attività, così come è necessario anche stimare i costi economici e temporali necessari allo svolgimento. Per facilitare questo compito, è stato scelto di dividere le responsabilità in vari ruoli, vedi @ruoli.
 - *Esecuzione e controllo*: l'esecuzione delle attività è affidata quindi ai vari ruoli e il *Responsabile*#super[G] dovrà costantemente monitorare lo stato di progresso e avanzamento complessivo;
-- *Revisione e valutazione*: una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del *Verificatore*#super[G]. Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @validazione per il codice;
+- *Revisione e valutazione*: una volta effettuata l'attività è necessario controllare la conformità di quanto prodotto: questo avviene per opera del *Verificatore*#super[G]. Per un dettaglio più specifico delle attività di revisione si veda la @regole-branch-issue per quanto riguarda la documentazione mentre @valutazione-della-configurazione, @verifica e @capitolovalidazione per il codice;
 - *Finalizzazione*: un'attività è da reputarsi conclusa solo nel momento in cui viene definitivamente approvata. Come anticipato nelle Sezioni precedenti, questa operazione viene eseguita al pari di una normale attività di verifica#super[G], con la sola eccezione che la risoluzione della _Pull Request#super[G]_ associata determina la chiusura della _Issue_#super[G] e del _branch_#super[G] utilizzato per la redazione/modifica della componente.
 
 Nell'interesse dello scopo del presente documento saranno ora descritti i ruoli prima citati e le loro responsabilità, previsti in particolar modo dall'attività di *pianificazione*.
@@ -1347,7 +1347,7 @@ Il gruppo ha poi deciso di utilizzare le _Issue_#super[G] di GitHub#super[G] per
 #align(center, text(1.2em)[*`azione documento data`*])
 
 Dove *azione*, *documento* e *data* hanno lo stesso significato della nomenclatura utilizzata per i _branch_#super[G].
-Ogni _Issue_#super[G] è inoltre legata ad una _Project Board_, uno strumento di GitHub#super[G] che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso.
+Ogni _Issue_#super[G] è inoltre legata ad una _Project Board#super[G]_, uno strumento di GitHub#super[G] che permette di vedere velocemente che attività ci sono ancora da svolgere e quali invece sono in corso.
 
 La chiusura di una _Issue_#super[G] avviene sempre ed esclusivamente mediante l'apertura di una _Pull Request#super[G]_ e al seguito di una verifica#super[G] con esito positivo: in tal caso il *Verificatore*#super[G] che ha effettuato la verifica#super[G] o il *Responsabile*#super[G] potrà procedere alla chiusura della stessa con conseguente entrata delle modifiche nel _branch_#super[G] principale e questa azione determinerà la chiusura automatica della _Issue_#super[G]. Qualora _GitHub_#super[G] non segnalasse tale automazione, sarà necessario procedere ad aggiungere al commento di chiusura della _Pull Request#super[G]_ la dicitura
 #align(center, text(1.2em)[*`fix #issue`*])
