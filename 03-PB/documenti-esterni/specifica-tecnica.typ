@@ -3520,7 +3520,7 @@ Si occupa di gestire l'_application logic_ del microservizio Catalog.
 === Warehouse <micro_warehouse>
 
 #figure(
-  image("../../assets/warehouse/warehouse.png", width: 100%),
+  image("../../assets/warehouse/warehouse.png", width: 115%),
   caption: "Componenti del microservizio Warehouse",
 )
 
