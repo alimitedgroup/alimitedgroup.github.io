@@ -272,7 +272,6 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     [*google uuid*], [1.6.0], [Libreria utilizzata per generare UUID, utili per identificare in maniera unica i vari servizi offerti dal Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/google/uuid#section-readme")[pagina Go del progetto]],
     [*jwx*], [1.2.30], [Libreria utilizzata per il parsing delle chiavi pubbliche nel rese disponibili nell'apposito _subject_ JetStream NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/lestrrat-go/jwx")[pagina Go del progetto]],
     [*nats*], [1.40.1], [Client Go per l'utilizzo di NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats.go")[pagina Go del progetto]],
-    [*viper*], [1.20.0], [Libreria utilizzata per permette la lettura di configurazione da file YAML. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/spf13/viper")[pagina Go del progetto]],
     [*OpenTelemetry-Go*], [1.35.0], [Implementazione Go per OpenTelemetry: viene utilizzata per raccogliere dati dai vari microservizi del Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/otel")[pagina Go del progetto]],
     [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare zap a OpenTelemetry-Go. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelzap")[pagina Go del progetto]]
   ),
@@ -421,16 +420,6 @@ Questo garantisce:
 - Gestione semplificata del ciclo di vita dei servizi.
 
 Questa architettura#super[G] consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
-
-=== _Client_ monolitico
-
-Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G]. Questa scelta architetturale offre diversi vantaggi:
-
-- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità#super[G] del sistema;
-
-- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
-
-- Ottimizzazione delle comunicazioni: il _client_ gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
 
 == Design pattern
 
@@ -1091,13 +1080,15 @@ Nello specifico, ogni microservizio possiede:
 
 ==== Esempio: catalogRouter
 
-//[PROSEGUIRE] inserire UMLL
+#figure(
+  image("../../assets/catalog/CatalogRouter.png", width: 80%),
+  caption: "CatalogRouter",
+)
 
 *catalogRouter*, router del microservizio *Catalog*, possiede i seguenti attributi:
 
 - *`NatsMessageBroker`*: si occupa della completa gestione della connessione a NATS#super[G] e JetStream NATS#super[G] ,nonché possiede un logger per l'integrazione con *Grafana*#super[G] .Esso infatti possiede i seguenti attributi:
   - *`Nats *nats.Conn`*: connessione a NATS#super[G] ;
-  - *`NatsJS nats.JetStream`*: struttura legacy per gestire connessioni a JetStream NATS#super[G] (non utilizzato nel progetto e presente solo per compatibilità con progettazione iniziale);
   - *`Js jetstream.JetStream`*: struttura per gestire connessioni a JetStream NATS#super[G] ;
   - *`Logger *zap.logger`*: logger.
   E può invocare le seguenti funzioni:
@@ -1119,9 +1110,9 @@ Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto 
 
 //descrizione generale delle classi config
 
-La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire mediante file di configurazioni o inserendo variabili di ambiente nel dockerfile.
+La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire inserendo variabili di ambiente nel `dockerfile`.
 
-Anche se vuoto, per permettere l'avvio dei microservizi è necessario che il file `config.yml` sia presente nella root dei file. Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
+Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
 
 === `Main` dei microservizi <main>
 
