@@ -19,6 +19,25 @@ Nessuno.
 L'operazione è stata eseguita con successo.
 
 Codifica: `application/json`
+
+<!--raw-typst
+#figure(
+   table(
+        columns: (1fr, 1fr, 3fr, 2fr),
+        inset: 8pt,
+        align: horizon,
+        table.header(
+            [#text(fill:white)[Nome]],
+            [#text(fill:white)[Tipo]],
+            [#text(fill:white)[Descrizione]],
+            [#text(fill:white)[Esempio]],
+        ),
+        [`message`], [`string`], [Valore fisso, sempre uguale a "pong".], [`pong`],
+   ),
+   caption: [Risposta di GET `/api/v1/ping`], 
+)
+-->
+
 <!--typst-begin-exclude-->
 | Nome | Tipo | Descrizione | Esempio |
 |------------ |---------- |-------------------------------------------- |----------- |
