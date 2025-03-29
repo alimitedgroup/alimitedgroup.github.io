@@ -69,7 +69,7 @@ Nel dettaglio è stato deciso che:
 #align(center)[*Piano di Qualifica#super[G]*]
 - Sarà necessario effettuare la stesura dell'introduzione del documento e di tutte le misurazioni rilevate entro il giorno *5 Gennaio 2025*
 
-#align(center)[*Tecnologie e PoC#super[G]*] 
+#align(center)[*Tecnologie e PoC#super[G]*]
 - Sarà necessario proseguire con lo studio delle tecnologie e relativi testing basandosi sui requisiti descritti nel capitolato#super[G], eventualmente iniziando la realizzazione del PoC#super[G], sino al giorno *5 Gennaio 2025*
 
 Per l'assegnazione delle attività saranno mantenute le issue#super[G] generiche di redazione attualmente presenti aggiornando la descrizione con le scadenze, in futuro invece i nomi dovranno essere più specifici.

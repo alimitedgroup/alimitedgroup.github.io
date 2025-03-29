@@ -1,6 +1,6 @@
 # POST `/api/v1/orders`
 
-Questa route consente di creare un ordine di merci.
+Questa route consente di creare un ordine#super[G] di merci.
 
 ## Richiesta autenticazione
 
@@ -27,7 +27,7 @@ Codifica: `application/json`
         [`address`], [`string`], [Indirizzo del cliente], [`"Via Roma 10, Milano"`],
         [`goods`], [`map[string]int64`], [Mappa delle merci con quantità associate], [`{"b55a6a92-6c3e-4934-9392-d6a40d940c81": 5, "7f2a6642-a6bf-4c79-acad-43f1038761b5": 3}`],
    ),
-   caption: [Corpo della richiesta di POST `/api/v1/orders`], 
+   caption: [Corpo della richiesta di POST `/api/v1/orders`],
 )
 -->
 
@@ -59,7 +59,7 @@ Codifica: `application/json`
         ),
         [`order_id`], [`string`], [Identificativo dell'ordine creato], [`c7bea6a8-8f44-4146-b6ab-c84ba0d14774`],
    ),
-   caption: [Risposta di POST `/api/v1/orders`], 
+   caption: [Risposta di POST `/api/v1/orders`],
 )
 -->
 

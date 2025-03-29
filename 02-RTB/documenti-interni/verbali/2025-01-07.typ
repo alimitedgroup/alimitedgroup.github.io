@@ -74,7 +74,7 @@ I membri di _ALimitedGroup_ hanno stabilito che nel corso del quinto Sprint#supe
 - Effettuare la redazione del documento con le informazioni aggiuntive rispetto alle misurazioni entro il giorno *12 Gennaio 2025*, integrando eventualmente con le Norme di Progetto#super[G] ove necessario;
 - Effettuare le prime misurazioni entro il giorno *19 Gennaio 2025*
 \
-#align(center)[*Tecnologie e PoC#super[G]*] 
+#align(center)[*Tecnologie e PoC#super[G]*]
 - Terminare la realizzazione del PoC#super[G] completando l'analisi di quanto necessario a realizzare l'aggiornamento delle informazioni tra i vari elementi del Sistema entro il giorno *19 Gennaio 2025*
 
 == Assegnazione prevista dei ruoli sino al 19-01-2025

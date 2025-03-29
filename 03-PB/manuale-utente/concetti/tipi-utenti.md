@@ -11,9 +11,9 @@ Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre 
 Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema con, chiaramente, delle limitazioni riguardo certe operazioni. Questo tipo di utente potrà effettuare le seguenti azioni all'interno del Sistema:
 
 - **Autenticare**, immettendo _username_ e _password_ tramite l'apposita _API_#super[G] offerta;
-- **Creare un ordine** inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
-- **Selezionare la merce per l'ordine** inserendo la quantità, per ognuna delle merci aggiunte all'ordine;
-- **Confermare l'ordine** ed in questo modo far partire la richiesta per l'ordine, in attesa che venga elaborata;
+- **Creare un ordine#super[G]** inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
+- **Selezionare la merce per l'ordine#super[G]** inserendo la quantità, per ognuna delle merci aggiunte all'ordine;
+- **Confermare l'ordine#super[G]** ed in questo modo far partire la richiesta per l'ordine, in attesa che venga elaborata;
 - **Visualizzare la lista degli ordini non confermati** e, per ognuno di essi, visualizzarne le informazioni come:
 
     * L'**ID** dell'ordine;

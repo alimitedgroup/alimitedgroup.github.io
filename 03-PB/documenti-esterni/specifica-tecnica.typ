@@ -628,7 +628,7 @@ Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
 *Descrizione degli attributi della struttura:*
 
 - *`pemPuk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
-- *`issuer string`*: rappresenta l'issuer, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
+- *`issuer string`*: rappresenta l'_issuer_, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -649,7 +649,7 @@ Rappresenta il _Command_ per ottenere la memorizzazione in _persistence logic_ d
 
 - *`prk *[]byte`*: rappresenta la chiave privata, in formato Pem e memorizzata in byte;
 - *`puk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
-- *`issuer string`*: rappresenta l'issuer, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
+- *`issuer string`*: rappresenta l'_issuer_, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 

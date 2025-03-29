@@ -40,7 +40,7 @@ def substitute(filePath,glossaryYml):
 
     #print(glossary)
     stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#use-case-diagram(" "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni(", "<!--typst-begin-exclude-->", "<!--raw-typst"]
-    specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":", "_", "*"]
+    specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":", "_", "*", "`"]
     stop=False
     newText=""
     startText=""
@@ -62,6 +62,10 @@ def substitute(filePath,glossaryYml):
                 bodyFound=True
             if bodyFound==True and ")" in line:
                 parFound=True
+        elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "/03-PB\\manuale-utente" in filePath:
+            newText += line 
+            line=file.readline()
+            continue
         else:
             if(stop == False and line[0] not in stopCheckingWords):
                 line = substitute_line(filePath, linenum, line, filtered_glossary)
@@ -79,6 +83,9 @@ def substitute(filePath,glossaryYml):
                     stop=True
                 elif word == ")" or word == "<!--typst-end-exclude-->" or word == "-->":
                     stop=False
+                #elif word[0] == "#" and "/03-PB\\manuale-utente" in filePath:
+                #    newText += word[0] + line
+                #    continue
                 if stop==False and ((word in glossary) or (word[:-1] in glossary) or (word[:-2] in glossary and len(word[:-2]) > 0) 
                                     or (word[1:-1] in glossary and len(word[1:-1]) > 1) or (word[2:-2] in glossary and len(word[2:-2]) > 2) or (word[2:-3] in glossary and len(word[2:-3]) > 2)) and len(word)>1:
                     #if word[:-1] in glossary and word[len(word)-1] in specialChar:
@@ -100,9 +107,9 @@ def substitute(filePath,glossaryYml):
                     # 
                     #print("SONO DENTRO L'IF per: "+word)
                     if word[len(word)-1] == "," or word[len(word)-1] == ";":
-                        if(word[len(word)-1] == "sopra"):
+                        if(word[:-1] == "sopra"):
                             newText += word
-                        elif(word[len(word)-1] in glossary):
+                        elif(word[:-1] in glossary):
                             newText += word[:-1] + "#super[G]" + word[-1:] + " "
                             logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                         elif(word[len(word)-2] == ")"):

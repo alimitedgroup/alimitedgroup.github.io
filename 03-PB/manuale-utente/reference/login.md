@@ -24,7 +24,7 @@ Codifica: `application/x-www-form-urlencoded`
         ),
         [ `username`], [`string`], [L'username con cui ci si vuole autenticare], [`admin`],
    ),
-   caption: [Corpo della richiesta di POST `/api/v1/login`], 
+   caption: [Corpo della richiesta di POST `/api/v1/login`],
 )
 -->
 
@@ -53,7 +53,7 @@ Codifica: `application/json`
         ),
         [ `token`], [`string`], [Un token JWT che autentica l'utente.], [`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30`],
    ),
-   caption: [Risposta di POST `/api/v1/login`], 
+   caption: [Risposta di POST `/api/v1/login`],
 )
 -->
 

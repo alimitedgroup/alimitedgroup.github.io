@@ -1,6 +1,6 @@
 # GET `/api/v1/warehouses`
 
-Questa route consente di recuperare la lista di `warehouse`s (magazzini)
+Questa route consente di recuperare la lista di `warehouse`#super[G] (magazzini)
 
 ## Richiesta autenticazione
 
@@ -30,7 +30,7 @@ Codifica: `application/json`
         ),
         [`ids`], [`string[]`], [Una lista di ID dei magazzini.], [`"ids": ["f7465619-4e3c-4a3e-8f0d-0379666bb47a", "2ecd185a-f7a6-4834-b29c-92657485d284"]`],
    ),
-   caption: [Risposta di GET `/api/v1/warehouses`], 
+   caption: [Risposta di GET `/api/v1/warehouses`],
 )
 -->
 

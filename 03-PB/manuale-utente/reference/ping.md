@@ -34,7 +34,7 @@ Codifica: `application/json`
         ),
         [`message`], [`string`], [Valore fisso, sempre uguale a "pong".], [`pong`],
    ),
-   caption: [Risposta di GET `/api/v1/ping`], 
+   caption: [Risposta di GET `/api/v1/ping`],
 )
 -->
 

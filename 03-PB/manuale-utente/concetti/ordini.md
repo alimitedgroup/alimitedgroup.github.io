@@ -16,5 +16,5 @@ Un "Ordine" viene inteso come un qualsiasi invio di merci, unilateralmente, tra 
 
 Queste sono le informazioni che devono essere presenti nell'invio, perché senza di queste l'Ordine perderebbe di significato.
 
-Inoltre, a differenza del "Trasferimento" e del "Riassortimento", quando viene preso in carico un Ordine, con i dati sopra citati, quest'ultimo deve essere convalidato se e solo se sia presente la quantità richiesta di merce (_Good_) dall'Ordine.
+Inoltre, a differenza del "Trasferimento" e del "Riassortimento", quando viene preso in carico un Ordine#super[G], con i dati sopra citati, quest'ultimo deve essere convalidato se e solo se sia presente la quantità richiesta di merce (_Good_#super[G]) dall'Ordine.
 In caso negativo, l'Ordine verrà posto nello stato di "Attesa" (_Hold_) fino a quando non ci sarà la quantità necessaria a soddisfarlo.
