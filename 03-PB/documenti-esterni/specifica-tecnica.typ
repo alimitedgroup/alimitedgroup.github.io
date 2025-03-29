@@ -1478,7 +1478,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 === Order <micro_order>
 
 #figure(
-  image("../../assets/order/order.png", width: 100%),
+  image("../../assets/order/order.png", width: 115%),
   caption: "Order",
 )
 
