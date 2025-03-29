@@ -14,7 +14,7 @@ Codifica: `application/json`
 #figure(
    table(
         columns: (1fr, 1.5fr, 2fr, 4fr),
-        inset: 8pt,
+        inset: 5pt,
         align: horizon,
         table.header(
             [#text(fill:white)[Nome]],
@@ -49,7 +49,7 @@ Codifica: `application/json`
 #figure(
    table(
         columns: (1fr, 1fr, 3fr, 2fr),
-        inset: 8pt,
+        inset: 5pt,
         align: horizon,
         table.header(
             [#text(fill:white)[Nome]],

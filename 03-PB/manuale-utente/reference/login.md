@@ -14,7 +14,7 @@ Codifica: `application/x-www-form-urlencoded`
 #figure(
    table(
         columns: (1fr, 1fr, 3fr, 2fr),
-        inset: 8pt,
+        inset: 5pt,
         align: horizon,
         table.header(
             [#text(fill:white)[Nome]],
@@ -43,7 +43,7 @@ Codifica: `application/json`
 #figure(
    table(
         columns: (1fr, 1fr, 1.5fr, 4.5fr),
-        inset: 8pt,
+        inset: 5pt,
         align: horizon,
         table.header(
             [#text(fill:white)[Nome]],
@@ -51,7 +51,11 @@ Codifica: `application/json`
             [#text(fill:white)[Descrizione]],
             [#text(fill:white)[Esempio]],
         ),
-        [ `token`], [`string`], [Un token JWT che autentica l'utente.], [`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30`],
+        [ `token`], [`string`], [Un token JWT che autentica l'utente.], [`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+        eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
+        SI6IkpvaG4gRG9lIiwiYWRtaW4iOn
+        RydWUsImlhdCI6MTUxNjIzOTAyMn0.
+        KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30`],
    ),
    caption: [Risposta di POST `/api/v1/login`],
 )
