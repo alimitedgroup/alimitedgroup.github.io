@@ -1898,7 +1898,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       - nel magazzino con id "test-warehouse-ID" ci sono 2 unità della merce con id "test-ID" e 0 unità della merce "2test-ID";
       - nel magazzino con id "2test-warehouse-ID" ci sono 3 unità della merce "test-ID" e 3 unità della merce "2test-ID".],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestInsertGetGoods Quantity`, verificare che il microservizio `Catalog` inserisca correttamente la quantità delle merci],
@@ -1906,7 +1906,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       - la merce con id "test-ID" ha globalmente 5 unità;
       - la merce con id "2test-ID" ha 3 unità.],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestInsertGetGoods`, verificare che il microservizio `Catalog` inserisca correttamente la informazioni delle merci],
@@ -1914,37 +1914,49 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       - nome "test-name";
       - descrizione "test-description".],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestGetTokenEmpty Username`, verificare che il microservizio `Authenticator` si comporti correttamente se nella richiesta non viene fornito il nome utente],
       va: [Nella risposta fornita il token è vuoto.],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestGetTokenWrong Username`, verificare che il microservizio `Authenticator` si comporti correttamente se nella richiesta viene incluso un nome utente non valido],
       va: [Nella risposta fornita il token è vuoto.],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestGetToken`, verificare che il microservizio `Authenticator` ritorni il token generato in caso di richiesta corretta],
       va: [Nella risposta fornita il token fornito è un token valido.],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestGetTwoToken`, verificare che il microservizio `Authenticator` ritorni due token validi e firmati con la medesima chiave privata],
       va: [I token forniti sono validi e firmati con la stessa chiave privata.],
       vr: "",
-      st: "S",
+      st: "I",
     ),
     (
       desc: [Implementato dalla funzione `TestAddAnd RemoveWarehouse Stоck` ,verificare che il microservizio `Warehouse`#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
       va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
       vr: "",
-      st: "S",
+      st: "I",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestCreateOrder`, testare che un ordine venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock],
+      va: [L'ordine ha come stato "Completed".],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestCreateTransfer`, testare che un trasferimento venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock dei magazzini coinvolti],
+      va: [Il trasferimento ha come stato "Completed".],
+      vr: "",
+      st: "I",
     ),
   )
 ),
@@ -2385,7 +2397,104 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 == Tеst di Regressione
 
 == Tеst di Accettazione
-
+[PROSEGUIRE] inserire istruzioni
+#test-table(
+  unit: "A",
+  tipo-test: "Tеst di Accettazione",
+  (
+    (
+      desc: [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare ordini],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di completare ordini],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di aggiungere merci al Sistema],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di modificare informazioni delle merci del Sistema],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento],
+      va: [NATS],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce],
+      va: [],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di aggiungere stock di merce],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
+      va: [Grafana],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema],
+      va: [Grafana],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto gestisca adeguatamente i conflitti tra ordini],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto funzioni correttamente con più istanze dello stesso microservizio],
+      va: [ok],
+      vr: "",
+      st: "I",
+    ),
+  ),
+)
+/*
 #show figure: set block(breakable: true)
 #figure(
   table(
@@ -2440,7 +2549,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     [T-35-A], [Verificare che il prodotto sincronizzi le informazioni tra magazzini], [NI],
   ),
   caption: [Tеst di Accettazione],
-)
+)*/
 
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
