@@ -1478,8 +1478,8 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 === Order <micro_order>
 
 #figure(
-  image("../../assets/order/order.png", width: 115%),
-  caption: "Order",
+  image("../../assets/order/order_2.png", width: 115%),
+  caption: "Struttura del Microservizio " + ["Order"],
 )
 
 Il microservizio *Order* viene utilizzato per realizzare gli ordini quando questi vengono confermati, andando a verificare la disponibilità di una merce e organizzando da quali magazzini prendere la merce per completare l'ordine.
@@ -1645,7 +1645,7 @@ Rappresenta un identificativo univoco per un ordine#super[G].
 
 ===== Order <OrderModelOrder>
 #figure(
-  image("../../assets/order/Order.png", width: 30%),
+  image("../../assets/order/order_1.png", width: 30%),
   caption: "Order - Order",
 )
 Rappresenta un ordine#super[G] nel sistema.
