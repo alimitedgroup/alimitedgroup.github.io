@@ -3,7 +3,7 @@
 #let nome-documento = [Piano di Progetto]
 
 #set list(indent: 0.5em)
-#let ver = [1.1.0]
+#let ver = [1.2.0]
 #show: body => importantdocs(
   data: datetime(day: 24, month: 02, year: 2025),
   tipo: [esterno],
@@ -12,7 +12,8 @@
     (
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),
-      autore: p.emanuele,
+      autore: p.sara,
+      verifica: p.matteo,
       descr: "Redazione per l'ottavo sprint " + [(@sprint8). ],
     ),
     (
@@ -1307,7 +1308,7 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(8, "Sprint 8 - Preventivo per componente", "Sprint 8 - Preventivo")
+#impegni(8, posizioni-legenda: (1, 4, 1, 2, -2, -2), "Sprint 8 - Preventivo per componente", "Sprint 8 - Preventivo")
 
 #v(2em)
 ==== Consuntivo
@@ -1316,6 +1317,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(
   8,
   preventivo: true,
+  posizioni-legenda: (1, 4, 1, 2, -2, -2),
   "Sprint 8 - Consuntivo per componente",
   "Sprint 8 - Consuntivo",
 )
