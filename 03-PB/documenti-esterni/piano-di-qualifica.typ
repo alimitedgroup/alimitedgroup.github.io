@@ -1947,14 +1947,14 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "I",
     ),
     (
-      desc: [Implementato dalla funzione `TestCreateOrder`, testare che un ordine venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock],
+      desc: [Implementato dalla funzione `TestCreateOrder`, testare che un ordine#super[G] venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock#super[G] ],
       va: [L'ordine ha come stato "Completed".],
       vr: "",
       st: "I",
     ),
     (
-      desc: [Implementato dalla funzione `TestCreateTransfer`, testare che un trasferimento venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock dei magazzini coinvolti],
-      va: [Il trasferimento ha come stato "Completed".],
+      desc: [Implementato dalla funzione `TestCreateTransfer`, testare che un trasferimento#super[G] venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock#super[G] dei magazzini coinvolti],
+      va: [Il trasferimento#super[G] ha come stato "Completed".],
       vr: "",
       st: "I",
     ),
@@ -2410,7 +2410,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare ordini],
-      va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la seconda risposta JSON, contenente le seguenti informazioni:
+      va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine#super[G] di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la seconda risposta JSON, contenente le seguenti informazioni:
         - `"order-id": "campo variabile ad ogni esecuzione"`;
         - `"status": "completed"`;
         - `"name": "order-1"`;
@@ -2424,13 +2424,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di completare ordini],
-      va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la prima risposta JSON, contenente l'informazione `"order_id": "campo variabile ad ogni esecuzione"`],
+      va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine#super[G] di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la prima risposta JSON, contenente l'informazione `"order_id": "campo variabile ad ogni esecuzione"`],
       vr: "",
       st: "I",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere merci al Sistema],
-      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Create good hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
+      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Create good#super[G] hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
         - `"name": "hat"`;
         - `"description": "blue hat, version 1"`;
         - `"id": "hat-1"`;
@@ -2442,7 +2442,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di modificare informazioni delle merci del Sistema],
-      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Update good hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
+      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Update good#super[G] hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
         - `"name": "hat"`;
         - `"description": "blue hat, version 2"`;
         - `"id": "hat-1"`;
@@ -2471,7 +2471,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
-      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"`.
+      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"`.
         Eseguendo lo script senza `grep` sarà possibile osservare che, nella voe `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1.
       ],
       vr: "",
@@ -2479,7 +2479,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti],
-      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"` e nella seconda risposta JSON:
+      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"` e nella seconda risposta JSON:
         - `"status": "Completed"`;
         - `"transfer_id": "13be693d-c6b5-45de-b2df-20b1024b39b7"`;
         - `"sender_id": "1"`;
@@ -2502,7 +2502,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "I",
     ),
     (
-      desc: [Verificare che il prodotto dia la possibilità di aggiungere stock di merce],
+      desc: [Verificare che il prodotto dia la possibilità di aggiungere stock#super[G] di merce],
       va: [Eseguire lo script `add_stock.sh`. Lo script crea una merce con id `hat-1` e ne aggiunge 6 unità al magazzino con id 1. Verificare che nella risposta JSON siano presenti le seguenti informazioni:
         - `"name": "hat"`;
         - `"description": "blue hat"`;
@@ -2515,13 +2515,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
-      va: [Aggiornare il file `dockerfile` per aggiungere un ulteriore microservizio e determinare se su grafana è possibile aggiungere le relative misurazioni. Per maggiori informazioni consultare il Manuale Utente.],
+      va: [Aggiornare il file `dockerfile` per aggiungere un ulteriore microservizio e determinare se su grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni consultare il Manuale Utente#super[G].],
       vr: "",
       st: "I",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema],
-      va: [Eseguire il file `./create_multiple_order.sh` ed efftuare l'accesso a Grafana. Procedere nella dashboard come indicato nel Manuale Utente, quindi verificare che:
+      va: [Eseguire il file `./create_multiple_order.sh` ed efftuare l'accesso a Grafana#super[G] .Procedere nella dashboard#super[G] come indicato nel Manuale Utente#super[G], quindi verificare che:
         - Authenticator possiede una richiesta per un token;
         - Catalog presenta 14 richieste totali;
         - Order/Transfer possiede 19 richieste totali;
