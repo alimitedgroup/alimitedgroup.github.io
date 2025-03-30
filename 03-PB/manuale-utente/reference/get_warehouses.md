@@ -4,7 +4,7 @@ Questa route consente di recuperare la lista di `warehouse`#super[G] (magazzini)
 
 ## Richiesta autenticazione
 
-No.
+Sì.
 
 ## Corpo della richiesta
 

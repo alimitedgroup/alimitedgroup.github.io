@@ -4,7 +4,7 @@ Questa route consente di recuperare la lista di `good`#super[G] (merci)
 
 ## Richiesta autenticazione
 
-No.
+Sì.
 
 ## Corpo della richiesta
 

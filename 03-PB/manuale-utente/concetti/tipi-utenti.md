@@ -10,7 +10,7 @@ Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre 
 
 Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà dei servizi offerti dal Sistema con, chiaramente, delle limitazioni riguardo certe operazioni. Questo tipo di utente potrà effettuare le seguenti azioni all'interno del Sistema:
 
-- **Autenticare**, immettendo _username_ e _password_ tramite l'apposita _API_#super[G] offerta;
+- **Autenticare**, immettendo il ruolo tramite l'apposita _API_#super[G] offerta;
 - **Creare un ordine#super[G]** inserendo il nome, il destinatario dell'ordine e l'indirizzo di spedizione;
 - **Selezionare la merce per l'ordine#super[G]** inserendo la quantità, per ognuna delle merci aggiunte all'ordine;
 - **Confermare l'ordine#super[G]** ed in questo modo far partire la richiesta per l'ordine, in attesa che venga elaborata;
@@ -33,11 +33,7 @@ Il **Cliente** è la persona che utilizzerà il prodotto finale ed usufruirà de
 ## Admin Locale
 L'**Admin Locale** è la persona responsabile#super[G] per un singolo magazzino, con un interesse "locale" alla situazione di quest'ultimo. Inoltre, rispetto al Cliente, l'Admin Locale ha un maggior potere decisionale sulle azioni da intraprendere all'interno del magazzino. Le operazioni che questo tipo di utente ha la possibilità di effettuare, sono le seguenti:
 
-- **Aggiungere** ed aumentare lo _stock_#super[G] disponibile per una merce, inserendone la quantità;
-- **Creare** un sistema di _Backup_ per il ripristino dei dati, in caso di cyberattacchi;
-- **Attivare** il sistema di _Backup_, specificandone la periodicità con cui si attiva;
-- **Eliminare** il sistema di _Backup_, in caso ne esista uno precedentemente creato;
-- **Ripristinare** i dati dall'ultimo _Backup_ effettuato e disponibile nel magazzino, in caso ne esista uno;
+- **Aggiungere** ed aumentare lo _stock_#super[G] disponibile per una merce, inserendone la quantità.
 
 ## Admin Globale
 

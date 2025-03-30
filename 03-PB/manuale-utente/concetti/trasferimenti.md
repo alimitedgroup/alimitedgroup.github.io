@@ -2,7 +2,7 @@
 
 Nel _Minimum Viable Product#super[G]_, che _ALimitedGroup_ ha progettato ed implementato, e nei documenti annessi viene fatto riferimento ad una serie di termini, uno tra questi è: il **Trasferimento#super[G]**.
 
-Un "Trasferimento" viene inteso come un qualsiasi scambio di merci, bilateralmente, tra due entità; questo scambio deve avere queste informazioni al suo interno:
+Un "Trasferimento" viene inteso come un qualsiasi scambio di merci, bilateralmente, tra due magazzini; questo scambio deve avere le seguenti informazioni al suo interno:
 
 - Un **Identificativo Unico** che rappresenta questo scambio;
 
@@ -11,7 +11,5 @@ Un "Trasferimento" viene inteso come un qualsiasi scambio di merci, bilateralmen
 - L'**Indirizzo del Mittente** dello scambio di merci;
 
 - L'**Indirizzo del Destinatario** dello scambio di merce.
-
-Queste sono le informazioni che devono essere presenti nello scambio, perché senza di queste il Trasferimento#super[G] perderebbe di significato.
 
 A differenza dell'Ordine e del "Riassortimento", nella fase di "Trasferimento" la quantità necessaria per lo scambio è già presente nel magazzino (_warehouse_#super[G]) e quindi l'"Ordine", antecedente a questa fase, è stato confermato ed è in fase di elaborazione in questa fase di "Trasferimento" .

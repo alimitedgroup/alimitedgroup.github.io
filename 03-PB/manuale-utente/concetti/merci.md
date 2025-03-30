@@ -5,7 +5,7 @@ Nel _Minimum Viable Product#super[G]_, che _ALimitedGroup_ ha progettato ed impl
 Viene subito da porsi la seguente domanda:
 _Cosa si intende per Merce? E cosa ALimitedGroup intende con Merce?_
 
-La risposta è la seguente: _ALimitedGroup_ con il termine "Merce", più appropriamente chiamato _Good_#super[G] ,intende una t-upla, ovvero una sequenza di valori specifici ed univoci, che identifichi tale Merce su cui stiamo lavorando.
+La risposta è la seguente: _ALimitedGroup_ con il termine "Merce", più appropriamente chiamato _Good_#super[G], intende una t-upla, ovvero una sequenza di valori specifici ed univoci, che identifichi tale Merce su cui stiamo lavorando.
 All'interno di questa sequenza di valori possiamo trovare:
 
 - L'**Identificatore Univoco** della merce;
