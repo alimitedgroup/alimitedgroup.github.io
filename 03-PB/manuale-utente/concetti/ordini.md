@@ -17,4 +17,4 @@ Un "Ordine" viene inteso come un qualsiasi invio di merci, unilateralmente, tra 
 Queste sono le informazioni che devono essere presenti nell'invio, perché senza di queste l'Ordine perderebbe di significato.
 
 Inoltre, a differenza del "Trasferimento" e del "Riassortimento", quando viene preso in carico un Ordine#super[G], con i dati sopra citati, quest'ultimo deve essere convalidato **se e solo se** sia presente la quantità richiesta di merce (_Good_#super[G]) dall'Ordine.
-In caso negativo, l'Ordine verrà cancellato interamente e dovrà essere ripetuto nuovamente dall'Utente. Infatti, solamente quando l'Utente confermerà l'Ordine precedentemente inserito, quest'ultimo verrà eseguito e preso in carico dal Sistema. 
+In caso negativo, l'Ordine verrà cancellato interamente e dovrà essere ripetuto nuovamente dall'Utente. Infatti, solamente quando l'Utente confermerà l'Ordine precedentemente inserito, quest'ultimo verrà eseguito e preso in carico dal Sistema.
