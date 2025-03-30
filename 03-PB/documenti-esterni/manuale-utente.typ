@@ -18,7 +18,9 @@
     (
       vers: "0.2.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, " + [(@tipiutenti)] + ".",
+      descr: "Redazione sezione Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti: "
+        + [(@tipiutenti, @capordini, @captrasferimenti, @capriassortimenti)]
+        + ".",
       autore: p.marco,
       verifica: p.samuele,
     ),
