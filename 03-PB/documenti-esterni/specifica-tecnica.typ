@@ -966,6 +966,24 @@ Rappresenta la risposta alla richiesta di un Token.
 === `Main` dei microservizi
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
+
+
+=== Funzionamento Ordini e Trasferimenti
+Ogni magazzino è gestito da un microservizio dedicato, respоnsabile della gestione dello stock#super[G] specifico di quel magazzino. La gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
+
+Quando il client ha terminato di costruire un ordine#super[G] localmente, per confermarlo contatta il microservizio Order, che genera un evento di tipo _order_update_ con stato _Created_. Questo evento viene salvato nello stream di NATS#super[G]. Contemporaneamente, viene inviato un evento sullo stream _contact_warehouses_, che sarà ascoltato dai microservizi Order (@micro_order) tramite un _consumer group_, in modo che una sola istanza gestisca l'evento. Questo microservizio si occupa di contattare i magazzini coinvolti per prenotare le merci necessarie. La prenotazione avviene tramite una richiesta NATS#super[G].
+
+La selezione dei magazzini avviene in base alla disponibilità delle merci richieste, utilizzando un algoritmo che privilegia i magazzini con una quantità di merce più vicina a quella necessaria.
+
+Dopo aver completato con successo la prenotazione delle merci presso i magazzini interessati, l'ordine viene aggiornato allo stato _Filled_. A questo punto, viene generato un nuovo evento di tipo _order_update_, che include la lista delle prenotazioni effettuate. I microservizi Warehouse#super[G] (@micro_warehouse) coinvolti ricevono questo evento e aggiornano di conseguenza lo stock#super[G] disponibile.
+
+Infine, quando i microservizi Order ricevono gli aggiornamenti degli stock#super[G] dai magazzini, lo stato dell'ordine viene aggiornato internamente a _Completed_, informando così l'utente del completamento dell'ordine.
+
+Per evitare conflitti tra ordini, il sistema utilizza, dunque, un meccanismo di prenotazioni che assicura la disponibilità delle merci al momento della conferma dell'ordine. Inoltre, la gestione distribuita degli stock#super[G] tra i vari magazzini elimina problemi di concorrenza e migliora la scalabilità complessiva del sistema.
+
+Una funzionalità#super[G] simile agli ordini è quella dei trasferimenti, dei particolari ordini che permettono di spostare della merce da un magazzino mittente a un magazzino destinatario.
+I trasferimenti vengono gestiti in modo simile agli ordini, con la differenza che non viene utilizzato nessun algoritmo per la selezione del magazzino destinatario, in quanto è già specificato nella richiesta di trasferimento#super[G] ,e vengono utilizzati gli eventi di tipo _transfer_update_ al posto degli omologhi per gli ordini (_order_update_).
+
 #pagebreak()
 
 === Authenticator <auth>
