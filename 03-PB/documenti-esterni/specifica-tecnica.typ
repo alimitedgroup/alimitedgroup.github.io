@@ -2385,7 +2385,7 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`GetGlobalStock(goodId: GoodID) GoodStock`*: il metodo deve permettere di ottenere la quantità globale di una merce presente in tutti i magazzini, prendendo come parametro l'identificativo della merce (`goodId`) e restituendo un oggetto `GoodStock`;
 
-- *`GetWarehouses() []Warehouse`*: il metodo deve permettere di ottenere l'elenco di tutti i magazzini registrati nel sistema, restituendo una slice di oggetti `Warehouse`.
+- *`GetWarehouses() []Warehouse `*: il metodo deve permettere di ottenere l'elenco di tutti i magazzini registrati nel sistema, restituendo una slice di oggetti `Warehouse`.
 
 ==== SimpleCalculateAvailabilityService <OrderSimpleCalculateAvailabilityService>
 
@@ -2838,9 +2838,9 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence 
 
 - *`GetStock(warehouseId string, goodId string) (int64, error)`*: il metodo deve permettere di ottenere la quantità di una merce specifica in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`) e l'identificativo della merce (`goodId`). Restituisce la quantità della merce come `int64` e un eventuale errore in caso di fallimento;
 
-- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*: il metodo deve permettere di impostare la quantità di una merce in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da impostare (`stock`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti;
+- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*: il metodo deve permettere di impostare la quantità di una merce in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da impostare (`stock#super[G]`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti;
 
-- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*: il metodo deve permettere di aggiungere una quantità specifica di una merce a un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da aggiungere (`stock`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti, e un eventuale errore in caso di fallimento;
+- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*: il metodo deve permettere di aggiungere una quantità specifica di una merce a un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da aggiungere (`stock#super[G]`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti, e un eventuale errore in caso di fallimento;
 
 - *`GetGlobalStock(goodId string) int64`*: il metodo deve permettere di ottenere la quantità globale di una merce presente in tutti i magazzini. Prende come parametro l'identificativo della merce (`goodId`) e restituisce la quantità globale come `int64`;
 
@@ -2884,7 +2884,7 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 - *`GetGlobalStock(GoodID GoodID) GoodStock`*: restituisce la quantità globale di una merce presente in tutti i magazzini.
 
-- *`GetWarehouses() []Warehouse`*: restituisce una lista di tutti i magazzini registrati nel sistema.
+- *`GetWarehouses() []Warehouse `*: restituisce una lista di tutti i magazzini registrati nel sistema.
 
 ==== IOrderRepository <OrderIOrderRepository>
 
