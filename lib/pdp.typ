@@ -157,6 +157,26 @@
       (p.emanuele, 0, 0, 0, 7, 4, 4),
     ),
   ),
+  "8": (
+    preventivo: (
+      (p.loris, 0, 0, 0, 8, 8, 5),
+      (p.samuele, 0, 3, 3, 8, 0, 0),
+      (p.sara, 5, 0, 0, 2, 8, 3),
+      (p.lorenzo, 0, 0, 0, 5, 8, 0),
+      (p.marco, 0, 4, 0, 6, 5, 4),
+      (p.matteo, 0, 0, 0, 5, 8, 5),
+      (p.emanuele, 7, 0, 0, 0, 8, 0),
+    ),
+    consuntivo: (
+      (p.loris, 0, 0, 0, 8, 7, 5),
+      (p.samuele, 0, 3, 3, 8, 0, 0),
+      (p.sara, 5, 0, 0, 7, 8, 3),
+      (p.lorenzo, 0, 0, 0, 1, 8, 0),
+      (p.marco, 0, 4, 0, 6, 5, 4),
+      (p.matteo, 0, 0, 0, 5, 8, 5),
+      (p.emanuele, 7, 0, 0, 0, 8, 0),
+    ),
+  ),
 )
 
 #let cella(dati, preventivo, i, j) = {
