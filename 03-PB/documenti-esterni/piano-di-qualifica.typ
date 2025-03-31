@@ -482,7 +482,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
   tipo-test: "Tеst di Unità",
   (
     (
-      desc: [Implementato dalla funzione `TestGet GoodsGlobalQt`, testare se il repository#super[G] del microservizio `Catalog` restituisce la quantità globali delle merci memorizzate],
+      desc: [Implementato dalla funzione `TestGet GoodsGlobalQt`, testare se il _repository_#super[G] del microservizio `Catalog` restituisce la quantità globali delle merci memorizzate],
       va: [
         - 16 per la merce con id "test-ID";
         - 10 per "2test-ID";
@@ -492,13 +492,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestAddGoodQuantity`, testare se il repository#super[G] del microservizio `Catalog` aggiunge la quantità corretta di una merce],
+      desc: [Implementato dalla funzione `TestAddGoodQuantity`, testare se il _repository_#super[G] del microservizio `Catalog` aggiunge la quantità corretta di una merce],
       va: [7 unità globali della merce con id "test-ID".],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestAddGood`, testare se il repository#super[G] del microservizio `Catalog` inserisce i dati di una merce],
+      desc: [Implementato dalla funzione `TestAddGood`, testare se il _repository_#super[G] del microservizio `Catalog` inserisce i dati di una merce],
       va: [
         - id della merce è "test-ID";
         - nome della merce è "test-name";
@@ -508,7 +508,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestChangeGoodData`, testare se il repository#super[G] del microservizio `Catalog` modifica i dati di una merce],
+      desc: [Implementato dalla funzione `TestChangeGoodData`, testare se il _repository_#super[G] del microservizio `Catalog` modifica i dati di una merce],
       va: [
         - id della merce è "test-ID"
         - nome della merce è "new-test-name"
@@ -519,26 +519,26 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestChangeGoodData WrongID`, testare se il repository#super[G] del microservizio `Catalog` restituise un errore se l'id della merce da modificare non esiste],
-      va: [il repository#super[G] restituisce l'errore `ErrGoodIdNotValid`],
+      desc: [Implementato dalla funzione `TestChangeGoodData WrongID`, testare se il _repository_#super[G] del microservizio `Catalog` restituise un errore se l'id della merce da modificare non esiste],
+      va: [il _repository_#super[G] restituisce l'errore `ErrGoodIdNotValid`],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestChangeGoodData EmptyName`, testare se il repository#super[G] del microservizio `Catalog` restituise un errore se il nome della merce è vuoto],
-      va: [il repository#super[G] restituisce l'errore `ErrEmptyName`.],
+      desc: [Implementato dalla funzione `TestChangeGoodData EmptyName`, testare se il _repository_#super[G] del microservizio `Catalog` restituise un errore se il nome della merce è vuoto],
+      va: [il _repository_#super[G] restituisce l'errore `ErrEmptyName`.],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestChange GoodDataEmpty Description`, testare se il repository#super[G] del microservizio Catalog restituise un errore se la descrizione della merce è vuota],
-      va: [il repository#super[G] restituisce l'errore `ErrEmptyDescription`.],
+      desc: [Implementato dalla funzione `TestChange GoodDataEmpty Description`, testare se il _repository_#super[G] del microservizio Catalog restituise un errore se la descrizione della merce è vuota],
+      va: [il _repository_#super[G] restituisce l'errore `ErrEmptyDescription`.],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestAddWarehouse`, testare se il repository#super[G] del microservizio `Catalog` aggiunge correttamente un nuovo magazzino],
-      va: [il repository#super[G] restituisce la mappa dei magazzini e il magazzino con id `test-warehouse-ID` sia presente.],
+      desc: [Implementato dalla funzione `TestAddWarehouse`, testare se il _repository_#super[G] del microservizio `Catalog` aggiunge correttamente un nuovo magazzino],
+      va: [il _repository_#super[G] restituisce la mappa dei magazzini e il magazzino con id `test-warehouse-ID` sia presente.],
       vr: "",
       st: "S",
     ),
@@ -628,13 +628,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Implementato dalla funzione `TestSetMultipleGood QuantityRequest`, testare se `CatalogController` riesce con successo a modificare la quantità di più merci],
-      va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
+      va: [La modifica viene con successo ricevuta dal _mock_ di CatalogService, che modifica una apposita variabile globale a `true`.],
       vr: "",
       st: "S",
     ),
     (
       desc: [Implementato dalla funzione `Tеst SetGoodDataRequest`, testare se `CatalogController` riesce con successo a modificare le informazioni di una merce],
-      va: [La modifica viene con successo ricevuta dal mock di CatalogService, che modifica una apposita variabile globale a `true`.],
+      va: [La modifica viene con successo ricevuta dal _mock_ di CatalogService, che modifica una apposita variabile globale a `true`.],
       vr: "",
       st: "S",
     ),
@@ -788,7 +788,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     ),
     (
       desc: [Implementato da `TestPublishing`, testare che `AuthPublisher` pubblichi correttamente una chiave pubblica],
-      va: [Nello stream di pubblicazione chiavi pubblichi è presente la chiave pubblica.],
+      va: [Nello _stream_ di pubblicazione chiavi pubblichi è presente la chiave pubblica.],
       vr: "",
       st: "S",
     ),
@@ -805,7 +805,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestGetTokenWith WrongUser`, testare che `AuthController` funzioni come previsto se il mock del service rileva un nome utente non corretto],
+      desc: [Implementato da `TestGetTokenWith WrongUser`, testare che `AuthController` funzioni come previsto se il _mock_ del service rileva un nome utente non corretto],
       va: [La risposta ritornata dal Controller ha un token vuoto.],
       vr: "",
       st: "S",
@@ -827,7 +827,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       va: [Sono presenti le seguenti quantità:
         - la merce con id "1" ha 10 unità totali, tutte non riservate;
         - la merce con id "1" ha 0 unità totali, tutte non riservate;
-        Inoltre, un tentativo di _reservation_ per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal repository#super[G] .
+        Inoltre, un tentativo di _reservation_ per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal _repository_#super[G] .
       ],
       vr: "",
       st: "S",
@@ -873,7 +873,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestStockPersistance AdapterApply`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di aggiunta stock#super[G]],
       va: [
-        Viene aggiunta correttamente la merce, il mock del repository#super[G] ritorna `true`.
+        Viene aggiunta correttamente la merce, il _mock_ del _repository_#super[G] ritorna `true`.
       ],
       vr: "",
       st: "S",
@@ -881,7 +881,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestStockPersistance AdapterGet`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G]],
       va: [
-        Nella risposta fornita dall'adapter sono persenti:
+        Nella risposta fornita dall'adapter sono presenti:
         - merce con id "1" con quantità totale pari a 10
         - merce con id "1" con quantità libera da _reservation_ pari a 10
       ],
@@ -891,7 +891,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestStockPersistance AdapterGetReserv`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G] in _reservation_],
       va: [
-        Nella risposta fornita dall'adapter sono persenti:
+        Nella risposta fornita dall'adapter sono presenti:
         - merce con id "1" con quantità riservata pari a 10
       ],
       vr: "",
@@ -948,7 +948,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestIdempotent AdapterSet`, testare che `IDempotentAdapter `trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
       va: [
-        Il mock del repository#super[G] riceve la richiesta con successo.
+        Il _mock_ del _repository_#super[G] riceve la richiesta con successo.
       ],
       vr: "",
       st: "S",
@@ -1008,7 +1008,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       //Utilizzato per quando le notifiche di assortimento vengono accettate
       desc: [Implementato da `Tеst StockUpdateListener`, testare che `StockUpdateListener` gestisca correttamente un evento di aggiornamento quantità merce disponibile],
       va: [
-        Il mock che implementa `IApplyStock UpdateUseCase` registra:
+        Il _mock_ che implementa `IApplyStock UpdateUseCase` registra:
         - 10 unità della merce con id "1";
         - 20 unità della merce con id "2".
       ],
@@ -1042,7 +1042,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestCatalogUpdate Listener`, testare che `CatalogListener` riceva le richieste di aggiornamento infromazioni su una merce],
       va: [
-        Viene ricevuto l'_acknowledge_ sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal mock di `IApplyCatalog UpdateUseCase`, il nome di tale merce è "hat".
+        Viene ricevuto l'_acknowledge_ sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal _mock_ di `IApplyCatalog UpdateUseCase`, il nome di tale merce è "hat".
       ],
       vr: "",
       st: "S",
@@ -1082,7 +1082,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `Tеst ManageStockService`, testare che `ManageStockService` gestisca correttamente una richiesta di aggiunta e rimozione merce],
       va: [
-        Il mock che implementa le porte del service verso il repository#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
+        Il _mock_ che implementa le porte del service verso il _repository_#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
       ],
       vr: "",
       st: "S",
@@ -1130,7 +1130,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestApply StockUpdateService`, testare che `ApplyStock UpdateService` gestisca correttamente l'aggiunta di stock#super[G] di merce],
       va: [
-        La richiesta raggiunge correttamente il mock di `IIdempotentPort`
+        La richiesta raggiunge correttamente il _mock_ di `IIdempotentPort`
       ],
       vr: "",
       st: "S",
@@ -1138,7 +1138,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestApply CatalogUpdateService`, testare che `ApplyCatalog UpdateService` gestisca correttamente la modifica delle informazioni di una merce],
       va: [
-        Interrogando il mock `IApplyCatalog UpdatePort` sul nome dell'oggetto con id "1", questo ritonra "hat".
+        Interrogando il _mock_ `IApplyCatalog UpdatePort` sul nome dell'oggetto con id "1", questo ritorna "hat".
       ],
       vr: "",
       st: "S",
@@ -1170,7 +1170,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestTransfer Persistence AdapterApply TransferUpdate`, testare che `TransferPersistance` Adapter gestisca correttamente le richieste di aggiornamento stato dei trasferimenti],
       va: [
-        Il mock di `ITransferRepository` riceve correttamente l'aggiornamento.
+        Il _mock_ di `ITransferRepository` riceve correttamente l'aggiornamento.
       ],
       vr: "",
       st: "S",
@@ -1234,7 +1234,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da` TestStock PersistenceAdapter ApplyStockUpdate`, testare che `Stоck PersistanceAdapter` gestisca correttamente una richiesta di aggiornamento stock#super[G] merce],
       va: [
-        Il mock che implementa `IStockRepository` riceve la richiesta di aggiornamento.
+        Il _mock_ che implementa `IStockRepository` riceve la richiesta di aggiornamento.
       ],
       vr: "",
       st: "S",
@@ -1274,7 +1274,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrder PersistenceAdapter ApplyOrderUpdate`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di applicazione modifiche ad un ordine#super[G]],
       va: [
-        Il mock di `IOrderRepository` riceve correttamente la richiesta.
+        Il _mock_ di `IOrderRepository` riceve correttamente la richiesta.
       ],
       vr: "",
       st: "S",
@@ -1336,7 +1336,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream AdapterSend OrderUpdate`, testare che `NatsStreamAdapter` gestisca richieste di aggiornamento ordine#super[G]],
+      desc: [Implementato da `TestNats_stream_ AdapterSend OrderUpdate`, testare che `Nats_stream_Adapter` gestisca richieste di aggiornamento ordine#super[G]],
       va: [
         L'adapter conferma l'operazione ritornando un ordine#super[G] con id pari a "1".
       ],
@@ -1344,7 +1344,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter SendTransferUpdate`, testare che `NatsStreamAdapter` gestisca richieste di aggiornamento trasferimento#super[G]],
+      desc: [Implementato da `TestNats_stream_ Adapter SendTransferUpdate`, testare che `Nats_stream_Adapter` gestisca richieste di aggiornamento trasferimento#super[G]],
       va: [
         L'adapter conferma l'operazione ritornando un trasferimento#super[G] con id pari a "1".
       ],
@@ -1352,7 +1352,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter SendContactOrder`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un ordine#super[G]],
+      desc: [Implementato da `TestNats_stream_ Adapter SendContactOrder`, testare che `Nats_stream_Adapter` gestisca richieste di contatto di un magazzino per un ordine#super[G]],
       va: [
         Il metodo invocato `SendContact Warеhouses` ritorna `nil`.
       ],
@@ -1360,7 +1360,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter SendContactTransfer`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un trasferimento#super[G]],
+      desc: [Implementato da `TestNats_stream_ Adapter SendContactTransfer`, testare che `Nats_stream_Adapter` gestisca richieste di contatto di un magazzino per un trasferimento#super[G]],
       va: [
         Il metodo invocato `SendContactWarehouses` ritorna `nil`.
       ],
@@ -1368,7 +1368,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestNatsStream Adapter RequestReservation`, testare che `NatsStreamAdapter` gestisca richieste di _reservation_],
+      desc: [Implementato da `TestNats_stream_ Adapter RequestReservation`, testare che `Nats_stream_Adapter` gestisca richieste di _reservation_],
       va: [
         Il metodo invocato `RequestReservation` ritorna una risposta con id pari a "1".
       ],
@@ -1378,7 +1378,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrder ListenerApply OrderUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un ordine#super[G]],
       va: [
-        Il mock di `applyOrderUpdate UseCase` riceve la richiesta.
+        Il _mock_ di `applyOrderUpdate UseCase` riceve la richiesta.
       ],
       vr: "",
       st: "S",
@@ -1386,7 +1386,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrderListener ApplyTransferUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un trasferimento#super[G]],
       va: [
-        Il mock di `applyTransferUpdate UseCase` riceve la richiesta.
+        Il _mock_ di `applyTransferUpdate UseCase` riceve la richiesta.
       ],
       vr: "",
       st: "S",
@@ -1394,7 +1394,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrderListener ContactWarehouses Transfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un trasferimento#super[G]],
       va: [
-        Il mock di `contactWarehouse UseCase` riceve la richiesta.
+        Il _mock_ di `contactWarehouse UseCase` riceve la richiesta.
       ],
       vr: "",
       st: "S",
@@ -1402,7 +1402,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrder ListenerContact WarehousesTransfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G]],
       va: [
-        Il mock di `contactWarehouse UseCase` riceve la richiesta.
+        Il _mock_ di `contactWarehouse UseCase` riceve la richiesta.
       ],
       vr: "",
       st: "S",
@@ -1410,7 +1410,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrder ListenerContact WarehousesOrder WithRetry`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G] al secondo tentativo],
       va: [
-        Il mock di `contactWarehouse UseCase` riceve la richiesta.
+        Il _mock_ di `contactWarehouse UseCase` riceve la richiesta.
       ],
       vr: "",
       st: "S",
@@ -1554,7 +1554,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestApply OrderUpdate ServiceOrder`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un ordine#super[G]],
       va: [
-        Il mock di `applyOrder UpdatePort` riceve la richiesta come previsto.
+        Il _mock_ di `applyOrder UpdatePort` riceve la richiesta come previsto.
       ],
       vr: "",
       st: "S",
@@ -1562,7 +1562,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestApply OrderUpdate ServiceTransfer`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un trasferimento#super[G]],
       va: [
-        Il mock di `applyTransfer UpdatePort` riceve la richiesta come previsto.
+        Il _mock_ di `applyTransfer UpdatePort` riceve la richiesta come previsto.
       ],
       vr: "",
       st: "S",
@@ -1570,7 +1570,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLogin`, testare che Business del microservizio `Api Gateway` trasmetta correttamente richieste di login],
       va: [
-        Il mock di `Authentication PortOut` riceve la richiesta e la risposta fornita dall'elemento testato contiene:
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e la risposta fornita dall'elemento testato contiene:
         - "some.secure. jwt" come token;
         - ruolo corrispondente a quello richiesto;
         - data di scadenza fissata a 1 settimana.
@@ -1581,7 +1581,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLoginNoSuchUser`, testare che `Business` del microservizio `Api Gateway` trasmetta correttamente richieste di login con utente sconosciuto],
       va: [
-        Il mock di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorInvalid Credentials`.
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorInvalid Credentials`.
       ],
       vr: "",
       st: "S",
@@ -1589,7 +1589,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLoginGetToken Error`, testare che `Business` del microservizio `Api Gateway` trasmetta correttamente richieste di login che ritornano un errore],
       va: [
-        Il mock di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
       ],
       vr: "",
       st: "S",
@@ -1597,7 +1597,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLoginGetRole Error`, testare che `Business` del microservizio `Api Gateway` trasmetta correttamente richieste di login che ritornano un errore relativo al ruolo],
       va: [
-        Il mock di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetRole`.
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetRole`.
       ],
       vr: "",
       st: "S",
@@ -1605,7 +1605,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLoginVerify TokenError`, testare che `Business` del microservizio `Api Gateway` gestisca correttamente token non validi durante l'operazione di login],
       va: [
-        Il mock di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
       ],
       vr: "",
       st: "S",
@@ -1696,7 +1696,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestLogin`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a tradurre richieste di login],
       va: [
-        `AuthAdapter` vеrifica con esito positivo il token fornito dal mock del microservizio `authenticator`. In particolare la risposta fornita dall'adapter presenta:
+        `AuthAdapter` vеrifica con esito positivo il token fornito dal _mock_ del microservizio `authenticator`. In particolare la risposta fornita dall'adapter presenta:
         - il token è firmato con una firma valida;
         - lo username è "admin";
         - il ruolo è "global_admin".
@@ -1731,13 +1731,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestRevocation`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire richieste di revoca token],
       va: [
-        Dopo aver effettuato l'operazione di revoca (ottenibile riavviando il mock del microservizio `authenticator`) la vеrifica del token restituisce l'errore `ErrTokenInvalid`.
+        Dopo aver effettuato l'operazione di revoca (ottenibile riavviando il _mock_ del microservizio `authenticator`) la vеrifica del token restituisce l'errore `ErrTokenInvalid`.
       ],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato da `TestGetKeyStream CreateError`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire problemi con la creazione di uno stream],
+      desc: [Implementato da `TestGetKey_stream_ CreateError`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire problemi con la creazione di uno _stream_],
       va: [
         Il metodo `getValidationKey` ritorna un errore.
       ],
@@ -1885,7 +1885,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato da `TestGetGoods`, testare che `GetGoodsController` del microservizio `Api Gateway` gestisca richieste di ottenimento informazioni merce che detrmina un errore],
+      desc: [Implementato da `TestGetGoods`, testare che `GetGoodsController` del microservizio `Api Gateway` gestisca richieste di ottenimento informazioni merce che determina un errore],
       va: [
         `GetGoodsController` risponde con codice 500, il DTO restituito contiene l'errore "internal_error".
       ],
@@ -1974,7 +1974,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 
 == Tеst di Sistema
 
-La vеrifica dei test#super[G] è stata effettuata manualmente. Data l'assenza di un _client_, il superamento di alcuni test#super[G] è stato determinato realizzando delle prove locali _ad hoc_ o verificate mediante le risposte fornite dal Sistema.
+La vеrifica dei test#super[G] è stata effettuata manualmente. Data la natura del progetto e l'assenza di un _client_ sviluppato, il superamento di alcuni test#super[G] è stato determinato realizzando delle prove locali _ad hoc_ e/o verificate mediante le risposte fornite dal Sistema.
 
 #show figure: set block(breakable: true)
 #figure(
@@ -2406,6 +2406,8 @@ La vеrifica dei test#super[G] è stata effettuata manualmente. Data l'assenza d
 )
 
 == Tеst di Regressione
+
+_ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#super[G] non rompesse funzionalità#super[G] esistenti: per questo motivo, _ALimitedGroup_ ha strutturato il _repository_#super[G] Github relativo all'_MVP_ in maniera tale che questo ripeta, al caricamento di nuovo codice, l'esecuzione di tutti i test#super[G] di unità e di integrazione, bloccando il passaggio del codice al ramo principale qualora un test#super[G] fallisse.
 
 == Tеst di Accettazione
 
