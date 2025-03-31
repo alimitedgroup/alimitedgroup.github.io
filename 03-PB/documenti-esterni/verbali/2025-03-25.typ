@@ -9,7 +9,7 @@
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
       verifica: p.lorenzo,
-      descr: "Approvazione interna del documento.",
+      descr: "Approvazione interna ed esterna del documento.",
     ),
     (
       vers: "0.1.0",
@@ -75,4 +75,5 @@ _ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per la disponibilità e l
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
+#figure(image("../../../assets/fima_ve2503.png", width: 50%))
 
