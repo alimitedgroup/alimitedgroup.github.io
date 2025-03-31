@@ -475,7 +475,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 
 == Tеst di Unità
 
-È possibile eseguire i test mediante il comando `go test -race ./...`. I test vengono eseguiti cartella per cartella: se la cartella non ha test la linea di output stampata da `go test` inizierà con `?`, mentre se il test riesce l'iniziale sarà `ok`.
+È possibile eseguire i test#super[G] mediante il comando `go tеst -race ./...`. I test#super[G] vengono eseguiti cartella per cartella: se la cartella non ha test#super[G] la linea di output stampata da `go tеst` inizierà con `?`, mentre se il test#super[G] riesce l'iniziale sarà `ok`.
 
 #test-table(
   unit: "U",
@@ -1322,7 +1322,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrderPersistence AdapterAdd CompletedWarehouse`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta `SetCompleted WarehouseCmd`],
       va: [
-        Il metodo invocato `SetCompleted Warehouse` ritorna un ordine#super[G] con id "1".
+        Il metodo invocato `SetCompleted Warеhouse` ritorna un ordine#super[G] con id "1".
       ],
       vr: "",
       st: "S",
@@ -1330,7 +1330,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestOrder PersistenceAdapter AddCompleted WarehouseErr`, testare che `OrderPersistance` Adapter gestisca correttamente una richiesta `SetCompleted WarehouseCmd` con una merce con id non esistente],
       va: [
-        Il metodo invocato `SetCompleted Warehouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
+        Il metodo invocato `SetCompleted Warеhouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
       ],
       vr: "",
       st: "S",
@@ -1354,7 +1354,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
     (
       desc: [Implementato da `TestNatsStream Adapter SendContactOrder`, testare che `NatsStreamAdapter` gestisca richieste di contatto di un magazzino per un ordine#super[G]],
       va: [
-        Il metodo invocato `SendContact Warehouses` ritorna `nil`.
+        Il metodo invocato `SendContact Warеhouses` ritorna `nil`.
       ],
       vr: "",
       st: "S",
@@ -1974,7 +1974,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 
 == Tеst di Sistema
 
-La verifica dei test è stata effettuata manualmente. Data l'assenza di un _client_, il superamento di alcuni test è stato determinato realizzando delle prove locali _ad hoc_ o verificate mediante le risposte fornite dal Sistema.
+La vеrifica dei test#super[G] è stata effettuata manualmente. Data l'assenza di un _client_, il superamento di alcuni test#super[G] è stato determinato realizzando delle prove locali _ad hoc_ o verificate mediante le risposte fornite dal Sistema.
 
 #show figure: set block(breakable: true)
 #figure(
@@ -2409,7 +2409,7 @@ La verifica dei test è stata effettuata manualmente. Data l'assenza di un _clie
 
 == Tеst di Accettazione
 
-I Test di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`.
+I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`.
 
 #test-table(
   unit: "A",
@@ -2429,7 +2429,7 @@ I Test di Accettazione sono parzialmente automatizzati mediante l'utilizzo di al
         - `"name": "order-1"`;
         - `"full_name": "John Doe"`;
         - `"address: "via roma 12 35012"`;
-        - `"goods": { "hat-1": 7},`;
+        - `"goods":#super[G] { "hat-1": 7},`;
         - `"reservations": ["campo variabile ad ogni esecuzione", "campo variabile ad ogni esecuzione"]`
       ],
       vr: "",
@@ -2497,7 +2497,7 @@ I Test di Accettazione sono parzialmente automatizzati mediante l'utilizzo di al
         - `"transfer_id": "13be693d-c6b5-45de-b2df-20b1024b39b7"`;
         - `"sender_id": "1"`;
         - `"receiver_id": "2"`;
-        - `"goods": {"hat-1": 5}`.
+        - `"goods":#super[G] {"hat-1": 5}`.
       ],
       vr: "",
       st: "I",
@@ -2557,7 +2557,7 @@ I Test di Accettazione sono parzialmente automatizzati mediante l'utilizzo di al
     ),
     (
       desc: [Verificare che il prodotto funzioni correttamente con più istanze dello stesso microservizio],
-      va: [Il test viene effettuato manualmente: aggiugere un'istanza di Order/Transfer e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test *T-14-A*.],
+      va: [Il test#super[G] viene effettuato manualmente: aggiugere un'istanza di Order/Transfer e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test#super[G] *T-14-A*.],
       vr: "",
       st: "I",
     ),
