@@ -31,7 +31,7 @@ Codifica: `application/json`
         [`goods`], [`GoodAnd
         Amount[]`], [ Una lista di merci, ognuna con la quantità disponibile globalmente e per singoli magazzini.], [`"goods": [{"name": "hat", "description": "a hat", "id": "e9281371-b9fe-41b4-968a-e510a98cf849", "amount": 20, "amounts": {"warehouse-1": 10, "warehouse-2": 10}}]`],
    ),
-   caption: [Risposta di GET `/api/v1/goods`],
+   caption: [Risposta di GET `/goods`],
 )
 -->
 

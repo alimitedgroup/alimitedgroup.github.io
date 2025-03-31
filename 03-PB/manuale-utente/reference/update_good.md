@@ -22,7 +22,7 @@ Si.
         ),
         [`good_id`], [`string`], [L'identificativo della merce], [`c8225f15-ba60-47f6-8f84-ee72ca3d3d73`],
    ),
-   caption: [Variabili PATH di PUT `/api/v1/goods/:good_id`],
+   caption: [Variabili PATH di PUT `/goods/:good_id`],
 )
 -->
 
@@ -51,7 +51,7 @@ Codifica: `application/json`
         [`name`], [`string`], [Nome della merce], [`"Abito blu"`],
         [`description`], [`string`], [Descrizione della merce], [`"Abito blu di alta qualità"`],
    ),
-   caption: [Corpo della richiesta di PUT `/api/v1/goods/:good_id`],
+   caption: [Corpo della richiesta di PUT `/goods/:good_id`],
 )
 -->
 

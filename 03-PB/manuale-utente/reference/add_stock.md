@@ -23,7 +23,7 @@ Si.
         [`good_id`], [`string`], [L'identificativo della merce], [`7be87589-6835-4437-ba6a-96d6b9a383c1`],
         [`warehouse_id`], [`string`], [L'identificativo del magazzino], [`warehouse-1`],
    ),
-   caption: [Varibili PATH di POST `/api/v1/goods/:good_id/warehouse/:warehouse_id/stock`],
+   caption: [Varibili PATH di POST `/goods/:good_id/warehouse/:warehouse_id/stock`],
 )
 -->
 

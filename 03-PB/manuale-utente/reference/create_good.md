@@ -25,7 +25,7 @@ Codifica: `application/json`
         [`name`], [`string`], [Nome della merce], [`"Abito blu"`],
         [`description`], [`string`], [Descrizione della merce], [`"Abito blu di alta qualità"`],
    ),
-   caption: [Corpo della richiesta di POST `/api/v1/goods`],
+   caption: [Corpo della richiesta di POST `/goods`],
 )
 -->
 
@@ -55,7 +55,7 @@ Codifica: `application/json`
         ),
         [`good_id`], [`string`], [Identificativo della merce creata], [`876f754f-e7da-4f07-b6de-258bbfb384bc`],
    ),
-   caption: [Risposta di POST `/api/v1/goods`],
+   caption: [Risposta di POST `/goods`],
 )
 -->
 
