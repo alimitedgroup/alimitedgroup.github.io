@@ -52,7 +52,7 @@ I membri si sono tutti presentati qualificandosi con il proprio ruolo attuale, r
 == Concordare way of working
 Abbiamo discusso principalmente con #persona(p.luca) i dettagli del way of working#super[G]. L'azienda sottolinea l'importanza di *redarre un'ottima documentazione*, sia quella di progetto che quella nel codice. Sono invece disposti ad essere meno stringenti sull'implementazione software e sulla creazione di interfacce utente per rispettare la scadenza preventivata.
 
-Abbiamo concordato l'utilizzo del *metodo agile* con sprint#super[G] di *due settimane*, presentando però anche una panoramica generale del lavoro.
+Abbiamo concordato l'utilizzo del *metodo agile*#super[G] con sprint#super[G] di *due settimane*, presentando però anche una panoramica generale del lavoro.
 
 #pagebreak()
 

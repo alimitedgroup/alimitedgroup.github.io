@@ -39,8 +39,8 @@ def substitute(filePath,glossaryYml):
                 glossary.append("*"+k.lower()+"*")
 
     #print(glossary)
-    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni(", "<!--typst-begin-exclude-->"]
-    specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":"]
+    stopCheckingWords=["#table(","#tabella-decisioni(", "#use-case(", "#use-case-diagram(" "#let", "#figure(", "table(", "=", "#metric(", "#show", "#impegni(", "<!--typst-begin-exclude-->", "<!--raw-typst"]
+    specialChar = [chr(92), "(", ")", "[", "]", ".", ",", ";", ":", "_", "*", "`"]
     stop=False
     newText=""
     startText=""
@@ -62,6 +62,10 @@ def substitute(filePath,glossaryYml):
                 bodyFound=True
             if bodyFound==True and ")" in line:
                 parFound=True
+        elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "/03-PB\\manuale-utente" in filePath:
+            newText += line 
+            line=file.readline()
+            continue
         else:
             if(stop == False and line[0] not in stopCheckingWords):
                 line = substitute_line(filePath, linenum, line, filtered_glossary)
@@ -72,25 +76,77 @@ def substitute(filePath,glossaryYml):
                 continue
             if len(line.lstrip()) != 0: newText += line[:len(line) - len(line.lstrip())]
             for i, word in enumerate(line.split()):
-                #print("read: "+word)
+                #print("read: "+word[-3:])
+                #print(stop)
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}, {stopCheckingWords}")
                     stop=True
-                elif word == ")" or word == "<!--typst-end-exclude-->":
+                elif word == ")" or word == "<!--typst-end-exclude-->" or word == "-->":
                     stop=False
-                if stop==False and (word in glossary or word[:-1] in glossary or (word[:-2] in glossary and len(word[:-2]) > 0) or (word[1:-1] in glossary and len(word[1:-1]) > 0)) and len(word)>1:
-                    if word[:-1] in glossary and word[len(word)-1] in specialChar:
-                        newText += word[:-1] + "#super[G] " + word[-1:]
-                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
-                        newText += word[:-2] + "#super[G] " + word[-2:]
-                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    elif word[0]=="_" or word[0]=="*":
-                        newText += word + "#super[G] "
-                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    elif word[0] == "(" and word[len(word)-1] == ")":
-                        newText += word[:-1] + "#super[G] " + word[-1:]
-                        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                #elif word[0] == "#" and "/03-PB\\manuale-utente" in filePath:
+                #    newText += word[0] + line
+                #    continue
+                if stop==False and ((word in glossary) or (word[:-1] in glossary) or (word[:-2] in glossary and len(word[:-2]) > 0) 
+                                    or (word[1:-1] in glossary and len(word[1:-1]) > 1) or (word[2:-2] in glossary and len(word[2:-2]) > 2) or (word[2:-3] in glossary and len(word[2:-3]) > 2)) and len(word)>1:
+                    #if word[:-1] in glossary and word[len(word)-1] in specialChar:
+                    #   newText += word[:-1] + "#super[G] " + word[-1:]
+                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    #elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
+                    #    newText += word[:-2] + "#super[G] " + word[-2:]
+                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    #elif word[0]=="_" or word[0]=="*":
+                    #    newText += word + "#super[G] "
+                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    #elif word[0] == "(" and word[len(word)-2] == ")":
+                    #    if word[1] in specialChar and word[len(word-3)] in specialChar:
+                    #        newText += word[:-2] + "#super[G]" + word[-3:]
+                    #        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    #        logging.error(f'If annidato {filePath}:{linenum}')
+                    #    newText += word[:-1] + "#super[G] " + word[-1:]
+                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')'
+                    # 
+                    #print("SONO DENTRO L'IF per: "+word)
+                    if word[len(word)-1] == "," or word[len(word)-1] == ";":
+                        if(word[:-1] == "sopra"):
+                            newText += word
+                        elif(word[:-1] in glossary):
+                            newText += word[:-1] + "#super[G]" + word[-1:] + " "
+                            logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                        elif(word[len(word)-2] == ")"):
+                            if(word[0] == "(" and word[1:-2] in glossary):
+                                newText += word[:-1] + "#super[G]" + word[-2:] + " "
+                                logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                            elif(word[0] == "(" and word[len(word)-3] in specialChar):
+                                if(word[1] in specialChar):
+                                    newText += word[:-3] + "#super[G]" + word[-3:] + " "
+                                    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                        elif(word[len(word)-2] in specialChar):
+                            if(word[0] in specialChar):
+                                newText += word[:-2] + "#super[G]" + word[-2:] + " "
+                                logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                            elif word[:-2] in glossary:
+                                newText += word[:-2] + "#super[G]" + word[-2:] + " "
+                                logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    elif word[len(word)-1] == ")":
+                        if(word[0] == "(" and word[1:-1] in glossary):
+                            newText += word[:-1] + "#super[G]" + word[-1:] + " "
+                            logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                        elif(word[len(word)-2] in specialChar and word[1] in specialChar and word[0] == "("):
+                            newText += word[:-2] + "#super[G]" + word[-2:] + " "
+                            logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                    elif word[len(word)-1] in specialChar:
+                        if(word[len(word)-1] == "sopra"):
+                            newText += word
+                        if(word[len(word)-2] in specialChar):
+                            if(word[len(word)-3] in specialChar):
+                                newText += word[:-3] + "#super[G]" + word[-3:] + " "
+                                logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                            else:
+                                newText += word[:-2] + "#super[G]" + word[-2:] + " "
+                                logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                        else:
+                            newText += word + "#super[G] "
+                            logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                     elif word in glossary:
                         newText += word + "#super[G] "
                         logging.error(f'Found un-tagged word at {filePath}:{linenum}')
@@ -128,10 +184,11 @@ def main():
 
     else:
         find_files(fileList)
+        #for file in fileList:
         for file in fileList:
             if "docs.typ" in file or "README.md" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
                 continue
-            substitute(file,loadGlossary())
+            substitute(file, loadGlossary())
 
 if __name__ == "__main__":
     main()
