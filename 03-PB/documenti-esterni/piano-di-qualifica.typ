@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.2.0]
+#let ver = [1.3.0]
 
 #show: body => importantdocs(
   data: datetime(day: 18, month: 02, year: 2025),
@@ -1899,6 +1899,126 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       vr: "",
       st: "S",
     ),
+    (
+      desc: [Implementato dalla funzione `TestAddQuery`, verificare che `AddQueryController` gestisca richieste di aggiunta query, ovvero aggiunta di soglie di allerta],
+      va: [Il controller restituisce "123e4567-e89b-12d3-a456-426614174000" come id della soglia.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestEditQuery`, verificare che `EditQueryController` gestisca richieste di modifica query, ovvero modifiche di soglie di allerta],
+      va: [Il controller restituisce la risposta "OK".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetQuery`, verificare che `GetQueryController` gestisca richieste di ottenimento query, ovvero ottenimento informazioni su una soglia di allerta],
+      va: [Il controller restituisce la risposta JSON "{\"GoodId\":\"1\", \"Operator\":\"<\", \"Threshold\":10}".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestListQuery`, verificare che `ListQueriesController` gestisca richieste di elenco query, ovvero di elenco di tutte le soglie di allerta],
+      va: [Il controller restituisce la risposta JSON "{\"RuleId\":\"123e4567-e89b-12d3-a456-426614174000\", \"GoodId\":\"1\", \"Operator\":\"<\",\"Threshold\":10}".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestStockUpdateReceiver`, verificare che `StockUpdateReceiver` gestisca richieste di aggiornamento stock di merce],
+      va: [NATS segnala il messaggio come ricevuto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRemoveQuery`, verificare che `RemoveQueryController` gestisca richieste eliminazione query, ovvero eliminazione soglie di allerta],
+      va: [Il controller restituisce la risposta "OK".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleCheck`, verificare che `RuleChecker` controlli correttamente la necessità di invio di una notifica],
+      va: [Il _mock_ che implementa `StockEventPublisher` riceve una richiesta di pubblicazione.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddQueryRule`, verificare che `Business` gestisca l'aggiunta di una query],
+      va: [Il metodo invocato `AddQueryRule` ritorna l'id "391d2936-c37b-4294-bfdc-29e2473a5052" della nuova query.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetQueryRule`, verificare che `Business` gestisca l'ottenimento di una query],
+      va: [Il metodo invocato `GetQueryRule` ritorna la regola con id "391d2936-c37b-4294-bfdc-29e2473a5052".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestListRules`, verificare che `Business` gestisca l'ottenimento di tutte le query memorizzate],
+      va: [Il metodo invocato `ListQueryRules` ritorna una sola regola con id "391d2936-c37b-4294-bfdc-29e2473a5052".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestEditQueryRule`, verificare che `Business` gestisca la modifica di una query],
+      va: [Il metodo invocato `EditQueryRule` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRemoveQueryRule`, verificare che `Business` gestisca l'eliminazione di una query],
+      va: [Il metodo invocato `RemoveQueryRule` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestPublishStockAlert`, verificare che `Business` gestisca la pubblicazione di una notifica],
+      va: [Il metodo invocato `PublishStockAlert` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetCurrentQuantityByGoodID`, verificare che `Business` gestisca l'ottenimento dello stock di una merce],
+      va: [Il metodo invocato `GetCurrentQuantityByGoodID` ritorna una `GetRuleResultResponse` con memorizzato l'id 1.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRecordStockUpdate`, verificare che `Business` gestisca la modifica dello stock di una merce],
+      va: [Il metodo invocato `RecordStockUpdate` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoAddRule`, verificare che `RuleRepositoryImpl` memorizzi l'aggiunta di una nuova query],
+      va: [Il metodo invocato `AddRule` ritorna `nil` e un id `uuid` popolato.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoGetRule`, verificare che `RuleRepositoryImpl` fornisca una query che viene richiesta],
+      va: [Il metodo invocato `GetRule` ritorna `nil` e una regola la cui merce legata ha id "1".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoListRules`, verificare che `RuleRepositoryImpl` fornisca tutte le query memorizzate],
+      va: [Il metodo invocato `ListRules` ritorna `nil` e una sola regola la cui merce legata ha id "1".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoRemoveRule`, verificare che `RuleRepositoryImpl` elimini una query],
+      va: [Il metodo invocato `RemoveRule` ritorna `nil` e, cercando di ottenere la regola eliminata, viene ritornato l'errore `ErrRuleNotExists`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoEditRule`, verificare che `RuleRepositoryImpl` modifichi una query],
+      va: [Il metodo invocato `EditRule` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
   ),
 )
 
@@ -1914,7 +2034,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       - nel magazzino con id "test-warehouse-ID" ci sono 2 unità della merce con id "test-ID" e 0 unità della merce "2test-ID";
       - nel magazzino con id "2test-warehouse-ID" ci sono 3 unità della merce "test-ID" e 3 unità della merce "2test-ID".],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestInsertGetGoods Quantity`, verificare che il microservizio `Catalog` inserisca correttamente la quantità delle merci],
@@ -1922,7 +2042,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       - la merce con id "test-ID" ha globalmente 5 unità;
       - la merce con id "2test-ID" ha 3 unità.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestInsertGetGoods`, verificare che il microservizio `Catalog` inserisca correttamente la informazioni delle merci],
@@ -1930,49 +2050,49 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       - nome "test-name";
       - descrizione "test-description".],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestGetTokenEmpty Username`, verificare che il microservizio `Authenticator` si comporti correttamente se nella richiesta non viene fornito il nome utente],
       va: [Nella risposta fornita il token è vuoto.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestGetTokenWrong Username`, verificare che il microservizio `Authenticator` si comporti correttamente se nella richiesta viene incluso un nome utente non valido],
       va: [Nella risposta fornita il token è vuoto.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestGetToken`, verificare che il microservizio `Authenticator` ritorni il token generato in caso di richiesta corretta],
       va: [Nella risposta fornita il token fornito è un token valido.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestGetTwoToken`, verificare che il microservizio `Authenticator` ritorni due token validi e firmati con la medesima chiave privata],
       va: [I token forniti sono validi e firmati con la stessa chiave privata.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestAddAnd RemoveWarehouse Stоck` ,verificare che il microservizio `Warehouse`#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
       va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestCreateOrder`, testare che un ordine#super[G] venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock#super[G] ],
       va: [L'ordine ha come stato "Completed".],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Implementato dalla funzione `TestCreateTransfer`, testare che un trasferimento#super[G] venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock#super[G] dei magazzini coinvolti],
       va: [Il trasferimento#super[G] ha come stato "Completed".],
       vr: "",
-      st: "I",
+      st: "S",
     ),
   )
 ),
@@ -2513,13 +2633,18 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento],
-      va: [NATS],
+      va: [Eseguire lo script `create_notification_query.sh`: lo script procederà a creare un prodotto e aggiungerne 6 unità, quindi procederà alla creazione della soglia di allerta, fissata a 100 unità. Lo script metterà si metterà dunque in ascolto nel canale delle notifiche: verificare che questo si inizi a popolare. Attenzione: per questo test è necessario avere nats installato nel proprio sistema e correttamente configurato tra i percorsi accessibili dalla linea di comando.],
       vr: "",
       st: "I",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce],
-      va: [],
+      va: [Eseguire lo script `create_notification_query.sh` con il comando `./create_notification_query.sh | grep -A 100 "Get notification queries"`. Verificare che la risposta JSON subito sotto la scritta "Get notification queries" contenga le seguenti informazioni:
+        - `"query_id": "campo variabile ad ogni esecuzione"`;
+        - `"good_id": "hat-1"`;
+        - `"operator": "<"`;
+        - `"threshold": 100`.
+      ],
       vr: "",
       st: "I",
     ),
