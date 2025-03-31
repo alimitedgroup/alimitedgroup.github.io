@@ -10,10 +10,11 @@
   versioni: (
     (
       vers: "0.9.0",
-      date: datetime(day: 28, month: 03, year: 2025),
+      date: datetime(day: 31, month: 03, year: 2025),
       autore: p.matteo,
       verifica: p.marco,
-      descr: "Aggiunte informazioni sulle versioni delle componenti utilizzate e aggiunte informazioni sul funzionamento di main e router"
+      descr: "Aggiunte informazioni sulle versioni delle componenti utilizzate e aggiunte informazioni sul funzionamento di main e router. Aggionte versioni delle librerie. Aggiunte informazioni sulla telemetria. "
+        + [(@rdm e @main)]
         + ".",
     ),
     (
@@ -189,8 +190,9 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*fx*], [1.23.0], [*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+    [*fx*], [1.23.0], [*Fx* è un _framework_ per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
       Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.],
+    [*gin*], [1.10.0], [_Framework_ che permette di gestire gli _endpoint_ e non solo. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/gin-gonic/gin")[pagina Go del progetto]]
   ),
   caption: [Framework per la codifica],
 )
@@ -220,7 +222,6 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
   caption: [Tecnologie per la comunicazione e messaggistica],
 )
 
-
 == Tecnologie per la virtualizzazione e _deployment_
 
 #figure(
@@ -244,6 +245,31 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     [*Docker Engine*], [28.0.1], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
   caption: [Tecnologie per la virtualizzazione e _deployment_],
+)
+
+== Tecnologie per la gestione di dati temporali
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*InfluxDB*], [1.11], [Si tratta di una base di dati specificatamente progettata per la memorizzazione e l'ottenimento di serie temporali.],
+  ),
+  caption: [Tecnologie per la gestione di dati temporali],
 )
 
 == Librerie
@@ -273,7 +299,8 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     [*jwx*], [1.2.30], [Libreria utilizzata per il parsing delle chiavi pubbliche nel rese disponibili nell'apposito _subject_ JetStream NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/lestrrat-go/jwx")[pagina Go del progetto]],
     [*nats*], [1.40.1], [Client Go per l'utilizzo di NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats.go")[pagina Go del progetto]],
     [*OpenTelemetry-Go*], [1.35.0], [Implementazione Go per OpenTelemetry: viene utilizzata per raccogliere dati dai vari microservizi del Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/otel")[pagina Go del progetto]],
-    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare zap a OpenTelemetry-Go. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelzap")[pagina Go del progetto]]
+    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare zap a OpenTelemetry-Go. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelzap")[pagina Go del progetto]],
+    [*influxdb-client-go*], [2.14.0], [Libreria per dialogare con il _Database_ InfluxDB, un tipo di Base di Dati specificatamente realizzata per gestire serie temporali, come quelle che riguardano le notifiche. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/influxdata/influxdb-client-go/v2")[pagina Go del progetto]],
   ),
   caption: [Librerie utilizzate],
 )
@@ -359,7 +386,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
 
     //table row
     [*go test*], [1.24.0], [Si tratta di una componente parte della libreria standard di Go per la realizzazione di test. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/testing")[pagina Go del progetto]],
-    [*GoMock*], [0.5.0], [GoMock è un framework utilizzato per realizzare Mock che implementano interfacce: questo risulta particolarmente utile nella realizzazione di test di unità. Deprecato da Google, adesso è sviluppato da Uber: per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/mock")[pagina Go del progetto]],
+    [*GoMock*], [0.5.0], [GoMock è un _framework_ utilizzato per realizzare Mock che implementano interfacce: questo risulta particolarmente utile nella realizzazione di test di unità. Deprecato da Google, adesso è sviluppato da Uber: per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/mock")[pagina Go del progetto]],
     [*magiconair properties assert*], [1.8.9], [La libreria offre funzionalità per scrivere file con proprietà, ma offre anche strumenti utili per realizzare testing ed è per questo scopo che viene utilizzata. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/magiconair/properties")[pagina Go del progetto]],
     [*stretchr testify*], [1.10.0], [Libreria specificatamente realizzata per permettere una più semplice realizzazione dei test, offrendo funzionalità per richiedere che un risultato sia di un certo tipo (esempio `nil`). Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/stretchr/testify")[pagina Go del progetto]],
     [*nats-server*], [2.11.0], [Libreria utilizzata per permettere la realizzazione di un Server NATS Mock utilizzabile nei test di unità e di integrazione. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats-server/v2")[pagina Go del progetto]],
@@ -445,7 +472,7 @@ L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numero
 - *gestione centralizzata*:la _dependency injection#super[G]_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
 
 ==== Framework Fx di _Uber_ <fwfx>
-*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+*Fx* è un _framework_ per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
 Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.
 
 ===== Costrutti principali
@@ -1069,7 +1096,15 @@ Rappresenta la risposta alla richiesta di un Token.
 
 - *`token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
 
-=== Router dei microservizi
+=== Telemetria
+
+I file dei vari `controller` e `listener` sono dotati di logger zap e di "contatori", oggetti di tipo `metric.Int64Counter`, come variabili globali. Nel costruttore dei `controller` e `listener` quest'ultime variabili vengono inizializzate con la funzione `CounterSetup` fornita dal package `observability`: tale funzione, la cui firma è `CounterSetup(meter *metric.Meter, logger *zap.Logger, counter *metric.Int64Counter, counterMap *sync.Map, name string, options ...metric.Int64CounterOption)` si occupa di prendere il logger del microservizio e la variabile da inizializzare, quindi l'oggetto `metric.Meter`, fornito nel costruttore del `controller` o `listener` e passato a questa funzione, viene sfruttato per creare un oggetto `metric.Int64Counter` che viene assegnato alla variabile `counter` passata come puntatore. Per evitare duplici assegnazioni, che potrebberò modificare il valore reale del contatore, una mappa `sync.Map` viene utilizzata per determinare se un contatore dello stesso tipo era già stato creato e assegnato.
+
+La configurazione di *OpenTelemetry*, sfruttato da *Prometheus* e *Loki*, viene poi realizzata dal metodo `New` dello stesso _package_, che invoca la funzione `setupOtel` atta allo scopo di configurare il servizio.
+
+Successivamente, per incrementare il numero di richieste, queste vengono incrementate dagli _Handler_ dei _controller_ e _listener_ prima di terminare l'esecuzione, sfruttando il metodo `Add` degli oggetti `metric.Int64Counter`.
+
+=== Router dei microservizi <rdm>
 
 //descrizione generale delle classi router
 
