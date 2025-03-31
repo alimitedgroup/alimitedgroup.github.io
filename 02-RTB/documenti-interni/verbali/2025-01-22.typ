@@ -49,7 +49,7 @@ _ALimitedGroup_ ha analizzato le attività svolte nell'ultimo periodo. Dall'anal
 
 - *Analisi dei Requisiti#super[G]*: sono stati completati tutti i casi d'uso non obbligatori e anche quelli relativi alle attività svolte dal Backend#super[G];
 - *Piano di Qualifica#super[G]*: è stato completato il documento, mancano solo le misurazioni di alcune metriche;
-- *Tecnologie e PoC*: è proseguita la realizzazione del PoC#super[G] che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
+- *Tecnologie e PoC#super[G]*: è proseguita la realizzazione del PoC#super[G] che si trova ora ad un buon punto di sviluppo per poter attestare la fattibilità del progetto con le tecnologie da utilizzare;
 - *Norme di Progetto#super[G]*: è stato completata la redazione del documento.
 
 Per maggiori informazioni è consigliata la lettura del *Piano di Progetto#super[G]* relativamente al quinto Sprint#super[G], la cui stesura dovrà avvenire entro la fine del sesto Sprint#super[G].
