@@ -1098,7 +1098,7 @@ Rappresenta la risposta alla richiesta di un Token.
 
 === Telemetria <telemetria>
 
-I file dei vari `controller` e `listener` sono dotati di logger zap e di "contatori", oggetti di tipo `metric.Int64Counter`, come variabili globali. Nel costruttore dei `controller` e `listener` quest'ultime variabili vengono inizializzate con la funzione `CounterSetup` fornita dal package `observability`: tale funzione, la cui firma è `CounterSetup(meter *metric.Meter, logger *zap.Logger, counter *metric.Int64Counter, counterMap *sync.Map, name string, options ...metric.Int64CounterOption)` si occupa di prendere il logger del microservizio e la variabile da inizializzare, quindi l'oggetto `metric.Meter`, fornito nel costruttore del `controller` o `listener` e passato a questa funzione, viene sfruttato per creare un oggetto `metric.Int64Counter` che viene assegnato alla variabile `counter` passata come puntatore. Per evitare duplici assegnazioni, che potrebberò modificare il valore reale del contatore, una mappa `sync.Map` viene utilizzata per determinare se un contatore dello stesso tipo era già stato creato e assegnato.
+I file dei vari `controller` e `listener` sono dotati di logger zap e di "contatori", oggetti di tipo `metric.Int64Counter`, come variabili globali. Nel costruttore dei `controller` e `listener` quest'ultime variabili vengono inizializzate con la funzione `CounterSetup` fornita dal package `observability`: tale funzione, la cui firma è `CounterSetup(meter *metric.Meter, logger *zap.Logger, counter *metric.Int64Counter, counterMap *sync.Map, name string, options ...metric.Int64CounterOption)` si occupa di prendere il logger del microservizio e la variabile da inizializzare, quindi l'oggetto `metric.Meter`, fornito nel costruttore del `controller` o `listener` e passato a questa funzione, viene sfruttato per creare un oggetto `metric.Int64Counter` che viene assegnato alla variabile `counter` passata come puntatore. Per evitare duplici assegnazioni, che potrebbero modificare il valore reale del contatore, una mappa `sync.Map` viene utilizzata per determinare se un contatore dello stesso tipo era già stato creato e assegnato.
 
 La configurazione di *OpenTelemetry*, sfruttato da *Prometheus* e *Loki*, viene poi realizzata dal metodo `New` dello stesso _package_, che invoca la funzione `setupOtel` atta allo scopo di configurare il servizio.
 
@@ -1108,7 +1108,7 @@ Successivamente, per incrementare il numero di richieste, queste vengono increme
 
 //descrizione generale delle classi router
 
-Ogni microservizio fa uso di NATS#super[G] ,un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go*#super[G] non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS#super[G] e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del Controller adibito alla gestione di una determinata richiesta.
+Ogni microservizio fa uso di NATS#super[G] ,un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go*#super[G] non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS#super[G] e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del controller adibito alla gestione di una determinata richiesta.
 
 I vari microservizi utilizzano dunque codice esplicito che esegue questo processo, dalla registrazione del microservizio all'apposito canale di comunicazione NATS#super[G] ,sino a richiamare il giusto metodo del controller che deve gestire una specifica richiesta: la conversione al DTO trasmesso viene effettuata internamente alla funzione richiamata.
 
@@ -1143,13 +1143,13 @@ Può invocare le seguenti funzioni:
 - *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
 - *`Setup(ctx context.Context) error`*: esegue le associazioni _controller_ - _subject_ usando i metodi sopra descritti.
 
-Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS#super[G] sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del repository#super[G] .
+Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS#super[G] sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del _repository_#super[G] .
 
 === Configurazioni dei microservizi
 
 //descrizione generale delle classi config
 
-La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire inserendo variabili di ambiente nel `dockerfile`.
+La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire inserendo variabili di ambiente nel file `compose.yml`.
 
 Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
 
@@ -3023,11 +3023,11 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 *Descrizione degli attributi della struttura:*
 
-- *`transferRepo ITransferRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi ai trasferimenti.
+- *`transferRepo ITransferRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi ai trasferimenti.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il repository#super[G] fornito come parametro.
+- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il _repository_#super[G] fornito come parametro.
 
 - *`SetComplete(transferId model.TransferID) error`*: segna un trasferimento#super[G] come completato. Prende come parametro l'identificativo del trasferimento#super[G] (`transferId`) e restituisce un errore in caso di fallimento.
 
@@ -3039,9 +3039,9 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 - *`GetAllTransfer() []Transfer`*: restituisce una lista di tutti i trasferimenti registrati nel sistema. Restituisce una slice di oggetti `Transfer`.
 
-- *`repoTransferToModelTransfer(transfer model.Transfer) model.Transfer`*: converte un oggetto `Transfer` del repository#super[G] in un oggetto `Transfer` utilizzato nella business logic.
+- *`repoTransferToModelTransfer(transfer model.Transfer) model.Transfer`*: converte un oggetto `Transfer` del _repository_#super[G] in un oggetto `Transfer` utilizzato nella business logic.
 
-- *`repoTransfersToModelTransfers(transfers []model.Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del repository#super[G] in una lista di oggetti `Transfer` utilizzati nella business logic.
+- *`repoTransfersToModelTransfers(transfers []model.Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del _repository_#super[G] in una lista di oggetti `Transfer` utilizzati nella business logic.
 
 ==== IStockRepository <OrderIStockRepository>
 
@@ -3085,11 +3085,11 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 *Descrizione degli attributi della struttura:*
 
-- *`stockRepo IStockRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
+- *`stockRepo IStockRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il repository#super[G] fornito come parametro.
+- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il _repository_#super[G] fornito come parametro.
 
 - *`ApplyStockUpdate(cmd port.ApplyStockUpdateCmd) error`*: applica un aggiornamento dello stock#super[G]. Per ogni merce inclusa nel comando, aggiorna la quantità nel magazzino specificato.
 
@@ -3139,25 +3139,25 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 *Descrizione degli attributi della struttura:*
 
-- *`orderRepo IOrderRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi agli ordini.
+- *`orderRepo IOrderRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi agli ordini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il repository#super[G] fornito come parametro.
+- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il _repository_#super[G] fornito come parametro.
 
-- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine#super[G] specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel repository#super[G]. Restituisce l'ordine aggiornato in formato `Order` e un eventuale errore in caso di fallimento.
+- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine#super[G] specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel _repository_#super[G]. Restituisce l'ordine aggiornato in formato `Order` e un eventuale errore in caso di fallimento.
 
-- *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel repository#super[G]. Restituisce un errore in caso di fallimento.
+- *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel _repository_#super[G]. Restituisce un errore in caso di fallimento.
 
-- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel repository#super[G].
+- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel _repository_#super[G].
 
-- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal repository#super[G]. Converte l'ordine dal formato del repository#super[G] a `Order`. Restituisce un errore in caso di fallimento.
+- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal _repository_#super[G]. Converte l'ordine dal formato del _repository_#super[G] a `Order`. Restituisce un errore in caso di fallimento.
 
-- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel repository#super[G]. Converte gli ordini dal formato del repository#super[G] a `Order`.
+- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel _repository_#super[G]. Converte gli ordini dal formato del _repository_#super[G] a `Order`.
 
-- *`repoOrderToModelOrder(order model.Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del repository#super[G] in un oggetto `Order` utilizzato nella business logic.
+- *`repoOrderToModelOrder(order model.Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del _repository_#super[G] in un oggetto `Order` utilizzato nella business logic.
 
-- *`repoOrdersToModelOrders(orders []model.Order) []mddel.Order`*: funzione di utilità che converte una lista di oggetti `Order` del repository#super[G] in una lista di oggetti `Order` utilizzati nella business logic.
+- *`repoOrdersToModelOrders(orders []model.Order) []mddel.Order`*: funzione di utilità che converte una lista di oggetti `Order` del _repository_#super[G] in una lista di oggetti `Order` utilizzati nella business logic.
 
 ==== NatsStreamAdapter <OrderNatsStreamAdapter>
 
