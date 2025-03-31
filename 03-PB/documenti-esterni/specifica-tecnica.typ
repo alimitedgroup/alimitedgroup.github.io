@@ -14,7 +14,7 @@
       autore: p.matteo,
       verifica: p.marco,
       descr: "Aggiunte informazioni sulle versioni delle componenti utilizzate e aggiunte informazioni sul funzionamento di main e router. Aggionte versioni delle librerie. Aggiunte informazioni sulla telemetria. "
-        + [(@rdm e @main)]
+        + [(@telemetria, @rdm e @main)]
         + ".",
     ),
     (
@@ -1096,7 +1096,7 @@ Rappresenta la risposta alla richiesta di un Token.
 
 - *`token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
 
-=== Telemetria
+=== Telemetria <telemetria>
 
 I file dei vari `controller` e `listener` sono dotati di logger zap e di "contatori", oggetti di tipo `metric.Int64Counter`, come variabili globali. Nel costruttore dei `controller` e `listener` quest'ultime variabili vengono inizializzate con la funzione `CounterSetup` fornita dal package `observability`: tale funzione, la cui firma è `CounterSetup(meter *metric.Meter, logger *zap.Logger, counter *metric.Int64Counter, counterMap *sync.Map, name string, options ...metric.Int64CounterOption)` si occupa di prendere il logger del microservizio e la variabile da inizializzare, quindi l'oggetto `metric.Meter`, fornito nel costruttore del `controller` o `listener` e passato a questa funzione, viene sfruttato per creare un oggetto `metric.Int64Counter` che viene assegnato alla variabile `counter` passata come puntatore. Per evitare duplici assegnazioni, che potrebberò modificare il valore reale del contatore, una mappa `sync.Map` viene utilizzata per determinare se un contatore dello stesso tipo era già stato creato e assegnato.
 
