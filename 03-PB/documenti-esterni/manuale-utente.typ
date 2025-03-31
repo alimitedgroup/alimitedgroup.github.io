@@ -8,7 +8,8 @@
   data: datetime.today(),
   descrizione: "Questo documento contiene le informazioni utili per l'utilizzo del "
     + [_Minimum Viable Product_]
-    + " realizzato da AlimitedGroup",
+    + " realizzato da "
+    + [_ALimitedGroup_],
   responsabile: (p.samuele,),
   verificatore: (p.emanuele, p.matteo),
   stato: [In redazione],
