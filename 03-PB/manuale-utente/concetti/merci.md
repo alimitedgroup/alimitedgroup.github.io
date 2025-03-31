@@ -12,9 +12,9 @@ All'interno di questa sequenza di valori possiamo trovare:
 
 - Il **Nome** della merce;
 
-- I **Metadati** associati alla merce.
+- La **Descrizione** associata alla merce.
 
-Quest'ultimi, all'interno dell'MVP, vengono codificati come stringa tramite lo standard _Unicode UTF-8_; questi metadati sono utili per l'utilizzo corretto dell'MVP realizzato.
+All'interno dell'MVP sono presenti dei metadati extra, quest'ultimi vengono codificati come stringa tramite lo standard _Unicode UTF-8_; questi metadati sono utili per l'utilizzo corretto dell'MVP realizzato.
 Di seguito sono riportati alcuni esempi pratici su alcuni usi utili di questi metadati:
 
 - **Salvare** l'identificatore unico che ha una determinata merce nel sito del fornitore, e da cui devo rifornirmi per aumentare lo _stock_#super[G] nel magazzino;
