@@ -10,6 +10,12 @@
   stato: [Approvato per RTB],
   versioni: (
     (
+      vers: "1.3.0",
+      date: datetime(day: 31, month: 03, year: 2025),
+      autore: p.emanuele,
+      descr: "Aggiornamento Pianificazione nel lungo termine " + [(@plt). ],
+    ),
+    (
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),
       autore: p.sara,
@@ -425,7 +431,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 
 = Pianificazione nel lungo termine <plt>
 
-Come anticipato nella #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[Dichiarazione degli Impegni], Il gruppo prevede di terminare il progetto entro e non oltre il giorno *31 Marzo 2025* con un budget di spesa fissato a *Euro 12.930*.
+Come scritto nella #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[Dichiarazione degli Impegni], il gruppo prevedeva di terminare il progetto entro il giorno *31 Marzo 2025* con un budget di spesa fissato a *Euro 12.930*.
 
 Al momento della candidatura si è teorizzato il seguente prospetto costi:
 
@@ -452,10 +458,10 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
     text(fill: white)[*Verificatore*], [15€/h], [136h], [2.040€],
     text(fill: white)[*Totale*], [-], [*644h*], [*12.930€*],
   ),
-  caption: [Riassunto dei costi previsti derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi previsti alla candidatura],
 )
 \
-In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] viene effettuata una ripartizione del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
 
 #figure(
   table(
@@ -479,10 +485,36 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tu
     text(fill: white)[*Verificatore*], [15€/h], [132h], [1.980€],
     text(fill: white)[*Totale*], [-], [*644h*], [*12.920€*],
   ),
-  caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi ridistribuiti per la RTB],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline#super[G] (RTB)_* entro il *3 febbraio 2025*.
+La revisione per la *_Requirements and Technology Baseline#super[G] (RTB)_* è avvenuta il 21 febbraio 2025.
+
+In seguito, in vista della *_Product Baseline#super[G] (PB)_*, il gruppo ha deciso di ridistribuire nuovamente le ore disponibili per ottimizzare l'allocazione delle risorse in vista delle attività previste. La nuova ripartizione è riportata nella tabella seguente:
+#figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    table.header(
+      text(fill: white)[*Ruolo*],
+      text(fill: white)[*Costo Orario*],
+      text(fill: white)[*Ore*],
+      text(fill: white)[*Costo*],
+    ),
+
+    text(fill: white)[*Responsabile*], [30€/h], [39h], [1.170€],
+    text(fill: white)[*Amministratore*], [20€/h], [77h], [1.540€],
+    text(fill: white)[*Analista*], [25€/h], [83h], [2.075€],
+    text(fill: white)[*Progettista*], [25€/h], [132h], [3.300€],
+    text(fill: white)[*Programmatore*], [15€/h], [181h], [2.715€],
+    text(fill: white)[*Verificatore*], [15€/h], [132h], [1.980€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.780€*],
+  ),
+  caption: [Riassunto dei costi ridistribuiti per la PB],
+)
 
 Seguiranno ora le attività previste per la *_Requirements and Technology Baseline#super[G] (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
