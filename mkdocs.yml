@@ -42,6 +42,8 @@ nav:
       - PUT /api/v1/goods/:good_id: reference/update_good.md
       - POST /api/v1/goods/:good_id/warehouse/:warehouse_id/stock: reference/add_stock.md
       - DELETE /api/v1/goods/:good_id/warehouse/:warehouse_id/stock: reference/remove_stock.md
+      - POST /api/v1/notifications/queries: reference/create_notification_query.md
+      - GET /api/v1/notifications/queries: reference/get_notification_queries.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py
