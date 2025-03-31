@@ -9,11 +9,18 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.3.0",
+      date: datetime(day: 31, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.loris,
+      descr: "Stesura dei test di unità ed integrazione" + [ (@tu e @ti)] + ".",
+    ),
+    (
       vers: "1.2.0",
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
       verifica: p.matteo,
-      descr: "Aggiornamento test di accettazione e di sistema.",
+      descr: "Aggiornamento test di accettazione e di sistema" + [ (@ta e @ts)] + ".",
     ),
     (
       vers: "1.1.0",
@@ -473,7 +480,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 - Tеst#super[G] di Regressione;
 - Tеst#super[G] di Accettazione.
 
-== Tеst di Unità
+== Tеst di Unità <tu>
 
 È possibile eseguire i test#super[G] mediante il comando `go tеst -race ./...`. I test#super[G] vengono eseguiti cartella per cartella: se la cartella non ha test#super[G] la linea di output stampata da `go tеst` inizierà con `?`, mentre se il test#super[G] riesce l'iniziale sarà `ok`.
 
@@ -1895,7 +1902,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
   ),
 )
 
-== Tеst di Integrazione
+== Tеst di Integrazione <ti>
 
 #test-table(
   unit: "I",
@@ -1972,7 +1979,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
 
 #pagebreak()
 
-== Tеst di Sistema
+== Tеst di Sistema <ts>
 
 La vеrifica dei test#super[G] è stata effettuata manualmente. Data la natura del progetto e l'assenza di un _client_ sviluppato, il superamento di alcuni test#super[G] è stato determinato realizzando delle prove locali _ad hoc_ e/o verificate mediante le risposte fornite dal Sistema.
 
@@ -2409,7 +2416,7 @@ La vеrifica dei test#super[G] è stata effettuata manualmente. Data la natura d
 
 _ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#super[G] non rompesse funzionalità#super[G] esistenti: per questo motivo, _ALimitedGroup_ ha strutturato il _repository_#super[G] Github relativo all'_MVP_ in maniera tale che questo ripeta, al caricamento di nuovo codice, l'esecuzione di tutti i test#super[G] di unità e di integrazione, bloccando il passaggio del codice al ramo principale qualora un test#super[G] fallisse.
 
-== Tеst di Accettazione
+== Tеst di Accettazione <ta>
 
 I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`.
 
