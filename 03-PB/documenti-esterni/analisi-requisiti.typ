@@ -4172,11 +4172,11 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da _Machine Learning_],
     [@UC38],
 
-    [R-67-F-Ob],
+    [R-67-F-De],
     [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di _Machine Learning_, l'ID della notifica],
     [@UC34 \ @UC36],
 
-    [R-68-F-Ob],
+    [R-68-F-De],
     [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un _Machine Learning_, lo stato della notifica (confermato, da confermare, rifiutato)],
     [@UC34 \ @UC35],
 
@@ -4819,10 +4819,10 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
     [R-66-F-De],
     [@UC38],
 
-    [R-67-F-Ob],
+    [R-67-F-De],
     [@UC34 \ @UC36],
 
-    [R-68-F-Ob],
+    [R-68-F-De],
     [@UC34 \ @UC35],
 
     [R-69-F-Ob],
@@ -4863,7 +4863,7 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
     [R-84-F-De],
     [@UC46],
 
-    [R-85-F-Ob],
+    [R-85-F-De],
     [@UC47],
 
     [R-86-F-Ob],
@@ -5108,7 +5108,7 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
       [#text(fill: white)[*Opzionali*]],
     ),
 
-    [Funzionali], [167], [25], [0],
+    [Funzionali], [164], [28], [0],
     [Qualità], [10], [1], [0],
     [Vincolo], [6], [0], [0],
   ),
