@@ -1924,7 +1924,7 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestStockUpdateReceiver`, verificare che `StockUpdateReceiver` gestisca richieste di aggiornamento stock di merce],
+      desc: [Implementato dalla funzione `TestStockUpdateReceiver`, verificare che `StockUpdateReceiver` gestisca richieste di aggiornamento stock#super[G] di merce],
       va: [NATS segnala il messaggio come ricevuto.],
       vr: "",
       st: "S",
@@ -1978,13 +1978,13 @@ Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*N
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestGetCurrentQuantityByGoodID`, verificare che `Business` gestisca l'ottenimento dello stock di una merce],
+      desc: [Implementato dalla funzione `TestGetCurrentQuantityByGoodID`, verificare che `Business` gestisca l'ottenimento dello stock#super[G] di una merce],
       va: [Il metodo invocato `GetCurrentQuantityByGoodID` ritorna una `GetRuleResultResponse` con memorizzato l'id 1.],
       vr: "",
       st: "S",
     ),
     (
-      desc: [Implementato dalla funzione `TestRecordStockUpdate`, verificare che `Business` gestisca la modifica dello stock di una merce],
+      desc: [Implementato dalla funzione `TestRecordStockUpdate`, verificare che `Business` gestisca la modifica dello stock#super[G] di una merce],
       va: [Il metodo invocato `RecordStockUpdate` ritorna `nil`.],
       vr: "",
       st: "S",
@@ -2633,7 +2633,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento],
-      va: [Eseguire lo script `create_notification_query.sh`: lo script procederà a creare un prodotto e aggiungerne 6 unità, quindi procederà alla creazione della soglia di allerta, fissata a 100 unità. Lo script metterà si metterà dunque in ascolto nel canale delle notifiche: verificare che questo si inizi a popolare. Attenzione: per questo test è necessario avere nats installato nel proprio sistema e correttamente configurato tra i percorsi accessibili dalla linea di comando.],
+      va: [Eseguire lo script `create_notification_query.sh`: lo script procederà a creare un prodotto e aggiungerne 6 unità, quindi procederà alla creazione della soglia di allerta, fissata a 100 unità. Lo script metterà si metterà dunque in ascolto nel canale delle notifiche: verificare che questo si inizi a popolare. Attenzione: per questo test#super[G] è necessario avere nats#super[G] installato nel proprio sistema e correttamente configurato tra i percorsi accessibili dalla linea di comando.],
       vr: "",
       st: "I",
     ),
