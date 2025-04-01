@@ -965,15 +965,15 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
 
-Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato#super[G] sino alla _Requirements and Technology Baseline#super[G] (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato#super[G] sino alla _Product Baseline#super[G] (PB)_.
 
 == MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
-Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
-Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].
-Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
+Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato, fino allo _sprint 6_.\
+Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato, in quanto, dopo la fine della sessione d'esame il gruppo _ALimitedGroup_ ha potuto dedicarsi interamente al progetto incrementando notevolmente le ore di lavoro come riportato nel #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].\
+È possibile notare che l'_Earned Value_ (EV) e il _Planned Value_ (PV) per lo più coincidono, quindi la programmazione del lavoro è stata efficace e conforme.
 
 #pagebreak()
 == MPC03 e MPC07: _Actual Cost_ e _Estimate To Complete_
