@@ -2538,7 +2538,7 @@ _ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#su
 
 == Tеst di Accettazione <ta>
 
-I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`.
+I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test.
 
 #test-table(
   unit: "A",
@@ -2558,7 +2558,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
         - `"name": "order-1"`;
         - `"full_name": "John Doe"`;
         - `"address: "via roma 12 35012"`;
-        - `"goods":#super[G] { "hat-1": 7},`;
+        - `"gоods": { "hat-1": 7},`;
         - `"reservations": ["campo variabile ad ogni esecuzione", "campo variabile ad ogni esecuzione"]`
       ],
       vr: "",
@@ -2572,7 +2572,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere merci al Sistema],
-      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Create good#super[G] hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
+      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Create gоod hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
         - `"name": "hat"`;
         - `"description": "blue hat, version 1"`;
         - `"id": "hat-1"`;
@@ -2584,7 +2584,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di modificare informazioni delle merci del Sistema],
-      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Update good#super[G] hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
+      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Update gоod hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
         - `"name": "hat"`;
         - `"description": "blue hat, version 2"`;
         - `"id": "hat-1"`;
@@ -2626,7 +2626,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
         - `"transfer_id": "13be693d-c6b5-45de-b2df-20b1024b39b7"`;
         - `"sender_id": "1"`;
         - `"receiver_id": "2"`;
-        - `"goods":#super[G] {"hat-1": 5}`.
+        - `"gоods": {"hat-1": 5}`.
       ],
       vr: "",
       st: "I",
@@ -2662,7 +2662,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
-      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni consultare il Manuale Utente#super[G].],
+      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni consultare il Manuale Utente#super[G].],
       vr: "",
       st: "I",
     ),
@@ -2681,7 +2681,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     (
       desc: [Verificare che il prodotto gestisca adeguatamente i conflitti tra ordini],
       va: [Eseguire il file `create_multiple_order.sh` con il comando `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"`: lo script eseguirà l'inserimento di 6 unità della merce con id `hat-1` nel magazzino con id 1 e 8 nel magazzino con id 2, 6 unità della merce con id `hat-2` nel magazzino con id 1 e 5 nel magazzino con id 2. Quindi procede a realizzare 3 ordini, tutti con 13 unità di `hat-1` e 11 di `hat-2`. Verificare che nella prima risposta JSON appaiano tre ordini:
-        - quello con id `test-order-1` ha il valore `"status": "Filled"`;
+        - quello con id `test-order-1` ha il valore `"status": "Created"`;
         - quello con id `test-order-2` ha il valore `"status": "Cancelled"`;
         - quello con id `test-order-3` ha il valore `"status": "Cancelled"`.
         Il risultato potrebbe leggermente variare nell'ordine che viene completato, ma solo uno risulterà completato.
