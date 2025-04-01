@@ -190,7 +190,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*fx*], [1.23.0], [*Fx* è un _framework_ per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+    [*fx*], [1.23.0], [*Fx* è un _framework_ per la _dependency injеction_ utilizzabile con il linguaggio *Go* sviluppato da _Uber_\
       Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.],
     [*gin*], [1.10.0], [_Framework_ che permette di gestire gli _endpoint_ e non solo. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/gin-gonic/gin")[pagina Go del progetto]]
   ),
@@ -267,7 +267,7 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*InfluxDB*], [1.11], [Si tratta di una base di dati specificatamente progettata per la memorizzazione e l'ottenimento di serie temporali.],
+    [*InfluxDB*], [2.7.11], [Si tratta di una base di dati specificatamente progettata per la memorizzazione e l'ottenimento di serie temporali.],
   ),
   caption: [Tecnologie per la gestione di dati temporali],
 )
