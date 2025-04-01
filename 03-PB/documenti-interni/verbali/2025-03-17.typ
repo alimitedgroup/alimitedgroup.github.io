@@ -58,7 +58,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Specifica Tecnica#super[G]*]
 
-- Continuare la progettazione e descrizione per il microservizio Order/Transfer #super[G] entro il giorno *25 Marzo 2025*
+- Continuare la progettazione e descrizione per il microservizio _Order/Transfer_ entro il giorno *25 Marzo 2025*
 
 
 #align(center)[*Piano di Progetto#super[G]*]
