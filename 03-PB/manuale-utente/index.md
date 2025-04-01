@@ -1,7 +1,5 @@
 # Introduzione <introduzione>
 
-## Scopo del _software_
-
 ## Scopo del documento
 
 Lo scopo del **Manuale Utente#super[G]** è quello di introdurre il lettore al Sistema sviluppato da _ALimitedGroup_ per il

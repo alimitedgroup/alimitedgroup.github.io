@@ -5,6 +5,15 @@ site_dir: dist/docs
 
 nav:
   - Introduzione: index.md
+  - Concetti:
+      - Tipi di utenti: concetti/tipi-utenti.md
+      - Autenticazione: concetti/autenticazione.md
+      - Merce: concetti/merci.md
+      - Ordine: concetti/ordini.md
+      - Riassortimento: concetti/riassortimenti.md
+      - Trasferimento: concetti/trasferimenti.md
+  - Test:
+      - Backup: operazione/Test.md
   - Installazione:
       - Requisiti:
           - Requisiti Hardware: installazione/requisiti/requisiti-hw.md
@@ -14,15 +23,6 @@ nav:
           - Personalizzare la configurazione: installazione/preparazione-del-sistema/02-configurare-ms.md
           - Avviare il Sistema: installazione/preparazione-del-sistema/03-avvio-sistema.md
     # Forse: aggiungere "Installazione con Kubernetes" 👀
-  - Test:
-      - Backup: operazione/Test.md
-  - Concetti:
-      - Tipi di utenti: concetti/tipi-utenti.md
-      - Autenticazione: concetti/autenticazione.md
-      - Merce: concetti/merci.md
-      - Ordine: concetti/ordini.md
-      - Riassortimento: concetti/riassortimenti.md
-      - Trasferimento: concetti/trasferimenti.md
   - Guide:
       - Effettuare il login: guide/login.md
       - Aggiungere una merce: guide/aggiunta-merce.md

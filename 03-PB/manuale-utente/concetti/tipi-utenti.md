@@ -105,6 +105,7 @@ L'**Admin Globale** ha la responsabilità di supervisionare tutti i magazzini pr
 
 ## Riepilogo degli Utenti presenti
 <!--raw-typst
+#show figure: set block(breakable: true)
 #figure(
   table(
     columns: (1fr, 1.75fr, 3fr),
