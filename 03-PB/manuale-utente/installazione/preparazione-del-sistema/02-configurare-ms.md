@@ -4,29 +4,29 @@
 
 Il Sistema è stato realizzato per poterne configurare a proprio piacimento i servizi in esecuzione in una stessa macchina.
 
-Per iniziare aprire il file `compose.yml`, file `yaml` contenente i servizi che saranno avviati mediante Docker. I seguenti servizi sono obbligatori per l'esecuzione di qualsiasi altro microservizio:
+Per iniziare aprire il file `compose.yml`, file `yaml` contenente i servizi che saranno avviati mediante Docker.#super[G] I seguenti servizi sono obbligatori per l'esecuzione di qualsiasi altro microservizio:
 
 - **collector**;
 - **loki**;
 - **prometheus**.
 
-Questi tre servizi offrono le funzionalità telemetriche e non possono perciò essere rimossi.
+Questi tre servizi offrono le funzionalità#super[G] telemetriche e non possono perciò essere rimossi.
 
-Il servizio `nats` avvia un'istanza di un server NATS: se rimosso è bene eliminare tale servizio dal campo `depends-on` presente in alcuni altri servizi.
+Il servizio `nats`#super[G] avvia un'istanza di un server NATS:#super[G] se rimosso è bene eliminare tale servizio dal campo `depends-on` presente in alcuni altri servizi.
 
 I servizi che possono essere aggiunti e rimossi a piacimento sono:
 
 - **api-gateway**: servizio che avvia un'istanza del microservizio omonimo;
-- **warehouse-1**: servizio che avvia un'istanza del microservizio warehouse. Dal momento che il nome del servizio è non vincolante, il nome può essere cambiato in base alle proprie esigenze;
+- **warehouse-1**: servizio che avvia un'istanza del microservizio warehouse.#super[G] Dal momento che il nome del servizio è non vincolante, il nome può essere cambiato in base alle proprie esigenze;
 - **catalog**: servizio che avvia un'istanza del microservizio omonimo;
 - **order**: servizio che avvia un'istanza del microservizio omonimo, che gestisce gli ordini e i trasferimenti;
 - **authenticator**: servizio che avvia un'istanza del microservizio omonimo;
 - **notification**: servizio che avvia un'istanza del microservizio omonimo;
-- **grafana**: servizio per visualizzare la telemetria con una comoda _Graphic User Interface_.
+- **grafana#super[G]**: servizio per visualizzare la telemetria con una comoda _Graphic User Interface_.
 
 Tutti i servizi appena elencati possiedono tre variabili d'ambiente configurabili in base alle proprie esigenze, presenti sotto la voce `environment`:
 
-- **ENV_BROKER_URL**: l'indirizzo di un'istanza NATS (default: `nats://nats:4222`);
+- **ENV_BROKER_URL**: l'indirizzo di un'istanza NATS#super[G] (default: `nats://nats:4222`);
 - **ENV_SERVICE_ID**: l'identificativo del servizio;
 - **OTLP_URL**: l'indirizzo di un'istanza di collector (default: `collector:4317`);
 
@@ -54,7 +54,7 @@ Nel caso un servizio richiederà ulteriori configurazioni, questo sarà ora desc
 
 Possiede queste ulteriori variabili d'ambiente:
 
-- **ENV_API_PORT**: porta API (default: `8080`);
+- **ENV_API_PORT**: porta API#super[G] (default: `8080`);
 - **HTTP_HOST**: host del sistema (default: `0.0.0.0`);
 - **HTTP_PORT**: porta http (default: `8080`).
 
@@ -63,11 +63,11 @@ Possiede queste ulteriori variabili d'ambiente:
 Possiede queste ulteriori variabili d'ambiente:
 
 - DOCKER_INFLUXDB_INIT_MODE: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/) (default: `setup`);
-- DOCKER_INFLUXDB_INIT_USERNAME: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/)  (default: `admin`);
-- DOCKER_INFLUXDB_INIT_PASSWORD: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/)  (default: `admin1234`);
-- DOCKER_INFLUXDB_INIT_ORG: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/)  (default: `my-org`);
-- DOCKER_INFLUXDB_INIT_BUCKET: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/)  (default: `stockdb`);
-- DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/)  (default: `my-token`).
+- DOCKER_INFLUXDB_INIT_USERNAME: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/) (default: `admin`);
+- DOCKER_INFLUXDB_INIT_PASSWORD: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/) (default: `admin1234`);
+- DOCKER_INFLUXDB_INIT_ORG: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/) (default: `my-org`);
+- DOCKER_INFLUXDB_INIT_BUCKET: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/) (default: `stockdb`);
+- DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: vedere la [documentazione ufficiale](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/) (default: `my-token`).
 
 ## Notifications
 

@@ -10,12 +10,12 @@ Anzitutto procedere al reperimento dell'ultima _release_ del Software disponibil
 
 #figure(
     grid(
-        columns: 1, 
+        columns: 1,
         gutter: 2mm,
         image("./../../assets/Release.png", width: 70%),
     ),
     caption: "Selezione della sezione Release"
-) 
+)
 #pagebreak()
 -->
 
@@ -29,12 +29,12 @@ Quindi selezionare la release di interesse (nel momento in cui questo manuale vi
 
 #figure(
     grid(
-        columns: 1, 
+        columns: 1,
         gutter: 2mm,
         image("./../../assets/sel_ver.png", width: 90%, height: 20%),
     ),
     caption: "Selezione della Release"
-) 
+)
 -->
 
 E procede a scaricare l'archivio compresso contenente il codice sorgente:
@@ -47,7 +47,7 @@ E procede a scaricare l'archivio compresso contenente il codice sorgente:
 
 #figure(
     grid(
-        columns: 1, 
+        columns: 1,
         gutter: 2mm,
         image("./../../assets/download.png", width: 90%, height: 20%),
     ),

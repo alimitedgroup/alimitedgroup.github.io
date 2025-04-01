@@ -33,7 +33,7 @@ nav:
       - Impostare una soglia: guide/soglia.md
       - Modificare una soglia: guide/soglia_mod.md
       - Eliminare una soglia: guide/elimina_soglia.md
-      - Ricevere le notifiche: notifiche.md
+      - Ricevere le notifiche: guide/notifiche.md
   - Telemetria:
       - Configurazione di Grafana: telemetria/config.md
       - Importare una dashboard: telemetria/dashboard.md

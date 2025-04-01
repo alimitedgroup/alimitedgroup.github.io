@@ -8,7 +8,7 @@ Una volta configurato il sistema l'avvio risulta essere molto semplice.
 
 ```just up```
 
-o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker**:
+o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker#super[G]**: 
 
 ```docker compose up -d --build```
 
@@ -28,7 +28,7 @@ Per arrestare i servizi avviati è possibile eseguire il comando:
 
 `just down`
 
-o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker**:
+o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker#super[G]**: 
 
 `docker compose down`
 
@@ -38,8 +38,8 @@ A sistema avviato, eseguire:
 
 `just reset`
 
-o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker**:
+o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker#super[G]**: 
 
-`docker compose down -v --remove-orphans && docker compose up -d --build`
+`docker compose down -v --remove-orphans && docker#super[G] compose up -d --build`
 
 I vari servizi saranno spenti, ripristinati e riavviati.

@@ -1,47 +1,47 @@
-La realizzazione del sistema è proceduta di pari passo con la realizzazione e l'esecuzione di test. Qui sarà brevemente spiegato come eseguire tali test.
+La realizzazione del sistema è proceduta di pari passo con la realizzazione e l'esecuzione di test.#super[G] Qui sarà brevemente spiegato come eseguire tali test.#super[G] 
 
 Per informazioni approfondite
 
-# Esecuzione dei test di unità ed integrazione
+# Esecuzione dei test#super[G] di unità ed integrazione
 
-Per eseguire i test di unità ed integrazione è sufficiente aprire un prompt dei comandi (o _shell_) nella radice dell'installazione ed eseguire questi due comandi:
+Per eseguire i test#super[G] di unità ed integrazione è sufficiente aprire un prompt#super[G] dei comandi (o _shell_) nella radice dell'installazione ed eseguire questi due comandi:
 
 `go generate ./...`
-`go test -race -covermode atomic ./...`
+`go test#super[G] -race -covermode atomic ./...`
 
 L'output sarà simile al seguente:
 
 ```
-?       github.com/alimitedgroup/MVP/common     [no test files]
-        github.com/alimitedgroup/MVP/common/dto         coverage: 0.0% of statements
-?       github.com/alimitedgroup/MVP/common/dto/request [no test files]
-?       github.com/alimitedgroup/MVP/common/dto/response        [no test files]
-?       github.com/alimitedgroup/MVP/common/lib [no test files]
-        github.com/alimitedgroup/MVP/common/lib/broker          coverage: 0.0% of statements
-        github.com/alimitedgroup/MVP/common/lib/observability           coverage: 0.0% of statements
-?       github.com/alimitedgroup/MVP/common/stream      [no test files]
-        github.com/alimitedgroup/MVP/srv/api_gateway            coverage: 0.0% of statements
-ok      github.com/alimitedgroup/MVP/srv/api_gateway/adapterin
+? github.com/alimitedgroup/MVP/common [no test#super[G] files]
+        github.com/alimitedgroup/MVP/common/dto coverage: 0.0% of statements
+? github.com/alimitedgroup/MVP/common/dto/request [no test#super[G] files]
+? github.com/alimitedgroup/MVP/common/dto/response [no test#super[G] files]
+? github.com/alimitedgroup/MVP/common/lib [no test#super[G] files]
+        github.com/alimitedgroup/MVP/common/lib/broker coverage: 0.0% of statements
+        github.com/alimitedgroup/MVP/common/lib/observability coverage: 0.0% of statements
+? github.com/alimitedgroup/MVP/common/stream [no test#super[G] files]
+        github.com/alimitedgroup/MVP/srv/api_gateway coverage: 0.0% of statements
+ok github.com/alimitedgroup/MVP/srv/api_gateway/adapterin
 
 [...]
 
-ok      github.com/alimitedgroup/MVP/srv/warehouse/adapter/sender       1.219s  coverage: 92.6% of statements
-?       github.com/alimitedgroup/MVP/srv/warehouse/adapter/stream       [no test files]
-ok      github.com/alimitedgroup/MVP/srv/warehouse/business     1.158s  coverage: 77.4% of statements
-?       github.com/alimitedgroup/MVP/srv/warehouse/business/model       [no test files]
-?       github.com/alimitedgroup/MVP/srv/warehouse/business/port        [no test files]
-        github.com/alimitedgroup/MVP/srv/warehouse/config               coverage: 0.0% of statements
+ok github.com/alimitedgroup/MVP/srv/warehouse/adapter/sender 1.219s coverage: 92.6% of statements
+? github.com/alimitedgroup/MVP/srv/warehouse/adapter/stream [no test#super[G] files]
+ok github.com/alimitedgroup/MVP/srv/warehouse/business 1.158s coverage: 77.4% of statements
+? github.com/alimitedgroup/MVP/srv/warehouse/business/model [no test#super[G] files]
+? github.com/alimitedgroup/MVP/srv/warehouse/business/port [no test#super[G] files]
+        github.com/alimitedgroup/MVP/srv/warehouse/config coverage: 0.0% of statements
 ```
 
 Dove il valore iniziale di ogni riga indica:
 
-- `?`: nella cartella non sono presenti test;
-- `ok`: i test nella cartella che segue sono stati superati.
+- `?`: nella cartella non sono presenti test#super[G]; 
+- `ok`: i test#super[G] nella cartella che segue sono stati superati.
 
-Un output non simile a questo indica il fallimento di uno dei test presenti.
+Un output non simile a questo indica il fallimento di uno dei test#super[G] presenti.
 
-# Esecuzione dei test di accettazione
+# Esecuzione dei test#super[G] di accettazione
 
-I test di accettazione sfruttano `curl`, `nats` e `jq` per poter essere eseguiti.
+I test#super[G] di accettazione sfruttano `curl`, `nats`#super[G] e `jq` per poter essere eseguiti.
 
-I test sono disponibili all'interno della cartella `tests` nella radice dell'installazione: è sufficiente aprire un prompt dei comandi (o _shell_) in questa cartella ed eseguire gli script.
+I test#super[G] sono disponibili all'interno della cartella `tests` nella radice dell'installazione: è sufficiente aprire un prompt#super[G] dei comandi (o _shell_) in questa cartella ed eseguire gli script.
