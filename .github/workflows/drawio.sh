@@ -35,3 +35,6 @@ do
         rm "$OUTPUT_FILE"
     done
 done
+
+echo "Outputs:"
+ls -l $OUTPUT_DIR/*.svg
