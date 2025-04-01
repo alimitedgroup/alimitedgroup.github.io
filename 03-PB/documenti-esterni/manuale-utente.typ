@@ -107,7 +107,12 @@
     )
   cmarker.render(
     content,
-    scope: (image: (path, alt: none) => align(center, image(basename + "/" + path, alt: alt, height: 30%))),
+    scope: (
+      image: (path, width: 50%, height: 30%, alt: none) => align(
+        center,
+        image(basename + "/" + path, alt: alt, width: width, height: height, fit: "contain"),
+      ),
+    ),
     h1-level: level,
   )
 }

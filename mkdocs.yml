@@ -14,9 +14,8 @@ nav:
           - Personalizzare la configurazione: installazione/preparazione-del-sistema/02-configurare-ms.md
           - Avviare il Sistema: installazione/preparazione-del-sistema/03-avvio-sistema.md
     # Forse: aggiungere "Installazione con Kubernetes" 👀
-  - Operazione:
-      - Backup: operazione/backup.md
-  - Quickstart: quickstart.md # tutorial, per iniziare in 5 minuti ad usare il software
+  - Test:
+      - Backup: operazione/Test.md
   - Concetti:
       - Tipi di utenti: concetti/tipi-utenti.md
       - Autenticazione: concetti/autenticazione.md
@@ -25,9 +24,19 @@ nav:
       - Riassortimento: concetti/riassortimenti.md
       - Trasferimento: concetti/trasferimenti.md
   - Guide:
-      - Registrare un nuovo utente: guide/registrazione.md
       - Effettuare il login: guide/login.md
       - Aggiungere una merce: guide/aggiunta-merce.md
+      - Aggiungere stock di una merce: guide/aggiunta-stock.md
+      - Rimuovere stock di merce: guide/rimozione-stock.md
+      - Effettuare un ordine: guide/ordine.md
+      - Effettuare un trasferimento: guide/trasferimento.md
+      - Impostare una soglia: guide/soglia.md
+      - Modificare una soglia: guide/soglia_mod.md
+      - Eliminare una soglia: guide/elimina_soglia.md
+      - Ricevere le notifiche: notifiche.md
+  - Telemetria:
+      - Configurazione di Grafana: telemetria/config.md
+      - Importare una dashboard: telemetria/dashboard.md
   - Riferimento API:
       - GET /api/v1/ping: reference/ping.md
       - POST /api/v1/login: reference/login.md

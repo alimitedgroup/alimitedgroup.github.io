@@ -13,11 +13,10 @@ Per facilitare l'avvio del Sistema è possibile utilizzare l'applicativo **Just*
 Il suo utilizzo resta tuttavia completamente facoltativo in quanto è pur sempre possibile inserire manualmente i comandi.
 I comandi che **Just** esegue sono reperibili nel file `JustFile`.
 
-Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con le versioni utilizzate da _ALimitedGroup_:
+La maggior parte di quanto necessario per compilare e avviare il Sistema viene automaticamento eseguito da `Docker`. Per eseguire tutte le operazioni possibili è dunque necessario avere un'installazione funzionante dei seguenti applicativi:
 
 <!--typst-begin-exclude-->
   - `Docker Engine`, con versione `28.0.1`
-  - `Go (compilatore)`, con versione `1.24.0`
   - `Just`, con versione `1.39.0`
   - `NATS`, con versione `2.10.25`
 <!--typst-end-exclude-->
@@ -29,7 +28,6 @@ Di seguito saranno comunque esposti tutti i Software utilizzati dal Sistema con 
     "Software", "Versione",
     "Docker Engine","28.0.1",
     "Just","1.39.0",
-    "Go (compilatore)","1.24.0",
     "NATS","2.10.25",
   ),
   caption: [Elenco dei _Software_ utilizzati e loro versioni]
