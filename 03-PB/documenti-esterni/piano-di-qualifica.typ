@@ -2538,7 +2538,7 @@ _ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#su
 
 == Tеst di Accettazione <ta>
 
-I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test.#super[G] 
+I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test#super[G].
 
 #test-table(
   unit: "A",
