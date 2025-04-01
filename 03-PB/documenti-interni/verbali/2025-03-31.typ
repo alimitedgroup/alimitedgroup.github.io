@@ -62,7 +62,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 #align(center)[*Piano di Progetto#super[G]*]
 
 - Aggiornare il Piano di Progetto#super[G] con le informazioni per il nono Sprint#super[G] entro il giorno *7 Aprile 2025*;
-- Aggiornare la pianificazione a lungo termine entro il giorno *3 Aprile 2025*
+- Aggiornare la pianificazione a lungo termine entro il giorno *3 Aprile 2025*.
 
 #align(center)[*Piano di Qualifica#super[G]*]
 
