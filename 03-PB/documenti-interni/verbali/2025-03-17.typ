@@ -54,7 +54,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 - Integrare la sezione "Sviluppo" (Sezione 2.2 delle *Norme di Progetto#super[G] ver. 1.1.0*) con le informazioni aggiornate in merito alla Codifica entro il giorno *23 Marzo 2025*.
 
 #align(center)[*Manuale Utente#super[G]*]
-- Continuare redazione del Manuale Utente#super[G], sezione Introduzione, Requisiti, Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti entro il giorno *25 Marzo 2025*
+- Continuare redazione del Manuale Utente#super[G], sezione "Introduzione", "Requisiti", "Tipi di Utenti", "Ordini", "Trasferimenti" e "Riassortimenti" entro il giorno *25 Marzo 2025*.
 
 #align(center)[*Specifica Tecnica#super[G]*]
 
