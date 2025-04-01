@@ -51,7 +51,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Manuale Utente#super[G]*]
 - Aggiunta informazioni per utilizzo dello _script_ con comandi _curl_ per realizzare i test#super[G] entro il giorno *3 Aprile 2025*;
-- Aggiungere informazioni sull'uso di Grafana#super[G] entro il giorno *4 Aprile 2025*
+- Aggiungere informazioni sull'uso di Grafana#super[G] entro il giorno *4 Aprile 2025*.
 
 #align(center)[*Specifica Tecnica#super[G]*]
 
