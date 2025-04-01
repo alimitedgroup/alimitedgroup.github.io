@@ -73,7 +73,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 - Continuare la codifica del microservizio *_Notification_* entro il giorno *25 Marzo 2025*;
 - Aggiornare il microservizio *_Api Gateway_* per supportare i nuovi microservizi entro il giorno *25 Marzo 2025*;
-- Iniziare a implementare un client per le richieste http entro il giorno *25 Marzo 2025*
+- Iniziare a implementare un _client_ per le richieste http entro il giorno *25 Marzo 2025*.
 
 
 == Assegnazione prevista dei ruoli sino al 25-03-2025
