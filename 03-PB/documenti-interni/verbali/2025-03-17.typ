@@ -44,7 +44,7 @@
 
 == Aggiornamenti sui lavori in corso
 
-_ALimitedGroup_ ha verificato che la settimana trascorsa non è stato possibile terminare la realizzazione del microservizio Api Gateway e Notification.\
+_ALimitedGroup_ ha verificato che la settimana trascorsa non è stato possibile terminare la realizzazione del microservizio _Api Gateway_ e _Notification_.\
 Tutte le altre attività previste sono state completate.
 
 Di seguito un'analisi approfondita del lavoro da completare.
