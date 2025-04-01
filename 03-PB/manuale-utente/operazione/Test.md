@@ -1,6 +1,6 @@
-La realizzazione del sistema è proceduta di pari passo con la realizzazione e l'esecuzione di test.#super[G] Qui sarà brevemente spiegato come eseguire tali test.#super[G] 
+La realizzazione del sistema è proceduta di pari passo con la realizzazione e l'esecuzione di test#super[G]. Qui sarà brevemente spiegato come eseguire tali test#super[G].
 
-Per informazioni approfondite
+Per informazioni approfondite si consiglia la lettura del [**Piano di Qualifica v.2.0.0**](https://alimitedgroup.github.io/PQ%20v2.0.0.pdf).
 
 # Esecuzione dei test#super[G] di unità ed integrazione
 
@@ -35,7 +35,7 @@ ok github.com/alimitedgroup/MVP/srv/warehouse/business 1.158s coverage: 77.4% of
 
 Dove il valore iniziale di ogni riga indica:
 
-- `?`: nella cartella non sono presenti test#super[G]; 
+- `?`: nella cartella non sono presenti test#super[G];
 - `ok`: i test#super[G] nella cartella che segue sono stati superati.
 
 Un output non simile a questo indica il fallimento di uno dei test#super[G] presenti.
