@@ -26,6 +26,7 @@
     p.loris,
     p.marco,
     p.matteo,
+    p.sara,
   ),
   odg: [Diciassettesima riunione di _ALimitedGroup_: viene fatto il punto della situazione e stabilito quanto da fare per il periodo successivo],
   body,
@@ -33,7 +34,7 @@
 
 = Informazioni generali
 
-#inizio-verbale-interno([*virtuale*], [*25 Marzo 2025*], [*14.15*], [*15.15*])
+#inizio-verbale-interno([*virtuale*], [*31 Marzo 2025*], [*14.15*], [*15.15*])
 
 + Aggiornamenti sui lavori in corso
 + Decisioni relative alle attività del prossimo periodo
