@@ -75,7 +75,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Programmazione*]
 
-- Completare la codifica dei test#super[G] del microservizio *Notification* entro il giorno *4 Aprile 2025*
+- Completare la codifica dei test#super[G] del microservizio *_Notification_* entro il giorno *4 Aprile 2025*;
 - Realizzare test#super[G] automatici con curl per futuri test#super[G] di accettazione entro il giorno *3 Aprile 2025*
 
 
