@@ -66,7 +66,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Piano di Qualifica#super[G]*]
 
-- Aggiungere le nuove misurazioni nel Piano di Qualifica#super[G] entro il giorno *4 Aprile 2025*
+- Aggiungere le nuove misurazioni nel Piano di Qualifica#super[G] entro il giorno *4 Aprile 2025*;
 - Aggiungere informazioni sui test#super[G] del microservizio _Notification_ entro il giorno *4 Aprile 2025*;
 - Aggiungere informazioni sulla modalità di esecuzione dei test#super[G] con _curl_ entro il giorno *3 Aprile 2025*.
 
