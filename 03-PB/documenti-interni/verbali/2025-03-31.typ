@@ -71,7 +71,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 - Aggiungere informazioni sulla modalità di esecuzione dei test#super[G] con curl entro il giorno *3 Aprile 2025*
 
 #align(center)[*Norme di Progetto#super[G]*]
-- Aggiornare misurazioni entro il giorno *4 Aprile 2025*
+- Aggiornare misurazioni entro il giorno *4 Aprile 2025*.
 
 #align(center)[*Programmazione*]
 
