@@ -63,7 +63,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Piano di Progetto#super[G]*]
 
-- Proseguire redazione Piano di Progetto#super[G] con le informazioni per l'ottavo Sprint#super[G] entro il giorno *31 Marzo 2025*
+- Proseguire redazione Piano di Progetto#super[G] con le informazioni per l'ottavo Sprint#super[G] entro il giorno *31 Marzo 2025*.
 
 #align(center)[*Piano di Qualifica#super[G]*]
 
