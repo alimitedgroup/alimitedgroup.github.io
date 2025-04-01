@@ -67,7 +67,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Piano di Qualifica#super[G]*]
 
-- Iniziare a trascrivere i test#super[G] eseguiti nel Piano di Qualifica#super[G] entro il giorno *25 Marzo 2025*
+- Iniziare a trascrivere i test#super[G] eseguiti nel Piano di Qualifica#super[G] entro il giorno *25 Marzo 2025*.
 
 #align(center)[*Programmazione*]
 
