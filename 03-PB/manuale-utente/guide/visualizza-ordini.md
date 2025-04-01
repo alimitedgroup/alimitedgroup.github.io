@@ -1,0 +1,22 @@
+# Visualizzare gli ordini eseguiti
+
+Il Sistema permette di ottenere una lista degli ordini eseguiti.
+
+Anzitutto è necessario ottenere un token per il ruolo di **Admin Globale**: per maggiori informazioni vedere la Sezione dedicata al login.
+
+La guida considererà ottenuto questo token e salvato in una variabile `GA_TOKEN`.
+
+Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme alla richiesta con il seguente comando:
+
+`GA_PARAMS=(-sS -H "Authorization: Bearer $GA_TOKEN" -H "Content-Type: application/json")`
+
+È possibile quindi ottenere la lista degli ordini eseguendo il comando seguente:
+
+`curl "${C_PARAMS[@]}" -X GET "$BASE/orders"`.
+
+Si noti che gli ordini possono avere quattro stati:
+
+- **Created**: ordine creato, in attesa di iniziare le _reservation_;
+- **Filled**: tutte le _reservation_ sono riuscite, è in corso la rimozione degli _stock_;
+- **Completed**: ordine completato;
+- **Cancelled**: una o più _reservation_ non sono riuscite e non è più presente merce a sufficienza per completare l'ordine.

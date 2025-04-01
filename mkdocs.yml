@@ -27,12 +27,14 @@ nav:
       - Effettuare il login: guide/login.md
       - Aggiungere una merce: guide/aggiunta-merce.md
       - Aggiungere stock di una merce: guide/aggiunta-stock.md
-      - Rimuovere stock di merce: guide/rimozione-stock.md
+      - Rimuovere stock di una merce: guide/rimozione-stock.md
+      - Visualizzare le merci nel Sistema: guide/visualizza-merce.md
+      - Visualizzare i magazzini presenti nel Sistema: guide/visualizza-magazzini.md
       - Effettuare un ordine: guide/ordine.md
+      - Visualizzare gli ordini eseguiti: guide/visualizza-ordini.md
       - Effettuare un trasferimento: guide/trasferimento.md
-      - Impostare una soglia: guide/soglia.md
-      - Modificare una soglia: guide/soglia_mod.md
-      - Eliminare una soglia: guide/elimina_soglia.md
+      - Visualizzare i trasferimenti eseguiti: guide/visualizza-trasferimenti.md
+      - Impostare una soglia di allerta: guide/soglia.md
       - Ricevere le notifiche: guide/notifiche.md
   - Telemetria:
       - Configurazione di Grafana: telemetria/config.md
