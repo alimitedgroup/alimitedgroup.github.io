@@ -55,7 +55,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 
 #align(center)[*Specifica Tecnica#super[G]*]
 
-- Completare la progettazione e descrizione per il microservizio di API#super[G] Gateway entro il giorno *2 Aprile 2025*
+- Completare la progettazione e descrizione per il microservizio di _API#super[G] Gateway_ entro il giorno *2 Aprile 2025*;
 - Completare la progettazione e descrizione per il microservizio _Notification_ entro il giorno *2 Aprile 2025*;
 - Aggiungere informazioni sulla telemetria entro il giorno *4 Aprile 2025*
 
