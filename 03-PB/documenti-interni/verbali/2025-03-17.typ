@@ -72,7 +72,7 @@ Di seguito un'analisi approfondita del lavoro da completare.
 #align(center)[*Programmazione*]
 
 - Continuare la codifica del microservizio *_Notification_* entro il giorno *25 Marzo 2025*;
-- Aggiornare il microservizio *Api Gateway* per supportare i nuovi microservizi entro il giorno *25 Marzo 2025*
+- Aggiornare il microservizio *_Api Gateway_* per supportare i nuovi microservizi entro il giorno *25 Marzo 2025*;
 - Iniziare a implementare un client per le richieste http entro il giorno *25 Marzo 2025*
 
 
