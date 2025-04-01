@@ -67,15 +67,15 @@ Di seguito un'analisi approfondita del lavoro da completare.
 #align(center)[*Piano di Qualifica#super[G]*]
 
 - Aggiungere le nuove misurazioni nel Piano di Qualifica#super[G] entro il giorno *4 Aprile 2025*
-- Aggiungere informazioni sui test del microservizio Notification entro il giorno *4 Aprile 2025*
-- Aggiungere informazioni sulla modalità di esecuzione dei test con curl entro il giorno *3 Aprile 2025*
+- Aggiungere informazioni sui test#super[G] del microservizio Notification entro il giorno *4 Aprile 2025*
+- Aggiungere informazioni sulla modalità di esecuzione dei test#super[G] con curl entro il giorno *3 Aprile 2025*
 
-#align(center)[*Norme di Progetto*]
+#align(center)[*Norme di Progetto#super[G]*]
 - Aggiornare misurazioni entro il giorno *4 Aprile 2025*
 
 #align(center)[*Programmazione*]
 
-- Completare la codifica dei test del microservizio *Notification* entro il giorno *4 Aprile 2025*
+- Completare la codifica dei test#super[G] del microservizio *Notification* entro il giorno *4 Aprile 2025*
 - Realizzare test#super[G] automatici con curl per futuri test#super[G] di accettazione entro il giorno *3 Aprile 2025*
 
 
