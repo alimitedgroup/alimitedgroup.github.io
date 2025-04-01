@@ -1,13 +1,22 @@
 #import "../../lib/importantdocs.typ": *
 
 
-#let ver = [0.8.0]
+#let ver = [0.9.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 27, month: 03, year: 2025),
+  data: datetime(day: 28, month: 03, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "0.9.0",
+      date: datetime(day: 31, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.marco,
+      descr: "Aggiunte informazioni sulle versioni delle componenti utilizzate e aggiunte informazioni sul funzionamento di main e router. Aggionte versioni delle librerie. Aggiunte informazioni sulla telemetria. "
+        + [(@telemetria, @rdm e @main)]
+        + ".",
+    ),
     (
       vers: "0.8.0",
       date: datetime(day: 27, month: 03, year: 2025),
@@ -136,7 +145,7 @@ La scelta tecnologica è stata guidata dalla necessità di creare un sistema di 
 Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la virtualizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
 
 Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
-== Linguaggi di programmazione e _framework_
+== Linguaggi di programmazione
 
 #figure(
   table(
@@ -156,11 +165,37 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
+    [*GO*], [1.24.0], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
   ),
-  caption: [Tecnologie per la programmazione e lo sviluppo software],
+  caption: [Linguaggi di programmazione],
 )
 
+== Framework per la codifica
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*fx*], [1.23.0], [*Fx* è un _framework_ per la _dependency injеction_ utilizzabile con il linguaggio *Go* sviluppato da _Uber_\
+      Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.],
+    [*gin*], [1.10.0], [_Framework_ che permette di gestire gli _endpoint_ e non solo. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/gin-gonic/gin")[pagina Go del progetto]]
+  ),
+  caption: [Framework per la codifica],
+)
 
 == Tecnologie per la comunicazione e messaggistica
 
@@ -182,11 +217,10 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*NATS*], [], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
+    [*NATS*], [2.10.25], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
   ),
   caption: [Tecnologie per la comunicazione e messaggistica],
 )
-
 
 == Tecnologie per la virtualizzazione e _deployment_
 
@@ -208,11 +242,68 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*Docker*], [], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
+    [*Docker Engine*], [28.0.1], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
   caption: [Tecnologie per la virtualizzazione e _deployment_],
 )
 
+== Tecnologie per la gestione di dati temporali
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*InfluxDB*], [2.7.11], [Si tratta di una base di dati specificatamente progettata per la memorizzazione e l'ottenimento di serie temporali.],
+  ),
+  caption: [Tecnologie per la gestione di dati temporali],
+)
+
+== Librerie
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*zap*], [1.27.0], [Libreria realizzata da Uber per il logging. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/zap")[pagina Go del progetto]],
+    [*zap-prettyconsole*], [0.5.2], [Libreria che rende maggiormente leggibile l'output di zap. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/thessem/zap-prettyconsole")[pagina Go del progetto]],
+    [*golang-jwt*], [5.2.2], [Libreria utilizzata per generare e verificare i Token JWT. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/golang-jwt/jwt/v5")[pagina Go del progetto]],
+    [*google uuid*], [1.6.0], [Libreria utilizzata per generare UUID, utili per identificare in maniera unica i vari servizi offerti dal Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/google/uuid#section-readme")[pagina Go del progetto]],
+    [*jwx*], [1.2.30], [Libreria utilizzata per il parsing delle chiavi pubbliche nel rese disponibili nell'apposito _subject_ JetStream NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/lestrrat-go/jwx")[pagina Go del progetto]],
+    [*nats*], [1.40.1], [Client Go per l'utilizzo di NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats.go")[pagina Go del progetto]],
+    [*OpenTelemetry-Go*], [1.35.0], [Implementazione Go per OpenTelemetry: viene utilizzata per raccogliere dati dai vari microservizi del Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/otel")[pagina Go del progetto]],
+    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare zap a OpenTelemetry-Go. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelzap")[pagina Go del progetto]],
+    [*influxdb-client-go*], [2.14.0], [Libreria per dialogare con il _Database_ InfluxDB, un tipo di Base di Dati specificatamente realizzata per gestire serie temporali, come quelle che riguardano le notifiche. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/influxdata/influxdb-client-go/v2")[pagina Go del progetto]],
+  ),
+  caption: [Librerie utilizzate],
+)
 
 == Tecnologie per il monitoraggio dei microservizi
 
@@ -233,20 +324,76 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     // Header row
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
     [*Grafana*],
-    [],
+    [11.6.0],
     [Grafana è una piattaforma open-source per la visualizzazione e l'analisi di dati di monitoraggio. Supporta diverse fonti di dati (come Prometheus, Loki e Mimir) e consente la creazione di dashboard interattive per il monitoraggio in tempo reale.],
     [*Prometheus*],
-    [],
+    [3.2.1],
     [Prometheus è un sistema di monitoraggio e allerta open-source focalizzato sulla raccolta di metriche attraverso un modello pull.],
     [*Loki*],
-    [],
+    [3.4.2],
     [Loki è un sistema di log aggregation sviluppato da Grafana Labs, ottimizzato per la gestione dei log in modo scalabile ed efficiente. Si integra con Grafana per la visualizzazione e utilizza un'architettura simile a Prometheus, semplificando la correlazione tra metriche e log.],
-    [*Mimir*],
-    [],
-    [Mimir è un'estensione di Prometheus sviluppata da Grafana Labs per la gestione di metriche su larga scala. Consente lo storage e la gestione distribuita di serie temporali, migliorando la scalabilità e la resilienza rispetto a un'istanza standalone di Prometheus.],
   ),
   caption: [Tecnologie per il monitoraggio dei microservizi],
 )
+
+== Tecnologie per analisi statica
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*gocyclo*], [0.6.0], [Strumento utile per il calcolo della complessità ciclomatica. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/fzipp/gocyclo/cmd/gocyclo")[pagina Go del progetto]],
+    [*staticcheck*], [0.6.0], [Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/honnef.co/go/tools/staticcheck")[pagina Go del progetto]],
+    [*lint*], [2.0.2], [Si tratta di una utility utile nell'ambito della _Continuous Integration_ per eseguire i vari _linter_ da esso stesso inclusi ed alcuni esterni come staticcheck. Per maggiori informazioni si rimanda alla #link("https://github.com/golangci/golangci-lint")[pagina GitHub del progetto]],
+  ),
+  caption: [Tecnologie per analisi statica],
+)
+
+== Tecnologie per l'analisi dinamica
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*go test*], [1.24.0], [Si tratta di una componente parte della libreria standard di Go per la realizzazione di test. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/testing")[pagina Go del progetto]],
+    [*GoMock*], [0.5.0], [GoMock è un _framework_ utilizzato per realizzare Mock che implementano interfacce: questo risulta particolarmente utile nella realizzazione di test di unità. Deprecato da Google, adesso è sviluppato da Uber: per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/mock")[pagina Go del progetto]],
+    [*magiconair properties assert*], [1.8.9], [La libreria offre funzionalità per scrivere file con proprietà, ma offre anche strumenti utili per realizzare testing ed è per questo scopo che viene utilizzata. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/magiconair/properties")[pagina Go del progetto]],
+    [*stretchr testify*], [1.10.0], [Libreria specificatamente realizzata per permettere una più semplice realizzazione dei test, offrendo funzionalità per richiedere che un risultato sia di un certo tipo (esempio `nil`). Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/stretchr/testify")[pagina Go del progetto]],
+    [*nats-server*], [2.11.0], [Libreria utilizzata per permettere la realizzazione di un Server NATS Mock utilizzabile nei test di unità e di integrazione. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats-server/v2")[pagina Go del progetto]],
+  ),
+  caption: [Tecnologie per l'analisi dinamica],
+)
+
 
 #pagebreak()
 = Architettura <architettura>
@@ -301,16 +448,6 @@ Questo garantisce:
 
 Questa architettura#super[G] consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
-=== _Client_ monolitico
-
-Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G]. Questa scelta architetturale offre diversi vantaggi:
-
-- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità#super[G] del sistema;
-
-- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
-
-- Ottimizzazione delle comunicazioni: il _client_ gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
-
 == Design pattern
 
 === Dependency injection <di>
@@ -335,7 +472,7 @@ L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numero
 - *gestione centralizzata*:la _dependency injection#super[G]_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
 
 ==== Framework Fx di _Uber_ <fwfx>
-*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+*Fx* è un _framework_ per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
 Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.
 
 ===== Costrutti principali
@@ -769,6 +906,8 @@ Rappresenta le informazioni relative a un ordine#super[G] nel microservizio *War
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`Goods []OrderInfoGood`*: rappresenta una lista di oggetti `OrderInfoGood` che contengono le informazioni sulle merci incluse nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine.
 
 ==== OrderInfoGood <OrderInfoGood>
 #figure(
@@ -843,6 +982,8 @@ Rappresenta le informazioni relative a un trasferimento#super[G] nel microserviz
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferInfoGood`*: rappresenta una lista di oggetti `TransferInfoGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G].
 
 ==== TransferInfoGood <TransferInfoGood>
 #figure(
@@ -955,18 +1096,70 @@ Rappresenta la risposta alla richiesta di un Token.
 
 - *`token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
 
-=== Router dei microservizi
+=== Telemetria <telemetria>
+
+I file dei vari `controller` e `listener` sono dotati di logger zap e di "contatori", oggetti di tipo `metric.Int64Counter`, come variabili globali. Nel costruttore dei `controller` e `listener` quest'ultime variabili vengono inizializzate con la funzione `CounterSetup` fornita dal package `observability`: tale funzione, la cui firma è `CounterSetup(meter *metric.Meter, logger *zap.Logger, counter *metric.Int64Counter, counterMap *sync.Map, name string, options ...metric.Int64CounterOption)` si occupa di prendere il logger del microservizio e la variabile da inizializzare, quindi l'oggetto `metric.Meter`, fornito nel costruttore del `controller` o `listener` e passato a questa funzione, viene sfruttato per creare un oggetto `metric.Int64Counter` che viene assegnato alla variabile `counter` passata come puntatore. Per evitare duplici assegnazioni, che potrebbero modificare il valore reale del contatore, una mappa `sync.Map` viene utilizzata per determinare se un contatore dello stesso tipo era già stato creato e assegnato.
+
+La configurazione di *OpenTelemetry*, sfruttato da *Prometheus* e *Loki*, viene poi realizzata dal metodo `New` dello stesso _package_, che invoca la funzione `setupOtel` atta allo scopo di configurare il servizio.
+
+Successivamente, per incrementare il numero di richieste, queste vengono incrementate dagli _Handler_ dei _controller_ e _listener_ prima di terminare l'esecuzione, sfruttando il metodo `Add` degli oggetti `metric.Int64Counter`.
+
+=== Router dei microservizi <rdm>
 
 //descrizione generale delle classi router
+
+Ogni microservizio fa uso di NATS#super[G] ,un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go*#super[G] non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS#super[G] e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del controller adibito alla gestione di una determinata richiesta.
+
+I vari microservizi utilizzano dunque codice esplicito che esegue questo processo, dalla registrazione del microservizio all'apposito canale di comunicazione NATS#super[G] ,sino a richiamare il giusto metodo del controller che deve gestire una specifica richiesta: la conversione al DTO trasmesso viene effettuata internamente alla funzione richiamata.
+
+Nello specifico, ogni microservizio possiede:
+
+- dei *Router*: tale struttura ha il compito, mediante la funzione `Setup`, di registrare il controller con un _subject_ NATS#super[G] o JetStream NATS#super[G] ,associandovi la funzione da eseguire all'arrivo di un nuovo messaggio
+- dei *Controller/Listener Router*: si tratta di una componente che possiede più `Router` e un metodo `Setup`. Dal momento che un microservizio potrebbe avere più controller e dunque più router, questa componente prende tutti i router del microservizio e vi invoca `Setup`. Per maggiori informazioni sul suo impiego, si veda la @main.
+
+==== Esempio: catalogRouter
+
+#figure(
+  image("../../assets/catalog/CatalogRouter.png", width: 80%),
+  caption: "CatalogRouter",
+)
+
+*catalogRouter*, router del microservizio *Catalog*, possiede i seguenti attributi:
+
+- *`NatsMessageBroker`*: si occupa della completa gestione della connessione a NATS#super[G] e JetStream NATS#super[G] ,nonché possiede un logger per l'integrazione con *Grafana*#super[G] .Esso infatti possiede i seguenti attributi:
+  - *`Nats *nats.Conn`*: connessione a NATS#super[G] ;
+  - *`Js jetstream.JetStream`*: struttura per gestire connessioni a JetStream NATS#super[G] ;
+  - *`Logger *zap.logger`*: logger.
+  E può invocare le seguenti funzioni:
+  - *`NewNatsMessageBroker(nc *nats.Conn, logger *zap.Logger) (*NatsMessageBroker, error)`*: costruttore della struttura;
+  - *`RegisterRequest(ctx context.Context, subject Subject, queue Queue, handler RequestHandler) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ specificato;
+  - *`RegisterJsHandler(ctx context.Context, restore IRestoreStreamControl, streamCfg jetstream.StreamConfig, handler JsHandler, opts ...JsHandlerOpt) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ (del JetStream NATS#super[G] )specificato;
+  - *`RegisterJsWithConsumerGroup(ctx context.Context, streamCfg jetstream.StreamConfig, consumerCfg jetstream.ConsumerConfig, handler JsHandler) error`*: come il precedente, ma permette di applicare un gruppo di _consumer_ (non viene utilizzato da questo router).
+- *`controller *catalogController`*: il controller del microservizio *Catalog*;
+- *`rsc *broker.RestoreStreamControl`*: una struttura che fa uso di `sync.WaitGroup` per gestire il recupero dei messaggi dai JetStream. È infatti necessario per l'invocazione di metodi quali `RegisterJsHandler`.
+
+Può invocare le seguenti funzioni:
+
+- *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
+- *`Setup(ctx context.Context) error`*: esegue le associazioni _controller_ - _subject_ usando i metodi sopra descritti.
+
+Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS#super[G] sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del _repository_#super[G] .
 
 === Configurazioni dei microservizi
 
 //descrizione generale delle classi config
 
-=== `Main` dei microservizi
+La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire inserendo variabili di ambiente nel file `compose.yml`.
+
+Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
+
+=== `Main` dei microservizi <main>
 
 //descrivere cosa genericamente accade nel Main dei vari microservizi
 
+Ogni microservizio possiede il proprio `Main` che raccoglie i vari fil `*.mdoule.go` necessari all'esecuzione del microservizio e invoca la funzione di avvio denominata `RunLifeCycle`, il tutto utilizzando il _framework_ fx.
+
+Tale funzione prende solitamente il `ControllerRouter` e/o i `Listener` e li passa alla funzione `Run` che vi richiama il metodo Setup, perciò concretamente avviando il microservizio.
 
 === Funzionamento Ordini e Trasferimenti
 Ogni magazzino è gestito da un microservizio dedicato, respоnsabile della gestione dello stock#super[G] specifico di quel magazzino. La gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
@@ -2100,6 +2293,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#supe
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine;
 - *`Goods []SendOrderUpdateGood`*: rappresenta una lista di oggetti `SendOrderUpdateGood` che contengono le informazioni sulle merci incluse nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
@@ -2364,6 +2558,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimen
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da aggiornare;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Created", "Filled");
 - *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G];
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []SendTransferUpdateGood`*: rappresenta una lista di oggetti `SendTransferUpdateGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G];
@@ -2828,11 +3023,11 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 *Descrizione degli attributi della struttura:*
 
-- *`transferRepo ITransferRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi ai trasferimenti.
+- *`transferRepo ITransferRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi ai trasferimenti.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il repository#super[G] fornito come parametro.
+- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il _repository_#super[G] fornito come parametro.
 
 - *`SetComplete(transferId model.TransferID) error`*: segna un trasferimento#super[G] come completato. Prende come parametro l'identificativo del trasferimento#super[G] (`transferId`) e restituisce un errore in caso di fallimento.
 
@@ -2844,9 +3039,9 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 - *`GetAllTransfer() []Transfer`*: restituisce una lista di tutti i trasferimenti registrati nel sistema. Restituisce una slice di oggetti `Transfer`.
 
-- *`repoTransferToModelTransfer(transfer model.Transfer) model.Transfer`*: converte un oggetto `Transfer` del repository#super[G] in un oggetto `Transfer` utilizzato nella business logic.
+- *`repoTransferToModelTransfer(transfer model.Transfer) model.Transfer`*: converte un oggetto `Transfer` del _repository_#super[G] in un oggetto `Transfer` utilizzato nella business logic.
 
-- *`repoTransfersToModelTransfers(transfers []model.Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del repository#super[G] in una lista di oggetti `Transfer` utilizzati nella business logic.
+- *`repoTransfersToModelTransfers(transfers []model.Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del _repository_#super[G] in una lista di oggetti `Transfer` utilizzati nella business logic.
 
 ==== IStockRepository <OrderIStockRepository>
 
@@ -2890,11 +3085,11 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 *Descrizione degli attributi della struttura:*
 
-- *`stockRepo IStockRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
+- *`stockRepo IStockRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il repository#super[G] fornito come parametro.
+- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il _repository_#super[G] fornito come parametro.
 
 - *`ApplyStockUpdate(cmd port.ApplyStockUpdateCmd) error`*: applica un aggiornamento dello stock#super[G]. Per ogni merce inclusa nel comando, aggiorna la quantità nel magazzino specificato.
 
@@ -2944,25 +3139,25 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 *Descrizione degli attributi della struttura:*
 
-- *`orderRepo IOrderRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi agli ordini.
+- *`orderRepo IOrderRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi agli ordini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il repository#super[G] fornito come parametro.
+- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il _repository_#super[G] fornito come parametro.
 
-- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine#super[G] specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel repository#super[G]. Restituisce l'ordine aggiornato in formato `Order` e un eventuale errore in caso di fallimento.
+- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine#super[G] specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel _repository_#super[G]. Restituisce l'ordine aggiornato in formato `Order` e un eventuale errore in caso di fallimento.
 
-- *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel repository#super[G]. Restituisce un errore in caso di fallimento.
+- *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel _repository_#super[G]. Restituisce un errore in caso di fallimento.
 
-- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel repository#super[G].
+- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel _repository_#super[G].
 
-- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal repository#super[G]. Converte l'ordine dal formato del repository#super[G] a `Order`. Restituisce un errore in caso di fallimento.
+- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal _repository_#super[G]. Converte l'ordine dal formato del _repository_#super[G] a `Order`. Restituisce un errore in caso di fallimento.
 
-- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel repository#super[G]. Converte gli ordini dal formato del repository#super[G] a `Order`.
+- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel _repository_#super[G]. Converte gli ordini dal formato del _repository_#super[G] a `Order`.
 
-- *`repoOrderToModelOrder(order model.Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del repository#super[G] in un oggetto `Order` utilizzato nella business logic.
+- *`repoOrderToModelOrder(order model.Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del _repository_#super[G] in un oggetto `Order` utilizzato nella business logic.
 
-- *`repoOrdersToModelOrders(orders []model.Order) []mddel.Order`*: funzione di utilità che converte una lista di oggetti `Order` del repository#super[G] in una lista di oggetti `Order` utilizzati nella business logic.
+- *`repoOrdersToModelOrders(orders []model.Order) []mddel.Order`*: funzione di utilità che converte una lista di oggetti `Order` del _repository_#super[G] in una lista di oggetti `Order` utilizzati nella business logic.
 
 ==== NatsStreamAdapter <OrderNatsStreamAdapter>
 
