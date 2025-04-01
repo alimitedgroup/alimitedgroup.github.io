@@ -1,11 +1,11 @@
 #!/bin/bash
 
-OUTPUT_DIR="assets/drawio"
-
 set -eu
 
-# Create output directory if it doesn't exist
+OUTPUT_DIR="assets/drawio"
 mkdir -p "$OUTPUT_DIR"
+
+time docker pull rlespinasse/drawio-desktop-headless
 
 for INPUT_FILE in assets/drawio/*.drawio
 do
