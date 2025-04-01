@@ -12,4 +12,4 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 
 È possibile quindi ottenere una lista delle merci eseguendo il seguente comando:
 
-`curl "${GA_PARAMS[@]}" -X GET "$BASE/goods"`
+`curl "${GA_PARAMS[@]}" -X GET "http://localhost:8080/api/v1/goods"`

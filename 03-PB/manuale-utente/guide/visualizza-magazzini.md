@@ -1,6 +1,6 @@
 # Visualizzare i magazzini presenti nel Sistema
 
-Il Sistema permette di reperire una lista di tutti i magazzini presenti nel Sistema e che hanno subito almeno un'aggiunta di _stock_.
+Il Sistema permette di reperire una lista di tutti i magazzini presenti nel Sistema e che hanno subito almeno un'aggiunta di _stock#super[G]_.
 
 Anzitutto è necessario ottenere un token per il ruolo di **Admin Globale**: per maggiori informazioni vedere la Sezione dedicata al login.
 
@@ -12,4 +12,4 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 
 È possibile quindi ottenere i magazzini con la seguente richiesta:
 
-`curl "${GA_PARAMS[@]}" -X GET "$BASE/warehouses"`
+`curl "${GA_PARAMS[@]}" -X GET "http://localhost:8080/api/v1/warehouses"`

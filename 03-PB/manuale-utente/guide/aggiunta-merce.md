@@ -18,7 +18,7 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 
 È possibile quindi procedere all'aggiunta della merce eseguendo il seguente comando:
 
-`curl "${GA_PARAMS[@]}" -X PUT "$BASE/goods/hat-1" \
+`curl "${GA_PARAMS[@]}" -X PUT "http://localhost:8080/api/v1/goods/hat-1" \
   -d '{"name":"hat","description":"blue hat"}' | jq`
 
 Operazione completata: la merce è stata aggiunta con successo.

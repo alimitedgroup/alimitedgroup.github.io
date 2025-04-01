@@ -36,7 +36,7 @@ Tutti i servizi appena elencati possiedono tre variabili d'ambiente configurabil
 
 > **IMPORTANTE**
 >
-> Prestare attenzione alla configurazione di **ENV_SERVICE_ID**: l'impostazione di due o più istanze con stesso identificativo **IMPEDIRÀ** la distinzione dei dati telemetrici di un'istanza dalle altre. Se omesso, il sistema genererà un identificativo causale, tuttavia questo sarà resettato al riavvio dell'istanza, determinandone un cambiamento: tale modo d'impiego è dunque **caldamente sconsigliato**. <br>  <!--raw-typst \ -->
+> Prestare attenzione alla configurazione di **ENV_SERVICE_ID**: l'impostazione di due o più istanze con stesso identificativo **IMPEDIRÀ** la distinzione dei dati telemetrici di un'istanza dalle altre. Se omesso, il sistema genererà un identificativo causale, tuttavia questo sarà resettato al riavvio dell'istanza, determinandone un cambiamento: tale modo d'impiego è dunque **caldamente sconsigliato**. <br> <!--raw-typst \ -->
 > La generazione automatica non è abilitata per i magazzini, che non entreranno in esecuzione se la variabile d'ambiente non è impostata.
 
 <!--raw-typst

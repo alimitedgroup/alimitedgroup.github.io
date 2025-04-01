@@ -1,6 +1,6 @@
-# Effettuare un trasferimento
+# Effettuare un trasferimento#super[G]
 
-Il sistema permette di realizzare trasferimenti tra magazzini. La seguente guida illustrerà come realizzarne uno, presupponendo l'esistenza di due magazzini e di stock sufficiente nel primo magazzion: per maggiori informazioni visitare la pagina di installazione del presente sistema e la Sezione dedicata all'aggiunta di _stock_.
+Il sistema permette di realizzare trasferimenti tra magazzini. La seguente guida illustrerà come realizzarne uno, presupponendo l'esistenza di due magazzini e di stock#super[G] sufficiente nel primo magazzion: per maggiori informazioni visitare la pagina di installazione del presente sistema e la Sezione dedicata all'aggiunta di _stock#super[G]_.
 
 Anzitutto è necessario ottenere un token per il ruolo di **Admin Globale**: per maggiori informazioni vedere la Sezione dedicata al login.
 
@@ -10,18 +10,18 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 
 `GA_PARAMS=(-sS -H "Authorization: Bearer $GA_TOKEN" -H "Content-Type: application/json")`
 
-Si può quindi procedere a realizzare il trasferimento mediante la seguente richiesta:
+Si può quindi procedere a realizzare il trasferimento#super[G] mediante la seguente richiesta:
 
-`curl "${GA_PARAMS[@]}" -X POST "$BASE/transfers" \
+`curl "${GA_PARAMS[@]}" -X POST "http://localhost:8080/api/v1/transfers" \
   -d '{"receiver_id": "id_magazzino_destinatario", "sender_id": "id_magazzino_mittente", "goods": {"id_merce": qta}}'`
 
 Cambiando i segnaposto seguenti con i valori adeguati:
 
-- **id_magazzino_destinatario**: identificativo del magazzino destinatario del trasferimento;
-- **id_magazzino_mittente**: identificativo del magazzino mittente del trasferimento;
+- **id_magazzino_destinatario**: identificativo del magazzino destinatario del trasferimento#super[G];
+- **id_magazzino_mittente**: identificativo del magazzino mittente del trasferimento#super[G];
 - **id_merce**: identificativo della merce da trasferire;
 - **qta**: quantità della merce da trasferire.
 
 È ovviamente possibile includere più merci inserendole in una lista JSON.
 
-Per verificare l'esito del trasferimento è consigliata la lettura della Sezione relativa alla visione dei trasferimenti.
+Per verificare l'esito del trasferimento#super[G] è consigliata la lettura della Sezione relativa alla visione dei trasferimenti.

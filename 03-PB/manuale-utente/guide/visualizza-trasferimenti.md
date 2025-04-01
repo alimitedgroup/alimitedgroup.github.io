@@ -12,4 +12,4 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 
 È possibile quindi ottenere la lista dei trasferimenti eseguendo il comando seguente:
 
-`curl "${GA_PARAMS[@]}" -X GET "$BASE/transfers"`.
+`curl "${GA_PARAMS[@]}" -X GET "http://localhost:8080/api/v1/transfers"`.

@@ -12,11 +12,11 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 
 È possibile quindi ottenere la lista degli ordini eseguendo il comando seguente:
 
-`curl "${C_PARAMS[@]}" -X GET "$BASE/orders"`.
+`curl "${C_PARAMS[@]}" -X GET "http://localhost:8080/api/v1/orders"`.
 
 Si noti che gli ordini possono avere quattro stati:
 
-- **Created**: ordine creato, in attesa di iniziare le _reservation_;
-- **Filled**: tutte le _reservation_ sono riuscite, è in corso la rimozione degli _stock_;
-- **Completed**: ordine completato;
+- **Created**: ordine#super[G] creato, in attesa di iniziare le _reservation_;
+- **Filled**: tutte le _reservation_ sono riuscite, è in corso la rimozione degli _stock_#super[G];
+- **Completed**: ordine#super[G] completato;
 - **Cancelled**: una o più _reservation_ non sono riuscite e non è più presente merce a sufficienza per completare l'ordine.
