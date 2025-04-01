@@ -1,6 +1,6 @@
-# GET `/api/v1/goods`
+# GET `/api/v1/notifications/queries`
 
-Questa route consente di recuperare la lista di `good`#super[G] (merci)
+Questa route consente di recuperare la lista di query delle notifiche.
 
 ## Richiesta autenticazione
 
@@ -28,15 +28,14 @@ Codifica: `application/json`
             [#text(fill:white)[Descrizione]],
             [#text(fill:white)[Esempio]],
         ),
-        [`goods`], [`GoodAnd
-        Amount[]`], [ Una lista di merci, ognuna con la quantità disponibile globalmente e per singoli magazzini.], [`"goods": [{"name": "hat", "description": "a hat", "id": "e9281371-b9fe-41b4-968a-e510a98cf849", "amount": 20, "amounts": {"warehouse-1": 10, "warehouse-2": 10}}]`],
+        [`queries`], [`Query[]`], [ Una lista di query delle notifiche, ognuna con il tipo di soglia monitorata.], [`"queries": [{"query_id":"39dfe1b4-35b2-467b-b86f-a915ac362cba","good_id": "hat-1","operator": "<","threshold": 5}]`],
    ),
-   caption: [Risposta di GET `/goods`],
+   caption: [Risposta di GET `/notifications/queries`],
 )
 -->
 
 <!--typst-begin-exclude-->
 | Nome | Tipo | Descrizione | Esempio |
 | ------- | ----------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `goods` | `GoodAndAmount[]` | Una lista di merci, ognuna con la quantità disponibile globalmente e per singoli magazzini. | `"goods": [{"name": "hat", "description": "a hat", "id": "e9281371-b9fe-41b4-968a-e510a98cf849", "amount": 20, "amounts": {"warehouse-1": 10, "warehouse-2": 10}}]` |
+| `queries` | `Query[]` | Una lista di query delle notifiche, ognuna con il tipo di soglia monitorata. | `"queries": [{"query_id":"39dfe1b4-35b2-467b-b86f-a915ac362cba","good_id": "hat-1","operator": "<","threshold": 5}]` |
 <!--typst-end-exclude-->

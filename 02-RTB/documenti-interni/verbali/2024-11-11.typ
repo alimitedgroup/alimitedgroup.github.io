@@ -67,7 +67,7 @@ A tal proposito, le categorie presenti nel sito sono:
   - Lettera di candidatura
   - Valutazione dei capitolati
   - Dichiarazione degli impegni
-- *_RTB_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Technology Baseline#super[G]_;
+- *_RTB#super[G]_*: indica la parte che _ALimitedGroup_ sta affrontando in questo momento. Qui verranno mano a mano pubblicati i documenti relativi alla _Requirements and Technology Baseline#super[G]_;
 - *_PB_*#super[G] : indica la parte che andremo a svolgere in futuro e che conterrà i documenti relativi alla _Product Baseline#super[G]_.
 Inoltre, abbiamo reso possibile la visualizzazione del sito compatibile con _smartphone_ e _tablet_ per rendere l'accesso, alle risorse e documenti, più facile. \
 Infine, all'interno del sito è ora possibile trovare i riferimenti ai profili _GitHub_#super[G] di ogni membro di _ALimitedGroup_.

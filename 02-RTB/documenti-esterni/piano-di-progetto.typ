@@ -583,12 +583,12 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 
 == Introduzione <pbti>
 
-_ALimitedGroup_ ha stabilito di procedere con un *approccio Agile* allo svolgimento del progetto, riconoscendo che un periodo efficace per produrre sviluppi utili si aggira intorno alle 2 settimane: stabilisce dunque di realizzare *_sprint_*#super[G] di *circa 2 settimane*.
+_ALimitedGroup_ ha stabilito di procedere con un *approccio Agile*#super[G] allo svolgimento del progetto, riconoscendo che un periodo efficace per produrre sviluppi utili si aggira intorno alle 2 settimane: stabilisce dunque di realizzare *_sprint_*#super[G] di *circa 2 settimane*.
 
 Seguendo questo principio, il gruppo si impegna a stabilire all'inizio di ogni _sprint_#super[G] le attività per le due settimane successive, ruotando nelle medesime occasioni i ruoli ricoperti, seppur mantenendo la possibilità di effettuare il cambiamento anche durante il suddetto periodo qualora le esigenze organizzative lo imponessero: tutto questo ha lo scopo di acquisire esperienza in ciascun ruolo e comprendere il periodo di rotazione ottimale.
 
 Il gruppo si impegna altresì a concordare riunioni con il proponente#super[G] #M31 per ricevere feedback su quanto realizzato in momenti quanto più vicini possibili alla scadenza degli _sprint_#super[G].
-Complessivamente riteniamo che il *modello Agile* possa rivelarsi il più efficace per portare a termine il progetto nei tempi prestabiliti, al contempo assicurandosi che quanto fatto sia realizzato conformemente alle volontà del proponente#super[G].
+Complessivamente riteniamo che il *modello Agile*#super[G] possa rivelarsi il più efficace per portare a termine il progetto nei tempi prestabiliti, al contempo assicurandosi che quanto fatto sia realizzato conformemente alle volontà del proponente#super[G].
 
 Seguiranno ora le descrizioni dei vari periodi di lavoro, nella quale verranno esposte:
 
@@ -745,7 +745,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 
 Durante questo sprint#super[G] si è concretizzato il rischio _RG3: Rischio Globale dovuto alla sottostima delle attività_, a causa di una previsione troppo ottimistica del tempo necessario per completare l'Analisi dei Requisiti#super[G].
 
-Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente#super[G] #M31.
+Questo evento è strettamente legato al rischio _RG2: Rischio Globale derivante da una comprensione incompleta del capitolato#super[G]_, poiché le difficoltà iniziali nel comprendere appieno i requisiti hanno rallentato il processo di stesura. La situazione è stata comunque chiarita grazie all'incontro con l'azienda proponente#super[G] #M31.
 
 Entrambi i rischi erano stati previsti per questo sprint#super[G] e sono stati gestiti seguendo le linee guida delineate nella sezione @rischio_globale.
 

@@ -26,6 +26,7 @@
     p.loris,
     p.marco,
     p.matteo,
+    p.sara,
   ),
   odg: [Diciassettesima riunione di _ALimitedGroup_: viene fatto il punto della situazione e stabilito quanto da fare per il periodo successivo],
   body,
@@ -87,7 +88,7 @@ _ALimitedGroup_ ha verificato che la settimana trascorsa non è stato possibile 
 - Risolvere il problema di sicurezza *CVE-2025-30204* entro il giorno *3 Aprile 2025*
 
 
-== Assegnazione prevista dei ruoli sino al 06-04-2025
+== Assegnazione prevista dei ruoli sino al 31-03-2025
 
 Date le attività da svolgere, i componenti di _ALimitedGroup_ si suddividono così i ruoli:
 

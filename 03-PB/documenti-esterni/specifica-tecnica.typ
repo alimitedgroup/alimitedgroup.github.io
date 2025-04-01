@@ -1281,7 +1281,7 @@ Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
 *Descrizione degli attributi della struttura:*
 
 - *`pemPuk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
-- *`issuer string`*: rappresenta l'issuer, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
+- *`issuer string`*: rappresenta l'_issuer_, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1302,7 +1302,7 @@ Rappresenta il _Command_ per ottenere la memorizzazione in _persistence logic_ d
 
 - *`prk *[]byte`*: rappresenta la chiave privata, in formato Pem e memorizzata in byte;
 - *`puk *[]byte`*: rappresenta la chiave pubblica, in formato Pem e memorizzata in byte;
-- *`issuer string`*: rappresenta l'issuer, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
+- *`issuer string`*: rappresenta l'_issuer_, che la _business logic_ genera al momento della generazione delle chiavi mediante la libreria uuid di Google.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1690,7 +1690,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 
 #figure(
   image("../../assets/order/order_2.png", width: 115%),
-  caption: "Order",
+  caption: "Struttura del Microservizio " + ["Order"],
 )
 
 Il microservizio *Order* viene utilizzato per realizzare gli ordini quando questi vengono confermati, andando a verificare la disponibilità di una merce e organizzando da quali magazzini prendere la merce per completare l'ordine.
@@ -3051,9 +3051,9 @@ Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence 
 
 - *`GetStock(warehouseId string, goodId string) (int64, error)`*: il metodo deve permettere di ottenere la quantità di una merce specifica in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`) e l'identificativo della merce (`goodId`). Restituisce la quantità della merce come `int64` e un eventuale errore in caso di fallimento;
 
-- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*: il metodo deve permettere di impostare la quantità di una merce in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da impostare (`stock`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti;
+- *`SetStock(warehouseId string, goodId string, stоck int64) bool`*: il metodo deve permettere di impostare la quantità di una merce in un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da impostare (`stock#super[G]`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti;
 
-- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*: il metodo deve permettere di aggiungere una quantità specifica di una merce a un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da aggiungere (`stock`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti, e un eventuale errore in caso di fallimento;
+- *`AddStock(warehouseId string, goodId string, stоck int64) (bool, error)`*: il metodo deve permettere di aggiungere una quantità specifica di una merce a un determinato magazzino. Prende come parametri l'identificativo del magazzino (`warehouseId`), l'identificativo della merce (`goodId`) e la quantità da aggiungere (`stock#super[G]`). Restituisce `true` se l'operazione è andata a buon fine, `false` altrimenti, e un eventuale errore in caso di fallimento;
 
 - *`GetGlobalStock(goodId string) int64`*: il metodo deve permettere di ottenere la quantità globale di una merce presente in tutti i magazzini. Prende come parametro l'identificativo della merce (`goodId`) e restituisce la quantità globale come `int64`;
 
