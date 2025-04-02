@@ -1,9 +1,8 @@
-# Importare una dashbord
+# Importare una dashboard#super[G]
 
 I file forniti includono una _dashboard_#super[G] configurata per avere a disposizione tutti i microservizi in esecuzione nella stessa macchina.
 
 Tale _dashboard_#super[G] è automaticamente importata all'avvio del Sistema. Qualora non lo fosse, è possibile seguire questi passaggi.
-
 
 Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], selezionando l'apposita opzione nella barra laterale sinistra, come mostrato in figura:
 

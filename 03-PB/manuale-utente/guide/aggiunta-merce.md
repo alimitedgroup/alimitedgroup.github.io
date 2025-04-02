@@ -1,6 +1,6 @@
 # Aggiungere una merce
 
-In questa sezione sarà spiegato come aggiungere una merce interagendo con il sistema mediante l'utilizzo di `curl` e `jq`.
+In questa sezione sarà spiegato come aggiungere una merce interagendo con il Sistema mediante l'utilizzo di `curl` e `jq`.
 
 La merce aggiunta avrà le seguenti caratteristiche:
 
@@ -19,10 +19,10 @@ Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme all
 È possibile quindi procedere all'aggiunta della merce eseguendo il seguente comando:
 
 `curl "${GA_PARAMS[@]}" -X PUT "http://localhost:8080/api/v1/goods/hat-1" \
-  -d '{"name":"hat","description":"blue hat"}' | jq`
+  -d '{"name":"hat","description":"blue hat"}'`
 
 Operazione completata: la merce è stata aggiunta con successo.
 
 Si noti che il comando eseguito ha manualmente assegnato l'id alla merce, tuttavia questo non è necessario: si consiglia la lettura degli _endpoint_ disponibili.
 
-Per verificare le informazioni sulle merci del sistema si consiglia la lettura della Sezione dedicata.
+Per verificare le informazioni sulle merci del Sistema si consiglia la lettura della Sezione dedicata.

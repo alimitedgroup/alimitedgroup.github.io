@@ -1,6 +1,6 @@
 # Impostare una soglia di allerta
 
-Il Sistema permette di aggiungere una soglia di allerta per ricevere notifiche quando le scorte globalmente disponibil di una merce scendono sotto una certa soglia.
+Il Sistema permette di aggiungere una soglia di allerta per ricevere notifiche quando le scorte globalmente disponibile di una merce scendono sotto una certa soglia.
 
 Anzitutto è necessario ottenere un token per il ruolo di **Admin Globale**: per maggiori informazioni vedere la Sezione dedicata al login.
 

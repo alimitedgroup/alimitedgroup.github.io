@@ -1,6 +1,6 @@
 # Requisiti Software
 
-In merito al Sistema Operativo, le componenti del sistema non fanno distinzione in quanto
+In merito al Sistema Operativo, le componenti del Sistema non fanno distinzione in quanto
 il Sistema si appoggia completamente a **Docker**#super[G] per garantire la sua esecuzione
 e le immagini utilizzate provengono direttamente dai _repository_#super[G] di Docker#super[G] o
 vengono compilate mediante il compilatore di Go#super[G] scaricato anch'esso dai

@@ -1,6 +1,6 @@
 # Effettuare un trasferimento#super[G]
 
-Il sistema permette di realizzare trasferimenti tra magazzini. La seguente guida illustrerà come realizzarne uno, presupponendo l'esistenza di due magazzini e di stock#super[G] sufficiente nel primo magazzion: per maggiori informazioni visitare la pagina di installazione del presente sistema e la Sezione dedicata all'aggiunta di _stock#super[G]_.
+Il Sistema permette di realizzare trasferimenti tra magazzini. La seguente guida illustrerà come realizzarne uno, presupponendo l'esistenza di due magazzini e di stock#super[G] sufficiente nel primo magazzion: per maggiori informazioni visitare la pagina di installazione del presente Sistema e la Sezione dedicata all'aggiunta di _stock#super[G]_.
 
 Anzitutto è necessario ottenere un token per il ruolo di **Admin Globale**: per maggiori informazioni vedere la Sezione dedicata al login.
 

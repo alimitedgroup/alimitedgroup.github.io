@@ -9,7 +9,7 @@ A tale scopo il manuale illustrerà i requisiti minimi necessari ad avviare il S
 a partire dai programmi necessari alla sua esecuzione,
 per poi proseguire a descrivere come configurare il Sistema in base alle proprie esigenze, e come avviare lo stesso.
 
-Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione#super[G] del sistema,
+Successivamente, vengono descritte le operazioni necessarie per la corretta operazione e manutenzione#super[G] del Sistema,
 in particolare su periodi di tempo prolungati.
 
 La parte finale di questo manuale ha l'obiettivo di
@@ -36,7 +36,7 @@ In particolare, sono presenti le seguenti sezioni:
 
 ## Glossario
 
-La realizzazione di un sistema software richiede, ancor prima della scrittura del codice, un’importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
+La realizzazione di un Sistema software richiede, ancor prima della scrittura del codice, un’importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivate da questa attività saranno appositamente documentate.
 
 È completamente ragionevole tuttavia pensare che tali documenti potrebbero contenere parole e terminologie complesse o comunque non direttamente comprensibili: è stato deciso dunque di realizzare un Glossario, nella quale saranno contenuti le spiegazioni relative a tali termini. Tale documento è in costante aggiornamento ed è reperibile, nella sua versione attuale, all'indirizzo [https://alimitedgroup.github.io/glossario.html](https://alimitedgroup.github.io/glossario.html). È disponibile anche una versione in [formato pdf](https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf).
 

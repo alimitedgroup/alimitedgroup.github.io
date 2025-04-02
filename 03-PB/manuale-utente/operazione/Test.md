@@ -1,4 +1,4 @@
-La realizzazione del sistema è proceduta di pari passo con la realizzazione e l'esecuzione di test#super[G]. Qui sarà brevemente spiegato come eseguire tali test#super[G].
+La realizzazione del Sistema è proceduta di pari passo con la realizzazione e l'esecuzione di test#super[G]. Qui sarà brevemente spiegato come eseguire tali test#super[G].
 
 Per informazioni approfondite si consiglia la lettura del [**Piano di Qualifica#super[G] v.2.0.0**](https://alimitedgroup.github.io/PQ%20v2.0.0.pdf).
 

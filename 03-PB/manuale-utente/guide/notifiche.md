@@ -6,6 +6,6 @@ Per farlo è sufficiente installare `nats`#super[G] (per istruzioni si consiglia
 
 `nats sub "stock.alert.>"`
 
-Ci si troverà quindi in ascolto di tutte le notifiche inviate dal sistema.
+Ci si troverà quindi in ascolto di tutte le notifiche inviate dal Sistema.
 
 <!--raw-typst #pagebreak() -->

@@ -22,7 +22,7 @@ I servizi che possono essere aggiunti e rimossi a piacimento sono:
 - **order**: servizio che avvia un'istanza del microservizio omonimo, che gestisce gli ordini e i trasferimenti;
 - **authenticator**: servizio che avvia un'istanza del microservizio omonimo;
 - **notification**: servizio che avvia un'istanza del microservizio omonimo;
-- **grafana#super[G]**: servizio per visualizzare la telemetria con una comoda _Graphic User Interface_.
+- **Grafana#super[G]**: servizio per visualizzare la telemetria con una comoda _Graphic User Interface_.
 
 Tutti i servizi appena elencati possiedono tre variabili d'ambiente configurabili in base alle proprie esigenze, presenti sotto la voce `environment`:
 
@@ -38,7 +38,7 @@ Tutti i servizi appena elencati possiedono tre variabili d'ambiente configurabil
 
 > **IMPORTANTE**
 >
-> Prestare attenzione alla configurazione di **ENV_SERVICE_ID**: l'impostazione di due o più istanze con stesso identificativo **IMPEDIRÀ** la distinzione dei dati telemetrici di un'istanza dalle altre. Se omesso, il sistema genererà un identificativo causale, tuttavia questo sarà resettato al riavvio dell'istanza, determinandone un cambiamento: tale modo d'impiego è dunque **caldamente sconsigliato**. <br> <!--raw-typst \ -->
+> Prestare attenzione alla configurazione di **ENV_SERVICE_ID**: l'impostazione di due o più istanze con stesso identificativo **IMPEDIRÀ** la distinzione dei dati telemetrici di un'istanza dalle altre. Se omesso, il Sistema genererà un identificativo causale, tuttavia questo sarà resettato al riavvio dell'istanza, determinandone un cambiamento: tale modo d'impiego è dunque **caldamente sconsigliato**. <br> <!--raw-typst \ -->
 > La generazione automatica non è abilitata per i magazzini, che non entreranno in esecuzione se la variabile d'ambiente non è impostata.
 
 <!--raw-typst
@@ -58,7 +58,7 @@ Nel caso un servizio richiederà ulteriori configurazioni, questo sarà ora desc
 Possiede queste ulteriori variabili d'ambiente:
 
 - **ENV_АPI_PORT**: porta АPI (default: `8080`);
-- **HTTP_HOST**: host del sistema (default: `0.0.0.0`);
+- **HTTP_HOST**: host del Sistema (default: `0.0.0.0`);
 - **HTTP_PORT**: porta http (default: `8080`).
 
 ## Influxdb

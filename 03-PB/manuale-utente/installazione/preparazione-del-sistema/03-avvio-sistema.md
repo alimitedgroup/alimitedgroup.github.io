@@ -2,7 +2,7 @@
 
 ## Avvio
 
-Una volta configurato il sistema l'avvio risulta essere molto semplice.
+Una volta configurato il Sistema l'avvio risulta essere molto semplice.
 
 È sufficiente eseguire il comando:
 
@@ -34,7 +34,7 @@ o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuz
 
 ## Ripristino
 
-A sistema avviato, eseguire:
+A Sistema avviato, eseguire:
 
 `just reset`
 

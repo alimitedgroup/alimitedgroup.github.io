@@ -1,6 +1,6 @@
 # Rimuovere stock#super[G] di una merce
 
-In questa Sezione sarà spiegato come rimuovere _stock_#super[G] ad una merce interagendo con il sistema mediante l'utilizzo di `curl`.
+In questa Sezione sarà spiegato come rimuovere _stock_#super[G] ad una merce interagendo con il Sistema mediante l'utilizzo di `curl`.
 
 Seguendo la guida saranno rimosse **5 unità** alla merce con **id** `hat-1` dal magazzino con **id** `1`.
 
@@ -19,4 +19,4 @@ Preparare e salvare in una variabile `LA_PARAMS` l'header da inviare assieme all
 
 Operazione completata: lo _stock_#super[G] è stato rimosso con successo.
 
-Per verificare le informazioni sulle merci del sistema si consiglia la lettura della Sezione dedicata.
+Per verificare le informazioni sulle merci del Sistema si consiglia la lettura della Sezione dedicata.
