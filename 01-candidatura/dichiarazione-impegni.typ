@@ -1,7 +1,7 @@
 // PC 31-10-2024
 
 #import "../lib/legacy.typ": *
-#import "@preview/plotst:0.2.0": *
+#import "../lib/pdp.typ": *
 
 #show: doc => documento(
   nome: [Dichiarazione impegni],
@@ -75,7 +75,6 @@ Seguiranno nei successivi paragrafi i dettagli.
     ),
     caption: [Ore di ogni componente per ciascun ruolo],
   )
-
 }
 #pagebreak()
 
@@ -104,16 +103,76 @@ Seguiranno nei successivi paragrafi i dettagli.
 ) <tab_2>
 
 #{
-  let p = plot(data: (
-    (9.01, "Responsabile - 9.01%"),
-    (9.32, "Amministratore - 9.32%"),
-    (9.32, "Analista - 9.32%"),
-    (23.29, "Progettista - 23.29%"),
-    (27.95, "Programmatore - 27.95%"),
-    (21.12, "Verificatore - 21.12%"),
-  ))
+  let data = (
+    (percentuale: 9.01, titolo: "Responsabile - 9.01%"),
+    (percentuale: 9.32, titolo: "Amministratore - 9.32%"),
+    (percentuale: 9.32, titolo: "Analista - 9.32%"),
+    (percentuale: 23.29, titolo: "Progettista - 23.29%"),
+    (percentuale: 27.95, titolo: "Programmatore - 27.95%"),
+    (percentuale: 21.12, titolo: "Verificatore - 21.12%"),
+  )
 
-  pie_chart(p, (40%, 30%), caption: "Divisione ore", display_style: "hor-legend-chart")
+  let ruoli = (
+    "Responsabile",
+    "Amministratore",
+    "Analista",
+    "Progettista",
+    "Programmatore",
+    "Verificatore",
+  )
+
+  let posizioni-legenda = (2, 2, 2, 2, -2, -2)
+  let descr = []
+
+  figure(
+    canvas({
+      import draw: *
+      chart.piechart(
+        data,
+        name: "pie",
+        position: (1em, 0),
+        radius: 1.8,
+        value-key: "percentuale",
+        label-key: "titolo",
+        outer-label: (content: none),
+        gap: 2deg,
+        legend: (label: none),
+      )
+
+      set-style(content: (padding: .2))
+      for (i, dat) in data.enumerate() {
+        if dat.percentuale > 0 {
+          // Calculate the point at 35% of the distance from the border of a slice to its center
+          let outer = "pie.chart.item-" + str(i)
+          let inner = "pie.chart.item-" + str(i) + "-inner"
+          line(outer, inner, stroke: none, mark: none, name: "midline-" + str(i))
+          let middle = (name: "midline-" + str(i), anchor: 35%)
+
+          let line-dir = posizioni-legenda.at(i)
+          let line-anchor = if posizioni-legenda.at(i) > 0 {
+            "west"
+          } else {
+            "east"
+          }
+          let percent = calc.round(dat.percentuale * 100 / data.map(x => x.percentuale).sum())
+
+          line(middle, (rel: (posizioni-legenda.at(i), 0)), name: "line-" + str(i))
+          content((), [#ruoli.at(i) - #percent%], anchor: line-anchor)
+          mark(
+            (name: "line-" + str(i), anchor: 0%),
+            (name: "line-" + str(i), anchor: 1%),
+            symbol: "o",
+            anchor: "center",
+            fill: white,
+            width: 1,
+          )
+        } else { }
+      }
+    }),
+
+    caption: [Divisione ore],
+    supplement: [Grafico],
+  )
 }
 
 #pagebreak()
