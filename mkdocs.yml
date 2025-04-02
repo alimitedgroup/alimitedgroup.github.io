@@ -35,6 +35,7 @@ nav:
       - Effettuare un trasferimento: guide/trasferimento.md
       - Visualizzare i trasferimenti eseguiti: guide/visualizza-trasferimenti.md
       - Impostare una soglia di allerta: guide/soglia.md
+      - Visualizzare le soglie impostate: guide/visualizza-soglie.md
       - Ricevere le notifiche: guide/notifiche.md
   - Telemetria:
       - Configurazione di Grafana: telemetria/config.md

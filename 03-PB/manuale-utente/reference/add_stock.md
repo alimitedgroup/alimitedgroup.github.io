@@ -1,4 +1,4 @@
-# POST `/goods/:good_id/warehouse/:warehouse_id/stock` <!--raw-typst <endpoint> -->
+# POST `/api/v1/goods/:good_id/warehouse/:warehouse_id/stock` <!--raw-typst <endpoint> -->
 
 Questa route consente di aggiungere dello stock#super[G] ad una merce del magazzino.
 
@@ -23,7 +23,7 @@ Si.
         [`good_id`], [`string`], [L'identificativo della merce], [`7be87589-6835-4437-ba6a-96d6b9a383c1`],
         [`warehouse_id`], [`string`], [L'identificativo del magazzino], [`warehouse-1`],
    ),
-   caption: [Variabili PATH di POST `/:good_id/warehouse/:warehouse_id/stock`],
+   caption: [Variabili PATH di POST `/api/v1/:good_id/warehouse/:warehouse_id/stock`],
 )
 -->
 
@@ -52,7 +52,7 @@ Codifica: `application/json`
         ),
         [`quantity`], [`int`], [La quantità di stock da aggiungere], [`10`],
    ),
-   caption: [Corpo della richiesta di POST `/:good_id/warehouse/:warehouse_id/stock`],
+   caption: [Corpo della richiesta di POST `/api/v1/:good_id/warehouse/:warehouse_id/stock`],
 )
 -->
 

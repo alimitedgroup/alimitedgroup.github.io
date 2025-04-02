@@ -1,4 +1,4 @@
-# GET `/ping`
+# GET `/api/v1/ping`
 
 Questa route consente di verificare se il servizio `api_gateway` è correttamente in esecuzione.
 
@@ -34,7 +34,7 @@ Codifica: `application/json`
         ),
         [`message`], [`string`], [Valore fisso, sempre uguale a "pong".], [`pong`],
    ),
-   caption: [Risposta di GET `/ping`],
+   caption: [Risposta di GET `/api/v1/ping`],
 )
 -->
 

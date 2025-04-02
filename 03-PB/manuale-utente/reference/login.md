@@ -1,4 +1,4 @@
-# POST `/login`
+# POST `/api/v1/login`
 
 Questa route consente di autenticarsi presso il servizio `api_gateway`, in modo da poter accedere alle route che richiedono autenticazione.
 
@@ -24,7 +24,7 @@ Codifica: `application/x-www-form-urlencoded`
         ),
         [ `username`], [`string`], [L'username con cui ci si vuole autenticare], [`admin`],
    ),
-   caption: [Corpo della richiesta di POST `/login`],
+   caption: [Corpo della richiesta di POST `/api/v1/login`],
 )
 -->
 

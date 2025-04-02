@@ -1,4 +1,4 @@
-# POST `/notifications/queries`
+# POST `/api/v1/notifications/queries`
 
 Questa route consente di creare una query per le notifiche.
 
@@ -26,7 +26,7 @@ Codifica: `application/json`
         [`operator`], [`string`], [Operatore logico da utilizzare nella query], [`"<"`],
         [`threshold`], [`int`], [Valore numerico della query], [`"10"`],
    ),
-   caption: [Corpo della richiesta di POST `/notifications/queries`],
+   caption: [Corpo della richiesta di POST `/api/v1/notifications/queries`],
 )
 -->
 
@@ -57,7 +57,7 @@ Codifica: `application/json`
         ),
         [`good_id`], [`string`], [Identificativo della query creata], [`876f754f-e7da-4f07-b6de-258bbfb384bc`],
    ),
-   caption: [Risposta di POST `/notifications/queries`],
+   caption: [Risposta di POST `/api/v1/notifications/queries`],
 )
 -->
 

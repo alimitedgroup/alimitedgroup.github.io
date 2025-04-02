@@ -1,4 +1,4 @@
-# GET `/notifications/queries`
+# GET `/api/v1/notifications/queries`
 
 Questa route consente di recuperare la lista di query delle notifiche.
 
@@ -30,7 +30,7 @@ Codifica: `application/json`
         ),
         [`queries`], [`Query[]`], [ Una lista di query delle notifiche, ognuna con il tipo di soglia monitorata.], [`"queries": [{"query_id":"39dfe1b4-35b2-467b-b86f-a915ac362cba","good_id": "hat-1","operator": "<","threshold": 5}]`],
    ),
-   caption: [Risposta di GET `/notifications/queries`],
+   caption: [Risposta di GET `/api/v1/notifications/queries`],
 )
 -->
 

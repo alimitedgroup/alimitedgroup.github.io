@@ -1,4 +1,4 @@
-# GET `/is_logged`
+# GET `/api/v1/is_logged`
 
 Questa route consente di verificare lo stato di autenticazione. Inoltre, consente di ottenere il proprio ruolo attuale, qualora non sia desiderabile ottenerlo estraendolo dal token JWT.
 
@@ -31,7 +31,7 @@ Codifica: `application/json`
         ),
         [`role`], [`string`], [Il ruolo dell'utente associato al token fornito. Il ruolo può essere uno tra le tre stringhe `client`, `local_admin` e `global_admin`.], [`global_admin`],
    ),
-   caption: [Risposta di GET `/is_logged`],
+   caption: [Risposta di GET `/api/v1/is_logged`],
 )
 -->
 
