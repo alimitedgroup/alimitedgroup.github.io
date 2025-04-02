@@ -1190,7 +1190,7 @@ I trasferimenti vengono gestiti in modo simile agli ordini, con la differenza ch
 
 Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
 
-I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
+I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm_: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
 
 È formato dalle seguenti componenti:
 
@@ -4739,6 +4739,7 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 - *`ListenTransferUpdate(ctx context.Context, msg jetstream.Msg) error`*: gestisce i messaggi per l'aggiornamento dei trasferimenti. Decodifica il messaggio ricevuto in un oggetto `TransferUpdate`, lo trasforma in un comando `ConfirmTransferCmd` e delega l'operazione al caso d'uso#super[G] `confirmTransferUseCase`. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
+#include "specifica/notification/index.typ"
 #pagebreak()
 
 = Stato dei requisiti funzionali
