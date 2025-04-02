@@ -1,4 +1,4 @@
-# GET `/transfers`
+# GET `v1/transfers`
 
 Questa route consente di recuperare la lista di `transfer`s (trasferimenti)
 
