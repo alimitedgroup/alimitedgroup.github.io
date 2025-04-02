@@ -40,21 +40,21 @@ nav:
       - Configurazione di Grafana: telemetria/config.md
       - Importare una dashboard: telemetria/dashboard.md
   - Riferimento API:
-      - GET /api/v1/ping: reference/ping.md
-      - POST /api/v1/login: reference/login.md
-      - GET /api/v1/is_logged: reference/is_logged.md
-      - GET /api/v1/goods: reference/get_goods.md
-      - GET /api/v1/warehouses: reference/get_warehouses.md
-      - GET /api/v1/orders: reference/get_orders.md
-      - GET /api/v1/transfers: reference/get_transfers.md
-      - POST /api/v1/goods: reference/create_good.md
-      - POST /api/v1/orders: reference/create_order.md
-      - POST /api/v1/transfers: reference/create_transfer.md
-      - PUT /api/v1/goods/:good_id: reference/update_good.md
-      - POST /api/v1/goods/:good_id/warehouse/:warehouse_id/stock: reference/add_stock.md
-      - DELETE /api/v1/goods/:good_id/warehouse/:warehouse_id/stock: reference/remove_stock.md
-      - POST /api/v1/notifications/queries: reference/create_notification_query.md
-      - GET /api/v1/notifications/queries: reference/get_notification_queries.md
+      - GET /ping: reference/ping.md
+      - POST /login: reference/login.md
+      - GET /is_logged: reference/is_logged.md
+      - GET /goods: reference/get_goods.md
+      - GET /warehouses: reference/get_warehouses.md
+      - GET /orders: reference/get_orders.md
+      - GET /transfers: reference/get_transfers.md
+      - POST /goods: reference/create_good.md
+      - POST /orders: reference/create_order.md
+      - POST /transfers: reference/create_transfer.md
+      - PUT /goods/:good_id: reference/update_good.md
+      - POST /goods/:good_id/warehouse/:warehouse_id/stock: reference/add_stock.md
+      - DELETE /goods/:good_id/warehouse/:warehouse_id/stock: reference/remove_stock.md
+      - POST /notifications/queries: reference/create_notification_query.md
+      - GET /notifications/queries: reference/get_notification_queries.md
 
 hooks:
   - 03-PB/manuale-utente/preprocess.py
