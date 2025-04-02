@@ -43,11 +43,11 @@ nav:
       - GET /ping: reference/ping.md
       - POST /login: reference/login.md
       - GET /is_logged: reference/is_logged.md
-      - GET /goods: reference/get_goods.md
-      - GET /warehouses: reference/get_warehouses.md
+      - GET v1/goods: reference/get_goods.md
+      - GET v1/warehouses: reference/get_warehouses.md
       - GET /orders: reference/get_orders.md
       - GET /transfers: reference/get_transfers.md
-      - POST /goods: reference/create_good.md
+      - POST v1/goods: reference/create_good.md
       - POST /orders: reference/create_order.md
       - POST /transfers: reference/create_transfer.md
       - PUT /goods/:good_id: reference/update_good.md

@@ -1,4 +1,4 @@
-# GET `/warehouses`
+# GET `v1/warehouses`
 
 Questa route consente di recuperare la lista di `warehouse`#super[G] (magazzini)
 
