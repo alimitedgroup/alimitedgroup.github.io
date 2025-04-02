@@ -44,7 +44,7 @@ Procedere dunque ad importare la _dashboard_#super[G] caricando l'apposito file 
 #pagebreak()
 -->
 
-# Modificare una dashboard#super[G] 
+# Modificare una dashboard#super[G]
 
 Selezionare anzitutto la _dashboard_#super[G] appena importata come mostrato in figura:
 
