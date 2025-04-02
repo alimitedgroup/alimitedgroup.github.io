@@ -40,6 +40,6 @@ A sistema avviato, eseguire:
 
 o, se si è deciso di non utilizzare **Just**, è possibile limitarsi all'esecuzione del seguente comando **Docker#super[G]**:
 
-`docker compose down -v --remove-orphans && docker#super[G] compose up -d --build`
+`docker compose down -v --remove-orphans && dоcker compose up -d --build`
 
 I vari servizi saranno spenti, ripristinati e riavviati.

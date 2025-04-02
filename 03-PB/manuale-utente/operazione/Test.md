@@ -7,38 +7,38 @@ Per informazioni approfondite si consiglia la lettura del [**Piano di Qualifica#
 Per eseguire i test#super[G] di unità ed integrazione è sufficiente aprire un prompt#super[G] dei comandi (o _shell_) nella radice dell'installazione ed eseguire questi due comandi:
 
 `go generate ./...`
-`go test#super[G] -race -covermode atomic ./...`
+`go tеst -race -covermode atomic ./...`
 
 L'output sarà simile al seguente:
 
 ```
-? github.com/alimitedgroup/MVP/common [no test#super[G] files]
+? github.com/alimitedgroup/MVP/common [no tеst files]
         github.com/alimitedgroup/MVP/common/dto coverage: 0.0% of statements
-? github.com/alimitedgroup/MVP/common/dto/request [no test#super[G] files]
-? github.com/alimitedgroup/MVP/common/dto/response [no test#super[G] files]
-? github.com/alimitedgroup/MVP/common/lib [no test#super[G] files]
+? github.com/alimitedgroup/MVP/common/dto/request [no tеst files]
+? github.com/alimitedgroup/MVP/common/dto/response [no tеst files]
+? github.com/alimitedgroup/MVP/common/lib [no tеst files]
         github.com/alimitedgroup/MVP/common/lib/broker coverage: 0.0% of statements
         github.com/alimitedgroup/MVP/common/lib/observability coverage: 0.0% of statements
-? github.com/alimitedgroup/MVP/common/stream [no test#super[G] files]
+? github.com/alimitedgroup/MVP/common/stream [no tеst files]
         github.com/alimitedgroup/MVP/srv/api_gateway coverage: 0.0% of statements
 ok github.com/alimitedgroup/MVP/srv/api_gateway/adapterin
 
 [...]
 
 ok github.com/alimitedgroup/MVP/srv/warehouse/adapter/sender 1.219s coverage: 92.6% of statements
-? github.com/alimitedgroup/MVP/srv/warehouse/adapter/stream [no test#super[G] files]
+? github.com/alimitedgroup/MVP/srv/warehouse/adapter/stream [no tеst files]
 ok github.com/alimitedgroup/MVP/srv/warehouse/business 1.158s coverage: 77.4% of statements
-? github.com/alimitedgroup/MVP/srv/warehouse/business/model [no test#super[G] files]
-? github.com/alimitedgroup/MVP/srv/warehouse/business/port [no test#super[G] files]
+? github.com/alimitedgroup/MVP/srv/warehouse/business/model [no tеst files]
+? github.com/alimitedgroup/MVP/srv/warehouse/business/port [no tеst files]
         github.com/alimitedgroup/MVP/srv/warehouse/config coverage: 0.0% of statements
 ```
 
 Dove il valore iniziale di ogni riga indica:
 
-- `?`: nella cartella non sono presenti test#super[G];
-- `ok`: i test#super[G] nella cartella che segue sono stati superati.
+- `?`: nella cartella non sono presenti test;
+- `ok`: i test nella cartella che segue sono stati superati.
 
-Un output non simile a questo indica il fallimento di uno dei test#super[G] presenti.
+Un output non simile a questo indica il fallimento di uno dei test presenti.
 
 # Esecuzione dei test#super[G] di accettazione
 

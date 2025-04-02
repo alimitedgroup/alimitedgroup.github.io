@@ -9,13 +9,13 @@ L'avvio con i _file_ sorgente non alterati dovrebbe completare automaticamente l
 Avviato il container con il servizio `grafana`#super[G] aprire un browser e collegarsi all'indirizzo `localhost:3000`. Apparirà la seguente schermata di login:
 
 <p align="center">
-  <img src="./../../assets/grafana-login.png" width="100%" />
+  <img src="./../../assets/grafana-login.png" width="100%"/>
 </p>
 
 <!--raw-typst
 
 #figure(
-image("./../assets/grafana-login.png", width: 120%, height: 30%),
+image("./../assets/grafana-login.png", width: 120%, height: 26%),
     caption: "Pagina di login di Grafana"
 )
 -->
@@ -37,7 +37,7 @@ Si presenterà la seguente schermata: sebbene sia consigliato cambiare la passwo
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/grafana-logged-in.png", width: 120%, height: 30%),
+        image("./../assets/grafana-logged-in.png", width: 120%, height: 26%),
     ),
     caption: "Pagina di richiesta cambio password di Grafana"
 )
@@ -59,7 +59,7 @@ Selezionare, nella colonna di sinistra, la voce **Connections**, quindi **Data s
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/grafana-add-source.png", width: 120%, height: 30%),
+        image("./../assets/grafana-add-source.png", width: 120%, height: 26%),
     ),
     caption: "Pagina Data Sources di Grafana"
 )
@@ -79,7 +79,7 @@ Nella schermata che appare, cercare **Prometheus** e selezionarlo, come mostrato
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/sel-prom.png", width: 120%, height: 30%),
+        image("./../assets/sel-prom.png", width: 120%, height: 26%),
     ),
     caption: "Pagina Data Sources di Grafana"
 )
@@ -97,14 +97,10 @@ Inserire l'indirizzo di Prometheus: se configurato localmente e con il file `com
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/prom-addr.png", width: 120%, height: 30%),
+        image("./../assets/prom-addr.png", width: 120%, height: 26%),
     ),
     caption: "Inserimento indirizzo di Prometheus"
 )
--->
-
-<!--raw-typst
-#pagebreak()
 -->
 
 Salvare quindi la configurazione.
@@ -119,7 +115,7 @@ Salvare quindi la configurazione.
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/prom-save.png", width: 110%, height: 30%),
+        image("./../assets/prom-save.png", width: 110%, height: 26%),
     ),
     caption: "Salvataggio connessione a Prometheus"
 )
@@ -139,17 +135,13 @@ Anzitutto, recarsi nuovamente in **Connections** > **Data sources**. Dopo l'aggi
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/add-src-2.png", width: 120%, height: 30%),
+        image("./../assets/add-src-2.png", width: 120%, height: 26%),
     ),
     caption: "Aggiunta di una nuova sorgente dati"
 )
 -->
 
 Cliccare, come mostrato in Figura 10, **Add new data source**.
-
-<!--raw-typst
-#pagebreak()
--->
 
 A questo punto, procedere a cercare e selezionare **Loki**, come mostrato nella figura seguente:
 
@@ -164,7 +156,7 @@ A questo punto, procedere a cercare e selezionare **Loki**, come mostrato nella 
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/sel-loki.png", width: 120%, height: 30%),
+        image("./../assets/sel-loki.png", width: 120%, height: 26%),
     ),
     caption: "Selezione della sorgente dati Loki"
 )
@@ -183,14 +175,14 @@ Inserire l'indirizzo di Loki: se configurato localmente e con il file `compose.y
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/config-loki.png", width: 120%, height: 30%),
+        image("./../assets/config-loki.png", width: 120%, height: 26%),
     ),
     caption: "Inserimento indirizzo di Loki"
 )
 -->
-<!--raw-typst
-#pagebreak()
--->
+
+<!--raw-typst #pagebreak() -->
+
 Confermare quindi l'aggiunta come mostrato nella figura che segue:
 
 <p align="center">
@@ -203,12 +195,9 @@ Confermare quindi l'aggiunta come mostrato nella figura che segue:
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../assets/confirm-loki.png", width: 120%, height: 30%),
+        image("./../assets/confirm-loki.png", width: 120%, height: 26%),
     ),
     caption: "Salvataggio connessione a Loki"
 )
 -->
 
-<!--raw-typst
-#pagebreak()
--->

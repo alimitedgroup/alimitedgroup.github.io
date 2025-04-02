@@ -30,6 +30,8 @@ Tutti i servizi appena elencati possiedono tre variabili d'ambiente configurabil
 - **ENV_SERVICE_ID**: l'identificativo del servizio;
 - **OTLP_URL**: l'indirizzo di un'istanza di collector (default: `collector:4317`);
 
+<!--raw-typst #pagebreak() -->
+
 <!--raw-typst
 -------------------------------------------------------------------------------------------------------------------
 -->
@@ -55,7 +57,7 @@ Nel caso un servizio richiederà ulteriori configurazioni, questo sarà ora desc
 
 Possiede queste ulteriori variabili d'ambiente:
 
-- **ENV_API_PORT**: porta API#super[G] (default: `8080`);
+- **ENV_АPI_PORT**: porta АPI (default: `8080`);
 - **HTTP_HOST**: host del sistema (default: `0.0.0.0`);
 - **HTTP_PORT**: porta http (default: `8080`).
 

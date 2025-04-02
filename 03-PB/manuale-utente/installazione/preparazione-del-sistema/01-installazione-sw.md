@@ -12,7 +12,7 @@ Anzitutto procedere al reperimento dell'ultima _release_ del Software disponibil
     grid(
         columns: 1,
         gutter: 2mm,
-        image("./../../assets/Release.png", width: 70%),
+        image("./../../assets/Release.png", width: 70%, height: 28%),
     ),
     caption: "Selezione della sezione Release"
 )

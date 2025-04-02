@@ -2,13 +2,13 @@
 
 Il Sistema permette di ottenere una lista degli ordini eseguiti.
 
-Anzitutto è necessario ottenere un token per il ruolo di **Admin Globale**: per maggiori informazioni vedere la Sezione dedicata al login.
+Anzitutto è necessario ottenere un token per il ruolo di **Cliente**: per maggiori informazioni vedere la Sezione dedicata al login.
 
-La guida considererà ottenuto questo token e salvato in una variabile `GA_TOKEN`.
+La guida considererà ottenuto questo token e salvato in una variabile `C_TOKEN`.
 
-Preparare e salvare in una variabile `GA_PARAMS` l'header da inviare assieme alla richiesta con il seguente comando:
+Preparare e salvare in una variabile `C_PARAMS` l'header da inviare assieme alla richiesta con il seguente comando:
 
-`GA_PARAMS=(-sS -H "Authorization: Bearer $GA_TOKEN" -H "Content-Type: application/json")`
+`C_PARAMS=(-sS -H "Authorization: Bearer $GA_TOKEN" -H "Content-Type: application/json")`
 
 È possibile quindi ottenere la lista degli ordini eseguendo il comando seguente:
 
