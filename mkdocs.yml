@@ -38,7 +38,7 @@ nav:
       - Ricevere le notifiche: guide/notifiche.md
   - Telemetria:
       - Configurazione di Grafana: telemetria/config.md
-      - Importare una dashboard: telemetria/dashboard.md
+      - Importare e modificare una dashboard: telemetria/dashboard.md
   - Riferimento API:
       - GET /ping: reference/ping.md
       - POST /login: reference/login.md

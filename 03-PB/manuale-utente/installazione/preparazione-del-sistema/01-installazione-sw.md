@@ -16,7 +16,7 @@ Anzitutto procedere al reperimento dell'ultima _release_ del Software disponibil
     ),
     caption: "Selezione della sezione Release"
 )
-#pagebreak()
+
 -->
 
 Quindi selezionare la release di interesse (nel momento in cui questo manuale viene scritto, la 0.2):
