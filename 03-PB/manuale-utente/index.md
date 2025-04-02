@@ -27,7 +27,7 @@ In particolare, sono presenti le seguenti sezioni:
 
 - **Guide**: delle guide rapide con l'obiettivo di guidare l'utente mentre effettua una particolare azione.
   Essa segue la forma di documentazione _How-to_ _guides_, come indicato dal Diátaxis;
-  
+
 - **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_#super[G] possibili;
   utile per l'utente che necessita di una specifica dettagliata del funzionamento dell'_API_.
   Essa segue la forma di documentazione _Reference_, come indicato dal Diátaxis.
