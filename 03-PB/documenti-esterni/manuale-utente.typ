@@ -17,10 +17,19 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.3.0",
+      date: datetime(day: 2, month: 04, year: 2025),
+      descr: "Redazione installazione e configurazione Sistema, Test, Guide e Telemetria  "
+        + [(@install, @testpar, @guidepar, @tel)]
+        + ".",
+      autore: p.matteo,
+      verifica: p.samuele,
+    ),
+    (
       vers: "0.2.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti: "
-        + [(@tipiutenti, @capordini, @captrasferimenti, @capriassortimenti)]
+      descr: "Redazione sezione Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti. Stesura Endpoint. "
+        + [(@tipiutenti, @capordini, @captrasferimenti, @capriassortimenti, @endpoint)]
         + ".",
       autore: p.marco,
       verifica: p.samuele,

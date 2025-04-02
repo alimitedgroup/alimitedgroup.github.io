@@ -1,4 +1,4 @@
-# POST `/goods/:good_id/warehouse/:warehouse_id/stock`
+# POST `/goods/:good_id/warehouse/:warehouse_id/stock` <!--raw-typst <endpoint> -->
 
 Questa route consente di aggiungere dello stock#super[G] ad una merce del magazzino.
 

@@ -1,4 +1,4 @@
-# Aggiungere una merce
+# Aggiungere una merce <!--raw-typst <guidepar> -->
 
 In questa sezione sarà spiegato come aggiungere una merce interagendo con il Sistema mediante l'utilizzo di `curl` e `jq`.
 
