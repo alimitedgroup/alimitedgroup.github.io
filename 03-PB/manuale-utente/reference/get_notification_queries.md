@@ -1,4 +1,4 @@
-# GET `/api/v1/notifications/queries`
+# GET `/notifications/queries`
 
 Questa route consente di recuperare la lista di query delle notifiche.
 

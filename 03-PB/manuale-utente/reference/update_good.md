@@ -1,4 +1,4 @@
-# PUT `/api/v1/goods/:good_id`
+# PUT `/goods/:good_id`
 
 Questa route consente di aggiornare una merce.
 

@@ -1,4 +1,4 @@
-# GET `/api/v1/ping`
+# GET `/ping`
 
 Questa route consente di verificare se il servizio `api_gateway` è correttamente in esecuzione.
 

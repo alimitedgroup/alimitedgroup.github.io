@@ -1,4 +1,4 @@
-# POST `/api/v1/notifications/queries`
+# POST `/notifications/queries`
 
 Questa route consente di creare una query per le notifiche.
 

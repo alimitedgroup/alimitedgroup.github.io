@@ -1,4 +1,4 @@
-# GET `/api/v1/goods`
+# GET `/goods`
 
 Questa route consente di recuperare la lista di `good`#super[G] (merci)
 

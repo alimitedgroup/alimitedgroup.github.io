@@ -1,4 +1,4 @@
-# POST `/api/v1/goods`
+# POST `/goods`
 
 Questa route consente di creare una merce.
 

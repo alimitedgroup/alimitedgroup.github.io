@@ -1,4 +1,4 @@
-# POST `/api/v1/orders`
+# POST `/orders`
 
 Questa route consente di creare un ordine#super[G] di merci.
 

@@ -1,4 +1,4 @@
-# DELETE `/api/v1/goods/:good_id/warehouse/:warehouse_id/stock`
+# DELETE `/goods/:good_id/warehouse/:warehouse_id/stock`
 
 Questa route consente di rimuovere dello stock#super[G] ad una merce del magazzino.
 

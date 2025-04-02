@@ -1,4 +1,4 @@
-# GET `/api/v1/orders`
+# GET `/orders`
 
 Questa route consente di recuperare la lista di `order`s (ordini)
 

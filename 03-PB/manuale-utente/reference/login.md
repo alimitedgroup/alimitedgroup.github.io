@@ -1,4 +1,4 @@
-# POST `/api/v1/login`
+# POST `/login`
 
 Questa route consente di autenticarsi presso il servizio `api_gateway`, in modo da poter accedere alle route che richiedono autenticazione.
 

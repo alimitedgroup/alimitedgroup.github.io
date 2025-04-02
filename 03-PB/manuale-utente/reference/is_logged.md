@@ -1,4 +1,4 @@
-# GET `/api/v1/is_logged`
+# GET `/is_logged`
 
 Questa route consente di verificare lo stato di autenticazione. Inoltre, consente di ottenere il proprio ruolo attuale, qualora non sia desiderabile ottenerlo estraendolo dal token JWT.
 

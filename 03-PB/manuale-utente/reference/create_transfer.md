@@ -1,4 +1,4 @@
-# POST `/api/v1/orders`
+# POST `/orders`
 
 Questa route consente di creare un trasferimento#super[G] di merci da un magazzino all'altro.
 

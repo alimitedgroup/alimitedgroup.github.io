@@ -16,14 +16,18 @@ La parte finale di questo manuale ha l'obiettivo di
 esporre tutte le conoscenze necessarie per un utilizzo efficace del Sistema.
 Ciò è fatto seguendo i principi di Diátaxis, un "Approccio sistematico alla produzione di documentazione tecnica".
 In particolare, sono presenti le seguenti sezioni:
+
 - **_Quickstart_**: una lezione rapida sull'utilizzo del software,
   che può essere completata indicativamente in una decina di minuti.
   Essa segue la forma di documentazione _Tutorial_, come indicato dal Diátaxis;
+
 - **Concetti**: una spiegazione completa dei concetti chiave che potrebbe
   essere necessario conoscere per usare il Sistema.
   Essa segue la forma di documentazione _Explanation_, come indicato dal Diátaxis;
+
 - **Guide**: delle guide rapide con l'obiettivo di guidare l'utente mentre effettua una particolare azione.
   Essa segue la forma di documentazione _How-to_ _guides_, come indicato dal Diátaxis;
+  
 - **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_#super[G] possibili;
   utile per l'utente che necessita di una specifica dettagliata del funzionamento dell'_API_.
   Essa segue la forma di documentazione _Reference_, come indicato dal Diátaxis.
