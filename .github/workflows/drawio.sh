@@ -4,6 +4,7 @@ set -eu
 
 OUTPUT_DIR="assets/drawio"
 mkdir -p "$OUTPUT_DIR"
+rm -f $OUTPUT_DIR/*.svg
 
 time docker pull rlespinasse/drawio-desktop-headless
 
