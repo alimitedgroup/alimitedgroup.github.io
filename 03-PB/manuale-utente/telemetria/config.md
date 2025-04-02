@@ -1,12 +1,12 @@
-Questa guida spiegherà come configurare Grafana per avere sotto osservazione tutte le misurazioni di natura telemetrica.
+Questa guida spiegherà come configurare Grafana#super[G] per avere sotto osservazione tutte le misurazioni di natura telemetrica.
 
-La guida suppone che l'accesso a Grafana sia effettuato da una macchina che possiede in esecuzione un'istanza dell'omonimo servizio: vedere la Sezione dedicata all'installazione del Sistema.
+La guida suppone che l'accesso a Grafana#super[G] sia effettuato da una macchina che possiede in esecuzione un'istanza dell'omonimo servizio: vedere la Sezione dedicata all'installazione del Sistema.
 
 L'avvio con i _file_ sorgente non alterati dovrebbe completare automaticamente la configurazione ma questa guida illustrerà nel dettaglio tutti i passaggi.
 
 # Primo accesso
 
-Avviato il container con il servizio `grafana` aprire un browser e collegarsi all'indirizzo `localhost:3000`. Apparirà la seguente schermata di login:
+Avviato il container con il servizio `grafana`#super[G] aprire un browser e collegarsi all'indirizzo `localhost:3000`. Apparirà la seguente schermata di login:
 
 <p align="center">
   <img src="./../../../assets/grafana-login.png" width="100%" />

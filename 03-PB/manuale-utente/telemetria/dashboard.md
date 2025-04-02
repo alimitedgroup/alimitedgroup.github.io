@@ -1,10 +1,10 @@
 # Importare una dashbord
 
-I file forniti includono una _dashboard_ configurata per avere a disposizione tutti i microservizi in esecuzione nella stessa macchina.
+I file forniti includono una _dashboard_#super[G] configurata per avere a disposizione tutti i microservizi in esecuzione nella stessa macchina.
 
-Tale _dashboard_ è automaticamente importata all'avvio del Sistema. Qualora non lo fosse, è possibile seguire questi passaggi.
+Tale _dashboard_#super[G] è automaticamente importata all'avvio del Sistema. Qualora non lo fosse, è possibile seguire questi passaggi.
 
-Anzitutto recarsi nella sezione **Dashboards** di Grafana, selezionando l'apposita opzione nella barra laterale sinistra, come mostrato in figura:
+Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], selezionando l'apposita opzione nella barra laterale sinistra, come mostrato in figura:
 
 <p align="center">
   <img src="./../../../assets/sel-dashboard.png" width="100%" />
@@ -22,7 +22,7 @@ Anzitutto recarsi nella sezione **Dashboards** di Grafana, selezionando l'apposi
 )
 -->
 
-Procedere dunque ad importare la dashboard caricando l'apposito file JSON che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
+Procedere dunque ad importare la _dashboard_#super[G] caricando l'apposito file JSON che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
 
 <p align="center">
   <img src="./../../../assets/import-dashboard.png" width="100%" />
@@ -44,9 +44,9 @@ Procedere dunque ad importare la dashboard caricando l'apposito file JSON che è
 #pagebreak()
 -->
 
-# Modificare una dashboard
+# Modificare una dashboard#super[G] 
 
-Selezionare anzitutto la _dashboard_ appena importata come mostrato in figura:
+Selezionare anzitutto la _dashboard_#super[G] appena importata come mostrato in figura:
 
 <p align="center">
   <img src="./../../../assets/import-dashboard-to-view.png" width="100%" />
