@@ -21,14 +21,14 @@ In particolare, sono presenti le seguenti sezioni:
   essere necessario conoscere per usare il Sistema.
   Essa segue la forma di documentazione _Explanation_, come indicato dal Diátaxis;
 
-- **Test**: una breve introduzione all'esecuzione dei test di unità, integrazione e accettazione;
+- **Test#super[G]**: una breve introduzione all'esecuzione dei test#super[G] di unità, integrazione e accettazione;
 
 - **Installazione**: una spiegazione completa su come scaricare, installare, configurare ed avviare il Sistema;
 
 - **Guide**: delle guide rapide con l'obiettivo di guidare l'utente mentre effettua una particolare azione.
   Essa segue la forma di documentazione _How-to_ _guides_, come indicato dal Diátaxis;
 
-- **Telemetria**: una guida alla configurazione di Grafana e al suo utilizzo.
+- **Telemetria**: una guida alla configurazione di Grafana#super[G] e al suo utilizzo.
 
 - **Riferimento _API_**: specifica con il massimo dettaglio ogni aspetto delle chiamate _API_#super[G] possibili;
   utile per l'utente che necessita di una specifica dettagliata del funzionamento dell'_API_.

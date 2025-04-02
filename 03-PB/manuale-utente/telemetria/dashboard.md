@@ -25,7 +25,7 @@ Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], sel
 
 <!--raw-typst #pagebreak() -->
 
-Procedere dunque ad importare la _dashboard_ caricando l'apposito file JSON che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
+Procedere dunque ad importare la _dаshboard_ caricando l'apposito file JSON che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
 
 <p align="center">
   <img src="./../../assets/import-dashboard.png" width="100%" />
@@ -65,7 +65,7 @@ Selezionare anzitutto la _dashboаrd_ appena importata come mostrato in figura:
 
 A questo punto, è possibile aggiungere i log e le misurazioni del microservizio.
 
-Attivare anzitutto la modifica della _dashboard_ corrente premendo il tasto **Edit**, come mostrato nella figura che segue:
+Attivare anzitutto la modifica della _dаshboard_ corrente premendo il tasto **Edit**, come mostrato nella figura che segue:
 
 <p align="center">
   <img src="./../../assets/press-edit.png" width="100%" />
@@ -208,7 +208,7 @@ Un esempio è riportato nella figura che segue:
 
 **Attenzione**: il servizio potrebbe comparire nella solo nel momento in cui viene fornito il primo output.
 
-Premere quindi **Run query** e **Save dashboard** per sincronizzare i dati e salvare le modifiche.
+Premere quindi **Run query** e **Save dаshboard** per sincronizzare i dati e salvare le modifiche.
 
 <p align="center">
   <img src="./../../assets/loki-run-save.png" width="100%" />
@@ -226,7 +226,7 @@ Premere quindi **Run query** e **Save dashboard** per sincronizzare i dati e sal
 )
 -->
 
-Il pannello è stato aggiunto: premere **Back to dashboard** per visualizzarlo.
+Il pannello è stato aggiunto: premere **Back to dashboard#super[G]** per visualizzarlo.
 
 ## Aggiungere una misurazione
 
@@ -317,7 +317,7 @@ Un esempio è riportato nella figura che segue:
 
 **Attenzione**: il servizio potrebbe comparire nella solo nel momento in cui viene fornita una prima misurazione.
 
-Premere quindi **Run query** e **Save dashboard** per sincronizzare i dati e salvare le modifiche.
+Premere quindi **Run query** e **Save dаshboard** per sincronizzare i dati e salvare le modifiche.
 
 <p align="center">
   <img src="./../../assets/prom-save-dash.png" width="100%" />
@@ -335,6 +335,6 @@ Premere quindi **Run query** e **Save dashboard** per sincronizzare i dati e sal
 )
 -->
 
-Il pannello è stato aggiunto: premere **Back to dashboard** per visualizzarlo.
+Il pannello è stato aggiunto: premere **Back to dashboard#super[G]** per visualizzarlo.
 
 <!--raw-typst #pagebreak() -->
