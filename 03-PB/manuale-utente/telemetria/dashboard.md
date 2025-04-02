@@ -7,7 +7,7 @@ Tale _dashboard_#super[G] è automaticamente importata all'avvio del Sistema. Qu
 Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], selezionando l'apposita opzione nella barra laterale sinistra, come mostrato in figura:
 
 <p align="center">
-  <img src="./../../../assets/sel-dashboard.png" width="100%" />
+  <img src="./../../assets/sel-dashboard.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -25,7 +25,7 @@ Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], sel
 Procedere dunque ad importare la _dashboard_#super[G] caricando l'apposito file JSON che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
 
 <p align="center">
-  <img src="./../../../assets/import-dashboard.png" width="100%" />
+  <img src="./../../assets/import-dashboard.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -49,7 +49,7 @@ Procedere dunque ad importare la _dashboard_#super[G] caricando l'apposito file 
 Selezionare anzitutto la _dashboard_#super[G] appena importata come mostrato in figura:
 
 <p align="center">
-  <img src="./../../../assets/import-dashboard-to-view.png" width="100%" />
+  <img src="./../../assets/import-dashboard-to-view.png" width="100%" />
 </p>
 
 <!--raw-typst

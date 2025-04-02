@@ -9,7 +9,7 @@ L'avvio con i _file_ sorgente non alterati dovrebbe completare automaticamente l
 Avviato il container con il servizio `grafana`#super[G] aprire un browser e collegarsi all'indirizzo `localhost:3000`. Apparirà la seguente schermata di login:
 
 <p align="center">
-  <img src="./../../../assets/grafana-login.png" width="100%" />
+  <img src="./../../assets/grafana-login.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -28,7 +28,7 @@ Inserire i dati di login di default:
 Si presenterà la seguente schermata: sebbene sia consigliato cambiare la password di default, al momento premeremo "Skip" per procedere con la guida.
 
 <p align="center">
-  <img src="./../../../assets/grafana-logged-in.png" width="100%" />
+  <img src="./../../assets/grafana-logged-in.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -50,7 +50,7 @@ Login effettuato.
 Selezionare, nella colonna di sinistra, la voce **Connections**, quindi **Data sources**. Apparirà la seguente schermata:
 
 <p align="center">
-  <img src="./../../../assets/grafana-add-source.png" width="100%" />
+  <img src="./../../assets/grafana-add-source.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -70,7 +70,7 @@ Come indicato dalla figura 6, cliccare il bottone **Add data source**.
 Nella schermata che appare, cercare **Prometheus** e selezionarlo, come mostrato in figura.
 
 <p align="center">
-  <img src="./../../../assets/sel-prom.png" width="100%" />
+  <img src="./../../assets/sel-prom.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -88,7 +88,7 @@ Nella schermata che appare, cercare **Prometheus** e selezionarlo, come mostrato
 Inserire l'indirizzo di Prometheus: se configurato localmente e con il file `compose.yml`, l'indirizzo è `http://prometheus:9090`.
 
 <p align="center">
-  <img src="./../../../assets/prom-addr.png" width="100%" />
+  <img src="./../../assets/prom-addr.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -110,7 +110,7 @@ Inserire l'indirizzo di Prometheus: se configurato localmente e con il file `com
 Salvare quindi la configurazione.
 
 <p align="center">
-  <img src="./../../../assets/prom-save.png" width="100%" />
+  <img src="./../../assets/prom-save.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -130,7 +130,7 @@ Salvare quindi la configurazione.
 Anzitutto, recarsi nuovamente in **Connections** > **Data sources**. Dopo l'aggiunta di **Prometheus**, la schermata sarà simile alla seguente:
 
 <p align="center">
-  <img src="./../../../assets/add-src-2.png" width="100%" />
+  <img src="./../../assets/add-src-2.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -155,7 +155,7 @@ A questo punto, procedere a cercare e selezionare **Loki**, come mostrato nella 
 
 
 <p align="center">
-  <img src="./../../../assets/sel-loki.png" width="100%" />
+  <img src="./../../assets/sel-loki.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -174,7 +174,7 @@ Inserire l'indirizzo di Loki: se configurato localmente e con il file `compose.y
 
 
 <p align="center">
-  <img src="./../../../assets/config-loki.png" width="100%" />
+  <img src="./../../assets/config-loki.png" width="100%" />
 </p>
 
 <!--raw-typst
@@ -194,7 +194,7 @@ Inserire l'indirizzo di Loki: se configurato localmente e con il file `compose.y
 Confermare quindi l'aggiunta come mostrato nella figura che segue:
 
 <p align="center">
-  <img src="./../../../assets/confirm-loki.png" width="100%" />
+  <img src="./../../assets/confirm-loki.png" width="100%" />
 </p>
 
 <!--raw-typst
