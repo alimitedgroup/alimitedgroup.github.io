@@ -680,15 +680,17 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [Correzione dei Casi d'Uso n. 32, 67 e 68: \ _sprint_ 7. \ \
       Aggiunta del tracciamento dei Casi d'Uso: \ _sprint_ 7. \ \
       Correzione dei requisiti non funzionali: \ _sprint_ 7.],
-    [In redazione],
+    [Completato],
 
-    [*Correzione Norme di Progetto*],
+    [*Correzione e completamento Norme di Progetto*],
     [Correzione delle seguenti parti:
       - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
       - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.
+      - Aggiornamento delle misurazioni con l'aggiunta di quelle relative al MVP.
     ],
     [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 8. \ \
-      Correzione con integrazione della sezione "Sviluppo": \ _sprint 8_.],
+      Correzione con integrazione della sezione "Sviluppo": \ _sprint 8_. \ \
+      Aggiornamento misurazioni: \ _sprint_ 9.],
     [In redazione],
 
     [*Correzione Piano di Qualifica*],
@@ -696,7 +698,10 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare;
       - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.
     ],
-    [],
+    [
+Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare: \ _sprint_ 8. \ \
+      Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto: \ _sprint_ 9.
+    ],
     [In redazione],
 
     [*Ampliamento del Glossario*],
@@ -725,14 +730,13 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Microservizi, più precisamente i seguenti:
         - Warehouse: _sprint_ 7;
         - Catalog: _sprint_ 7;
-        - Authenticator;
-        - Api Gateway;
-        - Order;
-        - Transfer;
-        - Notification.
-    ],
+        - Authenticator: _sprint_ 7;
+        - Api Gateway: da _sprint_ 7 a _sprint_ 8;
+        - Order: _sprint_ 8;
+        - Transfer: _sprint_ 8;
+        - Notification: _sprint_ 9. \ \
+      Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9.],
     [In fase di implementazione]),
-  ),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
 
