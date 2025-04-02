@@ -1,6 +1,6 @@
 // ignore
 
-#import "../lib.typ": *
+#import "lib.typ": *
 
 === Notification <notification>
 

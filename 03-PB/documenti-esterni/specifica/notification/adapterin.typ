@@ -1,6 +1,6 @@
 // ignore
 
-#import "../lib.typ": *
+#import "lib.typ": *
 
 ==== _Adapter-in_ e _Port-in_ <adapterin_portin>
 
