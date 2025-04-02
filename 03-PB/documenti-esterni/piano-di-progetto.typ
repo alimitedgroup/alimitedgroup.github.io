@@ -645,23 +645,29 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [*Redazione della Specifica Tecnica*],
     [Redazione delle seguenti parti:
       - Struttura base del documento;
-      - Inserire le tecnologie per la codifica
+      - Inserire le tecnologie per la codifica;
       - Capitolo "Architettura Logica";
-      - Capitolo "Architettura di Deployment".
+      - Capitolo "Architettura di Deployment";
+      - Aggiungere informazioni su analisi statica e dinamica;
+      - Aggiungere informazioni sui microservizi implementati all'interno dell'MVP.
     ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
-      Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \
-      Inserire all'interno del documento le tecnologie per la codifica: \ _sprint 7_. \ \
-      Inserire informazioni sui microservizi implementati all'interno dell'MVP: \ _sprint_ 7.],
+      Redigere i capitoli "Architettura Logica" e "Architettura di Deployment": _sprint_ 7. \ \
+      Inserire all'interno del documento le tecnologie per la codifica: \ _sprint_ 7. \ \
+      Inserire informazioni sui microservizi implementati all'interno dell'MVP: \ _sprint_ 8 e _sprint_ 9. \ \
+      Aggiungere informazioni su analisi statica e dinamica: \ _sprint_ 8.],
     [In redazione],
 
     [*Redazione del Manuale Utente*],
     [Redazione delle seguenti parti:
       - Struttura base del documento;
-      - Introduzione e scopo del documento.
-      Inoltre, verrà reso fruibile, questo documento, dal sito di _ALimitedGroup_.],
+      - Introduzione e scopo del documento;
+      - Aggiungere dettagli sull'utilizzo dei microservizi e del sistema;
+      - Rendere fruibile il documento dal sito di _ALimitedGroup_.
+    ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
-      Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7.\ \
+      Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7. \ \
+      Aggiungere dettagli sull'utilizzo dei microservizi e del sistema: \ _sprint_ 8. \ \
       Rendere fruibile, tramite il sito di _ALimitedGroup_, il Manuale Utente: da _sprint_ 7 a _sprint_ 9.],
     [In redazione],
 
@@ -725,7 +731,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
         - Transfer;
         - Notification.
     ],
-    [In fase di implementazione],
+    [In fase di implementazione]),
   ),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
