@@ -35,7 +35,7 @@ ok github.com/alimitedgroup/MVP/srv/warehouse/business 1.158s coverage: 77.4% of
 
 Dove il valore iniziale di ogni riga indica:
 
-- `?`: nella cartella non sono presenti test#super[G]; 
+- `?`: nella cartella non sono presenti test#super[G];
 - `ok`: i test#super[G] nella cartella che segue sono stati superati.
 
 Un output non simile a questo indica il fallimento di uno dei test#super[G] presenti.
