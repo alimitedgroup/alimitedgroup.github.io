@@ -980,8 +980,14 @@ Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato
 
 #metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
 
-Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline#super[G] (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
-raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline#super[G] (PB)_.
+Dal grafico si può notare che i costi sostenuti durante il progetto sono crescenti.\
+Dopo lo _sprint 6_ l'incremento risulta evidente:come programmato il ritmo di lavoro è aumentato e le conoscenze si sono consolidate.
+Al termine del progetto il costo sostenuto è pari a 12470\$.\
+
+I costi necessari per terminare il progetto, al contrario, risultano decrescenti.
+All'aggiudicazione il valore coincide con il budget, al termine dello _sprint 9_ il valore è pari a 0\$, quindi il progetto è stato completato.
+
+L' _Actual Cost_ finale è inferiore rispetto all' _Estimate To Complete_ iniziale, infatti per completare il progetto sono state necessarie meno risorse di quanto preventivato.
 #pagebreak()
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
