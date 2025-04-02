@@ -987,17 +987,15 @@ Al termine del progetto il costo sostenuto è pari a 12470\$.\
 I costi necessari per terminare il progetto, al contrario, risultano decrescenti.
 All'aggiudicazione il valore coincide con il budget, al termine dello _sprint 9_ il valore è pari a 0\$, quindi il progetto è stato completato.
 
-L' _Actual Cost_ finale è inferiore rispetto all' _Estimate To Complete_ iniziale, infatti per completare il progetto sono state necessarie meno risorse di quanto preventivato.
+L' _Actual Cost_ (AC) finale è inferiore rispetto all' _Estimate To Complete_ (ETC) iniziale, infatti per completare il progetto sono state necessarie meno risorse di quanto preventivato.
 #pagebreak()
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
 
-Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il _budget_: questo si ricava dal fatto che il _Cost Performance Index_ (CPI) sia minore di 1.
-La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo
-e non ha portato al completamento di tutte le attività previste.
-La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (CPI) (superiore a 1, indice di buon utilizzo del budget) e
-dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
+Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il _budget_ infatti il _Cost Performance Index_ (CPI) è minore di 1.
+La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo e non ha portato al completamento di tutte le attività previste.
+La situazione, in seguito, è migliorata: il _Cost Performance Index_ (CPI) e lo _Schedule Performance Index_ (SPI) sono risultati superiori ad 1 (tranne nello _sprint 6_ in cui si è registrato un minimo ritardo, quindi lo SPI è inferiore a 1), indicando una buona gestione del budget e del programma di lavoro.
 #pagebreak()
 == MPC06: _Estimate At Completion_
 
