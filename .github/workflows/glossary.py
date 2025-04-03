@@ -83,10 +83,10 @@ def substitute(filePath,glossaryYml):
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}")
                     stop=True
-                elif "/03-PB\\manuale-utente" in filePath and (word == "<!--typst-end-exclude-->" or word == "-->"):
+                elif ("/03-PB\\manuale-utente" in filePath or "\\03-PB\\manuale-utente" in filePath) and (word == "<!--typst-end-exclude-->" or word == "-->"):
                     stop=False
                     #print(word)
-                elif word == ")" and "/03-PB\\manuale-utente" not in filePath:
+                elif (word == ")") and ("/03-PB\\manuale-utente" not in filePath or "\\03-PB\\manuale-utente" not in filePath):
                     stop=False
                     #print(word)
                 if stop==False and ((word in glossary) or (word[:-1] in glossary) or (word[:-2] in glossary and len(word[:-2]) > 0) 
