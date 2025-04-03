@@ -1,7 +1,7 @@
 #import "@preview/cmarker:0.1.2"
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.2.0]
+#let ver = [0.3.0]
 #show: body => importantdocs(
   titolo: "Manuale Utente",
   tipo: [esterno],
@@ -17,10 +17,19 @@
   versione: ver,
   versioni: (
     (
+      vers: "0.3.0",
+      date: datetime(day: 2, month: 04, year: 2025),
+      descr: "Redazione installazione e configurazione Sistema, Test, Guide e Telemetria  "
+        + [(@install, @testpar, @guidepar, @tel)]
+        + ".",
+      autore: p.matteo,
+      verifica: p.samuele,
+    ),
+    (
       vers: "0.2.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti: "
-        + [(@tipiutenti, @capordini, @captrasferimenti, @capriassortimenti)]
+      descr: "Redazione sezione Merci, Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti. Stesura Endpoint. "
+        + [(@tipiutenti, @merce, @capordini, @capriassortimenti, @captrasferimenti, @endpoint)]
         + ".",
       autore: p.marco,
       verifica: p.samuele,
@@ -107,7 +116,12 @@
     )
   cmarker.render(
     content,
-    scope: (image: (path, alt: none) => align(center, image(basename + "/" + path, alt: alt, height: 30%))),
+    scope: (
+      image: (path, width: 50%, height: 30%, alt: none) => align(
+        center,
+        image(basename + "/" + path, alt: alt, width: width, height: height, fit: "contain"),
+      ),
+    ),
     h1-level: level,
   )
 }

@@ -83,28 +83,8 @@ def substitute(filePath,glossaryYml):
                     stop=True
                 elif word == ")" or word == "<!--typst-end-exclude-->" or word == "-->":
                     stop=False
-                #elif word[0] == "#" and "/03-PB\\manuale-utente" in filePath:
-                #    newText += word[0] + line
-                #    continue
                 if stop==False and ((word in glossary) or (word[:-1] in glossary) or (word[:-2] in glossary and len(word[:-2]) > 0) 
                                     or (word[1:-1] in glossary and len(word[1:-1]) > 1) or (word[2:-2] in glossary and len(word[2:-2]) > 2) or (word[2:-3] in glossary and len(word[2:-3]) > 2)) and len(word)>1:
-                    #if word[:-1] in glossary and word[len(word)-1] in specialChar:
-                    #   newText += word[:-1] + "#super[G] " + word[-1:]
-                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    #elif word[:-2] in glossary and word[len(word)-1] in specialChar and word[len(word)-2] in specialChar:
-                    #    newText += word[:-2] + "#super[G] " + word[-2:]
-                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    #elif word[0]=="_" or word[0]=="*":
-                    #    newText += word + "#super[G] "
-                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    #elif word[0] == "(" and word[len(word)-2] == ")":
-                    #    if word[1] in specialChar and word[len(word-3)] in specialChar:
-                    #        newText += word[:-2] + "#super[G]" + word[-3:]
-                    #        logging.error(f'Found un-tagged word at {filePath}:{linenum}')
-                    #        logging.error(f'If annidato {filePath}:{linenum}')
-                    #    newText += word[:-1] + "#super[G] " + word[-1:]
-                    #    logging.error(f'Found un-tagged word at {filePath}:{linenum}')'
-                    # 
                     #print("SONO DENTRO L'IF per: "+word)
                     if word[len(word)-1] == "," or word[len(word)-1] == ";":
                         if(word[:-1] == "sopra"):

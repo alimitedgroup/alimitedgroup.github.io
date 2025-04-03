@@ -1,11 +1,11 @@
 # Autenticazione ed autorizzazione
 
-Per mantenere un sistema sicuro,
+Per mantenere un Sistema sicuro,
 e per evitare azioni accidentali o volute da parte di utenti non autorizzati a compierle,
 molti sistemi richiedono agli utenti di identificarsi, prima di svolgere molte delle operazioni.
 Questo processo viene chiamato **autenticazione**.
 Il fatto che un utente sia autenticato, però,
-non garantisce che esso possa effettuare ogni operazione implementata dal sistema:
+non garantisce che esso possa effettuare ogni operazione implementata dal Sistema:
 il processo che controlla se l'utente ha i privilegi di effettuare le operazioni che richiede si chiama **autorizzazione**.
 
 Nel Sistema descritto dal presente manuale, i processi di Autenticazione e di Autorizzazione sono parzialmente separati
@@ -73,7 +73,7 @@ così da poter recuperare la chiave pubblica necessaria per verificarne la valid
 
 La terza e ultima parte, invece, è una firma crittografica che attesta la validità del _token_.
 Senza entrare troppo nei dettagli,
-è usato un sistema di **crittografia asimmetrica**,
+è usato un Sistema di **crittografia asimmetrica**,
 in cui è presente una coppia di chiavi definite "pubblica" e "privata".
 Utilizzando la chiave privata, è possibile generare una "firma" digitale
 che garantisce che i dati firmati non siano stati alterati rispetto a quando la firma è stata generata.
