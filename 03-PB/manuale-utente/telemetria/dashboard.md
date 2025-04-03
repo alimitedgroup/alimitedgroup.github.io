@@ -21,9 +21,7 @@ Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], sel
 )
 -->
 
-<!--raw-typst
-  #pagebreak() 
--->
+<!--raw-typst #pagebreak() -->
 
 Procedere dunque ad importare la _dаshboard_#super[G] caricando l'apposito file _JSON_ che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
 
@@ -339,6 +337,4 @@ Premere quindi **Run query** e **Save dаshboard** per sincronizzare i dati e sa
 
 Il pannello è stato aggiunto: premere **Back to dashboard#super[G]** per visualizzarlo.
 
-<!--raw-typst
-  #pagebreak() 
--->
+<!--raw-typst #pagebreak() -->
