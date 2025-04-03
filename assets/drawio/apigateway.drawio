@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:136.0) Gecko/20100101 Firefox/136.0" version="26.2.4" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:136.0) Gecko/20100101 Firefox/136.0" version="26.2.5" pages="3">
   <diagram name="types" id="jyUNx-ticdhWHaK3lG5j">
     <mxGraphModel dx="1188" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
@@ -150,6 +150,230 @@
         </mxCell>
         <mxCell id="i2FVGuv4eaX4_XcN0Vmc-17" value="+ GetWarehouseByID(int64): (dto.Warehouse, error)&lt;br&gt;+ GetWarehouses(): ([]types.WarehouseOverview, error)&lt;br&gt;+ GetGoods(): ([]dto.GoodAndAmount, error)&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="920" y="740" width="340" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="f7loQBOoPMdIHr39xkHE" name="Pagina-3">
+    <mxGraphModel dx="1188" dy="10773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-1" value="AddStockController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="290" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-2" value="- warehouses: portin.Warehouses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-1">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-1">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-4" value="+ NewAddStockController(portin.Warehouses): AddStockController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-1">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-5" value="CreateGoodController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="480" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-6" value="- warehouses: portin.Warehouses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-5">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-5">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-8" value="+ NewCreateGoodController(portin.Warehouses): CreateGoodController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-5">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-9" value="CreateOrderController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="100" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-10" value="- order: portin.Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-9">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-9">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-12" value="+ NewCreateOrderController(portin.Order): CreateOrderController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-9">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-13" value="CreateQueryController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="-120" width="470" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-14" value="- notifications: portin.Notifications&lt;br&gt;- Logger: zap.Logger" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-13">
+          <mxGeometry y="26" width="470" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-13">
+          <mxGeometry y="70" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-16" value="+ NewCreateQueryController(portin.Notifications, zap.Logger): CreateQueryController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-13">
+          <mxGeometry y="78" width="470" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-17" value="CreateTransferController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="670" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-18" value="- order: portin.Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-17">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-17">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-20" value="+ NewCreateTransferController(portin.Order): CreateTransferController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-17">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-21" value="GetGoodsController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="860" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-22" value="- warehouses: portin.Warehouses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-21">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-21">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-24" value="+ NewGetGoodsController(portin.Warehouses): GetGoodsController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-21">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-25" value="HealthCheckController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1050" width="470" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-26" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-25">
+          <mxGeometry y="26" width="470" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-27" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-25">
+          <mxGeometry y="30" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-28" value="+ NewHealthCheckController(): HealthCheckController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-25">
+          <mxGeometry y="38" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-29" value="HTTPHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1980" y="888" width="280" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-30" value="+ Engine: gin.Engine&lt;br&gt;+ Authenticate: gin.HandlerFunc" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-29">
+          <mxGeometry y="26" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-29">
+          <mxGeometry y="66" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-32" value="+ NewHTTPHandler(HttpParams): HTTPHandler" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-29">
+          <mxGeometry y="74" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-33" value="HttpParams" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="700" width="160" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-34" value="+ Auth: portin.Auth&lt;br&gt;+ Lifecycle: fx.Lifecycle&lt;br&gt;+ Listener: net.TCPListener&lt;br&gt;+ Logger: zap.Logger&lt;br&gt;+ Meter: metric.Meter" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-33">
+          <mxGeometry y="26" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-35" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-33">
+          <mxGeometry y="106" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-36" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-33">
+          <mxGeometry y="114" width="160" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-38" value="HttpConfig" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="570" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-39" value="+ Host: string&lt;br&gt;+ Port: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-38">
+          <mxGeometry y="26" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-40" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-38">
+          <mxGeometry y="66" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-41" value="+ FromEnv(): (HttpConfig, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-38">
+          <mxGeometry y="74" width="190" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-42" value="AuthHealthCheckController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1220" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-43" value="- business: portin.Auth" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-42">
+          <mxGeometry y="26" width="470" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-44" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-42">
+          <mxGeometry y="52" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-45" value="+ NewAuthHealthCheckController(portin.Auth): AuthHealthCheckController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-42">
+          <mxGeometry y="60" width="470" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-46" value="ListWarehousesController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1410" width="470" height="158" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-47" value="- warehouses: portin.Warehouses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-46">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-48" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-46">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-49" value="+ NewListWarehousesController(portin.Warehouses): ListWarehousesController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-46">
+          <mxGeometry y="58" width="470" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-50" value="LoginController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1600" width="470" height="168" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-51" value="- broker: broker.NatsMessageBroker&lt;br&gt;- business: portin.Auth" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-50">
+          <mxGeometry y="26" width="470" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-52" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-50">
+          <mxGeometry y="60" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-53" value="+ NewLoginController(broker.NatsMessageBroker, portin.Auth): LoginController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-50">
+          <mxGeometry y="68" width="470" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-54" value="GetOrdersController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1800" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-55" value="- order: portin.Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-54">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-56" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-54">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-57" value="+ NewGetOrdersController(portin.Order): GetOrdersController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-54">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-58" value="GetQueriesController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1990" width="470" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-59" value="- notifications: portin.Notifications&lt;br&gt;- Logger: zap.Logger" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-58">
+          <mxGeometry y="26" width="470" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-60" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-58">
+          <mxGeometry y="66" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-61" value="+ NewGetQueriesController(portin.Notifications, zap.Logger): GetQueriesController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-58">
+          <mxGeometry y="74" width="470" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-62" value="RemoveStockController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="2200" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-63" value="- warehouses: portin.Warehouses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-62">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-64" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-62">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-65" value="+ NewRemoveStockController(portin.Warehouses): RemoveStockController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-62">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-66" value="GetTransfersController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="2390" width="470" height="158" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-67" value="- order: portin.Order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-66">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-68" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-66">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-69" value="+ NewGetTransfersController(portin.Order): GetTransfersController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-66">
+          <mxGeometry y="58" width="470" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-70" value="UpdateGoodController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="2580" width="470" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-71" value="- warehouses: portin.Warehouses" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-70">
+          <mxGeometry y="26" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-72" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-70">
+          <mxGeometry y="50" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J8uNZpizXTsnPp5ZNtv0-73" value="+ NewUpdateGoodController(portin.Warehouses): UpdateGoodController&lt;br&gt;+ Handler(): gin.HandlerFunc&lt;br&gt;+ Pattern(): string&lt;br&gt;+ Method(): string&lt;br&gt;+ RequiresAuth(): bool&lt;br&gt;+ AllowedRoles(): []types.UserRole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="J8uNZpizXTsnPp5ZNtv0-70">
+          <mxGeometry y="58" width="470" height="102" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
