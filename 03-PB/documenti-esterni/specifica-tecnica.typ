@@ -1,5 +1,5 @@
 #import "../../lib/importantdocs.typ": *
-
+#import "@preview/plotst:0.2.0": *
 
 #let ver = [0.9.0]
 
@@ -4677,3 +4677,622 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 - *`ListenTransferUpdate(ctx context.Context, msg jetstream.Msg) error`*: gestisce i messaggi per l'aggiornamento dei trasferimenti. Decodifica il messaggio ricevuto in un oggetto `TransferUpdate`, lo trasforma in un comando `ConfirmTransferCmd` e delega l'operazione al caso d'uso#super[G] `confirmTransferUseCase`. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
+#pagebreak()
+
+= Stato dei requisiti funzionali
+
+== Stato per requisito
+
+#show figure: set block(breakable: true)
+#show table.cell.where(x: 0): strong
+//#show table.cell.where(x: 1):
+//#show table: block.with(stroke: (y: 1pt)
+#figure(
+  table(
+    align: left,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: 3,
+    inset: 8pt,
+    table.header(
+      [#text(fill: white)[*Codice*]],
+      [#text(fill: white)[*Descrizione*]],
+      [#text(fill: white)[*Stato*]],
+    ),
+
+    [R-1-F-Ob], [L'Utente deve poter autenticarsi presso il Sistema], [Soddisfatto],
+    [R-2-F-Ob],
+    [L'Utente deve inserire la tipologia di utente (Cliente, Admin Globale o Admin Locale) per potersi autenticare al Sistema],
+    [Soddisfatto],
+
+    [R-3-F-De],
+    [L'Utente deve inserire il proprio Username per potersi autenticare],
+    [Non Soddisfatto],
+
+    [R-4-F-De],
+    [L'Utente deve inserire la propria Password per potersi autenticare],
+    [Non Soddisfatto],
+
+    [R-5-F-Ob],
+    [L'Utente deve ricevere un errore in seguito ad un tentativo di accesso/autenticazione non riuscito],
+    [Non Soddisfatto],
+
+    [R-6-F-Ob], [Il Cliente deve poter creare un ordine che può confermare in seguito.], [Soddisfatto],
+    [R-7-F-Ob],
+    [Il Cliente deve inserire il nome dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [Soddisfatto],
+
+    [R-8-F-Ob],
+    [Il Cliente deve inserire il nominativo del destinatario dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [Soddisfatto],
+
+    [R-9-F-Ob],
+    [Il Cliente deve inserire l'indirizzo di spedizione dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [Soddisfatto],
+
+    [R-10-F-Ob],
+    [Il Cliente deve poter aggiungere merce ad un ordine non ancora confermato, indipendentemente se si tratta di un ordine di natura locale (limitata al magazzino corrente) o globale],
+    [Soddisfatto],
+
+    [R-11-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve selezionare la merce che vuole aggiungere ad un ordine non ancora confermato],
+    [Soddisfatto],
+
+    [R-12-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve inserire il quantitativo della merce che vuole aggiungere ad un ordine non ancora confermato],
+    [Soddisfatto],
+
+    [R-13-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve selezionare l'ordine non ancora confermato alla quale vuole aggiungere la merce],
+    [Soddisfatto],
+
+    [R-14-F-Ob],
+    [Il Cliente deve ricevere un errore qualora la merce aggiunta all'ordine non risulti essere valida (ovvero la quantità della merce è insufficiente oppure la merce non esiste)],
+    [Soddisfatto],
+
+    [R-15-F-Ob],
+    [Il Cliente deve ricevere un errore quando sta cercando di fare un'operazione su un ordine non confermato (quale l'aggiunta di merce, la cancellazione od una conferma) ma nessun ordine non confermato è disponibile],
+    [Soddisfatto],
+
+    [R-16-F-Ob],
+    [Il Cliente deve poter cancellare un ordine non ancora confermato, selezionando quale ordine cancellare],
+    [Soddisfatto],
+
+    [R-17-F-Ob],
+    [Il Cliente deve poter confermare un ordine non ancora confermato, selezionando quale ordine cancellare],
+    [Soddisfatto],
+
+    [R-18-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato],
+    [Soddisfatto],
+
+    [R-19-F-Ob],
+    [Il Cliente deve poter visualizzare l'ID di ciascun ordine nella lista degli ordini non confermati],
+    [Soddisfatto],
+
+    [R-20-F-Ob],
+    [Il Cliente deve poter visualizzare la data di creazione di ciascun ordine nella lista degli ordini non confermati],
+    [Soddisfatto],
+
+    [R-21-F-Ob],
+    [Il Cliente deve poter visualizzare il nome di ciascun ordine nella lista degli ordini non confermati],
+    [Soddisfatto],
+
+    [R-22-F-Ob], [Il Cliente deve poter consultare i dettagli di un ordine non confermato], [Soddisfatto],
+    [R-23-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne l'ID],
+    [Soddisfatto],
+
+    [R-24-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne la data di creazione],
+    [Soddisfatto],
+
+    [R-25-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne il nome],
+    [Soddisfatto],
+
+    [R-26-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne la lista delle merci],
+    [Soddisfatto],
+
+    [R-27-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter visualizzare la quantità della merce],
+    [Soddisfatto],
+
+    [R-28-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter visualizzare il nome della merce],
+    [Soddisfatto],
+
+    [R-29-F-Ob],
+    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema],
+    [Soddisfatto],
+
+    [R-30-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare l'ID di ciascuna delle merci], [Soddisfatto],
+    [R-31-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare il nome di ciascuna delle merci], [Soddisfatto],
+    [R-32-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di ciascuna delle merci], [Soddisfatto],
+    [R-33-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di ciascuna delle merci], [Soddisfatto],
+
+    [R-34-F-Ob],
+    [Il Cliente deve poter visualizzare una merce nel Sistema nel dettaglio],
+    [Soddisfatto],
+
+    [R-35-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare l'ID di tale merce], [Soddisfatto],
+    [R-36-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare il nome di tale merce], [Soddisfatto],
+    [R-37-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di tale merce], [Soddisfatto],
+    [R-38-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di tale merce], [Soddisfatto],
+    [R-39-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la descrizione di tale merce], [Soddisfatto],
+
+    [R-40-F-Ob],
+    [L'Admin Globale deve poter creare un trasferimento da confermare in seguito.],
+    [Soddisfatto],
+
+    [R-41-F-Ob],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve selezionare il magazzino mittente],
+    [Soddisfatto],
+
+    [R-42-F-Ob],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve selezionare il magazzino destinatario],
+    [Soddisfatto],
+
+    [R-43-F-Ob],
+    [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato],
+    [Soddisfatto],
+
+    [R-44-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la merce da aggiungere],
+    [Soddisfatto],
+
+    [R-45-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la quantità di merce da aggiungere],
+    [Soddisfatto],
+
+    [R-46-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare il trasferimento non confermato alla quale aggiungere la merce],
+    [Soddisfatto],
+
+    [R-47-F-Ob],
+    [L'Admin Globale deve poter confermare un trasferimento non ancora confermato, selezionando quale trasferimento confermare],
+    [Soddisfatto],
+
+    [R-48-F-Ob],
+    [L'Admin Globale deve ricevere un errore se la merce in un trasferimento che vuole confermare non è più disponibile in quantità sufficiente o non è più esistente nel Sistema],
+    [Soddisfatto],
+
+    [R-49-F-Ob],
+    [L'Admin Globale deve ricevere un errore qualora selezioni di voler aggiungere merce, confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
+    [Soddisfatto],
+
+    [R-50-F-Ob],
+    [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato, selezionando quale trasferimento cancellare],
+    [Soddisfatto],
+
+    [R-51-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti],
+    [Soddisfatto],
+
+    [R-52-F-Ob],
+    [L'Admin Globale deve poter visualizzare per ogni trasferimento dell'elenco di tutti i trasferimenti, l'ID del trasferimento],
+    [Soddisfatto],
+
+    [R-53-F-Ob],
+    [L'Admin Globale deve poter visualizzare per ogni trasferimento dell'elenco di tutti i trasferimenti, lo stato del trasferimento],
+    [Soddisfatto],
+
+    [R-54-F-Ob],
+    [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico],
+    [Soddisfatto],
+
+    [R-55-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare l'ID del trasferimento], [Soddisfatto],
+    [R-56-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare il magazzino mittente del trasferimento], [Soddisfatto],
+    [R-57-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare il magazzino di destinazione del trasferimento], [Soddisfatto],
+    [R-58-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare lo stato del trasferimento], [Soddisfatto],
+    [R-59-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare l'elenco della merce interessata dal trasferimento], [Soddisfatto],
+
+    [R-60-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve visualizzare per ogni merce interessata il nome di tale merce],
+    [Soddisfatto],
+
+    [R-61-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve visualizzare per ogni merce interessata la quantità di tale merce],
+    [Soddisfatto],
+
+    [R-62-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco delle notifiche contenenti i consigli di rifornimento],
+    [Soddisfatto],
+
+    [R-63-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento, l'ID della notifica],
+    [Soddisfatto],
+
+    [R-64-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [Soddisfatto],
+
+    [R-65-F-Ob],
+    [L'Admin Globale deve ricevere un messaggio di errore quando tenta di compiere un'azione sulle notifiche di rifornimento, ma nessuna notifica è disponibile],
+    [Soddisfatto],
+
+    [R-66-F-De],
+    [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da _Machine Learning_],
+    [Non Soddisfatto],
+
+    [R-67-F-De],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di _Machine Learning_, l'ID della notifica],
+    [Non Soddisfatto],
+
+    [R-68-F-De],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un _Machine Learning_, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [Non Soddisfatto],
+
+    [R-69-F-Ob],
+    [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico],
+    [Soddisfatto],
+
+    [R-70-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne l'ID], [Soddisfatto],
+    [R-71-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne lo stato (confermato, da confermare, rifiutato)], [Soddisfatto],
+    [R-72-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne il magazzino destinatario], [Soddisfatto],
+    [R-73-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne l'elenco della merce], [Soddisfatto],
+
+    [R-74-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, l'ID della merce],
+    [Soddisfatto],
+
+    [R-75-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, il nome della merce],
+    [Soddisfatto],
+
+    [R-76-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, la quantità della merce da rifornire],
+    [Soddisfatto],
+
+    [R-77-F-Ob],
+    [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata, selezionando quale accettare],
+    [Soddisfatto],
+
+    [R-78-F-Ob],
+    [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata, selezionando quale rifiutare],
+    [Soddisfatto],
+
+    [R-79-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco dei microservizi],
+    [Soddisfatto],
+
+    [R-80-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il nome di ciascun microservizio], [Soddisfatto],
+    [R-81-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il numero di richieste al secondo di ciascun microservizio], [Soddisfatto],
+
+    [R-82-F-De],
+    [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_],
+    [Non Soddisfatto],
+
+    [R-83-F-De],
+    [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
+    [Non Soddisfatto],
+
+    [R-84-F-De],
+    [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
+    [Non Soddisfatto],
+
+    [R-85-F-De],
+    [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
+    [Non Soddisfatto],
+
+    [R-86-F-Ob],
+    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
+    [Soddisfatto],
+
+    [R-87-F-Ob], [L'Admin Globale, impostando una soglia minima di allerta, deve selezionare la merce a cui assegnare la nuova soglia], [Soddisfatto],
+    [R-88-F-Ob], [L'Admin Globale, impostando una soglia minima di allerta, deve inserire la nuova soglia], [Soddisfatto],
+
+    [R-89-F-Ob],
+    [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
+    [Soddisfatto],
+    //
+    [R-90-F-Ob],
+    [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
+    [Soddisfatto],
+
+    [R-91-F-Ob], [L'Admin Locale, aggiungendo uno stock di merce, deve selezionare la merce a cui aggiungere lo stock], [Soddisfatto],
+    [R-92-F-Ob], [L'Admin Locale, aggiungendo uno stock di merce, deve inserire la quantità da aggiungere], [Soddisfatto],
+
+    [R-93-F-Ob],
+    [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema],
+    [Soddisfatto],
+
+    [R-94-F-Ob], [L'Admin Globale, creando (aggiungendo) una merce al Sistema, deve indicare il nome], [Soddisfatto],
+    [R-95-F-Ob], [L'Admin Globale, creando (aggiungendo) una merce al Sistema, deve indicare la descrizione], [Soddisfatto],
+
+    [R-96-F-Ob],
+    [L'Admin Globale deve poter aggiornare le informazioni di una merce],
+    [Soddisfatto],
+
+    [R-97-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare quale merce modificare], [Soddisfatto],
+    [R-98-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare il nome], [Soddisfatto],
+    [R-99-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare la descrizione], [Soddisfatto],
+
+    [R-100-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti],
+    [Soddisfatto],
+
+    [R-101-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne l'ID], [Soddisfatto],
+    [R-102-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne la data di creazione], [Soddisfatto],
+    [R-103-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne il nome], [Soddisfatto],
+
+    [R-104-F-Ob],
+    [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito],
+    [Soddisfatto],
+
+    [R-105-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne l'ID], [Soddisfatto],
+    [R-106-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne la data di creazione], [Soddisfatto],
+    [R-107-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne il nome], [Soddisfatto],
+    [R-108-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne la lista delle merci], [Soddisfatto],
+
+    [R-109-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare il nome della merce],
+    [Soddisfatto],
+    [R-110-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare la quantità interessata dall'ordine],
+    [Soddisfatto],
+
+    [R-111-F-De],
+    [L'Admin Locale deve avere la possibilità di creare un Backup del proprio magazzino],
+    [Non Soddisfatto],
+
+    [R-112-F-De],
+    [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
+    [Non Soddisfatto],
+
+    [R-113-F-De],
+    [L'Admin Locale deve ricevere un errore se la periodicità del Backup periodico che ha selezionato non è valida],
+    [Non Soddisfatto],
+
+    [R-114-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [Non Soddisfatto],
+
+    [R-115-F-De],
+    [L'Admin Locale deve ricevere un errore quando vuole eliminare la realizzazione di un Backup periodico ma non è attivo un Backup periodico],
+    [Non Soddisfatto],
+
+    [R-116-F-De],
+    [L'Admin Locale deve avere la possibilità di ripristinare i dati dell'ultimo Backup effettuato],
+    [Non Soddisfatto],
+
+    [R-117-F-De],
+    [L'Admin Locale deve ricevere un errore quando vuole ripristinare i dati dell'ultimo Backup effettuato ma nessun Backup è presente],
+    [Non Soddisfatto],
+
+    [R-118-F-De],
+    [L'Admin Globale deve poter visualizzare l'elenco delle attività di accesso],
+    [Non Soddisfatto],
+
+    [R-119-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare l'Indirizzo IP del luogo di accesso di ciascuna], [Non Soddisfatto],
+    [R-120-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare l'ID di ciascuna], [Non Soddisfatto],
+    [R-121-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare lo stato di ciascuna (riuscito, bloccato o negato)], [Non Soddisfatto],
+
+    [R-122-F-De],
+    [L'Admin Globale deve poter bloccare un tentativo di accesso, bloccando l'indirizzo IP dalla quale questo è avvenuto, inserendo l'ID del tentativo],
+    [Non Soddisfatto],
+
+    [R-123-F-De],
+    [Il Sistema di rilevamento deve notificare via email/sms gli Admin globali eventi di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
+    [Non Soddisfatto],
+
+    [R-124-F-De],
+    [L'Admin Globale deve avere la possibilità di aggiungere un Utente al Sistema],
+    [Non Soddisfatto],
+
+    [R-125-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne il nome], [Non Soddisfatto],
+    [R-126-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne la Password], [Non Soddisfatto],
+    [R-127-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne il ruolo], [Non Soddisfatto],
+
+    [R-128-F-De], [L'Admin Globale deve poter eliminare un Utente dal Sistema, selezionando quale Utente], [Non Soddisfatto],
+    [R-129-F-De], [L'Admin Globale deve poter promuovere il ruolo di un Utente, selezionando quale Utente], [Non Soddisfatto],
+
+    [R-130-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibili],
+    [Soddisfatto],
+
+    [R-131-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità localmente disponibile per ciascuna merce], [Soddisfatto],
+    [R-132-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità globalmente disponibile per ciascuna merce], [Soddisfatto],
+    [R-133-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione del nome per ciascuna merce], [Soddisfatto],
+    [R-134-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della descrizione per ciascuna merce], [Soddisfatto],
+    [R-135-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione dell'ID per ciascuna merce], [Soddisfatto],
+
+    [R-136-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una nuova merce],
+    [Soddisfatto],
+
+    [R-137-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della quantità localmente disponibile], [Soddisfatto],
+    [R-138-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della quantità globalmente disponibile], [Soddisfatto],
+    [R-139-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione del nome], [Soddisfatto],
+    [R-140-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della descrizione], [Soddisfatto],
+    [R-141-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione dell'ID], [Soddisfatto],
+
+
+    [R-142-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una merce eliminata],
+    [Soddisfatto],
+
+    [R-143-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della quantità localmente disponibile], [Soddisfatto],
+    [R-144-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della quantità globalmente disponibile], [Soddisfatto],
+    [R-145-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione del nome], [Soddisfatto],
+    [R-146-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della descrizione], [Soddisfatto],
+    [R-147-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione dell'ID], [Soddisfatto],
+
+    [R-148-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una merce modificata],
+    [Soddisfatto],
+
+    [R-149-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della quantità localmente disponibile], [Soddisfatto],
+    [R-150-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della quantità globalmente disponibile], [Soddisfatto],
+    [R-151-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione del nome], [Soddisfatto],
+    [R-152-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della descrizione], [Soddisfatto],
+    [R-153-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione dell'ID], [Soddisfatto],
+
+    [R-154-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini],
+    [Soddisfatto],
+
+    [R-155-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine la data di creazione], [Soddisfatto],
+    [R-156-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine il nome], [Soddisfatto],
+    [R-157-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine l'ID], [Soddisfatto],
+    [R-158-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine lo stato], [Soddisfatto],
+    [R-159-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine la lista delle merci interessate], [Soddisfatto],
+
+    [R-160-F-Ob],
+    [Per ogni merce di un ordine da sincronizzare, lo Scheduler deve avviare la sincronizzazione dell'ID della merce],
+    [Soddisfatto],
+
+    [R-161-F-Ob],
+    [Per ogni merce di un ordine da sincronizzare, lo Scheduler deve avviare la sincronizzazione la quantità interessata della merce],
+    [Soddisfatto],
+
+    [R-162-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione degli ordini confermati],
+    [Soddisfatto],
+
+    [R-163-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini confermati, avvia la sincronizzazione di tutti gli ordini], [Soddisfatto],
+
+    [R-164-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione degli ordini cancellati],
+    [Soddisfatto],
+
+    [R-165-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini cancellati, avvia la sincronizzazione di tutti gli ordini], [Soddisfatto],
+
+    [R-166-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dell'elenco dei trasferimenti],
+    [Soddisfatto],
+
+    [R-167-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare il magazzino destinatario di ciascun trasferimento], [Soddisfatto],
+    [R-168-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare il magazzino mittente di ciascun trasferimento], [Soddisfatto],
+    [R-169-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare l'ID di ciascun trasferimento], [Soddisfatto],
+    [R-170-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare lo stato di ciascun trasferimento], [Soddisfatto],
+    [R-171-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare la lista delle merci di ciascun trasferimento], [Soddisfatto],
+
+    [R-172-F-Ob],
+    [Per ogni merce di un trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione dell'ID della merce],
+    [Soddisfatto],
+
+    [R-173-F-Ob],
+    [Per ogni merce di un trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione la quantità interessata della merce],
+    [Soddisfatto],
+
+    [R-174-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti confermati],
+    [Soddisfatto],
+
+    [R-175-F-Ob],
+    [Lo Scheduler, avviando la sincronizzazione dei trasferimenti confermati, deve avviare la sincronizzazione di tutti i trasferimenti],
+    [Soddisfatto],
+
+    [R-176-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti cancellati],
+    [Soddisfatto],
+
+    [R-177-F-Ob],
+    [Lo Scheduler, avviando la sincronizzazione dei trasferimenti cancellati, deve avviare la sincronizzazione di tutti i trasferimenti],
+    [Soddisfatto],
+
+    [R-178-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento],
+    [Soddisfatto],
+
+    [R-179-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'ID], [Soddisfatto],
+    [R-180-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica il magazzino destinatario], [Soddisfatto],
+    [R-181-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica lo stato], [Soddisfatto],
+    [R-182-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'elenco delle merci interessate], [Soddisfatto],
+
+    [R-183-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare l'ID della merce],
+    [Soddisfatto],
+
+    [R-184-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare la quantità interessata della merce],
+    [Soddisfatto],
+
+    [R-185-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento confermate],
+    [Soddisfatto],
+
+    [R-186-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento confermate, deve sincronizzare tutte le notifiche di rifornimento], [Soddisfatto],
+
+    [R-187-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento cancellate],
+    [Soddisfatto],
+
+    [R-188-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento cancellate, deve sincronizzare tutte le notifiche di rifornimento], [Soddisfatto],
+
+    [R-189-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi],
+    [Soddisfatto],
+
+    [R-190-F-Ob], [Lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, deve avviare la sincronizzazione del nome di ciascun microservizio], [Soddisfatto],
+    [R-191-F-Ob], [Lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, deve avviare la sincronizzazione delle richieste al secondo di ciascun microservizio], [Soddisfatto],
+
+    [R-192-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione della soglia minima di allerta per una merce quando aggiornata],
+    [Soddisfatto],
+  ),
+  caption: [Stato dei requisiti funzionali],
+)
+
+== Grafici riassuntivi
+
+Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali*.
+
+#pie_chart(
+    plot(data: ((85.4, "Requisiti soddisfatti (58.4%)"), (14.6, "Requisiti non soddisfatti (14.6%)"))),
+    (auto, 20%),
+    display_style: "hor-chart-legend",
+    caption: "Percentuale di requisiti funzionali soddisfatti in totale",
+    colors: (rgb("#84dd7c"), rgb("#e46464")),
+  ),
+
+
+#pie_chart(
+  plot(
+    data: (
+      (100, "Requisiti soddisfatti (100%)"),
+      (0, "Requisiti non soddisfatti (0%)"),
+    ),
+  ),
+  (auto, 20%),
+  display_style: "hor-chart-legend",
+  caption: "Percentuale di requisiti funzionali obbligatori soddisfatti",
+  colors: (rgb("#84dd7c"), rgb("#e46464")),
+)
+
+#pie_chart(
+  plot(
+    data: (
+      (0, "Requisiti soddisfatti (0%)"),
+      (100, "Requisiti non soddisfatti (100%)"),
+    ),
+  ),
+  (auto, 20%),
+  display_style: "hor-chart-legend",
+  caption: "Percentuale di requisiti funzionali desiderabili soddisfatti",
+  colors: (rgb("#84dd7c"), rgb("#e46464")),
+)
+
+#pie_chart(
+  plot(
+    data: (
+      (100, "Requisiti soddisfatti (100%)"),
+      (0, "Requisiti non soddisfatti (0%)"),
+    ),
+  ),
+  (auto, 20%),
+  display_style: "hor-chart-legend",
+  caption: "Percentuale di requisiti funzionali opzionali soddisfatti",
+  colors: (rgb("#84dd7c"), rgb("#e46464")),
+)
