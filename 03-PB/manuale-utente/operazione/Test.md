@@ -42,6 +42,8 @@ Un output non simile a questo indica il fallimento di uno dei test#super[G] pres
 
 # Esecuzione dei test#super[G] di accettazione
 
-I test#super[G] di accettazione sfruttano `curl`, `nats`#super[G] e `jq` per poter essere eseguiti.
+I test#super[G] di accettazione sfruttano `curl`, `nats`#super[G] e `jq` per poter essere eseguiti e gli script utilizzati possono essere trovati all'interno della cartella `tests`.
+
+Alcuni test#super[G] richiedono una verifica#super[G] manuale sulla _dashboard_#super[G] presente su Grafana:#super[G] questa viene automaticamente configurata all'avvio, ma, per qualsiasi informazioni, dalla configurazione al primo accesso, è disponibile nel presente manuale.
 
 I test#super[G] sono disponibili all'interno della cartella `tests` nella radice dell'installazione: è sufficiente aprire un prompt#super[G] dei comandi (o _shell_) in questa cartella ed eseguire gli script.
