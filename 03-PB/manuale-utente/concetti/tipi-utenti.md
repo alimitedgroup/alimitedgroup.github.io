@@ -1,4 +1,4 @@
-# Tipi di utenti <!--raw-typst <tipiutenti>-->
+# Tipi di utenti <!--raw-typst <tipiutenti> -->
 
 Nel Sistema che _ALimitedGroup_ realizzerà ed implementerà, sono presenti tre tipi di utenti:
 

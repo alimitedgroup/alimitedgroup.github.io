@@ -1,4 +1,4 @@
-# Importare una dashboard#super[G]
+# Importare una dashboard
 
 I file forniti includono una _dashboard_#super[G] configurata per avere a disposizione tutti i microservizi in esecuzione nella stessa macchina.
 

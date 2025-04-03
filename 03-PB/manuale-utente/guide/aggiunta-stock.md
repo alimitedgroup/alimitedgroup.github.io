@@ -1,4 +1,4 @@
-# Aggiungere stock#super[G] ad una merce
+# Aggiungere _stock_ ad una merce
 
 In questa Sezione sarà spiegato come aggiungere _stock_#super[G] ad una merce interagendo con il Sistema mediante l'utilizzo di `curl`.
 

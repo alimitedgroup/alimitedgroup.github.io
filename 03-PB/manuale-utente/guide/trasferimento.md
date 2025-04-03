@@ -1,4 +1,4 @@
-# Effettuare un trasferimento#super[G]
+# Effettuare un trasferimento
 
 Il Sistema permette di realizzare trasferimenti tra magazzini. La seguente guida illustrerà come realizzarne uno, presupponendo l'esistenza di due magazzini e di stock#super[G] sufficiente nel primo magazzion: per maggiori informazioni visitare la pagina di installazione del presente Sistema e la Sezione dedicata all'aggiunta di _stock#super[G]_.
 
