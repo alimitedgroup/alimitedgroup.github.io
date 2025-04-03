@@ -62,10 +62,10 @@ def substitute(filePath,glossaryYml):
                 bodyFound=True
             if bodyFound==True and ")" in line:
                 parFound=True
-        elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and ("/03-PB\\manuale-utente" in filePath or "\\03-PB\\manuale-utente"):
+        elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and ("/03-PB\\manuale-utente" in filePath or "\\03-PB\\manuale-utente" in filePath):
             newText += line 
             line=file.readline()
-            logging.error(f'Found # as the start of the line --> linebreak')
+            logging.info(f'Found # as the start of the line --> linebreak')
             #print("Sono nell'IF del #")
             continue
         else:
