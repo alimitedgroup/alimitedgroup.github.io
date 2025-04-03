@@ -1001,26 +1001,26 @@ La situazione, in seguito, è migliorata: il _Cost Performance Index_ (CPI) e lo
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
-Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa:
-tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[G] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
-periodo della _Requirements and Technology Baseline#super[G] (RTB)_.
+Come prevedibile dalle misurazioni precedenti, una gestione iniziale non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa.
+Tale problematica è stata presto risolta a partire dallo _sprint_#super[G] 2: il costo previsto per il completamento del progetto è sempre stato sotto o in prossimità del budget iniziale.
+
 #pagebreak()
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
-Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[G], il tempo stimato al completamento risultava superiore alla durata pianificata.
-Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata,
-arrivando poi a coincidere verso lo _sprint_#super[G] 6.
+È tangibile che durante lo _sprint 1_ il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolemente maggiori rispetto alle corrispondenti ore produttive.
+Il grafico però segnale come successivamente la metrica _TEAC_ si sia assestata intorno alla durata pianificata, indicando una buona gestione del tempo e una stima più realistica delle tempistiche necessarie per completare il progetto.
 #pagebreak()
 == MPC09: _Requirements Stability Index_
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
 
 Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[G] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti
-i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche.
-Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti.
-Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica,
-che è migliorata tra gli _sprint_#super[G] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche.\
+Gli Analisti hanno, infatti, rilevato molti requisiti impliciti che necessitavano di essere esplicitati.
+Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica, che è migliorata successivamente anche grazie ad un lavoro crescente da parte degli Analisti.\
+Durante gli ultimi due _sprint_, in seguito al alcune minime modifiche apportate come consigliato dopo il colloquio del RTB (_Requirements Technology Baseline_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
+
 #pagebreak()
 == MPC10: Indice di _Gulpease_
 
