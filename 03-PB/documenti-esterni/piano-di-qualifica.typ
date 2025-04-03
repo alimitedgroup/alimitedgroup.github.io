@@ -1008,7 +1008,7 @@ Tale problematica è stata presto risolta a partire dallo _sprint_#super[G] 2: i
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
-È tangibile che durante lo _sprint 1_ il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolemente maggiori rispetto alle corrispondenti ore produttive.
+È tangibile che durante lo _sprint_ 1 il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolemente maggiori rispetto alle corrispondenti ore produttive.
 Il grafico però segnale come successivamente la metrica _TEAC_ si sia assestata intorno alla durata pianificata, indicando una buona gestione del tempo e una stima più realistica delle tempistiche necessarie per completare il progetto.
 #pagebreak()
 == MPC09: _Requirements Stability Index_
@@ -1027,19 +1027,14 @@ Durante gli ultimi due _sprint_, in seguito al alcune minime modifiche apportate
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
 In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile.
-Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[G] e del Piano di Progetto#super[G], specialmente il documento delle Norme di Progetto#super[G] rimane distante dalla soglia di ottimalità.
-I componenti di _ALimitedGroup_ concordano nell'affermare che questo sia dovuto anzitutto alle varie riorganizzazioni subite dal documento per renderlo più facilmente fruibile, ma anche per la natura
-a scopo regolamentativo del documento.
-
-Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento in questione.
-
+L'_indice di Gulpease_ evidenzia che il documento di Analisi dei Requisiti#super[G], il Piano di Progetto#super[G], il Glossario e il documento di Specifica Tecnica e il Manuale Utente risultano facilmente consultabili.
+Il documento delle Norme di Progetto#super[G] rimane inferiore alla soglia di ottimalità, anche se il valore è accettabile e migliorato negli ultimi _sprint_#super[G], grazie al lavoro degli Amministratori che si sono occupati di migliorare la fruibilità del documento, che comunque ha natura interna quindi sarà consultato unicamente dai membri del gruppo _ALimitedGroup_.
 #pagebreak()
 == MPC11: Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
-
-Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema
-di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[G] 4 e 6.
+Nei primi sprint si sono registrati fino a due errori ortografici, ma in seguito _ALimitedGroup_ ha prestato maggiore attenzione a questo aspetto. Per ridurre gli errori, sono stati adottati strumenti automatici per rilevare refusi e si è posta più cura nella revisione manuale dei documenti.\
+Questo ha garantito l'assenza di errori in tutti i documenti.
 #pagebreak()
 == MPC14: _Quality metrics satisfied_
 
