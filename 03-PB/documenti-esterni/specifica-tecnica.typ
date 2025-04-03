@@ -5247,13 +5247,13 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 == Grafici riassuntivi
 
-Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali*.
+Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali#super[G]*.
 
 #pie_chart(
     plot(data: ((85.4, "Requisiti soddisfatti (58.4%)"), (14.6, "Requisiti non soddisfatti (14.6%)"))),
     (auto, 20%),
     display_style: "hor-chart-legend",
-    caption: "Percentuale di requisiti funzionali soddisfatti in totale",
+    caption: "Percentuale di requisiti funzionаli soddisfatti in totale",
     colors: (rgb("#84dd7c"), rgb("#e46464")),
   ),
 
@@ -5267,7 +5267,7 @@ Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali*.
   ),
   (auto, 20%),
   display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionali obbligatori soddisfatti",
+  caption: "Percentuale di requisiti funzionаli obbligatori soddisfatti",
   colors: (rgb("#84dd7c"), rgb("#e46464")),
 )
 
@@ -5280,7 +5280,7 @@ Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali*.
   ),
   (auto, 20%),
   display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionali desiderabili soddisfatti",
+  caption: "Percentuale di requisiti funzionаli desiderabili soddisfatti",
   colors: (rgb("#84dd7c"), rgb("#e46464")),
 )
 
@@ -5293,6 +5293,6 @@ Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali*.
   ),
   (auto, 20%),
   display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionali opzionali soddisfatti",
+  caption: "Percentuale di requisiti funzionаli opzionali soddisfatti",
   colors: (rgb("#84dd7c"), rgb("#e46464")),
 )
