@@ -62,16 +62,18 @@ def substitute(filePath,glossaryYml):
                 bodyFound=True
             if bodyFound==True and ")" in line:
                 parFound=True
+        elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "/03-PB\\manuale-utente" in filePath:
+            newText += line 
+            line=file.readline()
+            print("Sono nell'IF del #")
+            continue
         else:
+            #print("Sono nell'IF del for di ricerca delle parole")
             if(stop == False and line[0] not in stopCheckingWords):
                 line = substitute_line(filePath, linenum, line, filtered_glossary)
 
             if len(line.strip()) > 0 and line.strip()[0] == '=':
                 newText += line
-                line=file.readline()
-                continue
-            elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "\\03-PB\\manuale-utente" in filePath:
-                newText += line 
                 line=file.readline()
                 continue
             if len(line.lstrip()) != 0: newText += line[:len(line) - len(line.lstrip())]
@@ -166,7 +168,7 @@ def main():
         for file in fileList:
             if "docs.typ" in file or "README.md" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
                 continue
-        substitute(file, loadGlossary())
+            substitute(file, loadGlossary())
 
 if __name__ == "__main__":
     main()
