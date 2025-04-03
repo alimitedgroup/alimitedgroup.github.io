@@ -28,8 +28,8 @@
     (
       vers: "0.2.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti. Stesura Endpoint. "
-        + [(@tipiutenti, @capordini, @captrasferimenti, @capriassortimenti, @endpoint)]
+      descr: "Redazione sezione Merci, Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti. Stesura Endpoint. "
+        + [(@tipiutenti, @merce, @capordini, @capriassortimenti, @captrasferimenti, @endpoint)]
         + ".",
       autore: p.marco,
       verifica: p.samuele,

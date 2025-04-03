@@ -1,4 +1,4 @@
-# Installazione del Software <!--raw-typst <install> -->
+# Installazione del Software <!--raw-typst <install>-->
 
 Anzitutto procedere al reperimento dell'ultima _release_ del Software disponibile per il _download_ alla [pagina Github del progetto](https://github.com/alimitedgroup/MVP). Le release si trovano nell'apposita sezione nella colonna a destra della pagina, come mostrato nella seguente immagine:
 
