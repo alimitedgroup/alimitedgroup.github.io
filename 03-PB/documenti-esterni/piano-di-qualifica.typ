@@ -2538,7 +2538,17 @@ _ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#su
 
 == Tеst di Accettazione <ta>
 
-I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test#super[G].
+I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test#super[G] e di copiare manualmente i comandi elencati.
+
+Si ricorda infine che per "risposta JSON" si intende quanto contenuto tra due parentesi graffe, come nel seguente esempio:
+`
+{
+  //Corpo della risposta JSON
+}
+`
+Si ricorda inoltre che una risposta JSON vuota rassomiglia al seguente esempio `{}`.
+
+Per informazioni più precise riguardanti il funzionamento di Grafana e sull'aggiunta di microservizi si consiglia la lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente].
 
 #test-table(
   unit: "A",
@@ -2559,7 +2569,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
         - `"full_name": "John Doe"`;
         - `"address: "via roma 12 35012"`;
         - `"gоods": { "hat-1": 7},`;
-        - `"reservations": ["campo variabile ad ogni esecuzione", "campo variabile ad ogni esecuzione"]`
+        - `"reservations": "campo variabile ad ogni esecuzione"`
       ],
       vr: "",
       st: "I",
@@ -2596,17 +2606,17 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema],
-      va: [Eseguire il file `create_multiple_order.sh` con il comando `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"`. Lo script crea una serie di ordini e, per eseguirli, deve prima aggiungere due merci differenti. Verificare, nella seconda risposta JSON, la presenza dei seguenti valori:
+      va: [Eseguire il file `add_good.sh` con il comando `./add_good.sh | grep -A 90 "Get goods status"`. Lo script crea una serie di ordini e, per eseguirli, deve prima aggiungere due merci differenti. Verificare, nella risposta JSON, la presenza dei seguenti valori:
         - `"name": "hat"`;
         - `"description": "red hat"`;
         - `"id": "hat-2"`;
         - `"amount": 0`;
-        - `"amounts": {"1": 0, "2": 0}`;
+        - `"amounts": {}`;
         - `"name": "hat"`;
         - `"description": "blue hat"`;
         - `"id": "hat-1"`;
-        - `"amount": 0`;
-        - `"amounts": {"1": 1,"2": 0}`.
+        - `"amount": 6`;
+        - `"amounts": {"1": 6}`.
       ],
       vr: "",
       st: "I",
@@ -2614,16 +2624,16 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     (
       desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
       va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"`.
-        Eseguendo lo script senza `grep` sarà possibile osservare che, nella voe `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1.
+        Eseguendo lo script senza `grep` sarà possibile osservare che, nella voce `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1, a conferma del trasferimento riuscito.
       ],
       vr: "",
       st: "I",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti],
-      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"` e nella seconda risposta JSON:
+      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"` e nella seconda risposta JSON i seguenti valori:
         - `"status": "Completed"`;
-        - `"transfer_id": "13be693d-c6b5-45de-b2df-20b1024b39b7"`;
+        - `"transfer_id": "campo variabile ad ogni esecuzione"`;
         - `"sender_id": "1"`;
         - `"receiver_id": "2"`;
         - `"gоods": {"hat-1": 5}`.
@@ -2639,7 +2649,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce],
-      va: [Eseguire lo script `create_notification_query.sh` con il comando `./create_notification_query.sh | grep -A 100 "Get notification queries"`. Verificare che la risposta JSON subito sotto la scritta "Get notification queries" contenga le seguenti informazioni:
+      va: [Eseguire lo script `get_notifications_queries.sh` con il comando `./get_notifications_queries.sh | grep -A 90 "Get notification queries"`. Verificare che la risposta JSON subito sotto la scritta "Get notification queries" contenga le seguenti informazioni:
         - `"query_id": "campo variabile ad ogni esecuzione"`;
         - `"good_id": "hat-1"`;
         - `"operator": "<"`;
@@ -2650,7 +2660,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere stock#super[G] di merce],
-      va: [Eseguire lo script `add_stock.sh`. Lo script crea una merce con id `hat-1` e ne aggiunge 6 unità al magazzino con id 1. Verificare che nella risposta JSON siano presenti le seguenti informazioni:
+      va: [Eseguire lo script `add_stock.sh`. Lo script crea una merce con id `hat-1` e ne aggiunge 6 unità al magazzino con id 1. Verificare che nella terza risposta JSON siano presenti le seguenti informazioni:
         - `"name": "hat"`;
         - `"description": "blue hat"`;
         - `"id": "hat-1"`;
@@ -2662,16 +2672,16 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
-      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni consultare il Manuale Utente#super[G].],
+      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni sull'accesso a Grafana e sull'aggiunta di servizi alla dashboard consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]].],
       vr: "",
       st: "I",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema],
-      va: [Eseguire il file `./create_multiple_order.sh` ed efftuare l'accesso a Grafana#super[G] .Procedere nella dashboard#super[G] come indicato nel Manuale Utente#super[G], quindi verificare che (i valori potrebbero leggermente variare a seconda dell'intervallo di aggiornamento di notifications):
-        - Authenticator possiede 3 richieste per 3 token;
+      va: [Eseguire il file `./create_multiple_order.sh` ed effetuare l'accesso a Grafana#super[G] (per maggiori informazioni consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]]), quindi verificare che (i valori potrebbero leggermente variare a seconda dell'intervallo di aggiornamento di notifications):
+        - Authenticator possieda 3 richieste per 3 token;
         - Catalog presenta 20 richieste totali;
-        - Order/Transfer possiede 19 richieste totali;
+        - Order/Transfer possieda 19 richieste totali;
         - I due magazzini possiedano 15 richieste totali ciascuno;
         - Notifications possiede 6 richieste totali.
       ],
@@ -2691,7 +2701,7 @@ I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utili
     ),
     (
       desc: [Verificare che il prodotto funzioni correttamente con più istanze dello stesso microservizio],
-      va: [Il test#super[G] viene effettuato manualmente: aggiugere un'istanza di Order/Transfer e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test#super[G] *T-14-A*.],
+      va: [Il test#super[G] viene effettuato manualmente: aggiugere un'istanza di Order/Transfer (per maggiori informazioni consultare il #link("https://alimitedgroup.github.io/docs/installazione/preparazione-del-sistema/02-configurare-ms/")[Manuale Utente#super[G]]) e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test#super[G] *T-14-A*.],
       vr: "",
       st: "I",
     ),
