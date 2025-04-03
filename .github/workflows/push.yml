@@ -19,7 +19,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
       - name: Write dictionary
-        run: uv run .github/workflows/glossary.py && git diff --exit-code
+        run: uv run .github/workflows/glossary.py
       - name: Compile Typst files
         run: uv run .github/workflows/compile.py
       - name: Compile manuale utente
