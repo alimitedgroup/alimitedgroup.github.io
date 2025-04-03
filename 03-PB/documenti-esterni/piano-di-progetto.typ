@@ -667,7 +667,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
       Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7. \ \
-      Aggiungere dettagli sull'utilizzo dei microservizi e del sistema: \ _sprint_ 8. \ \
+      Aggiungere dettagli sull'utilizzo dei microservizi e del sistema: \ _sprint_ 8 e _sprint_ 9. \ \
       Rendere fruibile, tramite il sito di _ALimitedGroup_, il Manuale Utente: da _sprint_ 7 a _sprint_ 9.],
     [In redazione],
 
@@ -688,8 +688,8 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.
       - Aggiornamento delle misurazioni con l'aggiunta di quelle relative al MVP.
     ],
-    [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 8. \ \
-      Correzione con integrazione della sezione "Sviluppo": \ _sprint 8_. \ \
+    [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 7. \ \
+      Correzione con integrazione della sezione "Sviluppo": \ _sprint_ 7. \ \
       Aggiornamento misurazioni: \ _sprint_ 9.],
     [In redazione],
 
@@ -722,7 +722,9 @@ Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettu
         - Order;
         - Transfer;
         - Notification.
-      Esecuzione dei test previsti dal Piano di Qualifica
+      Esecuzione dei test previsti dal Piano di Qualifica.
+      \ \
+      Integrazione di Grafana nei vari microservizi.
     ],
     [Realizzazione del MVP: da _sprint 7_ a _sprint 9_. \ \
       Codifica di:
@@ -730,13 +732,18 @@ Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettu
       - Microservizi, più precisamente i seguenti:
         - Warehouse: _sprint_ 7;
         - Catalog: _sprint_ 7;
-        - Authenticator: _sprint_ 7;
-        - Api Gateway: da _sprint_ 7 a _sprint_ 8;
-        - Order: _sprint_ 8;
-        - Transfer: _sprint_ 8;
-        - Notification: _sprint_ 9. \ \
-      Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9.],
-    [In fase di implementazione]),
+        - Authenticator: da _sprint_ 7 a _sprint_ 8;
+        - Api Gateway: da _sprint_ 7 a _sprint_ 9;
+        - Order: da _sprint_ 7 a _sprint_ 8;
+        - Transfer: da _sprint_ 7 a _sprint_ 8;
+        - Notifications: da _sprint_ 8 a _sprint_ 9. \ \
+      Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9. \ \
+      Integrazione di Grafana: _sprint_ 9.],
+    [In fase di implementazione],
+    [*Aggiornameto del Piano di Progetto*],
+    [Aggiornamento della Pianificazione a lungo termine e della Pianificazione a breve termine.],
+    [Aggiornamento: tutti gli _sprint_.],
+    [In redazione],),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
 
