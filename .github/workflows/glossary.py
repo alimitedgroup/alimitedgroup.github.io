@@ -80,13 +80,18 @@ def substitute(filePath,glossaryYml):
             for i, word in enumerate(line.split()):
                 #print("read: "+word+ "  and stop: "+str(stop))
                 if word in stopCheckingWords:
-                    #print(f"settingStop {word}, {stopCheckingWords}")
+                    #print(f"settingStop {word}")
                     stop=True
-                elif word == ")" or word == "<!--typst-end-exclude-->" or word == "-->":
+                elif "/03-PB\\manuale-utente" in filePath and (word == "<!--typst-end-exclude-->" or word == "-->"):
                     stop=False
+                    #print(word)
+                elif word == ")" and "/03-PB\\manuale-utente" not in filePath:
+                    stop=False
+                    #print(word)
                 if stop==False and ((word in glossary) or (word[:-1] in glossary) or (word[:-2] in glossary and len(word[:-2]) > 0) 
                                     or (word[1:-1] in glossary and len(word[1:-1]) > 1) or (word[2:-2] in glossary and len(word[2:-2]) > 2) or (word[2:-3] in glossary and len(word[2:-3]) > 2)) and len(word)>1:
-                    #print("SONO DENTRO L'IF per: "+word)
+                    #print("SONO DENTRO L'IF per: "+word+ "  del file " + str(file))
+                    #print("Lo stop vale: " +str(stop))
                     if word[len(word)-1] == "," or word[len(word)-1] == ";":
                         if(word[:-1] == "sopra"):
                             newText += word
@@ -125,6 +130,9 @@ def substitute(filePath,glossaryYml):
                             else:
                                 newText += word[:-2] + "#super[G]" + word[-2:] + " "
                                 logging.error(f'Found un-tagged word at {filePath}:{linenum}')
+                        elif(word[0] in specialChar and word[1:-1] in glossary):
+                            newText += word[:-1] + "#super[G]" + word[-1:] + " "
+                            logging.error(f'Found un-tagged word at {filePath}:{linenum}')
                         else:
                             newText += word + "#super[G] "
                             logging.error(f'Found un-tagged word at {filePath}:{linenum}')
