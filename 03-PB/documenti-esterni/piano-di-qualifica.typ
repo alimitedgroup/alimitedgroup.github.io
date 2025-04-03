@@ -1050,10 +1050,10 @@ _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correg
 
 Dal grafico si osserva un progressivo miglioramento dell'efficienza temporale dei componenti di ALimitedGroup.
 Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all'inesperienza e all'adattamento alle richieste del progetto.
-Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza#super[G] e una riduzione del tempo necessario per completare le attività.
-
-
+Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata.
+Al termine del progetto le ore produttive e quelle di orologio praticamente coincidono, indicando un'ottima efficienza temporale.
 #pagebreak()
+
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
 Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto _Software_.
