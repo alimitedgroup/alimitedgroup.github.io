@@ -65,7 +65,7 @@ def substitute(filePath,glossaryYml):
         elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "/03-PB\\manuale-utente" in filePath:
             newText += line 
             line=file.readline()
-            print("Sono nell'IF del #")
+            #print("Sono nell'IF del #")
             continue
         else:
             #print("Sono nell'IF del for di ricerca delle parole")
