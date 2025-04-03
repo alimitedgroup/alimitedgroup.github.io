@@ -21,9 +21,11 @@ Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], sel
 )
 -->
 
-<!--raw-typst #pagebreak() -->
+<!--raw-typst
+  #pagebreak() 
+-->
 
-Procedere dunque ad importare la _dаshboard_ caricando l'apposito file _JSON_ che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
+Procedere dunque ad importare la _dаshboard_#super[G] caricando l'apposito file _JSON_ che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
 
 <p align="center">
   <img src="./../../assets/import-dashboard.png" width="100%" />
@@ -101,7 +103,9 @@ Premere quindi il tasto **Add** e quindi **Visualization**
 
 A questo punto il processo differisce in base all'aggiunta di log e misurazioni, per cui si consiglia di seguire i paragrafi successivi.
 
-<!--raw-typst #pagebreak() -->
+<!--raw-typst
+  #pagebreak() 
+-->
 
 ## Aggiungere una finestra di log
 
@@ -335,4 +339,6 @@ Premere quindi **Run query** e **Save dаshboard** per sincronizzare i dati e sa
 
 Il pannello è stato aggiunto: premere **Back to dashboard#super[G]** per visualizzarlo.
 
-<!--raw-typst #pagebreak() -->
+<!--raw-typst
+  #pagebreak() 
+-->
