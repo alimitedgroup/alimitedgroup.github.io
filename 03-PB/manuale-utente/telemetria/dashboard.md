@@ -1,5 +1,4 @@
 # Importare una dashboard
-
 I file forniti includono una _dashboard_#super[G] configurata per avere a disposizione tutti i microservizi in esecuzione nella stessa macchina.
 
 Tale _dashboard_#super[G] è automaticamente importata all'avvio del Sistema. Qualora non lo fosse, è possibile seguire questi passaggi.
@@ -24,7 +23,7 @@ Anzitutto recarsi nella sezione **Dashboards#super[G]** di Grafana#super[G], sel
 
 <!--raw-typst #pagebreak() -->
 
-Procedere dunque ad importare la _dаshboard_ caricando l'apposito file JSON che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
+Procedere dunque ad importare la _dаshboard_ caricando l'apposito file _JSON_ che è possibile trovare in `/containers/dashboards/json` della cartella di installazione. La pagina di importazione è simile alla figura che segue:
 
 <p align="center">
   <img src="./../../assets/import-dashboard.png" width="100%" />

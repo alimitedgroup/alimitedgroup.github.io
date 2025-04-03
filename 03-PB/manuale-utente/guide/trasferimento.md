@@ -22,6 +22,6 @@ Cambiando i segnaposto seguenti con i valori adeguati:
 - **id_merce**: identificativo della merce da trasferire;
 - **qta**: quantità della merce da trasferire.
 
-È ovviamente possibile includere più merci inserendole in una lista JSON.
+È ovviamente possibile includere più merci inserendole in una lista _JSON_.
 
 Per verificare l'esito del trasferimento#super[G] è consigliata la lettura della Sezione relativa alla visione dei trasferimenti.

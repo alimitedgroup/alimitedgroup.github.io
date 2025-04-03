@@ -62,10 +62,6 @@ def substitute(filePath,glossaryYml):
                 bodyFound=True
             if bodyFound==True and ")" in line:
                 parFound=True
-        elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "/03-PB\\manuale-utente" in filePath:
-            newText += line 
-            line=file.readline()
-            continue
         else:
             if(stop == False and line[0] not in stopCheckingWords):
                 line = substitute_line(filePath, linenum, line, filtered_glossary)
@@ -74,10 +70,13 @@ def substitute(filePath,glossaryYml):
                 newText += line
                 line=file.readline()
                 continue
+            elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "\\03-PB\\manuale-utente" in filePath:
+                newText += line 
+                line=file.readline()
+                continue
             if len(line.lstrip()) != 0: newText += line[:len(line) - len(line.lstrip())]
             for i, word in enumerate(line.split()):
-                #print("read: "+word[-3:])
-                #print(stop)
+                #print("read: "+word+ "  and stop: "+str(stop))
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}, {stopCheckingWords}")
                     stop=True
@@ -164,11 +163,10 @@ def main():
 
     else:
         find_files(fileList)
-        #for file in fileList:
         for file in fileList:
             if "docs.typ" in file or "README.md" in file or "glossario.typ" in file or "/lib/" in file or "/lib\\" in file or "/03-PB/diari" in file or "/03-PB\\diari" in file or "/02-RTB/diari" in file or "/02-RTB\\diari" in file or "/01-candidatura/diari" in file or "/01-candidatura\\diari" in file:
                 continue
-            substitute(file, loadGlossary())
+        substitute(file, loadGlossary())
 
 if __name__ == "__main__":
     main()
