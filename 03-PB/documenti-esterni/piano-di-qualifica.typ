@@ -9,6 +9,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.3.0",
+      date: datetime(day: 1, month: 04, year: 2025),
+      autore: p.sara,
+      //verifica: p.matteo,
+      descr: "Aggiornamento cruscotto misurazioni",
+    ),
+    (
       vers: "1.2.0",
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
