@@ -65,6 +65,7 @@ def substitute(filePath,glossaryYml):
         elif len(line.strip()) > 0 and line.lstrip()[0] == '#' and "/03-PB\\manuale-utente" in filePath:
             newText += line 
             line=file.readline()
+            logging.error(f'Found # as the start of the line --> linebreak')
             #print("Sono nell'IF del #")
             continue
         else:
