@@ -2548,7 +2548,7 @@ Si ricorda infine che per "risposta JSON" si intende quanto contenuto tra due pa
 `
 Si ricorda inoltre che una risposta JSON vuota rassomiglia al seguente esempio `{}`.
 
-Per informazioni più precise riguardanti il funzionamento di Grafana e sull'aggiunta di microservizi si consiglia la lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente].
+Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e sull'aggiunta di microservizi si consiglia la lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
 
 #test-table(
   unit: "A",
@@ -2624,7 +2624,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana e sull'agg
     (
       desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
       va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"`.
-        Eseguendo lo script senza `grep` sarà possibile osservare che, nella voce `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1, a conferma del trasferimento riuscito.
+        Eseguendo lo script senza `grep` sarà possibile osservare che, nella voce `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1, a conferma del trasferimento#super[G] riuscito.
       ],
       vr: "",
       st: "I",
@@ -2672,7 +2672,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana e sull'agg
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
-      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni sull'accesso a Grafana e sull'aggiunta di servizi alla dashboard consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]].],
+      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni sull'accesso a Grafana#super[G] e sull'aggiunta di servizi alla _dashboard_#super[G] consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]].],
       vr: "",
       st: "I",
     ),
