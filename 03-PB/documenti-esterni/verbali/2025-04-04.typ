@@ -51,6 +51,7 @@ Nel corso della riunione il team di _ALimitedGroup_ ha presentato ad #M31 alcuni
 #M31 si dice formalmente soddisfatta di quanto sviluppato da _ALimitedGroup_. Tale formale accettazione è comprovata dalla firma, qui sotto riportata, di uno dei componenti partecipanti alla riunione:
 
 
+#align(right)[#image("../../../assets/firma_ve0404.png", width: 35%)]
 
 
 #pagebreak()
