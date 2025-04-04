@@ -1120,7 +1120,7 @@ Nello specifico, ogni microservizio possiede:
 ==== Esempio: catalogRouter
 
 #figure(
-  image("../../assets/catalog/CatalogRouter.png", width: 80%),
+  image("../../assets/catalog/CatalogRouter.png", width: 90%),
   caption: "CatalogRouter",
 )
 
@@ -1137,7 +1137,7 @@ Nello specifico, ogni microservizio possiede:
   - *`RegisterJsWithConsumerGroup(ctx context.Context, streamCfg jetstream.StreamConfig, consumerCfg jetstream.ConsumerConfig, handler JsHandler) error`*: come il precedente, ma permette di applicare un gruppo di _consumer_ (non viene utilizzato da questo router).
 - *`controller *catalogController`*: il controller del microservizio *Catalog* dedicato alla gestione dei magazzini e della quantità della merce;
 - *`goodController *CatalogGoodInfoController`*: il controller del microservizio *Catalog* dedicato alla gestione delle informazioni della merce;
-- *`qtController   *CatalogGlobalQuantityController`*: il controller del microservizio *Catalog* dedicato alla gestione delle richieste di ottenimento quantità globale della merce;
+- *`qtController *CatalogGlobalQuantityController`*: il controller del microservizio *Catalog* dedicato alla gestione delle richieste di ottenimento quantità globale della merce;
 - *`rsc *broker.RestoreStreamControl`*: una struttura che fa uso di `sync.WaitGroup` per gestire il recupero dei messaggi dai JetStream. È infatti necessario per l'invocazione di metodi quali `RegisterJsHandler`.
 
 Può invocare le seguenti funzioni:
