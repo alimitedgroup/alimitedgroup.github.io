@@ -67,13 +67,17 @@ I membri del gruppo si impegneranno per fare tesoro di tutto quanto ciò che è 
 \
 I membri di *_ALimitedGroup_*, \
 
-#persona(p.sara) \
 #persona(p.emanuele) \
-#persona(p.lorenzo) \
-#persona(p.loris) \
 #persona(p.samuele) \
+#persona(p.sara) \
+#persona(p.loris) \
 #persona(p.marco) \
 #persona(p.matteo) \
+#persona(p.lorenzo) \
+
+
+
+
 
 #pagebreak()
 
