@@ -1,14 +1,22 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.2.0]
+#let ver = [2.0.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 11, month: 03, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "2.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.marco,
+      verifica: p.sara,
+      approvazione: p.matteo,
+      descr: "Correzioni minori.",
+    ),
     (
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),

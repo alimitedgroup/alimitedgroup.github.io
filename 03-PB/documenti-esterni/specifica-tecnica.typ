@@ -1,12 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.9.0]
+#let ver = [1.0.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 28, month: 03, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.samuele,
+      verifica: p.loris,
+      approvazione: p.matteo,
+      descr: "Aggiunta di notifications e api gateway. " + [(@notification e @api_gateway)] + ".",
+    ),
     (
       vers: "0.9.0",
       date: datetime(day: 31, month: 03, year: 2025),
