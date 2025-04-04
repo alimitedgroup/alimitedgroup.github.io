@@ -3,12 +3,19 @@
 #let nome-documento = [Piano di Progetto]
 
 #set list(indent: 0.5em)
-#let ver = [1.2.0]
+#let ver = [1.3.0]
 #show: body => importantdocs(
   data: datetime(day: 24, month: 02, year: 2025),
   tipo: [esterno],
   stato: [Approvato per RTB],
   versioni: (
+    (
+      vers: "1.3.0",
+      date: datetime(day: 31, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.emanuele,
+      descr: "Aggiornamento Pianificazione nel lungo termine " + [(@plt). ],
+    ),
     (
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),
@@ -83,7 +90,7 @@
   ),
   versione: ver,
   responsabile: ((p.samuele),),
-  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele)),
+  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele), (p.matteo)),
   redattori: ((p.loris), (p.marco), (p.matteo), (p.samuele), (p.emanuele)),
   descrizione: [Il _Piano di Progetto_ contiene il resoconto delle attività svolte e da svolgere da _ALimitedGroup_],
   titolo: "Piano di Progetto",
@@ -116,25 +123,25 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
 - *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
-- *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")\
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
+- *Norme di Progetto#super[G] ver. 2.0.0* \
+  #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")\
+  *Ultimo Accesso 4 Aprile 2025*
 
 === Riferimenti informativi
 
 - *I processi di ciclo di vita del software* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Gestione di progetto* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Lezione rovesciata - Documentazione* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Glossario*: \
   #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 
@@ -425,7 +432,7 @@ Per le informazioni riguardanti la nomenclatura si suggerisce la lettura della s
 
 = Pianificazione nel lungo termine <plt>
 
-Come anticipato nella #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[Dichiarazione degli Impegni], Il gruppo prevede di terminare il progetto entro e non oltre il giorno *31 Marzo 2025* con un budget di spesa fissato a *Euro 12.930*.
+Come scritto nella #link("https://alimitedgroup.github.io/Dichiarazione%20impegni%201.0.0.pdf")[Dichiarazione degli Impegni], il gruppo prevedeva di terminare il progetto entro il giorno *31 Marzo 2025* con un budget di spesa fissato a *Euro 12.930*.
 
 Al momento della candidatura si è teorizzato il seguente prospetto costi:
 
@@ -452,10 +459,10 @@ Al momento della candidatura si è teorizzato il seguente prospetto costi:
     text(fill: white)[*Verificatore*], [15€/h], [136h], [2.040€],
     text(fill: white)[*Totale*], [-], [*644h*], [*12.930€*],
   ),
-  caption: [Riassunto dei costi previsti derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi previsti alla candidatura],
 )
 \
-In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tuttavia probabile una differente ripartizione finale del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
+In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] viene effettuata una ripartizione del budget disponibile a favore del ruolo di analista#super[G], come qui riportato:
 
 #figure(
   table(
@@ -479,10 +486,36 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] è tu
     text(fill: white)[*Verificatore*], [15€/h], [132h], [1.980€],
     text(fill: white)[*Totale*], [-], [*644h*], [*12.920€*],
   ),
-  caption: [Riassunto dei costi ridistribuiti derivanti dalle ore assegnate a ciascun ruolo],
+  caption: [Riassunto dei costi ridistribuiti per la RTB],
 )
 
-Si stima inoltre ad una candidatura per la *_Requirements and Technology Baseline#super[G] (RTB)_* entro il *3 febbraio 2025*.
+La revisione per la *_Requirements and Technology Baseline#super[G] (RTB)_* è avvenuta il 21 febbraio 2025.
+
+Superata la *_Requirements and Technology Baseline (RTB)_*, all'avvio della *_Product Baseline#super[G] (PB)_*, il gruppo ha deciso di ridistribuire nuovamente le ore disponibili per ottimizzare l'allocazione delle risorse in vista delle attività previste. La nuova ripartizione è riportata nella tabella seguente:
+#figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    inset: (x: 1.1em, y: 0.6em),
+    fill: (x, y) => if x == 0 or y == 0 {
+      rgb("#800080")
+    } else { rgb("#d8b2d8") },
+    table.header(
+      text(fill: white)[*Ruolo*],
+      text(fill: white)[*Costo Orario*],
+      text(fill: white)[*Ore*],
+      text(fill: white)[*Costo*],
+    ),
+
+    text(fill: white)[*Responsabile*], [30€/h], [39h], [1.170€],
+    text(fill: white)[*Amministratore*], [20€/h], [77h], [1.540€],
+    text(fill: white)[*Analista*], [25€/h], [83h], [2.075€],
+    text(fill: white)[*Progettista*], [25€/h], [132h], [3.300€],
+    text(fill: white)[*Programmatore*], [15€/h], [181h], [2.715€],
+    text(fill: white)[*Verificatore*], [15€/h], [132h], [1.980€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.780€*],
+  ),
+  caption: [Riassunto dei costi ridistribuiti per la PB],
+)
 
 Seguiranno ora le attività previste per la *_Requirements and Technology Baseline#super[G] (RTB)_* e la *_Product Baseline#super[G] (PB)_*: tali sezioni saranno utili per correttamente calendarizzare quanto da realizzare per ogni _sprint_#super[g] .
 
@@ -613,25 +646,31 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [*Redazione della Specifica Tecnica*],
     [Redazione delle seguenti parti:
       - Struttura base del documento;
-      - Inserire le tecnologie per la codifica
+      - Inserire le tecnologie per la codifica;
       - Capitolo "Architettura Logica";
-      - Capitolo "Architettura di Deployment".
+      - Capitolo "Architettura di Deployment";
+      - Aggiungere informazioni su analisi statica e dinamica;
+      - Aggiungere informazioni sui microservizi implementati all'interno dell'MVP.
     ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
-      Redigere i capitoli "Architettura Logica" e "Architettura di Deployment" : _sprint_ 7. \ \
-      Inserire all'interno del documento le tecnologie per la codifica: \ _sprint 7_. \ \
-      Inserire informazioni sui microservizi implementati all'interno dell'MVP: \ _sprint_ 7.],
+      Redigere i capitoli "Architettura Logica" e "Architettura di Deployment": _sprint_ 7. \ \
+      Inserire all'interno del documento le tecnologie per la codifica: \ _sprint_ 7. \ \
+      Inserire informazioni sui microservizi implementati all'interno dell'MVP: \ _sprint_ 8 e _sprint_ 9. \ \
+      Aggiungere informazioni su analisi statica e dinamica: \ _sprint_ 8.],
     [In redazione],
 
     [*Redazione del Manuale Utente*],
     [Redazione delle seguenti parti:
       - Struttura base del documento;
-      - Introduzione e scopo del documento.
-      Inoltre, verrà reso fruibile, questo documento, dal sito di _ALimitedGroup_.],
+      - Introduzione e scopo del documento;
+      - Aggiungere dettagli sull'utilizzo dei microservizi e del sistema;
+      - Rendere fruibile il documento dal sito di _ALimitedGroup_.
+    ],
     [Redigere la struttura base del documento: _sprint_ 7. \ \
-      Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7.\ \
+      Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7. \ \
+      Aggiungere dettagli sull'utilizzo dei microservizi e del sistema: \ _sprint_ 8 e _sprint_ 9. \ \
       Rendere fruibile, tramite il sito di _ALimitedGroup_, il Manuale Utente: da _sprint_ 7 a _sprint_ 9.],
-    [In redazione],
+    [Completato],
 
     [*Correzione Analisi dei Requisiti*],
     [Correzione delle seguenti parti:
@@ -642,15 +681,17 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [Correzione dei Casi d'Uso n. 32, 67 e 68: \ _sprint_ 7. \ \
       Aggiunta del tracciamento dei Casi d'Uso: \ _sprint_ 7. \ \
       Correzione dei requisiti non funzionali: \ _sprint_ 7.],
-    [In redazione],
+    [Completato],
 
-    [*Correzione Norme di Progetto*],
+    [*Correzione e completamento Norme di Progetto*],
     [Correzione delle seguenti parti:
       - Correzione con aggiunta della sezione "Strumenti a supporto" a tutti i processi presenti all'interno del documento;
       - Correzione con integrazione della sezione "Sviluppo" con le decisioni intraprese durante la riunione interna svolta in data 24/02.
+      - Aggiornamento delle misurazioni con l'aggiunta di quelle relative al MVP.
     ],
-    [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 8. \ \
-      Correzione con integrazione della sezione "Sviluppo": \ _sprint 8_.],
+    [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 7. \ \
+      Correzione con integrazione della sezione "Sviluppo": \ _sprint_ 7. \ \
+      Aggiornamento misurazioni: \ da _sprint_ 7 a _sprint_ 9.],
     [In redazione],
 
     [*Correzione Piano di Qualifica*],
@@ -658,7 +699,10 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare;
       - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.
     ],
-    [],
+    [
+      Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare: \ _sprint_ 8. \ \
+      Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto: \ _sprint_ 9.
+    ],
     [In redazione],
 
     [*Ampliamento del Glossario*],
@@ -666,7 +710,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Termini.
     ],
     [Ampliamento del Glossario: tutti gli _sprint_.],
-    [In redazione],
+    [Completato],
 
     [*Realizzazione del Minimum Viable Product (MVP)*],
     [Codifica di:
@@ -676,10 +720,11 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
         - Catalog;
         - Authenticator;
         - Api Gateway;
-        - Order;
-        - Transfer;
+        - Order/Transfer;
         - Notification.
-      Esecuzione dei test previsti dal Piano di Qualifica
+      Esecuzione dei test previsti dal Piano di Qualifica.
+      \ \
+      Integrazione di Grafana nei vari microservizi.
     ],
     [Realizzazione del MVP: da _sprint 7_ a _sprint 9_. \ \
       Codifica di:
@@ -687,13 +732,18 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Microservizi, più precisamente i seguenti:
         - Warehouse: _sprint_ 7;
         - Catalog: _sprint_ 7;
-        - Authenticator;
-        - Api Gateway;
-        - Order;
-        - Transfer;
-        - Notification.
-    ],
+        - Authenticator: da _sprint_ 7 a _sprint_ 8;
+        - Api Gateway: da _sprint_ 7 a _sprint_ 9;
+        - Order/Transfer: da _sprint_ 7 a _sprint_ 8;
+        - Notifications: da _sprint_ 8 a _sprint_ 9. \ \
+      Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9. \ \
+      Integrazione di Grafana: _sprint_ 9.],
     [In fase di implementazione],
+
+    [*Aggiornameto del Piano di Progetto*],
+    [Aggiornamento della Pianificazione a lungo termine e della Pianificazione a breve termine.],
+    [Aggiornamento: tutti gli _sprint_.],
+    [In redazione],
   ),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
