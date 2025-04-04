@@ -19,7 +19,7 @@
       descr: "Redazione del documento.",
     ),
   ),
-  stato: [In redazione],
+  stato: [Approvato],
   presenze: (p.sara, p.lorenzo, p.loris, p.matteo, p.marco, p.emanuele),
   odg: [Sesta riunione con #M31: aggiornamento sullo stato avanzamento lavori],
   body,

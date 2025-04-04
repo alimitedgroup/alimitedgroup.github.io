@@ -1,7 +1,7 @@
 #import "@preview/cmarker:0.1.2"
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.3.0]
+#let ver = [0.4.0]
 #show: body => importantdocs(
   titolo: "Manuale Utente",
   tipo: [esterno],
@@ -11,11 +11,18 @@
     + " realizzato da "
     + [_ALimitedGroup_],
   responsabile: (p.samuele,),
-  verificatore: (p.emanuele, p.matteo),
+  verificatore: (p.emanuele, p.matteo, p.samuele),
   stato: [In redazione],
   redattori: (p.samuele, p.matteo, p.marco),
   versione: ver,
   versioni: (
+    (
+      vers: "0.4.0",
+      date: datetime(day: 4, month: 04, year: 2025),
+      descr: "Cambiamento versione scaricabile.",
+      autore: p.matteo,
+      verifica: p.samuele,
+    ),
     (
       vers: "0.3.0",
       date: datetime(day: 2, month: 04, year: 2025),
