@@ -3,7 +3,7 @@
 #let nome-documento = [Piano di Progetto]
 
 #set list(indent: 0.5em)
-#let ver = [1.2.0]
+#let ver = [1.3.0]
 #show: body => importantdocs(
   data: datetime(day: 24, month: 02, year: 2025),
   tipo: [esterno],
@@ -700,7 +700,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       - Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto, e come viene migliorato _sprint_ dopo _sprint_.
     ],
     [
-Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare: \ _sprint_ 8. \ \
+      Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare: \ _sprint_ 8. \ \
       Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto: \ _sprint_ 9.
     ],
     [In redazione],
@@ -739,10 +739,12 @@ Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettu
       Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9. \ \
       Integrazione di Grafana: _sprint_ 9.],
     [In fase di implementazione],
+
     [*Aggiornameto del Piano di Progetto*],
     [Aggiornamento della Pianificazione a lungo termine e della Pianificazione a breve termine.],
     [Aggiornamento: tutti gli _sprint_.],
-    [In redazione],),
+    [In redazione],
+  ),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
 
