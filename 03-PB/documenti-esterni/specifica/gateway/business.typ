@@ -15,7 +15,7 @@ e le _port-in_ da essa implementate.
 
 ===== BusinessParams <BusinessParams>
 
-Parametri in ingresso necessari per costruire un'istanza di #typelink(<Business>).
+Parametri in ingresso necessari per costruire un'istanza di #typelink(<gateway_Business>).
 
 #struct(
   (
@@ -40,7 +40,7 @@ Parametri in ingresso necessari per costruire un'istanza di #typelink(<Business>
   (),
 )
 
-===== business.Business <Business>
+===== business.Business <gateway_Business>
 
 La _business logic_. Coordina tutte le operazioni del microservizio.
 Implementa le _port-in_
