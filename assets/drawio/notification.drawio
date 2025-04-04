@@ -433,56 +433,64 @@
         <mxCell id="-5K9T_KzksJM0ydLI5D7-12" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-5K9T_KzksJM0ydLI5D7-9" vertex="1">
           <mxGeometry y="98" width="280" height="2" as="geometry" />
         </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-5" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startFill=0;startArrow=none;" parent="1" source="WytTIRIDDDP2WNZlcsUT-1" target="-5K9T_KzksJM0ydLI5D7-5" edge="1">
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-5" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;endSize=8;startFill=0;startArrow=none;" parent="1" source="WytTIRIDDDP2WNZlcsUT-1" target="-5K9T_KzksJM0ydLI5D7-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1590" y="720" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="1700" y="775" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="1495" y="750" width="50" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-2" value="QueryRules" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1467.5" y="800" width="105" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-3" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1461.25" y="830" as="sourcePoint" />
-            <mxPoint x="1578.75" y="830" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-4" value="+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): ([]types.QueryRuleWithId, error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1320" y="830" width="400" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;endSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;" parent="1" source="WytTIRIDDDP2WNZlcsUT-6" target="-5K9T_KzksJM0ydLI5D7-5" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1830" y="800" as="sourcePoint" />
             <Array as="points">
               <mxPoint x="1740" y="775" />
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="3rQDniPZYBAQRxBhMwO--1" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=none;startFill=0;endArrow=none;endFill=0;endSize=8;" edge="1" parent="1" source="WytTIRIDDDP2WNZlcsUT-1" target="oY4UZmiA4n7cq5KSJwAP-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1950" y="528" />
+              <mxPoint x="2000" y="528" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="1925" y="750" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-2" value="QueryRules" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1897.5" y="800" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-3" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1891.25" y="830" as="sourcePoint" />
+            <mxPoint x="2008.75" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-4" value="+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): ([]types.QueryRuleWithId, error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1750" y="830" width="400" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;endSize=8;startArrow=none;startFill=0;" parent="1" source="WytTIRIDDDP2WNZlcsUT-6" target="-5K9T_KzksJM0ydLI5D7-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1830" y="800" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1700" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="WytTIRIDDDP2WNZlcsUT-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="1895" y="750" width="50" height="50" as="geometry" />
+          <mxGeometry x="1465" y="750" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="WytTIRIDDDP2WNZlcsUT-7" value="StockUpdates" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1867.5" y="800" width="105" height="30" as="geometry" />
+          <mxGeometry x="1437.5" y="800" width="105" height="30" as="geometry" />
         </mxCell>
         <mxCell id="WytTIRIDDDP2WNZlcsUT-8" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1861.25" y="830" as="sourcePoint" />
-            <mxPoint x="1978.75" y="830" as="targetPoint" />
+            <mxPoint x="1431.25" y="830" as="sourcePoint" />
+            <mxPoint x="1548.75" y="830" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="WytTIRIDDDP2WNZlcsUT-9" value="+ RecordStockUpdate(serviceresponse.AddStockUpdateCmd): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1720" y="830" width="400" height="30" as="geometry" />
+          <mxGeometry x="1290" y="830" width="400" height="30" as="geometry" />
         </mxCell>
         <mxCell id="oY4UZmiA4n7cq5KSJwAP-5" value="RuleChecker" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1760" y="90" width="390" height="216" as="geometry" />
         </mxCell>
-        <mxCell id="oY4UZmiA4n7cq5KSJwAP-6" value="- logger: zap.Logger&lt;br&gt;- cfg: config.NotificationConfig&lt;br&gt;- brk: broker.NatsMessageBroker&lt;br&gt;- rulePort: portin.QueryRules&lt;br&gt;- queryPort: portout.RuleQueryRepository&lt;br&gt;- publishPort: portout.StockEventPublisher&lt;br&gt;- stop: chan bool&lt;br&gt;- stopOk: chan bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="oY4UZmiA4n7cq5KSJwAP-5" vertex="1">
+        <mxCell id="oY4UZmiA4n7cq5KSJwAP-6" value="- logger: zap.Logger&lt;br&gt;- cfg: config.NotificationConfig&lt;br&gt;- brk: broker.NatsMessageBroker&lt;br&gt;- rulePort: portout.QueryRules&lt;br&gt;- queryPort: portout.RuleQueryRepository&lt;br&gt;- publishPort: portout.StockEventPublisher&lt;br&gt;- stop: chan bool&lt;br&gt;- stopOk: chan bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="oY4UZmiA4n7cq5KSJwAP-5" vertex="1">
           <mxGeometry y="26" width="390" height="124" as="geometry" />
         </mxCell>
         <mxCell id="oY4UZmiA4n7cq5KSJwAP-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="oY4UZmiA4n7cq5KSJwAP-5" vertex="1">
