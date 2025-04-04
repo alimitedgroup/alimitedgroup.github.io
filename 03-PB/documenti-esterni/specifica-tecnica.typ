@@ -1691,7 +1691,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 === Order <micro_order>
 
 #figure(
-  image("../../assets/order/order_2.png", width: 115%),
+  image("../../assets/order/General.png", width: 115%),
   caption: "Struttura del Microservizio " + ["Order"],
 )
 
@@ -2055,11 +2055,12 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 ===== OrderUpdateCmd <OrderOrderStockUpdateCmd>
 
-*Descrizione degli attributi della struttura:*
 #figure(
   image("../../assets/order/OrderUpdateCmd.png", width: 30%),
   caption: "Order - OrderUpdateCmd",
 )
+
+*Descrizione degli attributi della struttura:*
 - *`ID string`*: rappresenta l'identificativo univoco dell'ordine aggiornato;
 - *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
@@ -2672,7 +2673,8 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`sendTransferUpdatePort port.ISendTransferUpdatePort`*: rappresenta la porta per inviare aggiornamenti sui trasferimenti. Per maggiori dettagli, vedere la @OrderISendTransferUpdatePort;
 - *`sendContactWarehousePort port.ISendContactWarehousePort`*: rappresenta la porta per contattare i magazzini. Per maggiori dettagli, vedere la @OrderISendContactWarehousePort;
 - *`requestReservationPort port.IRequestReservationPort`*: rappresenta la porta per richiedere prenotazioni di merci. Per maggiori dettagli, vedere la @OrderIRequestReservationPort;
-- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*: rappresenta il caso d'uso#super[G] per calcolare la disponibilità delle merci nei magazzini. Per maggiori dettagli, vedere la @OrderICalculateAvailabilityUseCase.
+- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*: rappresenta il caso d'uso#super[G] per calcolare la disponibilità delle merci nei magazzini. Per maggiori dettagli, vedere la @OrderICalculateAvailabilityUseCase;
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta per gestire operazioni transazionali. Per maggiori dettagli, vedere la @OrderITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2750,6 +2752,32 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla 
 
 - *`SetComplete(model.OrderID) error`*: il metodo deve permettere di segnare un ordine#super[G] come completato, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un errore in caso di fallimento.
 
+==== ITransactionPort <OrderITransactionPort>
+
+Rappresenta l'interfaccia che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`Lock()`*: il metodo deve permettere di bloccare una risorsa condivisa, garantendo che solo una transazione possa accedervi alla volta.
+
+- *`Unlock()`*: il metodo deve permettere di sbloccare una risorsa condivisa, consentendo ad altre transazioni di accedervi.
+
+==== TransactionImpl <OrderTransactionImpl>
+
+La struttura `TransactionImpl` rappresenta un'implementazione dell'interfaccia `ITransactionPort` per la gestione delle operazioni transazionali nel microservizio *Order*#super[G]. Utilizza un mutex per garantire l'accesso esclusivo alle risorse condivise.
+
+*Descrizione degli attributi della struttura:*
+
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewTransactionImpl() *TransactionImpl`*: costruttore della struttura. Inizializza l'attributo `m` con un nuovo mutex e restituisce un'istanza di `TransactionImpl`.
+
+- *`Lock()`*: blocca il mutex, garantendo che solo una transazione possa accedere alla risorsa condivisa alla volta.
+
+- *`Unlock()`*: sblocca il mutex, consentendo ad altre transazioni di accedere alla risorsa condivisa.
+
 ==== ApplyStockUpdateService <OrderApplyStockUpdateService>
 
 La struttura `ApplyStockUpdateService` rappresenta un servizio per gestire l'applicazione degli aggiornamenti relativi allo stock#super[G]. Questo servizio si occupa di elaborare gli aggiornamenti dello stock#super[G] provenienti da ordini o trasferimenti, applicandoli al magazzino e aggiornando lo stato degli ordini o dei trasferimenti associati.
@@ -2766,7 +2794,8 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`getTransferPort port.IGetTransferPort`*: rappresenta la porta che consente alla _business logic_ di ottenere informazioni sui trasferimenti. Per maggiori informazioni, vedere la @OrderIGetTransferPort;
 - *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort;
 - *`setCompleteTransferPort port.ISetCompleteTransferPort`*: rappresenta la porta che consente alla _business logic_ di segnare un trasferimento#super[G] come completato o incrementare il numero di aggiornamenti dello stock#super[G] associati a un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderISetCompleteTransferPort;
-- *`setCompletedWarehousePort port.ISetCompletedWarehouseOrderPort`*: rappresenta la porta che consente alla _business logic_ di segnalare il completamento di un ordine#super[G] da parte di un magazzino o di segnare un ordine#super[G] come completato. Per maggiori informazioni, vedere la @OrderISetCompletedWarehouseOrderPort.
+- *`setCompletedWarehousePort port.ISetCompletedWarehouseOrderPort`*: rappresenta la porta che consente alla _business logic_ di segnalare il completamento di un ordine#super[G] da parte di un magazzino o di segnare un ordine#super[G] come completato. Per maggiori informazioni, vedere la @OrderISetCompletedWarehouseOrderPort;
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise. Per maggiori informazioni, vedere la @OrderITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2813,7 +2842,9 @@ Implementa le seguenti interfacce (_Use Case_):
 *Descrizione degli attributi della struttura:*
 
 - *`applyOrderUpdatePort port.IApplyOrderUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine#super[G]. Per maggiori informazioni, vedere la @OrderIApplyOrderUpdatePort;
-- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort.
+- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort;
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise. Per maggiori informazioni, vedere la @OrderITransactionPort.
+
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -4302,6 +4333,32 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`GetReservation(reservationId model.ReservationID) (model.Reservation, error)`*: il metodo deve permettere di ottenere i dettagli di una prenotazione specifica, prendendo come parametro l'identificativo della prenotazione (`reservationId`) e restituendo un oggetto di tipo `Reservation` e un eventuale errore in caso di fallimento.
 
+==== ITransactionPort <WarehouseITransactionPort>
+
+Rappresenta l'interfaccia che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`Lock()`*: il metodo deve permettere di bloccare una risorsa condivisa, garantendo che solo una transazione possa accedervi alla volta.
+
+- *`Unlock()`*: il metodo deve permettere di sbloccare una risorsa condivisa, consentendo ad altre transazioni di accedervi.
+
+==== TransactionImpl <WarehouseTransactionImpl>
+
+La struttura `TransactionImpl` rappresenta un'implementazione dell'interfaccia `ITransactionPort` per la gestione delle operazioni transazionali nel microservizio *Warehouse*#super[G]. Utilizza un mutex per garantire l'accesso esclusivo alle risorse condivise.
+
+*Descrizione degli attributi della struttura:*
+
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewTransactionImpl() *TransactionImpl`*: costruttore della struttura. Inizializza l'attributo `m` con un nuovo mutex e restituisce un'istanza di `TransactionImpl`.
+
+- *`Lock()`*: blocca il mutex, garantendo che solo una transazione possa accedere alla risorsa condivisa alla volta.
+
+- *`Unlock()`*: sblocca il mutex, consentendo ad altre transazioni di accedere alla risorsa condivisa.
+
 ==== IIdempotentPort <WarehouseIIdempotentPort>
 
 Rappresenta la porta che consente alla _business logic_ di gestire operazioni idempotenti, assicurandosi che un evento non venga elaborato più di una volta.
@@ -4454,7 +4511,8 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`createStockUpdatePort port.ICreateStockUpdatePort`*: vedere la descrizione alla @WarehouseICreateStockUpdatePort;
 - *`getGoodPort port.IGetGoodPort`*: vedere la descrizione alla @WarehouseIGetGoodPort;
-- *`getStockPort port.IGetStockPort`*: vedere la descrizione alla @WarehouseIGetStockPort.
+- *`getStockPort port.IGetStockPort`*: vedere la descrizione alla @WarehouseIGetStockPort;
+- *`transactionPort port.ITransactionPort`*: vedere la descrizione alla @WarehouseITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -4501,10 +4559,11 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`applyStockUpdatePort port.IApplyStockUpdatePort`*: vedere la descrizione alla @WarehouseIApplyStockUpdatePort;
 - *`idempotentPort port.IIdempotentPort`*: vedere la descrizione alla @WarehouseIIdempotentPort.
+- *`transactionPort port.ITransactionPort`*: vedere la descrizione alla @WarehouseITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyStockUpdateService(applyStockUpdatePort port.IApplyStockUpdatePort, idempotentPort port.IIdempotentPort) *ApplyStockUpdateService`*: Costruttore della struttura. Le porte utilizzate vengono fornite come parametro al costruttore;
+- *`NewApplyStockUpdateService(applyStockUpdatePort port.IApplyStockUpdatePort, idempotentPort port.IIdempotentPort, transactionPort port.ITransactionPort) *ApplyStockUpdateService`*: Costruttore della struttura. Le porte utilizzate vengono fornite come parametro al costruttore;
 
 - *`ApplyStockUpdate(cmd port.StockUpdateCmd)`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento dello stock#super[G] e utilizza la porta adibita allo scopo per svolgere la richiesta.
 
@@ -4544,7 +4603,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort port.IApplyCatalogUpdatePort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore;
+- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort port.IApplyCatalogUpdatePort, transactionPort port.ITransactionPort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porte deveno essere fornite come parametro al costruttore;
 
 - *`ApplyCatalogUpdate(cmd port.CatalogUpdateCmd)`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento del catalogo e utilizza la porta adibita allo scopo per svolgere la richiesta.
 
@@ -4592,6 +4651,7 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`createStockUpdatePort port.ICreateStockUpdatePort`*: rappresenta la porta per creare aggiornamenti dello stock#super[G]; vedere la @WarehouseICreateStockUpdatePort;
 - *`idempotentPort port.IIdempotentPort`*: rappresenta la porta per gestire operazioni idempotenti; vedere la @WarehouseIIdempotentPort;
 - *`cfg *config.WarehouseConfig`*: rappresenta la configurazione del microservizio _Warehouse_#super[G].
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta per gestire le transazioni; vedere la @WarehouseITransactionPort;
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
