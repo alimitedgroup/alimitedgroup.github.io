@@ -1,4 +1,4 @@
-# Rimuovere stock#super[G] di una merce
+# Rimuovere _stock_ di una merce
 
 In questa Sezione sarà spiegato come rimuovere _stock_#super[G] ad una merce interagendo con il Sistema mediante l'utilizzo di `curl`.
 

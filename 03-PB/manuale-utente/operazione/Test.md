@@ -2,9 +2,9 @@ La realizzazione del Sistema è proceduta di pari passo con la realizzazione e l
 
 Per informazioni approfondite si consiglia la lettura del [**Piano di Qualifica#super[G] v.2.0.0**](https://alimitedgroup.github.io/PQ%20v2.0.0.pdf).
 
-# Esecuzione dei test#super[G] di unità ed integrazione <!--raw-typst <testpar> -->
+# Esecuzione dei _test_ di unità ed integrazione <!--raw-typst <testpar> -->
 
-Per eseguire i test#super[G] di unità ed integrazione è sufficiente aprire un prompt#super[G] dei comandi (o _shell_) nella radice dell'installazione ed eseguire questi due comandi:
+Per eseguire i tеst di unità ed integrazione è sufficiente aprire un _prompt_/_shell_ dei comandi nella radice dell'installazione ed eseguire questi due comandi:
 
 `go generate ./...`
 `go tеst -race -covermode atomic ./...`
@@ -40,7 +40,7 @@ Dove il valore iniziale di ogni riga indica:
 
 Un output non simile a questo indica il fallimento di uno dei test#super[G] presenti.
 
-# Esecuzione dei test#super[G] di accettazione
+# Esecuzione dei _test_ di accettazione
 
 I test#super[G] di accettazione sfruttano `curl`, `nats`#super[G] e `jq` per poter essere eseguiti e gli script utilizzati possono essere trovati all'interno della cartella `tests`.
 

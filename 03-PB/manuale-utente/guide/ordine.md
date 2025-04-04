@@ -1,4 +1,4 @@
-# Effettuare un ordine#super[G]
+# Effettuare un ordine
 
 Il Sistema permette la realizzazione di ordini: la seguente guida illustrerà come realizzarne uno, presupponendo che ci sia sufficiente quantità per poterlo portare a termine.
 
