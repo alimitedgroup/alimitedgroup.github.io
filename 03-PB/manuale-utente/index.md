@@ -53,27 +53,27 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 ### Riferimenti normativi
 
 <!--typst-begin-exclude-->
-- [**Norme di Progetto#super[G] versione 1.0.0**](https://alimitedgroup.github.io/NP%20v1.0.0.pdf)
+- [**Norme di Progetto#super[G] versione 2.0.0**](https://alimitedgroup.github.io/NP%20v2.0.0.pdf)
 
-    Ultimo Accesso 3 Febbraio 2025
+    Ultimo Accesso 4 Aprile 2025
 
 - [**Capitolato C6: Sistema di Gestione di un Magazzino Distribuito**](https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf)
 
-    Ultimo Accesso 3 Febbraio 2025
+    Ultimo Accesso 4 Aprile 2025
 <!--typst-end-exclude-->
 
 <!--raw-typst
-- *Norme di Progetto#super[G] versione 1.0.0*
+- *Norme di Progetto#super[G] versione 2.0.0*
 
-    https://alimitedgroup.github.io/NP%20v1.0.0.pdf
+    https://alimitedgroup.github.io/NP%20v2.0.0.pdf
 
-    *Ultimo Accesso 3 Febbraio 2025*
+    *Ultimo Accesso 4 Aprile 2025*
 
 - *Capitolato C6: Sistema di Gestione di un Magazzino Distribuito*
 
     https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf
 
-    *Ultimo Accesso 3 Febbraio 2025*
+    *Ultimo Accesso 4 Aprile 2025*
 -->
 
 ### Riferimenti informativi
@@ -83,7 +83,7 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
     https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf
 
-    *Ultimo Accesso 3 Febbraio 2025*
+    *Ultimo Accesso 4 Aprile 2025*
 
   #v(40em)
 -->
@@ -91,5 +91,5 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 <!--typst-begin-exclude-->
 - [**Glossario**](https://alimitedgroup.github.io/Gloss%D0%B0rio.pdf)
 
-    Ultimo Accesso 3 Febbraio 2025
+    Ultimo Accesso 4 Aprile 2025
 <!--typst-end-exclude-->

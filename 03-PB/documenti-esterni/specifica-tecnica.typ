@@ -1,12 +1,20 @@
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.9.0]
+#let ver = [1.0.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 28, month: 03, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.samuele,
+      verifica: p.loris,
+      approvazione: p.matteo,
+      descr: "Aggiunta di notifications e api gateway. " + [(@notification e @api_gateway)] + ".",
+    ),
     (
       vers: "0.9.0",
       date: datetime(day: 31, month: 03, year: 2025),
@@ -75,13 +83,14 @@
         + ".",
     ),
   ),
-  stato: [In redazione],
-  responsabile: ((p.marco),),
+  stato: [Approvato],
+  responsabile: ((p.matteo),),
   verificatore: ((p.emanuele), (p.marco), (p.matteo), (p.sara)),
   redattori: (
     (p.loris),
     (p.matteo),
     (p.sara),
+    (p.samuele),
   ),
   descrizione: [Questo documento contiene la _Specifica Tecnica_ descritto dal gruppo _ALimitedGroup_ per il Capitolato numero 6 proposto da #M31],
   titolo: "Specifica Tecnica",
@@ -116,22 +125,22 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
 - *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
-  *Ultimo Accesso 25 Febbraio 2025*
-- *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf") \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
+- *Norme di Progetto#super[G] ver. 2.0.0* \
+  #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf") \
+  *Ultimo Accesso 4 Aprile 2025*
 
 === Riferimenti informativi
 - *Lezione rovesciata - Documentazione* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Regolamento del Progetto didattico* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf] \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 - *Glossario* \
   #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 

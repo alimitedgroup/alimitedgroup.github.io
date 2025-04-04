@@ -152,23 +152,23 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto#super[G] ver. 1.0.0*: \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf] \
-  *Ultimo Accesso 6 Febbraio 2025*
+- *Norme di Progetto#super[G] ver. 2.0.0*: \
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v2.0.0.pdf] \
+  *Ultimo Accesso 4 Aprile 2025*
 - *Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito*: \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf") \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 === Riferimenti informativi
 - *Glossario*: \
   #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Standard ISO/IEC 9126* \
   #link("https://it.wikipedia.org/wiki/ISO/IEC_9126") \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Standard ISO/IEC 12207:1995* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf") \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 = Qualità di processo <qtaprc>
@@ -341,7 +341,7 @@ La qualità del prodotto rappresenta l'obiettivo centrale di ogni progetto _Soft
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto _Software_ è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*] *(Sezione 3)*;
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] ver. 2.0.0*] *(Sezione 3)*;
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori;
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
@@ -472,7 +472,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 
 #pagebreak()
 = Metodi di testing <test>
-Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto#super[G] ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
+Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[*Norme di Progetto#super[G] ver. 2.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
 
 - Tеst#super[G] di Unità;
 - Tеst#super[G] di Integrazione;
@@ -2718,7 +2718,7 @@ Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggi
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
 Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
-Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].
+Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v2.0.0.pdf")[*Piano di Progetto#super[G] ver. 2.0.0*].
 Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
 
 #pagebreak()

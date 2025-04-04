@@ -15,8 +15,6 @@ sono stati estratti in un _package_ separato per evitare errori di compilazione.
 
 ===== types.UserRole <UserRole>
 
-#figure(image("../../../../assets/drawio/apigateway_types.svg"), caption: [Tipi comuni a tutto il microservizio])
-
 Questa enumerazione rappresenta il ruolo assegnato ad un utente.
 
 #enum(
@@ -27,8 +25,8 @@ Questa enumerazione rappresenta il ruolo assegnato ad un utente.
     ("RoleClient", [cliente]),
   ),
   (
-    ("+ String(): string", [Ritorna la rappresentazione in stringa di questo ruole]),
-    ("+ FromString(string): UserRole", [Effettua il _parsing_ della stringa fornita]),
+    ("+ String() string", [Ritorna la rappresentazione in stringa di questo ruolo]),
+    ("+ FromString(string) UserRole", [Effettua il _parsing_ della stringa fornita]),
   ),
 )
 
@@ -38,7 +36,7 @@ Questo tipo rappresenta un _token_ di un utente autenticato.
 
 #struct(
   (
-    ("Inner: string", [Rappresentazione in stringa del _token_]),
+    ("Inner string", [Rappresentazione in stringa del _token_]),
   ),
   (),
 )
@@ -58,8 +56,8 @@ Questo tipo rappresenta le informazioni di un utente.
 
 #struct(
   (
-    ("+ Username: string", [_Username_ dell'utente]),
-    ("+ Role: UserRole", [Ruolo dell'utente]),
+    ("+ Username string", [_Username_ dell'utente]),
+    ("+ Role UserRole", [Ruolo dell'utente]),
   ),
   (),
 )
@@ -70,8 +68,8 @@ Questo tipo rappresenta il risultato di un'operazione di _login_.
 
 #struct(
   (
-    ("+ Token: UserToken", [Un _token_ che identifica l'utente]),
-    ("+ Role: UserRole", [Il ruolo dell'utente]),
+    ("+ Token UserToken", [Un _token_ che identifica l'utente]),
+    ("+ Role UserRole", [Il ruolo dell'utente]),
   ),
   (),
 )
@@ -82,7 +80,7 @@ Questo tipo raccoglie le informazioni ad alto livello dei magazzini.
 
 #struct(
   (
-    ("+ ID: string", [Identificatore del magazzino]),
+    ("+ ID string", [Identificatore del magazzino]),
   ),
   (),
 )

@@ -90,7 +90,7 @@
   ),
   versione: ver,
   responsabile: ((p.samuele),),
-  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele)),
+  verificatore: ((p.emanuele), (p.lorenzo), (p.samuele), (p.matteo)),
   redattori: ((p.loris), (p.marco), (p.matteo), (p.samuele), (p.emanuele)),
   descrizione: [Il _Piano di Progetto_ contiene il resoconto delle attività svolte e da svolgere da _ALimitedGroup_],
   titolo: "Piano di Progetto",
@@ -123,25 +123,25 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
 - *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
-- *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")\
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
+- *Norme di Progetto#super[G] ver. 2.0.0* \
+  #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")\
+  *Ultimo Accesso 4 Aprile 2025*
 
 === Riferimenti informativi
 
 - *I processi di ciclo di vita del software* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Gestione di progetto* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Lezione rovesciata - Documentazione* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Glossario*: \
   #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
-  *Ultimo Accesso 5 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 
