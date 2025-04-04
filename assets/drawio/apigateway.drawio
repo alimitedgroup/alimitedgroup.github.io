@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:136.0) Gecko/20100101 Firefox/136.0" version="26.2.5" pages="4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.5" pages="4">
   <diagram name="types" id="jyUNx-ticdhWHaK3lG5j">
     <mxGraphModel dx="1188" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
@@ -71,11 +71,11 @@
     </mxGraphModel>
   </diagram>
   <diagram id="UzgOHU1cNPLH9OdegFgo" name="business">
-    <mxGraphModel dx="1188" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+    <mxGraphModel dx="819" dy="533" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i2FVGuv4eaX4_XcN0Vmc-2" target="i2FVGuv4eaX4_XcN0Vmc-14">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="i2FVGuv4eaX4_XcN0Vmc-2" target="i2FVGuv4eaX4_XcN0Vmc-14" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1280" y="625" />
@@ -83,10 +83,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i2FVGuv4eaX4_XcN0Vmc-2" target="i2FVGuv4eaX4_XcN0Vmc-6">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="i2FVGuv4eaX4_XcN0Vmc-2" target="i2FVGuv4eaX4_XcN0Vmc-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="i2FVGuv4eaX4_XcN0Vmc-2" target="i2FVGuv4eaX4_XcN0Vmc-10">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="i2FVGuv4eaX4_XcN0Vmc-2" target="i2FVGuv4eaX4_XcN0Vmc-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1330" y="625" />
@@ -94,62 +94,62 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-2" value="Business" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1110" y="230" width="390" height="360" as="geometry" />
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-2" value="Business" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="240" width="390" height="348" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-3" value="- auth: portout.AuthenticationPortOut&lt;br&gt;- catalog: portout.CatalogPortOut&lt;br&gt;- order: portout.OrderPortOut&lt;br&gt;- notification: portout.NotificationPortOut&lt;br&gt;- logger: zap.Logger" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="i2FVGuv4eaX4_XcN0Vmc-2">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-3" value="- auth: portout.AuthenticationPortOut&lt;br&gt;- catalog: portout.CatalogPortOut&lt;br&gt;- order: portout.OrderPortOut&lt;br&gt;- notification: portout.NotificationPortOut&lt;br&gt;- logger: zap.Logger" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="i2FVGuv4eaX4_XcN0Vmc-2" vertex="1">
           <mxGeometry y="26" width="390" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="i2FVGuv4eaX4_XcN0Vmc-2">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="i2FVGuv4eaX4_XcN0Vmc-2" vertex="1">
           <mxGeometry y="110" width="390" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-5" value="+ NewBusiness(BusinessParams): Business&lt;br&gt;+ GetWarehouseByID(int64): (dto.Warehouse, error)&lt;br&gt;+ CreateQuery(string, string, int): (string, error)&lt;br&gt;+ GetQueries(): ([]dto.Query, error)&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error&lt;br&gt;+ CreateOrder(string, string, string, map[string]int64): (string, error)&lt;br&gt;+ GetOrders(): ([]dto.Order, error)&lt;br&gt;+ CreateTransfer(string, string, map[string]int64): (string, error)&lt;br&gt;+ GetTransfers(): ([]dto.Transfer, error)&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error&lt;br&gt;+ GetWarehouses(): ([]types.WarehouseOverview, error)&lt;br&gt;+ GetGoods(): ([]dto.GoodAndAmount, error)&lt;br&gt;+ Login(string): (types.LoginResult, error)&lt;br&gt;+ ValidateToken(string): (types.UserData, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="i2FVGuv4eaX4_XcN0Vmc-2">
-          <mxGeometry y="118" width="390" height="242" as="geometry" />
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-5" value="+ NewBusiness(BusinessParams): Business&lt;br&gt;+ CreateQuery(string, string, int): (string, error)&lt;br&gt;+ GetQueries(): ([]dto.Query, error)&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error&lt;br&gt;+ CreateOrder(string, string, string, map[string]int64): (string, error)&lt;br&gt;+ GetOrders(): ([]dto.Order, error)&lt;br&gt;+ CreateTransfer(string, string, map[string]int64): (string, error)&lt;br&gt;+ GetTransfers(): ([]dto.Transfer, error)&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error&lt;br&gt;+ GetWarehouses(): ([]types.WarehouseOverview, error)&lt;br&gt;+ GetGoods(): ([]dto.GoodAndAmount, error)&lt;br&gt;+ Login(string): (types.LoginResult, error)&lt;br&gt;+ ValidateToken(string): (types.UserData, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="i2FVGuv4eaX4_XcN0Vmc-2" vertex="1">
+          <mxGeometry y="118" width="390" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="1280" y="830" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-7" value="Auth" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-7" value="Auth" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1252.5" y="880" width="105" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-8" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-8" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1246.25" y="910" as="sourcePoint" />
             <mxPoint x="1363.75" y="910" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-9" value="+ Login(string): (types.LoginResult, error)&lt;br&gt;+ ValidateToken(string): (types.UserData, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-9" value="+ Login(string): (types.LoginResult, error)&lt;br&gt;+ ValidateToken(string): (types.UserData, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1165" y="910" width="280" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-10" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-10" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="1495" y="660" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-11" value="Order" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-11" value="Order" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1467.5" y="710" width="105" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-12" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-12" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1461.25" y="740" as="sourcePoint" />
             <mxPoint x="1578.75" y="740" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-13" value="+ CreateOrder(string, string, string, map[string]int64): (string, error)&lt;br&gt;+ GetOrders(): ([]dto.Order, error)&lt;br&gt;+ CreateTransfer(string, string, map[string]int64): (string, error)&lt;br&gt;+ GetTransfers(): ([]dto.Transfer, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-13" value="+ CreateOrder(string, string, string, map[string]int64): (string, error)&lt;br&gt;+ GetOrders(): ([]dto.Order, error)&lt;br&gt;+ CreateTransfer(string, string, map[string]int64): (string, error)&lt;br&gt;+ GetTransfers(): ([]dto.Transfer, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1340" y="740" width="360" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-14" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-14" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="1065" y="660" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-15" value="Warehouses" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-15" value="Warehouses" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1037.5" y="710" width="105" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-16" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-16" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1031.25" y="740" as="sourcePoint" />
             <mxPoint x="1148.75" y="740" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-17" value="+ GetWarehouseByID(int64): (dto.Warehouse, error)&lt;br&gt;+ GetWarehouses(): ([]types.WarehouseOverview, error)&lt;br&gt;+ GetGoods(): ([]dto.GoodAndAmount, error)&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="920" y="740" width="340" height="110" as="geometry" />
+        <mxCell id="i2FVGuv4eaX4_XcN0Vmc-17" value="+ GetWarehouses(): ([]types.WarehouseOverview, error)&lt;br&gt;+ GetGoods(): ([]dto.GoodAndAmount, error)&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="920" y="740" width="340" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
