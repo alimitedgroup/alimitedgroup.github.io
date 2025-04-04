@@ -28,8 +28,8 @@
 = Informazioni generali
 #inizio-verbale-esterno([*virtuale*], [*4 Aprile 2025*], [*11.30*], [*12.30*], [#M31])
 
-+ Presentazione del _Minimum Viable Product_;
-+ Accettazione formale del _Minimum Viable Product_.
++ Presentazione del _Minimum Viable Product#super[G]_;
++ Accettazione formale del _Minimum Viable Product#super[G]_.
 
 In questa riunione hanno partecipato, per conto di #M31:
 - #persona(p.luca);
@@ -41,9 +41,9 @@ In questa riunione hanno partecipato, per conto di #M31:
 = Dettagli riunione
 == Presentazione del _Minimum Viable Product_
 
-Nel corso della riunione il team di _ALimitedGroup_ ha presentato ad #M31 alcuni chiarimenti rispetto allo sviluppo delle componenti del Sistema. Ha quindi proseguito con l'esecuzione in tempo reale dei test di accettazione.
+Nel corso della riunione il team di _ALimitedGroup_ ha presentato ad #M31 alcuni chiarimenti rispetto allo sviluppo delle componenti del Sistema. Ha quindi proseguito con l'esecuzione in tempo reale dei test#super[G] di accettazione.
 
-#M31 ha potuto osservare che i test riportavano i risultati previsti e si è detta soddisfatta di quanto realizzato da _ALimitedGroup_.
+#M31 ha potuto osservare che i test#super[G] riportavano i risultati previsti e si è detta soddisfatta di quanto realizzato da _ALimitedGroup_.
 
 
 == Accettazione formale del _Minimum Viable Product_.
