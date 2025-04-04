@@ -50,7 +50,7 @@ def substitute(filePath,glossaryYml):
     parFound=False
     line=file.readline()
     linenum = 0
-
+    logging.getLogger().setLevel(logging.INFO)
     filtered_glossary = list(filter(lambda el: " " in el, glossary))
     #print(filtered_glossary)
 
@@ -65,7 +65,7 @@ def substitute(filePath,glossaryYml):
         elif (len(line.strip()) > 0 and line.lstrip()[0] == '#') and ("/03-PB\\manuale-utente" in filePath or "\\03-PB\\manuale-utente" in filePath):
             newText += line 
             line=file.readline()
-            logging.info(f'Found # as the start of the line --> linebreak')
+            logging.info(f'Found # as the start of the line at {filePath}:{linenum}')
             #print("Sono nell'IF del #")
             continue
         else:
@@ -77,7 +77,8 @@ def substitute(filePath,glossaryYml):
                 newText += line
                 line=file.readline()
                 continue
-            if len(line.lstrip()) != 0: newText += line[:len(line) - len(line.lstrip())]
+            if len(line.lstrip()) != 0: 
+                newText += line[:len(line) - len(line.lstrip())]
             for i, word in enumerate(line.split()):
                 #print("read: "+word+ "  and stop: "+str(stop))
                 if word in stopCheckingWords:
