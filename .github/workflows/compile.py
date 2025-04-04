@@ -153,7 +153,8 @@ def main():
     documenti = defaultdict(list)
 
     for filename in sorted(source_files, reverse=True):
-        if ".pdf" in filename or "lib/" in filename or filename.strip() == "":
+        isIgnored = 'ignore' in Path(filename).read_text().splitlines()[0]
+        if ".pdf" in filename or "lib/" in filename or filename.strip() == "" or isIgnored:
             logging.info(f"Skipping {filename}…")
             continue
 

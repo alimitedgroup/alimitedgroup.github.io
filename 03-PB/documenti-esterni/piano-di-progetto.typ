@@ -12,8 +12,8 @@
     (
       vers: "1.3.0",
       date: datetime(day: 31, month: 03, year: 2025),
-      autore: p.matteo,
-      verifica: p.emanuele,
+      autore: p.emanuele,
+      verifica: p.matteo,
       descr: "Aggiornamento Pianificazione nel lungo termine " + [(@plt). ],
     ),
     (

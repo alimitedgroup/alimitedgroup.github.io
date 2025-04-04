@@ -1,5 +1,4 @@
 #import "../../lib/importantdocs.typ": *
-#import "@preview/plotst:0.2.0": *
 
 #let ver = [0.9.0]
 
@@ -1190,7 +1189,7 @@ I trasferimenti vengono gestiti in modo simile agli ordini, con la differenza ch
 
 Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
 
-I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
+I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm_: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
 
 È formato dalle seguenti componenti:
 
@@ -4739,6 +4738,9 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 - *`ListenTransferUpdate(ctx context.Context, msg jetstream.Msg) error`*: gestisce i messaggi per l'aggiornamento dei trasferimenti. Decodifica il messaggio ricevuto in un oggetto `TransferUpdate`, lo trasforma in un comando `ConfirmTransferCmd` e delega l'operazione al caso d'uso#super[G] `confirmTransferUseCase`. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
+#include "specifica/notification/index.typ"
+#include "specifica/gateway/index.typ"
+
 #pagebreak()
 
 = Stato dei requisiti funzionali
@@ -5311,50 +5313,31 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali#super[G]*.
 
-#pie_chart(
-    plot(data: ((85.4, "Requisiti soddisfatti (58.4%)"), (14.6, "Requisiti non soddisfatti (14.6%)"))),
-    (auto, 20%),
-    display_style: "hor-chart-legend",
-    caption: "Percentuale di requisiti funzionаli soddisfatti in totale",
-    colors: (rgb("#84dd7c"), rgb("#e46464")),
-  ),
-
-
-#pie_chart(
-  plot(
-    data: (
-      (100, "Requisiti soddisfatti (100%)"),
-      (0, "Requisiti non soddisfatti (0%)"),
-    ),
-  ),
-  (auto, 20%),
-  display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionаli obbligatori soddisfatti",
-  colors: (rgb("#84dd7c"), rgb("#e46464")),
+#pie-chart(
+  (percentuale: 85.4, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 14.6, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] soddisfatti in totale],
+  legend: true,
 )
 
-#pie_chart(
-  plot(
-    data: (
-      (0, "Requisiti soddisfatti (0%)"),
-      (100, "Requisiti non soddisfatti (100%)"),
-    ),
-  ),
-  (auto, 20%),
-  display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionаli desiderabili soddisfatti",
-  colors: (rgb("#84dd7c"), rgb("#e46464")),
+
+#pie-chart(
+  (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] obbligatori soddisfatti],
+  legend: true,
 )
 
-#pie_chart(
-  plot(
-    data: (
-      (100, "Requisiti soddisfatti (100%)"),
-      (0, "Requisiti non soddisfatti (0%)"),
-    ),
-  ),
-  (auto, 20%),
-  display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionаli opzionali soddisfatti",
-  colors: (rgb("#84dd7c"), rgb("#e46464")),
+#pie-chart(
+  (percentuale: 0, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 100, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] desiderabili soddisfatti],
+  legend: true,
+)
+
+#pie-chart(
+  (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] opzionali soddisfatti],
+  legend: true,
 )
