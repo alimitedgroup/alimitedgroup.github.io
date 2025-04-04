@@ -13,7 +13,7 @@
       date: datetime(day: 1, month: 04, year: 2025),
       autore: p.sara,
       //verifica: p.matteo,
-      descr: "Aggiornamento cruscotto misurazioni",
+      descr: "Aggiornamento cruscotto misurazioni.",
     ),
     (
       vers: "1.2.0",
