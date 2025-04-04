@@ -32,7 +32,7 @@ Parametri in ingresso necessari per costruire un'istanza di #typelink(<gateway_B
       [La _Port-out_ che verrà utilizzata dalla _business logic_ per parlare con altri componenti],
     ),
     (
-      "+ Notfication portout.NotificationPortOut",
+      "+ Notification portout.NotificationPortOut",
       [La _Port-out_ che verrà utilizzata dalla _business logic_ per parlare con altri componenti],
     ),
     ("+ Logger *zap.Logger", [Necessario per raccogliere i log]),

@@ -77,6 +77,44 @@ _Business logic_ del microservizio di notifica.
   ),
 )
 
+===== RuleCheckerParams <RuleCheckerParams>
+
+Parametri necessari per costruire un'istanza di #typelink(<RuleChecker>)
+
+#struct(
+  (
+    (
+      "+ Lc fx.Lifecycle",
+      [Gestisce il ciclo di vita dei componenti dell'applicazione],
+    ),
+    (
+      "+ Logger *zap.Logger",
+      [Necessario per raccogliere i log],
+    ),
+    (
+      "+ Brk *broker.NatsMessageBroker",
+      [Astrazione che incapsula la connessione a NATS],
+    ),
+    (
+      "+ Rules portout.RuleRepository",
+      [_Port-out_ che verrà utilizzata dalla _business logic_ per parlare con gli _adapter-out_],
+    ),
+    (
+      "+ Queries portout.RuleQueryRepository",
+      [_Port-out_ che verrà utilizzata dalla _business logic_ per parlare con gli _adapter-out_],
+    ),
+    (
+      "+ Publish portout.StockEventPublisher",
+      [_Port-out_ che verrà utilizzata dalla _business logic_ per parlare con gli _adapter-out_],
+    ),
+    (
+      "+ Cfg *config.NotificationConfig",
+      [Configurazione del microservizio],
+    ),
+  ),
+  (),
+)
+
 ===== business.RuleChecker <RuleChecker>
 
 Componente che implementa un controllo periodico delle regole di notifica, e si occupa di mandare le regole in caso serva.
@@ -87,7 +125,7 @@ Componente che implementa un controllo periodico delle regole di notifica, e si 
     ("- cfg *config.NotificationConfig", [Configurazione del microservizio]),
     ("- brk *broker.NatsMessageBroker", [Astrazione che incapsula la connessione a NATS]),
     (
-      "- rulePort portout.QueryRules",
+      "- rulePort portout.RuleRepository",
       [_Port-out_ che verrà utilizzata dalla _business logic_ per parlare con gli _adapter-out_],
     ),
     (

@@ -25,7 +25,7 @@ Questa enumerazione rappresenta il ruolo assegnato ad un utente.
     ("RoleClient", [cliente]),
   ),
   (
-    ("+ String() string", [Ritorna la rappresentazione in stringa di questo ruole]),
+    ("+ String() string", [Ritorna la rappresentazione in stringa di questo ruolo]),
     ("+ FromString(string) UserRole", [Effettua il _parsing_ della stringa fornita]),
   ),
 )

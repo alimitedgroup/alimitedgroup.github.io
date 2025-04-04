@@ -22,6 +22,10 @@ _Adapter-out_ che consente l'interazione con il microservizio di autenticazione.
     ("- logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
+    (
+      "+ NewAuthenticationAdapter(broker.NatsMessageBroker, zap.Logger) AuthenticationPortOut",
+      [Crea una nuova istanza di _AuthenticationAdapter_],
+    ),
     ("+ GetToken(string) (types.UserToken, error)", [Ritorna un _token_ per l'_username_ fornito, se è valido]),
     ("+ GetUsername(types.ParsedToken) (string, error)", [Ritorna l'_username_ associato al _token_ fornito]),
     ("+ GetRole(types.ParsedToken) (types.UserRole, error)", [Ritorna il ruolo associato al _token_ fornito]),
@@ -40,6 +44,7 @@ _Adapter-out_ che consente l'interazione con il microservizio catalog.
     ("- broker *broker.NatsMessageBroker", [Necessario per comunicare con _NATS_.]),
   ),
   (
+    ("+ NewCatalogAdapter(broker.NatsMessageBroker) CatalogPortOut", [Crea una nuova istanza di _CatalogAdapterOut_]),
     ("+ ListGoods() (map[string]dto.Good, error)", [Consente di recuperare la lista di merci]),
     (
       "+ ListStock() (map[string]int64, error)",
@@ -61,6 +66,7 @@ _Adapter-out_ che consente l'interazione con il microservizio degli ordini.
     ("- broker *broker.NatsMessageBroker", [Necessario per comunicare con _NATS_.]),
   ),
   (
+    ("+ NewOrderAdapter(broker.NatsMessageBroker) OrderPortOut", [Crea una nuova istanza di _OrderAdapterOut_]),
     ("+ CreateOrder(request.CreateOrderRequestDTO) (response.OrderCreateInfo, error)", [Consente di creare un ordine]),
     ("+ GetAllOrders() ([]response.OrderInfo, error)", [Consente di recuperare la lista di ordini]),
     (
@@ -80,6 +86,10 @@ _Adapter-out_ che consente l'interazione con il microservizio delle notifiche.
     ("- broker *broker.NatsMessageBroker", [Necessario per comunicare con _NATS_.]),
   ),
   (
+    (
+      "+ NewNotificationsAdapter(broker.NatsMessageBroker) NotificationPortOut",
+      [Crea una nuova istanza di _NotificationsAdapterOut_],
+    ),
     ("+ CreateQuery(dto.Rule) (string, error)", [Permette di creare una nuova regola]),
     ("+ GetQueries() ([]types.QueryRuleWithId, error)", [Permette di ottenere la lista di regole]),
   ),
