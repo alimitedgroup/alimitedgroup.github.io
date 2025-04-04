@@ -1,4 +1,4 @@
-# Importare una dashboard
+# Importare una dashboard 
 I file forniti includono una _dashboard_#super[G] configurata per avere a disposizione tutti i microservizi in esecuzione nella stessa macchina.
 
 Tale _dashboard_#super[G] è automaticamente importata all'avvio del Sistema. Qualora non lo fosse, è possibile seguire questi passaggi.
@@ -102,7 +102,7 @@ Premere quindi il tasto **Add** e quindi **Visualization**
 A questo punto il processo differisce in base all'aggiunta di log e misurazioni, per cui si consiglia di seguire i paragrafi successivi.
 
 <!--raw-typst
-  #pagebreak() 
+  #pagebreak()
 -->
 
 ## Aggiungere una finestra di log
@@ -226,7 +226,7 @@ Premere quindi **Run query** e **Save dаshboard** per sincronizzare i dati e sa
 )
 -->
 
-Il pannello è stato aggiunto: premere **Back to dashboard** per visualizzarlo.
+Il pannello è stato aggiunto: premere **Back to dashboard#super[G]** per visualizzarlo.
 
 ## Aggiungere una misurazione
 
