@@ -1,5 +1,4 @@
 #import "../../lib/importantdocs.typ": *
-#import "@preview/plotst:0.2.0": *
 
 #let ver = [0.9.0]
 
@@ -5312,50 +5311,31 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali#super[G]*.
 
-#pie_chart(
-    plot(data: ((85.4, "Requisiti soddisfatti (58.4%)"), (14.6, "Requisiti non soddisfatti (14.6%)"))),
-    (auto, 20%),
-    display_style: "hor-chart-legend",
-    caption: "Percentuale di requisiti funzionаli soddisfatti in totale",
-    colors: (rgb("#84dd7c"), rgb("#e46464")),
-  ),
-
-
-#pie_chart(
-  plot(
-    data: (
-      (100, "Requisiti soddisfatti (100%)"),
-      (0, "Requisiti non soddisfatti (0%)"),
-    ),
-  ),
-  (auto, 20%),
-  display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionаli obbligatori soddisfatti",
-  colors: (rgb("#84dd7c"), rgb("#e46464")),
+#pie-chart(
+  (percentuale: 85.4, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 14.6, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: "Percentuale di requisiti funzionali soddisfatti in totale",
+  legend: true,
 )
 
-#pie_chart(
-  plot(
-    data: (
-      (0, "Requisiti soddisfatti (0%)"),
-      (100, "Requisiti non soddisfatti (100%)"),
-    ),
-  ),
-  (auto, 20%),
-  display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionаli desiderabili soddisfatti",
-  colors: (rgb("#84dd7c"), rgb("#e46464")),
+
+#pie-chart(
+  (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: "Percentuale di requisiti funzionali obbligatori soddisfatti",
+  legend: true,
 )
 
-#pie_chart(
-  plot(
-    data: (
-      (100, "Requisiti soddisfatti (100%)"),
-      (0, "Requisiti non soddisfatti (0%)"),
-    ),
-  ),
-  (auto, 20%),
-  display_style: "hor-chart-legend",
-  caption: "Percentuale di requisiti funzionаli opzionali soddisfatti",
-  colors: (rgb("#84dd7c"), rgb("#e46464")),
+#pie-chart(
+  (percentuale: 0, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 100, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: "Percentuale di requisiti funzionali desiderabili soddisfatti",
+  legend: true,
+)
+
+#pie-chart(
+  (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: "Percentuale di requisiti funzionali opzionali soddisfatti",
+  legend: true,
 )

@@ -302,50 +302,72 @@
 ///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
 /// se e solo se queste sono delimitate dal comando #figure con annessa la caption
 
-#let pie-chart(..data, caption: []) = {
+#let pie-chart(..data, caption: [], legend: false) = {
+  data = data.pos()
+
+  if legend {
+    data = data.map(x => (..x, titolo: x.titolo + " - " + str(calc.round(x.percentuale, digits: 2)) + "%"))
+  }
+
   figure(
     canvas({
       import draw: *
-      chart.piechart(
-        data.pos(),
-        name: "pie",
-        position: (1em, 0),
-        radius: 1.8,
-        value-key: "percentuale",
-        label-key: "titolo",
-        outer-label: (content: none),
-        gap: 2deg,
-        legend: (label: none),
-      )
+
+      if (legend) {
+        chart.piechart(
+          data,
+          name: "pie",
+          position: (1em, 0),
+          radius: 1.8,
+          value-key: "percentuale",
+          label-key: "titolo",
+          outer-label: (content: none),
+          gap: 2deg,
+        )
+      } else {
+        chart.piechart(
+          data,
+          name: "pie",
+          position: (1em, 0),
+          radius: 1.8,
+          value-key: "percentuale",
+          label-key: "titolo",
+          outer-label: (content: none),
+          gap: 2deg,
+          legend: (label: none),
+        )
+      }
 
       set-style(content: (padding: .2))
-      for (i, dat) in data.pos().enumerate() {
-        if dat.percentuale > 0 {
-          // Calculate the point at 35% of the distance from the border of a slice to its center
-          let outer = "pie.chart.item-" + str(i)
-          let inner = "pie.chart.item-" + str(i) + "-inner"
-          line(outer, inner, stroke: none, mark: none, name: "midline-" + str(i))
-          let middle = (name: "midline-" + str(i), anchor: 35%)
+      if not legend {
+        for (i, dat) in data.enumerate() {
+          if dat.percentuale > 0 {
+            // Calculate the point at 35% of the distance from the border of a slice to its center
+            let outer = "pie.chart.item-" + str(i)
+            let inner = "pie.chart.item-" + str(i) + "-inner"
+            line(outer, inner, stroke: none, mark: none, name: "midline-" + str(i))
+            let middle = (name: "midline-" + str(i), anchor: 35%)
 
-          let line-dir = data.at(i).legenda
-          let line-anchor = if data.at(i).legenda > 0 {
-            "west"
-          } else {
-            "east"
-          }
-          let percent = calc.round(dat.percentuale * 100 / data.pos().map(x => x.percentuale).sum())
+            let line-dir = dat.legenda
+            let line-anchor = if dat.legenda > 0 {
+              "west"
+            } else {
+              "east"
+            }
+            let percent = calc.round(dat.percentuale * 100 / data.map(x => x.percentuale).sum())
 
-          line(middle, (rel: (data.at(i).legenda, 0)), name: "line-" + str(i))
-          content((), [#data.at(i).titolo - #percent%], anchor: line-anchor)
-          mark(
-            (name: "line-" + str(i), anchor: 0%),
-            (name: "line-" + str(i), anchor: 1%),
-            symbol: "o",
-            anchor: "center",
-            fill: white,
-            width: 1,
-          )
-        } else { }
+            line(middle, (rel: (dat.legenda, 0)), name: "line-" + str(i))
+            content((), [#dat.titolo - #percent%], anchor: line-anchor)
+            mark(
+              (name: "line-" + str(i), anchor: 0%),
+              (name: "line-" + str(i), anchor: 1%),
+              symbol: "o",
+              anchor: "center",
+              fill: white,
+              width: 1,
+            )
+          } else { }
+        }
       }
     }),
 
