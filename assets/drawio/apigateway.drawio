@@ -516,57 +516,129 @@
     </mxGraphModel>
   </diagram>
   <diagram id="7CTk6iHnr44x_UzIEt5C" name="adapterout">
-    <mxGraphModel dx="1320" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+    <mxGraphModel dx="1131" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-1" value="AuthenticationAdapter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1560" y="320" width="390" height="146" as="geometry" />
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-1" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="xHiCZFGHyEEn-PnUN8V3-1" target="5pa18tkQ61-FPrbnHFZ_-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-2" value="+ Broker: broker.NatsMessageBroker&lt;br&gt;- logger: zap.Logger" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-1">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-1" value="AuthenticationAdapter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="380" width="390" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-2" value="+ Broker: broker.NatsMessageBroker&lt;br&gt;- logger: zap.Logger" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-1" vertex="1">
           <mxGeometry y="26" width="390" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-1">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="xHiCZFGHyEEn-PnUN8V3-1" vertex="1">
           <mxGeometry y="66" width="390" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-4" value="+ GetToken(string): (types.UserToken, error)&lt;br&gt;+ GetUsername(types.ParsedToken): (string, error)&lt;br&gt;+ GetRole(types.ParsedToken): (types.UserRole, error)&lt;br&gt;+ VerifyToken(types.UserToken): (types.ParsedToken, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-1">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-4" value="+ GetToken(string): (types.UserToken, error)&lt;br&gt;+ GetUsername(types.ParsedToken): (string, error)&lt;br&gt;+ GetRole(types.ParsedToken): (types.UserRole, error)&lt;br&gt;+ VerifyToken(types.UserToken): (types.ParsedToken, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-1" vertex="1">
           <mxGeometry y="74" width="390" height="72" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-5" value="CatalogAdapterOut" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1560" y="100" width="390" height="178" as="geometry" />
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-11" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="xHiCZFGHyEEn-PnUN8V3-5" target="gVzp6uVAmzgWA59pbAVM-7">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-6" value="+ Broker: broker.NatsMessageBroker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-5">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-5" value="CatalogAdapterOut" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="115" y="380" width="390" height="178" as="geometry" />
+        </mxCell>
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-6" value="+ Broker: broker.NatsMessageBroker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-5" vertex="1">
           <mxGeometry y="26" width="390" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-5">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="xHiCZFGHyEEn-PnUN8V3-5" vertex="1">
           <mxGeometry y="50" width="390" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-8" value="+ ListGoods(): (map[string]dto.Good, error)&lt;br&gt;+ ListStock(): (map[string]int64, error)&lt;br&gt;+ ListWarehouses(): (map[string]dto.Warehouse, error)&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-5">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-8" value="+ ListGoods(): (map[string]dto.Good, error)&lt;br&gt;+ ListStock(): (map[string]int64, error)&lt;br&gt;+ ListWarehouses(): (map[string]dto.Warehouse, error)&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-5" vertex="1">
           <mxGeometry y="58" width="390" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-9" value="NotificationsAdapterOut" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1560" y="520" width="390" height="102" as="geometry" />
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-6" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="xHiCZFGHyEEn-PnUN8V3-9" target="gVzp6uVAmzgWA59pbAVM-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-10" value="+ Broker: broker.NatsMessageBroker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-9">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-9" value="NotificationsAdapterOut" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="115" y="800" width="390" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-10" value="+ Broker: broker.NatsMessageBroker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-9" vertex="1">
           <mxGeometry y="26" width="390" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-9">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="xHiCZFGHyEEn-PnUN8V3-9" vertex="1">
           <mxGeometry y="50" width="390" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-12" value="+ CreateQuery(dto.Rule): (string, error)&lt;br&gt;+ GetQueries(): ([]types.QueryRuleWithId, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-9">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-12" value="+ CreateQuery(dto.Rule): (string, error)&lt;br&gt;+ GetQueries(): ([]types.QueryRuleWithId, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-9" vertex="1">
           <mxGeometry y="58" width="390" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-13" value="OrderAdapterOut" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1560" y="660" width="510" height="130" as="geometry" />
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-20" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="xHiCZFGHyEEn-PnUN8V3-13" target="gVzp6uVAmzgWA59pbAVM-16">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-14" value="+ Broker: broker.NatsMessageBroker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-13">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-13" value="OrderAdapterOut" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="790" width="510" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-14" value="+ Broker: broker.NatsMessageBroker" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-13" vertex="1">
           <mxGeometry y="26" width="510" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-13">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="xHiCZFGHyEEn-PnUN8V3-13" vertex="1">
           <mxGeometry y="50" width="510" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="xHiCZFGHyEEn-PnUN8V3-16" value="+ CreateOrder(request.CreateOrderRequestDTO): (response.OrderCreateInfo, error)&lt;br&gt;+ GetAllOrders(): ([]response.OrderInfo, error)&lt;br&gt;+ CreateTransfer(request.CreateTransferRequestDTO): (response.TransferCreateInfo, error)&lt;br&gt;+ GetAllTransfers(): ([]response.TransferInfo, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xHiCZFGHyEEn-PnUN8V3-13">
+        <mxCell id="xHiCZFGHyEEn-PnUN8V3-16" value="+ CreateOrder(request.CreateOrderRequestDTO): (response.OrderCreateInfo, error)&lt;br&gt;+ GetAllOrders(): ([]response.OrderInfo, error)&lt;br&gt;+ CreateTransfer(request.CreateTransferRequestDTO): (response.TransferCreateInfo, error)&lt;br&gt;+ GetAllTransfers(): ([]response.TransferInfo, error)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHiCZFGHyEEn-PnUN8V3-13" vertex="1">
           <mxGeometry y="58" width="510" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="5pa18tkQ61-FPrbnHFZ_-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="760" y="590" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5pa18tkQ61-FPrbnHFZ_-3" value="AuthenticationPortOut" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="732.5" y="640" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5pa18tkQ61-FPrbnHFZ_-4" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="726.25" y="670" as="sourcePoint" />
+            <mxPoint x="843.75" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5pa18tkQ61-FPrbnHFZ_-5" value="+ GetToken(string): (types.UserToken, error)&lt;br&gt;+ GetUsername(types.ParsedToken): (string, error)&lt;br&gt;+ GetRole(types.ParsedToken): (types.UserRole, error)&lt;br&gt;+ VerifyToken(types.UserToken): (types.ParsedToken, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="615" y="670" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="285" y="950" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-3" value="NotificationPortOut" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="257.5" y="1000" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-4" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="251.25" y="1030" as="sourcePoint" />
+            <mxPoint x="368.75" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-5" value="+ CreateQuery(dto.Rule): (string, error)&lt;br&gt;+ GetQueries(): ([]types.QueryRuleWithId, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1030" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-7" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="285" y="590" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-8" value="CatalogPortOut" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="257.5" y="640" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-9" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="251.25" y="670" as="sourcePoint" />
+            <mxPoint x="368.75" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-10" value="+ ListGoods(): (map[string]dto.Good, error)&lt;br&gt;+ ListStock(): (map[string]int64, error)&lt;br&gt;+ ListWarehouses(): (map[string]dto.Warehouse, error)&lt;br&gt;+ CreateGood(context.Context, string, string): (string, error)&lt;br&gt;+ UpdateGood(context.Context, string, string, string): error&lt;br&gt;+ AddStock(string, string, int64): error&lt;br&gt;+ RemoveStock(string, string, int64): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="670" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-16" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="760" y="950" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-17" value="OrderPortOut" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="732.5" y="1000" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-18" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="726.25" y="1030" as="sourcePoint" />
+            <mxPoint x="843.75" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gVzp6uVAmzgWA59pbAVM-19" value="+ CreateOrder(request.CreateOrderRequestDTO): (response.OrderCreateInfo, error)&lt;br&gt;+ GetAllOrders(): ([]response.OrderInfo, error)&lt;br&gt;+ CreateTransfer(request.CreateTransferRequestDTO): (response.TransferCreateInfo, error)&lt;br&gt;+ GetAllTransfers(): ([]response.TransferInfo, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="535" y="1030" width="500" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
