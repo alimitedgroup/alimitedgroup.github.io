@@ -2053,11 +2053,12 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 ===== OrderUpdateCmd <OrderOrderStockUpdateCmd>
 
-*Descrizione degli attributi della struttura:*
 #figure(
   image("../../assets/order/OrderUpdateCmd.png", width: 30%),
   caption: "Order - OrderUpdateCmd",
 )
+
+*Descrizione degli attributi della struttura:*
 - *`ID string`*: rappresenta l'identificativo univoco dell'ordine aggiornato;
 - *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
