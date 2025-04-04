@@ -4,6 +4,8 @@
 
 ===== BusinessParams <BusinessParams>
 
+#figure(image("../../../../assets/drawio/apigateway_business.svg"), caption: [_Business_])
+
 Parametri in ingresso necessari per costruire un'istanza di #typelink(<Business>).
 
 #struct(

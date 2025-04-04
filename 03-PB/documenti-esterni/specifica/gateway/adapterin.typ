@@ -2,6 +2,10 @@
 
 #import "../lib.typ": *
 
+==== _Adapter-in_ e _port-in_
+
+#figure(image("../../../../assets/drawio/apigateway_adapterin.svg"), caption: [_Adapter-in_])
+
 ===== adapterin.HttpConfig <HttpConfig>
 
 Configurazione del server HTTP.

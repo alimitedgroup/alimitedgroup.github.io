@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/notification_adapterout.svg"),
-  caption: [Tipi comuni a tutto il microservizio],
+  caption: [_Adapter-out_],
 )
 
 Questi tipi sono stati utilizzati per realizzare la parte di "uscita" dell'architettura esagonale.

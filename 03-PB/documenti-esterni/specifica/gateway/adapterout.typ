@@ -2,6 +2,10 @@
 
 #import "../lib.typ": *
 
+==== _Adapter-out_
+
+#figure(image("../../../../assets/drawio/apigateway_adapterout.svg"), caption: [_Adapter-out_])
+
 ===== AuthenticationAdapter <AuthenticationAdapter>
 
 _Adapter-out_ che consente l'interazione con il microservizio di autenticazione.

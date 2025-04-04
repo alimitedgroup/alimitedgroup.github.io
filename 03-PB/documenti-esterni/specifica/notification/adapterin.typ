@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/notification_adapterin.svg"),
-  caption: [Tipi comuni a tutto il microservizio],
+  caption: [_Adapter-in_],
 )
 
 Questi tipi sono stati utilizzati per realizzare la parte di "ingresso" dell'architettura esagonale.

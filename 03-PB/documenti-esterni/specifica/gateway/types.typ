@@ -4,6 +4,8 @@
 
 ===== types.UserRole <UserRole>
 
+#figure(image("../../../../assets/drawio/apigateway_types.svg"), caption: [Tipi comuni a tutto il microservizio])
+
 Questa enumerazione rappresenta il ruolo assegnato ad un utente.
 
 #enum(
