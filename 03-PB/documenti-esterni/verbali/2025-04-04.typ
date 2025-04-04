@@ -51,6 +51,7 @@ Nel corso della riunione il team di _ALimitedGroup_ ha presentato ad #M31 alcuni
 #M31 si dice formalmente soddisfatta di quanto sviluppato da _ALimitedGroup_. Tale formale accettazione è comprovata dalla firma, qui sotto riportata, di uno dei componenti partecipanti alla riunione:
 
 
+#align(right)[#image("../../../assets/firma_ve0404.png", width: 35%)]
 
 
 #pagebreak()
@@ -66,13 +67,17 @@ I membri del gruppo si impegneranno per fare tesoro di tutto quanto ciò che è 
 \
 I membri di *_ALimitedGroup_*, \
 
-#persona(p.sara) \
 #persona(p.emanuele) \
-#persona(p.lorenzo) \
-#persona(p.loris) \
 #persona(p.samuele) \
+#persona(p.sara) \
+#persona(p.loris) \
 #persona(p.marco) \
 #persona(p.matteo) \
+#persona(p.lorenzo) \
+
+
+
+
 
 #pagebreak()
 
@@ -85,4 +90,4 @@ I membri di *_ALimitedGroup_*, \
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
-
+#align(right)[#image("../../../assets/firma_ve0404.png", width: 35%)]
