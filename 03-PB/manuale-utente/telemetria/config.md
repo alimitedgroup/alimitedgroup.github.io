@@ -6,7 +6,7 @@ L'avvio con i _file_ sorgente non alterati dovrebbe completare automaticamente l
 
 # Primo accesso <!--raw-typst <tel> -->
 
-Avviato il container con il servizio `Grafana`#super[G] aprire un browser e collegarsi all'indirizzo `localhost:3000`. Apparirà la seguente schermata di login:
+Avviato il container con il servizio `Grafana` aprire un browser e collegarsi all'indirizzo `localhost:3000`. Apparirà la seguente schermata di login:
 
 <p align="center">
   <img src="./../../assets/grafana-login.png" width="100%"/>
