@@ -12,3 +12,5 @@ seguita da un secondo messaggio quando la quantità ritorna nei livelli nominali
 
 #include "types.typ"
 #include "business.typ"
+#include "adapterin.typ"
+#include "adapterout.typ"

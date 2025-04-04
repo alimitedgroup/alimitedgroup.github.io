@@ -54,7 +54,7 @@ Componente che gestisce le richieste HTTP in ingresso.
 
 
 
-===== adapterin.Controller <Controller>
+===== adapterin.Controller
 
 Questa interfaccia accomuna tutti i _controller_.
 
