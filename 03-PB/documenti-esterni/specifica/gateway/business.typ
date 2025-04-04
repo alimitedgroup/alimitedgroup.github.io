@@ -88,7 +88,6 @@ Implementa le _port-in_
     ("+ CreateTransfer(string, string, map[string]int64): (string, error)", [Permette di creare un trasferimento]),
     ("+ GetTransfers(): ([]dto.Transfer, error)", [Ritorna la lista di trasferimenti]),
     // Warehouses
-    ("+ GetWarehouseByID(int64): (dto.Warehouse, error)", [Ritorna le informazioni di un magazzino, dato il suo ID]),
     ("+ GetWarehouses(): ([]types.WarehouseOverview, error)", [Ritorna le informazioni di tutti i magazzini]),
     ("+ GetGoods(): ([]dto.GoodAndAmount, error)", [Ritorna le informazioni di tutte le merci]),
     ("+ CreateGood(context.Context, string, string): (string, error)", [Crea una merce]),
@@ -135,7 +134,6 @@ Questa _port-in_ si occupa di gestire le richieste relative agli ordini.
 Questa _port-in_ si occupa di gestire le richieste relative ai magazzini.
 
 #interface(
-  ("+ GetWarehouseByID(int64): (dto.Warehouse, error)", [Ritorna le informazioni di un magazzino, dato il suo ID]),
   ("+ GetWarehouses(): ([]types.WarehouseOverview, error)", [Ritorna le informazioni di tutti i magazzini]),
   ("+ GetGoods(): ([]dto.GoodAndAmount, error)", [Ritorna le informazioni di tutte le merci]),
   ("+ CreateGood(context.Context, string, string): (string, error)", [Crea una merce]),
