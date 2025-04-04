@@ -18,9 +18,9 @@ Parametri in ingresso necessari per costruire un'istanza di #typelink(<StockUpda
 
 #struct(
   (
-    ("+ StockPort: portin.StockUpdates", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("+ Logger: *zap.Logger", [Necessario per raccogliere i log]),
-    ("+ Meter: metric.Meter", [Necessario per raccogliere le metriche]),
+    ("+ StockPort portin.StockUpdates", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("+ Logger *zap.Logger", [Necessario per raccogliere i log]),
+    ("+ Meter metric.Meter", [Necessario per raccogliere le metriche]),
   ),
   (),
 )
@@ -32,16 +32,16 @@ Implementa l'interfaccia #typelink(<JsController>).
 
 #struct(
   (
-    ("- stockPort: portin.StockUpdates", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("- Logger: *zap.Logger", [Necessario per raccogliere i log]),
+    ("- stockPort portin.StockUpdates", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("- Logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
     (
-      "+ Handle(context.Context, jetstream.Msg): error",
+      "+ Handle(context.Context, jetstream.Msg) error",
       [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
     ),
     (
-      "+ Stream(): jetstream.StreamConfig",
+      "+ Stream() jetstream.StreamConfig",
       [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
     ),
   ),
@@ -54,11 +54,11 @@ in contrapposizione a quelli che si interfacciano con _NATS Core_, rappresentati
 
 #interface(
   (
-    "+ Handle(context.Context, jetstream.Msg): error",
+    "+ Handle(context.Context, jetstream.Msg) error",
     [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
   ),
   (
-    "+ Stream(): jetstream.StreamConfig",
+    "+ Stream() jetstream.StreamConfig",
     [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
   ),
 )
@@ -70,17 +70,17 @@ Implementa l'interfaccia #typelink(<Controller>).
 
 #struct(
   (
-    ("- rulesPort: portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("- Logger: *zap.Logger", [Necessario per raccogliere i log]),
+    ("- rulesPort portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("- Logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
-    ("+ NewAddQueryController(QueryControllersParams): *AddQueryController", [Costruttore della struttura]),
+    ("+ NewAddQueryController(QueryControllersParams) *AddQueryController", [Costruttore della struttura]),
     (
-      "+ Handle(context.Context, *nats.Msg): error",
+      "+ Handle(context.Context, *nats.Msg) error",
       [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
     ),
     (
-      "+ Subject(): broker.Subject",
+      "+ Subject() broker.Subject",
       [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
     ),
   ),
@@ -93,17 +93,17 @@ Implementa l'interfaccia #typelink(<Controller>).
 
 #struct(
   (
-    ("- rulesPort: portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("- Logger: *zap.Logger", [Necessario per raccogliere i log]),
+    ("- rulesPort portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("- Logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
-    ("+ NewGetQueryController(QueryControllersParams): *GetQueryController", [Costruttore del tipla struttura]),
+    ("+ NewGetQueryController(QueryControllersParams) *GetQueryController", [Costruttore del tipla struttura]),
     (
-      "+ Handle(context.Context, *nats.Msg): error",
+      "+ Handle(context.Context, *nats.Msg) error",
       [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
     ),
     (
-      "+ Subject(): broker.Subject",
+      "+ Subject() broker.Subject",
       [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
     ),
   ),
@@ -116,17 +116,17 @@ Implementa l'interfaccia #typelink(<Controller>).
 
 #struct(
   (
-    ("- rulesPort: portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("- Logger: *zap.Logger", [Necessario per raccogliere i log]),
+    ("- rulesPort portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("- Logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
-    ("+ NewListQueriesController(QueryControllersParams): *ListQueriesController", [Costruttore del tipla struttura]),
+    ("+ NewListQueriesController(QueryControllersParams) *ListQueriesController", [Costruttore del tipla struttura]),
     (
-      "+ Handle(context.Context, *nats.Msg): error",
+      "+ Handle(context.Context, *nats.Msg) error",
       [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
     ),
     (
-      "+ Subject(): broker.Subject",
+      "+ Subject() broker.Subject",
       [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
     ),
   ),
@@ -139,17 +139,17 @@ Implementa l'interfaccia #typelink(<Controller>).
 
 #struct(
   (
-    ("- rulesPort: portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("- Logger: *zap.Logger", [Necessario per raccogliere i log]),
+    ("- rulesPort portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("- Logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
-    ("+ NewEditQueryController(QueryControllersParams): *EditQueryController", [Costruttore del tipla struttura]),
+    ("+ NewEditQueryController(QueryControllersParams) *EditQueryController", [Costruttore del tipla struttura]),
     (
-      "+ Handle(context.Context, *nats.Msg): error",
+      "+ Handle(context.Context, *nats.Msg) error",
       [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
     ),
     (
-      "+ Subject(): broker.Subject",
+      "+ Subject() broker.Subject",
       [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
     ),
   ),
@@ -163,17 +163,17 @@ Implementa l'interfaccia #typelink(<Controller>).
 
 #struct(
   (
-    ("- rulesPort: portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("- Logger: *zap.Logger", [Necessario per raccogliere i log]),
+    ("- rulesPort portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("- Logger *zap.Logger", [Necessario per raccogliere i log]),
   ),
   (
-    ("+ NewRemoveQueryController(QueryControllersParams): *RemoveQueryController", [Costruttore del tipla struttura]),
+    ("+ NewRemoveQueryController(QueryControllersParams) *RemoveQueryController", [Costruttore del tipla struttura]),
     (
-      "+ Handle(context.Context, *nats.Msg): error",
+      "+ Handle(context.Context, *nats.Msg) error",
       [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
     ),
     (
-      "+ Subject(): broker.Subject",
+      "+ Subject() broker.Subject",
       [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
     ),
   ),
@@ -186,11 +186,11 @@ in contrapposizione a quelli che si interfacciano con _Jetstream_, rappresentati
 
 #interface(
   (
-    "+ Handle(context.Context, *nats.Msg): error",
+    "+ Handle(context.Context, *nats.Msg) error",
     [Questo metodo viene chiamato quando l'_adapter_ riceve un messaggio],
   ),
   (
-    "+ Subject(): broker.Subject",
+    "+ Subject() broker.Subject",
     [Questo metodo viene chiamato in fase di avvio del software, per capire quali messaggi esso debba gestire],
   ),
 )
@@ -206,9 +206,9 @@ Parametri in ingresso necessari per costruire un'istanza di
 
 #struct(
   (
-    ("+ RulesPort: portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
-    ("+ Logger: *zap.Logger", [Necessario per raccogliere i log]),
-    ("+ Meter: metric.Meter", [Necessario per raccogliere le metriche]),
+    ("+ RulesPort portin.QueryRules", [La _Port-in_ che verrà utilizzata per parlare con la _business logic_]),
+    ("+ Logger *zap.Logger", [Necessario per raccogliere i log]),
+    ("+ Meter metric.Meter", [Necessario per raccogliere le metriche]),
   ),
   (),
 )
