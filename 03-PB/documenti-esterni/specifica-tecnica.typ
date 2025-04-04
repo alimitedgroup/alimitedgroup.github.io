@@ -1689,7 +1689,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 === Order <micro_order>
 
 #figure(
-  image("../../assets/order/order_2.png", width: 115%),
+  image("../../assets/order/General.png", width: 115%),
   caption: "Struttura del Microservizio " + ["Order"],
 )
 
