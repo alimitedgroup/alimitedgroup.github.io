@@ -4228,7 +4228,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
     [@UC46],
 
-    [R-85-F-Ob],
+    [R-85-F-De],
     [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
     [@UC47],
 
