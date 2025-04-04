@@ -168,8 +168,8 @@
     ),
   ),
   versione: ver,
-  stato: [Approvato per RTB],
-  responsabile: ((p.samuele),),
+  stato: [Approvato],
+  responsabile: ((p.matteo),),
   verificatore: ((p.emanuele), (p.lorenzo), (p.samuele), (p.sara)),
   redattori: (
     (p.marco),
