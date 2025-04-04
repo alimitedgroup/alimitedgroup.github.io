@@ -335,6 +335,6 @@ Premere quindi **Run query** e **Save dаshboard** per sincronizzare i dati e sa
 )
 -->
 
-Il pannello è stato aggiunto: premere **Back to dashboard#super[G]** per visualizzarlo.
+Il pannello è stato aggiunto: premere **Back to dashboаrd** per visualizzarlo.
 
 <!--raw-typst #pagebreak() -->
