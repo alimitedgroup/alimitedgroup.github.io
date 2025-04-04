@@ -1135,12 +1135,14 @@ Nello specifico, ogni microservizio possiede:
   - *`RegisterRequest(ctx context.Context, subject Subject, queue Queue, handler RequestHandler) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ specificato;
   - *`RegisterJsHandler(ctx context.Context, restore IRestoreStreamControl, streamCfg jetstream.StreamConfig, handler JsHandler, opts ...JsHandlerOpt) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ (del JetStream NATS#super[G] )specificato;
   - *`RegisterJsWithConsumerGroup(ctx context.Context, streamCfg jetstream.StreamConfig, consumerCfg jetstream.ConsumerConfig, handler JsHandler) error`*: come il precedente, ma permette di applicare un gruppo di _consumer_ (non viene utilizzato da questo router).
-- *`controller *catalogController`*: il controller del microservizio *Catalog*;
+- *`controller *catalogController`*: il controller del microservizio *Catalog* dedicato alla gestione dei magazzini e della quantità della merce;
+- *`goodController *CatalogGoodInfoController`*: il controller del microservizio *Catalog* dedicato alla gestione delle informazioni della merce;
+- *`qtController   *CatalogGlobalQuantityController`*: il controller del microservizio *Catalog* dedicato alla gestione delle richieste di ottenimento quantità globale della merce;
 - *`rsc *broker.RestoreStreamControl`*: una struttura che fa uso di `sync.WaitGroup` per gestire il recupero dei messaggi dai JetStream. È infatti necessario per l'invocazione di metodi quali `RegisterJsHandler`.
 
 Può invocare le seguenti funzioni:
 
-- *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
+- *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, gc *CatalogGoodInfoController, qt *CatalogGlobalQuantityController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
 - *`Setup(ctx context.Context) error`*: esegue le associazioni _controller_ - _subject_ usando i metodi sopra descritti.
 
 Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS#super[G] sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del _repository_#super[G] .
