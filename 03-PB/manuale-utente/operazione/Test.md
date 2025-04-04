@@ -4,7 +4,7 @@ Per informazioni approfondite si consiglia la lettura del [**Piano di Qualifica#
 
 # Esecuzione dei _test_ di unità ed integrazione <!--raw-typst <testpar> -->
 
-Per eseguire i test di unità ed integrazione è sufficiente aprire un prompt dei comandi (o _shell_) nella radice dell'installazione ed eseguire questi due comandi:
+Per eseguire i test#super[G] di unità ed integrazione è sufficiente aprire un prompt#super[G] dei comandi (o _shell_) nella radice dell'installazione ed eseguire questi due comandi:
 
 `go generate ./...`
 `go tеst -race -covermode atomic ./...`
