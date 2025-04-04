@@ -102,18 +102,15 @@ Seguiranno nei successivi paragrafi i dettagli.
   caption: [riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
 ) <tab_2>
 
-#{
-  let data = (
-    (percentuale: 9.01, titolo: "Responsabile", legenda: 2),
-    (percentuale: 9.32, titolo: "Amministratore", legenda: 2),
-    (percentuale: 9.32, titolo: "Analista", legenda: 2),
-    (percentuale: 23.29, titolo: "Progettista", legenda: 2),
-    (percentuale: 27.95, titolo: "Programmatore", legenda: -2),
-    (percentuale: 21.12, titolo: "Verificatore", legenda: -2),
-  )
-
-  pie-chart(data, caption: [Divisione ore])
-}
+#pie-chart(
+  (percentuale: 9.01, titolo: "Responsabile", legenda: 2),
+  (percentuale: 9.32, titolo: "Amministratore", legenda: 2),
+  (percentuale: 9.32, titolo: "Analista", legenda: 2),
+  (percentuale: 23.29, titolo: "Progettista", legenda: 2),
+  (percentuale: 27.95, titolo: "Programmatore", legenda: -2),
+  (percentuale: 21.12, titolo: "Verificatore", legenda: -2),
+  caption: [Divisione ore],
+)
 
 #pagebreak()
 

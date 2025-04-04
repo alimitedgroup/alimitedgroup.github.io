@@ -302,12 +302,12 @@
 ///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
 /// se e solo se queste sono delimitate dal comando #figure con annessa la caption
 
-#let pie-chart(data, caption: []) = {
+#let pie-chart(..data, caption: []) = {
   figure(
     canvas({
       import draw: *
       chart.piechart(
-        data,
+        data.pos(),
         name: "pie",
         position: (1em, 0),
         radius: 1.8,
@@ -319,7 +319,7 @@
       )
 
       set-style(content: (padding: .2))
-      for (i, dat) in data.enumerate() {
+      for (i, dat) in data.pos().enumerate() {
         if dat.percentuale > 0 {
           // Calculate the point at 35% of the distance from the border of a slice to its center
           let outer = "pie.chart.item-" + str(i)
@@ -333,7 +333,7 @@
           } else {
             "east"
           }
-          let percent = calc.round(dat.percentuale * 100 / data.map(x => x.percentuale).sum())
+          let percent = calc.round(dat.percentuale * 100 / data.pos().map(x => x.percentuale).sum())
 
           line(middle, (rel: (data.at(i).legenda, 0)), name: "line-" + str(i))
           content((), [#data.at(i).titolo - #percent%], anchor: line-anchor)
