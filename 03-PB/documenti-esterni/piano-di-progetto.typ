@@ -13,6 +13,7 @@
       vers: "1.3.0",
       date: datetime(day: 31, month: 03, year: 2025),
       autore: p.emanuele,
+      verifica: p.matteo,
       descr: "Aggiornamento Pianificazione nel lungo termine " + [(@plt). ],
     ),
     (
@@ -669,7 +670,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       Redigere i capitoli "Introduzione" e "Scopo del documento": _sprint_ 7. \ \
       Aggiungere dettagli sull'utilizzo dei microservizi e del sistema: \ _sprint_ 8 e _sprint_ 9. \ \
       Rendere fruibile, tramite il sito di _ALimitedGroup_, il Manuale Utente: da _sprint_ 7 a _sprint_ 9.],
-    [In redazione],
+    [Completato],
 
     [*Correzione Analisi dei Requisiti*],
     [Correzione delle seguenti parti:
@@ -690,7 +691,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     ],
     [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 7. \ \
       Correzione con integrazione della sezione "Sviluppo": \ _sprint_ 7. \ \
-      Aggiornamento misurazioni: \ _sprint_ 9.],
+      Aggiornamento misurazioni: \ da _sprint_ 7 a _sprint_ 9.],
     [In redazione],
 
     [*Correzione Piano di Qualifica*],
@@ -709,7 +710,7 @@ Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettu
       - Termini.
     ],
     [Ampliamento del Glossario: tutti gli _sprint_.],
-    [In redazione],
+    [Completato],
 
     [*Realizzazione del Minimum Viable Product (MVP)*],
     [Codifica di:
@@ -719,8 +720,7 @@ Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettu
         - Catalog;
         - Authenticator;
         - Api Gateway;
-        - Order;
-        - Transfer;
+        - Order/Transfer;
         - Notification.
       Esecuzione dei test previsti dal Piano di Qualifica.
       \ \
@@ -734,8 +734,7 @@ Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettu
         - Catalog: _sprint_ 7;
         - Authenticator: da _sprint_ 7 a _sprint_ 8;
         - Api Gateway: da _sprint_ 7 a _sprint_ 9;
-        - Order: da _sprint_ 7 a _sprint_ 8;
-        - Transfer: da _sprint_ 7 a _sprint_ 8;
+        - Order/Transfer: da _sprint_ 7 a _sprint_ 8;
         - Notifications: da _sprint_ 8 a _sprint_ 9. \ \
       Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9. \ \
       Integrazione di Grafana: _sprint_ 9.],
