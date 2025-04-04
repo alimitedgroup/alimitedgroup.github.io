@@ -50,7 +50,7 @@ def substitute(filePath,glossaryYml):
     parFound=False
     line=file.readline()
     linenum = 0
-    logging.getLogger().setLevel(logging.INFO)
+    #logging.getLogger().setLevel(logging.INFO)
     filtered_glossary = list(filter(lambda el: " " in el, glossary))
     #print(filtered_glossary)
 
@@ -62,10 +62,10 @@ def substitute(filePath,glossaryYml):
                 bodyFound=True
             if bodyFound==True and ")" in line:
                 parFound=True
-        elif (len(line.strip()) > 0 and line.lstrip()[0] == '#') and ("/03-PB\\manuale-utente" in filePath or "\\03-PB\\manuale-utente" in filePath):
+        elif (len(line.strip()) > 0 and line.lstrip()[0] == '#') and ("03-PB/manuale-utente" in filePath):
             newText += line 
             line=file.readline()
-            logging.info(f'Found # as the start of the line at {filePath}:{linenum}')
+            #logging.info(f'Found # as the start of the line at {filePath}:{linenum}')
             #print("Sono nell'IF del #")
             continue
         else:
@@ -84,10 +84,10 @@ def substitute(filePath,glossaryYml):
                 if word in stopCheckingWords:
                     #print(f"settingStop {word}")
                     stop=True
-                elif ("/03-PB\\manuale-utente" in filePath or "\\03-PB\\manuale-utente" in filePath) and (word == "<!--typst-end-exclude-->" or word == "-->"):
+                elif ("03-PB/manuale-utente" in filePath or "03-PB/manuale-utente" in filePath) and (word == "<!--typst-end-exclude-->" or word == "-->"):
                     stop=False
                     #print(word)
-                elif (word == ")") and ("/03-PB\\manuale-utente" not in filePath or "\\03-PB\\manuale-utente" not in filePath):
+                elif (word == ")") and ("03-PB/manuale-utente" not in filePath or "03-PB/manuale-utente" not in filePath):
                     stop=False
                     #print(word)
                 if stop==False and ((word in glossary) or (word[:-1] in glossary) or (word[:-2] in glossary and len(word[:-2]) > 0) 
