@@ -2,9 +2,15 @@
 
 #import "../lib.typ": *
 
-==== _Adapter-out_
+==== _Adapter-out_ e _Port-out_
 
-#figure(image("../../../../assets/drawio/apigateway_adapterout.svg"), caption: [_Adapter-out_])
+#figure(
+  image("../../../../assets/drawio/apigateway_adapterout.svg"),
+  caption: [_Adapter-out_],
+)
+
+Questi tipi sono stati utilizzati per realizzare la parte di "uscita" dell'architettura esagonale.
+Nella sezione corrente sono inclusi i tipi dei _package_ `adapterout` e `portout`.
 
 ===== AuthenticationAdapter <AuthenticationAdapter>
 

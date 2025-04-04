@@ -2,6 +2,17 @@
 
 #import "../lib.typ": *
 
+==== _Business logic_
+
+#figure(
+  image("../../../../assets/drawio/apigateway_business.svg"),
+  caption: [_Business logic_ del microservizio],
+)
+
+In questa sezione sono descritti i tipi relativi alla _business logic_,
+e le _port-in_ da essa implementate.
+
+
 ===== BusinessParams <BusinessParams>
 
 #figure(image("../../../../assets/drawio/apigateway_business.svg"), caption: [_Business_])

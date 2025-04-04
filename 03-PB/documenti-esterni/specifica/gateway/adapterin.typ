@@ -2,9 +2,15 @@
 
 #import "../lib.typ": *
 
-==== _Adapter-in_ e _port-in_
+==== _Adapter-in_ e _Port-in_
 
-#figure(image("../../../../assets/drawio/apigateway_adapterin.svg"), caption: [_Adapter-in_])
+#figure(
+  image("../../../../assets/drawio/apigateway_adapterin.svg"),
+  caption: [_Adapter-in_],
+)
+
+Questi tipi sono stati utilizzati per realizzare la parte di "ingresso" dell'architettura esagonale.
+Nella sezione corrente sono inclusi i tipi dei _package_ `adapterin` e `portin`.
 
 ===== adapterin.HttpConfig <HttpConfig>
 

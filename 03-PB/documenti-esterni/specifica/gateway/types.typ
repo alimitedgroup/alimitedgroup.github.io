@@ -2,6 +2,17 @@
 
 #import "../lib.typ": *
 
+==== Oggetti comuni del microservizio
+
+#figure(
+  image("../../../../assets/drawio/apigateway_types.svg"),
+  caption: [Tipi comuni a tutto il microservizio],
+)
+
+In Go, gli _import_ devono obbligatoriamente formare un grafo aciclico;
+di conseguenza questi tipi, che vengono utilizzati sia dalla _business logic_ che dagli _adapter_,
+sono stati estratti in un _package_ separato per evitare errori di compilazione.
+
 ===== types.UserRole <UserRole>
 
 #figure(image("../../../../assets/drawio/apigateway_types.svg"), caption: [Tipi comuni a tutto il microservizio])
