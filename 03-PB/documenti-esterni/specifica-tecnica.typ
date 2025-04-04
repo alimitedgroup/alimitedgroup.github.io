@@ -5314,7 +5314,7 @@ Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali#super[G]*.
 #pie-chart(
   (percentuale: 85.4, titolo: "Requisiti soddisfatti", legenda: 2),
   (percentuale: 14.6, titolo: "Requisiti non soddisfatti", legenda: 2),
-  caption: "Percentuale di requisiti funzionali soddisfatti in totale",
+  caption: [Percentuale di requisiti funzionali#super[G] soddisfatti in totale],
   legend: true,
 )
 
@@ -5322,20 +5322,20 @@ Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali#super[G]*.
 #pie-chart(
   (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
   (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
-  caption: "Percentuale di requisiti funzionali obbligatori soddisfatti",
+  caption: [Percentuale di requisiti funzionali#super[G] obbligatori soddisfatti],
   legend: true,
 )
 
 #pie-chart(
   (percentuale: 0, titolo: "Requisiti soddisfatti", legenda: 2),
   (percentuale: 100, titolo: "Requisiti non soddisfatti", legenda: 2),
-  caption: "Percentuale di requisiti funzionali desiderabili soddisfatti",
+  caption: [Percentuale di requisiti funzionali#super[G] desiderabili soddisfatti],
   legend: true,
 )
 
 #pie-chart(
   (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
   (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
-  caption: "Percentuale di requisiti funzionali opzionali soddisfatti",
+  caption: [Percentuale di requisiti funzionali#super[G] opzionali soddisfatti],
   legend: true,
 )
