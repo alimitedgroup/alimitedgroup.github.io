@@ -15,15 +15,21 @@ jobs:
       - name: Install typst CLI
         uses: typst-community/setup-typst@v3
         with:
-          typst-version: 0.12.x
+          typst-version: 0.13.x
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+      - name: Install tools for draw.io export
+        run: sudo apt-get update && sudo apt-get install -y inkscape xmlstarlet
+
+      - name: Export draw.io diagrams to SVG
+        run: bash .github/workflows/drawio.sh
       - name: Write dictionary
         run: uv run .github/workflows/glossary.py && git diff --exit-code
       - name: Compile Typst files
         run: uv run .github/workflows/compile.py
       - name: Compile manuale utente
         run: uv run mkdocs build
+
       - name: Comment on PR
         run: bash .github/workflows/comment-pull.sh
         if: github.ref != 'refs/heads/main'
