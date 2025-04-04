@@ -58,9 +58,6 @@ def substitute(filePath,glossaryYml):
         #if ("./03-PB\manuale-utente" in filePath):
         #    print("LOL")
         #    print(line.lstrip()[0])
-        #if ("./03-PB\manuale-utente" in filePath):
-        #    print("LOL")
-        #    print(line.lstrip()[0])
         linenum += 1
         if(bodyFound==False or parFound==False) and (".md" not in filePath):
             startText+=line
