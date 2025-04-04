@@ -1,5 +1,35 @@
 // ignore
 
+#let enum(fields, methods) = [
+  *Varianti dell'enumerazione:*
+
+  #if fields.len() > 0 {
+    list(
+      ..fields
+        .map(((name, desc)) => (name.replace("+ ", "").replace("- ", ""), desc))
+        .map(field => [#strong(raw(field.at(0))) - #field.at(1)])
+        .enumerate()
+        .map(((i, f)) => if i != fields.len() - 1 { f + [;] } else { f + [.] }),
+    )
+  } else {
+    [Questa enumerazione non ha varianti.]
+  }
+
+  *Descrizione dei metodi invocabili dalla enumerazione:*
+
+  #if methods.len() > 0 {
+    list(
+      ..methods
+        .map(((name, desc)) => (name.replace("+ ", "").replace("- ", ""), desc))
+        .map(method => [#strong(raw(method.at(0))) - #method.at(1)])
+        .enumerate()
+        .map(((i, f)) => if i != methods.len() - 1 { f + [;] } else { f + [.] }),
+    )
+  } else {
+    [Questa enumerazione non contiene metodi.]
+  }
+]
+
 #let struct(fields, methods) = [
   *Descrizione degli attributi della struttura:*
 

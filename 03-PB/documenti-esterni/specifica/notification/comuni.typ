@@ -62,8 +62,9 @@ Questo tipo rappresenta una notifica che sta per essere inviata.
 
 ===== StockStatus
 
-Questo tipo è una _type definition_ che punta al tipo primito `string`.
-Ciò significa che
+Questo tipo è una _type definition_ che punta al tipo primitivo `string`.
+Nonostante ciò, i due tipi sono diversi, ed è possibile convertire da uno
+all'altro solo inserndo un _cast_ esplicito.
 
 ===== QueryRule <QueryRule>
 
