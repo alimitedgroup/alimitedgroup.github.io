@@ -4,6 +4,11 @@
 
 ==== _Business logic_
 
+#figure(
+  image("../../../../assets/drawio/notification_business.svg"),
+  caption: [_Business logic_ del microservizio],
+)
+
 ===== BusinessParams <BusinessParams>
 
 Parametri necessari per costruire un'istanza di #typelink(<Business>)

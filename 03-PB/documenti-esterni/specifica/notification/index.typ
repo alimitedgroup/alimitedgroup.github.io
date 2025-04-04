@@ -10,6 +10,6 @@ Se la quantità configurata dell'utente non è soddisfatta, allora viene inviata
 seguita da un secondo messaggio quando la quantità ritorna nei livelli nominali.
 
 #include "comuni.typ"
+#include "business.typ"
 #include "adapterin.typ"
 #include "adapterout.typ"
-#include "business.typ"
