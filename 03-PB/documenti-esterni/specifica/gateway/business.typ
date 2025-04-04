@@ -2,6 +2,33 @@
 
 #import "../lib.typ": *
 
+===== BusinessParams <BusinessParams>
+
+Parametri in ingresso necessari per costruire un'istanza di #typelink(<Business>).
+
+#struct(
+  (
+    (
+      "+ Auth: portout.AuthenticationPortOut",
+      [La _Port-out_ che verrà utilizzata dalla _business logic_ per parlare con altri componenti],
+    ),
+    (
+      "+ Catalog: portout.CatalogPortOut",
+      [La _Port-out_ che verrà utilizzata dalla _business logic_ per parlare con altri componenti],
+    ),
+    (
+      "+ Order: portout.OrderPortOut",
+      [La _Port-out_ che verrà utilizzata dalla _business logic_ per parlare con altri componenti],
+    ),
+    (
+      "+ Notfication: portout.NotificationPortOut",
+      [La _Port-out_ che verrà utilizzata dalla _business logic_ per parlare con altri componenti],
+    ),
+    ("+ Logger: *zap.Logger", [Necessario per raccogliere i log]),
+  ),
+  (),
+)
+
 ===== business.Business <Business>
 
 La _business logic_. Coordina tutte le operazioni del microservizio.
