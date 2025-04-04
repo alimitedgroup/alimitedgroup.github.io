@@ -490,7 +490,7 @@ In seguito a quanto suggerito in merito all'analisi dei requisiti#super[G] viene
 
 La revisione per la *_Requirements and Technology Baseline#super[G] (RTB)_* è avvenuta il 21 febbraio 2025.
 
-In seguito, in vista della *_Product Baseline#super[G] (PB)_*, il gruppo ha deciso di ridistribuire nuovamente le ore disponibili per ottimizzare l'allocazione delle risorse in vista delle attività previste. La nuova ripartizione è riportata nella tabella seguente:
+Superata la *_Requirements and Technology Baseline (RTB)_*, all'avvio della *_Product Baseline#super[G] (PB)_*, il gruppo ha deciso di ridistribuire nuovamente le ore disponibili per ottimizzare l'allocazione delle risorse in vista delle attività previste. La nuova ripartizione è riportata nella tabella seguente:
 #figure(
   table(
     columns: (1fr, 1fr, 1fr, 1fr),
