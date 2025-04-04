@@ -85,4 +85,4 @@ I membri di *_ALimitedGroup_*, \
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
-
+#align(right)[#image("../../../assets/firma_ve0404.png", width: 35%)]
