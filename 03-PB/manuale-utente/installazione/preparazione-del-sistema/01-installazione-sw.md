@@ -19,7 +19,7 @@ Anzitutto procedere al reperimento dell'ultima _release_ del Software disponibil
 
 -->
 
-Quindi selezionare la release di interesse (nel momento in cui questo manuale viene scritto, la 0.2):
+Quindi selezionare la release di interesse (nel momento in cui questo manuale viene scritto, la 1.0):
 
 <p align="center">
   <img src="./../../../assets/sel_ver.png" width="100%" />

@@ -2538,7 +2538,7 @@ _ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#su
 
 == Tеst di Accettazione <ta>
 
-I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test#super[G] e di copiare manualmente i comandi elencati.
+I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale dopo ogni test mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test#super[G] e di copiare manualmente i comandi elencati.
 
 Si ricorda infine che per "risposta JSON" si intende quanto contenuto tra due parentesi graffe, come nel seguente esempio:
 `
@@ -2691,9 +2691,9 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
     (
       desc: [Verificare che il prodotto gestisca adeguatamente i conflitti tra ordini],
       va: [Eseguire il file `create_multiple_order.sh` con il comando `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"`: lo script eseguirà l'inserimento di 6 unità della merce con id `hat-1` nel magazzino con id 1 e 8 nel magazzino con id 2, 6 unità della merce con id `hat-2` nel magazzino con id 1 e 5 nel magazzino con id 2. Quindi procede a realizzare 3 ordini, tutti con 13 unità di `hat-1` e 11 di `hat-2`. Verificare che nella prima risposta JSON appaiano tre ordini:
-        - quello con id `test-order-1` ha il valore `"status": "Created"`;
-        - quello con id `test-order-2` ha il valore `"status": "Cancelled"`;
-        - quello con id `test-order-3` ha il valore `"status": "Cancelled"`.
+        - quello con nome `test-order-1` ha il valore `"status": "Completed"`;
+        - quello con nome `test-order-2` ha il valore `"status": "Cancelled"`;
+        - quello con nome `test-order-3` ha il valore `"status": "Cancelled"`.
         Il risultato potrebbe leggermente variare nell'ordine che viene completato, ma solo uno risulterà completato.
       ],
       vr: "",
@@ -2707,60 +2707,6 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
     ),
   ),
 )
-/*
-#show figure: set block(breakable: true)
-#figure(
-  table(
-    columns: (auto, auto, auto),
-
-    fill: (col, row) => if row == 0 {
-      rgb(128, 0, 128)
-    } else if calc.even(row) {
-      rgb(191, 127, 191)
-    } else {
-      rgb(216, 178, 216)
-    },
-    align: center + horizon,
-    inset: 8pt,
-
-    // Header row
-    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Stato del Tеst*],
-    [T-1-A], [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale], [NI],
-    [T-2-A], [Verificare che il prodotto dia la possibilità all'utente di essere riconosciuto inserendo Username e Password], [NI],
-    [T-3-A], [Verificare che il prodotto dia la possibilità di visualizzare ordini], [NI],
-    [T-4-A], [Verificare che il prodotto dia la possibilità di confermare ordini], [NI],
-    [T-5-A], [Verificare che il prodotto dia la possibilità di realizzare ordini], [NI],
-    [T-6-A], [Verificare che il prodotto dia la possibilità di cancellare ordini], [NI],
-    [T-7-A], [Verificare che il prodotto dia la possibilità di aggiungere merci dal Sistema], [NI],
-    [T-8-A], [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema], [NI],
-    [T-9-A], [Verificare che il prodotto dia la possibilità di modificare merci dal Sistema], [NI],
-    [T-10-A], [Verificare che il prodotto dia la possibilità di togliere merci dal Sistema], [NI],
-    [T-11-A], [Verificare che il prodotto dia la possibilità di realizzare trasferimenti], [NI],
-    [T-12-A], [Verificare che il prodotto dia la possibilità di cancellare trasferimenti], [NI],
-    [T-13-A], [Verificare che il prodotto dia la possibilità di confermare trasferimenti], [NI],
-    [T-14-A], [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti], [NI],
-    [T-15-A], [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento], [NI],
-    [T-16-A], [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento fornite da _Machine Learning_], [NI],
-    [T-17-A], [Verificare che il prodotto dia la possibilità di accettare notifiche di rifornimento], [NI],
-    [T-18-A], [Verificare che il prodotto dia la possibilità di rifiutare notifiche di rifornimento], [NI],
-    [T-19-A], [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema], [NI],
-    [T-20-A], [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema], [NI],
-    [T-21-A], [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce], [NI],
-    [T-22-A], [Verificare che il prodotto dia la possibilità di aumentare lo stock di una merce nel Sistema], [NI],
-    [T-23-A], [Verificare che il prodotto dia la possibilità di realizzare un Backup di un magazzino], [NI],
-    [T-24-A], [Verificare che il prodotto dia la possibilità di attivare un Backup periodico del magazzino], [NI],
-    [T-25-A], [Verificare che il prodotto dia la possibilità di disattivare il Backup periodico del magazzino], [NI],
-    [T-26-A], [Verificare che il prodotto dia la possibilità di visualizzare i tentativi di accesso], [NI],
-    [T-27-A], [Verificare che il prodotto dia la possibilità di bloccare i tentativi di accesso], [NI],
-    [T-28-A], [Verificare che il prodotto dia la possibilità di inviare email/sms in caso di evento critico], [NI],
-    [T-29-A], [Verificare che il prodotto dia la possibilità di creare nuovi Utenti], [NI],
-    [T-30-A], [Verificare che il prodotto dia la possibilità di eliminare nuovi Utenti], [NI],
-    [T-31-A], [Verificare che il prodotto dia la possibilità di promuovere il ruolo degli Utenti], [NI],
-    [T-32-A], [Verificare che il prodotto sia scalabile], [NI],
-    [T-33-A], [Verificare che il prodotto sincronizzi le informazioni tra magazzini], [NI],
-  ),
-  caption: [Tеst di Accettazione],
-)*/
 
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
