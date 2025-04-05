@@ -465,7 +465,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
     //table row
     [*MPD10*], [Code Smells], [≤ 10], [≤ 5],
     [*MPD11*], [Coefficient of Coupling], [≤ 0.4], [≤ 0.2],
-    [*MPD12*], [Cyclomatic complexity], [≤ 20], [≤ 10],
+    [*MPD12*], [Cyclomatic Complexity], [≤ 20], [≤ 10],
   ),
   caption: [Soglie metriche manutenibilità del prodotto],
 )
@@ -1043,6 +1043,26 @@ Il documento delle Norme di Progetto#super[G] rimane inferiore alla soglia di ot
 Nei primi sprint si sono registrati fino a due errori ortografici, ma in seguito _ALimitedGroup_ ha prestato maggiore attenzione a questo aspetto. Per ridurre gli errori, sono stati adottati strumenti automatici per rilevare refusi e si è posta più cura nella revisione manuale dei documenti.\
 Questo ha garantito l'assenza di errori in tutti i documenti.
 #pagebreak()
+
+
+== MPC12: _Code Coverage_
+#metriche-graph(nome: "MPC12", desc: "Grafico per periodo di MPC12", width: 100%);
+
+
+// DESCRIZIONE: MPC12: _Code Coverage_
+
+
+#pagebreak()
+
+== MPC13: _Test Success Rate_
+#metriche-graph(nome: "MPC13", desc: "Grafico per periodo di MPC13", width: 100%);
+
+
+// DESCRIZIONE: MPC13: _Test Success Rate_
+
+
+#pagebreak()
+
 == MPC14: _Quality metrics satisfied_
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
@@ -1060,6 +1080,54 @@ Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabil
 Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata.
 Al termine del progetto le ore produttive e quelle di orologio praticamente coincidono, indicando un'ottima efficienza temporale.
 #pagebreak()
+
+== MPD01: Requisiti obbligatori soddisfatti
+#metriche-graph(nome: "MPD01", desc: "Grafico per periodo di MPD01", width: 100%);
+
+
+
+// DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
+
+
+
+#pagebreak()
+
+
+== MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
+#metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02", width: 100%);
+
+
+// DESCRIZIONE: MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
+
+
+#pagebreak()
+
+
+== MPD04: _Statement Coverage_
+#metriche-graph(nome: "MPD04", desc: "Grafico per periodo di MPD04", width: 100%);
+
+
+// DESCRIZIONE: MPD04: _Statement Coverage_
+
+
+#pagebreak()
+
+
+== MPD05: _Response Time_
+#metriche-graph(nome: "MPD05", desc: "Grafico per periodo di MPD05", width: 100%);
+
+// DESCRIZIONE: MPD05: _Response Time_
+
+#pagebreak()
+
+== MPD06: _Cyclomatic Complexity_
+#metriche-graph(nome: "MPD06", desc: "Grafico per periodo di MPD06", width: 100%);
+
+// DESCRIZIONE: MPD06: _Cyclomatic Complexity_
+
+
+#pagebreak()
+
 
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
