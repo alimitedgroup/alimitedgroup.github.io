@@ -1251,8 +1251,8 @@ In questo sprint#super[G] vengono pianificate le seguenti attività:
 - Iniziare la redazione del documento di "Specifica Tecnica#super[G]" iniziando a stilare:
   - Struttura base del documento;
   - Tecnologie per la codifica;
-  - Archittetura logica;
-  - Archittetura di _deployment_.
+  - Architettura logica;
+  - Architettura di _deployment_.
 - Iniziare la redazione del "Manuale Utente#super[G]", rendendolo fruibile sia in sua versione _.pdf_ sia nella versione _web_ nel sito del gruppo.
 
 Il Responsabile#super[G] dovrà contattare l'azienda #M31 per fissare una riunione per discutere sulle prossime scelte da attuare nella fase della _Product Baseline#super[G]_.
