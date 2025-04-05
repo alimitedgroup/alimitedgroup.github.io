@@ -1442,15 +1442,15 @@ Nel dettaglio:
 - Aggiunta delle nuove misurazioni nel Piano di Qualifica#super[G] con aggiornamento eventuale delle Norme di Progetto#super[G];
 - Redazione del verbali interni ed esterni delle riunioni effettuate;
 - Terminare la redazione della Specifica Tecnica#super[G]:
-  - Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse#super[G]; 
+  - Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse#super[G];
   - Aggiungere informazioni sul funzionamento dei _router_ e del _main_ dei vari microservizi;
   - Completare la progettazione e descrizione per il microservizio di API#super[G] Gateway;
   - Completare la progettazione e descrizione per il microservizio Notification;
   - Aggiungere informazioni sulla telemetria;
 - Terminare la redazione del Manuale Utente#super[G]:
   - Aggiunta informazioni sui nuovi endpoint;
-  - Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test#super[G]; 
-  - Aggiungere informazioni sull'uso di Grafana#super[G]; 
+  - Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test#super[G];
+  - Aggiungere informazioni sull'uso di Grafana#super[G];
 - Terminare la realizzazione del _Minimum Viable Product#super[G]_:
   - Aggiornare microservizio di Api Gateway per supportare i nuovi microservizi;
   - Inserire i test#super[G] di integrazione per il microservizio Order/Transfer;
@@ -1497,7 +1497,7 @@ Durante questo sprint#super[G] si sono concretizzati i seguenti rischi:
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 Per i seguenti motivi:
-- RI2: alcuni impegni improvvisi hanno determinato un rallentamento dei lavori nella prima settimana dello _sprint#super[G]_. 
+- RI2: alcuni impegni improvvisi hanno determinato un rallentamento dei lavori nella prima settimana dello _sprint#super[G]_.
 
 ===== Valutazione di efficacia delle strategie di mitigazione dei rischi
 
