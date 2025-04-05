@@ -153,7 +153,7 @@
         <mxCell id="edjc87ROEW-UDJRNRrAj-48" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="edjc87ROEW-UDJRNRrAj-46" vertex="1">
           <mxGeometry x="111" width="44.53" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="edjc87ROEW-UDJRNRrAj-49" value="+ ApplyStockUpdate(goods: GoodStock*)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="edjc87ROEW-UDJRNRrAj-46" vertex="1">
+        <mxCell id="edjc87ROEW-UDJRNRrAj-49" value="+ ApplyStockUpdate(goods: GoodStock[*])" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="edjc87ROEW-UDJRNRrAj-46" vertex="1">
           <mxGeometry y="72" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="wqmk5dc7IV8bOijQdKz9-40" value="" style="endArrow=none;html=1;rounded=0;endFill=0;startFill=0;" parent="edjc87ROEW-UDJRNRrAj-46" edge="1">

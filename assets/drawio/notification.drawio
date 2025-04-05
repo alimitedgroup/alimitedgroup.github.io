@@ -357,7 +357,7 @@
         <mxCell id="OBRc719ktha6-VC057VR-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="OBRc719ktha6-VC057VR-1" vertex="1">
           <mxGeometry y="50" width="440" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="OBRc719ktha6-VC057VR-4" value="+ NewRuleRepository(broker.NatsMessageBroker): (RuleRepositoryImpl, error)&lt;br&gt;+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId*, error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="OBRc719ktha6-VC057VR-1" vertex="1">
+        <mxCell id="OBRc719ktha6-VC057VR-4" value="+ NewRuleRepository(broker.NatsMessageBroker): (RuleRepositoryImpl, error)&lt;br&gt;+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="OBRc719ktha6-VC057VR-1" vertex="1">
           <mxGeometry y="58" width="440" height="102" as="geometry" />
         </mxCell>
         <mxCell id="OBRc719ktha6-VC057VR-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
@@ -372,7 +372,7 @@
             <mxPoint x="1238.75" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OBRc719ktha6-VC057VR-9" value="+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId*, error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="OBRc719ktha6-VC057VR-9" value="+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="790" width="500" height="90" as="geometry" />
         </mxCell>
       </root>
@@ -405,7 +405,7 @@
         <mxCell id="-5K9T_KzksJM0ydLI5D7-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="-5K9T_KzksJM0ydLI5D7-5" vertex="1">
           <mxGeometry y="90" width="400" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="-5K9T_KzksJM0ydLI5D7-8" value="+ NewBusiness(BusinessParams): Business&lt;br&gt;+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): (types.QueryRuleWithId*, error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error&lt;br&gt;+ RecordStockUpdate(types.AddStockUpdateCmd): error&lt;br&gt;+ GetCurrentQuantityByGoodID(string): types.GetRuleResultResponse&lt;br&gt;+ PublishStockAlert(types.StockAlertEvent): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-5K9T_KzksJM0ydLI5D7-5" vertex="1">
+        <mxCell id="-5K9T_KzksJM0ydLI5D7-8" value="+ NewBusiness(BusinessParams): Business&lt;br&gt;+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error&lt;br&gt;+ RecordStockUpdate(types.AddStockUpdateCmd): error&lt;br&gt;+ GetCurrentQuantityByGoodID(string): types.GetRuleResultResponse&lt;br&gt;+ PublishStockAlert(types.StockAlertEvent): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-5K9T_KzksJM0ydLI5D7-5" vertex="1">
           <mxGeometry y="98" width="400" height="142" as="geometry" />
         </mxCell>
         <mxCell id="-5K9T_KzksJM0ydLI5D7-9" value="BusinessParams" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -440,7 +440,7 @@
             <mxPoint x="2008.75" y="830" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-4" value="+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): (types.QueryRuleWithId*, error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-4" value="+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1750" y="830" width="400" height="80" as="geometry" />
         </mxCell>
         <mxCell id="WytTIRIDDDP2WNZlcsUT-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;endSize=8;startArrow=none;startFill=0;" parent="1" source="WytTIRIDDDP2WNZlcsUT-6" target="-5K9T_KzksJM0ydLI5D7-5" edge="1">
@@ -553,7 +553,7 @@
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-18" value="AddStockUpdateCmd" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1195" y="245" width="140" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-19" value="+ WarehouseID: string&lt;br&gt;+ Type: string&lt;br&gt;+ Goods: StockGood*&lt;br&gt;+ OrderID: string&lt;br&gt;+ TransferID: string&lt;br&gt;+ Timestamp: int64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHvlUfkfVHnB-vtfJ5oJ-18" vertex="1">
+        <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-19" value="+ WarehouseID: string&lt;br&gt;+ Type: string&lt;br&gt;+ Goods: StockGood[*]&lt;br&gt;+ OrderID: string&lt;br&gt;+ TransferID: string&lt;br&gt;+ Timestamp: int64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHvlUfkfVHnB-vtfJ5oJ-18" vertex="1">
           <mxGeometry y="26" width="140" height="94" as="geometry" />
         </mxCell>
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="xHvlUfkfVHnB-vtfJ5oJ-18" vertex="1">

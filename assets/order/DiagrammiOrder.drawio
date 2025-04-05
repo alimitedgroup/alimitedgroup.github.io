@@ -85,7 +85,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-23" value="+ GetOrder(ctx: context.Context, cmd: GetOrderCmd):&amp;nbsp;(Order, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-20" vertex="1">
           <mxGeometry y="72" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-24" value="+ GetAllOrders(ctx: context.Context)&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: &lt;/span&gt;Order*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-20" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-24" value="+ GetAllOrders(ctx: context.Context)&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: &lt;/span&gt;Order[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-20" vertex="1">
           <mxGeometry y="100" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jn0dz8nA8oYyJj1VV6c0-13" value="" style="endArrow=none;html=1;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-20" edge="1">
@@ -109,7 +109,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-29" value="+ GetGlobalStock(goodId: GoodID): GoodStock" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-25" vertex="1">
           <mxGeometry y="110" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-30" value="+ GetWarehouses(): Warehouse*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-25" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-30" value="+ GetWarehouses(): Warehouse[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-25" vertex="1">
           <mxGeometry y="140" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="_EDEWbCzyQWsq8gEv2_8-7" value="" style="endArrow=none;html=1;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-25" edge="1">
@@ -493,7 +493,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-131" value="+ GetTransfer(transferId: TransferID):&amp;nbsp;(Transfer, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-128" vertex="1">
           <mxGeometry y="72" width="250" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-132" value="+ GetAllTransfers(): Transfer*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-128" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-132" value="+ GetAllTransfers(): Transfer[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-128" vertex="1">
           <mxGeometry y="110" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="_EDEWbCzyQWsq8gEv2_8-26" value="" style="endArrow=none;html=1;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-128" edge="1">
@@ -580,7 +580,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-152" value="+ GetGlobalStock(goodId: string): int64" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-150" vertex="1">
           <mxGeometry y="169" width="280" height="39" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-153" value="+ GetWarehouses(): string*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-150" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-153" value="+ GetWarehouses(): string[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-150" vertex="1">
           <mxGeometry x="1" y="200" width="280" height="39" as="geometry" />
         </mxCell>
         <mxCell id="Nq6vmR97yDklxZWr4LKI-154" value="&lt;b&gt;IStockRepository&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-150" vertex="1">
@@ -622,7 +622,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-164" value="+ GetTransfer(transferId: string): (Transfer, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-158" vertex="1">
           <mxGeometry y="63" width="280" height="37" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-165" value="+ GetTransfers(): Transfer*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-158" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-165" value="+ GetTransfers(): Transfer[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-158" vertex="1">
           <mxGeometry y="80" width="280" height="49" as="geometry" />
         </mxCell>
         <mxCell id="_EDEWbCzyQWsq8gEv2_8-25" value="" style="endArrow=none;html=1;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-158" edge="1">
@@ -652,7 +652,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-172" value="+ GetOrder(orderId: string): (Order, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-166" vertex="1">
           <mxGeometry y="63" width="280" height="37" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-173" value="+ GetOrders(): Order*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-166" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-173" value="+ GetOrders(): Order[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-166" vertex="1">
           <mxGeometry x="1" y="90" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="_EDEWbCzyQWsq8gEv2_8-32" value="" style="endArrow=none;html=1;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-166" edge="1">
@@ -715,7 +715,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-190" value="+ GetOrder(orderId: OrderID):&amp;nbsp;(Order, error)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-187" vertex="1">
           <mxGeometry y="72" width="250" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="Nq6vmR97yDklxZWr4LKI-191" value="+ GetAllOrder(): Order*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-187" vertex="1">
+        <mxCell id="Nq6vmR97yDklxZWr4LKI-191" value="+ GetAllOrder(): Order[*]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-187" vertex="1">
           <mxGeometry y="100" width="250" height="20" as="geometry" />
         </mxCell>
         <mxCell id="jn0dz8nA8oYyJj1VV6c0-20" value="" style="endArrow=none;html=1;rounded=0;" parent="Nq6vmR97yDklxZWr4LKI-187" edge="1">
@@ -935,7 +935,7 @@
         <mxCell id="Nq6vmR97yDklxZWr4LKI-253" value="+ ContactWarehouseUseCase: IContactWarehousesUseCase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Nq6vmR97yDklxZWr4LKI-250" vertex="1">
           <mxGeometry y="74" width="370" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="_EDEWbCzyQWsq8gEv2_8-44" value="&lt;div&gt;+ Logger: *zap.Logger&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Nq6vmR97yDklxZWr4LKI-250" vertex="1">
+        <mxCell id="_EDEWbCzyQWsq8gEv2_8-44" value="&lt;div&gt;+ Logger: zap.Logger&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Nq6vmR97yDklxZWr4LKI-250" vertex="1">
           <mxGeometry y="98" width="370" height="26" as="geometry" />
         </mxCell>
         <mxCell id="_EDEWbCzyQWsq8gEv2_8-43" value="+ Meter: metric.Meter" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Nq6vmR97yDklxZWr4LKI-250" vertex="1">
