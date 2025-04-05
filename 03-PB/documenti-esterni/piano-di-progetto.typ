@@ -1437,28 +1437,28 @@ Durante questo sprint#super[G], abbiamo incontrato i rischi _RT2: Rischio Tecnol
 Con il nono sprint#super[G] si continuano le attività per la _Product Baseline#super[G]_ per cercare di avere il prodotto finale accettato entro la fine dello stesso. \
 Nel dettaglio:
 
-- Trascrizione dei test eseguiti nel Piano di Qualifica;
+- Trascrizione dei test#super[G] eseguiti nel Piano di Qualifica#super[G];
 - Completare la progettazione e descrizione per il microservizio Notification;
-- Aggiunta delle nuove misurazioni nel Piano di Qualifica con aggiornamento eventuale delle Norme di Progetto;
+- Aggiunta delle nuove misurazioni nel Piano di Qualifica#super[G] con aggiornamento eventuale delle Norme di Progetto#super[G];
 - Redazione del verbali interni ed esterni delle riunioni effettuate;
-- Terminare la redazione della Specifica Tecnica:
-  - Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse;
+- Terminare la redazione della Specifica Tecnica#super[G]:
+  - Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse#super[G]; 
   - Aggiungere informazioni sul funzionamento dei _router_ e del _main_ dei vari microservizi;
-  - Completare la progettazione e descrizione per il microservizio di API Gateway;
+  - Completare la progettazione e descrizione per il microservizio di API#super[G] Gateway;
   - Completare la progettazione e descrizione per il microservizio Notification;
   - Aggiungere informazioni sulla telemetria;
-- Terminare la redazione del Manuale Utente:
+- Terminare la redazione del Manuale Utente#super[G]:
   - Aggiunta informazioni sui nuovi endpoint;
-  - Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test;
-  - Aggiungere informazioni sull'uso di Grafana;
-- Terminare la realizzazione del _Minimum Viable Product_:
+  - Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test#super[G]; 
+  - Aggiungere informazioni sull'uso di Grafana#super[G]; 
+- Terminare la realizzazione del _Minimum Viable Product#super[G]_:
   - Aggiornare microservizio di Api Gateway per supportare i nuovi microservizi;
-  - Inserire i test di integrazione per il microservizio Order/Transfer;
-  - Realizzare test automatici con curl per test di accettazione;
-  - Integrare Grafana nei vari microservizi;
+  - Inserire i test#super[G] di integrazione per il microservizio Order/Transfer;
+  - Realizzare test#super[G] automatici con curl per test#super[G] di accettazione;
+  - Integrare Grafana#super[G] nei vari microservizi;
   - Risolvere CVE-2025-30204;
   - Testare microservizio Notification;
-- Realizzare i test di accettazione con #M31.
+- Realizzare i test#super[G] di accettazione con #M31.
 
 ==== Rischi attesi
 
@@ -1497,7 +1497,7 @@ Durante questo sprint#super[G] si sono concretizzati i seguenti rischi:
 - RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
 
 Per i seguenti motivi:
-- RI2: alcuni impegni improvvisi hanno determinato un rallentamento dei lavori nella prima settimana dello _sprint_.
+- RI2: alcuni impegni improvvisi hanno determinato un rallentamento dei lavori nella prima settimana dello _sprint#super[G]_. 
 
 ===== Valutazione di efficacia delle strategie di mitigazione dei rischi
 
@@ -1506,13 +1506,13 @@ Per la mitigazione dei rischi incontrati, sono state adottate le seguenti strate
 
 ==== Rivisitazione migliorativa del piano per le attività future
 
-Questo _sprint_ è stato l'ultimo del progetto, durante lo stesso abbiamo completato quanto necessario per la presentazione della _Product Baseline_. Durante il progetto, _ALimitedGroup_ ha compreso davvero cosa significhi effettivamente lo sviluppo di un _Software_ e tutti faranno tesoro di quanto imparato.
+Questo _sprint#super[G]_ è stato l'ultimo del progetto, durante lo stesso abbiamo completato quanto necessario per la presentazione della _Product Baseline#super[G]_. Durante il progetto, _ALimitedGroup_ ha compreso davvero cosa significhi effettivamente lo sviluppo di un _Software_ e tutti faranno tesoro di quanto imparato.
 
 === Retrospettiva
 
-Durante l'ultimo _sprint_ i membri di _ALimitedGroup_ si sono impegnati nel massimo delle loro possibilità per terminare tutto il lavoro preventivato entro la fine prevista dello stesso, obiettivo che è stato raggiunto nonostante le difficoltà incontrate.
+Durante l'ultimo _sprint#super[G]_ i membri di _ALimitedGroup_ si sono impegnati nel massimo delle loro possibilità per terminare tutto il lavoro preventivato entro la fine prevista dello stesso, obiettivo che è stato raggiunto nonostante le difficoltà incontrate.
 
-In conclusione, il gruppo è riuscito con successo a portare a termine il lavoro ed è ora pronto, ricevuta anche l'accettazione del _Minimum Viable Product_ da parte di #M31, ad affrontare la fase finale della _Product Baseline_.
+In conclusione, il gruppo è riuscito con successo a portare a termine il lavoro ed è ora pronto, ricevuta anche l'accettazione del _Minimum Viable Product#super[G]_ da parte di #M31, ad affrontare la fase finale della _Product Baseline#super[G]_.
 
 #pagebreak()
 
@@ -1570,11 +1570,11 @@ In conclusione, il gruppo è riuscito con successo a portare a termine il lavoro
   )
 }
 
-Come si evidenzia dalla Tabella 40, ovvero le risorse rimanenti alla fine dell'ultimo _sprint_, il gruppo termina la realizzazione di quanto necessario per affrontare la _Product Baseline_ con un saldo rimanente di *470€*, spendendo dunque un totale di *12.460€*, al sotto del saldo inizialmente a disposizione pari a *12.930€*.
+Come si evidenzia dalla Tabella 40, ovvero le risorse rimanenti alla fine dell'ultimo _sprint_#super[G], il gruppo termina la realizzazione di quanto necessario per affrontare la _Product Baseline#super[G]_ con un saldo rimanente di *470€*, spendendo dunque un totale di *12.460€*, al sotto del saldo inizialmente a disposizione pari a *12.930€*.
 
 Dalla Tabella 41 si evidenzia invece l'impegno concreto apportato al progetto da parte di tutti i componenti del gruppo, con un un numero di ore consumate totale inferiore rispetto a quanto inizialmente preventivato.
 
-Come analizzato nella @plt, tra _Requirements and Technology Baseline_ e _Product Baseline_ è stato necessario modificare il quantitativo di ore previsto a ciascun ruolo: il consumo percentuale di ciascun ruolo è esposto qui di seguito:
+Come analizzato nella @plt, tra _Requirements and Technology Baseline#super[G]_ e _Product Baseline#super[G]_ è stato necessario modificare il quantitativo di ore previsto a ciascun ruolo: il consumo percentuale di ciascun ruolo è esposto qui di seguito:
 
 #pie-chart(
   (percentuale: 6.2, titolo: "Responsabile", legenda: 2),
