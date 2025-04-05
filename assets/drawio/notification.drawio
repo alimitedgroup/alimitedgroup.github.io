@@ -248,7 +248,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="DbbCqlpyY-Hrh_AI_-h0" name="adapterout">
-    <mxGraphModel dx="1589" dy="1006" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+    <mxGraphModel dx="1432" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -291,7 +291,7 @@
         <mxCell id="IfY69GlKI_L2ycyhRUny-5" value="NotificationAdapter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1540" y="450" width="390" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="IfY69GlKI_L2ycyhRUny-6" value="- ruleRepo: portout.RuleRepository&lt;br&gt;- writeApi: api.WriteAPI&lt;br&gt;- queryApi: api.QueryAPI&lt;br&gt;- influx: influxdb2.Client&lt;br&gt;- brk: *broker.NatsMessageBroker&lt;br&gt;- cfg: *config.NotificationConfig&lt;br&gt;- str: jetstream.Stream&lt;br&gt;&lt;div&gt;- logger: *zap.Logger&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="IfY69GlKI_L2ycyhRUny-5" vertex="1">
+        <mxCell id="IfY69GlKI_L2ycyhRUny-6" value="- ruleRepo: portout.RuleRepository&lt;br&gt;- writeApi: api.WriteAPI&lt;br&gt;- queryApi: api.QueryAPI&lt;br&gt;- influx: influxdb2.Client&lt;br&gt;- brk: broker.NatsMessageBroker&lt;br&gt;- cfg: config.NotificationConfig&lt;br&gt;- str: jetstream.Stream&lt;br&gt;&lt;div&gt;- logger: zap.Logger&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="IfY69GlKI_L2ycyhRUny-5" vertex="1">
           <mxGeometry y="26" width="390" height="124" as="geometry" />
         </mxCell>
         <mxCell id="IfY69GlKI_L2ycyhRUny-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="IfY69GlKI_L2ycyhRUny-5" vertex="1">
@@ -357,7 +357,7 @@
         <mxCell id="OBRc719ktha6-VC057VR-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="OBRc719ktha6-VC057VR-1" vertex="1">
           <mxGeometry y="50" width="440" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="OBRc719ktha6-VC057VR-4" value="+ NewRuleRepository(broker.NatsMessageBroker): (RuleRepositoryImpl, error)&lt;br&gt;+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): ([]types.QueryRuleWithId, error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="OBRc719ktha6-VC057VR-1" vertex="1">
+        <mxCell id="OBRc719ktha6-VC057VR-4" value="+ NewRuleRepository(broker.NatsMessageBroker): (RuleRepositoryImpl, error)&lt;br&gt;+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="OBRc719ktha6-VC057VR-1" vertex="1">
           <mxGeometry y="58" width="440" height="102" as="geometry" />
         </mxCell>
         <mxCell id="OBRc719ktha6-VC057VR-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
@@ -372,14 +372,14 @@
             <mxPoint x="1238.75" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OBRc719ktha6-VC057VR-9" value="+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId[], error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="OBRc719ktha6-VC057VR-9" value="+ AddRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="790" width="500" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="38ewbj9kUnNSsEywLc06" name="business">
-    <mxGraphModel dx="1589" dy="1006" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+    <mxGraphModel dx="1432" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -405,7 +405,7 @@
         <mxCell id="-5K9T_KzksJM0ydLI5D7-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="-5K9T_KzksJM0ydLI5D7-5" vertex="1">
           <mxGeometry y="90" width="400" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="-5K9T_KzksJM0ydLI5D7-8" value="+ NewBusiness(BusinessParams): Business&lt;br&gt;+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): ([]types.QueryRuleWithId, error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error&lt;br&gt;+ RecordStockUpdate(types.AddStockUpdateCmd): error&lt;br&gt;+ GetCurrentQuantityByGoodID(string): types.GetRuleResultResponse&lt;br&gt;+ PublishStockAlert(types.StockAlertEvent): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-5K9T_KzksJM0ydLI5D7-5" vertex="1">
+        <mxCell id="-5K9T_KzksJM0ydLI5D7-8" value="+ NewBusiness(BusinessParams): Business&lt;br&gt;+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error&lt;br&gt;+ RecordStockUpdate(types.AddStockUpdateCmd): error&lt;br&gt;+ GetCurrentQuantityByGoodID(string): types.GetRuleResultResponse&lt;br&gt;+ PublishStockAlert(types.StockAlertEvent): error" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-5K9T_KzksJM0ydLI5D7-5" vertex="1">
           <mxGeometry y="98" width="400" height="142" as="geometry" />
         </mxCell>
         <mxCell id="-5K9T_KzksJM0ydLI5D7-9" value="BusinessParams" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -440,7 +440,7 @@
             <mxPoint x="2008.75" y="830" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WytTIRIDDDP2WNZlcsUT-4" value="+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): ([]types.QueryRuleWithId, error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="WytTIRIDDDP2WNZlcsUT-4" value="+ AddQueryRule(types.QueryRule): (uuid.UUID, error)&lt;br&gt;+ GetQueryRule(uuid.UUID): (types.QueryRule, error)&lt;br&gt;+ ListQueryRules(): (types.QueryRuleWithId[*], error)&lt;br&gt;+ EditQueryRule(uuid.UUID, types.EditRule): error&lt;br&gt;+ RemoveQueryRule(uuid.UUID): error" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1750" y="830" width="400" height="80" as="geometry" />
         </mxCell>
         <mxCell id="WytTIRIDDDP2WNZlcsUT-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;endSize=8;startArrow=none;startFill=0;" parent="1" source="WytTIRIDDDP2WNZlcsUT-6" target="-5K9T_KzksJM0ydLI5D7-5" edge="1">
@@ -478,25 +478,25 @@
         <mxCell id="oY4UZmiA4n7cq5KSJwAP-8" value="+ NewRuleChecker(RuleCheckerParams): RuleChecker&lt;br&gt;- run()&lt;br&gt;- checkAllRules()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="oY4UZmiA4n7cq5KSJwAP-5" vertex="1">
           <mxGeometry y="158" width="390" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="nS9FRfkH8_zVn9582gm6-1" value="RuleCheckerParams" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="nS9FRfkH8_zVn9582gm6-1" value="RuleCheckerParams" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="2050" y="180" width="280" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="nS9FRfkH8_zVn9582gm6-2" value="&lt;div&gt;+ Lc: fx.Lifecycle&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ Logger: *zap.Logger&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Brk: *broker.NatsMessageBroker&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Rules: portout.&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;RuleRepository&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Queries: portout.RuleQueryRepository&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Publish: portout.StockEventPublisher&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Cfg: *config.NotificationConfig&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nS9FRfkH8_zVn9582gm6-1">
+        <mxCell id="nS9FRfkH8_zVn9582gm6-2" value="&lt;div&gt;+ Lc: fx.Lifecycle&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ Logger: zap.Logger&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Brk: broker.NatsMessageBroker&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Rules: portout.&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;RuleRepository&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Queries: portout.RuleQueryRepository&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Publish: portout.StockEventPublisher&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+ Cfg: config.NotificationConfig&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="nS9FRfkH8_zVn9582gm6-1" vertex="1">
           <mxGeometry y="26" width="280" height="114" as="geometry" />
         </mxCell>
-        <mxCell id="nS9FRfkH8_zVn9582gm6-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="nS9FRfkH8_zVn9582gm6-1">
+        <mxCell id="nS9FRfkH8_zVn9582gm6-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="nS9FRfkH8_zVn9582gm6-1" vertex="1">
           <mxGeometry y="140" width="280" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="nS9FRfkH8_zVn9582gm6-4" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="nS9FRfkH8_zVn9582gm6-1">
+        <mxCell id="nS9FRfkH8_zVn9582gm6-4" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="nS9FRfkH8_zVn9582gm6-1" vertex="1">
           <mxGeometry y="148" width="280" height="2" as="geometry" />
         </mxCell>
-        <mxCell id="nS9FRfkH8_zVn9582gm6-5" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=open;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.43;entryY=1.667;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="oY4UZmiA4n7cq5KSJwAP-5" target="nS9FRfkH8_zVn9582gm6-4">
+        <mxCell id="nS9FRfkH8_zVn9582gm6-5" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=open;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.43;entryY=1.667;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="oY4UZmiA4n7cq5KSJwAP-5" target="nS9FRfkH8_zVn9582gm6-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2130" y="450" as="sourcePoint" />
             <mxPoint x="1990" y="292" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="nS9FRfkH8_zVn9582gm6-6" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="nS9FRfkH8_zVn9582gm6-5">
+        <mxCell id="nS9FRfkH8_zVn9582gm6-6" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="nS9FRfkH8_zVn9582gm6-5" vertex="1" connectable="0">
           <mxGeometry x="-0.04" y="-3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -505,7 +505,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="nBUoGjxfvPCDbfBWSscd" name="types">
-    <mxGraphModel dx="927" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+    <mxGraphModel dx="1432" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -547,13 +547,13 @@
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-13" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHvlUfkfVHnB-vtfJ5oJ-10" vertex="1">
           <mxGeometry y="88" width="110" height="2" as="geometry" />
         </mxCell>
-        <mxCell id="Tg6DcawJW0mK5cQVVQci-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" edge="1" parent="1" source="xHvlUfkfVHnB-vtfJ5oJ-18" target="xHvlUfkfVHnB-vtfJ5oJ-22">
+        <mxCell id="Tg6DcawJW0mK5cQVVQci-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" parent="1" source="xHvlUfkfVHnB-vtfJ5oJ-18" target="xHvlUfkfVHnB-vtfJ5oJ-22" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-18" value="AddStockUpdateCmd" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1195" y="245" width="140" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-19" value="+ WarehouseID: string&lt;br&gt;+ Type: string&lt;br&gt;+ Goods: []StockGood&lt;br&gt;+ OrderID: string&lt;br&gt;+ TransferID: string&lt;br&gt;+ Timestamp: int64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHvlUfkfVHnB-vtfJ5oJ-18" vertex="1">
+        <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-19" value="+ WarehouseID: string&lt;br&gt;+ Type: string&lt;br&gt;+ Goods: StockGood[*]&lt;br&gt;+ OrderID: string&lt;br&gt;+ TransferID: string&lt;br&gt;+ Timestamp: int64" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHvlUfkfVHnB-vtfJ5oJ-18" vertex="1">
           <mxGeometry y="26" width="140" height="94" as="geometry" />
         </mxCell>
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="xHvlUfkfVHnB-vtfJ5oJ-18" vertex="1">
@@ -586,7 +586,7 @@
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-29" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="xHvlUfkfVHnB-vtfJ5oJ-26" vertex="1">
           <mxGeometry y="88" width="160" height="2" as="geometry" />
         </mxCell>
-        <mxCell id="Tg6DcawJW0mK5cQVVQci-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" edge="1" parent="1" source="xHvlUfkfVHnB-vtfJ5oJ-30" target="xHvlUfkfVHnB-vtfJ5oJ-34">
+        <mxCell id="Tg6DcawJW0mK5cQVVQci-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" parent="1" source="xHvlUfkfVHnB-vtfJ5oJ-30" target="xHvlUfkfVHnB-vtfJ5oJ-34" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xHvlUfkfVHnB-vtfJ5oJ-30" value="StockAlertEvent" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">

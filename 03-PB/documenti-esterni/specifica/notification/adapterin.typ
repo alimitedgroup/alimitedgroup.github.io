@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/notification_adapterin.svg"),
-  caption: [_Adapter-in_],
+  caption: [_Adapter-in_ di Notification],
 )
 
 Questi tipi sono stati utilizzati per realizzare la parte di "ingresso" dell'architettura esagonale.

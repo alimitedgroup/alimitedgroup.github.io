@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/notification_business.svg"),
-  caption: [_Business logic_ del microservizio],
+  caption: [_Business logic_ del microservizio Notification],
 )
 
 ===== BusinessParams <BusinessParams>

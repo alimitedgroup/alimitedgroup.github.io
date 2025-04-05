@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/apigateway_types.svg"),
-  caption: [Tipi comuni a tutto il microservizio],
+  caption: [Tipi comuni a tutto il microservizio API Gateway],
 )
 
 In Go, gli _import_ devono obbligatoriamente formare un grafo aciclico;

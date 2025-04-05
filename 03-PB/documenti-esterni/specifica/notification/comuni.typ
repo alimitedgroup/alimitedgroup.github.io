@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/notification_types.svg"),
-  caption: [Tipi comuni a tutto il microservizio],
+  caption: [Tipi comuni a tutto il microservizio Notification],
 )
 
 In Go, gli _import_ devono obbligatoriamente formare un grafo aciclico;

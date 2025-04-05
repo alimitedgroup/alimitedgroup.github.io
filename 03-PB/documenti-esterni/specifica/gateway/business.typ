@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/apigateway_business.svg"),
-  caption: [_Business logic_ del microservizio],
+  caption: [_Business logic_ del microservizio API Gateway],
 )
 
 In questa sezione sono descritti i tipi relativi alla _business logic_,
