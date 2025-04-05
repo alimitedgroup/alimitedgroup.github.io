@@ -14,7 +14,7 @@
       date: datetime(day: 04, month: 04, year: 2025),
       autore: p.emanuele,
       verifica: p.matteo,
-      descr: "Aggiornamento Pianificazione nel lungo termine " + [(@plt). ],
+      descr: "Redazione per il nono sprint e conclusioni " + [(@sprint9 e @conclusioni). ],
     ),
     (
       vers: "1.3.0",
@@ -1516,7 +1516,7 @@ In conclusione, il gruppo è riuscito con successo a portare a termine il lavoro
 
 #pagebreak()
 
-= Riassunto delle risorse utilizzate durante il progetto
+= Riassunto delle risorse utilizzate durante il progetto <conclusioni>
 
 \ \
 
