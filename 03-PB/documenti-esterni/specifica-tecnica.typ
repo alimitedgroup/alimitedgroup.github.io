@@ -2068,7 +2068,7 @@ Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferim
 
 ===== TransferUpdateGood <OrderTransferUpdateGood>
 #figure(
-  image("../../assets/order/TransferUpdateGood.png", width: 30%),
+  image("../../assets/order/TransferUpdateGood.png", width: 50%),
   caption: "Order - TransferUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
