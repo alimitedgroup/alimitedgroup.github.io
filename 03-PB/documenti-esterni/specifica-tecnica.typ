@@ -550,6 +550,10 @@ Il pattern _Strategy_ viene utilizzato quando una componente di natura algoritmi
 ==== Utilizzo del pattern nel progetto
 Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti necessita sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto il controllo di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e nessun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
 
+Nel progetto, il pattern _Strategy_ è stato applicato per il calcolo della disponibilità delle merci nei magazzini. L'interfaccia `ICalculateAvailabilityUseCase` definisce il contratto per tutte le implementazioni che calcolano la disponibilità.
+Attualmente, è presente un'unica implementazione di questa interfaccia, denominata `SimpleCalculateAvailabilityService`. Questa implementazione utilizza un algoritmo base per determinare la disponibilità delle merci, considerando i dati forniti dai magazzini.
+Future implementazioni potrebbero includere algoritmi più complessi, come quelli basati su intelligenza artificiale o machine learning, per ottimizzare ulteriormente il calcolo della disponibilità.
+
 #pagebreak()
 
 == Microservizi sviluppati
