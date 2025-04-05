@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/apigateway_adapterin.svg"),
-  caption: [_Adapter-in_],
+  caption: [_Adapter-in_ di API Gateway],
 )
 
 Questi tipi sono stati utilizzati per realizzare la parte di "ingresso" dell'architettura esagonale.

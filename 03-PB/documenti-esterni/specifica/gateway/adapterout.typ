@@ -6,7 +6,7 @@
 
 #figure(
   image("../../../../assets/drawio/apigateway_adapterout.svg"),
-  caption: [_Adapter-out_],
+  caption: [_Adapter-out_ di API Gateway],
 )
 
 Questi tipi sono stati utilizzati per realizzare la parte di "uscita" dell'architettura esagonale.
