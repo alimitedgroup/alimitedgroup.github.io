@@ -103,7 +103,7 @@ La verifica#super[G] è affidata reciprocamente a persone appartenenti a gruppi 
 = Tabella delle decisioni e delle azioni
 #tabella-decisioni(
   issue(182),
-  "Completare codifica i test per il microservizio Notification (entro 4 Aprile 2025)",
+  "Completare la progettazione e descrizione per il microservizio Notification entro il giorno (entro 2 Aprile 2025)",
   issue(170),
   "Completare la progettazione e descrizione per il microservizio di API Gateway (entro 2 Aprile 2025)",
   issue(171),

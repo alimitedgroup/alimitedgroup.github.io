@@ -3,12 +3,19 @@
 #let nome-documento = [Piano di Progetto]
 
 #set list(indent: 0.5em)
-#let ver = [1.3.0]
+#let ver = [2.0.0]
 #show: body => importantdocs(
-  data: datetime(day: 24, month: 02, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [esterno],
-  stato: [Approvato per RTB],
+  stato: [Approvato],
   versioni: (
+    (
+      vers: "2.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.emanuele,
+      verifica: p.matteo,
+      descr: "Aggiornamento Pianificazione nel lungo termine " + [(@plt). ],
+    ),
     (
       vers: "1.3.0",
       date: datetime(day: 31, month: 03, year: 2025),
@@ -657,7 +664,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       Inserire all'interno del documento le tecnologie per la codifica: \ _sprint_ 7. \ \
       Inserire informazioni sui microservizi implementati all'interno dell'MVP: \ _sprint_ 8 e _sprint_ 9. \ \
       Aggiungere informazioni su analisi statica e dinamica: \ _sprint_ 8.],
-    [In redazione],
+    [Completato],
 
     [*Redazione del Manuale Utente*],
     [Redazione delle seguenti parti:
@@ -692,7 +699,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
     [Correzione con aggiunta della sezione "Strumenti a supporto" : \ _sprint_ 7. \ \
       Correzione con integrazione della sezione "Sviluppo": \ _sprint_ 7. \ \
       Aggiornamento misurazioni: \ da _sprint_ 7 a _sprint_ 9.],
-    [In redazione],
+    [Completato],
 
     [*Correzione Piano di Qualifica*],
     [Correzione delle seguenti parti:
@@ -703,7 +710,7 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
       Correzione con aggiunta di indicatori quantitativi riguardanti i test da effettuare: \ _sprint_ 8. \ \
       Correzione con aggiunta di misurazioni che valutino la qualità del lavoro svolto: \ _sprint_ 9.
     ],
-    [In redazione],
+    [Completato],
 
     [*Ampliamento del Glossario*],
     [Aggiornamento del glossario con l'aggiunta delle seguenti parti:
@@ -738,12 +745,12 @@ Seguiranno ora le attività previste per la *_Requirements and Technology Baseli
         - Notifications: da _sprint_ 8 a _sprint_ 9. \ \
       Esecuzione dei test previsti dal Piano di Qualifica: da _sprint_ 7 a _sprint_ 9. \ \
       Integrazione di Grafana: _sprint_ 9.],
-    [In fase di implementazione],
+    [Completato e accettato da #M31],
 
     [*Aggiornameto del Piano di Progetto*],
     [Aggiornamento della Pianificazione a lungo termine e della Pianificazione a breve termine.],
     [Aggiornamento: tutti gli _sprint_.],
-    [In redazione],
+    [Completato],
   ),
   caption: [Attività previste per la _Product Baseline (PB)_],
 )
@@ -1409,3 +1416,174 @@ In questo ottavo sprint#super[G], ci siamo concentrati principalmente sulla real
 Abbiamo completato la progettazione e i test#super[G] dei microservizi _Authenticator_, _Notifications_, _Order_, _Transfer_, e _Client_. Inoltre, abbiamo continuato la redazione del documento di "Specifica Tecnica#super[G]" e del "Manuale Utente#super[G]".
 
 Durante questo sprint#super[G], abbiamo incontrato i rischi _RT2: Rischio Tecnologico legato a errori nel codice_ e _RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale_. Le strategie di mitigazione adottate si sono rivelate efficaci nel gestire questi rischi.
+
+#pagebreak()
+
+=== Sprint 9 <sprint9>
+
+#table(
+  columns: 2,
+  stroke: none,
+  inset: (x: 0pt),
+  column-gutter: 1em,
+  [Inizio:], strong[24-03-2025],
+  [Fine prevista:], strong[04-04-2025],
+  [Fine reale:], strong[04-04-2025],
+  [Giorni di ritardo:], strong[0],
+)
+
+==== Informazioni generali e attività da svolgere <sprint9intro>
+
+Con il nono sprint#super[G] si continuano le attività per la _Product Baseline#super[G]_ per cercare di avere il prodotto finale accettato entro la fine dello stesso. \
+Nel dettaglio:
+
+- Trascrizione dei test eseguiti nel Piano di Qualifica;
+- Completare la progettazione e descrizione per il microservizio Notification;
+- Aggiunta delle nuove misurazioni nel Piano di Qualifica con aggiornamento eventuale delle Norme di Progetto;
+- Redazione del verbali interni ed esterni delle riunioni effettuate;
+- Terminare la redazione della Specifica Tecnica:
+  - Aggiungere informazioni sul funzionamento di Order/Transfer e Warehouse;
+  - Aggiungere informazioni sul funzionamento dei _router_ e del _main_ dei vari microservizi;
+  - Completare la progettazione e descrizione per il microservizio di API Gateway;
+  - Completare la progettazione e descrizione per il microservizio Notification;
+  - Aggiungere informazioni sulla telemetria;
+- Terminare la redazione del Manuale Utente:
+  - Aggiunta informazioni sui nuovi endpoint;
+  - Aggiunta informazioni per utilizzo dello script con comandi curl per realizzare i test;
+  - Aggiungere informazioni sull'uso di Grafana;
+- Terminare la realizzazione del _Minimum Viable Product_:
+  - Aggiornare microservizio di Api Gateway per supportare i nuovi microservizi;
+  - Inserire i test di integrazione per il microservizio Order/Transfer;
+  - Realizzare test automatici con curl per test di accettazione;
+  - Integrare Grafana nei vari microservizi;
+  - Risolvere CVE-2025-30204;
+  - Testare microservizio Notification;
+- Realizzare i test di accettazione con #M31.
+
+==== Rischi attesi
+
+I componenti di _ALimitedGroup_ ritengono sia possibile il riscontro di questo rischio:
+
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
+
+#pagebreak()
+==== Preventivo
+
+Si prospetta l'utilizzo delle seguenti risorse:
+
+#impegni(9, posizioni-legenda: (1, 4, 1, 2, -2, -2), "Sprint 9 - Preventivo per componente", "Sprint 8 - Preventivo")
+
+#v(2em)
+==== Consuntivo
+#v(1em)
+
+#impegni(
+  9,
+  preventivo: true,
+  posizioni-legenda: (1, 4, 1, 2, -2, -2),
+  "Sprint 9 - Consuntivo per componente",
+  "Sprint 9 - Consuntivo",
+)
+
+#v(1em)
+==== Aggiornamento delle risorse rimanenti
+#prospetto-orario(9, "Sprint 9 - Variazione nelle risorse disponibili")
+
+#v(1em)
+
+==== Rischi incontrati
+
+Durante questo sprint#super[G] si sono concretizzati i seguenti rischi:
+- RI2: Rischio Individuale derivato da improvviso impegno o indisponibilità personale.
+
+Per i seguenti motivi:
+- RI2: alcuni impegni improvvisi hanno determinato un rallentamento dei lavori nella prima settimana dello _sprint_.
+
+===== Valutazione di efficacia delle strategie di mitigazione dei rischi
+
+Per la mitigazione dei rischi incontrati, sono state adottate le seguenti strategie:
+- RI2: è stato analizzato con attenzione il carico di lavoro e ridistribuito lo stesso tra le persone che più avevano disponibilità di riceverlo in gestione, prolungando il termine massimo di alcune di tali attività di qualche giorno per permettere il completamento delle stesse.
+
+==== Rivisitazione migliorativa del piano per le attività future
+
+Questo _sprint_ è stato l'ultimo del progetto, durante lo stesso abbiamo completato quanto necessario per la presentazione della _Product Baseline_. Durante il progetto, _ALimitedGroup_ ha compreso davvero cosa significhi effettivamente lo sviluppo di un _Software_ e tutti faranno tesoro di quanto imparato.
+
+=== Retrospettiva
+
+Durante l'ultimo _sprint_ i membri di _ALimitedGroup_ si sono impegnati nel massimo delle loro possibilità per terminare tutto il lavoro preventivato entro la fine prevista dello stesso, obiettivo che è stato raggiunto nonostante le difficoltà incontrate.
+
+In conclusione, il gruppo è riuscito con successo a portare a termine il lavoro ed è ora pronto, ricevuta anche l'accettazione del _Minimum Viable Product_ da parte di #M31, ad affrontare la fase finale della _Product Baseline_.
+
+#pagebreak()
+
+= Riassunto delle risorse utilizzate durante il progetto
+
+\ \
+
+#{
+  show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+    align(left, cl)
+  } else if cl.x == 0 {
+    align(bottom + left, cl)
+  } else if cl.y == 0 {
+    rotate(-45deg, reflow: false, align(left, cl))
+  } else {
+    align(bottom + center, cl)
+  }
+  figure(
+    table(
+      fill: (x, y) => if (y == 0) {
+        rgb("#ffffff")
+      } else if (calc.gcd(y, 2) == 2) {
+        rgb("#bf7fbf")
+      } else {
+        rgb("#d8b2d8")
+      },
+      columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+      inset: 1.1em,
+      stroke: (x, y) => if y >= 1 {
+        1pt + black
+      } else {
+        none
+      },
+      table.header(
+        [],
+        [*Responsabile*],
+        [*Amministratore*],
+        [*Analista*],
+        [*Progettista*],
+        [*Programmatore*],
+        [*Verificatore*],
+        [*Totale*],
+      ),
+
+      [Loris Libralato], [8], [9], [8], [21], [29], [15], [90],
+      [Samuele Esposito], [5], [9], [5], [22], [31], [18], [90],
+      [Sara Ferraro], [5], [14], [9], [21], [24], [17], [90],
+      [Lorenzo Stefani], [5], [7], [4], [22], [27], [22], [87],
+      [Marco Piccoli], [6], [13], [21], [5], [25], [20], [90],
+      [Matteo Schievano], [3], [12], [24], [14], [20], [19], [92],
+      [Emanuele Artusi], [7], [12], [10], [20], [23], [18], [90],
+      [*Totale*], [*39*], [*76*], [*81*], [*125*], [*179*], [*129*], [*629*],
+    ),
+    caption: [Ore utilizzate da ogni componente per ciascun ruolo],
+  )
+}
+
+Come si evidenzia dalla Tabella 40, ovvero le risorse rimanenti alla fine dell'ultimo _sprint_, il gruppo termina la realizzazione di quanto necessario per affrontare la _Product Baseline_ con un saldo rimanente di *470€*, spendendo dunque un totale di *12.460€*, al sotto del saldo inizialmente a disposizione pari a *12.930€*.
+
+Dalla Tabella 41 si evidenzia invece l'impegno concreto apportato al progetto da parte di tutti i componenti del gruppo, con un un numero di ore consumate totale inferiore rispetto a quanto inizialmente preventivato.
+
+Come analizzato nella @plt, tra _Requirements and Technology Baseline_ e _Product Baseline_ è stato necessario modificare il quantitativo di ore previsto a ciascun ruolo: il consumo percentuale di ciascun ruolo è esposto qui di seguito:
+
+#pie-chart(
+  (percentuale: 6.2, titolo: "Responsabile", legenda: 2),
+  (percentuale: 12.08, titolo: "Amministratore", legenda: 2),
+  (percentuale: 12.88, titolo: "Analista", legenda: 2),
+  (percentuale: 19.87, titolo: "Progettista", legenda: 2),
+  (percentuale: 28.46, titolo: "Programmatore", legenda: -2),
+  (percentuale: 20.51, titolo: "Verificatore", legenda: -2),
+  caption: [Percentuale utilizzo ore di ciascun ruolo sul totale],
+  legend: false,
+)
+

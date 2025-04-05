@@ -140,41 +140,61 @@
   "7": (
     preventivo: (
       (p.loris, 0, 2, 0, 5, 5, 2),
-      (p.samuele, 0, 0, 0, 4, 5, 0),
-      (p.sara, 0, 0, 0, 6, 5, 1),
-      (p.lorenzo, 0, 0, 0, 6, 0, 0),
-      (p.marco, 4, 1, 0, 0, 0, 6),
+      (p.samuele, 0, 0, 5, 9, 5, 0),
+      (p.sara, 0, 0, 0, 6, 9, 1),
+      (p.lorenzo, 0, 0, 0, 7, 8, 5),
+      (p.marco, 4, 1, 0, 0, 7, 6),
       (p.matteo, 0, 0, 0, 6, 8, 0),
-      (p.emanuele, 0, 0, 0, 7, 4, 3),
+      (p.emanuele, 0, 0, 0, 7, 9, 3),
     ),
     consuntivo: (
-      (p.loris, 0, 3, 0, 8, 6, 2),
-      (p.samuele, 0, 0, 0, 4, 6, 0),
-      (p.sara, 0, 0, 0, 9, 5, 2),
-      (p.lorenzo, 0, 0, 0, 7, 0, 0),
-      (p.marco, 4, 2, 0, 0, 0, 7),
+      (p.loris, 0, 3, 0, 9, 6, 2),
+      (p.samuele, 0, 0, 5, 9, 6, 0),
+      (p.sara, 0, 0, 0, 9, 10, 2),
+      (p.lorenzo, 0, 0, 0, 8, 8, 5),
+      (p.marco, 4, 2, 0, 0, 7, 7),
       (p.matteo, 0, 0, 0, 9, 9, 0),
-      (p.emanuele, 0, 0, 0, 7, 4, 4),
+      (p.emanuele, 0, 0, 0, 7, 9, 4),
     ),
   ),
   "8": (
     preventivo: (
       (p.loris, 0, 0, 0, 8, 8, 5),
-      (p.samuele, 0, 3, 3, 8, 0, 0),
-      (p.sara, 5, 0, 0, 2, 8, 3),
-      (p.lorenzo, 0, 0, 0, 5, 8, 0),
-      (p.marco, 0, 4, 0, 6, 5, 4),
+      (p.samuele, 0, 5, 0, 8, 5, 5),
+      (p.sara, 5, 0, 0, 2, 8, 4),
+      (p.lorenzo, 0, 2, 0, 8, 8, 4),
+      (p.marco, 0, 4, 0, 5, 9, 4),
       (p.matteo, 0, 0, 0, 5, 8, 5),
-      (p.emanuele, 7, 0, 0, 0, 8, 0),
+      (p.emanuele, 7, 0, 0, 8, 8, 0),
     ),
     consuntivo: (
       (p.loris, 0, 0, 0, 8, 7, 5),
-      (p.samuele, 0, 3, 3, 8, 0, 0),
-      (p.sara, 5, 0, 0, 7, 8, 3),
-      (p.lorenzo, 0, 0, 0, 1, 8, 0),
-      (p.marco, 0, 4, 0, 6, 5, 4),
+      (p.samuele, 0, 5, 0, 8, 5, 5),
+      (p.sara, 5, 0, 0, 7, 8, 4),
+      (p.lorenzo, 0, 2, 0, 8, 8, 4),
+      (p.marco, 0, 4, 0, 5, 9, 4),
       (p.matteo, 0, 0, 0, 5, 8, 5),
-      (p.emanuele, 7, 0, 0, 0, 8, 0),
+      (p.emanuele, 7, 0, 0, 8, 8, 0),
+    ),
+  ),
+  "9": (
+    preventivo: (
+      (p.loris, 0, 0, 0, 4, 2, 7),
+      (p.samuele, 0, 0, 0, 5, 4, 10),
+      (p.sara, 0, 0, 0, 5, 6, 2),
+      (p.lorenzo, 5, 0, 0, 5, 11, 4),
+      (p.marco, 0, 0, 0, 0, 9, 6),
+      (p.matteo, 2, 0, 0, 0, 3, 1),
+      (p.emanuele, 0, 0, 0, 5, 6, 3),
+    ),
+    consuntivo: (
+      (p.loris, 0, 0, 0, 4, 2, 7),
+      (p.samuele, 0, 0, 0, 5, 4, 10),
+      (p.sara, 0, 0, 0, 5, 6, 0),
+      (p.lorenzo, 5, 0, 0, 6, 11, 4),
+      (p.marco, 0, 0, 0, 0, 9, 6),
+      (p.matteo, 2, 0, 0, 0, 3, 1),
+      (p.emanuele, 0, 0, 0, 5, 6, 3),
     ),
   ),
 )
@@ -343,7 +363,7 @@
   let tot-budget-speso-prec = 0
   let ore-spese-tot = 0
   let ore-tot = ruoli.values().map(ruolo => ruolo.max-ore).sum()
-  let budget-tot = ruoli.values().map(ruolo => ruolo.max-ore * ruolo.costo).sum()
+  let budget-tot = 12930
   let sprint-idx = sprints.keys().position(x => x == sprint)
 
   set align(center)
