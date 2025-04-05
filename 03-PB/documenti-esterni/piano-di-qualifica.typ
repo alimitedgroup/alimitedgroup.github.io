@@ -9,6 +9,12 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.4.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.emanuele,
+      descr: "Aggiornamento metriche di misurazione.",
+    ),
+    (
       vers: "1.3.0",
       date: datetime(day: 31, month: 03, year: 2025),
       autore: p.matteo,
@@ -367,7 +373,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
     //table row
     [*MPD01*], [Requisiti obbligatori soddisfatti], [100%], [100%],
     [*MPD02*], [Requisiti desiderabili soddisfatti], [0%], [100%],
-    [*MPD02*], [Requisiti opzionali soddisfatti], [0%], [100%],
+    [*MPD03*], [Requisiti opzionali soddisfatti], [0%], [100%],
   ),
   caption: [Soglie metriche funzionalità del prodotto],
 )
@@ -390,35 +396,9 @@ Un prodotto _Software_ è considerato di alta qualità quando:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPD04*], [Branch Coverage], [≥ 60%], [≥ 80%],
-    [*MPD05*], [Statement Coverage], [≥ 70%], [≥ 90%],
-    [*MPD06*], [Failure Density], [≤ 0.5], [≤ 0.1],
+    [*MPD04*], [Statement Coverage], [≥ 70%], [≥ 90%],
   ),
   caption: [Soglie metriche affidabilità del prodotto],
-)
-
-== Usabilità
-#figure(
-  table(
-    columns: (0.75fr, 2fr, 1.5fr, 1.5fr),
-    fill: (col, row) => if row == 0 {
-      rgb(128, 0, 128)
-    } else if calc.even(row) {
-      rgb(191, 127, 191)
-    } else {
-      rgb(216, 178, 216)
-    },
-    align: center + horizon,
-    inset: 8pt,
-
-    // Header row
-    text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
-
-    //table row
-    [*MPD07*], [Time on Task], [≤ 60 sec], [≤ 30 sec],
-    [*MPD08*], [Error Rate], [≤ 5%], [≤ 2%],
-  ),
-  caption: [Soglie metriche usabilità del prodotto],
 )
 
 == Efficienza
@@ -439,7 +419,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPD09*], [Response Time], [≤ 2 sec], [≤ 1 sec],
+    [*MPD05*], [Response Time], [≤ 2 sec], [≤ 1 sec],
   ),
   caption: [Soglie metriche efficienza del prodotto],
 )
@@ -463,9 +443,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
     text(white)[*Metrica*], text(white)[*Nome*], text(white)[*Valore accettabile*], text(white)[*Valore ottimo*],
 
     //table row
-    [*MPD10*], [Code Smells], [≤ 10], [≤ 5],
-    [*MPD11*], [Coefficient of Coupling], [≤ 0.4], [≤ 0.2],
-    [*MPD12*], [Cyclomatic complexity], [≤ 20], [≤ 10],
+    [*MPD06*], [Cyclomatic complexity], [≤ 20], [≤ 10],
   ),
   caption: [Soglie metriche manutenibilità del prodotto],
 )

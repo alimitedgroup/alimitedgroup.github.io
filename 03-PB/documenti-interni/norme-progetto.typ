@@ -10,6 +10,12 @@
   tipo: [interno],
   versioni: (
     (
+      vers: "1.3.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.emanuele,
+      descr: "Aggiornamento metriche di misurazione.",
+    ),
+    (
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),
       autore: p.marco,
@@ -1561,12 +1567,11 @@ _ALimitedGroup_ inoltre si riserva, qualora lo ritenesse necessario, di pianific
 #pagebreak()
 = Metriche e standard per la Qualità <metriche>
 
-_ALimitedGroup_ ha deciso di seguire lo _standard ISO/IEC 9126_ per definire le metriche e i parametri che determinano la qualità di quanto realizzato. Lo standard identifica sei caratteristiche generali:
+_ALimitedGroup_ ha deciso di seguire lo _standard ISO/IEC 9126_ per definire le metriche e i parametri che determinano la qualità di quanto realizzato. Lo standard identifica cinque caratteristiche generali:
 
 - *Funzionalità*#super[G];
 - *Affidabilità*;
 - *Efficienza*#super[G];
-- *Usabilità*;
 - *Manutenibilità*;
 - *Portabilità*.
 
@@ -1595,16 +1600,6 @@ L'*Efficienza* misura la capacità di fornire delle prestazioni che siano dirett
 - *Comportamento temporale*, ovvero la capacità di fornire una risposta in tempi adeguati;
 - *Utilizzo delle risorse*, ovvero un uso proporzionale delle risorse in rapporto all'utilizzo;
 - *Conformità*, ovvero l'aderenza del prodotto a standard riguardanti l'efficienza.
-
-== Usabilità
-
-L'*Usabilità* consiste nel misurare quanto l'Utente finale è in grado di apprendere la modalità di utilizzo del prodotto. Si misura:
-
-- *Comprensibilità*, ovvero quanto è facile comprendere i concetti del prodotto;
-- *Apprendibilità*, ovvero quanto è semplice apprendere l'uso delle funzionalità#super[G] del prodotto;
-- *Operabilità*, ovvero se è semplice per gli Utenti utilizzare il prodotto;
-- *Attrattività*, ovvero se l'Utente trova positivo l'uso del prodotto;
-- *Conformità*, ovvero se il prodotto aderisce a standard relativi all'usabilità.
 
 == Manutenibilità
 
@@ -1856,56 +1851,19 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Affidabilità
-=== _Branch Coverage_
-#metric(
-  cod: [MPD04],
-  formula: [
-    $"Branch Coverage" = ("Rami testati" / "Rami totali") * 100$
-  ],
-  desc: [Percentuale di rami del codice coperti da Test automatizzati. Si raccomanda un coverage minimo del 60%.],
-)
-
 === _Statement Coverage_
 #metric(
-  cod: [MPD05],
+  cod: [MPD04],
   formula: [
     $"Statement Coverage" = ("Istruzioni testate" / "Istruzioni totali") * 100$
   ],
   desc: [Percentuale di istruzioni del codice coperte da Test automatizzati. Si raccomanda un coverage minimo del 70%.],
 )
 
-=== _Failure Density_
-#metric(
-  cod: [MPD06],
-  formula: [
-    $"Failure Density" = ("Numero di difetti rilevati" / "KLOC")$
-  ],
-  desc: [Numero di failure per 1000 linee di codice (*KLOC*, _*K*\ilo *L*\ines *O*\f *C*\ode_). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
-)
-
-== Usabilità
-=== _Time on Task_
-#metric(
-  cod: [MPD07],
-  formula: [
-    $"Time on Task" = "Tempo medio per completare un'attività"$
-  ],
-  desc: [Tempo medio impiegato per completare un'attività. Indica l'usabilità del prodotto.],
-)
-
-=== _Error Rate_
-#metric(
-  cod: [MPD08],
-  formula: [
-    $"Error Rate" = ("Errori totali" / "Azioni totali") * 100$
-  ],
-  desc: [Percentuale di errori commessi durante l'utilizzo del prodotto. Dovrebbe essere inferiore al 5%.],
-)
-
 == Efficienza
 === _Response Time_
 #metric(
-  cod: [MPD09],
+  cod: [MPD05],
   formula: [
     $"Response Time" = "Tempo medio di risposta"$
   ],
@@ -1913,29 +1871,10 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
 )
 
 == Manutenibilità
-=== _Code Smells_
-#metric(
-  cod: [MPD10],
-  formula: [
-    $"Code Smells" = ("Numero di code smells" / "KLOC")$
-  ],
-  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del _software_. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
-  desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
-)
-
-=== _Coefficient of Coupling_ (CoC)
-#metric(
-  cod: [MPD11],
-  formula: [
-    $"Coefficient of Coupling" = ("Numero di dipendenze" / "Numero di componenti")$
-  ],
-  desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
-)
-
 === _Cyclomatic Complexity_
 
 #metric(
-  cod: [MPD12],
+  cod: [MPD06],
   formula: [
     $"Cyclomatic Complexity" = E - N + P$
 
