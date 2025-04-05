@@ -69,7 +69,7 @@ Seguiranno nei successivi paragrafi i dettagli.
       [Sara Ferraro], [9], [8], [9], [22], [25], [19], [92],
       [Lorenzo Stefani], [8], [8], [9], [21], [27], [19], [92],
       [Marco Piccoli], [8], [8], [9], [21], [26], [20], [92],
-      [Matteo Scievano], [9], [9], [9], [21], [24], [20], [92],
+      [Matteo Schievano], [9], [9], [9], [21], [24], [20], [92],
       [Emanuele Artusi], [8], [9], [8], [21], [24], [22], [92],
       [*Totale*], [*58*], [*60*], [*60*], [*150*], [*180*], [*136*], [*644*],
     ),
