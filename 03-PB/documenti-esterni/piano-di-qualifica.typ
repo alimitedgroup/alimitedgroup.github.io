@@ -1136,7 +1136,7 @@ Al termine del progetto le ore produttive e quelle di orologio praticamente coin
 #pagebreak()
 
 == MPD09: _Response Time_
-#metriche-graph(nome: "MPD09", desc: "Grafico per periodo di MPD09", width: 100%);
+#metriche-graph(nome: "MPD12", desc: "Grafico per periodo di MPD09", width: 100%);
 
 // DESCRIZIONE: MPD09: _Response Time_
 #pagebreak()
