@@ -1094,7 +1094,7 @@ Al termine del progetto le ore produttive e quelle di orologio praticamente coin
 
 
 == MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
-#metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02", width: 100%);
+#metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02 e MPD03", width: 100%);
 
 
 // DESCRIZIONE: MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
@@ -1103,27 +1103,58 @@ Al termine del progetto le ore produttive e quelle di orologio praticamente coin
 #pagebreak()
 
 
-== MPD04: _Statement Coverage_
+== MPD04: _Branch Coverage_
 #metriche-graph(nome: "MPD04", desc: "Grafico per periodo di MPD04", width: 100%);
 
 
-// DESCRIZIONE: MPD04: _Statement Coverage_
+// DESCRIZIONE: MPD04: _Branch Coverage_
 
 
 #pagebreak()
 
 
-== MPD05: _Response Time_
+== MPD05: _Statement Coverage_
 #metriche-graph(nome: "MPD05", desc: "Grafico per periodo di MPD05", width: 100%);
+
+// DESCRIZIONE: MPD05: _Statement Coverage_
+#pagebreak()
+
+== MPD06: _Failure Density_
 
 // DESCRIZIONE: MPD05: _Response Time_
 
 #pagebreak()
 
-== MPD06: _Cyclomatic Complexity_
-#metriche-graph(nome: "MPD06", desc: "Grafico per periodo di MPD06", width: 100%);
+== MPD07: _Time on task_
 
-// DESCRIZIONE: MPD06: _Cyclomatic Complexity_
+// DESCRIZIONE: MPD07: _Time on task_
+#pagebreak()
+
+== MPD08: _Error rate_
+
+// DESCRIZIONE: MPD08: _Error rate_
+#pagebreak()
+
+== MPD09: _Response Time_
+#metriche-graph(nome: "MPD09", desc: "Grafico per periodo di MPD09", width: 100%);
+
+// DESCRIZIONE: MPD09: _Response Time_
+#pagebreak()
+
+== MPD10: _Code smells_
+
+// DESCRIZIONE: MPD10: _Code smells_
+#pagebreak()
+
+== MPD11: _Coefficient of Coupling_
+
+// DESCRIZIONE: MPD11: _Coefficient of Coupling_
+#pagebreak()
+
+== MPD12: _Cyclomatic Complexity_
+#metriche-graph(nome: "MPD12", desc: "Grafico per periodo di MPD12", width: 100%);
+
+// DESCRIZIONE: MPD12: _Cyclomatic Complexity_
 
 
 #pagebreak()
