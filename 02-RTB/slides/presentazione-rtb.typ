@@ -1,64 +1,10 @@
 #import "../../lib/common.typ": *
+#import "../../lib/sleek-slides.typ": *
 
-#set page(paper: "presentation-16-9", margin: 0pt)
-#set text(fill: white, size: 24pt, font: "Hanken Grotesk")
-
-#metadata("Presentazione RTB") <titolo>
-
-#let slide(body) = {
-  body
-
-  metadata("Utile solo per la pagina")
-  place(bottom + left, text(size: 16pt)[#context {counter(metadata).get().at(0)} / 10])
-
-  pagebreak(weak: true)
-}
-
-
-#let title = [
-  #text(size: 50pt, weight: "black")[Presentazione RTB]
-  #text(size: 25pt)[Gruppo n° 8 - A.A. 2024/2025]
-
-  #text(size: 30pt, weight: "bold")[ALimitedGroup]
-
-  #text(size: 20pt)[21/02/2025]
-]
-
-// Immagine torre archimede
-#place(top, box(image("../../assets/ta.png", width: 100%)))
-
-// Gradient inferiore
-#place(
-  bottom,
-  dy: 25pt,
-  skew(
-    rect(
-      fill: gradient.linear(rgb("#3b1763"), rgb("#af252c"), angle: 135deg),
-      width: 100%,
-      height: 62%,
-    ),
-    ay: -1.5deg,
-  ),
-)
-
-// Titolo
-#place(
-  center + bottom,
-  rect(align(center + top, title), stroke: none, width: 58%, height: 55%),
-  dy: 1.8em,
-)
-
-// #place(bottom + right, image("../../assets/altd_black.png", height: 60%), dy: 4em, dx: 1em)
-#place(bottom + left, image("../../assets/altd_black.png", height: 32.5%), dx: 1em, dy: -0.6em)
-#place(bottom + right, image("../../assets/unipd_white.svg", height: 30%), dx: -1em, dy: -0.8em)
-
-#set page(
-  margin: 1.5em,
-  background: rect(
-    width: 100%,
-    height: 100%,
-    fill: gradient.linear(rgb("#3b1763"), rgb("#af252c"), angle: 135deg),
-  ),
+#show: it => sleek-slides(
+  title: "Presentazione RTB",
+  date: datetime(day: 21, month: 2, year: 2025),
+  it,
 )
 
 #slide[
