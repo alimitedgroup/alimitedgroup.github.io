@@ -54,8 +54,8 @@
   // Titolo
   place(
     center + bottom,
-    rect(align(center + top, title), stroke: none, width: 58%, height: 55%),
-    dy: 1.8em,
+    rect(align(center + top, title), stroke: none, width: 100%, height: 55%),
+    dy: 1.4em,
   )
 
   place(bottom + left, image("../assets/altd_black.png", height: 32.5%), dx: 1em, dy: -0.6em)
