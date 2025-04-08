@@ -1083,8 +1083,8 @@ Al termine del progetto le ore produttive e quelle di orologio praticamente coin
 
 == MPD01: Requisiti obbligatori soddisfatti
 #metriche-graph(nome: "MPD01", desc: "Grafico per periodo di MPD01", width: 100%);
-
-
+Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test di accettazione ed è stato rilasciato con successo.
+È evidente come durante la milestone PB (Product Baseline#super[G]) si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato alli implementazione di un _MVP_ (Minimun Viable Product) di qualità.
 
 // DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
 
@@ -1095,6 +1095,7 @@ Al termine del progetto le ore produttive e quelle di orologio praticamente coin
 
 == MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
 #metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02 e MPD03", width: 100%);
+Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso di soddisfare solo i requisiti obbligatori.
 
 
 // DESCRIZIONE: MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
