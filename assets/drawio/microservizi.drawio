@@ -1,0 +1,166 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0" version="26.2.5">
+  <diagram name="Pagina-1" id="GbZ07KO3l87yXFm8Z4hl">
+    <mxGraphModel dx="1131" dy="736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-40" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="500" y="740" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-41" value="&amp;nbsp;Magazzino 1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;align=left;" vertex="1" parent="1">
+          <mxGeometry x="500" y="740" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-34" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-33" target="BiPedtlE2i4GuzgPE2tk-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-2" target="BiPedtlE2i4GuzgPE2tk-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-2" value="&lt;div&gt;NATS&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="640" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-3" value="&lt;div&gt;NATS&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="570" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-6" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-4" target="BiPedtlE2i4GuzgPE2tk-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-7" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-4" target="BiPedtlE2i4GuzgPE2tk-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-4" value="&lt;div&gt;NATS&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="640" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-8" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1265" y="490" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-11" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-10" target="BiPedtlE2i4GuzgPE2tk-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-9" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="500" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-10" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="510" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-16" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-15" target="BiPedtlE2i4GuzgPE2tk-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-13" value="Orders" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="650" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-14" value="Orders" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="660" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-15" value="Orders" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="670" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-17" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="730" y="490" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-18" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="740" y="500" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-20" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-19" target="BiPedtlE2i4GuzgPE2tk-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-19" value="Notification" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="750" y="510" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-22" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="610" y="620" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-23" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="620" y="630" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-25" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-24" target="BiPedtlE2i4GuzgPE2tk-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-24" value="API Gateway" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="630" y="640" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-39" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-27" target="BiPedtlE2i4GuzgPE2tk-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-27" value="&lt;div&gt;NATS&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-37" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-29" target="BiPedtlE2i4GuzgPE2tk-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-29" value="API Gateway" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="530" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-38" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-30" target="BiPedtlE2i4GuzgPE2tk-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-30" value="Warehouse" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="660" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-31" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="400" y="620" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-32" value="Authentication" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="410" y="630" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-33" value="Client" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;dashed=1;dashPattern=8 8;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="640" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-36" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-35" target="BiPedtlE2i4GuzgPE2tk-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-35" value="Client" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-42" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="850" y="740" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-43" value="&amp;nbsp;Magazzino 2" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;align=left;" vertex="1" parent="1">
+          <mxGeometry x="850" y="740" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-44" value="&lt;div&gt;NATS&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-45" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" source="BiPedtlE2i4GuzgPE2tk-46" target="BiPedtlE2i4GuzgPE2tk-44" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-46" value="API Gateway" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="880" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-47" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" source="BiPedtlE2i4GuzgPE2tk-48" target="BiPedtlE2i4GuzgPE2tk-44" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-48" value="Warehouse" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-51" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="740" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-52" value="&amp;nbsp;Magazzino 3" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="740" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-53" value="&lt;div&gt;NATS&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-54" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" source="BiPedtlE2i4GuzgPE2tk-55" target="BiPedtlE2i4GuzgPE2tk-53" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-55" value="API Gateway" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-56" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" source="BiPedtlE2i4GuzgPE2tk-57" target="BiPedtlE2i4GuzgPE2tk-53" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-57" value="Warehouse" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="870" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-61" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-4" target="BiPedtlE2i4GuzgPE2tk-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BiPedtlE2i4GuzgPE2tk-60" style="edgeStyle=none;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startFill=0;endArrow=none;" edge="1" parent="1" source="BiPedtlE2i4GuzgPE2tk-2" target="BiPedtlE2i4GuzgPE2tk-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
