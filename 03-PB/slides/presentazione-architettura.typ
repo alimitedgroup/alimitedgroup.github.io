@@ -231,12 +231,22 @@
 ]
 
 #slide[
+  = Dependency Injection - Esempio
+  #align(center, image("../../assets/es. Injection.png", height: 84%))
+]
+
+#slide[
   = Pattern - Object Adapter
 
   #v(1.3em)
   - L’utilizzo dell’architettura esagonale ha reso necessario l’utilizzo di Adapter specie per mettere in collegamento la business logic con la persistence logic
   #v(1.2em)
   - Gli adapter utilizzati in questo modo implementano delle interfacce della business logic e possiedono un attributo della struttura che ha funzioni della persistence logic
+]
+
+#slide[
+  = Adapter - Esempio
+  #align(center, image("../../assets/es. adapter.png", height: 84%))
 ]
 
 #slide[
@@ -254,4 +264,14 @@
   - Abbiamo dunque realizzato un’interfaccia IauthenticateUserStrategy che fa implementare un metodo che, dati i dati di accesso forniti, ne valuti la correttezza
   - È stata una scelta tra questo pattern e il Template Method: il Template Method è tuttavia utile solo se tutti gli algoritmi di autenticazione hanno gli stessi passaggi ma differiscono per il comportamento di almeno uno di essi
   - Nel nostro caso, questo può non essere vero specie aggiungendo “livelli” di sicurezza
+]
+
+#slide[
+  = Strategy - Esempio (2/2)
+  #align(center, image("../../assets/es. strategy(1).png", height: 84%))
+]
+
+#slide[
+  = Strategy - Esempio (2/2)
+  #align(center, image("../../assets/es. strategy(2).png", height: 84%))
 ]
