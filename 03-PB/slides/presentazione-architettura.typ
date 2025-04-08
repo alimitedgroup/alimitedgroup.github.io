@@ -81,21 +81,6 @@
 #slide[
   = Architettura di deployment: Microservizi
 
-  #align(
-    center,
-    // questa box serve per aggiungere margine all'immagine
-    box(
-      height: 80%,
-      fill: white,
-      inset: 0.5em,
-      image("../../assets/drawio/microservizi_Pagina1.svg"),
-    ),
-  )
-]
-
-#slide[
-  = Perché microservizi?
-
   #v(1.3em)
   - L'idea iniziale del capitolato spinge molto verso questa opzione;
   #v(0.3em)
@@ -106,6 +91,21 @@
   - Più facile fare _zero downtime deployment_;
   #v(0.3em)
   - Possibilità di distribuzione geografica;
+]
+
+#slide[
+  = Microservizi sviluppati
+
+  #align(
+    center,
+    // questa box serve per aggiungere margine all'immagine
+    box(
+      height: 80%,
+      fill: white,
+      inset: 0.5em,
+      image("../../assets/drawio/microservizi_Pagina1.svg"),
+    ),
+  )
 ]
 
 #slide[
