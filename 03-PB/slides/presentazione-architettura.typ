@@ -114,7 +114,7 @@
 
   - Abbiamo scelto il pattern dell'Architettura Esagonale per isolare la business logic dalle componenti esterne.
   #v(0.1em)
-  - La comunicazione tra moduli avviene tramite interfacce, iniettate nei costruttori, seguendo il principio della Dependency Injection.
+  - La comunicazione tra classi avviene tramite interfacce, iniettate nei costruttori, seguendo il principio della Dependency Injection.
   #v(0.1em)
   - Questo approccio rende il sistema facilmente testabile: la business logic può essere verificata in modo indipendente.
 ]
