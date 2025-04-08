@@ -76,7 +76,7 @@
   title-slide(title, date.display("[day]/[month]/[year]"))
 
   set page(
-    margin: 1.5em,
+    margin: (rest: 1.5em, bottom: 0.75em),
     background: rect(
       width: 100%,
       height: 100%,
