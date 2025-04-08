@@ -17,7 +17,7 @@ Il servizio `nats`#super[G] avvia un'istanza di un server NATS:#super[G] se rimo
 I servizi che possono essere aggiunti e rimossi a piacimento sono:
 
 - **api-gateway**: servizio che avvia un'istanza del microservizio omonimo;
-- **warehouse-1**: servizio che avvia un'istanza del microservizio warehouse.#super[G] Dal momento che il nome del servizio è non vincolante, il nome può essere cambiato in base alle proprie esigenze  (per garantire l'utilizzo offline è consigliato unire, ad un'istanza di warehouse, un'istanza di api gateway e una di nats sulla stessa macchina);
+- **warehouse-1**: servizio che avvia un'istanza del microservizio warehouse.#super[G] Dal momento che il nome del servizio è non vincolante, il nome può essere cambiato in base alle proprie esigenze (per garantire l'utilizzo offline è consigliato unire, ad un'istanza di warehouse#super[G], un'istanza di api#super[G] gateway e una di nats#super[G] sulla stessa macchina);
 - **catalog**: servizio che avvia un'istanza del microservizio omonimo;
 - **order**: servizio che avvia un'istanza del microservizio omonimo, che gestisce gli ordini e i trasferimenti;
 - **authenticator**: servizio che avvia un'istanza del microservizio omonimo;
