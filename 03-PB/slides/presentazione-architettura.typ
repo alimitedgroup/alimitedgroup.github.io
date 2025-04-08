@@ -133,87 +133,108 @@
 #slide[
   = UML Warehouse Microservice (1/4)
 
-  #box(trimmed-img("../../assets/warehouse/warehouse.png"), width: 93%)
+  #align(center, box(trimmed-img("../../assets/warehouse/warehouse.png"), width: 93%))
 ]
 
 #slide[
   = UML Warehouse Microservice (2/4)
 
-  #box(
-    trimmed-img(
-      "../../assets/warehouse/warehouse.png",
-      trim: (left: 15%, right: 44%, top: 10%, bottom: 55%),
+  #align(
+    center,
+    box(
+      trimmed-img(
+        "../../assets/warehouse/warehouse.png",
+        trim: (left: 15%, right: 44%, top: 10%, bottom: 55%),
+      ),
+      width: 95%,
     ),
-    width: 95%,
   )
 ]
 
 #slide[
   = UML Warehouse Microservice (3/4)
 
-  #box(
-    trimmed-img(
-      "../../assets/warehouse/warehouse.png",
-      trim: (left: 17.4%, right: 43%, top: 33%, bottom: 23%),
+  #align(
+    center,
+    box(
+      trimmed-img(
+        "../../assets/warehouse/warehouse.png",
+        trim: (left: 17.4%, right: 43%, top: 33%, bottom: 23%),
+      ),
+      width: 83%,
     ),
-    width: 83%,
   )
 ]
 
 #slide[
   = UML Warehouse Microservice (4/4)
 
-  #box(
-    trimmed-img(
-      "../../assets/warehouse/warehouse.png",
-      trim: (left: 35.4%, right: 43%, top: 63.5%, bottom: 2%),
+  #align(
+    center,
+    box(
+      trimmed-img(
+        "../../assets/warehouse/warehouse.png",
+        trim: (left: 35.4%, right: 43%, top: 63.5%, bottom: 2%),
+      ),
+      width: 56%,
     ),
-    width: 56%,
   )
 ]
 
 #slide[
   = UML Order Microservice (1/4)
 
-  #box(
-    trimmed-img("../../assets/order/General.png"),
-    width: 79%,
+  #align(
+    center,
+    box(
+      trimmed-img("../../assets/order/General.png"),
+      width: 79%,
+    ),
   )
 ]
 
 #slide[
   = UML Order Microservice (2/4)
 
-  #box(
-    trimmed-img(
-      "../../assets/order/General.png",
-      trim: (left: 44.5%, right: 16%, top: 11.5%, bottom: 52.8%),
+  #align(
+    center,
+    box(
+      trimmed-img(
+        "../../assets/order/General.png",
+        trim: (left: 44.5%, right: 16%, top: 11.5%, bottom: 52.8%),
+      ),
+      width: 79%,
     ),
-    width: 79%,
   )
 ]
 
 #slide[
   = UML Order Microservice (3/4)
 
-  #box(
-    trimmed-img(
-      "../../assets/order/General.png",
-      trim: (left: 44.5%, right: 09%, top: 38.8%, bottom: 24%),
+  #align(
+    center,
+    box(
+      trimmed-img(
+        "../../assets/order/General.png",
+        trim: (left: 44.5%, right: 09%, top: 38.8%, bottom: 24%),
+      ),
+      width: 89%,
     ),
-    width: 89%,
   )
 ]
 
 #slide[
   = UML Order Microservice (4/4)
 
-  #box(
-    trimmed-img(
-      "../../assets/order/General.png",
-      trim: (left: 45.2%, right: 09%, top: 70%, bottom: 0%),
+  #align(
+    center,
+    box(
+      trimmed-img(
+        "../../assets/order/General.png",
+        trim: (left: 45.2%, right: 09%, top: 70%, bottom: 0%),
+      ),
+      width: 100%,
     ),
-    width: 100%,
   )
 ]
 
