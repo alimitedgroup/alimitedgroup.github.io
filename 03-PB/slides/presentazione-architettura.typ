@@ -225,7 +225,7 @@
   #v(0.1em)
   - Per renderle note e non nascoste abbiamo reso note queste dipendenze inserendole come parametri obbligatori nelle funzioni costruttrici
   #v(0.1em)
-  - Abbiamo utilizzato il framework fx di Uber per gestire le dipendenze
+  - Abbiamo utilizzato il framework `fx` di Uber per gestire le dipendenze
   #v(0.1em)
   - L’utilizzo di un framework ci ha aiutato nella realizzazione dei test e ha semplificato il modo in cui le istanze necessarie vengono fornite
 ]
