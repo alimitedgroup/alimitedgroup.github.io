@@ -5,7 +5,7 @@
 ==== _Adapter-in_ e _Port-in_ <adapterin_portin>
 
 #figure(
-  image("../../../../assets/drawio/notification_adapterin.svg"),
+  image("../../../../assets/drawio/notification_adapterin.svg", width: 130%),
   caption: [_Adapter-in_ di Notification],
 )
 
@@ -155,6 +155,7 @@ Implementa l'interfaccia #typelink(<Controller>).
   ),
 )
 
+#pagebreak()
 
 ===== RemoveQueryController <RemoveQueryController>
 

@@ -5,7 +5,7 @@
 ==== _Adapter-out_ e _Port-out_ <adapterout_portout>
 
 #figure(
-  image("../../../../assets/drawio/notification_adapterout.svg"),
+  image("../../../../assets/drawio/notification_adapterout.svg", width: 120%),
   caption: [_Adapter-out_ di Notification],
 )
 
@@ -32,6 +32,8 @@ Parametri in ingresso necessari per costruire un'istanza di #typelink(<Notificat
   ),
   (),
 )
+
+#pagebreak()
 
 ===== NotificationAdapter <NotificationAdapter>
 

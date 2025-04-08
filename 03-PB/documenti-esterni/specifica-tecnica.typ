@@ -1113,7 +1113,7 @@ Rappresenta una merce inclusa in un trasferimento#super[G] nel microservizio *Wa
 
 ==== GetAllTransferResponseDTO <GetAllTransferResponseDTO>
 #figure(
-  image("../../assets/order/GetAllTransferResponseDTO.png", width: 25%),
+  image("../../assets/order/GetAllTransferResponseDTO.png", width: 35%),
   caption: "Order - GetAllTransferResponseDTO",
 )
 Rappresenta la risposta alla richiesta di informazioni su tutti i trasferimenti nel microservizio *Warehouse*#super[G].
@@ -1407,7 +1407,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 ===== GetTokenResponse <GetTokenResponse>
 
 #figure(
-  image("../../assets/authenticator/GetTokenResponse.png", width: 30%),
+  image("../../assets/authenticator/GetTokenResponse.png", width: 70%),
   caption: "Authenticator - GetTokenResponse",
 )
 
@@ -1428,7 +1428,7 @@ Rappresenta la risposta alla richiesta di ottenimento Token.
 ===== PublishPublicKeyResponse <PublishPublicKeyResponse>
 
 #figure(
-  image("../../assets/authenticator/PublishPublicKeyResponse.png", width: 70%),
+  image("../../assets/authenticator/PublishPublicKeyResponse.png", width: 80%),
   caption: "Authenticator - PublishPublicKeyResponse",
 )
 
@@ -1464,7 +1464,7 @@ Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
 ===== PemPrivateKey <PemPrivateKey>
 
 #figure(
-  image("../../assets/authenticator/PemPrivateKey.png", width: 55%),
+  image("../../assets/authenticator/PemPrivateKey.png", width: 75%),
   caption: "Authenticator - PemPrivateKey",
 )
 
@@ -1484,7 +1484,7 @@ Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_
 ===== PemPublicKey <PemPublicKey>
 
 #figure(
-  image("../../assets/authenticator/PemPublicKey.png", width: 55%),
+  image("../../assets/authenticator/PemPublicKey.png", width: 75%),
   caption: "Authenticator - PemPublicKey",
 )
 
@@ -1602,6 +1602,8 @@ Implementa l'interfaccia IPublishPort, descritta alla @IPublishPort.
 *Descrizione degli attributi della struttura:*
 
 - *`pb publisher.IAuthPublisher`*: istanza di una struttura che rappresenta il _Publisher_, vedi @IAuthPublisher per maggiori informazioni.
+
+#pagebreak()
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -1736,11 +1738,13 @@ In particolare, è formato da tre sotto-componenti principali:
 
 Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 
+#pagebreak()
+
 ==== Oggetti comuni del microservizio
 
 ===== OrderWarehouseUsed (Repo) <OrderRepoOrderWarehouseUsed>
 #figure(
-  image("../../assets/order/Repo-OrderWarehouseUsed.png", width: 30%),
+  image("../../assets/order/Repo-OrderWarehouseUsed.png", width: 40%),
   caption: "Order - OrderWarehouseUsed (Repo)",
 )
 Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G]. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare le informazioni sui magazzini coinvolti nella gestione degli ordini.
@@ -1755,7 +1759,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== OrderUpdateGood (Repo) <OrderRepoOrderUpdateGood>
 #figure(
-  image("../../assets/order/Repo-OrderUpdateGood.png", width: 30%),
+  image("../../assets/order/Repo-OrderUpdateGood.png", width: 50%),
   caption: "Order - OrderUpdateGood (Repo)",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G]. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare i dettagli delle merci associate agli ordini.
@@ -1983,7 +1987,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferResponse <OrderCreateTransferResponse>
 #figure(
-  image("../../assets/order/CreateTransferResponse.png", width: 35%),
+  image("../../assets/order/CreateTransferResponse.png", width: 45%),
   caption: "Order - CreateTransferResponse",
 )
 Rappresenta la risposta alla richiesta di creazione di un nuovo trasferimento#super[G].
@@ -2035,9 +2039,11 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 
 Questa struttura non ha metodi invocabili.
 
+#pagebreak()
+
 ===== SetCompletedWarehouseCmd <OrderSetCompletedWarehouseCmd>
 #figure(
-  image("../../assets/order/SetCompletedWarehouseCmd.png", width: 35%),
+  image("../../assets/order/SetCompletedWarehouseCmd.png", width: 45%),
   caption: "Order - SetCompletedWarehouseCmd",
 )
 Rappresenta il comando utilizzato per segnalare il completamento di un ordine#super[G] da parte di un magazzino.
@@ -2144,7 +2150,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== StockUpdateGood <OrderStockUpdateGood>
 #figure(
-  image("../../assets/order/StockUpdateGood.png", width: 30%),
+  image("../../assets/order/StockUpdateGood.png", width: 50%),
   caption: "Order - StockUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento dello stock#super[G].
@@ -2196,7 +2202,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== GetStockCmd <OrderGetStockCmd>
 #figure(
-  image("../../assets/order/GetStockCmd.png", width: 30%),
+  image("../../assets/order/GetStockCmd.png", width: 50%),
   caption: "Order - GetStockCmd",
 )
 Rappresenta il comando utilizzato per ottenere la quantità di una merce specifica in un determinato magazzino.
@@ -2212,7 +2218,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ContactWarehousesCmd <OrderContactWarehousesCmd>
 #figure(
-  image("../../assets/order/ContactWarehousesCmd.png", width: 45%),
+  image("../../assets/order/ContactWarehousesCmd.png", width: 60%),
   caption: "Order - ContactWarehousesCmd",
 )
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
@@ -2255,9 +2261,11 @@ Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando
 - *`Goods []ContactWarehousesGood`*: rappresenta una lista di merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
+#pagebreak()
+
 ===== ContactWarehousesTransfer <OrderContactWarehousesTransfer>
 #figure(
-  image("../../assets/order/ContactWarehousesTransfer.png", width: 55%),
+  image("../../assets/order/ContactWarehousesTransfer.png", width: 45%),
   caption: "Order - ContactWarehousesTransfer",
 )
 Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
@@ -2287,7 +2295,7 @@ Rappresenta una merce coinvolta in un ordine#super[G] o trasferimento#super[G].
 
 ===== ConfirmedReservation <OrderConfirmedReservation>
 #figure(
-  image("../../assets/order/ConfirmedReservation.png", width: 30%),
+  image("../../assets/order/ConfirmedReservation.png", width: 40%),
   caption: "Order - ConfirmedReservation",
 )
 Rappresenta una prenotazione confermata per un magazzino.
@@ -2300,7 +2308,7 @@ Rappresenta una prenotazione confermata per un magazzino.
 
 ===== ContactWarehousesResponse <OrderContactWarehousesResponse>
 #figure(
-  image("../../assets/order/ContactWarehousesResponse.png", width: 30%),
+  image("../../assets/order/ContactWarehousesResponse.png", width: 40%),
   caption: "Order - ContactWarehousesResponse",
 )
 Rappresenta la risposta alla richiesta di contatto con i magazzini.
@@ -2309,6 +2317,8 @@ Rappresenta la risposta alla richiesta di contatto con i magazzini.
 
 - *`IsRetry bool`*: indica se è necessario effettuare un nuovo tentativo di contatto;
 - *`RetryAfter time.Duration`*: rappresenta il tempo da attendere prima di effettuare un nuovo tentativo.
+
+#pagebreak()
 
 ===== SendOrderUpdateCmd <OrderSendOrderUpdateCmd>
 #figure(
@@ -2397,7 +2407,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateOrderCmd <OrderCreateOrderCmd>
 #figure(
-  image("../../assets/order/CreateOrderCmd.png", width: 30%),
+  image("../../assets/order/CreateOrderCmd.png", width: 40%),
   caption: "Order - CreateOrderCmd",
 )
 Rappresenta il comando utilizzato per creare un nuovo ordine#super[G].
@@ -2413,9 +2423,11 @@ Rappresenta il comando utilizzato per creare un nuovo ordine#super[G].
 
 Questa struttura non ha metodi invocabili.
 
+#pagebreak()
+
 ===== CreateOrderResponse <OrderCreateOrderResponse>
 #figure(
-  image("../../assets/order/CreateOrderResponse.png", width: 30%),
+  image("../../assets/order/CreateOrderResponse.png", width: 40%),
   caption: "Order - CreateOrderResponse",
 )
 Rappresenta la risposta alla richiesta di creazione di un nuovo ordine#super[G].
@@ -2500,9 +2512,11 @@ Rappresenta la disponibilità delle merci in un magazzino specifico.
 
 Questa struttura non ha metodi invocabili.
 
+#pagebreak()
+
 ===== CalculateAvailabilityResponse <OrderCalculateAvailabilityResponse>
 #figure(
-  image("../../assets/order/CalculateAvailabilityResponse.png", width: 30%),
+  image("../../assets/order/CalculateAvailabilityResponse.png", width: 50%),
   caption: "Order - CalculateAvailabilityResponse",
 )
 Rappresenta la risposta al comando di calcolo della disponibilità delle merci.
@@ -2517,7 +2531,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ApplyStockUpdateCmd <OrderApplyStockUpdateCmd>
 #figure(
-  image("../../assets/order/ApplyStockUpdateCmd.png", width: 30%),
+  image("../../assets/order/ApplyStockUpdateCmd.png", width: 50%),
   caption: "Order - ApplyStockUpdateCmd",
 )
 Rappresenta il comando utilizzato per applicare un aggiornamento dello stock#super[G] in un magazzino specifico.
@@ -2531,9 +2545,11 @@ Rappresenta il comando utilizzato per applicare un aggiornamento dello stock#sup
 
 Questa struttura non ha metodi invocabili.
 
+#pagebreak()
+
 ===== ReservationGood <OrderReservationGood>
 #figure(
-  image("../../assets/order/ReservationGood.png", width: 30%),
+  image("../../assets/order/ReservationGood.png", width: 35%),
   caption: "Order - ReservationGood",
 )
 Rappresenta una merce coinvolta in una richiesta di prenotazione.
@@ -2549,7 +2565,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== RequestReservationCmd <OrderRequestReservationCmd>
 #figure(
-  image("../../assets/order/RequestReservationCmd.png", width: 30%),
+  image("../../assets/order/RequestReservationCmd.png", width: 35%),
   caption: "Order - RequestReservationCmd",
 )
 Rappresenta il comando utilizzato per richiedere una prenotazione di merci in un magazzino.
@@ -2565,7 +2581,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== RequestReservationResponse <OrderRequestReservationResponse>
 #figure(
-  image("../../assets/order/RequestReservationResponse.png", width: 30%),
+  image("../../assets/order/RequestReservationResponse.png", width: 40%),
   caption: "Order - RequestReservationResponse",
 )
 Rappresenta la risposta alla richiesta di prenotazione di merci.
@@ -3161,6 +3177,8 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 - *`GetWarehouses() []model.Warehouse`*: restituisce una lista di tutti i magazzini registrati nel sistema.
 
+#pagebreak()
+
 ==== IOrderRepository <OrderIOrderRepository>
 
 Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ per la gestione degli ordini nel microservizio *Order*.
@@ -3243,7 +3261,7 @@ Rappresenta un _Adapter_ che mette in comunicazione la _business logic_ con il s
 
 ==== HealthCheckController <OrderHealthCheckController>
 #figure(
-  image("../../assets/order/HealthCheckController.png", width: 45%),
+  image("../../assets/order/HealthCheckController.png", width: 55%),
   caption: "Order - HealthCheckController",
 )
 La struttura `HealthCheckController` rappresenta l'_application logic_ per la gestione delle richieste di controllo dello stato di salute del microservizio. È progettata per rispondere a richieste di tipo "ping" con una risposta "pong", indicando che il microservizio è attivo e funzionante.
@@ -3283,7 +3301,7 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 ===== Warehouse <Warehouse>
 
 #figure(
-  image("../../assets/catalog/Warehouse.png", width: 35%),
+  image("../../assets/catalog/Warehouse.png", width: 45%),
   caption: "Catalog - Warehouse",
 )
 
@@ -3298,10 +3316,12 @@ Rappresenta un magazzino registrato nel Sistema.
 - *`SetStock(ID string, newQuantity int64)`*: per modificare la quantità della merce con id pari al parametro *string* nel valore passato come parametro *int64*;
 - *`addGood(ID string)`*: per aggiungere una merce nel magazzino, impostando il rispettivo id nel valore di tipo *string* passato come parametro.
 
+#pagebreak()
+
 ===== Good <Good>
 
 #figure(
-  image("../../assets/catalog/Good.png", width: 45%),
+  image("../../assets/catalog/Good.png", width: 55%),
   caption: "Catalog - Good",
 )
 
@@ -3321,10 +3341,12 @@ Rappresenta una merce registrata nel Sistema.
 - *`SetDescription(newDescription string) error`*: imposta la descrizione della merce al valore passato come parametro. Restituisce un errore se il parametro è una stringa vuota;
 - *`SetName(newName string) error`*: imposta il nome della merce al valore passato come parametro. Restituisce un errore se il parametro è una stringa vuota.
 
+#pagebreak()
+
 ===== AddChangeGoodCmd
 
 #figure(
-  image("../../assets/catalog/AddChangeGoodCmd.png", width: 75%),
+  image("../../assets/catalog/AddChangeGoodCmd.png", width: 95%),
   caption: "Catalog - AddChangeGoodCmd",
 )
 
@@ -3346,7 +3368,7 @@ Rappresenta il _Command_ per aggiungere o modificare le informazioni di una merc
 ===== GetGoodsInfoCmd
 
 #figure(
-  image("../../assets/catalog/GetGoodsInfoCmd.png", width: 75%),
+  image("../../assets/catalog/GetGoodsInfoCmd.png", width: 95%),
   caption: "Catalog - GetGoodsInfoCmd",
 )
 
@@ -3360,10 +3382,12 @@ questa struttura non possiede attributi
 
 - *`NewGetGoodsInfoCmd() *GetGoodsInfoCmd`*: rappresenta il costruttore del _Command_.
 
+#pagebreak()
+
 ===== GetGoodsQuantityCmd
 
 #figure(
-  image("../../assets/catalog/GetGoodsQuantityCmd.png", width: 75%),
+  image("../../assets/catalog/GetGoodsQuantityCmd.png", width: 95%),
   caption: "Catalog - GetGoodsQuantityCmd",
 )
 
@@ -3397,7 +3421,7 @@ questa struttura non possiede attributi
 ===== SetGoodQuantityCmd
 
 #figure(
-  image("../../assets/catalog/SetGoodQuantityCmd.png", width: 75%),
+  image("../../assets/catalog/SetGoodQuantityCmd.png", width: 95%),
   caption: "Catalog - SetGoodQuantityCmd",
 )
 
@@ -3424,7 +3448,7 @@ Rappresenta il _Command_ per aggiornare la quantità di una merce in un magazzin
 ===== SetMultipleGoodsQuantityCmd
 
 #figure(
-  image("../../assets/catalog/SetMultipleGoodsQuantityCmd.png", width: 85%),
+  image("../../assets/catalog/SetMultipleGoodsQuantityCmd.png", width: 95%),
   caption: "Catalog - SetMultipleGoodsQuantityCmd",
 )
 
@@ -3444,10 +3468,12 @@ Rappresenta il _Command_ utilizzato per modificare le quantità di una serie di 
 
 - *`GetWarehouseID() string`*: permette di ottenere l'id del magazzino su cui effettuare le modifiche.
 
+#pagebreak()
+
 ===== AddOrChangeResponse
 
 #figure(
-  image("../../assets/catalog/AddOrChangeResponse.png", width: 55%),
+  image("../../assets/catalog/AddOrChangeResponse.png", width: 65%),
   caption: "Catalog - AddOrChangeResponse",
 )
 
@@ -3482,10 +3508,12 @@ Rappresenta la Risposta all'operazione di richiesta informazioni su una merce.
 
 - *`GetMap() map[string]catalogCommon.Good`*: permette di ottenere la mappa memorizzata nella Risposta.
 
+#pagebreak()
+
 ===== GetGoodsQuantityResponse
 
 #figure(
-  image("../../assets/catalog/GetGoodsQuantityResponse.png", width: 75%),
+  image("../../assets/catalog/GetGoodsQuantityResponse.png", width: 85%),
   caption: "Catalog - GetGoodsQuantityResponse",
 )
 
@@ -3541,7 +3569,7 @@ Rappresenta la Risposta alla richiesta di modifica quantità di una merce.
 
 ===== SetMultipleGoodsQuantityResponse
 #figure(
-  image("../../assets/catalog/SetMultipleGoodsQuantityResponse.png", width: 85%),
+  image("../../assets/catalog/SetMultipleGoodsQuantityResponse.png", width: 100%),
   caption: "Catalog - SetMultipleGoodsQuantityResponse",
 )
 
@@ -3816,6 +3844,8 @@ Si occupa di gestire l'_application logic_ del microservizio Catalog in merito a
 - *`GetGoodsInfoUseCase serviceportin.IGetGoodsInfoUseCase`*: la descrizione è disponibile alla @IGetGoodsInfoUseCase;
 - *`UpdateGoodDataUseCase serviceportin.IUpdateGoodDataUseCase`*: la descrizione è disponibile alla @IUpdateGoodDataUseCase.
 
+#pagebreak()
+
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewCatalogGoodInfoController(p CatalogControllerParams) *CatalogGoodInfoController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati mediante la struttura `CatalogControllerParams`, che ha gli attributi necessari e quanto utile per la telemetria;
@@ -3864,7 +3894,7 @@ Gli oggetti utilizzati per implementare queste componenti saranno ora esposti.
 ==== Oggetti comuni
 ===== Good (Repo) <WarehouseRepoGood>
 #figure(
-  image("../../assets/warehouse/Good.png", width: 25%),
+  image("../../assets/warehouse/Good.png", width: 35%),
   caption: "Warehouse - Good (Repo)",
 )
 Rappresenta una merce registrata nel magazzino.
@@ -3876,7 +3906,7 @@ Vieni utilizzato dall'interfaccia ICatalogRepository, vedi @WarehouseICatalogRep
 - *`Description string`*: attributo di tipo *string* che rappresenta la descrizione della merce.
 ===== Reservation (Repo) <WarehouseRepoReservation>
 #figure(
-  image("../../assets/warehouse/Repo-Reservation.png", width: 25%),
+  image("../../assets/warehouse/Repo-Reservation.png", width: 35%),
   caption: "Warehouse - Reservation (Repo)",
 )
 Rappresenta una prenotazione di merci nel magazzino. Viene utilizzata dalla _persistence logic_ e dall'interfaccia *IStockRepository* (@WarehouseIStockRepository).
@@ -3891,7 +3921,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== Reservation <WarehouseModelReservation>
 #figure(
-  image("../../assets/warehouse/Reservation.png", width: 25%),
+  image("../../assets/warehouse/Reservation.png", width: 35%),
   caption: "Warehouse - Reservation",
 )
 Rappresenta una prenotazione di merci nel magazzino.
@@ -3909,9 +3939,11 @@ Rappresenta un identificativo univoco per una prenotazione.
 
 - *`string`*: rappresenta l'identificativo univoco della prenotazione.
 
+#pagebreak()
+
 ===== ReservationGood <WarehouseModelReservationGood>
 #figure(
-  image("../../assets/warehouse/ReservationGood.png", width: 25%),
+  image("../../assets/warehouse/ReservationGood.png", width: 35%),
   caption: "Warehouse - ReservationGood",
 )
 Rappresenta una merce coinvolta in una prenotazione.
@@ -3923,7 +3955,7 @@ Rappresenta una merce coinvolta in una prenotazione.
 
 ===== CreateReservationCmd <WarehouseCreateReservationCmd>
 #figure(
-  image("../../assets/warehouse/CreateReservationCmd.png", width: 25%),
+  image("../../assets/warehouse/CreateReservationCmd.png", width: 35%),
   caption: "Warehouse - CreateReservationCmd",
 )
 Rappresenta il comando utilizzato per creare una prenotazione.
@@ -3934,7 +3966,7 @@ Rappresenta il comando utilizzato per creare una prenotazione.
 
 ===== CreateReservationResponse <WarehouseCreateReservationResponse>
 #figure(
-  image("../../assets/warehouse/CreateReservationResponse.png", width: 25%),
+  image("../../assets/warehouse/CreateReservationResponse.png", width: 35%),
   caption: "Warehouse - CreateReservationResponse",
 )
 Rappresenta la risposta alla richiesta di creazione di una prenotazione.
@@ -3942,6 +3974,8 @@ Rappresenta la risposta alla richiesta di creazione di una prenotazione.
 *Descrizione degli attributi della struttura:*
 
 - *`ReservationID string`*: rappresenta l'identificativo univoco della prenotazione creata.
+
+#pagebreak()
 
 ===== ConfirmTransferCmd <WarehouseConfirmTransferCmd>
 #figure(
@@ -3961,7 +3995,7 @@ Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
 
 ===== TransferUpdateGood <WarehouseTransferUpdateGood>
 #figure(
-  image("../../assets/warehouse/TransferUpdateGood.png", width: 34%),
+  image("../../assets/warehouse/TransferUpdateGood.png", width: 40%),
   caption: "Warehouse - TransferUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
@@ -3970,6 +4004,8 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 - *`GoodID string`*: rappresenta l'identificativo della merce;
 - *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
+
+#pagebreak()
 
 ===== ConfirmOrderCmd <WarehouseConfirmOrderCmd>
 #figure(
@@ -3999,11 +4035,13 @@ Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
 ===== CatalogUpdateCmd <WarehouseCatalogUpdateCmd>
 #figure(
-  image("../../assets/warehouse/CatalogUpdateCmd.png", width: 25%),
+  image("../../assets/warehouse/CatalogUpdateCmd.png", width: 30%),
   caption: "Warehouse - CatalogUpdateCmd",
 )
 
 Rappresenta il comando per aggiornare le informazioni di un catalogo nel microservizio *Warehouse*#super[G].
+
+#pagebreak()
 
 *Descrizione degli attributi della struttura:*
 
@@ -4061,7 +4099,7 @@ Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa co
 
 ===== AddStockCmd <WarehouseAddStockCmd>
 #figure(
-  image("../../assets/warehouse/AddStockCmd.png", width: 25%),
+  image("../../assets/warehouse/AddStockCmd.png", width: 35%),
   caption: "Warehouse - AddStockCmd",
 )
 
@@ -4075,7 +4113,7 @@ Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di 
 
 ===== IdempotentCmd <WarehouseIdempotentCmd>
 #figure(
-  image("../../assets/warehouse/IdempotentCmd.png", width: 40%),
+  image("../../assets/warehouse/IdempotentCmd.png", width: 35%),
   caption: "Warehouse - IdempotentCmd",
 )
 
@@ -4112,7 +4150,7 @@ Rappresenta un identificativo univoco per una merce.
 
 ===== GoodInfo <WarehouseGoodInfo>
 #figure(
-  image("../../assets/warehouse/GoodInfo.png", width: 42%),
+  image("../../assets/warehouse/GoodInfo.png", width: 25%),
   caption: "Warehouse - GoodInfo",
 )
 Questa classe è utilizzata nella _business logic_.
@@ -4123,9 +4161,11 @@ Rappresenta una merce con le sue informazioni.
 - *`Name string`*: attributo di tipo *string* che rappresenta il nome della merce;
 - *`Description string`*: attributo di tipo *string* che rappresenta la descrizione della merce.
 
+#pagebreak()
+
 ===== GoodStock <WarehouseGoodStock>
 #figure(
-  image("../../assets/warehouse/GoodStock.png", width: 25%),
+  image("../../assets/warehouse/GoodStock.png", width: 35%),
   caption: "Warehouse - GoodStock",
 )
 Questa classe è utilizzata nella _business logic_.
@@ -4137,7 +4177,7 @@ Rappresenta una merce con la sua quantità presente nel magazzino.
 
 ===== ReservationGood <WarehouseReservationGood>
 #figure(
-  image("../../assets/warehouse/ReservationGood.png", width: 25%),
+  image("../../assets/warehouse/ReservationGood.png", width: 35%),
   caption: "Warehouse - ReservationGood",
 )
 Rappresenta una merce coinvolta in un evento di prenotazione.
@@ -4149,7 +4189,7 @@ Rappresenta una merce coinvolta in un evento di prenotazione.
 
 ===== ApplyReservationEventCmd <WarehouseApplyReservationEventCmd>
 #figure(
-  image("../../assets/warehouse/ApplyReservationEventCmd.png", width: 25%),
+  image("../../assets/warehouse/ApplyReservationEventCmd.png", width: 35%),
   caption: "Warehouse - ApplyReservationEventCmd",
 )
 Rappresenta il comando utilizzato per applicare un evento di prenotazione.
@@ -4161,7 +4201,7 @@ Rappresenta il comando utilizzato per applicare un evento di prenotazione.
 
 ===== CreateStockUpdateCmd <WarehouseCreateStockUpdateCmd>
 #figure(
-  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 40%),
+  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 45%),
   caption: "Warehouse - CreateStockUpdateCmd",
 )
 
@@ -4181,7 +4221,7 @@ Rappresenta il _Command_ per creare un aggiornamento dello stock#super[G].
 
 ===== CreateStockUpdateGood <WarehouseCreateStockUpdateGood>
 #figure(
-  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 30%),
+  image("../../assets/warehouse/CreateStockUpdateGood.png", width: 35%),
   caption: "Warehouse - CreateStockUpdateGood",
 )
 
@@ -4192,6 +4232,7 @@ Rappresenta una classe che viene utilizzata dal _Command_ per creare un aggiorna
 - *`Good GoodStock`*: attributo di tipo `GoodStock` che rappresenta la merce aggiornata;
 - *`QuantityDiff int64`*: attributo di tipo *int64* che rappresenta la differenza di quantità della merce rispetto all'ultimo stato.
 
+#pagebreak()
 
 // oggetti
 
@@ -4354,6 +4395,8 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`GetFreeStock(goodId model.GoodID) model.GoodStock`*: il metodo deve permettere di ottenere la quantità libera di una merce presente nel magazzino, ovvero la quantità non riservata. Prende come parametro l'identificativo della merce (`goodId`) e restituisce un oggetto di tipo `GoodStock`.
 
+#pagebreak()
+
 ==== IGetReservationPort <WarehouseIGetReservationPort>
 
 Rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di ottenere i dettagli di una prenotazione specifica tramite il suo identificativo.
@@ -4511,6 +4554,8 @@ Implementa le seguenti interfacce (porte):
 
 - *`GetGood(goodId model.GoodID) GoodInfo`*: converte la richiesta di ottenimento delle informazioni di una merce in valori da fornire alla _persistence Logic_, quindi richiama la _persistence Logic_ ad eseguire l'operazione desiderata.
 
+#pagebreak()
+
 ==== IRemoveStockUseCase <WarehouseIRemoveStockUseCase>
 
 Rappresenta l'interfaccia che permette all'_application logic_ di comunicare alla _business logic_ la volontà di rimuovere una quantità di una merce dal magazzino.
@@ -4550,6 +4595,8 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`RemoveStock(ctx context.Context, cmd port.RemoveStockCmd) error`*: prende un _Command_ per la richiesta di rimozione di stock#super[G] e utilizza la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione;
 
 - *`AddStock(ctx context.Context, cmd port.AddStockCmd) error`*: prende un _Command_ per la richiesta di aggiunta di stock#super[G] e utilizza la porta adibita allo scopo per svolgere la richiesta. Ritorna quindi l'esito dell'operazione.
+
+#pagebreak()
 
 ==== StockController <WarehouseStockController>
 

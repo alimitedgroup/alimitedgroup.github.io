@@ -2,6 +2,8 @@
 
 #import "../lib.typ": *
 
+#pagebreak()
+
 === Notification <notification>
 
 Il microservizio *Notification* si occupa di controllare periodicamente la quantità di merce presente nel sistema,

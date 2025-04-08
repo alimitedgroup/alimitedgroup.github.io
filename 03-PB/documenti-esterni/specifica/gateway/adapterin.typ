@@ -5,7 +5,7 @@
 ==== _Adapter-in_ e _Port-in_
 
 #figure(
-  image("../../../../assets/drawio/apigateway_adapterin.svg"),
+  image("../../../../assets/drawio/apigateway_adapterin.svg", width: 120%),
   caption: [_Adapter-in_ di API Gateway],
 )
 
@@ -101,6 +101,8 @@ Questo _adapter_ si occupa dell'aggiornamento delle merci.
     ),
   ),
 )
+
+#pagebreak()
 
 ===== adapterin.GetTransfersController <GetTransfersController>
 
@@ -277,6 +279,8 @@ Questo _adapter_ si occupa di ritornare all'utente il suo ruolo attuale.
     ),
   ),
 )
+
+#pagebreak()
 
 ===== adapterin.HealthCheckController <HealthCheckController>
 

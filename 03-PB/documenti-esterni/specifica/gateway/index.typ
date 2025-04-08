@@ -2,6 +2,8 @@
 
 #import "../lib.typ": *
 
+#pagebreak()
+
 === API Gateway <api_gateway>
 
 Il microservizio *API Gateway* permette di interagire con il Sistema,
