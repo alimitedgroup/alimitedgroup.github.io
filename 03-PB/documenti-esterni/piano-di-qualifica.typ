@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.2.0]
+#let ver = [1.4.0]
 
 #show: body => importantdocs(
   data: datetime(day: 18, month: 02, year: 2025),
@@ -9,18 +9,25 @@
   versione: ver,
   versioni: (
     (
-      vers: "1.3.0",
+      vers: "1.4.0",
       date: datetime(day: 1, month: 04, year: 2025),
       autore: p.sara,
       //verifica: p.matteo,
       descr: "Aggiornamento cruscotto misurazioni.",
     ),
     (
+      vers: "1.3.0",
+      date: datetime(day: 31, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.loris,
+      descr: "Stesura dei test di unità ed integrazione" + [ (@tu e @ti)] + ".",
+    ),
+    (
       vers: "1.2.0",
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
-      //verifica: p.matteo,
-      descr: "Aggiornamento test di accettazione e di sistema.",
+      verifica: p.matteo,
+      descr: "Aggiornamento test di accettazione e di sistema" + [ (@ta e @ts)] + ".",
     ),
     (
       vers: "1.1.0",
@@ -152,23 +159,23 @@ L'approccio metodologico adottato non configura la qualità come un elemento sta
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto#super[G] ver. 1.0.0*: \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v1.0.0.pdf] \
-  *Ultimo Accesso 6 Febbraio 2025*
+- *Norme di Progetto#super[G] ver. 2.0.0*: \
+  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[alimitedgroup.github.io/NP%20v2.0.0.pdf] \
+  *Ultimo Accesso 4 Aprile 2025*
 - *Capitolato d'appalto C6 Sistema di Gestione di un Magazzino Distribuito*: \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf") \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 === Riferimenti informativi
 - *Glossario*: \
   #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Standard ISO/IEC 9126* \
   #link("https://it.wikipedia.org/wiki/ISO/IEC_9126") \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Standard ISO/IEC 12207:1995* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf") \
-  *Ultimo Accesso 6 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 = Qualità di processo <qtaprc>
@@ -341,7 +348,7 @@ La qualità del prodotto rappresenta l'obiettivo centrale di ogni progetto _Soft
 Essa è il risultato diretto della qualità dei processi adottati durante l'intero ciclo di vita del progetto.\
 
 Un prodotto _Software_ è considerato di alta qualità quando:
-- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v1.1.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.1.0*] *(Sezione 3)*;
+- È *funzionale*, ovvero rispetta i requisiti funzionali#super[G] e non funzionali definiti nel documento di #link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] ver. 2.0.0*] *(Sezione 3)*;
 - È *affidabile*, garantendo prestazioni consistenti e prive di errori;
 - È *usabile*, rendendo semplice e intuitiva l'interazione per gli utenti finali;
 - È *efficiente*, ovvero ottimizzato per rispondere in modo rapido ed efficace alle richieste;
@@ -472,17 +479,1636 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 
 #pagebreak()
 = Metodi di testing <test>
-Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto#super[G] ver. 1.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
+Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[*Norme di Progetto#super[G] ver. 2.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
 
-- Test#super[G] di Unità;
-- Test#super[G] di Integrazione;
-- Test#super[G] di Sistema;
-- Test#super[G] di Regressione;
-- Test#super[G] di Accettazione.
+- Tеst#super[G] di Unità;
+- Tеst#super[G] di Integrazione;
+- Tеst#super[G] di Sistema;
+- Tеst#super[G] di Regressione;
+- Tеst#super[G] di Accettazione.
 
-ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i relativi Test#super[G] di Regressione, nonché le altre tipologie di Test#super[G] qui non presenti, durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+== Tеst di Unità <tu>
 
-== Test di Sistema
+È possibile eseguire i test#super[G] mediante il comando `go tеst -race ./...`. I test#super[G] vengono eseguiti cartella per cartella: se la cartella non ha test#super[G] la linea di output stampata da `go tеst` inizierà con `?`, mentre se il test#super[G] riesce l'iniziale sarà `ok`.
+
+#test-table(
+  unit: "U",
+  tipo-test: "Tеst di Unità",
+  (
+    (
+      desc: [Implementato dalla funzione `TestGet GoodsGlobalQt`, testare se il _repository_#super[G] del microservizio `Catalog` restituisce la quantità globali delle merci memorizzate],
+      va: [
+        - 16 per la merce con id "test-ID";
+        - 10 per "2test-ID";
+        - 3 per la merce "3test-ID".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddGoodQuantity`, testare se il _repository_#super[G] del microservizio `Catalog` aggiunge la quantità corretta di una merce],
+      va: [7 unità globali della merce con id "test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddGood`, testare se il _repository_#super[G] del microservizio `Catalog` inserisce i dati di una merce],
+      va: [
+        - id della merce è "test-ID";
+        - nome della merce è "test-name";
+        - descrizione della merce è "test-description".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestChangeGoodData`, testare se il _repository_#super[G] del microservizio `Catalog` modifica i dati di una merce],
+      va: [
+        - id della merce è "test-ID"
+        - nome della merce è "new-test-name"
+        - descrizione della merce è "new-test-description";
+        - la quantità della merce è invariata a 7.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestChangeGoodData WrongID`, testare se il _repository_#super[G] del microservizio `Catalog` restituise un errore se l'id della merce da modificare non esiste],
+      va: [il _repository_#super[G] restituisce l'errore `ErrGoodIdNotValid`],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestChangeGoodData EmptyName`, testare se il _repository_#super[G] del microservizio `Catalog` restituise un errore se il nome della merce è vuoto],
+      va: [il _repository_#super[G] restituisce l'errore `ErrEmptyName`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestChange GoodDataEmpty Description`, testare se il _repository_#super[G] del microservizio Catalog restituise un errore se la descrizione della merce è vuota],
+      va: [il _repository_#super[G] restituisce l'errore `ErrEmptyDescription`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddWarehouse`, testare se il _repository_#super[G] del microservizio `Catalog` aggiunge correttamente un nuovo magazzino],
+      va: [il _repository_#super[G] restituisce la mappa dei magazzini e il magazzino con id `test-warehouse-ID` sia presente.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetWarehouses`, testare se `catalogAdapter` del microservizio `Catalog` restituisce un `Get WarehousesResponse` valido],
+      va: [nella risposta prodotta è presente il magazzino con id "test-warehouse-id".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetWarehouses`, testare se catalogAdapter del microservizio `Catalog` restituisce un `Add OrChangeResponse` valido],
+      va: [nella risposta prodotta lo stato dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetWarehouses`, testare se `catalogAdapter` del microservizio `Catalog` restituisce un `Add OrChangeResponse` valido (considerando un possibile errore nell'id fornito)],
+      va: [nella risposta prodotta lo stato dell'operazione è `ErrGoodIdNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestSetGoodQuantity`, testare se catalogAdapter del microservizio `Catalog` restituisce un `TestSetGoodQuantity Response` valido],
+      va: [nella risposta prodotta lo stato dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestSetGoodQuantity WithWrongID`, testare se `catalogAdapter` del microservizio `Catalog` restituisce un `TestSetGoodQuantity Response` valido (considerando un possibile errore nell'id fornito)],
+      va: [nella risposta prodotta lo stato dell'operazione è `ErrGoodIdNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `Tеst GetGoodsQuantity`, testare se `catalogAdapter` del microservizio Catalog restituisce un `GetGoodsQuantity Response` valido],
+      va: [nella risposta fornita è presente la mappa all'interno della quale la quantità della merce con id "test-id" è 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetGoodsInfo`, testare se `catalogAdapter` del microservizio Catalog restituisce un `Get GoodsInfoResponse` valido],
+      va: [nella risposta fornita è presente la mappa all'interno della quale è presente la mece con id "test-id", nome "test-name" e descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetWarehouses`, testare se `CatalogService` riesce ad ottenere l'elenco dei magazzini],
+      va: [nella risposta fornita è presente la mappa dei magazzini contenente il magazzino con id "test-warehouse-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `Tеst AddOrChangeGood Data`, testare se `CatalogService` riesce a modificare i dati di una merce],
+      va: [nella risposta fornita è l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `Tеst AddOrChangeGood Data_WrongID`, testare se `CatalogService` riporta una risposta con errore quando l'id fornito non è valido],
+      va: [nella risposta fornita è l'esito dell'operazione è `ErrGoodIdNoValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestSetMultipleGoods Quantity`, testare se `CatalogService` riesce con successo ad avviare la modifica della quantità di due merci],
+      va: [nella risposta fornita è l'esito dell'operazione è `nil` e non vi sono id con modifica sbagliata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestSetMultipleGoods QuantityWithWrongID`, testare se `CatalogService` riesce con successo a riportare un errore nella modifica della quantità di una merce],
+      va: [nella risposta fornita è l'esito dell'operazione è `ErrGeneric` `Failure` ed è riportato un errore alla merce con id `test-wrong-id`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGet GoodsQuantity`, testare se `CatalogService` riesce con successo ad ottenere la lista delle merci e delle loro quantità],
+      va: [nella mappa della risposta fornita è presente la merce con id `test-id` e la quantità è 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetGoodsInfo`, testare se `CatalogService` riesce con successo ad ottenere la lista delle merci e delle loro informazioni],
+      va: [nella mappa della risposta fornita è presente la merce con id `test-id`, nome "test-name" e descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestSetMultipleGood QuantityRequest`, testare se `CatalogController` riesce con successo a modificare la quantità di più merci],
+      va: [La modifica viene con successo ricevuta dal _mock_ di CatalogService, che modifica una apposita variabile globale a `true`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `Tеst SetGoodDataRequest`, testare se `CatalogController` riesce con successo a modificare le informazioni di una merce],
+      va: [La modifica viene con successo ricevuta dal _mock_ di CatalogService, che modifica una apposita variabile globale a `true`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetGoodsRequest`, testare se `CatalogController` riesce con successo ad ottenere le informazioni delle merci],
+      va: [Nella risposta è presente una mappa che possiede una merce con:
+        - id "test-ID";
+        - nome "test-name";
+        - descrizione "test-description".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetWarehouses Request`, testare se `CatalogController` riesce con successo ad ottenere le informazioni dei magazzini],
+      va: [Nella risposta è presente una mappa che possiede un magazzino con id "test-warehouse-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetGoodsGlobal Quantity Request`, testare se `CatalogController` riesce con successo ad ottenere sulla quantità globale delle merci],
+      va: [Nella risposta è presente una mappa che possiede la merce con id "test-ID" a quantità 7.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStorePemKeyPair`, testare che `AuthRepository` registri correttamente una coppia di chiavi in formato Pem],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStore WrongKeyPair`, testare che `AuthRepository` ritorni un errore se si cerca di memorizzare una coppia di chiavi non di tipo ecdsa],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStore GarbageKeyPair`, testare che `AuthRepository` ritorni un errore se si cerca di memorizzare una coppia non in formato Pem],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetPemPublicKey`, testare che `AuthRepository` ritorni correttamente la chiave pubblica],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornata la chiave pubblica e l'issuer.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetPemPrivateKey`, testare che `AuthRepository` ritorni correttamente la chiave privata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornata la chiave privata e l'issuer.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetPemPublicKey WithNoKey`, testare che `AuthRepository` ritorni un errore se si prova ad ottenere la chiave pubblica ma questa non è stata precedentemente memorizzata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoPublicKey`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetPemPrivateKey WithNoKey`, testare che `AuthRepository` ritorni un errore se si prova ad ottenere la chiave privata ma questa non è stata precedentemente memorizzata],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoPrivateKey`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestCheckKeyPair`, testare che `AuthRepository` non ritorni errore se si invoca `CheckKeyPairExistence` e la coppia di chiavi è presente],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestCheckKeyPair WithNoKey`, testare che `AuthRepository` ritorni errore se si invoca `CheckKeyPairExistence` e la coppia di chiavi non è presente],
+      va: [Invocando il metodo apposito per eseguire l'operazione viene ritornato `ErrNoKeyPair`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStorePemKeyPair`, testare che `AuthAdapter` trasmetta correttamente la richiesta di memorizzazione di una coppia di chiavi],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStoreWrong PemKeyPair`, testare che `AuthAdapter` ritorni l'esito negativo di un'operazione di memorizzazione coppia di chiavi non corretta],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrKeyPairNotValid`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da` TestGetPemPublicKey`, testare che `AuthAdapter` trasmetta correttamente la richiesta di ottenimento chiave pubblica],
+      va: [Nella risposta fornita dall'_Adapter_ è presente la chiave pubblica.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetPemPublic Key_NoKey`, testare che `AuthAdapter` ritorni l'esito negativo di un'operazione di ottenimento chiave pubblica quando nessuna chiave pubblica è memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ la chiave pubblica è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst GetPemPrivateKey`, testare che `AuthAdapter` trasmetta correttamente la richiesta di ottenimento chiave privata],
+      va: [Nella risposta fornita dall'_Adapter_ è presente la chiave privata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetPem PrivateKey_NoKey`, testare che `AuthAdapter` ritorni l'esito negativo di un'operazione di ottenimento chiave privata quando nessuna chiave privata è memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ la chiave privata è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestCheckKey PairExistence`, testare che `AuthAdapter` trasmetta correttamente la richiesta di controllo della presenza di una coppia di chiavi memorizzata],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestAdaptKey`, testare che `AuthPublisherAdapter` trasmetta correttamente la richiesta di pubblicazione chiave pubblica],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestAdaptKeyWith WrongIssuer`, testare che `AuthPublisherAdapter` trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore simulando che qualcosa non ha funzionato come previsto],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `test error`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestAdaptKeyWith InvalidKey`, testare che `AuthPublisherAdapter` trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è in formato Pem],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst AdaptWithWrongKey`, testare che `AuthPublisherAdapter` trasmetta correttamente la richiesta di pubblicazione chiave pubblica e ritorni un errore se la chiave che si prova a pubblicare non è di tipo ecdsa],
+      va: [Nella risposta fornita dall'_Adapter_ l'esito dell'operazione è `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetToken`, testare che `AuthService` generi correttamente un token],
+      va: [AuthService genera una coppia di chiavi valida e ritorna un token correttamente firmato.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestPublishing`, testare che `AuthPublisher` pubblichi correttamente una chiave pubblica],
+      va: [Nello _stream_ di pubblicazione chiavi pubblichi è presente la chiave pubblica.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst PublishingWrongKey`, testare che `AuthPublisher` ritorni un errore quando la pubblicazione di una chiave non va a buon fine],
+      va: [Il Publisher ritorna l'errore `ErrPublish`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetToken`, testare che `AuthController` ritorni il token quando arriva una richiesta valida],
+      va: [La risposta ritornata dal Controller contiene il token di prova `test-token`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetTokenWith WrongUser`, testare che `AuthController` funzioni come previsto se il _mock_ del service rileva un nome utente non corretto],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetTokenEmpty Username`, testare che `AuthController` funzioni come previsto se il nome utente fornito è vuoto.],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetTokenWrong Request`, testare che `AuthController` funzioni come previsto se la richiesta fornita non è corretta.],
+      va: [La risposta ritornata dal Controller ha un token vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockRepository ImplGetAndSet`, testare che `StockRepositoryImpl` aggiunga correttamente quantità di merce e registri correttamente le _reservation_],
+      va: [Sono presenti le seguenti quantità:
+        - la merce con id "1" ha 10 unità totali, tutte non riservate;
+        - la merce con id "1" ha 0 unità totali, tutte non riservate;
+        Inoltre, un tentativo di _reservation_ per 5 unità della merce con id "1" e il suo rilascio fa ritornare `nil` dal _repository_#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst StockRepositoryImpl Reserve AndUnreserve`, testare che `StockRepositoryImpl` riesca a gestire correttamente le _reservation_],
+      va: [La quantità non riservata della merce con id "1" è 5 con 10 unità totali.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst StockRepositoryImpl ReserveNot ExistingGood`, testare che `StockRepositoryImpl` ritorni un errore se la _reservation_ è effettuata su una merce non esistente nel magazzino],
+      va: [Il metodo `ReserveStock` ritorna un errore, il tentativo di ottenere la quantità di merce disponibile ritorna 0.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockRepository Impl UnreserveNotEnough`, testare che `StockRepositoryImpl` gestisca correttamente una richiesta di rimozione di _reservation_ di una quantità maggiore di quella riservata],
+      va: [Il metodo `UnReserveStock` ritorna un errore.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestCatalog RepositoryImpl`, testare che `Catalog RepositoryImpl` gestisca correttamente l'aggiunta di una merce],
+      va: [Dopo l'operazione di aggiunta, invocando il metodo `GetGood` sulla merce con id "1", questa risulta presente e con le seguenti caratteristiche:
+        - nome "blue_hat";
+        - descrizione "very beautiful hat";
+        Inoltre non risulta esistere la merce con id "2" in quanto non aggiunta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIdempotente RepositoryImpl`, testare che `Idempotent RepositoryImpl` gestisca correttamente la gestione degli eventi],
+      va: [
+        - L'evento "event" con id "id" risulta essere processato;
+        - L'evento "event" con id "id2" non risulta essere processato;
+        - L'evento "event2" con id "id" non risulta essere processato.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance AdapterApply`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di aggiunta stock#super[G]],
+      va: [
+        Viene aggiunta correttamente la merce, il _mock_ del _repository_#super[G] ritorna `true`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance AdapterGet`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G]],
+      va: [
+        Nella risposta fornita dall'adapter sono presenti:
+        - merce con id "1" con quantità totale pari a 10
+        - merce con id "1" con quantità libera da _reservation_ pari a 10
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance AdapterGetReserv`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G] in _reservation_],
+      va: [
+        Nella risposta fornita dall'adapter sono presenti:
+        - merce con id "1" con quantità riservata pari a 10
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStock PersistanceAdapter GetReservNotFound`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di ottenimento stock#super[G] in _reservation_ e gestisca correttamente il caso in cui la _reservation_ richiesta non esista],
+      va: [
+        L'adapter ritorna un errore `ErrReservation NotFound` e la _reservation_ non contiene nulla
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance AdapterApplyReserv`, testare che `Stоck PersistanceAdapter` riesca a trasmettere la richiesta di _reservation_],
+      va: [
+        L'adapter ritorna `nil` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance AdapterApplyReservErr`, testare che `Stоck PersistanceAdapter` riesca a gestire una richiesta di _reservation_ con quantità non disponibile di una merce],
+      va: [
+        L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance AdapterApplyOrder`, testare che `Stоck PersistanceAdapter` riesca a gestire una richiesta di conferma ordine#super[G]],
+      va: [
+        L'adapter ritorna `nil` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistance Adapter ApplyOrderErr`, testare che `Stоck PersistanceAdapter` riesca a gestire una richiesta di conferma ordine#super[G] con richiesta non corretta],
+      va: [
+        L'adapter ritorna `ErrNotEnoughGoods` successivamente alla richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIdempotent AdapterGet`, testare che `IDempotentAdapter` trasmetta correttamente la richiesta di ottenimento informazioni sullo svolgimento di un evento],
+      va: [
+        La funzione `IsAlreadyProcessed` ritorna `false`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIdempotent AdapterSet`, testare che `IDempotentAdapter `trasmetta correttamente la richiesta di salvataggio di un nuovo evento],
+      va: [
+        Il _mock_ del _repository_#super[G] riceve la richiesta con successo.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst CatalogPersistance AdapterSetAndGet`, testare che `CatalogPersistance Adapter` trasmetta correttamente la richiesta di memorizzazione e ottenimento informazioni di una merce],
+      va: [
+        Il metodo `GetGood` ritorna un oggetto `GoodInfo` contenente una merce con le seguenti informazioni:
+        - id pari a 1;
+        - nome pari a "blue-hat";
+        - descrizione pari a "very beautiful hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst CatalogPersistance AdapterGetNotExist`, testare che `CatalogPersistance Adapter` gestisca correttamente la richiesta di ottenimento informazioni di un oggetto non esistente],
+      va: [
+        Il metodo `GetGood` ritorna un oggetto `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst StockUpdateAdapter`, testare che `PublishStock UpdateAdapter` gestisca correttamente la richiesta di aggiornamento quantità di una merce],
+      va: [
+        Il metodo `CreateStockUpdate` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst StockUpdateAdapter NetworkErr`, testare che `PublishStock UpdateAdapter` gestisca correttamente un errore di rete],
+      va: [
+        Il metodo `CreateStockUpdate` ritorna l'errore verificatosi.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestReservation EventAdapter`, testare che `PublishReservation EventAdapter` pubblichi correttamente una richiesta di _reservation_],
+      va: [
+        Il metodo `StoreReservationEvent` ritorna `nil` è il messaggio risulta inviato su NATS#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestReservationEvent AdapterNetworkErr`, testare che `PublishReservation EventAdapter` pubblichi correttamente una richiesta di _reservation_],
+      va: [
+        Il metodo `StoreReservationEvent` ritorna l'errore verificatosi.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      //Utilizzato per quando le notifiche di assortimento vengono accettate
+      desc: [Implementato da `Tеst StockUpdateListener`, testare che `StockUpdateListener` gestisca correttamente un evento di aggiornamento quantità merce disponibile],
+      va: [
+        Il _mock_ che implementa `IApplyStock UpdateUseCase` registra:
+        - 10 unità della merce con id "1";
+        - 20 unità della merce con id "2".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestReservation EventListener`, testare che `Reservation EventListener` riceva le richieste di _reservation_],
+      va: [
+        Viene ricevuto l'_acknowledge_ sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderUpdate ListenerForOrder`, testare che `OrderUpdateListener` riceva le richieste di aggiornamento su un ordine#super[G]],
+      va: [
+        Viene ricevuto l'_acknowledge_ sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderUpdate ListenerForTransfer`, testare che `OrderUpdateListener` riceva le richieste di aggiornamento su un trasferimento#super[G]],
+      va: [
+        Viene ricevuto l'_acknowledge_ sulla richiesta inviata.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestCatalogUpdate Listener`, testare che `CatalogListener` riceva le richieste di aggiornamento infromazioni su una merce],
+      va: [
+        Viene ricevuto l'_acknowledge_ sulla richiesta inviata e, ottenendo le informazioni sulla merce con id "1" dal _mock_ di `IApplyCatalog UpdateUseCase`, il nome di tale merce è "hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockController`, testare che `StockController` riceva le richieste di aggiornamento quantità merce],
+      va: [
+        La risposta fornita del controller è "ok".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockController AddStockErr`, testare che `StockController` gestisca correttamente una richiesta di aggiunta merce non andata a buon fine],
+      va: [
+        La risposta fornita del controller contiene un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockController RemStockErr`, testare che `StockController` gestisca correttamente una richiesta di rimozione merce non andata a buon fine],
+      va: [
+        La risposta fornita del controller contiene un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst ReservationController`, testare che `ReservationController` gestisca correttamente una richiesta di _reservation_],
+      va: [
+        Il controller, nella risposta fornita, inserisce l'id della resevation pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst ManageStockService`, testare che `ManageStockService` gestisca correttamente una richiesta di aggiunta e rimozione merce],
+      va: [
+        Il _mock_ che implementa le porte del service verso il _repository_#super[G] segnala prima 10 unità della merce con id "1", quindi 0, dopo la rimozione.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst ManageReservation ServiceApply ReservationEvent`, testare che `Manage ReservationService` applichi un evento _reservation_],
+      va: [
+        Il metodo invocato `ApplyReservation Event` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst ManageReservation Service CreateReservation`, testare che `Manage ReservationService` gestisca correttamente la creazione di una _reservation_],
+      va: [
+        Il metodo invocato `ApplyReservation Event` ritorna l'id della resevation e `nil` come errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManage Reservation ServiceConfirmOrder`, testare che `Manage ReservationService` gestisca correttamente la conferma di un ordine#super[G] ,con opportune conseguenze sulle _reservation_],
+      va: [
+        Il metodo invocato `ConfirmOrder` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst ManageReservation ServiceConfirm TransferSender`, testare che `Manage ReservationService` gestisca correttamente la conferma di un trasferimento#super[G] (lato mittente)],
+      va: [
+        Il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst ManageReservation ServiceConfirm TransferReceiver`, testare che `ManageReservation Service` gestisca correttamente la conferma di un trasferimento#super[G] (lato destinatario)],
+      va: [
+        Il metodo invocato `ConfirmTransfer` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestApply StockUpdateService`, testare che `ApplyStock UpdateService` gestisca correttamente l'aggiunta di stock#super[G] di merce],
+      va: [
+        La richiesta raggiunge correttamente il _mock_ di `IIdempotentPort`
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestApply CatalogUpdateService`, testare che `ApplyCatalog UpdateService` gestisca correttamente la modifica delle informazioni di una merce],
+      va: [
+        Interrogando il _mock_ `IApplyCatalog UpdatePort` sul nome dell'oggetto con id "1", questo ritorna "hat".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Rеpository Impl`, testare che `TransferRepository Impl` gestisca correttamente le richieste di ottenimento informazioni, inizializzazione e completamento dei trasferimenti],
+      va: [
+        Inizialmente i trasferimenti con id "1" e "2" non sono presenti, quindi il loro completamento e modifica non devono determinare il ritorno di errori.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `Tеst StockRepositoryImpl`, testare che `Stоck RepositoryImpl` gestisca correttamente le richieste di ottenimento informazioni, modifica e aggiunta stock#super[G] di merce, inclusa la gestione degli errori],
+      va: [
+        Inizialmente l'ottenimento di informazioni delle merci con id "1" e "2" non deve determinare un ritorno di `nil` in quanto non presenti. La successiva aggiunta e modifica quantità deve determinare il ritorno di `nil`. Inoltre deve risultare presente il magazzino con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder RepositoryImpl`, testare che `Order RepositoryImpl` gestisca correttamente le richieste di ottenimento informazioni, modifica e completamento ordini],
+      va: [
+        Inizialmente l'ottenimento di informazioni degli ordini con id "1" e "2" non deve determinare un ritono di `nil` in quanto non presenti. La successiva aggiunta e modifica di tali ordini deve determinare il ritorno di `nil`, così come il completamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence AdapterApply TransferUpdate`, testare che `TransferPersistance` Adapter gestisca correttamente le richieste di aggiornamento stato dei trasferimenti],
+      va: [
+        Il _mock_ di `ITransferRepository` riceve correttamente l'aggiornamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence Adapter GetTransferExist`, testare che `TransferPersistance Adapter` restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito positivo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene il trasferimento#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence Adapter GetTransfer NotExist`, testare che `TransferPersistance Adapter` restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene l'errore `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence Adapter GetAllTransfer`, testare che `TransferPersistance Adapter` restituisca correttamente la risposta di una richiesta ottenimento informazioni su un trasferimento#super[G] con esito negativo],
+      va: [
+        La risposta fornita dal metodo `GetTranfer` contiene un solo trasferimento#super[G] e tale trasferimento#super[G] ha id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence AdapterSetComplete`, testare che `TransferPersistance Adapter` trasmetta la richiesta di aggiornamento stato trasferimento#super[G] come completato],
+      va: [
+        La risposta fornita dal metodo `SetComplete` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence AdapterSetComplete Err`, testare che `TransferPersistance Adapter` gestisca correttamente una richiesta di aggiornamento stato trasferimento#super[G] come completato nel caso in cui tale trasferimento#super[G] non esista],
+      va: [
+        La risposta fornita dal metodo `SetComplete` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Persistence AdapterIncrement LinkedStockUpdate`, testare che `TransferPersistance Adapter` trasmetta correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G]],
+      va: [
+        La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer PersistenceAdapter Increment LinkedStockUpdate Err,` testare che `Transfer PersistanceAdapter` gestisca correttamente la richiesta di aggiunta di un aggiornamento dello stock#super[G] con un id trasferimento#super[G] non esistente],
+      va: [
+        La risposta fornita dal metodo `IncrementLinked StockUpdate` ritorna `ErrTransferNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da` TestStock PersistenceAdapter ApplyStockUpdate`, testare che `Stоck PersistanceAdapter` gestisca correttamente una richiesta di aggiornamento stock#super[G] merce],
+      va: [
+        Il _mock_ che implementa `IStockRepository` riceve la richiesta di aggiornamento.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistence Adapter GetWarehouses`, testare che `Stоck PersistanceAdapter` gestisca correttamente una richiesta di ottenimento lista dei magazzini],
+      va: [
+        La risposta fornita da `GetWarehouses` contiene due magazzini.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistence Adapter GetGlobalStock`, testare che `Stоck PersistanceAdapter` gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 10 unità per la merce con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistence AdapterGet StockNotExist`, testare che `StockPersistance Adapter` gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino ma con id merce non esistente],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 0 unità per la merce con id "1" e ha ritornato l'errore `ErrGoodNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestStockPersistence AdapterGetStock WarehouseNotExist`, testare che `StockPersistance Adapter` gestisca correttamente una richiesta di ottenimento quantità disponibile di una merce in un magazzino ma con un id magazzino non esistente],
+      va: [
+        La risposta fornita da `GetStock` ha memorizzato 0 unità per la merce con id "1" e ha ritornato l'errore `ErrWarehouseNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder PersistenceAdapter ApplyOrderUpdate`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di applicazione modifiche ad un ordine#super[G]],
+      va: [
+        Il _mock_ di `IOrderRepository` riceve correttamente la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder Persistence AdapterGet OrderExist`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G]],
+      va: [
+        La risposta contiene un ordine#super[G] con id "1" e nessun errore (`nil`) viene ritornato.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder PersistenceAdapter GetOrderNotExist`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di ottenimento informazioni su un ordine#super[G] con "id" non esistente],
+      va: [
+        Viene ritornato un errore `ErrOrderNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderPersistence AdapterGetAllOrder`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di ottenimento informazioni su tutti gli ordini],
+      va: [
+        La risposta contiene un ordine#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderPersistence AdapterSetComplete`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di modifica stato ordine#super[G] a completato],
+      va: [
+        Il metodo invocato `SetComplete` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderPersistence AdapterSet CompleteErr`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta di modifica stato ordine#super[G] a completato ma l'id dell'ordine non esiste],
+      va: [
+        Il metodo invocato `SetComplete` ritorna `ErrOrderNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderPersistence AdapterAdd CompletedWarehouse`, testare che `OrderPersistance Adapter` gestisca correttamente una richiesta `SetCompleted WarehouseCmd`],
+      va: [
+        Il metodo invocato `SetCompleted Warеhouse` ritorna un ordine#super[G] con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder PersistenceAdapter AddCompleted WarehouseErr`, testare che `OrderPersistance` Adapter gestisca correttamente una richiesta `SetCompleted WarehouseCmd` con una merce con id non esistente],
+      va: [
+        Il metodo invocato `SetCompleted Warеhouse` ritorna un ordine#super[G] con id vuoto e un errore `ErrGoodNotFound`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestNats_stream_ AdapterSend OrderUpdate`, testare che `Nats_stream_Adapter` gestisca richieste di aggiornamento ordine#super[G]],
+      va: [
+        L'adapter conferma l'operazione ritornando un ordine#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestNats_stream_ Adapter SendTransferUpdate`, testare che `Nats_stream_Adapter` gestisca richieste di aggiornamento trasferimento#super[G]],
+      va: [
+        L'adapter conferma l'operazione ritornando un trasferimento#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestNats_stream_ Adapter SendContactOrder`, testare che `Nats_stream_Adapter` gestisca richieste di contatto di un magazzino per un ordine#super[G]],
+      va: [
+        Il metodo invocato `SendContact Warеhouses` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestNats_stream_ Adapter SendContactTransfer`, testare che `Nats_stream_Adapter` gestisca richieste di contatto di un magazzino per un trasferimento#super[G]],
+      va: [
+        Il metodo invocato `SendContactWarehouses` ritorna `nil`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestNats_stream_ Adapter RequestReservation`, testare che `Nats_stream_Adapter` gestisca richieste di _reservation_],
+      va: [
+        Il metodo invocato `RequestReservation` ritorna una risposta con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder ListenerApply OrderUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un ordine#super[G]],
+      va: [
+        Il _mock_ di `applyOrderUpdate UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderListener ApplyTransferUpdate`, testare che `OrderListener` gestisca richieste di aggiornamento informazioni di un trasferimento#super[G]],
+      va: [
+        Il _mock_ di `applyTransferUpdate UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrderListener ContactWarehouses Transfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un trasferimento#super[G]],
+      va: [
+        Il _mock_ di `contactWarehouse UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder ListenerContact WarehousesTransfer`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G]],
+      va: [
+        Il _mock_ di `contactWarehouse UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder ListenerContact WarehousesOrder WithRetry`, testare che `OrderListener` gestisca richieste di aggiornamento contatto di un magazzino per un ordine#super[G] al secondo tentativo],
+      va: [
+        Il _mock_ di `contactWarehouse UseCase` riceve la richiesta.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer Controller CreateTransfer`, testare che `TransferController` gestisca richieste `CreateTransfer RequestDTO`],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene un trasferimento#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestTransfer ControllerGet Transfer`, testare che `TransferController` gestisca richieste di ottenimento informazioni su tutti i trasferimenti],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene due trasferimenti, con id "1" e "2" rispettivamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder Controller CreateOrder`, testare che `OrderController` gestisca richieste di creazione ordini],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene un ordine#super[G] con id pari a "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestOrder ControllerGetOrder`, testare che `OrderController` gestisca richieste di creazione ordini],
+      va: [
+        La risposta fornita mediante NATS#super[G] contiene due ordini, con id "1" e "2" rispettivamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestSimpleCalculate AvailabilityService`, testare che `SimpleCalculate AvailabilityService` riferisca quali magazzini hanno una certa quantità di una merce],
+      va: [
+        Viene restituito il magazzino con id "1", con esattamente 1 unità della merce con id "1".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManage OrderService GetAllTransfers`, testare che `ManageOrderService` gestisca richieste di ottenimento informazioni su tutti i trasferimenti],
+      va: [
+        Viene restituito un trasferimento#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManage OrderService GetTransfer`, testare che `ManageOrderService` gestisca richieste di ottenimento informazioni su un trasferimento#super[G] nello specifico],
+      va: [
+        Il trasferimento#super[G] con id "1" viene restituito correttamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManage OrderService GetAllOrders`, testare che `ManageOrderService` gestisca richieste di ottenimento informazioni su tutti gli ordini],
+      va: [
+        Viene restituito un ordine#super[G] .
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManageOrder ServiceGetOrder`, testare che `ManageOrderService` gestisca richieste di ottenimento informazioni su un ordine#super[G] nello specifico],
+      va: [
+        Il trasferimento#super[G] con id "1" viene restituito correttamente.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManageOrder ServiceCreateOrder`, testare che `ManageOrderService` gestisca richieste di creazione di un ordine#super[G]],
+      va: [
+        Viene ritornato l'id del nuovo ordine#super[G] (che non deve essere una stringa vuota).
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManageOrder ServiceCreateTrasfer`, testare che `ManageOrderService` gestisca richieste di creazione di un trasferimento#super[G]],
+      va: [
+        Viene ritornato l'id del nuovo trasferimento#super[G] (che non deve essere una stringa vuota).
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManage OrderService ContactWarehouse Transfer`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un trasferimento#super[G]],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManageOrder Service ContactWarehouse Transfer RetryLater`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un trasferimento#super[G] al secondo tentativo],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManage OrderService Contact WarehouseOrder`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un ordine#super[G]],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestManageOrder ServiceContact WarehouseOrder RetryLater`, testare che `ManageOrderService` gestisca richieste di contatto magazzino per un ordine#super[G] al secondo tentativo],
+      va: [
+        La risposta fornita dal metodo `ContactWarehouses` deve essere false al campo `IsRetry`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestApplyStock UpdateService Stоck`,testare che `ApplyStock UpdateService` registri gli aggiornamenti di stock#super[G] per un ordine#super[G]],
+      va: [
+        La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestApplyStock UpdateService Transfer`, testare che `ApplyStock UpdateService` registri gli aggiornamenti di stock#super[G] per un trasferimento#super[G]],
+      va: [
+        La risposta fornita dal metodo invocato `ApplyStockUpdate` non contiene errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestApply OrderUpdate ServiceOrder`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un ordine#super[G]],
+      va: [
+        Il _mock_ di `applyOrder UpdatePort` riceve la richiesta come previsto.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestApply OrderUpdate ServiceTransfer`, testare che `ApplyOrder UpdateService` registri gli aggiornamenti di un trasferimento#super[G]],
+      va: [
+        Il _mock_ di `applyTransfer UpdatePort` riceve la richiesta come previsto.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLogin`, testare che Business del microservizio `Api Gateway` trasmetta correttamente richieste di login],
+      va: [
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e la risposta fornita dall'elemento testato contiene:
+        - "some.secure. jwt" come token;
+        - ruolo corrispondente a quello richiesto;
+        - data di scadenza fissata a 1 settimana.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLoginNoSuchUser`, testare che `Business` del microservizio `Api Gateway` trasmetta correttamente richieste di login con utente sconosciuto],
+      va: [
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorInvalid Credentials`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLoginGetToken Error`, testare che `Business` del microservizio `Api Gateway` trasmetta correttamente richieste di login che ritornano un errore],
+      va: [
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLoginGetRole Error`, testare che `Business` del microservizio `Api Gateway` trasmetta correttamente richieste di login che ritornano un errore relativo al ruolo],
+      va: [
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetRole`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLoginVerify TokenError`, testare che `Business` del microservizio `Api Gateway` gestisca correttamente token non validi durante l'operazione di login],
+      va: [
+        Il _mock_ di `Authentication PortOut` riceve la richiesta e l'oggetto testato restituisce l'errore `ErrorGetToken`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestVerifyRoleError`, testare che `Business` del microservizio `Api Gateway` riesca a gestire token non validi],
+      va: [
+        La vеrifica di un token valido riporta un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetWarehouses`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento magazzini],
+      va: [
+        La risposta fornita possiede due magazzini:
+        - uno con id "abc";
+        - uno con id "def".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetWarehouses Error`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento magazzini e risposte contenenti errore],
+      va: [
+        Il metodo invocato `GetWarehouses` ritorna l'errore `ErrorGetWarehouses`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetGoods`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento dati merce],
+      va: [
+        La risposta fornita possiede due merci. La prima merce ha:
+        - id "id1";
+        - nome "abc";
+        - descrizione "abcdesc";
+        - 20 unità di materiale.
+        La seconda merce ha:
+        - id "id2";
+        - nome "def";
+        - descrizione "defdesc";
+        - 10 unità di materiale.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetGoodsError`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante i dati],
+      va: [
+        Il metodo invocato `GetGoods` ritorna l'errore `ErrorGetGoods`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetGoods StockError`, testare che `Business` del microservizio `Api Gateway` riesca a trasmettere richieste di ottenimento dati merce e risposte contenenti errore riguardante lo stock#super[G]],
+      va: [
+        Il metodo invocato `GetGoods` ritorna l'errore `ErrorGetStock`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestListGoods`, testare che `CatalogAdapter` del microservizio `Api Gateway` riesca a tradurre richieste di ottenimento lista di merci e rispettivi dati],
+      va: [
+        Il metodo invocato `ListGoods` non ritorna errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestListStock`, testare che `CatalogAdapter` del microservizio `Api Gateway` riesca a tradurre richieste di ottenimento lista di merci e rispettivi quantità],
+      va: [
+        Il metodo invocato `ListGoods` non ritorna errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestListWarehouses`, testare che `CatalogAdapter` del microservizio `Api Gateway` riesca a tradurre richieste di ottenimento lista di magazzini],
+      va: [
+        Il metodo invocato `ListGoods` non ritorna errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLogin`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a tradurre richieste di login],
+      va: [
+        `AuthAdapter` vеrifica con esito positivo il token fornito dal _mock_ del microservizio `authenticator`. In particolare la risposta fornita dall'adapter presenta:
+        - il token è firmato con una firma valida;
+        - lo username è "admin";
+        - il ruolo è "global_admin".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetToken MarshalError`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire richieste di login non correttamente formattate],
+      va: [
+        Il metodo invocato `GetToken` ritorna un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetUsername InvalidToken`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire richieste di ottenimento nome utente ma questo non è corretto],
+      va: [
+        I metodi invocati ritornano un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGet RoleInvalidToken`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire richieste di ottenimento ruolo ma questo non è corretto],
+      va: [
+        I metodi invocati ritornano un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestRevocation`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire richieste di revoca token],
+      va: [
+        Dopo aver effettuato l'operazione di revoca (ottenibile riavviando il _mock_ del microservizio `authenticator`) la vеrifica del token restituisce l'errore `ErrTokenInvalid`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetKey_stream_ CreateError`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire problemi con la creazione di uno _stream_],
+      va: [
+        Il metodo `getValidationKey` ritorna un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetKey WrongMessageFormat`, testare che `AuthAdapter` del microservizio `Api Gateway` riesca a gestire un messaggio non correttamente formattato],
+      va: [
+        Il metodo `getValidationKey` ritorna un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetKeyNoMessages`, testare che `AuthAdapter` del microservizio `Api Gateway` gestisca una richiesta di chiave ma nessuna chiave è presente],
+      va: [
+        Il metodo `getValidationKey` ritorna un errore.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestVerify TokenMissingIssuer`, testare che `AuthAdapter` del microservizio `Api Gateway` gestisca una richiesta vеrifica token senza issuer],
+      va: [
+        Il metodo `VerifyToken` ritorna un errore `ErrTokenInvalid`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestVerify TokenGetKeyError`, testare che `AuthAdapter` del microservizio `Api Gateway` gestisca una richiesta vеrifica token firmati con chiave di un issuer non esistente],
+      va: [
+        Il metodo `VerifyToken` ritorna un errore `ErrTokenInvalid`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestVerify TokenExpired`, testare che `AuthAdapter` del microservizio `Api Gateway` gestisca una richiesta vеrifica token scaduti],
+      va: [
+        Il metodo `VerifyToken` ritorna un errore `ErrTokenExpired`.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLoginOk`, testare che `LoginController` del microservizio `Api Gateway` gestisca una richiesta di login],
+      va: [
+        `LoginController` risponde con codice 200, il DTO restituito possiede token "some.secure.token".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLogin MissingUsername`, testare che `LoginController` del microservizio `Api Gateway` gestisca una richiesta di login senza username],
+      va: [
+        `LoginController` risponde con codice 400, il DTO restituito ha errore "missing_field".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLogin InternalError`, testare che `LoginController` del microservizio `Api Gateway` gestisca una richiesta di login che determina un errore nel microservizio],
+      va: [
+        `LoginController` risponde con codice 500, il DTO restituito ha errore "internal_error".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestLogin AuthFailed`, testare che `LoginController` del microservizio `Api Gateway` gestisca una richiesta di login negativa],
+      va: [
+        `LoginController` risponde con codice 401, il DTO restituito ha errore "authentication \_failed".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetWarehouses`, testare che `ListWarehouses Controller` del microservizio `Api Gateway` gestisca una richiesta di ottenimento lista magazzini],
+      va: [
+        `ListWarehouses Controller` risponde con codice 200, il DTO restituito fornisce tre magazzini, con i rispettivi id:
+        - "id1";
+        - "id2";
+        - "id3".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetWarehouses`, testare che `ListWarehouses Controller` del microservizio `Api Gateway` gestisca una richiesta di ottenimento lista magazzini che determina un errore],
+      va: [
+        `ListWarehouses Controller` risponde con codice 500, il DTO restituito ha errore "internal_error".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIsLoggedOk`, testare che `AuthHealth CheckController` del microservizio `Api Gateway` gestisca richieste di controllo autenticazione],
+      va: [
+        `AuthHealth CheckController` risponde con codice 200, il DTO restituito contiene il ruolo "global_admin".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIsLogged MissingToken`, testare che `AuthHealth CheckController` del microservizio `Api Gateway` gestisca richieste di controllo autenticazione senza token],
+      va: [
+        `AuthHealth CheckController` risponde con codice 401, il DTO restituito contiene errore "missing_token".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIsLogged InvalidToken`, testare che `AuthHealth CheckController` del microservizio `Api Gateway` gestisca richieste di controllo autenticazione con token non valido],
+      va: [
+        `AuthHealth CheckController` risponde con codice 401, il DTO restituito contiene errore "invalid_token".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestIsLogged ExpiredToken`, testare che `AuthHealth CheckController` del microservizio `Api Gateway` gestisca richieste di controllo autenticazione con token scaduto],
+      va: [
+        `AuthHealthCheck Controller` risponde con codice 401, il DTO restituito contiene errore "expired_token".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetGoods`, testare che `GetGoodsController` del microservizio `Api Gateway` gestisca richieste di ottenimento informazioni merce],
+      va: [
+        `GetGoodsController` risponde con codice 200, il DTO restituito contiene due merci, la prima con:
+        - id "id1";
+        - nome "Apple";
+        - descrizione "A tasty apple";
+        - quantità 20.
+        la seconda con:
+        - id "id2";
+        - nome "Orange";
+        - descrizione "A tasty orange";
+        - quantità 10.
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato da `TestGetGoods`, testare che `GetGoodsController` del microservizio `Api Gateway` gestisca richieste di ottenimento informazioni merce che determina un errore],
+      va: [
+        `GetGoodsController` risponde con codice 500, il DTO restituito contiene l'errore "internal_error".
+      ],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddQuery`, verificare che `AddQueryController` gestisca richieste di aggiunta query, ovvero aggiunta di soglie di allerta],
+      va: [Il controller restituisce "123e4567-e89b-12d3-a456-426614174000" come id della soglia.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestEditQuery`, verificare che `EditQueryController` gestisca richieste di modifica query, ovvero modifiche di soglie di allerta],
+      va: [Il controller restituisce la risposta "OK".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetQuery`, verificare che `GetQueryController` gestisca richieste di ottenimento query, ovvero ottenimento informazioni su una soglia di allerta],
+      va: [Il controller restituisce la risposta JSON "{\"GoodId\":\"1\", \"Operator\":\"<\", \"Threshold\":10}".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestListQuery`, verificare che `ListQueriesController` gestisca richieste di elenco query, ovvero di elenco di tutte le soglie di allerta],
+      va: [Il controller restituisce la risposta JSON "{\"RuleId\":\"123e4567-e89b-12d3-a456-426614174000\", \"GoodId\":\"1\", \"Operator\":\"<\",\"Threshold\":10}".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestStockUpdateReceiver`, verificare che `StockUpdateReceiver` gestisca richieste di aggiornamento stock#super[G] di merce],
+      va: [NATS segnala il messaggio come ricevuto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRemoveQuery`, verificare che `RemoveQueryController` gestisca richieste eliminazione query, ovvero eliminazione soglie di allerta],
+      va: [Il controller restituisce la risposta "OK".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleCheck`, verificare che `RuleChecker` controlli correttamente la necessità di invio di una notifica],
+      va: [Il _mock_ che implementa `StockEventPublisher` riceve una richiesta di pubblicazione.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddQueryRule`, verificare che `Business` gestisca l'aggiunta di una query],
+      va: [Il metodo invocato `AddQueryRule` ritorna l'id "391d2936-c37b-4294-bfdc-29e2473a5052" della nuova query.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetQueryRule`, verificare che `Business` gestisca l'ottenimento di una query],
+      va: [Il metodo invocato `GetQueryRule` ritorna la regola con id "391d2936-c37b-4294-bfdc-29e2473a5052".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestListRules`, verificare che `Business` gestisca l'ottenimento di tutte le query memorizzate],
+      va: [Il metodo invocato `ListQueryRules` ritorna una sola regola con id "391d2936-c37b-4294-bfdc-29e2473a5052".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestEditQueryRule`, verificare che `Business` gestisca la modifica di una query],
+      va: [Il metodo invocato `EditQueryRule` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRemoveQueryRule`, verificare che `Business` gestisca l'eliminazione di una query],
+      va: [Il metodo invocato `RemoveQueryRule` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestPublishStockAlert`, verificare che `Business` gestisca la pubblicazione di una notifica],
+      va: [Il metodo invocato `PublishStockAlert` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetCurrentQuantityByGoodID`, verificare che `Business` gestisca l'ottenimento dello stock#super[G] di una merce],
+      va: [Il metodo invocato `GetCurrentQuantityByGoodID` ritorna una `GetRuleResultResponse` con memorizzato l'id 1.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRecordStockUpdate`, verificare che `Business` gestisca la modifica dello stock#super[G] di una merce],
+      va: [Il metodo invocato `RecordStockUpdate` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoAddRule`, verificare che `RuleRepositoryImpl` memorizzi l'aggiunta di una nuova query],
+      va: [Il metodo invocato `AddRule` ritorna `nil` e un id `uuid` popolato.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoGetRule`, verificare che `RuleRepositoryImpl` fornisca una query che viene richiesta],
+      va: [Il metodo invocato `GetRule` ritorna `nil` e una regola la cui merce legata ha id "1".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoListRules`, verificare che `RuleRepositoryImpl` fornisca tutte le query memorizzate],
+      va: [Il metodo invocato `ListRules` ritorna `nil` e una sola regola la cui merce legata ha id "1".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoRemoveRule`, verificare che `RuleRepositoryImpl` elimini una query],
+      va: [Il metodo invocato `RemoveRule` ritorna `nil` e, cercando di ottenere la regola eliminata, viene ritornato l'errore `ErrRuleNotExists`.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestRuleRepoEditRule`, verificare che `RuleRepositoryImpl` modifichi una query],
+      va: [Il metodo invocato `EditRule` ritorna `nil`.],
+      vr: "",
+      st: "S",
+    ),
+  ),
+)
+
+== Tеst di Integrazione <ti>
+
+#test-table(
+  unit: "I",
+  tipo-test: "Tеst di Integrazione",
+  (
+    (
+      desc: [Implementato dalla funzione `TestInsert GetWarehouses Quantity`, verificare che il microservizio `Catalog` inserisca correttamente la quantità delle merci nei magazzini],
+      va: [Dopo la modifica, ottenendo la lista dei magazzini ed il loro inventario risulta che:
+      - nel magazzino con id "test-warehouse-ID" ci sono 2 unità della merce con id "test-ID" e 0 unità della merce "2test-ID";
+      - nel magazzino con id "2test-warehouse-ID" ci sono 3 unità della merce "test-ID" e 3 unità della merce "2test-ID".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestInsertGetGoods Quantity`, verificare che il microservizio `Catalog` inserisca correttamente la quantità delle merci],
+      va: [Dopo la modifica è presente la seguente situazione:
+      - la merce con id "test-ID" ha globalmente 5 unità;
+      - la merce con id "2test-ID" ha 3 unità.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestInsertGetGoods`, verificare che il microservizio `Catalog` inserisca correttamente la informazioni delle merci],
+      va: [Dopo la modifica è presente la merce con id "test-id" avente:
+      - nome "test-name";
+      - descrizione "test-description".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetTokenEmpty Username`, verificare che il microservizio `Authenticator` si comporti correttamente se nella richiesta non viene fornito il nome utente],
+      va: [Nella risposta fornita il token è vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetTokenWrong Username`, verificare che il microservizio `Authenticator` si comporti correttamente se nella richiesta viene incluso un nome utente non valido],
+      va: [Nella risposta fornita il token è vuoto.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetToken`, verificare che il microservizio `Authenticator` ritorni il token generato in caso di richiesta corretta],
+      va: [Nella risposta fornita il token fornito è un token valido.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestGetTwoToken`, verificare che il microservizio `Authenticator` ritorni due token validi e firmati con la medesima chiave privata],
+      va: [I token forniti sono validi e firmati con la stessa chiave privata.],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestAddAnd RemoveWarehouse Stоck` ,verificare che il microservizio `Warehouse`#super[G] aggiunga e rimuova correttamente stock#super[G] di merce],
+      va: [Ottenendo i dati delle merci risultano essere presenti 5 unità della merce con id "1".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestCreateOrder`, testare che un ordine#super[G] venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock#super[G] ],
+      va: [L'ordine ha come stato "Completed".],
+      vr: "",
+      st: "S",
+    ),
+    (
+      desc: [Implementato dalla funzione `TestCreateTransfer`, testare che un trasferimento#super[G] venga creato con successo e venga confermato ricevendo gli aggiornamenti degli stock#super[G] dei magazzini coinvolti],
+      va: [Il trasferimento#super[G] ha come stato "Completed".],
+      vr: "",
+      st: "S",
+    ),
+  )
+),
+
+#pagebreak()
+
+== Tеst di Sistema <ts>
+
+La vеrifica dei test#super[G] è stata effettuata manualmente. Data la natura del progetto e l'assenza di un _client_ sviluppato, il superamento di alcuni test#super[G] è stato determinato realizzando delle prove locali _ad hoc_ e/o verificate mediante le risposte fornite dal Sistema.
 
 #show figure: set block(breakable: true)
 #figure(
@@ -500,118 +2126,118 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
     inset: 8pt,
 
     // Header row
-    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Requisito di riferimento*], text(white)[*Stato del Test*],
-    [T-1-S], [Verificare che un Utente non autenticato possa effettuare l'autenticazione con il Sistema], [R-1-F-Ob], [NI],
-    [T-2-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito la tipologia di utente con la quale vuole essere riconosciuto], [R-2-F-Ob], [NI],
+    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Requisito di riferimento*], text(white)[*Stato del Tеst*],
+    [T-1-S], [Verificare che un Utente non autenticato possa effettuare l'autenticazione con il Sistema], [R-1-F-Ob], [S],
+    [T-2-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito la tipologia di utente con la quale vuole essere riconosciuto], [R-2-F-Ob], [S],
     [T-3-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito lo Username personale], [R-3-F-De], [NI],
     [T-4-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito la Password personale], [R-4-F-De], [NI],
     [T-5-S], [Verificare che l'Utente riceva un avviso/errore in seguito ad un tentativo di accesso fallito], [R-5-F-Ob], [NI],
-    [T-6-S], [Verificare che un Cliente possa creare un ordine da confermare in seguito], [R-6-F-Ob], [NI],
-    [T-7-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca un nome da dare all'ordine da confermare], [R-7-F-Ob], [NI],
-    [T-8-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca il nominativo del destinatario dell'ordine da confermare], [R-8-F-Ob], [NI],
-    [T-9-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca l'indirizzo di spedizione dell'ordine da confermare], [R-9-F-Ob], [NI],
-    [T-10-S], [Verificare che un Cliente possa aggiungere merce ad un ordine non confermato], [R-10-F-Ob], [NI],
-    [T-11-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non confermato, indichi/selezioni la merce che vuole aggiungere all'ordine non confermato], [R-11-F-Ob], [NI],
-    [T-12-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non confermato, inserisca/selezioni il quantitativo della merce da aggiungere all'ordine non confermato], [R-12-F-Ob], [NI],
-    [T-13-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, selezioni l'ordine non ancora confermato sulla quale effettuare l'operazione di aggiunta], [R-13-F-Ob], [NI],
+    [T-6-S], [Verificare che un Cliente possa creare un ordine da confermare in seguito], [R-6-F-Ob], [S],
+    [T-7-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca un nome da dare all'ordine da confermare], [R-7-F-Ob], [S],
+    [T-8-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca il nominativo del destinatario dell'ordine da confermare], [R-8-F-Ob], [S],
+    [T-9-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca l'indirizzo di spedizione dell'ordine da confermare], [R-9-F-Ob], [S],
+    [T-10-S], [Verificare che un Cliente possa aggiungere merce ad un ordine non confermato], [R-10-F-Ob], [S],
+    [T-11-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non confermato, indichi/selezioni la merce che vuole aggiungere all'ordine non confermato], [R-11-F-Ob], [S],
+    [T-12-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non confermato, inserisca/selezioni il quantitativo della merce da aggiungere all'ordine non confermato], [R-12-F-Ob], [S],
+    [T-13-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, selezioni l'ordine non ancora confermato sulla quale effettuare l'operazione di aggiunta], [R-13-F-Ob], [S],
     [T-14-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, riceva un avviso/errore se la merce aggiunta all'ordine non risulti essere valida (ovvero la
-      quantità della merce è insufficiente oppure la merce non esiste)], [R-14-F-Ob], [NI],
-    [T-15-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, riceva un avviso/errore se nessun ordine non confermato è disponibile], [R-15-F-Ob], [NI],
-    [T-16-S], [Verificare che un Cliente possa cancellare un ordine non confermato che viene da lui selezionato], [R-16-F-Ob], [NI],
-    [T-17-S], [Verificare che un Cliente possa confermare un ordine non confermato che viene da lui selezionato], [R-17-F-Ob], [NI],
-    [T-18-S], [Verificare che un Cliente possa visualizzare i suoi ordini non confermati], [R-18-F-Ob], [NI],
-    [T-19-S], [Verificare che nella lista degli ordini non confermati di un Cliente, il Cliente che ha creato tali ordini non confermati possa visualizzare, per ciascun ordine, il rispettivo ID], [R-19-F-Ob], [NI],
-    [T-20-S], [Verificare che nella lista degli ordini non confermati di un Cliente, il Cliente che ha creato tali ordini non confermati possa visualizzare, per ciascun ordine, la rispettiva data di creazione], [R-20-F-Ob], [NI],
-    [T-21-S], [Verificare che nella lista degli ordini non confermati di un Cliente, il Cliente che ha creato tali ordini non confermati possa visualizzare, per ciascun ordine, il rispettivo nome], [R-21-F-Ob], [NI],
-    [T-22-S], [Verificare che un Cliente possa consultare un ordine non confermato nel dettaglio], [R-22-F-Ob], [NI],
-    [T-23-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi l'ID di tale ordine], [R-23-F-Ob], [NI],
-    [T-24-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi la data di creazione di tale ordine], [R-24-F-Ob], [NI],
-    [T-25-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi il nome di tale ordine], [R-25-F-Ob], [NI],
-    [T-26-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi la lista delle merci di tale ordine], [R-26-F-Ob], [NI],
-    [T-27-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi, per ogni elemento della lista delle merci, la quantità della rispettiva merce interessata dall'ordine], [R-27-F-Ob], [NI],
-    [T-28-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi, per ogni elemento della lista delle merci, il nome della rispettiva merce], [R-28-F-Ob], [NI],
-    [T-29-S], [Verificare che un Cliente possa visualizzare la lista delle merci presenti nel Sistema], [R-29-F-Ob], [NI],
-    [T-30-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, l'ID di tale merce], [R-30-F-Ob], [NI],
-    [T-31-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, il nome di tale merce], [R-31-F-Ob], [NI],
-    [T-32-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, la quantità di tale merce complessivamente presente in tutti i magazzini], [R-32-F-Ob], [NI],
-    [T-33-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, la quantità di tale merce presente nel magazzino attuale], [R-33-F-Ob], [NI],
-    [T-34-S], [Verificare che un Cliente possa visualizzare una particolare merce nel dettaglio], [R-34-F-Ob], [NI],
-    [T-35-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi l'ID di tale merce], [R-35-F-Ob], [NI],
-    [T-36-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi il nome di tale merce], [R-36-F-Ob], [NI],
-    [T-37-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi la quantità globalmente disponibile di tale merce], [R-37-F-Ob], [NI],
-    [T-38-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi la quantità localmente disponibile di tale merce], [R-38-F-Ob], [NI],
-    [T-39-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi la descrizione di tale merce], [R-39-F-Ob], [NI],
-    [T-40-S], [Verificare che un Admin Globale possa creare un trasferimento da confermare in seguito], [R-40-F-Ob], [NI],
-    [T-41-S], [Verificare che un Admin Globale, durante la creazione di un trasferimento da confermare in seguito, fornisca il magazzino mittente], [R-41-F-Ob], [NI],
-    [T-42-S], [Verificare che un Admin Globale, durante la creazione di un trasferimento da confermare in seguito, fornisca il magazzino destinatario], [R-42-F-Ob], [NI],
-    [T-43-S], [Verificare che un Admin Globale possa aggiungere merce ad un trasferimento non confermato], [R-43-F-Ob], [NI],
-    [T-44-S], [Verificare che un Admin Globale, durante l'aggiunta di merce ad un trasferimento non confermato, fornisca quale merce aggiungere], [R-44-F-Ob], [NI],
-    [T-45-S], [Verificare che un Admin Globale, durante l'aggiunta di merce ad un trasferimento non confermato, selezioni la quantità di merce da aggiungere], [R-45-F-Ob], [NI],
-    [T-46-S], [Verificare che un Admin Globale, durante l'aggiunta di merce ad un trasferimento non confermato, selezioni il trasferimento non confermato alla quale aggiungere la merce], [R-46-F-Ob], [NI],
-    [T-47-S], [Verificare che un Admin Globale possa confermare un trasferimento non confermato da lui selezionato], [R-47-F-Ob], [NI],
-    [T-48-S], [Verificare che un Admin Globale riceva un avviso/errore qualora la merce in un trasferimento che vuole confermare non è più disponibile nel Sistema o è in quantità non sufficiente per effettuare l'ordine], [R-48-F-Ob], [NI],
-    [T-49-S], [Verificare che un Admin Globale riceva un avviso/errore quando cerca di confermare/cancellare un trasferimento non confermato ma nessun trasferimento non confermato è presente nel Sistema], [R-49-F-Ob], [NI],
-    [T-50-S], [Verificare che un Admin Globale possa cancellare un trasferimento non confermato da lui selezionato], [R-50-F-Ob], [NI],
-    [T-51-S], [Verificare che un Admin Globale possa visualizzare l'elenco di tutti i trasferimenti], [R-51-F-Ob], [NI],
-    [T-52-S], [Verificare che un Admin Globale, mentre visualizza l'elenco dei trasferimenti, visualizzi, per ciascun trasferimento, l'ID del trasferimento], [R-52-F-Ob], [NI],
-    [T-53-S], [Verificare che un Admin Globale, mentre visualizza l'elenco dei trasferimenti, visualizzi, per ciascun trasferimento, lo stato del trasferimento], [R-53-F-Ob], [NI],
-    [T-54-S], [Verificare che un Admin Globale possa visualizzare un singolo trasferimento nello specifico], [R-54-F-Ob], [NI],
-    [T-55-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi l'ID di tale trasferimento], [R-55-F-Ob], [NI],
-    [T-56-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi magazzino mittente di tale trasferimento], [R-56-F-Ob], [NI],
-    [T-57-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi magazzino destinatario di tale trasferimento], [R-57-F-Ob], [NI],
-    [T-58-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi lo stato di tale trasferimento], [R-58-F-Ob], [NI],
-    [T-59-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi l'elenco della merce interessata da tale trasferimento], [R-59-F-Ob], [NI],
-    [T-60-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi, per ogni merce nell'elenco della merce interessata da tale trasferimento, il nome di tale merce], [R-60-F-Ob], [NI],
-    [T-61-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi, per ogni merce nell'elenco della merce interessata da tale trasferimento, la quantità di tale merce], [R-61-F-Ob], [NI],
-    [T-52-S], [Verificare che un Admin Globale possa visualizzare l'elenco delle notifiche riguardanti i consigli di rifornimento], [R-62-F-Ob], [NI],
-    [T-63-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento, visualizzi l'ID di ciascuna notifica], [R-63-F-Ob], [NI],
-    [T-64-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento, visualizzi lo stato di ciascuna notifica], [R-64-F-Ob], [NI],
-    [T-65-S], [Verificare che un Admin Globale, effettuando un'operazione sulle notifiche di rifornimento, visualizzi un avviso/errore se nessuna notifica è disponibile], [R-65-F-Ob], [NI],
-    [T-66-S], [Verificare che un Admin Globale possa visualizzare le notifiche suggerite da un Sistema _Machine Learning_], [R-66-F-Ob], [NI],
-    [T-67-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento fornite da un Sistema _Machine Learning_, visualizzi l'ID di ciascuna notifica], [R-67-F-Ob], [NI],
-    [T-68-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento fornite da un Sistema _Machine Learning_, visualizzi lo stato di ciascuna notifica], [R-68-F-Ob], [NI],
-    [T-69-S], [Verificare che un Admin Globale possa visualizzare una notifica di rifornimento nello specifico], [R-69-F-Ob], [NI],
-    [T-70-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi l'ID della notifica], [R-70-F-Ob], [NI],
-    [T-71-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi lo stato della notifica], [R-71-F-Ob], [NI],
-    [T-72-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi il magazzino destinatario del rifornimento], [R-72-F-Ob], [NI],
-    [T-73-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi l'elenco della merce da rifornire], [R-73-F-Ob], [NI],
-    [T-74-S], [Verificare che un Admin Globale, mentre visualizza l'elenco della merce presente nel dettaglio di una notifica di rifornimento, visualizzi per ogni merce l'ID della merce], [R-74-F-Ob], [NI],
-    [T-75-S], [Verificare che un Admin Globale, mentre visualizza l'elenco della merce presente nel dettaglio di una notifica di rifornimento, visualizzi per ogni merce il nome della merce], [R-75-F-Ob], [NI],
-    [T-76-S], [Verificare che un Admin Globale, mentre visualizza l'elenco della merce presente nel dettaglio di una notifica di rifornimento, visualizzi per ogni merce la quantità di quella merce da rifornire], [R-76-F-Ob], [NI],
-    [T-77-S], [Verificare che un Admin Globale possa confermare una notifica di rifornimento non ancora accettata da lui selezionata], [R-77-F-Ob], [NI],
-    [T-78-S], [Verificare che un Admin Globale possa rifiutare una notifica di rifornimento non ancora accettata da lui selezionata], [R-78-F-Ob], [NI],
-    [T-79-S], [Verificare che un Admin Globale possa visualizzare l'elenco dei microservizi], [R-79-F-Ob], [NI],
-    [T-80-S], [Verificare che un Admin Globale, visualizzando l'elenco dei microservizi, visualizzi il nome di ciascun microservizio], [R-80-F-Ob], [NI],
-    [T-81-S], [Verificare che un Admin Globale, visualizzando l'elenco dei microservizi, visualizzi il numero di richieste al secondo di ciascun microservizio], [R-81-F-Ob], [NI],
+      quantità della merce è insufficiente oppure la merce non esiste)], [R-14-F-Ob], [S],
+    [T-15-S], [Verificare che un Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, riceva un avviso/errore se nessun ordine non confermato è disponibile], [R-15-F-Ob], [S],
+    [T-16-S], [Verificare che un Cliente possa cancellare un ordine non confermato che viene da lui selezionato], [R-16-F-Ob], [S],
+    [T-17-S], [Verificare che un Cliente possa confermare un ordine non confermato che viene da lui selezionato], [R-17-F-Ob], [S],
+    [T-18-S], [Verificare che un Cliente possa visualizzare i suoi ordini non confermati], [R-18-F-Ob], [S],
+    [T-19-S], [Verificare che nella lista degli ordini non confermati di un Cliente, il Cliente che ha creato tali ordini non confermati possa visualizzare, per ciascun ordine, il rispettivo ID], [R-19-F-Ob], [S],
+    [T-20-S], [Verificare che nella lista degli ordini non confermati di un Cliente, il Cliente che ha creato tali ordini non confermati possa visualizzare, per ciascun ordine, la rispettiva data di creazione], [R-20-F-Ob], [S],
+    [T-21-S], [Verificare che nella lista degli ordini non confermati di un Cliente, il Cliente che ha creato tali ordini non confermati possa visualizzare, per ciascun ordine, il rispettivo nome], [R-21-F-Ob], [S],
+    [T-22-S], [Verificare che un Cliente possa consultare un ordine non confermato nel dettaglio], [R-22-F-Ob], [S],
+    [T-23-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi l'ID di tale ordine], [R-23-F-Ob], [S],
+    [T-24-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi la data di creazione di tale ordine], [R-24-F-Ob], [S],
+    [T-25-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi il nome di tale ordine], [R-25-F-Ob], [S],
+    [T-26-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi la lista delle merci di tale ordine], [R-26-F-Ob], [S],
+    [T-27-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi, per ogni elemento della lista delle merci, la quantità della rispettiva merce interessata dall'ordine], [R-27-F-Ob], [S],
+    [T-28-S], [Verificare che un Cliente, visualizzando un ordine non confermato nel dettaglio, visualizzi, per ogni elemento della lista delle merci, il nome della rispettiva merce], [R-28-F-Ob], [S],
+    [T-29-S], [Verificare che un Cliente possa visualizzare la lista delle merci presenti nel Sistema], [R-29-F-Ob], [S],
+    [T-30-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, l'ID di tale merce], [R-30-F-Ob], [S],
+    [T-31-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, il nome di tale merce], [R-31-F-Ob], [S],
+    [T-32-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, la quantità di tale merce complessivamente presente in tutti i magazzini], [R-32-F-Ob], [S],
+    [T-33-S], [Verificare che un Cliente, mentre visualizza la lista delle merci presenti nel Sistema, visualizzi, per ogni merce, la quantità di tale merce presente nel magazzino attuale], [R-33-F-Ob], [S],
+    [T-34-S], [Verificare che un Cliente possa visualizzare una particolare merce nel dettaglio], [R-34-F-Ob], [S],
+    [T-35-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi l'ID di tale merce], [R-35-F-Ob], [S],
+    [T-36-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi il nome di tale merce], [R-36-F-Ob], [S],
+    [T-37-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi la quantità globalmente disponibile di tale merce], [R-37-F-Ob], [S],
+    [T-38-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi la quantità localmente disponibile di tale merce], [R-38-F-Ob], [S],
+    [T-39-S], [Verificare che un Cliente, visualizzando una merce nel dettaglio, visualizzi la descrizione di tale merce], [R-39-F-Ob], [S],
+    [T-40-S], [Verificare che un Admin Globale possa creare un trasferimento da confermare in seguito], [R-40-F-Ob], [S],
+    [T-41-S], [Verificare che un Admin Globale, durante la creazione di un trasferimento da confermare in seguito, fornisca il magazzino mittente], [R-41-F-Ob], [S],
+    [T-42-S], [Verificare che un Admin Globale, durante la creazione di un trasferimento da confermare in seguito, fornisca il magazzino destinatario], [R-42-F-Ob], [S],
+    [T-43-S], [Verificare che un Admin Globale possa aggiungere merce ad un trasferimento non confermato], [R-43-F-Ob], [S],
+    [T-44-S], [Verificare che un Admin Globale, durante l'aggiunta di merce ad un trasferimento non confermato, fornisca quale merce aggiungere], [R-44-F-Ob], [S],
+    [T-45-S], [Verificare che un Admin Globale, durante l'aggiunta di merce ad un trasferimento non confermato, selezioni la quantità di merce da aggiungere], [R-45-F-Ob], [S],
+    [T-46-S], [Verificare che un Admin Globale, durante l'aggiunta di merce ad un trasferimento non confermato, selezioni il trasferimento non confermato alla quale aggiungere la merce], [R-46-F-Ob], [S],
+    [T-47-S], [Verificare che un Admin Globale possa confermare un trasferimento non confermato da lui selezionato], [R-47-F-Ob], [S],
+    [T-48-S], [Verificare che un Admin Globale riceva un avviso/errore qualora la merce in un trasferimento che vuole confermare non è più disponibile nel Sistema o è in quantità non sufficiente per effettuare l'ordine], [R-48-F-Ob], [S],
+    [T-49-S], [Verificare che un Admin Globale riceva un avviso/errore quando cerca di confermare/cancellare un trasferimento non confermato ma nessun trasferimento non confermato è presente nel Sistema], [R-49-F-Ob], [S],
+    [T-50-S], [Verificare che un Admin Globale possa cancellare un trasferimento non confermato da lui selezionato], [R-50-F-Ob], [S],
+    [T-51-S], [Verificare che un Admin Globale possa visualizzare l'elenco di tutti i trasferimenti], [R-51-F-Ob], [S],
+    [T-52-S], [Verificare che un Admin Globale, mentre visualizza l'elenco dei trasferimenti, visualizzi, per ciascun trasferimento, l'ID del trasferimento], [R-52-F-Ob], [S],
+    [T-53-S], [Verificare che un Admin Globale, mentre visualizza l'elenco dei trasferimenti, visualizzi, per ciascun trasferimento, lo stato del trasferimento], [R-53-F-Ob], [S],
+    [T-54-S], [Verificare che un Admin Globale possa visualizzare un singolo trasferimento nello specifico], [R-54-F-Ob], [S],
+    [T-55-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi l'ID di tale trasferimento], [R-55-F-Ob], [S],
+    [T-56-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi magazzino mittente di tale trasferimento], [R-56-F-Ob], [S],
+    [T-57-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi magazzino destinatario di tale trasferimento], [R-57-F-Ob], [S],
+    [T-58-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi lo stato di tale trasferimento], [R-58-F-Ob], [S],
+    [T-59-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi l'elenco della merce interessata da tale trasferimento], [R-59-F-Ob], [S],
+    [T-60-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi, per ogni merce nell'elenco della merce interessata da tale trasferimento, il nome di tale merce], [R-60-F-Ob], [S],
+    [T-61-S], [Verificare che un Admin Globale, nel visualizzare un trasferimento specifico, visualizzi, per ogni merce nell'elenco della merce interessata da tale trasferimento, la quantità di tale merce], [R-61-F-Ob], [S],
+    [T-52-S], [Verificare che un Admin Globale possa visualizzare l'elenco delle notifiche riguardanti i consigli di rifornimento], [R-62-F-Ob], [S],
+    [T-63-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento, visualizzi l'ID di ciascuna notifica], [R-63-F-Ob], [S],
+    [T-64-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento, visualizzi lo stato di ciascuna notifica], [R-64-F-Ob], [S],
+    [T-65-S], [Verificare che un Admin Globale, effettuando un'operazione sulle notifiche di rifornimento, visualizzi un avviso/errore se nessuna notifica è disponibile], [R-65-F-Ob], [S],
+    [T-66-S], [Verificare che un Admin Globale possa visualizzare le notifiche suggerite da un Sistema _Machine Learning_], [R-66-F-De], [NI],
+    [T-67-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento fornite da un Sistema _Machine Learning_, visualizzi l'ID di ciascuna notifica], [R-67-F-De], [NI],
+    [T-68-S], [Verificare che un Admin Globale, visualizzando l'elenco delle notifiche di rifornimento fornite da un Sistema _Machine Learning_, visualizzi lo stato di ciascuna notifica], [R-68-F-De], [NI],
+    [T-69-S], [Verificare che un Admin Globale possa visualizzare una notifica di rifornimento nello specifico], [R-69-F-Ob], [S],
+    [T-70-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi l'ID della notifica], [R-70-F-Ob], [S],
+    [T-71-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi lo stato della notifica], [R-71-F-Ob], [S],
+    [T-72-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi il magazzino destinatario del rifornimento], [R-72-F-Ob], [S],
+    [T-73-S], [Verificare che un Admin Globale, visualizzando una notifica di rifornimento nello specifico, visualizzi l'elenco della merce da rifornire], [R-73-F-Ob], [S],
+    [T-74-S], [Verificare che un Admin Globale, mentre visualizza l'elenco della merce presente nel dettaglio di una notifica di rifornimento, visualizzi per ogni merce l'ID della merce], [R-74-F-Ob], [S],
+    [T-75-S], [Verificare che un Admin Globale, mentre visualizza l'elenco della merce presente nel dettaglio di una notifica di rifornimento, visualizzi per ogni merce il nome della merce], [R-75-F-Ob], [S],
+    [T-76-S], [Verificare che un Admin Globale, mentre visualizza l'elenco della merce presente nel dettaglio di una notifica di rifornimento, visualizzi per ogni merce la quantità di quella merce da rifornire], [R-76-F-Ob], [S],
+    [T-77-S], [Verificare che un Admin Globale possa confermare una notifica di rifornimento non ancora accettata da lui selezionata], [R-77-F-Ob], [S],
+    [T-78-S], [Verificare che un Admin Globale possa rifiutare una notifica di rifornimento non ancora accettata da lui selezionata], [R-78-F-Ob], [S],
+    [T-79-S], [Verificare che un Admin Globale possa visualizzare l'elenco dei microservizi], [R-79-F-Ob], [S],
+    [T-80-S], [Verificare che un Admin Globale, visualizzando l'elenco dei microservizi, visualizzi il nome di ciascun microservizio], [R-80-F-Ob], [S],
+    [T-81-S], [Verificare che un Admin Globale, visualizzando l'elenco dei microservizi, visualizzi il numero di richieste al secondo di ciascun microservizio], [R-81-F-Ob], [S],
     [T-82-S], [Verificare che un Admin Globale possa esportare l'elenco degli ordini eseguiti in un file _.csv_], [R-82-F-De], [NI],
     [T-83-S], [Verificare che un Admin Globale riceva un avviso/errore quando tenta di esportare gli ordini in un file _.csv_ ma nessun ordine da esportare è presente], [R-83-F-De], [NI],
     [T-84-S], [Verificare che un Admin Globale possa esportare l'inventario di tutti i magazzini (inventario globale) in un file _.csv_], [R-84-F-De], [NI],
-    [T-85-S], [Verificare che un Admin Globale riceva un errore quando cerca di esportare l'inventario dei magazzini ma nessun dato è disponibile], [R-85-F-Ob], [NI],
-    [T-86-S], [Verificare che un Admin Globale possa impostare una soglia minima di allerta per una merce], [R-86-F-Ob], [NI],
-    [T-87-S], [Verificare che un Admin Globale, impostando una soglia minima di allerta per una merce, selezioni la merce su cui vuole impostare la soglia minima], [R-87-F-Ob], [NI],
-    [T-88-S], [Verificare che un Admin Globale, impostando una soglia minima di allerta per una merce, inserisca il valore della soglia minima da impostare], [R-88-F-Ob], [NI],
-    [T-89-S], [Verificare che un Admin Globale riceva un avviso/errore quando cerca di impostare una soglia minima di allerta per una merce ma la soglia inserita non è valida (ad esempio perché negativa], [R-89-F-Ob], [NI],
-    [T-90-S], [Verificare che un Admin Locale possa aggiungere stock (quantità) di merce ad una merce nel Sistema], [R-90-F-Ob], [NI],
-    [T-91-S], [Verificare che un Admin Locale, aggiungendo stock (quantità) di una merce, selezioni la merce sulla quale effettuare l'aggiunta], [R-91-F-Ob], [NI],
-    [T-92-S], [Verificare che un Admin Locale, aggiungendo stock (quantità) di una merce, inserisca la quantità da aggiungere], [R-92-F-Ob], [NI],
-    [T-93-S], [Verificare che un Admin Globale possa aggiungere una merce nel Sistema], [R-93-F-Ob], [NI],
-    [T-94-S], [Verificare che un Admin Globale, creando una nuova merce nel Sistema, ne indichi il nome], [R-94-F-Ob], [NI],
-    [T-95-S], [Verificare che un Admin Globale, creando una nuova merce nel Sistema, ne indichi la descrizione], [R-95-F-Ob], [NI],
-    [T-96-S], [Verificare che un Admin Globale possa aggiornare le informazioni di una merce nel Sistema], [R-96-F-Ob], [NI],
-    [T-97-S], [Verificare che un Admin Globale, aggiornando le informazioni di una merce nel Sistema, indichi a quale merce applicare le modifiche], [R-97-F-Ob], [NI],
-    [T-98-S], [Verificare che un Admin Globale, aggiornando le informazioni di una merce nel Sistema, indichi il nuovo nome], [R-98-F-Ob], [NI],
-    [T-99-S], [Verificare che un Admin Globale, aggiornando le informazioni di una merce nel Sistema, indichi la nuova descrizione], [R-99-F-Ob], [NI],
-    [T-100-S], [Verificare che un Cliente possa visualizzare l'elenco degli ordini eseguiti], [R-100-F-Ob], [NI],
-    [T-101-S], [Verificare che un Cliente, visualizzando l'elenco degli ordini eseguiti, visualizzi per ciascun ordine il suo ID], [R-101-F-Ob], [NI],
-    [T-102-S], [Verificare che un Cliente, visualizzando l'elenco degli ordini eseguiti, visualizzi per ciascun ordine la sua data di creazione], [R-102-F-Ob], [NI],
-    [T-103-S], [Verificare che un Cliente, visualizzando l'elenco degli ordini eseguiti, visualizzi per ciascun ordine il suo nome], [R-103-F-Ob], [NI],
-    [T-104-S], [Verificare che un Cliente possa visualizzare un ordine eseguito nello specifico], [R-104-F-Ob], [NI],
-    [T-105-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi il suo ID], [R-105-F-Ob], [NI],
-    [T-106-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi la data di creazione di quell'ordine], [R-106-F-Ob], [NI],
-    [T-107-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi il nome di quell'ordine], [R-107-F-Ob], [NI],
-    [T-108-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi la lista delle merci di quell'ordine], [R-108-F-Ob], [NI],
-    [T-109-S], [Verificare che un Cliente, visualizzando la lista delle merci nel dettaglio di un ordine eseguito nello specifico, visualizzi per ogni merce il rispettivo nome], [R-109-F-Ob], [NI],
-    [T-110-S], [Verificare che un Cliente, visualizzando la lista delle merci nel dettaglio di un ordine eseguito nello specifico, visualizzi per ogni merce la quantità interessata], [R-110-F-Ob], [NI],
+    [T-85-S], [Verificare che un Admin Globale riceva un errore quando cerca di esportare l'inventario dei magazzini ma nessun dato è disponibile], [R-85-F-De], [NI],
+    [T-86-S], [Verificare che un Admin Globale possa impostare una soglia minima di allerta per una merce], [R-86-F-Ob], [S],
+    [T-87-S], [Verificare che un Admin Globale, impostando una soglia minima di allerta per una merce, selezioni la merce su cui vuole impostare la soglia minima], [R-87-F-Ob], [S],
+    [T-88-S], [Verificare che un Admin Globale, impostando una soglia minima di allerta per una merce, inserisca il valore della soglia minima da impostare], [R-88-F-Ob], [S],
+    [T-89-S], [Verificare che un Admin Globale riceva un avviso/errore quando cerca di impostare una soglia minima di allerta per una merce ma la soglia inserita non è valida (ad esempio perché negativa], [R-89-F-Ob], [S],
+    [T-90-S], [Verificare che un Admin Locale possa aggiungere stock (quantità) di merce ad una merce nel Sistema], [R-90-F-Ob], [S],
+    [T-91-S], [Verificare che un Admin Locale, aggiungendo stock (quantità) di una merce, selezioni la merce sulla quale effettuare l'aggiunta], [R-91-F-Ob], [S],
+    [T-92-S], [Verificare che un Admin Locale, aggiungendo stock (quantità) di una merce, inserisca la quantità da aggiungere], [R-92-F-Ob], [S],
+    [T-93-S], [Verificare che un Admin Globale possa aggiungere una merce nel Sistema], [R-93-F-Ob], [S],
+    [T-94-S], [Verificare che un Admin Globale, creando una nuova merce nel Sistema, ne indichi il nome], [R-94-F-Ob], [S],
+    [T-95-S], [Verificare che un Admin Globale, creando una nuova merce nel Sistema, ne indichi la descrizione], [R-95-F-Ob], [S],
+    [T-96-S], [Verificare che un Admin Globale possa aggiornare le informazioni di una merce nel Sistema], [R-96-F-Ob], [S],
+    [T-97-S], [Verificare che un Admin Globale, aggiornando le informazioni di una merce nel Sistema, indichi a quale merce applicare le modifiche], [R-97-F-Ob], [S],
+    [T-98-S], [Verificare che un Admin Globale, aggiornando le informazioni di una merce nel Sistema, indichi il nuovo nome], [R-98-F-Ob], [S],
+    [T-99-S], [Verificare che un Admin Globale, aggiornando le informazioni di una merce nel Sistema, indichi la nuova descrizione], [R-99-F-Ob], [S],
+    [T-100-S], [Verificare che un Cliente possa visualizzare l'elenco degli ordini eseguiti], [R-100-F-Ob], [S],
+    [T-101-S], [Verificare che un Cliente, visualizzando l'elenco degli ordini eseguiti, visualizzi per ciascun ordine il suo ID], [R-101-F-Ob], [S],
+    [T-102-S], [Verificare che un Cliente, visualizzando l'elenco degli ordini eseguiti, visualizzi per ciascun ordine la sua data di creazione], [R-102-F-Ob], [S],
+    [T-103-S], [Verificare che un Cliente, visualizzando l'elenco degli ordini eseguiti, visualizzi per ciascun ordine il suo nome], [R-103-F-Ob], [S],
+    [T-104-S], [Verificare che un Cliente possa visualizzare un ordine eseguito nello specifico], [R-104-F-Ob], [S],
+    [T-105-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi il suo ID], [R-105-F-Ob], [S],
+    [T-106-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi la data di creazione di quell'ordine], [R-106-F-Ob], [S],
+    [T-107-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi il nome di quell'ordine], [R-107-F-Ob], [S],
+    [T-108-S], [Verificare che un Cliente, visualizzando un ordine eseguito nello specifico, visualizzi la lista delle merci di quell'ordine], [R-108-F-Ob], [S],
+    [T-109-S], [Verificare che un Cliente, visualizzando la lista delle merci nel dettaglio di un ordine eseguito nello specifico, visualizzi per ogni merce il rispettivo nome], [R-109-F-Ob], [S],
+    [T-110-S], [Verificare che un Cliente, visualizzando la lista delle merci nel dettaglio di un ordine eseguito nello specifico, visualizzi per ogni merce la quantità interessata], [R-110-F-Ob], [S],
     [T-111-S], [Verificare che un Admin Locale possa realizzare un Backup del proprio magazzino], [R-111-F-De], [NI],
     [T-112-S], [Verificare che un Admin Locale possa attivare un Backup periodico del proprio magazzino, selezionando la periodicità], [R-112-F-De], [NI],
     [T-113-S], [Verificare che un Admin Locale riceva un avviso/errore quando cerca di attivare un Backup periodico ma la periodicità immessa non è valida], [R-113-F-De], [NI],
@@ -631,74 +2257,74 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
     [T-127-S], [Verificare che un Admin Globale, aggiungendo un Utente al sistema, ne inserisca il ruolo], [R-127-F-De], [NI],
     [T-128-S], [Verificare che un Admin Globale possa eliminare un Utente da lui selezionato], [R-128-F-De], [NI],
     [T-129-S], [Verificare che un Admin Globale possa promuovere il ruolo di un Utente da lui selezionato], [R-129-F-De], [NI],
-    [T-130-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle merci disponibili], [R-130-F-Ob], [NI],
-    [T-131-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione della quantità localmente disponibile per ogni merce], [R-131-F-Ob], [NI],
-    [T-132-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione della quantità globalmente disponibile per ogni merce], [R-132-F-Ob], [NI],
-    [T-133-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione del nome di ciascuna merce], [R-133-F-Ob], [NI],
-    [T-134-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione della descrizione di ciascuna merce], [R-134-F-Ob], [NI],
-    [T-135-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione dell'ID di ciascuna merce], [R-135-F-Ob], [NI],
-    [T-136-S], [Verificare che lo Scheduler, all'aggiunta di una merce al Sistema, riesca ad avviare la sincronizzazione della stessa], [R-136-F-Ob], [NI],
-    [T-137-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione della quantità localmente disponibile della stessa], [R-137-F-Ob], [NI],
-    [T-138-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione della quantità globalmente disponibile della stessa], [R-138-F-Ob], [NI],
-    [T-139-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione del nome della stessa], [R-139-F-Ob], [NI],
-    [T-140-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione della descrizione della stessa], [R-140-F-Ob], [NI],
-    [T-141-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione dell'ID della stessa], [R-141-F-Ob], [NI],
-    [T-142-S], [Verificare che lo Scheduler, all'eliminazione di una merce al Sistema, riesca ad avviare la sincronizzazione della stessa], [R-142-F-Ob], [NI],
-    [T-143-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione della quantità localmente disponibile della stessa], [R-143-F-Ob], [NI],
-    [T-144-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione della quantità globalmente disponibile della stessa], [R-144-F-Ob], [NI],
-    [T-145-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione del nome della stessa], [R-145-F-Ob], [NI],
-    [T-146-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione della descrizione della stessa], [R-146-F-Ob], [NI],
-    [T-147-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione dell'ID della stessa], [R-147-F-Ob], [NI],
-    [T-148-S], [Verificare che lo Scheduler, alla modifica di una merce al Sistema, riesca ad avviare la sincronizzazione della stessa], [R-148-F-Ob], [NI],
-    [T-149-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione della quantità localmente disponibile della stessa], [R-149-F-Ob], [NI],
-    [T-150-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione della quantità globalmente disponibile della stessa], [R-150-F-Ob], [NI],
-    [T-151-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione del nome della stessa], [R-151-F-Ob], [NI],
-    [T-152-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione della descrizione della stessa], [R-152-F-Ob], [NI],
-    [T-153-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione dell'ID della stessa], [R-153-F-Ob], [NI],
-    [T-154-S], [Verificare che lo Scheduler possa avviare la sincronizzazione degli ordini], [R-154-F-Ob], [NI],
-    [T-155-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione della data di creazione], [R-155-F-Ob], [NI],
-    [T-156-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione del nome], [R-156-F-Ob], [NI],
-    [T-157-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione dell'ID], [R-157-F-Ob], [NI],
-    [T-158-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione dello stato], [R-158-F-Ob], [NI],
-    [T-159-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione delle merci interessate], [R-159-F-Ob], [NI],
-    [T-160-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per la lista delle merci di ciascun ordine la sincronizzazzione dell'ID di ciascuna merce nella lista], [R-160-F-Ob], [NI],
-    [T-161-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per la lista delle merci di ciascun ordine la sincronizzazzione della quantità di ciascuna merce nella lista], [R-161-F-Ob], [NI],
-    [T-162-S], [Verificare che lo Scheduler possa avviare la sincronizzazione degli ordini confermati], [R-162-F-Ob], [NI],
-    [T-163-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini confermati, possa avviare la sincronizzazione di tutti gli ordini], [R-163-F-Ob], [NI],
-    [T-164-S], [Verificare che lo Scheduler possa avviare la sincronizzazione degli ordini cancellati], [R-164-F-Ob], [NI],
-    [T-165-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini cancellati, possa avviare la sincronizzazione di tutti gli ordini], [R-165-F-Ob], [NI],
-    [T-166-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dell'elenco dei trasferimenti], [R-166-F-Ob], [NI],
-    [T-167-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione del magazzino destinatario di ciascun trasferimento], [R-167-F-Ob], [NI],
-    [T-168-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione del magazzino mittente di ciascun trasferimento], [R-168-F-Ob], [NI],
-    [T-169-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione dell'ID di ciascun trasferimento], [R-169-F-Ob], [NI],
-    [T-170-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione dello stato di ciascun trasferimento], [R-170-F-Ob], [NI],
-    [T-171-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione della lista delle merci coinvolte in ciascun trasferimento], [R-171-F-Ob], [NI],
-    [T-172-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco della merce dei trasferimenti, possa avviare la sincronizzazione dell'ID di ciascuna merce], [R-172-F-Ob], [NI],
-    [T-173-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco della merce dei trasferimenti, possa avviare la sincronizzazione della quantità interessata dal trasferimento di ciascuna merce], [R-173-F-Ob], [NI],
-    [T-174-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dei trasferimenti confermati], [R-174-F-Ob], [NI],
-    [T-175-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei trasferimenti confermati, possa avviare la sincronizzazione di tutti i trasferimenti], [R-175-F-Ob], [NI],
-    [T-176-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dei trasferimenti cancellati], [R-176-F-Ob], [NI],
-    [T-177-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei trasferimenti cancellati, possa avviare la sincronizzazione di tutti i trasferimenti], [R-177-F-Ob], [NI],
-    [T-178-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle notifiche di rifornimento], [R-178-F-Ob], [NI],
-    [T-179-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare per ogni notifica il rispettivo ID], [R-179-F-Ob], [NI],
-    [T-180-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare per ogni notifica il rispettivo magazzino destinatario], [R-180-F-Ob], [NI],
-    [T-181-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare per ogni notifica il rispettivo stato], [R-181-F-Ob], [NI],
-    [T-182-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare per ogni notifica il rispettivo elenco delle merci], [R-182-F-Ob], [NI],
-    [T-183-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco delle merci delle notifiche di rifornimento, possa avviare per ogni merce nell'elenco della singola notifica l'ID della merce], [R-183-F-Ob], [NI],
-    [T-184-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco delle merci delle notifiche di rifornimento, possa avviare per ogni merce nell'elenco della singola notifica la quantità interessata della merce], [R-184-F-Ob], [NI],
-    [T-185-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle notifiche di rifornimento confermate], [R-185-F-Ob], [NI],
-    [T-186-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento confermate, possa avviare la sincronizzazione di tutte le notifiche di rifornimento], [R-186-F-Ob], [NI],
-    [T-187-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle notifiche di rifornimento cancellate], [R-187-F-Ob], [NI],
-    [T-188-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento cancellate, possa avviare la sincronizzazione di tutte le notifiche di rifornimento], [R-188-F-Ob], [NI],
-    [T-189-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dei dati dei microservizi], [R-189-F-Ob], [NI],
-    [T-190-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, possa avviare la sincronizzazione del nome di ciascun microservizio], [R-190-F-Ob], [NI],
-    [T-191-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, possa avviare la sincronizzazione del numero di richieste al secondo di ciascun microservizio], [R-191-F-Ob], [NI],
-    [T-192-S], [Verificare che lo Scheduler possa avviare la sincronizzazione della soglia minima di una merce quando questa viene aggiornata], [R-192-F-Ob], [NI],
+    [T-130-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle merci disponibili], [R-130-F-Ob], [S],
+    [T-131-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione della quantità localmente disponibile per ogni merce], [R-131-F-Ob], [S],
+    [T-132-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione della quantità globalmente disponibile per ogni merce], [R-132-F-Ob], [S],
+    [T-133-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione del nome di ciascuna merce], [R-133-F-Ob], [S],
+    [T-134-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione della descrizione di ciascuna merce], [R-134-F-Ob], [S],
+    [T-135-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle merci disponibili, possa avviare la sincronizzazione dell'ID di ciascuna merce], [R-135-F-Ob], [S],
+    [T-136-S], [Verificare che lo Scheduler, all'aggiunta di una merce al Sistema, riesca ad avviare la sincronizzazione della stessa], [R-136-F-Ob], [S],
+    [T-137-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione della quantità localmente disponibile della stessa], [R-137-F-Ob], [S],
+    [T-138-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione della quantità globalmente disponibile della stessa], [R-138-F-Ob], [S],
+    [T-139-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione del nome della stessa], [R-139-F-Ob], [S],
+    [T-140-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione della descrizione della stessa], [R-140-F-Ob], [S],
+    [T-141-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una nuova merce, possa avviare la sincronizzazione dell'ID della stessa], [R-141-F-Ob], [S],
+    [T-142-S], [Verificare che lo Scheduler, all'eliminazione di una merce al Sistema, riesca ad avviare la sincronizzazione della stessa], [R-142-F-Ob], [S],
+    [T-143-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione della quantità localmente disponibile della stessa], [R-143-F-Ob], [S],
+    [T-144-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione della quantità globalmente disponibile della stessa], [R-144-F-Ob], [S],
+    [T-145-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione del nome della stessa], [R-145-F-Ob], [S],
+    [T-146-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione della descrizione della stessa], [R-146-F-Ob], [S],
+    [T-147-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce eliminata, possa avviare la sincronizzazione dell'ID della stessa], [R-147-F-Ob], [S],
+    [T-148-S], [Verificare che lo Scheduler, alla modifica di una merce al Sistema, riesca ad avviare la sincronizzazione della stessa], [R-148-F-Ob], [S],
+    [T-149-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione della quantità localmente disponibile della stessa], [R-149-F-Ob], [S],
+    [T-150-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione della quantità globalmente disponibile della stessa], [R-150-F-Ob], [S],
+    [T-151-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione del nome della stessa], [R-151-F-Ob], [S],
+    [T-152-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione della descrizione della stessa], [R-152-F-Ob], [S],
+    [T-153-S], [Verificare che lo Scheduler, avviando la sincronizzazione di una merce modificata, possa avviare la sincronizzazione dell'ID della stessa], [R-153-F-Ob], [S],
+    [T-154-S], [Verificare che lo Scheduler possa avviare la sincronizzazione degli ordini], [R-154-F-Ob], [S],
+    [T-155-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione della data di creazione], [R-155-F-Ob], [S],
+    [T-156-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione del nome], [R-156-F-Ob], [S],
+    [T-157-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione dell'ID], [R-157-F-Ob], [S],
+    [T-158-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione dello stato], [R-158-F-Ob], [S],
+    [T-159-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per ciascun ordine la sincronizzazione delle merci interessate], [R-159-F-Ob], [S],
+    [T-160-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per la lista delle merci di ciascun ordine la sincronizzazzione dell'ID di ciascuna merce nella lista], [R-160-F-Ob], [S],
+    [T-161-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini, possa avviare per la lista delle merci di ciascun ordine la sincronizzazzione della quantità di ciascuna merce nella lista], [R-161-F-Ob], [S],
+    [T-162-S], [Verificare che lo Scheduler possa avviare la sincronizzazione degli ordini confermati], [R-162-F-Ob], [S],
+    [T-163-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini confermati, possa avviare la sincronizzazione di tutti gli ordini], [R-163-F-Ob], [S],
+    [T-164-S], [Verificare che lo Scheduler possa avviare la sincronizzazione degli ordini cancellati], [R-164-F-Ob], [S],
+    [T-165-S], [Verificare che lo Scheduler, avviando la sincronizzazione degli ordini cancellati, possa avviare la sincronizzazione di tutti gli ordini], [R-165-F-Ob], [S],
+    [T-166-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dell'elenco dei trasferimenti], [R-166-F-Ob], [S],
+    [T-167-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione del magazzino destinatario di ciascun trasferimento], [R-167-F-Ob], [S],
+    [T-168-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione del magazzino mittente di ciascun trasferimento], [R-168-F-Ob], [S],
+    [T-169-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione dell'ID di ciascun trasferimento], [R-169-F-Ob], [S],
+    [T-170-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione dello stato di ciascun trasferimento], [R-170-F-Ob], [S],
+    [T-171-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, possa avviare la sincronizzazione della lista delle merci coinvolte in ciascun trasferimento], [R-171-F-Ob], [S],
+    [T-172-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco della merce dei trasferimenti, possa avviare la sincronizzazione dell'ID di ciascuna merce], [R-172-F-Ob], [S],
+    [T-173-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco della merce dei trasferimenti, possa avviare la sincronizzazione della quantità interessata dal trasferimento di ciascuna merce], [R-173-F-Ob], [S],
+    [T-174-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dei trasferimenti confermati], [R-174-F-Ob], [S],
+    [T-175-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei trasferimenti confermati, possa avviare la sincronizzazione di tutti i trasferimenti], [R-175-F-Ob], [S],
+    [T-176-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dei trasferimenti cancellati], [R-176-F-Ob], [S],
+    [T-177-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei trasferimenti cancellati, possa avviare la sincronizzazione di tutti i trasferimenti], [R-177-F-Ob], [S],
+    [T-178-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle notifiche di rifornimento], [R-178-F-Ob], [S],
+    [T-179-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa la sincronizzazione per ogni notifica il rispettivo ID], [R-179-F-Ob], [S],
+    [T-180-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare la sincronizzazione per ogni notifica il rispettivo magazzino destinatario], [R-180-F-Ob], [S],
+    [T-181-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare la sincronizzazione per ogni notifica il rispettivo stato], [R-181-F-Ob], [S],
+    [T-182-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, possa avviare la sincronizzazione per ogni notifica il rispettivo elenco delle merci], [R-182-F-Ob], [S],
+    [T-183-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco delle merci delle notifiche di rifornimento, possa avviare la sincronizzazione per ogni merce nell'elenco della singola notifica l'ID della merce], [R-183-F-Ob], [S],
+    [T-184-S], [Verificare che lo Scheduler, avviando la sincronizzazione dell'elenco delle merci delle notifiche di rifornimento, possa avviare la sincronizzazione per ogni merce nell'elenco della singola notifica la quantità interessata della merce], [R-184-F-Ob], [S],
+    [T-185-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle notifiche di rifornimento confermate], [R-185-F-Ob], [S],
+    [T-186-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento confermate, possa avviare la sincronizzazione di tutte le notifiche di rifornimento], [R-186-F-Ob], [S],
+    [T-187-S], [Verificare che lo Scheduler possa avviare la sincronizzazione delle notifiche di rifornimento cancellate], [R-187-F-Ob], [S],
+    [T-188-S], [Verificare che lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento cancellate, possa avviare la sincronizzazione di tutte le notifiche di rifornimento], [R-188-F-Ob], [S],
+    [T-189-S], [Verificare che lo Scheduler possa avviare la sincronizzazione dei dati dei microservizi], [R-189-F-Ob], [S],
+    [T-190-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, possa avviare la sincronizzazione del nome di ciascun microservizio], [R-190-F-Ob], [S],
+    [T-191-S], [Verificare che lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, possa avviare la sincronizzazione del numero di richieste al secondo di ciascun microservizio], [R-191-F-Ob], [S],
+    [T-192-S], [Verificare che lo Scheduler possa avviare la sincronizzazione della soglia minima di una merce quando questa viene aggiornata], [R-192-F-Ob], [S],
   ),
-  caption: [Test di Sistema],
+  caption: [Tеst di Sistema],
 )
 
-=== Tracciamento dei Test di Sistema
+=== Tracciamento dei Tеst di Sistema
 
 #show figure: set block(breakable: true)
 #figure(
@@ -716,7 +2342,7 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
     inset: 8pt,
 
     // Header row
-    text(white)[*Codice Test*], text(white)[*Codice Requisito*],
+    text(white)[*Codice Tеst*], text(white)[*Codice Requisito*],
     [T-1-S], [R-1-F-Ob],
     [T-2-S], [R-2-F-Ob],
     [T-3-S], [R-3-F-De],
@@ -782,9 +2408,9 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
     [T-63-S], [R-63-F-Ob],
     [T-64-S], [R-64-F-Ob],
     [T-65-S], [R-65-F-Ob],
-    [T-66-S], [R-66-F-Ob],
-    [T-67-S], [R-67-F-Ob],
-    [T-68-S], [R-68-F-Ob],
+    [T-66-S], [R-66-F-De],
+    [T-67-S], [R-67-F-De],
+    [T-68-S], [R-68-F-De],
     [T-69-S], [R-69-F-Ob],
     [T-70-S], [R-70-F-Ob],
     [T-71-S], [R-71-F-Ob],
@@ -801,7 +2427,7 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
     [T-82-S], [R-82-F-De],
     [T-83-S], [R-83-F-De],
     [T-84-S], [R-84-F-De],
-    [T-85-S], [R-85-F-Ob],
+    [T-85-S], [R-85-F-De],
     [T-86-S], [R-86-F-Ob],
     [T-87-S], [R-87-F-Ob],
     [T-88-S], [R-88-F-Ob],
@@ -910,63 +2536,183 @@ ALimitedGroup ha deciso di identificare i Test#super[G] di Integrazione e i rela
     [T-191-S], [R-191-F-Ob],
     [T-192-S], [R-192-F-Ob],
   ),
-  caption: [Tracciamento dei Test di Sistema],
+  caption: [Tracciamento dei Tеst di Sistema],
 )
 
-== Test di Accettazione
+== Tеst di Regressione
 
-#show figure: set block(breakable: true)
-#figure(
-  table(
-    columns: (auto, auto, auto),
+_ALimitedGroup_ ha voluto assicurare che l'inserimento di nuove funzionalità#super[G] non rompesse funzionalità#super[G] esistenti: per questo motivo, _ALimitedGroup_ ha strutturato il _repository_#super[G] Github relativo all'_MVP_ in maniera tale che questo ripeta, al caricamento di nuovo codice, l'esecuzione di tutti i test#super[G] di unità e di integrazione, bloccando il passaggio del codice al ramo principale qualora un test#super[G] fallisse.
 
-    fill: (col, row) => if row == 0 {
-      rgb(128, 0, 128)
-    } else if calc.even(row) {
-      rgb(191, 127, 191)
-    } else {
-      rgb(216, 178, 216)
-    },
-    align: center + horizon,
-    inset: 8pt,
+== Tеst di Accettazione <ta>
 
-    // Header row
-    text(white)[*Codice*], text(white)[*Descrizione*], text(white)[*Stato del Test*],
-    [T-1-A], [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale], [NI],
-    [T-2-A], [Verificare che il prodotto dia la possibilità all'utente di essere riconosciuto inserendo Username e Password], [NI],
-    [T-3-A], [Verificare che il prodotto dia la possibilità di visualizzare ordini], [NI],
-    [T-4-A], [Verificare che il prodotto dia la possibilità di confermare ordini], [NI],
-    [T-5-A], [Verificare che il prodotto dia la possibilità di realizzare ordini], [NI],
-    [T-6-A], [Verificare che il prodotto dia la possibilità di cancellare ordini], [NI],
-    [T-7-A], [Verificare che il prodotto dia la possibilità di aggiungere merci dal Sistema], [NI],
-    [T-8-A], [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema], [NI],
-    [T-9-A], [Verificare che il prodotto dia la possibilità di modificare merci dal Sistema], [NI],
-    [T-10-A], [Verificare che il prodotto dia la possibilità di togliere merci dal Sistema], [NI],
-    [T-11-A], [Verificare che il prodotto dia la possibilità di realizzare trasferimenti], [NI],
-    [T-12-A], [Verificare che il prodotto dia la possibilità di cancellare trasferimenti], [NI],
-    [T-13-A], [Verificare che il prodotto dia la possibilità di confermare trasferimenti], [NI],
-    [T-14-A], [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti], [NI],
-    [T-15-A], [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento], [NI],
-    [T-16-A], [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento fornite da _Machine Learning_], [NI],
-    [T-17-A], [Verificare che il prodotto dia la possibilità di accettare notifiche di rifornimento], [NI],
-    [T-18-A], [Verificare che il prodotto dia la possibilità di rifiutare notifiche di rifornimento], [NI],
-    [T-19-A], [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema], [NI],
-    [T-20-A], [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema], [NI],
-    [T-21-A], [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce], [NI],
-    [T-22-A], [Verificare che il prodotto dia la possibilità di aumentare lo stock di una merce nel Sistema], [NI],
-    [T-23-A], [Verificare che il prodotto dia la possibilità di realizzare un Backup di un magazzino], [NI],
-    [T-24-A], [Verificare che il prodotto dia la possibilità di attivare un Backup periodico del magazzino], [NI],
-    [T-25-A], [Verificare che il prodotto dia la possibilità di disattivare il Backup periodico del magazzino], [NI],
-    [T-26-A], [Verificare che il prodotto dia la possibilità di visualizzare i tentativi di accesso], [NI],
-    [T-27-A], [Verificare che il prodotto dia la possibilità di bloccare i tentativi di accesso], [NI],
-    [T-28-A], [Verificare che il prodotto dia la possibilità di inviare email/sms in caso di evento critico], [NI],
-    [T-29-A], [Verificare che il prodotto dia la possibilità di creare nuovi Utenti], [NI],
-    [T-30-A], [Verificare che il prodotto dia la possibilità di eliminare nuovi Utenti], [NI],
-    [T-31-A], [Verificare che il prodotto dia la possibilità di promuovere il ruolo degli Utenti], [NI],
-    [T-32-A], [Verificare che il prodotto sia scalabile], [NI],
-    [T-33-A], [Verificare che il prodotto sincronizzi le informazioni tra magazzini], [NI],
+I Test#super[G] di Accettazione sono parzialmente automatizzati mediante l'utilizzo di alcuni script che sfruttano `curl`. Per una corretta esecuzione, il sistema deve essere riportato allo stato iniziale dopo ogni test#super[G] mediante il comando `docker compose down -v --remove-orphans` e, successivamente, `docker compose up --build -d`. Il processo può essere automatizzato con `just`, eseguendo il comando `just reset`. Si consiglia di aspettare il completo avvio dei servizi prima di effettuare un test#super[G] e di copiare manualmente i comandi elencati.
+
+Si ricorda infine che per "risposta JSON" si intende quanto contenuto tra due parentesi graffe, come nel seguente esempio:
+`
+{
+  //Corpo della risposta JSON
+}
+`
+Si ricorda inoltre che una risposta JSON vuota rassomiglia al seguente esempio `{}`.
+
+Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e sull'aggiunta di microservizi si consiglia la lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
+
+#test-table(
+  unit: "A",
+  tipo-test: "Tеst di Accettazione",
+  (
+    (
+      desc: [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale],
+      va: [Eseguendo il file `login.sh`, che eseguirà la richiesta di un token per il ruolo di admin globale, questo restituisce una risposta JSON con valore `"role": "global_admin"`, segno che il token è stato ricevuto e il Sistema lo riconosce come valido.],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare ordini],
+      va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine#super[G] di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la seconda risposta JSON, contenente le seguenti informazioni:
+        - `"order-id": "campo variabile ad ogni esecuzione"`;
+        - `"status": "completed"`;
+        - `"name": "order-1"`;
+        - `"full_name": "John Doe"`;
+        - `"address: "via roma 12 35012"`;
+        - `"gоods": { "hat-1": 7},`;
+        - `"reservations": "campo variabile ad ogni esecuzione"`
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di completare ordini],
+      va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine#super[G] di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la prima risposta JSON, contenente l'informazione `"order_id": "campo variabile ad ogni esecuzione"`],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di aggiungere merci al Sistema],
+      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Create gоod hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
+        - `"name": "hat"`;
+        - `"description": "blue hat, version 1"`;
+        - `"id": "hat-1"`;
+        - `"amount": 0`;
+        - `"amounts": {}`.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di modificare informazioni delle merci del Sistema],
+      va: [Eseguendo `update_good.sh` con il comando `./update_good.sh | grep -A 14 "Update gоod hat-1"`, verificare che nella seconda risposta JSON siano presenti le seguenti informazioni:
+        - `"name": "hat"`;
+        - `"description": "blue hat, version 2"`;
+        - `"id": "hat-1"`;
+        - `"amount": 0`;
+        - `"amounts": {}`.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema],
+      va: [Eseguire il file `add_good.sh` con il comando `./add_good.sh | grep -A 90 "Get goods status"`. Lo script crea una serie di ordini e, per eseguirli, deve prima aggiungere due merci differenti. Verificare, nella risposta JSON, la presenza dei seguenti valori:
+        - `"name": "hat"`;
+        - `"description": "red hat"`;
+        - `"id": "hat-2"`;
+        - `"amount": 0`;
+        - `"amounts": {}`;
+        - `"name": "hat"`;
+        - `"description": "blue hat"`;
+        - `"id": "hat-1"`;
+        - `"amount": 6`;
+        - `"amounts": {"1": 6}`.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
+      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"`.
+        Eseguendo lo script senza `grep` sarà possibile osservare che, nella voce `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1, a conferma del trasferimento#super[G] riuscito.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti],
+      va: [Eseguire il file `create_transfer.sh` con il comando `./create_transfer.sh | grep -A 17 "Create transfer"`, verranno inserite 6 quantità della merce con id `hat-1` nel magazzino con id 1 e 2 in quello con id 2 ed un trasferimento#super[G] di 5 unità dal magazzino con id 1 a quello con id 2. Verificare che nella prima risposta JSON ci sia il dato `"transfer_id": "campo variabile ad ogni esecuzione"` e nella seconda risposta JSON i seguenti valori:
+        - `"status": "Completed"`;
+        - `"transfer_id": "campo variabile ad ogni esecuzione"`;
+        - `"sender_id": "1"`;
+        - `"receiver_id": "2"`;
+        - `"gоods": {"hat-1": 5}`.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento],
+      va: [Eseguire lo script `create_notification_query.sh`: lo script procederà a creare un prodotto e aggiungerne 6 unità, quindi procederà alla creazione della soglia di allerta, fissata a 100 unità. Lo script metterà si metterà dunque in ascolto nel canale delle notifiche: verificare che questo si inizi a popolare. Attenzione: per questo test#super[G] è necessario avere nats#super[G] installato nel proprio sistema e correttamente configurato tra i percorsi accessibili dalla linea di comando.],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce],
+      va: [Eseguire lo script `get_notifications_queries.sh` con il comando `./get_notifications_queries.sh | grep -A 90 "Get notification queries"`. Verificare che la risposta JSON subito sotto la scritta "Get notification queries" contenga le seguenti informazioni:
+        - `"query_id": "campo variabile ad ogni esecuzione"`;
+        - `"good_id": "hat-1"`;
+        - `"operator": "<"`;
+        - `"threshold": 100`.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di aggiungere stock#super[G] di merce],
+      va: [Eseguire lo script `add_stock.sh`. Lo script crea una merce con id `hat-1` e ne aggiunge 6 unità al magazzino con id 1. Verificare che nella terza risposta JSON siano presenti le seguenti informazioni:
+        - `"name": "hat"`;
+        - `"description": "blue hat"`;
+        - `"id": "hat-1"`;
+        - `"amount": 6`;
+        - `"amounts": {"1": 6}`.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
+      va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni sull'accesso a Grafana#super[G] e sull'aggiunta di servizi alla _dashboard_#super[G] consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]].],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema],
+      va: [Eseguire il file `./create_multiple_order.sh` ed effetuare l'accesso a Grafana#super[G] (per maggiori informazioni consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]]), quindi verificare che (i valori potrebbero leggermente variare a seconda dell'intervallo di aggiornamento di notifications):
+        - Authenticator possieda 3 richieste per 3 token;
+        - Catalog presenta 20 richieste totali;
+        - Order/Transfer possieda 19 richieste totali;
+        - I due magazzini possiedano 15 richieste totali ciascuno;
+        - Notifications possiede 6 richieste totali.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto gestisca adeguatamente i conflitti tra ordini],
+      va: [Eseguire il file `create_multiple_order.sh` con il comando `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"`: lo script eseguirà l'inserimento di 6 unità della merce con id `hat-1` nel magazzino con id 1 e 8 nel magazzino con id 2, 6 unità della merce con id `hat-2` nel magazzino con id 1 e 5 nel magazzino con id 2. Quindi procede a realizzare 3 ordini, tutti con 13 unità di `hat-1` e 11 di `hat-2`. Verificare che nella prima risposta JSON appaiano tre ordini:
+        - quello con nome `test-order-1` ha il valore `"status": "Completed"`;
+        - quello con nome `test-order-2` ha il valore `"status": "Cancelled"`;
+        - quello con nome `test-order-3` ha il valore `"status": "Cancelled"`.
+        Il risultato potrebbe leggermente variare nell'ordine che viene completato, ma solo uno risulterà completato.
+      ],
+      vr: "",
+      st: "I",
+    ),
+    (
+      desc: [Verificare che il prodotto funzioni correttamente con più istanze dello stesso microservizio],
+      va: [Il test#super[G] viene effettuato manualmente: aggiugere un'istanza di Order/Transfer (per maggiori informazioni consultare il #link("https://alimitedgroup.github.io/docs/installazione/preparazione-del-sistema/02-configurare-ms/")[Manuale Utente#super[G]]) e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test#super[G] *T-14-A*.],
+      vr: "",
+      st: "I",
+    ),
   ),
-  caption: [Test di Accettazione],
 )
 
 #pagebreak()
@@ -979,7 +2725,7 @@ Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggi
 #metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
 
 Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato, fino allo _sprint 6_.\
-Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato, in quanto, dopo la fine della sessione d'esame il gruppo _ALimitedGroup_ ha potuto dedicarsi interamente al progetto incrementando notevolmente le ore di lavoro come riportato nel #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].\
+Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato, in quanto, dopo la fine della sessione d'esame il gruppo _ALimitedGroup_ ha potuto dedicarsi interamente al progetto incrementando notevolmente le ore di lavoro come riportato nel #link("https://alimitedgroup.github.io/PP%20v2.0.0.pdf")[*Piano di Progetto#super[G] ver. 2.0.0*].\
 È possibile notare che l'_Earned Value_ (EV) e il _Planned Value_ (PV) per lo più coincidono, quindi la programmazione del lavoro è stata efficace e conforme.
 
 #pagebreak()

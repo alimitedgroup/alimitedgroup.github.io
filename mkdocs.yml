@@ -5,6 +5,15 @@ site_dir: dist/docs
 
 nav:
   - Introduzione: index.md
+  - Concetti:
+      - Tipi di utenti: concetti/tipi-utenti.md
+      - Autenticazione: concetti/autenticazione.md
+      - Merce: concetti/merci.md
+      - Ordine: concetti/ordini.md
+      - Riassortimento: concetti/riassortimenti.md
+      - Trasferimento: concetti/trasferimenti.md
+  - Test:
+      - Backup: operazione/Test.md
   - Installazione:
       - Requisiti:
           - Requisiti Hardware: installazione/requisiti/requisiti-hw.md
@@ -14,20 +23,23 @@ nav:
           - Personalizzare la configurazione: installazione/preparazione-del-sistema/02-configurare-ms.md
           - Avviare il Sistema: installazione/preparazione-del-sistema/03-avvio-sistema.md
     # Forse: aggiungere "Installazione con Kubernetes" 👀
-  - Operazione:
-      - Backup: operazione/backup.md
-  - Quickstart: quickstart.md # tutorial, per iniziare in 5 minuti ad usare il software
-  - Concetti:
-      - Tipi di utenti: concetti/tipi-utenti.md
-      - Autenticazione: concetti/autenticazione.md
-      - Merce: concetti/merci.md
-      - Ordine: concetti/ordini.md
-      - Riassortimento: concetti/riassortimenti.md
-      - Trasferimento: concetti/trasferimenti.md
   - Guide:
-      - Registrare un nuovo utente: guide/registrazione.md
       - Effettuare il login: guide/login.md
       - Aggiungere una merce: guide/aggiunta-merce.md
+      - Aggiungere stock di una merce: guide/aggiunta-stock.md
+      - Rimuovere stock di una merce: guide/rimozione-stock.md
+      - Visualizzare le merci nel Sistema: guide/visualizza-merce.md
+      - Visualizzare i magazzini presenti nel Sistema: guide/visualizza-magazzini.md
+      - Effettuare un ordine: guide/ordine.md
+      - Visualizzare gli ordini eseguiti: guide/visualizza-ordini.md
+      - Effettuare un trasferimento: guide/trasferimento.md
+      - Visualizzare i trasferimenti eseguiti: guide/visualizza-trasferimenti.md
+      - Impostare una soglia di allerta: guide/soglia.md
+      - Visualizzare le soglie impostate: guide/visualizza-soglie.md
+      - Ricevere le notifiche: guide/notifiche.md
+  - Telemetria:
+      - Configurazione di Grafana: telemetria/config.md
+      - Importare e modificare una dashboard: telemetria/dashboard.md
   - Riferimento API:
       - GET /api/v1/ping: reference/ping.md
       - POST /api/v1/login: reference/login.md

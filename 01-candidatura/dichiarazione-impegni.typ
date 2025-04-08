@@ -1,7 +1,7 @@
 // PC 31-10-2024
 
 #import "../lib/legacy.typ": *
-#import "@preview/plotst:0.2.0": *
+#import "../lib/pdp.typ": *
 
 #show: doc => documento(
   nome: [Dichiarazione impegni],
@@ -69,13 +69,12 @@ Seguiranno nei successivi paragrafi i dettagli.
       [Sara Ferraro], [9], [8], [9], [22], [25], [19], [92],
       [Lorenzo Stefani], [8], [8], [9], [21], [27], [19], [92],
       [Marco Piccoli], [8], [8], [9], [21], [26], [20], [92],
-      [Matteo Scievano], [9], [9], [9], [21], [24], [20], [92],
+      [Matteo Schievano], [9], [9], [9], [21], [24], [20], [92],
       [Emanuele Artusi], [8], [9], [8], [21], [24], [22], [92],
       [*Totale*], [*58*], [*60*], [*60*], [*150*], [*180*], [*136*], [*644*],
     ),
     caption: [Ore di ogni componente per ciascun ruolo],
   )
-
 }
 #pagebreak()
 
@@ -103,18 +102,15 @@ Seguiranno nei successivi paragrafi i dettagli.
   caption: [riassunto dei costi derivanti dalle ore assegnate a ciascun ruolo],
 ) <tab_2>
 
-#{
-  let p = plot(data: (
-    (9.01, "Responsabile - 9.01%"),
-    (9.32, "Amministratore - 9.32%"),
-    (9.32, "Analista - 9.32%"),
-    (23.29, "Progettista - 23.29%"),
-    (27.95, "Programmatore - 27.95%"),
-    (21.12, "Verificatore - 21.12%"),
-  ))
-
-  pie_chart(p, (40%, 30%), caption: "Divisione ore", display_style: "hor-legend-chart")
-}
+#pie-chart(
+  (percentuale: 9.01, titolo: "Responsabile", legenda: 2),
+  (percentuale: 9.32, titolo: "Amministratore", legenda: 2),
+  (percentuale: 9.32, titolo: "Analista", legenda: 2),
+  (percentuale: 23.29, titolo: "Progettista", legenda: 2),
+  (percentuale: 27.95, titolo: "Programmatore", legenda: -2),
+  (percentuale: 21.12, titolo: "Verificatore", legenda: -2),
+  caption: [Divisione ore],
+)
 
 #pagebreak()
 

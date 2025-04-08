@@ -1,14 +1,22 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.2.0]
+#let ver = [2.0.0]
 
 #show figure: set block(breakable: true)
 
 #show: body => importantdocs(
-  data: datetime(day: 11, month: 03, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [interno],
   versioni: (
+    (
+      vers: "2.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.marco,
+      verifica: p.sara,
+      approvazione: p.matteo,
+      descr: "Correzioni minori.",
+    ),
     (
       vers: "1.2.0",
       date: datetime(day: 11, month: 03, year: 2025),
@@ -160,8 +168,8 @@
     ),
   ),
   versione: ver,
-  stato: [Approvato per RTB],
-  responsabile: ((p.samuele),),
+  stato: [Approvato],
+  responsabile: ((p.matteo),),
   verificatore: ((p.emanuele), (p.lorenzo), (p.samuele), (p.sara)),
   redattori: (
     (p.marco),
@@ -198,7 +206,7 @@ L'obiettivo che si è posto questo gruppo è realizzare questo progetto entro il
 La realizzazione di un sistema _software_ richiede, ancora prima della scrittura del codice, un'importante operazione di confronto, analisi e progettazione: per supportare e facilitare il lavoro asincrono tutte le informazioni derivanti da questa attività saranno appositamente documentate.
 
 Per evitare ogni tipo di ambiguità o incomprensioni riguardanti la nomenclatura adottata in tutti i documenti visionabili, viene utilizzato un Glossario in cui è trascritta, per ogni parola, la definizione. \
-La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel glossario è la seguente:
+La nomenclatura utilizzata, come descritto nel #link("https://alimitedgroup.github.io/VI%2026-11-2024%20v1.0.0.pdf")[verbale interno] del *26 Novembre 2024*, per segnalare che la definizione di una parola è contenuta nel Glossario è la seguente:
 #align(center, text(1.2em)[*`parola`*#super[G]])
 
 _ALimitedGroup_ si impegna a visionare il Glossario periodicamente, per permetter la più completa comprensione di ogni tipo di documento pubblicato dal gruppo.
@@ -269,7 +277,7 @@ Vengono ora elencati tutti i documenti che _ALimitedGroup_ consegnerà all'azien
 
 ==== Analisi dei Requisiti
 
-L'#link("https://alimitedgroup.github.io/AR%20v1.2.0.pdf")[*Analisi dei Requisiti#super[G] v1.2.0*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato#super[G] e, infine, informazioni utili al loro tracciamento.
+L'#link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] v2.0.0*] è il documento in cui _ALimitedGroup_ descriverà tutti i requisiti obbligatori, desiderabili e opzionali previsti dal progetto. Nello specifico il documento contiene, dopo una breve introduzione, i Casi d'Uso rilevati con i relativi attori, i requisiti legati ai Casi d'Uso e al capitolato#super[G] e, infine, informazioni utili al loro tracciamento.
 
 #figure(
   table(
@@ -411,7 +419,7 @@ Il presente documento: stabilisce il _Way of Working#super[G]_ e le pratiche di 
 
 ==== Piano di Progetto
 
-Il #link("https://alimitedgroup.github.io/PP%20v1.1.0.pdf")[*Piano di Progetto#super[G] v1.1.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[G] in _sprint_#super[G], nonché l'analisi dei rischi associati a ciascuna attività.\
+Il #link("https://alimitedgroup.github.io/PP%20v2.0.0.pdf")[*Piano di Progetto#super[G] v2.0.0*] è un documento che elenca in maniera ordinata tutte le informazioni riguardanti la pianificazione del gruppo. Conterrà dunque le attività da svolgere di _sprint_#super[G] in _sprint_#super[G], nonché l'analisi dei rischi associati a ciascuna attività.\
 Dati i requisiti del progetto, questo documento avrà anche il compito di aggiornare, volta per volta, il consumo orario previsto ed effettivo e dunque, conseguentemente a questo, anche il costo derivato.
 
 #figure(
@@ -579,7 +587,7 @@ Apportando lo scopo del processo alle _Baseline_#super[G] previste dal progetto 
 === Analisi dei Requisiti
 
 L'*Analisi dei Requisiti#super[G]* è tra le attività cardine della _Requirements and Technology Baseline#super[G] (RTB)_ e ha come fine l'individuazione di tutti i requisiti che il Sistema da noi sviluppato dovrà soddisfare.
-Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v1.2.0.pdf")[*Analisi dei Requisiti#super[G] v1.2.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] che, contenendo i Test#super[G] e il loro stato alla *Sezione 4*, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
+Tale analisi, reperibile nell'apposito documento visualizzabile su #link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] v2.0.0*], espone nel dettaglio tutte le informazioni necessarie, che saranno poi fondamentali per supportare il lavoro dei progettisti e dei programmatori nelle rispettive attività di progettazione dell'architettura e codifica della stessa (fondamentale riferimento sarà il #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v2.0.0*] che, contenendo i Test#super[G] e il loro stato alla *Sezione 4*, permetterà di determinare quali requisiti sono soddisfatti e quanti ancora non lo sono).
 
 In particolar modo, il documento raggruppa tutti i Casi d'Uso rilevati e i requisiti ad essi associati. Per una più rapida consultazione sarà ora discussa la nomenclatura nel dettaglio.
 
@@ -602,11 +610,11 @@ Si noti, inoltre, che un Caso d'Uso#super[G] *Secondario* può avere a sua volta
 La nomenclatura utilizzata è volta ad assicurare l'unicità di ogni Caso d'Uso#super[G].
 
 
-Ogni Caso d'Uso#super[G] è inoltre accompagnato da un nome che ne riassume lo scopo e una descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.2.0.pdf")[*Analisi dei Requisiti#super[G] v1.2.0*] *(Sezione 2.1)*.
+Ogni Caso d'Uso#super[G] è inoltre accompagnato da un nome che ne riassume lo scopo e una descrizione: per maggiori informazioni si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] v2.0.0*] *(Sezione 2.1)*.
 
 ==== Requisiti
 
-Identificati i Casi d'Uso, il documento di #link("https://alimitedgroup.github.io/AR%20v1.2.0.pdf")[*Analisi dei Requisiti#super[G] v1.2.0*] si concentra sull'individuazione dei requisiti deducibili dagli stessi e dal capitolato#super[G] *(Sezione 3)*.
+Identificati i Casi d'Uso, il documento di #link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] v2.0.0*] si concentra sull'individuazione dei requisiti deducibili dagli stessi e dal capitolato#super[G] *(Sezione 3)*.
 I requisiti sono anch'essi identificati da una nomenclatura:
 
 #align(center, text(1.2em)[*`R-Numero-Tipologia-Priorità`*])
@@ -623,7 +631,7 @@ dove:
   - *De* per *De*\siderabile;
   - *Op* per *Op*\zionale;
 
-Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v1.2.0.pdf")[*Analisi dei Requisiti#super[G] v1.2.0*] *(Sezione 1.1)*.
+Per maggiori informazioni circa la tipologia e la priorità si consiglia la lettura della parte introduttiva del documento di #link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] v2.0.0*] *(Sezione 1.1)*.
 
 === Codifica <codifica>
 
@@ -919,7 +927,7 @@ Per assicurare qualità _ALimitedGroup_ eseguirà, come suggerito dallo standard
 
 === Strumenti a supporto
 Per verificare ed attestare che i prodotti finali siano stati realizzati a regola d'arte, _ALimitedGroup_ utilizza delle metriche che si differiscono in base al processo coinvolto. In questo modo siamo consapevoli della effettiva qualità del lavoro svolto, essendo tali metriche puramente oggettive.\
-Tutte le metriche adottate dal gruppo sono presentate e descritte interamente nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*. \
+Tutte le metriche adottate dal gruppo sono presentate e descritte nei laro valori sufficienti nel #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v2.0.0*] *(Sezione 5)*. \
 Inoltre, durante il processo di Accertamento della Qualità verrà utilizzata una funzionalità#super[G] di *Grafana*#super[G] :le _dashboard_#super[G] .\
 Quest'ultima, permette di visualizzare, analizzare e monitorare in tempo reale come vengono memorizzati i dati e, soprattutto, come risponde il _software_ realizzato con livelli di carico alti.
 
@@ -933,7 +941,7 @@ Le attività previste dal processo di *Accertamento della qualità* sono le segu
 
 _ALimitedGroup_ per assicurare qualità ha individuato specifiche misure discusse alla @metriche. Si è deciso, per una consultazione più rapida, di definire in una sezione apposita tali misurazioni per renderle più velocemente consultabili.
 
-Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[G] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 5)*.
+Le misurazioni dovranno essere realizzate alla fine di ogni _sprint_#super[G] e adeguatamente riportate nel #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v12.0.0*] *(Sezione 5)*.
 
 Le metriche per la qualità di prodotto sono disponibili alla @metriche-qt-prodotto mentre quelle di processo alla @metriche-qt-processo.
 
@@ -945,12 +953,12 @@ Il processo di *Verifica*#super[G] ha come scopo quello di verificare che quanto
 Possiamo racchiudere l'obiettivo di questo processo nella risposta alla domanda:
 #align(center)[_"Did I build the System right?"_] ovvero, _"Ho realizzato il Sistema correttamente?_.
 
-Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 4)*.
+Tutti gli obiettivi e gli esiti di questo processo dovranno essere adeguatamente riportati nel #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v2.0.0*] *(Sezione 4)*.
 
 ==== Strumenti a supporto
 
 Per verificare che quanto prodotto dal gruppo, sia stato realizzato ed implementato secondo i requisiti richiesti ed imposti da #M31, ovvero che risponda correttamente alla domanda citata precedentemente. \
-Per questo, all'interno del documento del #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] nella sezione 4, vengono esposti e descritti dettagliatamente tutti i _test_#super[G] che il gruppo effettuerà, per verificare che il prodotto realizzato sia conforme ai requisiti imposti da #M31.
+Per questo, all'interno del documento del #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v2.0.0*] nella *Sezione 4*, vengono esposti e descritti dettagliatamente tutti i _test_#super[G] che il gruppo effettuerà, per verificare che il prodotto realizzato sia conforme ai requisiti imposti da #M31.
 
 Per il calcolo dell'indice di Gulpease è stato utilizzato il seguente servizio:
 #align(center)[#link("https://farfalla-project.org/readability_static/")[farfalla-project.org/readability_static/]]
@@ -980,7 +988,7 @@ Per maggiori informazioni sul processo di redazione di un documento si consiglia
 
 In merito invece alle verifiche relative al *Codice*, questo sarà un argomento che _ALimitedGroup_ affronterà maggiormente nel dettaglio non appena raggiunta la _Requirements and Technology Baseline#super[G]_.
 
-In generale tutte le informazioni relative alla Verifica#super[G], dalle misurazioni agli esiti dei Test#super[G] effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] *(Sezione 4)*.
+In generale tutte le informazioni relative alla Verifica#super[G], dalle misurazioni agli esiti dei Test#super[G] effettuati, dovranno essere riportati nel #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v2.0.0*] *(Sezione 4)*.
 
 La Verifica#super[G], in generale può essere realizzata in due modi: mediante *Analisi Statica* e mediante *Analisi Dinamica*, qui di seguito descritte.
 
@@ -1012,7 +1020,7 @@ Le principali tipologie di Test#super[G] sono:
 - *Test di Sistema*;
 - *Test di Regressione*.
 
-La nomenclatura utilizzata per descrivere tali Test#super[G] (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v1.1.0.pdf")[*Piano di Qualifica#super[G] v1.1.0*] alla *Sezione 4*) è la seguente:
+La nomenclatura utilizzata per descrivere tali Test#super[G] (reperibili nel #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] v2.0.0*] alla *Sezione 4*) è la seguente:
 
 #align(center, text(1.2em)[*`T-#-Tipo`*])
 
@@ -1058,7 +1066,7 @@ Durante l'esecuzione dei Test#super[G] descritti in precedenza, è possibile che
 
 È tuttavia necessario assicurarsi che una correzione apportata non introduca un problema precedentemente risolto: a questo scopo non ci si limita all'esecuzione del solo Test#super[G] fallito, bensì di tutti i Test#super[G], per evitare, di fatto, una regressione.
 
-=== Validazione <capitolovalidazione>>
+=== Validazione <capitolovalidazione>
 
 Lo scopo del processo di *Validazione*#super[G] è quello di tracciare l'efficacia di quanto sviluppato, ovvero comprendere se quanto realizzato soddisfa le esigenze di #M31.
 Potremmo riassumere lo scopo della *Validazione*#super[G] nella risposta alla domanda:
@@ -1075,7 +1083,7 @@ In base allo standard _ISO/IEC 12207:1995_, le attività previste da questo proc
 
 ===== Implementazione del processo
 
-_ALimitedGroup_ ha studiato le esigenze di #M31 e ha racchiuso tutti i requisiti da soddisfare all'interno dell'#link("https://alimitedgroup.github.io/AR%20v1.2.0.pdf")[*Analisi dei Requisiti#super[G] ver. 1.2.0*] *(Sezione 3)*.
+_ALimitedGroup_ ha studiato le esigenze di #M31 e ha racchiuso tutti i requisiti da soddisfare all'interno dell'#link("https://alimitedgroup.github.io/AR%20v2.0.0.pdf")[*Analisi dei Requisiti#super[G] ver. 2.0.0*] *(Sezione 3)*.
 
 Come già previsto da quanto descritto alla @valutazione-della-configurazione, il *Tracciamento dei Requisiti* sarà un elemento valido anche al processo di Validazione#super[G]: permette infatti di controllare se il prodotto funziona correttamente (un requisito è soddisfatto solo se il codice che lo implementa funziona correttamente) ed è conforme ai requisiti (perché il loro soddisfacimento è, per l'appunto, tracciato).
 
@@ -1293,7 +1301,7 @@ _ALimitedGroup_ ha compreso, durante lo svolgimento del progetto didattico, la n
 
     [*Script in Python*],
     [Per automatizzare l'aggiornamento del sito web con i nuovi documenti e la compilazione dei file Typst, _ALimitedGroup_ ha deciso di realizzare degli appositi script in Python.
-      Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel glossario],
+      Un ulteriore script inoltre permette di realizzare una sostituzione parziale delle parole nei documenti per collegarle ai termini contenuti nel Glossario],
 
     [*Telegram*],
     [Telegram viene utilizzato dal gruppo per comunicare in maniera diretta tra i membri in caso di dubbi minori per cui non è necessaria una riunione interna.],

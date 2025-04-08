@@ -1,7 +1,7 @@
 #import "@preview/cmarker:0.1.2"
 #import "../../lib/importantdocs.typ": *
 
-#let ver = [0.2.0]
+#let ver = [1.0.0]
 #show: body => importantdocs(
   titolo: "Manuale Utente",
   tipo: [esterno],
@@ -10,17 +10,41 @@
     + [_Minimum Viable Product_]
     + " realizzato da "
     + [_ALimitedGroup_],
-  responsabile: (p.samuele,),
-  verificatore: (p.emanuele, p.matteo),
-  stato: [In redazione],
+  responsabile: (p.matteo,),
+  verificatore: (p.emanuele, p.matteo, p.samuele, p.loris),
+  stato: [Approvato],
   redattori: (p.samuele, p.matteo, p.marco),
   versione: ver,
   versioni: (
     (
+      vers: "1.0.0",
+      date: datetime(day: 4, month: 04, year: 2025),
+      descr: "Correzioni minori.",
+      autore: p.samuele,
+      verifica: p.loris,
+      approvazione: p.matteo,
+    ),
+    (
+      vers: "0.4.0",
+      date: datetime(day: 4, month: 04, year: 2025),
+      descr: "Cambiamento versione scaricabile.",
+      autore: p.matteo,
+      verifica: p.samuele,
+    ),
+    (
+      vers: "0.3.0",
+      date: datetime(day: 2, month: 04, year: 2025),
+      descr: "Redazione installazione e configurazione Sistema, Test, Guide e Telemetria  "
+        + [(@install, @testpar, @guidepar, @tel)]
+        + ".",
+      autore: p.matteo,
+      verifica: p.samuele,
+    ),
+    (
       vers: "0.2.0",
       date: datetime(day: 19, month: 03, year: 2025),
-      descr: "Redazione sezione Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti: "
-        + [(@tipiutenti, @capordini, @captrasferimenti, @capriassortimenti)]
+      descr: "Redazione sezione Merci, Tipi di Utenti, Ordini, Trasferimenti e Riassortimenti. Stesura Endpoint. "
+        + [(@tipiutenti, @merce, @capordini, @capriassortimenti, @captrasferimenti, @endpoint)]
         + ".",
       autore: p.marco,
       verifica: p.samuele,
@@ -107,7 +131,12 @@
     )
   cmarker.render(
     content,
-    scope: (image: (path, alt: none) => align(center, image(basename + "/" + path, alt: alt, height: 30%))),
+    scope: (
+      image: (path, width: 50%, height: 30%, alt: none) => align(
+        center,
+        image(basename + "/" + path, alt: alt, width: width, height: height, fit: "contain"),
+      ),
+    ),
     h1-level: level,
   )
 }

@@ -24,7 +24,7 @@ Codifica: `application/x-www-form-urlencoded`
         ),
         [ `username`], [`string`], [L'username con cui ci si vuole autenticare], [`admin`],
    ),
-   caption: [Corpo della richiesta di POST `/login`],
+   caption: [Corpo della richiesta di POST `/api/v1/login`],
 )
 -->
 

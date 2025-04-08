@@ -1,13 +1,29 @@
 #import "../../lib/importantdocs.typ": *
 
-
-#let ver = [0.8.0]
+#let ver = [1.0.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 27, month: 03, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "1.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.samuele,
+      verifica: p.loris,
+      approvazione: p.matteo,
+      descr: "Aggiunta di notifications e api gateway. " + [(@notification e @api_gateway)] + ".",
+    ),
+    (
+      vers: "0.9.0",
+      date: datetime(day: 31, month: 03, year: 2025),
+      autore: p.matteo,
+      verifica: p.marco,
+      descr: "Aggiunte informazioni sulle versioni delle componenti utilizzate e aggiunte informazioni sul funzionamento di main e router. Aggionte versioni delle librerie. Aggiunte informazioni sulla telemetria. "
+        + [(@telemetria, @rdm e @main)]
+        + ".",
+    ),
     (
       vers: "0.8.0",
       date: datetime(day: 27, month: 03, year: 2025),
@@ -67,13 +83,14 @@
         + ".",
     ),
   ),
-  stato: [In redazione],
-  responsabile: ((p.marco),),
+  stato: [Approvato],
+  responsabile: ((p.matteo),),
   verificatore: ((p.emanuele), (p.marco), (p.matteo), (p.sara)),
   redattori: (
     (p.loris),
     (p.matteo),
     (p.sara),
+    (p.samuele),
   ),
   descrizione: [Questo documento contiene la _Specifica Tecnica_ descritto dal gruppo _ALimitedGroup_ per il Capitolato numero 6 proposto da #M31],
   titolo: "Specifica Tecnica",
@@ -108,22 +125,22 @@ Le parole che possiedono un riferimento nel Glossario saranno indicate nel modo 
 
 - *Capitolato d'appalto C6: Sistema di Gestione di un Magazzino Distribuito - #M31*
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf] \
-  *Ultimo Accesso 25 Febbraio 2025*
-- *Norme di Progetto#super[G] ver. 1.0.0* \
-  #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf") \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
+- *Norme di Progetto#super[G] ver. 2.0.0* \
+  #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf") \
+  *Ultimo Accesso 4 Aprile 2025*
 
 === Riferimenti informativi
 - *Lezione rovesciata - Documentazione* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf] \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 - *Regolamento del Progetto didattico* \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf] \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 - *Glossario* \
   #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \
-  *Ultimo Accesso 25 Febbraio 2025*
+  *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 
@@ -136,7 +153,7 @@ La scelta tecnologica è stata guidata dalla necessità di creare un sistema di 
 Le tecnologie adottate sono state organizzate in categorie, in base al loro ruolo all'interno dell'architettura: linguaggi di programmazione per lo sviluppo del codice, strumenti per la comunicazione tra microservizi, soluzioni per la virtualizzazione e il _deployment_, e piattaforme per il monitoraggio del sistema.
 
 Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le loro caratteristiche principali.
-== Linguaggi di programmazione e _framework_
+== Linguaggi di programmazione
 
 #figure(
   table(
@@ -156,11 +173,62 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*GO*], [], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
+    [*GO*], [1.24.0], [Go è un linguaggio di programmazione open-source sviluppato da Google, progettato per essere efficiente, semplice e scalabile. È particolarmente adatto per lo sviluppo di sistemi distribuiti, microservizi e applicazioni cloud-native, grazie alla sua compilazione rapida, alla gestione automatica della memoria e alla facilità di deployment con binari standalone.],
   ),
-  caption: [Tecnologie per la programmazione e lo sviluppo software],
+  caption: [Linguaggi di programmazione],
 )
 
+== Framework per la codifica
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*fx*], [1.23.0], [*Fx* è un _framework_ per la _dependency injеction_ utilizzabile con il linguaggio *Go* sviluppato da _Uber_\
+      Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.],
+    [*gin*], [1.10.0], [_Framework_ che permette di gestire gli _endpoint_ e non solo. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/gin-gonic/gin")[pagina Go del progetto]]
+  ),
+  caption: [Framework per la codifica],
+)
+
+== Tecnologie per la gestione di dati temporali
+
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*InfluxDB*], [2.7.11], [Si tratta di una base di dati specificatamente progettata per la memorizzazione e l'ottenimento di serie temporali.],
+  ),
+  caption: [Tecnologie per la gestione di dati temporali],
+)
 
 == Tecnologie per la comunicazione e messaggistica
 
@@ -182,11 +250,10 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*NATS*], [], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
+    [*NATS*], [2.10.25], [NATS è un sistema di messaggistica open-source progettato per la comunicazione scalabile, affidabile e a bassa latenza tra servizi distribuiti. Supporta il pub/sub, request/reply e message queueing, rendendolo adatto a microservizi. Grazie alla sua leggerezza e semplicità, NATS permette un'elevata efficienza nella gestione della comunicazione tra componenti, garantendo resilienza e facilità di scalabilità senza necessità di configurazioni complesse.],
   ),
   caption: [Tecnologie per la comunicazione e messaggistica],
 )
-
 
 == Tecnologie per la virtualizzazione e _deployment_
 
@@ -208,11 +275,43 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
 
     //table row
-    [*Docker*], [], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
+    [*Docker Engine*], [28.0.1], [Docker è una piattaforma di virtualizzazione che consente di impacchettare applicazioni e le loro dipendenze in container leggeri e portabili. Grazie alla sua architettura basata su immagini e container, Docker permette di garantire consistenza tra ambienti di sviluppo, test e produzione, semplificando il deployment e la scalabilità delle applicazioni. È particolarmente utile per microservizi e sistemi distribuiti, migliorando l'efficienza nell'uso delle risorse e la velocità di distribuzione del software.],
   ),
   caption: [Tecnologie per la virtualizzazione e _deployment_],
 )
 
+== Librerie
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*zap*], [1.27.0], [Libreria realizzata da Uber per il logging. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/zap")[pagina Go del progetto]],
+    [*zap-prettyconsole*], [0.5.2], [Libreria che rende maggiormente leggibile l'output di zap. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/thessem/zap-prettyconsole")[pagina Go del progetto]],
+    [*golang-jwt*], [5.2.2], [Libreria utilizzata per generare e verificare i Token JWT. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/golang-jwt/jwt/v5")[pagina Go del progetto]],
+    [*google uuid*], [1.6.0], [Libreria utilizzata per generare UUID, utili per identificare in maniera unica i vari servizi offerti dal Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/google/uuid#section-readme")[pagina Go del progetto]],
+    [*jwx*], [1.2.30], [Libreria utilizzata per il parsing delle chiavi pubbliche nel rese disponibili nell'apposito _subject_ JetStream NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/lestrrat-go/jwx")[pagina Go del progetto]],
+    [*nats*], [1.40.1], [Client Go per l'utilizzo di NATS. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats.go")[pagina Go del progetto]],
+    [*OpenTelemetry-Go*], [1.35.0], [Implementazione Go per OpenTelemetry: viene utilizzata per raccogliere dati dai vari microservizi del Sistema. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/otel")[pagina Go del progetto]],
+    [*OpenTelemetry-otelzap*], [0.10.0], [Libreria che permette di legare zap a OpenTelemetry-Go. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelzap")[pagina Go del progetto]],
+    [*influxdb-client-go*], [2.14.0], [Libreria per dialogare con il _Database_ InfluxDB, un tipo di Base di Dati specificatamente realizzata per gestire serie temporali, come quelle che riguardano le notifiche. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/influxdata/influxdb-client-go/v2")[pagina Go del progetto]],
+  ),
+  caption: [Librerie utilizzate],
+)
 
 == Tecnologie per il monitoraggio dei microservizi
 
@@ -233,20 +332,76 @@ Di seguito sono elencate e descritte le tecnologie utilizzate, evidenziando le l
     // Header row
     text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
     [*Grafana*],
-    [],
+    [11.6.0],
     [Grafana è una piattaforma open-source per la visualizzazione e l'analisi di dati di monitoraggio. Supporta diverse fonti di dati (come Prometheus, Loki e Mimir) e consente la creazione di dashboard interattive per il monitoraggio in tempo reale.],
     [*Prometheus*],
-    [],
+    [3.2.1],
     [Prometheus è un sistema di monitoraggio e allerta open-source focalizzato sulla raccolta di metriche attraverso un modello pull.],
     [*Loki*],
-    [],
+    [3.4.2],
     [Loki è un sistema di log aggregation sviluppato da Grafana Labs, ottimizzato per la gestione dei log in modo scalabile ed efficiente. Si integra con Grafana per la visualizzazione e utilizza un'architettura simile a Prometheus, semplificando la correlazione tra metriche e log.],
-    [*Mimir*],
-    [],
-    [Mimir è un'estensione di Prometheus sviluppata da Grafana Labs per la gestione di metriche su larga scala. Consente lo storage e la gestione distribuita di serie temporali, migliorando la scalabilità e la resilienza rispetto a un'istanza standalone di Prometheus.],
   ),
   caption: [Tecnologie per il monitoraggio dei microservizi],
 )
+
+== Tecnologie per analisi statica
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*gocyclo*], [0.6.0], [Strumento utile per il calcolo della complessità ciclomatica. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/fzipp/gocyclo/cmd/gocyclo")[pagina Go del progetto]],
+    [*staticcheck*], [0.6.0], [Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/honnef.co/go/tools/staticcheck")[pagina Go del progetto]],
+    [*lint*], [2.0.2], [Si tratta di una utility utile nell'ambito della _Continuous Integration_ per eseguire i vari _linter_ da esso stesso inclusi ed alcuni esterni come staticcheck. Per maggiori informazioni si rimanda alla #link("https://github.com/golangci/golangci-lint")[pagina GitHub del progetto]],
+  ),
+  caption: [Tecnologie per analisi statica],
+)
+
+== Tecnologie per l'analisi dinamica
+
+#show figure: set block(breakable: true)
+#figure(
+  table(
+    columns: (1fr, 0.60fr, 3.5fr),
+
+    fill: (col, row) => if row == 0 {
+      rgb(128, 0, 128)
+    } else if calc.even(row) {
+      rgb(191, 127, 191)
+    } else {
+      rgb(216, 178, 216)
+    },
+    align: center + horizon,
+    inset: 8pt,
+
+    // Header row
+    text(white)[*Tecnologia*], text(white)[*Versione*], text(white)[*Descrizione*],
+
+    //table row
+    [*go test*], [1.24.0], [Si tratta di una componente parte della libreria standard di Go per la realizzazione di test. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/testing")[pagina Go del progetto]],
+    [*GoMock*], [0.5.0], [GoMock è un _framework_ utilizzato per realizzare Mock che implementano interfacce: questo risulta particolarmente utile nella realizzazione di test di unità. Deprecato da Google, adesso è sviluppato da Uber: per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/go.uber.org/mock")[pagina Go del progetto]],
+    [*magiconair properties assert*], [1.8.9], [La libreria offre funzionalità per scrivere file con proprietà, ma offre anche strumenti utili per realizzare testing ed è per questo scopo che viene utilizzata. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/magiconair/properties")[pagina Go del progetto]],
+    [*stretchr testify*], [1.10.0], [Libreria specificatamente realizzata per permettere una più semplice realizzazione dei test, offrendo funzionalità per richiedere che un risultato sia di un certo tipo (esempio `nil`). Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/stretchr/testify")[pagina Go del progetto]],
+    [*nats-server*], [2.11.0], [Libreria utilizzata per permettere la realizzazione di un Server NATS Mock utilizzabile nei test di unità e di integrazione. Per maggiori informazioni si rimanda alla #link("https://pkg.go.dev/github.com/nats-io/nats-server/v2")[pagina Go del progetto]],
+  ),
+  caption: [Tecnologie per l'analisi dinamica],
+)
+
 
 #pagebreak()
 = Architettura <architettura>
@@ -301,16 +456,6 @@ Questo garantisce:
 
 Questa architettura#super[G] consente di ottenere un sistema altamente scalabile, resiliente e facilmente manutenibile, ottimizzato per ambienti distribuiti e carichi di lavoro variabili.
 
-=== _Client_ monolitico
-
-Il _client_ è progettato come un'applicazione monolitica che funge da interfaccia unificata verso i diversi microservizi del _backend_#super[G]. Questa scelta architetturale offre diversi vantaggi:
-
-- Esperienza utente coerente: un'interfaccia unificata garantisce consistenza nell'interazione con le diverse funzionalità#super[G] del sistema;
-
-- Semplificazione della gestione dello stato: la gestione delle sessioni utente e della sincronizzazione dei dati sono facilitate;
-
-- Ottimizzazione delle comunicazioni: il _client_ gestisce in modo efficiente le chiamate verso i diversi microservizi, mascherando la complessità dell'architettura distribuita all'utente finale.
-
 == Design pattern
 
 === Dependency injection <di>
@@ -335,7 +480,7 @@ L'utilizzo del pattern _Dependency Injection#super[G]_ nel progetto porta numero
 - *gestione centralizzata*:la _dependency injection#super[G]_ rende possibile l'utilizzo di _framework_ specifici per la fornitura automatica delle istanze necessarie per soddisfare le dipendenze (nel nostro caso, attraverso *Fx*, vedi @fwfx).
 
 ==== Framework Fx di _Uber_ <fwfx>
-*Fx* è un framework per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
+*Fx* è un _framework_ per la _dependency injection#super[G]_ utilizzabile con il linguaggio *Go*#super[G] sviluppato da _Uber_.\
 Per maggiori informazioni si consiglia la consultazione del #link("https://uber-go.github.io/fx/index.html")[sito web] del progetto.
 
 ===== Costrutti principali
@@ -405,6 +550,12 @@ Il pattern _Strategy_ viene utilizzato quando una componente di natura algoritmi
 ==== Utilizzo del pattern nel progetto
 Nel nostro progetto, il pattern _Strategy_ è stato utilizzato nel microservizio _Authenticator_ (@auth): #M31 infatti necessita sicuramente in futuro di rendere più complesso l'algoritmo utilizzato per verificare le credenziali di un Utente, aggiungendo anzitutto il controllo di _username_ e _password_ e altri meccanismi in un secondo momento. Ogni algoritmo, per via della maggiore complessità, potrebbe avere sensibili differenze e nessun tratto in comune con le versioni precedenti, motivo per cui si è deciso di utilizzare questo pattern e non il pattern _Template Method_.
 
+Nel progetto, il pattern _Strategy_ è stato applicato per il calcolo della disponibilità delle merci nei magazzini. L'interfaccia `ICalculateAvailabilityUseCase` definisce il contratto per tutte le implementazioni che calcolano la disponibilità.
+Attualmente, è presente un'unica implementazione di questa interfaccia, denominata `SimpleCalculateAvailabilityService`. Questa implementazione utilizza un algoritmo base per determinare la disponibilità delle merci, considerando i dati forniti dai magazzini.
+Future implementazioni potrebbero includere algoritmi più complessi, come quelli basati su intelligenza artificiale o machine learning, per ottimizzare ulteriormente il calcolo della disponibilità.
+
+#pagebreak()
+
 == Microservizi sviluppati
 
 Saranno ora esposti i microservizi sviluppati.
@@ -418,6 +569,90 @@ Per via del linguaggio utilizzato, talvolta potrebbe non essere stato possibile 
 Se la descrizione di un oggetto è assente questo implica che tale oggetto è una *struttura vuota*, ovvero senza alcun attributo e funzione da lei solamente invocabile.
 
 Infine, si ricorda che, nel linguaggio Go#super[G], un nome di funzione o attributo che inizia con lettera minuscola simboleggia che lo stesso è visibile solo all'interno dello stesso _package_.
+
+=== Telemetria <telemetria>
+
+I file dei vari `controller` e `listener` sono dotati di logger zap e di "contatori", oggetti di tipo `metric.Int64Counter`, come variabili globali. Nel costruttore dei `controller` e `listener` quest'ultime variabili vengono inizializzate con la funzione `CounterSetup` fornita dal package `observability`: tale funzione, la cui firma è `CounterSetup(meter *metric.Meter, logger *zap.Logger, counter *metric.Int64Counter, counterMap *sync.Map, name string, options ...metric.Int64CounterOption)` si occupa di prendere il logger del microservizio e la variabile da inizializzare, quindi l'oggetto `metric.Meter`, fornito nel costruttore del `controller` o `listener` e passato a questa funzione, viene sfruttato per creare un oggetto `metric.Int64Counter` che viene assegnato alla variabile `counter` passata come puntatore. Per evitare duplici assegnazioni, che potrebbero modificare il valore reale del contatore, una mappa `sync.Map` viene utilizzata per determinare se un contatore dello stesso tipo era già stato creato e assegnato.
+
+La configurazione di *OpenTelemetry*, sfruttato da *Prometheus* e *Loki*, viene poi realizzata dal metodo `New` dello stesso _package_, che invoca la funzione `setupOtel` atta allo scopo di configurare il servizio.
+
+Successivamente, per incrementare il numero di richieste, queste vengono incrementate dagli _Handler_ dei _controller_ e _listener_ prima di terminare l'esecuzione, sfruttando il metodo `Add` degli oggetti `metric.Int64Counter`.
+
+=== Router dei microservizi <rdm>
+
+//descrizione generale delle classi router
+
+Ogni microservizio fa uso di NATS#super[G] ,un _message broker_ per la trasmissione dei messaggi. Contrariamente ai linguaggi di programmazione come *Java* o *Kotlin*, *Go*#super[G] non prevede le annotazioni, strumenti utili in questi contesti poiché permettono la generazione automatica di codice che potrebbe, nel caso in questione, gestire la ricezione di un messaggio dalla rete NATS#super[G] e automaticamente convertirlo in un'istanza di un DTO richiesto dal metodo del controller adibito alla gestione di una determinata richiesta.
+
+I vari microservizi utilizzano dunque codice esplicito che esegue questo processo, dalla registrazione del microservizio all'apposito canale di comunicazione NATS#super[G] ,sino a richiamare il giusto metodo del controller che deve gestire una specifica richiesta: la conversione al DTO trasmesso viene effettuata internamente alla funzione richiamata.
+
+Nello specifico, ogni microservizio possiede:
+
+- dei *Router*: tale struttura ha il compito, mediante la funzione `Setup`, di registrare il controller con un _subject_ NATS#super[G] o JetStream NATS#super[G] ,associandovi la funzione da eseguire all'arrivo di un nuovo messaggio
+- dei *Controller/Listener Router*: si tratta di una componente che possiede più `Router` e un metodo `Setup`. Dal momento che un microservizio potrebbe avere più controller e dunque più router, questa componente prende tutti i router del microservizio e vi invoca `Setup`. Per maggiori informazioni sul suo impiego, si veda la @main.
+
+==== Esempio: catalogRouter
+
+#figure(
+  image("../../assets/catalog/CatalogRouter.png", width: 90%),
+  caption: "CatalogRouter",
+)
+
+*catalogRouter*, router del microservizio *Catalog*, possiede i seguenti attributi:
+
+- *`NatsMessageBroker`*: si occupa della completa gestione della connessione a NATS#super[G] e JetStream NATS#super[G] ,nonché possiede un logger per l'integrazione con *Grafana*#super[G] .Esso infatti possiede i seguenti attributi:
+  - *`Nats *nats.Conn`*: connessione a NATS#super[G] ;
+  - *`Js jetstream.JetStream`*: struttura per gestire connessioni a JetStream NATS#super[G] ;
+  - *`Logger *zap.logger`*: logger.
+  E può invocare le seguenti funzioni:
+  - *`NewNatsMessageBroker(nc *nats.Conn, logger *zap.Logger) (*NatsMessageBroker, error)`*: costruttore della struttura;
+  - *`RegisterRequest(ctx context.Context, subject Subject, queue Queue, handler RequestHandler) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ specificato;
+  - *`RegisterJsHandler(ctx context.Context, restore IRestoreStreamControl, streamCfg jetstream.StreamConfig, handler JsHandler, opts ...JsHandlerOpt) error`*: permette di associare una funzione di un controller come _handler_ di un messaggio in arrivo sul _subject_ (del JetStream NATS#super[G] )specificato;
+  - *`RegisterJsWithConsumerGroup(ctx context.Context, streamCfg jetstream.StreamConfig, consumerCfg jetstream.ConsumerConfig, handler JsHandler) error`*: come il precedente, ma permette di applicare un gruppo di _consumer_ (non viene utilizzato da questo router).
+- *`controller *catalogController`*: il controller del microservizio *Catalog* dedicato alla gestione dei magazzini e della quantità della merce;
+- *`goodController *CatalogGoodInfoController`*: il controller del microservizio *Catalog* dedicato alla gestione delle informazioni della merce;
+- *`qtController *CatalogGlobalQuantityController`*: il controller del microservizio *Catalog* dedicato alla gestione delle richieste di ottenimento quantità globale della merce;
+- *`rsc *broker.RestoreStreamControl`*: una struttura che fa uso di `sync.WaitGroup` per gestire il recupero dei messaggi dai JetStream. È infatti necessario per l'invocazione di metodi quali `RegisterJsHandler`.
+
+Può invocare le seguenti funzioni:
+
+- *`NewCatalogRouter(mb *broker.NatsMessageBroker, cc *catalogController, gc *CatalogGoodInfoController, qt *CatalogGlobalQuantityController, rsc *broker.RestoreStreamControl) *catalogRouter`*: il costruttore del Router;
+- *`Setup(ctx context.Context) error`*: esegue le associazioni _controller_ - _subject_ usando i metodi sopra descritti.
+
+Per ulteriori informazioni in merito ai _subject_ è possibile visionare quanto necessario direttamente nel codice, mentre le configurazioni dei vari JetStream NATS#super[G] sono disponibili nella #link("https://github.com/alimitedgroup/MVP/tree/main/common/stream")[cartella common/stream] del _repository_#super[G] .
+
+=== Configurazioni dei microservizi
+
+//descrizione generale delle classi config
+
+La configurazione dei vari microservizi, specie per l'indirizzo di accesso a NATS#super[G] e per la raccolta di dati telemetrici, può avvenire inserendo variabili di ambiente nel file `compose.yml`.
+
+Per maggiori informazioni si rimanda alla lettura del #link("https://alimitedgroup.github.io/docs/")[Manuale Utente#super[G]].
+
+=== `Main` dei microservizi <main>
+
+//descrivere cosa genericamente accade nel Main dei vari microservizi
+
+Ogni microservizio possiede il proprio `Main` che raccoglie i vari fil `*.mdoule.go` necessari all'esecuzione del microservizio e invoca la funzione di avvio denominata `RunLifeCycle`, il tutto utilizzando il _framework_ fx.
+
+Tale funzione prende solitamente il `ControllerRouter` e/o i `Listener` e li passa alla funzione `Run` che vi richiama il metodo Setup, perciò concretamente avviando il microservizio.
+
+=== Funzionamento Ordini e Trasferimenti
+Ogni magazzino è gestito da un microservizio dedicato, respоnsabile della gestione dello stock#super[G] specifico di quel magazzino. La gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
+
+Quando il client ha terminato di costruire un ordine#super[G] localmente, per confermarlo contatta il microservizio Order, che genera un evento di tipo _order_update_ con stato _Created_. Questo evento viene salvato nello stream di NATS#super[G]. Contemporaneamente, viene inviato un evento sullo stream _contact_warehouses_, che sarà ascoltato dai microservizi Order (@micro_order) tramite un _consumer group_, in modo che una sola istanza gestisca l'evento. Questo microservizio si occupa di contattare i magazzini coinvolti per prenotare le merci necessarie. La prenotazione avviene tramite una richiesta NATS#super[G].
+
+La selezione dei magazzini avviene in base alla disponibilità delle merci richieste, utilizzando un algoritmo che privilegia i magazzini con una quantità di merce più vicina a quella necessaria.
+
+Dopo aver completato con successo la prenotazione delle merci presso i magazzini interessati, l'ordine viene aggiornato allo stato _Filled_. A questo punto, viene generato un nuovo evento di tipo _order_update_, che include la lista delle prenotazioni effettuate. I microservizi Warehouse#super[G] (@micro_warehouse) coinvolti ricevono questo evento e aggiornano di conseguenza lo stock#super[G] disponibile.
+
+Infine, quando i microservizi Order ricevono gli aggiornamenti degli stock#super[G] dai magazzini, lo stato dell'ordine viene aggiornato internamente a _Completed_, informando così l'utente del completamento dell'ordine.
+
+Per evitare conflitti tra ordini, il sistema utilizza, dunque, un meccanismo di prenotazioni che assicura la disponibilità delle merci al momento della conferma dell'ordine. Inoltre, la gestione distribuita degli stock#super[G] tra i vari magazzini elimina problemi di concorrenza e migliora la scalabilità complessiva del sistema.
+
+Una funzionalità#super[G] simile agli ordini è quella dei trasferimenti, dei particolari ordini che permettono di spostare della merce da un magazzino mittente a un magazzino destinatario.
+I trasferimenti vengono gestiti in modo simile agli ordini, con la differenza che non viene utilizzato nessun algoritmo per la selezione del magazzino destinatario, in quanto è già specificato nella richiesta di trasferimento#super[G] ,e vengono utilizzati gli eventi di tipo _transfer_update_ al posto degli omologhi per gli ordini (_order_update_).
+
 
 === Oggetti comuni tra microservizi //COMMONOBJ
 
@@ -443,6 +678,8 @@ Rappresenta un DTO generico per le risposte, utilizzabile per incapsulare un mes
 // - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
 // WAREHOUSE
+
+#pagebreak()
 
 ==== StockUpdate <WarehouseStockUpdate>
 #figure(
@@ -479,7 +716,7 @@ Rappresenta il tipo di aggiornamento dello stock#super[G]. È un tipo stringa co
 ==== StockUpdateGood <WarehouseStockUpdateGood>
 
 #figure(
-  image("../../assets/warehouse/StreamStockUpdateGood.png", width: 27%),
+  image("../../assets/warehouse/StreamStockUpdateGood.png", width: 50%),
   caption: "Warehouse - StockUpdateGood",
 )
 
@@ -493,7 +730,7 @@ Rappresenta una merce aggiornata nel comando di aggiornamento dello stock#super[
 
 ==== AddStockRequestDTO <WarehouseAddStockRequestDTO>
 #figure(
-  image("../../assets/warehouse/AddStockRequestDTO.png", width: 25%),
+  image("../../assets/warehouse/AddStockRequestDTO.png", width: 30%),
   caption: "Warehouse - AddStockRequestDTO",
 )
 
@@ -506,7 +743,7 @@ Questo DTO viene utilizzato per rappresentare la richiesta di aggiunta di stock#
 
 ==== RemoveStockRequestDTO <WarehouseRemoveStockRequestDTO>
 #figure(
-  image("../../assets/warehouse/RemoveStockRequestDTO.png", width: 25%),
+  image("../../assets/warehouse/RemoveStockRequestDTO.png", width: 30%),
   caption: "Warehouse - RemoveStockRequestDTO",
 )
 
@@ -544,7 +781,7 @@ Rappresenta una merce coinvolta nella richiesta di prenotazione di stock#super[G
 
 ==== HealthCheckResponseDTO <WarehouseHealthCheckResponseDTO>
 #figure(
-  image("../../assets/warehouse/HealthCheckResponseDTO.png", width: 25%),
+  image("../../assets/warehouse/HealthCheckResponseDTO.png", width: 35%),
   caption: "Warehouse - HealthCheckResponseDTO",
 )
 Rappresenta un DTO specifico per le risposte di controllo dello stato di salute del microservizio *Warehouse*#super[G].
@@ -554,9 +791,11 @@ Rappresenta un DTO specifico per le risposte di controllo dello stato di salute 
 - *`Message string`*: rappresenta il messaggio di stato del microservizio *Warehouse*#super[G];
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
+#pagebreak()
+
 ==== ReserveStockResponseDTO <WarehouseReserveStockResponseDTO>
 #figure(
-  image("../../assets/warehouse/ReserveStockResponseDTO.png", width: 25%),
+  image("../../assets/warehouse/ReserveStockResponseDTO.png", width: 35%),
   caption: "Warehouse - ReserveStockResponseDTO",
 )
 Rappresenta un DTO specifico per le risposte relative alla prenotazione di stock#super[G] nel microservizio *Warehouse*#super[G].
@@ -568,7 +807,7 @@ Rappresenta un DTO specifico per le risposte relative alla prenotazione di stock
 
 ==== ReserveStockInfo <WarehouseReserveStockInfo>
 #figure(
-  image("../../assets/warehouse/ReserveStockInfo.png", width: 25%),
+  image("../../assets/warehouse/ReserveStockInfo.png", width: 35%),
   caption: "Warehouse - ReserveStockInfo",
 )
 Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel microservizio *Warehouse*#super[G].
@@ -579,10 +818,12 @@ Rappresenta le informazioni relative a una prenotazione di stock#super[G] nel mi
 
 // ORDER
 
+#pagebreak()
+
 ==== OrderUpdate <StreamOrderUpdate>
 #figure(
-  image("../../assets/order/OrderUpdate.png", width: 50%),
-  caption: "OrderUpdate",
+  image("../../assets/order/OrderUpdate.png", width: 40%),
+  caption: "Order - OrderUpdate",
 )
 
 Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
@@ -602,7 +843,7 @@ Rappresenta un aggiornamento di un ordine#super[G] nel sistema.
 ==== OrderUpdateGood <StreamOrderUpdateGood>
 #figure(
   image("../../assets/order/OrderUpdateGood.png", width: 35%),
-  caption: "OrderUpdateGood",
+  caption: "Order - OrderUpdateGood",
 )
 
 Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
@@ -614,8 +855,8 @@ Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
 
 ==== TransferUpdate <StreamTransferUpdate>
 #figure(
-  image("../../assets/order/TransferUpdate.png", width: 50%),
-  caption: "TransferUpdate",
+  image("../../assets/order/TransferUpdate.png", width: 40%),
+  caption: "Order - TransferUpdate",
 )
 
 Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
@@ -634,7 +875,7 @@ Rappresenta un aggiornamento di un trasferimento#super[G] nel sistema.
 ==== TransferUpdateGood <StreamTransferUpdateGood>
 #figure(
   image("../../assets/order/TransferUpdateGood.png", width: 35%),
-  caption: "TransferUpdateGood",
+  caption: "Order - TransferUpdateGood",
 )
 
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
@@ -645,10 +886,10 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 - *`Quantity int64`*: rappresenta la quantità della merce coinvolta nel trasferimento#super[G].
 
 
-==== CreateOrderRequestDTO <WarehouseCreateOrderRequestDTO>
+==== CreateOrderRequestDTO <OrderCreateOrderRequestDTO>
 #figure(
   image("../../assets/order/CreateOrderRequestDTO.png", width: 25%),
-  caption: "Warehouse - CreateOrderRequestDTO",
+  caption: "Order - CreateOrderRequestDTO",
 )
 Rappresenta il DTO utilizzato per creare un nuovo ordine#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -659,10 +900,10 @@ Rappresenta il DTO utilizzato per creare un nuovo ordine#super[G] nel microservi
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`Goods []CreateOrderGood`*: rappresenta una lista di oggetti `CreateOrderGood` che contengono le informazioni sulle merci incluse nell'ordine.
 
-==== CreateOrderGood <WarehouseCreateOrderGood>
+==== CreateOrderGood <OrderCreateOrderGood>
 #figure(
-  image("../../assets/order/CreateOrderGood.png", width: 25%),
-  caption: "Warehouse - CreateOrderGood",
+  image("../../assets/order/CreateOrderGood.png", width: 30%),
+  caption: "Order - CreateOrderGood",
 )
 Rappresenta una merce inclusa in un ordine#super[G].
 
@@ -671,10 +912,10 @@ Rappresenta una merce inclusa in un ordine#super[G].
 - *`GoodID string`*: rappresenta l'identificativo della merce inclusa nell'ordine;
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nell'ordine.
 
-==== CreateTransferRequestDTO <WarehouseCreateTransferRequestDTO>
+==== CreateTransferRequestDTO <OrderCreateTransferRequestDTO>
 #figure(
-  image("../../assets/order/CreateTransferRequestDTO.png", width: 25%),
-  caption: "Warehouse - CreateTransferRequestDTO",
+  image("../../assets/order/CreateTransferRequestDTO.png", width: 35%),
+  caption: "Order - CreateTransferRequestDTO",
 )
 Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -684,10 +925,10 @@ Rappresenta il DTO utilizzato per creare un nuovo trasferimento#super[G] nel mic
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferGood`*: rappresenta una lista di oggetti `TransferGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
 
-==== TransferGood <WarehouseTransferGood>
+==== TransferGood <OrderTransferGood>
 #figure(
-  image("../../assets/order/TransferGood.png", width: 25%),
-  caption: "Warehouse - TransferGood",
+  image("../../assets/order/TransferGood.png", width: 40%),
+  caption: "Order - TransferGood",
 )
 Rappresenta una merce inclusa in un trasferimento#super[G].
 
@@ -696,10 +937,10 @@ Rappresenta una merce inclusa in un trasferimento#super[G].
 - *`GoodID string`*: rappresenta l'identificativo della merce inclusa nel trasferimento#super[G];
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nel trasferimento#super[G].
 
-==== GetOrderRequestDTO <WarehouseGetOrderRequestDTO>
+==== GetOrderRequestDTO <OrderGetOrderRequestDTO>
 #figure(
-  image("../../assets/order/GetOrderRequestDTO.png", width: 25%),
-  caption: "Warehouse - GetOrderRequestDTO",
+  image("../../assets/order/GetOrderRequestDTO.png", width: 35%),
+  caption: "Order - GetOrderRequestDTO",
 )
 Rappresenta il DTO utilizzato per richiedere i dettagli di un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -707,10 +948,10 @@ Rappresenta il DTO utilizzato per richiedere i dettagli di un ordine#super[G] ne
 
 - *`OrderID string`*: rappresenta l'identificativo univoco dell'ordine richiesto.
 
-==== GetTransferRequestDTO <WarehouseGetTransferRequestDTO>
+==== GetTransferRequestDTO <OrderGetTransferRequestDTO>
 #figure(
-  image("../../assets/order/GetTransferRequestDTO.png", width: 25%),
-  caption: "Warehouse - GetTransferRequestDTO",
+  image("../../assets/order/GetTransferRequestDTO.png", width: 35%),
+  caption: "Order - GetTransferRequestDTO",
 )
 Rappresenta il DTO utilizzato per richiedere i dettagli di un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -718,10 +959,12 @@ Rappresenta il DTO utilizzato per richiedere i dettagli di un trasferimento#supe
 
 - *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] richiesto.
 
+#pagebreak()
+
 ==== OrderCreateResponseDTO <OrderCreateResponseDTO>
 #figure(
-  image("../../assets/order/OrderCreateResponseDTO.png", width: 25%),
-  caption: "OrderCreateResponseDTO",
+  image("../../assets/order/OrderCreateResponseDTO.png", width: 35%),
+  caption: "Order - OrderCreateResponseDTO",
 )
 Rappresenta la risposta alla richiesta di creazione di un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -732,8 +975,8 @@ Rappresenta la risposta alla richiesta di creazione di un ordine#super[G] nel mi
 
 ==== OrderCreateInfo <OrderCreateInfo>
 #figure(
-  image("../../assets/order/OrderCreateInfo.png", width: 25%),
-  caption: "OrderCreateInfo",
+  image("../../assets/order/OrderCreateInfo.png", width: 35%),
+  caption: "Order - OrderCreateInfo",
 )
 Rappresenta le informazioni relative all'ordine creato nel microservizio *Warehouse*#super[G].
 
@@ -743,8 +986,8 @@ Rappresenta le informazioni relative all'ordine creato nel microservizio *Wareho
 
 ==== GetOrderResponseDTO <GetOrderResponseDTO>
 #figure(
-  image("../../assets/order/GetOrderResponseDTO.png", width: 25%),
-  caption: "GetOrderResponseDTO",
+  image("../../assets/order/GetOrderResponseDTO.png", width: 35%),
+  caption: "Order - GetOrderResponseDTO",
 )
 Rappresenta la risposta alla richiesta di informazioni su un ordine#super[G] specifico nel microservizio *Warehouse*#super[G].
 
@@ -753,10 +996,12 @@ Rappresenta la risposta alla richiesta di informazioni su un ordine#super[G] spe
 - *`Message OrderInfo`*: rappresenta le informazioni relative all'ordine richiesto;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
+#pagebreak()
+
 ==== OrderInfo <OrderInfo>
 #figure(
-  image("../../assets/order/OrderInfo.png", width: 25%),
-  caption: "OrderInfo",
+  image("../../assets/order/OrderInfo.png", width: 40%),
+  caption: "Order - OrderInfo",
 )
 Rappresenta le informazioni relative a un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -769,11 +1014,13 @@ Rappresenta le informazioni relative a un ordine#super[G] nel microservizio *War
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`Goods []OrderInfoGood`*: rappresenta una lista di oggetti `OrderInfoGood` che contengono le informazioni sulle merci incluse nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine.
 
 ==== OrderInfoGood <OrderInfoGood>
 #figure(
-  image("../../assets/order/OrderInfoGood.png", width: 25%),
-  caption: "OrderInfoGood",
+  image("../../assets/order/OrderInfoGood.png", width: 35%),
+  caption: "Order - OrderInfoGood",
 )
 Rappresenta una merce inclusa in un ordine#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -782,10 +1029,12 @@ Rappresenta una merce inclusa in un ordine#super[G] nel microservizio *Warehouse
 - *`GoodID string`*: rappresenta l'identificativo della merce;
 - *`Quantity int64`*: rappresenta la quantità della merce inclusa nell'ordine.
 
+#pagebreak()
+
 ==== GetAllOrderResponseDTO <GetAllOrderResponseDTO>
 #figure(
-  image("../../assets/order/GetAllOrderResponseDTO.png", width: 25%),
-  caption: "GetAllOrderResponseDTO",
+  image("../../assets/order/GetAllOrderResponseDTO.png", width: 30%),
+  caption: "Order - GetAllOrderResponseDTO",
 )
 Rappresenta la risposta alla richiesta di informazioni su tutti gli ordini nel microservizio *Warehouse*#super[G].
 
@@ -796,8 +1045,8 @@ Rappresenta la risposta alla richiesta di informazioni su tutti gli ordini nel m
 
 ==== TransferCreateResponseDTO <TransferCreateResponseDTO>
 #figure(
-  image("../../assets/order/TransferCreateResponseDTO.png", width: 25%),
-  caption: "TransferCreateResponseDTO",
+  image("../../assets/order/TransferCreateResponseDTO.png", width: 40%),
+  caption: "Order - TransferCreateResponseDTO",
 )
 Rappresenta la risposta alla richiesta di creazione di un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -806,10 +1055,10 @@ Rappresenta la risposta alla richiesta di creazione di un trasferimento#super[G]
 - *`Message TransferCreateInfo`*: rappresenta le informazioni relative al trasferimento#super[G] creato;
 - *`Error string`*: rappresenta un messaggio di errore, se presente.
 
-==== TransferCreateInfo <TransferCreateInfo>
+==== TransferCreateInfo <TransferCreateInfo>//
 #figure(
-  image("../../assets/order/TransferCreateInfo.png", width: 25%),
-  caption: "TransferCreateInfo",
+  image("../../assets/order/TransferCreateInfo.png", width: 30%),
+  caption: "Order - TransferCreateInfo",
 )
 Rappresenta le informazioni relative al trasferimento#super[G] creato nel microservizio *Warehouse*#super[G].
 
@@ -817,10 +1066,12 @@ Rappresenta le informazioni relative al trasferimento#super[G] creato nel micros
 
 - *`TransferID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] creato.
 
+#pagebreak()
+
 ==== GetTransferResponseDTO <GetTransferResponseDTO>
 #figure(
-  image("../../assets/order/GetTransferResponseDTO.png", width: 25%),
-  caption: "GetTransferResponseDTO",
+  image("../../assets/order/GetTransferResponseDTO.png", width: 35%),
+  caption: "Order - GetTransferResponseDTO",
 )
 Rappresenta la risposta alla richiesta di informazioni su un trasferimento#super[G] specifico nel microservizio *Warehouse*#super[G].
 
@@ -831,8 +1082,8 @@ Rappresenta la risposta alla richiesta di informazioni su un trasferimento#super
 
 ==== TransferInfo <TransferInfo>
 #figure(
-  image("../../assets/order/TransferInfo.png", width: 25%),
-  caption: "TransferInfo",
+  image("../../assets/order/TransferInfo.png", width: 35%),
+  caption: "Order - TransferInfo",
 )
 Rappresenta le informazioni relative a un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -843,11 +1094,15 @@ Rappresenta le informazioni relative a un trasferimento#super[G] nel microserviz
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []TransferInfoGood`*: rappresenta una lista di oggetti `TransferInfoGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G].
+- *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G].
+
+#pagebreak()
 
 ==== TransferInfoGood <TransferInfoGood>
 #figure(
   image("../../assets/order/TransferInfoGood.png", width: 25%),
-  caption: "TransferInfoGood",
+  caption: "Order - TransferInfoGood",
 )
 Rappresenta una merce inclusa in un trasferimento#super[G] nel microservizio *Warehouse*#super[G].
 
@@ -859,7 +1114,7 @@ Rappresenta una merce inclusa in un trasferimento#super[G] nel microservizio *Wa
 ==== GetAllTransferResponseDTO <GetAllTransferResponseDTO>
 #figure(
   image("../../assets/order/GetAllTransferResponseDTO.png", width: 25%),
-  caption: "GetAllTransferResponseDTO",
+  caption: "Order - GetAllTransferResponseDTO",
 )
 Rappresenta la risposta alla richiesta di informazioni su tutti i trasferimenti nel microservizio *Warehouse*#super[G].
 
@@ -874,7 +1129,7 @@ Rappresenta la risposta alla richiesta di informazioni su tutti i trasferimenti 
 
 #figure(
   image("../../assets/catalog/GoodUpdateData.png", width: 35%),
-  caption: "GoodUpdateData",
+  caption: "Catalog - GoodUpdateData",
 )
 
 Struttura utile per rappresentare una modifica alle informazioni di una merce o all'aggiunta di una merce.
@@ -888,8 +1143,8 @@ Struttura utile per rappresentare una modifica alle informazioni di una merce o 
 ==== GetGoodsDataResponseDTO
 
 #figure(
-  image("../../assets/catalog/GetGoodsDataResponseDTO.png", width: 55%),
-  caption: "GetGoodsDataResponseDTO",
+  image("../../assets/catalog/GetGoodsDataResponseDTO.png", width: 60%),
+  caption: "Catalog - GetGoodsDataResponseDTO",
 )
 
 Rappresenta la risposta fornita alla richiesta di ottenimento informazioni sulle merci presenti nel Sistema.
@@ -902,7 +1157,7 @@ Rappresenta la risposta fornita alla richiesta di ottenimento informazioni sulle
 
 #figure(
   image("../../assets/catalog/GetWarehouseResponseDTO.png", width: 60%),
-  caption: "GetWarehouseResponseDTO",
+  caption: "Catalog - GetWarehouseResponseDTO",
 )
 
 Rappresenta la risposta alla richiesta di ottenimento informazioni sull'inventario dei magazzini memorizzati nel Sistema.
@@ -916,7 +1171,7 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sull'inventar
 
 #figure(
   image("../../assets/catalog/GetGoodsQuantityResponseDTO.png", width: 60%),
-  caption: "GetGoodsQuantityResponseDTO",
+  caption: "Catalog - GetGoodsQuantityResponseDTO",
 )
 
 Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantità globale delle merci.
@@ -933,7 +1188,7 @@ Rappresenta la risposta alla richiesta di ottenimento informazioni sulla quantit
 
 #figure(
   image("../../assets/authenticator/AuthLoginRequest.png", width: 30%),
-  caption: "AuthLoginRequest",
+  caption: "Authenticator - AuthLoginRequest",
 )
 
 Rappresenta la richiesta di ottenimento di un Token, necessario per operare con il Sistema.
@@ -946,7 +1201,7 @@ Rappresenta la richiesta di ottenimento di un Token, necessario per operare con 
 
 #figure(
   image("../../assets/authenticator/AuthLoginResponse.png", width: 30%),
-  caption: "AuthLoginResponse",
+  caption: "Authenticator - AuthLoginResponse",
 )
 
 Rappresenta la risposta alla richiesta di un Token.
@@ -955,47 +1210,16 @@ Rappresenta la risposta alla richiesta di un Token.
 
 - *`token string`*: rappresenta il Token. Il campo rimane vuoto se la richiesta non era corretta.
 
-=== Router dei microservizi
-
-//descrizione generale delle classi router
-
-=== Configurazioni dei microservizi
-
-//descrizione generale delle classi config
-
-=== `Main` dei microservizi
-
-//descrivere cosa genericamente accade nel Main dei vari microservizi
-
-
-=== Funzionamento Ordini e Trasferimenti
-Ogni magazzino è gestito da un microservizio dedicato, respоnsabile della gestione dello stock#super[G] specifico di quel magazzino. La gestione degli ordini è invece affidata al microservizio Order (@micro_order), che monitora costantemente gli aggiornamenti provenienti dai vari magazzini per mantenere aggiornato il proprio stato interno sulle disponibilità.
-
-Quando il client ha terminato di costruire un ordine#super[G] localmente, per confermarlo contatta il microservizio Order, che genera un evento di tipo _order_update_ con stato _Created_. Questo evento viene salvato nello stream di NATS#super[G]. Contemporaneamente, viene inviato un evento sullo stream _contact_warehouses_, che sarà ascoltato dai microservizi Order (@micro_order) tramite un _consumer group_, in modo che una sola istanza gestisca l'evento. Questo microservizio si occupa di contattare i magazzini coinvolti per prenotare le merci necessarie. La prenotazione avviene tramite una richiesta NATS#super[G].
-
-La selezione dei magazzini avviene in base alla disponibilità delle merci richieste, utilizzando un algoritmo che privilegia i magazzini con una quantità di merce più vicina a quella necessaria.
-
-Dopo aver completato con successo la prenotazione delle merci presso i magazzini interessati, l'ordine viene aggiornato allo stato _Filled_. A questo punto, viene generato un nuovo evento di tipo _order_update_, che include la lista delle prenotazioni effettuate. I microservizi Warehouse#super[G] (@micro_warehouse) coinvolti ricevono questo evento e aggiornano di conseguenza lo stock#super[G] disponibile.
-
-Infine, quando i microservizi Order ricevono gli aggiornamenti degli stock#super[G] dai magazzini, lo stato dell'ordine viene aggiornato internamente a _Completed_, informando così l'utente del completamento dell'ordine.
-
-Per evitare conflitti tra ordini, il sistema utilizza, dunque, un meccanismo di prenotazioni che assicura la disponibilità delle merci al momento della conferma dell'ordine. Inoltre, la gestione distribuita degli stock#super[G] tra i vari magazzini elimina problemi di concorrenza e migliora la scalabilità complessiva del sistema.
-
-Una funzionalità#super[G] simile agli ordini è quella dei trasferimenti, dei particolari ordini che permettono di spostare della merce da un magazzino mittente a un magazzino destinatario.
-I trasferimenti vengono gestiti in modo simile agli ordini, con la differenza che non viene utilizzato nessun algoritmo per la selezione del magazzino destinatario, in quanto è già specificato nella richiesta di trasferimento#super[G] ,e vengono utilizzati gli eventi di tipo _transfer_update_ al posto degli omologhi per gli ordini (_order_update_).
-
-#pagebreak()
-
 === Authenticator <auth>
 
 #figure(
   image("../../assets/authenticator/Auth.png", width: 130%),
-  caption: "Authenticator",
+  caption: "Authenticator - Authenticator",
 )
 
 Il microservizio *Authenticator* si occupa di ricevere le richieste di ottenimento Token, controllarne i valori e restituire un Token valido e temporaneo (1 settimana di validità) affinché il _Client_ possa utilizzare il Sistema.
 
-I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm _: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
+I Token sono inoltre firmati con una chiave privata di tipo *ECDSA*, acronimo di _Elliptic Curve Digital Signature Algorithm_: la relativa chiave pubblica, necessaria per verificata i Token, viene pubblicata in un JetStream di NATS#super[G] ed è utilizzata dagli API#super[G] Gateway per verificare l'autenticità dei Token.
 
 È formato dalle seguenti componenti:
 
@@ -1011,7 +1235,7 @@ Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esp
 
 #figure(
   image("../../assets/authenticator/CheckPemKeyPairExistenceCmd.png", width: 70%),
-  caption: "CheckPemKeyPairExistenceCmd",
+  caption: "Authenticator - CheckPemKeyPairExistenceCmd",
 )
 
 Rappresenta il _Command_ per verificare l'esistenza della chiave pubblica e della chiave privata. Viene utilizzata dalla _business logic_ per verificarne la presenza, necessaria per firmare il Token.
@@ -1028,7 +1252,7 @@ questa struttura non possiede attributi
 
 #figure(
   image("../../assets/authenticator/GetPemPrivateKeyCmd.png", width: 60%),
-  caption: "GetPemPrivateKeyCmd",
+  caption: "Authenticator - GetPemPrivateKeyCmd",
 )
 
 Rappresenta il _Command_ per ottenere la chiave privata, necessaria alla _business logic_ per firmare il Token.
@@ -1045,7 +1269,7 @@ questa struttura non possiede attributi
 
 #figure(
   image("../../assets/authenticator/GetPemPublicKeyCmd.png", width: 60%),
-  caption: "GetPemPublicKeyCmd",
+  caption: "Authenticator - GetPemPublicKeyCmd",
 )
 
 Rappresenta il _Command_ per ottenere la chiave pubblica, necessaria alla _business logic_ in quanto deve da questa essere pubblicata in un JetStream NATS#super[G] apposito.
@@ -1062,7 +1286,7 @@ questa struttura non possiede attributi
 
 #figure(
   image("../../assets/authenticator/GetTokenCmd.png", width: 57%),
-  caption: "GetTokenCmd",
+  caption: "Authenticator - GetTokenCmd",
 )
 
 Rappresenta il _Command_ per ottenere la generazione di un Token.
@@ -1080,7 +1304,7 @@ Rappresenta il _Command_ per ottenere la generazione di un Token.
 
 #figure(
   image("../../assets/authenticator/PublishPublicKeyCmd.png", width: 80%),
-  caption: "PublishPublicKeyCmd",
+  caption: "Authenticator - PublishPublicKeyCmd",
 )
 
 Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
@@ -1100,7 +1324,7 @@ Rappresenta il _Command_ per ottenere la pubblicazione della chiave pubblica.
 
 #figure(
   image("../../assets/authenticator/StorePemKeyPairCmd.png", width: 80%),
-  caption: "StorePemKeyPairCmd",
+  caption: "Authenticator - StorePemKeyPairCmd",
 )
 
 Rappresenta il _Command_ per ottenere la memorizzazione in _persistence logic_ della coppia di chiavi generate dalla _business logic_.
@@ -1122,7 +1346,7 @@ Rappresenta il _Command_ per ottenere la memorizzazione in _persistence logic_ d
 
 #figure(
   image("../../assets/authenticator/CheckKeyPairExistenceResponse.png", width: 80%),
-  caption: "CheckKeyPairExistenceResponse",
+  caption: "Authenticator - CheckKeyPairExistenceResponse",
 )
 
 Rappresenta la risposta della _persistence logic_ alla richiesta di controllo della presenza delle chiavi.
@@ -1140,7 +1364,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di controllo de
 
 #figure(
   image("../../assets/authenticator/GetPemPrivateKeyResponse.png", width: 80%),
-  caption: "GetPemPrivateKeyResponse",
+  caption: "Authenticator - GetPemPrivateKeyResponse",
 )
 
 Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento della chiave privata.
@@ -1162,7 +1386,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 
 #figure(
   image("../../assets/authenticator/GetPemPublicKeyResponse.png", width: 80%),
-  caption: "GetPemPublicKeyResponse",
+  caption: "Authenticator - GetPemPublicKeyResponse",
 )
 
 Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento della chiave pubblica.
@@ -1184,7 +1408,7 @@ Rappresenta la risposta della _persistence logic_ alla richiesta di ottenimento 
 
 #figure(
   image("../../assets/authenticator/GetTokenResponse.png", width: 30%),
-  caption: "GetTokenResponse",
+  caption: "Authenticator - GetTokenResponse",
 )
 
 Rappresenta la risposta alla richiesta di ottenimento Token.
@@ -1205,7 +1429,7 @@ Rappresenta la risposta alla richiesta di ottenimento Token.
 
 #figure(
   image("../../assets/authenticator/PublishPublicKeyResponse.png", width: 70%),
-  caption: "PublishPublicKeyResponse",
+  caption: "Authenticator - PublishPublicKeyResponse",
 )
 
 Rappresenta la risposta alla richiesta di pubblicazione della chiave pubblica.
@@ -1223,7 +1447,7 @@ Rappresenta la risposta alla richiesta di pubblicazione della chiave pubblica.
 
 #figure(
   image("../../assets/authenticator/StorePemKeyPairResponse.png", width: 70%),
-  caption: "StorePemKeyPairResponse",
+  caption: "Authenticator - StorePemKeyPairResponse",
 )
 
 Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
@@ -1241,7 +1465,7 @@ Rappresenta la risposta alla richiesta di memorizzazione delle chiavi.
 
 #figure(
   image("../../assets/authenticator/PemPrivateKey.png", width: 55%),
-  caption: "PemPrivateKey",
+  caption: "Authenticator - PemPrivateKey",
 )
 
 Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_ della stessa.
@@ -1261,7 +1485,7 @@ Oggetto utilizzato per memorizzare la chiave privata in formato Pem e l'_issuer_
 
 #figure(
   image("../../assets/authenticator/PemPublicKey.png", width: 55%),
-  caption: "PemPublicKey",
+  caption: "Authenticator - PemPublicKey",
 )
 
 Oggetto utilizzato per memorizzare la chiave pubblica in formato Pem e l'_issuer_ della stessa.
@@ -1410,8 +1634,8 @@ Implementa l'interfaccia *IAuthPublisher*: per maggiori informazioni vedere la @
 ==== UserData
 
 #figure(
-  image("../../assets/authenticator/UserData.png", width: 30%),
-  caption: "UserData",
+  image("../../assets/authenticator/UserData.png", width: 50%),
+  caption: "Authenticator - UserData",
 )
 
 Oggetto utilizzato da IAuthenticateUserStrategy, vedi @IAuthenticateUserStrategy.
@@ -1496,7 +1720,7 @@ Implementa l'interfaccia (_Use Case_) *IGetTokenUseCase*, per maggiori informazi
 === Order <micro_order>
 
 #figure(
-  image("../../assets/order/order_2.png", width: 115%),
+  image("../../assets/order/General.png", width: 115%),
   caption: "Struttura del Microservizio " + ["Order"],
 )
 
@@ -1547,7 +1771,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== Order (Repo) <OrderRepoOrder>
 #figure(
-  image("../../assets/order/Repo-Order.png", width: 30%),
+  image("../../assets/order/Repo-Order.png", width: 52%),
   caption: "Order - Order (Repo)",
 )
 Rappresenta un ordine#super[G] nel sistema. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare e gestire le informazioni relative agli ordini, inclusi i dettagli delle merci, i magazzini coinvolti e le prenotazioni associate.
@@ -1571,7 +1795,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== WarehouseStock (Repo) <OrderRepoWarehouseStock>
 #figure(
-  image("../../assets/order/Repo-WarehouseStock.png", width: 30%),
+  image("../../assets/order/Repo-WarehouseStock.png", width: 55%),
   caption: "Order - WarehouseStock (Repo)",
 )
 *Descrizione degli attributi della struttura:*
@@ -1584,7 +1808,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== TransferUpdateGood (Repo) <OrderRepoTransferUpdateGood>
 #figure(
-  image("../../assets/order/Repo-TransferUpdateGood.png", width: 30%),
+  image("../../assets/order/Repo-TransferUpdateGood.png", width: 35%),
   caption: "Order - TransferUpdateGood (Repo)",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]. Questa struttura viene utilizzata per memorizzare i dettagli delle merci associate a un trasferimento#super[G], come l'identificativo della merce e la quantità coinvolta.
@@ -1600,7 +1824,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== Transfer (Repo) <OrderRepoTransfer>
 #figure(
-  image("../../assets/order/Repo-Transfer.png", width: 30%),
+  image("../../assets/order/Repo-Transfer.png", width: 60%),
   caption: "Order - Transfer (Repo)",
 )
 Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato nella _persistence logic_ per memorizzare e gestire le informazioni relative ai trasferimenti, inclusi i dettagli delle merci, i magazzini coinvolti e le prenotazioni associate.
@@ -1632,7 +1856,7 @@ Rappresenta un identificativo univoco per un trasferimento#super[G].
 
 ===== Transfer <OrderModelTransfer>
 #figure(
-  image("../../assets/order/Transfer.png", width: 30%),
+  image("../../assets/order/Transfer.png", width: 40%),
   caption: "Order - Transfer",
 )
 Rappresenta un trasferimento#super[G] nel sistema. Questo oggetto è utilizzato nella _business logic_ per gestire le informazioni relative ai trasferimenti, inclusi i dettagli delle merci, i magazzini coinvolti e le prenotazioni associate.
@@ -1663,7 +1887,7 @@ Rappresenta un identificativo univoco per un ordine#super[G].
 
 ===== Order <OrderModelOrder>
 #figure(
-  image("../../assets/order/order_1.png", width: 30%),
+  image("../../assets/order/order_1.png", width: 40%),
   caption: "Order - Order",
 )
 Rappresenta un ordine#super[G] nel sistema.
@@ -1687,7 +1911,7 @@ Rappresenta un ordine#super[G] nel sistema.
 
 ===== OrderWarehouseUsed <OrderModelOrderWarehouseUsed>
 #figure(
-  image("../../assets/order/OrderWarehouseUsed.png", width: 30%),
+  image("../../assets/order/OrderWarehouseUsed.png", width: 35%),
   caption: "Order - OrderWarehouseUsed",
 )
 Rappresenta un magazzino utilizzato per soddisfare un ordine#super[G].
@@ -1711,7 +1935,7 @@ Rappresenta un identificativo univoco per un magazzino.
 
 ===== Warehouse <OrderModelWarehouse>
 #figure(
-  image("../../assets/order/Warehouse.png", width: 30%),
+  image("../../assets/order/Warehouse.png", width: 35%),
   caption: "Order - Warehouse",
 )
 Rappresenta un magazzino nel sistema.
@@ -1726,7 +1950,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferCmd <OrderCreateTransferCmd>
 #figure(
-  image("../../assets/order/CreateTransferCmd.png", width: 30%),
+  image("../../assets/order/CreateTransferCmd.png", width: 40%),
   caption: "Order - CreateTransferCmd",
 )
 Rappresenta il comando utilizzato per creare un nuovo trasferimento#super[G] nel sistema.
@@ -1743,7 +1967,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferGood <OrderCreateTransferGood>
 #figure(
-  image("../../assets/order/CreateTransferGood.png", width: 30%),
+  image("../../assets/order/CreateTransferGood.png", width: 35%),
   caption: "Order - CreateTransferGood",
 )
 Rappresenta una merce inclusa in un trasferimento#super[G].
@@ -1759,7 +1983,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== CreateTransferResponse <OrderCreateTransferResponse>
 #figure(
-  image("../../assets/order/CreateTransferResponse.png", width: 30%),
+  image("../../assets/order/CreateTransferResponse.png", width: 35%),
   caption: "Order - CreateTransferResponse",
 )
 Rappresenta la risposta alla richiesta di creazione di un nuovo trasferimento#super[G].
@@ -1774,7 +1998,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ApplyOrderUpdateCmd <OrderApplyOrderUpdateCmd>
 #figure(
-  image("../../assets/order/ApplyOrderUpdateCmd.png", width: 30%),
+  image("../../assets/order/ApplyOrderUpdateCmd.png", width: 40%),
   caption: "Order - ApplyOrderUpdateCmd",
 )
 Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#super[G].
@@ -1793,7 +2017,7 @@ Rappresenta il comando utilizzato per applicare un aggiornamento di un ordine#su
 
 ===== ApplyTransferUpdateCmd <OrderApplyTransferUpdateCmd>
 #figure(
-  image("../../assets/order/ApplyTransferUpdateCmd.png", width: 30%),
+  image("../../assets/order/ApplyTransferUpdateCmd.png", width: 54%),
   caption: "Order - ApplyTransferUpdateCmd",
 )
 *Descrizione degli attributi della struttura:*
@@ -1813,7 +2037,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SetCompletedWarehouseCmd <OrderSetCompletedWarehouseCmd>
 #figure(
-  image("../../assets/order/SetCompletedWarehouseCmd.png", width: 30%),
+  image("../../assets/order/SetCompletedWarehouseCmd.png", width: 35%),
   caption: "Order - SetCompletedWarehouseCmd",
 )
 Rappresenta il comando utilizzato per segnalare il completamento di un ordine#super[G] da parte di un magazzino.
@@ -1830,7 +2054,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== TransferUpdateCmd <OrderTransferUpdateCmd>
 #figure(
-  image("../../assets/order/TransferUpdateCmd.png", width: 30%),
+  image("../../assets/order/TransferUpdateCmd.png", width: 40%),
   caption: "Order - TransferUpdateCmd",
 )
 Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferimento#super[G] nel sistema.
@@ -1848,7 +2072,7 @@ Rappresenta il comando utilizzato per aggiornare le informazioni di un trasferim
 
 ===== TransferUpdateGood <OrderTransferUpdateGood>
 #figure(
-  image("../../assets/order/TransferUpdateGood.png", width: 30%),
+  image("../../assets/order/TransferUpdateGood.png", width: 50%),
   caption: "Order - TransferUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
@@ -1860,11 +2084,12 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 ===== OrderUpdateCmd <OrderOrderStockUpdateCmd>
 
-*Descrizione degli attributi della struttura:*
 #figure(
-  image("../../assets/order/OrderUpdateCmd.png", width: 30%),
+  image("../../assets/order/OrderUpdateCmd.png", width: 40%),
   caption: "Order - OrderUpdateCmd",
 )
+
+*Descrizione degli attributi della struttura:*
 - *`ID string`*: rappresenta l'identificativo univoco dell'ordine aggiornato;
 - *`Goods []OrderUpdateGood`*: rappresenta una lista di oggetti `OrderUpdateGood` che contengono le informazioni sulle merci coinvolte nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine;
@@ -1881,7 +2106,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== OrderUpdateGood <OrderOrderStockUpdateGood>
 #figure(
-  image("../../assets/order/OrderUpdateGood.png", width: 30%),
+  image("../../assets/order/OrderUpdateGood.png", width: 35%),
   caption: "Order - OrderUpdateGood",
 )
 *Descrizione degli attributi della struttura:*
@@ -1987,7 +2212,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== ContactWarehousesCmd <OrderContactWarehousesCmd>
 #figure(
-  image("../../assets/order/ContactWarehousesCmd.png", width: 30%),
+  image("../../assets/order/ContactWarehousesCmd.png", width: 45%),
   caption: "Order - ContactWarehousesCmd",
 )
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
@@ -2013,7 +2238,7 @@ Rappresenta il tipo di operazione per il comando *ContactWarehousesCmd*.
 
 ===== ContactWarehousesOrder <OrderContactWarehousesOrder>
 #figure(
-  image("../../assets/order/ContactWarehousesOrder.png", width: 30%),
+  image("../../assets/order/ContactWarehousesOrder.png", width: 40%),
   caption: "Order - ContactWarehousesOrder",
 )
 Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
@@ -2032,7 +2257,7 @@ Rappresenta i dettagli di un ordine#super[G] da gestire nel contesto del comando
 
 ===== ContactWarehousesTransfer <OrderContactWarehousesTransfer>
 #figure(
-  image("../../assets/order/ContactWarehousesTransfer.png", width: 30%),
+  image("../../assets/order/ContactWarehousesTransfer.png", width: 55%),
   caption: "Order - ContactWarehousesTransfer",
 )
 Rappresenta i dettagli di un trasferimento#super[G] da gestire nel contesto del comando *ContactWarehousesCmd*.
@@ -2087,7 +2312,7 @@ Rappresenta la risposta alla richiesta di contatto con i magazzini.
 
 ===== SendOrderUpdateCmd <OrderSendOrderUpdateCmd>
 #figure(
-  image("../../assets/order/SendOrderUpdateCmd.png", width: 30%),
+  image("../../assets/order/SendOrderUpdateCmd.png", width: 50%),
   caption: "Order - SendOrderUpdateCmd",
 )
 Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#super[G].
@@ -2100,6 +2325,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un ordine#supe
 - *`FullName string`*: rappresenta il nome completo del destinatario dell'ordine;
 - *`Address string`*: rappresenta l'indirizzo del destinatario dell'ordine;
 - *`CreationTime int64`*: rappresenta il _timestamp_ di creazione dell'ordine;
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento dell'ordine;
 - *`Goods []SendOrderUpdateGood`*: rappresenta una lista di oggetti `SendOrderUpdateGood` che contengono le informazioni sulle merci incluse nell'ordine;
 - *`Reservations []string`*: rappresenta una lista di identificativi delle prenotazioni associate all'ordine.
 
@@ -2125,7 +2351,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendContactWarehouseCmd <OrderSendContactWarehouseCmd>
 #figure(
-  image("../../assets/order/SendContactWarehouseCmd.png", width: 30%),
+  image("../../assets/order/SendContactWarehouseCmd.png", width: 50%),
   caption: "Order - SendContactWarehouseCmd",
 )
 Rappresenta il comando utilizzato per contattare i magazzini al fine di gestire ordini o trasferimenti.
@@ -2354,7 +2580,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== SendTransferUpdateCmd <OrderSendTransferUpdateCmd>
 #figure(
-  image("../../assets/order/SendTransferUpdateCmd.png", width: 30%),
+  image("../../assets/order/SendTransferUpdateCmd.png", width: 40%),
   caption: "Order - SendTransferUpdateCmd",
 )
 Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimento#super[G].
@@ -2364,6 +2590,7 @@ Rappresenta il comando utilizzato per inviare un aggiornamento di un trasferimen
 - *`ID string`*: rappresenta l'identificativo univoco del trasferimento#super[G] da aggiornare;
 - *`Status string`*: rappresenta lo stato del trasferimento#super[G] (es. "Created", "Filled");
 - *`CreationTime int64`*: rappresenta il _timestamp_ di creazione del trasferimento#super[G];
+- *`UpdateTime int64`*: rappresenta il _timestamp_ dell'ultimo aggiornamento del trasferimento#super[G];
 - *`SenderID string`*: rappresenta l'identificativo del magazzino mittente del trasferimento#super[G];
 - *`ReceiverID string`*: rappresenta l'identificativo del magazzino destinatario del trasferimento#super[G];
 - *`Goods []SendTransferUpdateGood`*: rappresenta una lista di oggetti `SendTransferUpdateGood` che contengono le informazioni sulle merci incluse nel trasferimento#super[G];
@@ -2475,7 +2702,8 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`sendTransferUpdatePort port.ISendTransferUpdatePort`*: rappresenta la porta per inviare aggiornamenti sui trasferimenti. Per maggiori dettagli, vedere la @OrderISendTransferUpdatePort;
 - *`sendContactWarehousePort port.ISendContactWarehousePort`*: rappresenta la porta per contattare i magazzini. Per maggiori dettagli, vedere la @OrderISendContactWarehousePort;
 - *`requestReservationPort port.IRequestReservationPort`*: rappresenta la porta per richiedere prenotazioni di merci. Per maggiori dettagli, vedere la @OrderIRequestReservationPort;
-- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*: rappresenta il caso d'uso#super[G] per calcolare la disponibilità delle merci nei magazzini. Per maggiori dettagli, vedere la @OrderICalculateAvailabilityUseCase.
+- *`calculateAvailabilityUseCase port.ICalculateAvailabilityUseCase`*: rappresenta il caso d'uso#super[G] per calcolare la disponibilità delle merci nei magazzini. Per maggiori dettagli, vedere la @OrderICalculateAvailabilityUseCase;
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta per gestire operazioni transazionali. Per maggiori dettagli, vedere la @OrderITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2553,6 +2781,32 @@ Rappresenta l'interfaccia che permette alla _business logic_ di comunicare alla 
 
 - *`SetComplete(model.OrderID) error`*: il metodo deve permettere di segnare un ordine#super[G] come completato, prendendo come parametro l'identificativo dell'ordine (`orderId`). Deve restituire un errore in caso di fallimento.
 
+==== ITransactionPort <OrderITransactionPort>
+
+Rappresenta l'interfaccia che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`Lock()`*: il metodo deve permettere di bloccare una risorsa condivisa, garantendo che solo una transazione possa accedervi alla volta.
+
+- *`Unlock()`*: il metodo deve permettere di sbloccare una risorsa condivisa, consentendo ad altre transazioni di accedervi.
+
+==== TransactionImpl <OrderTransactionImpl>
+
+La struttura `TransactionImpl` rappresenta un'implementazione dell'interfaccia `ITransactionPort` per la gestione delle operazioni transazionali nel microservizio *Order*#super[G]. Utilizza un mutex per garantire l'accesso esclusivo alle risorse condivise.
+
+*Descrizione degli attributi della struttura:*
+
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewTransactionImpl() *TransactionImpl`*: costruttore della struttura. Inizializza l'attributo `m` con un nuovo mutex e restituisce un'istanza di `TransactionImpl`.
+
+- *`Lock()`*: blocca il mutex, garantendo che solo una transazione possa accedere alla risorsa condivisa alla volta.
+
+- *`Unlock()`*: sblocca il mutex, consentendo ad altre transazioni di accedere alla risorsa condivisa.
+
 ==== ApplyStockUpdateService <OrderApplyStockUpdateService>
 
 La struttura `ApplyStockUpdateService` rappresenta un servizio per gestire l'applicazione degli aggiornamenti relativi allo stock#super[G]. Questo servizio si occupa di elaborare gli aggiornamenti dello stock#super[G] provenienti da ordini o trasferimenti, applicandoli al magazzino e aggiornando lo stato degli ordini o dei trasferimenti associati.
@@ -2569,7 +2823,8 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`getTransferPort port.IGetTransferPort`*: rappresenta la porta che consente alla _business logic_ di ottenere informazioni sui trasferimenti. Per maggiori informazioni, vedere la @OrderIGetTransferPort;
 - *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort;
 - *`setCompleteTransferPort port.ISetCompleteTransferPort`*: rappresenta la porta che consente alla _business logic_ di segnare un trasferimento#super[G] come completato o incrementare il numero di aggiornamenti dello stock#super[G] associati a un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderISetCompleteTransferPort;
-- *`setCompletedWarehousePort port.ISetCompletedWarehouseOrderPort`*: rappresenta la porta che consente alla _business logic_ di segnalare il completamento di un ordine#super[G] da parte di un magazzino o di segnare un ordine#super[G] come completato. Per maggiori informazioni, vedere la @OrderISetCompletedWarehouseOrderPort.
+- *`setCompletedWarehousePort port.ISetCompletedWarehouseOrderPort`*: rappresenta la porta che consente alla _business logic_ di segnalare il completamento di un ordine#super[G] da parte di un magazzino o di segnare un ordine#super[G] come completato. Per maggiori informazioni, vedere la @OrderISetCompletedWarehouseOrderPort;
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise. Per maggiori informazioni, vedere la @OrderITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2616,7 +2871,9 @@ Implementa le seguenti interfacce (_Use Case_):
 *Descrizione degli attributi della struttura:*
 
 - *`applyOrderUpdatePort port.IApplyOrderUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un ordine#super[G]. Per maggiori informazioni, vedere la @OrderIApplyOrderUpdatePort;
-- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort.
+- *`applyTransferUpdatePort port.IApplyTransferUpdatePort`*: rappresenta la porta che consente alla _business logic_ di comunicare alla _persistence logic_ la volontà di applicare un aggiornamento di un trasferimento#super[G]. Per maggiori informazioni, vedere la @OrderIApplyTransferUpdatePort;
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise. Per maggiori informazioni, vedere la @OrderITransactionPort.
+
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -2828,11 +3085,11 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 *Descrizione degli attributi della struttura:*
 
-- *`transferRepo ITransferRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi ai trasferimenti.
+- *`transferRepo ITransferRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi ai trasferimenti.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il repository#super[G] fornito come parametro.
+- *`NewTransferPersistenceAdapter(transferRepo ITransferRepository) *TransferPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `transferRepo` con il _repository_#super[G] fornito come parametro.
 
 - *`SetComplete(transferId model.TransferID) error`*: segna un trasferimento#super[G] come completato. Prende come parametro l'identificativo del trasferimento#super[G] (`transferId`) e restituisce un errore in caso di fallimento.
 
@@ -2844,9 +3101,9 @@ _Adapter_ che mette in comunicazione la _business logic_ con la _persistence log
 
 - *`GetAllTransfer() []Transfer`*: restituisce una lista di tutti i trasferimenti registrati nel sistema. Restituisce una slice di oggetti `Transfer`.
 
-- *`repoTransferToModelTransfer(transfer model.Transfer) model.Transfer`*: converte un oggetto `Transfer` del repository#super[G] in un oggetto `Transfer` utilizzato nella business logic.
+- *`repoTransferToModelTransfer(transfer model.Transfer) model.Transfer`*: converte un oggetto `Transfer` del _repository_#super[G] in un oggetto `Transfer` utilizzato nella business logic.
 
-- *`repoTransfersToModelTransfers(transfers []model.Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del repository#super[G] in una lista di oggetti `Transfer` utilizzati nella business logic.
+- *`repoTransfersToModelTransfers(transfers []model.Transfer) []model.Transfer`*: converte una lista di oggetti `Transfer` del _repository_#super[G] in una lista di oggetti `Transfer` utilizzati nella business logic.
 
 ==== IStockRepository <OrderIStockRepository>
 
@@ -2890,11 +3147,11 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 *Descrizione degli attributi della struttura:*
 
-- *`stockRepo IStockRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
+- *`stockRepo IStockRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi allo stock#super[G].
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il repository#super[G] fornito come parametro.
+- *`NewStockPersistenceAdapter(stockRepo IStockRepository) *StockPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `stockRepo` con il _repository_#super[G] fornito come parametro.
 
 - *`ApplyStockUpdate(cmd port.ApplyStockUpdateCmd) error`*: applica un aggiornamento dello stock#super[G]. Per ogni merce inclusa nel comando, aggiorna la quantità nel magazzino specificato.
 
@@ -2944,25 +3201,25 @@ _Adapter_ che mette in comunicazione la _business logic_ del microservizio *Orde
 
 *Descrizione degli attributi della struttura:*
 
-- *`orderRepo IOrderRepository`*: rappresenta il repository#super[G] utilizzato per accedere e gestire i dati relativi agli ordini.
+- *`orderRepo IOrderRepository`*: rappresenta il _repository_#super[G] utilizzato per accedere e gestire i dati relativi agli ordini.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il repository#super[G] fornito come parametro.
+- *`NewOrderPersistenceAdapter(orderRepo IOrderRepository) *OrderPersistenceAdapter`*: costruttore della struttura. Inizializza l'attributo `orderRepo` con il _repository_#super[G] fornito come parametro.
 
-- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine#super[G] specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel repository#super[G]. Restituisce l'ordine aggiornato in formato `Order` e un eventuale errore in caso di fallimento.
+- *`SetCompletedWarehouse(cmd port.SetCompletedWarehouseCmd) (model.Order, error)`*: segna un magazzino come completato per un ordine#super[G] specifico. Aggrega le quantità delle merci coinvolte e aggiorna l'ordine nel _repository_#super[G]. Restituisce l'ordine aggiornato in formato `Order` e un eventuale errore in caso di fallimento.
 
-- *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel repository#super[G]. Restituisce un errore in caso di fallimento.
+- *`SetComplete(orderId model.OrderID) error`*: segna un ordine#super[G] come completato nel _repository_#super[G]. Restituisce un errore in caso di fallimento.
 
-- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel repository#super[G].
+- *`ApplyOrderUpdate(cmd port.ApplyOrderUpdateCmd)`*: applica un aggiornamento a un ordine#super[G] esistente o crea un nuovo ordine#super[G] se non esiste. Aggiorna i dettagli dell'ordine, inclusi i magazzini, le merci e le prenotazioni, e salva l'ordine nel _repository_#super[G].
 
-- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal repository#super[G]. Converte l'ordine dal formato del repository#super[G] a `Order`. Restituisce un errore in caso di fallimento.
+- *`GetOrder(orderId model.OrderID) (model.Order, error)`*: restituisce i dettagli di un ordine#super[G] specifico dal _repository_#super[G]. Converte l'ordine dal formato del _repository_#super[G] a `Order`. Restituisce un errore in caso di fallimento.
 
-- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel repository#super[G]. Converte gli ordini dal formato del repository#super[G] a `Order`.
+- *`GetAllOrder() []model.Order`*: restituisce una lista di tutti gli ordini registrati nel _repository_#super[G]. Converte gli ordini dal formato del _repository_#super[G] a `Order`.
 
-- *`repoOrderToModelOrder(order model.Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del repository#super[G] in un oggetto `Order` utilizzato nella business logic.
+- *`repoOrderToModelOrder(order model.Order) model.Order`*: funzione di utilità che converte un oggetto `Order` del _repository_#super[G] in un oggetto `Order` utilizzato nella business logic.
 
-- *`repoOrdersToModelOrders(orders []model.Order) []mddel.Order`*: funzione di utilità che converte una lista di oggetti `Order` del repository#super[G] in una lista di oggetti `Order` utilizzati nella business logic.
+- *`repoOrdersToModelOrders(orders []model.Order) []mddel.Order`*: funzione di utilità che converte una lista di oggetti `Order` del _repository_#super[G] in una lista di oggetti `Order` utilizzati nella business logic.
 
 ==== NatsStreamAdapter <OrderNatsStreamAdapter>
 
@@ -2986,7 +3243,7 @@ Rappresenta un _Adapter_ che mette in comunicazione la _business logic_ con il s
 
 ==== HealthCheckController <OrderHealthCheckController>
 #figure(
-  image("../../assets/order/HealthCheckController.png", width: 35%),
+  image("../../assets/order/HealthCheckController.png", width: 45%),
   caption: "Order - HealthCheckController",
 )
 La struttura `HealthCheckController` rappresenta l'_application logic_ per la gestione delle richieste di controllo dello stato di salute del microservizio. È progettata per rispondere a richieste di tipo "ping" con una risposta "pong", indicando che il microservizio è attivo e funzionante.
@@ -3015,9 +3272,9 @@ Il microservizio tiene traccia dell'aggiunta e della modifica delle informazioni
 
 È formato da tre componenti principali:
 
-- *CatalogController*, che rappresenta l'_application logic_;
+- *CatalogController*, *CatalogGoodInfoController* e *CatalogGlobalQuantityController*, che rappresenta l'_application logic_;
 - *CatalogService*, che rappresenta la _business logic_;
-- *CatalogRepository*, che rappresenta la _persistence logic_.
+- *CatalogRepository* e *CatalogGoodDataRepository*, che rappresenta la _persistence logic_.
 
 Le tre componenti, assieme agli oggetti eventualmente utilizzati saranno ora esposti.
 
@@ -3123,7 +3380,7 @@ questa struttura non possiede attributi
 ===== GetWarehousesCmd
 
 #figure(
-  image("../../assets/catalog/GetWarehousesCmd.png", width: 75%),
+  image("../../assets/catalog/GetWarehousesCmd.png", width: 55%),
   caption: "Catalog - GetWarehousesCmd",
 )
 
@@ -3303,6 +3560,22 @@ Rappresenta la Risposta alla richiesta di modifica quantità di un insieme di me
 
 - *`GetWrongIDSlice() []string`*: permette di ottenere la _slice_ degli id la cui modifica non è riuscita.
 
+==== CatalogGoodDataRepository
+
+Questa struttura implementa l'interfaccia *ICatalogGoodDataRepository*, vedi la @icataloggooddatarepository.
+
+*Descrizione degli attributi della struttura:*
+
+- *`goodMap map[string]*catalogCommon.Good`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un oggetto *Good*#super[G], rappresentante una merce;
+- *`mutex sync.Mutex`*: variabile utilizzata per il corretto funzionamento di alcuni metodi. Si rimanda alla #link("https://go.dev/tour/concurrency/9")[documentazione del linguaggio Go#super[G] ]per ulteriori informazioni.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogGoodDataRepository() *CatalogGoodDataRepository`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote;
+- *`GetGoods() map[string]catalogCommon.Good`*: restituisce la mappa delle merci internamente memorizzata;
+- *`AddGood(goodID string, name string, description string) error`*: aggiunge una merce al Sistema con id *goodID*, nome *name* e descrizione *description*. Se la merce è già presente nel Sistema, chiama automaticamente la funzione `changeGoodData` per modificarne le informazioni. Ritorna sempre `nil`;
+- *`changeGoodData(goodID string, newName string, newDescription string) error`*: cambia le informazioni della merce con id *goodID*, impostando il nome a *newName* e la descrizione a *newDescription*. Ritorna un errore se l'id della merce non è registrato.
+
 ==== CatalogRepository
 
 Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepository.
@@ -3310,15 +3583,12 @@ Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepos
 *Descrizione degli attributi della struttura:*
 
 - *`warehouseMap map[string]*catalogCommon.Warehouse`*: è una mappa che ha come chiave una *string* (l'identificativo del magazzino) e come valore un oggetto *Warehouse*#super[G], rappresentante un magazzino;
-- *`goodMap map[string]*catalogCommon.Good`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un oggetto *Good*#super[G], rappresentante una merce;
 - *`goodStockMap map[string]int64`*: è una mappa che ha come chiave una *string* (l'identificatore della merce) e come valore un *int64* (la quantità di quella merce tra tutti i magazzini)
 - *`mutex sync.Mutex`*: variabile utilizzata per il corretto funzionamento di alcuni metodi. Si rimanda alla #link("https://go.dev/tour/concurrency/9")[documentazione del linguaggio Go#super[G] ]per ulteriori informazioni
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewCatalogRepository() *CatalogRepository`*: rappresenta il costruttore della struttura. Non prende alcun parametro, inizializzando gli attributi a mappe vuote;
-
-- *`GetGoods() map[string]catalogCommon.Good`*: restituisce la mappa delle merci internamente memorizzata;
 
 - *`GetGoodsGlobalQuantity() map[string]int64`*: restituisce la mappa della quantità globale delle merci;
 
@@ -3328,23 +3598,24 @@ Questa struttura implementa l'interfaccia *IGoodRepository*, vedi la @igoodrepos
 
 - *`addWarehouse(warehouseID string)`*: aggiunge magazzino al sistema con id pari a *warehouseID*. Questa operazione è effettuata automaticamente quando si cerca di aggiunge _stock_#super[G] ad un magazzino non ancora registrato;
 
-- *`AddGood(goodID string, name string, description string) error`*: aggiunge una merce al Sistema con id *goodID*, nome *name* e descrizione *description*. Se la merce è già presente nel Sistema, chiama automaticamente la funzione `changeGoodData` per modificarne le informazioni. Ritorna sempre `nil`;
+==== ICatalogGoodDataRepository <icataloggooddatarepository>
 
-- *`changeGoodData(goodID string, newName string, newDescription string) error`*: cambia le informazioni della merce con id *goodID*, impostando il nome a *newName* e la descrizione a *newDescription*. Ritorna un errore se l'id della merce non è registrato.
-
-==== IGoodRepository <igoodrepository>
-
-Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ del microservizio _Catalog_.
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ del microservizio _Catalog_ che gestisce i dati delle merci.
 
 *Descrizione dei metodi dell'interfaccia:*
 
 - *`GetGoods() map[string]catalogCommon.Good`*: il metodo deve dare possibilità di ottenere i dati delle merci registrate nel Sistema;
+- *`AddGood(goodID string, name string, description string) error`*: il metodo deve dare la possibilità di aggiungere una merce al Sistema.
+
+==== IGoodRepository <igoodrepository>
+
+Rappresenta l'interfaccia generica di un oggetto che implementa la _persistence logic_ del microservizio _Catalog_ che gestisce i magazzini e le quantità di merce.
+
+*Descrizione dei metodi dell'interfaccia:*
 
 - *`GetGoodsGlobalQuantity() map[string]int64`*: il metodo deve dare la possibilità di ottenere la quantità globale delle merci nel Sistema;
 
 - *`SetGoodQuantity(warehouseID string, goodID string, newQuantity int64) error`*: il metodo deve dare la possibilità di impostare la quantità di una merce in un magazzino e, conseguentemente, la quantità globale;
-
-- *`AddGood(goodID string, name string, description string) error`*: il metodo deve dare la possibilità di aggiungere una merce al Sistema;
 
 - *`GetWarehouses() map[string]catalogCommon.Warehouse`*: il metodo deve dare la possibilità di ottenere i magazzini registrati nel Sistema.
 
@@ -3388,33 +3659,46 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`SetGoodQuantity(agqc *servicecmd.SetGoodQuantityCmd) *serviceresponse.SetGoodQuantityResponse`*: il metodo deve permettere di modificare la quantità di una merce.
 
-==== CatalogAdapter
+==== CatalogGoodDataRepositoryAdapter
 
-_Adapter_ che mette in comunicazione la _business logic_ di catalog con la _persistence logic_ dello stesso.
+_Adapter_ che mette in comunicazione la _business logic_ di catalog con la _persistence logic_ relativa alla gestione dati merci merci dello stesso.
 
 Implementa le seguenti interfacce (porte):
 
 - *IAddOrChangeGoodDataPort*, @IAddOrChangeGoodDataPort;
-- *IGetGoodsInfoPort*, @IGetGoodsInfoPort;
+- *IGetGoodsInfoPort*, @IGetGoodsInfoPort.
+
+*Descrizione degli attributi della struttura:*
+
+- *`repo persistence.ICatalogGoodDataRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Catalog relativa alla gestione dati delle merci. Per le informazioni riguardo IGoodRepository vedere la @icataloggooddatarepository.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogGoodDataRepositoryAdapter(repo persistence.ICatalogGoodDataRepository) *CatalogGoodDataRepositoryAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `repo` con quello passato come parametro al costruttore;
+- *`AddOrChangeGoodData(agc *servicecmd.AddChangeGoodCmd) *serviceresponse.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
+- *`GetGoodsInfo(ggqc *servicecmd.GetGoodsInfoCmd) *serviceresponse.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata.
+
+==== CatalogRepositoryAdapter
+
+_Adapter_ che mette in comunicazione la _business logic_ di catalog con la _persistence logic_ relativa alla gestione magazzini e quantità merci dello stesso.
+
+Implementa le seguenti interfacce (porte):
+
 - *IGetGoodsQuantityPort*, @IGetGoodsQuantityPort;
 - *IGetWarehousesInfoPort*, @IGetWarehousesInfoPort;
 - *ISetGoodQuantityPort*, @ISetGoodQuantityPort.
 
 *Descrizione degli attributi della struttura:*
 
-- *`repo persistence.IGoodRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Catalog. Per le informazioni riguardo IGoodRepository vedere la @igoodrepository.
+- *`repo persistence.IGoodRepository`*: l'_Adapter_ possiede un attributo alla struttura rappresentante la _persistence logic_ di Catalog relativa alla gestione magazzini e quantità merci. Per le informazioni riguardo IGoodRepository vedere la @igoodrepository.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
 - *`NewCatalogRepositoryAdapter(repo persistence.IGoodRepository) *CatalogRepositoryAdapter`*: costruttore dell'_Adapter_. Inizializza l'attributo `repo` con quello passato come parametro al costruttore;
 
-- *`AddOrChangeGoodData(agc *servicecmd.AddChangeGoodCmd) *serviceresponse.AddOrChangeResponse`*: converte il _Command_ per l'aggiunta o modifica dati merce in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
-
 - *`SetGoodQuantity(agqc *servicecmd.SetGoodQuantityCmd) *serviceresponse.SetGoodQuantityResponse`*:converte il _Command_ per la modifica della quantità di una merce in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 
 - *`GetGoodsQuantity(ggqc *servicecmd.GetGoodsQuantityCmd) *serviceresponse.GetGoodsQuantityResponse`*: converte il _Command_ per ottenere la quantità delle varie merci registrate nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
-
-- *`GetGoodsInfo(ggqc *servicecmd.GetGoodsInfoCmd) *serviceresponse.GetGoodsInfoResponse`*: converte il _Command_ per ottenere le informazioni sulle varie merci registrate nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata;
 
 - *`GetWarehouses(*servicecmd.GetWarehousesCmd) *serviceresponse.GetWarehousesResponse`*: converte il _Command_ per ottenere le informazioni sui magazzini registrati nel Sistema in valori da fornire alla _persistence logic_, quindi richiama la _persistence logic_ ad eseguire l'operazione desiderata.
 
@@ -3510,28 +3794,49 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`GetWarehouses(gwc *servicecmd.GetWarehousesCmd) *serviceresponse.GetWarehousesResponse`*: prende un _Command_ per la richiesta delle informazioni sull'inventario dei magazzini memorizzati nel Sistema. Procede ad inoltrare la richiesta sulla porta opportuna e ritorna quindi la risposta.
 
-==== CatalogController
+==== CatalogGlobalQuantityController
 
-Si occupa di gestire l'_application logic_ del microservizio Catalog.
+Si occupa di gestire l'_application logic_ del microservizio Catalog in merito all'ottenimento delle quantità globalmente disponibili.
 
 *Descrizione degli attributi della struttura:*
 
-- *`getGoodsInfoUseCase serviceportin.IGetGoodsInfoUseCase`*: la descrizione è disponibile alla @IGetGoodsInfoUseCase;
-- *`getGoodsQuantityUseCase serviceportin.IGetGoodsQuantityUseCase`*: la descrizione è disponibile alla @IGetGoodsQuantityUseCase;
-- *`getWarehouseInfoUseCase serviceportin.IGetWarehousesUseCase`*: la descrizione è disponibile alla @IGetWarehousesUseCase;
-- *`setMultipleGoodsQuantityUseCase serviceportin.ISetMultipleGoodsQuantityUseCase`*: la descrizione è disponibile alla @ISetMultipleGoodsQuantityUseCase;
-- *`updateGoodDataUseCase serviceportin.IUpdateGoodDataUseCase`*: la descrizione è disponibile alla @IUpdateGoodDataUseCase.
+- *`GetGoodsQuantityUseCase serviceportin.IGetGoodsQuantityUseCase`*: la descrizione è disponibile alla @IGetGoodsQuantityUseCase;
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewCatalogController(p CatalogControllerParams) *catalogController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati mediante la struttura `CatalogControllerParams`, che ha i medesimi attributi e quanto necessario per la telemetria;
+- *`NewCatalogGlobalQuantityController(p CatalogControllerParams) *CatalogGlobalQuantityController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati mediante la struttura `CatalogControllerParams`, che ha gli attributi necessari e quanto utile per la telemetria;
+- *`GetGoodsGlobalQuantityRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulla quantità globalmente disponibile delle merci memorizzate nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
 
-- *`getGoodsRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulle merci presenti nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
-- *`getWarehouseRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sui magazzini presenti nel Sistema e il loro inventario. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
-- *`getGoodsGlobalQuantityRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulla quantità globalmente disponibile delle merci memorizzate nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
-- *`setGoodDataRequest(ctx context.Context, msg jetstream.Msg)`*: metodo utilizzato per recuperare le richieste di aggiunta merce o modifica informazioni su una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodDataRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
+==== CatalogGoodInfoController
+
+Si occupa di gestire l'_application logic_ del microservizio Catalog in merito alla gestione dati delle merci.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GetGoodsInfoUseCase serviceportin.IGetGoodsInfoUseCase`*: la descrizione è disponibile alla @IGetGoodsInfoUseCase;
+- *`UpdateGoodDataUseCase serviceportin.IUpdateGoodDataUseCase`*: la descrizione è disponibile alla @IUpdateGoodDataUseCase.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogGoodInfoController(p CatalogControllerParams) *CatalogGoodInfoController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati mediante la struttura `CatalogControllerParams`, che ha gli attributi necessari e quanto utile per la telemetria;
+- *`SetGoodDataRequest(ctx context.Context, msg jetstream.Msg)`*: metodo utilizzato per recuperare le richieste di aggiunta merce o modifica informazioni su una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodDataRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`GetGoodsRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sulle merci presenti nel Sistema. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
+
+==== CatalogController
+
+Si occupa di gestire l'_application logic_ del microservizio Catalog in merito alla gestione magazzini e quantità merce.
+
+*Descrizione degli attributi della struttura:*
+
+- *`GetWarehouseInfoUseCase serviceportin.IGetWarehousesUseCase`*: la descrizione è disponibile alla @IGetWarehousesUseCase;
+- *`SetMultipleGoodsQuantityUseCase serviceportin.ISetMultipleGoodsQuantityUseCase`*: la descrizione è disponibile alla @ISetMultipleGoodsQuantityUseCase;
 - *`checkSetGoodDataRequest(request *stream.GoodUpdateData) error`*: controlla le richieste di aggiornamento dati o aggiunta merce. Ritorna un errore se la richiesta non è valida;
-- *`setGoodQuantityRequest(ctx context.Context, msg jetstream.Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewCatalogController(p CatalogControllerParams) *catalogController`*: costruttore della struttura. Gli attributi della struttura vengono inizializzati con i valori passati mediante la struttura `CatalogControllerParams`, che ha gli attributi necessari e quanto utile per la telemetria;;
+- *`GetWarehouseRequest(ctx context.Context, msg *nats.Msg) error`*: metodo utilizzato per recuperare le richieste di ottenimento informazioni sui magazzini presenti nel Sistema e il loro inventario. La richiesta arriva direttamente mediante un messaggio su *NATS*#super[G]. Ritorna un errore in caso l'operazione non venga completata correttamente;
+- *`SetGoodQuantityRequest(ctx context.Context, msg jetstream.Msg) error`*: metodo utilizzato per recuperare i messaggi relativi a richieste di aggiornamento della quantità di una merce. La richiesta arriva direttamente mediante un messaggio su *NATS JetStream*. Utilizza il metodo `checkSetGoodQuantityRequest` per verificare se l'elaborazione della richiesta è sensata. Ritorna un errore in caso l'operazione non venga completata correttamente;
 - *`checkSetGoodQuantityRequest(request *stream.StockUpdate) error`*: controlla le richieste di aggiornamento quantità di una merce. Ritorna un errore se la richiesta non è valida.
 
 #pagebreak()
@@ -3640,7 +3945,7 @@ Rappresenta la risposta alla richiesta di creazione di una prenotazione.
 
 ===== ConfirmTransferCmd <WarehouseConfirmTransferCmd>
 #figure(
-  image("../../assets/warehouse/ConfirmTransferCmd.png", width: 25%),
+  image("../../assets/warehouse/ConfirmTransferCmd.png", width: 45%),
   caption: "Warehouse - ConfirmTransferCmd",
 )
 Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
@@ -3656,7 +3961,7 @@ Rappresenta il comando utilizzato per confermare un trasferimento#super[G].
 
 ===== TransferUpdateGood <WarehouseTransferUpdateGood>
 #figure(
-  image("../../assets/warehouse/TransferUpdateGood.png", width: 25%),
+  image("../../assets/warehouse/TransferUpdateGood.png", width: 34%),
   caption: "Warehouse - TransferUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G].
@@ -3668,7 +3973,7 @@ Rappresenta una merce coinvolta in un aggiornamento di un trasferimento#super[G]
 
 ===== ConfirmOrderCmd <WarehouseConfirmOrderCmd>
 #figure(
-  image("../../assets/warehouse/ConfirmOrderCmd.png", width: 25%),
+  image("../../assets/warehouse/ConfirmOrderCmd.png", width: 45%),
   caption: "Warehouse - ConfirmOrderCmd",
 )
 Rappresenta il comando utilizzato per confermare un ordine#super[G].
@@ -3682,7 +3987,7 @@ Rappresenta il comando utilizzato per confermare un ordine#super[G].
 
 ===== OrderUpdateGood <WarehouseOrderUpdateGood>
 #figure(
-  image("../../assets/warehouse/OrderUpdateGood.png", width: 25%),
+  image("../../assets/warehouse/OrderUpdateGood.png", width: 45%),
   caption: "Warehouse - OrderUpdateGood",
 )
 Rappresenta una merce coinvolta in un aggiornamento di un ordine#super[G].
@@ -3770,7 +4075,7 @@ Questo _Command_ viene utilizzato per rappresentare la richiesta di aggiunta di 
 
 ===== IdempotentCmd <WarehouseIdempotentCmd>
 #figure(
-  image("../../assets/warehouse/IdempotentCmd.png", width: 25%),
+  image("../../assets/warehouse/IdempotentCmd.png", width: 40%),
   caption: "Warehouse - IdempotentCmd",
 )
 
@@ -3787,7 +4092,7 @@ Questa struttura non ha metodi invocabili.
 
 ===== RemoveStockCmd <WarehouseRemoveStockCmd>
 #figure(
-  image("../../assets/warehouse/RemoveStockCmd.png", width: 25%),
+  image("../../assets/warehouse/RemoveStockCmd.png", width: 35%),
   caption: "Warehouse - RemoveStockCmd",
 )
 
@@ -3807,7 +4112,7 @@ Rappresenta un identificativo univoco per una merce.
 
 ===== GoodInfo <WarehouseGoodInfo>
 #figure(
-  image("../../assets/warehouse/GoodInfo.png", width: 20%),
+  image("../../assets/warehouse/GoodInfo.png", width: 42%),
   caption: "Warehouse - GoodInfo",
 )
 Questa classe è utilizzata nella _business logic_.
@@ -3856,7 +4161,7 @@ Rappresenta il comando utilizzato per applicare un evento di prenotazione.
 
 ===== CreateStockUpdateCmd <WarehouseCreateStockUpdateCmd>
 #figure(
-  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 30%),
+  image("../../assets/warehouse/CreateStockUpdateCmd.png", width: 40%),
   caption: "Warehouse - CreateStockUpdateCmd",
 )
 
@@ -4057,6 +4362,32 @@ Rappresenta la porta che consente alla _business logic_ di comunicare alla _pers
 
 - *`GetReservation(reservationId model.ReservationID) (model.Reservation, error)`*: il metodo deve permettere di ottenere i dettagli di una prenotazione specifica, prendendo come parametro l'identificativo della prenotazione (`reservationId`) e restituendo un oggetto di tipo `Reservation` e un eventuale errore in caso di fallimento.
 
+==== ITransactionPort <WarehouseITransactionPort>
+
+Rappresenta l'interfaccia che consente alla _business logic_ di gestire operazioni transazionali, fornendo metodi per bloccare e sbloccare risorse condivise.
+
+*Descrizione dei metodi dell'interfaccia:*
+
+- *`Lock()`*: il metodo deve permettere di bloccare una risorsa condivisa, garantendo che solo una transazione possa accedervi alla volta.
+
+- *`Unlock()`*: il metodo deve permettere di sbloccare una risorsa condivisa, consentendo ad altre transazioni di accedervi.
+
+==== TransactionImpl <WarehouseTransactionImpl>
+
+La struttura `TransactionImpl` rappresenta un'implementazione dell'interfaccia `ITransactionPort` per la gestione delle operazioni transazionali nel microservizio *Warehouse*#super[G]. Utilizza un mutex per garantire l'accesso esclusivo alle risorse condivise.
+
+*Descrizione degli attributi della struttura:*
+
+- *`m sync.Mutex`*: mutex utilizzato per garantire la sicurezza dei dati in caso di accesso concorrente.
+
+*Descrizione dei metodi invocabili dalla struttura:*
+
+- *`NewTransactionImpl() *TransactionImpl`*: costruttore della struttura. Inizializza l'attributo `m` con un nuovo mutex e restituisce un'istanza di `TransactionImpl`.
+
+- *`Lock()`*: blocca il mutex, garantendo che solo una transazione possa accedere alla risorsa condivisa alla volta.
+
+- *`Unlock()`*: sblocca il mutex, consentendo ad altre transazioni di accedere alla risorsa condivisa.
+
 ==== IIdempotentPort <WarehouseIIdempotentPort>
 
 Rappresenta la porta che consente alla _business logic_ di gestire operazioni idempotenti, assicurandosi che un evento non venga elaborato più di una volta.
@@ -4209,7 +4540,8 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`createStockUpdatePort port.ICreateStockUpdatePort`*: vedere la descrizione alla @WarehouseICreateStockUpdatePort;
 - *`getGoodPort port.IGetGoodPort`*: vedere la descrizione alla @WarehouseIGetGoodPort;
-- *`getStockPort port.IGetStockPort`*: vedere la descrizione alla @WarehouseIGetStockPort.
+- *`getStockPort port.IGetStockPort`*: vedere la descrizione alla @WarehouseIGetStockPort;
+- *`transactionPort port.ITransactionPort`*: vedere la descrizione alla @WarehouseITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -4256,10 +4588,11 @@ Implementa le seguenti interfacce (_Use Case_):
 
 - *`applyStockUpdatePort port.IApplyStockUpdatePort`*: vedere la descrizione alla @WarehouseIApplyStockUpdatePort;
 - *`idempotentPort port.IIdempotentPort`*: vedere la descrizione alla @WarehouseIIdempotentPort.
+- *`transactionPort port.ITransactionPort`*: vedere la descrizione alla @WarehouseITransactionPort.
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyStockUpdateService(applyStockUpdatePort port.IApplyStockUpdatePort, idempotentPort port.IIdempotentPort) *ApplyStockUpdateService`*: Costruttore della struttura. Le porte utilizzate vengono fornite come parametro al costruttore;
+- *`NewApplyStockUpdateService(applyStockUpdatePort port.IApplyStockUpdatePort, idempotentPort port.IIdempotentPort, transactionPort port.ITransactionPort) *ApplyStockUpdateService`*: Costruttore della struttura. Le porte utilizzate vengono fornite come parametro al costruttore;
 
 - *`ApplyStockUpdate(cmd port.StockUpdateCmd)`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento dello stock#super[G] e utilizza la porta adibita allo scopo per svolgere la richiesta.
 
@@ -4299,7 +4632,7 @@ Implementa le seguenti interfacce (_Use Case_):
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
-- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort port.IApplyCatalogUpdatePort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porta deve essere fornita come parametro al costruttore;
+- *`NewApplyCatalogUpdateService(applyCatalogUpdatePort port.IApplyCatalogUpdatePort, transactionPort port.ITransactionPort) *ApplyCatalogUpdateService`*: Costruttore della struttura. La porte deveno essere fornite come parametro al costruttore;
 
 - *`ApplyCatalogUpdate(cmd port.CatalogUpdateCmd)`*: prende un _Command_ per la richiesta di applicazione di un aggiornamento del catalogo e utilizza la porta adibita allo scopo per svolgere la richiesta.
 
@@ -4347,6 +4680,7 @@ Implementa le seguenti interfacce (_Use Case_):
 - *`createStockUpdatePort port.ICreateStockUpdatePort`*: rappresenta la porta per creare aggiornamenti dello stock#super[G]; vedere la @WarehouseICreateStockUpdatePort;
 - *`idempotentPort port.IIdempotentPort`*: rappresenta la porta per gestire operazioni idempotenti; vedere la @WarehouseIIdempotentPort;
 - *`cfg *config.WarehouseConfig`*: rappresenta la configurazione del microservizio _Warehouse_#super[G].
+- *`transactionPort port.ITransactionPort`*: rappresenta la porta per gestire le transazioni; vedere la @WarehouseITransactionPort;
 
 *Descrizione dei metodi invocabili dalla struttura:*
 
@@ -4434,3 +4768,606 @@ Il *OrderUpdateListener* gestisce l'_Application Logic_ per l'ascolto degli aggi
 
 - *`ListenTransferUpdate(ctx context.Context, msg jetstream.Msg) error`*: gestisce i messaggi per l'aggiornamento dei trasferimenti. Decodifica il messaggio ricevuto in un oggetto `TransferUpdate`, lo trasforma in un comando `ConfirmTransferCmd` e delega l'operazione al caso d'uso#super[G] `confirmTransferUseCase`. Ritorna un errore in caso l'operazione non venga completata correttamente.
 
+#include "specifica/notification/index.typ"
+#include "specifica/gateway/index.typ"
+
+#pagebreak()
+
+= Stato dei requisiti funzionali
+
+== Stato per requisito
+
+#show figure: set block(breakable: true)
+#show table.cell.where(x: 0): strong
+//#show table.cell.where(x: 1):
+//#show table: block.with(stroke: (y: 1pt)
+#figure(
+  table(
+    align: left,
+    fill: (x, y) => if (y == 0) {
+      rgb("#800080")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#bf7fbf")
+    } else {
+      rgb("#d8b2d8")
+    },
+    stroke: (x, y) => (
+      left: if (x > 0) { 0pt } else { 1pt },
+      right: 1pt,
+      top: if (y < 2) { 1pt } else { 0pt },
+      bottom: 1pt,
+    ),
+    columns: 3,
+    inset: 8pt,
+    table.header(
+      [#text(fill: white)[*Codice*]],
+      [#text(fill: white)[*Descrizione*]],
+      [#text(fill: white)[*Stato*]],
+    ),
+
+    [R-1-F-Ob], [L'Utente deve poter autenticarsi presso il Sistema], [Soddisfatto],
+    [R-2-F-Ob],
+    [L'Utente deve inserire la tipologia di utente (Cliente, Admin Globale o Admin Locale) per potersi autenticare al Sistema],
+    [Soddisfatto],
+
+    [R-3-F-De],
+    [L'Utente deve inserire il proprio Username per potersi autenticare],
+    [Non Soddisfatto],
+
+    [R-4-F-De],
+    [L'Utente deve inserire la propria Password per potersi autenticare],
+    [Non Soddisfatto],
+
+    [R-5-F-Ob],
+    [L'Utente deve ricevere un errore in seguito ad un tentativo di accesso/autenticazione non riuscito],
+    [Non Soddisfatto],
+
+    [R-6-F-Ob], [Il Cliente deve poter creare un ordine che può confermare in seguito.], [Soddisfatto],
+    [R-7-F-Ob],
+    [Il Cliente deve inserire il nome dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [Soddisfatto],
+
+    [R-8-F-Ob],
+    [Il Cliente deve inserire il nominativo del destinatario dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [Soddisfatto],
+
+    [R-9-F-Ob],
+    [Il Cliente deve inserire l'indirizzo di spedizione dell'ordine al momento della creazione di un nuovo ordine da confermare],
+    [Soddisfatto],
+
+    [R-10-F-Ob],
+    [Il Cliente deve poter aggiungere merce ad un ordine non ancora confermato, indipendentemente se si tratta di un ordine di natura locale (limitata al magazzino corrente) o globale],
+    [Soddisfatto],
+
+    [R-11-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve selezionare la merce che vuole aggiungere ad un ordine non ancora confermato],
+    [Soddisfatto],
+
+    [R-12-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve inserire il quantitativo della merce che vuole aggiungere ad un ordine non ancora confermato],
+    [Soddisfatto],
+
+    [R-13-F-Ob],
+    [Il Cliente, durante l'operazione di aggiunta merce ad un ordine non ancora confermato, deve selezionare l'ordine non ancora confermato alla quale vuole aggiungere la merce],
+    [Soddisfatto],
+
+    [R-14-F-Ob],
+    [Il Cliente deve ricevere un errore qualora la merce aggiunta all'ordine non risulti essere valida (ovvero la quantità della merce è insufficiente oppure la merce non esiste)],
+    [Soddisfatto],
+
+    [R-15-F-Ob],
+    [Il Cliente deve ricevere un errore quando sta cercando di fare un'operazione su un ordine non confermato (quale l'aggiunta di merce, la cancellazione od una conferma) ma nessun ordine non confermato è disponibile],
+    [Soddisfatto],
+
+    [R-16-F-Ob],
+    [Il Cliente deve poter cancellare un ordine non ancora confermato, selezionando quale ordine cancellare],
+    [Soddisfatto],
+
+    [R-17-F-Ob],
+    [Il Cliente deve poter confermare un ordine non ancora confermato, selezionando quale ordine cancellare],
+    [Soddisfatto],
+
+    [R-18-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini non confermati per l'utente attualmente autenticato],
+    [Soddisfatto],
+
+    [R-19-F-Ob],
+    [Il Cliente deve poter visualizzare l'ID di ciascun ordine nella lista degli ordini non confermati],
+    [Soddisfatto],
+
+    [R-20-F-Ob],
+    [Il Cliente deve poter visualizzare la data di creazione di ciascun ordine nella lista degli ordini non confermati],
+    [Soddisfatto],
+
+    [R-21-F-Ob],
+    [Il Cliente deve poter visualizzare il nome di ciascun ordine nella lista degli ordini non confermati],
+    [Soddisfatto],
+
+    [R-22-F-Ob], [Il Cliente deve poter consultare i dettagli di un ordine non confermato], [Soddisfatto],
+    [R-23-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne l'ID],
+    [Soddisfatto],
+
+    [R-24-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne la data di creazione],
+    [Soddisfatto],
+
+    [R-25-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne il nome],
+    [Soddisfatto],
+
+    [R-26-F-Ob],
+    [Il Cliente, visualizzando un ordine non confermato nel dettaglio, deve visualizzarne la lista delle merci],
+    [Soddisfatto],
+
+    [R-27-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter visualizzare la quantità della merce],
+    [Soddisfatto],
+
+    [R-28-F-Ob],
+    [Il Cliente, visualizzando l'elenco merce di un ordine non confermato, deve poter visualizzare il nome della merce],
+    [Soddisfatto],
+
+    [R-29-F-Ob],
+    [Il Cliente deve poter visualizzare la lista delle merci nel Sistema],
+    [Soddisfatto],
+
+    [R-30-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare l'ID di ciascuna delle merci], [Soddisfatto],
+    [R-31-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare il nome di ciascuna delle merci], [Soddisfatto],
+    [R-32-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di ciascuna delle merci], [Soddisfatto],
+    [R-33-F-Ob], [Il Cliente visualizzando la lista delle merci nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di ciascuna delle merci], [Soddisfatto],
+
+    [R-34-F-Ob],
+    [Il Cliente deve poter visualizzare una merce nel Sistema nel dettaglio],
+    [Soddisfatto],
+
+    [R-35-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare l'ID di tale merce], [Soddisfatto],
+    [R-36-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare il nome di tale merce], [Soddisfatto],
+    [R-37-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce complessiva in tutti i magazzini di tale merce], [Soddisfatto],
+    [R-38-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la quantità della merce attualmente presente nel magazzino di tale merce], [Soddisfatto],
+    [R-39-F-Ob], [Il Cliente visualizzando una merce specifica nel Sistema, deve poter visualizzare la descrizione di tale merce], [Soddisfatto],
+
+    [R-40-F-Ob],
+    [L'Admin Globale deve poter creare un trasferimento da confermare in seguito.],
+    [Soddisfatto],
+
+    [R-41-F-Ob],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve selezionare il magazzino mittente],
+    [Soddisfatto],
+
+    [R-42-F-Ob],
+    [L'Admin Globale, durante la creazione di un trasferimento da confermare in seguito, deve selezionare il magazzino destinatario],
+    [Soddisfatto],
+
+    [R-43-F-Ob],
+    [L'Admin Globale deve poter aggiungere della merce ad un trasferimento non confermato],
+    [Soddisfatto],
+
+    [R-44-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la merce da aggiungere],
+    [Soddisfatto],
+
+    [R-45-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare la quantità di merce da aggiungere],
+    [Soddisfatto],
+
+    [R-46-F-Ob],
+    [L'Admin Globale, durante l'operazione di aggiunta di merce ad un trasferimento non confermato, deve selezionare il trasferimento non confermato alla quale aggiungere la merce],
+    [Soddisfatto],
+
+    [R-47-F-Ob],
+    [L'Admin Globale deve poter confermare un trasferimento non ancora confermato, selezionando quale trasferimento confermare],
+    [Soddisfatto],
+
+    [R-48-F-Ob],
+    [L'Admin Globale deve ricevere un errore se la merce in un trasferimento che vuole confermare non è più disponibile in quantità sufficiente o non è più esistente nel Sistema],
+    [Soddisfatto],
+
+    [R-49-F-Ob],
+    [L'Admin Globale deve ricevere un errore qualora selezioni di voler aggiungere merce, confermare o cancellare un trasferimento non confermato ma nessun trasferimento non confermato risulta essere presente],
+    [Soddisfatto],
+
+    [R-50-F-Ob],
+    [L'Admin Globale deve poter cancellare un trasferimento non ancora confermato, selezionando quale trasferimento cancellare],
+    [Soddisfatto],
+
+    [R-51-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco di tutti i trasferimenti],
+    [Soddisfatto],
+
+    [R-52-F-Ob],
+    [L'Admin Globale deve poter visualizzare per ogni trasferimento dell'elenco di tutti i trasferimenti, l'ID del trasferimento],
+    [Soddisfatto],
+
+    [R-53-F-Ob],
+    [L'Admin Globale deve poter visualizzare per ogni trasferimento dell'elenco di tutti i trasferimenti, lo stato del trasferimento],
+    [Soddisfatto],
+
+    [R-54-F-Ob],
+    [L'Admin Globale deve poter visualizzare un singolo trasferimento nello specifico],
+    [Soddisfatto],
+
+    [R-55-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare l'ID del trasferimento], [Soddisfatto],
+    [R-56-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare il magazzino mittente del trasferimento], [Soddisfatto],
+    [R-57-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare il magazzino di destinazione del trasferimento], [Soddisfatto],
+    [R-58-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare lo stato del trasferimento], [Soddisfatto],
+    [R-59-F-Ob], [L'Admin Globale, visualizzando un singolo trasferimento, deve visualizzare l'elenco della merce interessata dal trasferimento], [Soddisfatto],
+
+    [R-60-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve visualizzare per ogni merce interessata il nome di tale merce],
+    [Soddisfatto],
+
+    [R-61-F-Ob],
+    [L'Admin Globale, visualizzando un trasferimento nel dettaglio, deve visualizzare per ogni merce interessata la quantità di tale merce],
+    [Soddisfatto],
+
+    [R-62-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco delle notifiche contenenti i consigli di rifornimento],
+    [Soddisfatto],
+
+    [R-63-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento, l'ID della notifica],
+    [Soddisfatto],
+
+    [R-64-F-Ob],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [Soddisfatto],
+
+    [R-65-F-Ob],
+    [L'Admin Globale deve ricevere un messaggio di errore quando tenta di compiere un'azione sulle notifiche di rifornimento, ma nessuna notifica è disponibile],
+    [Soddisfatto],
+
+    [R-66-F-De],
+    [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da _Machine Learning_],
+    [Non Soddisfatto],
+
+    [R-67-F-De],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di _Machine Learning_, l'ID della notifica],
+    [Non Soddisfatto],
+
+    [R-68-F-De],
+    [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un _Machine Learning_, lo stato della notifica (confermato, da confermare, rifiutato)],
+    [Non Soddisfatto],
+
+    [R-69-F-Ob],
+    [L'Admin Globale deve poter visualizzare una notifica di rifornimento nello specifico],
+    [Soddisfatto],
+
+    [R-70-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne l'ID], [Soddisfatto],
+    [R-71-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne lo stato (confermato, da confermare, rifiutato)], [Soddisfatto],
+    [R-72-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne il magazzino destinatario], [Soddisfatto],
+    [R-73-F-Ob], [L'Admin Globale, visualizzando una notifica di rifornimento nello specifico, deve visualizzarne l'elenco della merce], [Soddisfatto],
+
+    [R-74-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, l'ID della merce],
+    [Soddisfatto],
+
+    [R-75-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, il nome della merce],
+    [Soddisfatto],
+
+    [R-76-F-Ob],
+    [Per ciascuna merce il cui rifornimento è consigliato da una notifica di rifornimento, l'Admin Globale deve visualizzare, quando sta visualizzando una notifica in particolare, la quantità della merce da rifornire],
+    [Soddisfatto],
+
+    [R-77-F-Ob],
+    [L'Admin Globale deve poter accettare una notifica di rifornimento non ancora accettata, selezionando quale accettare],
+    [Soddisfatto],
+
+    [R-78-F-Ob],
+    [L'Admin Globale deve poter rifiutare una notifica di rifornimento non ancora accettata, selezionando quale rifiutare],
+    [Soddisfatto],
+
+    [R-79-F-Ob],
+    [L'Admin Globale deve poter visualizzare l'elenco dei microservizi],
+    [Soddisfatto],
+
+    [R-80-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il nome di ciascun microservizio], [Soddisfatto],
+    [R-81-F-Ob], [L'Admin Globale, visualizzando l'elenco dei microservizi, deve visualizzare il numero di richieste al secondo di ciascun microservizio], [Soddisfatto],
+
+    [R-82-F-De],
+    [L'Admin Globale deve poter esportare gli ordini eseguiti su un file di tipo _.csv_],
+    [Non Soddisfatto],
+
+    [R-83-F-De],
+    [L'Admin Globale deve ricevere un errore quando tenta di esportare degli ordini in un file in formato _.csv_ ma nessun ordine da esportare è presente],
+    [Non Soddisfatto],
+
+    [R-84-F-De],
+    [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
+    [Non Soddisfatto],
+
+    [R-85-F-De],
+    [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
+    [Non Soddisfatto],
+
+    [R-86-F-Ob],
+    [L'Admin Globale deve poter impostare una soglia minima di allerta per una merce],
+    [Soddisfatto],
+
+    [R-87-F-Ob], [L'Admin Globale, impostando una soglia minima di allerta, deve selezionare la merce a cui assegnare la nuova soglia], [Soddisfatto],
+    [R-88-F-Ob], [L'Admin Globale, impostando una soglia minima di allerta, deve inserire la nuova soglia], [Soddisfatto],
+
+    [R-89-F-Ob],
+    [L'Admin Globale deve ricevere un errore se la soglia minima di allerta che ha impostato non è valida (ad esempio perché negativa)],
+    [Soddisfatto],
+    //
+    [R-90-F-Ob],
+    [L'Admin Locale deve poter manualmente aggiungere stock (quantità) di merce ad una merce esistente nel Sistema],
+    [Soddisfatto],
+
+    [R-91-F-Ob], [L'Admin Locale, aggiungendo uno stock di merce, deve selezionare la merce a cui aggiungere lo stock], [Soddisfatto],
+    [R-92-F-Ob], [L'Admin Locale, aggiungendo uno stock di merce, deve inserire la quantità da aggiungere], [Soddisfatto],
+
+    [R-93-F-Ob],
+    [L'Admin Globale deve poter creare (aggiungere) una merce nel Sistema],
+    [Soddisfatto],
+
+    [R-94-F-Ob], [L'Admin Globale, creando (aggiungendo) una merce al Sistema, deve indicare il nome], [Soddisfatto],
+    [R-95-F-Ob], [L'Admin Globale, creando (aggiungendo) una merce al Sistema, deve indicare la descrizione], [Soddisfatto],
+
+    [R-96-F-Ob],
+    [L'Admin Globale deve poter aggiornare le informazioni di una merce],
+    [Soddisfatto],
+
+    [R-97-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare quale merce modificare], [Soddisfatto],
+    [R-98-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare il nome], [Soddisfatto],
+    [R-99-F-Ob], [L'Admin Globale, modificando una merce del Sistema, deve indicare la descrizione], [Soddisfatto],
+
+    [R-100-F-Ob],
+    [Il Cliente deve poter visualizzare l'elenco degli ordini eseguiti],
+    [Soddisfatto],
+
+    [R-101-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne l'ID], [Soddisfatto],
+    [R-102-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne la data di creazione], [Soddisfatto],
+    [R-103-F-Ob], [Il Cliente, per ciascun ordine nell'elenco degli ordini eseguiti, deve visualizzarne il nome], [Soddisfatto],
+
+    [R-104-F-Ob],
+    [Il Cliente deve poter visualizzare il dettaglio di un ordine eseguito],
+    [Soddisfatto],
+
+    [R-105-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne l'ID], [Soddisfatto],
+    [R-106-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne la data di creazione], [Soddisfatto],
+    [R-107-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne il nome], [Soddisfatto],
+    [R-108-F-Ob], [Il Cliente, visualizzando un ordine eseguito nel dettaglio, deve visualizzarne la lista delle merci], [Soddisfatto],
+
+    [R-109-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare il nome della merce],
+    [Soddisfatto],
+    [R-110-F-Ob],
+    [Per ogni merce nella lista delle merci di un ordine eseguito, il Cliente deve visualizzare la quantità interessata dall'ordine],
+    [Soddisfatto],
+
+    [R-111-F-De],
+    [L'Admin Locale deve avere la possibilità di creare un Backup del proprio magazzino],
+    [Non Soddisfatto],
+
+    [R-112-F-De],
+    [L'Admin Locale deve avere la possibilità di attivare un Backup periodico del proprio magazzino, selezionandone la periodicità],
+    [Non Soddisfatto],
+
+    [R-113-F-De],
+    [L'Admin Locale deve ricevere un errore se la periodicità del Backup periodico che ha selezionato non è valida],
+    [Non Soddisfatto],
+
+    [R-114-F-De], [L'Admin Locale deve poter eliminare la realizzazione del Backup periodico], [Non Soddisfatto],
+
+    [R-115-F-De],
+    [L'Admin Locale deve ricevere un errore quando vuole eliminare la realizzazione di un Backup periodico ma non è attivo un Backup periodico],
+    [Non Soddisfatto],
+
+    [R-116-F-De],
+    [L'Admin Locale deve avere la possibilità di ripristinare i dati dell'ultimo Backup effettuato],
+    [Non Soddisfatto],
+
+    [R-117-F-De],
+    [L'Admin Locale deve ricevere un errore quando vuole ripristinare i dati dell'ultimo Backup effettuato ma nessun Backup è presente],
+    [Non Soddisfatto],
+
+    [R-118-F-De],
+    [L'Admin Globale deve poter visualizzare l'elenco delle attività di accesso],
+    [Non Soddisfatto],
+
+    [R-119-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare l'Indirizzo IP del luogo di accesso di ciascuna], [Non Soddisfatto],
+    [R-120-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare l'ID di ciascuna], [Non Soddisfatto],
+    [R-121-F-De], [L'Admin Globale, visualizzando l'elenco delle attività di accesso, deve visualizzare lo stato di ciascuna (riuscito, bloccato o negato)], [Non Soddisfatto],
+
+    [R-122-F-De],
+    [L'Admin Globale deve poter bloccare un tentativo di accesso, bloccando l'indirizzo IP dalla quale questo è avvenuto, inserendo l'ID del tentativo],
+    [Non Soddisfatto],
+
+    [R-123-F-De],
+    [Il Sistema di rilevamento deve notificare via email/sms gli Admin globali eventi di opportuna importanza, quali il raggiungimento di scorte minime o la necessità di approvare un rifornimento],
+    [Non Soddisfatto],
+
+    [R-124-F-De],
+    [L'Admin Globale deve avere la possibilità di aggiungere un Utente al Sistema],
+    [Non Soddisfatto],
+
+    [R-125-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne il nome], [Non Soddisfatto],
+    [R-126-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne la Password], [Non Soddisfatto],
+    [R-127-F-De], [L'Admin Globale, aggiungendo un nuovo Utente, deve inserirne il ruolo], [Non Soddisfatto],
+
+    [R-128-F-De], [L'Admin Globale deve poter eliminare un Utente dal Sistema, selezionando quale Utente], [Non Soddisfatto],
+    [R-129-F-De], [L'Admin Globale deve poter promuovere il ruolo di un Utente, selezionando quale Utente], [Non Soddisfatto],
+
+    [R-130-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco delle merci disponibili],
+    [Soddisfatto],
+
+    [R-131-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità localmente disponibile per ciascuna merce], [Soddisfatto],
+    [R-132-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della quantità globalmente disponibile per ciascuna merce], [Soddisfatto],
+    [R-133-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione del nome per ciascuna merce], [Soddisfatto],
+    [R-134-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione della descrizione per ciascuna merce], [Soddisfatto],
+    [R-135-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle merci disponibili, deve avviare la sincronizzazione dell'ID per ciascuna merce], [Soddisfatto],
+
+    [R-136-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una nuova merce],
+    [Soddisfatto],
+
+    [R-137-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della quantità localmente disponibile], [Soddisfatto],
+    [R-138-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della quantità globalmente disponibile], [Soddisfatto],
+    [R-139-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione del nome], [Soddisfatto],
+    [R-140-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione della descrizione], [Soddisfatto],
+    [R-141-F-Ob], [Lo Scheduler, avviando la sincronizzazione della merce aggiunta, deve avviare la sincronizzazione dell'ID], [Soddisfatto],
+
+
+    [R-142-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una merce eliminata],
+    [Soddisfatto],
+
+    [R-143-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della quantità localmente disponibile], [Soddisfatto],
+    [R-144-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della quantità globalmente disponibile], [Soddisfatto],
+    [R-145-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione del nome], [Soddisfatto],
+    [R-146-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione della descrizione], [Soddisfatto],
+    [R-147-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce eliminata, deve avviare la sincronizzazione dell'ID], [Soddisfatto],
+
+    [R-148-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione di una merce modificata],
+    [Soddisfatto],
+
+    [R-149-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della quantità localmente disponibile], [Soddisfatto],
+    [R-150-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della quantità globalmente disponibile], [Soddisfatto],
+    [R-151-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione del nome], [Soddisfatto],
+    [R-152-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione della descrizione], [Soddisfatto],
+    [R-153-F-Ob], [Lo Scheduler, avviando la sincronizzazione di una merce modificata, deve avviare la sincronizzazione dell'ID], [Soddisfatto],
+
+    [R-154-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione dell'elenco degli ordini],
+    [Soddisfatto],
+
+    [R-155-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine la data di creazione], [Soddisfatto],
+    [R-156-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine il nome], [Soddisfatto],
+    [R-157-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine l'ID], [Soddisfatto],
+    [R-158-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine lo stato], [Soddisfatto],
+    [R-159-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini, deve sincronizzare per ciascun ordine la lista delle merci interessate], [Soddisfatto],
+
+    [R-160-F-Ob],
+    [Per ogni merce di un ordine da sincronizzare, lo Scheduler deve avviare la sincronizzazione dell'ID della merce],
+    [Soddisfatto],
+
+    [R-161-F-Ob],
+    [Per ogni merce di un ordine da sincronizzare, lo Scheduler deve avviare la sincronizzazione la quantità interessata della merce],
+    [Soddisfatto],
+
+    [R-162-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione degli ordini confermati],
+    [Soddisfatto],
+
+    [R-163-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini confermati, avvia la sincronizzazione di tutti gli ordini], [Soddisfatto],
+
+    [R-164-F-Ob],
+    [Lo Scheduler deve poter avviare la sincronizzazione degli ordini cancellati],
+    [Soddisfatto],
+
+    [R-165-F-Ob], [Lo Scheduler, avviando la sincronizzazione degli ordini cancellati, avvia la sincronizzazione di tutti gli ordini], [Soddisfatto],
+
+    [R-166-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dell'elenco dei trasferimenti],
+    [Soddisfatto],
+
+    [R-167-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare il magazzino destinatario di ciascun trasferimento], [Soddisfatto],
+    [R-168-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare il magazzino mittente di ciascun trasferimento], [Soddisfatto],
+    [R-169-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare l'ID di ciascun trasferimento], [Soddisfatto],
+    [R-170-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare lo stato di ciascun trasferimento], [Soddisfatto],
+    [R-171-F-Ob], [Lo Scheduler, avviando la sincronizzazione dell'elenco dei trasferimenti, deve sincronizzare la lista delle merci di ciascun trasferimento], [Soddisfatto],
+
+    [R-172-F-Ob],
+    [Per ogni merce di un trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione dell'ID della merce],
+    [Soddisfatto],
+
+    [R-173-F-Ob],
+    [Per ogni merce di un trasferimento da sincronizzare, lo Scheduler deve avviare la sincronizzazione la quantità interessata della merce],
+    [Soddisfatto],
+
+    [R-174-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti confermati],
+    [Soddisfatto],
+
+    [R-175-F-Ob],
+    [Lo Scheduler, avviando la sincronizzazione dei trasferimenti confermati, deve avviare la sincronizzazione di tutti i trasferimenti],
+    [Soddisfatto],
+
+    [R-176-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei trasferimenti cancellati],
+    [Soddisfatto],
+
+    [R-177-F-Ob],
+    [Lo Scheduler, avviando la sincronizzazione dei trasferimenti cancellati, deve avviare la sincronizzazione di tutti i trasferimenti],
+    [Soddisfatto],
+
+    [R-178-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento],
+    [Soddisfatto],
+
+    [R-179-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'ID], [Soddisfatto],
+    [R-180-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica il magazzino destinatario], [Soddisfatto],
+    [R-181-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica lo stato], [Soddisfatto],
+    [R-182-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento, deve sincronizzare per ciascuna notifica l'elenco delle merci interessate], [Soddisfatto],
+
+    [R-183-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare l'ID della merce],
+    [Soddisfatto],
+
+    [R-184-F-Ob],
+    [Per ogni merce facente parte di un elenco merci di un trasferimento, lo Scheduler deve sincronizzare la quantità interessata della merce],
+    [Soddisfatto],
+
+    [R-185-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento confermate],
+    [Soddisfatto],
+
+    [R-186-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento confermate, deve sincronizzare tutte le notifiche di rifornimento], [Soddisfatto],
+
+    [R-187-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione delle notifiche di rifornimento cancellate],
+    [Soddisfatto],
+
+    [R-188-F-Ob], [Lo Scheduler, avviando la sincronizzazione delle notifiche di rifornimento cancellate, deve sincronizzare tutte le notifiche di rifornimento], [Soddisfatto],
+
+    [R-189-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione dei dati dei microservizi],
+    [Soddisfatto],
+
+    [R-190-F-Ob], [Lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, deve avviare la sincronizzazione del nome di ciascun microservizio], [Soddisfatto],
+    [R-191-F-Ob], [Lo Scheduler, avviando la sincronizzazione dei dati dei microservizi, deve avviare la sincronizzazione delle richieste al secondo di ciascun microservizio], [Soddisfatto],
+
+    [R-192-F-Ob],
+    [Lo Scheduler deve avviare la sincronizzazione della soglia minima di allerta per una merce quando aggiornata],
+    [Soddisfatto],
+  ),
+  caption: [Stato dei requisiti funzionali],
+)
+
+== Grafici riassuntivi
+
+Tutti i grafici qui presenti si riferiscono ai *requisiti funzionali#super[G]*.
+
+#pie-chart(
+  (percentuale: 85.4, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 14.6, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] soddisfatti in totale],
+  legend: true,
+)
+
+
+#pie-chart(
+  (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] obbligatori soddisfatti],
+  legend: true,
+)
+
+#pie-chart(
+  (percentuale: 0, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 100, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] desiderabili soddisfatti],
+  legend: true,
+)
+
+#pie-chart(
+  (percentuale: 100, titolo: "Requisiti soddisfatti", legenda: 2),
+  (percentuale: 0, titolo: "Requisiti non soddisfatti", legenda: 2),
+  caption: [Percentuale di requisiti funzionali#super[G] opzionali soddisfatti],
+  legend: true,
+)

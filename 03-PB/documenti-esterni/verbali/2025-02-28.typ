@@ -88,4 +88,4 @@ _ALimitedGroup_ ringrazia #M31 e i suoi rappresentanti per la disponibilità e l
 
 = Approvazione esterna
 #approvazione-esterna(nome_parte_esterna: [#M31])
-#figure(image("../../../assets/fima_ve2503.png", width: 50%))
+#align(right)[#image("../../../assets/firma_ve2503.png", width: 35%)]

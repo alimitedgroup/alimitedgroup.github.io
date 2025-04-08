@@ -1,4 +1,4 @@
-# Merce
+# Merce <!--raw-typst <merce> -->
 
 Nel _Minimum Viable Product#super[G]_, che _ALimitedGroup_ ha progettato ed implementato, e nei documenti annessi viene fatto riferimento ad una serie di termini, uno tra questi è: la **Merce**.
 

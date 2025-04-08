@@ -1,3 +1,5 @@
+#import "@preview/cetz:0.3.2": *
+#import "@preview/cetz-plot:0.1.1": chart
 
 /// Array con le persone incluse nel progetto
 ///
@@ -35,12 +37,12 @@
 )
 
 #let ruoli = (
-  responsabile: (max-ore: 50, costo: 30, nome: "Responsabile"),
+  responsabile: (max-ore: 41, costo: 30, nome: "Responsabile"),
   amministratore: (max-ore: 77, costo: 20, nome: "Amministratore"),
   analista: (max-ore: 83, costo: 25, nome: "Analista"),
-  progettista: (max-ore: 128, costo: 25, nome: "Progettista"),
-  programmatore: (max-ore: 175, costo: 15, nome: "Programmatore"),
-  verificatore: (max-ore: 132, costo: 15, nome: "Verificatore"),
+  progettista: (max-ore: 132, costo: 25, nome: "Progettista"),
+  programmatore: (max-ore: 181, costo: 15, nome: "Programmatore"),
+  verificatore: (max-ore: 130, costo: 15, nome: "Verificatore"),
 )
 
 /// Lista delle repository su cui si possono trovare issue e pull request
@@ -299,3 +301,77 @@
 
 ///COMMENTO IMPORTANTE RIGUARDANTE indice-immagini e indice-tabelle: tutte e due le funzioni indicizzano correttamente le tabelle/immagini
 /// se e solo se queste sono delimitate dal comando #figure con annessa la caption
+
+#let pie-chart(..data, caption: [], legend: false) = {
+  data = data.pos()
+
+  if legend {
+    data = data.map(x => (..x, titolo: x.titolo + " - " + str(calc.round(x.percentuale, digits: 2)) + "%"))
+  }
+
+  figure(
+    canvas({
+      import draw: *
+
+      if (legend) {
+        chart.piechart(
+          data,
+          name: "pie",
+          position: (1em, 0),
+          radius: 1.8,
+          value-key: "percentuale",
+          label-key: "titolo",
+          outer-label: (content: none),
+          gap: 2deg,
+        )
+      } else {
+        chart.piechart(
+          data,
+          name: "pie",
+          position: (1em, 0),
+          radius: 1.8,
+          value-key: "percentuale",
+          label-key: "titolo",
+          outer-label: (content: none),
+          gap: 2deg,
+          legend: (label: none),
+        )
+      }
+
+      set-style(content: (padding: .2))
+      if not legend {
+        for (i, dat) in data.enumerate() {
+          if dat.percentuale > 0 {
+            // Calculate the point at 35% of the distance from the border of a slice to its center
+            let outer = "pie.chart.item-" + str(i)
+            let inner = "pie.chart.item-" + str(i) + "-inner"
+            line(outer, inner, stroke: none, mark: none, name: "midline-" + str(i))
+            let middle = (name: "midline-" + str(i), anchor: 35%)
+
+            let line-dir = dat.legenda
+            let line-anchor = if dat.legenda > 0 {
+              "west"
+            } else {
+              "east"
+            }
+            let percent = calc.round(dat.percentuale * 100 / data.map(x => x.percentuale).sum())
+
+            line(middle, (rel: (dat.legenda, 0)), name: "line-" + str(i))
+            content((), [#dat.titolo - #percent%], anchor: line-anchor)
+            mark(
+              (name: "line-" + str(i), anchor: 0%),
+              (name: "line-" + str(i), anchor: 1%),
+              symbol: "o",
+              anchor: "center",
+              fill: white,
+              width: 1,
+            )
+          } else { }
+        }
+      }
+    }),
+
+    caption: caption,
+    supplement: [Grafico],
+  )
+}

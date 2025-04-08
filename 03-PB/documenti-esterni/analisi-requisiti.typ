@@ -1,6 +1,6 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/use-case.typ": *
-#let ver = [1.2.0]
+#let ver = [2.0.0]
 
 #show ref: it => if str(it.target).starts-with("UC") {
   link(it.target, "[" + str(it.target) + "]")
@@ -9,22 +9,30 @@
 }
 
 #show: body => importantdocs(
-  data: datetime(day: 03, month: 02, year: 2025),
+  data: datetime(day: 04, month: 04, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
     (
+      vers: "2.0.0",
+      date: datetime(day: 04, month: 04, year: 2025),
+      autore: p.sara,
+      verifica: p.samuele,
+      approvazione: p.matteo,
+      descr: "Modifiche minori.",
+    ),
+    (
       vers: "1.3.0",
       date: datetime(day: 26, month: 03, year: 2025),
       autore: p.sara,
-      //verifica: p.matteo,
+      verifica: p.emanuele,
       descr: "Correzione alcuni requisiti.",
     ),
     (
       vers: "1.2.0",
       date: datetime(day: 25, month: 02, year: 2025),
       autore: p.emanuele,
-      verifica: p.matteo,
+      verifica: p.sara,
       descr: "Correzione degli Use Case 67 e 68.",
     ),
     (
@@ -253,11 +261,12 @@
       descr: "Creazione struttura e template documento.",
     ),
   ),
-  stato: [Approvato per RTB],
-  responsabile: ((p.samuele),),
+  stato: [Approvato],
+  responsabile: ((p.matteo),),
   verificatore: ((p.samuele), (p.lorenzo), (p.loris), (p.sara)),
   redattori: (
     (p.matteo),
+    (p.emanuele),
     (p.sara),
     (p.loris),
     (p.marco),
@@ -336,14 +345,14 @@ Per tutte le _definizioni_, _acronimi_ e _abbreviazioni_ utilizzati in questo do
 
 == Riferimenti
 === Riferimenti normativi
-- *Norme di Progetto#super[G] versione 1.0.0* \ #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[https://alimitedgroup.github.io/NP%20v1.0.0.pdf] \ *Ultimo Accesso 3 Febbraio 2025*
-- *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_* \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf \ *Ultimo Accesso 3 Febbraio 2025*
+- *Norme di Progetto#super[G] versione 2.0.0* \ #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[https://alimitedgroup.github.io/NP%20v2.0.0.pdf] \ *Ultimo Accesso 4 Aprile 2025*
+- *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_* \ https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf \ *Ultimo Accesso 4 Aprile 2025*
 === Riferimenti informativi
-- *Standard IEEE* \ https://ieeexplore.ieee.org/document/720574 \ *Ultimo Accesso 3 Febbraio 2025*
-- *Analisi dei requisiti* \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf \ *Ultimo Accesso 3 Febbraio 2025*
-- *Diagrammi Casi d'Uso* \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf - *Ultimo Accesso 3 Febbraio 2025*
-- *_Repository GitHub_ del #prof(p.cardin)* \ https://github.com/rcardin/swe-imdb \ *Ultimo Accesso 3 Febbraio 2025*
-- *Glossario* \ #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \ *Ultimo Accesso 3 Febbraio 2025*
+- *Standard IEEE* \ https://ieeexplore.ieee.org/document/720574 \ *Ultimo Accesso 4 Aprile 2025*
+- *Analisi dei requisiti* \ https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf \ *Ultimo Accesso 4 Aprile 2025*
+- *Diagrammi Casi d'Uso* \ https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf - *Ultimo Accesso 4 Aprile 2025*
+- *_Repository GitHub_ del #prof(p.cardin)* \ https://github.com/rcardin/swe-imdb \ *Ultimo Accesso 4 Aprile 2025*
+- *Glossario* \ #link("https://alimitedgroup.github.io/Glossаrio.pdf")[#text("https://alimitedgroup.github.io/Glossario.pdf")] \ *Ultimo Accesso 4 Aprile 2025*
 
 #pagebreak()
 
@@ -3924,7 +3933,7 @@ Verranno ora descritti i requisiti che _ALimitedGroup_ ha individuato, raggruppa
 - *Qualità*, ovvero requisiti che devono essere soddisfatti per accertare la qualità di quanto realizzato;
 - *Vincolo*, ovvero restrizioni poste al Sistema, quali, a titolo di esempio, sull'uso di alcune tecnologie;
 
-Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*]
+Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.1 delle #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[*Norme di Progetto ver. 2.0.0*]
 
 == Requisiti Funzionali
 
@@ -4172,11 +4181,11 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [L'Admin Globale deve poter visualizzare le notifiche di rifornimento suggerite da _Machine Learning_],
     [@UC38],
 
-    [R-67-F-Ob],
+    [R-67-F-De],
     [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di _Machine Learning_, l'ID della notifica],
     [@UC34 \ @UC36],
 
-    [R-68-F-Ob],
+    [R-68-F-De],
     [L'Admin Globale deve visualizzare, per ogni notifica nell'elenco delle notifiche di rifornimento da parte di un _Machine Learning_, lo stato della notifica (confermato, da confermare, rifiutato)],
     [@UC34 \ @UC35],
 
@@ -4228,7 +4237,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [L'Admin Globale deve poter esportare il report dell'inventario globale in un file in formato _.csv_],
     [@UC46],
 
-    [R-85-F-Ob],
+    [R-85-F-De],
     [L'Admin Globale deve ricevere un errore quando cerca di esportare l'inventario ma nessun dato è disponibile],
     [@UC47],
 
@@ -4540,15 +4549,15 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Test e Validazione" e #link("https://alimitedgroup.github.io/VE%2028-02-2025%20v1.0.0.pdf")[Verbale esterno del 28 Febbraio 2025]],
 
     [R-7-Q-Ob],
-    [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*] oppure in un _Test Book_ dedicato],
+    [È necessario descrivere tutti i Test effettuati. Tale redazione sarà effettuata nel #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica ver. 2.0.0*] oppure in un _Test Book_ dedicato],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto],\ Sez. "Documentazione"],
 
     [R-8-Q-Ob],
-    [È necessario perseguire al raggiungimento degli obiettivi posti dal #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica ver. 1.0.0*])],
+    [È necessario perseguire al raggiungimento degli obiettivi posti dal #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica ver. 2.0.0*])],
     [#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[Capitolato di Progetto] e Interno],
 
     [R-9-Q-Ob],
-    [È necessario rispettare tutte le norme presenti nelle #link("https://alimitedgroup.github.io/NP%20v1.0.0.pdf")[*Norme di Progetto ver. 1.0.0*]],
+    [È necessario rispettare tutte le norme presenti nelle #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[*Norme di Progetto ver. 2.0.0*]],
     [Interno],
 
     [R-10-Q-Ob],
@@ -4562,7 +4571,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.2.2 delle #li
   caption: [Requisiti di Qualità],
 )
 
-Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimitedgroup.github.io/PQ%20v1.0.0.pdf")[*Piano di Qualifica#super[G] ver. 1.0.0*].
+Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimitedgroup.github.io/PQ%20v2.0.0.pdf")[*Piano di Qualifica#super[G] ver. 2.0.0*].
 
 == Requisiti di Vincolo
 
@@ -4819,10 +4828,10 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
     [R-66-F-De],
     [@UC38],
 
-    [R-67-F-Ob],
+    [R-67-F-De],
     [@UC34 \ @UC36],
 
-    [R-68-F-Ob],
+    [R-68-F-De],
     [@UC34 \ @UC35],
 
     [R-69-F-Ob],
@@ -4863,7 +4872,7 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
     [R-84-F-De],
     [@UC46],
 
-    [R-85-F-Ob],
+    [R-85-F-De],
     [@UC47],
 
     [R-86-F-Ob],
@@ -5108,7 +5117,7 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
       [#text(fill: white)[*Opzionali*]],
     ),
 
-    [Funzionali], [167], [25], [0],
+    [Funzionali], [164], [28], [0],
     [Qualità], [10], [1], [0],
     [Vincolo], [6], [0], [0],
   ),
