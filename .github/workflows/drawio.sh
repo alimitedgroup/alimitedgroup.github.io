@@ -8,8 +8,7 @@ rm -f $OUTPUT_DIR/*.svg
 
 time docker pull rlespinasse/drawio-desktop-headless
 
-for INPUT_FILE in assets/drawio/*.drawio
-do
+for INPUT_FILE in assets/drawio/*.drawio; do
     # Extract tab names robustly using xmlstarlet (preferred)
     TAB_NAMES=($(xmlstarlet sel -t -v "//diagram/@name" "$INPUT_FILE"))
 
@@ -17,9 +16,9 @@ do
     PAGE_COUNT=${#TAB_NAMES[@]}
 
     # Export each page separately
-    for ((i=0; i<PAGE_COUNT; i++)); do
+    for ((i = 0; i < PAGE_COUNT; i++)); do
         TAB_NAME="${TAB_NAMES[i]}"
-        
+
         # Sanitize filename (remove spaces and special characters)
         SAFE_TAB_NAME=$(echo "$TAB_NAME" | tr ' ' '_' | tr -d '[:punct:]')
 
@@ -33,7 +32,7 @@ do
 
         inkscape "$OUTPUT_FILE" --pdf-poppler --export-plain-svg --export-type=svg 2>/dev/null
 
-        rm "$OUTPUT_FILE"
+        rm -f "$OUTPUT_FILE"
     done
 done
 
