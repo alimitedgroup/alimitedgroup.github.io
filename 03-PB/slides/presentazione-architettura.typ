@@ -112,22 +112,22 @@
   = Architettura Esagonale (1/2)
   #v(0.2em)
 
-  - Abbiamo scelto il pattern dell'Architettura Esagonale per isolare la business logic dalle componenti esterne come l'application layer e la persistence layer.
+  - Abbiamo scelto il pattern dell'Architettura Esagonale per isolare la business logic dalle componenti esterne.
   #v(0.1em)
   - La comunicazione tra moduli avviene tramite interfacce, iniettate nei costruttori, seguendo il principio della Dependency Injection.
   #v(0.1em)
-  - Questo approccio rende il sistema facilmente testabile: la business logic può essere verificata in modo indipendente, senza dipendere da infrastrutture esterne.
+  - Questo approccio rende il sistema facilmente testabile: la business logic può essere verificata in modo indipendente.
 ]
 
 #slide[
   = Architettura Esagonale (2/2)
   #v(0.2em)
 
-  - Le porte d'ingresso (Use Case) e le porte d'uscita (Port) definiscono i confini della business logic, rendendo l'architettura modulare e adattabile.
+  - Le porte d'ingresso e le porte d'uscita definiscono i confini della business logic.
   #v(0.1em)
   - Questa architettura logica ci permette di cambiare tecnologie senza stravolgere la business logic del servizio
   #v(0.1em)
-  - In un contesto a microservizi, l'architettura esagonale valorizza l'autonomia e il disaccoppiamento dei singoli servizi, facilitando l'evoluzione indipendente e la sostituzione di componenti tecnologiche all'interno di ciascun microservizio.
+  - In un contesto a microservizi, l'architettura esagonale aumenta il disaccoppiamento dei singoli servizi, facilitando l'evoluzione del sistema e la sostituzione di componenti tecnologiche.
 ]
 
 #slide[
