@@ -558,7 +558,10 @@ Future implementazioni potrebbero includere algoritmi più complessi, come quell
 
 == Microservizi sviluppati
 
-Saranno ora esposti i microservizi sviluppati.
+#figure(
+  image("../../assets/drawio/microservizi_Pagina1.svg"),
+  caption: [Microservizi inclusi nel Sistema],
+)
 
 Sebbene *Go*#super[G] non abbia il concetto di "classe", comunque è possibile realizzare *strutture* e *funzioni* invocabili solo da quelle specifiche strutture, potendo così imitare, nel senso largo del termine, il funzionamento delle classi in un linguaggio di programmazione ad oggetti.
 
