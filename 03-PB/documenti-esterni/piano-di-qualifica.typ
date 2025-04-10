@@ -9,6 +9,13 @@
   versione: ver,
   versioni: (
     (
+      vers: "1.5.0",
+      date: datetime(day: 2, month: 04, year: 2025),
+      autore: p.sara,
+      //verifica: p.matteo,
+      descr: "Continuazione aggiornamento cruscotto misurazioni.",
+    ),
+    (
       vers: "1.4.0",
       date: datetime(day: 1, month: 04, year: 2025),
       autore: p.sara,
@@ -2735,7 +2742,7 @@ Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato
 
 Dal grafico si può notare che i costi sostenuti durante il progetto sono crescenti.\
 Dopo lo _sprint 6_ l'incremento risulta evidente:come programmato il ritmo di lavoro è aumentato e le conoscenze si sono consolidate.
-Al termine del progetto il costo sostenuto è pari a 12470\$.\
+Al termine del progetto il costo sostenuto è pari a 12490\$.\
 
 I costi necessari per terminare il progetto, al contrario, risultano decrescenti.
 All'aggiudicazione il valore coincide con il budget, al termine dello _sprint 9_ il valore è pari a 0\$, quindi il progetto è stato completato.
@@ -2794,6 +2801,9 @@ Questo ha garantito l'assenza di errori in tutti i documenti.
 == MPC12: _Code Coverage_
 #metriche-graph(nome: "MPC12", desc: "Grafico per periodo di MPC12", width: 100%);
 
+La metrica _Code Coverage_ è stata monitorata durante il progetto una volta iniziata l'implementazione del _MVP_ (Minimun Viable Product#super[G]).\
+Nel periodo precedente la realizzazione del PoC non richiedeva l'esecuzione di test.
+ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura del codice superiore al 75%, soglia conconcordata con l'azienda #M31.
 
 // DESCRIZIONE: MPC12: _Code Coverage_
 
@@ -2803,6 +2813,9 @@ Questo ha garantito l'assenza di errori in tutti i documenti.
 == MPC13: _Test Success Rate_
 #metriche-graph(nome: "MPC13", desc: "Grafico per periodo di MPC13", width: 100%);
 
+A partire dallo _sprint_ 7, si osserva che il _TSR_ cresce rapidamente, fino a raggiungere il 100% nello _sprint_ 9.\
+Questo andamento evidenzia un percorso di maturazione tecnica e metodologica da parte del gruppo anche nell'attività di verifica.\
+L’introduzione graduale dei test, unitamente alla loro progressiva stabilizzazione, ha permesso di ottenere una _suite_ di _test_ affidabile, contribuendo in modo determinante al controllo della qualità del software.
 
 // DESCRIZIONE: MPC13: _Test Success Rate_
 
@@ -2813,9 +2826,10 @@ Questo ha garantito l'assenza di errori in tutti i documenti.
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
-Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza,
-dall'aggiudicazione del Capitolato#super[G] allo _sprint_#super[G] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
-_ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[G]_.
+Il grafico evidenzia l'attenzione posta da _ALimitedGroup_ sulla qualità del software e della documentazione prodotta.\
+Fino allo _sprint_ 3, il numero di metriche soddisfatte era inferiore alla soglia ottima, seppur accettabile.
+In seguito il miglioramento del _Way of Working#super[G]_ ha garantito un incremento, che ha raggiunto il 100% alla _milestone_ _RTB_.\
+Dallo _sprint_ 7 l'introduzione di nuove metriche ha portato ad un leggero calo, seguito da una pronta ripresa fino al 100% alla _milestone_ _PB_.
 #pagebreak()
 == MPC15: _Time Efficiency_
 
@@ -2830,7 +2844,7 @@ Al termine del progetto le ore produttive e quelle di orologio praticamente coin
 == MPD01: Requisiti obbligatori soddisfatti
 #metriche-graph(nome: "MPD01", desc: "Grafico per periodo di MPD01", width: 100%);
 Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test di accettazione ed è stato rilasciato con successo.
-È evidente come durante la milestone PB (Product Baseline#super[G]) si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato alli implementazione di un _MVP_ (Minimun Viable Product) di qualità.
+È evidente che dopo la milestone _RTB_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP_ (Minimun Viable Product) di qualità.
 
 // DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
 
@@ -2883,8 +2897,10 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 
 == MPD09: _Response Time_
 #metriche-graph(nome: "MPD09", desc: "Grafico per periodo di MPD09", width: 100%);
-
 // DESCRIZIONE: MPD09: _Response Time_
+È evidente che è stato implementato un _MVP_ (_Minimun Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno a 0.2 secondi.\
+Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come `GO` e `NATS`, che hanno permesso di ottimizzare le prestazioni del sistema.
+
 #pagebreak()
 
 == MPD10: _Code smells_
@@ -2902,6 +2918,8 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 
 // DESCRIZIONE: MPD12: _Cyclomatic Complexity_
 
+La complessità ciclomatica registrata nel _MVP_ (_Minimun Viable Product_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
+Inoltre, questa metrica indica che è stato raggiunto un buon livello di manutenibilità e testabilità.
 
 #pagebreak()
 

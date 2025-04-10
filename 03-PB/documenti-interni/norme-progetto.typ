@@ -1798,7 +1798,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
   formula: [
     $"Code Coverage" = ("Linee di codice testate" / "Linee di codice totali") * 100$
   ],
-  desc: [Percentuale di codice coperto da Test automatizzati. Si raccomanda un coverage minimo del 80%.],
+  desc: [Percentuale di codice coperto da Test automatizzati. Si raccomanda un coverage minimo del 75%.],
 )
 
 ==== _Test Success Rate_
