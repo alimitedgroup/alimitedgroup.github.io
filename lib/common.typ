@@ -38,11 +38,11 @@
 
 #let ruoli = (
   responsabile: (max-ore: 41, costo: 30, nome: "Responsabile"),
-  amministratore: (max-ore: 77, costo: 20, nome: "Amministratore"),
-  analista: (max-ore: 83, costo: 25, nome: "Analista"),
-  progettista: (max-ore: 132, costo: 25, nome: "Progettista"),
-  programmatore: (max-ore: 181, costo: 15, nome: "Programmatore"),
-  verificatore: (max-ore: 130, costo: 15, nome: "Verificatore"),
+  amministratore: (max-ore: 81, costo: 20, nome: "Amministratore"),
+  analista: (max-ore: 93, costo: 25, nome: "Analista"),
+  progettista: (max-ore: 127, costo: 25, nome: "Progettista"),
+  programmatore: (max-ore: 177, costo: 15, nome: "Programmatore"),
+  verificatore: (max-ore: 125, costo: 15, nome: "Verificatore"),
 )
 
 /// Lista delle repository su cui si possono trovare issue e pull request

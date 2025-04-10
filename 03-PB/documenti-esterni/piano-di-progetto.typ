@@ -513,13 +513,13 @@ Superata la *_Requirements and Technology Baseline#super[G] (RTB)_*, all'avvio d
       text(fill: white)[*Costo*],
     ),
 
-    text(fill: white)[*Responsabile*], [30€/h], [41h], [1.170€],
-    text(fill: white)[*Amministratore*], [20€/h], [77h], [1.540€],
-    text(fill: white)[*Analista*], [25€/h], [83h], [2.075€],
-    text(fill: white)[*Progettista*], [25€/h], [132h], [3.300€],
-    text(fill: white)[*Programmatore*], [15€/h], [181h], [2.715€],
-    text(fill: white)[*Verificatore*], [15€/h], [130h], [1.980€],
-    text(fill: white)[*Totale*], [-], [*644h*], [*12.780€*],
+    text(fill: white)[*Responsabile*], [30€/h], [41h], [1.230€],
+    text(fill: white)[*Amministratore*], [20€/h], [81h], [1.620€],
+    text(fill: white)[*Analista*], [25€/h], [93h], [2.325€],
+    text(fill: white)[*Progettista*], [25€/h], [127h], [3.175€],
+    text(fill: white)[*Programmatore*], [15€/h], [177h], [2.655€],
+    text(fill: white)[*Verificatore*], [15€/h], [125h], [1.875€],
+    text(fill: white)[*Totale*], [-], [*644h*], [*12.880€*],
   ),
   caption: [Riassunto dei costi ridistribuiti per la PB],
 )
@@ -1269,7 +1269,12 @@ I componenti di _ALimitedGroup_ ritengono siano possibili i seguenti rischi:
 
 Si prospetta l'utilizzo delle seguenti risorse:
 
-#impegni(7, posizioni-legenda: (1, 4, -2, 2, -2, -2), "Sprint 7 - Preventivo per componente", "Sprint 7 - Preventivo")
+#impegni(
+  7,
+  posizioni-legenda: (1, 4, -2, 2, -2, -4),
+  "Sprint 7 - Preventivo per componente",
+  "Sprint 7 - Preventivo",
+)
 
 #v(2em)
 ==== Consuntivo
@@ -1278,7 +1283,7 @@ Si prospetta l'utilizzo delle seguenti risorse:
 #impegni(
   7,
   preventivo: true,
-  posizioni-legenda: (1, 3, 1, 1, -1, -2),
+  posizioni-legenda: (1, 4, -2, 2, -2, -4),
   "Sprint 7 - Consuntivo per componente",
   "Sprint 7 - Consuntivo",
 )
@@ -1558,31 +1563,31 @@ In conclusione, il gruppo è riuscito con successo a portare a termine il lavoro
       ),
 
       [Loris Libralato], [8], [9], [8], [21], [29], [15], [90],
-      [Samuele Esposito], [5], [9], [5], [22], [31], [18], [90],
+      [Samuele Esposito], [5], [9], [10], [18], [30], [18], [90],
       [Sara Ferraro], [5], [14], [9], [21], [24], [17], [90],
-      [Lorenzo Stefani], [5], [7], [4], [22], [27], [22], [87],
-      [Marco Piccoli], [6], [13], [21], [5], [25], [20], [90],
+      [Lorenzo Stefani], [5], [12], [9], [18], [27], [18], [89],
+      [Marco Piccoli], [6], [13], [21], [10], [20], [20], [90],
       [Matteo Schievano], [5], [12], [24], [14], [20], [17], [92],
       [Emanuele Artusi], [7], [12], [10], [20], [23], [18], [90],
-      [*Totale*], [*41*], [*76*], [*81*], [*125*], [*179*], [*127*], [*629*],
+      [*Totale*], [*41*], [*81*], [*91*], [*122*], [*173*], [*123*], [*631*],
     ),
     caption: [Ore utilizzate da ogni componente per ciascun ruolo],
   )
 }
 
-Come si evidenzia dalla Tabella 40, ovvero le risorse rimanenti alla fine dell'ultimo _sprint_#super[G], il gruppo termina la realizzazione di quanto necessario per affrontare la _Product Baseline#super[G]_ con un saldo rimanente di *440€*, spendendo dunque un totale di *12.490€*, al sotto del saldo inizialmente a disposizione pari a *12.930€*.
+Come si evidenzia dalla Tabella 40, ovvero le risorse rimanenti alla fine dell'ultimo _sprint_#super[G], il gruppo termina la realizzazione di quanto necessario per affrontare la _Product Baseline#super[G]_ con un saldo rimanente di *315€*, spendendo dunque un totale di *12.615€*, al sotto del saldo inizialmente a disposizione pari a *12.930€*.
 
 Dalla Tabella 41 si evidenzia invece l'impegno concreto apportato al progetto da parte di tutti i componenti del gruppo, con un un numero di ore consumate totale inferiore rispetto a quanto inizialmente preventivato.
 
 Come analizzato nella @plt, tra _Requirements and Technology Baseline#super[G]_ e _Product Baseline#super[G]_ è stato necessario modificare il quantitativo di ore previsto a ciascun ruolo: il consumo percentuale di ciascun ruolo è esposto qui di seguito:
 
 #pie-chart(
-  (percentuale: 6.52, titolo: "Responsabile", legenda: 2),
-  (percentuale: 12.08, titolo: "Amministratore", legenda: 2),
-  (percentuale: 12.88, titolo: "Analista", legenda: 2),
-  (percentuale: 19.87, titolo: "Progettista", legenda: 2),
-  (percentuale: 28.46, titolo: "Programmatore", legenda: -2),
-  (percentuale: 20.19, titolo: "Verificatore", legenda: -2),
+  (percentuale: 6.50, titolo: "Responsabile", legenda: 2),
+  (percentuale: 12.84, titolo: "Amministratore", legenda: 2),
+  (percentuale: 14.42, titolo: "Analista", legenda: 2),
+  (percentuale: 19.33, titolo: "Progettista", legenda: 2),
+  (percentuale: 27.42, titolo: "Programmatore", legenda: -2),
+  (percentuale: 19.49, titolo: "Verificatore", legenda: -2),
   caption: [Percentuale utilizzo ore di ciascun ruolo sul totale],
   legend: false,
 )
