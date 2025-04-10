@@ -2768,7 +2768,7 @@ Tale problematica è stata presto risolta a partire dallo _sprint_#super[G] 2: i
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
-È tangibile che durante lo _sprint_ 1 il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolemente maggiori rispetto alle corrispondenti ore produttive.
+È tangibile che durante lo _sprint#super[G]_ 1 il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolemente maggiori rispetto alle corrispondenti ore produttive.
 Il grafico però segnale come successivamente la metrica _TEAC_ si sia assestata intorno alla durata pianificata, indicando una buona gestione del tempo e una stima più realistica delle tempistiche necessarie per completare il progetto.
 #pagebreak()
 == MPC09: _Requirements Stability Index_
@@ -2779,7 +2779,7 @@ Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[G]
 i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche.\
 Gli Analisti hanno, infatti, rilevato molti requisiti impliciti che necessitavano di essere esplicitati.
 Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica, che è migliorata successivamente anche grazie ad un lavoro crescente da parte degli Analisti.\
-Durante gli ultimi due _sprint_, in seguito al alcune minime modifiche apportate come consigliato dopo il colloquio del RTB (_Requirements Technology Baseline_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
+Durante gli ultimi due _sprint_#super[G], in seguito al alcune minime modifiche apportate come consigliato dopo il colloquio del RTB#super[G] (_Requirements Technology Baseline_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
 
 #pagebreak()
 == MPC10: Indice di _Gulpease_
@@ -2787,13 +2787,13 @@ Durante gli ultimi due _sprint_, in seguito al alcune minime modifiche apportate
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
 
 In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile.
-L'_indice di Gulpease_ evidenzia che il documento di Analisi dei Requisiti#super[G], il Piano di Progetto#super[G], il Glossario e il documento di Specifica Tecnica e il Manuale Utente risultano facilmente consultabili.
+L'_indice di Gulpease_ evidenzia che il documento di Analisi dei Requisiti#super[G], il Piano di Progetto#super[G], il Glossario e il documento di Specifica Tecnica#super[G] e il Manuale Utente#super[G] risultano facilmente consultabili.
 Il documento delle Norme di Progetto#super[G] rimane inferiore alla soglia di ottimalità, anche se il valore è accettabile e migliorato negli ultimi _sprint_#super[G], grazie al lavoro degli Amministratori che si sono occupati di migliorare la fruibilità del documento, che comunque ha natura interna quindi sarà consultato unicamente dai membri del gruppo _ALimitedGroup_.
 #pagebreak()
 == MPC11: Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
-Nei primi sprint si sono registrati fino a due errori ortografici, ma in seguito _ALimitedGroup_ ha prestato maggiore attenzione a questo aspetto. Per ridurre gli errori, sono stati adottati strumenti automatici per rilevare refusi e si è posta più cura nella revisione manuale dei documenti.\
+Nei primi sprint#super[G] si sono registrati fino a due errori ortografici, ma in seguito _ALimitedGroup_ ha prestato maggiore attenzione a questo aspetto. Per ridurre gli errori, sono stati adottati strumenti automatici per rilevare refusi e si è posta più cura nella revisione manuale dei documenti.\
 Questo ha garantito l'assenza di errori in tutti i documenti.
 #pagebreak()
 
@@ -2801,8 +2801,8 @@ Questo ha garantito l'assenza di errori in tutti i documenti.
 == MPC12: _Code Coverage_
 #metriche-graph(nome: "MPC12", desc: "Grafico per periodo di MPC12", width: 100%);
 
-La metrica _Code Coverage_ è stata monitorata durante il progetto una volta iniziata l'implementazione del _MVP_ (Minimun Viable Product#super[G]).\
-Nel periodo precedente la realizzazione del PoC non richiedeva l'esecuzione di test.
+La metrica _Code Coverage_ è stata monitorata durante il progetto una volta iniziata l'implementazione del _MVP#super[G]_ (Minimun Viable Product#super[G]).\
+Nel periodo precedente la realizzazione del PoC#super[G] non richiedeva l'esecuzione di test.#super[G]
 ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura del codice superiore al 75%, soglia conconcordata con l'azienda #M31.
 
 // DESCRIZIONE: MPC12: _Code Coverage_
@@ -2813,9 +2813,9 @@ ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura 
 == MPC13: _Test Success Rate_
 #metriche-graph(nome: "MPC13", desc: "Grafico per periodo di MPC13", width: 100%);
 
-A partire dallo _sprint_ 7, si osserva che il _TSR_ cresce rapidamente, fino a raggiungere il 100% nello _sprint_ 9.\
-Questo andamento evidenzia un percorso di maturazione tecnica e metodologica da parte del gruppo anche nell'attività di verifica.\
-L’introduzione graduale dei test, unitamente alla loro progressiva stabilizzazione, ha permesso di ottenere una _suite_ di _test_ affidabile, contribuendo in modo determinante al controllo della qualità del software.
+A partire dallo _sprint#super[G]_ 7, si osserva che il _TSR_ cresce rapidamente, fino a raggiungere il 100% nello _sprint#super[G]_ 9.\
+Questo andamento evidenzia un percorso di maturazione tecnica e metodologica da parte del gruppo anche nell'attività di verifica#super[G].\
+L’introduzione graduale dei test#super[G], unitamente alla loro progressiva stabilizzazione, ha permesso di ottenere una _suite_ di _test#super[G]_ affidabile, contribuendo in modo determinante al controllo della qualità del software.
 
 // DESCRIZIONE: MPC13: _Test Success Rate_
 
@@ -2827,9 +2827,9 @@ L’introduzione graduale dei test, unitamente alla loro progressiva stabilizzaz
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
 Il grafico evidenzia l'attenzione posta da _ALimitedGroup_ sulla qualità del software e della documentazione prodotta.\
-Fino allo _sprint_ 3, il numero di metriche soddisfatte era inferiore alla soglia ottima, seppur accettabile.
-In seguito il miglioramento del _Way of Working#super[G]_ ha garantito un incremento, che ha raggiunto il 100% alla _milestone_ _RTB_.\
-Dallo _sprint_ 7 l'introduzione di nuove metriche ha portato ad un leggero calo, seguito da una pronta ripresa fino al 100% alla _milestone_ _PB_.
+Fino allo _sprint#super[G]_ 3, il numero di metriche soddisfatte era inferiore alla soglia ottima, seppur accettabile.
+In seguito il miglioramento del _Way of Working#super[G]_ ha garantito un incremento, che ha raggiunto il 100% alla _milestone#super[G]_ _RTB#super[G]_.\
+Dallo _sprint#super[G]_ 7 l'introduzione di nuove metriche ha portato ad un leggero calo, seguito da una pronta ripresa fino al 100% alla _milestone#super[G]_ _PB#super[G]_.
 #pagebreak()
 == MPC15: _Time Efficiency_
 
@@ -2838,13 +2838,13 @@ Dallo _sprint_ 7 l'introduzione di nuove metriche ha portato ad un leggero calo,
 Dal grafico si osserva un progressivo miglioramento dell'efficienza temporale dei componenti di ALimitedGroup.
 Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all'inesperienza e all'adattamento alle richieste del progetto.
 Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata.
-Al termine del progetto le ore produttive e quelle di orologio praticamente coincidono, indicando un'ottima efficienza temporale.
+Al termine del progetto le ore produttive e quelle di orologio praticamente coincidono, indicando un'ottima efficienza#super[G] temporale.
 #pagebreak()
 
 == MPD01: Requisiti obbligatori soddisfatti
 #metriche-graph(nome: "MPD01", desc: "Grafico per periodo di MPD01", width: 100%);
-Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test di accettazione ed è stato rilasciato con successo.
-È evidente che dopo la milestone _RTB_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP_ (Minimun Viable Product) di qualità.
+Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test#super[G] di accettazione ed è stato rilasciato con successo.
+È evidente che dopo la milestone#super[G] _RTB#super[G]_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP#super[G]_ (Minimun Viable Product) di qualità.
 
 // DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
 
@@ -2898,7 +2898,7 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 == MPD09: _Response Time_
 #metriche-graph(nome: "MPD09", desc: "Grafico per periodo di MPD09", width: 100%);
 // DESCRIZIONE: MPD09: _Response Time_
-È evidente che è stato implementato un _MVP_ (_Minimun Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno a 0.2 secondi.\
+È evidente che è stato implementato un _MVP#super[G]_ (_Minimun Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno a 0.2 secondi.\
 Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come `GO` e `NATS`, che hanno permesso di ottimizzare le prestazioni del sistema.
 
 #pagebreak()
@@ -2918,7 +2918,7 @@ Questo è sicuramente attribuito all'adozione di tecnologie moderne e performant
 
 // DESCRIZIONE: MPD12: _Cyclomatic Complexity_
 
-La complessità ciclomatica registrata nel _MVP_ (_Minimun Viable Product_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
+La complessità ciclomatica registrata nel _MVP#super[G]_ (_Minimun Viable Product_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
 Inoltre, questa metrica indica che è stato raggiunto un buon livello di manutenibilità e testabilità.
 
 #pagebreak()
