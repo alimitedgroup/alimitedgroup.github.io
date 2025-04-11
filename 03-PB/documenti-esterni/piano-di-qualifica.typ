@@ -1,7 +1,7 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.4.0]
+#let ver = [1.5.0]
 
 #show: body => importantdocs(
   data: datetime(day: 18, month: 02, year: 2025),
