@@ -2864,7 +2864,7 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 #pagebreak()
 
 
-== MPD04: _Branch Coverage_
+/*== MPD04: _Branch Coverage_
 #metriche-graph(nome: "MPD04", desc: "Grafico per periodo di MPD04", width: 100%);
 
 
@@ -2893,7 +2893,7 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 == MPD08: _Error rate_
 
 // DESCRIZIONE: MPD08: _Error rate_
-#pagebreak()
+#pagebreak()*/
 
 == MPD09: _Response Time_
 #metriche-graph(nome: "MPD09", desc: "Grafico per periodo di MPD09", width: 100%);
