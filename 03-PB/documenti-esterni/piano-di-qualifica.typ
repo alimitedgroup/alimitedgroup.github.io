@@ -2883,7 +2883,7 @@ Inoltre, questa metrica indica che è stato raggiunto un buon livello di manuten
 
 == MPD07 e MPD08: _Time on task_ e _Error Rate_
 Non è stato possibile monitorare l'usabilità del prodotto in quanto al momento non è disponibile un _client_ per l’interazione con il sistema.\
-Tale funzionalità non era tra i requisiti obbligatori del progetto; tuttavia, in ottica di miglioramento futuro, è prevista la sua implementazione, che permetterà anche di eseguire i _test#super[G]_ di usabilità.
+Tale funzionalità#super[G] non era tra i requisiti obbligatori del progetto; tuttavia, in ottica di miglioramento futuro, è prevista la sua implementazione, che permetterà anche di eseguire i _test#super[G]_ di usabilità.
 #pagebreak()
 
 
