@@ -2572,7 +2572,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
       desc: [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale],
       va: [Eseguendo il file `login.sh`, che eseguirà la richiesta di un token per il ruolo di admin globale, questo restituisce una risposta JSON con valore `"role": "global_admin"`, segno che il token è stato ricevuto e il Sistema lo riconosce come valido.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare ordini],
@@ -2586,13 +2586,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"reservations": "campo variabile ad ogni esecuzione"`
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di completare ordini],
       va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine#super[G] di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la prima risposta JSON, contenente l'informazione `"order_id": "campo variabile ad ogni esecuzione"`],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere merci al Sistema],
@@ -2604,7 +2604,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di modificare informazioni delle merci del Sistema],
@@ -2616,7 +2616,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema],
@@ -2633,7 +2633,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {"1": 6}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
@@ -2641,7 +2641,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         Eseguendo lo script senza `grep` sarà possibile osservare che, nella voce `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1, a conferma del trasferimento#super[G] riuscito.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti],
@@ -2653,13 +2653,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"gоods": {"hat-1": 5}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento],
       va: [Eseguire lo script `create_notification_query.sh`: lo script procederà a creare un prodotto e aggiungerne 6 unità, quindi procederà alla creazione della soglia di allerta, fissata a 100 unità. Lo script metterà si metterà dunque in ascolto nel canale delle notifiche: verificare che questo si inizi a popolare. Attenzione: per questo test#super[G] è necessario avere nats#super[G] installato nel proprio sistema e correttamente configurato tra i percorsi accessibili dalla linea di comando.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce],
@@ -2670,7 +2670,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"threshold": 100`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere stock#super[G] di merce],
@@ -2682,13 +2682,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {"1": 6}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
       va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni sull'accesso a Grafana#super[G] e sull'aggiunta di servizi alla _dashboard_#super[G] consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]].],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema],
@@ -2700,7 +2700,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - Notifications possiede 6 richieste totali.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto gestisca adeguatamente i conflitti tra ordini],
@@ -2711,13 +2711,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         Il risultato potrebbe leggermente variare nell'ordine che viene completato, ma solo uno risulterà completato.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto funzioni correttamente con più istanze dello stesso microservizio],
       va: [Il test#super[G] viene effettuato manualmente: aggiugere un'istanza di Order/Transfer (per maggiori informazioni consultare il #link("https://alimitedgroup.github.io/docs/installazione/preparazione-del-sistema/02-configurare-ms/")[Manuale Utente#super[G]]) e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test#super[G] *T-14-A*.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
   ),
 )
