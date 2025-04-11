@@ -1863,7 +1863,7 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     L'indicatore è utile per monitorare il grado di soddisfacimento dei requisiti aggiuntivi del progetto.],
 )
 
-== Affidabilità
+/*== Affidabilità
 === _Branch Coverage_
 #metric(
   cod: [MPD04],
@@ -1889,6 +1889,32 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     $"Failure Density" = ("Numero di difetti rilevati" / "KLOC")$
   ],
   desc: [Numero di failure per 1000 linee di codice (*KLOC*, _*K*\ilo *L*\ines *O*\f *C*\ode_). Un valore superiore a 0.5 indica possibili problemi di affidabilità.],
+)*/
+
+== Efficienza
+=== _Response Time_
+#metric(
+  cod: [MPD04],
+  formula: [
+    $"Response Time" = "Tempo medio di risposta"$
+  ],
+  desc: [Tempo medio impiegato per rispondere a una richiesta. Indica l'efficienza del prodotto. Un tempo di risposta inferiore a 2 secondi è considerato accettabile, mentre un tempo inferiore a 1 secondo è considerato ottimo.],
+)
+
+== Manutenibilità
+=== _Cyclomatic Complexity_
+
+#metric(
+  cod: [MPD05],
+  formula: [
+    $"Cyclomatic Complexity" = E - N + P$
+
+  ],
+  desc: [
+    - E = numero di archi nel grafo di controllo
+    - N = numero di nodi nel grafo di controllo
+    - P = numero di componenti connesse da ogni arco\
+    Misura la complessità del codice contando i percorsi linearmente indipendenti. Un valore superiore a 10 indica codice complesso che potrebbe richiedere refactoring.],
 )
 
 == Usabilità
@@ -1908,49 +1934,4 @@ necessarie per garantire una comprensione uniforme dei termini tecnici e dei con
     $"Error Rate" = ("Errori totali" / "Azioni totali") * 100$
   ],
   desc: [Percentuale di errori commessi durante l'utilizzo del prodotto. Dovrebbe essere inferiore al 5%.],
-)
-
-== Efficienza
-=== _Response Time_
-#metric(
-  cod: [MPD09],
-  formula: [
-    $"Response Time" = "Tempo medio di risposta"$
-  ],
-  desc: [Tempo medio impiegato per rispondere a una richiesta. Indica l'efficienza del prodotto. Un tempo di risposta inferiore a 2 secondi è considerato accettabile, mentre un tempo inferiore a 1 secondo è considerato ottimo.],
-)
-
-== Manutenibilità
-=== _Code Smells_
-#metric(
-  cod: [MPD10],
-  formula: [
-    $"Code Smells" = ("Numero di code smells" / "KLOC")$
-  ],
-  // Definizione di code smells: I code smells sono indicatori di potenziali problemi nel codice sorgente che possono influire negativamente sulla manutenibilità, leggibilità e qualità complessiva del _software_. Esempi comuni includono codice duplicato, metodi troppo lunghi, eccessiva complessità ciclomatica e nomi di variabili poco chiari.
-  desc: [Numero di code smells per 1000 linee di codice. Un valore superiore a 10 indica possibili problemi di manutenibilità.],
-)
-
-=== _Coefficient of Coupling_ (CoC)
-#metric(
-  cod: [MPD11],
-  formula: [
-    $"Coefficient of Coupling" = ("Numero di dipendenze" / "Numero di componenti")$
-  ],
-  desc: [Numero medio di dipendenze tra le componenti del sistema. Un valore superiore a 0.4 indica un accoppiamento eccessivo tra le componenti.],
-)
-
-=== _Cyclomatic Complexity_
-
-#metric(
-  cod: [MPD12],
-  formula: [
-    $"Cyclomatic Complexity" = E - N + P$
-
-  ],
-  desc: [
-    - E = numero di archi nel grafo di controllo
-    - N = numero di nodi nel grafo di controllo
-    - P = numero di componenti connesse da ogni arco\
-    Misura la complessità del codice contando i percorsi linearmente indipendenti. Un valore superiore a 10 indica codice complesso che potrebbe richiedere refactoring.],
 )
