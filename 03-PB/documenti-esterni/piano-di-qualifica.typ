@@ -2742,7 +2742,7 @@ Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato
 
 Dal grafico si può notare che i costi sostenuti durante il progetto sono crescenti.\
 Dopo lo _sprint 6_ l'incremento risulta evidente:come programmato il ritmo di lavoro è aumentato e le conoscenze si sono consolidate.
-Al termine del progetto il costo sostenuto è pari a 12490\$.\
+Al termine del progetto il costo sostenuto è pari a 12645\$.\
 
 I costi necessari per terminare il progetto, al contrario, risultano decrescenti.
 All'aggiudicazione il valore coincide con il budget, al termine dello _sprint 9_ il valore è pari a 0\$, quindi il progetto è stato completato.
