@@ -2778,7 +2778,7 @@ dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopr
 
 === Product Baseline (PB)
 
-In merito alla spesa del busget, si denota che negli _sprint_ dal 7 al 9, _ALimitedGroup_ ha gestito con più attenzione il budget, concentrandone la spesa in questi ultimi _sprint_ informazione fornita dalla discesa di *MPC04*.
+In merito alla spesa del busget, si denota che negli _sprint#super[G]_ dal 7 al 9, _ALimitedGroup_ ha gestito con più attenzione il budget, concentrandone la spesa in questi ultimi _sprint#super[G]_ informazione fornita dalla discesa di *MPC04*.
 Da *MPC05* si denota invece che i ritardi sono stati piutttosto contenuti e il gruppo ha realizzato quasi sempre quanto preventivato.
 
 #pagebreak()
@@ -2867,7 +2867,7 @@ Questo ha garantito l'assenza di errori in tutti i documenti.
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
@@ -2885,7 +2885,7 @@ ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura 
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
@@ -2911,7 +2911,7 @@ _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correg
 === Product Baseline (PB)
 
 Dallo _sprint#super[G]_ 7 l'introduzione di nuove metriche ha portato ad un calo del valore della metrica *MPC14*, valore che è tuttavia rimasto al di sopra della soglia di accettabilità.
-Tale decremento è tuttavia stato velocemente risolto negli _sprint_ successivim raggiungendo il valore massimo al termine dello _sprint_ 9.
+Tale decremento è tuttavia stato velocemente risolto negli _sprint#super[G]_ successivim raggiungendo il valore massimo al termine dello _sprint#super[G]_ 9.
 
 
 #pagebreak()
@@ -2928,7 +2928,7 @@ Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità
 
 === Product Baseline (PB)
 
-L'efficienza temporale è progressivamente cresciuta durante gli _sprint_ della PB (_Product Baseline_): questo è dovuto al fatto che, specie per le tecnologie impiegate nella realizzazione del _Minimum Viable Prdouct_, il gruppo ha cercato di allenarsi quanto più possibile.
+L'efficienza temporale è progressivamente cresciuta durante gli _sprint#super[G]_ della PB#super[G] (_Product Baseline#super[G]_): questo è dovuto al fatto che, specie per le tecnologie impiegate nella realizzazione del _Minimum Viable Prdouct_, il gruppo ha cercato di allenarsi quanto più possibile.
 
 I contrattempi e alcune novità non sono tuttavia venute a mancare, motivo per cui questa misurazione non ha raggiunto il valore ottimo.
 
@@ -2939,7 +2939,7 @@ I contrattempi e alcune novità non sono tuttavia venute a mancare, motivo per c
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
@@ -2955,11 +2955,11 @@ Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligato
 #metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02 e MPD03", width: 100%);
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
-Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso di soddisfare solo i requisiti obbligatori: per questo motivo, il grafico è rimasto al valore minimo anche durante la _Product Baseline (PB)_
+Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso di soddisfare solo i requisiti obbligatori: per questo motivo, il grafico è rimasto al valore minimo anche durante la _Product Baseline#super[G] (PB)_
 
 
 // DESCRIZIONE: MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
@@ -2972,12 +2972,12 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
 È evidente che è stato implementato un _MVP#super[G]_ (_Minimun Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno a 0.2 secondi.\
-Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come *Go* e *NATS*, che hanno permesso di ottimizzare le prestazioni del sistema.
+Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come *Go#super[G]* e *NATS*#super[G], che hanno permesso di ottimizzare le prestazioni del sistema.
 
 #pagebreak()
 
@@ -2986,7 +2986,7 @@ Questo è sicuramente attribuito all'adozione di tecnologie moderne e performant
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
@@ -2999,7 +2999,7 @@ Inoltre, questa metrica indica che è stato raggiunto un buon livello di manuten
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline_.
+Misurazione non disponibile in questa _baseline#super[G]_. 
 
 === Product Baseline (PB)
 
