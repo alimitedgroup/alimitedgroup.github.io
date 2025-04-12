@@ -2867,7 +2867,7 @@ Questo ha garantito l'assenza di errori in tutti i documenti.
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
@@ -2885,7 +2885,7 @@ ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura 
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
@@ -2939,7 +2939,7 @@ I contrattempi e alcune novità non sono tuttavia venute a mancare, motivo per c
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
@@ -2955,7 +2955,7 @@ Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligato
 #metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02 e MPD03", width: 100%);
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
@@ -2972,7 +2972,7 @@ Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso 
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
@@ -2986,7 +2986,7 @@ Questo è sicuramente attribuito all'adozione di tecnologie moderne e performant
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
@@ -2999,7 +2999,7 @@ Inoltre, questa metrica indica che è stato raggiunto un buon livello di manuten
 
 === Requirements and Technology Baseline (RTB)
 
-Misurazione non disponibile in questa _baseline#super[G]_. 
+Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
