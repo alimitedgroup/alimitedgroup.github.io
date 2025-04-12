@@ -957,7 +957,7 @@ Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggi
 
 == MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
-#metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
+#metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01 e MPC02", width: 100%);
 
 Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
 Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].
@@ -966,7 +966,7 @@ Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più 
 #pagebreak()
 == MPC03 e MPC07: _Actual Cost_ e _Estimate To Complete_
 
-#metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
+#metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC03 e MPC07", width: 100%);
 
 Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline#super[G] (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
 raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline#super[G] (PB)_.
