@@ -2825,7 +2825,7 @@ che è migliorata tra gli _sprint_#super[G] 4, 5 e 6, periodo a cui effettivamen
 
 === Product Baseline (PB)
 
-Durante gli ultimi due _sprint_#super[G], in seguito ad alcune modifiche apportate come consigliato dopo il colloquio per la RTB#super[G] (_Requirements and Technology Baseline_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
+Durante gli ultimi due _sprint_#super[G], in seguito ad alcune modifiche apportate come consigliato dopo il colloquio per la RTB#super[G] (_Requirements and Technology Baseline#super[G]_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
 
 #pagebreak()
 == MPC10: Indice di _Gulpease_
@@ -2944,7 +2944,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 === Product Baseline (PB)
 
 Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test#super[G] di accettazione ed è stato rilasciato con successo.
-È evidente che dopo la _baseline_#super[G] _RTB#super[G]_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP#super[G]_ (Minimum Viable Product) di qualità.
+È evidente che dopo la _baseline_#super[G] _RTB#super[G]_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP#super[G]_ (Minimum Viable Product#super[G]) di qualità.
 
 // DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
 
@@ -2976,7 +2976,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
-È evidente che è stato implementato un _MVP#super[G]_ (_Minimum Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno agli 0.2 secondi.\
+È evidente che è stato implementato un _MVP#super[G]_ (_Minimum Viable Product#super[G]_) molto efficiente e reattivo, con tempi di risposta costantemente intorno agli 0.2 secondi.\
 Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come *Go#super[G]* e *NATS*#super[G], che hanno permesso di ottimizzare le prestazioni del sistema.
 
 #pagebreak()
@@ -2990,7 +2990,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
-La complessità ciclomatica registrata nel _MVP#super[G]_ (_Minimum Viable Product_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
+La complessità ciclomatica registrata nel _MVP#super[G]_ (_Minimum Viable Product#super[G]_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
 Inoltre, questa metrica indica che è stato raggiunto un buon livello di manutenibilità e testabilità.
 
 #pagebreak()
