@@ -25,7 +25,7 @@
     [Redattori],
     grid(align: left, gutter: 8pt, ..redattori.map(persona)),
     [Distribuzione],
-    grid(align: left, gutter: 8pt, [_ALimitedGroup_], prof(p.tullio), prof(p.cardin)),
+    grid(align: left, gutter: 8pt, [_ALimitedGroup_]),
   )
 
   set enum(indent: 1em)

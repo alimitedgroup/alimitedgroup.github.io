@@ -78,9 +78,9 @@
     ),
   ),
   stato: [Approvato],
-  responsabile: ((p.samuele),),
-  verificatore: ((p.sara), (p.lorenzo)),
-  redattori: ((p.emanuele), (p.marco), (p.matteo)),
+  responsabile: ((p.matteo),),
+  verificatore: ((p.sara), (p.lorenzo), p.samuele, p.marco),
+  redattori: ((p.emanuele), (p.marco), (p.matteo), (p.sara)),
   versione: vers,
   body,
 )
