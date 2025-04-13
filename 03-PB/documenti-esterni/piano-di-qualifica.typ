@@ -1,13 +1,28 @@
 #import "../../lib/importantdocs.typ": *
 #import "../../lib/metriche.typ": *
 
-#let ver = [1.3.0]
+#let ver = [2.0.0]
 
 #show: body => importantdocs(
-  data: datetime(day: 18, month: 02, year: 2025),
+  data: datetime(day: 4, month: 04, year: 2025),
   tipo: [esterno],
   versione: ver,
   versioni: (
+    (
+      vers: "2.0.0",
+      date: datetime(day: 4, month: 04, year: 2025),
+      autore: p.sara,
+      verifica: p.lorenzo,
+      approvazione: p.matteo,
+      descr: "Continuazione aggiornamento cruscotto misurazioni.",
+    ),
+    (
+      vers: "1.4.0",
+      date: datetime(day: 1, month: 04, year: 2025),
+      autore: p.sara,
+      verifica: p.matteo,
+      descr: "Aggiornamento cruscotto misurazioni.",
+    ),
     (
       vers: "1.3.0",
       date: datetime(day: 31, month: 03, year: 2025),
@@ -108,9 +123,9 @@
       descr: "Prima redazione documento.",
     ),
   ),
-  stato: [Approvato per RTB],
-  responsabile: ((p.samuele),),
-  verificatore: ((p.matteo), (p.sara)),
+  stato: [Approvato],
+  responsabile: ((p.matteo),),
+  verificatore: ((p.matteo), (p.sara), p.lorenzo, p.loris),
   redattori: (
     (p.emanuele),
     (p.matteo),
@@ -465,13 +480,13 @@ Un prodotto _Software_ è considerato di alta qualità quando:
     //table row
     [*MPD10*], [Code Smells], [≤ 10], [≤ 5],
     [*MPD11*], [Coefficient of Coupling], [≤ 0.4], [≤ 0.2],
-    [*MPD12*], [Cyclomatic complexity], [≤ 20], [≤ 10],
+    [*MPD12*], [Cyclomatic Complexity], [≤ 20], [≤ 10],
   ),
   caption: [Soglie metriche manutenibilità del prodotto],
 )
 
 #pagebreak()
-= Metodi di testing <test>
+= Strategie di testing <test>
 Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[*Norme di Progetto#super[G] ver. 2.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
 
 - Tеst#super[G] di Unità;
@@ -2124,7 +2139,7 @@ La vеrifica dei test#super[G] è stata effettuata manualmente. Data la natura d
     [T-2-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito la tipologia di utente con la quale vuole essere riconosciuto], [R-2-F-Ob], [S],
     [T-3-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito lo Username personale], [R-3-F-De], [NI],
     [T-4-S], [Verificare che l'Utente, durante il processo di autenticazione, abbia inserito la Password personale], [R-4-F-De], [NI],
-    [T-5-S], [Verificare che l'Utente riceva un avviso/errore in seguito ad un tentativo di accesso fallito], [R-5-F-Ob], [NI],
+    [T-5-S], [Verificare che l'Utente riceva un avviso/errore in seguito ad un tentativo di accesso fallito], [R-5-F-Ob], [S],
     [T-6-S], [Verificare che un Cliente possa creare un ordine da confermare in seguito], [R-6-F-Ob], [S],
     [T-7-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca un nome da dare all'ordine da confermare], [R-7-F-Ob], [S],
     [T-8-S], [Verificare che un Cliente, durante la creazione di un ordine da confermare, inserisca il nominativo del destinatario dell'ordine da confermare], [R-8-F-Ob], [S],
@@ -2558,7 +2573,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
       desc: [Verificare che il prodotto dia la possibilità all'Utente di essere riconosciuto come Cliente, Admin Locale e Admin Globale],
       va: [Eseguendo il file `login.sh`, che eseguirà la richiesta di un token per il ruolo di admin globale, questo restituisce una risposta JSON con valore `"role": "global_admin"`, segno che il token è stato ricevuto e il Sistema lo riconosce come valido.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare ordini],
@@ -2572,13 +2587,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"reservations": "campo variabile ad ogni esecuzione"`
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di completare ordini],
       va: [Eseguendo il file `create_order.sh` con il comando `./create_order.sh | grep -A 90 "Create order"`, verrà creato un ordine#super[G] di 7 unità della merce con id `hat-1`, disponibili, per via di aggiunte precedenti effettuate sempre dallo script, in 6 unità in un magazzino e 2 in un altro. Nell'output stampato verificare la prima risposta JSON, contenente l'informazione `"order_id": "campo variabile ad ogni esecuzione"`],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere merci al Sistema],
@@ -2590,7 +2605,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di modificare informazioni delle merci del Sistema],
@@ -2602,7 +2617,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare merci dal Sistema],
@@ -2619,7 +2634,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {"1": 6}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di completare trasferimenti],
@@ -2627,7 +2642,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         Eseguendo lo script senza `grep` sarà possibile osservare che, nella voce `amounts` dell'ultima risposta JSON, sono presenti 7 unità nel magazzino con id 2 e 1 unità nel magazzino con id 1, a conferma del trasferimento#super[G] riuscito.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare trasferimenti],
@@ -2639,13 +2654,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"gоods": {"hat-1": 5}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare notifiche di rifornimento],
       va: [Eseguire lo script `create_notification_query.sh`: lo script procederà a creare un prodotto e aggiungerne 6 unità, quindi procederà alla creazione della soglia di allerta, fissata a 100 unità. Lo script metterà si metterà dunque in ascolto nel canale delle notifiche: verificare che questo si inizi a popolare. Attenzione: per questo test#super[G] è necessario avere nats#super[G] installato nel proprio sistema e correttamente configurato tra i percorsi accessibili dalla linea di comando.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di impostare una soglia minima di allerta per ogni merce],
@@ -2656,7 +2671,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"threshold": 100`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di aggiungere stock#super[G] di merce],
@@ -2668,13 +2683,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - `"amounts": {"1": 6}`.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare i microservizi del Sistema],
       va: [Aggiornare il file `compose.yml` per aggiungere un ulteriore microservizio e determinare se su Grafana#super[G] è possibile aggiungere le relative misurazioni. Per maggiori informazioni sull'accesso a Grafana#super[G] e sull'aggiunta di servizi alla _dashboard_#super[G] consultare il #link("https://alimitedgroup.github.io/docs/telemetria/config/")[Manuale Utente#super[G]].],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto dia la possibilità di visualizzare il numero di richieste al secondo dei microservizi del Sistema],
@@ -2686,7 +2701,7 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         - Notifications possiede 6 richieste totali.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto gestisca adeguatamente i conflitti tra ordini],
@@ -2697,13 +2712,13 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
         Il risultato potrebbe leggermente variare nell'ordine che viene completato, ma solo uno risulterà completato.
       ],
       vr: "",
-      st: "I",
+      st: "S",
     ),
     (
       desc: [Verificare che il prodotto funzioni correttamente con più istanze dello stesso microservizio],
       va: [Il test#super[G] viene effettuato manualmente: aggiugere un'istanza di Order/Transfer (per maggiori informazioni consultare il #link("https://alimitedgroup.github.io/docs/installazione/preparazione-del-sistema/02-configurare-ms/")[Manuale Utente#super[G]]) e verificare, eseguendo `./create_multiple_order.sh | grep -A 90 "Get orders and goods status"` che lo stato sia lo stesso riportato nel test#super[G] *T-14-A*.],
       vr: "",
-      st: "I",
+      st: "S",
     ),
   ),
 )
@@ -2711,62 +2726,113 @@ Per informazioni più precise riguardanti il funzionamento di Grafana#super[G] e
 #pagebreak()
 = Cruscotto di Valutazione <dashboard>
 
-Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato#super[G] sino alla _Requirements and Technology Baseline#super[G] (RTB)_. Le misurazioni non presenti saranno prese durante lo svolgimento delle attività per la _Product Baseline#super[G] (PB)_.
+Verranno ora esposte le misurazioni eseguite durante il periodo che va dall'aggiudicazione del capitolato#super[G] sino alla _Product Baseline#super[G] (PB)_.
 
 == MPC01 e MPC02: _Earned Value_ e _Planned Value_
 
-#metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01", width: 100%);
+#metriche-graph(nome: "MPC01", desc: "Grafico per periodo di MPC01 e MPC02", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
 
 Dall'aggiudicazione del Capitolato#super[G] si denota un progressivo aumento del lavoro pianificato da svolgere, raggiungendo il suo picco al sesto _sprint_#super[G].
-Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v2.0.0.pdf")[*Piano di Progetto#super[G] ver. 2.0.0*].
+Questo coincide con quanto redatto del #link("https://alimitedgroup.github.io/PP%20v1.0.0.pdf")[*Piano di Progetto#super[G] ver. 1.0.0*].
 Si nota inoltre che l'_Earned Value_ (EV) e la _Planned Value_ (PV) per lo più coincidono, segno che il lavoro svolto è in linea con le aspettative.
+
+=== Product Baseline (PB)
+
+Dallo _sprint 7_ il carico di lavoro pianificato è aumentato in modo accentuato, in quanto, dopo la fine della sessione d'esame il gruppo _ALimitedGroup_ ha potuto dedicarsi interamente al progetto incrementando notevolmente le ore di lavoro come riportato nel #link("https://alimitedgroup.github.io/PP%20v2.0.0.pdf")[*Piano di Progetto#super[G] ver. 2.0.0*].\
+È possibile notare che l'_Earned Value_ (EV) e il _Planned Value_ (PV) per lo più coincidono, quindi la programmazione del lavoro è stata efficace e conforme.
 
 #pagebreak()
 == MPC03 e MPC07: _Actual Cost_ e _Estimate To Complete_
 
-#metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC01 e MPC07", width: 100%);
+#metriche-graph(nome: "MPC03", desc: "Grafico per periodo di MPC03 e MPC07", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
 
 Dal grafico si può notare come il lavoro svolto durante la _Requirements and Technology Baseline#super[G] (RTB)_ sia progressivamente andato ad aumentare dall'assegnazione del capitolato#super[G],
 raggiungendo il suo picco durante il sesto _sprint_#super[G]. Come prevedibile, ciò ha portato tuttavia ad una diminuzione del costo necessario per terminare il progetto, che avverrà al raggiungimento della _Product Baseline#super[G] (PB)_.
+
+=== Product Baseline (PB)
+
+Dal grafico si può notare che i costi sostenuti durante il progetto sono crescenti.\
+Dopo lo _sprint 6_ l'incremento risulta evidente:come programmato il ritmo di lavoro è aumentato e le conoscenze si sono consolidate.
+Al termine del progetto il costo sostenuto è pari a 12.615€.\
+
+I costi necessari per terminare il progetto, al contrario, risultano decrescenti.
+
+L' _Actual Cost_ (AC) finale è inferiore rispetto all'_Estimate To Complete_ (ETC) iniziale, infatti per completare il progetto sono state necessarie meno risorse di quanto preventivato.
 #pagebreak()
+
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
 
 #metriche-graph(nome: "MPC04", desc: "Grafico per periodo di MPC04 e MPC05", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
 
 Dal grafico si denota che inizialmente _ALimitedGroup_ non ha gestito correttamente il _budget_: questo si ricava dal fatto che il _Cost Performance Index_ (CPI) sia minore di 1.
 La cattiva gestione è anche documentata dallo _Schedule Performance Index_ che, essendo inferiore ad 1, indica l'accumulo di ritardi: effettivamente il primo periodo è stato eccessivamente lungo
 e non ha portato al completamento di tutte le attività previste.
 La situazione è andata progressivamente a migliorare, come denotato dal _Cost Performance Index_ (CPI) (superiore a 1, indice di buon utilizzo del budget) e
 dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopra 1 indica lo svolgimento dei compiti come preventivato, ovvero in tempo).
+
+=== Product Baseline (PB)
+
+In merito alla spesa del busget, si denota che negli _sprint#super[G]_ dal 7 al 9, _ALimitedGroup_ ha gestito con più attenzione il budget, concentrandone la spesa in questi ultimi _sprint#super[G]_ informazione fornita dalla discesa di *MPC04*.
+Da *MPC05* si denota invece che i ritardi sono stati relativamente contenuti e il gruppo ha realizzato quasi sempre quanto preventivato.
+
 #pagebreak()
 == MPC06: _Estimate At Completion_
 
 #metriche-graph(nome: "MPC06", desc: "Grafico per periodo di MPC06", width: 100%);
 
+=== Requirements and Technology Baseline (RTB)
+
 Come prevedibile dalle misurazioni precedenti, una gestione non corretta delle risorse ha portato la previsione di spesa futura ben oltre il tetto massimo di spesa:
 tale problematica si è tuttavia andata presto a risolvere a partire dall _sprint_#super[G] 2, andando a migliorare o comunque rimanere entro i limiti massimi per il resto del
 periodo della _Requirements and Technology Baseline#super[G] (RTB)_.
+
+=== Product Baseline (PB)
+
+Come previsto dalle precedenti misurazioni, in seguito ad un iniziale risparmio di risorse, il gruppo ha iniziato a spendere tali risorse aumentando il consumo del budget seppur non andandolo mai a superare.
+
 #pagebreak()
 == MPC08: _Time Estimate At Completion_
 #metriche-graph(nome: "MPC08", desc: "Grafico per periodo di MPC08", width: 100%);
 
+=== Requirements and Technology Baseline (RTB)
+
 Dal grafico risulta che, causa cattiva pianificazione durante il primo _sprint_#super[G], il tempo stimato al completamento risultava superiore alla durata pianificata.
 Il grafico però segnala come le correzioni apportate per risolvere il problema hanno avuto esito positivo, portando il tempo stimato al completamento sotto la durata pianificata,
 arrivando poi a coincidere verso lo _sprint_#super[G] 6.
+
+=== Product Baseline (PB)
+
+È tangibile che durante lo _sprint#super[G]_ 1 il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolmente maggiori rispetto alle corrispondenti ore produttive.
+Il grafico però mostra come, proseguendo nel progetto, la metrica _TEAC_ si sia assestata intorno alla durata pianificata, indicando una buona gestione del tempo e una stima più realistica delle tempistiche necessarie per completare il progetto: questo coincide con le altre misurazioni.
 #pagebreak()
 == MPC09: _Requirements Stability Index_
 
 #metriche-graph(nome: "MPC09", desc: "Grafico per periodo di MPC09", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
 
 Il grafico registra un peggioramento della misurazione tra gli _sprint_#super[G] 2, 3 e 4: _ALimitedGroup_ ha concentrato in questo periodo la rilevazione di tutti
 i requisiti da descrivere e i suoi membri sono concordi nel sottolineare che le stime effettuate inizialmente sono state troppo ottimistiche.
 Gli Analisti hanno infatti rilevato molti requisiti impliciti che tuttavia era necessario rendere espliciti.
 Inoltre, ulteriori requisiti sono stati rilevati in seguito al colloquio svolto con il #profBreve(p.cardin): le conseguenti modifiche hanno portato ad un ulteriore peggioramento della metrica,
 che è migliorata tra gli _sprint_#super[G] 4, 5 e 6, periodo a cui effettivamente corrisponde un lavoro crescente da parte degli Analisti.
+
+=== Product Baseline (PB)
+
+Durante gli ultimi due _sprint_#super[G], in seguito ad alcune modifiche apportate come consigliato dopo il colloquio per la RTB#super[G] (_Requirements and Technology Baseline#super[G]_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
+
 #pagebreak()
 == MPC10: Indice di _Gulpease_
 
 #metriche-graph(nome: "MPC10", desc: "Grafico per periodo di MPC10", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
 
 In generale _ALimitedGroup_ ha cercato di fare attenzione alla redazione dei Documenti: lo scopo era quello di avere documentazione sempre facilmente fruibile.
 Seppur si può dire che questo è il caso dell'Analisi dei Requisiti#super[G] e del Piano di Progetto#super[G], specialmente il documento delle Norme di Progetto#super[G] rimane distante dalla soglia di ottimalità.
@@ -2775,32 +2841,173 @@ a scopo regolamentativo del documento.
 
 Seppur attestandosi sopra la soglia di accettabilità, _ALimitedGroup_ si impegna nel tempo a migliorare la leggibilità del documento in questione.
 
+=== Product Baseline (PB)
+
+In generale _ALimitedGroup_ ha cercato di prestare maggiore attenzione alla redazione dei Documenti: l'_indice di Gulpease_ evidenzia che il documento di Analisi dei Requisiti#super[G], il Piano di Progetto#super[G], il Glossario e il documento di Specifica Tecnica#super[G] e il Manuale Utente#super[G] risultano facilmente consultabili.
+Il documento delle Norme di Progetto#super[G] rimane inferiore alla soglia di ottimalità, anche se il valore è accettabile e migliorato negli ultimi _sprint_#super[G], grazie al lavoro degli Amministratori che si sono occupati di migliorare la fruibilità del documento.
 #pagebreak()
+
 == MPC11: Correttezza ortografica
 
 #metriche-graph(nome: "MPC11", desc: "Grafico per periodo di MPC11", width: 100%);
 
+=== Requirements and Technology Baseline (RTB)
+
 Il grafico segnala un'attenzione inizialmente scarsa per la correttezza ortografica dei documenti: _ALimitedGroup_ si è tuttavia resa conto del problema
 di importanza critica e vi ha posto rimedio, correggendo tale criticità tra gli _sprint_#super[G] 4 e 6.
+
+=== Product Baseline (PB)
+
+Nei primi sprint#super[G] si sono registrati fino a due errori ortografici: _ALimitedGroup_ ha prestato maggiore attenzione a questo aspetto e, per ridurre gli errori, sono stati adottati strumenti automatici per rilevare refusi e si è posta più cura nella revisione manuale dei documenti.\
+Questo ha garantito l'assenza di errori in tutti i documenti.
 #pagebreak()
+
+== MPC12: _Code Coverage_
+#metriche-graph(nome: "MPC12", desc: "Grafico per periodo di MPC12", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+La metrica _Code Coverage_ è stata monitorata durante il progetto una volta iniziata l'implementazione del _MVP#super[G]_ (Minimum Viable Product#super[G]).\
+Nel periodo precedente la realizzazione del PoC#super[G] non richiedeva l'esecuzione di test.#super[G]
+ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura del codice leggermente superiore al 75%, soglia concordata con l'azienda #M31.
+
+// DESCRIZIONE: MPC12: _Code Coverage_
+
+
+#pagebreak()
+
+== MPC13: _Test Success Rate_
+#metriche-graph(nome: "MPC13", desc: "Grafico per periodo di MPC13", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+A partire dallo _sprint#super[G]_ 7, si osserva che il _TSR_ cresce rapidamente, fino a raggiungere il 100% nello _sprint#super[G]_ 9.\
+Questo andamento evidenzia un percorso di maturazione tecnica e metodologica da parte del gruppo anche nell'attività di verifica#super[G].\
+L’introduzione graduale dei test#super[G], unitamente alla loro progressiva stabilizzazione, ha permesso di ottenere un insieme di _test#super[G]_ affidabile, contribuendo in modo determinante al controllo della qualità del software.
+
+// DESCRIZIONE: MPC13: _Test Success Rate_
+
+
+#pagebreak()
+
 == MPC14: _Quality metrics satisfied_
 
 #metriche-graph(nome: "MPC14", desc: "Grafico per periodo di MPC14", width: 100%);
 
+=== Requirements and Technology Baseline (RTB)
+
 Dal grafico si denota chiaramente l'attenzione posta da _ALimitedGroup_ per il soddisfacimento delle metriche di qualità: molto probabilmente a causa della poca esperienza,
 dall'aggiudicazione del Capitolato#super[G] allo _sprint_#super[G] 3 le metriche soddisfatte sono state superiori al valore accettabile, ma non il massimo.
 _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correggere gli errori rilevati migliorando il proprio _Way of Working#super[G]_.
+
+=== Product Baseline (PB)
+
+Dallo _sprint#super[G]_ 7 l'introduzione di nuove metriche ha portato ad un calo del valore della metrica *MPC14*, valore che è tuttavia rimasto al di sopra della soglia di accettabilità.
+Tale decremento è tuttavia stato velocemente risolto negli _sprint#super[G]_ successivi raggiungendo il valore massimo al termine dello _sprint#super[G]_ 9.
+
+
 #pagebreak()
+
 == MPC15: _Time Efficiency_
 
 #metriche-graph(nome: "MPC15", desc: "Grafico per periodo di MPC15", width: 100%);
 
-Dal grafico si osserva un progressivo miglioramento dell'efficienza temporale dei componenti di ALimitedGroup.
+=== Requirements and Technology Baseline (RTB)
+
+Dal grafico si osserva un progressivo miglioramento dell'efficienza temporale dei componenti di _ALimitedGroup_.
 Inizialmente, la metrica si attestava su valori inferiori alla soglia accettabile, riflettendo le difficoltà iniziali legate all'inesperienza e all'adattamento alle richieste del progetto.
 Tuttavia, con il passare del tempo, il gruppo ha acquisito maggiore familiarità con gli strumenti e le pratiche necessarie, portando a un netto miglioramento della metrica analizzata. Sebbene vi sia ancora margine per ottimizzare ulteriormente la gestione del tempo, i risultati ottenuti finora dimostrano una crescente efficienza#super[G] e una riduzione del tempo necessario per completare le attività.
 
+=== Product Baseline (PB)
+
+L'efficienza temporale è progressivamente cresciuta durante gli _sprint#super[G]_ della PB#super[G] (_Product Baseline#super[G]_): questo è dovuto al fatto che, specie per le tecnologie impiegate nella realizzazione del _Minimum Viable Prdouct_, il gruppo ha cercato di allenarsi quanto più possibile.
+
+I contrattempi e alcune novità non sono tuttavia venute a mancare, motivo per cui questa misurazione non ha raggiunto il valore ottimo.
 
 #pagebreak()
+
+== MPD01: Requisiti obbligatori soddisfatti
+#metriche-graph(nome: "MPD01", desc: "Grafico per periodo di MPD01", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test#super[G] di accettazione ed è stato rilasciato con successo.
+È evidente che dopo la _baseline_#super[G] _RTB#super[G]_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP#super[G]_ (Minimum Viable Product#super[G]) di qualità.
+
+// DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
+
+#pagebreak()
+
+
+== MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
+#metriche-graph(nome: "MPD02", desc: "Grafico per periodo di MPD02 e MPD03", width: 100%);
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+Data la complessità del progetto e la tempistica limitata, il gruppo ha deciso di soddisfare solo i requisiti obbligatori: per questo motivo, il grafico è rimasto al valore minimo anche durante la _Product Baseline#super[G] (PB)_
+
+
+// DESCRIZIONE: MPD02 e MPD03: Requisiti desiderabili soddisfatti e Requisiti opzionali soddisfatti
+
+
+#pagebreak()
+
+== MPD04: _Response Time_
+#metriche-graph(nome: "MPD04", desc: "Grafico per periodo di MPD04", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+È evidente che è stato implementato un _MVP#super[G]_ (_Minimum Viable Product#super[G]_) molto efficiente e reattivo, con tempi di risposta costantemente intorno agli 0.2 secondi.\
+Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come *Go#super[G]* e *NATS*#super[G], che hanno permesso di ottimizzare le prestazioni del sistema.
+
+#pagebreak()
+
+== MPD05: _Cyclomatic Complexity_
+#metriche-graph(nome: "MPD05", desc: "Grafico per periodo di MPD05", width: 100%);
+
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+La complessità ciclomatica registrata nel _MVP#super[G]_ (_Minimum Viable Product#super[G]_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
+Inoltre, questa metrica indica che è stato raggiunto un buon livello di manutenibilità e testabilità.
+
+#pagebreak()
+
+== MPD07 e MPD08: _Time on task_ e _Error Rate_
+
+=== Requirements and Technology Baseline (RTB)
+
+Misurazione non disponibile in questa _baseline#super[G]_.
+
+=== Product Baseline (PB)
+
+Non è stato possibile monitorare l'usabilità del prodotto in quanto al momento non è disponibile un _client_ per l’interazione con il sistema.\
+Tale funzionalità#super[G] non rientrava tra i requisiti obbligatori del progetto e, dato il tempo rimanente non sufficiente alla sua implementazione, non è stata realizzata.
+#pagebreak()
+
+
 = Iniziative di automiglioramento <automiglioramento>
 == Introduzione
 Il miglioramento continuo rappresenta un obiettivo primario per garantire la qualità del progetto _Software_.
