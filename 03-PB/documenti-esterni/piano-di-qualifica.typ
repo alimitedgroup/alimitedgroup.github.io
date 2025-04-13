@@ -486,7 +486,7 @@ Un prodotto _Software_ è considerato di alta qualità quando:
 )
 
 #pagebreak()
-= Metodi di testing <test>
+= Strategie di testing <test>
 Come stabilito nelle #link("https://alimitedgroup.github.io/NP%20v2.0.0.pdf")[*Norme di Progetto#super[G] ver. 2.0.0*] (Sezioni 3.4.1.4.2 e 3.4.2.1.2), alla quale è disponibile anche la nomenclatura utilizzata, i test#super[G] effettuati saranno:
 
 - Tеst#super[G] di Unità;
@@ -2761,7 +2761,7 @@ Al termine del progetto il costo sostenuto è pari a 12.615€.\
 
 I costi necessari per terminare il progetto, al contrario, risultano decrescenti.
 
-L' _Actual Cost_ (AC) finale è inferiore rispetto all' _Estimate To Complete_ (ETC) iniziale, infatti per completare il progetto sono state necessarie meno risorse di quanto preventivato.
+L' _Actual Cost_ (AC) finale è inferiore rispetto all'_Estimate To Complete_ (ETC) iniziale, infatti per completare il progetto sono state necessarie meno risorse di quanto preventivato.
 #pagebreak()
 
 == MPC04 e MPC05: _Cost Performance Index_ e _Schedule Performance Index_
@@ -2779,7 +2779,7 @@ dallo _Schedule Performance Index_ (SPI) (che, attestandosi prevalentemente sopr
 === Product Baseline (PB)
 
 In merito alla spesa del busget, si denota che negli _sprint#super[G]_ dal 7 al 9, _ALimitedGroup_ ha gestito con più attenzione il budget, concentrandone la spesa in questi ultimi _sprint#super[G]_ informazione fornita dalla discesa di *MPC04*.
-Da *MPC05* si denota invece che i ritardi sono stati piutttosto contenuti e il gruppo ha realizzato quasi sempre quanto preventivato.
+Da *MPC05* si denota invece che i ritardi sono stati relativamente contenuti e il gruppo ha realizzato quasi sempre quanto preventivato.
 
 #pagebreak()
 == MPC06: _Estimate At Completion_
@@ -2808,7 +2808,7 @@ arrivando poi a coincidere verso lo _sprint_#super[G] 6.
 
 === Product Baseline (PB)
 
-È tangibile che durante lo _sprint#super[G]_ 1 il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolemente maggiori rispetto alle corrispondenti ore produttive.
+È tangibile che durante lo _sprint#super[G]_ 1 il tempo stimato per completare il progetto risultava superiore alla durata pianificata, in quanto le conoscenze del gruppo erano limitate e le ore di orologio erano notevolmente maggiori rispetto alle corrispondenti ore produttive.
 Il grafico però mostra come, proseguendo nel progetto, la metrica _TEAC_ si sia assestata intorno alla durata pianificata, indicando una buona gestione del tempo e una stima più realistica delle tempistiche necessarie per completare il progetto: questo coincide con le altre misurazioni.
 #pagebreak()
 == MPC09: _Requirements Stability Index_
@@ -2825,7 +2825,7 @@ che è migliorata tra gli _sprint_#super[G] 4, 5 e 6, periodo a cui effettivamen
 
 === Product Baseline (PB)
 
-Durante gli ultimi due _sprint_#super[G], in seguito al alcune minime modifiche apportate come consigliato dopo il colloquio per la RTB#super[G] (_Requirements Technology Baseline_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
+Durante gli ultimi due _sprint_#super[G], in seguito ad alcune modifiche apportate come consigliato dopo il colloquio per la RTB#super[G] (_Requirements and Technology Baseline_), i requisiti sono diventati definitivi, portando ad un miglioramento della metrica.
 
 #pagebreak()
 == MPC10: Indice di _Gulpease_
@@ -2871,9 +2871,9 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
-La metrica _Code Coverage_ è stata monitorata durante il progetto una volta iniziata l'implementazione del _MVP#super[G]_ (Minimun Viable Product#super[G]).\
+La metrica _Code Coverage_ è stata monitorata durante il progetto una volta iniziata l'implementazione del _MVP#super[G]_ (Minimum Viable Product#super[G]).\
 Nel periodo precedente la realizzazione del PoC#super[G] non richiedeva l'esecuzione di test.#super[G]
-ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura del codice leggermente superiore al 75%, soglia conconcordata con l'azienda #M31.
+ALimitedGroup è riuscito, al termine del progetto, ad assicurare una copertura del codice leggermente superiore al 75%, soglia concordata con l'azienda #M31.
 
 // DESCRIZIONE: MPC12: _Code Coverage_
 
@@ -2891,7 +2891,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 
 A partire dallo _sprint#super[G]_ 7, si osserva che il _TSR_ cresce rapidamente, fino a raggiungere il 100% nello _sprint#super[G]_ 9.\
 Questo andamento evidenzia un percorso di maturazione tecnica e metodologica da parte del gruppo anche nell'attività di verifica#super[G].\
-L’introduzione graduale dei test#super[G], unitamente alla loro progressiva stabilizzazione, ha permesso di ottenere una _suite_ di _test#super[G]_ affidabile, contribuendo in modo determinante al controllo della qualità del software.
+L’introduzione graduale dei test#super[G], unitamente alla loro progressiva stabilizzazione, ha permesso di ottenere un insieme di _test#super[G]_ affidabile, contribuendo in modo determinante al controllo della qualità del software.
 
 // DESCRIZIONE: MPC13: _Test Success Rate_
 
@@ -2911,7 +2911,7 @@ _ALimitedGroup_ ha però preso consapevolezza del problema e provveduto a correg
 === Product Baseline (PB)
 
 Dallo _sprint#super[G]_ 7 l'introduzione di nuove metriche ha portato ad un calo del valore della metrica *MPC14*, valore che è tuttavia rimasto al di sopra della soglia di accettabilità.
-Tale decremento è tuttavia stato velocemente risolto negli _sprint#super[G]_ successivim raggiungendo il valore massimo al termine dello _sprint#super[G]_ 9.
+Tale decremento è tuttavia stato velocemente risolto negli _sprint#super[G]_ successivi raggiungendo il valore massimo al termine dello _sprint#super[G]_ 9.
 
 
 #pagebreak()
@@ -2944,7 +2944,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 === Product Baseline (PB)
 
 Dal grafico si osserva che, al termine del progetto, tutti i requisiti obbligatori risultano soddisfatti: il prodotto ha quindi superato i test#super[G] di accettazione ed è stato rilasciato con successo.
-È evidente che dopo la milestone#super[G] _RTB#super[G]_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP#super[G]_ (Minimun Viable Product) di qualità.
+È evidente che dopo la _baseline_#super[G] _RTB#super[G]_ si sia registrato un significativo incremento nel numero di requisiti soddisfatti: le attività svolte in questo periodo hanno portato all'implementazione di un _MVP#super[G]_ (Minimum Viable Product) di qualità.
 
 // DESCRIZIONE: MPD01: Requisiti obbligatori soddisfatti
 
@@ -2976,7 +2976,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
-È evidente che è stato implementato un _MVP#super[G]_ (_Minimun Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno a 0.2 secondi.\
+È evidente che è stato implementato un _MVP#super[G]_ (_Minimum Viable Product_) molto efficiente e reattivo, con tempi di risposta costantemente intorno agli 0.2 secondi.\
 Questo è sicuramente attribuito all'adozione di tecnologie moderne e performanti, come *Go#super[G]* e *NATS*#super[G], che hanno permesso di ottimizzare le prestazioni del sistema.
 
 #pagebreak()
@@ -2990,7 +2990,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 
 === Product Baseline (PB)
 
-La complessità ciclomatica registrata nel _MVP#super[G]_ (_Minimun Viable Product_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
+La complessità ciclomatica registrata nel _MVP#super[G]_ (_Minimum Viable Product_) è bassa: il codice risulta estremamente leggibile e ben strutturato, infatti è stato adottato uno stile di programmazione modulare e pulito, con funzioni semplici e ben definite.\
 Inoltre, questa metrica indica che è stato raggiunto un buon livello di manutenibilità e testabilità.
 
 #pagebreak()
@@ -3004,7 +3004,7 @@ Misurazione non disponibile in questa _baseline#super[G]_.
 === Product Baseline (PB)
 
 Non è stato possibile monitorare l'usabilità del prodotto in quanto al momento non è disponibile un _client_ per l’interazione con il sistema.\
-Tale funzionalità#super[G] non era tra i requisiti obbligatori del progetto; tuttavia, in ottica di miglioramento futuro, è prevista la sua implementazione, che permetterà anche di eseguire i _test#super[G]_ di usabilità.
+Tale funzionalità#super[G] non rientrava tra i requisiti obbligatori del progetto e, dato il tempo rimanente non sufficiente alla sua implementazione, non è stata realizzata.
 #pagebreak()
 
 

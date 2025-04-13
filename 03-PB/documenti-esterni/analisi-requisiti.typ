@@ -3962,7 +3962,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.1 delle #li
     table.header(
       [#text(fill: white)[*Codice*]],
       [#text(fill: white)[*Descrizione*]],
-      [#text(fill: white)[*Fonti*]],
+      [#text(fill: white)[*Riferimenti*]],
     ),
 
     [R-1-F-Ob], [L'Utente deve poter autenticarsi presso il Sistema], [@UC1],
@@ -4498,6 +4498,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.1 delle #li
   ),
   caption: [Requisiti Funzionali],
 )
+
 == Requisiti di Qualità
 
 #figure(
@@ -4521,7 +4522,7 @@ Per la nomenclatura utilizzata si consiglia di leggere la Sez. 2.2.3.1 delle #li
     table.header(
       [#text(fill: white)[*Codice*]],
       [#text(fill: white)[*Descrizione*]],
-      [#text(fill: white)[*Fonti*]],
+      [#text(fill: white)[*Riferimenti*]],
     ),
 
     [R-1-Q-Ob],
@@ -4596,7 +4597,7 @@ Per il dettaglio dei test#super[G] effettuati si rimanda al #link("https://alimi
     table.header(
       [#text(fill: white)[*Codice*]],
       [#text(fill: white)[*Descrizione*]],
-      [#text(fill: white)[*Fonti*]],
+      [#text(fill: white)[*Riferimenti*]],
     ),
 
     [R-1-V-Ob],
