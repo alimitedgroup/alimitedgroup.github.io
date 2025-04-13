@@ -12,7 +12,7 @@
     #link("https://alimitedgroup.github.io/")[#image("../assets/altd.png", height: 50pt)]
   ],
   to-details: [
-    #v(-15pt)
+    #v(-20pt)
     Alla cortese attenzione di \
     #prof(p.tullio), \
     #prof(p.cardin), \
@@ -23,22 +23,22 @@
 )
 #show link: underline
 
-#v(-20pt)
+#v(-30pt)
 
 Egregio Prof. Vardanega,\
 Egregio Prof. Cardin,
 
-#v(10pt)
+#v(5pt)
 
 con la presente il gruppo _ALimitedGroup_ desidera comunicarVi formalmente la
-propria intenzione di sottoporsi alla revisione della _Product Baseline_ in data *[DEFINIRE]*, riguardo il lavoro svolto nell'ambito del progetto proposto dall'azienda #M31 nel capitolato *C6*, con titolo:
+propria intenzione a sottoporsi alla seconda parte della _Product Baseline_ in seguito all'ottenimento del *semaforo verde* in data *13/04/2025* per la prima parte, in merito al lavoro svolto nell'ambito del progetto proposto dall'azienda #M31 nel capitolato *C6*, con titolo:
 
 #align(center, text(12pt)[*Sistema di Gestione di un Magazzino Distribuito*])
 
-Nel periodo trascorso è stato sviluppato il _Minimum Viable Product_ accettato formalmente dall'azienda come descritto nella *Sezione 2.2* del #link("https://alimitedgroup.github.io/VE%2004-04-2025%20v1.0.0.pdf")[*Verbale Esterno del 4 Aprile 2025*]. È possibile visionare il codice sorgente nel _repo_ dedicato, raggiungibile al seguente indirizzo: \
+Nel periodo trascorso è stato sviluppato il _Minimum Viable Product_, accettato formalmente dall'azienda come descritto nella *Sezione 2.2* del #link("https://alimitedgroup.github.io/VE%2004-04-2025%20v1.0.0.pdf")[*Verbale Esterno del 4 Aprile 2025*]. È possibile visionare il codice sorgente nel _repo_ dedicato, raggiungibile al seguente indirizzo: \
 https://github.com/alimitedgroup/MVP
 
-Con l'occasione, Vi segnaliamo che la documentazione prodotta può sempre essere trovata alla sezione _PB_ della nostra _repo_ al seguente link:
+Con l'occasione, Vi segnaliamo che la documentazione prodotta può sempre essere trovata alla sezione _PB_ della nostra _repo_ al seguente indirizzo:
 https://alimitedgroup.github.io
 
 All'interno si possono trovare i seguenti documenti:
@@ -69,7 +69,7 @@ All'interno si possono trovare i seguenti documenti:
   ],
 )
 
-La spesa totale affrontata per la realizzazione del progetto risulta essere di *12.490€* a fronte dei *12.930€* preventivati in candidatura.
+La spesa totale affrontata per la realizzazione del progetto risulta essere di *12.615€* a fronte dei *12.930€* preventivati in candidatura.
 
 Cordiali Saluti, \
 _ALimitedGroup_
