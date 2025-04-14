@@ -6,7 +6,7 @@
   contenuto1: [
     - Effettuata la riunione con il professor Cardin: ricevuto il semaforo verde
     - Redatta la lettera di presentazione per la Product Baseline
-    - Contattato il professor Vardanega per chiedere una riunione per la seconda parte della Product Baseline
+    - Contattato il professor Vardanega per chiedere una riunione per la seconda parte della Product Baseline (16 Aprile)
   ],
   contenuto2: [
     - Completare la realizzazione della presentazione per la riunione con il professor Vardanega
