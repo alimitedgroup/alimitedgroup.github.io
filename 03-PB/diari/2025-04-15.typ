@@ -2,6 +2,7 @@
 
 #show: ppt => ddb(
   intestazioni: true,
+
   date: datetime(day: 15, month: 04, year: 2025),
   contenuto1: [
     - Effettuata la riunione con il professor Cardin: ricevuto il semaforo verde
