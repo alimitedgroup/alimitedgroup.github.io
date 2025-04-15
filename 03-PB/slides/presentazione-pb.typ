@@ -76,9 +76,9 @@
       #v(1.3em)
       - Resa facoltativa la creazione di un client;
       #v(0.3em)
-      - implementate funzionalità chiave, soddisfatti i requisiti obbligatori;
+      - Implementate funzionalità chiave, soddisfatti i requisiti obbligatori;
       #v(0.3em)
-      - rimodulazione positiva.
+      - Rimodulazione positiva.
     ],
   )
 ]
@@ -90,13 +90,13 @@
     #place(bottom + right, image("../../assets/elenco-icona-simbolo-carta.png", width: 29%))
 
     #v(2.3em)
-    - raggiunto code coverage del 76%
+    - Raggiunto code coverage del 76%
     #v(0.3em)
-    - per raggiungere lo stato dell'arte bisognerebbe tendere al 100%
+    - Per raggiungere lo stato dell'arte bisognerebbe tendere al 100%
     #v(0.3em)
-    - due fattori hanno determinato una diminuzione: \
-      → progetto complesso, molte componenti \
-      → team di sviluppo piccolo
+    - Due fattori hanno determinato una diminuzione: \
+      → Progetto complesso, molte componenti \
+      → Team di sviluppo piccolo
   ]
 ]
 
@@ -110,7 +110,7 @@
 
   Ci sono stati fatti notare alcuni errori:
 
-  - non sempre è stato ben applicato il principio della _"separation of concerns"_;
+  - Non sempre è stato ben applicato il principio della _"separation of concerns"_;
   - Specifica tecnica dettagliata, tranne per l'interazione tra componenti.
 ]
 
@@ -177,7 +177,7 @@
 ]
 
 #slide[
-  = Autovalutazione dell’Apprendimento
+  = Autovalutazione dell'Apprendimento
 
   - Apprendimento di Golang e NATS
 
